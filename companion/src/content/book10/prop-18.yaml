@@ -1,0 +1,153 @@
+id: X.18
+kind: theorem
+title: When the roots of the quadratic are incommensurable
+
+paraphrase: |
+  The counterpart of [[X.17]]: the segments {BD}, {DC} are incommensurable exactly when $\sqrt{BC^2 - A^2}$ is
+  incommensurable with {BC}. A bracketed lemma follows on the terminology of rational lines.
+
+diagram:
+  width: 270
+  height: 190
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,150;0;0"
+    - "B3;point;free;1000,150;0;0"
+    - "A1;point;lineSlider;A0,A3,40,0;0"
+    - "A2;point;lineSlider;A0,A3,220,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B;point;lineSlider;B0,B3,40,0"
+    - "C;point;lineSlider;B0,B3,230,0"
+    - "BC;line;connect;B,C"
+    - "E;point;midpoint;B,C"
+    - "a;point;midpoint;A1,A2;0;0"
+    - "b;point;midpoint;B,E;0;0"
+    - "bcirc;circle;radius;b,B;0;0;0;0"
+    - "Bcirc;circle;radius;B,A1,a;0;0;0;0"
+    - "cc';line;bichord;bcirc,Bcirc;0;0;0"
+    - "c;point;first;cc';0;0"
+    - "D;point;cutoff;E,C,E,c"
+    - "F;point;cutoff;E,B,D,E"
+    - "d;point;perpendicular;D,C;0;0"
+    - "rect;polygon;parallelogram;B,D,d;0;0;black;random"
+    - "BD;line;connect;B,D;0;0;0"
+    - "DC;line;connect;D,C;0;0;0"
+    - "BF;line;connect;B,F;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+  aliases: { CD: DC, FD: DF }
+  caption: |
+    As in [[X.17]]: {BD}·{DC} = ¼ sq({A}), sq({BC}) − sq({A}) = sq({DF}).
+
+steps:
+  - part: enunciation
+    text: "If there be two unequal straight lines, and to the greater there be applied a parallelogram equal to the fourth part of the square on the less and deficient by a square figure, and if it divide it into parts which are incommensurable, the square on the greater will be greater than the square on the less by the square on a straight line incommensurable with the greater."
+    highlight: [A, BC]
+    hint: |
+      Incommensurable roots iff incommensurable discriminant root.
+    modern: |
+      $x/(b - x) \notin \mathbb{Q} \iff \sqrt{b^2 - a^2}/b \notin \mathbb{Q}$.
+
+  - part: enunciation
+    text: "And, if the square on the greater be greater than the square on the less by the square on a straight line incommensurable with the greater, and if there be applied to the greater a parallelogram equal to the fourth part of the square on the less and deficient by a square figure, it divides it into parts which are incommensurable."
+    hint: |
+      And conversely.
+
+  - part: setting-out
+    text: "Let A, BC be two unequal straight lines, of which BC is the greater, and to BC let there be applied a parallelogram equal to the fourth part of the square on the less, A, and deficient by a square figure. Let this be the rectangle BD, DC, and let BD be incommensurable in length with DC;"
+    highlight: [A, BC, BD, DC]
+    hint: |
+      Setup, with {BD}, {DC} incommensurable.
+
+  - part: specification
+    text: "I say that the square on BC is greater than the square on A by the square on a straight line incommensurable with BC."
+    highlight: [BC, A]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, with the same construction as before, we can prove similarly that the square on BC is greater than the square on A by the square on FD."
+    highlight: [BC, A, DF]
+    hint: |
+      As in [[X.17]], sq({BC}) − sq({A}) = sq({FD}).
+
+  - part: specification
+    text: "It is to be proved that BC is incommensurable in length with DF."
+    highlight: [BC, DF]
+    hint: |
+      Remains: {BC}, {DF} incommensurable.
+
+  - part: proof
+    text: "Since BD is incommensurable in length with DC, therefore BC is also incommensurable in length with CD."
+    highlight: [BC, DC]
+    hint: |
+      [[X.16]].
+
+  - part: proof
+    text: "But DC is commensurable with the sum of BF, DC; therefore BC is also incommensurable with the sum of BF, DC; so that BC is also incommensurable in length with the remainder FD."
+    highlight: [BC, BF, DC, DF]
+    hint: |
+      {DC} is commensurable with {BF} + {DC}, so {BC} is not ([[X.13]]); hence not with the remainder {FD}
+      ([[X.16]]).
+
+  - part: proof
+    text: "And the square on BC is greater than the square on A by the square on FD; therefore the square on BC is greater than the square on A by the square on a straight line incommensurable with BC."
+    highlight: [BC, DF]
+    hint: |
+      Done.
+
+  - part: specification
+    text: "Again, let the square on BC be greater than the square on A by the square on a straight line incommensurable with BC, and let there be applied to BC a parallelogram equal to the fourth part of the square on A and deficient by a square figure. Let this be the rectangle BD, DC."
+    highlight: [BC, A, BD, DC]
+    hint: |
+      Converse.
+
+  - part: specification
+    text: "It is to be proved that BD is incommensurable in length with DC."
+    highlight: [BD, DC]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, with the same construction, we can prove similarly that the square on BC is greater than the square on A by the square on FD."
+    highlight: [BC, A, DF]
+    hint: |
+      As before.
+
+  - part: proof
+    text: "But the square on BC is greater than the square on A by the square on a straight line incommensurable with BC; therefore BC is incommensurable in length with FD, so that BC is also incommensurable with the remainder, the sum of BF, DC."
+    highlight: [BC, DF, BF, DC]
+    hint: |
+      {BC} incommensurable with {FD}, hence with {BF} + {DC} ([[X.16]]) …
+
+  - part: proof
+    text: "But the sum of BF, DC is commensurable in length with DC; therefore BC is also incommensurable in length with DC, so that, separando, BD is also incommensurable in length with DC."
+    highlight: [BC, DC, BD]
+    hint: |
+      … hence with {DC} ([[X.13]]); so {BD}, {DC} incommensurable ([[X.16]]).
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: lemma
+    text: "[Lemma. Since it has been proved that straight lines commensurable in length are always commensurable in square also, while those commensurable in square are not always commensurable in length also, but can of course be either commensurable or incommensurable in length, it is manifest that, if any straight line be commensurable in length with a given rational straight line, it is called rational and commensurable with the other not only in length but in square also, since straight lines commensurable in length are always commensurable in square also."
+    hint: |
+      Bracketed lemma: lines commensurable in length with the rational line are rational, and commensurable with
+      it in length and in square …
+
+  - part: lemma
+    text: "But, if any straight line be commensurable in square with a given rational straight line, then, if it is also commensurable in length with it, it is called in this case also rational and commensurable with it both in length and in square; but, if again any straight line, being commensurable in square with a given rational straight line, be incommensurable in length with it, it is called in this case also rational but commensurable in square only.]"
+    hint: |
+      … lines commensurable with it in square only are still called rational, "commensurable in square only".
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8]
+      text: |
+        $(b - 2x)/b \notin \mathbb{Q} \iff x/b \notin \mathbb{Q} \iff x/(b - x) \notin \mathbb{Q}$. $\blacksquare$
+
+commentary: |
+  Used from [[X.33]] on. The bracketed lemma restates [[X.Def.3]]; Heath, after Heiberg, regards it as an
+  interpolation.

@@ -1,0 +1,90 @@
+id: IX.16
+kind: theorem
+title: No third proportional to coprime numbers
+
+paraphrase: |
+  If {A}, {B} are prime to one another, there is no number {C} with {A} : {B} = {B} : {C}.
+
+diagram:
+  width: 250
+  height: 130
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "B0;point;free;-1000,65;0;0"
+    - "B3;point;free;1000,65;0;0"
+    - "C0;point;free;-1000,100;0;0"
+    - "C3;point;free;1000,100;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,90,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,130,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;A1,A2,B1,B2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+  caption: |
+    {A}, {B} coprime; {C} is the supposed third proportional.
+
+steps:
+  - part: enunciation
+    text: "If two numbers be prime to one another, the second will not be to any other number as the first is to the second."
+    highlight: [A, B]
+    hint: |
+      $\gcd(a, b) = 1$, $a > 1$ $\Rightarrow$ $b^2/a$ is not whole.
+    modern: |
+      $\gcd(a, b) = 1,\ a \ge 2 \Rightarrow$ no whole $c$ with $ac = b^2$.
+
+  - part: setting-out
+    text: "For let the two numbers A, B be prime to one another;"
+    highlight: [A, B]
+    hint: |
+      {A}, {B} coprime.
+
+  - part: specification
+    text: "I say that B is not to any other number as A is to B."
+    highlight: [A, B]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, if possible, as A is to B, so let B be to C."
+    highlight: [A, B, C]
+    hint: |
+      Suppose {A} : {B} = {B} : {C}.
+
+  - part: proof
+    text: "Now A, B are prime, primes are also least, and the least numbers measure those which have the same ratio the same number of times, the antecedent the antecedent and the consequent the consequent; therefore A measures B as antecedent antecedent."
+    highlight: [A, B]
+    hint: |
+      [[VII.21]], [[VII.20]]: {A} measures {B}.
+
+  - part: proof
+    text: "But it also measures itself; therefore A measures A, B which are prime to one another: which is absurd."
+    highlight: [A, B]
+    hint: |
+      {A} a common measure of coprime numbers.
+    explain:
+      implicit: |
+        {A} is a number (at least 2); if {A} were the unit the argument would fail — and then a third
+        proportional does exist ($1 : b = b : b^2$).
+
+  - part: proof
+    text: "Therefore B will not be to C, as A is to B."
+    highlight: [B, C]
+    hint: |
+      No such {C}.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        $ac = b^2$ and $\gcd(a, b) = 1$ give $a \mid b^2$ with $a$ coprime to $b^2$, so $a = 1$. $\blacksquare$

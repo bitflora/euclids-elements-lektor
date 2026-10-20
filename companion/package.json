@@ -1,0 +1,36 @@
+{
+  "name": "euclid-reading-companion",
+  "version": "0.1.0",
+  "description": "An annotated reading companion for Euclid's Elements (Heath translation, with Joyce's guides).",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "extract:heath": "node scripts/extract-heath.mjs 1 2 3 4 5 6 7 8 9 10 11 12 13",
+    "screenshot": "node scripts/screenshot.mjs"
+  },
+  "type": "module",
+  "dependencies": {
+    "@brownnrl/geomlib": "^0.16.0",
+    "@fontsource/eb-garamond": "^5.3.0",
+    "@fontsource/source-sans-3": "^5.3.0",
+    "katex": "^0.18.9",
+    "marked": "^18.0.14",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@types/katex": "^0.16.8",
+    "@types/node": "^26.6.3",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "playwright": "^1.63.0",
+    "typescript": "^7.0.2",
+    "vite": "^5.4.21",
+    "vitest": "^2.1.9"
+  },
+  "private": true
+}

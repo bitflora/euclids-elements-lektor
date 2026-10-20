@@ -1,0 +1,233 @@
+id: I.8
+kind: theorem
+title: Side–side–side
+
+paraphrase: |
+  If two triangles have all three sides equal in pairs, the angles contained by the equal sides
+  are equal. With [[I.4]] it follows that the triangles are equal in every respect: **SSS
+  congruence**.
+
+diagram:
+  width: 350
+  height: 250
+  elements:
+    - "D;point;free;225,55"
+    - "E;point;free;200,210"
+    - "F;point;free;325,160"
+    - "DEF;polygon;triangle;D,E,F;0;0;black;#dfe7ea"
+    - "B;point;free;45,210"
+    - "CircBA;circle;radius;B,E,D;0;0;0;0"
+    - "A;point;circleSlider;CircBA,70,55"
+    - "CircAC;circle;radius;A,D,F;0;0;0;0"
+    - "CircBC;circle;radius;B,E,F;0;0;0;0"
+    - "CCx;line;bichord;CircAC,CircBC;0;0;0"
+    - "C;point;last;CCx"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "G;point;free;285,70"
+    - "EG;line;connect;E,G"
+    - "GF;line;connect;G,F"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angEDF;sector;angleMarker;D,E,F"
+  aliases:
+    BA: AB
+    CA: AC
+    CB: BC
+    ED: DE
+    FD: DF
+    FE: EF
+    GE: EG
+    FG: GF
+    BAC: angBAC
+    EDF: angEDF
+  given: [A, B, C, D, E, F, ABC, DEF]
+  caption: |
+    Drag {D}, {E}, {F} or {B}, and slide {A}: {ABC} is rebuilt from circles so that its sides
+    always equal those of {DEF}. {G} is the imagined apex that "falls beside" — drag it anywhere;
+    by [[I.7]] it can never have {EG} = {BA} and {GF} = {AC}.
+
+steps:
+  - part: enunciation
+    text: "If two triangles have the two sides equal to two sides respectively, and have also the base equal to the base, they will also have the angles equal which are contained by the equal straight lines."
+    highlight: [AB, AC, BC, DE, DF, EF, angBAC, angEDF]
+    hint: |
+      Three pairs of equal sides force the angles between them to be equal. The second of Euclid's
+      three congruence theorems ([[I.4]] SAS, I.8 SSS, [[I.26]] ASA/AAS).
+    explain:
+      did: |
+        States the theorem.
+      implicit: |
+        Euclid claims only the angle at the apex. The rest — the other angles, the third side,
+        the areas — follows by [[I.4]] once that angle is known, and later proofs use I.8 that way.
+
+  - part: setting-out
+    text: "Let ABC, DEF be two triangles having the two sides AB, AC equal to the two sides DE, DF respectively, namely AB to DE, and AC to DF;"
+    highlight: [ABC, DEF, AB, DE, AC, DF]
+    hint: |
+      The data, part one: {AB} = {DE} and {AC} = {DF}.
+    modern: |
+      $$AB = DE,\qquad AC = DF$$
+
+  - part: setting-out
+    text: "and let them have the base BC equal to the base EF;"
+    highlight: [BC, EF]
+    hint: |
+      Part two: the third sides are equal too, {BC} = {EF}.
+    modern: |
+      $$BC = EF$$
+
+  - part: specification
+    text: "I say that the angle BAC is also equal to the angle EDF."
+    highlight: [angBAC, angEDF]
+    hint: |
+      The goal: the angles at {A} and {D} are equal.
+    modern: |
+      $$\text{To prove: } \angle BAC = \angle EDF$$
+
+  - part: proof
+    text: "For, if the triangle ABC be applied to the triangle DEF, and if the point B be placed on the point E and the straight line BC on EF, the point C will also coincide with F, because BC is equal to EF."
+    highlight: [BC, EF, B, E, C, F]
+    hint: |
+      Superposition, as in [[I.4]]: lay {ABC} on {DEF} with {B} on {E} and {BC} along {EF}. The
+      bases are equal, so {C} lands on {F}.
+    explain:
+      did: |
+        Moves the first triangle onto the second, matching the bases.
+      fact: |
+        Equal segments laid along each other from a common end coincide.
+      justification: |
+        [[I.CN.4]] read in reverse (equal things can be made to coincide) — the same principle
+        as in I.4.
+      implicit: |
+        That {A} lands on the same side of {EF} as {D}. If not, turn the triangle over; Euclid
+        does not mention this.
+    gap: |
+      **Superposition again.** As in [[I.4]], nothing in the postulates allows a figure to be
+      moved. Hilbert-style systems need SAS as an axiom, but SSS can then be *proved* without
+      motion (see the reconstruction).
+
+  - part: proof
+    text: "Then, BC coinciding with EF, BA, AC will also coincide with ED, DF;"
+    highlight: [AB, AC, DE, DF]
+    hint: |
+      Claim: the other two sides land exactly on {ED} and {DF}, so {A} lands on {D}.
+    explain:
+      did: |
+        States what is to be shown next, by contradiction.
+
+  - part: proof
+    text: "for, if the base BC coincides with the base EF, and the sides BA, AC do not coincide with ED, DF but fall beside them as EG, GF,"
+    highlight: [EG, GF, G, DE, DF]
+    adds: [G, EG, GF]
+    hint: |
+      Suppose instead they miss, landing as {EG} and {GF} with a new apex {G}.
+    explain:
+      did: |
+        Introduces the false supposition.
+      fact: |
+        Then {EG} = {BA} = {ED} and {GF} = {AC} = {DF}: two pairs of lines on the base {EF},
+        on the same side, meeting at different points, each equal to the one with the same end.
+      implicit: |
+        "Fall beside" translates παραλλάξουσι, "pass by without touching" (Heath's note on line 21).
+    modern: |
+      $$G \ne D,\quad EG = ED,\quad GF = DF$$
+
+  - part: proof
+    text: "then, given two straight lines constructed on a straight line (from its extremities) and meeting in a point, there will have been constructed on the same straight line (from its extremities), and on the same side of it, two other straight lines meeting in another point and equal to the former two respectively, namely each to that which has the same extremity with it."
+    highlight: [DE, DF, EG, GF, EF]
+    hint: |
+      That is exactly the configuration [[I.7]] forbids.
+    explain:
+      did: |
+        Quotes the enunciation of I.7, word for word, applied to {ED}, {DF} and {EG}, {GF} on {EF}.
+      follows: |
+        {ED}, {DF} meet at {D}; {EG}, {GF} meet at {G} ≠ {D}; both pairs stand on {EF} on the same
+        side; {EG} = {ED} and {GF} = {DF}.
+
+  - part: proof
+    text: "But they cannot be so constructed."
+    highlight: [G]
+    hint: |
+      [[I.7]]: no such second apex exists. So the supposition fails.
+    explain:
+      justification: "[[I.7]], bracketed by Heath."
+
+  - part: proof
+    text: "Therefore it is not possible that, if the base BC be applied to the base EF, the sides BA, AC should not coincide with ED, DF;"
+    highlight: [DE, DF]
+    hint: |
+      So the sides must coincide.
+    explain:
+      did: |
+        Concludes the reductio.
+
+  - part: proof
+    text: "they will therefore coincide, so that the angle BAC will also coincide with the angle EDF, and will be equal to it."
+    highlight: [angBAC, angEDF]
+    hint: |
+      The sides coincide, so the angles they contain coincide, and coinciding things are equal
+      ([[I.CN.4]]).
+    explain:
+      did: |
+        Draws the conclusion.
+      justification: "[[I.CN.4]]: things which coincide with one another are equal to one another."
+    modern: |
+      $$\angle BAC = \angle EDF$$
+    cites: [I.CN.4]
+
+  - part: conclusion
+    text: "If therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* It avoids superposition and [[I.7]],
+    using only SAS ([[I.4]]) and the isosceles theorem ([[I.5]]). The idea is reported by
+    Proclus, who credits it to Philo.
+  lines:
+    - steps: [1, 2, 3]
+      text: Let $AB = DE$, $AC = DF$, $BC = EF$.
+    - steps: [4]
+      text: |
+        On the side of $EF$ opposite $D$, copy the angle $\angle CBA$ at $E$ and lay off
+        $EG' = BA$ (angle and segment transfer). By SAS, $\triangle G'EF \cong \triangle ABC$, so
+        $G'F = AC = DF$ and $\angle EG'F = \angle BAC$.
+    - steps: [5, 6, 7, 8, 9]
+      text: |
+        Join $DG'$. Triangles $EDG'$ and $FDG'$ are isosceles ($ED = EG'$, $FD = FG'$), so by
+        I.5 their base angles at $D$ and $G'$ are equal. Adding (or, if $DG'$ falls outside
+        $\triangle DEF$, subtracting) them, $\angle EDF = \angle EG'F$.
+    - steps: [10]
+      text: Hence $\angle EDF = \angle EG'F = \angle BAC$. $\blacksquare$
+  closing: |
+    Hilbert's *Foundations* proves SSS along these lines. Like Euclid, the
+    modern proof has cases — here, where $DG'$ crosses $EF$.
+
+commentary: |
+  I.8 completes, with [[I.4]], the toolkit Euclid uses for the constructions that follow: the
+  angle bisection of [[I.9]], the segment bisection of [[I.10]], and the perpendiculars of
+  [[I.11]] and [[I.12]] all end with I.8 or I.4.
+
+  The proof is in two layers. Superposition puts the bases together; [[I.7]] then rules out
+  that the apexes miss each other.
+
+gaps: |
+  - **Superposition** (step 4), as in [[I.4]].
+  - **Same side of the base** (step 4): the triangle may need to be turned over.
+  - **Only the apex angle**: the other angles and the equality of the triangles follow by
+    [[I.4]], and Euclid leaves that to later uses.
+
+historical: |
+  Heath points out that in the Greek the verb for "fall beside" is in the future tense, and that
+  the text reads "{BA}, {CA}" where he prints "{BA}, {AC}" (his notes on lines 19 and 21).

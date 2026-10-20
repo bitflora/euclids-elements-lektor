@@ -1,0 +1,274 @@
+id: XI.34
+kind: theorem
+title: Equal parallelepipeds have bases reciprocally proportional to heights
+
+paraphrase: |
+  Two parallelepipeds are equal exactly when their bases are reciprocally proportional to their heights. The solid
+  version of [[VI.14]].
+
+diagram:
+  width: 400
+  height: 280
+  elements:
+    - "G;point;fixed;60,100,0;black;green"
+    - "1X;point;fixed;260,73,36;0;0"
+    - "1Y;point;fixed;5,-20,160;0;0"
+    - "1Z;point;fixed;60,244,123;0;0"
+    - "ceiling;plane;3points;G,1X,1Y;0;0;0;0"
+    - "A;point;lineSlider;G,1Z,220,110,200"
+    - "K;point;planeSlider;ceiling,90,0,0"
+    - "F;point;planeSlider;ceiling,150,234,100"
+    - "H;point;parallelogram;A,G,K"
+    - "E;point;parallelogram;A,G,F"
+    - "L;point;parallelogram;H,A,E"
+    - "B;point;parallelogram;K,G,F"
+    - "floor;plane;3points;A,E,H;0;0;black;0"
+    - "AGFE;polygon;quadrilateral;A,G,F,E;0;0;black;170,75,100"
+    - "EFBL;polygon;quadrilateral;E,F,B,L;0;0;black;170,100,90"
+    - "GFBK;polygon;quadrilateral;G,F,B,K;0;0;black;170,50,100"
+    - "HK;line;connect;H,K"
+    - "K';point;perpendicular;G,F,ceiling;0;0"
+    - "K'';point;intersection;G,K',K,B,ceiling;0;0"
+    - "R;point;planeSlider;ceiling,250,110,100"
+    - "M;point;planeSlider;ceiling,220,180,100"
+    - "O;point;planeSlider;ceiling,300,180,100"
+    - "D;point;parallelogram;R,M,O"
+    - "RMOD;polygon;quadrilateral;R,M,O,D;0;0;black;30,50,100"
+    - "R';point;perpendicular;M,O,ceiling;0;0"
+    - "R'';point;intersection;M,R',R,D,ceiling;0;0"
+    - "C';point;parallelogram;A,G,M;0;0"
+    - "C'';point;proportion;M,O,G,A,G,F,M,C';0;0"
+    - "C;point;proportion;M,R'',G,K'',M,C'',M,C''"
+    - "N;point;parallelogram;O,M,C"
+    - "P;point;parallelogram;D,M,C"
+    - "Q;point;parallelogram;R,M,C"
+    - "CMON;polygon;quadrilateral;C,M,O,N;0;0;black;30,75,100"
+    - "NODP;polygon;quadrilateral;N,O,D,P;0;0;black;30,100,90"
+    - "CQ;line;connect;C,Q"
+    - "PQ;line;connect;P,Q"
+    - "RQ;line;connect;R,Q"
+    - "T;point;cutoff;C,M,A,G"
+    - "V;point;parallelogram;D,M,T"
+    - "a;point;parallelogram;R,M,T;0"
+    - "b;point;parallelogram;O,M,T;0"
+    - "aTbV;polygon;quadrilateral;a,T,b,V;0;0;black;0"
+  aliases: { KH: HK, QC: CQ, QP: PQ, QR: RQ }
+  caption: |
+    Joyce's figure (upright case).
+
+steps:
+  - part: enunciation
+    text: "In equal parallelepipedal solids the bases are reciprocally proportional to the heights; and those parallelepipedal solids in which the bases are reciprocally proportional to the heights are equal."
+    highlight: [A]
+    hint: |
+      Equal volume iff base₁ : base₂ = height₂ : height₁.
+    modern: |
+      $B_1h_1 = B_2h_2 \iff B_1 : B_2 = h_2 : h_1$.
+
+  - part: setting-out
+    text: "Let AB, CD be equal parallelepipedal solids; I say that in the parallelepipedal solids AB, CD the bases are reciprocally proportional to the heights, that is, as the base EH is to the base NQ, so is the height of the solid CD to the height of the solid AB."
+    highlight: [A]
+    hint: |
+      Setup.
+
+  - part: specification
+    text: "First, let the sides which stand up, namely AG, EF, LB, HK, CM, NO, PD, QR, be at right angles to their bases; I say that, as the base EH is to the base NQ, so is CM to AG."
+    highlight: [A]
+    hint: |
+      Case 1: upright edges.
+
+  - part: proof
+    text: "If now the base EH is equal to the base NQ, while the solid AB is also equal to the solid CD, CM will also be equal to AG."
+    highlight: [A]
+    hint: |
+      If the bases are equal, the heights are.
+
+  - part: proof
+    text: "For parallelepipedal solids of the same height are to one another as the bases; and, as the base EH is to NQ, so will CM be to AG, and it is manifest that in the parallelepipedal solids AB, CD the bases are reciprocally proportional to the heights."
+    highlight: [A]
+    hint: |
+      ([[XI.32]].)
+
+  - part: proof
+    text: "Next, let the base EH not be equal to the base NQ, but let EH be greater."
+    highlight: [A]
+    hint: |
+      Otherwise let *EH* > *NQ* …
+
+  - part: proof
+    text: "Now the solid AB is equal to the solid CD; therefore CM is also greater than AG."
+    highlight: [A]
+    hint: |
+      … so *CM* > *AG*.
+
+  - part: construction
+    text: "Let then CT be made equal to AG, and let the parallelepipedal solid VC be completed on NQ as base and with CT as height."
+    highlight: [A]
+    hint: |
+      *CT* = *AG*; complete the solid *CV*.
+
+  - part: proof
+    text: "Now, since the solid AB is equal to the solid CD, and CV is outside them, while equals have to the same the same ratio, therefore, as the solid AB is to the solid CV, so is the solid CD to the solid CV."
+    highlight: [A]
+    hint: |
+      *AB* : *CV* = *CD* : *CV* ([[V.7]]) …
+
+  - part: proof
+    text: "But, as the solid AB is to the solid CV, so is the base EH to the base NQ, for the solids AB, CV are of equal height; and, as the solid CD is to the solid CV, so is the base MQ to the base TQ and CM to CT; therefore also, as the base EH is to the base NQ, so is MC to CT."
+    highlight: [A]
+    hint: |
+      … *AB* : *CV* = *EH* : *NQ* ([[XI.32]]), *CD* : *CV* = *CM* : *CT* ([[XI.25]]) …
+
+  - part: proof
+    text: "But CT is equal to AG; therefore also, as the base EH is to the base NQ, so is MC to AG."
+    highlight: [A]
+    hint: |
+      … so *EH* : *NQ* = *MC* : *AG*.
+
+  - part: proof
+    text: "Therefore in the parallelepipedal solids AB, CD the bases are reciprocally proportional to the heights."
+    highlight: [A]
+    hint: |
+      Reciprocally proportional.
+
+  - part: specification
+    text: "Again, in the parallelepipedal solids AB, CD let the bases be reciprocally proportional to the heights, that is, as the base EH is to the base NQ, so let the height of the solid CD be to the height of the solid AB; I say that the solid AB is equal to the solid CD."
+    highlight: [A]
+    hint: |
+      Converse.
+
+  - part: proof
+    text: "Let the sides which stand up be again at right angles to the bases."
+    highlight: [A]
+    hint: |
+      Upright edges.
+
+  - part: proof
+    text: "Now, if the base EH is equal to the base NQ, and, as the base EH is to the base NQ, so is the height of the solid CD to the height of the solid AB, therefore the height of the solid CD is also equal to the height of the solid AB."
+    highlight: [A]
+    hint: |
+      Equal bases give equal heights …
+
+  - part: proof
+    text: "But parallelepipedal solids on equal bases and of the same height are equal to one another; therefore the solid AB is equal to the solid CD."
+    highlight: [A]
+    hint: |
+      … and equal solids ([[XI.31]]).
+
+  - part: proof
+    text: "Next, let the base EH not be equal to the base NQ, but let EH be greater; therefore the height of the solid CD is also greater than the height of the solid AB, that is, CM is greater than AG."
+    highlight: [A]
+    hint: |
+      Otherwise *CM* > *AG* …
+
+  - part: construction
+    text: "Let CT be again made equal to AG, and let the solid CV be similarly completed."
+    highlight: [A]
+    hint: |
+      *CT* = *AG*, the solid *CV*.
+
+  - part: proof
+    text: "Since, as the base EH is to the base NQ, so is MC to AG, while AG is equal to CT, therefore, as the base EH is to the base NQ, so is CM to CT."
+    highlight: [A]
+    hint: |
+      *EH* : *NQ* = *CM* : *CT* …
+
+  - part: proof
+    text: "But, as the base EH is to the base NQ, so is the solid AB to the solid CV, for the solids AB, CV are of equal height; and, as CM is to CT, so is the base MQ to the base QT and the solid CD to the solid CV."
+    highlight: [A]
+    hint: |
+      … so *AB* : *CV* = *CD* : *CV* …
+
+  - part: proof
+    text: "Therefore also, as the solid AB is to the solid CV, so is the solid CD to the solid CV; therefore each of the solids AB, CD has to CV the same ratio."
+    highlight: [A]
+    hint: |
+      … the same ratio to *CV* …
+
+  - part: proof
+    text: "Therefore the solid AB is equal to the solid CD."
+    highlight: [A]
+    hint: |
+      … *AB* = *CD* ([[V.9]]).
+
+  - part: construction
+    text: "Now let the sides which stand up, FE, BL, GA, HK, ON, DP, MC, RQ, not be at right angles to their bases; let perpendiculars be drawn from the points F, G, B, K, O, M, D, R to the planes through EH, NQ, and let them meet the planes at S, T, U, V, W, X, Y, a, and let the solids FV, Oa be completed; I say that, in this case too, if the solids AB, CD are equal, the bases are reciprocally proportional to the heights, that is, as the base EH is to the base NQ, so is the height of the solid CD to the height of the solid AB."
+    highlight: [A]
+    hint: |
+      Case 2: slanting edges. Drop perpendiculars to form upright solids *BT*, *DX*.
+
+  - part: proof
+    text: "Since the solid AB is equal to the solid CD, while AB is equal to BT, for they are on the same base FK and of the same height; and the solid CD is equal to DX, for they are again on the same base RO and of the same height; [id.] therefore the solid BT is also equal to the solid DX."
+    highlight: [A]
+    hint: |
+      *BT* = *AB* and *DX* = *CD* ([[XI.29]], [[XI.30]]) …
+
+  - part: proof
+    text: "Therefore, as the base FK is to the base OR, so is the height of the solid DX to the height of the solid BT. [Part 1.]"
+    highlight: [A]
+    hint: |
+      … so by case 1 …
+
+  - part: proof
+    text: "But the base FK is equal to the base EH, and the base OR to the base NQ; therefore, as the base EH is to the base NQ, so is the height of the solid DX to the height of the solid BT."
+    highlight: [A]
+    hint: |
+      … the bases are reciprocally as the heights …
+
+  - part: proof
+    text: "But the solids DX, BT and the solids DC, BA have the same heights respectively; therefore, as the base EH is to the base NQ, so is the height of the solid DC to the height of the solid AB."
+    highlight: [A]
+    hint: |
+      … of the given solids.
+
+  - part: proof
+    text: "Therefore in the parallelepipedal solids AB, CD the bases are reciprocally proportional to the heights."
+    highlight: [A]
+    hint: |
+      So in general.
+
+  - part: specification
+    text: "Again, in the parallelepipedal solids AB, CD let the bases be reciprocally proportional to the heights, that is, as the base EH is to the base NQ, so let the height of the solid CD be to the height of the solid AB; I say that the solid AB is equal to the solid CD."
+    highlight: [A]
+    hint: |
+      Converse, slanting case.
+
+  - part: proof
+    text: "For, with the same construction, since, as the base EH is to the base NQ, so is the height of the solid CD to the height of the solid AB, while the base EH is equal to the base FK, and NQ to OR, therefore, as the base FK is to the base OR, so is the height of the solid CD to the height of the solid AB."
+    highlight: [A]
+    hint: |
+      The same construction …
+
+  - part: proof
+    text: "But the solids AB, CD and BT, DX have the same heights respectively; therefore, as the base FK is to the base OR, so is the height of the solid DX to the height of the solid BT."
+    highlight: [A]
+    hint: |
+      … the reciprocal proportion transfers to *BT*, *DX* …
+
+  - part: proof
+    text: "Therefore in the parallelepipedal solids BT, DX the bases are reciprocally proportional to the heights; therefore the solid BT is equal to the solid DX. [Part 1.]"
+    highlight: [A]
+    hint: |
+      … so *BT* = *DX* by case 1.
+
+  - part: proof
+    text: "But BT is equal to BA, for they are on the same base FK and of the same height; and the solid DX is equal to the solid DC. [id.]"
+    highlight: [A]
+    hint: |
+      And *BT* = *BA*, *DX* = *DC*.
+
+  - part: proof
+    text: "Therefore the solid AB is also equal to the solid CD."
+    highlight: [A]
+    hint: |
+      So *AB* = *CD*.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $B_1h_1 = B_2h_2$. $\blacksquare$

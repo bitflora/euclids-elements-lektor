@@ -1,0 +1,129 @@
+id: III.12
+kind: theorem
+title: Externally touching circles — the line of centres passes through the point of contact
+
+paraphrase: |
+  If two circles touch externally, the line joining their centres passes through the point of contact.
+
+diagram:
+  width: 320
+  height: 250
+  elements:
+    - "A;point;free;150,110"
+    - "B;point;free;70,30;black;0"
+    - "Cp;point;free;126,130;0"
+    - "E;point;free;280,150;black;0"
+    - "F;point;free;70,90"
+    - "G;point;free;180,170"
+    - "ABC;circle;circumcircle;A,B,Cp;0;0;black;0"
+    - "O;point;center;ABC;0;0"
+    - "M;point;midpoint;A,E;0;0"
+    - "MMx;line;perpendicular;M,E;0;0;0"
+    - "Mx;point;last;MMx;0;0"
+    - "P;point;intersection;M,Mx,O,A;0;0"
+    - "ADE;circle;radius;P,A;0;0;black;0"
+    - "FA;line;connect;F,A"
+    - "AG;line;connect;A,G"
+    - "FG;line;connect;F,G"
+    - "DDx;line;chord;FG,ADE;0;0;0"
+    - "D;point;first;DDx"
+    - "CCx;line;chord;FG,ABC;0;0;0"
+    - "C;point;last;CCx"
+    - "FC;line;connect;F,C;0;0;0"
+    - "GD;line;connect;G,D;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+  aliases:
+    AF: FA
+    GA: AG
+    FCDG: FG
+  given: [A, ABC, ADE, F, G]
+  caption: |
+    {F} and {G} are the supposed centres of the two circles; the proof shows the line {FG} must pass
+    through {A}. Drag them to see the triangle {FAG} that the reductio refutes.
+
+steps:
+  - part: enunciation
+    text: "If two circles touch one another externally, the straight line joining their centres will pass through the point of contact."
+    highlight: [ABC, ADE, A]
+    hint: |
+      For externally touching circles too, centres and contact point are in a line.
+
+  - part: setting-out
+    text: "For let the two circles ABC, ADE touch one another externally at the point A, and let the centre F of ABC, and the centre G of ADE, be taken;"
+    highlight: [ABC, ADE, A, F, G]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the straight line joined from F to G will pass through the point of contact at A."
+    highlight: [FG, A]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For suppose it does not, but, if possible, let it pass as FCDG, and let AF, AG be joined."
+    highlight: [FG, FA, AG, C, D]
+    hint: |
+      Suppose {FG} misses {A}, crossing the circles at {C} and {D}.
+
+  - part: proof
+    text: "Then, since the point F is the centre of the circle ABC, FA is equal to FC."
+    highlight: [FA, FC]
+    hint: |
+      Radii.
+    cites: [I.Def.15]
+
+  - part: proof
+    text: "Again, since the point G is the centre of the circle ADE, GA is equal to GD."
+    highlight: [AG, GD]
+    hint: |
+      Radii.
+
+  - part: proof
+    text: "But FA was also proved equal to FC; therefore FA, AG are equal to FC, GD, so that the whole FG is greater than FA, AG;"
+    highlight: [FG, FA, AG]
+    hint: |
+      {FG} contains {FC} and {GD} and the gap {CD} between them.
+
+  - part: proof
+    text: "but it is also less: which is impossible."
+    highlight: [FG, FA, AG]
+    hint: |
+      But by the triangle inequality ([[I.20]]) {FG} < {FA} + {AG}. Contradiction.
+
+  - part: proof
+    text: "Therefore the straight line joined from F to G will not fail to pass through the point of contact at A; therefore it will pass through it."
+    highlight: [FG, A]
+    hint: |
+      Done.
+    explain:
+      implicit: |
+        "Will not fail to pass" renders the Greek double negative, "will not *not*-pass" (Heath's note
+        on line 23).
+
+  - part: conclusion
+    text: "Therefore etc.]"
+    hint: |
+      The enunciation, now proved. The closing bracket is in Heath's text.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: |
+        For external tangency $|F - G| = R + r = |F - A| + |A - G|$; equality in the triangle inequality
+        forces $A$ onto segment $FG$. $\blacksquare$
+
+commentary: |
+  The external counterpart of [[III.11]]. Together they say: at a point of contact, the two circles have
+  a common tangent perpendicular to the line of centres (compare [[III.16]]).
+
+gaps: |
+  - **{C} and {D} distinct, with {C} before {D}**: that the line {FG} meets the circles in that order —
+    which is what "touch externally" provides — is taken from the figure.

@@ -1,0 +1,103 @@
+id: VII.29
+kind: theorem
+title: A prime is coprime to every number it does not measure
+
+paraphrase: |
+  If {A} is prime and does not measure {B}, then {A} and {B} are prime to one another.
+
+diagram:
+  width: 250
+  height: 140
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "C0;point;free;-1000,110;0;0"
+    - "C3;point;free;1000,110;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,150,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,220,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,70,0;0"
+    - "C;line;connect;C1,C2;black"
+  caption: |
+    {A} is prime; {C} is the supposed common measure of {A} and {B}.
+
+steps:
+  - part: enunciation
+    text: "Any prime number is prime to any number which it does not measure."
+    highlight: [A, B]
+    hint: |
+      $p$ prime, $p \nmid b$ $\Rightarrow \gcd(p, b) = 1$.
+    modern: |
+      $p$ prime, $p \nmid b \Rightarrow \gcd(p, b) = 1$.
+
+  - part: setting-out
+    text: "Let A be a prime number, and let it not measure B;"
+    highlight: [A, B]
+    hint: |
+      {A} prime, not measuring {B}.
+
+  - part: specification
+    text: "I say that B, A are prime to one another."
+    highlight: [A, B]
+    hint: |
+      To prove: coprime.
+
+  - part: proof
+    text: "For, if B, A are not prime to one another, some number will measure them."
+    highlight: [A, B]
+    hint: |
+      Suppose not.
+
+  - part: construction
+    text: "Let C measure them."
+    highlight: [C]
+    hint: |
+      A common measure {C}.
+
+  - part: proof
+    text: "Since C measures B, and A does not measure B, therefore C is not the same with A."
+    highlight: [C, A, B]
+    hint: |
+      {C} ≠ {A}, since {C} measures {B} and {A} does not.
+
+  - part: proof
+    text: "Now, since C measures B, A, therefore it also measures A which is prime, though it is not the same with it: which is impossible."
+    highlight: [C, A]
+    hint: |
+      A prime is measured only by the unit ([[VII.Def.11]]) — and by itself, which {C} is not.
+    cites: [VII.Def.11]
+
+  - part: proof
+    text: "Therefore no number will measure B, A."
+    highlight: [A, B]
+    hint: |
+      No common measure.
+
+  - part: proof
+    text: "Therefore A, B are prime to one another."
+    highlight: [A, B]
+    hint: |
+      Coprime.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8]
+      text: |
+        The divisors of $p$ are $1$ and $p$; $p \nmid b$, so the only common divisor is $1$. $\blacksquare$
+
+commentary: |
+  Note step 5: [[VII.Def.11]] says a prime is "measured by an unit alone", yet Euclid treats a prime as
+  measured by itself too. "Measured by" in the definition means measured by something *less*.

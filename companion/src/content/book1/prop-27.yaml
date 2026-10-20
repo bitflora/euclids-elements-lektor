@@ -1,0 +1,169 @@
+id: I.27
+kind: theorem
+title: Equal alternate angles make parallel lines
+
+paraphrase: |
+  If a line {EF} crossing two lines {AB} and {CD} makes equal *alternate* angles (∠{AEF} = ∠{EFD}),
+  the two lines are parallel.
+
+diagram:
+  width: 300
+  height: 150
+  elements:
+    - "A;point;free;30,40"
+    - "B;point;free;170,40"
+    - "AB;line;connect;A,B"
+    - "C;point;free;30,100"
+    - "CD;line;parallel;C,A,B"
+    - "D;point;last;CD"
+    - "E;point;lineSlider;AB,95,40"
+    - "F;point;lineSlider;CD,125,100"
+    - "Ex;point;extend;F,E,F,E;0;0"
+    - "Fx;point;extend;E,F,E,F;0;0"
+    - "EF;line;connect;Ex,Fx"
+    - "M;point;midpoint;A,C;0;0"
+    - "N;point;midpoint;B,D;0;0"
+    - "G;point;lineSlider;M,N,265,72"
+    - "BG;line;connect;B,G"
+    - "DG;line;connect;D,G"
+    - "EG;line;connect;E,G;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+    - "GEF;polygon;triangle;G,E,F;0;0;0;0"
+    - "angAEF;sector;angleMarker;E,A,F"
+    - "angEFD;sector;angleMarker;F,E,D"
+    - "angEFG;sector;angleMarker;F,E,G"
+  aliases:
+    AEF: angAEF
+    EFD: angEFD
+    EFG: angEFG
+  given: [A, B, C, D, E, F, AB, CD, EF, angAEF, angEFD]
+  caption: |
+    The figure keeps ∠{AEF} = ∠{EFD} (so {CD} is in fact parallel to {AB}). {G} is the meeting point
+    the proof imagines; however you slide it, the "triangle" {GEF} can't be closed.
+
+steps:
+  - part: enunciation
+    text: "If a straight line falling on two straight lines make the alternate angles equal to one another, the straight lines will be parallel to one another."
+    highlight: [EF, AB, CD, angAEF, angEFD]
+    hint: |
+      Equal alternate angles ⇒ parallel lines. The first theorem about parallels, and it does not
+      need the parallel postulate.
+    explain:
+      fact: |
+        "Falling on" is the same phrase as in [[I.Post.5]]: {EF} is a *transversal*. "Alternate"
+        angles lie on opposite sides of it, between the two lines, like ∠{AEF} and ∠{EFD}
+        (Heath's notes on lines 1–2).
+
+  - part: setting-out
+    text: "For let the straight line EF falling on the two straight lines AB, CD make the alternate angles AEF, EFD equal to one another;"
+    highlight: [EF, angAEF, angEFD]
+    hint: |
+      The data: ∠{AEF} = ∠{EFD}.
+    modern: |
+      $$\angle AEF = \angle EFD$$
+
+  - part: specification
+    text: "I say that AB is parallel to CD."
+    highlight: [AB, CD]
+    hint: |
+      The goal.
+    explain:
+      fact: |
+        *Parallel* means: in the same plane and never meeting, however far produced ([[I.Def.23]]).
+        Not "equidistant", and not "same direction".
+
+  - part: proof
+    text: "For, if not, AB, CD when produced will meet either in the direction of B, D or towards A, C."
+    highlight: [AB, CD]
+    hint: |
+      Reductio: if they are not parallel, they meet — on one side of {EF} or the other.
+    explain:
+      implicit: |
+        "In the direction of" is literally "towards the parts" (Heath's note on line 9).
+
+  - part: proof
+    text: "Let them be produced and meet, in the direction of B, D, at G."
+    highlight: [G, BG, DG]
+    adds: [G, BG, DG]
+    hint: |
+      Suppose they meet at {G}, beyond {B} and {D}.
+
+  - part: proof
+    text: "Then, in the triangle GEF, the exterior angle AEF is equal to the interior and opposite angle EFG: which is impossible."
+    highlight: [GEF, angAEF, angEFG]
+    adds: [angEFG]
+    hint: |
+      Then {GEF} is a triangle whose exterior angle ∠{AEF} equals the remote interior angle ∠{EFG} —
+      but by [[I.16]] it must be greater.
+    explain:
+      implicit: |
+        ∠{EFG} is ∠{EFD}, as {G} lies on {CD} produced beyond {D}.
+
+  - part: proof
+    text: "Therefore AB, CD when produced will not meet in the direction of B, D."
+    highlight: [AB, CD]
+    hint: |
+      So they don't meet on that side.
+
+  - part: proof
+    text: "Similarly it can be proved that neither will they meet towards A, C."
+    highlight: [AB, CD]
+    hint: |
+      The same argument on the other side.
+
+  - part: proof
+    text: "But straight lines which do not meet in either direction are parallel;"
+    highlight: [AB, CD]
+    hint: |
+      That is the definition ([[I.Def.23]]).
+
+  - part: proof
+    text: "therefore AB is parallel to CD."
+    highlight: [AB, CD]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* This is the *alternate interior angle
+    theorem* of neutral geometry.
+  lines:
+    - steps: [1, 2]
+      text: Let transversal $EF$ make $\angle AEF = \angle EFD$.
+    - steps: [3, 4, 5]
+      text: Suppose lines $AB$, $CD$ meet at $G$, say on the side of $B$, $D$.
+    - steps: [5]
+      text: |
+        In $\triangle GEF$, $\angle AEF$ is exterior and $\angle EFG$ is remote interior, so
+        $\angle AEF > \angle EFG = \angle EFD$, a contradiction. The other side is symmetric.
+    - steps: [6, 7, 8, 9]
+      text: So $AB \parallel CD$. $\blacksquare$
+  closing: |
+    Because it uses only [[I.16]], I.27 holds in hyperbolic geometry too. What fails there is the
+    converse — [[I.29]] — which is why Euclid needs [[I.Post.5]] for it.
+
+commentary: |
+  I.27 and [[I.28]] give conditions under which lines are parallel; [[I.29]] is their converse.
+  The break is significant: I.27 and I.28 are true without the parallel postulate; [[I.29]] is
+  the first proposition that needs it.
+
+  I.27 also shows that parallels *exist*: through any point a line can be drawn making equal
+  alternate angles with a transversal ([[I.23]]), which is the construction of [[I.31]].
+
+gaps: |
+  - **Meeting on one side**: if two lines meet, they meet on one side of {EF} only — two straight
+    lines cannot enclose a space. Euclid uses this without comment.
+
+historical: |
+  Proclus notes that Euclid uses the word *alternate* in two senses: for angles here, and for a
+  rearrangement of proportions in Book V (Heath's note on line 2).

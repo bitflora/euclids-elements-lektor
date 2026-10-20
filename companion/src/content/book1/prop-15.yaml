@@ -1,0 +1,157 @@
+id: I.15
+kind: theorem
+title: Vertical angles are equal
+
+paraphrase: |
+  When two lines cross, the opposite ("vertical") angles they make are equal.
+
+diagram:
+  width: 260
+  height: 230
+  elements:
+    - "A;point;free;50,40"
+    - "B;point;free;210,195"
+    - "AB;line;connect;A,B"
+    - "C;point;free;35,140"
+    - "D;point;free;225,95"
+    - "CD;line;connect;C,D"
+    - "E;point;intersection;AB,CD"
+    - "AE;line;connect;A,E;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "angCEA;sector;angleMarker;E,C,A"
+    - "angAED;sector;angleMarker;E,A,D"
+    - "angDEB;sector;angleMarker;E,D,B"
+    - "angBEC;sector;angleMarker;E,B,C"
+  aliases:
+    BA: AB
+    DC: CD
+    EA: AE
+    ED: DE
+    CEA: angCEA
+    AEC: angCEA
+    AED: angAED
+    DEA: angAED
+    DEB: angDEB
+    BED: angDEB
+    BEC: angBEC
+    CEB: angBEC
+  given: [A, B, C, D, E, AB, CD]
+  caption: |
+    Drag any of {A}, {B}, {C}, {D}: {E} is wherever the lines cross, and the opposite angles stay equal.
+
+steps:
+  - part: enunciation
+    text: "If two straight lines cut one another, they make the vertical angles equal to one another."
+    highlight: [angCEA, angDEB, angAED, angBEC]
+    hint: |
+      Where two lines cross, opposite angles are equal.
+    explain:
+      fact: |
+        *Vertical* angles (κατὰ κορυφήν, "at the vertex") share a vertex and lie opposite each other;
+        Proclus contrasts them with *adjacent* angles, which share a side (Heath's note on line 1).
+
+  - part: setting-out
+    text: "For let the straight lines AB, CD cut one another at the point E;"
+    highlight: [AB, CD, E]
+    hint: |
+      Two lines {AB}, {CD} crossing at {E}.
+
+  - part: specification
+    text: "I say that the angle AEC is equal to the angle DEB, and the angle CEB to the angle AED."
+    highlight: [angCEA, angDEB]
+    adds: [angCEA, angDEB]
+    hint: |
+      Two pairs of vertical angles to prove equal.
+    modern: |
+      $$\angle AEC = \angle DEB,\qquad \angle CEB = \angle AED$$
+
+  - part: proof
+    text: "For, since the straight line AE stands on the straight line CD, making the angles CEA, AED, the angles CEA, AED are equal to two right angles"
+    highlight: [AE, CD, angCEA, angAED]
+    adds: [angAED]
+    hint: |
+      {AE} stands on {CD}: by [[I.13]] its two angles sum to two right angles.
+    modern: |
+      $$\angle CEA + \angle AED = 2R$$
+
+  - part: proof
+    text: "Again, since the straight line DE stands on the straight line AB, making the angles AED, DEB, the angles AED, DEB are equal to two right angles."
+    highlight: [DE, AB, angAED, angDEB]
+    hint: |
+      And {DE} stands on {AB}: again two right angles ([[I.13]]).
+    modern: |
+      $$\angle AED + \angle DEB = 2R$$
+
+  - part: proof
+    text: "But the angles CEA, AED were also proved equal to two right angles;"
+    highlight: [angCEA, angAED]
+    hint: |
+      Both pairs sum to two right angles.
+
+  - part: proof
+    text: "therefore the angles CEA, AED are equal to the angles AED, DEB."
+    highlight: [angCEA, angAED, angDEB]
+    hint: |
+      So the two sums are equal ([[I.Post.4]], [[I.CN.1]]).
+    explain:
+      justification: |
+        Heath brackets Post. 4 and C.N. 1, as in [[I.14]]: all right angles are equal, and
+        things equal to the same thing are equal.
+    modern: |
+      $$\angle CEA + \angle AED = \angle AED + \angle DEB$$
+
+  - part: proof
+    text: "Let the angle AED be subtracted from each; therefore the remaining angle CEA is equal to the remaining angle BED."
+    highlight: [angCEA, angDEB]
+    hint: |
+      Take away the shared ∠{AED} ([[I.CN.3]]).
+    modern: |
+      $$\angle CEA = \angle BED$$
+
+  - part: proof
+    text: "Similarly it can be proved that the angles CEB, DEA are also equal."
+    highlight: [angBEC, angAED]
+    adds: [angBEC]
+    hint: |
+      The same argument, starting from the other line, gives the other pair.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove. Heath prints a porism after it, in brackets (see below).
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: Lines $AB$ and $CD$ meet at $E$, with $E$ between $A$ and $B$ and between $C$ and $D$.
+    - steps: [3, 4, 5, 6, 7]
+      text: |
+        Linear pairs: $\angle CEA + \angle AED = 180^\circ = \angle AED + \angle DEB$, so
+        $\angle CEA = \angle DEB$.
+    - steps: [8]
+      text: Likewise $\angle CEB = \angle AED$. $\blacksquare$
+
+commentary: |
+  A two-line consequence of [[I.13]], and one of the theorems Proclus (following Eudemus)
+  attributes to Thales. It is needed at once in [[I.16]].
+
+  **The porism.** Heath prints, in brackets, a *porism* (corollary) after the proof: "if two
+  straight lines cut one another, they will make the angles at the point of section equal to four
+  right angles." He brackets it because it is probably not Euclid's; Proclus knew it, and adds that
+  the angles around any point sum to four right angles, a fact used in the theory of regular
+  tilings (only triangles, squares and hexagons can fill the space around a point).
+
+gaps: |
+  - **{E} between the endpoints**: the lines are assumed actually to cross, so that each line
+    "stands on" the other.
+
+historical: |
+  Proclus, citing Eudemus, says that Thales first discovered this theorem, but that it was first
+  given a scientific proof by the author of the *Elements*.

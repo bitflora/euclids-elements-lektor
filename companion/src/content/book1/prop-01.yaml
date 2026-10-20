@@ -1,0 +1,341 @@
+# Proposition I.1 — the model for every annotated proposition.
+#
+# `text` fields quote Heath (1908) in plain words. The app refuses any step
+# whose words are not the next words of Heath's text (see src/lib/align.ts),
+# so these strings can be trusted as quotation. Everything else here is this
+# edition's commentary.
+
+id: I.1
+kind: problem
+title: An equilateral triangle on a given line
+
+paraphrase: |
+  Given a segment {AB}, construct a triangle {ABC} whose three sides are all equal.
+
+diagram:
+  width: 340
+  height: 260
+  pivot: C
+  elements:
+    - "A;point;free;125,140"
+    - "B;point;free;215,140"
+    - "AB;line;connect;A,B"
+    - "BCD;circle;radius;A,B"
+    - "ACE;circle;radius;B,A"
+    - "CD;line;bichord;ACE,BCD;0;0;0"
+    - "C;point;first;CD"
+    - "AC;line;connect;A,C"
+    - "BC;line;connect;B,C"
+    - "AE;line;extend;AB,AB;0;0;0"
+    - "E;point;last;AE;black;0"
+    - "BD;line;extend;B,A,A,B;0;0;0"
+    - "D;point;last;BD;black;0"
+    - "ABC;polygon;triangle;A,B,C;0;0;0;#efe4d2"
+  aliases:
+    CDB: BCD
+    CAE: ACE
+    BA: AB
+    CA: AC
+    CB: BC
+  given: [A, B, AB]
+  caption: |
+    Drag {A} or {B}: the construction re-runs, and {ABC} stays equilateral. The circles
+    are named, as Euclid names them, by three points on their circumference.
+
+steps:
+  - part: enunciation
+    text: "On a given finite straight line to construct an equilateral triangle."
+    highlight: [AB, ABC]
+    hint: |
+      A *problem*: something to be **done**, not a claim to be proved. Given any segment,
+      build an equilateral triangle that has it as a side.
+    explain:
+      did: |
+        States the task. Propositions of this kind (Proclus calls them *problems*) end with
+        "what it was required to do" (Q.E.F.); the others (*theorems*) end with "what it
+        was required to prove" (Q.E.D.).
+      fact: |
+        "Finite straight line" is Euclid's term for what we call a *segment*. His straight
+        lines have ends unless they are said to be produced; see [[I.Def.3]] and [[I.Post.2]].
+      implicit: |
+        The Greek says "on *the* given finite straight line" — any one we choose to take
+        (Heath's note on line 1). The triangle is to be built *on* the segment: the segment
+        becomes one of its sides.
+    cites: [I.Def.20]
+
+  - part: setting-out
+    text: "Let AB be the given finite straight line."
+    highlight: [AB]
+    hint: |
+      Euclid names the arbitrary given segment so that he can talk about it.
+    explain:
+      did: |
+        This is the *setting-out* (ἔκθεσις): the general statement is restated about a
+        particular, lettered figure.
+      follows: |
+        Nothing is assumed about {AB} except that it is a finite straight line, so whatever
+        is shown for {AB} holds for *every* segment. Modern proofs do the same with
+        "Let $AB$ be an arbitrary segment."
+
+  - part: specification
+    text: "Thus it is required to construct an equilateral triangle on the straight line AB."
+    highlight: [AB]
+    hint: |
+      The goal restated for the lettered figure.
+    explain:
+      did: |
+        The *specification* (διορισμός): the enunciation applied to {AB}. From here on,
+        "done" means: there is a triangle with {AB} as a side and all three sides equal.
+
+  - part: construction
+    text: "With centre A and distance AB let the circle BCD be described;"
+    highlight: [A, AB, BCD]
+    adds: [BCD, D]
+    hint: |
+      Draw the circle centred at {A} that passes through {B}. [[I.Post.3]] permits this.
+    explain:
+      did: |
+        Describes a circle with centre {A} and radius {AB}.
+      fact: |
+        Every point of this circle is at distance {AB} from {A} — that is what makes it a
+        circle ([[I.Def.15]]). Euclid will use exactly this in step 6.
+      justification: |
+        [[I.Post.3]]: "To describe a circle with any centre and distance."
+      implicit: |
+        The circle is called *BCD* after three points on its circumference. {C} and {D} are
+        not yet defined: Euclid names the circle by points that the figure will show.
+        {D} is never used again; it only helps name the circle.
+    dispute: |
+      The Greek is a perfect passive imperative, γεγράφθω, "let it *have been* described"
+      (Heath's note on line 8). Scholars disagree about what such constructions mean. On one
+      reading (Zeuthen, 1896) the postulates and constructions guarantee that the objects
+      *exist*; on another (Knorr, 1983; Harari, 2003) the construction postulates license
+      certain operations on figures without making claims about existence in the modern
+      sense.
+
+  - part: construction
+    text: "again, with centre B and distance BA let the circle ACE be described;"
+    highlight: [B, AB, ACE]
+    adds: [ACE, E]
+    hint: |
+      The mirror image of the previous step, now centred at {B}.
+    explain:
+      did: |
+        Describes a second circle, centre {B}, radius {BA}.
+      fact: |
+        Every point of circle {ACE} is at distance {BA} from {B}.
+      justification: "[[I.Post.3]] again."
+      implicit: |
+        {BA} and {AB} are the same segment. Euclid often reverses the letters
+        (compare "{CA}" and "{AC}" below) without comment.
+
+  - part: construction
+    text: "and from the point C, in which the circles cut one another, to the points A, B let the straight lines CA, CB be joined."
+    highlight: [C, BCD, ACE, AC, BC]
+    adds: [C, AC, BC, ABC]
+    hint: |
+      Take a point {C} where the two circles cross, and draw {CA} and {CB}. [[I.Post.1]]
+      permits the lines. Nothing in Euclid's list permits the point.
+    explain:
+      did: |
+        Picks an intersection point {C} of the circles and joins it to {A} and {B}.
+      fact: |
+        Two points can always be joined by a straight line.
+      justification: |
+        [[I.Post.1]] ("to draw a straight line from any point to any point") for {CA} and {CB}.
+        Euclid cites nothing for the existence of {C}.
+      implicit: |
+        That the circles *do* cut one another. Each circle passes through the other's centre,
+        so each must cross the other — the figure makes this obvious, but no postulate or
+        common notion says it. There are two such points, one on each side of {AB};
+        either will do.
+    gap: |
+      **Where does {C} come from?** Nothing in Euclid's postulates or common notions
+      guarantees that two circles meet. A modern axiom system needs an extra principle
+      here, e.g. Hartshorne's *circle–circle intersection property*: if one circle contains
+      points both inside and outside another, the two circles meet in two points. There are
+      models of the other axioms (for instance, the plane over the rational numbers) where
+      the circles of this construction do not meet at all.
+    dispute: |
+      Whether this is a *mistake* is itself disputed. On the Hilbert-style reading it is a
+      gap. Manders (*The Euclidean Diagram*, 2008) argues that Euclid's practice legitimately
+      reads such "co-exact" facts (which regions and lines meet) off the diagram, and Avigad,
+      Dean & Mumma (2009) give a formal system in which inferences of exactly this kind are
+      sound.
+
+  - part: proof
+    text: "Now, since the point A is the centre of the circle CDB, AC is equal to AB."
+    highlight: [A, BCD, AC, AB]
+    hint: |
+      {AC} and {AB} are both radii of the circle centred at {A}, so they are equal.
+    explain:
+      did: |
+        Concludes {AC} = {AB}.
+      fact: |
+        All radii of a circle are equal.
+      justification: |
+        [[I.Def.15]]: a circle is a figure such that "all the straight lines falling upon it
+        from one point … are equal to one another," and [[I.Def.16]] calls that point the
+        centre. {C} and {B} both lie on circle {CDB}.
+      follows: |
+        {AC} and {AB} both run from the centre {A} to the circumference, so the definition
+        says they are equal.
+      implicit: |
+        "Circle CDB" is the circle called BCD in step 3; Euclid reorders the letters freely.
+    modern: |
+      $$C, B \in \odot(A, AB) \;\Longrightarrow\; AC = AB$$
+      Here $AC$ means the *length* of segment $AC$; $\odot(A, r)$ is the circle with centre
+      $A$ and radius $r$.
+
+  - part: proof
+    text: "Again, since the point B is the centre of the circle CAE, BC is equal to BA."
+    highlight: [B, ACE, BC, AB]
+    hint: |
+      The same argument with the other circle: {BC} and {BA} are radii of the circle centred at {B}.
+    explain:
+      did: |
+        Concludes {BC} = {BA}.
+      fact: |
+        All radii of a circle are equal.
+      justification: "[[I.Def.15]] again, now for circle {CAE}."
+    modern: |
+      $$C, A \in \odot(B, BA) \;\Longrightarrow\; BC = BA$$
+
+  - part: proof
+    text: "But CA was also proved equal to AB; therefore each of the straight lines CA, CB is equal to AB."
+    highlight: [AC, BC, AB]
+    hint: |
+      Collects the two results: both {CA} and {CB} equal the same segment {AB}.
+    explain:
+      did: |
+        Puts steps 6 and 7 side by side. It is bookkeeping: nothing new is inferred yet, but
+        the statement is arranged so that [[I.CN.1]] applies to it.
+      implicit: |
+        Step 7 said {BC} = {BA}; here it is quoted as "{CB} is equal to {AB}". Euclid treats
+        a segment as the same whichever end is named first, and equality as symmetric.
+    modern: |
+      $$CA = AB \quad\text{and}\quad CB = AB$$
+
+  - part: proof
+    text: "And things which are equal to the same thing are also equal to one another; therefore CA is also equal to CB."
+    highlight: [AC, BC]
+    hint: |
+      Two things equal to a third are equal to each other — here, {CA} and {CB} are both
+      equal to {AB}. In modern terms: equality is transitive.
+    explain:
+      did: |
+        Concludes {CA} = {CB}.
+      fact: |
+        Common Notion 1, quoted word for word. This is one of the few places Euclid
+        states his justification in the text itself.
+      justification: "[[I.CN.1]]: Things which are equal to the same thing are also equal to one another."
+      follows: |
+        {CA} and {CB} are each equal to the same thing, {AB}, so they are equal to one another.
+      implicit: |
+        Euclid's common notions are about magnitudes *of one kind* — here three lengths.
+        In modern language, [[I.CN.1]] together with the symmetry used in the previous step
+        makes equality transitive.
+    modern: |
+      $$CA = AB,\; CB = AB \;\Longrightarrow\; CA = CB$$
+      This is the transitive law ($x = z,\ y = z \Rightarrow x = y$), which modern logic treats
+      as a property of equality itself rather than as a geometric axiom.
+
+  - part: proof
+    text: "Therefore the three straight lines CA, AB, BC are equal to one another."
+    highlight: [AC, AB, BC]
+    hint: |
+      All three sides are now known to be equal.
+    explain:
+      did: |
+        Combines steps 6, 7 and 9.
+      follows: "{CA} = {AB} (step 6), {CB} = {AB} (step 7), and {CA} = {CB} (step 9)."
+    modern: |
+      $$CA = AB = BC$$
+
+  - part: conclusion
+    text: "Therefore the triangle ABC is equilateral; and it has been constructed on the given finite straight line AB."
+    highlight: [ABC, AB, AC, BC]
+    hint: |
+      A triangle with three equal sides is by definition equilateral ([[I.Def.20]]), and
+      {AB} is one of its sides. The task is done.
+    explain:
+      did: |
+        Draws the conclusion and restates that the specification has been met.
+      justification: |
+        [[I.Def.20]]: "an equilateral triangle is that which has its three sides equal."
+        Heath does not bracket this reference; Euclid's reader was expected to supply it.
+      implicit: |
+        That {CA}, {AB} and {BC} really do bound a triangle: that {C} is not on the line
+        {AB}, and that the two sides {CA} and {CB} do not meet before they reach {C}.
+        See the notes below on Zeno of Sidon.
+    gap: |
+      **Is {ABC} a triangle at all?** Euclid never shows that {C} lies off the line {AB}
+      (it does: $C$ is at distance $AB$ from both $A$ and $B$, and no point of line $AB$ is),
+      nor that the figure lies in a plane — the plane propositions [[XI.1]] and [[XI.2]] come
+      much later.
+    cites: [I.Def.20]
+
+  - part: conclusion
+    text: "(Being) what it was required to do."
+    hint: |
+      The formula that closes a *problem*; Latin *quod erat faciendum*, "Q.E.F."
+    explain:
+      did: |
+        Marks the end of a construction problem. Theorems close instead with "what it was
+        required to prove" (*quod erat demonstrandum*, Q.E.D.). Heath writes the words out in
+        full for I.1–I.4 and abbreviates afterwards.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* It uses Hilbert-style axioms plus
+    the **circle–circle intersection property** (Hartshorne, *Geometry: Euclid and Beyond*,
+    2000): if circle $\Gamma$ contains a point inside and a point outside circle $\Delta$,
+    then $\Gamma$ and $\Delta$ meet.
+  lines:
+    - steps: [1, 2]
+      text: Let $A \ne B$ be points and $r = AB > 0$.
+    - steps: [3, 4]
+      text: Let $\Gamma = \odot(A, r)$ and $\Delta = \odot(B, r)$.
+    - steps: [5]
+      text: |
+        $\Gamma$ contains $B$, which is the centre of $\Delta$ and so *inside* $\Delta$; and $\Gamma$
+        contains the point $B'$ on ray $BA$ beyond $A$ with $AB' = r$, for which
+        $BB' = 2r > r$, so $B'$ is *outside* $\Delta$. By circle–circle intersection,
+        $\Gamma \cap \Delta \neq \varnothing$. Choose $C \in \Gamma \cap \Delta$.
+    - steps: [6]
+      text: $C \in \Gamma \Rightarrow AC = r$.
+    - steps: [7]
+      text: $C \in \Delta \Rightarrow BC = r$.
+    - steps: [8, 9, 10]
+      text: Hence $AB = BC = CA = r$.
+    - steps: [11]
+      text: |
+        $C \notin \overleftrightarrow{AB}$: the only points of line $AB$ at distance $r$ from $A$
+        are $B$ and the reflection of $B$ in $A$, and neither is at distance $r$ from $B$.
+        So $A, B, C$ are non-collinear and $\triangle ABC$ is equilateral. $\blacksquare$
+  closing: |
+    The modern proof must prove two things Euclid takes from the diagram: that $C$ exists
+    and that $A, B, C$ are not collinear.
+
+commentary: |
+  I.1 is the model of a Euclidean *problem*: a task is set, a construction is carried out using
+  only the construction postulates ([[I.Post.1]]–[[I.Post.3]]), and a short proof shows that the
+  construction does what was asked. The proof uses exactly two further principles:
+  the definition of a circle ([[I.Def.15]]) and the first common notion ([[I.CN.1]]).
+
+  The construction is used directly in [[I.2]], and through it in [[I.3]] and much of what follows.
+  Euclid's companion problem, dividing a segment in half, comes at [[I.10]].
+
+gaps: |
+  - **Existence of {C}** (step 5). No postulate says that circles meet.
+  - **Non-collinearity** (step 11). That {A}, {B}, {C} form a genuine triangle is read off the figure.
+  - **Straight lines meeting only once.** Zeno of Sidon objected (Proclus reports) that {AC} and
+    {BC} might share a stretch of line before reaching {C}, bounding a figure that is not
+    equilateral. Ruling this out needs "two straight lines cannot share a segment"
+    (a consequence of the uniqueness in [[I.Post.1]]), which Euclid never states.
+
+historical: |
+  Proclus (5th c. CE) divides a complete proposition into six parts, and this edition labels
+  the steps with them: *enunciation* (πρότασις), *setting-out* (ἔκθεσις), *specification*
+  (διορισμός), *construction* (κατασκευή), *proof* (ἀπόδειξις), *conclusion* (συμπέρασμα).
+  I.1 has all six. The labels are Proclus's analysis, not headings in Euclid's text.

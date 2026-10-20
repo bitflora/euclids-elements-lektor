@@ -1,0 +1,70 @@
+id: X.7
+kind: theorem
+title: Incommensurable magnitudes are not as a number to a number
+
+paraphrase: |
+  If {A}, {B} are incommensurable, their ratio is not a ratio of numbers.
+
+diagram:
+  width: 160
+  height: 100
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "B0;point;free;-1000,65;0;0"
+    - "B3;point;free;1000,65;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,130,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,109,0;0"
+    - "B;line;connect;B1,B2;black"
+  caption: |
+    Two incommensurable magnitudes.
+
+steps:
+  - part: enunciation
+    text: "Incommensurable magnitudes have not to one another the ratio which a number has to a number."
+    highlight: [A, B]
+    hint: |
+      Incommensurable ⇒ irrational ratio.
+    modern: |
+      $a, b$ incommensurable $\Rightarrow a/b \notin \mathbb{Q}$.
+
+  - part: setting-out
+    text: "Let A, B be incommensurable magnitudes;"
+    highlight: [A, B]
+    hint: |
+      {A}, {B} incommensurable.
+
+  - part: specification
+    text: "I say that A has not to B the ratio which a number has to a number."
+    highlight: [A, B]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, if A has to B the ratio which a number has to a number, A will be commensurable with B."
+    highlight: [A, B]
+    hint: |
+      Otherwise they would be commensurable ([[X.6]]).
+
+  - part: proof
+    text: "But it is not; therefore A has not to B the ratio which a number has to a number."
+    highlight: [A, B]
+    hint: |
+      They are not.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+reconstruction:
+  lines:
+    - steps: [3, 4]
+      text: |
+        Contrapositive of [[X.6]]. $\blacksquare$
+
+commentary: |
+  Used in [[X.11]].

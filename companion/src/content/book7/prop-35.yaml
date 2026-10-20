@@ -1,0 +1,103 @@
+id: VII.35
+kind: theorem
+title: The least common multiple divides every common multiple
+
+paraphrase: |
+  If {A} and {B} both measure {CD}, then their least common multiple {E} measures {CD}.
+
+diagram:
+  width: 250
+  height: 140
+  elements:
+    - "A0;point;free;-1000,35;0;0"
+    - "A3;point;free;1000,35;0;0"
+    - "C0;point;free;-1000,70;0;0"
+    - "C3;point;free;1000,70;0;0"
+    - "E0;point;free;-1000,105;0;0"
+    - "E3;point;free;1000,105;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,100,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;A0,A3,130,0;0"
+    - "B2;point;lineSlider;A0,A3,210,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C;point;lineSlider;C0,C3,30,0"
+    - "D;point;lineSlider;C0,C3,220,0"
+    - "CD;line;connect;C,D"
+    - "F;point;lineSlider;C0,C3,90,0"
+    - "E1;point;lineSlider;E0,E3,30,0;0"
+    - "E2;point;lineSlider;E0,E3,80,0;0"
+    - "E;line;connect;E1,E2;black"
+    - "DF;line;connect;D,F;0;0;0"
+    - "CF;line;connect;C,F;0;0;0"
+  aliases: { FD: DF, FC: CF }
+  caption: |
+    {E} is the least number measured by {A} and {B}. If {E} did not measure {CD}, it would leave a remainder
+    {CF}.
+
+steps:
+  - part: enunciation
+    text: "If two numbers measure any number, the least number measured by them will also measure the same."
+    highlight: [A, B, CD, E]
+    hint: |
+      Every common multiple is a multiple of the least common multiple.
+    modern: |
+      $a \mid m,\ b \mid m \Rightarrow \operatorname{lcm}(a, b) \mid m$.
+
+  - part: setting-out
+    text: "For let the two numbers A, B measure any number CD, and let E be the least that they measure;"
+    highlight: [A, B, CD, E]
+    hint: |
+      {A}, {B} measure {CD}; {E} is their least common multiple.
+
+  - part: specification
+    text: "I say that E also measures CD."
+    highlight: [E, CD]
+    hint: |
+      To prove: {E} measures {CD}.
+
+  - part: construction
+    text: "For, if E does not measure CD, let E, measuring DF, leave CF less than itself."
+    highlight: [E, DF, CF]
+    hint: |
+      Otherwise divide: {CD} = (multiple {DF} of {E}) + remainder {CF} < {E}.
+
+  - part: proof
+    text: "Now, since A, B measure E, and E measures DF, therefore A, B will also measure DF."
+    highlight: [A, B, E, DF]
+    hint: |
+      {A}, {B} measure {E}, hence {DF}.
+
+  - part: proof
+    text: "But they also measure the whole CD; therefore they will also measure the remainder CF which is less than E: which is impossible."
+    highlight: [CD, CF, E]
+    hint: |
+      So they measure the remainder {CF}, a common multiple smaller than the least: impossible.
+
+  - part: proof
+    text: "Therefore E cannot fail to measure CD; therefore it measures it."
+    highlight: [E, CD]
+    hint: |
+      {E} measures {CD}.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        Divide: $m = q\ell + r$ with $0 \le r < \ell = \operatorname{lcm}(a, b)$. Then $a, b \mid r$; if $r >
+        0$ it is a smaller common multiple. So $r = 0$. $\blacksquare$
+
+commentary: |
+  The division-with-remainder argument, as in the Euclidean algorithm. Used in [[VII.36]] and
+  [[VIII.4]].
+
+gaps: |
+  - The remainder {CF} is tacitly a *number*: if it were the unit, {A} and {B} would have to measure the
+    unit. Euclid does not discuss the case.

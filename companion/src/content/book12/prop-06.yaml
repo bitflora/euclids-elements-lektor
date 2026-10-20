@@ -1,0 +1,143 @@
+id: XII.6
+kind: theorem
+title: Pyramids of the same height on polygonal bases are as their bases
+
+paraphrase: |
+  Pyramids of the same height on polygonal bases {ABCDE}, {FGHKL} are to one another as their bases.
+
+diagram:
+  width: 400
+  height: 280
+  elements:
+    - "origin;point;fixed;-10,250,0;0;0"
+    - "1X;point;fixed;242,250,-91;0;0"
+    - "1Y;point;fixed;-105,550,-120;0;0"
+    - "1Z;point;fixed;14,375,288;0;0"
+    - "floor;plane;3points;origin,1X,1Y;0;0;0;0"
+    - "M;point;lineSlider;origin,1Y,-10,-10,0"
+    - "A;point;planeSlider;floor,170,200,0"
+    - "B;point;planeSlider;floor,180,160,0"
+    - "C;point;planeSlider;floor,70,150,0"
+    - "D;point;planeSlider;floor,30,220,0"
+    - "E;point;planeSlider;floor,120,250,0"
+    - "ABCDE;polygon;pentagon;A,B,C,D,E;0;0;0;0"
+    - "Mpyr;polyhedron;pyramid;ABCDE,M;0;0;black;random"
+    - "MX;point;parallelogram;M,origin,1X;0;0"
+    - "MY;point;parallelogram;M,origin,1Y;0;0"
+    - "ceiling;plane;3points;M,MX,MY;0;0;0;0"
+    - "N;point;planeSlider;ceiling,270,40,0"
+    - "F;point;planeSlider;floor,320,300,0"
+    - "G;point;planeSlider;floor,400,250,0"
+    - "H;point;planeSlider;floor,330,190,0"
+    - "K;point;planeSlider;floor,270,190,0"
+    - "L;point;planeSlider;floor,250,220,0"
+    - "FGHKL;polygon;pentagon;F,G,H,K,L;0;0;0;0"
+    - "Npyr;polyhedron;pyramid;FGHKL,N;0;0;black;random"
+    - "AC;line;connect;A,C"
+    - "AD;line;connect;A,D"
+    - "FH;line;connect;F,H"
+    - "FK;line;connect;F,K"
+    - "ABCDEdup;polygon;pentagon;A,B,C,D,E;0;0;0;random"
+    - "FGHKLdup;polygon;pentagon;F,G,H,K,L;0;0;0;random"
+    - "ABC;polygon;triangle;A,B,C;0;0;0"
+    - "ACD;polygon;triangle;A,C,D;0;0;0"
+    - "ADE;polygon;triangle;A,D,E;0;0;0"
+    - "FGH;polygon;triangle;F,G,H;0;0;0"
+  aliases: { CA: AC, DA: AD, HF: FH, KF: FK }
+  caption: |
+    The polygonal bases split into triangles by diagonals from {A} and {F}.
+
+steps:
+  - part: enunciation
+    text: "Pyramids which are of the same height and have polygonal bases are to one another as the bases."
+    highlight: [ABCDE, FGHKL]
+    hint: |
+      Extend [[XII.5]] from triangles to polygons.
+
+  - part: setting-out
+    text: "Let there be pyramids of the same height of which the polygons ABCDE, FGHKL are the bases and the points M, N the vertices; I say that, as the base ABCDE is to the base FGHKL, so is the pyramid ABCDEM to the pyramid FGHKLN."
+    highlight: [ABCDE, FGHKL]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let AC, AD, FH, FK be joined."
+    highlight: [AC, AD, FH, FK]
+    hint: |
+      Join the diagonals {AC}, {AD}, {FH}, {FK}.
+
+  - part: proof
+    text: "Since then ABCM, ACDM are two pyramids which have triangular bases and equal height, they are to one another as the bases; therefore, as the base ABC is to the base ACD, so is the pyramid ABCM to the pyramid ACDM."
+    highlight: [ABC, ACD]
+    hint: |
+      Triangular pyramids of equal height: as their bases ([[XII.5]]).
+
+  - part: proof
+    text: "And, componendo, as the base ABCD is to the base ACD, so is the pyramid ABCDM to the pyramid ACDM."
+    highlight: [ACD]
+    hint: |
+      Componendo ([[V.18]]).
+
+  - part: proof
+    text: "But also, as the base ACD is to the base ADE, so is the pyramid ACDM to the pyramid ADEM."
+    highlight: [ACD, ADE]
+    hint: |
+      [[XII.5]] again.
+
+  - part: proof
+    text: "Therefore, ex aequali, as the base ABCD is to the base ADE, so is the pyramid ABCDM to the pyramid ADEM."
+    highlight: [ADE]
+    hint: |
+      Ex aequali ([[V.22]]).
+
+  - part: proof
+    text: "And again componendo, as the base ABCDE is to the base ADE, so is the pyramid ABCDEM to the pyramid ADEM."
+    highlight: [ABCDE, ADE]
+    hint: |
+      Componendo: {ABCDE} : {ADE} = pyramid : pyramid.
+
+  - part: proof
+    text: "Similarly also it can be proved that, as the base FGHKL is to the base FGH, so is the pyramid FGHKLN to the pyramid FGHN."
+    highlight: [FGHKL, FGH]
+    hint: |
+      Likewise for the second.
+
+  - part: proof
+    text: "And, since ADEM, FGHN are two pyramids which have triangular bases and equal height, therefore, as the base ADE is to the base FGH, so is the pyramid ADEM to the pyramid FGHN."
+    highlight: [ADE, FGH]
+    hint: |
+      Triangular pyramids on {ADE}, {FGH}: [[XII.5]].
+
+  - part: proof
+    text: "But, as the base ADE is to the base ABCDE, so was the pyramid ADEM to the pyramid ABCDEM."
+    highlight: [ADE, ABCDE]
+    hint: |
+      Recalled.
+
+  - part: proof
+    text: "Therefore also, ex aequali, as the base ABCDE is to the base FGH, so is the pyramid ABCDEM to the pyramid FGHN."
+    highlight: [ABCDE, FGH]
+    hint: |
+      Ex aequali.
+
+  - part: proof
+    text: "But further, as the base FGH is to the base FGHKL, so also was the pyramid FGHN to the pyramid FGHKLN."
+    highlight: [FGH, FGHKL]
+    hint: |
+      Recalled.
+
+  - part: proof
+    text: "Therefore also, ex aequali, as the base ABCDE is to the base FGHKL, so is the pyramid ABCDEM to the pyramid FGHKLN."
+    highlight: [ABCDE, FGHKL]
+    hint: |
+      Ex aequali: done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Sum over a triangulation. $\blacksquare$

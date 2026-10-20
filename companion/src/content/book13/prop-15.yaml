@@ -1,0 +1,164 @@
+id: XIII.15
+kind: problem
+title: To construct a cube in a sphere
+
+paraphrase: |
+  Construct a cube inscribed in a given sphere, and show that the square on the diameter is three times the square
+  on the edge.
+
+diagram:
+  width: 550
+  height: 320
+  elements:
+    - "A0;point;free;40,-1000;0;0"
+    - "A3;point;free;40,1000;0;0"
+    - "A;point;lineSlider;A0,A3,0,40"
+    - "B;point;lineSlider;A0,A3,0,280"
+    - "AB;line;connect;A,B"
+    - "ABmid;point;midpoint;A,B;0;0"
+    - "ABcirc;circle;radius;ABmid,B;0;0;0;0"
+    - "semi;sector;sector;ABmid,B,A;0;0;black;random"
+    - "A1;point;perpendicular;A,B;0;0"
+    - "A2;point;extend;A,A1,A,A1;0;0"
+    - "B1;point;perpendicular;B,A;0;0"
+    - "C;point;intersection;A,B,A2,B1"
+    - "D';point;perpendicular;C,A;0;0"
+    - "Dch;line;chord;C,D',ABcirc;0;0;0"
+    - "D;point;last;Dch"
+    - "CD;line;connect;C,D"
+    - "BD;line;connect;B,D"
+    - "P;point;free;380,160;0"
+    - "Psphere;sphere;radius;P,A,ABmid;0;0;lightGray"
+    - "E;point;sphereSlider;Psphere,340,130,-40"
+    - "M;point;extend;E,P,P,E"
+    - "Esphere;sphere;radius;E,D,B;0;0;0;0"
+    - "Fcircle;circle;intersection;Esphere,Psphere;0;0;0;0"
+    - "F;point;circleSlider;Fcircle,430,200,30"
+    - "N;point;extend;F,P,P,E"
+    - "ENplane;plane;perpendicular;E,F;0;0;0;0"
+    - "Q;point;midpoint;E,N;0;0"
+    - "H;point;perpendicular;Q,E,ENplane"
+    - "K;point;parallelogram;E,H,N"
+    - "L;point;extend;H,P,P,E"
+    - "G;point;extend;K,P,P,E"
+    - "cube;polyhedron;parallelepiped;E,F,H,K;0;0;black;random"
+    - "EG;line;connect;E,G"
+    - "GK;line;connect;G,K"
+    - "KG;line;connect;K,G;0;0;0"
+    - "GE;line;connect;G,E;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+  aliases: { BA: AB, DC: CD, CA: AC }
+  caption: |
+    {AB} cut at {C} with {AC} = 2{CB}; the cube with edge {BD}; {GK} its diagonal.
+
+steps:
+  - part: enunciation
+    text: "To construct a cube and comprehend it in a sphere, like the pyramid; and to prove that the square on the diameter of the sphere is triple of the square on the side of the cube."
+    highlight: [GK, EG]
+    hint: |
+      The cube: diameter² = 3 · edge².
+    modern: |
+      $d^2 = 3a^2$, $a = d/\sqrt3$.
+
+  - part: construction
+    text: "Let the diameter AB of the given sphere be set out, and let it be cut at C so that AC is double of CB; let the semicircle ADB be described on AB, let CD be drawn from C at right angles to AB, and let DB be joined; let the square EFGH having its side equal to DB be set out, from E, F, G, H let EK, FL, GM, HN be drawn at right angles to the plane of the square EFGH, from EK, FL, GM, HN let EK, FL, GM, HN respectively be cut off equal to one of the straight lines EF, FG, GH, HE, and let KL, LM, MN, NK be joined; therefore the cube FN has been constructed which is contained by six equal squares."
+    highlight: [AB, BD]
+    hint: |
+      Construct the cube with edge {BD}.
+
+  - part: specification
+    text: "It is then required to comprehend it in the given sphere, and to prove that the square on the diameter of the sphere is triple of the square on the side of the cube."
+    highlight: [GK]
+    hint: |
+      Inscribe and compute.
+
+  - part: construction
+    text: "For let KG, EG be joined."
+    highlight: [GK, EG]
+    hint: |
+      Join {KG}, {EG}.
+
+  - part: proof
+    text: "Then, since the angle KEG is right, because KE is also at right angles to the plane EG and of course to the straight line EG also, therefore the semicircle described on KG will also pass through the point E."
+    highlight: [EG, GK]
+    hint: |
+      ∠*KEG* right: the semicircle on {KG} passes through {E} …
+
+  - part: proof
+    text: "Again, since GF is at right angles to each of the straight lines FL, FE, GF is also at right angles to the plane FK; hence also, if we join FK, GF will be at right angles to FK; and for this reason again the semicircle described on GK will also pass through F."
+    highlight: [GK]
+    hint: |
+      … and through {F} …
+
+  - part: proof
+    text: "Similarly it will also pass through the remaining angular points of the cube."
+    highlight: [GK]
+    hint: |
+      … and all the vertices …
+
+  - part: proof
+    text: "If then, KG remaining fixed, the semicircle be carried round and restored to the same position from which it began to be moved, the cube will be comprehended in a sphere."
+    highlight: [GK]
+    hint: |
+      … rotating it gives the sphere.
+
+  - part: specification
+    text: "I say next that it is also comprehended in the given sphere."
+    highlight: [GK]
+    hint: |
+      It is the given sphere:
+
+  - part: proof
+    text: "For, since GF is equal to FE, and the angle at F is right, therefore the square on EG is double of the square on EF."
+    highlight: [EG]
+    hint: |
+      sq({EG}) = 2 sq(*EF*) …
+
+  - part: proof
+    text: "But EF is equal to EK; therefore the square on EG is double of the square on EK; hence the squares on GE, EK, that is the square on GK, is triple of the square on EK."
+    highlight: [GK, EG]
+    hint: |
+      … so sq({GK}) = sq({GE}) + sq(*EK*) = 3 sq(*EK*).
+
+  - part: proof
+    text: "And, since AB is triple of BC, while, as AB is to BC, so is the square on AB to the square on BD, therefore the square on AB is triple of the square on BD."
+    highlight: [AB, BD]
+    hint: |
+      {AB} = 3{BC}, so sq({AB}) = 3 sq({BD}).
+
+  - part: proof
+    text: "But the square on GK was also proved triple of the square on KE."
+    highlight: [GK]
+    hint: |
+      Recalled.
+
+  - part: proof
+    text: "And KE was made equal to DB; therefore KG is also equal to AB."
+    highlight: [GK, AB]
+    hint: |
+      *KE* = {DB}, so {KG} = {AB} …
+
+  - part: proof
+    text: "And AB is the diameter of the given sphere; therefore KG is also equal to the diameter of the given sphere."
+    highlight: [GK, AB]
+    hint: |
+      … the given diameter.
+
+  - part: proof
+    text: "Therefore the cube has been comprehended in the given sphere; and it has been demonstrated at the same time that the square on the diameter of the sphere is triple of the square on the side of the cube."
+    highlight: [GK]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        The space diagonal of a cube of edge $a$ is $a\sqrt3$. $\blacksquare$

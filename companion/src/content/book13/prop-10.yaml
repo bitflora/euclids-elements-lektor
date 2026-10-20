@@ -1,0 +1,216 @@
+id: XIII.10
+kind: theorem
+title: Pentagon side² = hexagon side² + decagon side²
+
+paraphrase: |
+  In a circle, the square on the side of the inscribed pentagon equals the squares on the sides of the inscribed
+  hexagon and decagon together.
+
+diagram:
+  width: 340
+  height: 340
+  pivot: "F"
+  elements:
+    - "C;point;free;90,280"
+    - "D;point;free;250,280"
+    - "CDEAB;polygon;regularPolygon;C,D,5;0;0;0;0"
+    - "E;point;vertex;CDEAB,3"
+    - "A;point;vertex;CDEAB,4"
+    - "B;point;vertex;CDEAB,5"
+    - "circ;circle;circumcircle;C,D,A;0;0;black;random"
+    - "CDEABdup;polygon;regularPolygon;C,D,5;0;0;black;random"
+    - "F;point;center;circ;black;green"
+    - "G;point;extend;A,F,A,F"
+    - "AG;line;connect;A,G"
+    - "BF;line;connect;B,F"
+    - "H;point;midpoint;A,B"
+    - "K;point;cutoff;F,H,F,A"
+    - "FK;line;connect;F,K"
+    - "BK;line;connect;B,K"
+    - "AK;line;connect;A,K"
+    - "L;point;midpoint;A,K"
+    - "M;point;cutoff;F,L,F,A"
+    - "FM;line;connect;F,M"
+    - "N;point;intersection;F,L,A,B"
+    - "KN;line;connect;K,N"
+    - "AB;line;connect;A,B;0;0;0"
+    - "FH;line;connect;F,H;0;0;0"
+    - "KB;line;connect;K,B;0;0;0"
+    - "BA;line;connect;B,A;0;0;0"
+  aliases: { GA: AG, FB: BF, KF: FK, KA: AK, MF: FM, NK: KN, HF: FH }
+  caption: |
+    Pentagon in a circle with centre {F}; {AB} pentagon side, {BF} radius (hexagon side), {AK} decagon side.
+
+steps:
+  - part: enunciation
+    text: "If an equilateral pentagon be inscribed in a circle, the square on the side of the pentagon is equal to the squares on the side of the hexagon and on that of the decagon inscribed in the same circle."
+    highlight: [AB, BF, AK]
+    hint: |
+      $s_5^2 = s_6^2 + s_{10}^2$.
+    modern: |
+      $\left(2r\sin 36^\circ\right)^2 = r^2 + \left(2r\sin 18^\circ\right)^2$.
+
+  - part: setting-out
+    text: "Let ABCDE be a circle, and let the equilateral pentagon ABCDE be inscribed in the circle ABCDE."
+    highlight: [AB]
+    hint: |
+      Setup.
+
+  - part: specification
+    text: "I say that the square on the side of the pentagon ABCDE is equal to the squares on the side of the hexagon and on that of the decagon inscribed in the circle ABCDE."
+    highlight: [AB]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For let the centre of the circle, the point F, be taken, let AF be joined and carried through to the point G, let FB be joined, let FH be drawn from F perpendicular to AB and be carried through to K, let AK, KB be joined, let FL be again drawn from F perpendicular to AK, and be carried through to M, and let KN be joined."
+    highlight: [AG, BF, FK]
+    hint: |
+      Centre {F}; {AG} a diameter; {FH} ⊥ {AB} meets the circle at {K}; join {AK}, {KB}; {FM}, {KN} as in the figure.
+
+  - part: proof
+    text: "Since the circumference ABCG is equal to the circumference AEDG, and in them ABC is equal to AED, therefore the remainder, the circumference CG, is equal to the remainder GD."
+    highlight: [AG]
+    hint: |
+      Arc *CG* is half arc *CD* …
+
+  - part: proof
+    text: "But CD belongs to a pentagon; therefore CG belongs to a decagon."
+    highlight: [AG]
+    hint: |
+      … so *CG* is a decagon side.
+
+  - part: proof
+    text: "And, since FA is equal to FB, and FH is perpendicular, therefore the angle AFK is also equal to the angle KFB."
+    highlight: [FK]
+    hint: |
+      ∠*AFK* = ∠*KFB* ([[I.5]], [[I.26]]).
+
+  - part: proof
+    text: "Hence the circumference AK is also equal to KB; therefore the circumference AB is double of the circumference BK; therefore the straight line AK is a side of a decagon."
+    highlight: [AK, BK]
+    hint: |
+      So arc *AK* = arc *KB* ([[III.26]]): {AK} is a decagon side.
+
+  - part: proof
+    text: "For the same reason AK is also double of KM."
+    highlight: [AK]
+    hint: |
+      Likewise arc *AK* is twice arc *KM*.
+
+  - part: proof
+    text: "Now, since the circumference AB is double of the circumference BK, while the circumference CD is equal to the circumference AB, therefore the circumference CD is also double of the circumference BK."
+    highlight: [BK]
+    hint: |
+      Arc *CD* = arc *AB* is twice arc *BK* …
+
+  - part: proof
+    text: "But the circumference CD is also double of CG; therefore the circumference CG is equal to the circumference BK."
+    highlight: [BK]
+    hint: |
+      … so arc *CG* = arc *BK* …
+
+  - part: proof
+    text: "But BK is double of KM, since KA is so also; therefore CG is also double of KM."
+    highlight: [BK]
+    hint: |
+      … and *CG* is twice *KM*.
+
+  - part: proof
+    text: "But, further, the circumference CB is also double of the circumference BK, for the circumference CB is equal to BA."
+    highlight: [BK]
+    hint: |
+      Arc *CB* is twice arc *BK* …
+
+  - part: proof
+    text: "Therefore the whole circumference GB is also double of BM; hence the angle GFB is also double of the angle BFM."
+    highlight: [FM]
+    hint: |
+      … so arc *GB* is twice arc *BM*, and ∠*GFB* = 2∠*BFM* ([[VI.33]]).
+
+  - part: proof
+    text: "But the angle GFB is also double of the angle FAB, for the angle FAB is equal to the angle ABF."
+    highlight: [BF]
+    hint: |
+      ∠*GFB* = 2∠*FAB*.
+
+  - part: proof
+    text: "Therefore the angle BFN is also equal to the angle FAB."
+    highlight: [BF]
+    hint: |
+      So ∠*BFN* = ∠*FAB*.
+
+  - part: proof
+    text: "But the angle ABF is common to the two triangles ABF and BFN; therefore the remaining angle AFB is equal to the remaining angle BNF; therefore the triangle ABF is equiangular with the triangle BFN."
+    highlight: [BF]
+    hint: |
+      Triangles *ABF*, *BFN* equiangular ([[I.32]]) …
+
+  - part: proof
+    text: "Therefore, proportionally, as the straight line AB is to BF, so is FB to BN; therefore the rectangle AB, BN is equal to the square on BF."
+    highlight: [AB, BF]
+    hint: |
+      … *AB* : *BF* = *FB* : *BN*: rect(*AB*, *BN*) = sq({BF}) ([[VI.4]], [[VI.17]]).
+
+  - part: proof
+    text: "Again, since AL is equal to LK, while LN is common and at right angles, therefore the base KN is equal to the base AN; therefore the angle LKN is also equal to the angle LAN."
+    highlight: [KN]
+    hint: |
+      *KN* = *AN* ([[I.4]]), so ∠*LKN* = ∠*LAN*.
+
+  - part: proof
+    text: "But the angle LAN is equal to the angle KBN; therefore the angle LKN is also equal to the angle KBN."
+    highlight: [KN, BK]
+    hint: |
+      ∠*LAN* = ∠*KBN* …
+
+  - part: proof
+    text: "And the angle at A is common to the two triangles AKB and AKN."
+    highlight: [AK, KN]
+    hint: |
+      … angle at {A} common …
+
+  - part: proof
+    text: "Therefore the remaining angle AKB is equal to the remaining angle KNA; therefore the triangle KBA is equiangular with the triangle KNA."
+    highlight: [AK, KN]
+    hint: |
+      … so triangles *KBA*, *KNA* equiangular ([[I.32]]) …
+
+  - part: proof
+    text: "Therefore, proportionally, as the straight line BA is to AK, so is KA to AN; therefore the rectangle BA, AN is equal to the square on AK."
+    highlight: [AK]
+    hint: |
+      … *BA* : *AK* = *KA* : *AN*: rect(*BA*, *AN*) = sq({AK}).
+
+  - part: proof
+    text: "But the rectangle AB, BN was also proved equal to the square on BF; therefore the rectangle AB, BN together with the rectangle BA, AN, that is, the square on BA, is equal to the square on BF together with the square on AK."
+    highlight: [AB, BF, AK]
+    hint: |
+      Adding: sq({AB}) = sq({BF}) + sq({AK}) ([[II.2]]).
+
+  - part: proof
+    text: "And BA is a side of the pentagon, BF of the hexagon, and AK of the decagon."
+    highlight: [AB, BF, AK]
+    hint: |
+      {BA} pentagon side, {BF} hexagon side ([[IV.15]], porism), {AK} decagon side.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [AB]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        With $r = 1$: $s_5^2 = \tfrac{5 - \sqrt5}{2}$, $s_6^2 = 1$, $s_{10}^2 = \tfrac{3 - \sqrt5}{2}$, and
+        $1 + \tfrac{3 - \sqrt5}{2} = \tfrac{5 - \sqrt5}{2}$. $\blacksquare$
+
+commentary: |
+  The key metric fact for the icosahedron ([[XIII.16]]): its edge is the pentagon side, while the hexagon and
+  decagon sides appear in the construction.

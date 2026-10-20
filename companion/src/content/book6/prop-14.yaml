@@ -1,0 +1,159 @@
+id: VI.14
+kind: theorem
+title: Equal parallelograms have reciprocally proportional sides
+
+paraphrase: |
+  Two equiangular parallelograms {AB}, {BC} are equal exactly when the sides about the equal angles are
+  reciprocally proportional: {DB} : {BE} = {GB} : {BF}.
+
+diagram:
+  width: 270
+  height: 270
+  elements:
+    - "A;point;free;40,240"
+    - "C;point;free;240,40"
+    - "X;point;free;90,40;0"
+    - "Y;point;parallelogram;A,X,C;0;0"
+    - "B;point;lineSlider;X,Y,150,120"
+    - "Gp;point;parallelogram;C,X,B;0;0"
+    - "G;point;intersection;B,Gp,C,Y"
+    - "F;point;intersection;X,A,B,Gp"
+    - "Dp;point;parallelogram;C,Y,B;0;0"
+    - "D;point;intersection;B,Dp,A,Y"
+    - "E;point;intersection;B,Dp,X,C"
+    - "ADBF;polygon;quadrilateral;A,D,B,F;0;0;black;#efe4d2"
+    - "CGBE;polygon;quadrilateral;C,G,B,E;0;0;black;#dfe7ea"
+    - "FX;line;connect;F,X"
+    - "EX;line;connect;E,X"
+    - "FBEX;polygon;quadrilateral;F,B,E,X;0;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+    - "FB;line;connect;F,B;0;0;0"
+    - "BG;line;connect;B,G;0;0;0"
+    - "angFBD;sector;angleMarker;B,F,D"
+    - "angEBG;sector;angleMarker;B,E,G"
+  aliases:
+    AB: ADBF
+    BC: CGBE
+    FE: FBEX
+    GB: BG
+    BF: FB
+  given: [A, C, X, Y, B, Gp, G, F, Dp, D, E, ADBF, CGBE, DB, BE, FB, BG, angFBD, angEBG]
+  caption: |
+    {AB} and {BC} are drawn as the two complements about the diagonal of a larger parallelogram, so they are always
+    equal ([[I.43]]). Slide {B} along that diagonal, or drag {A}, {C}.
+
+steps:
+  - part: enunciation
+    text: "In equal and equiangular parallelograms the sides about the equal angles are reciprocally proportional; and equiangular parallelograms in which the sides about the equal angles are reciprocally proportional are equal."
+    highlight: [AB, BC]
+    hint: |
+      Equiangular parallelograms: equal ⇔ sides reciprocally proportional.
+    explain:
+      fact: |
+        *Reciprocally proportional* ([[VI.Def.2]]): a side of the first is to a side of the second as the other
+        side of the second is to the other side of the first.
+    modern: |
+      $$DB \cdot BF = BE \cdot BG \iff DB : BE = GB : BF$$
+    cites: [VI.Def.2]
+
+  - part: setting-out
+    text: "Let AB, BC be equal and equiangular parallelograms having the angles at B equal, and let DB, BE be placed in a straight line;"
+    highlight: [AB, BC, angFBD, angEBG, DB, BE]
+    hint: |
+      Place them with equal angles vertically opposite at {B}, {DB} continuing into {BE}.
+
+  - part: proof
+    text: "therefore FB, BG are also in a straight line."
+    highlight: [FB, BG]
+    hint: |
+      The other sides line up too ([[I.14]]), because the angles at {B} are equal.
+
+  - part: specification
+    text: "I say that, in AB, BC, the sides about the equal angles are reciprocally proportional, that is to say, that, as DB is to BE, so is GB to BF."
+    highlight: [DB, BE, GB, BF]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let the parallelogram FE be completed."
+    highlight: [FE]
+    adds: [FX, EX, FBEX]
+    hint: |
+      The parallelogram on {FB} and {BE}, a third area to compare both with.
+
+  - part: proof
+    text: "Since, then, the parallelogram AB is equal to the parallelogram BC, and FE is another area, therefore, as AB is to FE, so is BC to FE."
+    highlight: [AB, BC, FE]
+    hint: |
+      [[V.7]].
+
+  - part: proof
+    text: "But, as AB is to FE, so is DB to BE, and, as BC is to FE, so is GB to BF. [id.]"
+    highlight: [AB, FE, DB, BE, BC, GB, BF]
+    hint: |
+      Parallelograms of the same height are as their bases ([[VI.1]]): {AB} and {FE} share the side {FB}, {BC} and {FE}
+      share {BE}.
+
+  - part: proof
+    text: "therefore also, as DB is to BE, so is GB to BF."
+    highlight: [DB, BE, GB, BF]
+    hint: |
+      [[V.11]].
+
+  - part: proof
+    text: "Therefore in the parallelograms AB, BC the sides about the equal angles are reciprocally proportional."
+    highlight: [AB, BC]
+    hint: |
+      First part done.
+
+  - part: setting-out
+    text: "Next, let GB be to BF as DB to BE;"
+    highlight: [GB, BF, DB, BE]
+    hint: |
+      Converse: the reciprocal proportion is given.
+
+  - part: specification
+    text: "I say that the parallelogram AB is equal to the parallelogram BC."
+    highlight: [AB, BC]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For since, as DB is to BE, so is GB to BF, while, as DB is to BE, so is the parallelogram AB to the parallelogram FE, and, as GB is to BF, so is the parallelogram BC to the parallelogram FE, therefore also, as AB is to FE, so is BC to FE;"
+    highlight: [AB, BC, FE]
+    hint: |
+      [[VI.1]] twice, then [[V.11]].
+
+  - part: proof
+    text: "therefore the parallelogram AB is equal to the parallelogram BC."
+    highlight: [AB, BC]
+    hint: |
+      [[V.9]].
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Let $\theta$ be the common angle.
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: |
+        $[AB] = DB\cdot BF\sin\theta$ and $[BC] = BE\cdot BG\sin\theta$. So
+        $$[AB] = [BC] \iff DB\cdot BF = BE\cdot BG \iff DB : BE = GB : BF.$$
+    - steps: [9, 10, 11, 12]
+      text: |
+        The same equivalence read backwards. $\blacksquare$
+
+commentary: |
+  VI.14 and its triangle version [[VI.15]] say, in Euclid's language, that the area of a parallelogram is
+  proportional to the product of its sides. The special case of rectangles is [[VI.16]]; Joyce notes VI.14
+  is used in [[VI.16]] and [[VI.30]], and in Book X.

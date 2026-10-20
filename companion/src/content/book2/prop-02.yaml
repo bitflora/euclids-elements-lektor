@@ -1,0 +1,144 @@
+id: II.2
+kind: theorem
+title: The square as the sum of two rectangles
+
+paraphrase: |
+  Cut a line {AB} at {C}. The rectangles on the whole line with each piece add up to the square on
+  the whole. In algebra, with $AB = a + b$: $(a + b)a + (a + b)b = (a + b)^2$.
+
+diagram:
+  width: 220
+  height: 220
+  elements:
+    - "A0;point;free;-1000,40;0"
+    - "A3;point;free;1000,40;0"
+    - "A;point;lineSlider;A0,A3,40,0"
+    - "B;point;lineSlider;A0,A3,180,0"
+    - "C;point;lineSlider;A0,A3,110,0"
+    - "AB;line;connect;A,B"
+    - "BADE;polygon;square;B,A;0;0;black;0"
+    - "E;point;vertex;BADE,4"
+    - "D;point;vertex;BADE,3"
+    - "F;point;parallelogram;D,A,C"
+    - "ACFD;polygon;quadrilateral;A,C,F,D;0;0;black;#efe4d2"
+    - "CBEF;polygon;quadrilateral;C,B,E,F;0;0;black;#dfe7ea"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+    - "CF;line;connect;C,F;0;0;0"
+  aliases:
+    ADEB: BADE
+    AE: BADE
+    AF: ACFD
+    CE: CBEF
+    BA: AB
+    CA: AC
+    CB: BC
+    DA: AD
+    EB: BE
+    FC: CF
+  given: [A, B, C, AB]
+  caption: |
+    Slide {A}, {B}, and the cut {C}. The two rectangles always make up the square.
+
+steps:
+  - part: enunciation
+    text: "If a straight line be cut at random, the rectangle contained by the whole and both of the segments is equal to the square on the whole."
+    highlight: [AE, AF, CE]
+    hint: |
+      Square on the whole = (whole × first piece) + (whole × second piece).
+    explain:
+      implicit: |
+        "The rectangle contained by the whole and both of the segments" means the *two* rectangles,
+        whole-by-each-segment, taken together.
+
+  - part: setting-out
+    text: "For let the straight line AB be cut at random at the point C;"
+    highlight: [AB, C]
+    hint: |
+      A line {AB} cut anywhere at {C}.
+
+  - part: specification
+    text: "I say that the rectangle contained by AB, BC together with the rectangle contained by BA, AC is equal to the square on AB."
+    highlight: [AB, BC, AC]
+    hint: |
+      The goal.
+    modern: |
+      $$AB\cdot BC + BA\cdot AC = AB^2$$
+
+  - part: construction
+    text: "For let the square ADEB be described on AB,"
+    highlight: [ADEB]
+    adds: [BADE, D, E]
+    hint: |
+      Draw the square on {AB} ([[I.46]]).
+
+  - part: construction
+    text: "and let CF be drawn through C parallel to either AD or BE."
+    highlight: [CF]
+    adds: [F, ACFD, CBEF]
+    hint: |
+      A line through {C} parallel to the sides cuts the square into two rectangles ([[I.31]]).
+
+  - part: proof
+    text: "Then AE is equal to AF, CE."
+    highlight: [AE, AF, CE]
+    hint: |
+      The square {AE} is the sum of its two parts {AF} and {CE}.
+
+  - part: proof
+    text: "Now AE is the square on AB;"
+    highlight: [AE]
+    hint: |
+      By construction.
+
+  - part: proof
+    text: "AF is the rectangle contained by BA, AC, for it is contained by DA, AC, and AD is equal to AB;"
+    highlight: [AF, AD, AC]
+    hint: |
+      {AF} has sides {DA} (= {AB}) and {AC}.
+
+  - part: proof
+    text: "and CE is the rectangle AB, BC, for BE is equal to AB."
+    highlight: [CE, BE, BC]
+    hint: |
+      {CE} has sides {BE} (= {AB}) and {BC}.
+
+  - part: conclusion
+    text: "Therefore the rectangle BA, AC together with the rectangle AB, BC is equal to the square on AB."
+    highlight: [AF, CE, AE]
+    hint: |
+      Done.
+    modern: |
+      $$(a + b)a + (a + b)b = (a + b)^2$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: Let $AC = a$, $CB = b$.
+    - steps: [3, 4, 5, 6, 7, 8, 9]
+      text: $(a + b)a + (a + b)b = (a + b)(a + b)$ by the distributive law ([[II.1]] with $A = AB$). $\blacksquare$
+
+commentary: |
+  A special case of [[II.1]], in which the uncut line is the whole line itself. Euclid gives it its
+  own figure: the square on {AB} cut by one line parallel to a side.
+
+gaps: |
+  - **Whole equals sum of parts** (step 4), as in [[II.1]].
+
+historical: |
+  Book II's propositions are often read as identities for numbers; II.2 is
+  $(a + b)^2 = (a + b)a + (a + b)b$. The figure, not the formula, is what Euclid proves.

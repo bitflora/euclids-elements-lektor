@@ -1,0 +1,115 @@
+id: I.41
+kind: theorem
+title: A parallelogram is double a triangle on the same base
+
+paraphrase: |
+  A parallelogram and a triangle on the same base and between the same parallels: the
+  parallelogram has twice the area.
+
+diagram:
+  width: 260
+  height: 200
+  elements:
+    - "B;point;free;60,170"
+    - "C;point;free;140,170"
+    - "A;point;free;40,40"
+    - "ABCD;polygon;parallelogram;A,B,C;0;0;black;#efe4d2"
+    - "D;point;vertex;ABCD,4"
+    - "E;point;lineSlider;A,D,215,40"
+    - "DE;line;connect;D,E"
+    - "AC;line;connect;A,C"
+    - "BE;line;connect;B,E"
+    - "CE;line;connect;C,E"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "BCE;polygon;triangle;B,C,E;0;0;0;#dfe7ea"
+    - "ABC;polygon;triangle;A,B,C;0;0;0;0"
+    - "ACD;polygon;triangle;A,C,D;0;0;0;0"
+  aliases:
+    EBC: BCE
+    BEC: BCE
+    CB: BC
+    EA: AE
+    EB: BE
+    EC: CE
+    CA: AC
+    ED: DE
+  given: [A, B, C, D, E, ABCD, DE, BE, CE, BCE]
+  caption: |
+    Drag {A}, {B} or {C}; slide {E} along the top line. The triangle keeps exactly half the area of
+    the parallelogram.
+
+steps:
+  - part: enunciation
+    text: "If a parallelogram have the same base with a triangle and be in the same parallels, the parallelogram is double of the triangle."
+    highlight: [ABCD, BCE]
+    hint: |
+      Parallelogram = 2 × triangle, when they share base and height. (Hence: triangle = ½ base × height.)
+
+  - part: setting-out
+    text: "For let the parallelogram ABCD have the same base BC with the triangle EBC, and let it be in the same parallels BC, AE;"
+    highlight: [ABCD, BCE, BC, AE]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the parallelogram ABCD is double of the triangle BEC."
+    highlight: [ABCD, BCE]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let AC be joined."
+    highlight: [AC]
+    adds: [AC]
+    hint: |
+      Draw the diagonal {AC}.
+
+  - part: proof
+    text: "Then the triangle ABC is equal to the triangle EBC; for it is on the same base BC with it and in the same parallels BC, AE."
+    highlight: [ABC, BCE]
+    hint: |
+      [[I.37]]: same base, same parallels.
+
+  - part: proof
+    text: "But the parallelogram ABCD is double of the triangle ABC; for the diameter AC bisects it;"
+    highlight: [ABCD, ABC, ACD, AC]
+    hint: |
+      The diagonal halves the parallelogram ([[I.34]]).
+
+  - part: proof
+    text: "so that the parallelogram ABCD is also double of the triangle EBC."
+    highlight: [ABCD, BCE]
+    hint: |
+      Done.
+    modern: |
+      $$[ABCD] = 2[ABC] = 2[EBC]$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: $[ABCD] = BC\cdot h$ and $[EBC] = \tfrac12 BC \cdot h$. $\blacksquare$
+
+commentary: |
+  The link between triangles and parallelograms that makes the next three constructions work:
+  [[I.42]] turns a triangle into a parallelogram, [[I.44]] does so on a given line, [[I.45]] for any
+  rectilinear figure. It is also the key step in [[I.47]].
+
+gaps: |
+  - None beyond those of [[I.37]].
+
+historical: |
+  "Double" (διπλάσιον) is the first appearance of a ratio-like comparison of areas in the
+  *Elements*; the general theory waits for Books V and VI.

@@ -1,0 +1,116 @@
+id: V.21
+kind: theorem
+title: Perturbed proportion, comparing the extremes
+
+paraphrase: |
+  If {A} : {B} = {E} : {F} and {B} : {C} = {D} : {E} (a *perturbed* proportion), then {A} greater than, equal to or less
+  than {C} makes {D} greater than, equal to or less than {F}. The lemma for [[V.23]].
+
+diagram:
+  width: 300
+  height: 130
+  elements:
+    - "U0;point;free;-1000,30;0;0"
+    - "U1;point;free;1000,30;0;0"
+    - "V0;point;free;-1000,65;0;0"
+    - "V1;point;free;1000,65;0;0"
+    - "W0;point;free;-1000,100;0;0"
+    - "W1;point;free;1000,100;0;0"
+    - "A0;point;lineSlider;U0,U1,30,30;0"
+    - "A1;point;lineSlider;U0,U1,140,30;0"
+    - "A;line;connect;A0,A1;black;0;green"
+    - "B0;point;lineSlider;V0,V1,30,65;0"
+    - "B1;point;lineSlider;V0,V1,95,65;0"
+    - "B;line;connect;B0,B1;black;0;green"
+    - "C0;point;lineSlider;W0,W1,30,100;0"
+    - "C1;point;lineSlider;W0,W1,115,100;0"
+    - "C;line;connect;C0,C1;black;0;green"
+    - "D0;point;lineSlider;U0,U1,180,30;0"
+    - "D1;point;lineSlider;U0,U1,260,30;0"
+    - "D;line;connect;D0,D1;black;0;red"
+    - "E0;point;lineSlider;V0,V1,180,65;0"
+    - "E1;point;proportion;B0,B1,C0,C1,D0,D1,E0,V1;0"
+    - "E;line;connect;E0,E1;black;0;red"
+    - "F0;point;lineSlider;W0,W1,180,100;0"
+    - "F1;point;proportion;A0,A1,B0,B1,E0,E1,F0,W1;0"
+    - "F;line;connect;F0,F1;black;0;red"
+  caption: |
+    {E} and {F} are constructed so that $B : C = D : E$ and $A : B = E : F$. Drag the ends of {A}, {B}, {C}, {D}.
+
+steps:
+  - part: enunciation
+    text: "If there be three magnitudes, and others equal to them in multitude, which taken two and two together are in the same ratio, and the proportion of them be perturbed, then, if ex aequali the first magnitude is greater than the third, the fourth will also be greater than the sixth; if equal, equal; and if less, less."
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      $A : B = E : F$, $B : C = D : E$ and $A \gtreqless C$ give $D \gtreqless F$.
+    explain:
+      fact: |
+        *Perturbed* ([[V.Def.18]]): the second triple is matched crosswise.
+    cites: [V.Def.18]
+
+  - part: setting-out
+    text: "Let there be three magnitudes A, B, C, and others D, E, F equal to them in multitude, which taken two and two are in the same ratio, and let the proportion of them be perturbed, so that, as A is to B, so is E to F, and, as B is to C, so is D to E, and let A be greater than C ex aequali;"
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      Take the case {A} > {C}.
+
+  - part: specification
+    text: "I say that D will also be greater than F; if A is equal to C, equal; and if less, less."
+    highlight: [D, F]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, since A is greater than C, and B is some other magnitude, therefore A has to B a greater ratio than C has to B."
+    highlight: [A, C, B]
+    hint: |
+      [[V.8]].
+
+  - part: proof
+    text: "But, as A is to B, so is E to F, and, as C is to B, inversely, so is E to D."
+    highlight: [A, B, E, F, C, D]
+    hint: |
+      $A : B = E : F$; inverting $B : C = D : E$ gives $C : B = E : D$.
+    cites: [V.7]
+
+  - part: proof
+    text: "Therefore also E has to F a greater ratio than E has to D."
+    highlight: [E, F, D]
+    hint: |
+      $E : F = A : B > C : B = E : D$ ([[V.13]] and its unstated companion).
+
+  - part: proof
+    text: "But that to which the same has a greater ratio is less; therefore F is less than D; therefore D is greater than F."
+    highlight: [F, D]
+    hint: |
+      [[V.10]], second part.
+
+  - part: proof
+    text: "Similarly we can prove that, if A be equal to C, D will also be equal to F; and if less, less."
+    highlight: [A, C, D, F]
+    hint: |
+      The other cases.
+    cites: [V.9]
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: |
+        With ratios as numbers: $F = E\,B/A$ and $D = E\,B/C$, so
+        $D \gtreqless F \iff 1/C \gtreqless 1/A \iff A \gtreqless C$. $\blacksquare$
+
+commentary: |
+  The perturbed twin of [[V.20]]. Joyce notes that both this and [[V.23]] rely on [[V.Def.4]] being taken
+  as an axiom (through [[V.8]]).

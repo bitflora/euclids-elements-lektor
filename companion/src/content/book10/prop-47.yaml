@@ -1,0 +1,125 @@
+id: X.47
+kind: theorem
+title: The side of the sum of two medial areas divides at only one point
+
+paraphrase: |
+  The side of the sum of two medial areas splits into its two terms in only one way.
+
+diagram:
+  width: 360
+  height: 210
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "E0;point;free;40,-1000;0;0"
+    - "E3;point;free;40,1000;0;0"
+    - "A;point;lineSlider;A0,A3,90,0"
+    - "B;point;lineSlider;A0,A3,245,0"
+    - "C;point;lineSlider;A0,A3,220,0"
+    - "AB;line;connect;A,B"
+    - "D;point;lineSlider;A0,A3,170,0"
+    - "E;point;lineSlider;E0,E3,0,80"
+    - "F;point;lineSlider;E0,E3,0,170"
+    - "N';point;parallelogram;B,A,E;0;0"
+    - "N;point;proportion;E,F,A,B,A,B,E,N'"
+    - "K;point;parallelogram;F,E,N"
+    - "F,E,N,K;polygon;quadrilateral;F,E,N,K;0;0;black;random"
+    - "H';point;proportion;E,F,A,C,A,C,E,N;0;0"
+    - "H;point;proportion;E,F,C,B,C,B,H',N"
+    - "G;point;parallelogram;F,E,H"
+    - "M';point;proportion;E,F,A,D,A,D,E,N;0;0"
+    - "M;point;proportion;E,F,D,B,D,B,M',N"
+    - "L;point;parallelogram;F,E,M"
+    - "GHML;polygon;quadrilateral;G,H,M,L;0;0;black;random"
+    - "EF;line;connect;E,F;0;0;0"
+    - "EH;line;connect;E,H;0;0;0"
+    - "HN;line;connect;H,N;0;0;0"
+    - "EM;line;connect;E,M;0;0;0"
+    - "MN;line;connect;M,N;0;0;0"
+    - "EN;line;connect;E,N;0;0;0"
+  aliases: { BA: AB, FE: EF, HE: EH, NH: HN, ME: EM, NM: MN, NE: EN }
+  caption: |
+    As in [[X.44]]: the two divisions of {AB} give two divisions of the binomial {EN}.
+
+steps:
+  - part: enunciation
+    text: "The side of the sum of two medial areas is divided at one point only."
+    highlight: [AB]
+    hint: |
+      Uniqueness, reduced to [[X.42]] as in [[X.44]].
+
+  - part: setting-out
+    text: "Let AB be divided at C, so that AC, CB are incommensurable in square and make the sum of the squares on AC, CB medial, and the rectangle AC, CB medial and also incommensurable with the sum of the squares on them; I say that AB is not divided at another point so as to fulfil the given conditions."
+    highlight: [AB]
+    hint: |
+      The division at {C}.
+
+  - part: construction
+    text: "For, if possible, let it be divided at D, so that again AC is of course not the same as BD, but AC is supposed greater; let a rational straight line EF be set out, and let there be applied to EF the rectangle EG equal to the squares on AC, CB, and the rectangle HK equal to twice the rectangle AC, CB; therefore the whole EK is equal to the square on AB."
+    highlight: [EF, EH]
+    hint: |
+      Suppose another at {D}; apply the sum of squares and 2·rect to the rational line {EF}.
+
+  - part: construction
+    text: "Again, let EL, equal to the squares on AD, DB, be applied to EF; therefore the remainder, twice the rectangle AD, DB, is equal to the remainder MK."
+    highlight: [EM]
+    hint: |
+      Likewise for the division at {D}.
+
+  - part: proof
+    text: "And since, by hypothesis, the sum of the squares on AC, CB is medial, therefore EG is also medial."
+    highlight: [EH]
+    hint: |
+      *EG* medial …
+
+  - part: proof
+    text: "And it is applied to the rational straight line EF; therefore HE is rational and incommensurable in length with EF."
+    highlight: [EH]
+    hint: |
+      … so {HE} rational, incommensurable in length with {EF} ([[X.22]]).
+
+  - part: proof
+    text: "For the same reason HN is also rational and incommensurable in length with EF."
+    highlight: [HN]
+    hint: |
+      Likewise {HN}.
+
+  - part: proof
+    text: "And, since the sum of the squares on AC, CB is incommensurable with twice the rectangle AC, CB, therefore EG is also incommensurable with GN, so that EH is also incommensurable with HN."
+    highlight: [EH, HN]
+    hint: |
+      Incommensurable ([[VI.1]], [[X.11]]).
+
+  - part: proof
+    text: "And they are rational; therefore EH, HN are rational straight lines commensurable in square only; therefore EN is a binomial straight line divided at H."
+    highlight: [EN]
+    hint: |
+      {EN} a binomial divided at *H* ([[X.36]]) …
+
+  - part: proof
+    text: "Similarly we can prove that it is also divided at M."
+    highlight: [EM, MN]
+    hint: |
+      … and at *M*.
+
+  - part: proof
+    text: "And EH is not the same with MN; therefore a binomial has been divided at different points: which is absurd."
+    highlight: [EH, MN]
+    hint: |
+      Different divisions of a binomial: absurd ([[X.42]]).
+
+  - part: proof
+    text: "Therefore a side of the sum of two medial areas is not divided at different points; therefore it is divided at one point only."
+    highlight: [AB]
+    hint: |
+      Only one division.
+
+reconstruction:
+  lines:
+    - steps: [2, 3, 4, 5, 6, 7, 8, 9, 10]
+      text: |
+        As [[X.44]]. $\blacksquare$
+
+commentary: |
+  Here ends the first part of Book X. The second set of definitions ([[X.Def.II.1]]–[[X.Def.II.6]]) introduces
+  the six kinds of binomial, constructed in [[X.48]]–[[X.53]].

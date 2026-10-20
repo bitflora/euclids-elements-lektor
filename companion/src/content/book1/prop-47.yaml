@@ -1,0 +1,291 @@
+id: I.47
+kind: theorem
+title: The Pythagorean theorem
+
+paraphrase: |
+  In a right triangle, the square on the hypotenuse equals (in area) the sum of the squares on the
+  other two sides: $a^2 = b^2 + c^2$.
+
+diagram:
+  width: 320
+  height: 380
+  elements:
+    - "B;point;free;100,200"
+    - "C;point;free;230,200"
+    - "O;point;midpoint;B,C;0;0"
+    - "OABC;circle;radius;O,B;0;0;0;0"
+    - "A;point;circleSlider;OABC,140,100"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#e6e0ef"
+    - "A2;polygon;square;C,B;0;0;black;0"
+    - "B2;polygon;square;B,A;0;0;black;0"
+    - "C2;polygon;square;A,C;0;0;black;0"
+    - "G;point;vertex;B2,3"
+    - "F;point;vertex;B2,4"
+    - "K;point;vertex;C2,3"
+    - "H;point;vertex;C2,4"
+    - "D;point;vertex;A2,3"
+    - "E;point;vertex;A2,4"
+    - "AL;line;foot;A,D,E"
+    - "L;point;last;AL"
+    - "J;point;intersection;B,C,A,L;0;0"
+    - "AD;line;connect;A,D"
+    - "CF;line;connect;C,F"
+    - "BK;line;connect;B,K"
+    - "AE;line;connect;A,E"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "AG;line;connect;A,G;0;0;0"
+    - "AH;line;connect;A,H;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "FB;line;connect;F,B;0;0;0"
+    - "GC;line;connect;G,C;0;0;0"
+    - "CE;line;connect;C,E;0;0;0"
+    - "BH;line;connect;B,H;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "GBfill;polygon;quadrilateral;B,A,G,F;0;0;0;#efe4d2"
+    - "HCfill;polygon;quadrilateral;A,C,K,H;0;0;0;#dfe7ea"
+    - "BL;polygon;quadrilateral;B,D,L,J;0;0;0;#efe4d2"
+    - "CL;polygon;quadrilateral;J,L,E,C;0;0;0;#dfe7ea"
+    - "ABD;polygon;triangle;A,B,D;0;0;0;0"
+    - "FBC;polygon;triangle;F,B,C;0;0;0;0"
+    - "angBAC;sector;angleMarker;A,B,C,20"
+    - "angBAG;sector;angleMarker;A,B,G,20"
+    - "angDBC;sector;angleMarker;B,D,C,20"
+    - "angFBA;sector;angleMarker;B,F,A,20"
+    - "angABC;sector;angleMarker;B,A,C,20"
+    - "angDBA;sector;angleMarker;B,D,A,30"
+    - "angFBC;sector;angleMarker;B,F,C,38"
+  aliases:
+    BDEC: A2
+    GB: B2
+    HC: C2
+    BA: AB
+    CA: AC
+    CB: BC
+    DB: BD
+    BF: FB
+    GA: AG
+    HA: AH
+    FC: CF
+    CG: GC
+    EC: CE
+    DA: AD
+    EA: AE
+    KB: BK
+    LA: AL
+    BAC: angBAC
+    BAG: angBAG
+    DBC: angDBC
+    FBA: angFBA
+    DBA: angDBA
+    BAH: BH
+    GAC: GC
+  given: [A, B, C, ABC, angBAC]
+  caption: |
+    Drag {B} or {C}, and slide {A}: it stays on the circle with diameter {BC}, so the angle at {A}
+    is always right. The two shaded pairs — square {GB} and rectangle {BL}, square {HC} and
+    rectangle {CL} — keep equal areas.
+
+steps:
+  - part: enunciation
+    text: "In right-angled triangles the square on the side subtending the right angle is equal to the squares on the sides containing the right angle."
+    highlight: [BDEC, GB, HC]
+    hint: |
+      The square on the hypotenuse equals the two squares on the other sides — as *areas*.
+    explain:
+      fact: |
+        "The square on" (τὸ ἀπὸ … τετράγωνον) means the square *described on* the line, as in [[I.46]]
+        (Heath's note on line 1). Euclid's theorem is about figures, not numbers: there is no
+        multiplication of lengths.
+
+  - part: setting-out
+    text: "Let ABC be a right-angled triangle having the angle BAC right;"
+    highlight: [ABC, angBAC]
+    hint: |
+      The data: the right angle is at {A}; {BC} is the hypotenuse.
+
+  - part: specification
+    text: "I say that the square on BC is equal to the squares on BA, AC."
+    highlight: [BC, AB, AC]
+    hint: |
+      The goal.
+    modern: |
+      $$BC^2 = BA^2 + AC^2$$
+
+  - part: construction
+    text: "For let there be described on BC the square BDEC, and on BA, AC the squares GB, HC;"
+    highlight: [BDEC, GB, HC]
+    adds: [A2, B2, C2, GBfill, HCfill, D, E, F, G, H, K]
+    hint: |
+      Draw the three squares outward ([[I.46]]).
+
+  - part: construction
+    text: "through A let AL be drawn parallel to either BD or CE,"
+    highlight: [AL]
+    adds: [AL, L, BL, CL]
+    hint: |
+      Drop a line from {A} parallel to the sides of the big square ([[I.31]]). It splits {BDEC} into two
+      rectangles, {BL} and {CL}.
+    cites: [I.31]
+
+  - part: construction
+    text: "and let AD, FC be joined."
+    highlight: [AD, CF]
+    adds: [AD, CF]
+    hint: |
+      Draw {AD} and {FC}: the famous "windmill" lines.
+
+  - part: proof
+    text: "Then, since each of the angles BAC, BAG is right, it follows that with a straight line BA, and at the point A on it, the two straight lines AC, AG not lying on the same side make the adjacent angles equal to two right angles;"
+    highlight: [angBAC, angBAG]
+    hint: |
+      First, a check of the figure: at {A} the right angle of the triangle and the right angle of
+      the square sit side by side.
+
+  - part: proof
+    text: "therefore CA is in a straight line with AG."
+    highlight: [AC, AG]
+    hint: |
+      So {GAC} is one straight line ([[I.14]]) — which makes {GC} parallel to {FB}.
+
+  - part: proof
+    text: "For the same reason BA is also in a straight line with AH."
+    highlight: [AB, AH]
+    hint: |
+      Likewise {BAH} is straight.
+
+  - part: proof
+    text: "And, since the angle DBC is equal to the angle FBA: for each is right: let the angle ABC be added to each;"
+    highlight: [angDBC, angFBA, angABC]
+    hint: |
+      Two right angles at {B}, one from each square. Add ∠{ABC|angABC} to both.
+
+  - part: proof
+    text: "therefore the whole angle DBA is equal to the whole angle FBC."
+    highlight: [angDBA, angFBC]
+    hint: |
+      ∠{DBA} = ∠{FBC} ([[I.CN.2]]).
+
+  - part: proof
+    text: "And, since DB is equal to BC, and FB to BA, the two sides AB, BD are equal to the two sides FB, BC respectively, and the angle ABD is equal to the angle FBC;"
+    highlight: [ABD, FBC, BD, BC, FB, AB]
+    hint: |
+      Triangles {ABD} and {FBC}: sides of squares are equal, and the included angles were just shown equal.
+    explain:
+      implicit: |
+        Heath notes that Euclid writes "{DB}, {BA}", so the equal sides are not named in corresponding
+        order (his note on line 33).
+
+  - part: proof
+    text: "therefore the base AD is equal to the base FC, and the triangle ABD is equal to the triangle FBC."
+    highlight: [ABD, FBC]
+    hint: |
+      SAS ([[I.4]]): the two windmill triangles are congruent — one is the other turned through a right
+      angle about {B}.
+
+  - part: proof
+    text: "Now the parallelogram BL is double of the triangle ABD, for they have the same base BD and are in the same parallels BD, AL."
+    highlight: [BL, ABD]
+    hint: |
+      Rectangle {BL} and triangle {ABD} share base {BD} and lie between parallels: [[I.41]].
+
+  - part: proof
+    text: "And the square GB is double of the triangle FBC, for they again have the same base FB and are in the same parallels FB, GC."
+    highlight: [GB, FBC]
+    hint: |
+      Square {GB} and triangle {FBC} share base {FB}, between parallels {FB} and {GC}: [[I.41]]. (This
+      is where step 5 was needed.)
+
+  - part: proof
+    text: "[But the doubles of equals are equal to one another.]"
+    hint: |
+      Doubles of equals are equal.
+    dispute: |
+      Bracketed by Heiberg: it quotes a common notion that is itself an interpolation, as in [[I.37]]
+      (Heath's note on line 44).
+
+  - part: proof
+    text: "Therefore the parallelogram BL is also equal to the square GB."
+    highlight: [BL, GB]
+    hint: |
+      Half the big square equals the square on {AB}.
+    modern: |
+      $$[BL] = 2[ABD] = 2[FBC] = [GB] = AB^2$$
+
+  - part: proof
+    text: "Similarly, if AE, BK be joined, the parallelogram CL can also be proved equal to the square HC;"
+    highlight: [CL, HC, AE, BK]
+    adds: [AE, BK]
+    hint: |
+      The mirror-image argument on the other side.
+    modern: |
+      $$[CL] = AC^2$$
+
+  - part: proof
+    text: "therefore the whole square BDEC is equal to the two squares GB, HC."
+    highlight: [BDEC, GB, HC]
+    hint: |
+      Add: the two rectangles make up the big square ([[I.CN.2]]).
+    modern: |
+      $$BC^2 = [BL] + [CL] = AB^2 + AC^2$$
+
+  - part: proof
+    text: "And the square BDEC is described on BC, and the squares GB, HC on BA, AC."
+    highlight: [BDEC, GB, HC]
+    hint: |
+      Which squares are which.
+
+  - part: conclusion
+    text: "Therefore the square on the side BC is equal to the squares on the sides BA, AC."
+    highlight: [BDEC, GB, HC]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* The commonest modern proof uses similar
+    triangles (Euclid's own version of this is [[VI.31]]):
+  lines:
+    - steps: [1, 2]
+      text: Let $\angle A = 90^\circ$, $a = BC$, $b = CA$, $c = AB$; let $J$ be the foot of the altitude from $A$.
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+      text: |
+        $\triangle JBA \sim \triangle ABC$ (common angle at $B$, right angles), so $BJ / c = c / a$,
+        i.e. $c^2 = a \cdot BJ$ — the area of rectangle $BL$.
+    - steps: [17]
+      text: Likewise $b^2 = a \cdot JC$, the area of $CL$.
+    - steps: [18, 19, 20]
+      text: Adding, $b^2 + c^2 = a(BJ + JC) = a^2$. $\blacksquare$
+  closing: |
+    The modern proof establishes exactly Euclid's intermediate claim — each square equals a rectangle
+    of the big square — but by proportion. Euclid's Book I has no proportions, so he reaches it
+    through congruence and [[I.41]].
+
+commentary: |
+  The summit of Book I. Every earlier tool appears: squares ([[I.46]]), parallels ([[I.31]]), lines in a
+  straight line ([[I.14]]), SAS ([[I.4]]), and parallelogram–triangle area ([[I.41]]).
+
+  The proof's key idea is to cut the big square by the line {AL} into two rectangles and to show
+  each rectangle equals one of the small squares, by passing through a pair of congruent
+  triangles. The figure is sometimes called the "windmill" or the "bride's chair".
+
+gaps: |
+  - **Lines in a straight line** (steps 6–8): Euclid takes care of these himself, using [[I.14]].
+  - **{AL} meets {BC} and {DE}** inside the segments; taken from the figure.
+
+historical: |
+  Proclus reports that "those who like to recount ancient history" attribute this theorem to
+  Pythagoras and say he sacrificed an ox on its discovery; he himself admires more the author of the
+  *Elements* for the proof. The relation was known long before Pythagoras: the Old Babylonian tablet
+  Plimpton 322 (c. 1800 BCE) lists triples of numbers satisfying it.

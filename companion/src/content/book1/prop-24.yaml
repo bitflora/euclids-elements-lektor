@@ -1,0 +1,224 @@
+id: I.24
+kind: theorem
+title: The hinge theorem
+
+paraphrase: |
+  Two triangles with two pairs of equal sides: the one whose angle between those sides is larger
+  has the larger third side. (Picture the two sides as the arms of a hinge: open it wider and the
+  ends move apart.)
+
+diagram:
+  width: 330
+  height: 270
+  elements:
+    - "D;point;free;225,40"
+    - "E;point;free;305,180"
+    - "F;point;free;230,240"
+    - "DEF;polygon;triangle;D,E,F;0;0;black;#dfe7ea"
+    - "A;point;free;80,40"
+    - "ABcirc;circle;radius;A,D,E;0;0;0;0"
+    - "ACcirc;circle;radius;A,D,F;0;0;0;0"
+    - "B;point;circleSlider;ABcirc,140,150"
+    - "C;point;circleSlider;ACcirc,40,170"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "DEG;polygon;similar;D,E,A,B,C;0;0;0;0"
+    - "G;point;vertex;DEG,3"
+    - "FG;line;connect;F,G"
+    - "EG;line;connect;E,G"
+    - "DG;line;connect;D,G"
+    - "EFG;polygon;triangle;E,F,G;0;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angEDF;sector;angleMarker;D,E,F"
+    - "angEDG;sector;angleMarker;D,E,G"
+    - "angDGF;sector;angleMarker;G,D,F"
+    - "angEGF;sector;angleMarker;G,E,F"
+    - "angDFG;sector;angleMarker;F,D,G"
+    - "angEFG;sector;angleMarker;F,E,G"
+  aliases:
+    BA: AB
+    ED: DE
+    FD: DF
+    GF: FG
+    GE: EG
+    BAC: angBAC
+    EDF: angEDF
+    EDG: angEDG
+    DGF: angDGF
+    EGF: angEGF
+    DFG: angDFG
+  given: [A, B, C, D, E, F, ABC, DEF, angBAC, angEDF]
+  caption: |
+    Drag {D}, {E}, {F}, {A}, and slide {B} and {C}: {AB} = {DE} and {AC} = {DF} always. Keep the
+    angle at {A} the larger and {BC} stays longer than {EF}.
+
+steps:
+  - part: enunciation
+    text: "If two triangles have the two sides equal to two sides respectively, but have the one of the angles contained by the equal straight lines greater than the other, they will also have the base greater than the base."
+    highlight: [angBAC, angEDF, BC, EF]
+    hint: |
+      Same two sides, bigger angle between them ⇒ longer third side. An inequality version of
+      [[I.4]].
+
+  - part: setting-out
+    text: "Let ABC, DEF be two triangles having the two sides AB, AC equal to the two sides DE, DF respectively, namely AB to DE, and AC to DF,"
+    highlight: [AB, DE, AC, DF]
+    hint: |
+      The data: {AB} = {DE}, {AC} = {DF}.
+
+  - part: setting-out
+    text: "and let the angle at A be greater than the angle at D;"
+    highlight: [angBAC, angEDF]
+    hint: |
+      And ∠{BAC} > ∠{EDF}.
+    modern: |
+      $$AB = DE,\quad AC = DF,\quad \angle BAC > \angle EDF$$
+
+  - part: specification
+    text: "I say that the base BC is also greater than the base EF."
+    highlight: [BC, EF]
+    hint: |
+      The goal: {BC} > {EF}.
+
+  - part: construction
+    text: "For, since the angle BAC is greater than the angle EDF, let there be constructed, on the straight line DE, and at the point D on it, the angle EDG equal to the angle BAC;"
+    highlight: [angEDG, angBAC]
+    adds: [angEDG]
+    hint: |
+      Copy the larger angle onto {DE} at {D} ([[I.23]]). Its arm falls outside ∠{EDF}.
+
+  - part: construction
+    text: "let DG be made equal to either of the two straight lines AC, DF,"
+    highlight: [DG, AC, DF, G]
+    adds: [G, DG]
+    hint: |
+      Mark {G} on that arm with {DG} = {AC} = {DF} ([[I.3]]).
+    cites: [I.3]
+
+  - part: construction
+    text: "and let EG, FG be joined."
+    highlight: [EG, FG]
+    adds: [EG, FG]
+    hint: |
+      Join {EG} and {FG} ([[I.Post.1]]).
+    cites: [I.Post.1]
+
+  - part: proof
+    text: "Then, since AB is equal to DE, and AC to DG, the two sides BA, AC are equal to the two sides ED, DG, respectively;"
+    highlight: [AB, DE, AC, DG]
+    hint: |
+      Triangles {ABC} and {DEG}: two pairs of equal sides…
+
+  - part: proof
+    text: "and the angle BAC is equal to the angle EDG;"
+    highlight: [angBAC, angEDG]
+    hint: |
+      …and equal angles between them, by construction.
+
+  - part: proof
+    text: "therefore the base BC is equal to the base EG."
+    highlight: [BC, EG]
+    hint: |
+      SAS ([[I.4]]): {EG} is a copy of {BC}. Now it suffices to show {EG} > {EF}.
+    modern: |
+      $$BC = EG$$
+
+  - part: proof
+    text: "Again, since DF is equal to DG, the angle DGF is also equal to the angle DFG;"
+    highlight: [DF, DG, angDGF, angDFG]
+    adds: [angDGF, angDFG]
+    hint: |
+      Triangle {DFG} is isosceles, so its base angles at {G} and {F} are equal ([[I.5]]).
+    modern: |
+      $$\angle DGF = \angle DFG$$
+
+  - part: proof
+    text: "therefore the angle DFG is greater than the angle EGF."
+    highlight: [angDFG, angEGF]
+    adds: [angEGF]
+    hint: |
+      ∠{EGF} is part of ∠{DGF}, which equals ∠{DFG}. So ∠{DFG} > ∠{EGF}.
+    explain:
+      implicit: |
+        That {GE} lies inside ∠{DGF}.
+    modern: |
+      $$\angle DFG = \angle DGF > \angle EGF$$
+
+  - part: proof
+    text: "Therefore the angle EFG is much greater than the angle EGF."
+    highlight: [angEFG, angEGF]
+    adds: [angEFG]
+    hint: |
+      ∠{EFG|angEFG} contains ∠{DFG}, so it is greater still.
+    explain:
+      implicit: |
+        That {FD} lies inside ∠{EFG|angEFG} — which depends on where {F} falls relative to {EG}.
+        See the gaps.
+    modern: |
+      $$\angle EFG > \angle DFG > \angle EGF$$
+
+  - part: proof
+    text: "And, since EFG is a triangle having the angle EFG greater than the angle EGF, and the greater angle is subtended by the greater side, the side EG is also greater than EF."
+    highlight: [EFG, EG, EF]
+    hint: |
+      In triangle {EFG}, the larger angle (at {F}) faces the longer side, {EG} ([[I.19]]).
+    modern: |
+      $$EG > EF$$
+
+  - part: proof
+    text: "But EG is equal to BC. Therefore BC is also greater than EF."
+    highlight: [BC, EF, EG]
+    hint: |
+      {BC} = {EG} > {EF}.
+    modern: |
+      $$BC = EG > EF$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* A clean modern proof uses the angle
+    bisector instead of Euclid's case-dependent angles:
+  lines:
+    - steps: [1, 2, 3]
+      text: Let $AB = DE$, $AC = DF$, $\angle BAC > \angle EDF$.
+    - steps: [4, 5, 6, 7, 8, 9]
+      text: |
+        Copy $\angle BAC$ to $\angle EDG$ with $DG = AC$; by SAS $EG = BC$. Since
+        $\angle EDG > \angle EDF$, ray $DF$ lies inside $\angle EDG$.
+    - steps: [10, 11, 12, 13, 14]
+      text: |
+        Let the bisector of $\angle FDG$ meet $EG$ at $M$. By SAS, $\triangle FDM \cong \triangle GDM$,
+        so $MF = MG$. Then $EG = EM + MG = EM + MF \ge EF$ (triangle inequality), with equality only if
+        $F$ is on segment $EM$ — impossible since $\angle EDF < \angle EDG$. So $EF < EG = BC$.
+        $\blacksquare$
+  closing: |
+    The bisector proof handles every position of {F} at once.
+
+commentary: |
+  I.24 is the inequality counterpart of [[I.4]] (SAS): equal sides with equal angles give equal
+  bases; with unequal angles, the larger angle gives the larger base. Its converse is [[I.25]].
+  In modern texts it is called the *hinge theorem* (or the "open mouth" theorem).
+
+gaps: |
+  - **Cases for {F}.** Euclid draws {F} below {EG}. {F} might also lie *on* {EG}, or above it,
+    and the angle comparison in step 11 then changes. Simson added the words "of the two sides
+    {DE}, {DF} let {DE} be the side which is not greater than the other" to force {F} below {EG};
+    Heath leaves them out, doubting that Euclid would have added them (his note on line 10).
+  - **Betweenness of rays** (steps 10–11), as usual.
+
+historical: |
+  Proclus treats the other positions of {F}, showing that the proof can be completed in each.

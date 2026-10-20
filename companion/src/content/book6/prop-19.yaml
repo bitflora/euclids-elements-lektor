@@ -1,0 +1,150 @@
+id: VI.19
+kind: theorem
+title: Similar triangles are in the duplicate ratio of their sides
+
+paraphrase: |
+  If triangles {ABC}, {DEF} are similar, with {BC} corresponding to {EF}, then {ABC} : {DEF} is the duplicate of
+  {BC} : {EF} — areas scale as the square of the sides.
+
+diagram:
+  width: 330
+  height: 220
+  elements:
+    - "A;point;free;140,40"
+    - "B0;point;free;-1000,190;0;0"
+    - "B3;point;free;1000,190;0;0"
+    - "B;point;lineSlider;B0,B3,50,0"
+    - "C;point;lineSlider;B0,B3,180,0"
+    - "E;point;lineSlider;B0,B3,210,0"
+    - "F;point;lineSlider;B0,B3,290,0"
+    - "D;point;similar;E,F,B,C,A"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "DEF;polygon;triangle;D,E,F;0;0;black;#dfe7ea"
+    - "G;point;proportion;B,C,E,F,E,F,B,C"
+    - "AG;line;connect;A,G"
+    - "ABG;polygon;triangle;A,B,G;0;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "BG;line;connect;B,G;0;0;0"
+    - "angABC;sector;angleMarker;B,A,C"
+    - "angDEF;sector;angleMarker;E,D,F"
+  aliases:
+    CB: BC
+  given: [A, B0, B3, B, C, E, F, D, ABC, DEF, AB, BC, DE, EF, angABC, angDEF]
+  caption: |
+    {DEF} is constructed similar to {ABC}. {BG} is the third proportional to {BC}, {EF}; the triangle {ABG} turns out equal
+    to {DEF}. Slide {B}, {C}, {E}, {F} or drag {A}.
+
+steps:
+  - part: enunciation
+    text: "Similar triangles are to one another in the duplicate ratio of the corresponding sides."
+    highlight: [ABC, DEF, BC, EF]
+    hint: |
+      Areas go as the *square* of the scale factor.
+    explain:
+      fact: |
+        *Duplicate ratio* ([[V.Def.9]]): if $a : b = b : c$, then $a : c$ is the duplicate of $a : b$. In
+        modern terms, the ratio squared.
+    modern: |
+      $$\frac{[ABC]}{[DEF]} = \left(\frac{BC}{EF}\right)^2$$
+
+  - part: setting-out
+    text: "Let ABC, DEF be similar triangles having the angle at B equal to the angle at E, and such that, as AB is to BC, so is DE to EF, so that BC corresponds to EF;"
+    highlight: [ABC, DEF, angABC, angDEF, BC, EF]
+    hint: |
+      {BC} ↔ {EF} are corresponding sides ([[V.Def.11]]).
+
+  - part: specification
+    text: "I say that the triangle ABC has to the triangle DEF a ratio duplicate of that which BC has to EF."
+    highlight: [ABC, DEF, BC, EF]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let a third proportional BG be taken to BC, EF, so that, as BC is to EF, so is EF to BG; and let AG be joined."
+    highlight: [BG, AG]
+    adds: [G, AG, ABG, BG]
+    hint: |
+      [[VI.11]]: $BC : EF = EF : BG$, so $BC : BG$ is the duplicate of $BC : EF$.
+
+  - part: proof
+    text: "Since then, as AB is to BC, so is DE to EF, therefore, alternately, as AB is to DE, so is BC to EF."
+    highlight: [AB, DE, BC, EF]
+    hint: |
+      [[V.16]].
+
+  - part: proof
+    text: "But, as BC is to EF, so is EF to BG; therefore also, as AB is to DE, so is EF to BG."
+    highlight: [AB, DE, EF, BG]
+    hint: |
+      [[V.11]].
+
+  - part: proof
+    text: "Therefore in the triangles ABG, DEF the sides about the equal angles are reciprocally proportional."
+    highlight: [ABG, DEF]
+    hint: |
+      $AB : DE = EF : BG$, with the equal angles at {B} and {E}.
+
+  - part: proof
+    text: "But those triangles which have one angle equal to one angle, and in which the sides about the equal angles are reciprocally proportional, are equal;"
+    highlight: [ABG, DEF]
+    hint: |
+      [[VI.15]].
+
+  - part: proof
+    text: "therefore the triangle ABG is equal to the triangle DEF."
+    highlight: [ABG, DEF]
+    hint: |
+      So {DEF} has been replaced by a triangle with the same vertex {A} as {ABC}.
+
+  - part: proof
+    text: "Now since, as BC is to EF, so is EF to BG, and, if three straight lines be proportional, the first has to the third a ratio duplicate of that which it has to the second, therefore BC has to BG a ratio duplicate of that which CB has to EF."
+    highlight: [BC, EF, BG]
+    hint: |
+      [[V.Def.9]].
+
+  - part: proof
+    text: "But, as CB is to BG, so is the triangle ABC to the triangle ABG;"
+    highlight: [CB, BG, ABC, ABG]
+    hint: |
+      Same vertex {A}, bases on one line: [[VI.1]].
+
+  - part: proof
+    text: "therefore the triangle ABC also has to the triangle ABG a ratio duplicate of that which BC has to EF."
+    highlight: [ABC, ABG]
+    hint: |
+      [[V.11]].
+    cites: [V.11]
+
+  - part: proof
+    text: "But the triangle ABG is equal to the triangle DEF; therefore the triangle ABC also has to the triangle DEF a ratio duplicate of that which BC has to EF."
+    highlight: [ABG, DEF, ABC]
+    hint: |
+      Replace {ABG} by the equal {DEF} ([[V.7]]).
+    cites: [V.7]
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved. A porism follows.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Let $k = BC : EF$.
+  lines:
+    - steps: [1, 2, 3]
+      text: |
+        All sides of {ABC} are $k$ times those of {DEF}, and so is the height from {A}.
+    - steps: [4, 5, 6, 7, 8, 9, 10, 11, 12]
+      text: |
+        $[ABC] = \tfrac12\cdot BC\cdot h = \tfrac12\cdot kEF\cdot kh' = k^2[DEF]$. $\blacksquare$
+  closing: |
+    The porism: if $a : b = b : c$, then $a : c$ equals the ratio of the figure on $a$ to the similar figure on
+    $b$. Joyce notes it is used in [[VI.22]] and [[VI.31]].
+
+commentary: |
+  Euclid cannot square a ratio, so he squares a line instead: the third proportional {BG} makes $BC : BG$ the
+  duplicate of $BC : EF$, and the triangle {ABG} — equal to {DEF} by [[VI.15]] — converts it into a ratio of
+  areas. [[VI.20]] extends the result to similar polygons.

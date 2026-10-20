@@ -1,0 +1,129 @@
+id: XI.24
+kind: theorem
+title: Opposite faces of a parallelepiped are equal parallelograms
+
+paraphrase: |
+  If a solid is contained by three pairs of parallel planes, its opposite faces are equal parallelograms.
+
+diagram:
+  width: 270
+  height: 230
+  elements:
+    - "A;point;free;40,90"
+    - "B;point;free;70,40"
+    - "C;point;free;100,150"
+    - "D;point;parallelogram;A,B,C"
+    - "E;point;free;200,200"
+    - "F;point;parallelogram;E,D,C"
+    - "G;point;parallelogram;E,D,A"
+    - "H;point;parallelogram;E,D,B"
+    - "ABHG;polygon;quadrilateral;A,B,H,G;0;0;black;random"
+    - "ADEG;polygon;quadrilateral;A,D,E,G;0;0;black;random"
+    - "EFHG;polygon;quadrilateral;E,F,H,G;0;0;black;random"
+    - "BC;line;connect;B,C"
+    - "CD;line;connect;C,D"
+    - "CF;line;connect;C,F"
+    - "AH;line;connect;A,H"
+    - "DF;line;connect;D,F"
+  aliases: { CB: BC, DC: CD, FC: CF, HA: AH, FD: DF }
+  caption: |
+    The parallelepiped with faces *AC*, *GF*, *AH*, *DF*, *BF*, *AE*.
+
+steps:
+  - part: enunciation
+    text: "If a solid be contained by parallel planes, the opposite planes in it are equal and parallelogrammic."
+    highlight: [BC, CD]
+    hint: |
+      Opposite faces of a parallelepiped are congruent parallelograms.
+
+  - part: setting-out
+    text: "For let the solid CDHG be contained by the parallel planes AC, GF, AH, DF, BF, AE; I say that the opposite planes in it are equal and parallelogrammic."
+    highlight: [BC, CD]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For, since the two parallel planes BG, CE are cut by the plane AC, their common sections are parallel."
+    highlight: [CD]
+    hint: |
+      Parallel planes *BG*, *CE* cut by *AC* give parallel lines ([[XI.16]]) …
+
+  - part: proof
+    text: "Therefore AB is parallel to DC."
+    highlight: [CD]
+    hint: |
+      … *AB* ∥ *DC*.
+
+  - part: proof
+    text: "Again, since the two parallel planes BF, AE are cut by the plane AC, their common sections are parallel."
+    highlight: [BC]
+    hint: |
+      Likewise …
+
+  - part: proof
+    text: "Therefore BC is parallel to AD."
+    highlight: [BC]
+    hint: |
+      … *BC* ∥ *AD*.
+
+  - part: proof
+    text: "But AB was also proved parallel to DC; therefore AC is a parallelogram."
+    highlight: [BC, CD]
+    hint: |
+      So *AC* is a parallelogram.
+
+  - part: proof
+    text: "Similarly we can prove that each of the planes DF, FG, GB, BF, AE is a parallelogram."
+    highlight: [BC, CD]
+    hint: |
+      Likewise the other faces.
+
+  - part: construction
+    text: "Let AH, DF be joined."
+    highlight: [AH, DF]
+    hint: |
+      Join {AH}, {DF}.
+
+  - part: proof
+    text: "Then, since AB is parallel to DC, and BH to CF, the two straight lines AB, BH which meet one another are parallel to the two straight lines DC, CF which meet one another, not in the same plane; therefore they will contain equal angles; therefore the angle ABH is equal to the angle DCF."
+    highlight: [CF]
+    hint: |
+      ∠*ABH* = ∠*DCF* ([[XI.10]]).
+
+  - part: proof
+    text: "And, since the two sides AB, BH are equal to the two sides DC, CF, and the angle ABH is equal to the angle DCF, therefore the base AH is equal to the base DF, and the triangle ABH is equal to the triangle DCF."
+    highlight: [AH, DF]
+    hint: |
+      Triangles *ABH*, *DCF* are equal ([[I.4]]).
+
+  - part: proof
+    text: "And the parallelogram BG is double of the triangle ABH, and the parallelogram CE double of the triangle DCF; therefore the parallelogram BG is equal to the parallelogram CE."
+    highlight: [AH, DF]
+    hint: |
+      So the parallelograms *BG*, *CE* are equal (each double a triangle, [[I.34]]).
+
+  - part: proof
+    text: "Similarly we can prove that AC is also equal to GF, and AE to BF."
+    highlight: [AH, DF]
+    hint: |
+      Likewise the other opposite pairs.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [AH, DF]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Opposite faces are translates of each other. $\blacksquare$
+
+commentary: |
+  Euclid calls the solid "parallelepipedal" (παραλληλεπίπεδον) without defining it; this proposition supplies the
+  properties used.

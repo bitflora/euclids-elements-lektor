@@ -1,0 +1,98 @@
+id: VII.18
+kind: theorem
+title: Multipliers are as their products
+
+paraphrase: |
+  If {A} and {B} each multiply the same number {C}, giving {D} and {E}, then {A} : {B} = {D} : {E}. In
+  symbols: $a : b = ac : bc$.
+
+diagram:
+  width: 280
+  height: 175
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "D0;point;free;-1000,110;0;0"
+    - "D3;point;free;1000,110;0;0"
+    - "E0;point;free;-1000,145;0;0"
+    - "E3;point;free;1000,145;0;0"
+    - "A1;point;lineSlider;A0,A3,100,30;0"
+    - "A2;point;lineSlider;A0,A3,160,30;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,100,30;0"
+    - "B2;point;lineSlider;B0,B3,180,30;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;A0,A3,30,30;0"
+    - "C2;point;lineSlider;A0,A3,70,30;0"
+    - "C;line;connect;C1,C2;black"
+    - "U1;point;lineSlider;A0,A3,1000,30;0;0"
+    - "U2;point;lineSlider;A0,A3,1015,30;0;0"
+    - "D1;point;lineSlider;D0,D3,30,110;0"
+    - "D2;point;proportion;U1,U2,C1,C2,A1,A2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;E0,E3,30,110;0"
+    - "E2;point;proportion;U1,U2,C1,C2,B1,B2,E1,E3;0"
+    - "E;line;connect;E1,E2;black"
+  caption: |
+    {D} = {A}·{C}, {E} = {B}·{C}.
+
+steps:
+  - part: enunciation
+    text: "If two numbers by multiplying any number make certain numbers, the numbers so produced will have the same ratio as the multipliers."
+    highlight: [A, B, C, D, E]
+    hint: |
+      $a : b = ac : bc$ — [[VII.17]] with the factors the other way round.
+    modern: |
+      $a : b = ac : bc$.
+
+  - part: setting-out
+    text: "For let two numbers A, B by multiplying any number C make D, E;"
+    highlight: [A, B, C, D, E]
+    hint: |
+      {D} = {A}·{C}, {E} = {B}·{C}.
+
+  - part: specification
+    text: "I say that, as A is to B, so is D to E."
+    highlight: [A, B, D, E]
+    hint: |
+      To prove: {A} : {B} = {D} : {E}.
+
+  - part: proof
+    text: "For, since A by multiplying C has made D, therefore also C by multiplying A has made D."
+    highlight: [A, C, D]
+    hint: |
+      By commutativity ([[VII.16]]), {D} is also {C}·{A}.
+
+  - part: proof
+    text: "For the same reason also C by multiplying B has made E."
+    highlight: [B, C, E]
+    hint: |
+      And {E} = {C}·{B}.
+    cites: [VII.16]
+
+  - part: proof
+    text: "Therefore the number C by multiplying the two numbers A, B has made D, E."
+    highlight: [C, A, B, D, E]
+    hint: |
+      Now one number {C} multiplies {A} and {B}.
+
+  - part: proof
+    text: "Therefore, as A is to B, so is D to E."
+    highlight: [A, B, D, E]
+    hint: |
+      So [[VII.17]] applies.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        $ac = ca$ and $bc = cb$ ([[VII.16]]), and $a : b = ca : cb$ ([[VII.17]]). $\blacksquare$
+
+commentary: |
+  Because Euclid's multiplication is defined asymmetrically ([[VII.Def.15]]), "{A} multiplying {C}" and
+  "{C} multiplying {A}" are different statements, and [[VII.17]] and [[VII.18]] are different propositions.
+  After [[VII.16]] the distinction is merely verbal.

@@ -1,0 +1,122 @@
+id: XIII.5
+kind: theorem
+title: Adding the greater part to a golden-cut line gives a golden-cut line
+
+paraphrase: |
+  If {AB} is cut in extreme and mean ratio at {C} and {AD} = {AC} is added, then {DB} is cut in extreme and mean ratio
+  at {A}, with {AB} the greater segment.
+
+diagram:
+  width: 270
+  height: 200
+  elements:
+    - "A;point;free;110,40"
+    - "B;point;free;230,40"
+    - "BATE;polygon;square;B,A;0;0;black;random"
+    - "T;point;vertex;BATE,3;0;0"
+    - "E;point;vertex;BATE,4"
+    - "X;point;midpoint;A,B;0;0"
+    - "Y;point;extend;A,X,X,E;0;0"
+    - "C;point;cutoff;A,B,B,Y"
+    - "D;point;extend;C,A,C,A"
+    - "ADLH;polygon;square;A,D;0;0;black;random"
+    - "L;point;vertex;ADLH,3"
+    - "H;point;vertex;ADLH,4"
+    - "K;point;intersection;L,H,B,E"
+    - "HK;line;connect;H,K"
+    - "AE;line;connect;A,E"
+    - "CC';line;parallel;C,B,E"
+    - "DB;line;connect;D,B;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "DA;line;connect;D,A;0;0;0"
+    - "BA;line;connect;B,A;0;0;0"
+  aliases: { KH: HK, EA: AE, CB: BC, CA: AC }
+  caption: |
+    {AB} cut at {C}; {AD} = {AC} added beyond {A}.
+
+steps:
+  - part: enunciation
+    text: "If a straight line be cut in extreme and mean ratio, and there be added to it a straight line equal to the greater segment, the whole straight line has been cut in extreme and mean ratio, and the original straight line is the greater segment."
+    highlight: [DB, AB]
+    hint: |
+      $1 + \varphi^{-1} = \varphi$: the golden section reproduces itself.
+
+  - part: setting-out
+    text: "For let the straight line AB be cut in extreme and mean ratio at the point C, let AC be the greater segment, and let AD be equal to AC."
+    highlight: [AB, C, AD]
+    hint: |
+      Setup.
+
+  - part: specification
+    text: "I say that the straight line DB has been cut in extreme and mean ratio at A, and the original straight line AB is the greater segment."
+    highlight: [DB]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For let the square AE be described on AB, and let the figure be drawn."
+    highlight: [AB]
+    hint: |
+      Square {AE} on {AB}; draw the figure.
+
+  - part: proof
+    text: "Since AB has been cut in extreme and mean ratio at C, therefore the rectangle AB, BC is equal to the square on AC."
+    highlight: [AB, BC, AC]
+    hint: |
+      rect({AB},{BC}) = sq({AC}).
+
+  - part: proof
+    text: "And CE is the rectangle AB, BC, and CH the square on AC; therefore CE is equal to HC."
+    highlight: [AB]
+    hint: |
+      So *CE* = *HC*.
+
+  - part: proof
+    text: "But HE is equal to CE, and DH is equal to HC; therefore DH is also equal to HE."
+    highlight: [AD]
+    hint: |
+      *HE* = *CE* and *DH* = *HC*, so *DH* = *HE*.
+
+  - part: proof
+    text: "Therefore the whole DK is equal to the whole AE."
+    highlight: [DB]
+    hint: |
+      So *DK* = {AE}.
+
+  - part: proof
+    text: "And DK is the rectangle BD, DA, for AD is equal to DL; and AE is the square on AB; therefore the rectangle BD, DA is equal to the square on AB."
+    highlight: [DB, AD, AB]
+    hint: |
+      rect({BD},{DA}) = sq({AB}).
+
+  - part: proof
+    text: "Therefore, as DB is to BA, so is BA to AD."
+    highlight: [DB, AB, AD]
+    hint: |
+      So {DB} : {BA} = {BA} : {AD} ([[VI.17]]).
+
+  - part: proof
+    text: "And DB is greater than BA; therefore BA is also greater than AD."
+    highlight: [AB, AD]
+    hint: |
+      And {BA} > {AD} ([[V.14]]).
+
+  - part: proof
+    text: "Therefore DB has been cut in extreme and mean ratio at A, and AB is the greater segment."
+    highlight: [DB]
+    hint: |
+      So {DB} is cut in extreme and mean ratio at {A}.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $(1 + x) : 1 = 1 : x$ since $x^2 + x = 1$. $\blacksquare$

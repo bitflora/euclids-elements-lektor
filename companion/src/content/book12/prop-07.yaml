@@ -1,0 +1,113 @@
+id: XII.7
+kind: theorem
+title: A triangular prism splits into three equal pyramids
+
+paraphrase: |
+  A prism on a triangular base divides into three equal pyramids. Porism: any pyramid is a third of the prism with
+  the same base and height.
+
+diagram:
+  width: 260
+  height: 250
+  elements:
+    - "origin;point;fixed;-10,250,0;0;0"
+    - "1X;point;fixed;242,250,-91;0;0"
+    - "1Y;point;fixed;-105,550,-120;0;0"
+    - "1Z;point;fixed;14,375,288;0;0"
+    - "floor;plane;3points;origin,1X,1Y;0;0;0;0"
+    - "E;point;lineSlider;origin,1Y,-10,10,0"
+    - "A;point;planeSlider;floor,240,237,0"
+    - "B;point;planeSlider;floor,80,210,0"
+    - "C;point;planeSlider;floor,170,180,0"
+    - "BAC;polygon;triangle;B,A,C;0;0;0;random"
+    - "pris;polyhedron;prism;BAC,B,E;0;0;black;0"
+    - "EDF;polygon;face;pris,2;0;0;0;random"
+    - "D;point;vertex;EDF,2"
+    - "F;point;vertex;EDF,3"
+    - "BD;line;connect;B,D"
+    - "CD;line;connect;C,D"
+    - "CE;line;connect;C,E"
+    - "EC;line;connect;E,C;0;0;0"
+    - "ABD;polygon;triangle;A,B,D;0;0;0"
+    - "EBD;polygon;triangle;E,B,D;0;0;0"
+    - "EBC;polygon;triangle;E,B,C;0;0;0"
+    - "CEF;polygon;triangle;C,E,F;0;0;0"
+    - "CBE;polygon;triangle;C,B,E;0;0;0"
+    - "BCE;polygon;triangle;B,C,E;0;0;0"
+    - "ECF;polygon;triangle;E,C,F;0;0;0"
+    - "DEB;polygon;triangle;D,E,B;0;0;0"
+  aliases: { DB: BD, DC: CD }
+  caption: |
+    The prism *ABCDEF* cut by the planes through {BD}, {EC}, {CD}.
+
+steps:
+  - part: enunciation
+    text: "Any prism which has a triangular base is divided into three pyramids equal to one another which have triangular bases."
+    highlight: [BAC]
+    hint: |
+      Three equal tetrahedra make a triangular prism: the pyramid is a third of the prism.
+    modern: |
+      $V_{\text{pyramid}} = \tfrac13 B h$.
+
+  - part: setting-out
+    text: "Let there be a prism in which the triangle ABC is the base and DEF its opposite; I say that the prism ABCDEF is divided into three pyramids equal to one another, which have triangular bases."
+    highlight: [BAC]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let BD, EC, CD be joined."
+    highlight: [BD, EC, CD]
+    hint: |
+      Join {BD}, {EC}, {CD}.
+
+  - part: proof
+    text: "Since ABED is a parallelogram, and BD is its diameter, therefore the triangle ABD is equal to the triangle EBD; therefore also the pyramid of which the triangle ABD is the base and the point C the vertex is equal to the pyramid of which the triangle DEB is the base and the point C the vertex."
+    highlight: [ABD, EBD]
+    hint: |
+      {ABD} = {EBD} ([[I.34]]), so the pyramids on them with vertex {C} are equal ([[XII.5]]).
+
+  - part: proof
+    text: "But the pyramid of which the triangle DEB is the base and the point C the vertex is the same with the pyramid of which the triangle EBC is the base and the point D the vertex; for they are contained by the same planes."
+    highlight: [EBC]
+    hint: |
+      The pyramid on {DEB} with vertex {C} is the pyramid on {EBC} with vertex {D}.
+
+  - part: proof
+    text: "Therefore the pyramid of which the triangle ABD is the base and the point C the vertex is also equal to the pyramid of which the triangle EBC is the base and the point D the vertex."
+    highlight: [ABD, EBC]
+    hint: |
+      So pyramid({ABD}, {C}) = pyramid({EBC}, {D}).
+
+  - part: proof
+    text: "Again, since FCBE is a parallelogram, and CE is its diameter, the triangle CEF is equal to the triangle CBE."
+    highlight: [CEF, CBE]
+    hint: |
+      {CEF} = {CBE} ([[I.34]]).
+
+  - part: proof
+    text: "Therefore also the pyramid of which the triangle BCE is the base and the point D the vertex is equal to the pyramid of which the triangle ECF is the base and the point D the vertex."
+    highlight: [BCE, ECF]
+    hint: |
+      So pyramid({BCE}, {D}) = pyramid({ECF}, {D}).
+
+  - part: proof
+    text: "But the pyramid of which the triangle BCE is the base and the point D the vertex was proved equal to the pyramid of which the triangle ABD is the base and the point C the vertex; therefore also the pyramid of which the triangle CEF is the base and the point D the vertex is equal to the pyramid of which the triangle ABD is the base and the point C the vertex; therefore the prism ABCDEF has been divided into three pyramids equal to one another which have triangular bases."
+    highlight: [ABD, ECF]
+    hint: |
+      So all three are equal.
+
+  - part: proof
+    text: "And, since the pyramid of which the triangle ABD is the base and the point C the vertex is the same with the pyramid of which the triangle CAB is the base and the point D the vertex, for they are contained by the same planes, while the pyramid of which the triangle ABD is the base and the point C the vertex was proved to be a third of the prism in which the triangle ABC is the base and DEF its opposite, therefore also the pyramid of which the triangle ABC is the base and the point D the vertex is a third of the prism which has the same base, the triangle ABC, and DEF as its opposite."
+    highlight: [BAC]
+    hint: |
+      And they make up the prism.
+
+reconstruction:
+  lines:
+    - text: |
+        Three tetrahedra $ABCD$, $BCDE$, $CDEF$ with equal bases and heights in pairs. $\blacksquare$
+
+commentary: |
+  The porism — a pyramid is one third of the prism on the same base and height — is the result Archimedes
+  credits to Eudoxus (Democritus had stated it without proof).

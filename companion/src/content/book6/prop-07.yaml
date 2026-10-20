@@ -1,0 +1,242 @@
+id: VI.7
+kind: theorem
+title: Angle-side-side similarity
+
+paraphrase: |
+  If triangles {ABC}, {DEF} have the angle at {A} equal to the angle at {D}, the sides about the angles at {B} and {E}
+  proportional ({AB} : {BC} = {DE} : {EF}), and the remaining angles at {C}, {F} either both acute or both not acute,
+  then the triangles are equiangular.
+
+diagram:
+  width: 340
+  height: 280
+  elements:
+    - "A;point;free;70,40"
+    - "B;point;free;40,230"
+    - "C;point;free;180,260"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "D;point;free;230,60"
+    - "E;point;free;210,170"
+    - "F;point;similar;D,E,A,B,C"
+    - "DEF;polygon;triangle;D,E,F;0;0;black;#dfe7ea"
+    - "G;point;lineSlider;A,C,140,240"
+    - "BG;line;connect;B,G"
+    - "ABG;polygon;triangle;A,B,G;0;0;0;0"
+    - "BGC;polygon;triangle;B,G,C;0;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angEDF;sector;angleMarker;D,E,F"
+    - "angABC;sector;angleMarker;B,A,C"
+    - "angDEF;sector;angleMarker;E,D,F"
+    - "angACB;sector;angleMarker;C,A,B"
+    - "angDFE;sector;angleMarker;F,D,E"
+    - "angABG;sector;angleMarker;B,A,G"
+    - "angAGB;sector;angleMarker;G,A,B"
+    - "angBGC;sector;angleMarker;G,B,C"
+  given: [A, B, C, ABC, D, E, F, DEF, AB, BC, AC, DE, EF, angBAC, angEDF, angABC, angDEF, angACB, angDFE]
+  caption: |
+    {DEF} is drawn similar to {ABC}. {G} on {AC} stands for the point the proof supposes (with the angle {ABG|angABG} equal to
+    the angle {DEF|angDEF}) and then shows cannot exist apart from {C}: slide it along {AC}.
+
+steps:
+  - part: enunciation
+    text: "If two triangles have one angle equal to one angle, the sides about other angles proportional, and the remaining angles either both less or both not less than a right angle, the triangles will be equiangular and will have those angles equal, the sides about which are proportional."
+    highlight: [ABC, DEF]
+    hint: |
+      The "ambiguous case": an angle and two sides not containing it determine the shape only if the third
+      angles are on the same side of a right angle.
+    explain:
+      implicit: |
+        Without the condition the result is false: with the same angle at {A} and the same ratio $AB : BC$,
+        {C} can lie at two places on the line {AC}, giving one acute and one obtuse angle at {C}.
+    modern: |
+      $$\angle A = \angle D,\ \frac{AB}{BC} = \frac{DE}{EF},\ \angle C, \angle F \text{ both } < 90^\circ \text{ or both } \ge 90^\circ \Rightarrow \triangle ABC \sim \triangle DEF$$
+
+  - part: setting-out
+    text: "Let ABC, DEF be two triangles having one angle equal to one angle, the angle BAC to the angle EDF, the sides about other angles ABC, DEF proportional, so that, as AB is to BC, so is DE to EF, and, first, each of the remaining angles at C, F less than a right angle;"
+    highlight: [angBAC, angEDF, AB, BC, DE, EF, angACB, angDFE]
+    hint: |
+      Case 1: the angles at {C}, {F} both acute.
+
+  - part: specification
+    text: "I say that the triangle ABC is equiangular with the triangle DEF, the angle ABC will be equal to the angle DEF, and the remaining angle, namely the angle at C, equal to the remaining angle, the angle at F."
+    highlight: [angABC, angDEF, angACB, angDFE]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, if the angle ABC is unequal to the angle DEF, one of them is greater."
+    highlight: [angABC, angDEF]
+    hint: |
+      Suppose not.
+
+  - part: setting-out
+    text: "Let the angle ABC be greater;"
+    highlight: [angABC]
+    hint: |
+      Without loss of generality.
+
+  - part: construction
+    text: "and on the straight line AB, and at the point B on it, let the angle ABG be constructed equal to the angle DEF."
+    highlight: [angABG, BG]
+    adds: [G, BG, ABG, BGC, angABG, angAGB, angBGC]
+    hint: |
+      Cut off part of the angle at {B} ([[I.23]]); {BG} meets {AC} at {G}.
+
+  - part: proof
+    text: "Then, since the angle A is equal to D, and the angle ABG to the angle DEF, therefore the remaining angle AGB is equal to the remaining angle DFE."
+    highlight: [angAGB, angDFE]
+    hint: |
+      [[I.32]].
+
+  - part: proof
+    text: "Therefore the triangle ABG is equiangular with the triangle DEF."
+    highlight: [ABG, DEF]
+    hint: |
+      All three angles match.
+
+  - part: proof
+    text: "Therefore, as AB is to BG, so is DE to EF"
+    highlight: [AB, BG, DE, EF]
+    hint: |
+      [[VI.4]].
+
+  - part: proof
+    text: "But, as DE is to EF, so by hypothesis is AB to BC; therefore AB has the same ratio to each of the straight lines BC, BG;"
+    highlight: [AB, BC, BG]
+    hint: |
+      [[V.11]].
+
+  - part: proof
+    text: "therefore BC is equal to BG, so that the angle at C is also equal to the angle BGC."
+    highlight: [BC, BG, angACB, angBGC]
+    hint: |
+      [[V.9]]; then {BGC} is isosceles ([[I.5]]).
+
+  - part: proof
+    text: "But, by hypothesis, the angle at C is less than a right angle; therefore the angle BGC is also less than a right angle;"
+    highlight: [angACB, angBGC]
+    hint: |
+      Acute.
+
+  - part: proof
+    text: "so that the angle AGB adjacent to it is greater than a right angle."
+    highlight: [angAGB]
+    hint: |
+      Adjacent angles make two right angles ([[I.13]]).
+
+  - part: proof
+    text: "And it was proved equal to the angle at F; therefore the angle at F is also greater than a right angle."
+    highlight: [angAGB, angDFE]
+    hint: |
+      So the angle at {F} would be obtuse.
+
+  - part: proof
+    text: "But it is by hypothesis less than a right angle: which is absurd."
+    highlight: [angDFE]
+    hint: |
+      Contradiction.
+
+  - part: proof
+    text: "Therefore the angle ABC is not unequal to the angle DEF; therefore it is equal to it."
+    highlight: [angABC, angDEF]
+    hint: |
+      So the angles at {B} and {E} are equal.
+
+  - part: proof
+    text: "But the angle at A is also equal to the angle at D; therefore the remaining angle at C is equal to the remaining angle at F."
+    highlight: [angBAC, angEDF, angACB, angDFE]
+    hint: |
+      [[I.32]].
+
+  - part: proof
+    text: "Therefore the triangle ABC is equiangular with the triangle DEF."
+    highlight: [ABC, DEF]
+    hint: |
+      Case 1 done.
+
+  - part: setting-out
+    text: "But, again, let each of the angles at C, F be supposed not less than a right angle;"
+    highlight: [angACB, angDFE]
+    hint: |
+      Case 2: both angles right or obtuse.
+
+  - part: specification
+    text: "I say again that, in this case too, the triangle ABC is equiangular with the triangle DEF."
+    highlight: [ABC, DEF]
+    hint: |
+      The same goal.
+
+  - part: proof
+    text: "For, with the same construction, we can prove similarly that BC is equal to BG; so that the angle at C is also equal to the angle BGC."
+    highlight: [BC, BG, angACB, angBGC]
+    hint: |
+      As before.
+
+  - part: proof
+    text: "But the angle at C is not less than a right angle; therefore neither is the angle BGC less than a right angle."
+    highlight: [angACB, angBGC]
+    hint: |
+      Both right or obtuse.
+
+  - part: proof
+    text: "Thus in the triangle BGC the two angles are not less than two right angles: which is impossible."
+    highlight: [BGC, angACB, angBGC]
+    hint: |
+      Two angles of a triangle are less than two right angles ([[I.17]]).
+
+  - part: proof
+    text: "Therefore, once more, the angle ABC is not unequal to the angle DEF; therefore it is equal to it."
+    highlight: [angABC, angDEF]
+    hint: |
+      Equal.
+
+  - part: proof
+    text: "But the angle at A is also equal to the angle at D; therefore the remaining angle at C is equal to the remaining angle at F."
+    highlight: [angACB, angDFE]
+    hint: |
+      [[I.32]].
+
+  - part: proof
+    text: "Therefore the triangle ABC is equiangular with the triangle DEF."
+    highlight: [ABC, DEF]
+    hint: |
+      Case 2 done.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      text: |
+        If the angles at {B} and {E} differed, a point {G} on {AC} with the angle {ABG|angABG} equal to {DEF|angDEF} would give
+        {ABG} similar to {DEF}, hence $BG = BC$: the isosceles triangle {BGC} has equal base angles at {G} and {C}.
+    - steps: [11, 12, 13, 14, 15, 16, 17]
+      text: |
+        Then the angle at {C} and the angle at {F} (equal to {AGB|angAGB}, supplementary to {BGC|angBGC}) lie on opposite sides of a right angle, contradicting
+        the hypothesis.
+    - steps: [18, 19, 20, 21, 22, 23, 24, 25]
+      text: |
+        If both are $\ge 90^\circ$, the isosceles triangle {BGC} would have two angles $\ge 90^\circ$: impossible.
+        $\blacksquare$
+  closing: |
+    The law of sines shows what is going on: $\sin C = \frac{AB}{BC}\sin A$ fixes $\sin C$, which leaves two
+    candidates for $C$, one acute and one obtuse. The hypothesis picks one.
+
+commentary: |
+  Joyce notes that Book I has no side-side-angle congruence theorem to match this similarity theorem. The
+  ambiguity it guards against is the same one that makes "SSA" fail as a congruence test.

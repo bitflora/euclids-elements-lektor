@@ -1,0 +1,101 @@
+id: VIII.26
+kind: theorem
+title: Similar plane numbers are as a square to a square
+
+paraphrase: |
+  Two similar plane numbers {A}, {B} have the ratio of one square number to another.
+
+diagram:
+  width: 300
+  height: 140
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "C0;point;free;-1000,75;0;0"
+    - "C3;point;free;1000,75;0;0"
+    - "D0;point;free;-1000,110;0;0"
+    - "D3;point;free;1000,110;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,100,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;A0,A3,130,0;0"
+    - "B2;point;lineSlider;A0,A3,250,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,100,0;0"
+    - "C2;point;meanProportional;A1,A2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;lineSlider;D0,D3,70,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;D0,D3,100,0;0"
+    - "E2;point;proportion;A1,A2,B1,B2,D1,D2,E1,D3;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;D0,D3,210,0;0"
+    - "F2;point;proportion;A1,A2,C1,C2,D1,D2,F1,D3;0"
+    - "F;line;connect;F1,F2;black"
+  caption: |
+    {C} is the mean between {A} and {B}; {D}, {E}, {F} are the least numbers in their ratio.
+
+steps:
+  - part: enunciation
+    text: "Similar plane numbers have to one another the ratio which a square number has to a square number."
+    highlight: [A, B]
+    hint: |
+      Similar plane numbers are in the ratio of two squares.
+    modern: |
+      $a, b$ similar plane $\Rightarrow a : b = s^2 : t^2$.
+
+  - part: setting-out
+    text: "Let A, B be similar plane numbers;"
+    highlight: [A, B]
+    hint: |
+      {A}, {B} similar plane numbers.
+
+  - part: specification
+    text: "I say that A has to B the ratio which a square number has to a square number."
+    highlight: [A, B]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since A, B are similar plane numbers, therefore one mean proportional number falls between A, B."
+    highlight: [A, B]
+    hint: |
+      [[VIII.18]].
+
+  - part: construction
+    text: "Let it so fall, and let it be C; and let D, E, F, the least numbers of those which have the same ratio with A, C, B, be taken;"
+    highlight: [C, D, E, F]
+    hint: |
+      The mean {C}; least numbers {D}, {E}, {F} in the ratio of {A}, {C}, {B}.
+
+  - part: proof
+    text: "therefore the extremes of them D, F are square."
+    highlight: [D, F]
+    hint: |
+      The porism of [[VIII.2]].
+
+  - part: proof
+    text: "And since, as D is to F, so is A to B, and D, F are square, therefore A has to B the ratio which a square number has to a square number."
+    highlight: [D, F, A, B]
+    hint: |
+      {A} : {B} = {D} : {F} ([[VII.14]]).
+    cites: [VII.14]
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        $pq : rs$ with $p : q = r : s$: write the common ratio $p/r = q/s = u/v$; then $pq/rs = u^2/v^2$.
+        $\blacksquare$
+
+commentary: |
+  Used in [[IX.10]] and in [[X.9]], where Euclid proves that squares on commensurable lines are as square
+  numbers — the starting point of the theory of irrationals.

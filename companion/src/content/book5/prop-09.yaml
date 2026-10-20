@@ -1,0 +1,120 @@
+id: V.9
+kind: theorem
+title: Magnitudes with the same ratio to the same are equal
+
+paraphrase: |
+  If {A} : {C} = {B} : {C}, then {A} = {B}; and if {C} : {A} = {C} : {B}, then {A} = {B}. The converse of [[V.7]].
+
+diagram:
+  width: 250
+  height: 95
+  elements:
+    - "U0;point;free;-1000,30;0;0"
+    - "U1;point;free;1000,30;0;0"
+    - "V0;point;free;-1000,75;0;0"
+    - "V1;point;free;1000,75;0;0"
+    - "A0;point;lineSlider;U0,U1,30,40;0"
+    - "A1;point;lineSlider;U0,U1,100,40;0"
+    - "A;line;connect;A0,A1;black;0;green"
+    - "B0;point;lineSlider;U0,U1,150,40;0"
+    - "B1;point;cutoff;B0,U1,A0,A1;0"
+    - "B;line;connect;B0,B1;black;0;green"
+    - "C0;point;lineSlider;V0,V1,70,40;0"
+    - "C1;point;lineSlider;V0,V1,170,40;0"
+    - "C;line;connect;C0,C1;black;0;green"
+  caption: |
+    The conclusion drawn in: {B} equal to {A}.
+
+steps:
+  - part: enunciation
+    text: "Magnitudes which have the same ratio to the same are equal to one another; and magnitudes to which the same has the same ratio are equal."
+    highlight: [A, B, C]
+    hint: |
+      $A : C = B : C \Rightarrow A = B$, and $C : A = C : B \Rightarrow A = B$.
+    explain:
+      implicit: |
+        This is how Book V gets back from ratios to magnitudes: later books prove two magnitudes equal by
+        showing they have the same ratio to a third (e.g. [[VI.2]], [[VI.14]]).
+
+  - part: setting-out
+    text: "For let each of the magnitudes A, B have the same ratio to C;"
+    highlight: [A, B, C]
+    hint: |
+      Suppose $A : C = B : C$.
+
+  - part: specification
+    text: "I say that A is equal to B."
+    highlight: [A, B]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, otherwise, each of the magnitudes A, B would not have had the same ratio to C;"
+    highlight: [A, B, C]
+    hint: |
+      If {A} ≠ {B}, the greater would have the greater ratio to {C} ([[V.8]]).
+    explain:
+      justification: |
+        [[V.8]]: if, say, $A > B$, then $A : C > B : C$.
+      implicit: |
+        That "greater ratio" and "same ratio" cannot both hold. Euclid never proves it; it follows from
+        [[V.Def.5]] and [[V.Def.7]], whose conditions contradict each other for the witness pair $(m, n)$.
+    gap: |
+      The exclusivity of "same" and "greater" ratio is assumed, not proved.
+
+  - part: proof
+    text: "but it has; therefore A is equal to B."
+    highlight: [A, B]
+    hint: |
+      Contradiction: so {A} = {B}.
+
+  - part: setting-out
+    text: "Again, let C have the same ratio to each of the magnitudes A, B;"
+    highlight: [C, A, B]
+    hint: |
+      Suppose $C : A = C : B$.
+
+  - part: specification
+    text: "I say that A is equal to B."
+    highlight: [A, B]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, otherwise, C would not have had the same ratio to each of the magnitudes A, B;"
+    highlight: [C, A, B]
+    hint: |
+      If {A} ≠ {B}, {C} would have a greater ratio to the less ([[V.8]], second part).
+
+  - part: proof
+    text: "but it has; therefore A is equal to B."
+    highlight: [A, B]
+    hint: |
+      Contradiction again.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4]
+      text: |
+        If $A > B$, [[V.8]] gives $m, n$ with $mA > nC \ge mB$; but $A : C = B : C$ requires
+        $mA > nC \Rightarrow mB > nC$. Contradiction; likewise if $A < B$. So $A = B$.
+    - steps: [5, 6, 7, 8]
+      text: |
+        The second part is the same with the roles of antecedent and consequent exchanged. $\blacksquare$
+
+commentary: |
+  Joyce notes that, through [[V.8]], this proof also depends on [[V.Def.4]]: with infinitesimals,
+  $c + y$ and $c + 2y$ ($y$ infinitesimal) would have the same ratio to $c$ under [[V.Def.5]] without being
+  equal.

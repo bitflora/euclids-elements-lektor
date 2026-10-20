@@ -1,0 +1,170 @@
+id: VI.16
+kind: theorem
+title: Product of extremes equals product of means
+
+paraphrase: |
+  Four lines are proportional, {AB} : {CD} = {E} : {F}, exactly when the rectangle on the extremes {AB}, {F} equals the
+  rectangle on the means {CD}, {E}.
+
+diagram:
+  width: 380
+  height: 220
+  elements:
+    - "A;point;free;40,120"
+    - "B;point;free;170,120"
+    - "C;point;free;220,150"
+    - "D;point;free;350,150"
+    - "L0;point;free;-1000,190;0;0"
+    - "L1;point;free;1000,190;0;0"
+    - "E0;point;lineSlider;L0,L1,40,0;0"
+    - "E1;point;lineSlider;L0,L1,140,0;0"
+    - "E;line;connect;E0,E1;black"
+    - "F0;point;lineSlider;L0,L1,220,0;0"
+    - "F1;point;lineSlider;L0,L1,290,0;0"
+    - "F;line;connect;F0,F1;black"
+    - "Gp;point;perpendicular;A,B;0;0"
+    - "G;point;cutoff;A,Gp,F0,F1"
+    - "BG;polygon;parallelogram;B,A,G;0;0;black;#efe4d2"
+    - "Hp;point;perpendicular;C,D;0;0"
+    - "H;point;cutoff;C,Hp,E0,E1"
+    - "DH;polygon;parallelogram;D,C,H;0;0;black;#dfe7ea"
+    - "AB;line;connect;A,B;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "AG;line;connect;A,G;0;0;0"
+    - "CH;line;connect;C,H;0;0;0"
+  given: [A, B, C, D, L0, L1, E0, E1, E, F0, F1, F, AB, CD]
+  caption: |
+    Drag the ends of {AB}, {CD}, {E}, {F}. {AG} is made equal to {F} and {CH} to {E}. The rectangles {BG}, {DH} are equal exactly
+    when $AB : CD = E : F$.
+
+steps:
+  - part: enunciation
+    text: "If four straight lines be proportional, the rectangle contained by the extremes is equal to the rectangle contained by the means; and, if the rectangle contained by the extremes be equal to the rectangle contained by the means, the four straight lines will be proportional."
+    highlight: [AB, CD, E, F]
+    hint: |
+      $a : b = c : d \iff ad = bc$, for lines.
+    modern: |
+      $$AB : CD = E : F \iff AB\cdot F = CD\cdot E$$
+
+  - part: setting-out
+    text: "Let the four straight lines AB, CD, E, F be proportional, so that, as AB is to CD, so is E to F;"
+    highlight: [AB, CD, E, F]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the rectangle contained by AB, F is equal to the rectangle contained by CD, E."
+    highlight: [AB, F, CD, E]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let AG, CH be drawn from the points A, C at right angles to the straight lines AB, CD, and let AG be made equal to F, and CH equal to E."
+    highlight: [AG, CH]
+    adds: [Gp, G, AG, Hp, H, CH]
+    hint: |
+      Perpendiculars ([[I.11]]) of lengths {F} and {E} ([[I.3]]).
+
+  - part: construction
+    text: "Let the parallelograms BG, DH be completed."
+    highlight: [BG, DH]
+    adds: [BG, DH]
+    hint: |
+      The two rectangles.
+
+  - part: proof
+    text: "Then since, as AB is to CD, so is E to F, while E is equal to CH, and F to AG, therefore, as AB is to CD, so is CH to AG."
+    highlight: [AB, CD, CH, AG]
+    hint: |
+      Substitute the equal lines.
+    cites: [V.7, V.11]
+
+  - part: proof
+    text: "Therefore in the parallelograms BG, DH the sides about the equal angles are reciprocally proportional."
+    highlight: [BG, DH]
+    hint: |
+      $AB : CD = CH : AG$ is reciprocal proportion ([[VI.Def.2]]).
+
+  - part: proof
+    text: "But those equiangular parallelograms in which the sides about the equal angles are reciprocally proportional are equal; therefore the parallelogram BG is equal to the parallelogram DH."
+    highlight: [BG, DH]
+    hint: |
+      [[VI.14]] (both are rectangles, so equiangular).
+
+  - part: proof
+    text: "And BG is the rectangle AB, F, for AG is equal to F; and DH is the rectangle CD, E, for E is equal to CH; therefore the rectangle contained by AB, F is equal to the rectangle contained by CD, E."
+    highlight: [BG, DH]
+    hint: |
+      First part done.
+
+  - part: setting-out
+    text: "Next, let the rectangle contained by AB, F be equal to the rectangle contained by CD, E;"
+    highlight: [BG, DH]
+    hint: |
+      Converse.
+
+  - part: specification
+    text: "I say that the four straight lines will be proportional, so that, as AB is to CD, so is E to F."
+    highlight: [AB, CD, E, F]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, with the same construction, since the rectangle AB, F is equal to the rectangle CD, E, and the rectangle AB, F is BG, for AG is equal to F, and the rectangle CD, E is DH, for CH is equal to E, therefore BG is equal to DH."
+    highlight: [BG, DH]
+    hint: |
+      The rectangles are equal.
+
+  - part: proof
+    text: "And they are equiangular"
+    highlight: [BG, DH]
+    hint: |
+      All their angles are right.
+
+  - part: proof
+    text: "But in equal and equiangular parallelograms the sides about the equal angles are reciprocally proportional."
+    highlight: [BG, DH]
+    hint: |
+      [[VI.14]].
+
+  - part: proof
+    text: "Therefore, as AB is to CD, so is CH to AG."
+    highlight: [AB, CD, CH, AG]
+    hint: |
+      Reciprocal proportion.
+
+  - part: proof
+    text: "But CH is equal to E, and AG to F; therefore, as AB is to CD, so is E to F."
+    highlight: [CH, E, AG, F]
+    hint: |
+      Substitute back.
+    cites: [V.7, V.11]
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: |
+        $AB : CD = E : F \Rightarrow AB\cdot F = CD\cdot E$: cross-multiply.
+    - steps: [9, 10, 11, 12, 13, 14, 15]
+      text: |
+        And conversely, divide. $\blacksquare$
+  closing: |
+    The rule of cross-multiplication, which Euclid has to prove because a ratio is not a fraction and a
+    "product" of lines is a rectangle.
+
+commentary: |
+  VI.16 links the two languages of Greek geometric algebra: proportions (Book V) and rectangles (Book II).
+  Joyce notes that it is a special case of [[VI.14]] and hardly needs so long a proof; it, and especially
+  its square case [[VI.17]], is used constantly in Books X and XIII.

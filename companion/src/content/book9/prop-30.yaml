@@ -1,0 +1,121 @@
+id: IX.30
+kind: theorem
+title: An odd number measuring an even number measures its half
+
+paraphrase: |
+  If an odd number {A} measures an even number {B}, it also measures half of {B}.
+
+diagram:
+  width: 230
+  height: 140
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "C0;point;free;-1000,110;0;0"
+    - "C3;point;free;1000,110;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,35;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,90,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,200,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;A1,A2,B1,B2,U1,U2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+  caption: |
+    {B} = {A}·{C}.
+
+steps:
+  - part: enunciation
+    text: "If an odd number measure an even number, it will also measure the half of it."
+    highlight: [A, B]
+    hint: |
+      $a$ odd, $a \mid 2m \Rightarrow a \mid m$.
+    modern: |
+      $a$ odd, $a \mid 2m \Rightarrow a \mid m$.
+
+  - part: setting-out
+    text: "For let the odd number A measure the even number B;"
+    highlight: [A, B]
+    hint: |
+      {A} odd measures {B} even.
+
+  - part: specification
+    text: "I say that it will also measure the half of it."
+    highlight: [A, B]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For, since A measures B, let it measure it according to C;"
+    highlight: [C]
+    hint: |
+      {B} = {C} copies of {A}.
+
+  - part: specification
+    text: "I say that C is not odd."
+    highlight: [C]
+    hint: |
+      First: {C} is even.
+
+  - part: proof
+    text: "For, if possible, let it be so."
+    highlight: [C]
+    hint: |
+      Suppose {C} odd.
+
+  - part: proof
+    text: "Then, since A measures B according to C, therefore A by multiplying C has made B."
+    highlight: [A, C, B]
+    hint: |
+      {B} = {A}{C}.
+
+  - part: proof
+    text: "Therefore B is made up of odd numbers the multitude of which is odd."
+    highlight: [B]
+    hint: |
+      An odd number of odd summands.
+
+  - part: proof
+    text: "Therefore B is odd: which is absurd, for by hypothesis it is even."
+    highlight: [B]
+    hint: |
+      [[IX.23]] (in effect [[IX.29]]).
+
+  - part: proof
+    text: "Therefore C is not odd; therefore C is even."
+    highlight: [C]
+    hint: |
+      {C} even.
+
+  - part: proof
+    text: "Thus A measures B an even number of times."
+    highlight: [A, B]
+    hint: |
+      {B} = {A} taken an even number of times.
+
+  - part: proof
+    text: "For this reason then it also measures the half of it."
+    highlight: [A, B]
+    hint: |
+      Half of {B} is {A} taken half as many times.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [4, 5, 6, 7, 8, 9]
+      text: |
+        $2m = ac$ with $a$ odd forces $c$ even ([[IX.29]]), $c = 2k$.
+    - steps: [10, 11]
+      text: |
+        Then $m = ak$. $\blacksquare$

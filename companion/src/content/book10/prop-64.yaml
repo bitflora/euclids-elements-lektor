@@ -1,0 +1,126 @@
+id: X.64
+kind: theorem
+title: The square on the side of a rational plus a medial area applied to a rational line gives a fifth binomial
+
+paraphrase: |
+  If the square on a side of a rational plus a medial area {AB} is applied to a rational line {DE}, the breadth {DG} is a fifth
+  binomial. The converse of [[X.58]].
+
+diagram:
+  width: 270
+  height: 200
+  elements:
+    - "A0;point;free;-1000,160;0;0"
+    - "A3;point;free;1000,160;0;0"
+    - "D0;point;free;40,-1000;0;0"
+    - "D3;point;free;40,1000;0;0"
+    - "A;point;lineSlider;A0,A3,60,0"
+    - "B;point;lineSlider;A0,A3,180,0"
+    - "C;point;lineSlider;A0,A3,130,0"
+    - "AB;line;connect;A,B"
+    - "D;point;lineSlider;D0,D3,0,40"
+    - "E;point;lineSlider;D0,D3,0,120"
+    - "G';point;parallelogram;D,A0,A3;0;0"
+    - "G;point;proportion;D,E,A,B,A,B,D,G'"
+    - "F;point;parallelogram;E,D,G"
+    - "EDGF;polygon;quadrilateral;E,D,G,F;0;0;black;random"
+    - "K;point;proportion;D,E,A,C,A,C,D,G'"
+    - "EDKH;polygon;parallelogram;E,D,K;0;0;black;random"
+    - "H;point;vertex;EDKH,4"
+    - "M;point;proportion;D,E,B,C,B,C,K,G'"
+    - "HKML;polygon;parallelogram;H,K,M;0;0;black;random"
+    - "L;point;vertex;HKML,4"
+    - "N;point;midpoint;M,G"
+    - "O;point;parallelogram;E,D,N"
+    - "NO;line;connect;N,O"
+    - "DG;line;connect;D,G;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+    - "DM;line;connect;D,M;0;0;0"
+    - "MG;line;connect;M,G;0;0;0"
+    - "DK;line;connect;D,K;0;0;0"
+    - "KM;line;connect;K,M;0;0;0"
+  aliases: { DF: EDGF, DH: EDKH, KL: HKML, BA: AB, ON: NO, GD: DG, ED: DE, CA: AC, BC: CB, MD: DM, GM: MG, KD: DK, MK: KM }
+  caption: |
+    sq({AB}) is applied to the rational line {DE} as {DF}, with breadth {DG}; {DH} = sq({AC}), {KL} =
+    sq({CB}); the rest, *MF*, is 2·rect({AC},{CB}), bisected at {N}.
+
+steps:
+  - part: enunciation
+    text: "The square on the side of a rational plus a medial area applied to a rational straight line produces as breadth the fifth binomial."
+    highlight: [AB, DG]
+    hint: |
+      Squaring undoes [[X.58]]: a side of a rational plus a medial area squared and divided by a rational line is a fifth binomial.
+
+  - part: proof
+    text: "Let AB be the side of a rational plus a medial area, divided into its straight lines at C, so that AC is the greater; let a rational straight line DE be set out, and let there be applied to DE the parallelogram DF equal to the square on AB, producing DG as its breadth; I say that DG is a fifth binomial straight line."
+    highlight: [AB, DE, DF, DG]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "Let the same construction as before be made."
+    highlight: [DH, KL]
+    hint: |
+      The construction of [[X.60]].
+
+  - part: proof
+    text: "Since then AB is the side of a rational plus a medial area, divided at C, therefore AC, CB are straight lines incommensurable in square which make the sum of the squares on them medial, but the rectangle contained by them rational."
+    highlight: [AC, CB]
+    hint: |
+      Medial sum of squares, rational rectangle.
+
+  - part: proof
+    text: "Since then the sum of the squares on AC, CB is medial, therefore DL is medial, so that DM is rational and incommensurable in length with DE."
+    highlight: [DM]
+    hint: |
+      {DM} rational, incommensurable with {DE}.
+
+  - part: proof
+    text: "Again, since twice the rectangle AC, CB, that is MF, is rational, therefore MG is rational and commensurable with DE."
+    highlight: [MG]
+    hint: |
+      {MG} commensurable with {DE}.
+
+  - part: proof
+    text: "Therefore DM is incommensurable with MG; therefore DM, MG are rational straight lines commensurable in square only; therefore DG is binomial."
+    highlight: [DG]
+    hint: |
+      {DG} binomial.
+
+  - part: specification
+    text: "I say next that it is also a fifth binomial straight line."
+    highlight: [DG]
+    hint: |
+      A fifth binomial:
+
+  - part: proof
+    text: "For it can be proved similarly that the rectangle DK, KM is equal to the square on MN, and that DK is incommensurable in length with KM; therefore the square on DM is greater than the square on MG by the square on a straight line incommensurable with DM."
+    highlight: [DK, KM, DM]
+    hint: |
+      {DK}, {KM} incommensurable: the excess is incommensurable with {DM}.
+
+  - part: proof
+    text: "And DM, MG are commensurable in square only, and the less, MG, is commensurable in length with DE."
+    highlight: [MG, DE]
+    hint: |
+      The lesser term {MG} commensurable with {DE}.
+
+  - part: proof
+    text: "Therefore DG is a fifth binomial."
+    highlight: [DG]
+    hint: |
+      Fifth binomial ([[X.Def.II.5]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $AB^2 = (AC^2 + CB^2) + 2AC\cdot CB$; divided by $\rho$, the two parts give the terms {DM}, {MG} of
+        a binomial, whose kind is read off from which part is rational and from [[X.17]]/[[X.18]].
+        $\blacksquare$

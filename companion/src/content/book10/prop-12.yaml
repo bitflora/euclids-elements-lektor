@@ -1,0 +1,150 @@
+id: X.12
+kind: theorem
+title: Magnitudes commensurable with the same magnitude are commensurable
+
+paraphrase: |
+  If {A} and {B} are each commensurable with {C}, they are commensurable with each other.
+
+diagram:
+  width: 320
+  height: 200
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "D0;point;free;-1000,65;0;0"
+    - "D3;point;free;1000,65;0;0"
+    - "E0;point;free;-1000,100;0;0"
+    - "E3;point;free;1000,100;0;0"
+    - "F0;point;free;-1000,135;0;0"
+    - "F3;point;free;1000,135;0;0"
+    - "G0;point;free;-1000,170;0;0"
+    - "G3;point;free;1000,170;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,30;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,100,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;A0,A3,130,0;0"
+    - "B2;point;lineSlider;A0,A3,220,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;A0,A3,250,0;0"
+    - "C2;point;lineSlider;A0,A3,290,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;lineSlider;D0,D3,80,0;0"
+    - "D;line;connect;D1,D2;black;0;blue"
+    - "E1;point;lineSlider;E0,E3,30,0;0"
+    - "E2;point;proportion;A1,A2,C1,C2,D1,D2,E1,E3;0"
+    - "E;line;connect;E1,E2;black;0;blue"
+    - "F1;point;lineSlider;F0,F3,30,0;0"
+    - "F2;point;lineSlider;F0,F3,90,0;0"
+    - "F;line;connect;F1,F2;black;0;blue"
+    - "G1;point;lineSlider;G0,G3,30,0;0"
+    - "G2;point;proportion;B1,B2,C1,C2,F1,F2,G1,G3;0"
+    - "G;line;connect;G1,G2;black;0;blue"
+    - "H1;point;lineSlider;E0,E3,150,0;0"
+    - "H2;point;lineSlider;E0,E3,270,0;0"
+    - "H;line;connect;H1,H2;black;0;blue"
+    - "K1;point;lineSlider;F0,F3,150,0;0"
+    - "K2;point;proportion;D1,D2,E1,E2,H1,H2,K1,F3;0"
+    - "K;line;connect;K1,K2;black;0;blue"
+    - "L1;point;lineSlider;G0,G3,150,0;0"
+    - "L2;point;proportion;F1,F2,G1,G2,K1,K2,L1,G3;0"
+    - "L;line;connect;L1,L2;black;0;blue"
+  caption: |
+    {A} : {C} = {D} : {E}, {C} : {B} = {F} : {G}; {H}, {K}, {L} are numbers continuously in these ratios.
+
+steps:
+  - part: enunciation
+    text: "Magnitudes commensurable with the same magnitude are commensurable with one another also."
+    highlight: [A, B, C]
+    hint: |
+      Commensurability is transitive.
+    modern: |
+      $a/c,\ c/b \in \mathbb{Q} \Rightarrow a/b \in \mathbb{Q}$.
+
+  - part: setting-out
+    text: "For let each of the magnitudes A, B be commensurable with C;"
+    highlight: [A, B, C]
+    hint: |
+      {A}, {B} each commensurable with {C}.
+
+  - part: specification
+    text: "I say that A is also commensurable with B."
+    highlight: [A, B]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since A is commensurable with C, therefore A has to C the ratio which a number has to a number."
+    highlight: [A, C]
+    hint: |
+      [[X.5]].
+
+  - part: construction
+    text: "Let it have the ratio which D has to E."
+    highlight: [D, E]
+    hint: |
+      {A} : {C} = {D} : {E}.
+
+  - part: proof
+    text: "Again, since C is commensurable with B, therefore C has to B the ratio which a number has to a number."
+    highlight: [C, B]
+    hint: |
+      [[X.5]] again.
+
+  - part: construction
+    text: "Let it have the ratio which F has to G."
+    highlight: [F, G]
+    hint: |
+      {C} : {B} = {F} : {G}.
+
+  - part: construction
+    text: "And, given any number of ratios we please, namely the ratio which D has to E and that which F has to G, let the numbers H, K, L be taken continuously in the given ratios; so that, as D is to E, so is H to K, and, as F is to G, so is K to L."
+    highlight: [H, K, L]
+    hint: |
+      Numbers {H}, {K}, {L} with {H} : {K} = {D} : {E} and {K} : {L} = {F} : {G} (cf. [[VIII.4]]).
+
+  - part: proof
+    text: "Since, then, as A is to C, so is D to E, while, as D is to E, so is H to K, therefore also, as A is to C, so is H to K."
+    highlight: [A, C, H, K]
+    hint: |
+      {A} : {C} = {H} : {K}.
+
+  - part: proof
+    text: "Again, since, as C is to B, so is F to G, while, as F is to G, so is K to L, therefore also, as C is to B, so is K to L."
+    highlight: [C, B, K, L]
+    hint: |
+      {C} : {B} = {K} : {L}.
+
+  - part: proof
+    text: "But also, as A is to C, so is H to K; therefore, ex aequali, as A is to B, so is H to L."
+    highlight: [A, B, H, L]
+    hint: |
+      Ex aequali: {A} : {B} = {H} : {L}.
+
+  - part: proof
+    text: "Therefore A has to B the ratio which a number has to a number; therefore A is commensurable with B."
+    highlight: [A, B]
+    hint: |
+      A ratio of numbers, so commensurable ([[X.6]]).
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11]
+      text: |
+        $a/b = (a/c)(c/b) \in \mathbb{Q}$. $\blacksquare$
+
+commentary: |
+  Euclid cannot multiply ratios, so he chains them with [[VIII.4]] and ex aequali. Used throughout Book X and
+  in [[XIII.11]].

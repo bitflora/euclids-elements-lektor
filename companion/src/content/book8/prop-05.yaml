@@ -1,0 +1,158 @@
+id: VIII.5
+kind: theorem
+title: Plane numbers are in the ratio compounded of their sides
+
+paraphrase: |
+  If {A} = {C}·{D} and {B} = {E}·{F}, then {A} : {B} is the ratio compounded of {C} : {E} and {D} : {F}. In
+  fractions: $\tfrac{cd}{ef} = \tfrac{c}{e}\cdot\tfrac{d}{f}$.
+
+diagram:
+  width: 280
+  height: 315
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "C0;point;free;-1000,110;0;0"
+    - "C3;point;free;1000,110;0;0"
+    - "E0;point;free;-1000,145;0;0"
+    - "E3;point;free;1000,145;0;0"
+    - "G0;point;free;-1000,180;0;0"
+    - "G3;point;free;1000,180;0;0"
+    - "H0;point;free;-1000,215;0;0"
+    - "H3;point;free;1000,215;0;0"
+    - "K0;point;free;-1000,250;0;0"
+    - "K3;point;free;1000,250;0;0"
+    - "L0;point;free;-1000,285;0;0"
+    - "L3;point;free;1000,285;0;0"
+    - "U0;point;free;1000,0;0;0"
+    - "U1;point;free;1000,20;0;0"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,100,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;C0,C3,180,0;0"
+    - "D2;point;lineSlider;C0,C3,220,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;proportion;U0,U1,C1,C2,D1,D2,A1,A3;0"
+    - "A;line;connect;A1,A2;black"
+    - "E1;point;lineSlider;E0,E3,30,0;0"
+    - "E2;point;lineSlider;E0,E3,80,0;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;E0,E3,180,0;0"
+    - "F2;point;lineSlider;E0,E3,230,0;0"
+    - "F;line;connect;F1,F2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;proportion;U0,U1,E1,E2,F1,F2,B1,B3;0"
+    - "B;line;connect;B1,B2;black"
+    - "G1;point;lineSlider;G0,G3,30,0;0"
+    - "G2;point;proportion;U0,U1,C1,C2,D1,D2,G1,G3;0"
+    - "G;line;connect;G1,G2;black"
+    - "H1;point;lineSlider;H0,H3,30,0;0"
+    - "H2;point;proportion;U0,U1,D1,D2,E1,E2,H1,H3;0"
+    - "H;line;connect;H1,H2;black"
+    - "K1;point;lineSlider;K0,K3,30,0;0"
+    - "K2;point;proportion;U0,U1,F1,F2,E1,E2,K1,K3;0"
+    - "K;line;connect;K1,K2;black"
+    - "L1;point;lineSlider;L0,L3,30,0;0"
+    - "L2;point;proportion;U0,U1,D1,D2,E1,E2,L1,L3;0"
+    - "L;line;connect;L1,L2;black"
+  caption: |
+    {A} = {C}{D}, {B} = {E}{F}. {G}, {H}, {K} are least with {G} : {H} = {C} : {E} and {H} : {K} = {D} :
+    {F}; {L} = {D}{E}.
+
+steps:
+  - part: enunciation
+    text: "Plane numbers have to one another the ratio compounded of the ratios of their sides."
+    highlight: [A, B]
+    hint: |
+      $cd : ef$ is the ratio $c : e$ compounded with $d : f$.
+    explain:
+      fact: |
+        *Compounding* two ratios $p : q$ and $q' : r'$: find numbers $x, y, z$ with $x : y = p : q$ and $y : z
+        = q' : r'$; then $x : z$ is the compound ratio ([[VIII.4]] supplies $x, y, z$). In modern terms it is
+        the product of the fractions.
+    modern: |
+      $\dfrac{cd}{ef} = \dfrac{c}{e} \cdot \dfrac{d}{f}$.
+
+  - part: setting-out
+    text: "Let A, B be plane numbers, and let the numbers C, D be the sides of A, and E, F of B;"
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      {A} = {C}{D}, {B} = {E}{F} ([[VII.Def.16]]).
+
+  - part: specification
+    text: "I say that A has to B the ratio compounded of the ratios of the sides."
+    highlight: [A, B]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For, the ratios being given which C has to E and D to F, let the least numbers G, H, K that are continuously in the ratios C: E, D: F be taken, so that, as C is to E, so is G to H, and, as D is to F, so is H to K."
+    highlight: [G, H, K]
+    hint: |
+      By [[VIII.4]]: {G} : {H} = {C} : {E} and {H} : {K} = {D} : {F}. Then {G} : {K} is the compound ratio.
+
+  - part: construction
+    text: "And let D by multiplying E make L."
+    highlight: [L]
+    hint: |
+      An intermediate product {L} = {D}{E}.
+
+  - part: proof
+    text: "Now, since D by multiplying C has made A, and by multiplying E has made L, therefore, as C is to E, so is A to L."
+    highlight: [C, E, A, L]
+    hint: |
+      [[VII.17]]: {C} : {E} = {D}{C} : {D}{E} = {A} : {L}.
+
+  - part: proof
+    text: "But, as C is to E, so is G to H; therefore also, as G is to H, so is A to L."
+    highlight: [G, H, A, L]
+    hint: |
+      {G} : {H} = {A} : {L}.
+
+  - part: proof
+    text: "Again, since E by multiplying D has made L, and further by multiplying F has made B, therefore, as D is to F, so is L to B."
+    highlight: [D, F, L, B]
+    hint: |
+      [[VII.17]]: {D} : {F} = {E}{D} : {E}{F} = {L} : {B}.
+
+  - part: proof
+    text: "But, as D is to F, so is H to K; therefore also, as H is to K, so is L to B."
+    highlight: [H, K, L, B]
+    hint: |
+      {H} : {K} = {L} : {B}.
+
+  - part: proof
+    text: "But it was also proved that, as G is to H, so is A to L; therefore, ex aequali, as G is to K, so is A to B."
+    highlight: [G, K, A, B]
+    hint: |
+      Ex aequali ([[VII.14]]): {G} : {K} = {A} : {B}.
+
+  - part: proof
+    text: "But G has to K the ratio compounded of the ratios of the sides; therefore A also has to B the ratio compounded of the ratios of the sides."
+    highlight: [A, B]
+    hint: |
+      So {A} : {B} is the compound ratio.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [5, 6, 7, 8, 9, 10]
+      text: |
+        $\dfrac{cd}{ef} = \dfrac{cd}{de}\cdot\dfrac{de}{ef} = \dfrac{c}{e}\cdot\dfrac{d}{f}$. $\blacksquare$
+
+commentary: |
+  The arithmetic twin of [[VI.23]] (equiangular parallelograms are in the ratio compounded of their sides).
+  "Compounded ratio" is never defined in Heath's text of the *Elements*; Book VI's Def. 5, which tried to
+  define it, is regarded as an interpolation. Its meaning is fixed by use, as here.
+
+  Joyce discusses compound ratios at length: duplicate and triplicate ratios ([[V.Def.9]], [[V.Def.10]])
+  are the special cases where the two ratios are the same.

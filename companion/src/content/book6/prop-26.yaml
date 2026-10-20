@@ -1,0 +1,140 @@
+id: VI.26
+kind: theorem
+title: A similar parallelogram at a common angle lies about the diameter
+
+paraphrase: |
+  If a parallelogram {AF} similar to {ABCD}, and similarly placed, is cut from it at the common angle {DAB}, then {AF}
+  lies along the same diagonal as {ABCD}. The converse of [[VI.24]].
+
+diagram:
+  width: 330
+  height: 250
+  elements:
+    - "A;point;free;60,40"
+    - "B;point;free;40,210"
+    - "C;point;free;260,210"
+    - "ABCD;polygon;parallelogram;A,B,C;0;0;black;0"
+    - "D;point;vertex;ABCD,4"
+    - "E;point;lineSlider;A,B,50,100"
+    - "Fp;point;parallelogram;A,D,E;0;0"
+    - "AC;line;connect;A,C"
+    - "F;point;intersection;A,C,E,Fp"
+    - "AEFG;polygon;parallelogram;A,E,F;0;0;black;#efe4d2"
+    - "G;point;vertex;AEFG,4"
+    - "H;point;lineSlider;F,G,80,120"
+    - "FH;line;connect;F,H"
+    - "HK;line;parallel;H,G,A"
+    - "K;point;last;HK"
+    - "AH;line;connect;A,H"
+    - "CH;line;connect;C,H"
+    - "AKHG;polygon;quadrilateral;A,K,H,G;0;0;0;0"
+    - "DA;line;connect;D,A;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "GA;line;connect;G,A;0;0;0"
+    - "AK;line;connect;A,K;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "GF;line;connect;G,F;0;0;0"
+    - "angDAB;sector;angleMarker;A,D,B"
+  aliases:
+    AF: AEFG
+    EG: AEFG
+    KG: AKHG
+    AHC: AH
+    AD: DA
+    DAB: angDAB
+  given: [A, B, C, ABCD, D, E, Fp, AC, F, AEFG, G, DA, AB, GA, AE, GF, angDAB]
+  caption: |
+    {AF} is constructed similar to {ABCD}; it lies on the diagonal {AC}. {H}, on {GF} produced, is the point of the
+    reductio, where a supposed different diagonal {AHC} would cross. Slide {H}: the lines {AH} and {CH} line up only when {H}
+    reaches {F}.
+
+steps:
+  - part: enunciation
+    text: "If from a parallelogram there be taken away a parallelogram similar and similarly situated to the whole and having a common angle with it, it is about the same diameter with the whole"
+    highlight: [ABCD, AF, AC]
+    hint: |
+      Converse of [[VI.24]]: similar and at a common corner ⇒ on the same diagonal.
+
+  - part: setting-out
+    text: "For from the parallelogram ABCD let there be taken away the parallelogram AF similar and similarly situated to ABCD, and having the angle DAB common with it;"
+    highlight: [ABCD, AF, angDAB]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that ABCD is about the same diameter with AF."
+    highlight: [ABCD, AF, AC]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For suppose it is not, but, if possible, let AHC be the diameter ⟨of ABCD⟩, let GF be produced and carried through to H, and let HK be drawn through H parallel to either of the straight lines AD, BC."
+    highlight: [AHC, FH, HK]
+    adds: [H, FH, HK, K, AH, CH, AKHG, AK]
+    hint: |
+      Suppose the diagonal of {ABCD} misses {F}, crossing {GF} produced at {H}; draw {HK} parallel to {AD} ([[I.31]]).
+    explain:
+      did: |
+        The words in angle brackets, "of {ABCD}", are Heath's addition.
+
+  - part: proof
+    text: "Since, then, ABCD is about the same diameter with KG, therefore, as DA is to AB, so is GA to AK."
+    highlight: [ABCD, KG, DA, AB, GA, AK]
+    hint: |
+      {KG} lies on the supposed diagonal, so it is similar to {ABCD} ([[VI.24]]).
+
+  - part: proof
+    text: "But also, because of the similarity of ABCD, EG, as DA is to AB, so is GA to AE;"
+    highlight: [DA, AB, GA, AE]
+    hint: |
+      The hypothesis.
+
+  - part: proof
+    text: "therefore also, as GA is to AK, so is GA to AE."
+    highlight: [GA, AK, AE]
+    hint: |
+      [[V.11]].
+
+  - part: proof
+    text: "Therefore GA has the same ratio to each of the straight lines AK, AE."
+    highlight: [GA, AK, AE]
+    hint: |
+      Same ratio to both.
+
+  - part: proof
+    text: "Therefore AE is equal to AK, the less to the greater: which is impossible."
+    highlight: [AE, AK]
+    hint: |
+      [[V.9]] — but {AK} is part of {AE} or {AE} of {AK}. Contradiction.
+
+  - part: proof
+    text: "Therefore ABCD cannot but be about the same diameter with AF; therefore the parallelogram ABCD is about the same diameter with the parallelogram AF."
+    highlight: [ABCD, AF, AC]
+    hint: |
+      The diagonal passes through {F}.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      text: |
+        Similarity with the common angle at {A} gives $AE : AB = AG : AD$, so the dilation at {A} with ratio
+        $AE : AB$ maps {B} to {E}, {D} to {G}, hence {C} to {F}: {A}, {F}, {C} are collinear. $\blacksquare$
+
+commentary: |
+  Joyce notes that VI.26 is used in the next three propositions, the application of areas with defect and
+  excess, and in Book X.
+
+gaps: |
+  - **Only one case**: Euclid draws the supposed diagonal on one side of {F}; the other side is similar.

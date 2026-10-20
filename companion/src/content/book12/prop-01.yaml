@@ -1,0 +1,126 @@
+id: XII.1
+kind: theorem
+title: Similar polygons in circles are as the squares on the diameters
+
+paraphrase: |
+  Similar polygons inscribed in circles are to one another as the squares on the diameters of the circles.
+
+diagram:
+  width: 440
+  height: 250
+  elements:
+    - "A;point;free;110,40"
+    - "B;point;free;50,100"
+    - "C;point;free;80,200"
+    - "ABC;circle;circumcircle;A,B,C;0;0;black;random"
+    - "D;point;circleSlider;ABC,200,180"
+    - "E;point;circleSlider;ABC,210,90"
+    - "F;point;free;308,50"
+    - "G;point;free;260,98"
+    - "H;point;similar;F,G,A,B,C"
+    - "K;point;similar;F,G,A,B,D"
+    - "L;point;similar;F,G,A,B,E"
+    - "FGH;circle;circumcircle;F,G,H;0;0;black;random"
+    - "ABCDE;polygon;pentagon;A,B,C,D,E;0;0;black;random"
+    - "FGHKL;polygon;pentagon;F,G,H,K,L;0;0;black;random"
+    - "ABCcenter;point;center;ABC;0;0"
+    - "M;point;extend;B,ABCcenter,B,ABCcenter"
+    - "FGHcenter;point;center;FGH;0;0"
+    - "N;point;extend;G,FGHcenter,G,FGHcenter"
+    - "BM;line;connect;B,M"
+    - "GN;line;connect;G,N"
+    - "AM;line;connect;A,M"
+    - "FN;line;connect;F,N"
+    - "BE;line;connect;B,E"
+    - "GL;line;connect;G,L"
+  aliases: { MB: BM, NG: GN, MA: AM, NF: FN, EB: BE, LG: GL }
+  caption: |
+    Similar pentagons {ABCDE}, {FGHKL} inscribed in circles with diameters {BM}, {GN}.
+
+steps:
+  - part: enunciation
+    text: "Similar polygons inscribed in circles are to one another as the squares on the diameters."
+    highlight: [ABCDE, FGHKL]
+    hint: |
+      Inscribed similar polygons scale like the squares of the diameters.
+
+  - part: setting-out
+    text: "Let ABC, FGH be circles, let ABCDE, FGHKL be similar polygons inscribed in them, and let BM, GN be diameters of the circles; I say that, as the square on BM is to the square on GN, so is the polygon ABCDE to the polygon FGHKL."
+    highlight: [ABCDE, FGHKL, BM, GN]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let BE, AM, GL, FN be joined."
+    highlight: [BE, AM, GL, FN]
+    hint: |
+      Join {BE}, {AM}, {GL}, {FN}.
+
+  - part: proof
+    text: "Now, since the polygon ABCDE is similar to the polygon FGHKL, the angle BAE is equal to the angle GFL, and, as BA is to AE, so is GF to FL. [VI. Def. I]"
+    highlight: [ABCDE, FGHKL]
+    hint: |
+      Similar polygons: ∠*BAE* = ∠*GFL*, sides proportional ([[VI.Def.1]]).
+    cites: [VI.Def.1]
+
+  - part: proof
+    text: "Thus BAE, GFL are two triangles which have one angle equal to one angle, namely the angle BAE to the angle GFL, and the sides about the equal angles proportional; therefore the triangle ABE is equiangular with the triangle FGL."
+    highlight: [BE, GL]
+    hint: |
+      Triangles *ABE*, *FGL* similar ([[VI.6]]) …
+
+  - part: proof
+    text: "Therefore the angle AEB is equal to the angle FLG."
+    highlight: [BE, GL]
+    hint: |
+      … ∠*AEB* = ∠*FLG*.
+
+  - part: proof
+    text: "But the angle AEB is equal to the angle AMB, for they stand on the same circumference; and the angle FLG to the angle FNG; therefore the angle AMB is also equal to the angle FNG."
+    highlight: [AM, FN]
+    hint: |
+      Angles on the same arc: ∠*AMB* = ∠*FNG* ([[III.27]]).
+
+  - part: proof
+    text: "But the right angle BAM is also equal to the right angle GFN; therefore the remaining angle is equal to the remaining angle."
+    highlight: [AM, FN]
+    hint: |
+      Right angles in semicircles ([[III.31]]), so the third angles are equal.
+
+  - part: proof
+    text: "Therefore the triangle ABM is equiangular with the triangle FGN."
+    highlight: [AM, FN, BM, GN]
+    hint: |
+      Triangles *ABM*, *FGN* equiangular …
+
+  - part: proof
+    text: "Therefore, proportionally, as BM is to GN, so is BA to GF."
+    highlight: [BM, GN]
+    hint: |
+      … *BM* : *GN* = *BA* : *GF* ([[VI.4]]).
+
+  - part: proof
+    text: "But the ratio of the square on BM to the square on GN is duplicate of the ratio of BM to GN, and the ratio of the polygon ABCDE to the polygon FGHKL is duplicate of the ratio of BA to GF; therefore also, as the square on BM is to the square on GN, so is the polygon ABCDE to the polygon FGHKL."
+    highlight: [BM, GN]
+    hint: |
+      Both ratios duplicated ([[VI.20]]): polygon : polygon = sq({BM}) : sq({GN}).
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [ABCDE, FGHKL]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Similar figures scale as the square of the ratio of corresponding lengths; the diameter is one such length.
+        $\blacksquare$
+
+commentary: |
+  The preliminary to [[XII.2]]: polygons are handled by Book VI; the circle needs the method of exhaustion.

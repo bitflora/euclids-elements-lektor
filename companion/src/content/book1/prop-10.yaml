@@ -1,0 +1,179 @@
+id: I.10
+kind: problem
+title: Bisecting a segment
+
+paraphrase: |
+  Given a segment {AB}, find its midpoint {D}.
+
+diagram:
+  width: 260
+  height: 220
+  elements:
+    - "A;point;free;45,185"
+    - "B;point;free;215,185"
+    - "AB;line;connect;A,B"
+    - "ABC;polygon;equilateralTriangle;A,B;0;0;black;#efe4d2"
+    - "C;point;vertex;ABC,3"
+    - "D;point;midpoint;A,B"
+    - "CD;line;connect;C,D"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "ACD;polygon;triangle;A,C,D;0;0;0;0"
+    - "BCD;polygon;triangle;B,C,D;0;0;0;0"
+    - "angACB;sector;angleMarker;C,A,B"
+    - "angACD;sector;angleMarker;C,A,D"
+    - "angBCD;sector;angleMarker;C,B,D"
+  aliases:
+    BA: AB
+    CA: AC
+    BC: CB
+    DC: CD
+    DA: AD
+    DB: BD
+    ACB: angACB
+  given: [A, B, AB]
+  caption: |
+    Drag {A} or {B}. {C} is the apex of the equilateral triangle on {AB}, and the bisector of
+    the angle at {C} meets {AB} at its midpoint {D}.
+
+steps:
+  - part: enunciation
+    text: "To bisect a given finite straight line."
+    highlight: [AB, D]
+    hint: |
+      A problem: find the midpoint of a segment.
+    explain:
+      did: |
+        States the task.
+      implicit: |
+        That a segment can be halved at all. On a view of lines as made of indivisible
+        atoms with an odd number of them, it could not.
+
+  - part: setting-out
+    text: "Let AB be the given finite straight line."
+    highlight: [AB]
+    hint: |
+      Name the segment.
+
+  - part: specification
+    text: "Thus it is required to bisect the finite straight line AB."
+    highlight: [AB]
+    hint: |
+      The goal restated for {AB}.
+
+  - part: construction
+    text: "Let the equilateral triangle ABC be constructed on it,"
+    highlight: [ABC, C]
+    adds: [ABC, C]
+    hint: |
+      Build an equilateral triangle on {AB} ([[I.1]]).
+    explain:
+      did: |
+        Uses I.1 to get a point {C} equally distant from {A} and {B}.
+      fact: |
+        Only $CA = CB$ is needed; an isosceles triangle would do.
+      justification: "[[I.1]]"
+
+  - part: construction
+    text: "and let the angle ACB be bisected by the straight line CD;"
+    highlight: [angACB, CD, D]
+    adds: [CD, D]
+    hint: |
+      Bisect the angle at the apex {C} ([[I.9]]); the bisector meets {AB} at {D}.
+    explain:
+      did: |
+        Applies I.9 to the angle at {C}.
+      justification: "[[I.9]]"
+      implicit: |
+        That the bisector actually meets {AB}, and between {A} and {B}. The figure shows it;
+        it needs a betweenness argument (the crossbar theorem in modern terms).
+    gap: |
+      **Where is {D}?** The bisector of ∠{ACB} is a line from {C}; that it crosses the opposite
+      side {AB} is assumed. In Hilbert's system this is the *crossbar theorem*, proved from the
+      axioms of order.
+
+  - part: proof
+    text: "I say that the straight line AB has been bisected at the point D."
+    highlight: [AD, BD]
+    hint: |
+      The claim: {AD} = {DB}.
+
+  - part: proof
+    text: "For, since AC is equal to CB, and CD is common, the two sides AC, CD are equal to the two sides BC, CD respectively;"
+    highlight: [ACD, BCD, AC, CB, CD]
+    hint: |
+      Triangles {ACD} and {BCD}: {AC} = {CB} (sides of the equilateral triangle), and {CD} is shared.
+    explain:
+      justification: "[[I.Def.20]] for $AC = CB$."
+    modern: |
+      $$AC = BC,\qquad CD = CD$$
+    cites: [I.Def.20]
+
+  - part: proof
+    text: "and the angle ACD is equal to the angle BCD;"
+    highlight: [angACD, angBCD]
+    hint: |
+      The angles between them are equal: {CD} bisects the angle at {C}.
+    modern: |
+      $$\angle ACD = \angle BCD$$
+
+  - part: proof
+    text: "therefore the base AD is equal to the base BD."
+    highlight: [AD, BD]
+    hint: |
+      Side–angle–side: by [[I.4]] the bases are equal.
+    explain:
+      justification: "[[I.4]]"
+    modern: |
+      $$\triangle ACD \cong \triangle BCD \;\Longrightarrow\; AD = BD$$
+
+  - part: conclusion
+    text: "Therefore the given finite straight line AB has been bisected at D."
+    highlight: [AD, BD, D]
+    hint: |
+      {D} is the midpoint. Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3]
+      text: |
+        Let $C$ satisfy $CA = CB$, $C \notin \overleftrightarrow{AB}$ (e.g. the apex of an
+        equilateral triangle on $AB$).
+    - steps: [4]
+      text: |
+        Let ray $r$ bisect $\angle ACB$. By the crossbar theorem $r$ meets segment $AB$ at a point
+        $D$ strictly between $A$ and $B$.
+    - steps: [5, 6, 7]
+      text: |
+        $CA = CB$, $CD = CD$, $\angle ACD = \angle BCD$, so by SAS $\triangle ACD \cong \triangle BCD$
+        and $AD = BD$. $\blacksquare$
+  closing: |
+    A shorter route, the one usually taught: draw circles about $A$ and $B$ with radius $AB$; the
+    line through their two intersections cuts $AB$ at its midpoint. It uses I.8 rather than I.9 and
+    I.4.
+
+commentary: |
+  I.10 stacks the previous constructions: [[I.1]] gives the apex, [[I.9]] gives the angle
+  bisector, and [[I.4]] proves that the bisector halves the base. Read backwards it says: in an
+  isosceles triangle the bisector of the apex angle bisects the base.
+
+  The midpoint is used constantly from here on: immediately in [[I.12]], then in [[I.16]] and
+  beyond.
+
+gaps: |
+  - **The bisector meets {AB}** (step 2), and between {A} and {B}.
+
+historical: |
+  Proclus reports an alternative construction by Apollonius, with two circles of equal radius
+  about {A} and {B} (the one now taught in schools; see the reconstruction). He also takes I.10
+  as showing that magnitudes are divisible without end, against those who held that lines are
+  made of indivisible parts.

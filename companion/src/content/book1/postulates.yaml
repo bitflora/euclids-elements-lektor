@@ -1,0 +1,115 @@
+items:
+  - id: I.Post.1
+    title: Drawing a straight line
+    paraphrase: |
+      Any two points can be joined by a straight line.
+    meaning: |
+      The first construction Euclid allows himself. With [[I.Post.2]] it is what a straightedge
+      does. The postulates are phrased as *demands* ("let it be postulated … to draw"), not as
+      statements of fact.
+    modern: |
+      For distinct points $A, B$ there is a line through both (Hilbert I.1) — and only one
+      (Hilbert I.2).
+    notes: |
+      **Uniqueness is used but not stated.** Euclid treats the line joining two points as unique:
+      [[I.4]] depends on it ("two straight lines cannot enclose a space"). Heath's text brackets
+      the justification Euclid's editors supplied there.
+
+      In Books I–VI the joining line is assumed to lie in the plane of the figure.
+    interpretations: |
+      Do the construction postulates assert *existence* (there is such a line) or grant a
+      *permission* (you may draw one)? Zeuthen (1896) argued that Greek geometers used
+      constructions as existence proofs; Knorr (1983) and Harari (2003), among others, have
+      disputed that reading.
+    figure: |
+      <svg viewBox="0 0 300 90"><line class="l2" x1="60" y1="50" x2="240" y2="50"/><circle class="pt" cx="60" cy="50" r="3.5"/><circle class="pt" cx="240" cy="50" r="3.5"/><text class="fig-label" x="48" y="40">A</text><text class="fig-label" x="244" y="40">B</text></svg>
+
+  - id: I.Post.2
+    title: Producing a straight line
+    paraphrase: |
+      A straight line segment can be extended, in a straight line, as far as needed.
+    meaning: |
+      Euclid's straight lines are finite; this postulate lets them be lengthened. It gives a
+      *potential* infinity — as long as you like — rather than an actual infinite line.
+    modern: |
+      Hilbert's order axioms: for points $A \ne B$ there is a point $C$ with $B$ between $A$ and $C$.
+    notes: |
+      Again uniqueness is assumed: the extension is taken to be determined (two straight lines
+      cannot share a segment and then diverge). Zeno of Sidon's objection to [[I.1]] turns on
+      exactly this. First used in [[I.2]].
+    figure: |
+      <svg viewBox="0 0 300 90"><line class="l" x1="40" y1="50" x2="160" y2="50"/><line class="l2" x1="160" y1="50" x2="270" y2="50"/><circle class="pt" cx="40" cy="50" r="3.5"/><circle class="pt" cx="160" cy="50" r="3.5"/><text class="fig-label" x="30" y="40">A</text><text class="fig-label" x="156" y="40">B</text><text class="fig-label" x="268" y="40">C</text></svg>
+
+  - id: I.Post.3
+    title: Describing a circle
+    paraphrase: |
+      A circle can be drawn with any centre and any radius.
+    meaning: |
+      The compass postulate. In Book I the "distance" is always given as a line drawn from the
+      centre ("with centre {A} and distance {AB}"), so the circle is always drawn through a given
+      point.
+    modern: |
+      For points $O \ne A$, the circle $\{P : OP = OA\}$ exists.
+    interpretations: |
+      **A "collapsing" compass?** Read strictly, the postulate does not let you pick up a length
+      and draw a circle with it somewhere else. On that reading [[I.2]] is needed to show that
+      carrying lengths is nevertheless possible. The phrase "collapsing compass" and the talk of
+      instruments are modern glosses; Euclid speaks of neither, and the narrow reading is an
+      inference from his usage.
+    figure: |
+      <svg viewBox="0 0 300 150"><circle class="l2" cx="150" cy="75" r="55"/><line class="l" x1="150" y1="75" x2="205" y2="75"/><circle class="pt" cx="150" cy="75" r="3.5"/><circle class="pt" cx="205" cy="75" r="3.5"/><text class="fig-label" x="136" y="72">A</text><text class="fig-label" x="210" y="72">B</text></svg>
+
+  - id: I.Post.4
+    title: All right angles are equal
+    paraphrase: |
+      Any right angle equals any other right angle.
+    meaning: |
+      A right angle is defined locally ([[I.Def.10]]): at a particular place, as one of two
+      equal adjacent angles. This postulate says that right angles at different places, or on
+      different lines, are the same size. It makes the right angle a fixed standard, which is
+      how Euclid uses it ("two right angles").
+    modern: |
+      In Hilbert's system this is a theorem, proved from the congruence axioms. Euclid's
+      choice to postulate it reflects the fact that his other principles cannot deliver it
+      without some form of superposition.
+    notes: |
+      The postulate is first needed in [[I.14]] (and implicitly wherever angles are compared
+      with "two right angles"). It is also presupposed by [[I.Post.5]], which speaks of angles
+      "less than two right angles".
+    interpretations: |
+      Why is this a postulate rather than a theorem? Proclus attempted a proof and argued it
+      should not be a postulate. Some modern commentators see it as expressing the
+      *homogeneity* of space — that geometry is the same everywhere — which Euclid could not
+      otherwise secure.
+    figure: |
+      <svg viewBox="0 0 300 110"><line class="l" x1="20" y1="90" x2="130" y2="90"/><line class="l" x1="75" y1="90" x2="75" y2="25"/><path class="arc" d="M75,78 L87,78 L87,90"/><g transform="rotate(-25 215 70)"><line class="l" x1="160" y1="90" x2="270" y2="90"/><line class="l" x1="215" y1="90" x2="215" y2="25"/><path class="arc" d="M215,78 L227,78 L227,90"/></g></svg>
+
+  - id: I.Post.5
+    title: The parallel postulate
+    paraphrase: |
+      If a line crossing two other lines makes the two interior angles on one side add up to less
+      than two right angles, those two lines, extended far enough, meet on that side.
+    meaning: |
+      Take two lines and a third line crossing both. On one side of the crossing line are two
+      *interior* angles (the ones between the two lines). If together they fall short of two
+      right angles, the lines lean towards each other on that side, and the postulate says they
+      will eventually meet there.
+
+      Unlike the first four, this postulate is not something one can check in a small drawing:
+      the meeting point may be arbitrarily far away.
+    modern: |
+      If $\alpha + \beta < 180^\circ$ then the lines meet on the side of $\alpha$ and $\beta$.
+
+      Given the rest of Hilbert's axioms it is equivalent to **Playfair's axiom** (after John
+      Playfair, 1795): through a point not on a line there is at most one parallel to the line.
+    notes: |
+      Euclid avoids it as long as he can. Propositions [[I.1]]–[[I.28]] never use it; the
+      first proposition that does is [[I.29]]. Everything before is valid in *neutral*
+      (absolute) geometry.
+
+      For two thousand years geometers tried to prove it from the others — Ptolemy and Proclus
+      in antiquity, Saccheri (1733) and Lambert later. The attempts ended when Gauss, Bolyai and
+      Lobachevsky, in the early 19th century, developed consistent *hyperbolic* geometries in
+      which it fails.
+    figure: |
+      <svg viewBox="0 0 300 150"><line class="l" x1="20" y1="35" x2="200" y2="71"/><line class="thin" x1="200" y1="71" x2="232.5" y2="77.5"/><line class="l" x1="20" y1="120" x2="200" y2="84"/><line class="thin" x1="200" y1="84" x2="232.5" y2="77.5"/><circle class="pt" cx="232.5" cy="77.5" r="3"/><line class="l2" x1="110" y1="10" x2="84" y2="123"/><path class="arc" d="M116.2,54.2 A16,16 0 0 1 96.9,66.7"/><path class="arc" d="M103.4,103.4 A16,16 0 0 0 91.3,90.9"/><text class="fig-note" x="160" y="140" text-anchor="middle">the two marked angles: together less than two right angles</text><text class="fig-note" x="240" y="81">they meet</text></svg>

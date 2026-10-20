@@ -1,0 +1,86 @@
+id: VII.12
+kind: theorem
+title: All the antecedents to all the consequents
+
+paraphrase: |
+  If {A} : {B} = {C} : {D}, then {A} + {C} is to {B} + {D} in the same ratio. The same holds for any number
+  of equal ratios.
+
+diagram:
+  width: 150
+  height: 230
+  elements:
+    - "A0;point;free;30,-1000;0;0"
+    - "A3;point;free;30,1000;0;0"
+    - "A1;point;lineSlider;A0,A3,30,30;0"
+    - "B0;point;free;60,-1000;0;0"
+    - "B3;point;free;60,1000;0;0"
+    - "B1;point;lineSlider;B0,B3,60,30;0"
+    - "C0;point;free;90,-1000;0;0"
+    - "C3;point;free;90,1000;0;0"
+    - "C1;point;lineSlider;C0,C3,90,30;0"
+    - "D0;point;free;120,-1000;0;0"
+    - "D3;point;free;120,1000;0;0"
+    - "D1;point;lineSlider;D0,D3,120,30;0"
+    - "A2;point;lineSlider;A0,A3,30,200;0"
+    - "A;line;connect;A1,A2;black"
+    - "B2;point;lineSlider;B0,B3,60,120;0"
+    - "B;line;connect;B1,B2;black"
+    - "C2;point;lineSlider;C0,C3,90,175;0"
+    - "C;line;connect;C1,C2;black"
+    - "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+  caption: |
+    {D} is computed so that {A} : {B} = {C} : {D}. Drag the ends of the others.
+
+steps:
+  - part: enunciation
+    text: "If there be as many numbers as we please in proportion, then, as one of the antecedents is to one of the consequents, so are all the antecedents to all the consequents."
+    highlight: [A, B, C, D]
+    hint: |
+      The numerical version of [[V.12]].
+    modern: |
+      $a : b = c : d \Rightarrow (a + c) : (b + d) = a : b$.
+
+  - part: setting-out
+    text: "Let A, B, C, D be as many numbers as we please in proportion, so that, as A is to B, so is C to D;"
+    highlight: [A, B, C, D]
+    hint: |
+      {A} : {B} = {C} : {D}.
+
+  - part: specification
+    text: "I say that, as A is to B, so are A, C to B, D."
+    highlight: [A, B, C, D]
+    hint: |
+      To prove: {A} + {C} : {B} + {D} = {A} : {B}.
+
+  - part: proof
+    text: "For since, as A is to B, so is C to D, whatever part or parts A is of B, the same part or parts is C of D also."
+    highlight: [A, B, C, D]
+    hint: |
+      {A} is the same fraction of {B} as {C} of {D} ([[VII.Def.20]]).
+
+  - part: proof
+    text: "Therefore also the sum of A, C is the same part or the same parts of the sum of B, D that A is of B."
+    highlight: [A, B, C, D]
+    hint: |
+      Adding, by [[VII.5]] or [[VII.6]].
+
+  - part: proof
+    text: "Therefore, as A is to B, so are A, C to B, D."
+    highlight: [A, B, C, D]
+    hint: |
+      Back into a proportion.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5]
+      text: |
+        $a = r b$, $c = r d$, so $a + c = r(b + d)$. $\blacksquare$
+
+commentary: |
+  Euclid states it for "as many numbers as we please" but proves it for two ratios. It is used in [[VII.15]],
+  [[VII.20]] and [[IX.35]].
+  This proposition, like [[VII.2]], has no "Q. E. D." in Heath's text.

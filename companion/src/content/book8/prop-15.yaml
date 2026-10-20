@@ -1,0 +1,134 @@
+id: VIII.15
+kind: theorem
+title: A cube measures a cube exactly when side measures side
+
+paraphrase: |
+  For cubes {A} = {C}³ and {B} = {D}³: {A} measures {B} if and only if {C} measures {D}.
+
+diagram:
+  width: 410
+  height: 170
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "E0;point;free;-1000,50;0;0"
+    - "E3;point;free;1000,50;0;0"
+    - "C0;point;free;-1000,70;0;0"
+    - "C3;point;free;1000,70;0;0"
+    - "F0;point;free;-1000,90;0;0"
+    - "F3;point;free;1000,90;0;0"
+    - "D0;point;free;-1000,110;0;0"
+    - "D3;point;free;1000,110;0;0"
+    - "G0;point;free;-1000,130;0;0"
+    - "G3;point;free;1000,130;0;0"
+    - "B0;point;free;-1000,150;0;0"
+    - "B3;point;free;1000,150;0;0"
+    - "U1;point;lineSlider;F0,F3,0,0;0;0"
+    - "U2;point;lineSlider;F0,F3,25,0;0;0"
+    - "U;line;connect;U1,U2;0;0;0"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,65,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;lineSlider;D0,D3,75,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;E0,E3,110,0;0"
+    - "E2;point;proportion;U1,U2,C1,C2,C1,C2,E1,E3;0"
+    - "E;line;connect;E1,E2;black"
+    - "G1;point;lineSlider;G0,G3,110,0;0"
+    - "G2;point;proportion;U1,U2,D1,D2,D1,D2,G1,G3;0"
+    - "G;line;connect;G1,G2;black"
+    - "A1;point;lineSlider;A0,A3,240,0;0"
+    - "A2;point;proportion;U1,U2,C1,C2,E1,E2,A1,A3;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,240,0;0"
+    - "B2;point;proportion;U1,U2,D1,D2,G1,G2,B1,B3;0"
+    - "B;line;connect;B1,B2;black"
+    - "F1;point;lineSlider;F0,F3,110,0;0"
+    - "F2;point;proportion;U1,U2,C1,C2,D1,D2,F1,F3;0"
+    - "F;line;connect;F1,F2;black"
+    - "H1;point;lineSlider;C0,C3,240,0;0"
+    - "H2;point;proportion;U1,U2,C1,C2,F1,F2,H1,C3;0"
+    - "H;line;connect;H1,H2;black"
+    - "K1;point;lineSlider;D0,D3,240,0;0"
+    - "K2;point;proportion;U1,U2,D1,D2,F1,F2,K1,D3;0"
+    - "K;line;connect;K1,K2;black"
+  caption: |
+    {E} = {C}², {F} = {C}{D}, {G} = {D}²; {A}, {H}, {K}, {B} are {C}³, {C}²{D}, {C}{D}², {D}³.
+
+steps:
+  - part: enunciation
+    text: "If a cube number measure a cube number, the side will also measure the side; and, if the side measure the side, the cube will also measure the cube."
+    highlight: [A, B, C, D]
+    hint: |
+      $c^3 \mid d^3 \iff c \mid d$.
+    modern: |
+      $c^3 \mid d^3 \iff c \mid d$.
+
+  - part: setting-out
+    text: "For let the cube number A measure the cube B, and let C be the side of A and D of B;"
+    highlight: [A, B, C, D]
+    hint: |
+      {A} measures {B}.
+
+  - part: specification
+    text: "I say that C measures D."
+    highlight: [C, D]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For let C by multiplying itself make E, and let D by multiplying itself make G; further, let C by multiplying D make F, and let C, D by multiplying F make H, K respectively."
+    highlight: [E, F, G, H, K]
+    hint: |
+      As in [[VIII.12]].
+
+  - part: proof
+    text: "Now it is manifest that E, F, G and A, H, K, B are continuously proportional in the ratio of C to D."
+    highlight: [A, H, K, B]
+    hint: |
+      [[VIII.11]], [[VIII.12]].
+
+  - part: proof
+    text: "And, since A, H, K, B are continuously proportional, and A measures B, therefore it also measures H."
+    highlight: [A, H]
+    hint: |
+      [[VIII.7]].
+
+  - part: proof
+    text: "And, as A is to H, so is C to D; therefore C also measures D."
+    highlight: [C, D]
+    hint: |
+      [[VII.Def.20]].
+
+  - part: specification
+    text: "Next, let C measure D; I say that A will also measure B."
+    highlight: [C, D, A, B]
+    hint: |
+      The converse.
+
+  - part: proof
+    text: "For, with the same construction, we can prove in a similar manner that A, H, K, B are continuously proportional in the ratio of C to D."
+    highlight: [A, H, K, B]
+    hint: |
+      As before.
+
+  - part: proof
+    text: "And, since C measures D, and, as C is to D, so is A to H, therefore A also measures H, so that A measures B also."
+    highlight: [A, H, B]
+    hint: |
+      {A} measures {H}, {H} measures {K}, {K} measures {B}.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        $c^3 \mid d^3 \Rightarrow c^3 \mid c^2 d$ ([[VIII.7]]) $\Rightarrow c \mid d$; the converse is clear.
+        $\blacksquare$

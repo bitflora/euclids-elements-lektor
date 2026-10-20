@@ -1,0 +1,87 @@
+id: IX.22
+kind: theorem
+title: An even number of odd numbers adds to an even number
+
+paraphrase: |
+  The sum {AE} of an even count of odd numbers {AB}, {BC}, {CD}, {DE} is even.
+
+diagram:
+  width: 250
+  height: 60
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "B;point;lineSlider;A0,A3,72,0"
+    - "C;point;lineSlider;A0,A3,120,0"
+    - "D;point;lineSlider;A0,A3,194,0"
+    - "E;point;lineSlider;A0,A3,220,0"
+    - "AE;line;connect;A,E"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+  caption: |
+    Four odd numbers end to end.
+
+steps:
+  - part: enunciation
+    text: "If as many odd numbers as we please be added together, and their multitude be even, the whole will be even."
+    highlight: [AE]
+    hint: |
+      odd + odd (an even number of times) = even.
+    modern: |
+      $\sum_{i=1}^{2m} (2k_i + 1) = 2(\sum k_i + m)$.
+
+  - part: setting-out
+    text: "For let as many odd numbers as we please, AB, BC, CD, DE, even in multitude, be added together;"
+    highlight: [AB, BC, CD, DE]
+    hint: |
+      Four odd numbers.
+
+  - part: specification
+    text: "I say that the whole AE is even."
+    highlight: [AE]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since each of the numbers AB, BC, CD, DE is odd, if an unit be subtracted from each, each of the remainders will be even;"
+    highlight: [AB, BC, CD, DE]
+    hint: |
+      odd − 1 = even ([[VII.Def.7]]).
+    explain:
+      implicit: |
+        Joyce: this uses the second form of [[VII.Def.7]] ("differs by a unit from an even number") as if it
+        were proved equivalent to the first.
+
+  - part: proof
+    text: "so that the sum of them will be even."
+    highlight: [AE]
+    hint: |
+      [[IX.21]].
+
+  - part: proof
+    text: "But the multitude of the units is also even."
+    highlight: [AE]
+    hint: |
+      And there are an even number of the removed units.
+
+  - part: proof
+    text: "Therefore the whole AE is also even."
+    highlight: [AE]
+    hint: |
+      [[IX.21]] again.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        $(2k_1 + 1) + \dots + (2k_{2m} + 1) = 2(k_1 + \dots + k_{2m}) + 2m$. $\blacksquare$

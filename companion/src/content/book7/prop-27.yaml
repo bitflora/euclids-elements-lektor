@@ -1,0 +1,134 @@
+id: VII.27
+kind: theorem
+title: Squares and cubes of coprime numbers are coprime
+
+paraphrase: |
+  If {A} and {B} are prime to one another, so are their squares {C}, {E}, and so are their cubes {D},
+  {F}.
+
+diagram:
+  width: 210
+  height: 290
+  elements:
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,20;0;0"
+    - "A0;point;free;30,-1000;0;0"
+    - "A3;point;free;30,1000;0;0"
+    - "A1;point;lineSlider;A0,A3,30,30;0"
+    - "A2;point;lineSlider;A0,A3,30,62;0"
+    - "A;line;connect;A1,A2;black"
+    - "B0;point;free;60,-1000;0;0"
+    - "B3;point;free;60,1000;0;0"
+    - "B1;point;lineSlider;B0,B3,60,30;0"
+    - "B2;point;lineSlider;B0,B3,60,75;0"
+    - "B;line;connect;B1,B2;black"
+    - "C0;point;free;90,-1000;0;0"
+    - "C3;point;free;90,1000;0;0"
+    - "C1;point;lineSlider;C0,C3,90,30;0"
+    - "C2;point;proportion;U1,U2,A1,A2,A1,A2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D0;point;free;120,-1000;0;0"
+    - "D3;point;free;120,1000;0;0"
+    - "D1;point;lineSlider;D0,D3,120,30;0"
+    - "D2;point;proportion;U1,U2,A1,A2,C1,C2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+    - "E0;point;free;150,-1000;0;0"
+    - "E3;point;free;150,1000;0;0"
+    - "E1;point;lineSlider;E0,E3,90,30;0"
+    - "E2;point;proportion;U1,U2,B1,B2,B1,B2,E1,E3;0"
+    - "E;line;connect;E1,E2;black"
+    - "F0;point;free;180,-1000;0;0"
+    - "F3;point;free;180,1000;0;0"
+    - "F1;point;lineSlider;F0,F3,180,30;0"
+    - "F2;point;proportion;U1,U2,B1,B2,E1,E2,F1,F3;0"
+    - "F;line;connect;F1,F2;black"
+  caption: |
+    {C} = {A}², {D} = {A}³; {E} = {B}², {F} = {B}³.
+
+steps:
+  - part: enunciation
+    text: "If two numbers be prime to one another, and each by multiplying itself make a certain number, the products will be prime to one another; and, if the original numbers by multiplying the products make certain numbers, the latter will also be prime to one another [and this is always the case with the extremes]."
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      $\gcd(a, b) = 1 \Rightarrow \gcd(a^2, b^2) = \gcd(a^3, b^3) = 1$.
+    explain:
+      implicit: |
+        Heath prints in square brackets words that Heiberg's edition marks as probably interpolated. The
+        clause seems to say that the property goes on to higher powers.
+    modern: |
+      $\gcd(a, b) = 1 \Rightarrow \gcd(a^n, b^n) = 1$ (Euclid proves $n = 2, 3$).
+    dispute: |
+      What "the extremes" means is uncertain. One reading takes them to be the last terms of the two series
+      of powers $a, a^2, a^3, \dots$ and $b, b^2, b^3, \dots$, so that the clause extends the result to all
+      powers; the clause is not used in the proof either way.
+
+  - part: setting-out
+    text: "Let A, B be two numbers prime to one another, let A by multiplying itself make C, and by multiplying C make D, and let B by multiplying itself make E, and by multiplying E make F;"
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      {C} = {A}², {D} = {A}³, {E} = {B}², {F} = {B}³.
+
+  - part: specification
+    text: "I say that both C, E and D, F are prime to one another."
+    highlight: [C, E, D, F]
+    hint: |
+      To prove: squares coprime, cubes coprime.
+
+  - part: proof
+    text: "For, since A, B are prime to one another, and A by multiplying itself has made C, therefore C, B are prime to one another."
+    highlight: [C, B]
+    hint: |
+      {A}² is prime to {B} ([[VII.25]]).
+
+  - part: proof
+    text: "Since then C, B are prime to one another, and B by multiplying itself has made E, therefore C, E are prime to one another. [id.]"
+    highlight: [C, E]
+    hint: |
+      And {B}² is prime to {C} ([[VII.25]] again): the squares are coprime.
+
+  - part: proof
+    text: "Again, since A, B are prime to one another, and B by multiplying itself has made E, therefore A, E are prime to one another. [id.]"
+    highlight: [A, E]
+    hint: |
+      Also {A} is prime to {B}².
+
+  - part: proof
+    text: "Since then the two numbers A, C are prime to the two numbers B, E, both to each, therefore also the product of A, C is prime to the product of B, E."
+    highlight: [A, C, B, E]
+    hint: |
+      {A}, {C} are each prime to each of {B}, {E}; by [[VII.26]], {A}·{C} is prime to {B}·{E}.
+
+  - part: proof
+    text: "And the product of A, C is D, and the product of B, E is F."
+    highlight: [D, F]
+    hint: |
+      Those products are the cubes {D}, {F}.
+
+  - part: proof
+    text: "Therefore D, F are prime to one another."
+    highlight: [D, F]
+    hint: |
+      The cubes are coprime.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4]
+      text: |
+        $\gcd(a^2, b) = 1$, then $\gcd(a^2, b^2) = 1$ ([[VII.25]] twice).
+    - steps: [5, 6, 7, 8]
+      text: |
+        $\gcd(a, b^2) = 1$; with $\gcd(a, b) = \gcd(a^2, b) = \gcd(a^2, b^2) = 1$, [[VII.26]] gives
+        $\gcd(a^3, b^3) = 1$. $\blacksquare$
+  closing: |
+    The same induction gives every power; [[VIII.2]] needs that general form.
+
+commentary: |
+  Joyce notes that Euclid's proof covers squares and cubes only, but [[VIII.2]] uses the result for any
+  powers — perhaps the point of the bracketed clause.

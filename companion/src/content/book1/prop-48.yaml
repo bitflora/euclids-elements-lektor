@@ -1,0 +1,194 @@
+id: I.48
+kind: theorem
+title: Converse of the Pythagorean theorem
+
+paraphrase: |
+  If the square on one side of a triangle equals the sum of the squares on the other two, the angle
+  between those two sides is right.
+
+diagram:
+  width: 260
+  height: 230
+  elements:
+    - "A;point;free;130,190"
+    - "B;point;free;220,190"
+    - "ACp;line;perpendicular;A,B;0;0;0"
+    - "C;point;lineSlider;ACp,130,40"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "AD;line;extend;B,A,B,A"
+    - "D;point;last;AD"
+    - "CD;line;connect;C,D"
+    - "DAC;polygon;triangle;D,A,C;0;0;black;#dfe7ea"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "angBAC;sector;angleMarker;A,B,C,20"
+    - "angDAC;sector;angleMarker;A,D,C,20"
+  aliases:
+    BA: AB
+    CA: AC
+    CB: BC
+    DA: AD
+    DC: CD
+    BAC: angBAC
+  given: [A, B, C, ABC]
+  caption: |
+    Drag {A} or {B}, and slide {C}. The figure keeps the hypothesis ({BC}² = {BA}² + {AC}², i.e. the
+    angle at {A} right); {D} is the mirror image of {B} in {AC}.
+
+steps:
+  - part: enunciation
+    text: "If in a triangle the square on one of the sides be equal to the squares on the remaining two sides of the triangle, the angle contained by the remaining two sides of the triangle is right."
+    highlight: [ABC, angBAC]
+    hint: |
+      The converse of [[I.47]]: if $a^2 = b^2 + c^2$, the triangle is right-angled.
+
+  - part: setting-out
+    text: "For in the triangle ABC let the square on one side BC be equal to the squares on the sides BA, AC;"
+    highlight: [BC, AB, AC]
+    hint: |
+      The data.
+    modern: |
+      $$BC^2 = BA^2 + AC^2$$
+
+  - part: specification
+    text: "I say that the angle BAC is right."
+    highlight: [angBAC]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let AD be drawn from the point A at right angles to the straight line AC,"
+    highlight: [AD]
+    adds: [AD]
+    hint: |
+      Raise the perpendicular to {AC} at {A} ([[I.11]]), on the other side from {B}.
+    cites: [I.11]
+
+  - part: construction
+    text: "let AD be made equal to BA,"
+    highlight: [AD, AB, D]
+    adds: [D]
+    hint: |
+      Mark {D} with {AD} = {AB} ([[I.3]]).
+    cites: [I.3]
+
+  - part: construction
+    text: "and let DC be joined."
+    highlight: [CD, DAC]
+    adds: [CD, DAC, angDAC]
+    hint: |
+      Triangle {DAC} is right-angled at {A} by construction.
+
+  - part: proof
+    text: "Since DA is equal to AB, the square on DA is also equal to the square on AB."
+    highlight: [AD, AB]
+    hint: |
+      Equal lines have equal squares.
+    explain:
+      implicit: |
+        Not proved anywhere in Book I, though it follows easily from [[I.4]] and [[I.46]].
+
+  - part: proof
+    text: "Let the square on AC be added to each; therefore the squares on DA, AC are equal to the squares on BA, AC."
+    highlight: [AD, AB, AC]
+    hint: |
+      Add the square on {AC} ([[I.CN.2]]).
+    cites: [I.CN.2]
+
+  - part: proof
+    text: "But the square on DC is equal to the squares on DA, AC, for the angle DAC is right;"
+    highlight: [CD, AD, AC, angDAC]
+    hint: |
+      Pythagoras in the right triangle {DAC} ([[I.47]]).
+    modern: |
+      $$DC^2 = DA^2 + AC^2$$
+
+  - part: proof
+    text: "and the square on BC is equal to the squares on BA, AC, for this is the hypothesis;"
+    highlight: [BC, AB, AC]
+    hint: |
+      And the hypothesis for {ABC}.
+
+  - part: proof
+    text: "therefore the square on DC is equal to the square on BC,"
+    highlight: [CD, BC]
+    hint: |
+      So the squares on {DC} and {BC} are equal ([[I.CN.1]]).
+    modern: |
+      $$DC^2 = DA^2 + AC^2 = BA^2 + AC^2 = BC^2$$
+
+  - part: proof
+    text: "so that the side DC is also equal to BC."
+    highlight: [CD, BC]
+    hint: |
+      Equal squares ⇒ equal sides.
+    explain:
+      implicit: |
+        The converse of step 6: equal squares stand on equal lines. Again Euclid gives no proof.
+    gap: |
+      **Equal squares, equal sides.** Neither direction is proved in Book I. Both follow quickly from
+      earlier results — equal lines give congruent squares by [[I.4]]; and if the lines were unequal,
+      one square would sit strictly inside the other — but Euclid states neither.
+
+  - part: proof
+    text: "And, since DA is equal to AB, and AC is common, the two sides DA, AC are equal to the two sides BA, AC;"
+    highlight: [DAC, ABC, AD, AB, AC]
+    hint: |
+      Triangles {DAC} and {BAC}: two pairs of equal sides…
+
+  - part: proof
+    text: "and the base DC is equal to the base BC;"
+    highlight: [CD, BC]
+    hint: |
+      …and equal third sides.
+
+  - part: proof
+    text: "therefore the angle DAC is equal to the angle BAC."
+    highlight: [angDAC, angBAC]
+    hint: |
+      SSS ([[I.8]]).
+
+  - part: proof
+    text: "But the angle DAC is right; therefore the angle BAC is also right."
+    highlight: [angBAC]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved — and with it, Book I.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* With the law of cosines it is immediate:
+  lines:
+    - steps: [1, 2]
+      text: Let $a^2 = b^2 + c^2$.
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+      text: |
+        $a^2 = b^2 + c^2 - 2bc\cos A$, so $\cos A = 0$ and $A = 90^\circ$. $\blacksquare$
+  closing: |
+    Euclid's proof is more elementary: build a right triangle with the same two legs, and use I.47 and
+    SSS to show it is congruent to the given one.
+
+commentary: |
+  Book I ends with the converse of its most famous theorem. I.48 is the only converse of I.47 in the
+  *Elements*, and the end of the arc that runs from [[I.1]] through the congruence theorems, the
+  parallels, and the areas.
+
+gaps: |
+  - **Equal squares on equal sides** (steps 6 and 11), assumed both ways.
+  - **{D} on the far side** of {AC} from {B}: needed so that {DAC} and {BAC} are distinct triangles;
+    Euclid does not say so.
+
+historical: |
+  The converse is what made the "rope-stretcher's" right angle work: a knotted cord in lengths 3, 4, 5
+  makes a right angle. That Egyptian surveyors did this is a modern conjecture (Cantor's) with little
+  direct evidence, but the arithmetic is I.48.

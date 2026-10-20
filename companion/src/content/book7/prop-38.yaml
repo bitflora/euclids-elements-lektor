@@ -1,0 +1,92 @@
+id: VII.38
+kind: theorem
+title: A number with a "C-th" part is measured by C
+
+paraphrase: |
+  If {A} has a part {B} "called by the same name" as {C} (a third part, if {C} is three), then {C} measures
+  {A}. The converse of [[VII.37]].
+
+diagram:
+  width: 250
+  height: 170
+  elements:
+    - "A0;point;free;-1000,35;0;0"
+    - "A3;point;free;1000,35;0;0"
+    - "B0;point;free;-1000,70;0;0"
+    - "B3;point;free;1000,70;0;0"
+    - "C0;point;free;-1000,105;0;0"
+    - "C3;point;free;1000,105;0;0"
+    - "D0;point;free;-1000,140;0;0"
+    - "D3;point;free;1000,140;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,220,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,90,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;lineSlider;D0,D3,60,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;B1,B2,A1,A2,D1,D2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+  caption: |
+    {B} is the "{C}-th" part of {A}; {D} is the unit.
+
+steps:
+  - part: enunciation
+    text: "If a number have any part whatever, it will be measured by a number called by the same name as the part."
+    highlight: [A]
+    hint: |
+      If $a$ has a $1/c$ part, then $c \mid a$.
+    modern: |
+      $\tfrac1c a$ a whole number $\Rightarrow c \mid a$.
+
+  - part: setting-out
+    text: "For let the number A have any part whatever, B, and let C be a number called by the same name as the part B;"
+    highlight: [A, B, C]
+    hint: |
+      {B} is the "{C}-th" part of {A}.
+
+  - part: specification
+    text: "I say that C measures A."
+    highlight: [C, A]
+    hint: |
+      To prove: {C} measures {A}.
+
+  - part: proof
+    text: "For, since B is a part of A called by the same name as C, and the unit D is also a part of C called by the same name as it, therefore, whatever part the unit D is of the number C, the same part is B of A also;"
+    highlight: [B, A, D, C]
+    hint: |
+      {B} is to {A} as the unit {D} is to {C}.
+
+  - part: proof
+    text: "therefore the unit D measures the number C the same number of times that B measures A."
+    highlight: [D, C, B, A]
+    hint: |
+      Restated as "measures the same number of times".
+
+  - part: proof
+    text: "Therefore, alternately, the unit D measures the number B the same number of times that C measures A."
+    highlight: [D, B, C, A]
+    hint: |
+      Alternate ([[VII.15]]).
+
+  - part: proof
+    text: "Therefore C measures A."
+    highlight: [C, A]
+    hint: |
+      {C} goes into {A} ({B} times).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6]
+      text: |
+        $a = cb$ means $a = bc$ ([[VII.15]]): $c$ goes $b$ times into $a$. $\blacksquare$

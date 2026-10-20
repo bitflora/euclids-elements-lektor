@@ -1,0 +1,123 @@
+id: X.29
+kind: problem
+title: Rational lines in square only, the square on the greater exceeding by a commensurable square
+
+paraphrase: |
+  Find rational lines {AB}, {AF}, commensurable in square only, such that $\sqrt{AB^2 - AF^2}$ is commensurable
+  in length with {AB}. Example: $AB = 3$, $AF = \sqrt5$, $BF = 2$.
+
+diagram:
+  width: 260
+  height: 200
+  elements:
+    - "A0;point;free;-1000,130;0;0"
+    - "A3;point;free;1000,130;0;0"
+    - "C0;point;free;-1000,160;0;0"
+    - "C3;point;free;1000,160;0;0"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "B;point;lineSlider;A0,A3,230,0"
+    - "AB;line;connect;A,B"
+    - "C;point;lineSlider;C0,C3,40,0"
+    - "D;point;lineSlider;C0,C3,200,0"
+    - "CD;line;connect;C,D;0;0;blue"
+    - "E;point;lineSlider;C0,C3,130,0"
+    - "M;point;midpoint;A,B;0;0"
+    - "ABF;circle;radius;M,A;0;0;0;0"
+    - "G;point;meanProportional;D,C,C,E,C,D;0;0"
+    - "F';point;proportion;D,C,C,G,A,B,A,B;0;0"
+    - "AFcirc;circle;radius;A,F';0;0;0;0"
+    - "FF'';line;bichord;ABF,AFcirc;0;0;0"
+    - "F;point;first;FF''"
+    - "semi;sector;arc;B,F,A;0;0;black;random"
+    - "tri;polygon;triangle;A,B,F;0;0;black;random"
+    - "AF;line;connect;A,F;0;0;0"
+    - "FB;line;connect;F,B;0;0;0"
+    - "CE;line;connect;C,E;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+  aliases: { BA: AB, BF: FB, DC: CD }
+  caption: |
+    {CD}, {DE} square numbers whose difference {CE} is not square; sq({BA}) : sq({AF}) = {DC} : {CE}; {F} on the
+    semicircle on {AB}.
+
+steps:
+  - part: enunciation
+    text: "To find two rational straight lines commensurable in square only and such that the square on the greater is greater than the square on the less by the square on a straight line commensurable in length with the greater."
+    highlight: [AB, AF]
+    hint: |
+      Like $3$ and $\sqrt5$: $\sqrt{9 - 5} = 2$, commensurable with 3.
+    modern: |
+      $a = \rho$, $b = \rho\sqrt{1 - k^2}$ with $k$ rational and $1 - k^2$ not a rational square.
+
+  - part: construction
+    text: "For let there be set out any rational straight line AB, and two square numbers CD, DE such that their difference CE is not square; let there be described on AB the semicircle AFB, and let it be contrived that, as DC is to CE, so is the square on BA to the square on AF."
+    highlight: [AB, CD, DE, CE, AF]
+    hint: |
+      Square numbers {CD}, {DE} with non-square difference {CE} (lemma 1 of [[X.28]]); {F} on the semicircle
+      with sq({BA}) : sq({AF}) = {DC} : {CE}.
+
+  - part: construction
+    text: "Let FB be joined."
+    highlight: [FB]
+    hint: |
+      Join {FB}.
+
+  - part: proof
+    text: "Since, as the square on BA is to the square on AF, so is DC to CE, therefore the square on BA has to the square on AF the ratio which the number DC has to the number CE; therefore the square on BA is commensurable with the square on AF."
+    highlight: [AB, AF]
+    hint: |
+      A ratio of numbers: the squares are commensurable ([[X.6]]).
+
+  - part: proof
+    text: "But the square on AB is rational; therefore the square on AF is also rational; [id.] therefore AF is also rational."
+    highlight: [AF]
+    hint: |
+      So {AF} is rational.
+
+  - part: proof
+    text: "And, since DC has not to CE the ratio which a square number has to a square number, neither has the square on BA to the square on AF the ratio which a square number has to a square number; therefore AB is incommensurable in length with AF."
+    highlight: [AB, AF]
+    hint: |
+      Not a ratio of squares: {AB}, {AF} incommensurable in length ([[X.9]]).
+
+  - part: proof
+    text: "Therefore BA, AF are rational straight lines commensurable in square only."
+    highlight: [AB, AF]
+    hint: |
+      Rational, commensurable in square only.
+
+  - part: proof
+    text: "And since, as DC is to CE, so is the square on BA to the square on AF, therefore, convertendo, as CD is to DE, so is the square on AB to the square on BF."
+    highlight: [AB, FB, CD, DE]
+    hint: |
+      Convertendo, with the right angle at {F} ([[III.31]], [[I.47]]): sq({AB}) : sq({BF}) = {CD} : {DE}.
+
+  - part: proof
+    text: "But CD has to DE the ratio which a square number has to a square number: therefore also the square on AB has to the square on BF the ratio which a square number has to a square number; therefore AB is commensurable in length with BF."
+    highlight: [AB, FB]
+    hint: |
+      A ratio of squares: {AB}, {BF} commensurable in length ([[X.9]]).
+
+  - part: proof
+    text: "And the square on AB is equal to the squares on AF, FB; therefore the square on AB is greater than the square on AF by the square on BF commensurable with AB."
+    highlight: [AB, AF, FB]
+    hint: |
+      sq({AB}) = sq({AF}) + sq({FB}).
+
+  - part: proof
+    text: "Therefore there have been found two rational straight lines BA, AF commensurable in square only and such that the square on the greater AB is greater than the square on the less AF by the square on BF commensurable in length with AB."
+    highlight: [AB, AF, FB]
+    hint: |
+      Found.
+
+reconstruction:
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6]
+      text: |
+        Take $AB^2 : AF^2 = d^2 : (d^2 - e^2)$ with $d^2 - e^2$ not a square, e.g. $9 : 5$.
+    - steps: [7, 8, 9, 10]
+      text: |
+        Then $BF^2 = AB^2 - AF^2$ and $AB^2 : BF^2 = d^2 : e^2$, so $BF : AB = e : d$. $\blacksquare$
+
+commentary: |
+  [[X.29]]–[[X.35]] construct pairs of lines with prescribed properties; they supply the components of the
+  six binomials ([[X.48]]–[[X.53]]) and six apotomes ([[X.85]]–[[X.90]]).

@@ -1,0 +1,137 @@
+id: X.51
+kind: problem
+title: To find the fourth binomial
+
+paraphrase: |
+  Construct a fourth binomial {EG} ([[X.Def.II.4]]): greater term {EF} commensurable with the rational line {D},
+  but $\sqrt{EF^2 - FG^2}$ incommensurable with {EF}.
+
+diagram:
+  width: 130
+  height: 290
+  elements:
+    - "A0;point;free;40,-1000;0;0"
+    - "A3;point;free;40,1000;0;0"
+    - "D0;point;free;70,-1000;0;0"
+    - "D3;point;free;70,1000;0;0"
+    - "E0;point;free;100,-1000;0;0"
+    - "E3;point;free;100,1000;0;0"
+    - "A;point;lineSlider;A0,A3,0,30"
+    - "B;point;lineSlider;A0,A3,0,220"
+    - "C;point;lineSlider;A0,A3,0,140"
+    - "AB;line;connect;A,B;0;0;blue"
+    - "D1;point;lineSlider;D0,D3,0,30;0"
+    - "D2;point;lineSlider;D0,D3,0,100;0"
+    - "D;line;connect;D1,D2;black"
+    - "E;point;lineSlider;E0,E3,0,30"
+    - "F;point;lineSlider;E0,E3,0,110"
+    - "G';point;proportion;B,A,A,C,E,F,F,E3;0;0"
+    - "G;point;meanProportional;E,F,F,G',F,E3"
+    - "EG;line;connect;E,G"
+    - "M;point;midpoint;E,F;0;0"
+    - "EFcirc;circle;radius;M,F;0;0;0;0"
+    - "FGcirc;circle;radius;F,G;0;0;0;0"
+    - "bich;line;bichord;EFcirc,FGcirc;0;0;0"
+    - "H';point;first;bich;0;0"
+    - "H1;point;lineSlider;D0,D3,0,150;0"
+    - "H2;point;cutoff;H1,D3,G,H';0"
+    - "H;line;connect;H1,H2;black"
+    - "EF;line;connect;E,F;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+  aliases: { BA: AB, GE: EG, FE: EF, GF: FG, CA: AC, BC: CB }
+  caption: |
+    {AB} in a square ratio to neither {BC} nor {AC}; sq({EF}) : sq({FG}) = {BA} : {AC}.
+
+steps:
+  - part: enunciation
+    text: "To find the fourth binomial straight line."
+    highlight: [EG]
+    hint: |
+      E.g. $3 + \sqrt3$.
+
+  - part: construction
+    text: "Let two numbers AC, CB be set out such that AB neither has to BC, nor yet to AC, the ratio which a square number has to a square number."
+    highlight: [AC, CB]
+    hint: |
+      {AB} in no square ratio to {BC} or {AC}.
+
+  - part: construction
+    text: "Let a rational straight line D be set out, and let EF be commensurable in length with D; therefore EF is also rational."
+    highlight: [D, EF]
+    hint: |
+      {EF} commensurable in length with the rational {D}.
+
+  - part: construction
+    text: "Let it be contrived that, as the number BA is to AC, so is the square on EF to the square on FG; therefore the square on EF is commensurable with the square on FG; therefore FG is also rational."
+    highlight: [EF, FG]
+    hint: |
+      sq({EF}) : sq({FG}) = {BA} : {AC}; {FG} rational.
+
+  - part: proof
+    text: "Now, since BA has not to AC the ratio which a square number has to a square number, neither has the square on EF to the square on FG the ratio which a square number has to a square number; therefore EF is incommensurable in length with FG."
+    highlight: [EF, FG]
+    hint: |
+      Incommensurable in length.
+
+  - part: proof
+    text: "Therefore EF, FG are rational straight lines commensurable in square only; so that EG is binomial."
+    highlight: [EG]
+    hint: |
+      Binomial.
+
+  - part: specification
+    text: "I say next that it is also a fourth binomial straight line."
+    highlight: [EG]
+    hint: |
+      A fourth binomial.
+
+  - part: proof
+    text: "For since, as BA is to AC, so is the square on EF to the square on FG, therefore the square on EF is greater than the square on FG."
+    highlight: [EF, FG]
+    hint: |
+      {EF} > {FG}.
+
+  - part: proof
+    text: "Let then the squares on FG, H be equal to the square on EF; therefore, convertendo, as the number AB is to BC, so is the square on EF to the square on H."
+    highlight: [EF, H]
+    hint: |
+      sq({EF}) = sq({FG}) + sq({H}); convertendo sq({EF}) : sq({H}) = {AB} : {BC}.
+
+  - part: proof
+    text: "But AB has not to BC the ratio which a square number has to a square number; therefore neither has the square on EF to the square on H the ratio which a square number has to a square number."
+    highlight: [EF, H]
+    hint: |
+      Not a ratio of squares …
+
+  - part: proof
+    text: "Therefore EF is incommensurable in length with H; therefore the square on EF is greater than the square on GF by the square on a straight line incommensurable with EF."
+    highlight: [EF, H]
+    hint: |
+      … so the excess {H} is incommensurable with {EF}.
+
+  - part: proof
+    text: "And EF, FG are rational straight lines commensurable in square only, and EF is commensurable in length with D."
+    highlight: [EF, D]
+    hint: |
+      And {EF} is commensurable with {D}.
+
+  - part: proof
+    text: "Therefore EG is a fourth binomial straight line."
+    highlight: [EG]
+    hint: |
+      Fourth binomial.
+    cites: [X.Def.II.4]
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      text: |
+        $EF = \rho$, $FG = \rho\sqrt{c/(b)}$ with $(b - c)/b$ not a square: the excess $\rho\sqrt{(b-c)/b}$ is
+        incommensurable with $\rho$. $\blacksquare$

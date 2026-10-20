@@ -1,0 +1,99 @@
+id: XI.20
+kind: theorem
+title: In a trihedral angle, any two face angles exceed the third
+
+paraphrase: |
+  If a solid angle at {A} is contained by three plane angles ∠*BAC*, ∠*CAD*, ∠*DAB*, any two of them together are
+  greater than the third — the triangle inequality for angles on a sphere.
+
+diagram:
+  width: 270
+  height: 200
+  elements:
+    - "A;point;free;150,130"
+    - "B;point;free;40,170"
+    - "C;point;free;230,170"
+    - "D;point;free;150,40"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;random"
+    - "ABD;polygon;triangle;A,B,D;0;0;black;random"
+    - "ACD;polygon;triangle;A,C,D;0;0;black;random"
+    - "E';point;similar;B,A,D,A,B;0;0"
+    - "E;point;intersection;B,C,A,E'"
+    - "AE;line;connect;A,E"
+    - "AD;line;connect;A,D;0;0;0"
+  aliases: { EA: AE, DA: AD }
+  caption: |
+    The solid angle at {A}; ∠*BAE* = ∠*DAB* made in the plane of *BA*, *AC*, with {AE} = {AD}.
+
+steps:
+  - part: enunciation
+    text: "If a solid angle be contained by three plane angles, any two, taken together in any manner, are greater than the remaining one."
+    highlight: [ABC, ABD, ACD]
+    hint: |
+      The triangle inequality for the face angles of a trihedral angle.
+    modern: |
+      $\alpha + \beta > \gamma$ for the face angles of a trihedral angle (spherical triangle inequality).
+
+  - part: setting-out
+    text: "For let the solid angle at A be contained by the three plane angles BAC, CAD, DAB; I say that any two of the angles BAC, CAD, DAB, taken together in any manner, are greater than the remaining one."
+    highlight: [ABC, ABD, ACD]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "If now the angles BAC, CAD, DAB are equal to one another, it is manifest that any two are greater than the remaining one."
+    highlight: [ABC]
+    hint: |
+      If all three are equal, clear.
+
+  - part: construction
+    text: "But, if not, let BAC be greater, and on the straight line AB, and at the point A on it, let the angle BAE be constructed, in the plane through BA, AC, equal to the angle DAB; let AE be made equal to AD, and let BEC, drawn across through the point E, cut the straight lines AB, AC at the points B, C; let DB, DC be joined."
+    highlight: [AE]
+    hint: |
+      Otherwise, with ∠*BAC* greatest: copy ∠*DAB* as ∠*BAE* inside ∠*BAC*, {AE} = {AD}; join *BEC*, *DB*, *DC*.
+
+  - part: proof
+    text: "Now, since DA is equal to AE, and AB is common, two sides are equal to two sides; and the angle DAB is equal to the angle BAE; therefore the base DB is equal to the base BE."
+    highlight: [AE]
+    hint: |
+      *DB* = *BE* ([[I.4]]).
+
+  - part: proof
+    text: "And, since the two sides BD, DC are greater than BC, and of these DB was proved equal to BE, therefore the remainder DC is greater than the remainder EC."
+    highlight: [AE]
+    hint: |
+      *BD* + *DC* > *BC* ([[I.20]]), so *DC* > *EC*.
+
+  - part: proof
+    text: "Now, since DA is equal to AE, and AC is common, and the base DC is greater than the base EC, therefore the angle DAC is greater than the angle EAC."
+    highlight: [AE]
+    hint: |
+      So ∠*DAC* > ∠*EAC* ([[I.25]]).
+
+  - part: proof
+    text: "But the angle DAB was also proved equal to the angle BAE; therefore the angles DAB, DAC are greater than the angle BAC."
+    highlight: [ABD, ACD]
+    hint: |
+      Adding ∠*DAB* = ∠*BAE*: ∠*DAB* + ∠*DAC* > ∠*BAC*.
+
+  - part: proof
+    text: "Similarly we can prove that the remaining angles also, taken together two and two, are greater than the remaining one."
+    highlight: [ABC, ABD, ACD]
+    hint: |
+      The other pairs similarly.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [ABC, ABD, ACD]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Copy one angle into the largest and compare third sides with [[I.20]] and [[I.25]]. $\blacksquare$

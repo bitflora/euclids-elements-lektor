@@ -1,0 +1,107 @@
+id: VII.37
+kind: theorem
+title: A number measured by B has a "B-th" part
+
+paraphrase: |
+  If {B} measures {A}, then {A} has a part "called by the same name" as {B}: if 3 measures 12, then 12 has a
+  third part (namely 4).
+
+diagram:
+  width: 250
+  height: 170
+  elements:
+    - "A0;point;free;-1000,35;0;0"
+    - "A3;point;free;1000,35;0;0"
+    - "B0;point;free;-1000,70;0;0"
+    - "B3;point;free;1000,70;0;0"
+    - "C0;point;free;-1000,105;0;0"
+    - "C3;point;free;1000,105;0;0"
+    - "D0;point;free;-1000,140;0;0"
+    - "D3;point;free;1000,140;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,220,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,80,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,120,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+  caption: |
+    {B} measures {A}, {C} times; {D} is the unit.
+
+steps:
+  - part: enunciation
+    text: "If a number be measured by any number, the number which is measured will have a part called by the same name as the measuring number."
+    highlight: [A, B]
+    hint: |
+      If $b \mid a$, then $a$ has a $1/b$ part.
+    explain:
+      fact: |
+        "A part called by the same name as {B}": a third part if {B} is three, a fourth if four. Greek
+        names the fraction $1/n$ after the number $n$ (τρίτον from τρία), as English does.
+    modern: |
+      $b \mid a \Rightarrow a/b$ is a whole number, and $a/b = \tfrac1b a$.
+
+  - part: setting-out
+    text: "For let the number A be measured by any number B;"
+    highlight: [A, B]
+    hint: |
+      {B} measures {A}.
+
+  - part: specification
+    text: "I say that A has a part called by the same name as B."
+    highlight: [A, B]
+    hint: |
+      To prove: {A} has a "{B}-th" part.
+
+  - part: construction
+    text: "For, as many times as B measures A, so many units let there be in C."
+    highlight: [C]
+    hint: |
+      {C} counts how often {B} goes into {A}.
+
+  - part: proof
+    text: "Since B measures A according to the units in C, and the unit D also measures the number C according to the units in it, therefore the unit D measures the number C the same number of times as B measures A."
+    highlight: [D, C, B, A]
+    hint: |
+      The unit goes into {C} as often as {B} into {A}.
+
+  - part: proof
+    text: "Therefore, alternately, the unit D measures the number B the same number of times as C measures A;"
+    highlight: [D, B, C, A]
+    hint: |
+      Alternate ([[VII.15]]): {C} goes into {A} as often as the unit into {B}.
+
+  - part: proof
+    text: "therefore, whatever part the unit D is of the number B, the same part is C of A also."
+    highlight: [D, B, C, A]
+    hint: |
+      So {C} is the same part of {A} as the unit is of {B}.
+
+  - part: proof
+    text: "But the unit D is a part of the number B called by the same name as it; therefore C is also a part of A called by the same name as B, so that A has a part C which is called by the same name as B."
+    highlight: [C, A, B]
+    hint: |
+      The unit is the "{B}-th" part of {B}; so {C} is the "{B}-th" part of {A}.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7]
+      text: |
+        $a = cb$, so $a = bc$ ([[VII.15]]), i.e. $c = \tfrac1b a$. $\blacksquare$
+
+commentary: |
+  [[VII.37]]–[[VII.39]] close Book VII by connecting divisors with unit fractions; they are the
+  number-theoretic background to the Greek (and Egyptian) habit of writing fractions as sums of unit
+  fractions.

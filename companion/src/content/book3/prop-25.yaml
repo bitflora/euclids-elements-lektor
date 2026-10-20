@@ -1,0 +1,181 @@
+id: III.25
+kind: problem
+title: Completing a circle from a segment
+
+paraphrase: |
+  Given a segment of a circle (an arc on a chord), find its centre and draw the whole circle.
+
+diagram:
+  width: 230
+  height: 230
+  elements:
+    - "A;point;free;60,30"
+    - "C;point;free;60,200"
+    - "AC;line;connect;A,C"
+    - "D;point;midpoint;AC"
+    - "DBp;line;perpendicular;D,A;0;0;0"
+    - "B;point;lineSlider;DBp,30,115"
+    - "E;point;circumcenter;A,B,C"
+    - "BE;line;connect;B,E"
+    - "AE;line;connect;A,E"
+    - "CE;line;connect;C,E"
+    - "ABC;sector;sector;E,A,C;0;0;black;0"
+    - "AB;line;connect;A,B"
+    - "DB;line;connect;D,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "DC;line;connect;D,C;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "full;circle;radius;E,A;0;0;black;0"
+    - "angABD;sector;angleMarker;B,A,D"
+    - "angBAD;sector;angleMarker;A,B,D"
+    - "angBAE;sector;angleMarker;A,B,E"
+  aliases:
+    EB: BE
+    EA: AE
+    EC: CE
+    BA: AB
+    ABD: angABD
+    BAD: angBAD
+    BAE: angBAE
+    ABE: angABD
+  given: [A, C, B, ABC, AC]
+  caption: |
+    Slide {B} along the perpendicular bisector to change the segment. {E} lands outside the segment when
+    it is less than a semicircle, on {AC} for a semicircle, inside when it is greater.
+
+steps:
+  - part: enunciation
+    text: "Given a segment of a circle, to describe the complete circle of which it is a segment."
+    highlight: [ABC, full]
+    hint: |
+      A problem: from a piece of a circle, recover the whole.
+    explain:
+      implicit: |
+        "To describe the complete circle" is literally "to describe the circle on to it" (Heath's note on line 1).
+
+  - part: setting-out
+    text: "Let ABC be the given segment of a circle;"
+    highlight: [ABC]
+    hint: |
+      The data: arc {ABC} on chord {AC}.
+
+  - part: specification
+    text: "thus it is required to describe the complete circle belonging to the segment ABC, that is, of which it is a segment."
+    highlight: [ABC]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let AC be bisected at D, let DB be drawn from the point D at right angles to AC, and let AB be joined;"
+    highlight: [D, DB, AB]
+    adds: [D, DB, AB]
+    hint: |
+      The perpendicular bisector of the chord meets the arc at {B} ([[I.10]], [[I.11]]).
+    cites: [I.10, I.11]
+
+  - part: proof
+    text: "the angle ABD is then greater than, equal to, or less than the angle BAD."
+    highlight: [angABD, angBAD]
+    hint: |
+      Three cases, according to the shape of the segment.
+
+  - part: proof
+    text: "First let it be greater;"
+    highlight: [angABD]
+    hint: |
+      Case 1 (as drawn).
+
+  - part: construction
+    text: "and on the straight line BA, and at the point A on it, let the angle BAE be constructed equal to the angle ABD;"
+    highlight: [angBAE, angABD]
+    adds: [AE, angBAE]
+    hint: |
+      Copy ∠{ABD} at {A} ([[I.23]]).
+    cites: [I.23]
+
+  - part: construction
+    text: "let DB be drawn through to E, and let EC be joined."
+    highlight: [DE, BE, CE]
+    adds: [E, BE, CE]
+    hint: |
+      Extend {DB} to meet {AE} at {E}; join {EC}.
+
+  - part: proof
+    text: "Then, since the angle ABE is equal to the angle BAE, the straight line EB is also equal to EA."
+    highlight: [BE, AE]
+    hint: |
+      Equal angles, equal sides ([[I.6]]).
+
+  - part: proof
+    text: "And, since AD is equal to DC, and DE is common, the two sides AD, DE are equal to the two sides CD, DE respectively; and the angle ADE is equal to the angle CDE, for each is right; therefore the base AE is equal to the base CE."
+    highlight: [AE, CE]
+    hint: |
+      SAS ([[I.4]]).
+    cites: [I.4]
+
+  - part: proof
+    text: "But AE was proved equal to BE; therefore BE is also equal to CE; therefore the three straight lines AE, EB, EC are equal to one another."
+    highlight: [AE, BE, CE]
+    hint: |
+      {E} is equidistant from {A}, {B}, {C}.
+
+  - part: proof
+    text: "Therefore the circle drawn with centre E and distance one of the straight lines AE, EB, EC will also pass through the remaining points and will have been completed."
+    highlight: [full, E]
+    adds: [full]
+    hint: |
+      The circle about {E} through {A} passes through {B} and {C} ([[III.9]]).
+
+  - part: proof
+    text: "Therefore, given a segment of a circle, the complete circle has been described."
+    highlight: [full]
+    hint: |
+      Case 1 done.
+
+  - part: proof
+    text: "And it is manifest that the segment ABC is less than a semicircle, because the centre E happens to be outside it."
+    highlight: [ABC, E]
+    hint: |
+      In this case the centre is outside the segment.
+
+  - part: proof
+    text: "Similarly, even if the angle ABD be equal to the angle BAD, AD being equal to each of the two BD, DC, the three straight lines DA, DB, DC will be equal to one another, D will be the centre of the completed circle, and ABC will clearly be a semicircle."
+    highlight: [D]
+    hint: |
+      Case 2: {D} itself is the centre; a semicircle.
+
+  - part: proof
+    text: "But, if the angle ABD be less than the angle BAD, and if we construct, on the straight line BA and at the point A on it, an angle equal to the angle ABD, the centre will fall on DB within the segment ABC, and the segment ABC will clearly be greater than a semicircle."
+    highlight: [DB]
+    hint: |
+      Case 3: the centre is inside; greater than a semicircle.
+
+  - part: conclusion
+    text: "Therefore, given a segment of a circle, the complete circle has been described."
+    highlight: [full]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4]
+      text: The centre lies on the perpendicular bisector of $AC$ (porism to III.1).
+    - steps: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+      text: It is also on the perpendicular bisector of $AB$; the two meet at the circumcentre $E$. $\blacksquare$
+  closing: |
+    Euclid finds the point of the first bisector equidistant from {A} and {B} by copying an angle rather
+    than by bisecting {AB}.
+
+commentary: |
+  Book III's second construction problem after [[III.1]]. The case split also *classifies* segments: less
+  than, equal to, or greater than a semicircle.
+
+gaps: |
+  - **{DB} produced meets {AE}** (step 6) in the first case — taken from the figure.

@@ -1,0 +1,104 @@
+id: XI.29
+kind: theorem
+title: Parallelepipeds on the same base and height, tops on the same lines, are equal
+
+paraphrase: |
+  Parallelepipeds on the same base and of the same height, whose upper edges lie on the same straight lines, are
+  equal. The solid version of [[I.35]].
+
+diagram:
+  width: 300
+  height: 300
+  elements:
+    - "F;point;fixed;70,130,0;black;green"
+    - "1X;point;fixed;270,103,36;0;0"
+    - "1Y;point;fixed;25,10,160;0;0"
+    - "1Z;point;fixed;70,274,123;0;0"
+    - "M;point;lineSlider;F,1X,210,60,0"
+    - "D;point;lineSlider;F,1Y,60,60,100"
+    - "A;point;lineSlider;F,1Z,210,210,180"
+    - "ceiling;plane;3points;F,M,D;0;0;black;60,50,100"
+    - "L;point;parallelogram;A,F,M"
+    - "C;point;parallelogram;A,F,D"
+    - "B;point;parallelogram;L,A,C"
+    - "H;point;parallelogram;M,F,D"
+    - "floor;plane;3points;A,L,C;0;0;black;0"
+    - "AFDC;polygon;quadrilateral;A,F,D,C;0;0;black;60,75,100"
+    - "ALMF;polygon;quadrilateral;A,L,M,F;0;0;black;60,100,100"
+    - "HB;line;connect;H,B"
+    - "N;point;lineSlider;F,M,280,210,10"
+    - "G;point;parallelogram;N,L,A"
+    - "K;point;parallelogram;N,L,B"
+    - "E;point;parallelogram;N,L,C"
+    - "ACEG;polygon;quadrilateral;A,C,E,G;0;0;black;0"
+    - "LBKN;polygon;quadrilateral;L,B,K,N;0;0;black;0"
+    - "HK;line;connect;H,K"
+    - "M,N;line;connect;M,N"
+  aliases: { BH: HB, KH: HK }
+  caption: |
+    Two parallelepipeds *CM*, *CN* on the base *AB*.
+
+steps:
+  - part: enunciation
+    text: "Parallelepipedal solids which are on the same base and of the same height, and in which the extremities of the sides which stand up are on the same straight lines, are equal to one another."
+    highlight: [A]
+    hint: |
+      Shearing preserves volume (first case).
+
+  - part: setting-out
+    text: "Let CM, CN be parallelepipedal solids on the same base AB and of the same height, and let the extremities of their sides which stand up, namely AG, AF, LM, LN, CD, CE, BH, BK, be on the same straight lines FN, DK; I say that the solid CM is equal to the solid CN."
+    highlight: [A]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For, since each of the figures CH, CK is a parallelogram, CB is equal to each of the straight lines DH, EK, hence DH is also equal to EK."
+    highlight: [A]
+    hint: |
+      *DH* = *EK* (each equals *CB*, [[I.34]]).
+
+  - part: proof
+    text: "Let EH be subtracted from each; therefore the remainder DE is equal to the remainder HK."
+    highlight: [A]
+    hint: |
+      Subtract *EH*: *DE* = *HK*.
+
+  - part: proof
+    text: "Hence the triangle DCE is also equal to the triangle HBK, and the parallelogram DG to the parallelogram HN."
+    highlight: [A]
+    hint: |
+      So the end triangles and side parallelograms are equal ([[I.8]], [[I.4]], [[I.36]]).
+
+  - part: proof
+    text: "For the same reason the triangle AFG is also equal to the triangle MLN."
+    highlight: [A]
+    hint: |
+      Likewise the triangles *AFG*, *MLN*.
+
+  - part: proof
+    text: "But the parallelogram CF is equal to the parallelogram BM, and CG to BN, for they are opposite; therefore the prism contained by the two triangles AFG, DCE and the three parallelograms AD, DG, CG is equal to the prism contained by the two triangles MLN, HBK and the three parallelograms BM, HN, BN."
+    highlight: [A]
+    hint: |
+      So the two prisms cut off are equal.
+
+  - part: proof
+    text: "Let there be added to each the solid of which the parallelogram AB is the base and GEHM its opposite; therefore the whole parallelepipedal solid CM is equal to the whole parallelepipedal solid CN."
+    highlight: [A]
+    hint: |
+      Add the common solid: the parallelepipeds are equal.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [A]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Cavalieri: equal base, equal height, equal volume. $\blacksquare$

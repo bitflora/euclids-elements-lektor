@@ -1,0 +1,241 @@
+id: VIII.21
+kind: theorem
+title: Numbers with two means between them are similar solid numbers
+
+paraphrase: |
+  If two mean proportionals {C}, {D} fall between {A} and {B}, then {A} and {B} are similar solid numbers. A
+  converse of [[VIII.19]].
+
+diagram:
+  width: 510
+  height: 170
+  elements:
+    - "U1;point;free;0,0;0;0"
+    - "U2;point;free;25,0;0;0"
+    - "U;line;connect;U1,U2;0;0;0"
+    - "H1;point;free;30,30;0"
+    - "H3;point;parallelogram;H1,U;0;0"
+    - "H2;point;lineSlider;H1,H3,65,0;0"
+    - "H;line;connect;H1,H2;black"
+    - "K1;point;free;30,70;0"
+    - "K3;point;parallelogram;K1,U;0;0"
+    - "K2;point;lineSlider;K1,K3,80,0;0"
+    - "K;line;connect;K1,K2;black"
+    - "N1;point;free;30,110;0"
+    - "N3;point;parallelogram;N1,U;0;0"
+    - "N2;point;lineSlider;N1,N3,70,0;0"
+    - "N;line;connect;N1,N2;black"
+    - "L1;point;free;100,50;0"
+    - "L3;point;parallelogram;L1,U;0;0"
+    - "L2;point;lineSlider;L1,L3,140,0;0"
+    - "L;line;connect;L1,L2;black"
+    - "M1;point;free;100,90;0"
+    - "M3;point;parallelogram;M1,U;0;0"
+    - "M2;point;proportion;H,K,L,M1,M3;0"
+    - "M;line;connect;M1,M2;black"
+    - "O1;point;free;100,130;0"
+    - "O3;point;parallelogram;O1,U;0;0"
+    - "O2;point;proportion;H,L,N,O1,O3;0"
+    - "O;line;connect;O1,O2;black"
+    - "E1;point;free;190,50;0"
+    - "E3;point;parallelogram;E1,U;0;0"
+    - "E2;point;proportion;U,H,K,E1,E3;0"
+    - "E;line;connect;E1,E2;black"
+    - "G1;point;free;190,130;0"
+    - "G3;point;parallelogram;G1,U;0;0"
+    - "G2;point;proportion;U,L,M,G1,G3;0"
+    - "G;line;connect;G1,G2;black"
+    - "F1;point;free;190,90;0"
+    - "F3;point;parallelogram;F1,U;0;0"
+    - "F2;point;proportion;H,L,E,F1,F3;0"
+    - "F;line;connect;F1,F2;black"
+    - "A1;point;free;310,30;0"
+    - "A3;point;parallelogram;A1,U;0;0"
+    - "A2;point;proportion;U,N,E,A1,A3;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;free;310,150;0"
+    - "B3;point;parallelogram;B1,U;0;0"
+    - "B2;point;proportion;U,O,G,B1,B3;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;free;310,70;0"
+    - "C3;point;parallelogram;C1,U;0;0"
+    - "C2;point;proportion;H,L,A,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;free;310,110;0"
+    - "D3;point;parallelogram;D1,U;0;0"
+    - "D2;point;proportion;H,L,C,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+  caption: |
+    {E}, {F}, {G} are least in the ratio of {A}, {C}, {D}; {E} = {H}{K}, {G} = {L}{M}; {A} = {N}{E}, {B} =
+    {O}{G}.
+
+steps:
+  - part: enunciation
+    text: "If two mean proportional numbers fall between two numbers, the numbers are similar solid numbers."
+    highlight: [A, B, C, D]
+    hint: |
+      Two geometric means between $a$ and $b$ $\Rightarrow$ $a$, $b$ similar solid numbers.
+    modern: |
+      $a, c, d, b$ geometric $\Rightarrow a = hkn$, $b = lmo$ with $h : l = k : m = n : o$.
+
+  - part: setting-out
+    text: "For let two mean proportional numbers C, D fall between the two numbers A, B;"
+    highlight: [A, C, D, B]
+    hint: |
+      {A}, {C}, {D}, {B} in continued proportion.
+
+  - part: specification
+    text: "I say that A, B are similar solid numbers."
+    highlight: [A, B]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For let three numbers E, F, G, the least of those which have the same ratio with A, C, D, be taken;"
+    highlight: [E, F, G]
+    hint: |
+      Least numbers {E}, {F}, {G} in the ratio of {A}, {C}, {D}.
+
+  - part: proof
+    text: "therefore the extremes of them E, G are prime to one another."
+    highlight: [E, G]
+    hint: |
+      [[VIII.3]].
+
+  - part: proof
+    text: "Now, since one mean proportional number F has fallen between E, G, therefore E, G are similar plane numbers."
+    highlight: [E, F, G]
+    hint: |
+      [[VIII.20]].
+
+  - part: construction
+    text: "Let, then, H, K be the sides of E, and L, M of G."
+    highlight: [H, K, L, M]
+    hint: |
+      {E} = {H}{K}, {G} = {L}{M}.
+
+  - part: proof
+    text: "Therefore it is manifest from the theorem before this that E, F, G are continuously proportional in the ratio of H to L and that of K to M."
+    highlight: [E, F, G]
+    hint: |
+      From the proof of [[VIII.20]].
+
+  - part: proof
+    text: "Now, since E, F, G are the least of the numbers which have the same ratio with A, C, D, and the multitude of the numbers E, F, G is equal to the multitude of the numbers A, C, D, therefore, ex aequali, as E is to G, so is A to D."
+    highlight: [E, G, A, D]
+    hint: |
+      [[VII.14]].
+
+  - part: proof
+    text: "But E, G are prime, primes are also least, and the least measure those which have the same ratio with them the same number of times, the greater the greater and the less the less, that is, the antecedent the antecedent and the consequent the consequent; therefore E measures A the same number of times that G measures D."
+    highlight: [E, A, G, D]
+    hint: |
+      [[VII.21]], [[VII.20]].
+
+  - part: construction
+    text: "Now, as many times as E measures A, so many units let there be in N."
+    highlight: [N]
+    hint: |
+      {A} = {N} copies of {E}.
+
+  - part: proof
+    text: "Therefore N by multiplying E has made A."
+    highlight: [N, E, A]
+    hint: |
+      {A} = {N}{E}.
+
+  - part: proof
+    text: "But E is the product of H, K; therefore N by multiplying the product of H, K has made A."
+    highlight: [A]
+    hint: |
+      {A} = {N}{H}{K}.
+
+  - part: proof
+    text: "Therefore A is solid, and H, K, N are its sides."
+    highlight: [A, H, K, N]
+    hint: |
+      Solid.
+
+  - part: proof
+    text: "Again, since E, F, G are the least of the numbers which have the same ratio as C, D, B, therefore E measures C the same number of times that G measures B."
+    highlight: [E, C, G, B]
+    hint: |
+      Same argument for {C}, {D}, {B}.
+
+  - part: construction
+    text: "Now, as many times as E measures C, so many units let there be in O."
+    highlight: [O]
+    hint: |
+      {O} counts.
+
+  - part: proof
+    text: "Therefore G measures B according to the units in O; therefore O by multiplying G has made B."
+    highlight: [O, G, B]
+    hint: |
+      {B} = {O}{G}.
+
+  - part: proof
+    text: "But G is the product of L, M; therefore O by multiplying the product of L, M has made B."
+    highlight: [B]
+    hint: |
+      {B} = {O}{L}{M}.
+
+  - part: proof
+    text: "Therefore B is solid, and L, M, O are its sides; therefore A, B are solid."
+    highlight: [A, B]
+    hint: |
+      Both solid.
+
+  - part: specification
+    text: "I say that they are also similar."
+    highlight: [A, B]
+    hint: |
+      Now similar.
+
+  - part: proof
+    text: "For since N, O by multiplying E have made A, C, therefore, as N is to O, so is A to C, that is, E to F."
+    highlight: [N, O, A, C, E, F]
+    hint: |
+      [[VII.18]].
+
+  - part: proof
+    text: "But, as E is to F, so is H to L and K to M; therefore also, as H is to L, so is K to M and N to O."
+    highlight: [H, L, K, M, N, O]
+    hint: |
+      The sides are proportional.
+
+  - part: proof
+    text: "And H, K, N are the sides of A, and O, L, M the sides of B."
+    highlight: [A, B]
+    hint: |
+      Recalled.
+
+  - part: proof
+    text: "Therefore A, B are similar solid numbers."
+    highlight: [A, B]
+    hint: |
+      Done ([[VII.Def.21]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [4, 5, 6, 7, 8]
+      text: |
+        The least progression is $e, f, g$ with $e = hk$, $g = lm$, ratio $h : l = k : m$.
+    - steps: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+      text: |
+        $a = ne$, $c = oe$, so $a = hkn$; and $b = og = lmo$.
+    - steps: [19, 20, 21, 22, 23]
+      text: |
+        $n : o = a : c = e : f = h : l$. $\blacksquare$
+
+gaps: |
+  - Step 4 uses the least numbers in the ratio of {A}, {C}, {D}, but then appeals to the same numbers as
+    least in the ratio of {C}, {D}, {B} (step 14); that holds because the ratios are equal.
+  - [[VIII.20]]'s proof is cited for the ratios of the sides ("manifest from the theorem before this").

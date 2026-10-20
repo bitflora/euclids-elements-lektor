@@ -1,0 +1,97 @@
+id: X.19
+kind: theorem
+title: A rectangle on rational lines commensurable in length is rational
+
+paraphrase: |
+  If {AB}, {BC} are rational and commensurable in length, the rectangle {AC} they contain is rational.
+
+diagram:
+  width: 240
+  height: 240
+  elements:
+    - "A0;point;free;-1000,200;0;0"
+    - "A3;point;free;1000,200;0;0"
+    - "A;point;lineSlider;A0,A3,40,0"
+    - "B;point;lineSlider;A0,A3,200,0"
+    - "AD;polygon;square;A,B;0;0;black;random"
+    - "D;point;vertex;AD,3"
+    - "C;point;lineSlider;B,D,200,90"
+    - "AC;polygon;parallelogram;A,B,C"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+  aliases: { DA: AD }
+  caption: |
+    {AD} is the square on {AB}; {AC} the rectangle {AB}·{BC}.
+
+steps:
+  - part: enunciation
+    text: "The rectangle contained by rational straight lines commensurable in length is rational."
+    highlight: [AC]
+    hint: |
+      Rational × rational (commensurable in length) is a rational area.
+    modern: |
+      $a = r\rho$, $b = s\rho$ with $r, s \in \mathbb{Q}$ $\Rightarrow$ $ab = rs\rho^2$, rational.
+
+  - part: setting-out
+    text: "For let the rectangle AC be contained by the rational straight lines AB, BC commensurable in length;"
+    highlight: [AB, BC, AC]
+    hint: |
+      {AB}, {BC} rational, commensurable in length.
+
+  - part: specification
+    text: "I say that AC is rational."
+    highlight: [AC]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For on AB let the square AD be described;"
+    highlight: [AD]
+    hint: |
+      The square {AD} on {AB} …
+
+  - part: proof
+    text: "therefore AD is rational."
+    highlight: [AD]
+    hint: |
+      … is rational ([[X.Def.4]]).
+
+  - part: proof
+    text: "And, since AB is commensurable in length with BC, while AB is equal to BD, therefore BD is commensurable in length with BC."
+    highlight: [BD, BC]
+    hint: |
+      {BD} = {AB}, so {BD} is commensurable with {BC}.
+
+  - part: proof
+    text: "And, as BD is to BC, so is DA to AC."
+    highlight: [AD, AC]
+    hint: |
+      Same height: {DA} : {AC} = {BD} : {BC} ([[VI.1]]).
+
+  - part: proof
+    text: "Therefore DA is commensurable with AC."
+    highlight: [AD, AC]
+    hint: |
+      So {DA}, {AC} commensurable ([[X.11]]) …
+
+  - part: proof
+    text: "But DA is rational; therefore AC is also rational."
+    highlight: [AC]
+    hint: |
+      … and {AC} rational.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8]
+      text: |
+        $AC/AD = BC/BD \in \mathbb{Q}$ and $AD$ is rational. $\blacksquare$
+
+commentary: |
+  Joyce explains the bookkeeping that starts here: everything is measured against a fixed rational line,
+  and "rational" areas are rational multiples of its square.

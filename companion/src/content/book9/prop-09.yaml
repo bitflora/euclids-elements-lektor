@@ -1,0 +1,174 @@
+id: IX.9
+kind: theorem
+title: If the first term after the unit is a square (cube), all terms are
+
+paraphrase: |
+  In a continued proportion 1, {A}, {B}, … from the unit, if {A} is a square then every term is a square; if
+  {A} is a cube then every term is a cube.
+
+diagram:
+  width: 250
+  height: 200
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "B0;point;free;-1000,60;0;0"
+    - "B3;point;free;1000,60;0;0"
+    - "C0;point;free;-1000,90;0;0"
+    - "C3;point;free;1000,90;0;0"
+    - "D0;point;free;-1000,120;0;0"
+    - "D3;point;free;1000,120;0;0"
+    - "E0;point;free;-1000,150;0;0"
+    - "E3;point;free;1000,150;0;0"
+    - "F0;point;free;-1000,180;0;0"
+    - "F3;point;free;1000,180;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,90,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,105,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;A1,A2,B1,B2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;E0,E3,30,0;0"
+    - "E2;point;proportion;A1,A2,B1,B2,D1,D2,E1,E3;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;F0,F3,30,0;0"
+    - "F2;point;proportion;A1,A2,B1,B2,E1,E2,F1,F3;0"
+    - "F;line;connect;F1,F2;black"
+  caption: |
+    1, {A}, {B}, {C}, {D}, {E}, {F} in continued proportion.
+
+steps:
+  - part: enunciation
+    text: "If as many numbers as we please beginning from an unit be in continued proportion, and the number after the unit be square, all the rest will also be square. And, if the number after the unit be cube, all the rest will also be cube."
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      Powers of a square are squares; powers of a cube are cubes.
+    modern: |
+      $a = s^2 \Rightarrow a^k = (s^k)^2$; $a = s^3 \Rightarrow a^k = (s^k)^3$.
+
+  - part: setting-out
+    text: "Let there be as many numbers as we please, A, B, C, D, E, F, beginning from an unit and in continued proportion, and let A, the number after the unit, be square;"
+    highlight: [A]
+    hint: |
+      {A} a square.
+
+  - part: specification
+    text: "I say that all the rest will also be square."
+    highlight: [B, C, D, E, F]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "Now it has been proved that B, the third from the unit, is square, as are also all those which leave out one;"
+    highlight: [B, D, F]
+    hint: |
+      [[IX.8]]: every other term is a square anyway.
+
+  - part: specification
+    text: "I say that all the rest are also square."
+    highlight: [C, E]
+    hint: |
+      The odd ones remain.
+
+  - part: proof
+    text: "For, since A, B, C are in continued proportion, and A is square, therefore C is also square."
+    highlight: [A, B, C]
+    hint: |
+      [[VIII.22]].
+
+  - part: proof
+    text: "Again, since B, C, D are in continued proportion, and B is square, D is also square."
+    highlight: [B, C, D]
+    hint: |
+      [[VIII.22]].
+
+  - part: proof
+    text: "Similarly we can prove that all the rest are also square."
+    highlight: [E, F]
+    hint: |
+      And so on.
+
+  - part: specification
+    text: "Next, let A be cube; I say that all the rest are also cube."
+    highlight: [A]
+    hint: |
+      Cube case.
+
+  - part: proof
+    text: "Now it has been proved that C, the fourth from the unit, is cube, as also are all those which leave out two;"
+    highlight: [C, F]
+    hint: |
+      [[IX.8]].
+
+  - part: specification
+    text: "I say that all the rest are also cube."
+    highlight: [B, D, E]
+    hint: |
+      The others.
+
+  - part: proof
+    text: "For, since, as the unit is to A, so is A to B, therefore the unit measures A the same number of times as A measures B."
+    highlight: [A, B]
+    hint: |
+      1 : {A} = {A} : {B}.
+
+  - part: proof
+    text: "But the unit measures A according to the units in it; therefore A also measures B according to the units in itself; therefore A by multiplying itself has made B."
+    highlight: [A, B]
+    hint: |
+      {B} = {A}².
+
+  - part: proof
+    text: "And A is cube."
+    highlight: [A]
+    hint: |
+      By hypothesis.
+
+  - part: proof
+    text: "But, if a cube number by multiplying itself make some number, the product is cube."
+    highlight: [A, B]
+    hint: |
+      [[IX.3]].
+
+  - part: proof
+    text: "Therefore B is also cube."
+    highlight: [B]
+    hint: |
+      {B} a cube.
+
+  - part: proof
+    text: "And, since the four numbers A, B, C, D are in continued proportion, and A is cube, D also is cube."
+    highlight: [A, B, C, D]
+    hint: |
+      [[VIII.23]].
+
+  - part: proof
+    text: "For the same reason E is also cube, and similarly all the rest are cube."
+    highlight: [E, F]
+    hint: |
+      And so on.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6, 7]
+      text: |
+        $a = s^2 \Rightarrow a^k = (s^k)^2$.
+    - steps: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+      text: |
+        $a = s^3 \Rightarrow a^k = (s^k)^3$. $\blacksquare$
+
+commentary: |
+  The converse is [[IX.10]].

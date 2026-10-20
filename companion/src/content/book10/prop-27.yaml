@@ -1,0 +1,127 @@
+id: X.27
+kind: problem
+title: Medials commensurable in square only containing a rational rectangle
+
+paraphrase: |
+  Find two medial lines {C}, {D}, commensurable in square only, whose rectangle is rational. With {A} = 1 and
+  {B} = $\sqrt b$: {C} = $b^{1/4}$, {D} = $b^{3/4}$.
+
+diagram:
+  width: 150
+  height: 200
+  elements:
+    - "A0;point;free;30,-1000;0;0"
+    - "A3;point;free;30,1000;0;0"
+    - "A1;point;lineSlider;A0,A3,30,30;0"
+    - "A2;point;lineSlider;A0,A3,30,170;0"
+    - "A;line;connect;A1,A2;black"
+    - "B0;point;free;60,-1000;0;0"
+    - "B3;point;free;60,1000;0;0"
+    - "B1;point;lineSlider;B0,B3,60,30;0"
+    - "B2;point;lineSlider;B0,B3,60,140;0"
+    - "B;line;connect;B1,B2;black"
+    - "C0;point;free;90,-1000;0;0"
+    - "C3;point;free;90,1000;0;0"
+    - "C1;point;lineSlider;C0,C3,90,30;0"
+    - "C2;point;meanProportional;A1,A2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D0;point;free;120,-1000;0;0"
+    - "D3;point;free;120,1000;0;0"
+    - "D1;point;lineSlider;D0,D3,120,30;0"
+    - "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+  caption: |
+    {A}, {B} rational, commensurable in square only; {C} their mean; {A} : {B} = {C} : {D}.
+
+steps:
+  - part: enunciation
+    text: "To find medial straight lines commensurable in square only which contain a rational rectangle."
+    highlight: [C, D]
+    hint: |
+      Medials $c, d$ with $cd$ rational.
+    modern: |
+      $c = b^{1/4}$, $d = b^{3/4}$, $cd = b$.
+
+  - part: construction
+    text: "Let two rational straight lines A, B commensurable in square only be set out; let C be taken a mean proportional between A, B, and let it be contrived that, as A is to B, so is C to D."
+    highlight: [A, B, C, D]
+    hint: |
+      {C} = mean of {A}, {B} ([[VI.13]]); {D} with {A} : {B} = {C} : {D} ([[VI.12]]).
+
+  - part: proof
+    text: "Then, since A, B are rational and commensurable in square only, the rectangle A, B, that is, the square on C, is medial."
+    highlight: [A, B, C]
+    hint: |
+      sq({C}) = rect({A},{B}) is medial ([[VI.17]], [[X.21]]) …
+
+  - part: proof
+    text: "Therefore C is medial."
+    highlight: [C]
+    hint: |
+      … so {C} is medial.
+
+  - part: proof
+    text: "And since, as A is to B, so is C to D, and A, B are commensurable in square only, therefore C, D are also commensurable in square only."
+    highlight: [C, D]
+    hint: |
+      {C}, {D} commensurable in square only ([[X.11]]) …
+
+  - part: proof
+    text: "And C is medial; therefore D is also medial."
+    highlight: [D]
+    hint: |
+      … so {D} is medial too ([[X.23]] and its addendum).
+
+  - part: proof
+    text: "Therefore C, D are medial and commensurable in square only."
+    highlight: [C, D]
+    hint: |
+      Medial, commensurable in square only.
+
+  - part: specification
+    text: "I say that they also contain a rational rectangle."
+    highlight: [C, D]
+    hint: |
+      Now: rect({C},{D}) rational.
+
+  - part: proof
+    text: "For since, as A is to B, so is C to D, therefore, alternately, as A is to C, so is B to D."
+    highlight: [A, C, B, D]
+    hint: |
+      Alternately ([[V.16]]): {A} : {C} = {B} : {D}.
+
+  - part: proof
+    text: "But, as A is to C, so is C to B; therefore also, as C is to B, so is B to D; therefore the rectangle C, D is equal to the square on B."
+    highlight: [C, B, D]
+    hint: |
+      {A} : {C} = {C} : {B}, so {C} : {B} = {B} : {D}: rect({C},{D}) = sq({B}).
+
+  - part: proof
+    text: "But the square on B is rational; therefore the rectangle C, D is also rational."
+    highlight: [C, D]
+    hint: |
+      sq({B}) is rational.
+
+  - part: proof
+    text: "Therefore medial straight lines commensurable in square only have been found which contain a rational rectangle."
+    highlight: [C, D]
+    hint: |
+      Found.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6]
+      text: |
+        $c = \sqrt{1\cdot\sqrt b} = b^{1/4}$, $d = c\sqrt b = b^{3/4}$; $c^2 = \sqrt b$, $d^2 = b\sqrt b$.
+    - steps: [7, 8, 9, 10, 11]
+      text: |
+        $cd = b$, rational. $\blacksquare$
+
+commentary: |
+  [[X.27]] and [[X.28]] show that both cases of [[X.25]] occur; they supply the "first bimedial" ([[X.37]]) and
+  "second bimedial" ([[X.38]]).

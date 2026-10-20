@@ -1,0 +1,183 @@
+id: III.31
+kind: theorem
+title: The angle in a semicircle is right
+
+paraphrase: |
+  An angle inscribed in a semicircle is a right angle (Thales' theorem); in a larger segment it is acute,
+  in a smaller one obtuse. Also: the curvilinear angle of the larger segment exceeds a right angle, that
+  of the smaller falls short.
+
+diagram:
+  width: 280
+  height: 280
+  elements:
+    - "B;point;free;130,240"
+    - "C;point;free;210,40"
+    - "BC;line;connect;B,C"
+    - "E;point;midpoint;BC"
+    - "ABCD;circle;radius;E,B;0;0;black;0"
+    - "A;point;circleSlider;ABCD,60,90"
+    - "D;point;circleSlider;ABCD,90,40"
+    - "AB;line;connect;A,B"
+    - "AC;line;connect;A,C"
+    - "AD;line;connect;A,D"
+    - "CD;line;connect;C,D"
+    - "AE;line;connect;A,E"
+    - "F;point;extend;B,A,B,A"
+    - "FA;line;connect;F,A"
+    - "ABC;polygon;triangle;A,B,C;0;0;0;0"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angABC;sector;angleMarker;B,A,C"
+    - "angACB;sector;angleMarker;C,A,B"
+    - "angADC;sector;angleMarker;D,A,C"
+    - "angFAC;sector;angleMarker;A,F,C"
+    - "angBAE;sector;angleMarker;A,B,E"
+    - "angCAE;sector;angleMarker;A,E,C"
+  aliases:
+    BA: AB
+    CA: AC
+    EA: AE
+    AF: FA
+    BAC: angBAC
+    ACB: angACB
+    ADC: angADC
+    FAC: angFAC
+    BAE: angBAE
+    CAE: angCAE
+    ABE: angABC
+    ACE: angACB
+  given: [B, C, BC, E, ABCD, A, D, AB, AC, AD, CD]
+  caption: |
+    Slide {A} round the circle: the angle at {A}, standing on the diameter {BC}, is always right.
+
+steps:
+  - part: enunciation
+    text: "In a circle the angle in the semicircle is right, that in a greater segment less than a right angle, and that in a less segment greater than a right angle; and further the angle of the greater segment is greater than a right angle, and the angle of the less segment less than a right angle."
+    highlight: [angBAC, angABC, angADC]
+    hint: |
+      Thales' theorem and its companions.
+    explain:
+      fact: |
+        The "angle *in* a segment" is a rectilinear angle at the circumference ([[III.Def.8]]); the "angle
+        *of* a segment" is the curvilinear angle between chord and arc ([[III.Def.7]]).
+    cites: [III.Def.7, III.Def.8]
+
+  - part: setting-out
+    text: "Let ABCD be a circle, let BC be its diameter, and E its centre, and let BA, AC, AD, DC be joined;"
+    highlight: [BC, E, AB, AC, AD, CD]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the angle BAC in the semicircle BAC is right, the angle ABC in the segment ABC greater than the semicircle is less than a right angle, and the angle ADC in the segment ADC less than the semicircle is greater than a right angle."
+    highlight: [angBAC, angABC, angADC]
+    hint: |
+      Three claims about rectilinear angles.
+
+  - part: construction
+    text: "Let AE be joined, and let BA be carried through to F."
+    highlight: [AE, FA]
+    adds: [AE, F, FA]
+    hint: |
+      Join {AE}; extend {BA} to {F}.
+
+  - part: proof
+    text: "Then, since BE is equal to EA, the angle ABE is also equal to the angle BAE."
+    highlight: [angABC, angBAE]
+    hint: |
+      Isosceles ([[I.5]]).
+
+  - part: proof
+    text: "Again, since CE is equal to EA, the angle ACE is also equal to the angle CAE."
+    highlight: [angACB, angCAE]
+    hint: |
+      Isosceles again.
+
+  - part: proof
+    text: "Therefore the whole angle BAC is equal to the two angles ABC, ACB."
+    highlight: [angBAC, angABC, angACB]
+    hint: |
+      Add.
+
+  - part: proof
+    text: "But the angle FAC exterior to the triangle ABC is also equal to the two angles ABC, ACB;"
+    highlight: [angFAC, ABC]
+    hint: |
+      Exterior angle ([[I.32]]).
+
+  - part: proof
+    text: "therefore the angle BAC is also equal to the angle FAC; therefore each is right;"
+    highlight: [angBAC, angFAC]
+    hint: |
+      Equal adjacent angles are right ([[I.Def.10]]).
+
+  - part: proof
+    text: "therefore the angle BAC in the semicircle BAC is right."
+    highlight: [angBAC]
+    hint: |
+      Thales' theorem.
+
+  - part: proof
+    text: "Next, since in the triangle ABC the two angles ABC, BAC are less than two right angles, and the angle BAC is a right angle, the angle ABC is less than a right angle; and it is the angle in the segment ABC greater than the semicircle."
+    highlight: [angABC]
+    hint: |
+      [[I.17]].
+
+  - part: proof
+    text: "Next, since ABCD is a quadrilateral in a circle, and the opposite angles of quadrilaterals in circles are equal to two right angles, while the angle ABC is less than a right angle, therefore the angle ADC which remains is greater than a right angle; and it is the angle in the segment ADC less than the semicircle."
+    highlight: [angADC, angABC]
+    hint: |
+      [[III.22]].
+
+  - part: specification
+    text: "I say further that the angle of the greater segment, namely that contained by the circumference ABC and the straight line AC, is greater than a right angle; and the angle of the less segment, namely that contained by the circumference ADC and the straight line AC, is less than a right angle."
+    highlight: [AC]
+    hint: |
+      The curvilinear angles at {A}.
+
+  - part: proof
+    text: "This is at once manifest. For, since the angle contained by the straight lines BA, AC is right, the angle contained by the circumference ABC and the straight line AC is greater than a right angle."
+    highlight: [angBAC]
+    hint: |
+      The arc {ABC} leaves {A} outside the right angle, so the curvilinear angle contains it.
+
+  - part: proof
+    text: "Again, since the angle contained by the straight lines AC, AF is right, the angle contained by the straight line CA and the circumference ADC is less than a right angle."
+    highlight: [angFAC]
+    hint: |
+      And the other curvilinear angle is contained in ∠{FAC}.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      text: |
+        With $E$ the origin and $B = -C$: $\vec{AB}\cdot\vec{AC} = (B - A)\cdot(-B - A) = |A|^2 - |B|^2 = 0$. $\blacksquare$
+    - steps: [10, 11]
+      text: The other inscribed angles are half the central angles $< 180^\circ$ or $> 180^\circ$ (III.20).
+  closing: |
+    The dot-product proof is the modern classic; Euclid's uses two isosceles triangles and I.32.
+
+commentary: |
+  One of the most famous theorems in geometry. It gives the standard construction of a right angle,
+  of the tangent from a point (the circle on {AE} as diameter), and of the mean proportional ([[II.14]],
+  VI.13).
+
+gaps: |
+  - **Angle addition** in step 3: {AE} lies inside ∠{BAC|angBAC}.
+
+historical: |
+  Diogenes Laertius, citing Pamphile, reports that Thales was the first to inscribe a right-angled
+  triangle in a circle, and sacrificed an ox. Others attributed the discovery to Pythagoras. Aristotle
+  sketches a different proof, using the angle sum of the triangle directly.

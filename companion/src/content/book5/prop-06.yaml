@@ -1,0 +1,176 @@
+id: V.6
+kind: theorem
+title: Subtracting equimultiples
+
+paraphrase: |
+  If {AB}, {CD} are the same multiple of {E}, {F}, and pieces {AG}, {CH} cut from them are again the same
+  multiple of {E}, {F}, then the remainders {GB}, {HD} are either equal to {E}, {F} or the same multiple of them.
+  In algebra: $m e - n e = (m - n) e$.
+
+diagram:
+  width: 400
+  height: 145
+  elements:
+    - "U0;point;free;-1000,30;0;0"
+    - "U1;point;free;1000,30;0;0"
+    - "V0;point;free;-1000,60;0;0"
+    - "V1;point;free;1000,60;0;0"
+    - "W0;point;free;-1000,100;0;0"
+    - "W1;point;free;1000,100;0;0"
+    - "X0;point;free;-1000,130;0;0"
+    - "X1;point;free;1000,130;0;0"
+    - "E0;point;lineSlider;W0,W1,40,100;0"
+    - "E1;point;lineSlider;W0,W1,80,100;0"
+    - "E;line;connect;E0,E1;black;0;cyan"
+    - "F0;point;lineSlider;X0,X1,40,130;0"
+    - "F1;point;lineSlider;X0,X1,105,130;0"
+    - "F;line;connect;F0,F1;black;0;red"
+    - "A;point;lineSlider;U0,U1,40,30"
+    - "A1;point;cutoff;A,U1,E0,E1;0;lightGray"
+    - "A2;point;cutoff;A1,U1,E0,E1;0;lightGray"
+    - "G;point;cutoff;A2,U1,E0,E1"
+    - "B;point;cutoff;G,U1,E0,E1"
+    - "AB;line;connect;A,B;0;0;cyan"
+    - "C;point;lineSlider;V0,V1,105,130"
+    - "K;point;cutoff;C,V0,F0,F1"
+    - "C1;point;cutoff;C,V1,F0,F1;0;lightGray"
+    - "C2;point;cutoff;C1,V1,F0,F1;0;lightGray"
+    - "H;point;cutoff;C2,V1,F0,F1"
+    - "D;point;cutoff;H,V1,F0,F1"
+    - "KD;line;connect;K,D;0;0;red"
+    - "CD;line;connect;C,D;0;0;0"
+    - "AG;line;connect;A,G;0;0;0"
+    - "GB;line;connect;G,B;0;0;0"
+    - "CH;line;connect;C,H;0;0;0"
+    - "HD;line;connect;H,D;0;0;0"
+    - "CK;line;connect;C,K;0;0;0"
+    - "KH;line;connect;K,H;0;0;0"
+  aliases:
+    KC: CK
+  caption: |
+    {AB} is four times {E} and {AG} three times; {CD} is four times {F} and {CH} three times. {CK} is the extra
+    copy of {F} that the proof lays off before {C}.
+
+steps:
+  - part: enunciation
+    text: "If two magnitudes be equimultiples of two magnitudes, and any magnitudes subtracted from them be equimultiples of the same, the remainders also are either equal to the same or equimultiples of them."
+    highlight: [AB, CD, AG, CH, E, F]
+    hint: |
+      The subtraction counterpart of [[V.2]].
+    explain:
+      implicit: |
+        "Either equal or equimultiples": for Euclid 1 is not a number, so "one times" is not a multiple, and
+        the case where the remainder is a single copy is stated separately.
+    modern: |
+      $$me - ne = (m - n)e,\quad mf - nf = (m - n)f \qquad (m > n)$$
+
+  - part: setting-out
+    text: "For let two magnitudes AB, CD be equimultiples of two magnitudes E, F, and let AG, CH subtracted from them be equimultiples of the same two E, F;"
+    highlight: [AB, CD, E, F, AG, CH]
+    hint: |
+      {AB} = $m${E}, {CD} = $m${F}; {AG} = $n${E}, {CH} = $n${F}. In the figure $m = 4$, $n = 3$.
+
+  - part: specification
+    text: "I say that the remainders also, GB, HD, are either equal to E, F or equimultiples of them."
+    highlight: [GB, HD, E, F]
+    hint: |
+      The goal.
+
+  - part: setting-out
+    text: "For, first, let GB be equal to E;"
+    highlight: [GB, E]
+    hint: |
+      Case 1: the remainder {GB} is one copy of {E} (so $m - n = 1$).
+
+  - part: specification
+    text: "I say that HD is also equal to F."
+    highlight: [HD, F]
+    hint: |
+      The goal in this case.
+
+  - part: construction
+    text: "For let CK be made equal to F."
+    highlight: [CK, F]
+    hint: |
+      Lay off a copy of {F} on the other side of {C} ([[I.3]] for lines).
+
+  - part: proof
+    text: "Since AG is the same multiple of E that CH is of F, while GB is equal to E and KC to F, therefore AB is the same multiple of E that KH is of F."
+    highlight: [AG, CH, GB, KC, AB, KH]
+    hint: |
+      Add one copy to each: {AB} = {AG} + {GB} and {KH} = {KC} + {CH} are equimultiples of {E}, {F} ([[V.2]]).
+
+  - part: proof
+    text: "But, by hypothesis, AB is the same multiple of E that CD is of F;"
+    highlight: [AB, CD]
+    hint: |
+      {CD} = $m${F}.
+
+  - part: proof
+    text: "therefore KH is the same multiple of F that CD is of F."
+    highlight: [KH, CD, F]
+    hint: |
+      Both {KH} and {CD} are $m${F}.
+
+  - part: proof
+    text: "Since then each of the magnitudes KH, CD is the same multiple of F, therefore KH is equal to CD."
+    highlight: [KH, CD]
+    hint: |
+      The same multiple of the same magnitude: equal.
+    explain:
+      implicit: |
+        If $X = mF$ and $Y = mF$ then $X = Y$ — both are the same sum of copies of {F}.
+
+  - part: proof
+    text: "Let CH be subtracted from each; therefore the remainder KC is equal to the remainder HD."
+    highlight: [CH, KC, HD]
+    hint: |
+      {KH} − {CH} = {CD} − {CH} ([[I.CN.3]]).
+    cites: [I.CN.3]
+
+  - part: proof
+    text: "But F is equal to KC; therefore HD is also equal to F."
+    highlight: [F, KC, HD]
+    hint: |
+      By construction {KC} = {F}.
+
+  - part: proof
+    text: "Hence, if GB is equal to E, HD is also equal to F."
+    highlight: [GB, E, HD, F]
+    hint: |
+      Case 1 done.
+
+  - part: proof
+    text: "Similarly we can prove that, even if GB be a multiple of E, HD is also the same multiple of F."
+    highlight: [GB, HD]
+    hint: |
+      Case 2: lay off {CK} as that multiple of {F} instead; the same argument works.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: |
+        Let $AB = mE$, $CD = mF$, $AG = nE$, $CH = nF$, with $m > n$.
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+      text: |
+        $GB = mE - nE = (m - n)E$ and $HD = mF - nF = (m - n)F$, since $nE + (m - n)E = mE$ ([[V.2]]) and
+        subtraction is well defined. $\blacksquare$
+
+commentary: |
+  Euclid's method mirrors [[V.5]]: build a candidate ({KH}) with the right multiple, show it equals the
+  given whole, and subtract. Joyce notes that V.6, like V.5, is not cited later in the *Elements*.
+
+gaps: |
+  - **Case 2** ("similarly") is left to the reader.

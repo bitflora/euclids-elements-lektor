@@ -1,0 +1,88 @@
+id: VIII.7
+kind: theorem
+title: If the first measures the last, it measures the second
+
+paraphrase: |
+  In a continued proportion {A}, {B}, {C}, {D}, if {A} measures {D} then {A} measures {B}.
+
+diagram:
+  width: 270
+  height: 170
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "C0;point;free;-1000,110;0;0"
+    - "C3;point;free;1000,110;0;0"
+    - "D0;point;free;-1000,145;0;0"
+    - "D3;point;free;1000,145;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,90,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,120,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;A1,A2,B1,B2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+  caption: |
+    {A}, {B}, {C}, {D} in continued proportion.
+
+steps:
+  - part: enunciation
+    text: "If there be as many numbers as we please in continued proportion, and the first measure the last, it will measure the second also."
+    highlight: [A, B, C, D]
+    hint: |
+      The contrapositive of [[VIII.6]].
+    modern: |
+      $a_1 \mid a_n \Rightarrow a_1 \mid a_2$.
+
+  - part: setting-out
+    text: "Let there be as many numbers as we please, A, B, C, D, in continued proportion; and let A measure D;"
+    highlight: [A, D]
+    hint: |
+      {A} measures {D}.
+
+  - part: specification
+    text: "I say that A also measures B."
+    highlight: [A, B]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, if A does not measure B, neither will any other of the numbers measure any other."
+    highlight: [A, B]
+    hint: |
+      Otherwise no term measures a later one ([[VIII.6]]).
+
+  - part: proof
+    text: "But A measures D."
+    highlight: [A, D]
+    hint: |
+      But {A} measures {D}.
+
+  - part: proof
+    text: "Therefore A also measures B."
+    highlight: [A, B]
+    hint: |
+      So {A} measures {B}.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5]
+      text: |
+        Contrapositive of [[VIII.6]]. $\blacksquare$
+
+commentary: |
+  Used in [[VIII.14]] and [[VIII.15]]: if a square measures a square, the side measures the side.

@@ -1,0 +1,361 @@
+id: I.5
+kind: theorem
+title: The base angles of an isosceles triangle (pons asinorum)
+
+paraphrase: |
+  In a triangle with two equal sides, the angles opposite those sides are equal; and if the
+  equal sides are extended past the base, the angles formed below the base are equal too.
+
+diagram:
+  width: 340
+  height: 290
+  pivot: M
+  elements:
+    - "B;point;free;120,150"
+    - "C;point;free;220,150"
+    - "M;point;midpoint;B,C;0;0"
+    - "MM;line;perpendicular;M,B;0;0;0"
+    - "A;point;lineSlider;MM,170,35"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "BD;line;extend;A,B,A,B"
+    - "D;point;last;BD;black;0"
+    - "CE;line;extend;A,C,A,C"
+    - "E;point;last;CE;black;0"
+    - "F;point;lineSlider;BD,90,215"
+    - "AG;line;cutoff;A,E,A,F;0;0;0"
+    - "G;point;last;AG"
+    - "FC;line;connect;F,C"
+    - "BG;line;connect;B,G"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AF;line;connect;A,F;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "BF;line;connect;B,F;0;0;0"
+    - "CG;line;connect;C,G;0;0;0"
+    - "AFC;polygon;triangle;A,F,C;0;0;0;0"
+    - "AGB;polygon;triangle;A,G,B;0;0;0;0"
+    - "BFC;polygon;triangle;B,F,C;0;0;0;0"
+    - "CGB;polygon;triangle;C,G,B;0;0;0;0"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angABC;sector;angleMarker;B,A,C"
+    - "angACB;sector;angleMarker;C,A,B"
+    - "angCBD;sector;angleMarker;B,C,D"
+    - "angBCE;sector;angleMarker;C,B,E"
+    - "angABG;sector;angleMarker;B,A,G"
+    - "angACF;sector;angleMarker;C,A,F"
+    - "angAFC;sector;angleMarker;F,A,C"
+    - "angAGB;sector;angleMarker;G,A,B"
+    - "angCBG;sector;angleMarker;B,C,G"
+    - "angBCF;sector;angleMarker;C,B,F"
+  aliases:
+    BA: AB
+    CA: AC
+    CB: BC
+    FA: AF
+    GA: AG
+    CF: FC
+    GB: BG
+    FB: BF
+    GC: CG
+    angFAG: angBAC
+    angBFC: angAFC
+    angCGB: angAGB
+    angFBC: angCBD
+    angGCB: angBCE
+    # Bare three-letter names used in the notes for angles (none is also a triangle here)
+    ABG: angABG
+    ACB: angACB
+    ACF: angACF
+    BCE: angBCE
+    BCF: angBCF
+    CBD: angCBD
+    CBG: angCBG
+    FAC: angBAC
+    FAG: angBAC
+    GAB: angBAC
+    FBC: angCBD
+    GCB: angBCE
+  given: [A, B, C, ABC]
+  caption: |
+    Drag {B} or {C}; slide {A} (it stays on the line that keeps {AB} = {AC}) and slide {F}
+    along {BD} — "a point taken at random".
+
+steps:
+  - part: enunciation
+    text: "In isosceles triangles the angles at the base are equal to one another,"
+    highlight: [angABC, angACB]
+    hint: |
+      The main claim — the angles opposite the equal sides are equal.
+    explain:
+      did: |
+        States the first half of the theorem.
+      fact: |
+        An isosceles triangle has two equal sides ([[I.Def.20]]); the *base* is the third side, and
+        the angles at its ends are the "angles at the base".
+
+  - part: enunciation
+    text: "and, if the equal straight lines be produced further, the angles under the base will be equal to one another."
+    highlight: [angCBD, angBCE]
+    hint: |
+      A second claim: extend the equal sides past the base, and the two angles *below* the base are
+      equal as well.
+    explain:
+      did: |
+        States the second half.
+      implicit: |
+        This half is not needed for the first and is used less often. Proclus explains that
+        it is there for later use, in particular to deal with a case of [[I.7]] that Euclid does
+        not treat.
+
+  - part: setting-out
+    text: "Let ABC be an isosceles triangle having the side AB equal to the side AC;"
+    highlight: [ABC, AB, AC]
+    hint: |
+      The data. {AB} = {AC}; {BC} is the base.
+    modern: |
+      $$AB = AC$$
+
+  - part: setting-out
+    text: "and let the straight lines BD, CE be produced further in a straight line with AB, AC."
+    highlight: [BD, CE]
+    adds: [BD, CE, D, E]
+    hint: |
+      Extend {AB} beyond {B} to {D}, and {AC} beyond {C} to {E} ([[I.Post.2]]).
+    explain:
+      did: |
+        Completes the figure that the enunciation describes. Because the second half of the
+        theorem speaks of the sides *produced*, this belongs to the setting-out rather than to
+        the construction.
+      justification: "[[I.Post.2]]"
+      implicit: |
+        The lines are to be produced far enough; Post. 2 allows any length.
+
+  - part: specification
+    text: "I say that the angle ABC is equal to the angle ACB, and the angle CBD to the angle BCE."
+    highlight: [angABC, angACB, angCBD, angBCE]
+    hint: |
+      Two things to prove.
+    modern: |
+      $$\angle ABC = \angle ACB \qquad\text{and}\qquad \angle CBD = \angle BCE$$
+
+  - part: construction
+    text: "Let a point F be taken at random on BD;"
+    highlight: [F, BD]
+    adds: [F]
+    hint: |
+      Pick any point {F} on the extension {BD}.
+    explain:
+      did: |
+        Chooses an auxiliary point.
+      fact: |
+        "At random" (τυχὸν σημεῖον, "a chance point", Heath's note on line 10): nothing
+        depends on which point is chosen.
+      implicit: |
+        That {F} is beyond {B}, not between {A} and {B}. It lies on {BD}, which is the extension.
+
+  - part: construction
+    text: "from AE the greater let AG be cut off equal to AF the less;"
+    highlight: [AE, AG, AF, G]
+    adds: [G]
+    hint: |
+      Mark {G} on {AE} with {AG} = {AF}, using [[I.3]].
+    explain:
+      did: |
+        Applies I.3 to the lines {AE} and {AF}.
+      fact: |
+        After this step {AF} = {AG}.
+      justification: "[[I.3]]"
+      implicit: |
+        That {AE} *is* the greater. {AE} is a produced line, so it can be made as long as needed
+        ([[I.Post.2]]). And that {G} lands beyond {C}: {AG} = {AF} > {AB} = {AC}.
+    gap: |
+      The position of {G} beyond {C} is needed in step 9 (so that {CG} is a "remainder"), and
+      depends on {AF} > {AB}, i.e. on {F} lying beyond {B}. Euclid does not say so.
+
+  - part: construction
+    text: "and let the straight lines FC, GB be joined."
+    highlight: [FC, BG]
+    adds: [FC, BG]
+    hint: |
+      Draw the two cross lines {FC} and {GB} ([[I.Post.1]]).
+    explain:
+      did: |
+        Completes the figure. There are now two pairs of overlapping triangles.
+      implicit: |
+        Heath notes that this is the first place Euclid allows himself the short form "let
+        {FC} be joined", without naming the points it runs from and to.
+
+  - part: proof
+    text: "Then, since AF is equal to AG and AB to AC, the two sides FA, AC are equal to the two sides GA, AB, respectively; and they contain a common angle, the angle FAG."
+    highlight: [AFC, AGB, AF, AC, AG, AB, angBAC]
+    hint: |
+      Look at the big triangles {AFC} and {AGB}. They have two pairs of equal sides and share the
+      angle at {A}. That is the hypothesis of [[I.4]].
+    explain:
+      did: |
+        Checks the hypothesis of I.4 for triangles {AFC} and {AGB}.
+      fact: |
+        {FA} = {GA} (step 5) and {AC} = {AB} (given), and the angle between each pair is the
+        same angle at {A}.
+      justification: |
+        The setting-out and step 5; the angle is literally shared.
+      implicit: |
+        That angle {FAC} and angle {GAB} are both the angle {FAG}: {F} lies on line {AB}
+        and {G} on line {AC}, so each pair of sides lies along the same two lines.
+    modern: |
+      $$AF = AG,\quad AC = AB,\quad \angle FAC = \angle GAB \;(= \angle FAG)$$
+
+  - part: proof
+    text: "Therefore the base FC is equal to the base GB, and the triangle AFC is equal to the triangle AGB, and the remaining angles will be equal to the remaining angles respectively, namely those which the equal sides subtend, that is, the angle ACF to the angle ABG, and the angle AFC to the angle AGB."
+    highlight: [FC, BG, angACF, angABG, angAFC, angAGB]
+    hint: |
+      [[I.4]] delivers everything at once: {FC} = {GB}, and two pairs of equal angles.
+    explain:
+      did: |
+        Applies I.4, quoting its conclusion in full.
+      follows: |
+        Matching the sides: {FA} ↔ {GA} and {AC} ↔ {AB}. So the angle opposite {FA}, namely the angle
+        at {C} ({ACF}), equals the angle opposite {GA}, the angle at {B} ({ABG}); and the angle
+        opposite {AC} (at {F}) equals the angle opposite {AB} (at {G}).
+      implicit: |
+        The triangles {AFC} and {AGB} overlap; I.4 does not care.
+    modern: |
+      $$\triangle AFC \cong \triangle AGB:\quad FC = GB,\quad \angle ACF = \angle ABG,\quad \angle AFC = \angle AGB$$
+
+  - part: proof
+    text: "And, since the whole AF is equal to the whole AG, and in these AB is equal to AC, the remainder BF is equal to the remainder CG."
+    highlight: [AF, AG, AB, AC, BF, CG]
+    hint: |
+      Equal minus equal: {AF} − {AB} = {AG} − {AC}, so {BF} = {CG} ([[I.CN.3]]).
+    explain:
+      justification: "[[I.CN.3]], as in I.2."
+      implicit: "{B} lies between {A} and {F}, and {C} between {A} and {G} (see steps 4 and 5)."
+    modern: |
+      $$BF = AF - AB = AG - AC = CG$$
+    cites: [I.CN.3]
+
+  - part: proof
+    text: "But FC was also proved equal to GB; therefore the two sides BF, FC are equal to the two sides CG, GB respectively; and the angle BFC is equal to the angle CGB, while the base BC is common to them;"
+    highlight: [BFC, CGB, BF, FC, CG, BG, angAFC, angAGB, BC]
+    hint: |
+      Now the small triangles {BFC} and {CGB} below the base: two sides and the angle between
+      them are equal. I.4 again.
+    explain:
+      did: |
+        Checks the hypothesis of I.4 for triangles {BFC} and {CGB}.
+      fact: |
+        {BF} = {CG} (step 9), {FC} = {GB} (step 8), and the angle at {F} equals the angle at {G}
+        (step 8).
+      implicit: |
+        Angle {BFC} is the same angle as {AFC}, because {B} lies on {FA}; likewise {CGB} is {AGB}.
+        "The base {BC} is common to them": Heath explains that Euclid is quoting I.4's
+        conclusion ("the base equal to the base"), and since here the two bases are the *same*
+        line, "equal" becomes "common".
+    modern: |
+      $$BF = CG,\quad FC = GB,\quad \angle BFC = \angle CGB$$
+
+  - part: proof
+    text: "therefore the triangle BFC is also equal to the triangle CGB, and the remaining angles will be equal to the remaining angles respectively, namely those which the equal sides subtend; therefore the angle FBC is equal to the angle GCB, and the angle BCF to the angle CBG."
+    highlight: [angCBD, angBCE, angBCF, angCBG]
+    hint: |
+      [[I.4]] gives two more pairs of equal angles. The first pair, ∠{FBC} and ∠{GCB}, are the
+      angles *under the base*.
+    explain:
+      justification: "[[I.4]] (Heath does not bracket it here)."
+      follows: |
+        Angle {FBC} is opposite {FC}, angle {GCB} is opposite {GB}, and {FC} = {GB}. Angle {BCF} is
+        opposite {BF}, angle {CBG} opposite {CG}, and {BF} = {CG}.
+    modern: |
+      $$\angle FBC = \angle GCB,\qquad \angle BCF = \angle CBG$$
+    cites: [I.4]
+
+  - part: proof
+    text: "Accordingly, since the whole angle ABG was proved equal to the angle ACF, and in these the angle CBG is equal to the angle BCF, the remaining angle ABC is equal to the remaining angle ACB; and they are at the base of the triangle ABC."
+    highlight: [angABG, angACF, angCBG, angBCF, angABC, angACB]
+    hint: |
+      Subtract equal angles from equal angles: ∠{ABG} − ∠{CBG} = ∠{ACF} − ∠{BCF}, which leaves
+      ∠{ABC} = ∠{ACB} ([[I.CN.3]]). These are the base angles.
+    explain:
+      did: |
+        Subtracts angles, as step 9 subtracted lines.
+      fact: |
+        Common notion 3 applies to angles as well as lines: they are magnitudes of one kind.
+      justification: "[[I.CN.3]]; ∠{ABG} = ∠{ACF} from step 8, ∠{CBG} = ∠{BCF} from step 11."
+      implicit: |
+        That the line {BC} falls *inside* the angle {ABG} (and {CB} inside {ACF}), so that angle
+        {CBG} is part of angle {ABG} and the "remainder" is angle {ABC}. The figure shows it;
+        nothing proves it.
+    modern: |
+      $$\angle ABC = \angle ABG - \angle CBG = \angle ACF - \angle BCF = \angle ACB$$
+    gap: |
+      **Angle subtraction needs betweenness.** Subtracting ∠{CBG} from ∠{ABG} presupposes
+      that ray {BC} lies inside ∠{ABG}. A modern proof must show it (for instance with the
+      *crossbar theorem*).
+    cites: [I.CN.3]
+
+  - part: proof
+    text: "But the angle FBC was also proved equal to the angle GCB; and they are under the base."
+    highlight: [angCBD, angBCE]
+    hint: |
+      And step 11 already gave the second claim: ∠{FBC} = ∠{GCB}, the angles under the base.
+    explain:
+      implicit: |
+        Angle {FBC} is the angle {CBD} of the enunciation (because {F} lies on {BD}); angle
+        {GCB} is angle {BCE}.
+    modern: |
+      $$\angle CBD = \angle FBC = \angle GCB = \angle BCE$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, restated as proved (abbreviated by Heath).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      From here on Heath writes "Q. E. D." and "Q. E. F." instead of "(Being) what it was
+      required to prove / do" (his note on line 48).
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* With SAS (I.4) available there is a
+    much shorter proof, reported by Proclus and usually credited to Pappus:
+  lines:
+    - steps: [1, 3]
+      text: Let $AB = AC$.
+    - steps: [4, 5, 6, 7, 8, 9, 10, 11, 12]
+      text: |
+        Compare $\triangle ABC$ with itself read in the other order, $\triangle ACB$:
+        $AB = AC$, $AC = AB$, and $\angle BAC = \angle CAB$ (the same angle). By SAS,
+        $\triangle ABC \cong \triangle ACB$, so $\angle ABC = \angle ACB$.
+    - steps: [2, 13]
+      text: |
+        For the angles under the base: $\angle CBD$ and $\angle ABC$ together make two right
+        angles, as do $\angle BCE$ and $\angle ACB$ (a supplement, [[I.13]]); equal angles have
+        equal supplements, so $\angle CBD = \angle BCE$. $\blacksquare$
+  closing: |
+    The short proof uses [[I.13]], which comes later; Euclid's own proof needs only I.3 and I.4.
+    Many readers also find "a triangle congruent to itself, reversed" suspiciously clever. Both
+    points are sometimes given as reasons for Euclid's longer route, but this is conjecture:
+    Euclid does not say why he chose it.
+
+commentary: |
+  This is the proposition medieval students nicknamed the *pons asinorum*, the "bridge of
+  asses" — the first real test in the *Elements*, which the weak could not cross. The figure,
+  with its two pairs of overlapping triangles, may have suggested a bridge.
+
+  The strategy is worth seeing whole: a pair of **big triangles** ({AFC}, {AGB}) gives a pair
+  of **small triangles** ({BFC}, {CGB}) via I.4; the small triangles give the angles under the
+  base directly, and by subtraction from the big ones, the base angles.
+
+gaps: |
+  - **The position of {G}** beyond {C} (step 5), needed for the subtraction in step 9.
+  - **Angle subtraction** (step 12) presupposes that {BC} lies inside angles {ABG} and {ACF}.
+  - **Implicit identifications** of angles that share their sides (∠{FAC} = ∠{GAB},
+    ∠{BFC} = ∠{AFC}, ∠{FBC} = ∠{CBD}): harmless, but never stated.
+
+historical: |
+  Proclus reports that Thales was the first to notice and state that the base angles of an
+  isosceles triangle are equal, calling them, in the archaic manner, "similar" rather than
+  "equal". Proclus also gives the shorter proof attributed to Pappus (see the reconstruction).

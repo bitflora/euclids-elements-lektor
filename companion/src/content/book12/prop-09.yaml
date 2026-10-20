@@ -1,0 +1,142 @@
+id: XII.9
+kind: theorem
+title: Equal pyramids have bases reciprocally proportional to heights
+
+paraphrase: |
+  Two triangular pyramids are equal exactly when their bases are reciprocally proportional to their heights. The
+  pyramid version of [[XI.34]].
+
+diagram:
+  width: 400
+  height: 280
+  elements:
+    - "C;point;fixed;100,200,0;black;green"
+    - "1X;point;fixed;412,200,-91;0;0"
+    - "1Y;point;fixed;65,500,-120;0;0"
+    - "1Z;point;fixed;184,325,288;0;0"
+    - "floor;plane;3points;C,1X,1Y;0;0;0;0"
+    - "B;point;lineSlider;C,1X,40,230,0"
+    - "M;point;planeSlider;floor,180,130,0"
+    - "a;point;lineSlider;C,1Y,150,150,160;0"
+    - "L;point;parallelogram;M,C,a"
+    - "G;point;parallelogram;B,C,a"
+    - "A;point;parallelogram;B,C,M"
+    - "ABCG;polyhedron;tetrahedron;A,B,C,G;0;0;black;random"
+    - "Apar;polyhedron;parallelepiped;B,A,C,G;0;0;black;0"
+    - "E;point;lineSlider;C,1X,220,200,0"
+    - "D;point;lineSlider;C,1X,305,200,0"
+    - "F;point;planeSlider;floor,260,260,0"
+    - "H';point;parallelogram;a,C,E;0;0"
+    - "ABCM;polygon;quadrilateral;A,B,C,M;0;0;0;0"
+    - "DEap;polygon;application;ABCM,E,D,F;0;0;0;0"
+    - "F';point;vertex;DEap,4;0;0"
+    - "H;point;proportion;E,F,B,G,E,F',E,H'"
+    - "DEFH;polyhedron;tetrahedron;D,E,F,H;0;0;black;random"
+    - "Dpar;polyhedron;parallelepiped;E,D,F,H;0;0;black;0"
+    - "Q;point;parallelogram;D,E,F"
+    - "O;point;parallelogram;D,E,H"
+    - "P;point;parallelogram;Q,E,H"
+    - "R;point;parallelogram;F,E,H"
+  caption: |
+    The pyramids *ABCG*, *DEFH* completed to parallelepipeds.
+
+steps:
+  - part: enunciation
+    text: "In equal pyramids which have triangular bases the bases are reciprocally proportional to the heights; and those pyramids in which the bases are reciprocally proportional to the heights are equal."
+    highlight: [B]
+    hint: |
+      Equal volume iff $B_1 : B_2 = h_2 : h_1$.
+
+  - part: setting-out
+    text: "For let there be equal pyramids which have the triangular bases ABC, DEF and vertices the points G, H; I say that in the pyramids ABCG, DEFH the bases are reciprocally proportional to the heights, that is, as the base ABC is to the base DEF, so is the height of the pyramid DEFH to the height of the pyramid ABCG."
+    highlight: [B]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let the parallelepipedal solids BGML, EHQP be completed."
+    highlight: [B]
+    hint: |
+      Complete the parallelepipeds.
+
+  - part: proof
+    text: "Now, since the pyramid ABCG is equal to the pyramid DEFH, and the solid BGML is six times the pyramid ABCG, and the solid EHQP six times the pyramid DEFH, therefore the solid BGML is equal to the solid EHQP."
+    highlight: [B]
+    hint: |
+      They are six times the equal pyramids, so equal.
+
+  - part: proof
+    text: "But in equal parallelepipedal solids the bases are reciprocally proportional to the heights; therefore, as the base BM is to the base EQ, so is the height of the solid EHQP to the height of the solid BGML."
+    highlight: [B]
+    hint: |
+      So their bases are reciprocally as their heights ([[XI.34]]).
+
+  - part: proof
+    text: "But, as the base BM is to EQ, so is the triangle ABC to the triangle DEF."
+    highlight: [B]
+    hint: |
+      And their bases are as the triangles ([[I.34]]).
+
+  - part: proof
+    text: "Therefore also, as the triangle ABC is to the triangle DEF, so is the height of the solid EHQP to the height of the solid BGML."
+    highlight: [B]
+    hint: |
+      So triangle : triangle = height : height reciprocally.
+
+  - part: proof
+    text: "But the height of the solid EHQP is the same with the height of the pyramid DEFH, and the height of the solid BGML is the same with the height of the pyramid ABCG, therefore, as the base ABC is to the base DEF, so is the height of the pyramid DEFH to the height of the pyramid ABCG."
+    highlight: [B]
+    hint: |
+      The heights are those of the pyramids.
+
+  - part: proof
+    text: "Therefore in the pyramids ABCG, DEFH the bases are reciprocally proportional to the heights."
+    highlight: [B]
+    hint: |
+      First part done.
+
+  - part: specification
+    text: "Next, in the pyramids ABCG, DEFH let the bases be reciprocally proportional to the heights; that is, as the base ABC is to the base DEF, so let the height of the pyramid DEFH be to the height of the pyramid ABCG; I say that the pyramid ABCG is equal to the pyramid DEFH."
+    highlight: [B]
+    hint: |
+      Converse.
+
+  - part: proof
+    text: "For, with the same construction, since, as the base ABC is to the base DEF, so is the height of the pyramid DEFH to the height of the pyramid ABCG, while, as the base ABC is to the base DEF, so is the parallelogram BM to the parallelogram EQ, therefore also, as the parallelogram BM is to the parallelogram EQ, so is the height of the pyramid DEFH to the height of the pyramid ABCG."
+    highlight: [B]
+    hint: |
+      The same construction …
+
+  - part: proof
+    text: "But the height of the pyramid DEFH is the same with the height of the parallelepiped EHQP, and the height of the pyramid ABCG is the same with the height of the parallelepiped BGML; therefore, as the base BM is to the base EQ, so is the height of the parallelepiped EHQP to the height of the parallelepiped BGML."
+    highlight: [B]
+    hint: |
+      … heights shared …
+
+  - part: proof
+    text: "But those parallelepipedal solids in which the bases are reciprocally proportional to the heights are equal; therefore the parallelepipedal solid BGML is equal to the parallelepipedal solid EHQP."
+    highlight: [B]
+    hint: |
+      … the parallelepipeds are equal ([[XI.34]]) …
+
+  - part: proof
+    text: "And the pyramid ABCG is a sixth part of BGML, and the pyramid DEFH a sixth part of the parallelepiped EHQP; therefore the pyramid ABCG is equal to the pyramid DEFH."
+    highlight: [B]
+    hint: |
+      … and so are their sixth parts.
+
+  - part: conclusion
+    text: "Therefore etc"
+    highlight: [B]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $\tfrac13 B_1 h_1 = \tfrac13 B_2 h_2$. $\blacksquare$

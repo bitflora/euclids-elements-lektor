@@ -1,0 +1,123 @@
+id: X.67
+kind: theorem
+title: A line commensurable with a bimedial is a bimedial of the same order
+
+paraphrase: |
+  A line {CD} commensurable (in length) with a bimedial {AB} is itself a bimedial and the same order.
+
+diagram:
+  width: 250
+  height: 95
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "C0;point;free;-1000,65;0;0"
+    - "C3;point;free;1000,65;0;0"
+    - "A;point;lineSlider;A0,A3,60,0"
+    - "B;point;lineSlider;A0,A3,180,0"
+    - "AB;line;connect;A,B"
+    - "C;point;lineSlider;C0,C3,30,0"
+    - "D;point;lineSlider;C0,C3,210,0"
+    - "CD;line;connect;C,D"
+    - "E;point;lineSlider;A0,A3,130,0"
+    - "F;point;proportion;A,B,C,D,A,E,C,C3"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "CF;line;connect;C,F;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+  aliases: { BA: AB, DC: CD, EA: AE, BE: EB, FC: CF, DF: FD }
+  caption: |
+    {AB} divided at {E}; {CD} commensurable with {AB}, divided at {F} in the same ratio.
+
+steps:
+  - part: enunciation
+    text: "A straight line commensurable in length with a bimedial straight line is itself also bimedial and the same in order."
+    highlight: [AB, CD]
+    hint: |
+      The kinds of irrational are closed under rational scaling.
+    modern: |
+      $CD = r\,AB$ with $r \in \mathbb Q$ $\Rightarrow$ $CD$ is of the same kind.
+
+  - part: setting-out
+    text: "Let AB be bimedial, and let CD be commensurable in length with AB; I say that CD is bimedial and the same in order with AB."
+    highlight: [AB, CD]
+    hint: |
+      {CD} commensurable with {AB}.
+
+  - part: proof
+    text: "For, since AB is bimedial, let it be divided into its medials at E; therefore AE, EB are medial straight lines commensurable in square only."
+    highlight: [AE, EB]
+    hint: |
+      The medials of {AB}.
+
+  - part: construction
+    text: "And let it be contrived that, as AB is to CD, so is AE to CF; therefore also the remainder EB is to the remainder FD as AB is to CD."
+    highlight: [CF, FD]
+    hint: |
+      Divide {CD} proportionally at {F}.
+
+  - part: proof
+    text: "But AB is commensurable in length with CD; therefore AE, EB are also commensurable with CF, FD respectively."
+    highlight: [AE, CF, EB, FD]
+    hint: |
+      Corresponding parts commensurable.
+
+  - part: proof
+    text: "But AE, EB are medial; therefore CF, FD are also medial."
+    highlight: [CF, FD]
+    hint: |
+      So {CF}, {FD} medial ([[X.23]]).
+
+  - part: proof
+    text: "And since, as AE is to EB, so is CF to FD, and AE, EB are commensurable in square only, CF, FD are also commensurable in square only."
+    highlight: [CF, FD]
+    hint: |
+      Commensurable in square only.
+
+  - part: proof
+    text: "But they were also proved medial; therefore CD is bimedial."
+    highlight: [CD]
+    hint: |
+      {CD} bimedial.
+
+  - part: specification
+    text: "I say next that it is also the same in order with AB."
+    highlight: [CD]
+    hint: |
+      Of the same order:
+
+  - part: proof
+    text: "For since, as AE is to EB, so is CF to FD, therefore also, as the square on AE is to the rectangle AE, EB, so is the square on CF to the rectangle CF, FD; therefore, alternately, as the square on AE is to the square on CF, so is the rectangle AE, EB to the rectangle CF, FD."
+    highlight: [AE, EB, CF, FD]
+    hint: |
+      sq({AE}) : rect({AE},{EB}) = sq({CF}) : rect({CF},{FD}), and alternately.
+
+  - part: proof
+    text: "But the square on AE is commensurable with the square on CF; therefore the rectangle AE, EB is also commensurable with the rectangle CF, FD."
+    highlight: [AE, EB, CF, FD]
+    hint: |
+      So the rectangles are commensurable.
+
+  - part: proof
+    text: "If therefore the rectangle AE, EB is rational, the rectangle CF, FD is also rational, [and for this reason CD is a first bimedial]; but if medial, medial, and each of the straight lines AB, CD is a second bimedial."
+    highlight: [CD]
+    hint: |
+      Rational rectangle (first bimedial) or medial (second) — the same for both. The bracketed words are
+      Heath's sign of a probable interpolation.
+
+  - part: proof
+    text: "And for this reason CD will be the same in order with AB."
+    highlight: [CD]
+    hint: |
+      Same order.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Scaling by a rational $r$ multiplies the terms by $r$ and their squares and rectangle by $r^2$, preserving
+        every property in the definition. $\blacksquare$

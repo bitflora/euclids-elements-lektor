@@ -1,0 +1,150 @@
+id: X.62
+kind: theorem
+title: The square on a second bimedial applied to a rational line gives a third binomial
+
+paraphrase: |
+  If the square on a second bimedial {AB} is applied to a rational line {DE}, the breadth {DG} is a third
+  binomial. The converse of [[X.56]].
+
+diagram:
+  width: 280
+  height: 210
+  elements:
+    - "A0;point;free;-1000,180;0;0"
+    - "A3;point;free;1000,180;0;0"
+    - "D0;point;free;40,-1000;0;0"
+    - "D3;point;free;40,1000;0;0"
+    - "A;point;lineSlider;A0,A3,50,0"
+    - "B;point;lineSlider;A0,A3,170,0"
+    - "C;point;lineSlider;A0,A3,120,0"
+    - "AB;line;connect;A,B"
+    - "D;point;lineSlider;D0,D3,0,40"
+    - "E;point;lineSlider;D0,D3,0,130"
+    - "G';point;parallelogram;D,A0,A3;0;0"
+    - "G;point;proportion;D,E,A,B,A,B,D,G'"
+    - "F;point;parallelogram;E,D,G"
+    - "EDGF;polygon;quadrilateral;E,D,G,F;0;0;black;random"
+    - "K;point;proportion;D,E,A,C,A,C,D,G'"
+    - "EDKH;polygon;parallelogram;E,D,K;0;0;black;random"
+    - "H;point;vertex;EDKH,4"
+    - "M;point;proportion;D,E,B,C,B,C,K,G'"
+    - "HKML;polygon;parallelogram;H,K,M;0;0;black;random"
+    - "L;point;vertex;HKML,4"
+    - "N;point;midpoint;M,G"
+    - "O;point;parallelogram;E,D,N"
+    - "NO;line;connect;N,O"
+    - "DG;line;connect;D,G;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+    - "DM;line;connect;D,M;0;0;0"
+    - "MG;line;connect;M,G;0;0;0"
+    - "DK;line;connect;D,K;0;0;0"
+    - "KM;line;connect;K,M;0;0;0"
+  aliases: { DF: EDGF, DH: EDKH, KL: HKML, BA: AB, ON: NO, GD: DG, ED: DE, CA: AC, BC: CB, MD: DM, GM: MG, KD: DK, MK: KM }
+  caption: |
+    sq({AB}) is applied to the rational line {DE} as {DF}, with breadth {DG}; {DH} = sq({AC}), {KL} =
+    sq({CB}); the rest, *MF*, is 2·rect({AC},{CB}), bisected at {N}.
+
+steps:
+  - part: enunciation
+    text: "The square on the second bimedial straight line applied to a rational straight line produces as breadth the third binomial."
+    highlight: [AB, DG]
+    hint: |
+      Squaring undoes [[X.56]]: a second bimedial squared and divided by a rational line is a third binomial.
+
+  - part: proof
+    text: "Let AB be a second bimedial straight line divided into its medials at C, so that AC is the greater segment; let DE be any rational straight line, and to DE let there be applied the parallelogram DF equal to the square on AB and producing DG as its breadth; I say that DG is a third binomial straight line."
+    highlight: [AB, DE, DF, DG]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "Let the same construction be made as before shown."
+    highlight: [DH, KL]
+    hint: |
+      The construction of [[X.60]].
+
+  - part: proof
+    text: "Then, since AB is a second bimedial divided at C, therefore AC, CB are medial straight lines commensurable in square only and containing a medial rectangle, so that the sum of the squares on AC, CB is also medial."
+    highlight: [AC, CB]
+    hint: |
+      {AC}, {CB} medial, commensurable in square only, medial rectangle: the sum of squares is medial.
+
+  - part: proof
+    text: "And it is equal to DL; therefore DL is also medial."
+    highlight: [DH, KL]
+    hint: |
+      So *DL* is medial …
+
+  - part: proof
+    text: "And it is applied to the rational straight line DE; therefore MD is also rational and incommensurable in length with DE."
+    highlight: [DM]
+    hint: |
+      … and {DM} rational, incommensurable with {DE}.
+
+  - part: proof
+    text: "For the same reason, MG is also rational and incommensurable in length with ML, that is, with DE; therefore each of the straight lines DM, MG is rational and incommensurable in length with DE."
+    highlight: [MG]
+    hint: |
+      Likewise {MG}.
+
+  - part: proof
+    text: "And, since AC is incommensurable in length with CB, and, as AC is to CB, so is the square on AC to the rectangle AC, CB, therefore the square on AC is also incommensurable with the rectangle AC, CB."
+    highlight: [AC, CB]
+    hint: |
+      sq({AC}) incommensurable with rect({AC},{CB}) …
+
+  - part: proof
+    text: "Hence the sum of the squares on AC, CB is incommensurable with twice the rectangle AC, CB, that is, DL is incommensurable with MF, so that DM is also incommensurable with MG."
+    highlight: [DM, MG]
+    hint: |
+      … so the sum of squares with 2·rect, and {DM} with {MG}.
+
+  - part: proof
+    text: "And they are rational; therefore DG is binomial."
+    highlight: [DG]
+    hint: |
+      Binomial.
+
+  - part: specification
+    text: "It is to be proved that it is also a third binomial straight line."
+    highlight: [DG]
+    hint: |
+      A third binomial:
+
+  - part: proof
+    text: "In manner similar to the foregoing we may conclude that DM is greater than MG, and that DK is commensurable with KM."
+    highlight: [DM, MG, DK, KM]
+    hint: |
+      As before, {DM} > {MG} and {DK}, {KM} commensurable …
+
+  - part: proof
+    text: "And the rectangle DK, KM is equal to the square on MN; therefore the square on DM is greater than the square on MG by the square on a straight line commensurable with DM."
+    highlight: [DM, MG]
+    hint: |
+      … so the excess is commensurable with {DM}.
+
+  - part: proof
+    text: "And neither of the straight lines DM, MG is commensurable in length with DE."
+    highlight: [DM, MG, DE]
+    hint: |
+      Neither term commensurable with {DE}.
+
+  - part: proof
+    text: "Therefore DG is a third binomial straight line."
+    highlight: [DG]
+    hint: |
+      Third binomial ([[X.Def.II.3]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $AB^2 = (AC^2 + CB^2) + 2AC\cdot CB$; divided by $\rho$, the two parts give the terms {DM}, {MG} of
+        a binomial, whose kind is read off from which part is rational and from [[X.17]]/[[X.18]].
+        $\blacksquare$

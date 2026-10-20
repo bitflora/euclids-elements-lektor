@@ -1,0 +1,209 @@
+id: I.12
+kind: problem
+title: A perpendicular from a point off a line
+
+paraphrase: |
+  Given an unlimited line {AB} and a point {C} not on it, drop the perpendicular {CH} from {C} to {AB}.
+
+diagram:
+  width: 330
+  height: 220
+  elements:
+    - "A;point;free;20,150"
+    - "B;point;free;310,150"
+    - "AB;line;connect;A,B"
+    - "C;point;free;165,80"
+    - "D;point;free;240,178"
+    - "EFG;circle;radius;C,D"
+    - "EG;line;chord;AB,EFG;0;0;0"
+    - "E;point;first;EG"
+    - "G;point;last;EG"
+    - "H;point;midpoint;EG"
+    - "CG;line;connect;C,G"
+    - "CH;line;connect;C,H"
+    - "CE;line;connect;C,E"
+    - "FFx;line;chord;CH,EFG;0;0;0"
+    - "F;point;first;FFx"
+    - "GH;line;connect;G,H;0;0;0"
+    - "HE;line;connect;H,E;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "CHG;polygon;triangle;C,H,G;0;0;0;0"
+    - "CHE;polygon;triangle;C,H,E;0;0;0;0"
+    - "angCHG;sector;angleMarker;H,C,G"
+    - "angEHC;sector;angleMarker;H,E,C"
+  aliases:
+    BA: AB
+    HC: CH
+    EH: HE
+    HG: GH
+    GC: CG
+    EC: CE
+    CGE: EG
+    angGHC: angCHG
+    angCHE: angEHC
+  given: [A, B, AB, C]
+  caption: |
+    Drag {A}, {B}, {C} or {D}. {D} must stay on the far side of {AB} from {C}; then the circle
+    about {C} through {D} always cuts {AB}, at {E} and {G}.
+
+steps:
+  - part: enunciation
+    text: "To a given infinite straight line, from a given point which is not on it, to draw a perpendicular straight line."
+    highlight: [AB, C, CH]
+    hint: |
+      A problem: from a point off a line, drop the perpendicular to the line.
+    explain:
+      fact: |
+        "Perpendicular" (κάθετος) means "let down", like a plumb-line (Heath's note on line 2).
+      implicit: |
+        The line is *infinite* — unlimited in both directions — so that the circle drawn below is
+        sure to cut it. This is one of the few places Euclid uses the word.
+
+  - part: setting-out
+    text: "Let AB be the given infinite straight line, and C the given point which is not on it;"
+    highlight: [AB, C]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to draw to the given infinite straight line AB, from the given point C which is not on it, a perpendicular straight line."
+    highlight: [AB, C]
+    hint: |
+      The goal restated.
+
+  - part: construction
+    text: "For let a point D be taken at random on the other side of the straight line AB,"
+    highlight: [D]
+    adds: [D]
+    hint: |
+      Pick any point {D} on the far side of {AB} from {C}.
+    explain:
+      did: |
+        Chooses a point that guarantees the circle in the next step reaches across {AB}.
+      fact: |
+        "On the other side" is literally "towards the other parts" of {AB} (Heath's note on line 10).
+
+  - part: construction
+    text: "and with centre C and distance CD let the circle EFG be described;"
+    highlight: [EFG, C, CD]
+    adds: [EFG, E, G, F]
+    hint: |
+      Draw the circle about {C} through {D} ([[I.Post.3]]). It cuts {AB} at two points, {E} and {G}.
+    explain:
+      justification: "[[I.Post.3]]"
+      implicit: |
+        That the circle meets {AB} twice. {C} is inside the circle and on one side of {AB}; {D} is
+        on the circle and on the other side; so the circle must cross the line. No postulate says so.
+    gap: |
+      **Line–circle intersection.** That a line through the inside of a circle meets it in two
+      points is assumed. Modern axiom systems add it (or derive it from a continuity axiom).
+
+  - part: construction
+    text: "let the straight line EG be bisected at H,"
+    highlight: [EG, H]
+    adds: [H]
+    hint: |
+      Find the midpoint {H} of {EG} ([[I.10]]).
+    explain:
+      justification: "[[I.10]]"
+
+  - part: construction
+    text: "and let the straight lines CG, CH, CE be joined."
+    highlight: [CG, CH, CE]
+    adds: [CG, CH, CE]
+    hint: |
+      Join {C} to {G}, {H} and {E} ([[I.Post.1]]). {CH} is the perpendicular.
+    explain:
+      justification: "[[I.Post.1]]"
+
+  - part: proof
+    text: "I say that CH has been drawn perpendicular to the given infinite straight line AB from the given point C which is not on it."
+    highlight: [CH, AB]
+    hint: |
+      The claim.
+
+  - part: proof
+    text: "For, since GH is equal to HE, and HC is common, the two sides GH, HC are equal to the two sides EH, HC respectively;"
+    highlight: [CHG, CHE, GH, HE, CH]
+    hint: |
+      Triangles {CHG} and {CHE}: {GH} = {HE} ({H} is the midpoint), {HC} shared.
+    modern: |
+      $$GH = EH,\qquad HC = HC$$
+
+  - part: proof
+    text: "and the base CG is equal to the base CE;"
+    highlight: [CG, CE, EFG]
+    hint: |
+      Radii of the circle {EFG} ([[I.Def.15]]).
+    cites: [I.Def.15]
+    modern: |
+      $$CG = CE$$
+
+  - part: proof
+    text: "therefore the angle CHG is equal to the angle EHC."
+    highlight: [angCHG, angEHC]
+    hint: |
+      SSS ([[I.8]]).
+    explain:
+      justification: "[[I.8]]"
+    modern: |
+      $$\triangle CHG \cong \triangle CHE \;\Longrightarrow\; \angle CHG = \angle EHC$$
+
+  - part: proof
+    text: "And they are adjacent angles."
+    highlight: [angCHG, angEHC]
+    hint: |
+      They lie side by side on {AB}, sharing {HC}.
+
+  - part: proof
+    text: "But, when a straight line set up on a straight line makes the adjacent angles equal to one another, each of the equal angles is right, and the straight line standing on the other is called a perpendicular to that on which it stands."
+    highlight: [angCHG, angEHC, CH]
+    hint: |
+      [[I.Def.10]], quoted in full: equal adjacent angles are right, and the standing line is a
+      *perpendicular*.
+    explain:
+      justification: "[[I.Def.10]]"
+
+  - part: conclusion
+    text: "Therefore CH has been drawn perpendicular to the given infinite straight line AB from the given point C which is not on it."
+    highlight: [CH, AB]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3]
+      text: |
+        Choose $D$ on the side of line $AB$ opposite $C$. Segment $CD$ meets line $AB$, so the circle
+        $\odot(C, CD)$ contains points of $AB$ in its interior, and by line–circle continuity meets
+        $AB$ in two points $E \ne G$.
+    - steps: [4, 5]
+      text: Let $H$ be the midpoint of $EG$.
+    - steps: [6, 7, 8, 9]
+      text: |
+        $GH = EH$, $HC = HC$, $CG = CE$, so by SSS $\angle CHG = \angle CHE$; they form a linear pair,
+        so each is right. $\blacksquare$
+  closing: |
+    The only new ingredient beyond [[I.11]] is the existence of {E} and {G}, which Euclid takes
+    from the figure.
+
+commentary: |
+  The companion of [[I.11]]: there the point was on the line, here it is off it. The circle about
+  {C} produces a segment {EG} on the line whose ends are equally far from {C}; its midpoint is the
+  foot of the perpendicular.
+
+gaps: |
+  - **The circle meets the line** (step 2), in two points.
+  - **{C} and {H} distinct**: needed for {CH} to be a line; true because {C} is not on {AB}.
+
+historical: |
+  Proclus says that Oenopides of Chios first investigated this problem, thinking it useful for
+  astronomy, and called the perpendicular "gnomon-wise" (κατὰ γνώμονα), after the upright
+  pointer of a sundial.

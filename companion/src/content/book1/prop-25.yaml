@@ -1,0 +1,137 @@
+id: I.25
+kind: theorem
+title: Converse of the hinge theorem
+
+paraphrase: |
+  Two triangles with two pairs of equal sides: the one with the longer third side has the larger
+  angle between the equal sides. The converse of [[I.24]].
+
+diagram:
+  width: 300
+  height: 220
+  elements:
+    - "D;point;free;215,40"
+    - "E;point;free;195,185"
+    - "F;point;free;265,185"
+    - "DEF;polygon;triangle;D,E,F;0;0;black;#dfe7ea"
+    - "A;point;free;75,40"
+    - "ABcirc;circle;radius;A,D,E;0;0;0;0"
+    - "ACcirc;circle;radius;A,D,F;0;0;0;0"
+    - "B;point;circleSlider;ABcirc,30,175"
+    - "C;point;circleSlider;ACcirc,140,182"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angEDF;sector;angleMarker;D,E,F"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+  aliases:
+    BAC: angBAC
+    EDF: angEDF
+  given: [A, B, C, D, E, F, ABC, DEF, angBAC, angEDF]
+  caption: |
+    Slide {B} and {C} (they keep {AB} = {DE}, {AC} = {DF}). Whichever base is longer, the angle
+    opposite it is larger.
+
+steps:
+  - part: enunciation
+    text: "If two triangles have the two sides equal to two sides respectively, but have the base greater than the base, they will also have the one of the angles contained by the equal straight lines greater than the other."
+    highlight: [BC, EF, angBAC, angEDF]
+    hint: |
+      Same two sides, longer base ⇒ wider angle.
+
+  - part: setting-out
+    text: "Let ABC, DEF be two triangles having the two sides AB, AC equal to the two sides DE, DF respectively, namely AB to DE, and AC to DF;"
+    highlight: [AB, DE, AC, DF]
+    hint: |
+      {AB} = {DE}, {AC} = {DF}.
+
+  - part: setting-out
+    text: "and let the base BC be greater than the base EF;"
+    highlight: [BC, EF]
+    hint: |
+      And {BC} > {EF}.
+    modern: |
+      $$AB = DE,\quad AC = DF,\quad BC > EF$$
+
+  - part: specification
+    text: "I say that the angle BAC is also greater than the angle EDF."
+    highlight: [angBAC, angEDF]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, if not, it is either equal to it or less."
+    highlight: [angBAC, angEDF]
+    hint: |
+      Eliminate the other two cases, exactly as in [[I.19]].
+
+  - part: proof
+    text: "Now the angle BAC is not equal to the angle EDF; for then the base BC would also have been equal to the base EF,"
+    highlight: [angBAC, angEDF, BC, EF]
+    hint: |
+      Equal angles would make the triangles congruent by SAS ([[I.4]]), so the bases equal.
+
+  - part: proof
+    text: "but it is not; therefore the angle BAC is not equal to the angle EDF."
+    highlight: [BC, EF]
+    hint: |
+      But {BC} > {EF}. So the angles are not equal.
+
+  - part: proof
+    text: "Neither again is the angle BAC less than the angle EDF; for then the base BC would also have been less than the base EF,"
+    highlight: [angBAC, angEDF, BC, EF]
+    hint: |
+      A smaller angle at {A} would give a smaller base, by the hinge theorem ([[I.24]]).
+
+  - part: proof
+    text: "but it is not; therefore the angle BAC is not less than the angle EDF."
+    highlight: [BC, EF]
+    hint: |
+      But {BC} is the greater. So the angle at {A} is not less.
+
+  - part: proof
+    text: "But it was proved that it is not equal either; therefore the angle BAC is greater than the angle EDF."
+    highlight: [angBAC, angEDF]
+    hint: |
+      Only "greater" is left.
+    modern: |
+      $$\angle BAC > \angle EDF$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Euclid's proof is already the standard one:
+  lines:
+    - steps: [1, 2, 3]
+      text: Let $AB = DE$, $AC = DF$, $BC > EF$.
+    - steps: [4, 5, 6, 7, 8, 9]
+      text: |
+        If $\angle A = \angle D$, SAS gives $BC = EF$; if $\angle A < \angle D$, the hinge theorem gives
+        $BC < EF$. Both contradict $BC > EF$, so $\angle A > \angle D$. $\blacksquare$
+  closing: |
+    In trigonometric terms both I.24 and I.25 say that, for fixed $b$ and $c$, the law of cosines
+    $a^2 = b^2 + c^2 - 2bc\cos A$ makes $a$ an increasing function of the angle $A$.
+
+commentary: |
+  I.25 relates to [[I.24]] as [[I.19]] relates to [[I.18]]: the converse of an inequality, proved by
+  ruling out the other two cases with the direct theorem and the equality case (here [[I.4]]).
+
+gaps: |
+  - **Trichotomy** for angles, as in I.19.
+
+historical: |
+  Proclus records two *direct* proofs of I.25, one by Menelaus of Alexandria and one by Heron,
+  which avoid the reductio.

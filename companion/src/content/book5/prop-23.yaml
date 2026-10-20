@@ -1,0 +1,202 @@
+id: V.23
+kind: theorem
+title: Ex aequali in perturbed proportion
+
+paraphrase: |
+  If {A} : {B} = {E} : {F} and {B} : {C} = {D} : {E} (the second triple matched crosswise), then still {A} : {C} = {D} : {F}.
+
+diagram:
+  width: 500
+  height: 150
+  elements:
+    - "U0;point;free;-1000,30;0;0"
+    - "U1;point;free;1000,30;0;0"
+    - "V0;point;free;-1000,60;0;0"
+    - "V1;point;free;1000,60;0;0"
+    - "W0;point;free;-1000,100;0;0"
+    - "W1;point;free;1000,100;0;0"
+    - "X0;point;free;-1000,130;0;0"
+    - "X1;point;free;1000,130;0;0"
+    - "A0;point;lineSlider;U0,U1,30,30;0"
+    - "A1;point;lineSlider;U0,U1,70,30;0"
+    - "A;line;connect;A0,A1;black;0;magenta"
+    - "B0;point;lineSlider;U0,U1,200,30;0"
+    - "B1;point;lineSlider;U0,U1,250,30;0"
+    - "B;line;connect;B0,B1;black;0;magenta"
+    - "C0;point;lineSlider;U0,U1,370,30;0"
+    - "C1;point;lineSlider;U0,U1,430,30;0"
+    - "C;line;connect;C0,C1;black;0;magenta"
+    - "D0;point;lineSlider;V0,V1,30,60;0"
+    - "D1;point;lineSlider;V0,V1,70,60;0"
+    - "D;line;connect;D0,D1;black;0;blue"
+    - "E0;point;lineSlider;V0,V1,200,60;0"
+    - "E1;point;proportion;B0,B1,C0,C1,D0,D1,E0,V1;0"
+    - "E;line;connect;E0,E1;black;0;blue"
+    - "F0;point;lineSlider;V0,V1,370,60;0"
+    - "F1;point;proportion;A0,A1,B0,B1,E0,E1,F0,V1;0"
+    - "F;line;connect;F0,F1;black;0;blue"
+    - "G0;point;lineSlider;W0,W1,30,30;0"
+    - "G1;point;cutoff;G0,W1,A0,A1;0;lightGray"
+    - "G2;point;cutoff;G1,W1,A0,A1;0;lightGray"
+    - "G3;point;cutoff;G2,W1,A0,A1;0"
+    - "G;line;connect;G0,G3;black;0;magenta"
+    - "K0;point;lineSlider;X0,X1,30,60;0"
+    - "K1;point;cutoff;K0,X1,D0,D1;0;lightGray"
+    - "K2;point;cutoff;K1,X1,D0,D1;0;lightGray"
+    - "K3;point;cutoff;K2,X1,D0,D1;0"
+    - "K;line;connect;K0,K3;black;0;blue"
+    - "H0;point;lineSlider;W0,W1,200,30;0"
+    - "H1;point;cutoff;H0,W1,B0,B1;0;lightGray"
+    - "H2;point;cutoff;H1,W1,B0,B1;0;lightGray"
+    - "H3;point;cutoff;H2,W1,B0,B1;0"
+    - "H;line;connect;H0,H3;black;0;magenta"
+    - "M0;point;lineSlider;X0,X1,200,60;0"
+    - "M1;point;cutoff;M0,X1,E0,E1;0;lightGray"
+    - "M2;point;cutoff;M1,X1,E0,E1;0"
+    - "M;line;connect;M0,M2;black;0;blue"
+    - "L0;point;lineSlider;W0,W1,370,30;0"
+    - "L1;point;cutoff;L0,W1,C0,C1;0;lightGray"
+    - "L2;point;cutoff;L1,W1,C0,C1;0"
+    - "L;line;connect;L0,L2;black;0;magenta"
+    - "N0;point;lineSlider;X0,X1,370,60;0"
+    - "N1;point;cutoff;N0,X1,F0,F1;0;lightGray"
+    - "N2;point;cutoff;N1,X1,F0,F1;0"
+    - "N;line;connect;N0,N2;black;0;blue"
+  caption: |
+    {E} and {F} are constructed so that $B : C = D : E$ and $A : B = E : F$. {G}, {H}, {K} are three times {A}, {B}, {D};
+    {L}, {M}, {N} twice {C}, {E}, {F}.
+
+steps:
+  - part: enunciation
+    text: "If there be three magnitudes, and others equal to them in multitude, which taken two and two together are in the same ratio, and the proportion of them be perturbed, they will also be in the same ratio ex aequali."
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      Perturbed ([[V.Def.18]]): $A : B = E : F$, $B : C = D : E$. Conclusion: $A : C = D : F$.
+    modern: |
+      $$\frac{A}{B} = \frac{E}{F},\ \frac{B}{C} = \frac{D}{E} \ \Rightarrow\ \frac{A}{C} = \frac{D}{F}$$
+    cites: [V.Def.18]
+
+  - part: setting-out
+    text: "Let there be three magnitudes A, B, C, and others equal to them in multitude, which, taken two and two together, are in the same proportion, namely D, E, F; and let the proportion of them be perturbed, so that, as A is to B, so is E to F, and, as B is to C, so is D to E;"
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that, as A is to C, so is D to F."
+    highlight: [A, C, D, F]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Of A, B, D let equimultiples G, H, K be taken, and of C, E, F other, chance, equimultiples L, M, N."
+    highlight: [G, H, K, L, M, N]
+    hint: |
+      {G}, {H}, {K} = $m$ × {A}, {B}, {D}; {L}, {M}, {N} = $n$ × {C}, {E}, {F}.
+
+  - part: proof
+    text: "Then, since G, H are equimultiples of A, B, and parts have the same ratio as the same multiples of them, therefore, as A is to B, so is G to H."
+    highlight: [A, B, G, H]
+    hint: |
+      [[V.15]].
+
+  - part: proof
+    text: "For the same reason also, as E is to F, so is M to N."
+    highlight: [E, F, M, N]
+    hint: |
+      [[V.15]] again.
+    cites: [V.15]
+
+  - part: proof
+    text: "And, as A is to B, so is E to F; therefore also, as G is to H, so is M to N."
+    highlight: [G, H, M, N]
+    hint: |
+      [[V.11]].
+
+  - part: proof
+    text: "Next, since, as B is to C, so is D to E, alternately, also, as B is to D, so is C to E."
+    highlight: [B, D, C, E]
+    hint: |
+      Alternate ([[V.16]]) — which requires all six magnitudes to be of one kind.
+
+  - part: proof
+    text: "And, since H, K are equimultiples of B, D, and parts have the same ratio as their equimultiples, therefore, as B is to D, so is H to K."
+    highlight: [B, D, H, K]
+    hint: |
+      [[V.15]].
+
+  - part: proof
+    text: "But, as B is to D, so is C to E; therefore also, as H is to K, so is C to E."
+    highlight: [H, K, C, E]
+    hint: |
+      [[V.11]].
+
+  - part: proof
+    text: "Again, since L, M are equimultiples of C, E, therefore, as C is to E, so is L to M."
+    highlight: [C, E, L, M]
+    hint: |
+      [[V.15]].
+
+  - part: proof
+    text: "But, as C is to E, so is H to K; therefore also, as H is to K, so is L to M, and, alternately, as H is to L, so is K to M."
+    highlight: [H, L, K, M]
+    hint: |
+      [[V.11]], then alternate ([[V.16]]).
+
+  - part: proof
+    text: "But it was also proved that, as G is to H, so is M to N."
+    highlight: [G, H, M, N]
+    hint: |
+      From step 6.
+
+  - part: proof
+    text: "Since, then, there are three magnitudes G, H, L, and others equal to them in multitude K, M, N, which taken two and two together are in the same ratio, and the proportion of them is perturbed, therefore, ex aequali, if G is in excess of L, K is also in excess of N; if equal, equal; and if less, less."
+    highlight: [G, L, K, N]
+    hint: |
+      $G : H = M : N$ and $H : L = K : M$ is perturbed: [[V.21]] gives {G} vs {L} like {K} vs {N}.
+
+  - part: proof
+    text: "And G, K are equimultiples of A, D, and L, N of C, F."
+    highlight: [G, K, L, N]
+    hint: |
+      The multiples [[V.Def.5]] asks for.
+
+  - part: proof
+    text: "Therefore, as A is to C, so is D to F."
+    highlight: [A, C, D, F]
+    hint: |
+      [[V.Def.5]].
+    cites: [V.Def.5]
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Joyce's streamlined version, using [[V.4]].
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6]
+      text: |
+        Fix $m, n$. Then $mA : mB = A : B = E : F = nE : nF$ ([[V.15]], [[V.11]]).
+    - steps: [7, 8, 9, 10, 11]
+      text: |
+        From $B : C = D : E$: $mB : nC = mD : nE$ ([[V.4]]).
+    - steps: [12, 13, 14, 15]
+      text: |
+        Now $mA : mB = nE : nF$ and $mB : nC = mD : nE$ are perturbed, so [[V.21]] gives
+        $mA \gtreqless nC \Rightarrow mD \gtreqless nF$: $A : C = D : F$. $\blacksquare$
+  closing: |
+    This version needs no alternation, so it holds when {A}, {B}, {C} and {D}, {E}, {F} are of different kinds.
+
+commentary: |
+  Joyce finds Euclid's proof clumsy: it uses [[V.15]] and [[V.11]] where [[V.4]] would do, as in
+  [[V.22]], and its use of alternation restricts it to magnitudes all of one kind. He conjectures that the
+  proof is older than the polished one of [[V.22]] and was never revised. Joyce also notes that V.23 is
+  not used later in the *Elements*.

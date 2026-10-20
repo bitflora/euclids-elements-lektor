@@ -1,0 +1,239 @@
+id: XI.31
+kind: theorem
+title: Parallelepipeds on equal bases with the same height are equal
+
+paraphrase: |
+  Parallelepipeds on equal bases and of the same height are equal. The solid version of [[I.36]].
+
+diagram:
+  width: 400
+  height: 280
+  elements:
+    - "G;point;fixed;60,120,0"
+    - "1X;point;fixed;260,93,36;0;0"
+    - "1Y;point;fixed;15,0,160;0;0"
+    - "1Z;point;fixed;60,264,123;0;0"
+    - "ceiling;plane;3points;G,1X,1Y;0;0;0;0"
+    - "A;point;lineSlider;G,1Z,220,130,200"
+    - "M;point;planeSlider;ceiling,130,120,0"
+    - "K;point;planeSlider;ceiling,30,150,100"
+    - "L;point;parallelogram;A,G,M"
+    - "H;point;parallelogram;A,G,K"
+    - "B;point;parallelogram;L,A,H"
+    - "E;point;parallelogram;M,G,K"
+    - "floor;plane;3points;A,L,H;0;0;0;0"
+    - "AGKH;polygon;quadrilateral;A,G,K,H;0;0;black;60,75,100"
+    - "ALMG;polygon;quadrilateral;A,L,M,G;0;0;black;60,100,90"
+    - "GKEM;polygon;quadrilateral;G,K,E,M;0;0;black;60,50,100"
+    - "EB;line;connect;E,B"
+    - "HB;line;connect;H,B"
+    - "LB;line;connect;L,B"
+    - "H'';point;perpendicular;A,L,floor;0;0"
+    - "H';point;intersection;A,H'',H,B,floor;0;0"
+    - "C;point;planeSlider;floor,200,140,0"
+    - "P;point;planeSlider;floor,160,30,0"
+    - "D';point;perpendicular;C,P,floor;0;0"
+    - "D'';point;proportion;C,P,A,L,A,H',C,D';0;0"
+    - "D''';point;parallelogram;D'',C,P;0;0"
+    - "D;point;lineSlider;D'',D''',170,10,0"
+    - "R;point;parallelogram;C,P,D"
+    - "F;point;parallelogram;D,A,G"
+    - "Q;point;parallelogram;P,A,G"
+    - "O;point;parallelogram;C,A,G"
+    - "S;point;parallelogram;R,A,G"
+    - "QOCP;polygon;quadrilateral;Q,O,C,P;0;0;black;180,100,90"
+    - "QOSF;polygon;quadrilateral;Q,O,S,F;0;0;black;180,50,100"
+    - "COSR;polygon;quadrilateral;C,O,S,R;0;0;black;180,75,100"
+    - "FD;line;connect;F,D"
+    - "PD;line;connect;P,D"
+    - "RD;line;connect;R,D"
+    - "T;point;extend;C,R,A,L"
+    - "U;point;similar;T,R,floor,A,L,B,floor"
+    - "W;point;parallelogram;T,R,U"
+    - "X;point;parallelogram;T,A,G"
+    - "V;point;parallelogram;W,A,G"
+    - "d;point;parallelogram;U,A,G"
+    - "UdSR;polygon;quadrilateral;U,d,S,R;0;0;black;60,75,100"
+    - "UWVd;polygon;quadrilateral;U,W,V,d;0;0;black;60,100,90"
+    - "dSXV;polygon;quadrilateral;d,S,X,V;0;0;black;60,50,100"
+    - "RT;line;connect;R,T"
+    - "WT;line;connect;W,T"
+    - "XT;line;connect;X,T"
+    - "Y;point;intersection;D,R,W,U,floor"
+    - "a;point;parallelogram;T,R,D"
+    - "b;point;parallelogram;T,R,Y"
+    - "I;point;parallelogram;a,A,G"
+    - "c;point;parallelogram;b,A,G"
+    - "e;point;parallelogram;Y,A,G"
+    - "abcI;polygon;quadrilateral;a,b,c,I;0;0;black;0"
+    - "FI;line;connect;F,I"
+    - "Da;line;connect;D,a"
+    - "Se;line;connect;S,e"
+    - "RY;line;connect;R,Y"
+    - "eY;line;connect;e,Y"
+    - "cV;line;connect;c,V"
+    - "bW;line;connect;b,W"
+    - "de;line;connect;d,e"
+    - "UY;line;connect;U,Y"
+  aliases: { BE: EB, BH: HB, BL: LB, DF: FD, DP: PD, DR: RD, TR: RT, TW: WT, TX: XT, IF: FI, YR: RY, YU: UY }
+  caption: |
+    Joyce's figure (one of two); drag points to tilt.
+
+steps:
+  - part: enunciation
+    text: "Parallelepipedal solids which are on equal bases and of the same height are equal to one another."
+    highlight: [A]
+    hint: |
+      Parallelepipeds on equal bases with equal heights are equal.
+
+  - part: setting-out
+    text: "Let the parallelepipedal solids AE, CF, of the same height, be on equal bases AB, CD."
+    highlight: [A]
+    hint: |
+      Setup.
+
+  - part: specification
+    text: "I say that the solid AE is equal to the solid CF."
+    highlight: [A]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "First, let the sides which stand up, HK, BE, AG, LM, PQ, DF, CO, RS, be at right angles to the bases AB, CD; let the straight line RT be produced in a straight line with CR; on the straight line RT, and at the point R on it, let the angle TRU be constructed equal to the angle ALB, let RT be made equal to AL, and RU equal to LB, and let the base RW and the solid XU be completed."
+    highlight: [A]
+    hint: |
+      Case 1, upright edges: build on the second base a solid *XU* matching the first.
+
+  - part: proof
+    text: "Now, since the two sides TR, RU are equal to the two sides AL, LB, and they contain equal angles, therefore the parallelogram RW is equal and similar to the parallelogram HL."
+    highlight: [A]
+    hint: |
+      Faces equal and similar …
+
+  - part: proof
+    text: "Since again AL is equal to RT, and LM to RS, and they contain right angles, therefore the parallelogram RX is equal and similar to the parallelogram AM."
+    highlight: [A]
+    hint: |
+      … likewise …
+
+  - part: proof
+    text: "For the same reason LE is also equal and similar to SU; therefore three parallelograms of the solid AE are equal and similar to three parallelograms of the solid XU."
+    highlight: [A]
+    hint: |
+      … three faces equal and similar to three …
+
+  - part: proof
+    text: "But the former three are equal and similar to the three opposite, and the latter three to the three opposite; therefore the whole parallelepipedal solid AE is equal to the whole parallelepipedal solid XU."
+    highlight: [A]
+    hint: |
+      … so the solids are equal ([[XI.24]]).
+
+  - part: construction
+    text: "Let DR, WU be drawn through and meet one another at Y, let aTb be drawn through T parallel to DY, let PD be produced to a, and let the solids YX, RI be completed."
+    highlight: [A]
+    hint: |
+      Complete the auxiliary solids *YX*, *RI*.
+
+  - part: proof
+    text: "Then the solid XY, of which the parallelogram RX is the base and Yc its opposite, is equal to the solid XU of which the parallelogram RX is the base and UV its opposite, for they are on the same base RX and of the same height, and the extremities of their sides which stand up, namely RY, RU, Tb, TW, Se, Sd, Xc, XV, are on the same straight lines YW, eV."
+    highlight: [A]
+    hint: |
+      *XY* = *XU* ([[XI.29]]) …
+
+  - part: proof
+    text: "But the solid XU is equal to AE: therefore the solid XY is also equal to the solid AE."
+    highlight: [A]
+    hint: |
+      … = *AE*.
+
+  - part: proof
+    text: "And, since the parallelogram RUWT is equal to the parallelogram YT for they are on the same base RT and in the same parallels RT, YW, while RUWT is equal to CD, since it is also equal to AB, therefore the parallelogram YT is also equal to CD."
+    highlight: [A]
+    hint: |
+      *YT* = *RUWT* = *CD* ([[I.35]]).
+
+  - part: proof
+    text: "But DT is another parallelogram; therefore, as the base CD is to DT, so is YT to DT."
+    highlight: [A]
+    hint: |
+      So *CD* : *DT* = *YT* : *DT* ([[V.7]]).
+
+  - part: proof
+    text: "And, since the parallelepipedal solid CI has been cut by the plane RF which is parallel to opposite planes, as the base CD is to the base DT, so is the solid CF to the solid RI."
+    highlight: [A]
+    hint: |
+      *CF* : *RI* = *CD* : *DT* ([[XI.25]]) …
+
+  - part: proof
+    text: "For the same reason, since the parallelepipedal solid YI has been cut by the plane RX which is parallel to opposite planes, as the base YT is to the base TD, so is the solid YX to the solid RI."
+    highlight: [A]
+    hint: |
+      … and *YX* : *RI* = *YT* : *TD*.
+
+  - part: proof
+    text: "But, as the base CD is to DT, so is YT to DT; therefore also, as the solid CF is to the solid RI, so is the solid YX to RI."
+    highlight: [A]
+    hint: |
+      So *CF* : *RI* = *YX* : *RI* ([[V.11]]) …
+
+  - part: proof
+    text: "Therefore each of the solids CF, YX has to RI the same ratio; therefore the solid CF is equal to the solid YX."
+    highlight: [A]
+    hint: |
+      … so *CF* = *YX* ([[V.9]]).
+
+  - part: proof
+    text: "But YX was proved equal to AE; therefore AE is also equal to CF."
+    highlight: [A]
+    hint: |
+      So *AE* = *CF*.
+
+  - part: specification
+    text: "Next, let the sides standing up, AG, HK, BE, LM, CN, PQ, DF, RS, not be at right angles to the bases AB, CD; I say again that the solid AE is equal to the solid CF."
+    highlight: [A]
+    hint: |
+      Case 2, slanting edges:
+
+  - part: construction
+    text: "For from the points K, E, G, M, Q, F, N, S let KO, ET, GU, MV, QW, FX, NY, SI be drawn perpendicular to the plane of reference, and let them meet the plane at the points O, T, U, V, W, X, Y, I, and let OT, OU, UV, TV, WX, WY, YI, IX be joined."
+    highlight: [A]
+    hint: |
+      Drop perpendiculars from the top corners to make upright solids on the same bases.
+
+  - part: proof
+    text: "Then the solid KV is equal to the solid QI, for they are on the equal bases KM, QS and of the same height, and their sides which stand up are at right angles to their bases. [First part of this Prop.]"
+    highlight: [A]
+    hint: |
+      Those are equal by case 1 …
+
+  - part: proof
+    text: "But the solid KV is equal to the solid AE, and QI to CF; for they are on the same base and of the same height, while the extremities of their sides which stand up are not on the same straight lines."
+    highlight: [A]
+    hint: |
+      … and equal to the given ones ([[XI.29]], [[XI.30]]).
+
+  - part: proof
+    text: "Therefore the solid AE is also equal to the solid CF."
+    highlight: [A]
+    hint: |
+      So *AE* = *CF*.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [A]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Volume = base × height. $\blacksquare$
+
+commentary: |
+  The most elaborate proof in Book XI. Case 1 converts the second base into a parallelogram with a side equal to
+  a side of the first, using [[XI.25]] and Book V; case 2 reduces slanting solids to upright ones.

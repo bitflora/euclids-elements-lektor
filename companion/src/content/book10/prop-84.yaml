@@ -1,0 +1,165 @@
+id: X.84
+kind: theorem
+title: Only one line can be annexed to the line that produces with a medial area a medial whole
+
+paraphrase: |
+  A line that produces with a medial area a medial whole {AB} has only one annex. The subtractive counterpart of [[X.47]].
+
+diagram:
+  width: 200
+  height: 270
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "F0;point;free;-1000,75;0;0"
+    - "F3;point;free;1000,75;0;0"
+    - "A;point;lineSlider;A0,A3,40,0"
+    - "B;point;lineSlider;A0,A3,105,0"
+    - "C;point;lineSlider;A0,A3,135,0"
+    - "D;point;lineSlider;A0,A3,160,0"
+    - "AD;line;connect;A,D"
+    - "F;point;lineSlider;F0,F3,40,0"
+    - "E;point;lineSlider;F0,F3,160,0"
+    - "G''';point;perpendicular;F,E;0;0"
+    - "G'';point;extend;G''',F,A0,A3;0;0"
+    - "G';point;proportion;F,E,A,C,A,C,F,G'';0;0"
+    - "G;point;proportion;F,E,B,C,B,C,G',G''"
+    - "M;point;parallelogram;E,F,G"
+    - "EFGM;polygon;quadrilateral;E,F,G,M;0;0;black;random"
+    - "L';point;proportion;F,E,A,C,C,B,G,F;0;0"
+    - "L;point;extend;G,L',G,L'"
+    - "H;point;parallelogram;M,G,L"
+    - "MGLH;polygon;quadrilateral;M,G,L,H;0;0;black;random"
+    - "I';point;proportion;F,E,A,D,A,D,F,G'';0;0"
+    - "I;point;proportion;F,E,B,D,B,D,I',G''"
+    - "N;point;parallelogram;E,F,I"
+    - "MGIN;polygon;quadrilateral;M,G,I,N;0;0;black;random"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "EM;line;connect;E,M;0;0;0"
+    - "HM;line;connect;H,M;0;0;0"
+    - "EN;line;connect;E,N;0;0;0"
+    - "HN;line;connect;H,N;0;0;0"
+    - "EH;line;connect;E,H;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+  aliases: { DA: AD, BA: AB, CB: BC, CA: AC, ME: EM, MH: HM, NE: EN, NH: HN, HE: EH, FE: EF }
+  caption: |
+    The two annexes give, after application to the rational line {EF}, two annexes {HM}, {HN} to the
+    apotome {EH}.
+
+steps:
+  - part: enunciation
+    text: "To a straight line which produces with a medial area a medial whole only one straight line can be annexed which is incommensurable in square with the whole straight line and which with the whole straight line makes the sum of the squares on them medial and twice the rectangle contained by them both medial and also incommensurable with the sum of the squares on them."
+    highlight: [AB]
+    hint: |
+      Uniqueness, reduced to [[X.79]].
+
+  - part: setting-out
+    text: "Let AB be the straight line which produces with a medial area a medial whole, and BC an annex to it; therefore AC, CB are straight lines incommensurable in square which fulfil the aforesaid conditions."
+    highlight: [AB, BC, AC]
+    hint: |
+      {AB}, annex {BC}.
+
+  - part: specification
+    text: "I say that no other straight line can be annexed to AB which fulfils the aforesaid conditions."
+    highlight: [AB]
+    hint: |
+      To prove: unique.
+
+  - part: proof
+    text: "For, if possible, let BD be so annexed, so that AD, DB are also straight lines incommensurable in square which make the squares on AD, DB added together medial, twice the rectangle AD, DB medial, and also the squares on AD, DB incommensurable with twice the rectangle AD, DB."
+    highlight: [BD, AD]
+    hint: |
+      Suppose another annex {BD}.
+
+  - part: construction
+    text: "Let a rational straight line EF be set out, let EG equal to the squares on AC, CB be applied to EF, producing EM as breadth, and let HG equal to twice the rectangle AC, CB be applied to EF, producing HM as breadth; therefore the remainder, the square on AB, is equal to EL; therefore AB is the “side” of EL."
+    highlight: [EM, HM]
+    hint: |
+      Apply to the rational {EF}, as in [[X.81]].
+
+  - part: construction
+    text: "Again, let EI equal to the squares on AD, DB be applied to EF, producing EN as breadth."
+    highlight: [EN]
+    hint: |
+      Likewise for {AD}, {DB}.
+
+  - part: proof
+    text: "But the square on AB is also equal to EL; therefore the remainder, twice the rectangle AD, DB, is equal to HI."
+    highlight: [HN]
+    hint: |
+      The remainders.
+
+  - part: proof
+    text: "Now, since the sum of the squares on AC, CB is medial and is equal to EG, therefore EG is also medial."
+    highlight: [EM]
+    hint: |
+      Squares medial …
+
+  - part: proof
+    text: "And it is applied to the rational straight line EF, producing EM as breadth; therefore EM is rational and incommensurable in length with EF."
+    highlight: [EM]
+    hint: |
+      … {EM} rational, incommensurable with {EF}.
+
+  - part: proof
+    text: "Again, since twice the rectangle AC, CB is medial and is equal to HG, therefore HG is also medial."
+    highlight: [HM]
+    hint: |
+      2·rect medial …
+
+  - part: proof
+    text: "And it is applied to the rational straight line EF, producing HM as breadth; therefore HM is rational and incommensurable in length with EF."
+    highlight: [HM]
+    hint: |
+      … {HM} likewise.
+
+  - part: proof
+    text: "And, since the squares on AC, CB are incommensurable with twice the rectangle AC, CB, EG is also incommensurable with HG; therefore EM is also incommensurable in length with MH."
+    highlight: [EM, HM]
+    hint: |
+      Incommensurable with each other.
+
+  - part: proof
+    text: "And both are rational; therefore EM, MH are rational straight lines commensurable in square only; therefore EH is an apotome, and HM an annex to it."
+    highlight: [EH, HM]
+    hint: |
+      {EH} an apotome, annex {HM}.
+
+  - part: proof
+    text: "Similarly we can prove that EH is again an apotome and HN an annex to it."
+    highlight: [HN]
+    hint: |
+      Likewise annex {HN} …
+
+  - part: proof
+    text: "Therefore to an apotome different rational straight lines are annexed which are commensurable with the wholes in square only: which was proved impossible."
+    highlight: [EH]
+    hint: |
+      … two annexes: contradicting [[X.79]].
+
+  - part: proof
+    text: "Therefore no other straight line can be so annexed to AB."
+    highlight: [AB]
+    hint: |
+      So no other.
+
+  - part: proof
+    text: "Therefore to AB only one straight line can be annexed which is incommensurable in square with the whole and which with the whole makes the squares on them added together medial, twice the rectangle contained by them medial, and also the squares on them incommensurable with twice the rectangle contained by them."
+    highlight: [AB]
+    hint: |
+      Only one.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Applying to $\rho$ turns the two annexes into two annexes of one apotome, contradicting [[X.79]].
+        $\blacksquare$

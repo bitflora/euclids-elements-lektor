@@ -1,0 +1,189 @@
+id: VIII.12
+kind: theorem
+title: Two means between two cubes
+
+paraphrase: |
+  Between two cubes {A} = {C}³ and {B} = {D}³ there are two mean proportionals, {C}²{D} and {C}{D}²; and {A} :
+  {B} is the triplicate of {C} : {D}.
+
+diagram:
+  width: 420
+  height: 170
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "E0;point;free;-1000,50;0;0"
+    - "E3;point;free;1000,50;0;0"
+    - "C0;point;free;-1000,70;0;0"
+    - "C3;point;free;1000,70;0;0"
+    - "F0;point;free;-1000,90;0;0"
+    - "F3;point;free;1000,90;0;0"
+    - "D0;point;free;-1000,110;0;0"
+    - "D3;point;free;1000,110;0;0"
+    - "G0;point;free;-1000,130;0;0"
+    - "G3;point;free;1000,130;0;0"
+    - "B0;point;free;-1000,150;0;0"
+    - "B3;point;free;1000,150;0;0"
+    - "U1;point;lineSlider;F0,F3,0,0;0;0"
+    - "U2;point;lineSlider;F0,F3,25,0;0;0"
+    - "U;line;connect;U1,U2;0;0;0"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,65,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;lineSlider;D0,D3,75,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;E0,E3,110,0;0"
+    - "E2;point;proportion;U1,U2,C1,C2,C1,C2,E1,E3;0"
+    - "E;line;connect;E1,E2;black"
+    - "G1;point;lineSlider;G0,G3,110,0;0"
+    - "G2;point;proportion;U1,U2,D1,D2,D1,D2,G1,G3;0"
+    - "G;line;connect;G1,G2;black"
+    - "A1;point;lineSlider;A0,A3,240,0;0"
+    - "A2;point;proportion;U1,U2,C1,C2,E1,E2,A1,A3;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,240,0;0"
+    - "B2;point;proportion;U1,U2,D1,D2,G1,G2,B1,B3;0"
+    - "B;line;connect;B1,B2;black"
+    - "F1;point;lineSlider;F0,F3,110,0;0"
+    - "F2;point;proportion;U1,U2,C1,C2,D1,D2,F1,F3;0"
+    - "F;line;connect;F1,F2;black"
+    - "H1;point;lineSlider;C0,C3,240,0;0"
+    - "H2;point;proportion;U1,U2,C1,C2,F1,F2,H1,C3;0"
+    - "H;line;connect;H1,H2;black"
+    - "K1;point;lineSlider;D0,D3,240,0;0"
+    - "K2;point;proportion;U1,U2,D1,D2,F1,F2,K1,D3;0"
+    - "K;line;connect;K1,K2;black"
+  caption: |
+    {E} = {C}², {F} = {C}{D}, {G} = {D}²; {H} = {C}{F}, {K} = {D}{F}.
+
+steps:
+  - part: enunciation
+    text: "Between two cube numbers there are two mean proportional numbers, and the cube has to the cube the ratio triplicate of that which the side has to the side."
+    highlight: [A, B]
+    hint: |
+      $c^3, c^2d, cd^2, d^3$ is a geometric progression.
+    modern: |
+      $c^3 : c^2d = c^2d : cd^2 = cd^2 : d^3 = c : d$.
+
+  - part: setting-out
+    text: "Let A, B be cube numbers, and let C be the side of A, and D of B;"
+    highlight: [A, B, C, D]
+    hint: |
+      {A} = {C}³, {B} = {D}³.
+
+  - part: specification
+    text: "I say that between A, B there are two mean proportional numbers, and A has to B the ratio triplicate of that which C has to D."
+    highlight: [A, B]
+    hint: |
+      Two claims.
+
+  - part: construction
+    text: "For let C by multiplying itself make E, and by multiplying D let it make F; let D by multiplying itself make G, and let the numbers C, D by multiplying F make H, K respectively."
+    highlight: [E, F, G, H, K]
+    hint: |
+      {E} = {C}², {F} = {C}{D}, {G} = {D}², {H} = {C}{F} = {C}²{D}, {K} = {D}{F} = {C}{D}².
+
+  - part: proof
+    text: "Now, since A is a cube, and C its side, and C by multiplying itself has made E, therefore C by multiplying itself has made E and by multiplying E has made A."
+    highlight: [C, E, A]
+    hint: |
+      {A} = {C}{E} ([[VII.Def.19]]).
+
+  - part: proof
+    text: "For the same reason also D by multiplying itself has made G and by multiplying G has made B."
+    highlight: [D, G, B]
+    hint: |
+      {B} = {D}{G}.
+
+  - part: proof
+    text: "And, since C by multiplying the numbers C, D has made E, F respectively, therefore, as C is to D, so is E to F."
+    highlight: [C, D, E, F]
+    hint: |
+      [[VII.17]].
+
+  - part: proof
+    text: "For the same reason also, as C is to D, so is F to G."
+    highlight: [C, D, F, G]
+    hint: |
+      [[VII.18]].
+
+  - part: proof
+    text: "Again, since C by multiplying the numbers E, F has made A, H respectively, therefore, as E is to F, so is A to H."
+    highlight: [E, F, A, H]
+    hint: |
+      [[VII.17]].
+
+  - part: proof
+    text: "But, as E is to F, so is C to D."
+    highlight: [E, F, C, D]
+    hint: |
+      Shown above.
+
+  - part: proof
+    text: "Therefore also, as C is to D, so is A to H."
+    highlight: [A, H]
+    hint: |
+      {A} : {H} = {C} : {D}.
+
+  - part: proof
+    text: "Again, since the numbers C, D by multiplying F have made H, K respectively, therefore, as C is to D, so is H to K."
+    highlight: [H, K]
+    hint: |
+      [[VII.18]]: {H} : {K} = {C} : {D}.
+
+  - part: proof
+    text: "Again, since D by multiplying each of the numbers F, G has made K, B respectively, therefore, as F is to G, so is K to B."
+    highlight: [F, G, K, B]
+    hint: |
+      [[VII.17]].
+
+  - part: proof
+    text: "But, as F is to G, so is C to D; therefore also, as C is to D, so is A to H, H to K, and K to B."
+    highlight: [A, H, K, B]
+    hint: |
+      All three ratios are {C} : {D}.
+
+  - part: proof
+    text: "Therefore H, K are two mean proportionals between A, B."
+    highlight: [H, K]
+    hint: |
+      The two means.
+
+  - part: specification
+    text: "I say next that A also has to B the ratio triplicate of that which C has to D."
+    highlight: [A, B]
+    hint: |
+      Second claim.
+
+  - part: proof
+    text: "For, since A, H, K, B are four numbers in proportion, therefore A has to B the ratio triplicate of that which A has to H."
+    highlight: [A, H, K, B]
+    hint: |
+      Definition of triplicate ratio ([[V.Def.10]]).
+
+  - part: proof
+    text: "But, as A is to H, so is C to D; therefore A also has to B the ratio triplicate of that which C has to D."
+    highlight: [A, B]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+      text: |
+        $c^3 : c^2d = c^2d : cd^2 = cd^2 : d^3 = c : d$.
+    - steps: [15, 16, 17]
+      text: |
+        So $c^3 : d^3 = (c : d)^3$. $\blacksquare$
+
+commentary: |
+  The arithmetic counterpart of [[XI.33]] (similar solids are in the triplicate ratio of their sides). Used in
+  [[VIII.15]].

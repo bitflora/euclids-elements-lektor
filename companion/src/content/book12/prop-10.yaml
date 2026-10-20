@@ -1,0 +1,241 @@
+id: XII.10
+kind: theorem
+title: A cone is a third of the cylinder with the same base and height
+
+paraphrase: |
+  Any cone is one third of the cylinder on the same base and of the same height — proved by exhaustion, comparing
+  pyramids and prisms on inscribed polygons.
+
+diagram:
+  width: 280
+  height: 280
+  elements:
+    - "B;point;free;40,140"
+    - "D;point;free;240,140"
+    - "O;point;midpoint;B,D;0;0"
+    - "circ;circle;radius;O,B;0;0;black;random"
+    - "A;point;perpendicular;O,D"
+    - "C;point;extend;A,O,A,O"
+    - "E';point;midpoint;A,B;0;0"
+    - "E;point;cutoff;O,E',O,A"
+    - "F';point;midpoint;B,C;0;0"
+    - "F;point;cutoff;O,F',O,A"
+    - "G';point;midpoint;C,D;0;0"
+    - "G;point;cutoff;O,G',O,A"
+    - "H';point;midpoint;D,A;0;0"
+    - "H;point;cutoff;O,H',O,A"
+    - "AHDGCFBE;polygon;octagon;A,H,D,G,C,F,B,E;0;0;black;random"
+    - "ABCE;polygon;quadrilateral;A,B,C,D;0;0;black;random"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "DA;line;connect;D,A;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "BF;line;connect;B,F;0;0;0"
+    - "FC;line;connect;F,C;0;0;0"
+    - "CG;line;connect;C,G;0;0;0"
+    - "GD;line;connect;G,D;0;0;0"
+    - "DH;line;connect;D,H;0;0;0"
+    - "HA;line;connect;H,A;0;0;0"
+  aliases: { BA: AB, CB: BC, DC: CD, AD: DA, EA: AE, BE: EB, FB: BF, CF: FC, GC: CG, DG: GD, HD: DH, AH: HA }
+  caption: |
+    The common base circle, with inscribed square *ABCD* and octagon *AEBFCGDH*.
+
+steps:
+  - part: enunciation
+    text: "Any cone is a third part of the cylinder which has the same base with it and equal height."
+    highlight: [circ]
+    hint: |
+      A cone is a third of the cylinder on the same base and height.
+    modern: |
+      $V_{\text{cone}} = \tfrac13 \pi r^2 h$.
+
+  - part: setting-out
+    text: "For let a cone have the same base, namely the circle ABCD, with a cylinder and equal height; I say that the cone is a third part of the cylinder, that is, that the cylinder is triple of the cone."
+    highlight: [circ]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For if the cylinder is not triple of the cone, the cylinder will be either greater than triple or less than triple of the cone."
+    highlight: [circ]
+    hint: |
+      Otherwise the cylinder is more or less than three cones.
+
+  - part: construction
+    text: "First let it be greater than triple, and let the square ABCD be inscribed in the circle ABCD; then the square ABCD is greater than the half of the circle ABCD."
+    highlight: [AB, BC, CD, DA]
+    hint: |
+      Case 1: more. Inscribe the square *ABCD*; it is more than half the circle.
+
+  - part: construction
+    text: "From the square ABCD let there be set up a prism of equal height with the cylinder."
+    highlight: [AB, BC, CD, DA]
+    hint: |
+      Erect the prism on it.
+
+  - part: proof
+    text: "Then the prism so set up is greater than the half of the cylinder, inasmuch as, if we also circumscribe a square about the circle ABCD, the square inscribed in the circle ABCD is half of that circumscribed about it, and the solids set up from them are parallelepipedal prisms of equal height, while parallelepipedal solids which are of the same height are to one another as their bases; therefore also the prism set up on the square ABCD is half of the prism set up from the square circumscribed about the circle ABCD; and the cylinder is less than the prism set up from the square circumscribed about the circle ABCD; therefore the prism set up from the square ABCD and of equal height with the cylinder is greater than the half of the cylinder."
+    highlight: [AB, BC, CD, DA]
+    hint: |
+      The prism is more than half the cylinder (half the circumscribed one).
+
+  - part: construction
+    text: "Let the circumferences AB, BC, CD, DA be bisected at the points E, F, G, H, and let AE, EB, BF, FC, CG, GD, DH, HA be joined; then each of the triangles AEB, BFC, CGD, DHA is greater than the half of that segment of the circle ABCD which is about it, as we proved before."
+    highlight: [AE, EB, BF, FC, CG, GD, DH, HA]
+    hint: |
+      Bisect the arcs; the triangles on the sides exceed half their segments.
+
+  - part: construction
+    text: "On each of the triangles AEB, BFC, CGD, DHA let prisms be set up of equal height with the cylinder; then each of the prisms so set up is greater than the half part of that segment of the cylinder which is about it, inasmuch as, if we draw through the points E, F, G, H parallels to AB, BC, CD, DA, complete the parallelograms on AB, BC, CD, DA, and set up from them parallelepipedal solids of equal height with the cylinder, the prisms on the triangles AEB, BFC, CGD, DHA are halves of the several solids set up; and the segments of the cylinder are less than the parallelepipedal solids set up; hence also the prisms on the triangles AEB, BFC, CGD, DHA are greater than the half of the segments of the cylinder about them."
+    highlight: [AE, EB, BF, FC, CG, GD, DH, HA]
+    hint: |
+      So do their prisms.
+
+  - part: proof
+    text: "Thus, bisecting the circumferences that are left, joining straight lines, setting up on each of the triangles prisms of equal height with the cylinder, and doing this continually, we shall leave some segments of the cylinder which will be less than the excess by which the cylinder exceeds the triple of the cone."
+    highlight: [AE, EB, BF, FC, CG, GD, DH, HA]
+    hint: |
+      Repeat until the leftover is less than the excess of the cylinder over three cones ([[X.1]]).
+    cites: [X.1]
+
+  - part: proof
+    text: "Let such segments be left, and let them be AE, EB, BF, FC, CG, GD, DH, HA; therefore the remainder, the prism of which the polygon AEBFCGDH is the base and the height is the same as that of the cylinder, is greater than triple of the cone."
+    highlight: [AE, EB, BF, FC, CG, GD, DH, HA]
+    hint: |
+      Then the prism on the polygon *AEBFCGDH* exceeds three cones.
+
+  - part: proof
+    text: "But the prism of which the polygon AEBFCGDH is the base and the height the same as that of the cylinder is triple of the pyramid of which the polygon AEBFCGDH is the base and the vertex is the same as that of the cone; therefore also the pyramid of which the polygon AEBFCGDH is the base and the vertex is the same as that of the cone is greater than the cone which has the circle ABCD as base."
+    highlight: [AE, EB, BF, FC, CG, GD, DH, HA]
+    hint: |
+      But that prism is three times the pyramid on the same polygon ([[XII.7]], porism) — so that pyramid exceeds the cone …
+
+  - part: proof
+    text: "But it is also less, for it is enclosed by it: which is impossible."
+    highlight: [AE, EB, BF, FC, CG, GD, DH, HA]
+    hint: |
+      … though it is inside the cone: impossible.
+
+  - part: proof
+    text: "Therefore the cylinder is not greater than triple of the cone."
+    highlight: [circ]
+    hint: |
+      So not more than triple.
+
+  - part: specification
+    text: "I say next that neither is the cylinder less than triple of the cone,"
+    highlight: [circ]
+    hint: |
+      Case 2: less.
+
+  - part: proof
+    text: "For, if possible, let the cylinder be less than triple of the cone, therefore, inversely, the cone is greater than a third part of the cylinder."
+    highlight: [circ]
+    hint: |
+      Then the cone is more than a third of the cylinder.
+
+  - part: construction
+    text: "Let the square ABCD be inscribed in the circle ABCD; therefore the square ABCD is greater than the half of the circle ABCD."
+    highlight: [AB, BC, CD, DA]
+    hint: |
+      Inscribe the square …
+
+  - part: proof
+    text: "Now let there be set up from the square ABCD a pyramid having the same vertex with the cone; therefore the pyramid so set up is greater than the half part of the cone, seeing that, as we proved before, if we circumscribe a square about the circle, the square ABCD will be half of the square circumscribed about the circle, and if we set up from the squares parallelepipedal solids of equal height with the cone, which are also called prisms, the solid set up from the square ABCD will be half of that set up from the square circumscribed about the circle; for they are to one another as their bases."
+    highlight: [AB, BC, CD, DA]
+    hint: |
+      … its pyramid exceeds half the cone …
+
+  - part: proof
+    text: "Hence also the thirds of them are in that ratio; therefore also the pyramid of which the square ABCD is the base is half of the pyramid set up from the square circumscribed about the circle."
+    highlight: [AB, BC, CD, DA]
+    hint: |
+      (half of the circumscribed pyramid, [[XII.6]]) …
+
+  - part: proof
+    text: "And the pyramid set up from the square about the circle is greater than the cone, for it encloses it."
+    highlight: [AB, BC, CD, DA]
+    hint: |
+      … which encloses the cone.
+
+  - part: proof
+    text: "Therefore the pyramid of which the square ABCD is the base and the vertex is the same with that of the cone is greater than the half of the cone."
+    highlight: [AB, BC, CD, DA]
+    hint: |
+      So more than half the cone.
+
+  - part: construction
+    text: "Let the circumferences AB, BC, CD, DA be bisected at the points E, F, G, H, and let AE, EB, BF, FC, CG, GD, DH, HA be joined; therefore also each of the triangles AEB, BFC, CGD, DHA is greater than the half part of that segment of the circle ABCD which is about it."
+    highlight: [AE, EB, BF, FC, CG, GD, DH, HA]
+    hint: |
+      Bisect the arcs …
+
+  - part: construction
+    text: "Now, on each of the triangles AEB, BFC, CGD, DHA let pyramids be set up which have the same vertex as the cone; therefore also each of the pyramids so set up is, in the same manner, greater than the half part of that segment of the cone which is about it."
+    highlight: [AE, EB, BF, FC, CG, GD, DH, HA]
+    hint: |
+      … pyramids on the triangles exceed half their parts.
+
+  - part: proof
+    text: "Thus, by bisecting the circumferences that are left, joining straight lines, setting up on each of the triangles a pyramid which has the same vertex as the cone, and doing this continually, we shall leave some segments of the cone which will be less than the excess by which the cone exceeds the third part of the cylinder."
+    highlight: [AE, EB, BF, FC, CG, GD, DH, HA]
+    hint: |
+      Repeat ([[X.1]]).
+
+  - part: proof
+    text: "Let such be left, and let them be the segments on AE, EB, BF, FC, CG, GD, DH, HA; therefore the remainder, the pyramid of which the polygon AEBFCGDH is the base and the vertex the same with that of the cone, is greater than a third part of the cylinder."
+    highlight: [AE, EB, BF, FC, CG, GD, DH, HA]
+    hint: |
+      Then the pyramid on *AEBFCGDH* exceeds a third of the cylinder.
+
+  - part: proof
+    text: "But the pyramid of which the polygon AEBFCGDH is the base and the vertex the same with that of the cone is a third part of the prism of which the polygon AEBFCGDH is the base and the height is the same with that of the cylinder; therefore the prism of which the polygon AEBFCGDH is the base and the height is the same with that of the cylinder is greater than the cylinder of which the circle ABCD is the base."
+    highlight: [AE, EB, BF, FC, CG, GD, DH, HA]
+    hint: |
+      It is a third of the prism on the polygon, so that prism exceeds the cylinder …
+
+  - part: proof
+    text: "But it is also less, for it is enclosed by it: which is impossible."
+    highlight: [AE, EB, BF, FC, CG, GD, DH, HA]
+    hint: |
+      … though enclosed by it: impossible.
+
+  - part: proof
+    text: "Therefore the cylinder is not less than triple of the cone."
+    highlight: [circ]
+    hint: |
+      So not less than triple.
+
+  - part: proof
+    text: "But it was proved that neither is it greater than triple; therefore the cylinder is triple of the cone; hence the cone is a third part of the cylinder."
+    highlight: [circ]
+    hint: |
+      Hence exactly triple.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [circ]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11]
+      text: |
+        If cylinder $> 3\times$cone, inscribed prisms can exceed $3\times$cone, but each is $3\times$ the
+        corresponding inscribed pyramid, which is inside the cone.
+    - steps: [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+      text: |
+        If cylinder $< 3\times$cone, inscribed pyramids exceed $\tfrac13$ cylinder, so their prisms exceed the
+        cylinder. $\blacksquare$
+
+commentary: |
+  With [[XII.7]] (the pyramid is a third of the prism), this is the second of the two results Archimedes credits
+  to Eudoxus.

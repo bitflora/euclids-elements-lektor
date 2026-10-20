@@ -1,0 +1,109 @@
+id: IX.2
+kind: theorem
+title: Numbers whose product is a square are similar plane numbers
+
+paraphrase: |
+  If {A}·{B} is a square, then {A} and {B} are similar plane numbers. The converse of [[IX.1]].
+
+diagram:
+  width: 260
+  height: 170
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "C0;point;free;-1000,110;0;0"
+    - "C3;point;free;1000,110;0;0"
+    - "D0;point;free;-1000,145;0;0"
+    - "D3;point;free;1000,145;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,35;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,100,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,135,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;U1,U2,A1,A2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;proportion;U1,U2,A1,A2,A1,A2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+  caption: |
+    {C} = {A}{B} is square; {D} = {A}².
+
+steps:
+  - part: enunciation
+    text: "If two numbers by multiplying one another make a square number, they are similar plane numbers."
+    highlight: [A, B, C]
+    hint: |
+      $ab$ a square $\Rightarrow$ $a, b$ similar plane.
+    modern: |
+      $ab = c^2 \Rightarrow a : b$ is a ratio of squares.
+
+  - part: setting-out
+    text: "Let A, B be two numbers, and let A by multiplying B make the square number C;"
+    highlight: [A, B, C]
+    hint: |
+      {C} = {A}{B}, a square.
+
+  - part: specification
+    text: "I say that A, B are similar plane numbers."
+    highlight: [A, B]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For let A by multiplying itself make D; therefore D is square."
+    highlight: [D]
+    hint: |
+      {D} = {A}².
+
+  - part: proof
+    text: "Now, since A by multiplying itself has made D, and by multiplying B has made C, therefore, as A is to B, so is D to C."
+    highlight: [A, B, D, C]
+    hint: |
+      [[VII.17]].
+
+  - part: proof
+    text: "And, since D is square, and C is so also, therefore D, C are similar plane numbers."
+    highlight: [D, C]
+    hint: |
+      Squares are similar plane numbers.
+
+  - part: proof
+    text: "Therefore one mean proportional number falls between D, C."
+    highlight: [D, C]
+    hint: |
+      [[VIII.18]].
+
+  - part: proof
+    text: "And, as D is to C, so is A to B; therefore one mean proportional number falls between A, B also."
+    highlight: [A, B]
+    hint: |
+      [[VIII.8]].
+
+  - part: proof
+    text: "But, if one mean proportional number fall between two numbers, they are similar plane numbers; therefore A, B are similar plane numbers."
+    highlight: [A, B]
+    hint: |
+      [[VIII.20]].
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8]
+      text: |
+        $a : b = a^2 : ab$, a ratio of two squares; so a mean falls between $a$ and $b$ ([[VIII.8]]), and they
+        are similar plane ([[VIII.20]]). $\blacksquare$
+
+commentary: |
+  Joyce's example: 400 = 20² factors as 8·50, and 8 = 2·4, 50 = 5·10 with 2 : 4 = 5 : 10.

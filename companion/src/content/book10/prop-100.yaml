@@ -1,0 +1,201 @@
+id: X.100
+kind: theorem
+title: The square on a minor line applied to a rational line gives a fourth apotome
+
+paraphrase: |
+  If the square on a minor line {AB} is applied to a rational line {CD}, the breadth {CF} is a fourth apotome. The
+  converse of [[X.94]].
+
+diagram:
+  width: 370
+  height: 180
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "C0;point;free;40,-1000;0;0"
+    - "C3;point;free;40,1000;0;0"
+    - "A;point;lineSlider;A0,A3,120,0"
+    - "B;point;lineSlider;A0,A3,190,0"
+    - "C;point;lineSlider;C0,C3,0,70"
+    - "D;point;lineSlider;C0,C3,0,140"
+    - "CD;line;connect;C,D"
+    - "F';point;parallelogram;C,A0,A3;0;0"
+    - "F;point;proportion;C,D,A,B,A,B,C,F'"
+    - "E;point;parallelogram;D,C,F"
+    - "DCFE;polygon;quadrilateral;D,C,F,E;0;0;black;random"
+    - "G;point;lineSlider;A0,A3,250,0"
+    - "AG;line;connect;A,G"
+    - "K;point;proportion;C,D,A,G,A,G,C,F'"
+    - "H;point;parallelogram;D,C,K"
+    - "FKHE;polygon;quadrilateral;F,K,H,E;0;0;black;random"
+    - "M;point;proportion;C,D,B,G,B,G,K,F'"
+    - "L;point;parallelogram;D,C,M"
+    - "HKML;polygon;quadrilateral;H,K,M,L;0;0;black;random"
+    - "N;point;midpoint;F,M"
+    - "O;point;parallelogram;D,C,N"
+    - "NO;line;connect;N,O"
+    - "AB;line;connect;A,B;0;0;0"
+    - "CF;line;connect;C,F;0;0;0"
+    - "GB;line;connect;G,B;0;0;0"
+    - "CK;line;connect;C,K;0;0;0"
+    - "KM;line;connect;K,M;0;0;0"
+    - "CM;line;connect;C,M;0;0;0"
+    - "FM;line;connect;F,M;0;0;0"
+    - "NM;line;connect;N,M;0;0;0"
+    - "BG;line;connect;B,G;0;0;0"
+    - "MF;line;connect;M,F;0;0;0"
+    - "MN;line;connect;M,N;0;0;0"
+  aliases: { DC: CD, GA: AG, ON: NO, BA: AB, FC: CF, KC: CK, MK: KM, MC: CM }
+  caption: |
+    sq({AB}) is applied to the rational line {CD} with breadth {CF}; the squares on {AG}, {GB} give {CM}; the
+    remainder, 2·rect({AG},{GB}), has breadth {FM}, bisected at {N}.
+
+steps:
+  - part: enunciation
+    text: "The square on a minor straight line applied to a rational straight line produces as breadth a fourth apotome."
+    highlight: [AB, CF]
+    hint: |
+      Squaring undoes [[X.94]].
+
+  - part: setting-out
+    text: "Let AB be a minor and CD a rational straight line, and to the rational straight line CD let CE be applied equal to the square on AB and producing CF as breadth; I say that CF is a fourth apotome."
+    highlight: [AB, CD, CF]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For let BG be the annex to AB; therefore AG, GB are straight lines incommensurable in square which make the sum of the squares on AG, GB rational, but twice the rectangle AG, GB medial."
+    highlight: [AG, GB]
+    hint: |
+      Annex {BG}: incommensurable in square, rational sum of squares, medial rectangle.
+
+  - part: construction
+    text: "To CD let there be applied CH equal to the square on AG and producing CK as breadth, and KL equal to the square on BG, producing KM as breadth; therefore the whole CL is equal to the squares on AG, GB."
+    highlight: [CK, KM]
+    hint: |
+      Apply the squares.
+
+  - part: proof
+    text: "And the sum of the squares on AG, GB is rational; therefore CL is also rational."
+    highlight: [CM]
+    hint: |
+      *CL* rational …
+
+  - part: proof
+    text: "And it is applied to the rational straight line CD, producing CM as breadth; therefore CM is also rational and commensurable in length with CD."
+    highlight: [CM]
+    hint: |
+      … so {CM} commensurable with {CD}.
+
+  - part: proof
+    text: "And, since the whole CL is equal to the squares on AG, GB, and, in these, CE is equal to the square on AB, therefore the remainder FL is equal to twice the rectangle AG, GB."
+    highlight: [FM]
+    hint: |
+      Remainder *FL* = 2·rect.
+
+  - part: construction
+    text: "Let then FM be bisected at the point N, and let NO be drawn through N parallel to either of the straight lines CD, ML; therefore each of the rectangles FO, NL is equal to the rectangle AG, GB."
+    highlight: [FM, N]
+    hint: |
+      Bisect at {N}.
+
+  - part: proof
+    text: "And, since twice the rectangle AG, GB is medial and is equal to FL, therefore FL is also medial."
+    highlight: [FM]
+    hint: |
+      *FL* medial …
+
+  - part: proof
+    text: "And it is applied to the rational straight line FE, producing FM as breadth; therefore FM is rational and incommensurable in length with CD."
+    highlight: [FM]
+    hint: |
+      … {FM} incommensurable with {CD}.
+
+  - part: proof
+    text: "And, since the sum of the squares on AG, GB is rational, while twice the rectangle AG, GB is medial, the squares on AG, GB are incommensurable with twice the rectangle AG, GB."
+    highlight: [CM, FM]
+    hint: |
+      Rational vs medial …
+
+  - part: proof
+    text: "But CL is equal to the squares on AG, GB, and FL equal to twice the rectangle AG, GB; therefore CL is incommensurable with FL."
+    highlight: [CM, FM]
+    hint: |
+      … *CL*, *FL* incommensurable …
+
+  - part: proof
+    text: "But, as CL is to FL, so is CM to MF; therefore CM is incommensurable in length with MF."
+    highlight: [CM, FM]
+    hint: |
+      … {CM}, {MF} incommensurable.
+
+  - part: proof
+    text: "And both are rational; therefore CM, MF are rational straight lines commensurable in square only; therefore CF is an apotome."
+    highlight: [CF]
+    hint: |
+      {CF} an apotome.
+
+  - part: specification
+    text: "I say that it is also a fourth apotome."
+    highlight: [CF]
+    hint: |
+      A fourth apotome:
+
+  - part: proof
+    text: "For, since AG, GB are incommensurable in square, therefore the square on AG is also incommensurable with the square on GB."
+    highlight: [AG, GB]
+    hint: |
+      sq({AG}), sq({GB}) incommensurable …
+
+  - part: proof
+    text: "And CH is equal to the square on AG, and KL equal to the square on GB; therefore CH is incommensurable with KL."
+    highlight: [CK, KM]
+    hint: |
+      … *CH*, *KL* incommensurable …
+
+  - part: proof
+    text: "But, as CH is to KL, so is CK to KM; therefore CK is incommensurable in length with KM."
+    highlight: [CK, KM]
+    hint: |
+      … {CK}, {KM} incommensurable.
+
+  - part: proof
+    text: "And, since the rectangle AG, GB is a mean proportional between the squares on AG, GB, and the square on AG is equal to CH, the square on GB to KL, and the rectangle AG, GB to NL, therefore NL is a mean proportional between CH, KL; therefore, as CH is to NL, so is NL to KL."
+    highlight: [CK, KM, NM]
+    hint: |
+      *NL* the mean …
+
+  - part: proof
+    text: "But, as CH is to NL, so is CK to NM, and, as NL is to KL, so is NM to KM; therefore, as CK is to MN, so is MN to KM; therefore the rectangle CK, KM is equal to the square on MN, that is, to the fourth part of the square on FM."
+    highlight: [CK, KM, NM]
+    hint: |
+      … rect({CK},{KM}) = sq({MN}).
+
+  - part: proof
+    text: "Since then CM, MF are two unequal straight lines, and the rectangle CK, KM equal to the fourth part of the square on MF and deficient by a square figure has been applied to CM and divides it into incommensurable parts, therefore the square on CM is greater than the square on MF by the square on a straight line incommensurable with CM."
+    highlight: [CM, FM]
+    hint: |
+      Excess incommensurable with {CM} ([[X.18]]).
+
+  - part: proof
+    text: "And the whole CM is commensurable in length with the rational straight line CD set out; therefore CF is a fourth apotome."
+    highlight: [CM, CD]
+    hint: |
+      {CM} commensurable with {CD}: fourth apotome.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [CF]
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $AB^2 = (AG^2 + GB^2) - 2AG\cdot GB$; divided by $\rho$, the two parts give the whole {CM} and annex
+        {FM} of an apotome, whose kind is read off as in [[X.60]]–[[X.65]]. $\blacksquare$

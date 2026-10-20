@@ -1,0 +1,134 @@
+id: III.27
+kind: theorem
+title: Equal arcs subtend equal angles
+
+paraphrase: |
+  The converse of [[III.26]]: in equal circles, angles standing on equal arcs are equal.
+
+diagram:
+  width: 470
+  height: 240
+  elements:
+    - "G;point;free;120,115"
+    - "A;point;free;75,30"
+    - "ABC;circle;radius;G,A;0;0;black;0"
+    - "B;point;circleSlider;ABC,60,190"
+    - "C;point;circleSlider;ABC,180,190"
+    - "H;point;free;340,115"
+    - "DEF;circle;radius;H,G,A;0;0;black;0"
+    - "D;point;circleSlider;DEF,380,25"
+    - "E;point;circleSlider;DEF,280,190"
+    - "F;point;similar;H,E,G,B,C"
+    - "AB;line;connect;A,B"
+    - "AC;line;connect;A,C"
+    - "DE;line;connect;D,E"
+    - "DF;line;connect;D,F"
+    - "GB;line;connect;G,B"
+    - "GC;line;connect;G,C"
+    - "HF;line;connect;H,F"
+    - "HE;line;connect;H,E"
+    - "K;point;circleSlider;ABC,140,205;black;0"
+    - "GK;line;connect;G,K"
+    - "BC;sector;arc;B,K,C;0;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "BK;line;connect;B,K;0;0;0"
+    - "angBGC;sector;angleMarker;G,B,C"
+    - "angEHF;sector;angleMarker;H,E,F"
+    - "angBGK;sector;angleMarker;G,B,K"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angEDF;sector;angleMarker;D,E,F"
+  aliases:
+    BG: GB
+    BGC: angBGC
+    EHF: angEHF
+    BGK: angBGK
+    BAC: angBAC
+    EDF: angEDF
+  given: [ABC, DEF, A, B, C, D, E, F, G, H, AB, AC, DE, DF, GB, GC, HE, HF]
+  caption: |
+    Two equal circles, arcs {BC} and {EF} equal. {K} is the supposed point with ∠{BGK|angBGK} = ∠{EHF|angEHF}.
+
+steps:
+  - part: enunciation
+    text: "In equal circles angles standing on equal circumferences are equal to one another, whether they stand at the centres or at the circumferences."
+    highlight: [angBGC, angEHF, angBAC, angEDF]
+    hint: |
+      Equal arcs ⇒ equal angles.
+
+  - part: setting-out
+    text: "For in equal circles ABC, DEF, on equal circumferences BC, EF, let the angles BGC, EHF stand at the centres G, H, and the angles BAC, EDF at the circumferences;"
+    highlight: [angBGC, angEHF, angBAC, angEDF]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the angle BGC is equal to the angle EHF, and the angle BAC is equal to the angle EDF."
+    highlight: [angBGC, angEHF, angBAC, angEDF]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, if the angle BGC is unequal to the angle EHF, one of them is greater."
+    highlight: [angBGC, angEHF]
+    hint: |
+      Reductio.
+
+  - part: construction
+    text: "Let the angle BGC be greater: and on the straight line BG, and at the point G on it, let the angle BGK be constructed equal to the angle EHF."
+    highlight: [angBGK, angEHF, GK]
+    adds: [K, GK, angBGK]
+    hint: |
+      Copy the smaller angle inside the larger ([[I.23]]).
+
+  - part: proof
+    text: "Now equal angles stand on equal circumferences, when they are at the centres;"
+    highlight: [angBGK, angEHF]
+    hint: |
+      [[III.26]].
+
+  - part: proof
+    text: "therefore the circumference BK is equal to the circumference EF."
+    highlight: [BK, EF]
+    hint: |
+      So arc *BK* = arc *EF*.
+
+  - part: proof
+    text: "But EF is equal to BC; therefore BK is also equal to BC, the less to the greater: which is impossible."
+    highlight: [BC]
+    hint: |
+      But arc *BK* is part of arc *BC*. Contradiction.
+
+  - part: proof
+    text: "Therefore the angle BGC is not unequal to the angle EHF; therefore it is equal to it."
+    highlight: [angBGC, angEHF]
+    hint: |
+      Central angles equal.
+
+  - part: proof
+    text: "And the angle at A is half of the angle BGC, and the angle at D half of the angle EHF; therefore the angle at A is also equal to the angle at D."
+    highlight: [angBAC, angEDF]
+    hint: |
+      Halves ([[III.20]]).
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      text: Central angle $= s/r$ for arc length $s$; equal $s$ and $r$ give equal angles; inscribed angles are half. $\blacksquare$
+
+commentary: |
+  The converse of [[III.26]], by the usual reductio.
+
+gaps: |
+  - **Arc *BK* inside arc *BC***: follows from ∠{BGK|angBGK} < ∠{BGC|angBGC}, read off the figure.

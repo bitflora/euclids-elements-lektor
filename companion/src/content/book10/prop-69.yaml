@@ -1,0 +1,80 @@
+id: X.69
+kind: theorem
+title: A line commensurable with the side of a rational plus a medial area is such a side
+
+paraphrase: |
+  A line {CD} commensurable (in length) with a side of a rational plus a medial area {AB} is itself a side of a rational plus a medial area.
+
+diagram:
+  width: 250
+  height: 95
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "C0;point;free;-1000,65;0;0"
+    - "C3;point;free;1000,65;0;0"
+    - "A;point;lineSlider;A0,A3,60,0"
+    - "B;point;lineSlider;A0,A3,180,0"
+    - "AB;line;connect;A,B"
+    - "C;point;lineSlider;C0,C3,30,0"
+    - "D;point;lineSlider;C0,C3,210,0"
+    - "CD;line;connect;C,D"
+    - "E;point;lineSlider;A0,A3,130,0"
+    - "F;point;proportion;A,B,C,D,A,E,C,C3"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "CF;line;connect;C,F;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+  aliases: { BA: AB, DC: CD, EA: AE, BE: EB, FC: CF, DF: FD }
+  caption: |
+    {AB} divided at {E}; {CD} commensurable with {AB}, divided at {F} in the same ratio.
+
+steps:
+  - part: enunciation
+    text: "A straight line commensurable with the side of a rational plus a medial area is itself also the side of a rational plus a medial area."
+    highlight: [AB, CD]
+    hint: |
+      The kinds of irrational are closed under rational scaling.
+    modern: |
+      $CD = r\,AB$ with $r \in \mathbb Q$ $\Rightarrow$ $CD$ is of the same kind.
+
+  - part: setting-out
+    text: "Let AB be the side of a rational plus a medial area, and let CD be commensurable with AB; it is to be proved that CD is also the side of a rational plus a medial area."
+    highlight: [AB, CD]
+    hint: |
+      {CD} commensurable with {AB}.
+
+  - part: proof
+    text: "Let AB be divided into its straight lines at E; therefore AE, EB are straight lines incommensurable in square which make the sum of the squares on them medial, but the rectangle contained by them rational."
+    highlight: [AE, EB]
+    hint: |
+      The parts of {AB}.
+
+  - part: construction
+    text: "Let the same construction be made as before."
+    highlight: [CF, FD]
+    hint: |
+      Same construction.
+
+  - part: proof
+    text: "We can then prove similarly that CF, FD are incommensurable in square, and the sum of the squares on AE, EB is commensurable with the sum of the squares on CF, FD, and the rectangle AE, EB with the rectangle CF, FD; so that the sum of the squares on CF, FD is also medial, and the rectangle CF, FD rational."
+    highlight: [CF, FD]
+    hint: |
+      As in [[X.68]], the properties carry over.
+
+  - part: proof
+    text: "Therefore CD is the side of a rational plus a medial area."
+    highlight: [CD]
+    hint: |
+      Done ([[X.40]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Scaling by a rational $r$ multiplies the terms by $r$ and their squares and rectangle by $r^2$, preserving
+        every property in the definition. $\blacksquare$

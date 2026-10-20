@@ -1,0 +1,172 @@
+id: X.50
+kind: problem
+title: To find the third binomial
+
+paraphrase: |
+  Construct a third binomial {FH} = {FG} + {GH} ([[X.Def.II.3]]): $\sqrt{FG^2 - GH^2}$ commensurable with
+  {FG}, but neither term commensurable in length with the rational line {E}.
+
+diagram:
+  width: 360
+  height: 130
+  elements:
+    - "K0;point;free;-1000,30;0;0"
+    - "K3;point;free;1000,30;0;0"
+    - "E0;point;free;-1000,65;0;0"
+    - "E3;point;free;1000,65;0;0"
+    - "F0;point;free;-1000,100;0;0"
+    - "F3;point;free;1000,100;0;0"
+    - "A;point;lineSlider;K0,K3,180,0"
+    - "B;point;lineSlider;K0,K3,324,0"
+    - "C;point;lineSlider;K0,K3,280,0"
+    - "AB;line;connect;A,B;0;0;blue"
+    - "D1;point;lineSlider;E0,E3,200,0;0"
+    - "D2;point;lineSlider;E0,E3,290,0;0"
+    - "D;line;connect;D1,D2;black;0;blue"
+    - "E1;point;lineSlider;E0,E3,30,0;0"
+    - "E2;point;lineSlider;E0,E3,110,0;0"
+    - "E;line;connect;E1,E2;black"
+    - "F;point;lineSlider;F0,F3,30,0"
+    - "G';point;proportion;D1,D2,A,B,E1,E2,F,F3;0;0"
+    - "G;point;meanProportional;E1,E2,F,G',F,F3"
+    - "H';point;proportion;B,A,A,C,F,G,G,F3;0;0"
+    - "H;point;meanProportional;F,G,G,H',G,F3"
+    - "FH;line;connect;F,H"
+    - "FG;line;connect;F,G;0;0;0"
+    - "GH;line;connect;G,H;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+  aliases: { BA: AB, HF: FH, GF: FG, HG: GH, CA: AC, BC: CB }
+  caption: |
+    {D} a number not square and not in a square ratio to {BA} or {AC}; sq({E}) : sq({FG}) = {D} : {AB};
+    sq({FG}) : sq({GH}) = {BA} : {AC}.
+
+steps:
+  - part: enunciation
+    text: "To find the third binomial straight line."
+    highlight: [FH]
+    hint: |
+      E.g. $\sqrt8 + \sqrt6$.
+
+  - part: construction
+    text: "Let two numbers AC, CB be set out such that the sum of them AB has to BC the ratio which a square number has to a square number, but has not to AC the ratio which a square number has to a square number."
+    highlight: [AC, CB]
+    hint: |
+      Numbers {AC}, {CB} as in [[X.48]].
+
+  - part: construction
+    text: "Let any other number D, not square, be set out also, and let it not have to either of the numbers BA, AC the ratio which a square number has to a square number."
+    highlight: [D]
+    hint: |
+      And a number {D}, not square, not in a square ratio to {BA} or {AC}.
+
+  - part: construction
+    text: "Let any rational straight line E be set out, and let it be contrived that, as D is to AB, so is the square on E to the square on FG; therefore the square on E is commensurable with the square on FG."
+    highlight: [E, FG]
+    hint: |
+      sq({E}) : sq({FG}) = {D} : {AB}: commensurable squares.
+
+  - part: proof
+    text: "And E is rational; therefore FG is also rational."
+    highlight: [FG]
+    hint: |
+      {FG} rational.
+
+  - part: proof
+    text: "And, since D has not to AB the ratio which a square number has to a square number, neither has the square on E to the square on FG the ratio which a square number has to a square number; therefore E is incommensurable in length with FG."
+    highlight: [E, FG]
+    hint: |
+      Not square to square: {E}, {FG} incommensurable in length.
+
+  - part: construction
+    text: "Next let it be contrived that, as the number BA is to AC, so is the square on FG to the square on GH; therefore the square on FG is commensurable with the square on GH."
+    highlight: [FG, GH]
+    hint: |
+      sq({FG}) : sq({GH}) = {BA} : {AC}.
+
+  - part: proof
+    text: "But FG is rational; therefore GH is also rational."
+    highlight: [GH]
+    hint: |
+      {GH} rational.
+
+  - part: proof
+    text: "And, since BA has not to AC the ratio which a square number has to a square number, neither has the square on FG to the square on HG the ratio which a square number has to a square number; therefore FG is incommensurable in length with GH."
+    highlight: [FG, GH]
+    hint: |
+      {FG}, {GH} incommensurable in length.
+
+  - part: proof
+    text: "Therefore FG, GH are rational straight lines commensurable in square only; therefore FH is binomial."
+    highlight: [FH]
+    hint: |
+      {FH} binomial.
+
+  - part: specification
+    text: "I say next that it is also a third binomial straight line."
+    highlight: [FH]
+    hint: |
+      A third binomial.
+
+  - part: proof
+    text: "For since, as D is to AB, so is the square on E to the square on FG, and, as BA is to AC, so is the square on FG to the square on GH, therefore, ex aequali, as D is to AC, so is the square on E to the square on GH."
+    highlight: [E, GH]
+    hint: |
+      Ex aequali: sq({E}) : sq({GH}) = {D} : {AC} …
+
+  - part: proof
+    text: "But D has not to AC the ratio which a square number has to a square number; therefore neither has the square on E to the square on GH the ratio which a square number has to a square number; therefore E is incommensurable in length with GH."
+    highlight: [E, GH]
+    hint: |
+      … not square to square: {E}, {GH} incommensurable in length.
+
+  - part: proof
+    text: "And since, as BA is to AC, so is the square on FG to the square on GH, therefore the square on FG is greater than the square on GH."
+    highlight: [FG, GH]
+    hint: |
+      {FG} > {GH}.
+
+  - part: construction
+    text: "Let then the squares on GH, K be equal to the square on FG; therefore, convertendo, as AB is to BC, so is the square on FG to the square on K."
+    highlight: [FG]
+    hint: |
+      sq({FG}) = sq({GH}) + sq(*K*); convertendo sq({FG}) : sq(*K*) = {AB} : {BC}.
+
+  - part: proof
+    text: "But AB has to BC the ratio which a square number has to a square number; therefore the square on FG also has to the square on K the ratio which a square number has to a square number; therefore FG is commensurable in length with K."
+    highlight: [FG]
+    hint: |
+      A ratio of squares: {FG}, *K* commensurable in length.
+
+  - part: proof
+    text: "Therefore the square on FG is greater than the square on GH by the square on a straight line commensurable with FG."
+    highlight: [FG, GH]
+    hint: |
+      The excess is commensurable with {FG}.
+
+  - part: proof
+    text: "And FG, GH are rational straight lines commensurable in square only, and neither of them is commensurable in length with E."
+    highlight: [FG, GH, E]
+    hint: |
+      Neither term commensurable in length with {E}.
+
+  - part: proof
+    text: "Therefore FH is a third binomial straight line."
+    highlight: [FH]
+    hint: |
+      Third binomial.
+    cites: [X.Def.II.3]
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      text: |
+        $FG = \rho\sqrt{d/m}$ (irrational in length), $GH = FG\sqrt{1 - k^2}$.
+    - steps: [10, 11, 12, 13, 14, 15, 16, 17, 18]
+      text: |
+        $\sqrt{FG^2 - GH^2} = k\,FG$; neither term is a rational multiple of $\rho$. $\blacksquare$

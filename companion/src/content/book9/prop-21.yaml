@@ -1,0 +1,83 @@
+id: IX.21
+kind: theorem
+title: A sum of even numbers is even
+
+paraphrase: |
+  Adding any even numbers {AB}, {BC}, {CD}, {DE} gives an even number {AE}.
+
+diagram:
+  width: 260
+  height: 70
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "B;point;lineSlider;A0,A3,72,0"
+    - "C;point;lineSlider;A0,A3,120,0"
+    - "D;point;lineSlider;A0,A3,194,0"
+    - "E;point;lineSlider;A0,A3,220,0"
+    - "AE;line;connect;A,E"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+  caption: |
+    {AE} is the sum of the even numbers {AB}, {BC}, {CD}, {DE}.
+
+steps:
+  - part: enunciation
+    text: "If as many even numbers as we please be added together, the whole is even."
+    highlight: [AE]
+    hint: |
+      even + even + … = even.
+    modern: |
+      $\sum 2k_i = 2\sum k_i$.
+
+  - part: setting-out
+    text: "For let as many even numbers as we please, AB, BC, CD, DE, be added together;"
+    highlight: [AB, BC, CD, DE]
+    hint: |
+      Even numbers end to end.
+
+  - part: specification
+    text: "I say that the whole AE is even."
+    highlight: [AE]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since each of the numbers AB, BC, CD, DE is even, it has a half part;"
+    highlight: [AB, BC, CD, DE]
+    hint: |
+      Each has a half ([[VII.Def.6]]).
+
+  - part: proof
+    text: "so that the whole AE also has a half part."
+    highlight: [AE]
+    hint: |
+      The halves add up to a half of the whole ([[VII.5]], tacitly).
+    cites: [VII.5]
+
+  - part: proof
+    text: "But an even number is that which is divisible into two equal parts; [id.] therefore AE is even."
+    highlight: [AE]
+    hint: |
+      So {AE} is even.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5]
+      text: |
+        $2a + 2b + 2c + 2d = 2(a + b + c + d)$. $\blacksquare$
+
+commentary: |
+  [[IX.21]]–[[IX.34]] are a self-contained theory of odd and even, generally thought to be among the oldest
+  material in the *Elements* — Pythagorean, by Oskar Becker's well-known reconstruction, which traces the
+  proof of the irrationality of $\sqrt2$ to these propositions.

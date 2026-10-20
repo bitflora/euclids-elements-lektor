@@ -1,0 +1,75 @@
+id: X.82
+kind: theorem
+title: Only one line can be annexed to a minor line
+
+paraphrase: |
+  A minor line {AB} has only one annex {BC} of the kind its definition ([[X.76]]) requires. The subtractive
+  counterpart of [[X.45]].
+
+diagram:
+  width: 250
+  height: 65
+  elements:
+    - "A0;point;free;-1000,35"
+    - "A3;point;free;1000,35"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "B;point;lineSlider;A0,A3,90,0"
+    - "C;point;lineSlider;A0,A3,180,0"
+    - "D;point;lineSlider;A0,A3,210,0"
+    - "AD;line;connect;A,D"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+  aliases: { DA: AD, BA: AB, CB: BC, CA: AC, DB: BD }
+  caption: |
+    {AB} with the annex {BC} (whole {AC}) and, supposedly, a second annex {BD} (whole {AD}).
+
+steps:
+  - part: enunciation
+    text: "To a minor straight line only one straight line can be annexed which is incommensurable in square with the whole and which makes, with the whole, the sum of the squares on them rational but twice the rectangle contained by them medial."
+    highlight: [AB, BC]
+    hint: |
+      The annex is unique.
+
+  - part: setting-out
+    text: "Let AB be the minor straight line, and let BC be an annex to AB; therefore AC, CB are straight lines incommensurable in square which make the sum of the squares on them rational, but twice the rectangle contained by them medial."
+    highlight: [AB, BC, AC]
+    hint: |
+      {AB} a minor line, annex {BC}.
+
+  - part: specification
+    text: "I say that no other straight line can be annexed to AB fulfilling the same conditions."
+    highlight: [AB]
+    hint: |
+      To prove: unique.
+
+  - part: proof
+    text: "For, if possible, let BD be so annexed; therefore AD, DB are also straight lines incommensurable in square which fulfil the aforesaid conditions."
+    highlight: [BD, AD]
+    hint: |
+      Suppose another annex {BD}.
+
+  - part: proof
+    text: "Now, since the excess of the squares on AD, DB over the squares on AC, CB is also the excess of twice the rectangle AD, DB over twice the rectangle AC, CB, while the squares on AD, DB exceed the squares on AC, CB by a rational area, for both are rational, therefore twice the rectangle AD, DB also exceeds twice the rectangle AC, CB by a rational area: which is impossible, for both are medial."
+    highlight: [AD, BD, AC, BC]
+    hint: |
+      The sums of squares are rational and the doubled rectangles medial, and they differ by the same amount: so
+      two medial areas would differ by a rational one ([[X.26]]).
+
+  - part: proof
+    text: "Therefore to a minor straight line only one straight line can be annexed which is incommensurable in square with the whole and which makes the squares on them added together rational, but twice the rectangle contained by them medial."
+    highlight: [AB]
+    hint: |
+      Only one.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        As [[X.45]]: two annexes would make two medial areas differ by a rational area, contradicting [[X.26]].
+        $\blacksquare$

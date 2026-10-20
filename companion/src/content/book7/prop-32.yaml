@@ -1,0 +1,75 @@
+id: VII.32
+kind: theorem
+title: Every number is prime or has a prime divisor
+
+paraphrase: |
+  Any number {A} is either prime or measured by some prime.
+
+diagram:
+  width: 250
+  height: 60
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,220,0;0"
+    - "A;line;connect;A1,A2;black"
+  caption: |
+    A number {A}.
+
+steps:
+  - part: enunciation
+    text: "Any number either is prime or is measured by some prime number."
+    highlight: [A]
+    hint: |
+      Every number is prime or has a prime factor.
+    modern: |
+      Every $n \ge 2$ has a prime divisor (possibly $n$ itself).
+
+  - part: setting-out
+    text: "Let A be a number;"
+    highlight: [A]
+    hint: |
+      Any number {A}.
+
+  - part: specification
+    text: "I say that A either is prime or is measured by some prime number."
+    highlight: [A]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "If now A is prime, that which was enjoined will have been done."
+    highlight: [A]
+    hint: |
+      If prime, done.
+
+  - part: proof
+    text: "But if it is composite, some prime number will measure it."
+    highlight: [A]
+    hint: |
+      If composite, [[VII.31]].
+
+  - part: proof
+    text: "Therefore any number either is prime or is measured by some prime number."
+    highlight: [A]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5]
+      text: |
+        Every number is prime or composite ([[VII.Def.11]], [[VII.Def.13]]); in the second case use
+        [[VII.31]]. $\blacksquare$
+
+commentary: |
+  Joyce: "After the previous proposition, this one really doesn't need to be stated at all." It does make
+  explicit that "prime" and "composite" exhaust the numbers, which is how [[IX.20]] uses it.

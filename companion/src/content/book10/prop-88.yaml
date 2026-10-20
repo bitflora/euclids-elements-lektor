@@ -1,0 +1,133 @@
+id: X.88
+kind: problem
+title: To find the fourth apotome
+
+paraphrase: |
+  Construct a fourth apotome {BC} = {BG} − {GC} ([[X.Def.III.4]]): the whole commensurable with the rational line
+  {A}, the excess incommensurable with the whole. Example: $3 - \sqrt3$.
+
+diagram:
+  width: 280
+  height: 95
+  elements:
+    - "A0;point;free;-1000,35;0;0"
+    - "A3;point;free;1000,35;0;0"
+    - "H0;point;free;-1000,70;0;0"
+    - "H3;point;free;1000,70;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,110,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B;point;lineSlider;A0,A3,140,0"
+    - "G;point;lineSlider;A0,A3,240,0"
+    - "BG;line;connect;B,G"
+    - "D;point;lineSlider;H0,H3,230,0"
+    - "E;point;lineSlider;H0,H3,160,0"
+    - "F;point;lineSlider;H0,H3,190,0"
+    - "DE;line;connect;D,E;0;0;blue"
+    - "C';point;proportion;E,D,E,F,B,G,G,B;0;0"
+    - "C;point;meanProportional;B,G,G,C',G,B"
+    - "H1;point;lineSlider;H0,H3,30,0;0"
+    - "M;point;midpoint;B,G;0;0"
+    - "BGcirc;circle;radius;M,G;0;0;0;0"
+    - "CGcirc;circle;radius;G,C;0;0;0;0"
+    - "bich;line;bichord;BGcirc,CGcirc;0;0;0"
+    - "H2';point;first;bich;0;0"
+    - "H2;point;cutoff;H1,H3,G,H2';0"
+    - "H;line;connect;H1,H2;black"
+    - "BC;line;connect;B,C;0;0;0"
+    - "GC;line;connect;G,C;0;0;0"
+  aliases: { GB: BG, ED: DE, CB: BC, CG: GC }
+steps:
+  - part: enunciation
+    text: "To find the fourth apotome."
+    highlight: [BC]
+    hint: |
+      Mirror of [[X.51]].
+
+  - part: construction
+    text: "Let a rational straight line A be set out, and BG commensurable in length with it; therefore BG is also rational."
+    highlight: [A, BG]
+    hint: |
+      {BG} commensurable with {A}.
+
+  - part: construction
+    text: "Let two numbers DF, FE be set out such that the whole DE has not to either of the numbers DF, EF the ratio which a square number has to a square number."
+    highlight: [DE]
+    hint: |
+      Numbers *DF*, *FE* with *DE* in no square ratio to either.
+
+  - part: construction
+    text: "Let it be contrived that, as DE is to EF, so is the square on BG to the square on GC; therefore the square on BG is commensurable with the square on GC."
+    highlight: [BG, GC]
+    hint: |
+      sq({BG}) : sq({GC}) = *DE* : *EF*.
+
+  - part: proof
+    text: "But the square on BG is rational; therefore the square on GC is also rational; therefore GC is rational."
+    highlight: [GC]
+    hint: |
+      {GC} rational.
+
+  - part: proof
+    text: "Now, since DE has not to EF the ratio which a square number has to a square number, therefore neither has the square on BG to the square on GC the ratio which a square number has to a square number; therefore BG is incommensurable in length with GC."
+    highlight: [BG, GC]
+    hint: |
+      Incommensurable in length.
+
+  - part: proof
+    text: "And both are rational; therefore BG, GC are rational straight lines commensurable in square only; therefore BC is an apotome."
+    highlight: [BC]
+    hint: |
+      {BC} an apotome.
+
+  - part: construction
+    text: "Now let the square on H be that by which the square on BG is greater than the square on GC."
+    highlight: [BG, GC]
+    hint: |
+      Let sq(*H*) = sq({BG}) − sq({GC}).
+
+  - part: proof
+    text: "Since then, as DE is to EF, so is the square on BG to the square on GC, therefore also, convertendo, as ED is to DF, so is the square on GB to the square on H."
+    highlight: [BG]
+    hint: |
+      Convertendo …
+
+  - part: proof
+    text: "But ED has not to DF the ratio which a square number has to a square number; therefore neither has the square on GB to the square on H the ratio which a square number has to a square number; therefore BG is incommensurable in length with H."
+    highlight: [BG]
+    hint: |
+      … not square to square …
+
+  - part: proof
+    text: "And the square on BG is greater than the square on GC by the square on H; therefore the square on BG is greater than the square on GC by the square on a straight line incommensurable with BG."
+    highlight: [BG]
+    hint: |
+      … so the excess is incommensurable with {BG}.
+
+  - part: proof
+    text: "And the whole BG is commensurable in length with the rational straight line A set out."
+    highlight: [BG, A]
+    hint: |
+      {BG} commensurable with {A}.
+
+  - part: proof
+    text: "Therefore BC is a fourth apotome."
+    highlight: [BC]
+    hint: |
+      Fourth apotome.
+
+  - part: proof
+    text: "Therefore the fourth apotome has been found."
+    highlight: [BC]
+    hint: |
+      Found.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        As [[X.51]] with "−". $\blacksquare$

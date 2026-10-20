@@ -1,0 +1,133 @@
+id: XI.11
+kind: problem
+title: To drop a perpendicular from a point to a plane
+
+paraphrase: |
+  From a point {A} above a plane, draw the perpendicular {AF} to the plane.
+
+diagram:
+  width: 310
+  height: 300
+  pivot: "F,xyplane"
+  elements:
+    - "origin;point;free;120,160;0;0,50,100"
+    - "x;point;fixed;280,160,100;0;darkGray"
+    - "yzplane;plane;perpendicular;origin,x;0;0;0;0"
+    - "y;point;planeSlider;yzplane,-90,260,40;0;0,50,100"
+    - "xyplane;plane;3points;origin,x,y;0;0;lightGray"
+    - "z1;point;perpendicular;origin,y,yzplane;0;0"
+    - "z;point;lineSlider;origin,z1,50,50,100;0"
+    - "Oz;line;connect;origin,z;0;0;lightGray"
+    - "ceiling;plane;parallel;xyplane,z;0;0;0;0"
+    - "A;point;planeSlider;ceiling,140,100,180"
+    - "B;point;planeSlider;xyplane,208,270,140"
+    - "C;point;planeSlider;xyplane,245,190,80"
+    - "BC;line;connect;B,C"
+    - "D;point;foot;A,BC"
+    - "AD;line;connect;A,D"
+    - "E';point;perpendicular;D,C,xyplane;0;0"
+    - "E;point;lineSlider;D,E',100,120,80"
+    - "DE;line;connect;D,E"
+    - "F;point;foot;A,D,E;black;green"
+    - "AF;line;connect;A,F"
+    - "G;point;parallelogram;B,D,F"
+    - "H;point;parallelogram;C,D,F"
+    - "GH;line;connect;G,H"
+    - "DA;line;connect;D,A;0;0;0"
+    - "EDA;polygon;triangle;E,D,A;0;0;0"
+    - "FA;line;connect;F,A;0;0;0"
+  aliases: { CB: BC, ED: DE, HG: GH }
+  caption: |
+    {BC} any line in the plane; {AD} ⊥ {BC}; {DE} ⊥ {BC} in the plane; {AF} ⊥ {DE}; {GH} through {F} parallel to {BC}.
+
+steps:
+  - part: enunciation
+    text: "From a given elevated point to draw a straight line perpendicular to a given plane."
+    highlight: [A]
+    hint: |
+      Drop a perpendicular to a plane.
+
+  - part: setting-out
+    text: "Let A be the given elevated point, and the plane of reference the given plane; thus it is required to draw from the point A a straight line perpendicular to the plane of reference."
+    highlight: [A]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "Let any straight line BC be drawn, at random, in the plane of reference, and let AD be drawn from the point A perpendicular to BC."
+    highlight: [BC, AD]
+    hint: |
+      Any line {BC} in the plane; {AD} ⊥ {BC} ([[I.12]]).
+
+  - part: proof
+    text: "If then AD is also perpendicular to the plane of reference, that which was enjoined will have been done."
+    highlight: [AD]
+    hint: |
+      If {AD} is perpendicular to the plane, done.
+
+  - part: construction
+    text: "But, if not, let DE be drawn from the point D at right angles to BC and in the plane of reference, let AF be drawn from A perpendicular to DE, and let GH be drawn through the point F parallel to BC."
+    highlight: [DE, AF, GH]
+    hint: |
+      Otherwise {DE} ⊥ {BC} in the plane, {AF} ⊥ {DE}, {GH} ∥ {BC} through {F}.
+
+  - part: proof
+    text: "Now, since BC is at right angles to each of the straight lines DA, DE, therefore BC is also at right angles to the plane through ED, DA."
+    highlight: [BC]
+    hint: |
+      {BC} ⊥ {DA}, {DE}: so {BC} ⊥ plane {EDA} ([[XI.4]]).
+
+  - part: proof
+    text: "And GH is parallel to it; but, if two straight lines be parallel, and one of them be at right angles to any plane, the remaining one will also be at right angles to the same plane; therefore GH is also at right angles to the plane through ED, DA."
+    highlight: [GH]
+    hint: |
+      {GH} ∥ {BC}, so {GH} ⊥ that plane too ([[XI.8]]).
+
+  - part: proof
+    text: "Therefore GH is also at right angles to all the straight lines which meet it and are in the plane through ED, DA."
+    highlight: [GH]
+    hint: |
+      So {GH} ⊥ every line in it through {F} …
+
+  - part: proof
+    text: "But AF meets it and is in the plane through ED, DA; therefore GH is at right angles to FA, so that FA is also at right angles to GH."
+    highlight: [GH, AF]
+    hint: |
+      … including {FA}.
+
+  - part: proof
+    text: "But AF is also at right angles to DE; therefore AF is at right angles to each of the straight lines GH, DE."
+    highlight: [AF, GH, DE]
+    hint: |
+      So {AF} ⊥ {GH} and {AF} ⊥ {DE} …
+
+  - part: proof
+    text: "But, if a straight line be set up at right angles to two straight lines which cut one another, at the point of section, it will also be at right angles to the plane through them; therefore FA is at right angles to the plane through ED, GH."
+    highlight: [AF]
+    hint: |
+      … so {AF} ⊥ the plane of {GH}, {DE} ([[XI.4]]) …
+
+  - part: proof
+    text: "But the plane through ED, GH is the plane of reference; therefore AF is at right angles to the plane of reference."
+    highlight: [AF]
+    hint: |
+      … which is the given plane.
+
+  - part: proof
+    text: "Therefore from the given elevated point A the straight line AF has been drawn perpendicular to the plane of reference."
+    highlight: [AF]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  lines:
+    - text: |
+        Project $A$ onto the plane: two perpendicular drops, first to a line, then within a plane. $\blacksquare$
+
+commentary: |
+  Joyce's figure can be turned in three dimensions: drag to change the viewpoint.

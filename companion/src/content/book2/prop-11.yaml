@@ -1,0 +1,231 @@
+id: II.11
+kind: problem
+title: Cutting a line in extreme and mean ratio
+
+paraphrase: |
+  Cut a line {AB} at a point {H} so that the rectangle on the whole and the smaller piece equals the
+  square on the larger piece: $AB \cdot BH = AH^2$. This is the "golden section".
+
+diagram:
+  width: 250
+  height: 300
+  elements:
+    - "A0;point;free;-1000,140;0"
+    - "A3;point;free;1000,140;0"
+    - "A;point;lineSlider;A0,A3,50,140"
+    - "B;point;lineSlider;A0,A3,190,140"
+    - "BD;line;perpendicular;B,A;0;0;0"
+    - "D;point;last;BD"
+    - "ABDC;polygon;parallelogram;A,B,D;0;0;black;0"
+    - "C;point;vertex;ABDC,4"
+    - "E;point;midpoint;A,C"
+    - "BE;line;connect;B,E"
+    - "F;point;extend;C,E,E,B"
+    - "FAHG;polygon;square;F,A;0;0;black;#efe4d2"
+    - "H;point;vertex;FAHG,3"
+    - "G;point;vertex;FAHG,4"
+    - "HK;line;parallel;H,A,C"
+    - "K;point;last;HK"
+    - "AB;line;connect;A,B;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "CF;line;connect;C,F;0;0;0"
+    - "AF;line;connect;A,F;0;0;0"
+    - "AH;line;connect;A,H;0;0;0"
+    - "BH;line;connect;B,H;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+    - "GH;line;connect;G,H;0;0;0"
+    - "FGKC;polygon;quadrilateral;F,G,K,C;0;0;0;0"
+    - "AHKC;polygon;quadrilateral;A,H,K,C;0;0;0;0"
+    - "HBDK;polygon;quadrilateral;H,B,D,K;0;0;0;#dfe7ea"
+    - "angBAE;sector;angleMarker;A,B,E"
+  aliases:
+    BA: AB
+    CA: AC
+    FA: AF
+    EA: AE
+    FE: EF
+    EB: BE
+    HA: AH
+    HB: BH
+    GF: FG
+    HG: GH
+    DB: BD
+    AD: ABDC
+    FH: FAHG
+    FK: FGKC
+    AK: AHKC
+    HD: HBDK
+  given: [A, B, AB]
+  caption: |
+    Slide {A} and {B}. The square {FH} on {AH} and the rectangle {HD} on {AB}, {BH} always have the
+    same area; {H} divides {AB} in the golden ratio.
+
+steps:
+  - part: enunciation
+    text: "To cut a given straight line so that the rectangle contained by the whole and one of the segments is equal to the square on the remaining segment."
+    highlight: [AB, H, FH, HD]
+    hint: |
+      A problem: find {H} on {AB} with $AB \cdot BH = AH^2$.
+    explain:
+      fact: |
+        In Book VI (VI.30) this is called cutting a line in *extreme and mean ratio*: the whole is to
+        the greater piece as the greater is to the less. The ratio is the golden ratio,
+        $\varphi = (1 + \sqrt 5)/2$.
+      implicit: |
+        In algebra, with $AB = a$ and $AH = x$: $a(a - x) = x^2$, the quadratic $x^2 + ax = a^2$.
+
+  - part: setting-out
+    text: "Let AB be the given straight line;"
+    highlight: [AB]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to cut AB so that the rectangle contained by the whole and one of the segments is equal to the square on the remaining segment."
+    highlight: [AB]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let the square ABDC be described on AB;"
+    highlight: [AD]
+    adds: [ABDC, C, D]
+    hint: |
+      The square on {AB} ([[I.46]]).
+
+  - part: construction
+    text: "let AC be bisected at the point E, and let BE be joined;"
+    highlight: [E, BE]
+    adds: [E, BE]
+    hint: |
+      Midpoint {E} of the side {AC} ([[I.10]]); join {BE}.
+    cites: [I.10]
+
+  - part: construction
+    text: "let CA be drawn through to F, and let EF be made equal to BE;"
+    highlight: [EF, BE, F]
+    adds: [F, EF]
+    hint: |
+      Extend {CA} beyond {A} to {F} with {EF} = {EB} ([[I.3]]).
+    cites: [I.3]
+
+  - part: construction
+    text: "let the square FH be described on AF, and let GH be drawn through to K."
+    highlight: [FH, HK]
+    adds: [FAHG, G, H, HK, K, HBDK]
+    hint: |
+      The square on {AF}; its corner {H} lands on {AB}. Extend {GH} to {K} on {CD}.
+    cites: [I.46]
+
+  - part: proof
+    text: "I say that AB has been cut at H so as to make the rectangle contained by AB, BH equal to the square on AH."
+    highlight: [H, AB, BH, AH]
+    hint: |
+      The claim.
+
+  - part: proof
+    text: "For, since the straight line AC has been bisected at E, and FA is added to it, the rectangle contained by CF, FA together with the square on AE is equal to the square on EF."
+    highlight: [AC, AF, AE, EF]
+    hint: |
+      This is exactly [[II.6]]: a line bisected ({AC} at {E}) and produced (by {AF}).
+    modern: |
+      $$CF\cdot FA + AE^2 = EF^2$$
+
+  - part: proof
+    text: "But EF is equal to EB; therefore the rectangle CF, FA together with the square on AE is equal to the square on EB."
+    highlight: [EF, BE]
+    hint: |
+      By construction.
+
+  - part: proof
+    text: "But the squares on BA, AE are equal to the square on EB, for the angle at A is right;"
+    highlight: [AB, AE, BE, angBAE]
+    hint: |
+      Pythagoras in triangle {BAE|BE} ([[I.47]]).
+
+  - part: proof
+    text: "therefore the rectangle CF, FA together with the square on AE is equal to the squares on BA, AE."
+    highlight: [AB, AE]
+    hint: |
+      Both equal the square on {EB}.
+
+  - part: proof
+    text: "Let the square on AE be subtracted from each; therefore the rectangle CF, FA which remains is equal to the square on AB."
+    highlight: [AB]
+    hint: |
+      [[I.CN.3]]: $CF \cdot FA = AB^2$.
+    cites: [I.CN.3]
+
+  - part: proof
+    text: "Now the rectangle CF, FA is FK, for AF is equal to FG; and the square on AB is AD; therefore FK is equal to AD."
+    highlight: [FK, AD]
+    hint: |
+      {FK} is the rectangle on {CF} and {FG} (= {FA}); {AD} is the square on {AB}.
+
+  - part: proof
+    text: "Let AK be subtracted from each; therefore FH which remains is equal to HD."
+    highlight: [AK, FH, HD]
+    hint: |
+      Take away the common rectangle {AK} ([[I.CN.3]]).
+
+  - part: proof
+    text: "And HD is the rectangle AB, BH, for AB is equal to BD; and FH is the square on AH;"
+    highlight: [HD, FH]
+    hint: |
+      {HD} has sides {BH} and {BD} (= {AB}); {FH} is the square on {AH}.
+
+  - part: proof
+    text: "therefore the rectangle contained by AB, BH is equal to the square on HA."
+    highlight: [HD, FH]
+    hint: |
+      $AB \cdot BH = AH^2$.
+    modern: |
+      $$AB\cdot BH = AH^2$$
+
+  - part: conclusion
+    text: "therefore the given straight line AB has been cut at H so as to make the rectangle contained by AB, BH equal to the square on HA."
+    highlight: [AB, H]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Solve $x^2 + ax = a^2$ by completing the
+    square:
+  lines:
+    - steps: [1, 2, 3]
+      text: Let $AB = a$, $AE = a/2$, so $EB = \sqrt{a^2 + a^2/4} = \tfrac{\sqrt 5}{2}a$.
+    - steps: [4, 5, 6, 7]
+      text: Then $AF = EF - EA = \tfrac{\sqrt 5 - 1}{2}a$, and $AH = AF$.
+    - steps: [8, 9, 10, 11, 12, 13, 14, 15, 16]
+      text: |
+        $x = \tfrac{\sqrt 5 - 1}{2}a$ satisfies $x^2 + ax = a^2$, i.e. $a(a - x) = x^2$:
+        $AB \cdot BH = AH^2$. $\blacksquare$
+  closing: |
+    The construction is completing the square in geometric form: {E} halves the coefficient,
+    [[II.6]] is the identity $(x + a/2)^2 = x^2 + ax + a^2/4$, and {BE} is the square root.
+
+commentary: |
+  The first *problem* in Book II, and the first use of [[II.6]]. The point {H} reappears in Book IV
+  (the regular pentagon, IV.10–11), in Book VI as "extreme and mean ratio" (VI.30), and throughout
+  Book XIII on the regular solids.
+
+  No line can be cut this way into *commensurable* pieces: the ratio is irrational. The diagonal and
+  side of a regular pentagon are in exactly this ratio.
+
+gaps: |
+  - **{H} lies on {AB}**: that the corner of the square on {AF} falls between {A} and {B} needs
+    $AF < AB$, which holds but is not shown.
+
+historical: |
+  Some historians (e.g. von Fritz, 1945) have argued that the incommensurability of the pentagon's
+  side and diagonal — exactly this ratio — may have been the first irrationality discovered by the
+  Pythagoreans. The name "golden section" is modern (19th century).

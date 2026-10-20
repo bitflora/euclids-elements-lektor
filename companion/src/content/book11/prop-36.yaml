@@ -1,0 +1,120 @@
+id: XI.36
+kind: theorem
+title: The solid on three proportionals equals the equiangular solid on the mean
+
+paraphrase: |
+  If {A} : {B} = {B} : {C}, the parallelepiped with edges {A}, {B}, {C} equals the equilateral parallelepiped on {B}
+  with the same angles. The solid version of [[VI.17]].
+
+diagram:
+  width: 460
+  height: 310
+  elements:
+    - "M0;point;free;-1000,180;0;0"
+    - "M3;point;free;1000,180;0;0"
+    - "A0;point;free;-1000,220;0;0"
+    - "A3;point;free;1000,220;0;0"
+    - "B0;point;free;-1000,250;0;0"
+    - "B3;point;free;1000,250;0;0"
+    - "C0;point;free;-1000,280;0;0"
+    - "C3;point;free;1000,280;0;0"
+    - "A1;point;lineSlider;A0,A3,80,0;0"
+    - "A2;point;lineSlider;A0,A3,200,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,80,0;0"
+    - "B2;point;lineSlider;B0,B3,170,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,80,0;0"
+    - "C2;point;proportion;A1,A2,B1,B2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "M;point;lineSlider;M0,M3,80,0"
+    - "L;point;cutoff;M,M3,A1,A2"
+    - "c;point;lineSlider;M0,M3,250,0;0"
+    - "G;point;cutoff;c,M3,B1,B2"
+    - "O;point;free;140,130"
+    - "a;point;parallelogram;M,L,O;0"
+    - "E';point;parallelogram;L,O,G;0;0"
+    - "E;point;proportion;A1,A2,B1,B2,L,O,G,E'"
+    - "F;point;parallelogram;E,G,c"
+    - "N;point;free;230,110"
+    - "f;point;parallelogram;M,L,N;0"
+    - "b;point;parallelogram;O,L,N;0"
+    - "H;point;parallelogram;a,L,N"
+    - "D';point;parallelogram;N,L,E;0;0"
+    - "D;point;proportion;C1,C2,B1,B2,L,N,E,D'"
+    - "d;point;parallelogram;F,E,D;0"
+    - "e;point;parallelogram;G,E,D;0"
+    - "K;point;parallelogram;c,E,D"
+    - "OaML;polygon;quadrilateral;O,a,M,L;0;0;black;90,75,75"
+    - "OaHb;polygon;quadrilateral;O,a,H,b;0;0;black;90,30,100"
+    - "OLNb;polygon;quadrilateral;O,L,N,b;0;0;black;90,70,100"
+    - "Hf;line;connect;H,f"
+    - "Mf;line;connect;M,f"
+    - "Nf;line;connect;N,f"
+    - "GcFE;polygon;quadrilateral;G,c,F,E;0;0;black;10,75,75"
+    - "GcKe;polygon;quadrilateral;G,c,K,e;0;0;black;10,30,100"
+    - "GEDe;polygon;quadrilateral;G,E,D,e;0;0;black;10,70,100"
+    - "Dd;line;connect;D,d"
+    - "Fd;line;connect;F,d"
+    - "Kd;line;connect;K,d"
+  caption: |
+    {A}, {B}, {C} in continued proportion; the solid on {A}, {B}, {C} at *L* and the solid on {B} at *E*.
+
+steps:
+  - part: enunciation
+    text: "If three straight lines be proportional, the parallelepipedal solid formed out of the three is equal to the parallelepipedal solid on the mean which is equilateral, but equiangular with the aforesaid solid."
+    highlight: [A, B, C]
+    hint: |
+      $ac = b^2$, so $a\,b\,c = b^3$ (with the same angles).
+
+  - part: setting-out
+    text: "Let A, B, C be three straight lines in proportion, so that, as A is to B, so is B to C; I say that the solid formed out of A, B, C is equal to the solid on B which is equilateral, but equiangular with the aforesaid solid."
+    highlight: [A, B, C]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "Let there be set out the solid angle at E contained by the angles DEG, GEF, FED, let each of the straight lines DE, GE, EF be made equal to B, and let the parallelepipedal solid EK be completed, let LM be made equal to A, and on the straight line LM, and at the point L on it, let there be constructed a solid angle equal to the solid angle at E, namely that contained by NLO, OLM, MLN; let LO be made equal to B, and LN equal to C."
+    highlight: [B]
+    hint: |
+      A solid angle at *E* with edges equal to {B}; an equal solid angle at *L* with edges {A}, {B}, {C}.
+
+  - part: proof
+    text: "Now, since, as A is to B, so is B to C, while A is equal to LM, B to each of the straight lines LO, ED, and C to LN, therefore, as LM is to EF, so is DE to LN."
+    highlight: [A, B, C]
+    hint: |
+      *LM* : *EF* = *DE* : *LN* …
+
+  - part: proof
+    text: "Thus the sides about the equal angles NLM, DEF are reciprocally proportional; therefore the parallelogram MN is equal to the parallelogram DF."
+    highlight: [A, B, C]
+    hint: |
+      … so the parallelograms *MN*, *DF* are equal ([[VI.14]]).
+
+  - part: proof
+    text: "And, since the angles DEF, NLM are two plane rectilineal angles, and on them the elevated straight lines LO, EG are set up which are equal to one another and contain equal angles with the original straight lines respectively, therefore the perpendiculars drawn from the points G, O to the planes through NL, LM and DE, EF are equal to one another; hence the solids LH, EK are of the same height."
+    highlight: [B]
+    hint: |
+      Equal heights by [[XI.35]] (porism).
+
+  - part: proof
+    text: "But parallelepipedal solids on equal bases and of the same height are equal to one another; therefore the solid HL is equal to the solid EK."
+    highlight: [B]
+    hint: |
+      So the solids are equal ([[XI.31]]).
+
+  - part: proof
+    text: "And LH is the solid formed out of A, B, C, and EK the solid on B; therefore the parallelepipedal solid formed out of A, B, C is equal to the solid on B which is equilateral, but equiangular with the aforesaid solid."
+    highlight: [A, B, C]
+    hint: |
+      That is the claim.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $V = ab c\cdot k = b^3 k$ where $k$ depends only on the angles. $\blacksquare$

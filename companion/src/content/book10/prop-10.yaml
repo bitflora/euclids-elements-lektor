@@ -1,0 +1,122 @@
+id: X.10
+kind: problem
+title: Lines incommensurable with a given line, in length only and in square
+
+paraphrase: |
+  Given a line {A}, find a line {D} incommensurable with it in length only (their squares are commensurable),
+  and a line {E} incommensurable with it even in square.
+
+diagram:
+  width: 180
+  height: 200
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "D0;point;free;-1000,65;0;0"
+    - "D3;point;free;1000,65;0;0"
+    - "E0;point;free;-1000,100;0;0"
+    - "E3;point;free;1000,100;0;0"
+    - "B0;point;free;-1000,135;0;0"
+    - "B3;point;free;1000,135;0;0"
+    - "C0;point;free;-1000,170;0;0"
+    - "C3;point;free;1000,170;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,10;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,120,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,70,0;0"
+    - "B;line;connect;B1,B2;black;0;blue"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,100,0;0"
+    - "C;line;connect;C1,C2;black;0;blue"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D*;point;proportion;B1,B2,C1,C2,A1,A2,D1,D3;0;0"
+    - "D2;point;meanProportional;A1,A2,D1,D*,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;E0,E3,30,0;0"
+    - "E2;point;meanProportional;A1,A2,D1,D2,E1,E3;0"
+    - "E;line;connect;E1,E2;black"
+  caption: |
+    {B} : {C} is not a ratio of squares; sq({A}) : sq({D}) = {B} : {C}; {E} is the mean proportional between
+    {A} and {D}.
+
+steps:
+  - part: enunciation
+    text: "To find two straight lines incommensurable, the one in length only, and the other in square also, with an assigned straight line."
+    highlight: [A]
+    hint: |
+      Construct $\sqrt{q}$-type and $\sqrt[4]{q}$-type lines relative to {A}.
+    modern: |
+      With $A = 1$: $D = \sqrt{c/b}$ ($c/b$ not a square), $E = \sqrt{D} = \sqrt[4]{c/b}$.
+
+  - part: setting-out
+    text: "Let A be the assigned straight line;"
+    highlight: [A]
+    hint: |
+      The given line {A}.
+
+  - part: specification
+    text: "thus it is required to find two straight lines incommensurable, the one in length only, and the other in square also, with A."
+    highlight: [A]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let two numbers B, C be set out which have not to one another the ratio which a square number has to a square number, that is, which are not similar plane numbers;"
+    highlight: [B, C]
+    hint: |
+      Numbers {B}, {C} not in the ratio of two squares (e.g. 1 and 2).
+
+  - part: construction
+    text: "and let it be contrived that, as B is to C, so is the square on A to the square on D —for we have learnt how to do this—"
+    highlight: [A, D, B, C]
+    hint: |
+      Choose {D} with sq({A}) : sq({D}) = {B} : {C} ([[X.6]], porism).
+
+  - part: proof
+    text: "therefore the square on A is commensurable with the square on D."
+    highlight: [A, D]
+    hint: |
+      So the squares on {A}, {D} are commensurable ([[X.6]]).
+
+  - part: proof
+    text: "And, since B has not to C the ratio which a square number has to a square number, therefore neither has the square on A to the square on D the ratio which a square number has to a square number; therefore A is incommensurable in length with D."
+    highlight: [A, D]
+    hint: |
+      But not as square to square, so {A}, {D} are incommensurable in length ([[X.9]]).
+
+  - part: construction
+    text: "Let E be taken a mean proportional between A, D; therefore, as A is to D, so is the square on A to the square on E."
+    highlight: [E, A, D]
+    hint: |
+      {E}: mean proportional between {A} and {D}; then {A} : {D} = sq({A}) : sq({E}) ([[V.Def.9]]).
+
+  - part: proof
+    text: "But A is incommensurable in length with D; therefore the square on A is also incommensurable with the square on E; therefore A is incommensurable in square with E."
+    highlight: [A, E]
+    hint: |
+      {A}, {D} incommensurable, so the squares on {A}, {E} are too ([[X.11]]): {E} is incommensurable in square.
+
+  - part: proof
+    text: "Therefore two straight lines D, E have been found incommensurable, D in length only, and E in square and of course in length also, with the assigned straight line A.]"
+    highlight: [D, E]
+    hint: |
+      Found.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Take $A = 1$, $B : C = 1 : 2$.
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        $D = \sqrt2$: $D^2 = 2$ is rational, $D$ is not.
+    - steps: [7, 8, 9]
+      text: |
+        $E = \sqrt{D} = \sqrt[4]{2}$: $E^2 = \sqrt2$ is irrational. $\blacksquare$
+
+commentary: |
+  This supplies the lines promised in [[X.Def.3]]. Heath, following Heiberg, brackets the whole proposition
+  as a later addition: it cites [[X.11]], which comes after it, and the closing bracket of Heath's text marks
+  the end of the interpolation.

@@ -1,0 +1,248 @@
+id: II.14
+kind: problem
+title: Squaring a rectilinear figure
+
+paraphrase: |
+  Given any rectilinear figure {A}, construct a square of the same area. First turn {A} into a
+  rectangle ([[I.45]]), then turn the rectangle into a square by finding the mean proportional of its
+  sides.
+
+diagram:
+  width: 470
+  height: 260
+  elements:
+    - "A1;point;free;80,40;0"
+    - "A2;point;free;160,80;0"
+    - "A3;point;free;120,180;0"
+    - "A4;point;free;40,100;0"
+    - "A;polygon;quadrilateral;A1,A2,A3,A4;0,0,0;0;black;#e6e0ef"
+    - "B;point;free;200,140"
+    - "C;point;free;200,190"
+    - "BE1;line;perpendicular;B,C"
+    - "E1;point;last;BE1;0;0"
+    - "BCDE;polygon;application;A,B,C,E1;0;0;black;#efe4d2"
+    - "D;point;vertex;BCDE,3"
+    - "E;point;vertex;BCDE,4"
+    - "EF;line;extend;B,E,E,D"
+    - "F;point;last;EF"
+    - "G;point;midpoint;B,F"
+    - "BHF;sector;sector;G,F,B;0;0;black;0"
+    - "Gcirc;circle;radius;G,B;0;0;0;0"
+    - "Hp;line;perpendicular;E,G;0;0;0"
+    - "HH2;line;chord;Hp,Gcirc;0;0;0"
+    - "H;point;last;HH2"
+    - "EH;line;connect;E,H"
+    - "GH;line;connect;G,H"
+    - "BE;line;connect;B,E;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "BF;line;connect;B,F;0;0;0"
+    - "GB;line;connect;G,B;0;0;0"
+    - "GF;line;connect;G,F;0;0;0"
+    - "GE;line;connect;G,E;0;0;0"
+    - "HGE;polygon;triangle;H,G,E;0;0;0;0"
+    - "angGEH;sector;angleMarker;E,G,H"
+    - "BH;line;connect;B,H;0;0;0"
+  aliases:
+    BD: BCDE
+    DE: ED
+    EG: GE
+    HE: EH
+    GHE: HGE
+  given: [A, A1, A2, A3, A4]
+  caption: |
+    Drag the corners of {A}, or {B} and {C}. {BD} is a rectangle equal to {A}; the semicircle on
+    {BF} gives {EH}, the side of a square equal to both.
+
+steps:
+  - part: enunciation
+    text: "To construct a square equal to a given rectilineal figure."
+    highlight: [A]
+    hint: |
+      A problem: square any polygon. The climax of Book II and of the "application of areas".
+
+  - part: setting-out
+    text: "Let A be the given rectilineal figure;"
+    highlight: [A]
+    hint: |
+      The data: any rectilinear figure {A}.
+
+  - part: specification
+    text: "thus it is required to construct a square equal to the rectilineal figure A."
+    highlight: [A]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let there be constructed the rectangular parallelogram BD equal to the rectilineal figure A."
+    highlight: [BD, A]
+    adds: [B, C, BCDE, D, E]
+    hint: |
+      Turn {A} into a rectangle {BD} with [[I.45]] (taking the given angle to be right).
+
+  - part: proof
+    text: "Then, if BE is equal to ED, that which was enjoined will have been done;"
+    highlight: [BE, ED]
+    hint: |
+      If the rectangle happens to be a square, there is nothing more to do.
+    explain:
+      implicit: |
+        "Will have been done" is literally "would have been done" (γεγονὸς ἂν εἴη τὸ ἐπιταχθέν,
+        Heath's note on line 7).
+
+  - part: proof
+    text: "for a square BD has been constructed equal to the rectilineal figure A."
+    highlight: [BD]
+    hint: |
+      The rectangle is then the required square.
+
+  - part: proof
+    text: "But, if not, one of the straight lines BE, ED is greater."
+    highlight: [BE, ED]
+    hint: |
+      Otherwise one side is longer.
+
+  - part: construction
+    text: "Let BE be greater, and let it be produced to F;"
+    highlight: [BE, BF]
+    adds: [BF, F]
+    hint: |
+      Extend the longer side {BE} past {E}.
+
+  - part: construction
+    text: "let EF be made equal to ED, and let BF be bisected at G."
+    highlight: [EF, ED, G]
+    adds: [G]
+    hint: |
+      Lay off {EF} = {ED} ([[I.3]]), so {BF} is the two sides end to end; take its midpoint {G} ([[I.10]]).
+    cites: [I.3, I.10]
+
+  - part: construction
+    text: "With centre G and distance one of the straight lines GB, GF let the semicircle BHF be described;"
+    highlight: [BHF, G]
+    adds: [BHF]
+    hint: |
+      The semicircle on {BF} as diameter ([[I.Post.3]]).
+    cites: [I.Post.3]
+
+  - part: construction
+    text: "let DE be produced to H, and let GH be joined."
+    highlight: [EH, GH]
+    adds: [H, EH, GH]
+    hint: |
+      Extend {DE} to meet the semicircle at {H}; join {GH}. {EH} will be the side of the square.
+    explain:
+      implicit: |
+        That {DE} produced meets the semicircle: {E} lies inside the circle, and the line through it
+        perpendicular to the diameter must cross the circle. Again taken from the figure.
+
+  - part: proof
+    text: "Then, since the straight line BF has been cut into equal segments at G, and into unequal segments at E, the rectangle contained by BE, EF together with the square on EG is equal to the square on GF."
+    highlight: [BF, G, E]
+    hint: |
+      [[II.5]]: {BF} halved at {G}, cut unequally at {E}.
+    modern: |
+      $$BE\cdot EF + EG^2 = GF^2$$
+
+  - part: proof
+    text: "But GF is equal to GH; therefore the rectangle BE, EF together with the square on GE is equal to the square on GH."
+    highlight: [GF, GH]
+    hint: |
+      Radii of the semicircle ([[I.Def.15]]).
+    cites: [I.Def.15]
+
+  - part: proof
+    text: "But the squares on HE, EG are equal to the square on GH;"
+    highlight: [HGE, EH, GE, GH]
+    hint: |
+      Pythagoras in triangle {HGE}, right-angled at {E} ([[I.47]]).
+
+  - part: proof
+    text: "therefore the rectangle BE, EF together with the square on GE is equal to the squares on HE, EG."
+    highlight: [EH, GE]
+    hint: |
+      Both equal the square on {GH}.
+
+  - part: proof
+    text: "Let the square on GE be subtracted from each; therefore the rectangle contained by BE, EF which remains is equal to the square on EH."
+    highlight: [EH]
+    hint: |
+      [[I.CN.3]]: $BE \cdot EF = EH^2$.
+    cites: [I.CN.3]
+    modern: |
+      $$BE\cdot EF = EH^2$$
+
+  - part: proof
+    text: "But the rectangle BE, EF is BD, for EF is equal to ED;"
+    highlight: [BD]
+    hint: |
+      The rectangle on {BE} and {EF} is {BD}, since {EF} = {ED}.
+
+  - part: proof
+    text: "therefore the parallelogram BD is equal to the square on HE."
+    highlight: [BD, EH]
+    hint: |
+      So the rectangle equals the square on {EH}.
+
+  - part: proof
+    text: "And BD is equal to the rectilineal figure A."
+    highlight: [BD, A]
+    hint: |
+      By construction.
+
+  - part: proof
+    text: "Therefore the rectilineal figure A is also equal to the square which can be described on EH."
+    highlight: [A, EH]
+    hint: |
+      [[I.CN.1]].
+    explain:
+      implicit: |
+        "Which can be described" is a future passive participle in the Greek: the square is not
+        actually drawn (Heath's note on lines 35–36).
+
+  - part: conclusion
+    text: "Therefore a square, namely that which can be described on EH, has been constructed equal to the given rectilineal figure A."
+    highlight: [EH, A]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* The key step is the geometric mean:
+  lines:
+    - steps: [1, 2, 3, 4]
+      text: Turn the figure into a rectangle with sides $p = BE$, $q = ED$ and area $S = pq$.
+    - steps: [5, 6, 7, 8, 9, 10, 11]
+      text: |
+        On a line lay off $p$ then $q$; draw the semicircle on the whole, radius $r = (p + q)/2$; the
+        perpendicular at the junction meets it at height $h$.
+    - steps: [12, 13, 14, 15, 16]
+      text: |
+        With $e = |r - p|$ the distance from the centre: $h^2 = r^2 - e^2 = pq$ (II.5 in algebraic
+        form). So $h = \sqrt{pq}$ and $h^2 = S$. $\blacksquare$
+  closing: |
+    $EH$ is the *mean proportional* between $BE$ and $ED$ (in Book VI, VI.13). The same figure is
+    the standard construction of $\sqrt{x}$ with ruler and compass.
+
+commentary: |
+  Book II ends by solving the problem that Book I's [[I.45]] left half-done: every rectilinear figure
+  can be squared. The tools are [[I.45]] (polygon → rectangle) and [[II.5]] (rectangle → square,
+  via the semicircle).
+
+  This is the end point of the Greek theory of *quadrature*: an area is "known" when a square equal
+  to it can be constructed.
+
+gaps: |
+  - **{DE} produced meets the semicircle** (step 9), as in the circle intersections of Book I.
+  - **The right angle at {E}** in triangle {HGE}: {H} is on {DE} produced, perpendicular to {BF} because
+    {BD} is a rectangle.
+
+historical: |
+  After squaring every rectilinear figure, the obvious next question was the circle. The *quadrature of
+  the circle* with straightedge and compass occupied Greek geometers (Hippocrates of Chios squared
+  certain lunes) and was finally shown impossible by Lindemann in 1882, when he proved that $\pi$ is
+  transcendental.

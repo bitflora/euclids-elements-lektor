@@ -1,0 +1,117 @@
+id: V.19
+kind: theorem
+title: Remainder to remainder as whole to whole
+
+paraphrase: |
+  If {AB} : {CD} = {AE} : {CF}, where {AE}, {CF} are parts cut from {AB}, {CD}, then the remainders satisfy
+  {EB} : {FD} = {AB} : {CD}. In fractions: if $\frac{a}{c} = \frac{e}{f}$ then $\frac{a - e}{c - f} = \frac{a}{c}$.
+
+diagram:
+  width: 280
+  height: 80
+  elements:
+    - "U0;point;free;-1000,30;0;0"
+    - "U1;point;free;1000,30;0;0"
+    - "V0;point;free;-1000,70;0;0"
+    - "V1;point;free;1000,70;0;0"
+    - "A;point;lineSlider;U0,U1,70,30"
+    - "B;point;lineSlider;U0,U1,220,30"
+    - "AB;line;connect;A,B;0;0;blue"
+    - "E;point;lineSlider;A,B,160,30"
+    - "C;point;lineSlider;V0,V1,20,70"
+    - "D;point;lineSlider;V0,V1,260,50"
+    - "CD;line;connect;C,D;0;0;red"
+    - "F;point;proportion;A,B,C,D,A,E,C,V1"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "CF;line;connect;C,F;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+  aliases:
+    BA: AB
+    DC: CD
+    EA: AE
+    FC: CF
+    BE: EB
+    DF: FD
+  caption: |
+    {F} is placed so that $AB : CD = AE : CF$. Slide {E}, or the ends of the lines.
+
+steps:
+  - part: enunciation
+    text: "If, as a whole is to a whole, so is a part subtracted to a part subtracted, the remainder will also be to the remainder as whole to whole."
+    highlight: [AB, CD, AE, CF]
+    hint: |
+      Whole : whole = part : part ⇒ remainder : remainder = whole : whole.
+    explain:
+      implicit: |
+        The proof alternates ([[V.16]]), so all four magnitudes must be of one kind.
+    modern: |
+      $$\frac{AB}{CD} = \frac{AE}{CF} \ \Rightarrow\ \frac{AB - AE}{CD - CF} = \frac{AB}{CD}$$
+
+  - part: setting-out
+    text: "For, as the whole AB is to the whole CD, so let the part AE subtracted be to the part CF subtracted;"
+    highlight: [AB, CD, AE, CF]
+    hint: |
+      The hypothesis.
+
+  - part: specification
+    text: "I say that the remainder EB will also be to the remainder FD as the whole AB to the whole CD."
+    highlight: [EB, FD, AB, CD]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For since, as AB is to CD, so is AE to CF, alternately also, as BA is to AE, so is DC to CF."
+    highlight: [BA, AE, DC, CF]
+    hint: |
+      Alternate ([[V.16]]): whole to part, whole to part.
+
+  - part: proof
+    text: "And, since the magnitudes are proportional componendo, they will also be proportional separando, that is, as BE is to EA, so is DF to CF,"
+    highlight: [BE, EA, DF, CF]
+    hint: |
+      Separate ([[V.17]]): $BA : AE = DC : CF$ gives $BE : EA = DF : FC$.
+
+  - part: proof
+    text: "and, alternately, as BE is to DF, so is EA to FC."
+    highlight: [BE, DF, EA, FC]
+    hint: |
+      Alternate again ([[V.16]]).
+
+  - part: proof
+    text: "But, as AE is to CF, so by hypothesis is the whole AB to the whole CD."
+    highlight: [AE, CF, AB, CD]
+    hint: |
+      The hypothesis.
+
+  - part: proof
+    text: "Therefore also the remainder EB will be to the remainder FD as the whole AB is to the whole CD."
+    highlight: [EB, FD, AB, CD]
+    hint: |
+      [[V.11]].
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved. Heath prints a bracketed porism after it.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7]
+      text: |
+        Let $AB = r\,CD$ and $AE = r\,CF$ for the common ratio $r$. Then $EB = AB - AE = r(CD - CF) = r\,FD$.
+        $\blacksquare$
+  closing: |
+    Treating the ratio as a number $r$ is exactly what Book V avoids; Euclid's chain of alternation and
+    separation achieves the same without multiplying magnitudes by ratios.
+
+commentary: |
+  The porism after V.19 — *convertendo*: if $A : B = C : D$ then $A : (A - B) = C : (C - D)$
+  ([[V.Def.16]]) — does not follow from V.19 itself, as the bracket signals. Heath and Heiberg both regard
+  it as an early interpolation; Joyce notes that it follows from [[V.17]] and inversion, and holds even
+  when the two pairs are of different kinds, which V.19 does not allow. Joyce notes that the porism is used
+  once each in Books VI and XIII and often in Book X.
+
+  V.19 is the subtraction counterpart of [[V.12]], and is used in [[V.25]].

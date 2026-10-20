@@ -1,0 +1,173 @@
+id: IX.8
+kind: theorem
+title: In a progression from the unit, every other term is a square, every third a cube
+
+paraphrase: |
+  In a continued proportion 1, {A}, {B}, {C}, {D}, {E}, {F}, … starting from the unit, the 3rd, 5th, 7th, …
+  terms are squares, the 4th, 7th, 10th, … are cubes, and the 7th, 13th, … are both.
+
+diagram:
+  width: 250
+  height: 230
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "B0;point;free;-1000,65;0;0"
+    - "B3;point;free;1000,65;0;0"
+    - "C0;point;free;-1000,100;0;0"
+    - "C3;point;free;1000,100;0;0"
+    - "D0;point;free;-1000,135;0;0"
+    - "D3;point;free;1000,135;0;0"
+    - "E0;point;free;-1000,170;0;0"
+    - "E3;point;free;1000,170;0;0"
+    - "F0;point;free;-1000,205;0;0"
+    - "F3;point;free;1000,205;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,90,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,105,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;A1,A2,B1,B2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;E0,E3,30,0;0"
+    - "E2;point;proportion;A1,A2,B1,B2,D1,D2,E1,E3;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;F0,F3,30,0;0"
+    - "F2;point;proportion;A1,A2,B1,B2,E1,E2,F1,F3;0"
+    - "F;line;connect;F1,F2;black"
+  caption: |
+    1, {A}, {B}, {C}, {D}, {E}, {F} in continued proportion: $a, a^2, \dots, a^6$.
+
+steps:
+  - part: enunciation
+    text: "If as many numbers as we please beginning from an unit be in continued proportion, the third from the unit will be square, as will also those which successively leave out one; the fourth will be cube, as will also all those which leave out two; and the seventh will be at once cube and square, as will also those which leave out five."
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      In $1, a, a^2, a^3, \dots$: even powers are squares, multiples of 3 are cubes, multiples of 6 both.
+    modern: |
+      $a^{2k}$ is a square, $a^{3k}$ a cube, $a^{6k}$ both.
+
+  - part: setting-out
+    text: "Let there be as many numbers as we please, A, B, C, D, E, F, beginning from an unit and in continued proportion;"
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      1, {A}, …, {F}: the powers $a, a^2, \dots, a^6$.
+
+  - part: specification
+    text: "I say that B, the third from the unit, is square, as are also all those which leave out one; C, the fourth, is cube, as are also all those which leave out two; and F, the seventh, is at once cube and square, as are also all those which leave out five."
+    highlight: [B, D, F, C]
+    hint: |
+      The claims, counting the unit as first.
+
+  - part: proof
+    text: "For since, as the unit is to A, so is A to B, therefore the unit measures the number A the same number of times that A measures B."
+    highlight: [A, B]
+    hint: |
+      1 : {A} = {A} : {B} ([[VII.Def.20]]).
+
+  - part: proof
+    text: "But the unit measures the number A according to the units in it; therefore A also measures B according to the units in A."
+    highlight: [A, B]
+    hint: |
+      {B} is {A} copies of {A}.
+
+  - part: proof
+    text: "Therefore A by multiplying itself has made B; therefore B is square."
+    highlight: [B]
+    hint: |
+      {B} = {A}².
+
+  - part: proof
+    text: "And, since B, C, D are in continued proportion, and B is square, therefore D is also square."
+    highlight: [B, C, D]
+    hint: |
+      [[VIII.22]].
+
+  - part: proof
+    text: "For the same reason F is also square."
+    highlight: [D, E, F]
+    hint: |
+      Again [[VIII.22]].
+    cites: [VIII.22]
+
+  - part: proof
+    text: "Similarly we can prove that all those which leave out one are square."
+    highlight: [B, D, F]
+    hint: |
+      Every other term.
+
+  - part: specification
+    text: "I say next that C, the fourth from the unit, is cube, as are also all those which leave out two."
+    highlight: [C, F]
+    hint: |
+      Now cubes.
+
+  - part: proof
+    text: "For since, as the unit is to A, so is B to C, therefore the unit measures the number A the same number of times that B measures C."
+    highlight: [A, B, C]
+    hint: |
+      1 : {A} = {B} : {C}.
+
+  - part: proof
+    text: "But the unit measures the number A according to the units in A; therefore B also measures C according to the units in A."
+    highlight: [B, C]
+    hint: |
+      {C} is {A} copies of {B}.
+
+  - part: proof
+    text: "Therefore A by multiplying B has made C."
+    highlight: [A, B, C]
+    hint: |
+      {C} = {A}{B}.
+
+  - part: proof
+    text: "Since then A by multiplying itself has made B, and by multiplying B has made C, therefore C is cube."
+    highlight: [C]
+    hint: |
+      {C} = {A}³ ([[VII.Def.19]]).
+
+  - part: proof
+    text: "And, since C, D, E, F are in continued proportion, and C is cube, therefore F is also cube."
+    highlight: [C, D, E, F]
+    hint: |
+      [[VIII.23]].
+
+  - part: proof
+    text: "But it was also proved square; therefore the seventh from the unit is both cube and square."
+    highlight: [F]
+    hint: |
+      {F} = $a^6$ is both.
+
+  - part: proof
+    text: "Similarly we can prove that all the numbers which leave out five are also both cube and square."
+    highlight: [F]
+    hint: |
+      Every sixth power.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* The $k$th term after the unit is $a^k$.
+  lines:
+    - steps: [4, 5, 6, 7, 8, 9]
+      text: |
+        $a^{2k} = (a^k)^2$.
+    - steps: [10, 11, 12, 13, 14]
+      text: |
+        $a^{3k} = (a^k)^3$.
+    - steps: [15, 16]
+      text: |
+        $a^{6k}$ is both. $\blacksquare$
+
+commentary: |
+  Joyce: "It's unfortunate that Euclid didn't have the concept or notation for exponentiation." The phrase
+  "those which leave out one" means every second term.

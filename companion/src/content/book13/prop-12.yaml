@@ -1,0 +1,96 @@
+id: XIII.12
+kind: theorem
+title: Side of the inscribed equilateral triangle² = 3 × radius²
+
+paraphrase: |
+  The square on the side of an equilateral triangle inscribed in a circle is three times the square on the
+  radius.
+
+diagram:
+  width: 245
+  height: 245
+  elements:
+    - "B;point;free;40,170"
+    - "C;point;free;200,170"
+    - "BCA;polygon;equilateralTriangle;B,C;0;0;0;0"
+    - "A;point;vertex;BCA,3"
+    - "circ;circle;circumcircle;A,B,C;0;0;black;random"
+    - "BCAdup;polygon;triangle;A,B,C;0;0;black;random"
+    - "D;point;center;circ"
+    - "E;point;extend;A,D,A,D"
+    - "AE;line;connect;A,E"
+    - "BE;line;connect;B,E"
+  aliases: { EA: AE, EB: BE }
+  caption: |
+    The equilateral triangle in its circle, centre {D}; {AE} a diameter.
+
+steps:
+  - part: enunciation
+    text: "If an equilateral triangle be inscribed in a circle, the square on the side of the triangle is triple of the square on the radius of the circle."
+    highlight: [AE, BE]
+    hint: |
+      $s_3 = r\sqrt3$.
+
+  - part: setting-out
+    text: "Let ABC be a circle, and let the equilateral triangle ABC be inscribed in it; I say that the square on one side of the triangle ABC is triple of the square on the radius of the circle."
+    highlight: [A]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let the centre D of the circle ABC be taken, let AD be joined and carried through to E, and let BE be joined."
+    highlight: [AE, BE]
+    hint: |
+      Centre {D}; diameter {AE}; join {BE}.
+
+  - part: proof
+    text: "Then, since the triangle ABC is equilateral, therefore the circumference BEC is a third part of the circumference of the circle ABC."
+    highlight: [BE]
+    hint: |
+      Arc *BEC* is a third of the circle …
+
+  - part: proof
+    text: "Therefore the circumference BE is a sixth part of the circumference of the circle; therefore the straight line BE belongs to a hexagon; therefore it is equal to the radius DE."
+    highlight: [BE]
+    hint: |
+      … arc {BE} a sixth: {BE} equals the radius ([[IV.15]], porism).
+
+  - part: proof
+    text: "And, since AE is double of DE, the square on AE is quadruple of the square on ED, that is, of the square on BE."
+    highlight: [AE, BE]
+    hint: |
+      sq({AE}) = 4 sq(*ED*) = 4 sq({BE}).
+
+  - part: proof
+    text: "But the square on AE is equal to the squares on AB, BE; therefore the squares on AB, BE are quadruple of the square on BE."
+    highlight: [AE, BE]
+    hint: |
+      sq({AE}) = sq(*AB*) + sq({BE}) ([[III.31]], [[I.47]]).
+
+  - part: proof
+    text: "Therefore, separando, the square on AB is triple of the square on BE."
+    highlight: [BE]
+    hint: |
+      So sq(*AB*) = 3 sq({BE}) …
+
+  - part: proof
+    text: "But BE is equal to DE; therefore the square on AB is triple of the square on DE."
+    highlight: [BE]
+    hint: |
+      … = 3 sq(*DE*).
+
+  - part: proof
+    text: "Therefore the square on the side of the triangle is triple of the square on the radius."
+    highlight: [A]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $s_3^2 = (2r)^2 - r^2 = 3r^2$. $\blacksquare$

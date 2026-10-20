@@ -1,0 +1,376 @@
+id: XIII.17
+kind: problem
+title: To construct a regular dodecahedron in a sphere
+
+paraphrase: |
+  Construct a dodecahedron inscribed in a given sphere, by building a pentagonal "roof" over each edge of the
+  inscribed cube, and show that its edge is an apotome when the diameter is rational.
+
+diagram:
+  width: 370
+  height: 400
+  elements:
+    - "B;point;free;40,150"
+    - "C';point;fixed;250,190,100;0;0"
+    - "side;plane;perpendicular;B,C';0;0;0;0"
+    - "A;point;planeSlider;side,430,400,50"
+    - "front;plane;3points;B,A,C';0;0;0;0"
+    - "ABCD;polygon;square;A,B,front;0;0;black;random"
+    - "C;point;vertex;ABCD,3"
+    - "D;point;vertex;ABCD,4"
+    - "E;point;perpendicular;B,front,A,B"
+    - "top;plane;3points;B,C,E;0;0;0;0"
+    - "F;point;parallelogram;E,B,C"
+    - "BEFC;polygon;quadrilateral;B,E,F,C;0;0;black;random"
+    - "G;point;midpoint;A,B"
+    - "H;point;midpoint;B,C"
+    - "K;point;midpoint;C,D"
+    - "L;point;midpoint;A,D"
+    - "M;point;midpoint;E,F"
+    - "N;point;midpoint;B,E"
+    - "O;point;midpoint;C,F"
+    - "GK;line;connect;G,K"
+    - "HL;line;connect;H,L"
+    - "HM;line;connect;H,M"
+    - "NO;line;connect;N,O"
+    - "P;point;intersection;HM,NO,top"
+    - "Q;point;intersection;GK,HL,screen"
+    - "OPmid;point;midpoint;O,P;0;0"
+    - "R;point;cutoff;OPmid,P,OPmid,M"
+    - "S;point;cutoff;P,O,P,R"
+    - "T;point;cutoff;Q,H,P,R"
+    - "U';point;perpendicular;R,top,P,R;0;0"
+    - "U;point;extend;U',R,U',R"
+    - "RU;line;connect;R,U"
+    - "V;point;parallelogram;U,R,S"
+    - "SV;line;connect;S,V"
+    - "W';point;perpendicular;T,front,P,R;0;0"
+    - "W;point;extend;W',T,W',T"
+    - "TW;line;connect;T,W"
+    - "VUBWC;polygon;pentagon;V,U,B,W,C;0;0;black;random"
+    - "RB;line;connect;R,B"
+    - "SB;line;connect;S,B"
+    - "VB;line;connect;V,B"
+    - "X;point;midpoint;U,V"
+    - "XW;line;connect;X,W"
+    - "Z;point;midpoint;A,F"
+    - "XZ;line;connect;X,Z"
+    - "UZ;line;connect;U,Z"
+    - "BR;line;connect;B,R;0;0;0"
+    - "BV;line;connect;B,V;0;0;0"
+    - "ZX;line;connect;Z,X;0;0;0"
+  aliases: { UBWCV: VUBWC, KG: GK, LH: HL, MH: HM, ON: NO, UR: RU, VS: SV, WT: TW, BS: SB, WX: XW, ZU: UZ }
+  caption: |
+    Two faces {ABCD}, {BEFC} of the cube and the pentagon {UBWCV} raised over the edge *BC*; {Z} the centre. Drag to
+    rotate.
+
+steps:
+  - part: enunciation
+    text: "To construct a dodecahedron and comprehend it in a sphere, like the aforesaid figures, and to prove that the side of the dodecahedron is the irrational straight line called apotome."
+    highlight: [VUBWC]
+    hint: |
+      The dodecahedron, built as a roof over each edge of a cube; its edge is an apotome.
+    modern: |
+      With cube edge $c$, the dodecahedron edge is $c/\varphi$ — the greater segment of the cube edge cut in golden section.
+
+  - part: construction
+    text: "Let ABCD, CBEF, two planes of the aforesaid cube at right angles to one another, be set out, let the sides AB, BC, CD, DA, EF, EB, FC be bisected at G, H, K, L, M, N, O respectively, let GK, HL, MH, NO be joined, let the straight lines NP, PO, HQ be cut in extreme and mean ratio at the points R, S, T respectively, and let RP, PS, TQ be their greater segments; from the points R, S, T let RU, SV, TW be set up at right angles to the planes of the cube towards the outside of the cube, let them be made equal to RP, PS, TQ, and let UB, BW, WC, CV, VU be joined."
+    highlight: [ABCD, BEFC]
+    hint: |
+      Two faces of the cube; bisect the edges, cut the half-lines in golden section, erect perpendiculars {RU}, {SV}, {TW} equal to the greater segments.
+
+  - part: specification
+    text: "I say that the pentagon UBWCV is equilateral, and in one plane, and is further equiangular."
+    highlight: [VUBWC]
+    hint: |
+      Claim: {UBWCV} is a regular pentagon in one plane.
+
+  - part: construction
+    text: "For let RB, SB, VB be joined."
+    highlight: [RB, SB, VB]
+    hint: |
+      Join {RB}, {SB}, {VB}.
+
+  - part: proof
+    text: "Then, since the straight line NP has been cut in extreme and mean ratio at R, and RP is the greater segment, therefore the squares on PN, NR are triple of the square on RP."
+    highlight: [RB]
+    hint: |
+      sq(*NP*) + sq(*NR*) = 3 sq(*RP*) ([[XIII.4]]).
+
+  - part: proof
+    text: "But PN is equal to NB, and PR to RU; therefore the squares on BN, NR are triple of the square on RU."
+    highlight: [RB, RU]
+    hint: |
+      So sq(*BN*) + sq(*NR*) = 3 sq({RU}).
+
+  - part: proof
+    text: "But the square on BR is equal to the squares on BN, NR; therefore the square on BR is triple of the square on RU; hence the squares on BR, RU are quadruple of the square on RU."
+    highlight: [RB, RU]
+    hint: |
+      sq({BR}) = 3 sq({RU}) ([[I.47]]).
+
+  - part: proof
+    text: "But the square on BU is equal to the squares on BR, RU; therefore the square on BU is quadruple of the square on RU; therefore BU is double of RU."
+    highlight: [RU]
+    hint: |
+      sq(*BU*) = 4 sq({RU}): *BU* = 2{RU}.
+
+  - part: proof
+    text: "But VU is also double of UR, inasmuch as SR is also double of PR, that is, of RU; therefore BU is equal to UV."
+    highlight: [RU, SV]
+    hint: |
+      *VU* = *SR* = 2*PR* = 2{RU}: *BU* = *UV*.
+
+  - part: proof
+    text: "Similarly it can be proved that each of the straight lines BW, WC, CV is also equal to each of the straight lines BU, UV."
+    highlight: [VUBWC]
+    hint: |
+      Likewise *BW*, *WC*, *CV*.
+
+  - part: proof
+    text: "Therefore the pentagon BUVCW is equilateral."
+    highlight: [VUBWC]
+    hint: |
+      Equilateral.
+
+  - part: specification
+    text: "I say next that it is also in one plane."
+    highlight: [VUBWC]
+    hint: |
+      In one plane:
+
+  - part: construction
+    text: "For let PX be drawn from P parallel to each of the straight lines RU, SV and towards the outside of the cube, and let XH, HW be joined; I say that XHW is a straight line."
+    highlight: [XW]
+    hint: |
+      Draw *PX* parallel to {RU}, {SV}; join *XH*, *HW*.
+
+  - part: proof
+    text: "For, since HQ has been cut in extreme and mean ratio at T, and QT is its greater segment, therefore, as HQ is to QT, so is QT to TH."
+    highlight: [XW]
+    hint: |
+      *HQ* cut in golden section at {T}: *HQ* : *QT* = *QT* : *TH*.
+
+  - part: proof
+    text: "But HQ is equal to HP, and QT to each of the straight lines TW, PX; therefore, as HP is to PX, so is WT to TH."
+    highlight: [XW]
+    hint: |
+      So *HP* : *PX* = *WT* : *TH*.
+
+  - part: proof
+    text: "And HP is parallel to TW, for each of them is at right angles to the plane BD; and TH is parallel to PX, for each of them is at right angles to the plane BF. [id.]"
+    highlight: [XW]
+    hint: |
+      *HP* ∥ *TW* ([[XI.6]]) and *TH* ∥ *PX* ([[XI.9]]).
+
+  - part: proof
+    text: "But if two triangles, as XPH, HTW, which have two sides proportional to two sides be placed together at one angle so that their corresponding sides are also parallel, the remaining straight lines will be in a straight line; therefore XH is in a straight line with HW."
+    highlight: [XW]
+    hint: |
+      So *XH*, *HW* lie in one line ([[VI.32]]), and {UBWCV} lies in one plane.
+
+  - part: proof
+    text: "But every straight line is in one plane; therefore the pentagon UBWCV is in one plane."
+    highlight: [VUBWC]
+    hint: |
+      ([[XI.1]].)
+
+  - part: specification
+    text: "I say next that it is also equiangular."
+    highlight: [VUBWC]
+    hint: |
+      Equiangular:
+
+  - part: proof
+    text: "For, since the straight line NP has been cut in extreme and mean ratio at R, and PR is the greater segment, while PR is equal to PS, therefore NS has also been cut in extreme and mean ratio at P, and NP is the greater segment; therefore the squares on NS, SP are triple of the square on NP."
+    highlight: [SB, SV]
+    hint: |
+      sq(*NS*) + sq(*SV*) = 3 sq(*NB*) ([[XIII.4]]) …
+
+  - part: proof
+    text: "But NP is equal to NB, and PS to SV; therefore the squares on NS, SV are triple of the square on NB; hence the squares on VS, SN, NB are quadruple of the square on NB."
+    highlight: [SB, SV]
+    hint: |
+      … with *PS* = *SV* …
+
+  - part: proof
+    text: "But the square on SB is equal to the squares on SN, NB; therefore the squares on BS, SV, that is, the square on BV —for the angle VSB is right—is quadruple of the square on NB; therefore VB is double of BN."
+    highlight: [SB, SV, VB]
+    hint: |
+      … so sq({BV}) = 4 sq(*NB*) …
+
+  - part: proof
+    text: "But BC is also double of BN; therefore BV is equal to BC."
+    highlight: [VB]
+    hint: |
+      … {BV} = *BC*.
+
+  - part: proof
+    text: "And, since the two sides BU, UV are equal to the two sides BW, WC, and the base BV is equal to the base BC, therefore the angle BUV is equal to the angle BWC."
+    highlight: [VUBWC]
+    hint: |
+      Triangles *BUV*, *BWC*: three sides equal, so ∠*BUV* = ∠*BWC* ([[I.8]]).
+
+  - part: proof
+    text: "Similarly we can prove that the angle UVC is also equal to the angle BWC; therefore the three angles BWC, BUV, UVC are equal to one another."
+    highlight: [VUBWC]
+    hint: |
+      Likewise ∠*UVC*: three equal angles …
+
+  - part: proof
+    text: "But if in an equilateral pentagon three angles are equal to one another, the pentagon will be equiangular, therefore the pentagon BUVCW is equiangular."
+    highlight: [VUBWC]
+    hint: |
+      … so equiangular ([[XIII.7]]).
+
+  - part: proof
+    text: "And it was also proved equilateral; therefore the pentagon BUVCW is equilateral and equiangular, and it is on one side BC of the cube."
+    highlight: [VUBWC]
+    hint: |
+      A regular pentagon, in one plane.
+
+  - part: proof
+    text: "Therefore, if we make the same construction in the case of each of the twelve sides of the cube, a solid figure will have been constructed which is contained by twelve equilateral and equiangular pentagons, and which is called a dodecahedron."
+    highlight: [VUBWC]
+    hint: |
+      Twelve such roofs over the twelve edges of the cube: a dodecahedron.
+
+  - part: specification
+    text: "It is then required to comprehend it in the given sphere, and to prove that the side of the dodecahedron is the irrational straight line called apotome."
+    highlight: [XZ, UZ]
+    hint: |
+      Inscribe it and compute.
+
+  - part: construction
+    text: "For let XP be produced, and let the produced straight line be XZ; therefore PZ meets the diameter of the cube, and they bisect one another, for this has been proved in the last theorem but one of the eleventh book."
+    highlight: [XZ]
+    hint: |
+      Extend *XP* to {Z}, the centre of the cube.
+
+  - part: proof
+    text: "Let them cut at Z; therefore Z is the centre of the sphere which comprehends the cube, and ZP is half of the side of the cube."
+    highlight: [XZ]
+    hint: |
+      *ZP* is half the cube edge.
+
+  - part: construction
+    text: "Let UZ be joined."
+    highlight: [UZ]
+    hint: |
+      Join {UZ}.
+
+  - part: proof
+    text: "Now, since the straight line NS has been cut in extreme and mean ratio at P, and NP is its greater segment, therefore the squares on NS, SP are triple of the square on NP."
+    highlight: [XZ]
+    hint: |
+      *NS* cut in golden section at *P*: sq(*NS*) + sq(*SP*) = 3 sq(*NP*) ([[XIII.4]]).
+
+  - part: proof
+    text: "But NS is equal to XZ, inasmuch as NP is also equal to PZ, and XP to PS."
+    highlight: [XZ]
+    hint: |
+      *NS* = {XZ} …
+
+  - part: proof
+    text: "But further PS is also equal to XU, since it is also equal to RP; therefore the squares on ZX, XU are triple of the square on NP."
+    highlight: [XZ, UZ]
+    hint: |
+      … and *PS* = *XU*: sq({ZX}) + sq(*XU*) = 3 sq(*NP*).
+
+  - part: proof
+    text: "But the square on UZ is equal to the squares on ZX, XU; therefore the square on UZ is triple of the square on NP."
+    highlight: [UZ]
+    hint: |
+      So sq({UZ}) = 3 sq(*NP*) …
+
+  - part: proof
+    text: "But the square on the radius of the sphere which comprehends the cube is also triple of the square on the half of the side of the cube, for it has previously been shown how to construct a cube and comprehend it in a sphere, and to prove that the square on the diameter of the sphere is triple of the square on the side of the cube."
+    highlight: [UZ]
+    hint: |
+      … as for the cube's circumradius ([[XIII.15]]).
+
+  - part: proof
+    text: "But, if whole is so related to whole, so is half to half also; and NP is half of the side of the cube; therefore UZ is equal to the radius of the sphere which comprehends the cube."
+    highlight: [UZ]
+    hint: |
+      Halves: {UZ} equals the radius of the cube's sphere.
+
+  - part: proof
+    text: "And Z is the centre of the sphere which comprehends the cube; therefore the point U is on the surface of the sphere."
+    highlight: [UZ]
+    hint: |
+      So {U} lies on that sphere.
+
+  - part: proof
+    text: "Similarly we can prove that each of the remaining angles of the dodecahedron is also on the surface of the sphere; therefore the dodecahedron has been comprehended in the given sphere."
+    highlight: [UZ]
+    hint: |
+      Likewise all the vertices.
+
+  - part: specification
+    text: "I say next that the side of the dodecahedron is the irrational straight line called apotome."
+    highlight: [VUBWC]
+    hint: |
+      The edge is an apotome:
+
+  - part: proof
+    text: "For since, when NP has been cut in extreme and mean ratio, RP is the greater segment, and, when PO has been cut in extreme and mean ratio, PS is the greater segment, therefore, when the whole NO is cut in extreme and mean ratio, RS is the greater segment."
+    highlight: [VUBWC]
+    hint: |
+      The cube edge cut in golden section has *RS* as greater segment …
+
+  - part: proof
+    text: "[Thus, since, as NP is to PR, so is PR to RN, the same is true of the doubles also, for parts have the same ratio as their equimultiples; therefore as NO is to RS, so is RS to the sum of NR, SO."
+    highlight: [VUBWC]
+    hint: |
+      [bracketed reasoning on halves and doubles] …
+
+  - part: proof
+    text: "But NO is greater than RS; therefore RS is also greater than the sum of NR, SO; therefore NO has been cut in extreme and mean ratio, and RS is its greater segment.]"
+    highlight: [VUBWC]
+    hint: |
+      … so *NO* is cut in golden section with greater segment *RS* …
+
+  - part: proof
+    text: "But RS is equal to UV; therefore, when NO is cut in extreme and mean ratio, UV is the greater segment."
+    highlight: [VUBWC]
+    hint: |
+      … = *UV*, the dodecahedron edge.
+
+  - part: proof
+    text: "And, since the diameter of the sphere is rational, and the square on it is triple of the square on the side of the cube, therefore NO, being a side of the cube, is rational."
+    highlight: [VUBWC]
+    hint: |
+      The diameter is rational, so the cube edge is rational ([[XIII.15]]).
+
+  - part: proof
+    text: "[But if a rational line be cut in extreme and mean ratio, each of the segments is an irrational apotome.]"
+    highlight: [VUBWC]
+    hint: |
+      [A rational line cut in golden section has apotome segments.]
+
+  - part: proof
+    text: "Therefore UV, being a side of the dodecahedron, is an irrational apotome."
+    highlight: [VUBWC]
+    hint: |
+      So *UV* is an apotome ([[XIII.6]]).
+
+reconstruction:
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      text: |
+        Raise each cube-edge into a pentagon with "ridge" height equal to the greater golden segment of half the edge.
+    - steps: [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
+      text: |
+        Coplanarity and equal angles follow from golden-ratio proportions ([[XIII.4]], [[XIII.7]]).
+    - steps: [27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38]
+      text: |
+        The new vertices are as far from the centre as the cube's corners.
+    - steps: [39, 40, 41, 42, 43, 44, 45, 46]
+      text: |
+        The edge is $c/\varphi$, an apotome ([[XIII.6]]). $\blacksquare$
+
+commentary: |
+  The porism: when the cube's edge is cut in extreme and mean ratio, the greater segment is the dodecahedron's
+  edge. Euclid's construction places a cube inside the dodecahedron — eight of the dodecahedron's twenty
+  vertices are the cube's corners.

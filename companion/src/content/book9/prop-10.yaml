@@ -1,0 +1,194 @@
+id: IX.10
+kind: theorem
+title: If the first term after the unit is not a square (cube), only the alternate (every third) terms are
+
+paraphrase: |
+  In a continued proportion 1, {A}, {B}, … from the unit: if {A} is not a square, the only squares are the
+  terms {B}, {D}, {F}, … (every other one); if {A} is not a cube, the only cubes are {C}, {F}, … (every third).
+
+diagram:
+  width: 250
+  height: 230
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "B0;point;free;-1000,65;0;0"
+    - "B3;point;free;1000,65;0;0"
+    - "C0;point;free;-1000,100;0;0"
+    - "C3;point;free;1000,100;0;0"
+    - "D0;point;free;-1000,135;0;0"
+    - "D3;point;free;1000,135;0;0"
+    - "E0;point;free;-1000,170;0;0"
+    - "E3;point;free;1000,170;0;0"
+    - "F0;point;free;-1000,205;0;0"
+    - "F3;point;free;1000,205;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,90,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,105,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;A1,A2,B1,B2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;E0,E3,30,0;0"
+    - "E2;point;proportion;A1,A2,B1,B2,D1,D2,E1,E3;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;F0,F3,30,0;0"
+    - "F2;point;proportion;A1,A2,B1,B2,E1,E2,F1,F3;0"
+    - "F;line;connect;F1,F2;black"
+  caption: |
+    1, {A}, {B}, {C}, {D}, {E}, {F} in continued proportion.
+
+steps:
+  - part: enunciation
+    text: "If as many numbers as we please beginning from an unit be in continued proportion, and the number after the unit be not square, neither will any other be square except the third from the unit and all those which leave out one. And, if the number after the unit be not cube, neither will any other be cube except the fourth from the unit and all those which leave out two."
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      The converse of [[IX.9]]: if $a$ is not a square, $a^k$ is a square only for even $k$.
+    modern: |
+      $a$ not a square $\Rightarrow$ $a^k$ square iff $k$ even; $a$ not a cube $\Rightarrow$ $a^k$ cube iff
+      $3 \mid k$.
+
+  - part: setting-out
+    text: "Let there be as many numbers as we please, A, B, C, D, E, F, beginning from an unit and in continued proportion, and let A, the number after the unit, not be square;"
+    highlight: [A]
+    hint: |
+      {A} not a square.
+
+  - part: specification
+    text: "I say that neither will any other be square except the third from the unit ⟨and those which leave out one⟩."
+    highlight: [B, D, F]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, if possible, let C be square."
+    highlight: [C]
+    hint: |
+      Suppose {C} = $a^3$ were a square.
+
+  - part: proof
+    text: "But B is also square; [therefore B, C have to one another the ratio which a square number has to a square number]."
+    highlight: [B, C]
+    hint: |
+      {B} is a square ([[IX.8]]).
+    explain:
+      implicit: |
+        Heath brackets the clause as a probable interpolation (Heiberg's judgement).
+
+  - part: proof
+    text: "And, as B is to C, so is A to B; therefore A, B have to one another the ratio which a square number has to a square number; [so that A, B are similar plane numbers]."
+    highlight: [A, B, C]
+    hint: |
+      {A} : {B} = {B} : {C}, a ratio of squares.
+
+  - part: proof
+    text: "And B is square; therefore A is also square: which is contrary to the hypothesis."
+    highlight: [A, B]
+    hint: |
+      [[VIII.24]] would make {A} a square.
+    cites: [VIII.24]
+
+  - part: proof
+    text: "Therefore C is not square."
+    highlight: [C]
+    hint: |
+      So {C} is not a square.
+
+  - part: proof
+    text: "Similarly we can prove that neither is any other of the numbers square except the third from the unit and those which leave out one."
+    highlight: [E]
+    hint: |
+      Likewise for {E}, etc.
+
+  - part: specification
+    text: "Next, let A not be cube."
+    highlight: [A]
+    hint: |
+      Cube case.
+
+  - part: specification
+    text: "I say that neither will any other be cube except the fourth from the unit and those which leave out two."
+    highlight: [C, F]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, if possible, let D be cube."
+    highlight: [D]
+    hint: |
+      Suppose {D} = $a^4$ were a cube.
+
+  - part: proof
+    text: "Now C is also cube; for it is fourth from the unit."
+    highlight: [C]
+    hint: |
+      [[IX.8]].
+
+  - part: proof
+    text: "And, as C is to D, so is B to C; therefore B also has to C the ratio which a cube has to a cube."
+    highlight: [B, C, D]
+    hint: |
+      {B} : {C} = {C} : {D}, a ratio of cubes.
+
+  - part: proof
+    text: "And C is cube; therefore B is also cube."
+    highlight: [B, C]
+    hint: |
+      [[VIII.25]].
+
+  - part: proof
+    text: "And since, as the unit is to A, so is A to B, and the unit measures A according to the units in it, therefore A also measures B according to the units in itself; therefore A by multiplying itself has made the cube number B."
+    highlight: [A, B]
+    hint: |
+      {B} = {A}², a cube.
+
+  - part: proof
+    text: "But, if a number by multiplying itself make a cube number, it is also itself cube."
+    highlight: [A]
+    hint: |
+      [[IX.6]].
+
+  - part: proof
+    text: "Therefore A is also cube: which is contrary to the hypothesis."
+    highlight: [A]
+    hint: |
+      Contradiction.
+
+  - part: proof
+    text: "Therefore D is not cube."
+    highlight: [D]
+    hint: |
+      So {D} is not a cube.
+
+  - part: proof
+    text: "Similarly we can prove that neither is any other of the numbers cube except the fourth from the unit and those which leave out two."
+    highlight: [E]
+    hint: |
+      Likewise.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8]
+      text: |
+        If $a^{2k+1}$ were a square, $a = a^{2k+1}/(a^k)^2$ would be a rational square, hence a square.
+    - steps: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+      text: |
+        Similarly if $a^k$ were a cube with $3 \nmid k$, some $a$ or $a^2$ would be a cube, hence $a$ would be
+        ([[IX.6]]). $\blacksquare$
+
+gaps: |
+  - Only {C} (for squares) and {D} (for cubes) are treated; "similarly" covers the rest. For cubes, the
+    terms $a^5$, $a^8$, … need a slightly different reduction (to $a^2$ rather than $a$), which is where
+    [[IX.6]] comes in.

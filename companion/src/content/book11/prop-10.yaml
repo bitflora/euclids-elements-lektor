@@ -1,0 +1,112 @@
+id: XI.10
+kind: theorem
+title: Angles with parallel sides are equal, even in space
+
+paraphrase: |
+  If {AB}, {BC} are parallel to {DE}, {EF} respectively (not in one plane), then ∠{ABC} = ∠{DEF}.
+
+diagram:
+  width: 310
+  height: 300
+  elements:
+    - "X;point;free;100000,200"
+    - "Y;point;free;200,-100000"
+    - "Z;point;free;50000,-100000"
+    - "P0;point;free;20,130;0;0,75,100"
+    - "P1;point;lineSlider;P0,X,200,150;0;30,75,100"
+    - "P3;point;lineSlider;P0,Z,90,30;0;30,75,100"
+    - "P2;point;parallelogram;P3,P0,P1;0;0"
+    - "P;polygon;quadrilateral;P0,P1,P2,P3;0;0;lightGray;brighter"
+    - "Q0;point;free;60,280;0;0,75,100"
+    - "Q1;point;parallelogram;P1,P0,Q0;0;0"
+    - "Q2;point;parallelogram;P2,P0,Q0;0;0"
+    - "Q3;point;parallelogram;P3,P0,Q0;0;0"
+    - "Q;polygon;quadrilateral;Q0,Q1,Q2,Q3;0;0;lightGray;brighter"
+    - "A;point;free;60,100"
+    - "B;point;free;110,50"
+    - "C;point;free;180,60"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;random"
+    - "E;point;free;150,200"
+    - "D;point;parallelogram;E,B,A"
+    - "F;point;parallelogram;E,B,C"
+    - "DEF;polygon;triangle;D,E,F;0;0;black;random"
+    - "AD;line;connect;A,D"
+    - "BE;line;connect;B,E"
+    - "CF;line;connect;C,F"
+    - "AC;line;connect;A,C;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "BA;line;connect;B,A;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+  aliases: { DA: AD, EB: BE, FC: CF, CA: AC, FD: DF, CB: BC, FE: EF }
+  caption: |
+    {BA} = {BC} = {ED} = {EF}; {AD}, {BE}, {CF} are equal and parallel.
+
+steps:
+  - part: enunciation
+    text: "If two straight lines meeting one another be parallel to two straight lines meeting one another not in the same plane, they will contain equal angles."
+    highlight: [ABC, DEF]
+    hint: |
+      Angles with parallel arms are equal.
+
+  - part: setting-out
+    text: "For let the two straight lines AB, BC meeting one another be parallel to the two straight lines DE, EF meeting one another, not in the same plane; I say that the angle ABC is equal to the angle DEF."
+    highlight: [ABC, DEF]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let BA, BC, ED, EF be cut off equal to one another, and let AD, CF, BE, AC, DF be joined."
+    highlight: [AD, BE, CF]
+    hint: |
+      Cut off equal lengths; join {AD}, {CF}, {BE}, {AC}, {DF}.
+
+  - part: proof
+    text: "Now, since BA is equal and parallel to ED, therefore AD is also equal and parallel to BE."
+    highlight: [AD, BE]
+    hint: |
+      {AD} equal and parallel to {BE} ([[I.33]]).
+
+  - part: proof
+    text: "For the same reason CF is also equal and parallel to BE."
+    highlight: [CF, BE]
+    hint: |
+      Likewise {CF}.
+
+  - part: proof
+    text: "Therefore each of the straight lines AD, CF is equal and parallel to BE."
+    highlight: [AD, CF]
+    hint: |
+      Both equal and parallel to {BE} …
+
+  - part: proof
+    text: "But straight lines which are parallel to the same straight line and are not in the same plane with it are parallel to one another; therefore AD is parallel and equal to CF."
+    highlight: [AD, CF]
+    hint: |
+      … so to each other ([[XI.9]]).
+
+  - part: proof
+    text: "And AC, DF join them; therefore AC is also equal and parallel to DF."
+    highlight: [AC, DF]
+    hint: |
+      So {AC} equal and parallel to {DF} ([[I.33]]).
+
+  - part: proof
+    text: "Now, since the two sides AB, BC are equal to the two sides DE, EF, and the base AC is equal to the base DF, therefore the angle ABC is equal to the angle DEF."
+    highlight: [ABC, DEF]
+    hint: |
+      Three sides equal: ∠{ABC} = ∠{DEF} ([[I.8]]).
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [ABC, DEF]
+    hint: |
+      The enunciation.
+
+reconstruction:
+  lines:
+    - text: |
+        A translation carries one angle onto the other. $\blacksquare$

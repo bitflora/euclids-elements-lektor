@@ -1,0 +1,156 @@
+id: I.17
+kind: theorem
+title: Any two angles of a triangle are less than two right angles
+
+paraphrase: |
+  In every triangle, the sum of any two of the angles is less than two right angles (180°).
+
+diagram:
+  width: 280
+  height: 220
+  elements:
+    - "A;point;free;85,30"
+    - "B;point;free;30,185"
+    - "C;point;free;150,185"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "D;point;lineSlider;B,C,250,185"
+    - "CD;line;connect;C,D"
+    - "BC;line;connect;B,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "angACD;sector;angleMarker;C,A,D"
+    - "angACB;sector;angleMarker;C,A,B"
+    - "angABC;sector;angleMarker;B,C,A"
+    - "angBAC;sector;angleMarker;A,B,C"
+  aliases:
+    CB: BC
+    ACD: angACD
+    ACB: angACB
+    BCA: angACB
+    CBA: angABC
+    BAC: angBAC
+    CAB: angBAC
+  given: [A, B, C, ABC]
+  caption: |
+    Drag {A}, {B} or {C}. The exterior angle ∠{ACD} always exceeds ∠{ABC|angABC}; adding ∠{ACB} to
+    both shows the pair at {B} and {C} falls short of two right angles.
+
+steps:
+  - part: enunciation
+    text: "In any triangle two angles taken together in any manner are less than two right angles."
+    highlight: [angABC, angACB, angBAC]
+    hint: |
+      Any two angles of a triangle add up to less than 180°.
+    explain:
+      fact: |
+        "Taken together in any manner" (πάντῃ μεταλαμβανόμεναι) means any pair, added (Heath's
+        note on line 1).
+      implicit: |
+        A weak form of "the angles of a triangle sum to two right angles" ([[I.32]]), proved without
+        the parallel postulate.
+
+  - part: setting-out
+    text: "Let ABC be a triangle;"
+    highlight: [ABC]
+    hint: |
+      A triangle {ABC}.
+
+  - part: specification
+    text: "I say that two angles of the triangle ABC taken together in any manner are less than two right angles."
+    highlight: [angABC, angACB]
+    hint: |
+      The goal, for every pair.
+
+  - part: construction
+    text: "For let BC be produced to D."
+    highlight: [CD]
+    adds: [D, CD, angACD]
+    hint: |
+      Extend {BC} past {C} to {D} ([[I.Post.2]]).
+
+  - part: proof
+    text: "Then, since the angle ACD is an exterior angle of the triangle ABC,"
+    highlight: [angACD, ABC]
+    hint: |
+      ∠{ACD} is outside the triangle, next to the angle at {C}.
+
+  - part: proof
+    text: "it is greater than the interior and opposite angle ABC."
+    highlight: [angACD, angABC]
+    hint: |
+      By [[I.16]], it exceeds the remote interior angle at {B}.
+    modern: |
+      $$\angle ACD > \angle ABC$$
+
+  - part: proof
+    text: "Let the angle ACB be added to each; therefore the angles ACD, ACB are greater than the angles ABC, BCA."
+    highlight: [angACD, angACB, angABC]
+    hint: |
+      Add ∠{ACB} to both sides.
+    explain:
+      fact: |
+        Adding the same magnitude to unequal magnitudes leaves them unequal in the same order.
+      implicit: |
+        No common notion says this. It is the "inequality" counterpart of [[I.CN.2]], which some
+        editors added as an axiom.
+    modern: |
+      $$\angle ACD + \angle ACB > \angle ABC + \angle BCA$$
+
+  - part: proof
+    text: "But the angles ACD, ACB are equal to two right angles."
+    highlight: [angACD, angACB]
+    hint: |
+      ∠{ACD} and ∠{ACB} are adjacent angles on the line {BD}: two right angles ([[I.13]]).
+    modern: |
+      $$\angle ACD + \angle ACB = 2R$$
+
+  - part: proof
+    text: "Therefore the angles ABC, BCA are less than two right angles."
+    highlight: [angABC, angACB]
+    hint: |
+      So the angles at {B} and {C} together are less than two right angles.
+    modern: |
+      $$\angle ABC + \angle BCA < 2R$$
+
+  - part: proof
+    text: "Similarly we can prove that the angles BAC, ACB are also less than two right angles, and so are the angles CAB, ABC as well."
+    highlight: [angBAC, angACB, angABC]
+    hint: |
+      The other two pairs are handled the same way, producing other sides.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3]
+      text: Let $D$ be on ray $BC$ beyond $C$.
+    - steps: [4, 5]
+      text: By the exterior angle theorem, $\angle ACD > \angle ABC$.
+    - steps: [6, 7, 8]
+      text: $\angle ABC + \angle BCA < \angle ACD + \angle ACB = 180^\circ$. $\blacksquare$
+  closing: |
+    This is the Saccheri–Legendre direction of things: in neutral geometry the angle sum of a
+    triangle is at most 180°. Exactly 180° needs the parallel postulate ([[I.32]]).
+
+commentary: |
+  I.17 is in effect a converse of the parallel postulate ([[I.Post.5]]): the postulate says that
+  if two lines make interior angles *less* than two right angles with a transversal, they meet;
+  I.17 says that if two lines meet (forming a triangle), the interior angles are less than two
+  right angles.
+
+gaps: |
+  - **Adding to unequals** (step 5): "if $a > b$ then $a + c > b + c$" is used but not stated
+    among the common notions.
+
+historical: |
+  Proclus points out the connection with the fifth postulate, and uses it in arguing that the
+  postulate is really a theorem needing proof — the start of two thousand years of attempts.

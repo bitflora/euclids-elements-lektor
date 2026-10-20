@@ -1,0 +1,106 @@
+id: IX.4
+kind: theorem
+title: The product of two cubes is a cube
+
+paraphrase: |
+  If {A} and {B} are cubes, so is {A}·{B}.
+
+diagram:
+  width: 270
+  height: 200
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "C0;point;free;-1000,110;0;0"
+    - "C3;point;free;1000,110;0;0"
+    - "D0;point;free;-1000,145;0;0"
+    - "D3;point;free;1000,145;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,35;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,100,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,135,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;U1,U2,A1,A2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;proportion;U1,U2,A1,A2,A1,A2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+  caption: |
+    {C} = {A}{B}, {D} = {A}².
+
+steps:
+  - part: enunciation
+    text: "If a cube number by multiplying a cube number make some number, the product will be cube."
+    highlight: [A, B, C]
+    hint: |
+      $m^3 n^3 = (mn)^3$.
+    modern: |
+      $m^3 n^3 = (mn)^3$.
+
+  - part: setting-out
+    text: "For let the cube number A by multiplying the cube number B make C;"
+    highlight: [A, B, C]
+    hint: |
+      {C} = {A}{B}.
+
+  - part: specification
+    text: "I say that C is cube."
+    highlight: [C]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For let A by multiplying itself make D;"
+    highlight: [D]
+    hint: |
+      {D} = {A}².
+
+  - part: proof
+    text: "therefore D is cube."
+    highlight: [D]
+    hint: |
+      [[IX.3]].
+
+  - part: proof
+    text: "And, since A by multiplying itself has made D, and by multiplying B has made C therefore, as A is to B, so is D to C."
+    highlight: [A, B, D, C]
+    hint: |
+      [[VII.17]].
+
+  - part: proof
+    text: "And, since A, B are cube numbers, A, B are similar solid numbers."
+    highlight: [A, B]
+    hint: |
+      Cubes are similar solid numbers.
+
+  - part: proof
+    text: "Therefore two mean proportional numbers fall between A, B; so that two mean proportional numbers will fall between D, C also."
+    highlight: [D, C]
+    hint: |
+      [[VIII.19]], [[VIII.8]].
+
+  - part: proof
+    text: "And D is cube; therefore C is also cube"
+    highlight: [C]
+    hint: |
+      [[VIII.23]].
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8]
+      text: |
+        $a^2 : ab = a : b$, a ratio of cubes; $a^2$ is a cube ([[IX.3]]), hence so is $ab$ ([[VIII.25]]).
+        $\blacksquare$

@@ -1,0 +1,213 @@
+id: I.13
+kind: theorem
+title: Angles on a straight line
+
+paraphrase: |
+  When one line stands on another, the two angles it makes add up to two right angles. (In
+  modern terms: adjacent angles on a line are *supplementary*, summing to 180°.)
+
+diagram:
+  width: 280
+  height: 220
+  elements:
+    - "C;point;free;30,180"
+    - "D;point;free;250,180"
+    - "CD;line;connect;C,D"
+    - "B;point;lineSlider;CD,140,180"
+    - "A;point;free;85,50"
+    - "AB;line;connect;A,B"
+    - "BE;line;perpendicular;B,D"
+    - "E;point;last;BE"
+    - "angCBA;sector;angleMarker;B,C,A"
+    - "angABD;sector;angleMarker;B,A,D"
+    - "angCBE;sector;angleMarker;B,C,E"
+    - "angEBD;sector;angleMarker;B,E,D"
+    - "angABE;sector;angleMarker;B,A,E"
+  aliases:
+    BA: AB
+    EB: BE
+    CBA: angCBA
+    ABC: angCBA
+    ABD: angABD
+    DBA: angABD
+    CBE: angCBE
+    EBD: angEBD
+    DBE: angEBD
+    ABE: angABE
+    EBA: angABE
+  given: [A, B, C, D, CD, AB]
+  caption: |
+    Drag {A}, {C} or {D}, and slide {B} along {CD}. However {AB} leans, ∠{CBA} + ∠{ABD} stays
+    equal to the two right angles ∠{CBE} + ∠{EBD}.
+
+steps:
+  - part: enunciation
+    text: "If a straight line set up on a straight line make angles, it will make either two right angles or angles equal to two right angles."
+    highlight: [angCBA, angABD]
+    hint: |
+      A line standing on a line makes two angles that together equal two right angles.
+    explain:
+      did: |
+        States the theorem.
+      fact: |
+        Euclid has no degrees and no "straight angle". The standard of measure for angles is the
+        right angle, all of which are equal ([[I.Post.4]]); so "two right angles" is how he says 180°.
+      implicit: |
+        "Either two right angles or equal to two right angles": if the line is perpendicular the
+        angles simply *are* right angles; otherwise they are unequal, but their sum equals two right angles.
+
+  - part: setting-out
+    text: "For let any straight line AB set up on the straight line CD make the angles CBA, ABD;"
+    highlight: [AB, CD, angCBA, angABD]
+    adds: [angCBA, angABD]
+    hint: |
+      {AB} stands on {CD} at {B}, making ∠{CBA} and ∠{ABD}.
+
+  - part: specification
+    text: "I say that the angles CBA, ABD are either two right angles or equal to two right angles."
+    highlight: [angCBA, angABD]
+    hint: |
+      The goal.
+    modern: |
+      $$\angle CBA + \angle ABD = 2\,\text{right angles}$$
+
+  - part: proof
+    text: "Now, if the angle CBA is equal to the angle ABD, they are two right angles."
+    highlight: [angCBA, angABD]
+    hint: |
+      If the two angles are equal, each is right by definition ([[I.Def.10]]). Done in that case.
+    explain:
+      justification: "[[I.Def.10]]"
+
+  - part: construction
+    text: "But, if not, let BE be drawn from the point B at right angles to CD;"
+    highlight: [BE]
+    adds: [BE, E]
+    hint: |
+      Otherwise raise the perpendicular {BE} at {B} ([[I.11]]).
+    explain:
+      did: |
+        Introduces a reference line: the two right angles to compare against.
+      justification: "[[I.11]]"
+      implicit: |
+        {BE} is drawn on the same side of {CD} as {A}.
+
+  - part: proof
+    text: "therefore the angles CBE, EBD are two right angles."
+    highlight: [angCBE, angEBD]
+    adds: [angCBE, angEBD]
+    hint: |
+      ∠{CBE} and ∠{EBD} are right, by the construction.
+    modern: |
+      $$\angle CBE = \angle EBD = \text{right}$$
+
+  - part: proof
+    text: "Then, since the angle CBE is equal to the two angles CBA, ABE, let the angle EBD be added to each;"
+    highlight: [angCBE, angCBA, angABE, angEBD]
+    adds: [angABE]
+    hint: |
+      ∠{CBE} is made up of ∠{CBA} and ∠{ABE}. Add ∠{EBD} to both sides.
+    explain:
+      did: |
+        Splits one right angle into two parts, and prepares to add.
+      fact: |
+        {BA} lies inside ∠{CBE}, so ∠{CBE} = ∠{CBA} + ∠{ABE}.
+      implicit: |
+        "Added to each" is literally "let it be added (as) common", κοινὴ προσκείσθω (Heath's note
+        on line 17).
+
+  - part: proof
+    text: "therefore the angles CBE, EBD are equal to the three angles CBA, ABE, EBD."
+    highlight: [angCBE, angEBD, angCBA, angABE]
+    hint: |
+      Equals added to equals ([[I.CN.2]]).
+    explain:
+      justification: "[[I.CN.2]]"
+    modern: |
+      $$\angle CBE + \angle EBD = \angle CBA + \angle ABE + \angle EBD$$
+
+  - part: proof
+    text: "Again, since the angle DBA is equal to the two angles DBE, EBA, let the angle ABC be added to each;"
+    highlight: [angABD, angEBD, angABE, angCBA]
+    hint: |
+      Likewise ∠{DBA} is made up of ∠{DBE} and ∠{EBA}. Add ∠{ABC} to both.
+    explain:
+      fact: |
+        {BE} lies inside ∠{DBA}.
+
+  - part: proof
+    text: "therefore the angles DBA, ABC are equal to the three angles DBE, EBA, ABC."
+    highlight: [angABD, angCBA, angEBD, angABE]
+    hint: |
+      [[I.CN.2]] again: the same three angles.
+    modern: |
+      $$\angle DBA + \angle ABC = \angle DBE + \angle EBA + \angle ABC$$
+
+  - part: proof
+    text: "But the angles CBE, EBD were also proved equal to the same three angles;"
+    highlight: [angCBE, angEBD]
+    hint: |
+      Both pairs equal the same sum of three angles.
+
+  - part: proof
+    text: "and things which are equal to the same thing are also equal to one another; therefore the angles CBE, EBD are also equal to the angles DBA, ABC."
+    highlight: [angCBE, angEBD, angABD, angCBA]
+    hint: |
+      So the two pairs are equal to each other ([[I.CN.1]]).
+    modern: |
+      $$\angle CBE + \angle EBD = \angle DBA + \angle ABC$$
+
+  - part: proof
+    text: "But the angles CBE, EBD are two right angles; therefore the angles DBA, ABC are also equal to two right angles."
+    highlight: [angABD, angCBA]
+    hint: |
+      And the first pair is two right angles. Done.
+    modern: |
+      $$\angle DBA + \angle ABC = 2\,\text{right angles}$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* With angle measure (the protractor
+    postulate of the SMSG axioms, or Hilbert's angle congruence plus a theory of angle sums):
+  lines:
+    - steps: [1, 2]
+      text: Let $B$ lie between $C$ and $D$ and $A \notin CD$.
+    - steps: [3, 4, 5]
+      text: Let $BE \perp CD$ with $E$ on $A$'s side, so $\angle CBE = \angle EBD = 90^\circ$.
+    - steps: [6, 7, 8, 9, 10, 11]
+      text: |
+        If ray $BA$ lies inside $\angle CBE$:
+        $$\angle CBA + \angle ABD = \angle CBA + (\angle ABE + 90^\circ) = (\angle CBA + \angle ABE) + 90^\circ = 90^\circ + 90^\circ.$$
+        The other case is symmetric. $\blacksquare$
+  closing: |
+    Many modern treatments simply *postulate* this (the "linear pair" or "supplement" postulate),
+    since with angle measure it is almost a definition.
+
+commentary: |
+  I.13 starts a short run on angles at a point: its converse [[I.14]], vertical angles
+  [[I.15]], and later the angle sum of a triangle in [[I.32]]. It turns "two right angles" into
+  a working unit of angle.
+
+  The proof is pure bookkeeping with common notions: both pairs of angles are shown equal to the
+  same three-part sum.
+
+gaps: |
+  - **Rays inside angles** (steps 4 and 6): that {BA} lies inside ∠{CBE} and {BE} inside
+    ∠{DBA}. As drawn, {A} is on the {C} side of the perpendicular; the other case is the same with
+    letters swapped.
+  - **All right angles are equal** is used silently when "two right angles" is treated as a
+    fixed magnitude ([[I.Post.4]]).
+
+historical: |
+  Proclus notes that the theorem lets one reason about angles at a point by measuring against
+  the right angle, which [[I.Post.4]] guarantees is a fixed standard.

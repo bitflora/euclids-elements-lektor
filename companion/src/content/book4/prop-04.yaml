@@ -1,0 +1,196 @@
+id: IV.4
+kind: problem
+title: Inscribing a circle in a triangle
+
+paraphrase: |
+  In a given triangle, inscribe a circle (touching all three sides). Its centre is where the angle
+  bisectors meet: the *incentre*.
+
+diagram:
+  width: 320
+  height: 260
+  elements:
+    - "A;point;free;210,40"
+    - "B;point;free;40,190"
+    - "C;point;free;280,220"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "BBx;line;angleBisector;A,B,C;0;0;0"
+    - "CCx;line;angleBisector;B,C,A;0;0;0"
+    - "D;point;intersection;BBx,CCx"
+    - "F;point;foot;D,B,C"
+    - "E;point;foot;D,A,B"
+    - "G;point;foot;D,C,A"
+    - "EFG;circle;radius;D,E;0;0;black;0"
+    - "BD;line;connect;B,D"
+    - "CD;line;connect;C,D"
+    - "ED;line;connect;E,D"
+    - "FD;line;connect;F,D"
+    - "GD;line;connect;G,D"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "CA;line;connect;C,A;0;0;0"
+    - "EBD;polygon;triangle;E,B,D;0;0;0;0"
+    - "FBD;polygon;triangle;F,B,D;0;0;0;0"
+    - "angABD;sector;angleMarker;B,A,D"
+    - "angCBD;sector;angleMarker;B,D,C"
+    - "angBED;sector;angleMarker;E,B,D"
+    - "angBFD;sector;angleMarker;F,B,D"
+  aliases:
+    DE: ED
+    DF: FD
+    DG: GD
+    AC: CA
+    FGE: EFG
+    ABD: angABD
+    CBD: angCBD
+    BED: angBED
+    BFD: angBFD
+  given: [A, B, C, ABC]
+  caption: |
+    Drag the vertices. The bisectors of the angles at {B} and {C} meet at {D}, the centre of the circle
+    touching all three sides.
+
+steps:
+  - part: enunciation
+    text: "In a given triangle to inscribe a circle."
+    highlight: [ABC, EFG]
+    hint: |
+      A problem: the incircle.
+    explain:
+      fact: |
+        "A circle inscribed in a figure" touches each side ([[IV.Def.5]]).
+    cites: [IV.Def.5]
+
+  - part: setting-out
+    text: "Let ABC be the given triangle;"
+    highlight: [ABC]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to inscribe a circle in the triangle ABC."
+    highlight: [ABC]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let the angles ABC, ACB be bisected by the straight lines BD, CD,"
+    highlight: [BD, CD]
+    adds: [BD, CD]
+    hint: |
+      Bisect two angles ([[I.9]]).
+
+  - part: construction
+    text: "and let these meet one another at the point D;"
+    highlight: [D]
+    adds: [D]
+    hint: |
+      They meet at {D}.
+    explain:
+      implicit: |
+        That they meet at all (and inside the triangle) is not argued; it follows from [[I.17]]-type
+        reasoning: half-angles at {B} and {C} sum to less than two right angles (Post. 5).
+
+  - part: construction
+    text: "from D let DE, DF, DG be drawn perpendicular to the straight lines AB, BC, CA."
+    highlight: [ED, FD, GD]
+    adds: [E, F, G, ED, FD, GD]
+    hint: |
+      Perpendiculars to the three sides ([[I.12]]).
+    cites: [I.12]
+
+  - part: proof
+    text: "Now, since the angle ABD is equal to the angle CBD, and the right angle BED is also equal to the right angle BFD, EBD, FBD are two triangles having two angles equal to two angles and one side equal to one side, namely that subtending one of the equal angles, which is BD common to the triangles;"
+    highlight: [EBD, FBD, angABD, angCBD, angBED, angBFD]
+    hint: |
+      Triangles {EBD} and {FBD}: two angles and the side {BD} opposite a right angle.
+
+  - part: proof
+    text: "therefore they will also have the remaining sides equal to the remaining sides;"
+    highlight: [EBD, FBD]
+    hint: |
+      AAS ([[I.26]]).
+
+  - part: proof
+    text: "therefore DE is equal to DF."
+    highlight: [ED, FD]
+    hint: |
+      {D} is equally far from {AB} and {BC}.
+
+  - part: proof
+    text: "For the same reason DG is also equal to DF."
+    highlight: [GD, FD]
+    hint: |
+      Same at {C}.
+
+  - part: proof
+    text: "Therefore the three straight lines DE, DF, DG are equal to one another;"
+    highlight: [ED, FD, GD]
+    hint: |
+      Equal distances to all three sides.
+
+  - part: proof
+    text: "therefore the circle described with centre D and distance one of the straight lines DE, DF, DG will pass also through the remaining points, and will touch the straight lines AB, BC, CA, because the angles at the points E, F, G are right."
+    highlight: [EFG]
+    adds: [EFG]
+    hint: |
+      The circle about {D} through {E} passes through {F}, {G} and touches the sides there.
+    explain:
+      implicit: |
+        Heath notes that Euclid literally says "with distance one of the (points) *E*, *F*, *G*", careless
+        language that Heath fills out (his note on lines 26, 34).
+
+  - part: proof
+    text: "For, if it cuts them, the straight line drawn at right angles to the diameter of the circle from its extremity will be found to fall within the circle: which was proved absurd;"
+    highlight: [EFG]
+    hint: |
+      [[III.16]].
+
+  - part: proof
+    text: "therefore the circle described with centre D and distance one of the straight lines DE, DF, DG will not cut the straight lines AB, BC, CA;"
+    highlight: [EFG]
+    hint: |
+      So it does not cut the sides.
+
+  - part: proof
+    text: "therefore it will touch them, and will be the circle inscribed in the triangle ABC."
+    highlight: [EFG, ABC]
+    hint: |
+      [[IV.Def.5]].
+
+  - part: proof
+    text: "Let it be inscribed, as FGE."
+    highlight: [EFG]
+    hint: |
+      Name it.
+
+  - part: conclusion
+    text: "Therefore in the given triangle ABC the circle EFG has been inscribed."
+    highlight: [EFG]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6]
+      text: Points on the bisector of an angle are equidistant from its arms.
+    - steps: [7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+      text: |
+        So $D$ is equidistant ($= r$) from all three sides; the circle $\odot(D, r)$ meets each side only at
+        the foot of the perpendicular, so it touches each. $\blacksquare$
+  closing: |
+    A corollary not stated by Euclid: the third bisector (at {A}) also passes through {D} — the three angle
+    bisectors are concurrent.
+
+commentary: |
+  The incircle. Together with [[IV.5]] (the circumcircle) it gives the two classical centres of a triangle.
+
+gaps: |
+  - **The bisectors meet inside the triangle** (step 2): assumed.

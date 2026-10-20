@@ -1,0 +1,192 @@
+id: I.34
+kind: theorem
+title: Opposite sides and angles of a parallelogram
+
+paraphrase: |
+  In a parallelogram, opposite sides are equal, opposite angles are equal, and a diagonal cuts it
+  into two equal halves.
+
+diagram:
+  width: 290
+  height: 200
+  elements:
+    - "A;point;free;90,50"
+    - "B;point;free;250,50"
+    - "C;point;free;50,175"
+    - "CABD;polygon;parallelogram;C,A,B;0;0;black;#efe4d2"
+    - "D;point;vertex;CABD,4"
+    - "BC;line;connect;B,C"
+    - "AB;line;connect;A,B;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "ABC;polygon;triangle;A,B,C;0;0;0;0"
+    - "DCB;polygon;triangle;D,C,B;0;0;0;0"
+    - "angABC;sector;angleMarker;B,C,A,22;0;0;red;red"
+    - "angBCD;sector;angleMarker;C,B,D,22;0;0;red;red"
+    - "angACB;sector;angleMarker;C,A,B,22;0;0;blue;blue"
+    - "angCBD;sector;angleMarker;B,C,D,22;0;0;blue;blue"
+    - "angBAC;sector;angleMarker;A,B,C,22;0;0;green;green"
+    - "angCDB;sector;angleMarker;D,C,B,22;0;0;green;green"
+    - "angABD;sector;angleMarker;B,A,D,30;0;0;orange;0"
+    - "angACD;sector;angleMarker;C,A,D,30;0;0;orange;0"
+  aliases:
+    DC: CD
+    CB: BC
+    DB: BD
+    ACDB: CABD
+    CBA: angABC
+    BCD: angBCD
+    ACB: angACB
+    BCA: angACB
+    CBD: angCBD
+    BAC: angBAC
+    CDB: angCDB
+    ABD: angABD
+    ACD: angACD
+  given: [A, B, C, D, CABD]
+  caption: |
+    Drag {A}, {B} or {C}: {D} completes the parallelogram. Matching colours mark the equal angles.
+
+steps:
+  - part: enunciation
+    text: "In parallelogrammic areas the opposite sides and angles are equal to one another, and the diameter bisects the areas."
+    highlight: [CABD, BC]
+    hint: |
+      Parallelograms: opposite sides equal, opposite angles equal, and a diagonal halves the area.
+    explain:
+      fact: |
+        "Parallelogrammic area" (παραλληλόγραμμον χωρίον) is Euclid's first name for a parallelogram:
+        a region bounded by two pairs of parallel lines (Heath's note on line 1). The *diameter* is
+        the diagonal.
+      implicit: |
+        Euclid never defines "parallelogram"; the term is understood from its parts.
+
+  - part: setting-out
+    text: "Let ACDB be a parallelogrammic area, and BC its diameter;"
+    highlight: [CABD, BC]
+    hint: |
+      The data: parallelogram {ACDB|CABD} ({AB} ∥ {CD}, {AC} ∥ {BD}) with diagonal {BC}.
+
+  - part: specification
+    text: "I say that the opposite sides and angles of the parallelogram ACDB are equal to one another, and the diameter BC bisects it."
+    highlight: [CABD, BC]
+    hint: |
+      Three claims.
+
+  - part: proof
+    text: "For, since AB is parallel to CD, and the straight line BC has fallen upon them, the alternate angles ABC, BCD are equal to one another."
+    highlight: [AB, CD, BC, angABC, angBCD]
+    hint: |
+      {AB} ∥ {CD} cut by {BC}: alternate angles equal ([[I.29]]).
+
+  - part: proof
+    text: "Again, since AC is parallel to BD, and BC has fallen upon them, the alternate angles ACB, CBD are equal to one another."
+    highlight: [AC, BD, BC, angACB, angCBD]
+    hint: |
+      {AC} ∥ {BD} cut by {BC}: the other pair of alternate angles ([[I.29]]).
+
+  - part: proof
+    text: "Therefore ABC, DCB are two triangles having the two angles ABC, BCA equal to the two angles DCB, CBD respectively, and one side equal to one side, namely that adjoining the equal angles and common to both of them, BC;"
+    highlight: [ABC, DCB, BC, angABC, angBCD, angACB, angCBD]
+    hint: |
+      Triangles {ABC} and {DCB}: two angles and the side between them — the ASA case of [[I.26]].
+
+  - part: proof
+    text: "therefore they will also have the remaining sides equal to the remaining sides respectively, and the remaining angle to the remaining angle;"
+    highlight: [ABC, DCB]
+    hint: |
+      So they are congruent ([[I.26]]).
+
+  - part: proof
+    text: "therefore the side AB is equal to CD, and AC to BD, and further the angle BAC is equal to the angle CDB."
+    highlight: [AB, CD, AC, BD, angBAC, angCDB]
+    hint: |
+      Opposite sides equal; one pair of opposite angles equal.
+    modern: |
+      $$AB = CD,\quad AC = BD,\quad \angle BAC = \angle CDB$$
+
+  - part: proof
+    text: "And, since the angle ABC is equal to the angle BCD, and the angle CBD to the angle ACB, the whole angle ABD is equal to the whole angle ACD."
+    highlight: [angABD, angACD]
+    hint: |
+      The other pair of opposite angles: add the equal parts ([[I.CN.2]]).
+    modern: |
+      $$\angle ABD = \angle ABC + \angle CBD = \angle BCD + \angle ACB = \angle ACD$$
+
+  - part: proof
+    text: "And the angle BAC was also proved equal to the angle CDB."
+    highlight: [angBAC, angCDB]
+    hint: |
+      Both pairs of opposite angles are equal.
+
+  - part: conclusion
+    text: "Therefore in parallelogrammic areas the opposite sides and angles are equal to one another."
+    highlight: [AB, CD, AC, BD]
+    hint: |
+      First two claims proved.
+
+  - part: specification
+    text: "I say, next, that the diameter also bisects the areas."
+    highlight: [BC, ABC, DCB]
+    hint: |
+      Third claim.
+
+  - part: proof
+    text: "For, since AB is equal to CD, and BC is common, the two sides AB, BC are equal to the two sides DC, CB respectively;"
+    highlight: [AB, CD, BC]
+    hint: |
+      Set up SAS for {ABC} and {DCB}.
+
+  - part: proof
+    text: "and the angle ABC is equal to the angle BCD;"
+    highlight: [angABC, angBCD]
+    hint: |
+      The included angles are equal.
+
+  - part: proof
+    text: "therefore the base AC is also equal to DB, and the triangle ABC is equal to the triangle DCB."
+    highlight: [ABC, DCB]
+    hint: |
+      [[I.4]]: the triangles are equal — in particular, equal in area.
+    explain:
+      implicit: |
+        This was already available from I.26, but I.26 does not state that the triangles are equal
+        in area; so Euclid repeats the argument through I.4, which does.
+
+  - part: conclusion
+    text: "Therefore the diameter BC bisects the parallelogram ACDB."
+    highlight: [BC, CABD]
+    hint: |
+      The two halves are equal.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      text: |
+        Diagonal $BC$ makes alternate angles $\angle ABC = \angle BCD$ and $\angle ACB = \angle CBD$
+        (parallel axiom). ASA gives $\triangle ABC \cong \triangle DCB$, so $AB = CD$, $AC = BD$,
+        $\angle A = \angle D$; adding angles, $\angle B = \angle C$.
+    - steps: [10, 11, 12, 13, 14]
+      text: Congruent triangles have equal areas, so $BC$ bisects the area. $\blacksquare$
+
+commentary: |
+  The basic theorem about parallelograms, used in almost every proposition up to [[I.47]] — first in
+  [[I.35]], where Euclid begins comparing areas.
+
+  Notice the shift in what "equal" means. In [[I.4]] it meant (in effect) congruent. From [[I.35]]
+  on, "equal" figures are figures with the same *area*, which need not have the same shape.
+
+gaps: |
+  - **Angle addition** (step 7): that {BC} lies inside the angles at {B} and {C}.
+
+historical: |
+  Proclus thinks the word "parallelogram" was coined by the author of the *Elements*, suggested by
+  [[I.33]]: a figure "bounded by parallel lines".

@@ -1,0 +1,198 @@
+id: VI.5
+kind: theorem
+title: Triangles with proportional sides are equiangular
+
+paraphrase: |
+  If the sides of triangles {ABC}, {DEF} are proportional ({AB} : {BC} = {DE} : {EF}, and so on), then the triangles are
+  equiangular, the equal angles being opposite corresponding sides. The converse of [[VI.4]] (SSS similarity).
+
+diagram:
+  width: 400
+  height: 260
+  elements:
+    - "A;point;free;170,30"
+    - "B;point;free;30,230"
+    - "C;point;free;145,200"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "D;point;free;310,30"
+    - "E;point;free;230,148"
+    - "F;point;similar;D,E,A,B,C"
+    - "DEF;polygon;triangle;D,E,F;0;0;black;#dfe7ea"
+    - "Gp;point;similar;F,E,D,E,F;0;0"
+    - "G;point;cutoff;E,Gp,E,D"
+    - "EFG;polygon;triangle;E,F,G;0;0;black;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "CA;line;connect;C,A;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+    - "EG;line;connect;E,G;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+    - "angABC;sector;angleMarker;B,A,C"
+    - "angBCA;sector;angleMarker;C,B,A"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angDEF;sector;angleMarker;E,D,F"
+    - "angEFD;sector;angleMarker;F,E,D"
+    - "angEDF;sector;angleMarker;D,E,F"
+    - "angFEG;sector;angleMarker;E,F,G"
+    - "angEFG;sector;angleMarker;F,E,G"
+    - "angEGF;sector;angleMarker;G,E,F"
+  aliases:
+    BA: AB
+    AC: CA
+    ED: DE
+    DF: FD
+    GE: EG
+    GF: FG
+    GEF: EFG
+    ACB: angBCA
+    angACB: angBCA
+    angGEF: angFEG
+    angFED: angDEF
+    angDFE: angEFD
+    angGFE: angEFG
+  given: [A, B, C, ABC, D, E, F, DEF, AB, BC, CA, DE, EF, FD]
+  caption: |
+    {DEF} is constructed with sides proportional to those of {ABC}. Drag {A}, {B}, {C}, {D}, {E}. {GEF} is the auxiliary
+    triangle on {EF} with the angles of {ABC}: it turns out to be {DEF} reflected in {EF}.
+
+steps:
+  - part: enunciation
+    text: "If two triangles have their sides proportional, the triangles will be equiangular and will have those angles equal which the corresponding sides subtend."
+    highlight: [ABC, DEF]
+    hint: |
+      Proportional sides ⇒ equal angles: SSS similarity.
+    modern: |
+      $$\frac{AB}{DE} = \frac{BC}{EF} = \frac{CA}{FD} \ \Rightarrow\ \angle A = \angle D,\ \angle B = \angle E,\ \angle C = \angle F$$
+
+  - part: setting-out
+    text: "Let ABC, DEF be two triangles having their sides proportional, so that, as AB is to BC, so is DE to EF, as BC is to CA, so is EF to FD, and further, as BA is to AC, so is ED to DF;"
+    highlight: [ABC, DEF]
+    hint: |
+      The three proportions, in a fixed correspondence {A} ↔ {D}, {B} ↔ {E}, {C} ↔ {F}.
+
+  - part: specification
+    text: "I say that the triangle ABC is equiangular with the triangle DEF, and they will have those angles equal which the corresponding sides subtend, namely the angle ABC to the angle DEF, the angle BCA to the angle EFD, and further the angle BAC to the angle EDF."
+    highlight: [angABC, angDEF, angBCA, angEFD, angBAC, angEDF]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For on the straight line EF, and at the points E, F on it, let there be constructed the angle FEG equal to the angle ABC, and the angle EFG equal to the angle ACB;"
+    highlight: [angFEG, angEFG, EG, FG]
+    adds: [Gp, G, EFG, EG, FG, angFEG, angEFG, angEGF]
+    hint: |
+      Build on {EF} a triangle {GEF} with the angles of {ABC} ([[I.23]]).
+
+  - part: proof
+    text: "therefore the remaining angle at A is equal to the remaining angle at G."
+    highlight: [angBAC, angEGF]
+    hint: |
+      Angle sum ([[I.32]]).
+
+  - part: proof
+    text: "Therefore the triangle ABC is equiangular with the triangle GEF."
+    highlight: [ABC, GEF]
+    hint: |
+      All three angles match.
+
+  - part: proof
+    text: "Therefore in the triangles ABC, GEF the sides about the equal angles are proportional, and those are corresponding sides which subtend the equal angles;"
+    highlight: [ABC, GEF]
+    hint: |
+      [[VI.4]].
+
+  - part: proof
+    text: "therefore, as AB is to BC, so is GE to EF."
+    highlight: [AB, BC, GE, EF]
+    hint: |
+      One of the proportions [[VI.4]] gives.
+
+  - part: proof
+    text: "But, as AB is to BC, so by hypothesis is DE to EF; therefore, as DE is to EF, so is GE to EF."
+    highlight: [DE, EF, GE]
+    hint: |
+      [[V.11]].
+
+  - part: proof
+    text: "Therefore each of the straight lines DE, GE has the same ratio to EF; therefore DE is equal to GE."
+    highlight: [DE, GE]
+    hint: |
+      [[V.9]].
+
+  - part: proof
+    text: "For the same reason DF is also equal to GF."
+    highlight: [DF, GF]
+    hint: |
+      The same, from $BC : CA = EF : FD$ (inverted).
+    cites: [VI.4, V.11, V.9]
+
+  - part: proof
+    text: "Since then DE is equal to EG, and EF is common, the two sides DE, EF are equal to the two sides GE, EF; and the base DF is equal to the base FG;"
+    highlight: [DE, EG, EF, DF, FG]
+    hint: |
+      Three sides equal.
+
+  - part: proof
+    text: "therefore the angle DEF is equal to the angle GEF, and the triangle DEF is equal to the triangle GEF, and the remaining angles are equal to the remaining angles, namely those which the equal sides subtend."
+    highlight: [angDEF, angGEF, DEF, GEF]
+    hint: |
+      SSS congruence ([[I.8]]), then [[I.4]] for the rest.
+
+  - part: proof
+    text: "Therefore the angle DFE is also equal to the angle GFE, and the angle EDF to the angle EGF."
+    highlight: [angDFE, angGFE, angEDF, angEGF]
+    hint: |
+      Corresponding angles of the congruent triangles.
+
+  - part: proof
+    text: "And, since the angle FED is equal to the angle GEF, while the angle GEF is equal to the angle ABC, therefore the angle ABC is also equal to the angle DEF."
+    highlight: [angFED, angGEF, angABC]
+    hint: |
+      Chain the equalities.
+
+  - part: proof
+    text: "For the same reason the angle ACB is also equal to the angle DFE, and further, the angle at A to the angle at D;"
+    highlight: [angACB, angDFE, angBAC, angEDF]
+    hint: |
+      The other two angles likewise.
+
+  - part: proof
+    text: "therefore the triangle ABC is equiangular with the triangle DEF."
+    highlight: [ABC, DEF]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: |
+        Build {GEF} on {EF} with the angles of {ABC}; by [[VI.4]] its sides are proportional to those of {ABC}.
+    - steps: [6, 7, 8, 9, 10]
+      text: |
+        So $GE : EF = AB : BC = DE : EF$, whence $GE = DE$; likewise $GF = DF$.
+    - steps: [11, 12, 13, 14, 15, 16]
+      text: |
+        $\triangle DEF \cong \triangle GEF$ (SSS), so {DEF} has the angles of {GEF}, which are those of {ABC}.
+        $\blacksquare$
+  closing: |
+    The pattern — build the triangle the conclusion predicts, show it is congruent to the given one — is
+    the standard way Euclid proves converses.
+
+commentary: |
+  Joyce: we now have two characterisations of similar triangles, by angles ([[VI.4]]) and by sides (VI.5).
+  The proportions must be taken in the stated correspondence: $AB : BC = DE : EF$ with
+  $BC : CA = FD : EF$ (a different pairing) is not intended ([[VI.Def.1]]).

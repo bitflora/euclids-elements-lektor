@@ -1,0 +1,127 @@
+id: I.31
+kind: problem
+title: Drawing a parallel through a point
+
+paraphrase: |
+  Given a point {A} and a line {BC}, draw through {A} a line {EAF|EF} parallel to {BC}.
+
+diagram:
+  width: 260
+  height: 170
+  elements:
+    - "A;point;free;145,40"
+    - "B;point;free;30,130"
+    - "C;point;free;230,130"
+    - "D;point;lineSlider;B,C,100,130"
+    - "BC;line;connect;B,C"
+    - "AD;line;connect;A,D"
+    - "AE;line;similar;A,D,D,A,C"
+    - "E;point;last;AE"
+    - "AF;line;extend;E,A,B,D"
+    - "F;point;last;AF"
+    - "EF;line;connect;E,F;0;0;0"
+    - "angEAD;sector;angleMarker;A,E,D"
+    - "angADC;sector;angleMarker;D,A,C"
+  aliases:
+    DA: AD
+    EA: AE
+    EAF: EF
+    DAE: angEAD
+    EAD: angEAD
+    ADC: angADC
+  given: [A, B, C, BC]
+  caption: |
+    Drag {A}, {B} or {C}, and slide {D}. The line through {A} stays parallel to {BC}.
+
+steps:
+  - part: enunciation
+    text: "Through a given point to draw a straight line parallel to a given straight line."
+    highlight: [A, BC, EF]
+    hint: |
+      A problem: draw the parallel through a point.
+
+  - part: setting-out
+    text: "Let A be the given point, and BC the given straight line;"
+    highlight: [A, BC]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to draw through the point A a straight line parallel to the straight line BC."
+    highlight: [A, BC]
+    hint: |
+      The goal.
+    explain:
+      implicit: |
+        That {A} is not on {BC}.
+
+  - part: construction
+    text: "Let a point D be taken at random on BC, and let AD be joined;"
+    highlight: [D, AD]
+    adds: [D, AD]
+    hint: |
+      Pick any {D} on {BC} and join {AD}: a transversal.
+
+  - part: construction
+    text: "on the straight line DA, and at the point A on it, let the angle DAE be constructed equal to the angle ADC;"
+    highlight: [angEAD, angADC, AE]
+    adds: [AE, E, angEAD, angADC]
+    hint: |
+      Copy ∠{ADC} to {A}, on the other side of {AD} ([[I.23]]): this makes alternate angles equal.
+
+  - part: construction
+    text: "and let the straight line AF be produced in a straight line with EA."
+    highlight: [AF]
+    adds: [AF, F]
+    hint: |
+      Extend {EA} through {A} to {F} ([[I.Post.2]]).
+    cites: [I.Post.2]
+
+  - part: proof
+    text: "Then, since the straight line AD falling on the two straight lines BC, EF has made the alternate angles EAD, ADC equal to one another, therefore EAF is parallel to BC."
+    highlight: [angEAD, angADC, EF, BC]
+    hint: |
+      Equal alternate angles ⇒ parallel ([[I.27]]).
+    explain:
+      implicit: |
+        Note *which* result is used: [[I.27]], not [[I.29]]. The construction needs no parallel
+        postulate.
+
+  - part: conclusion
+    text: "Therefore through the given point A the straight line EAF has been drawn parallel to the given straight line BC."
+    highlight: [EF, BC]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3]
+      text: Let $A \notin BC$; choose $D$ on $BC$.
+    - steps: [4]
+      text: Transfer $\angle ADC$ to $A$ on the opposite side of $AD$ from $C$, giving ray $AE$.
+    - steps: [5, 6]
+      text: Line $EA$ makes equal alternate angles with $BC$, so it is parallel (I.27). $\blacksquare$
+  closing: |
+    This proves *existence* of a parallel without Postulate 5. *Uniqueness* — that this is the
+    only parallel through {A} — is equivalent to Postulate 5 (Playfair's axiom), and fails in
+    hyperbolic geometry, where infinitely many lines through {A} miss {BC}.
+
+commentary: |
+  The basic construction for everything that follows about parallelograms ([[I.33]]–[[I.46]]). It
+  is often called the starting point of "Playfair's axiom", which John Playfair (1795) put in
+  place of Postulate 5: *through a point not on a line, exactly one parallel can be drawn*. Euclid's
+  I.31 supplies the "at least one".
+
+gaps: |
+  - **Side of {AD}**: the copied angle must be on the side opposite {C}, or the angles are not
+    alternate.
+
+historical: |
+  Joyce's guide gives a full ruler-and-compass construction behind the appeal to [[I.23]].

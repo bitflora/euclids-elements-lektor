@@ -1,0 +1,103 @@
+id: VIII.17
+kind: theorem
+title: If a cube does not measure a cube, the side does not measure the side
+
+paraphrase: |
+  The contrapositive of [[VIII.15]].
+
+diagram:
+  width: 260
+  height: 170
+  elements:
+    - "A0;point;free;-1000,35;0;0"
+    - "A3;point;free;1000,35;0;0"
+    - "B0;point;free;-1000,70;0;0"
+    - "B3;point;free;1000,70;0;0"
+    - "C0;point;free;-1000,105;0;0"
+    - "C3;point;free;1000,105;0;0"
+    - "D0;point;free;-1000,140;0;0"
+    - "D3;point;free;1000,140;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,30;0;0"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,70,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;lineSlider;D0,D3,85,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "C4;point;proportion;U1,U2,C1,C2,C1,C2,C1,C3;0;0"
+    - "D4;point;proportion;U1,U2,D1,D2,D1,D2,D1,D3;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;proportion;U1,U2,C1,C2,C1,C4,A1,A3;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;proportion;U1,U2,D1,D2,D1,D4,B1,B3;0"
+    - "B;line;connect;B1,B2;black"
+  caption: |
+    {A} = {C}³, {B} = {D}³.
+
+steps:
+  - part: enunciation
+    text: "If a cube number do not measure a cube number, neither will the side measure the side; and, if the side do not measure the side, neither will the cube measure the cube."
+    highlight: [A, B, C, D]
+    hint: |
+      $c^3 \nmid d^3 \iff c \nmid d$.
+
+  - part: setting-out
+    text: "For let the cube number A not measure the cube number B, and let C be the side of A, and D of B;"
+    highlight: [A, B, C, D]
+    hint: |
+      {A} does not measure {B}.
+
+  - part: specification
+    text: "I say that C will not measure D."
+    highlight: [C, D]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For if C measures D, A will also measure B."
+    highlight: [C, D, A, B]
+    hint: |
+      [[VIII.15]].
+
+  - part: proof
+    text: "But A does not measure B; therefore neither does C measure D."
+    highlight: [C, D]
+    hint: |
+      So {C} does not measure {D}.
+
+  - part: specification
+    text: "Again, let C not measure D; I say that neither will A measure B."
+    highlight: [C, D, A, B]
+    hint: |
+      The converse.
+
+  - part: proof
+    text: "For, if A measures B, C will also measure D."
+    highlight: [A, B, C, D]
+    hint: |
+      [[VIII.15]].
+
+  - part: proof
+    text: "But C does not measure D; therefore neither will A measure B."
+    highlight: [A, B]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6, 7]
+      text: |
+        Contrapositive of [[VIII.15]]. $\blacksquare$
+
+commentary: |
+  Joyce quotes Tweedledee: "Contrariwise, if it was so, it might be; and if it were so, it would be; but as it
+  isn't, it ain't. That's logic."

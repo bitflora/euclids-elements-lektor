@@ -1,0 +1,146 @@
+id: X.22
+kind: theorem
+title: The square on a medial applied to a rational line
+
+paraphrase: |
+  The square on a medial line {A}, applied to a rational line {BC}, gives a breadth {CD} that is rational but
+  incommensurable in length with {BC}.
+
+diagram:
+  width: 270
+  height: 250
+  elements:
+    - "A0;point;free;40,-1000;0;0"
+    - "A3;point;free;40,1000;0;0"
+    - "B0;point;free;75,-1000;0;0"
+    - "B3;point;free;75,1000;0;0"
+    - "E0;point;free;160,-1000;0;0"
+    - "E3;point;free;160,1000;0;0"
+    - "A1;point;lineSlider;A0,A3,0,40;0"
+    - "A2;point;lineSlider;A0,A3,0,130;0"
+    - "A;line;connect;A1,A2;black"
+    - "B;point;lineSlider;B0,B3,0,40"
+    - "C;point;lineSlider;B0,B3,0,200"
+    - "BC;line;connect;B,C"
+    - "D';point;perpendicular;C,B;0;0"
+    - "D'';point;extend;D',C,D',C;0;0"
+    - "D;point;proportion;B,C,A1,A2,A1,A2,C,D''"
+    - "BD;polygon;parallelogram;B,C,D;0;0;black;random"
+    - "G;point;lineSlider;E0,E3,0,50"
+    - "E;point;lineSlider;E0,E3,0,160"
+    - "EG;line;connect;E,G"
+    - "F';point;perpendicular;E,G;0;0"
+    - "F'';point;extend;F',E,F',E;0;0"
+    - "F;point;proportion;E,G,A1,A2,A1,A2,E,F''"
+    - "FG;polygon;parallelogram;F,E,G;0;0;black;random"
+    - "CD;line;connect;C,D;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+  aliases: { CB: BC, DC: CD, GF: FG, FE: EF }
+  caption: |
+    {BD} = sq({A}) on {BC}; {FG} = sq({A}) as a rectangle on {EG}, {EF} rational and commensurable in square
+    only.
+
+steps:
+  - part: enunciation
+    text: "The square on a medial straight line, if applied to a rational straight line, produces as breadth a straight line rational and incommensurable in length with that to which it is applied."
+    highlight: [A, BC, CD]
+    hint: |
+      Medial² ÷ rational = rational, but incommensurable in length.
+    modern: |
+      $(\rho\sqrt[4]q)^2/\rho = \rho\sqrt q$.
+
+  - part: setting-out
+    text: "Let A be medial and CB rational, and let a rectangular area BD equal to the square on A be applied to BC, producing CD as breadth;"
+    highlight: [A, BC, BD, CD]
+    hint: |
+      Setup.
+
+  - part: specification
+    text: "I say that CD is rational and incommensurable in length with CB."
+    highlight: [CD, BC]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since A is medial, the square on it is equal to a rectangular area contained by rational straight lines commensurable in square only."
+    highlight: [A]
+    hint: |
+      sq({A}) is a rectangle of rationals commensurable in square only ([[X.21]]) …
+
+  - part: proof
+    text: "Let the square on it be equal to GF."
+    highlight: [FG]
+    hint: |
+      … say {GF}.
+
+  - part: proof
+    text: "But the square on it is also equal to BD; therefore BD is equal to GF."
+    highlight: [BD, FG]
+    hint: |
+      So {BD} = {GF}.
+
+  - part: proof
+    text: "But it is also equiangular with it; and in equal and equiangular parallelograms the sides about the equal angles are reciprocally proportional; therefore, proportionally, as BC is to EG, so is EF to CD."
+    highlight: [BC, EG, EF, CD]
+    hint: |
+      Equal equiangular parallelograms have reciprocal sides ([[VI.14]]): {BC} : {EG} = {EF} : {CD}.
+
+  - part: proof
+    text: "Therefore also, as the square on BC is to the square on EG, so is the square on EF to the square on CD."
+    highlight: [BC, EG, EF, CD]
+    hint: |
+      Squares too ([[VI.22]]).
+
+  - part: proof
+    text: "But the square on CB is commensurable with the square on EG, for each of these straight lines is rational; therefore the square on EF is also commensurable with the square on CD."
+    highlight: [EF, CD]
+    hint: |
+      sq({CB}), sq({EG}) commensurable, so sq({EF}), sq({CD}) are ([[X.11]]).
+
+  - part: proof
+    text: "But the square on EF is rational; therefore the square on CD is also rational; therefore CD is rational."
+    highlight: [CD]
+    hint: |
+      So {CD} is rational.
+
+  - part: proof
+    text: "And, since EF is incommensurable in length with EG, for they are commensurable in square only, and, as EF is to EG, so is the square on EF to the rectangle FE, EG, [Lemma] therefore the square on EF is incommensurable with the rectangle FE, EG."
+    highlight: [EF, EG]
+    hint: |
+      {EF} : {EG} = sq({EF}) : rect({FE},{EG}) (lemma of [[X.21]]), incommensurable.
+
+  - part: proof
+    text: "But the square on CD is commensurable with the square on EF, for the straight lines are rational in square; and the rectangle DC, CB is commensurable with the rectangle FE, EG, for they are equal to the square on A; therefore the square on CD is also incommensurable with the rectangle DC, CB."
+    highlight: [CD, BC]
+    hint: |
+      Hence sq({CD}) is incommensurable with rect({DC},{CB}) ([[X.13]]) …
+
+  - part: proof
+    text: "But, as the square on CD is to the rectangle DC, CB, so is DC to CB; [Lemma] therefore DC is incommensurable in length with CB."
+    highlight: [CD, BC]
+    hint: |
+      … and so {DC}, {CB} are incommensurable in length (lemma, [[X.11]]).
+
+  - part: proof
+    text: "Therefore CD is rational and incommensurable in length with CB."
+    highlight: [CD, BC]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9]
+      text: |
+        $A^2 = \rho^2\sqrt q$, so $CD = A^2/BC$ has $CD^2$ rational: $CD$ is rational.
+    - steps: [10, 11, 12, 13]
+      text: |
+        $CD/BC = A^2/BC^2 = \sqrt q \cdot (\rho/BC)^2$, irrational. $\blacksquare$
+
+commentary: |
+  From here on Euclid identifies each kind of irrational by the breadth its square produces when applied to a
+  rational line: the medial gives a rational line commensurable in square only.

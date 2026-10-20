@@ -1,0 +1,199 @@
+id: IV.10
+kind: problem
+title: The golden triangle (36°–72°–72°)
+
+paraphrase: |
+  Construct an isosceles triangle whose base angles are each twice the apex angle. Its angles are
+  36°, 72°, 72° — the key to the regular pentagon.
+
+diagram:
+  width: 300
+  height: 300
+  elements:
+    - "A;point;free;140,150"
+    - "B;point;free;210,50"
+    - "AB;line;connect;A,B"
+    - "BDE;circle;radius;A,B;0;0;black;0"
+    - "Gx;point;perpendicular;A,B;0;0"
+    - "Kx;point;midpoint;A,Gx;0;0"
+    - "Fx;point;extend;Gx,Kx,Kx,B;0;0"
+    - "C;point;cutoff;A,B,A,Fx"
+    - "Bcirc;circle;radius;B,A,C;0;0;0;0"
+    - "DDx;line;bichord;BDE,Bcirc;0;0;0"
+    - "D;point;first;DDx"
+    - "BD;line;connect;B,D"
+    - "CD;line;connect;C,D"
+    - "AD;line;connect;A,D"
+    - "ACD;circle;circumcircle;A,C,D;0;0;black;0"
+    - "ABD;polygon;triangle;A,B,D;0;0;0;#efe4d2"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "angBDC;sector;angleMarker;D,B,C"
+    - "angDAC;sector;angleMarker;A,D,C"
+    - "angCDA;sector;angleMarker;D,C,A"
+    - "angBCD;sector;angleMarker;C,B,D"
+    - "angBDA;sector;angleMarker;D,B,A"
+    - "angDBA;sector;angleMarker;B,D,A"
+  aliases:
+    BA: AB
+    DC: CD
+    CA: AC
+    CB: BC
+    DB: BD
+    BDC: angBDC
+    DAC: angDAC
+    CAD: angDAC
+    DAB: angDAC
+    CDA: angCDA
+    BCD: angBCD
+    BDA: angBDA
+    DBA: angDBA
+    CBD: angDBA
+    DBC: angDBA
+  given: [A, B, AB]
+  caption: |
+    Drag {A} or {B}. {C} cuts {AB} in extreme and mean ratio ([[II.11]]); {BD} = {AC}. The triangle {ABD}
+    always has base angles twice the apex angle.
+
+steps:
+  - part: enunciation
+    text: "To construct an isosceles triangle having each of the angles at the base double of the remaining one."
+    highlight: [ABD]
+    hint: |
+      A problem: the 36°–72°–72° triangle.
+
+  - part: construction
+    text: "Let any straight line AB be set out, and let it be cut at the point C so that the rectangle contained by AB, BC is equal to the square on CA;"
+    highlight: [AB, C]
+    adds: [C]
+    hint: |
+      Cut {AB} in extreme and mean ratio ([[II.11]]).
+
+  - part: construction
+    text: "with centre A and distance AB let the circle BDE be described, and let there be fitted in the circle BDE the straight line BD equal to the straight line AC which is not greater than the diameter of the circle BDE."
+    highlight: [BDE, BD]
+    adds: [BDE, D, BD]
+    hint: |
+      The circle about {A} through {B}; a chord {BD} = {AC} ([[IV.1]]).
+
+  - part: construction
+    text: "Let AD, DC be joined, and let the circle ACD be circumscribed about the triangle ACD."
+    highlight: [AD, CD, ACD]
+    adds: [AD, CD, ACD, ABD]
+    hint: |
+      The circle through {A}, {C}, {D} ([[IV.5]]).
+
+  - part: proof
+    text: "Then, since the rectangle AB, BC is equal to the square on AC, and AC is equal to BD, therefore the rectangle AB, BC is equal to the square on BD."
+    highlight: [AB, BC, BD]
+    hint: |
+      $AB\cdot BC = BD^2$.
+
+  - part: proof
+    text: "And, since a point B has been taken outside the circle ACD, and from B the two straight lines BA, BD have fallen on the circle ACD, and one of them cuts it, while the other falls on it, and the rectangle AB, BC is equal to the square on BD, therefore BD touches the circle ACD."
+    highlight: [BD, ACD]
+    hint: |
+      Converse of the tangent–secant theorem ([[III.37]]).
+
+  - part: proof
+    text: "Since, then, BD touches it, and DC is drawn across from the point of contact at D, therefore the angle BDC is equal to the angle DAC in the alternate segment of the circle."
+    highlight: [angBDC, angDAC]
+    hint: |
+      [[III.32]].
+
+  - part: proof
+    text: "Since, then, the angle BDC is equal to the angle DAC, let the angle CDA be added to each; therefore the whole angle BDA is equal to the two angles CDA, DAC."
+    highlight: [angBDA, angCDA, angDAC]
+    hint: |
+      Add ∠{CDA}.
+
+  - part: proof
+    text: "But the exterior angle BCD is equal to the angles CDA, DAC;"
+    highlight: [angBCD]
+    hint: |
+      Exterior angle of triangle *ACD* ([[I.32]]).
+
+  - part: proof
+    text: "therefore the angle BDA is also equal to the angle BCD."
+    highlight: [angBDA, angBCD]
+    hint: |
+      ∠{BDA} = ∠{BCD}.
+
+  - part: proof
+    text: "But the angle BDA is equal to the angle CBD, since the side AD is also equal to AB;"
+    highlight: [angBDA, angDBA]
+    hint: |
+      Triangle {ABD} is isosceles (radii): [[I.5]].
+
+  - part: proof
+    text: "so that the angle DBA is also equal to the angle BCD."
+    highlight: [angDBA, angBCD]
+    hint: |
+      Chain.
+
+  - part: proof
+    text: "Therefore the three angles BDA, DBA, BCD are equal to one another."
+    highlight: [angBDA, angDBA, angBCD]
+    hint: |
+      Three equal angles.
+
+  - part: proof
+    text: "And, since the angle DBC is equal to the angle BCD, the side BD is also equal to the side DC."
+    highlight: [BD, CD]
+    hint: |
+      [[I.6]] in triangle {BCD|CD}.
+
+  - part: proof
+    text: "But BD is by hypothesis equal to CA; therefore CA is also equal to CD, so that the angle CDA is also equal to the angle DAC;"
+    highlight: [AC, CD, angCDA, angDAC]
+    hint: |
+      Triangle {ACD|CD} is isosceles: [[I.5]].
+
+  - part: proof
+    text: "therefore the angles CDA, DAC are double of the angle DAC."
+    highlight: [angCDA, angDAC]
+    hint: |
+      Two equal angles.
+
+  - part: proof
+    text: "But the angle BCD is equal to the angles CDA, DAC; therefore the angle BCD is also double of the angle CAD."
+    highlight: [angBCD, angDAC]
+    hint: |
+      ∠{BCD} = 2∠{CAD}.
+
+  - part: proof
+    text: "But the angle BCD is equal to each of the angles BDA, DBA; therefore each of the angles BDA, DBA is also double of the angle DAB."
+    highlight: [angBDA, angDBA, angDAC]
+    hint: |
+      So each base angle is twice the apex angle.
+
+  - part: conclusion
+    text: "Therefore the isosceles triangle ABD has been constructed having each of the angles at the base DB double of the remaining one."
+    highlight: [ABD]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3]
+      text: The angles $x, 2x, 2x$ sum to $180^\circ$, so $x = 36^\circ$.
+    - steps: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+      text: |
+        In such a triangle with legs $1$, the base $b$ satisfies $b^2 = 1 - b$ (bisect a base angle to get a
+        similar triangle), so $b = (\sqrt 5 - 1)/2$ — exactly the extreme-and-mean cut of [[II.11]]. $\blacksquare$
+  closing: |
+    The modern proof uses similar triangles (Book VI); Euclid's, remarkably, uses only Books I–III.
+
+commentary: |
+  The key lemma for the pentagon ([[IV.11]]): the apex angle is a fifth of two right angles, so as an
+  inscribed angle it stands on exactly a fifth of the circle.
+
+gaps: |
+  - **{C} between {A} and {B}**: assumed in [[III.37]]'s application.

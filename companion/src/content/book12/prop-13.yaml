@@ -1,0 +1,136 @@
+id: XII.13
+kind: theorem
+title: A cylinder cut parallel to its bases is divided as its axis
+
+paraphrase: |
+  If a cylinder is cut by a plane parallel to its bases, the two parts are to one another as the parts of the axis.
+
+diagram:
+  width: 540
+  height: 210
+  elements:
+    - "E0;point;fixed;-10000,110,0"
+    - "E3;point;fixed;10000,110,0"
+    - "E;point;lineSlider;E0,E3,170,0,0"
+    - "U0;point;fixed;-10000,110,-4000"
+    - "K;point;lineSlider;U0,E,240,0,0"
+    - "F;point;lineSlider;U0,E,340,0,0"
+    - "Eplane;plane;perpendicular;E,U0;0;0;0;0"
+    - "Kplane;plane;perpendicular;K,U0;0;0;0;0"
+    - "Fplane;plane;perpendicular;F,U0;0;0;0;0"
+    - "A';point;perpendicular;E,E0"
+    - "A;point;lineSlider;E,A',0,40"
+    - "B;point;extend;A,E,A,E"
+    - "C;point;parallelogram;F,E,A"
+    - "D;point;parallelogram;F,E,B"
+    - "G;point;parallelogram;K,E,A"
+    - "H;point;parallelogram;K,E,B"
+    - "Ecirc;circle;radius;E,A,Eplane;0;0;black;160,60,100"
+    - "ABHG;polygon;quadrilateral;A,B,H,G;0;0;0;160,60,100"
+    - "Kcirc;circle;radius;K,E,A,Kplane;0;0;black;20,75,90"
+    - "GHDC;polygon;quadrilateral;G,H,D,C;0;0;0;20,75,90"
+    - "Fcirc;circle;radius;F,E,A,Fplane;0;0;black;20,60,100"
+    - "N;point;extend;K,E,K,E"
+    - "L;point;extend;K,N,K,E"
+    - "O;point;extend;K,F,K,F"
+    - "M;point;extend;K,O,K,F"
+    - "LM;line;connect;L,M"
+    - "Nplane;plane;perpendicular;N,U0;0;0;0;0"
+    - "Lplane;plane;perpendicular;L,U0;0;0;0;0"
+    - "Oplane;plane;perpendicular;O,U0;0;0;0;0"
+    - "Mplane;plane;perpendicular;M,U0;0;0;0;0"
+    - "Ncirc;circle;radius;N,E,A,Nplane;0;0;black;0"
+    - "Lcirc;circle;radius;L,E,A,Lplane;0;0;black;0"
+    - "Ocirc;circle;radius;O,E,A,Oplane;0;0;black;0"
+    - "Mcirc;circle;radius;M,E,A,Mplane;0;0;black;0"
+    - "P;point;parallelogram;L,E,A"
+    - "Q;point;parallelogram;L,E,B"
+    - "R;point;parallelogram;N,E,A"
+    - "S;point;parallelogram;N,E,B"
+    - "T;point;parallelogram;O,E,A"
+    - "U;point;parallelogram;O,E,B"
+    - "V;point;parallelogram;M,E,A"
+    - "W;point;parallelogram;M,E,B"
+    - "PV;line;connect;P,V"
+    - "QW;line;connect;Q,W"
+    - "EF;line;connect;E,F;0;0;0"
+  aliases: { ML: LM, VP: PV, WQ: QW, FE: EF }
+  caption: |
+    The cylinder *AD* cut by the plane *GH* at {K} on the axis {EF}; equal copies laid along the axis.
+
+steps:
+  - part: enunciation
+    text: "If a cylinder be cut by a plane which is parallel to its opposite planes, then, as the cylinder is to the cylinder, so will the axis be to the axis."
+    highlight: [EF, K]
+    hint: |
+      Volume of a cylinder ∝ height (same base).
+
+  - part: setting-out
+    text: "For let the cylinder AD be cut by the plane GH which is parallel to the opposite planes AB, CD, and let the plane GH meet the axis at the point K; I say that, as the cylinder BG is to the cylinder GD, so is the axis EK to the axis KF."
+    highlight: [EF, K]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let the axis EF be produced in both directions to the points L, M, and let there be set out any number whatever of axes EN, NL equal to the axis EK, and any number whatever FO, OM equal to FK; and let the cylinder PW on the axis LM be conceived of which the circles PQ, VW are the bases."
+    highlight: [LM]
+    hint: |
+      Extend the axis and lay off equal copies of each part.
+
+  - part: construction
+    text: "Let planes be carried through the points N, O parallel to AB, CD and to the bases of the cylinder PW, and let them produce the circles RS, TU about the centres N, O."
+    highlight: [LM]
+    hint: |
+      Planes through the division points give equal cylinders.
+
+  - part: proof
+    text: "Then, since the axes LN, NE, EK are equal to one another, therefore the cylinders QR, RB, BG are to one another as their bases."
+    highlight: [LM]
+    hint: |
+      Equal axes, same base: the cylinders are as their bases ([[XII.11]]) …
+
+  - part: proof
+    text: "But the bases are equal; therefore the cylinders QR, RB, BG are also equal to one another."
+    highlight: [LM]
+    hint: |
+      … so equal.
+
+  - part: proof
+    text: "Since then the axes LN, NE, EK are equal to one another, and the cylinders QR, RB, BG are also equal to one another, and the multitude of the former is equal to the multitude of the latter, therefore, whatever multiple the axis KL is of the axis EK, the same multiple also will the cylinder QG be of the cylinder GB."
+    highlight: [LM]
+    hint: |
+      So the cylinder *QG* is the same multiple of *BG* as the axis *LK* of *EK*.
+
+  - part: proof
+    text: "For the same reason, whatever multiple the axis MK is of the axis KF, the same multiple also is the cylinder WG of the cylinder GD."
+    highlight: [LM]
+    hint: |
+      Likewise on the other side.
+
+  - part: proof
+    text: "And, if the axis KL is equal to the axis KM, the cylinder QG will also be equal to the cylinder GW, if the axis is greater than the axis, the cylinder will also be greater than the cylinder, and if less, less."
+    highlight: [LM]
+    hint: |
+      Equal, greater, less go together.
+
+  - part: proof
+    text: "Thus, there being four magnitudes, the axes EK, KF and the cylinders BG, GD, there have been taken equimultiples of the axis EK and of the cylinder BG, namely the axis LK and the cylinder QG, and equimultiples of the axis KF and of the cylinder GD, namely the axis KM and the cylinder GW; and it has been proved that, if the axis KL is in excess of the axis KM, the cylinder QG is also in excess of the cylinder GW, if equal, equal, and if less, less."
+    highlight: [LM]
+    hint: |
+      Equimultiples …
+
+  - part: proof
+    text: "Therefore, as the axis EK is to the axis KF, so is the cylinder BG to the cylinder GD."
+    highlight: [EF, K]
+    hint: |
+      … so axis : axis = cylinder : cylinder ([[V.Def.5]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $V = Bh$ with common $B$. $\blacksquare$

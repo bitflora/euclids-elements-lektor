@@ -1,0 +1,180 @@
+id: X.1
+kind: theorem
+title: Repeatedly removing more than half leaves less than any given magnitude
+
+paraphrase: |
+  Given two unequal magnitudes, if more than half is taken from the greater, then more than half of the
+  remainder, and so on, eventually what is left is less than the smaller magnitude. This is the principle
+  behind the "method of exhaustion" of Book XII.
+
+diagram:
+  width: 280
+  height: 100
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "D0;point;free;-1000,70;0;0"
+    - "D3;point;free;1000,70;0;0"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "B;point;lineSlider;A0,A3,160,0"
+    - "AB;line;connect;A,B"
+    - "C1;point;lineSlider;A0,A3,200,0;0"
+    - "C2;point;lineSlider;A0,A3,250,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D;point;lineSlider;D0,D3,30,0"
+    - "F;point;cutoff;D,D3,C1,C2"
+    - "G;point;cutoff;F,D3,C1,C2"
+    - "E;point;cutoff;G,D3,C1,C2"
+    - "DE;line;connect;D,E"
+    - "ABmid;point;midpoint;A,B;0;0"
+    - "H;point;lineSegmentSlider;A,ABmid,85,0"
+    - "AHmid;point;midpoint;A,H;0;0"
+    - "K;point;lineSegmentSlider;A,AHmid,55,0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+    - "GE;line;connect;G,E;0;0;0"
+    - "AK;line;connect;A,K;0;0;0"
+    - "KH;line;connect;K,H;0;0;0"
+    - "HB;line;connect;H,B;0;0;0"
+    - "GD;line;connect;G,D;0;0;0"
+    - "HA;line;connect;H,A;0;0;0"
+  aliases: { BH: HB, AH: HA, EG: GE, GF: FG, HK: KH }
+  caption: |
+    {DE} is a multiple of {C} exceeding {AB}. From {AB} remove {BH} (more than half), then {HK} (more than
+    half of {AH}); what remains, {AK}, is less than {C}.
+
+steps:
+  - part: enunciation
+    text: "Two unequal magnitudes being set out, if from the greater there be subtracted a magnitude greater than its half, and from that which is left a magnitude greater than its half, and if this process be repeated continually, there will be left some magnitude which will be less than the lesser magnitude set out."
+    highlight: [AB, C]
+    hint: |
+      Halving (or better) again and again eventually goes below any given size.
+    modern: |
+      $a > c > 0$, $a_0 = a$, $a_{k+1} < \tfrac12 a_k$ $\Rightarrow$ $a_n < c$ for some $n$.
+
+  - part: setting-out
+    text: "Let AB, C be two unequal magnitudes of which AB is the greater:"
+    highlight: [AB, C]
+    hint: |
+      {AB} > {C}.
+
+  - part: specification
+    text: "I say that, if from AB there be subtracted a magnitude greater than its half, and from that which is left a magnitude greater than its half, and if this process be repeated continually, there will be left some magnitude which will be less than the magnitude C."
+    highlight: [AB, C]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For C if multiplied will sometime be greater than AB."
+    highlight: [C, AB]
+    hint: |
+      Some multiple of {C} exceeds {AB} — the Archimedean property.
+    explain:
+      fact: |
+        Heath cites [[V.Def.4]] ("cf."): magnitudes having a ratio are those of which a multiple of each
+        exceeds the other.
+      implicit: |
+        That {C} and {AB} *have* a ratio is assumed. Joyce notes it fails for a horn angle and a rectilinear
+        angle ([[III.16]]), so the proposition holds only for magnitudes satisfying the Archimedean axiom.
+    gap: |
+      The existence of the multiple is an axiom (the Archimedean property), not a consequence of [[V.Def.4]],
+      which only names the property.
+
+  - part: construction
+    text: "Let it be multiplied, and let DE be a multiple of C, and greater than AB;"
+    highlight: [DE, C, AB]
+    hint: |
+      Let {DE} be such a multiple.
+
+  - part: construction
+    text: "let DE be divided into the parts DF, FG, GE equal to C,"
+    highlight: [DF, FG, GE]
+    hint: |
+      Divide {DE} into copies {DF}, {FG}, {GE} of {C}.
+
+  - part: construction
+    text: "from AB let there be subtracted BH greater than its half, and, from AH, HK greater than its half, and let this process be repeated continually until the divisions in AB are equal in multitude with the divisions in DE."
+    highlight: [HB, KH]
+    hint: |
+      Remove {BH} (more than half of {AB}), then {HK} (more than half of {AH}), as many times as {DE} has
+      parts.
+
+  - part: proof
+    text: "Let, then, AK, KH, HB be divisions which are equal in multitude with DF, FG, GE."
+    highlight: [AK, KH, HB, DF, FG, GE]
+    hint: |
+      Three pieces each.
+
+  - part: proof
+    text: "Now, since DE is greater than AB, and from DE there has been subtracted EG less than its half, and, from AB, BH greater than its half, therefore the remainder GD is greater than the remainder HA."
+    highlight: [GD, HA]
+    hint: |
+      From {DE} we removed {EG}, at most half; from {AB}, more than half. So {GD} > {HA}.
+    explain:
+      follows: |
+        {DE} > {AB}, and the remainder of the greater after removing *at most* half exceeds the remainder of
+        the less after removing *more than* half.
+
+  - part: proof
+    text: "And, since GD is greater than HA, and there has been subtracted, from GD, the half GF, and, from HA, HK greater than its half, therefore the remainder DF is greater than the remainder AK."
+    highlight: [DF, AK]
+    hint: |
+      Repeat: {DF} > {AK}.
+
+  - part: proof
+    text: "But DF is equal to C; therefore C is also greater than AK."
+    highlight: [DF, C, AK]
+    hint: |
+      {DF} = {C}, so {C} > {AK}.
+
+  - part: proof
+    text: "Therefore AK is less than C."
+    highlight: [AK, C]
+    hint: |
+      {AK} < {C}.
+
+  - part: proof
+    text: "Therefore there is left of the magnitude AB the magnitude AK which is less than the lesser magnitude set out, namely C."
+    highlight: [AK, C]
+    hint: |
+      What remains of {AB} is less than {C}.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+  - part: conclusion
+    text: "And the theorem can be similarly proved even if the parts subtracted be halves."
+    hint: |
+      The same works if exactly half is removed each time.
+    explain:
+      implicit: |
+        With halves, the comparison of step 9 uses "≥" on one side and "=" on the other; the argument still
+        goes through because {DE} > {AB}.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6, 7]
+      text: |
+        Choose $n$ with $(n+1)c > a$ (Archimedes).
+    - steps: [8, 9, 10, 11, 12]
+      text: |
+        Then $a_n < a/2^n \le a/(n+1) < c$, since $2^n \ge n + 1$. $\blacksquare$
+  closing: |
+    Euclid avoids powers of 2 by comparing the two subtraction processes term by term.
+
+commentary: |
+  The foundation of the method of exhaustion: [[XII.2]] (circles are as the squares on their diameters) and
+  the volume theorems of Book XII use it to show that inscribed polygons and polyhedra can be made to differ
+  from the curved figure by less than any given amount. Joyce remarks that it is not used anywhere in Book X
+  itself and might belong at the start of Book XII.
+
+gaps: |
+  - The Archimedean property is used as if it followed from [[V.Def.4]].
+
+historical: |
+  The method of exhaustion is attributed to Eudoxus; Archimedes used it to compute the areas and volumes
+  of the parabolic segment, sphere and cylinder. The name "exhaustion" is modern (17th century).

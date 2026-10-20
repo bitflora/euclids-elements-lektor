@@ -1,0 +1,125 @@
+id: VI.12
+kind: problem
+title: Finding a fourth proportional
+
+paraphrase: |
+  Given three lines {A}, {B}, {C}, find a fourth {HF} with {A} : {B} = {C} : {HF}.
+
+diagram:
+  width: 320
+  height: 250
+  elements:
+    - "A0;point;free;-1000,30;0"
+    - "A3;point;free;1000,30;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,160,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B0;point;free;-1000,60;0"
+    - "B3;point;free;1000,60;0"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,140,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C0;point;free;-1000,90;0"
+    - "C3;point;free;1000,90;0"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,110,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D;point;free;30,230"
+    - "Ep;point;free;280,50;0"
+    - "Fp;point;free;280,230;0"
+    - "G;point;cutoff;D,Ep,A1,A2"
+    - "E;point;extend;D,G,B1,B2"
+    - "H;point;cutoff;D,Fp,C1,C2"
+    - "F;point;similar;D,E,D,G,H"
+    - "DEF;polygon;triangle;D,E,F;0;0;black;#dfe7ea"
+    - "DGH;polygon;triangle;D,G,H;0;0;black;#efe4d2"
+    - "EEp;line;connect;E,Ep"
+    - "FFp;line;connect;F,Fp"
+    - "DE;line;connect;D,E;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "DG;line;connect;D,G;0;0;0"
+    - "GE;line;connect;G,E;0;0;0"
+    - "DH;line;connect;D,H;0;0;0"
+    - "HF;line;connect;H,F;0;0;0"
+    - "GH;line;connect;G,H;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "angEDF;sector;angleMarker;D,E,F"
+  given: [A0, A3, A1, A2, A, B0, B3, B1, B2, B, C0, C3, C1, C2, C]
+  caption: |
+    Change {A}, {B}, {C} by dragging their right ends; move {D} or the far ends of the two rays. {HF} is always the
+    fourth proportional.
+
+steps:
+  - part: enunciation
+    text: "To three given straight lines to find a fourth proportional."
+    highlight: [A, B, C]
+    hint: |
+      Given $a, b, c$, find $x$ with $a : b = c : x$.
+    modern: |
+      $$x = \frac{bc}{a}$$
+
+  - part: setting-out
+    text: "Let A, B, C be the three given straight lines;"
+    highlight: [A, B, C]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to find a fourth proportional to A, B, C."
+    highlight: [A, B, C]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let two straight lines DE, DF be set out containing any angle EDF; let DG be made equal to A, GE equal to B, and further DH equal to C; let GH be joined, and let EF be drawn through E parallel to it."
+    highlight: [DG, GE, DH, GH, EF]
+    adds: [D, Ep, Fp, G, E, H, F, DEF, DGH, EEp, FFp, DE, DF, DG, GE, DH, HF, GH, EF, angEDF]
+    hint: |
+      Two rays from {D}; lay {A} then {B} along one, {C} along the other ([[I.3]]); join {GH}, and draw the parallel
+      through {E} ([[I.31]]).
+
+  - part: proof
+    text: "Since, then, GH has been drawn parallel to EF, one of the sides of the triangle DEF, therefore, as DG is to GE, so is DH to HF."
+    highlight: [GH, EF, DEF, DG, GE, DH, HF]
+    hint: |
+      [[VI.2]].
+
+  - part: proof
+    text: "But DG is equal to A, GE to B, and DH to C; therefore, as A is to B, so is C to HF."
+    highlight: [DG, GE, DH, HF, A, B, C]
+    hint: |
+      Substitute equals ([[V.7]], [[V.11]]).
+    cites: [V.7, V.11]
+
+  - part: conclusion
+    text: "Therefore to the three given straight lines A, B, C a fourth proportional HF has been found."
+    highlight: [HF]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: |
+        $DG = a$, $GE = b$, $DH = c$; parallels give $a : b = c : HF$, so $HF = bc/a$. $\blacksquare$
+  closing: |
+    Descartes took this construction as the geometric definition of multiplication and division of lines:
+    with a unit length $1$, the fourth proportional to $1, b, c$ is the product $bc$, and to $a, 1, c$ the
+    quotient $c/a$.
+
+commentary: |
+  VI.12 settles, for straight lines, the existence question that [[V.18]] left open: a fourth proportional
+  to three lines can always be constructed. For other kinds of magnitude (areas, solids) Euclid never
+  constructs one in general.
+
+historical: |
+  Joyce's guide describes how Descartes (1637) turned this construction into an arithmetic of line
+  segments — the step from Euclid's geometric algebra, in which the product of two lines is a rectangle,
+  to analytic geometry, in which it is another line.

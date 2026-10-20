@@ -1,0 +1,425 @@
+id: XIII.18
+kind: problem
+title: The five regular solids compared, and no others
+
+paraphrase: |
+  Set out the edges of the five regular solids inscribed in the same sphere and compare them; then prove that no
+  other solid can be bounded by equal regular polygons equal in number at each vertex. The last proposition of the
+  *Elements*.
+
+diagram:
+  width: 320
+  height: 330
+  elements:
+    - "A0;point;free;-1000,300;0;0"
+    - "A3;point;free;1000,300;0;0"
+    - "A;point;lineSlider;30,0,A0,A3"
+    - "B;point;lineSlider;290,0,A0,A3"
+    - "AB;line;connect;A,B"
+    - "C;point;midpoint;AB"
+    - "sphere;circle;radius;C,A;0;0;0;0"
+    - "BCA;sector;sector;C,B,A"
+    - "G;point;perpendicular;A,B"
+    - "B1;point;perpendicular;B,A;0;0"
+    - "A2;point;extend;A,G,A,B;0;0"
+    - "D;point;intersection;A,B,B1,A2"
+    - "E;point;perpendicular;C,B"
+    - "CE;line;connect;C,E"
+    - "F1;point;parallelogram;E,C,D;0;0"
+    - "FF';line;chord;D,F1,sphere;0;0;0"
+    - "F;point;first;FF'"
+    - "DF;line;connect;D,F"
+    - "AF;line;connect;A,F;0;0;red"
+    - "FB;line;connect;F,B;0;0;green"
+    - "EB;line;connect;E,B"
+    - "AE;line;connect;A,E;0;0;cyan"
+    - "AG;line;connect;A,G"
+    - "CG;line;connect;C,G"
+    - "H;point;cutoff;C,G,C,A"
+    - "K;point;foot;H,AB"
+    - "HK;line;connect;H,K"
+    - "L;point;cutoff;C,B,C,K"
+    - "M;point;parallelogram;H,K,L"
+    - "LM;line;connect;L,M"
+    - "MB;line;connect;M,B;0;0;blue"
+    - "N;point;intersection;EB,LM"
+    - "NB;line;connect;N,B;0;0;magenta"
+    - "BF;line;connect;B,F;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+    - "BA;line;connect;B,A;0;0;0"
+    - "GC;line;connect;G,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+    - "LB;line;connect;L,B;0;0;0"
+    - "ML;line;connect;M,L;0;0;0"
+    - "FA;line;connect;F,A;0;0;0"
+  aliases: { EC: CE, FD: DF, EA: AE, GA: AG, KH: HK, BM: MB, BN: NB, DA: AD, BL: LB }
+  caption: |
+    The diameter {AB} with the edges {AF} (tetrahedron), {BF} (cube), {BE} (octahedron), {MB} (icosahedron) and {NB}
+    (dodecahedron).
+
+steps:
+  - part: enunciation
+    text: "To set out the sides of the five figures and to compare them with one another."
+    highlight: [AB]
+    hint: |
+      Compare the edges of the five solids in one sphere, and show there are no other regular solids.
+    modern: |
+      With $d = AB$: tetrahedron $\sqrt{2/3}\,d$, octahedron $\sqrt{1/2}\,d$, cube $\sqrt{1/3}\,d$, icosahedron $\approx 0.526\,d$, dodecahedron $\approx 0.357\,d$.
+
+  - part: construction
+    text: "Let AB, the diameter of the given sphere, be set out, and let it be cut at C so that AC is equal to CB, and at D so that AD is double of DB; let the semicircle AEB be described on AB, from C, D let CE, DF be drawn at right angles to AB, and let AF, FB, EB be joined."
+    highlight: [AB, AF, BF, BE]
+    hint: |
+      Diameter {AB}; {C} its midpoint, {D} with {AD} = 2{DB}; semicircle on {AB}; perpendiculars at {C}, {D} meet it at {E}, {F}; join {AF}, {FB}, {BE}.
+
+  - part: proof
+    text: "Then, since AD is double of DB, therefore AB is triple of BD."
+    highlight: [AB, BD]
+    hint: |
+      {AB} = 3{BD} …
+
+  - part: proof
+    text: "Convertendo, therefore, BA is one and a half times AD."
+    highlight: [AB]
+    hint: |
+      … so {BA} = 3/2 {AD} …
+
+  - part: proof
+    text: "But, as BA is to AD, so is the square on BA to the square on AF, for the triangle AFB is equiangular with the triangle AFD; therefore the square on BA is one and a half times the square on AF."
+    highlight: [AB, AF]
+    hint: |
+      … and sq({BA}) = 3/2 sq({AF}) ([[V.Def.9]], [[VI.8]]).
+
+  - part: proof
+    text: "But the square on the diameter of the sphere is also one and a half times the square on the side of the pyramid."
+    highlight: [AF]
+    hint: |
+      That is the ratio for the pyramid ([[XIII.13]]) …
+
+  - part: proof
+    text: "And AB is the diameter of the sphere; therefore AF is equal to the side of the pyramid."
+    highlight: [AF]
+    hint: |
+      … so {AF} is the tetrahedron edge.
+
+  - part: proof
+    text: "Again, since AD is double of DB, therefore AB is triple of BD."
+    highlight: [AB, BD]
+    hint: |
+      Again {AB} = 3{BD} …
+
+  - part: proof
+    text: "But, as AB is to BD, so is the square on AB to the square on BF; therefore the square on AB is triple of the square on BF."
+    highlight: [AB, BF]
+    hint: |
+      … so sq({AB}) = 3 sq({BF}).
+
+  - part: proof
+    text: "But the square on the diameter of the sphere is also triple of the square on the side of the cube."
+    highlight: [BF]
+    hint: |
+      The ratio for the cube ([[XIII.15]]) …
+
+  - part: proof
+    text: "And AB is the diameter of the sphere; therefore BF is the side of the cube."
+    highlight: [BF]
+    hint: |
+      … so {BF} is the cube edge.
+
+  - part: proof
+    text: "And, since AC is equal to CB, therefore AB is double of BC."
+    highlight: [AB, BC]
+    hint: |
+      {AB} = 2{BC} …
+
+  - part: proof
+    text: "But, as AB is to BC, so is the square on AB to the square on BE; therefore the square on AB is double of the square on BE."
+    highlight: [AB, BE]
+    hint: |
+      … so sq({AB}) = 2 sq({BE}).
+
+  - part: proof
+    text: "But the square on the diameter of the sphere is also double of the square on the side of the octahedron."
+    highlight: [BE]
+    hint: |
+      The ratio for the octahedron ([[XIII.14]]) …
+
+  - part: proof
+    text: "And AB is the diameter of the given sphere; therefore BE is the side of the octahedron."
+    highlight: [BE]
+    hint: |
+      … so {BE} is the octahedron edge.
+
+  - part: construction
+    text: "Next, let AG be drawn from the point A at right angles to the straight line AB, let AG be made equal to AB, let GC be joined, and from H let HK be drawn perpendicular to AB."
+    highlight: [AG, CG, HK]
+    hint: |
+      {AG} ⊥ {AB}, {AG} = {AB}; join {GC}; drop {HK}.
+
+  - part: proof
+    text: "Then, since GA is double of AC, for GA is equal to AB, and, as GA is to AC, so is HK to KC, therefore HK is also double of KC."
+    highlight: [HK]
+    hint: |
+      {HK} = 2*KC* …
+
+  - part: proof
+    text: "Therefore the square on HK is quadruple of the square on KC; therefore the squares on HK, KC, that is, the square on HC, is five times the square on KC."
+    highlight: [HK]
+    hint: |
+      … sq(*HC*) = 5 sq(*KC*).
+
+  - part: proof
+    text: "But HC is equal to CB; therefore the square on BC is five times the square on CK."
+    highlight: [HK]
+    hint: |
+      *HC* = {CB}: sq({BC}) = 5 sq(*CK*).
+
+  - part: proof
+    text: "And, since AB is double of CB, and, in them, AD is double of DB, therefore the remainder BD is double of the remainder DC."
+    highlight: [BD]
+    hint: |
+      {BD} = 2*DC* …
+
+  - part: proof
+    text: "Therefore BC is triple of CD; therefore the square on BC is nine times the square on CD."
+    highlight: [BD]
+    hint: |
+      … sq({BC}) = 9 sq(*CD*).
+
+  - part: proof
+    text: "But the square on BC is five times the square on CK; therefore the square on CK is greater than the square on CD; therefore CK is greater than CD."
+    highlight: [HK]
+    hint: |
+      So *CK* > *CD*.
+
+  - part: construction
+    text: "Let CL be made equal to CK, from L let LM be drawn at right angles to AB, and let MB be joined."
+    highlight: [LM, MB]
+    hint: |
+      *CL* = *CK*; {LM} ⊥ {AB}; join {MB}.
+
+  - part: proof
+    text: "Now, since the square on BC is five times the square on CK, and AB is double of BC, and KL double of CK, therefore the square on AB is five times the square on KL."
+    highlight: [LM]
+    hint: |
+      sq({AB}) = 5 sq(*KL*) …
+
+  - part: proof
+    text: "But the square on the diameter of the sphere is also five times the square on the radius of the circle from which the icosahedron has been described."
+    highlight: [LM]
+    hint: |
+      … the ratio for the icosahedron's circle (porism of [[XIII.16]]) …
+
+  - part: proof
+    text: "And AB is the diameter of the sphere; therefore KL is the radius of the circle from which the icosahedron has been described; therefore KL is a side of the hexagon in the said circle."
+    highlight: [LM]
+    hint: |
+      … so *KL* is that radius.
+
+  - part: proof
+    text: "And, since the diameter of the sphere is made up of the side of the hexagon and two of the sides of the decagon inscribed in the same circle, and AB is the diameter of the sphere, while KL is a side of the hexagon, and AK is equal to LB, therefore each of the straight lines AK, LB is a side of the decagon inscribed in the circle from which the icosahedron has been described."
+    highlight: [LM]
+    hint: |
+      The diameter = hexagon side + two decagon sides ([[XIII.16]]); so *AK*, *LB* are decagon sides.
+
+  - part: proof
+    text: "And, since LB belongs to a decagon, and ML to a hexagon, for ML is equal to KL, since it is also equal to HK, being the same distance from the centre, and each of the straight lines HK, KL is double of KC, therefore MB belongs to a pentagon."
+    highlight: [LM, MB]
+    hint: |
+      {LB} decagon, {ML} hexagon, right angle: {MB} a pentagon side ([[XIII.10]]) …
+
+  - part: proof
+    text: "But the side of the pentagon is the side of the icosahedron; therefore MB belongs to the icosahedron."
+    highlight: [MB]
+    hint: |
+      … the icosahedron edge.
+
+  - part: construction
+    text: "Now, since FB is a side of the cube, let it be cut in extreme and mean ratio at N, and let NB be the greater segment; therefore NB is a side of the dodecahedron."
+    highlight: [NB]
+    hint: |
+      Cut {FB} in golden section at {N}: {NB} is the dodecahedron edge ([[XIII.17]], porism).
+
+  - part: proof
+    text: "And, since the square on the diameter of the sphere was proved to be one and a half times the square on the side AF of the pyramid, double of the square on the side BE of the octahedron and triple of the side FB of the cube, therefore, of parts of which the square on the diameter of the sphere contains six, the square on the side of the pyramid contains four, the square on the side of the octahedron three, and the square on the side of the cube two."
+    highlight: [AF, BE]
+    hint: |
+      sq(pyramid edge) : sq(octahedron edge) …
+
+  - part: proof
+    text: "Therefore the square on the side of the pyramid is four-thirds of the square on the side of the octahedron, and double of the square on the side of the cube; and the square on the side of the octahedron is one and a half times the square on the side of the cube."
+    highlight: [AF, BE]
+    hint: |
+      … = 4 : 3, and so on.
+
+  - part: proof
+    text: "The said sides, therefore, of the three figures, I mean the pyramid, the octahedron and the cube, are to one another in rational ratios."
+    highlight: [AF, BE, BF]
+    hint: |
+      So the first three edges are in rational ratios (as squares): 2 : 3/2 : 1 …
+
+  - part: proof
+    text: "But the remaining two, I mean the side of the icosahedron and the side of the dodecahedron, are not in rational ratios either to one another or to the aforesaid sides; for they are irrational, the one being minor and the other an apotome."
+    highlight: [MB, NB]
+    hint: |
+      … but the icosahedron and dodecahedron edges are irrational (minor, apotome) relative to them and to each other.
+
+  - part: proof
+    text: "That the side MB of the icosahedron is greater than the side NB of the dodecahedron we can prove thus."
+    highlight: [MB, NB]
+    hint: |
+      {MB} > {NB}:
+
+  - part: proof
+    text: "For, since the triangle FDB is equiangular with the triangle FAB, proportionally, as DB is to BF, so is BF to BA."
+    highlight: [BF, BD]
+    hint: |
+      {FB} is the mean of *DB*, {BA} ([[VI.8]]) …
+
+  - part: proof
+    text: "And, since the three straight lines are proportional, as the first is to the third, so is the square on the first to the square on the second; therefore, as DB is to BA, so is the square on DB to the square on BF; therefore, inversely, as AB is to BD, so is the square on FB to the square on BD."
+    highlight: [BF, BD]
+    hint: |
+      … sq({FB}) : sq({BD}) = {AB} : {BD} …
+
+  - part: proof
+    text: "But AB is triple of BD; therefore the square on FB is triple of the square on BD."
+    highlight: [BF, BD]
+    hint: |
+      … = 3 …
+
+  - part: proof
+    text: "But the square on AD is also quadruple of the square on DB, for AD is double of DB; therefore the square on AD is greater than the square on FB; therefore AD is greater than FB; therefore AL is by far greater than FB."
+    highlight: [NB]
+    hint: |
+      sq({AD}) = 4 sq({DB}) > sq({FB}), so {AD} > {FB}, and *AL* > {FB} by far.
+
+  - part: proof
+    text: "And, when AL is cut in extreme and mean ratio, KL is the greater segment, inasmuch as LK belongs to a hexagon, and KA to a decagon; and, when FB is cut in extreme and mean ratio, NB is the greater segment; therefore KL is greater than NB."
+    highlight: [LM, NB]
+    hint: |
+      Cut in golden section, *AL* has greater segment *KL* ([[XIII.9]]) and {FB} has {NB}; so *KL* > {NB} …
+
+  - part: proof
+    text: "But KL is equal to LM; therefore LM is greater than NB."
+    highlight: [LM, NB]
+    hint: |
+      … and {LM} = *KL* > {NB} …
+
+  - part: proof
+    text: "Therefore MB, which is a side of the icosahedron, is by far greater than NB which is a side of the dodecahedron. Q. E. D."
+    highlight: [MB, NB]
+    hint: |
+      … so {MB} > {NB} by far.
+
+  - part: specification
+    text: "I say next that no other figure, besides the said five figures, can be constructed which is contained by equilateral and equiangular figures equal to one another."
+    highlight: [AB]
+    hint: |
+      No other regular solid:
+
+  - part: proof
+    text: "For a solid angle cannot be constructed with two triangles, or indeed planes."
+    highlight: [AB]
+    hint: |
+      Two faces cannot form a solid angle.
+
+  - part: proof
+    text: "With three triangles the angle of the pyramid is constructed, with four the angle of the octahedron, and with five the angle of the icosahedron; but a solid angle cannot be formed by six equilateral and equiangular triangles placed together at one point, for, the angle of the equilateral triangle being two-thirds of a right angle, the six will be equal to four right angles: which is impossible, for any solid angle is contained by angles less than four right angles."
+    highlight: [AB]
+    hint: |
+      Three, four or five equilateral triangles give the pyramid, octahedron, icosahedron; six make four right angles — a plane, not a solid angle ([[XI.21]]).
+    cites: [XI.21]
+
+  - part: proof
+    text: "For the same reason, neither can a solid angle be constructed by more than six plane angles."
+    highlight: [AB]
+    hint: |
+      More than six is impossible.
+
+  - part: proof
+    text: "By three squares the angle of the cube is contained, but by four it is impossible for a solid angle to be contained, for they will again be four right angles."
+    highlight: [AB]
+    hint: |
+      Three squares give the cube; four make four right angles.
+
+  - part: proof
+    text: "By three equilateral and equiangular pentagons the angle of the dodecahedron is contained; but by four such it is impossible for any solid angle to be contained, for, the angle of the equilateral pentagon being a right angle and a fifth, the four angles will be greater than four right angles: which is impossible."
+    highlight: [AB]
+    hint: |
+      Three regular pentagons give the dodecahedron; four exceed four right angles (each is 1⅕ right angles).
+
+  - part: proof
+    text: "Neither again will a solid angle be contained by other polygonal figures by reason of the same absurdity."
+    highlight: [AB]
+    hint: |
+      No other regular polygon can form a solid angle (a hexagon's angle is already 4/3 of a right angle).
+
+  - part: proof
+    text: "Therefore etc. Q. E. D."
+    highlight: [AB]
+    hint: |
+      Therefore etc.
+
+  - part: lemma
+    text: "Lemma. But that the angle of the equilateral and equiangular pentagon is a right angle and a fifth we must prove thus."
+    highlight: [F]
+    hint: |
+      Lemma: the angle of the regular pentagon is 1⅕ right angles.
+
+  - part: lemma
+    text: "Let ABCDE be an equilateral and equiangular pentagon, let the circle ABCDE be circumscribed about it, let its centre F be taken, and let FA, FB, FC, FD, FE be joined."
+    highlight: [F]
+    hint: |
+      Circumscribe the circle, centre {F}; join {FA}, {FB}, …
+
+  - part: lemma
+    text: "Therefore they bisect the angles of the pentagon at A, B, C, D, E."
+    highlight: [F]
+    hint: |
+      These bisect the pentagon's angles.
+
+  - part: lemma
+    text: "And, since the angles at F are equal to four right angles and are equal, therefore one of them, as the angle AFB, is one right angle less a fifth; therefore the remaining angles FAB, ABF consist of one right angle and a fifth."
+    highlight: [F]
+    hint: |
+      The five angles at {F} make four right angles, so each is ⅘ of a right angle, and ∠*FAB* + ∠*ABF* = 1⅕ right angles.
+
+  - part: lemma
+    text: "But the angle FAB is equal to the angle FBC; therefore the whole angle ABC of the pentagon consists of one right angle and a fifth."
+    highlight: [F]
+    hint: |
+      So the whole angle *ABC* is 1⅕ right angles.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+      text: |
+        From $d$: $a_4^2 = \tfrac23 d^2$, $a_6^2 = \tfrac13 d^2$, $a_8^2 = \tfrac12 d^2$.
+    - steps: [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+      text: |
+        The icosahedron and dodecahedron edges from [[XIII.16]], [[XIII.17]].
+    - steps: [41, 42, 43, 44, 45, 46, 47, 48]
+      text: |
+        At a vertex, $k$ regular $n$-gons need $k(1 - 2/n)\cdot 180^\circ < 360^\circ$ with $k \ge 3$: only
+        $(n, k) = (3,3), (3,4), (3,5), (4,3), (5,3)$. $\blacksquare$
+
+commentary: |
+  The *Elements* ends here, with the classification of the regular solids — which Proclus took to be the
+  purpose of the whole work. The final argument rests on [[XI.21]]: the face angles at a vertex must total less
+  than four right angles. (Euclid shows only that no other *vertex* configuration is possible; that each
+  configuration gives exactly one solid is taken from the constructions.)
+
+historical: |
+  The regular solids are often called "Platonic" after Plato's *Timaeus*, which assigns four of them to the
+  elements and the dodecahedron to the cosmos. A scholium attributes the cube, pyramid and dodecahedron to the
+  Pythagoreans and the octahedron and icosahedron to Theaetetus.

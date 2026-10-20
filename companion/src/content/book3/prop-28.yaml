@@ -1,0 +1,104 @@
+id: III.28
+kind: theorem
+title: Equal chords cut off equal arcs
+
+paraphrase: |
+  In equal circles, equal chords cut off equal arcs — the larger arc equal to the larger, the smaller to
+  the smaller.
+
+diagram:
+  width: 400
+  height: 220
+  elements:
+    - "K;point;free;110,110"
+    - "C;point;free;110,30;black"
+    - "ABC;circle;radius;K,C;0;0;black;0"
+    - "A;point;circleSlider;ABC,60,170"
+    - "B;point;circleSlider;ABC,160,170"
+    - "L;point;free;290,110"
+    - "DEF;circle;radius;L,K,C;0;0;black;0"
+    - "D;point;circleSlider;DEF,240,170"
+    - "F;point;circleSlider;DEF,290,30"
+    - "E;point;similar;L,D,K,A,B"
+    - "G;point;circleSlider;ABC,110,190"
+    - "H;point;circleSlider;DEF,290,190"
+    - "ABK;polygon;triangle;A,B,K;0;0;black;0"
+    - "DEL;polygon;triangle;D,E,L;0;0;black;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "AGB;sector;arc;A,G,B;0;0;0;0"
+    - "DHE;sector;arc;D,H,E;0;0;0;0"
+    - "ACB;sector;arc;A,C,B;0;0;0;0"
+    - "DFE;sector;arc;D,F,E;0;0;0;0"
+    - "angAKB;sector;angleMarker;K,A,B"
+    - "angDLE;sector;angleMarker;L,D,E"
+  aliases:
+    AKB: angAKB
+    DLE: angDLE
+  given: [ABC, DEF, K, L, A, B, C, D, E, F, G, H, ABK, DEL]
+  caption: |
+    Two equal circles with equal chords {AB}, {DE}. Slide {A}, {B}, {D}: the arcs stay equal.
+
+steps:
+  - part: enunciation
+    text: "In equal circles equal straight lines cut off equal circumferences, the greater equal to the greater and the less to the less."
+    highlight: [AB, DE, AGB, DHE]
+    hint: |
+      Equal chords ⇒ equal arcs.
+
+  - part: setting-out
+    text: "Let ABC, DEF be equal circles, and in the circles let AB, DE be equal straight lines cutting off ACB, DFE as greater circumferences and AGB, DHE as lesser;"
+    highlight: [AB, DE, ACB, DFE, AGB, DHE]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the greater circumference ACB is equal to the greater circumference DFE, and the less circumference AGB to DHE."
+    highlight: [ACB, DFE, AGB, DHE]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let the centres K, L of the circles be taken, and let AK, KB, DL, LE be joined."
+    highlight: [ABK, DEL]
+    hint: |
+      Radii to the chord ends.
+
+  - part: proof
+    text: "Now, since the circles are equal, the radii are also equal; therefore the two sides AK, KB are equal to the two sides DL, LE; and the base AB is equal to the base DE; therefore the angle AKB is equal to the angle DLE."
+    highlight: [angAKB, angDLE]
+    hint: |
+      SSS ([[I.8]]).
+
+  - part: proof
+    text: "But equal angles stand on equal circumferences, when they are at the centres; therefore the circumference AGB is equal to DHE."
+    highlight: [AGB, DHE]
+    hint: |
+      [[III.26]].
+
+  - part: proof
+    text: "And the whole circle ABC is also equal to the whole circle DEF; therefore the circumference ACB which remains is also equal to the circumference DFE which remains."
+    highlight: [ACB, DFE]
+    hint: |
+      Subtract from equal circles.
+    cites: [I.CN.3]
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7]
+      text: Chord $c = 2r\sin(\theta/2)$ determines $\theta \in (0, \pi]$ and hence both arcs. $\blacksquare$
+
+commentary: |
+  Chords and arcs: [[III.28]] and its converse [[III.29]].

@@ -1,0 +1,166 @@
+id: I.40
+kind: theorem
+title: Equal triangles on equal bases lie between the same parallels
+
+paraphrase: |
+  The converse of [[I.38]]: equal triangles on equal bases along one line, on the same side, have
+  their apexes on a line parallel to the bases.
+
+diagram:
+  width: 270
+  height: 210
+  elements:
+    - "B;point;free;30,170"
+    - "C;point;free;130,170"
+    - "A;point;free;60,40"
+    - "ADp;line;parallel;A,B,C;0;0;0"
+    - "D;point;lineSlider;ADp,190,40"
+    - "E;point;extend;B,C,B,C"
+    - "F;point;lineSlider;C,D,150,75"
+    - "BE;line;connect;B,E"
+    - "AD;line;connect;A,D"
+    - "AB;line;connect;A,B"
+    - "AC;line;connect;A,C"
+    - "CD;line;connect;C,D"
+    - "DE;line;connect;D,E"
+    - "AF;line;connect;A,F"
+    - "EF;line;connect;E,F"
+    - "BC;line;connect;B,C;0;0;0"
+    - "CE;line;connect;C,E;0;0;0"
+    - "FC;line;connect;F,C;0;0;0"
+    - "ABC;polygon;triangle;A,B,C;0;0;0;#efe4d2"
+    - "DCE;polygon;triangle;D,C,E;0;0;0;#dfe7ea"
+    - "FCE;polygon;triangle;F,C,E;0;0;0;0"
+  aliases:
+    CDE: DCE
+    FE: EF
+    BA: AB
+    CA: AC
+    DC: CD
+    ED: DE
+    CF: FC
+    FA: AF
+    DA: AD
+    EB: BE
+    CB: BC
+    EC: CE
+  given: [A, B, C, D, E, BE, AB, AC, CD, DE, ABC, DCE]
+  caption: |
+    {CE} is kept equal to {BC} and {AD} parallel to {BE}. {F}, on {CD}, is the point the reductio
+    supposes.
+
+steps:
+  - part: enunciation
+    text: "Equal triangles which are on equal bases and on the same side are also in the same parallels."
+    highlight: [ABC, DCE, AD, BE]
+    hint: |
+      Equal bases and equal area ⇒ same height. Converse of [[I.38]].
+    dispute: |
+      Heath prints the whole proposition in square brackets, following Heiberg, who judged it an
+      interpolation: a converse of [[I.38]] written on the model of [[I.39]] to complete the set.
+
+  - part: setting-out
+    text: "Let ABC, CDE be equal triangles on equal bases BC, CE and on the same side."
+    highlight: [ABC, DCE, BC, CE]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that they are also in the same parallels."
+    highlight: [AD, BE]
+    hint: |
+      The goal.
+
+  - part: setting-out
+    text: "For let AD be joined;"
+    highlight: [AD]
+    adds: [AD]
+    hint: |
+      Join the apexes.
+
+  - part: specification
+    text: "I say that AD is parallel to BE."
+    highlight: [AD, BE]
+    hint: |
+      The goal, in lettered form.
+
+  - part: construction
+    text: "For, if not, let AF be drawn through A parallel to BE,"
+    highlight: [AF, F]
+    adds: [F, AF]
+    hint: |
+      Suppose not; draw the true parallel {AF} ([[I.31]]), meeting {CD} at {F}.
+
+  - part: construction
+    text: "and let FE be joined."
+    highlight: [EF]
+    adds: [EF]
+    hint: |
+      Join {FE}.
+
+  - part: proof
+    text: "Therefore the triangle ABC is equal to the triangle FCE; for they are on equal bases BC, CE and in the same parallels BE, AF."
+    highlight: [ABC, FCE]
+    hint: |
+      [[I.38]].
+
+  - part: proof
+    text: "But the triangle ABC is equal to the triangle DCE; therefore the triangle DCE is also equal to the triangle FCE,"
+    highlight: [DCE, FCE]
+    hint: |
+      Both equal {ABC} ([[I.CN.1]]).
+
+  - part: proof
+    text: "the greater to the less: which is impossible."
+    highlight: [DCE, FCE]
+    hint: |
+      {FCE} is part of {DCE} ([[I.CN.5]]).
+    cites: [I.CN.5]
+
+  - part: proof
+    text: "Therefore AF is not parallel to BE."
+    highlight: [AF]
+    hint: |
+      The supposition fails.
+
+  - part: proof
+    text: "Similarly we can prove that neither is any other straight line except AD;"
+    highlight: [AD]
+    hint: |
+      Only {AD} remains.
+
+  - part: proof
+    text: "therefore AD is parallel to BE."
+    highlight: [AD, BE]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Therefore etc.]"
+    hint: |
+      The closing bracket ends the passage Heath marks as interpolated.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4]
+      text: Equal areas on equal bases mean equal heights.
+    - steps: [5, 6, 7, 8, 9, 10, 11]
+      text: So $A$ and $D$ are equidistant from line $BE$ on the same side, and $AD \parallel BE$. $\blacksquare$
+
+commentary: |
+  Whether or not Euclid wrote it, I.40 completes the pattern: [[I.37]]/[[I.38]] and their converses
+  [[I.39]]/I.40. It is never used later in the *Elements*.
+
+gaps: |
+  - As in [[I.39]].
+
+historical: |
+  Heath's brackets mark the editors' judgement that the proposition is a later addition; it is
+  translated here because it appears in all the manuscripts.

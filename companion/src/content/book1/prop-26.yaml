@@ -1,0 +1,306 @@
+id: I.26
+kind: theorem
+title: Angle–side–angle and angle–angle–side
+
+paraphrase: |
+  Two triangles with two pairs of equal angles and one pair of equal sides are equal in every
+  respect — whether the side lies between the two angles (**ASA**) or opposite one of them (**AAS**).
+
+diagram:
+  width: 300
+  height: 220
+  elements:
+    - "D;point;free;210,40"
+    - "E;point;free;170,185"
+    - "F;point;free;265,185"
+    - "DEF;polygon;triangle;D,E,F;0;0;black;#dfe7ea"
+    - "A;point;free;70,40"
+    - "ABcirc;circle;radius;A,D,E;0;0;0;0"
+    - "B;point;circleSlider;ABcirc,30,185"
+    - "ABC;polygon;similar;A,B,D,E,F;0;0;black;#efe4d2"
+    - "C;point;vertex;ABC,3"
+    - "G;point;lineSlider;A,B,52,90"
+    - "CG;line;connect;C,G"
+    - "H;point;lineSlider;B,C,95,184"
+    - "AH;line;connect;A,H"
+    - "angABC;sector;angleMarker;B,C,A"
+    - "angBCA;sector;angleMarker;C,B,A"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angDEF;sector;angleMarker;E,F,D"
+    - "angEFD;sector;angleMarker;F,E,D"
+    - "angEDF;sector;angleMarker;D,E,F"
+    - "angGCB;sector;angleMarker;C,G,B"
+    - "angBHA;sector;angleMarker;H,B,A"
+    - "GBC;polygon;triangle;G,B,C;0;0;0;0"
+    - "ABH;polygon;triangle;A,B,H;0;0;0;0"
+    - "AHC;polygon;triangle;A,H,C;0;0;0;0"
+    - "BG;line;connect;B,G;0;0;0"
+    - "BH;line;connect;B,H;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+  aliases:
+    GB: BG
+    GC: CG
+    CBA: angABC
+    BCA: angBCA
+    ACB: angBCA
+    BAC: angBAC
+    FED: angDEF
+    EFD: angEFD
+    DFE: angEFD
+    EDF: angEDF
+    GCB: angGCB
+    BCG: angGCB
+    BHA: angBHA
+  given: [A, B, C, D, E, F, ABC, DEF]
+  caption: |
+    Drag {D}, {E}, {F} or {A}, and slide {B}: {ABC} is built congruent to {DEF}. {G} (first case)
+    and {H} (second case) are the points the two reductios *suppose*; slide them to see how the
+    supposed figure contradicts itself.
+
+steps:
+  - part: enunciation
+    text: "If two triangles have the two angles equal to two angles respectively, and one side equal to one side, namely, either the side adjoining the equal angles, or that subtending one of the equal angles, they will also have the remaining sides equal to the remaining sides and the remaining angle to the remaining angle."
+    highlight: [angABC, angBCA, angDEF, angEFD, BC, EF]
+    hint: |
+      Two angles and a side determine a triangle: ASA (the side between the angles) and AAS (a side
+      opposite one of them). The third of Euclid's congruence theorems, after [[I.4]] and [[I.8]].
+    explain:
+      implicit: |
+        Euclid does not claim that the *triangles* are equal (in area), as he does in I.4; Heath
+        observes that this follows anyway, through I.4, and the proof says so in the second case.
+
+  - part: setting-out
+    text: "Let ABC, DEF be two triangles having the two angles ABC, BCA equal to the two angles DEF, EFD respectively, namely the angle ABC to the angle DEF, and the angle BCA to the angle EFD;"
+    highlight: [angABC, angDEF, angBCA, angEFD]
+    hint: |
+      The angles at {B}, {C} equal those at {E}, {F}.
+    modern: |
+      $$\angle ABC = \angle DEF,\qquad \angle BCA = \angle EFD$$
+
+  - part: setting-out
+    text: "and let them also have one side equal to one side, first that adjoining the equal angles, namely BC to EF;"
+    highlight: [BC, EF]
+    hint: |
+      **First case (ASA):** the side between those angles is equal, {BC} = {EF}.
+    explain:
+      fact: |
+        "Adjoining the equal angles" (πρὸς ταῖς ἴσαις γωνίαις) is the side that both angles stand on
+        (Heath's note on lines 2–3).
+
+  - part: specification
+    text: "I say that they will also have the remaining sides equal to the remaining sides respectively, namely AB to DE and AC to DF, and the remaining angle to the remaining angle, namely the angle BAC to the angle EDF."
+    highlight: [AB, DE, AC, DF, angBAC, angEDF]
+    hint: |
+      The goal: everything else matches.
+
+  - part: proof
+    text: "For, if AB is unequal to DE, one of them is greater."
+    highlight: [AB, DE]
+    hint: |
+      Reductio again. It is enough to show {AB} = {DE}; then [[I.4]] does the rest.
+
+  - part: construction
+    text: "Let AB be greater, and let BG be made equal to DE;"
+    highlight: [BG, DE, G]
+    adds: [G]
+    hint: |
+      Supposing {AB} the longer, cut off {BG} = {DE} ([[I.3]]).
+    cites: [I.3]
+
+  - part: construction
+    text: "and let GC be joined."
+    highlight: [CG]
+    adds: [CG]
+    hint: |
+      Join {GC}.
+
+  - part: proof
+    text: "Then, since BG is equal to DE, and BC to EF, the two sides GB, BC are equal to the two sides DE, EF respectively;"
+    highlight: [GBC, DEF, BG, DE, BC, EF]
+    hint: |
+      Triangles {GBC} and {DEF}: two pairs of equal sides…
+
+  - part: proof
+    text: "and the angle GBC is equal to the angle DEF;"
+    highlight: [angABC, angDEF]
+    hint: |
+      …with equal angles between them (∠{GBC|angABC} is the angle at {B}).
+
+  - part: proof
+    text: "therefore the base GC is equal to the base DF, and the triangle GBC is equal to the triangle DEF, and the remaining angles will be equal to the remaining angles, namely those which the equal sides subtend;"
+    highlight: [GBC, DEF, CG, DF]
+    hint: |
+      SAS ([[I.4]]).
+
+  - part: proof
+    text: "therefore the angle GCB is equal to the angle DFE."
+    highlight: [angGCB, angEFD]
+    adds: [angGCB]
+    hint: |
+      In particular ∠{GCB} = ∠{DFE}.
+
+  - part: proof
+    text: "But the angle DFE is by hypothesis equal to the angle BCA; therefore the angle BCG is equal to the angle BCA, the less to the greater: which is impossible."
+    highlight: [angGCB, angBCA]
+    hint: |
+      So ∠{BCG} = ∠{BCA}; but ∠{BCG} is a part of ∠{BCA} ([[I.CN.5]]). Impossible.
+    explain:
+      implicit: |
+        "By hypothesis" renders the Greek ὑπόκειται (Heath's note on line 29).
+    cites: [I.CN.5]
+    modern: |
+      $$\angle BCG = \angle DFE = \angle BCA, \text{ yet } \angle BCG < \angle BCA$$
+
+  - part: proof
+    text: "Therefore AB is not unequal to DE, and is therefore equal to it."
+    highlight: [AB, DE]
+    hint: |
+      So {AB} = {DE}.
+
+  - part: proof
+    text: "But BC is also equal to EF; therefore the two sides AB, BC are equal to the two sides DE, EF respectively, and the angle ABC is equal to the angle DEF;"
+    highlight: [AB, DE, BC, EF, angABC, angDEF]
+    hint: |
+      Now SAS applies to the original triangles.
+
+  - part: proof
+    text: "therefore the base AC is equal to the base DF, and the remaining angle BAC is equal to the remaining angle EDF."
+    highlight: [AC, DF, angBAC, angEDF]
+    hint: |
+      [[I.4]] finishes the first case.
+    modern: |
+      $$AC = DF,\qquad \angle BAC = \angle EDF$$
+
+  - part: setting-out
+    text: "Again, let sides subtending equal angles be equal, as AB to DE;"
+    highlight: [AB, DE]
+    hint: |
+      **Second case (AAS):** now the equal sides are opposite equal angles — {AB} faces the angle at
+      {C}, {DE} the angle at {F}.
+
+  - part: specification
+    text: "I say again that the remaining sides will be equal to the remaining sides, namely AC to DF and BC to EF, and further the remaining angle BAC is equal to the remaining angle EDF."
+    highlight: [AC, DF, BC, EF, angBAC, angEDF]
+    hint: |
+      Same goal.
+
+  - part: proof
+    text: "For, if BC is unequal to EF, one of them is greater."
+    highlight: [BC, EF]
+    hint: |
+      This time show {BC} = {EF}.
+
+  - part: construction
+    text: "Let BC be greater, if possible, and let BH be made equal to EF;"
+    highlight: [BH, EF, H]
+    adds: [H]
+    hint: |
+      Supposing {BC} the longer, cut off {BH} = {EF}.
+
+  - part: construction
+    text: "let AH be joined."
+    highlight: [AH]
+    adds: [AH]
+    hint: |
+      Join {AH}.
+
+  - part: proof
+    text: "Then, since BH is equal to EF, and AB to DE, the two sides AB, BH are equal to the two sides DE, EF respectively, and they contain equal angles;"
+    highlight: [ABH, DEF, AB, BH, angABC, angDEF]
+    hint: |
+      Triangles {ABH} and {DEF}: SAS hypothesis.
+
+  - part: proof
+    text: "therefore the base AH is equal to the base DF, and the triangle ABH is equal to the triangle DEF, and the remaining angles will be equal to the remaining angles, namely those which the equal sides subtend;"
+    highlight: [ABH, DEF, AH, DF]
+    hint: |
+      [[I.4]].
+
+  - part: proof
+    text: "therefore the angle BHA is equal to the angle EFD."
+    highlight: [angBHA, angEFD]
+    adds: [angBHA]
+    hint: |
+      In particular ∠{BHA} = ∠{EFD}.
+
+  - part: proof
+    text: "But the angle EFD is equal to the angle BCA;"
+    highlight: [angEFD, angBCA]
+    hint: |
+      By hypothesis.
+
+  - part: proof
+    text: "therefore, in the triangle AHC, the exterior angle BHA is equal to the interior and opposite angle BCA: which is impossible."
+    highlight: [AHC, angBHA, angBCA]
+    hint: |
+      ∠{BHA} is exterior to triangle {AHC}, so it must *exceed* ∠{BCA} ([[I.16]]). Contradiction.
+
+  - part: proof
+    text: "Therefore BC is not unequal to EF, and is therefore equal to it."
+    highlight: [BC, EF]
+    hint: |
+      So {BC} = {EF}.
+
+  - part: proof
+    text: "But AB is also equal to DE; therefore the two sides AB, BC are equal to the two sides DE, EF respectively, and they contain equal angles;"
+    highlight: [AB, DE, BC, EF, angABC, angDEF]
+    hint: |
+      SAS for the original triangles.
+
+  - part: proof
+    text: "therefore the base AC is equal to the base DF, the triangle ABC equal to the triangle DEF, and the remaining angle BAC equal to the remaining angle EDF."
+    highlight: [AC, DF, ABC, DEF, angBAC, angEDF]
+    hint: |
+      [[I.4]] finishes the second case.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* With the angle sum theorem (I.32), AAS
+    reduces to ASA; but in neutral geometry, as here, both need their own argument. Euclid's
+    arguments are essentially the modern ones.
+  lines:
+    - steps: [1, 2, 3]
+      text: "ASA: $\\angle B = \\angle E$, $\\angle C = \\angle F$, $BC = EF$."
+    - steps: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+      text: |
+        Let $G$ on ray $BA$ with $BG = ED$. SAS: $\triangle GBC \cong \triangle DEF$, so
+        $\angle GCB = \angle F = \angle ACB$. By uniqueness of angle transfer, ray $CG$ = ray $CA$, so
+        $G = A$, $AB = DE$, and SAS finishes.
+    - steps: [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+      text: |
+        AAS: $\angle B = \angle E$, $\angle C = \angle F$, $AB = DE$. Let $H$ on ray $BC$ with $BH = EF$.
+        SAS: $\angle BHA = \angle F = \angle BCA$. If $H \ne C$, one of $\angle BHA$, $\angle BCA$ is an
+        exterior angle of $\triangle AHC$ and the other a remote interior angle — contradicting the
+        exterior angle theorem. So $H = C$ and SAS finishes. $\blacksquare$
+
+commentary: |
+  The last of Book I's congruence theorems: with [[I.4]] (SAS) and [[I.8]] (SSS) it completes the
+  list. (There is no "SSA": two sides and a non-included angle do not determine a triangle.)
+
+  The two halves use different contradictions: the first, like [[I.6]], that a part equals the
+  whole ([[I.CN.5]]); the second, that an exterior angle equals a remote interior one ([[I.16]]).
+
+gaps: |
+  - **Only one sub-case each**: Euclid supposes {AB} (resp. {BC}) is the greater; the other
+    supposition is handled by exchanging the triangles.
+  - **Position of {G} and {H}**: that {G} lies between {A} and {B}, and {H} between {B} and {C},
+    follows from the supposed inequalities.
+
+historical: |
+  Eudemus (quoted by Proclus) attributes the theorem to Thales on the strength of his method for
+  measuring the distance of a ship from the shore, which "must" use it.

@@ -1,0 +1,154 @@
+id: III.15
+kind: theorem
+title: The diameter is the longest chord
+
+paraphrase: |
+  The diameter is the longest chord of a circle, and of the others, the one nearer the centre is longer.
+
+diagram:
+  width: 280
+  height: 280
+  elements:
+    - "A;point;free;140,35"
+    - "D;point;free;140,245"
+    - "E;point;midpoint;A,D"
+    - "ABCD;circle;radius;E,A;0;0;black;0"
+    - "AD;line;connect;A,D"
+    - "B;point;circleSlider;ABCD,215,70"
+    - "C;point;circleSlider;ABCD,205,210"
+    - "F;point;circleSlider;ABCD,50,80"
+    - "G;point;circleSlider;ABCD,40,160"
+    - "BC;line;connect;B,C"
+    - "FG;line;connect;F,G"
+    - "H;point;foot;E,BC"
+    - "K;point;foot;E,FG"
+    - "EH;line;connect;E,H"
+    - "EK;line;connect;E,K"
+    - "L;point;cutoff;E,K,E,H"
+    - "LLx;line;perpendicular;L,E;0;0;0"
+    - "MN;line;chord;LLx,ABCD"
+    - "M;point;first;MN"
+    - "N;point;last;MN"
+    - "EF;line;connect;E,F"
+    - "EG;line;connect;E,G"
+    - "EM;line;connect;E,M"
+    - "EN;line;connect;E,N"
+    - "EL;line;connect;E,L;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "angMEN;sector;angleMarker;E,M,N"
+    - "angFEG;sector;angleMarker;E,F,G"
+  aliases:
+    ME: EM
+    FE: EF
+    MEN: angMEN
+    FEG: angFEG
+  given: [A, D, E, ABCD, AD, B, C, F, G, BC, FG]
+  caption: |
+    Slide {B}, {C}, {F}, {G}. {MN} is a copy of {BC} placed on the same perpendicular as {FG}.
+
+steps:
+  - part: enunciation
+    text: "Of straight lines in a circle the diameter is greatest, and of the rest the nearer to the centre is always greater than the more remote."
+    highlight: [AD, BC, FG]
+    hint: |
+      Chords get longer as they get closer to the centre.
+    explain:
+      implicit: |
+        "Of straight lines" is supplied by Heath; the Greek leaves it understood (his note on line 1).
+
+  - part: setting-out
+    text: "Let ABCD be a circle, let AD be its diameter and E the centre; and let BC be nearer to the diameter AD, and FG more remote;"
+    highlight: [AD, E, BC, FG]
+    hint: |
+      The data.
+    explain:
+      implicit: |
+        Heath notes that Euclid should have said "nearer to the *centre*": the chords need not be parallel
+        to {AD} (his note on line 5).
+
+  - part: specification
+    text: "I say that AD is greatest and BC greater than FG."
+    highlight: [AD, BC, FG]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For from the centre E let EH, EK be drawn perpendicular to BC, FG."
+    highlight: [EH, EK]
+    hint: |
+      The distances from the centre ([[I.12]]).
+    cites: [I.12]
+
+  - part: proof
+    text: "Then, since BC is nearer to the centre and FG more remote, EK is greater than EH."
+    highlight: [EH, EK]
+    hint: |
+      [[III.Def.5]].
+
+  - part: construction
+    text: "Let EL be made equal to EH, through L let LM be drawn at right angles to EK and carried through to N, and let ME, EN, FE, EG be joined."
+    highlight: [EL, MN, EM, EN, EF, EG]
+    adds: [L, MN, M, N, EM, EN, EF, EG]
+    hint: |
+      Copy the distance {EH} onto {EK} and draw the chord {MN} there.
+
+  - part: proof
+    text: "Then, since EH is equal to EL, BC is also equal to MN."
+    highlight: [BC, MN]
+    hint: |
+      Same distance, equal chords ([[III.14]]).
+
+  - part: proof
+    text: "Again, since AE is equal to EM, and ED to EN, AD is equal to ME, EN."
+    highlight: [AD, EM, EN]
+    hint: |
+      The diameter equals two radii.
+
+  - part: proof
+    text: "But ME, EN are greater than MN, and MN is equal to BC; therefore AD is greater than BC."
+    highlight: [EM, EN, MN, AD, BC]
+    hint: |
+      Triangle inequality ([[I.20]]). So the diameter is greatest.
+
+  - part: proof
+    text: "And, since the two sides ME, EN are equal to the two sides FE, EG, and the angle MEN greater than the angle FEG, therefore the base MN is greater than the base FG."
+    highlight: [angMEN, angFEG, MN, FG]
+    hint: |
+      Hinge theorem ([[I.24]]).
+
+  - part: proof
+    text: "But MN was proved equal to BC."
+    highlight: [MN, BC]
+    hint: |
+      Recall.
+
+  - part: proof
+    text: "Therefore the diameter AD is greatest and BC greater than FG."
+    highlight: [AD, BC, FG]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      text: Chord length $2\sqrt{r^2 - d^2}$ decreases as the distance $d$ grows; at $d = 0$ it is the diameter $2r$. $\blacksquare$
+
+commentary: |
+  Completes [[III.14]]: chord length decreases strictly with distance from the centre.
+
+gaps: |
+  - **∠{MEN|angMEN} > ∠{FEG|angFEG}** (step 8) is read off the figure: that the nearer chord subtends a
+    larger angle at the centre is exactly what needs showing.

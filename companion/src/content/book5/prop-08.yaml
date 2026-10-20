@@ -1,0 +1,358 @@
+id: V.8
+kind: theorem
+title: The greater has the greater ratio
+
+paraphrase: |
+  If {AB} is greater than {C}, then {AB} has to any magnitude {D} a greater ratio than {C} has to {D}, and {D} has
+  to {C} a greater ratio than it has to {AB}.
+
+diagram:
+  width: 300
+  height: 260
+  elements:
+    - "U0;point;free;-1000,30;0;0"
+    - "V0;point;free;1000,30;0;0"
+    - "U1;point;free;-1000,60;0;0"
+    - "V1;point;free;1000,60;0;0"
+    - "U2;point;free;-1000,90;0;0"
+    - "V2;point;free;1000,90;0;0"
+    - "U3;point;free;-1000,120;0;0"
+    - "V3;point;free;1000,120;0;0"
+    - "U4;point;free;-1000,160;0;0"
+    - "V4;point;free;1000,160;0;0"
+    - "U5;point;free;-1000,190;0;0"
+    - "V5;point;free;1000,190;0;0"
+    - "U6;point;free;-1000,220;0;0"
+    - "V6;point;free;1000,220;0;0"
+    - "U7;point;free;-1000,250;0;0"
+    - "V7;point;free;1000,250;0;0"
+    - "A;point;lineSlider;U0,V0,20,30"
+    - "B;point;lineSlider;U0,V0,140,30"
+    - "AB;line;connect;A,B;0;0;blue"
+    - "C0;point;lineSlider;U1,V1,20,60;0"
+    - "C1;point;lineSlider;U1,V1,110,60;0"
+    - "C;line;connect;C0,C1;black;0;blue"
+    - "E;point;cutoff;B,A,C"
+    - "D0;point;lineSlider;U4,V4,20,160;0"
+    - "D1;point;lineSlider;U4,V4,70,160;0"
+    - "D;line;connect;D0,D1;black;0;blue"
+    - "F;point;lineSlider;U2,V2,20,90"
+    - "F1;point;cutoff;F,V2,A,E;0;lightGray"
+    - "G;point;cutoff;F1,V2,A,E"
+    - "G1;point;cutoff;G,V2,E,B;0;lightGray"
+    - "H;point;cutoff;G1,V2,E,B"
+    - "FH;line;connect;F,H;0;0;blue"
+    - "K0;point;lineSlider;U3,V3,20,120;0"
+    - "K1;point;cutoff;K0,V3,C;0;lightGray"
+    - "K2;point;cutoff;K1,V3,C;0"
+    - "K;line;connect;K0,K2;black;0;blue"
+    - "L0;point;lineSlider;U5,V5,20,160;0"
+    - "L1;point;cutoff;L0,V5,D;0;lightGray"
+    - "L2;point;cutoff;L1,V5,D;0"
+    - "L;line;connect;L0,L2;black;0;blue"
+    - "M0;point;lineSlider;U6,V6,20,160;0"
+    - "M1;point;cutoff;M0,V6,D;0;lightGray"
+    - "M2;point;cutoff;M1,V6,D;0;lightGray"
+    - "M3;point;cutoff;M2,V6,D;0"
+    - "M;line;connect;M0,M3;black;0;blue"
+    - "N0;point;lineSlider;U7,V7,20,190;0"
+    - "N1;point;cutoff;N0,V7,D;0;lightGray"
+    - "N2;point;cutoff;N1,V7,D;0;lightGray"
+    - "N3;point;cutoff;N2,V7,D;0;lightGray"
+    - "N4;point;cutoff;N3,V7,D;0"
+    - "N;line;connect;N0,N4;black;0;blue"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+    - "GH;line;connect;G,H;0;0;0"
+  aliases:
+    BE: EB
+  caption: |
+    Case 1 ({AE} less than {EB}). {BE} equals {C}; {FG}, {GH}, {K} are twice {AE}, {EB}, {C}; {L}, {M}, {N} are two,
+    three and four times {D}. Drag {A}, {B} or the ends of {C} and {D} — but the multiples are fixed at Euclid's
+    numbers, so the inequalities hold only near the starting figure.
+
+steps:
+  - part: enunciation
+    text: "Of unequal magnitudes, the greater has to the same a greater ratio than the less has; and the same has to the less a greater ratio than it has to the greater."
+    highlight: [AB, C, D]
+    hint: |
+      $AB > C \Rightarrow AB : D > C : D$ and $D : C > D : AB$.
+    modern: |
+      $$x > y \ \Rightarrow\ x : z > y : z \ \text{ and } \ z : y > z : x$$
+
+  - part: setting-out
+    text: "Let AB, C be unequal magnitudes, and let AB be greater; let D be another, chance, magnitude;"
+    highlight: [AB, C, D]
+    hint: |
+      {AB} > {C}; {D} arbitrary.
+
+  - part: specification
+    text: "I say that AB has to D a greater ratio than C has to D, and D has to C a greater ratio than it has to AB."
+    highlight: [AB, C, D]
+    hint: |
+      To prove "greater ratio" we need, by [[V.Def.7]], *one* pair of multiples that separates the ratios.
+    explain:
+      fact: |
+        [[V.Def.7]]: $AB : D > C : D$ if for some $m, n$, $m\,AB > n\,D$ but $m\,C \le n\,D$.
+      did: |
+        The whole proof is the hunt for such $m$, $n$.
+    cites: [V.Def.7]
+
+  - part: construction
+    text: "For, since AB is greater than C, let BE be made equal to C;"
+    highlight: [BE, C, AE]
+    hint: |
+      Cut off {BE} = {C}; the excess is {AE}.
+
+  - part: proof
+    text: "then the less of the magnitudes AE, EB, if multiplied, will sometime be greater than D."
+    highlight: [AE, EB, D]
+    hint: |
+      Some multiple of the smaller piece exceeds {D}: [[V.Def.4]].
+    explain:
+      fact: |
+        [[V.Def.4]] read as an axiom: magnitudes that have a ratio can each, multiplied, exceed the other.
+      implicit: |
+        This is where the theory needs the Archimedean property. If {AE} were infinitely small compared with
+        {D}, no multiple of {AB} and {C} could be told apart by multiples of {D}, and the theorem would fail.
+    gap: |
+      [[V.Def.4]] is phrased as a definition, but here it is used as an axiom — that the excess {AE} *does*
+      have a ratio to {D}.
+
+  - part: setting-out
+    text: "[Case I.]"
+    hint: |
+      Heath's heading, in brackets: Euclid distinguishes two cases.
+
+  - part: setting-out
+    text: "First, let AE be less than EB;"
+    highlight: [AE, EB]
+    hint: |
+      Case 1: the excess {AE} is the smaller piece.
+
+  - part: construction
+    text: "let AE be multiplied, and let FG be a multiple of it which is greater than D;"
+    highlight: [FG, D]
+    hint: |
+      Choose $m$ with {FG} = $m${AE} > {D}. (In the figure $m = 2$.)
+
+  - part: construction
+    text: "then, whatever multiple FG is of AE, let GH be made the same multiple of EB and K of C;"
+    highlight: [GH, K, FH]
+    hint: |
+      {GH} = $m${EB}, {K} = $m${C}.
+
+  - part: construction
+    text: "and let L be taken double of D, M triple of it, and successive multiples increasing by one, until what is taken is a multiple of D and the first that is greater than K."
+    highlight: [L, M, N, K]
+    hint: |
+      Count up the multiples of {D} — 2{D}, 3{D}, … — until one first exceeds {K}.
+    explain:
+      implicit: |
+        That some multiple of {D} exceeds {K} is again [[V.Def.4]]; that there is a *first* such multiple
+        is the well-ordering of whole numbers.
+
+  - part: construction
+    text: "Let it be taken, and let it be N which is quadruple of D and the first multiple of it that is greater than K."
+    highlight: [N, K]
+    hint: |
+      In the figure that is {N} = 4{D}. Call its multiplier $n$.
+
+  - part: proof
+    text: "Then, since K is less than N first, therefore K is not less than M."
+    highlight: [K, N, M]
+    hint: |
+      {N} is the *first* multiple above {K}, so the one before it, {M} = $(n-1)${D}, is not above {K}.
+
+  - part: proof
+    text: "And, since FG is the same multiple of AE that GH is of EB, therefore FG is the same multiple of AE that FH is of AB."
+    highlight: [FG, GH, FH, AB]
+    hint: |
+      {FH} = $m${AE} + $m${EB} = $m${AB} ([[V.1]]).
+
+  - part: proof
+    text: "But FG is the same multiple of AE that K is of C; therefore FH is the same multiple of AB that K is of C;"
+    highlight: [FH, AB, K, C]
+    hint: |
+      {FH} = $m${AB} and {K} = $m${C}.
+
+  - part: proof
+    text: "therefore FH, K are equimultiples of AB, C."
+    highlight: [FH, K]
+    hint: |
+      These are the multiples of the antecedents for [[V.Def.7]].
+
+  - part: proof
+    text: "Again, since GH is the same multiple of EB that K is of C, and EB is equal to C, therefore GH is equal to K."
+    highlight: [GH, K]
+    hint: |
+      $m${EB} = $m${C}, since {EB} = {C}.
+
+  - part: proof
+    text: "But K is not less than M; therefore neither is GH less than M."
+    highlight: [GH, M]
+    hint: |
+      {GH} = {K} ≥ {M}.
+
+  - part: proof
+    text: "And FG is greater than D; therefore the whole FH is greater than D, M together."
+    highlight: [FG, D, FH, M]
+    hint: |
+      {FH} = {FG} + {GH} > {D} + {M}.
+
+  - part: proof
+    text: "But D, M together are equal to N, inasmuch as M is triple of D, and M, D together are quadruple of D, while N is also quadruple of D; whence M, D together are equal to N."
+    highlight: [D, M, N]
+    hint: |
+      {M} + {D} = 3{D} + {D} = 4{D} = {N}.
+
+  - part: proof
+    text: "But FH is greater than M, D; therefore FH is in excess of N, while K is not in excess of N."
+    highlight: [FH, N, K]
+    hint: |
+      {FH} > {N} but {K} < {N}: the separating pair.
+    modern: |
+      $m\,AB > n\,D$ and $m\,C < n\,D$.
+
+  - part: proof
+    text: "And FH, K are equimultiples of AB, C, while N is another, chance, multiple of D;"
+    highlight: [FH, K, N]
+    hint: |
+      The shape [[V.Def.7]] needs.
+
+  - part: proof
+    text: "therefore AB has to D a greater ratio than C has to D."
+    highlight: [AB, C, D]
+    hint: |
+      First claim, by [[V.Def.7]].
+
+  - part: specification
+    text: "I say next, that D also has to C a greater ratio than D has to AB."
+    highlight: [D, C, AB]
+    hint: |
+      Second claim.
+
+  - part: proof
+    text: "For, with the same construction, we can prove similarly that N is in excess of K, while N is not in excess of FH."
+    highlight: [N, K, FH]
+    hint: |
+      The same pair, read the other way: {N} > {K}, {N} < {FH}.
+
+  - part: proof
+    text: "And N is a multiple of D, while FH, K are other, chance, equimultiples of AB, C;"
+    highlight: [N, FH, K]
+    hint: |
+      Now {D} is the antecedent.
+
+  - part: proof
+    text: "therefore D has to C a greater ratio than D has to AB."
+    highlight: [D, C, AB]
+    hint: |
+      Second claim, by [[V.Def.7]].
+
+  - part: setting-out
+    text: "[Case 2.]"
+    hint: |
+      The other case.
+
+  - part: setting-out
+    text: "Again, let AE be greater than EB."
+    highlight: [AE, EB]
+    hint: |
+      Case 2: the excess {AE} is the larger piece.
+
+  - part: proof
+    text: "Then the less, EB, if multiplied, will sometime be greater than D."
+    highlight: [EB, D]
+    hint: |
+      [[V.Def.4]] again, now for {EB}.
+
+  - part: construction
+    text: "Let it be multiplied, and let GH be a multiple of EB and greater than D;"
+    highlight: [GH, D]
+    hint: |
+      {GH} = $m${EB} > {D}.
+
+  - part: construction
+    text: "and, whatever multiple GH is of EB, let FG be made the same multiple of AE, and K of C."
+    highlight: [FG, K]
+    hint: |
+      {FG} = $m${AE}, {K} = $m${C}.
+
+  - part: proof
+    text: "Then we can prove similarly that FH, K are equimultiples of AB, C;"
+    highlight: [FH, K]
+    hint: |
+      As before ([[V.1]]).
+
+  - part: construction
+    text: "and, similarly, let N be taken a multiple of D but the first that is greater than FG, so that FG is again not less than M."
+    highlight: [N, FG, M]
+    hint: |
+      This time count multiples of {D} past {FG}.
+
+  - part: proof
+    text: "But GH is greater than D; therefore the whole FH is in excess of D, M, that is, of N."
+    highlight: [GH, FH, N]
+    hint: |
+      {FH} = {FG} + {GH} > {M} + {D} = {N}.
+
+  - part: proof
+    text: "Now K is not in excess of N, inasmuch as FG also, which is greater than GH, that is, than K, is not in excess of N."
+    highlight: [K, N, FG, GH]
+    hint: |
+      {K} = {GH} < {FG} < {N}.
+
+  - part: proof
+    text: "And in the same manner, by following the above argument, we complete the demonstration."
+    hint: |
+      The rest is as in Case 1.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Let $x = AB > y = C$, $z = D$, and $e = x - y$.
+  lines:
+    - steps: [3, 4]
+      text: |
+        By [[V.Def.4]] there is $m$ with $m e > z$.
+    - steps: [7, 8, 9, 10, 11]
+      text: |
+        By [[V.Def.4]] some multiple of $z$ exceeds $m y$; let $n$ be the least, so $(n - 1)z \le m y < n z$.
+    - steps: [12, 13, 14, 15, 16, 17, 18, 19]
+      text: |
+        Then $m x = m e + m y > z + (n - 1) z = n z$, while $m y < n z$.
+    - steps: [20, 21]
+      text: |
+        So $m x > n z$ but $m y \not> n z$: $x : z > y : z$ by [[V.Def.7]].
+    - steps: [22, 23, 24, 25]
+      text: |
+        And $n z > m y$ but $n z \not> m x$: $z : y > z : x$, again by [[V.Def.7]]. $\blacksquare$
+  closing: |
+    The case split is unnecessary: the argument needs only *some* multiple of the excess {AE} that exceeds
+    {D}, which [[V.Def.4]] supplies whichever of {AE}, {EB} is smaller.
+
+commentary: |
+  The first theorem about *unequal* ratios, and the first to need the Archimedean property
+  ([[V.Def.4]]). Joyce points out that the statement is false for non-Archimedean magnitudes: if $y$ is
+  infinitesimal compared with $x$, then $x > x - y$, yet $x : x$ is not greater than $(x - y) : x$.
+
+  Its converse is [[V.10]].
+
+gaps: |
+  - **[[V.Def.4]] as an axiom**: the proof needs that the excess {AE} has a ratio to {D}, i.e. is not
+    infinitely small. The definition only names the property; Euclid assumes every pair of magnitudes of
+    the same kind has it.
+  - **Least multiple**: choosing "the first" multiple of {D} that exceeds {K} uses the well-ordering of the
+    whole numbers.
+  - **Case 2** is completed only by "in the same manner".

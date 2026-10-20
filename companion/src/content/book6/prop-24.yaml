@@ -1,0 +1,215 @@
+id: VI.24
+kind: theorem
+title: Parallelograms about the diameter are similar to the whole
+
+paraphrase: |
+  In a parallelogram {ABCD}, the smaller parallelograms {EG}, {HK} that lie along the diagonal {AC} are similar to the
+  whole and to each other.
+
+diagram:
+  width: 350
+  height: 300
+  elements:
+    - "A;point;free;40,40"
+    - "B;point;free;240,40"
+    - "C;point;free;290,260"
+    - "D;point;parallelogram;A,B,C"
+    - "ABCD;polygon;quadrilateral;A,B,C,D"
+    - "AC;line;connect;A,C"
+    - "F;point;lineSlider;A,C,120,120"
+    - "Gp;point;parallelogram;A,B,F;0;0"
+    - "G;point;intersection;A,D,F,Gp"
+    - "E;point;parallelogram;A,G,F"
+    - "AGFE;polygon;quadrilateral;A,G,F,E;0;0;black;#efe4d2"
+    - "H;point;intersection;G,F,B,C"
+    - "K;point;intersection;E,F,C,D"
+    - "FHCK;polygon;quadrilateral;F,H,C,K;0;0;black;#dfe7ea"
+    - "EF;line;connect;E,F;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+    - "EA;line;connect;E,A;0;0;0"
+    - "CF;line;connect;C,F;0;0;0"
+    - "FA;line;connect;F,A;0;0;0"
+    - "DG;line;connect;D,G;0;0;0"
+    - "GA;line;connect;G,A;0;0;0"
+    - "ABC;polygon;triangle;A,B,C;0;0;0;0"
+    - "ACD;polygon;triangle;A,C,D;0;0;0;0"
+    - "AGF;polygon;triangle;A,G,F;0;0;0;0"
+    - "AFE;polygon;triangle;A,F,E;0;0;0;0"
+    - "angBAD;sector;angleMarker;A,B,D"
+    - "angAFG;sector;angleMarker;F,A,G"
+    - "angDCA;sector;angleMarker;C,D,A"
+    - "angDAC;sector;angleMarker;A,D,C"
+  aliases:
+    EG: AGFE
+    HK: FHCK
+    KH: FHCK
+    GF: FG
+    FE: EF
+    DC: CD
+    CB: BC
+    BA: AB
+    DA: AD
+    AE: EA
+    AG: GA
+    CA: AC
+    AF: FA
+    ADC: ACD
+    ACB: ABC
+  caption: |
+    Slide {F} along the diagonal {AC}, or drag {A}, {B}, {C}. The shaded parallelograms always have the shape of {ABCD}.
+
+steps:
+  - part: enunciation
+    text: "In any parallelogram the parallelograms about the diameter are similar both to the whole and to one another."
+    highlight: [ABCD, EG, HK, AC]
+    hint: |
+      Parallelograms along a diagonal are scaled copies of the whole.
+    modern: |
+      $$EG \sim ABCD \sim HK$$
+
+  - part: setting-out
+    text: "Let ABCD be a parallelogram, and AC its diameter, and let EG, HK be parallelograms about AC;"
+    highlight: [ABCD, AC, EG, HK]
+    hint: |
+      "About the diameter": the diagonal {AC} passes through opposite corners of {EG} and {HK}.
+
+  - part: specification
+    text: "I say that each of the parallelograms EG, HK is similar both to the whole ABCD and to the other."
+    highlight: [EG, HK, ABCD]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, since EF has been drawn parallel to BC, one of the sides of the triangle ABC, proportionally, as BE is to EA, so is CF to FA."
+    highlight: [EF, BC, ABC, BE, EA, CF, FA]
+    hint: |
+      [[VI.2]].
+
+  - part: proof
+    text: "Again, since FG has been drawn parallel to CD, one of the sides of the triangle ACD, proportionally, as CF is to FA, so is DG to GA."
+    highlight: [FG, CD, ACD, CF, FA, DG, GA]
+    hint: |
+      [[VI.2]].
+
+  - part: proof
+    text: "But it was proved that, as CF is to FA, so also is BE to EA; therefore also, as BE is to EA, so is DG to GA,"
+    highlight: [BE, EA, DG, GA]
+    hint: |
+      [[V.11]].
+    cites: [V.11]
+
+  - part: proof
+    text: "and therefore, componendo, as BA is to AE, so is DA to AG,"
+    highlight: [BA, AE, DA, AG]
+    hint: |
+      *Componendo* ([[V.18]]).
+
+  - part: proof
+    text: "and, alternately, as BA is to AD, so is EA to AG."
+    highlight: [BA, AD, EA, AG]
+    hint: |
+      [[V.16]].
+
+  - part: proof
+    text: "Therefore in the parallelograms ABCD, EG, the sides about the common angle BAD are proportional."
+    highlight: [ABCD, EG, angBAD]
+    hint: |
+      Sides about the angle at {A}.
+
+  - part: proof
+    text: "And, since GF is parallel to DC, the angle AFG is equal to the angle DCA;"
+    highlight: [GF, DC, angAFG, angDCA]
+    hint: |
+      [[I.29]].
+    cites: [I.29]
+
+  - part: proof
+    text: "and the angle DAC is common to the two triangles ADC, AGF; therefore the triangle ADC is equiangular with the triangle AGF."
+    highlight: [angDAC, ADC, AGF]
+    hint: |
+      Two angles equal, so the third too ([[I.32]]).
+    cites: [I.32]
+
+  - part: proof
+    text: "For the same reason the triangle ACB is also equiangular with the triangle AFE, and the whole parallelogram ABCD is equiangular with the parallelogram EG."
+    highlight: [ACB, AFE, ABCD, EG]
+    hint: |
+      Likewise; and the angles of the parallelograms add up from those of the triangles.
+
+  - part: proof
+    text: "Therefore, proportionally, as AD is to DC, so is AG to GF, as DC is to CA, so is GF to FA, as AC is to CB, so is AF to FE, and further, as CB is to BA, so is FE to EA."
+    highlight: [AD, DC, AG, GF, CA, FA, CB, FE, BA, EA]
+    hint: |
+      [[VI.4]] in each pair of triangles.
+    cites: [VI.4]
+
+  - part: proof
+    text: "And, since it was proved that, as DC is to CA, so is GF to FA, and, as AC is to CB, so is AF to FE, therefore, ex aequali, as DC is to CB, so is GF to FE."
+    highlight: [DC, CB, GF, FE]
+    hint: |
+      [[V.22]].
+
+  - part: proof
+    text: "Therefore in the parallelograms ABCD, EG the sides about the equal angles are proportional;"
+    highlight: [ABCD, EG]
+    hint: |
+      All sides now proportional.
+
+  - part: proof
+    text: "therefore the parallelogram ABCD is similar to the parallelogram EG."
+    highlight: [ABCD, EG]
+    hint: |
+      [[VI.Def.1]].
+
+  - part: proof
+    text: "For the same reason the parallelogram ABCD is also similar to the parallelogram KH;"
+    highlight: [ABCD, KH]
+    hint: |
+      The same argument at {C}.
+
+  - part: proof
+    text: "therefore each of the parallelograms EG, HK is similar to ABCD."
+    highlight: [EG, HK, ABCD]
+    hint: |
+      First claim.
+
+  - part: proof
+    text: "But figures similar to the same rectilineal figure are also similar to one another;"
+    highlight: [EG, HK]
+    hint: |
+      [[VI.21]].
+
+  - part: proof
+    text: "therefore the parallelogram EG is also similar to the parallelogram HK."
+    highlight: [EG, HK]
+    hint: |
+      Second claim.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+      text: |
+        A dilation centred at {A} with ratio $AF : AC$ maps {ABCD} onto {EG} (it maps {C} to {F} and preserves directions);
+        likewise a dilation centred at {C} maps {ABCD} onto {HK}. $\blacksquare$
+
+commentary: |
+  Joyce: with VI.24 Euclid returns to the *application of areas* of [[I.44]]–[[I.45]], preparing [[VI.28]]
+  and [[VI.29]], which apply a parallelogram to a line with a "defect" or an "excess" of given shape — the
+  geometric solution of quadratic equations. The converse is [[VI.26]].

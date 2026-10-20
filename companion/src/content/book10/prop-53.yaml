@@ -1,0 +1,238 @@
+id: X.53
+kind: problem
+title: To find the sixth binomial
+
+paraphrase: |
+  Construct a sixth binomial {FH} ([[X.Def.II.6]]): neither term commensurable with the rational line {E}, and
+  $\sqrt{FG^2 - GH^2}$ incommensurable with {FG}. A lemma on two squares placed corner to corner follows.
+
+diagram:
+  width: 160
+  height: 270
+  elements:
+    - "A0;point;free;40,-1000;0;0"
+    - "A3;point;free;40,1000;0;0"
+    - "D0;point;free;70,-1000;0;0"
+    - "D3;point;free;70,1000;0;0"
+    - "E0;point;free;100,-1000;0;0"
+    - "E3;point;free;100,1000;0;0"
+    - "F0;point;free;130,-1000;0;0"
+    - "F3;point;free;130,1000;0;0"
+    - "A;point;lineSlider;A0,A3,0,30"
+    - "B;point;lineSlider;A0,A3,0,220"
+    - "C;point;lineSlider;A0,A3,0,150"
+    - "AB;line;connect;A,B;0;0;blue"
+    - "D1;point;lineSlider;D0,D3,0,30;0"
+    - "D2;point;lineSlider;D0,D3,0,125;0"
+    - "D;line;connect;D1,D2;black;0;blue"
+    - "E1;point;lineSlider;E0,E3,0,30;0"
+    - "E2;point;lineSlider;E0,E3,0,110;0"
+    - "E;line;connect;E1,E2;black"
+    - "F;point;lineSlider;F0,F3,0,30"
+    - "G';point;proportion;D1,D2,A,B,E1,E2,F,F3;0;0"
+    - "G;point;meanProportional;E1,E2,F,G',F,F3"
+    - "H';point;proportion;B,A,A,C,F,G,G,F3;0;0"
+    - "H;point;meanProportional;F,G,G,H',G,F3"
+    - "FH;line;connect;F,H"
+    - "FG;line;connect;F,G;0;0;0"
+    - "GH;line;connect;G,H;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+  aliases: { BA: AB, HF: FH, GF: FG, HG: GH, CA: AC, BC: CB }
+  caption: |
+    As [[X.50]], but {AB} in no square ratio to {AC} or {CB}.
+
+steps:
+  - part: enunciation
+    text: "To find the sixth binomial straight line."
+    highlight: [FH]
+    hint: |
+      E.g. $\sqrt5 + \sqrt3$.
+
+  - part: construction
+    text: "Let two numbers AC, CB be set out such that AB has not to either of them the ratio which a square number has to a square number; and let there also be another number D which is not square and which has not to either of the numbers BA, AC the ratio which a square number has to a square number."
+    highlight: [AC, CB, D]
+    hint: |
+      Numbers {AC}, {CB} as in [[X.51]], and {D} not square, in no square ratio to {BA} or {AC}.
+
+  - part: construction
+    text: "Let any rational straight line E be set out, and let it be contrived that, as D is to AB, so is the square on E to the square on FG; therefore the square on E is commensurable with the square on FG."
+    highlight: [E, FG]
+    hint: |
+      sq({E}) : sq({FG}) = {D} : {AB}: commensurable squares.
+
+  - part: proof
+    text: "And E is rational; therefore FG is also rational."
+    highlight: [FG]
+    hint: |
+      {FG} rational.
+
+  - part: proof
+    text: "Now, since D has not to AB the ratio which a square number has to a square number, neither has the square on E to the square on FG the ratio which a square number has to a square number; therefore E is incommensurable in length with FG."
+    highlight: [E, FG]
+    hint: |
+      {E}, {FG} incommensurable in length.
+
+  - part: construction
+    text: "Again, let it be contrived that, as BA is to AC, so is the square on FG to the square on GH."
+    highlight: [FG, GH]
+    hint: |
+      sq({FG}) : sq({GH}) = {BA} : {AC} …
+
+  - part: proof
+    text: "Therefore the square on FG is commensurable with the square on HG."
+    highlight: [FG, GH]
+    hint: |
+      … commensurable squares …
+
+  - part: proof
+    text: "Therefore the square on HG is rational; therefore HG is rational."
+    highlight: [GH]
+    hint: |
+      … {HG} rational.
+
+  - part: proof
+    text: "And, since BA has not to AC the ratio which a square number has to a square number, neither has the square on FG to the square on GH the ratio which a square number has to a square number; therefore FG is incommensurable in length with GH."
+    highlight: [FG, GH]
+    hint: |
+      {FG}, {GH} incommensurable in length.
+
+  - part: proof
+    text: "Therefore FG, GH are rational straight lines commensurable in square only; therefore FH is binomial."
+    highlight: [FH]
+    hint: |
+      {FH} binomial.
+
+  - part: specification
+    text: "It is next to be proved that it is also a sixth binomial straight line."
+    highlight: [FH]
+    hint: |
+      A sixth binomial.
+
+  - part: proof
+    text: "For since, as D is to AB, so is the square on E to the square on FG, and also, as BA is to AC, so is the square on FG to the square on GH, therefore, ex aequali, as D is to AC, so is the square on E to the square on GH."
+    highlight: [E, GH]
+    hint: |
+      Ex aequali: sq({E}) : sq({GH}) = {D} : {AC} …
+
+  - part: proof
+    text: "But D has not to AC the ratio which a square number has to a square number; therefore neither has the square on E to the square on GH the ratio which a square number has to a square number; therefore E is incommensurable in length with GH."
+    highlight: [E, GH]
+    hint: |
+      … {E}, {GH} incommensurable in length.
+
+  - part: proof
+    text: "But it was also proved incommensurable with FG; therefore each of the straight lines FG, GH is incommensurable in length with E."
+    highlight: [FG, GH, E]
+    hint: |
+      Neither term commensurable with {E}.
+
+  - part: proof
+    text: "And, since, as BA is to AC, so is the square on FG to the square on GH, therefore the square on FG is greater than the square on GH."
+    highlight: [FG, GH]
+    hint: |
+      {FG} > {GH}.
+
+  - part: construction
+    text: "Let then the squares on GH, K be equal to the square on FG; therefore, convertendo, as AB is to BC, so is the square on FG to the square on K."
+    highlight: [FG]
+    hint: |
+      sq({FG}) = sq({GH}) + sq(*K*); sq({FG}) : sq(*K*) = {AB} : {BC}.
+
+  - part: proof
+    text: "But AB has not to BC the ratio which a square number has to a square number; so that neither has the square on FG to the square on K the ratio which a square number has to a square number."
+    highlight: [FG]
+    hint: |
+      Not square to square …
+
+  - part: proof
+    text: "Therefore FG is incommensurable in length with K; therefore the square on FG is greater than the square on GH by the square on a straight line incommensurable with FG."
+    highlight: [FG]
+    hint: |
+      … so the excess is incommensurable with {FG}.
+
+  - part: proof
+    text: "And FG, GH are rational straight lines commensurable in square only, and neither of them is commensurable in length with the rational straight line E set out."
+    highlight: [FG, GH, E]
+    hint: |
+      Collected.
+
+  - part: proof
+    text: "Therefore FH is a sixth binomial straight line."
+    highlight: [FH]
+    hint: |
+      Sixth binomial.
+    cites: [X.Def.II.6]
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to do.
+
+  - part: lemma
+    text: "Lemma. Let there be two squares AB, BC, and let them be placed so that DB is in a straight line with BE; therefore FB is also in a straight line with BG."
+    hint: |
+      Lemma (used in [[X.54]]–[[X.59]]): two squares *AB*, *BC* set corner to corner along a line.
+
+  - part: lemma
+    text: "Let the parallelogram AC be completed; I say that AC is a square, that DG is a mean proportional between AB, BC, and further that DC is a mean proportional between AC, CB."
+    hint: |
+      Complete *AC*: it is a square; *DG* is the mean between *AB*, *BC*; *DC* the mean between *AC*, *CB*.
+    modern: |
+      With sides $x, y$: $(x + y)^2$; $xy$ is the mean of $x^2, y^2$; $(x + y)y$ the mean of $(x+y)^2, y^2$.
+
+  - part: lemma
+    text: "For, since DB is equal to BF, and BE to BG, therefore the whole DE is equal to the whole FG."
+    hint: |
+      *DE* = *FG* …
+
+  - part: lemma
+    text: "But DE is equal to each of the straight lines AH, KC, and FG is equal to each of the straight lines AK, HC; therefore each of the straight lines AH, KC is also equal to each of the straight lines AK, HC."
+    hint: |
+      … and the opposite sides are equal ([[I.34]]) …
+
+  - part: lemma
+    text: "Therefore the parallelogram AC is equilateral."
+    hint: |
+      … so *AC* is equilateral …
+
+  - part: lemma
+    text: "And it is also rectangular; therefore AC is a square."
+    hint: |
+      … and rectangular: a square.
+
+  - part: lemma
+    text: "And since, as FB is to BG, so is DB to BE, while, as FB is to BG, so is AB to DG, and, as DB is to BE, so is DG to BC, therefore also, as AB is to DG, so is DG to BC."
+    hint: |
+      *AB* : *DG* = *FB* : *BG* = *DB* : *BE* = *DG* : *BC* ([[VI.1]]).
+
+  - part: lemma
+    text: "Therefore DG is a mean proportional between AB, BC."
+    hint: |
+      So *DG* is the mean.
+
+  - part: lemma
+    text: "I say next that DC is also a mean proportional between AC, CB."
+    hint: |
+      Next *DC*.
+
+  - part: lemma
+    text: "For since, as AD is to DK, so is KG to GC— for they are equal respectively— and, componendo, as AK is to KD, so is KC to CG, while, as AK is to KD, so is AC to CD, and, as KC is to CG, so is DC to CB, therefore also, as AC is to DC, so is DC to BC."
+    hint: |
+      Componendo and [[VI.1]]: *AC* : *DC* = *DC* : *CB*.
+
+  - part: lemma
+    text: "Therefore DC is a mean proportional between AC, CB. Being what it was proposed to prove."
+    hint: |
+      So *DC* is the mean.
+
+reconstruction:
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      text: |
+        As [[X.50]], with the non-square ratio of [[X.51]]. $\blacksquare$
+
+commentary: |
+  The six binomials are now constructed. The next six propositions ([[X.54]]–[[X.59]]) take the square root:
+  the side of a rectangle contained by a rational line and the $n$th binomial is one of the six additive
+  irrationals of [[X.36]]–[[X.41]].

@@ -1,0 +1,238 @@
+id: VI.29
+kind: problem
+title: Application with an excess (solving x(a + x) = c)
+
+paraphrase: |
+  To a given line {AB}, apply a parallelogram equal to a given figure {C}, overshooting {AB} by a parallelogram similar
+  to a given {D}. Always possible. In the square case this solves $x(a + x) = c$.
+
+diagram:
+  width: 550
+  height: 250
+  elements:
+    - "Z0;point;free;-1000,180;0;0"
+    - "Z1;point;free;1000,180;0;0"
+    - "A;point;lineSlider;Z0,Z1,170,180"
+    - "B;point;lineSlider;Z0,Z1,300,250"
+    - "E;point;midpoint;A,B"
+    - "C1;point;free;30,160;0"
+    - "C2;point;free;40,80;0"
+    - "C3;point;free;90,40;0"
+    - "C4;point;free;100,160;0"
+    - "C5;point;free;80,200;0"
+    - "C;polygon;pentagon;C1,C2,C3,C4,C5;black;0;black;#f3eee4"
+    - "Y0;point;free;-1000,140;0;0"
+    - "Y1;point;free;1000,140;0;0"
+    - "D1;point;free;140,80;0"
+    - "D2;point;lineSlider;Y0,Y1,130,140;0"
+    - "D3;point;lineSlider;Y0,Y1,190,140;0"
+    - "D;polygon;parallelogram;D1,D2,D3;black;0;black;#dfe7ea"
+    - "D4;point;vertex;D,4;0"
+    - "F;point;similar;E,B,D2,D3,D1"
+    - "L;point;similar;E,B,D2,D3,D4"
+    - "EBLF;polygon;quadrilateral;E,B,L,F;0;0;black;#dfe7ea"
+    - "FAApFp;polygon;application;C,E,F,A;0;0;0;0;0"
+    - "Fp;point;vertex;FAApFp,4;0;0"
+    - "Ap;point;vertex;FAApFp,3;0;0"
+    - "BLApFp;polygon;quadrilateral;B,L,Ap,Fp;0;0;0;0"
+    - "Dp;polygon;application;BLApFp,D3,D4,D2;0;0;0;0"
+    - "D6;point;vertex;Dp,4;0;0"
+    - "X0;point;free;-1000,50;0;0"
+    - "X1;point;free;1000,50;0;0"
+    - "K;point;lineSlider;X0,X1,410,50"
+    - "H;point;meanProportional;D2,D3,D3,D6,K,X1"
+    - "Gp;point;similar;K,H,D1,D4,D2;0;0"
+    - "GH;polygon;application;BLApFp,K,H,Gp;0;0;black;#dfe7ea"
+    - "G;point;vertex;GH,4"
+    - "M;point;cutoff;F,L,K,H"
+    - "N;point;cutoff;F,E,K,G"
+    - "O;point;parallelogram;N,F,M"
+    - "FO;line;connect;F,O"
+    - "P;point;intersection;A,B,M,O"
+    - "Q;point;intersection;L,B,N,O"
+    - "AO;polygon;parallelogram;A,P,O;0;0;black;#efe4d2"
+    - "FP;polygon;parallelogram;F,E,P;0;0;black;0"
+    - "LQ;line;connect;L,Q"
+    - "EN;line;connect;E,N"
+    - "Y;point;midpoint;B,P;0;0"
+    - "V;point;cutoff;B,L,B,Y;black;0"
+    - "W;point;cutoff;B,O,B,Y;black;0"
+    - "X;point;cutoff;B,A,B,Y;black;0"
+    - "XWV;sector;arc;X,W,V;0;0;darkGray;0"
+    - "T;point;parallelogram;A,E,N;0;0"
+    - "FMON;polygon;quadrilateral;F,M,O,N;0;0;0;0"
+    - "AENT;polygon;quadrilateral;A,E,N,T;0;0;0;0"
+    - "EBQN;polygon;quadrilateral;E,B,Q,N;0;0;0;0"
+    - "LMPB;polygon;quadrilateral;L,M,P,B;0;0;0;0"
+    - "EPON;polygon;quadrilateral;E,P,O,N;0;0;0;0"
+    - "BPOQ;polygon;quadrilateral;B,P,O,Q;0;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "FL;line;connect;F,L;0;0;0"
+    - "FE;line;connect;F,E;0;0;0"
+    - "FLM;line;connect;F,M;0;0;0"
+    - "FEN;line;connect;F,N;0;0;0"
+    - "KH;line;connect;K,H;0;0;0"
+    - "KG;line;connect;K,G;0;0;0"
+    - "AP;line;connect;A,P;0;0;0"
+    - "BP;line;connect;B,P;0;0;0"
+    - "MO;line;connect;M,O;0;0;0"
+  aliases:
+    BF: EBLF
+    EL: EBLF
+    FB: EBLF
+    MN: FMON
+    AN: AENT
+    NB: EBQN
+    LP: LMPB
+    EO: EPON
+    QP: BPOQ
+    PQ: BPOQ
+    VWX: XWV
+  given: [Z0, Z1, A, B, C1, C2, C3, C4, C5, C, Y0, Y1, D1, D2, D3, D, D4, AB]
+  caption: |
+    Drag the corners of {C} and {D}, or slide {A}, {B}. {AO} is applied to {AB}, equal to {C}, and overshoots by {QP}, which has the shape
+    of {D}.
+
+steps:
+  - part: enunciation
+    text: "To a given straight line to apply a parallelogram equal to a given rectilineal figure and exceeding by a parallelogrammic figure similar to a given one."
+    highlight: [AB, C, D]
+    hint: |
+      "Application with excess" (ὑπερβολή). No diorismos is needed: it can always be done.
+    explain:
+      implicit: |
+        With {D} a square and $AB = a$: find $x = BP$ with $(a + x)x = c$ — two lines with given difference $a$
+        and given product $c$.
+    modern: |
+      $$x(a + x) = c$$
+
+  - part: setting-out
+    text: "Let AB be the given straight line, C the given rectilineal figure to which the figure to be applied to AB is required to be equal, and D that to which the excess is required to be similar;"
+    highlight: [AB, C, D]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to apply to the straight line AB a parallelogram equal to the rectilineal figure C and exceeding by a parallelogrammic figure similar to D."
+    highlight: [AB, C, D]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let AB be bisected at E; let there be described on EB the parallelogram BF similar and similarly situated to D; and let GH be constructed at once equal to the sum of BF, C and similar and similarly situated to D."
+    highlight: [E, BF, GH]
+    adds: [E, F, L, EBLF, FAApFp, Fp, Ap, BLApFp, Dp, D6, X0, X1, K, H, Gp, GH, G, KH, KG, AE, EB, FL, FE]
+    hint: |
+      Bisect; draw {BF} on the half with the shape of {D} ([[VI.18]]); then {GH} with the shape of {D} and the size of
+      {BF} + {C} ([[VI.25]]).
+
+  - part: construction
+    text: "Let KH correspond to FL and KG to FE."
+    highlight: [KH, FL, KG, FE]
+    hint: |
+      The correspondence of sides.
+
+  - part: proof
+    text: "Now, since GH is greater than FB, therefore KH is also greater than FL, and KG than FE."
+    highlight: [GH, FB, KH, FL, KG, FE]
+    hint: |
+      Similar figures: the greater has the greater sides.
+    cites: [VI.20]
+
+  - part: construction
+    text: "Let FL, FE be produced, let FLM be equal to KH, and FEN to KG, and let MN be completed;"
+    highlight: [FLM, FEN, MN]
+    adds: [M, N, O, FMON, FLM, FEN, EN, MO]
+    hint: |
+      Extend the sides of {BF} from {F} to the lengths of {GH}'s sides, and complete {MN}.
+
+  - part: proof
+    text: "therefore MN is both equal and similar to GH."
+    highlight: [MN, GH]
+    hint: |
+      Same sides and angles.
+
+  - part: proof
+    text: "But GH is similar to EL; therefore MN is also similar to EL;"
+    highlight: [GH, EL, MN]
+    hint: |
+      [[VI.21]].
+
+  - part: proof
+    text: "therefore EL is about the same diameter with MN."
+    highlight: [EL, MN]
+    hint: |
+      [[VI.26]]: {B} lies on the diagonal of {MN}.
+
+  - part: construction
+    text: "Let their diameter FO be drawn, and let the figure be described."
+    highlight: [FO]
+    adds: [FO, P, Q, T, AO, FP, LQ, AENT, EBQN, LMPB, EPON, BPOQ, AP, BP, Y, V, W, X, XWV]
+    hint: |
+      The diagonal {FO} through {B}; extend {AB} to {P} on {MO}; complete the figure.
+
+  - part: proof
+    text: "Since GH is equal to EL, C, while GH is equal to MN, therefore MN is also equal to EL, C."
+    highlight: [GH, EL, C, MN]
+    hint: |
+      {MN} = {GH} = {EL} + {C}.
+
+  - part: proof
+    text: "Let EL be subtracted from each; therefore the remainder, the gnomon XWV, is equal to C."
+    highlight: [EL, XWV, C]
+    hint: |
+      The gnomon around {EL} equals {C} ([[I.CN.3]]).
+    cites: [I.CN.3]
+
+  - part: proof
+    text: "Now, since AE is equal to EB, AN is also equal to NB, that is, to LP."
+    highlight: [AE, EB, AN, NB, LP]
+    hint: |
+      Equal bases ([[I.36]]); {NB} and {LP} are complements about the diagonal ([[I.43]]).
+
+  - part: proof
+    text: "Let EO be added to each; therefore the whole AO is equal to the gnomon VWX."
+    highlight: [EO, AO, VWX]
+    hint: |
+      {AN} + {EO} = {AO}; {LP} + {EO} = the gnomon.
+
+  - part: proof
+    text: "But the gnomon VWX is equal to C; therefore AO is also equal to C."
+    highlight: [VWX, C, AO]
+    hint: |
+      So {AO} = {C}.
+
+  - part: conclusion
+    text: "Therefore to the given straight line AB there has been applied the parallelogram AO equal to the given rectilineal figure C and exceeding by a parallelogrammic figure QP which is similar to D, since PQ is also similar to EL."
+    highlight: [AO, QP, C, D]
+    hint: |
+      Done; {QP} lies about the diagonal, so it is similar to {EL} ([[VI.24]]), hence to {D}.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Square case: $AB = a$, unknown $x = BP$.
+  lines:
+    - steps: [1, 2, 3]
+      text: |
+        On the half $a/2$ draw a square; take a square of side $y$ with $y^2 = (a/2)^2 + c$.
+    - steps: [4, 5, 6, 7, 8, 9]
+      text: |
+        Set it at the same corner, so it surrounds the first square.
+    - steps: [10, 11, 12, 13, 14, 15]
+      text: |
+        Then $x = y - a/2$ and $x(a + x) = (y - a/2)(y + a/2) = y^2 - (a/2)^2 = c$:
+        $x = \sqrt{(\tfrac a2)^2 + c} - \tfrac a2$. $\blacksquare$
+  closing: |
+    Unlike [[VI.28]], there is always exactly one positive solution, so no diorismos is needed.
+
+commentary: |
+  The generalisation of [[II.6]] to parallelograms of any shape, as [[VI.28]] generalises [[II.5]]. Joyce notes
+  that the construction is used in the next proposition to cut a line in extreme and mean ratio — the case
+  $x(a + x) = a^2$.

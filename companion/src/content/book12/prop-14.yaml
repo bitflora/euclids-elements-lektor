@@ -1,0 +1,121 @@
+id: XII.14
+kind: theorem
+title: Cones and cylinders on equal bases are as their heights
+
+paraphrase: |
+  Cones and cylinders on equal bases are to one another as their heights.
+
+diagram:
+  width: 310
+  height: 300
+  elements:
+    - "G0;point;fixed;85,100,0;0;0"
+    - "Gy;point;fixed;85,-1000,400;0;0"
+    - "Gx;point;fixed;1000,100,0;0;0"
+    - "G;point;lineSlider;G0,Gy,0,140,0"
+    - "H;point;lineSlider;G0,Gy,0,280,0"
+    - "E';point;parallelogram;G,G0,Gx;0;0"
+    - "E;point;lineSlider;G,E',35,0,0"
+    - "A;point;parallelogram;E,G,H"
+    - "B;point;extend;A,H,A,H"
+    - "Gplane;plane;perpendicular;G,Gy;0;0;0;0"
+    - "Hplane;plane;perpendicular;H,Gy;0;0;0;0"
+    - "Gcirc;circle;radius;G,E,Gplane;0;0;black;300,40,100"
+    - "EAB;polygon;parallelogram;E,A,B;0;0;0;300,40,100"
+    - "Hcirc;circle;radius;H,A,Hplane;0;0;black;300,80,100"
+    - "ABG;polygon;triangle;A,B,G;0;0;0;300,80,100"
+    - "AE;line;connect;A,E"
+    - "AG;line;connect;A,G"
+    - "GH;line;connect;G,H"
+    - "GB;line;connect;G,B"
+    - "BB';line;parallel;B,H,G"
+    - "L;point;lineSlider;E',G,220,0,0"
+    - "C;point;cutoff;L,G,G,E"
+    - "D;point;extend;C,L,C,L"
+    - "L';point;parallelogram;L,G,Gy;0;0"
+    - "K;point;lineSlider;L,L',0,40,0"
+    - "F;point;parallelogram;K,L,C"
+    - "FC;line;connect;F,C"
+    - "CK;line;connect;C,K"
+    - "KL;line;connect;K,L"
+    - "KD;line;connect;K,D"
+    - "DD';line;parallel;D,L,K"
+    - "Kplane;plane;perpendicular;K,L;0;0;0;0"
+    - "Kcirc;circle;radius;K,F,Kplane;0;0;black;60,50,90"
+    - "FCD;polygon;parallelogram;F,C,D;0;0;0;60,50,90"
+    - "Lcirc;circle;radius;L,C,Gplane;0;0;black;70,90,90"
+    - "CDK;polygon;triangle;C,D,K;0;0;0;70,90,90"
+    - "N;point;extend;K,L,G,H"
+    - "M;point;parallelogram;N,L,D"
+    - "Ncirc;circle;radius;N,M,Hplane;0;0;black;0"
+    - "LN;line;connect;L,N"
+    - "DM;line;connect;D,M"
+    - "CC';line;extend;F,C,L,N"
+  aliases: { EA: AE, GA: AG, HG: GH, BG: GB, CF: FC, KC: CK, LK: KL, DK: KD, NL: LN, MD: DM }
+  caption: |
+    Cylinders *EB*, *FD* on equal bases; *CM* is a cylinder on the base of *FD* with axis {LN} equal to {GH}.
+
+steps:
+  - part: enunciation
+    text: "Cones and cylinders which are on equal bases are to one another as their heights."
+    highlight: [GH, KL]
+    hint: |
+      Equal bases: volume ∝ height.
+
+  - part: setting-out
+    text: "For let EB, FD be cylinders on equal bases, the circles AB, CD; I say that, as the cylinder EB is to the cylinder FD, so is the axis GH to the axis KL."
+    highlight: [GH, KL]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let the axis KL be produced to the point N, let LN be made equal to the axis GH, and let the cylinder CM be conceived about LN as axis."
+    highlight: [LN]
+    hint: |
+      Extend {KL} by {LN} = {GH}; the cylinder *CM* about it.
+
+  - part: proof
+    text: "Since then the cylinders EB, CM are of the same height, they are to one another as their bases."
+    highlight: [GH, LN]
+    hint: |
+      *EB*, *CM* have the same height: as their bases ([[XII.11]]) …
+
+  - part: proof
+    text: "But the bases are equal to one another; therefore the cylinders EB, CM are also equal."
+    highlight: [GH, LN]
+    hint: |
+      … so equal.
+
+  - part: proof
+    text: "And, since the cylinder FM has been cut by the plane CD which is parallel to its opposite planes, therefore, as the cylinder CM is to the cylinder FD, so is the axis LN to the axis KL."
+    highlight: [LN, KL]
+    hint: |
+      Cut *FM* by the plane *CD*: *CM* : *FD* = {LN} : {KL} ([[XII.13]]).
+
+  - part: proof
+    text: "But the cylinder CM is equal to the cylinder EB, and the axis LN to the axis GH; therefore, as the cylinder EB is to the cylinder FD, so is the axis GH to the axis KL."
+    highlight: [GH, KL]
+    hint: |
+      So *EB* : *FD* = {GH} : {KL}.
+
+  - part: proof
+    text: "But, as the cylinder EB is to the cylinder FD, so is the cone ABG to the cone CDK."
+    highlight: [GH, KL]
+    hint: |
+      Cones are thirds of cylinders ([[XII.10]]) …
+
+  - part: proof
+    text: "Therefore also, as the axis GH is to the axis KL, so is the cone ABG to the cone CDK and the cylinder EB to the cylinder FD."
+    highlight: [GH, KL]
+    hint: |
+      … so the same for cones.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $V = Bh$ (or $\tfrac13 Bh$) with common $B$. $\blacksquare$

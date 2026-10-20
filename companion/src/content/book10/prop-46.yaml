@@ -1,0 +1,69 @@
+id: X.46
+kind: theorem
+title: The side of a rational plus a medial area divides at only one point
+
+paraphrase: |
+  The side of a rational plus a medial area splits into its two terms in only one way.
+
+diagram:
+  width: 260
+  height: 70
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "B;point;lineSlider;A0,A3,220,0"
+    - "AB;line;connect;A,B;0;0"
+    - "C;point;lineSlider;A0,A3,170,0"
+    - "D;point;lineSlider;A0,A3,130,0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+  aliases: { BA: AB, CA: AC, BC: CB, DA: AD, BD: DB }
+  caption: |
+    {AB} divided at {C} and, supposedly, at {D}.
+
+steps:
+  - part: enunciation
+    text: "The side of a rational plus a medial area is divided at one point only."
+    highlight: [AB]
+    hint: |
+      Uniqueness, as in [[X.42]].
+
+  - part: setting-out
+    text: "Let AB be the side of a rational plus a medial area divided at C, so that AC, CB are incommensurable in square and make the sum of the squares on AC, CB medial, but twice the rectangle AC, CB rational; I say that AB is not so divided at another point."
+    highlight: [AC, CB]
+    hint: |
+      The division at {C}.
+
+  - part: proof
+    text: "For, if possible, let it be divided at D also, so that AD, DB are also incommensurable in square and make the sum of the squares on AD, DB medial, but twice the rectangle AD, DB rational."
+    highlight: [AD, DB]
+    hint: |
+      Suppose another at {D}.
+
+  - part: proof
+    text: "Since then that by which twice the rectangle AC, CB differs from twice the rectangle AD, DB is also that by which the squares on AD, DB differ from the squares on AC, CB, while twice the rectangle AC, CB exceeds twice the rectangle AD, DB by a rational area, therefore the squares on AD, DB also exceed the squares on AC, CB by a rational area, though they are medial: which is impossible."
+    highlight: [AC, CB, AD, DB]
+    hint: |
+      The sums of squares and the doubled rectangles differ by the same amount; that makes two medial areas
+      differ by a rational area — impossible ([[X.26]]).
+    cites: [X.26]
+
+  - part: proof
+    text: "Therefore the side of a rational plus a medial area is not divided at different points; therefore it is divided at one point only."
+    highlight: [AB]
+    hint: |
+      Only one division.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [2, 3]
+      text: |
+        As [[X.42]]. $\blacksquare$

@@ -1,0 +1,136 @@
+id: VII.22
+kind: theorem
+title: The least numbers in a ratio are coprime
+
+paraphrase: |
+  If {A} : {B} is in lowest terms, then {A} and {B} are prime to one another. The converse of [[VII.21]].
+
+diagram:
+  width: 250
+  height: 250
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "C0;point;free;-1000,110;0;0"
+    - "C3;point;free;1000,110;0;0"
+    - "D0;point;free;-1000,145;0;0"
+    - "D3;point;free;1000,145;0;0"
+    - "E0;point;free;-1000,180;0;0"
+    - "E3;point;free;1000,180;0;0"
+    - "A1;point;lineSlider;A0,A3,30,40;0"
+    - "A2;point;lineSlider;A0,A3,220,40;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,75;0"
+    - "B2;point;lineSlider;B0,B3,180,75;0"
+    - "B;line;connect;B1,B2;black"
+    - "E1;point;lineSlider;E0,E3,30,170;0;black"
+    - "E2;point;lineSlider;E0,E3,50,170;0;black"
+    - "E;line;connect;E1,E2;black"
+    - "C1;point;lineSlider;C0,C3,30,110;0"
+    - "M;point;midpoint;A1,A2;0;0"
+    - "C2;point;cutoff;C1,C3,A1,M;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,145;0"
+    - "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+  caption: |
+    {C} is the supposed common measure; {D} and {E} count how often it goes into {A} and {B}.
+
+steps:
+  - part: enunciation
+    text: "The least numbers of those which have the same ratio with them are prime to one another."
+    highlight: [A, B]
+    hint: |
+      A ratio in lowest terms has coprime terms.
+    modern: |
+      $a : b$ in lowest terms $\Rightarrow \gcd(a, b) = 1$.
+
+  - part: setting-out
+    text: "Let A, B be the least numbers of those which have the same ratio with them;"
+    highlight: [A, B]
+    hint: |
+      {A} : {B} in lowest terms.
+
+  - part: specification
+    text: "I say that A, B are prime to one another."
+    highlight: [A, B]
+    hint: |
+      To prove: coprime.
+
+  - part: proof
+    text: "For, if they are not prime to one another, some number will measure them."
+    highlight: [A, B]
+    hint: |
+      Suppose not.
+
+  - part: construction
+    text: "Let some number measure them, and let it be C."
+    highlight: [C]
+    hint: |
+      A common measure {C}.
+
+  - part: construction
+    text: "And, as many times as C measures A, so many units let there be in D, and, as many times as C measures B, so many units let there be in E"
+    highlight: [D, E]
+    hint: |
+      {A} = {D}·{C}, {B} = {E}·{C}.
+
+  - part: proof
+    text: "Since C measures A according to the units in D, therefore C by multiplying D has made A."
+    highlight: [C, D, A]
+    hint: |
+      {C} × {D} = {A} ([[VII.Def.15]]).
+
+  - part: proof
+    text: "For the same reason also C by multiplying E has made B."
+    highlight: [C, E, B]
+    hint: |
+      {C} × {E} = {B}.
+    cites: [VII.Def.15]
+
+  - part: proof
+    text: "Thus the number C by multiplying the two numbers D, E has made A, B; therefore, as D is to E, so is A to B;"
+    highlight: [D, E, A, B]
+    hint: |
+      By [[VII.17]], {D} : {E} = {A} : {B}.
+
+  - part: proof
+    text: "therefore D, E are in the same ratio with A, B, being less than they: which is impossible."
+    highlight: [D, E, A, B]
+    hint: |
+      {D}, {E} are smaller and in the same ratio — contradicting "least".
+
+  - part: proof
+    text: "Therefore no number will measure the numbers A, B."
+    highlight: [A, B]
+    hint: |
+      No common measure.
+
+  - part: proof
+    text: "Therefore A, B are prime to one another."
+    highlight: [A, B]
+    hint: |
+      Coprime ([[VII.Def.12]]).
+    cites: [VII.Def.12]
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6, 7]
+      text: |
+        If $c \ge 2$ divides $a$ and $b$: $a = cd$, $b = ce$.
+    - steps: [8, 9]
+      text: |
+        Then $d : e = a : b$ with $d < a$: not lowest terms. $\blacksquare$
+
+commentary: |
+  Used in [[VIII.2]], [[VIII.3]] and [[IX.15]]. Together with [[VII.21]] it identifies "least numbers in a
+  ratio" with "coprime numbers", the form in which Book VIII uses the idea.

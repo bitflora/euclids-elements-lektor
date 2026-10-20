@@ -1,0 +1,119 @@
+id: XIII.6
+kind: theorem
+title: The segments of a rational line cut in golden section are apotomes
+
+paraphrase: |
+  If a rational line {AB} is cut in extreme and mean ratio, each segment is an apotome: $\tfrac{\sqrt5 - 1}{2}$ and
+  $\tfrac{3 - \sqrt5}{2}$ (with $AB = 1$).
+
+diagram:
+  width: 250
+  height: 70
+  elements:
+    - "A;point;free;100,35"
+    - "B;point;free;220,35"
+    - "BATE;polygon;square;B,A;0;0;0;0"
+    - "E;point;vertex;BATE,4;0;0"
+    - "X;point;midpoint;A,B;0;0"
+    - "Y;point;extend;A,X,X,E;0;0"
+    - "C;point;cutoff;A,B,B,Y"
+    - "D;point;extend;B,A,B,X"
+    - "BD;line;connect;B,D"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "DA;line;connect;D,A;0;0;0"
+  aliases: { DB: BD, CA: AC, CB: BC, BA: AB, DC: CD }
+  caption: |
+    {AB} rational, cut at {C}; {AD} is half of {AB}, laid off beyond {A}.
+
+steps:
+  - part: enunciation
+    text: "If a rational straight line be cut in extreme and mean ratio, each of the segments is the irrational straight line called apotome."
+    highlight: [AC, BC]
+    hint: |
+      The golden-section segments are irrational of the apotome kind.
+    modern: |
+      $AC = \tfrac{\sqrt5}{2} - \tfrac12$, $BC = \tfrac32 - \tfrac{\sqrt5}{2}$: rational minus a rational line commensurable in square only.
+
+  - part: setting-out
+    text: "Let AB be a rational straight line, let it be cut in extreme and mean ratio at C, and let AC be the greater segment; I say that each of the straight lines AC, CB is the irrational straight line called apotome."
+    highlight: [AB, C]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let BA be produced, and let AD be made half of BA."
+    highlight: [AD]
+    hint: |
+      {AD} = half {AB}.
+
+  - part: proof
+    text: "Since then the straight line AB has been cut in extreme and mean ratio, and to the greater segment AC is added AD which is half of AB, therefore the square on CD is five times the square on DA."
+    highlight: [CD, AD]
+    hint: |
+      sq({CD}) = 5 sq({DA}) ([[XIII.1]]).
+
+  - part: proof
+    text: "Therefore the square on CD has to the square on DA the ratio which a number has to a number; therefore the square on CD is commensurable with the square on DA."
+    highlight: [CD, AD]
+    hint: |
+      So the squares are commensurable ([[X.6]]) …
+
+  - part: proof
+    text: "But the square on DA is rational, for DA is rational, being half of AB which is rational; therefore the square on CD is also rational; therefore CD is also rational."
+    highlight: [CD]
+    hint: |
+      … and {CD} is rational.
+
+  - part: proof
+    text: "And, since the square on CD has not to the square on DA the ratio which a square number has to a square number, therefore CD is incommensurable in length with DA; therefore CD, DA are rational straight lines commensurable in square only; therefore AC is an apotome."
+    highlight: [CD, AD]
+    hint: |
+      5 is not a square ratio, so {CD}, {DA} are incommensurable in length ([[X.9]]) — so {AC} = {CD} − {DA} is an apotome ([[X.73]]).
+
+  - part: proof
+    text: "Again, since AB has been cut in extreme and mean ratio, and AC is the greater segment, therefore the rectangle AB, BC is equal to the square on AC."
+    highlight: [AB, BC, AC]
+    hint: |
+      rect({AB},{BC}) = sq({AC}).
+
+  - part: proof
+    text: "Therefore the square on the apotome AC, if applied to the rational straight line AB, produces BC as breadth."
+    highlight: [BC]
+    hint: |
+      So sq({AC}) applied to {AB} gives breadth {BC} …
+
+  - part: proof
+    text: "But the square on an apotome, if applied to a rational straight line, produces as breadth a first apotome; therefore CB is a first apotome."
+    highlight: [BC]
+    hint: |
+      … which is a first apotome ([[X.97]]).
+
+  - part: proof
+    text: "And CA was also proved to be an apotome."
+    highlight: [AC, BC]
+    hint: |
+      Both are apotomes.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [AB]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $AC = \tfrac{\sqrt5 - 1}{2}$ and $BC = AC^2/AB$. $\blacksquare$
+
+commentary: |
+  Unlike its neighbours, this proposition links Book XIII to the irrationals of Book X; its proof relies on
+  [[X.97]]. Some editors have suspected it is a later addition.

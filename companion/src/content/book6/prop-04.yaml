@@ -1,0 +1,210 @@
+id: VI.4
+kind: theorem
+title: Equiangular triangles have proportional sides
+
+paraphrase: |
+  If two triangles {ABC}, {DCE} have their angles equal one to one, then the sides about the equal angles are
+  proportional, the sides opposite equal angles corresponding: {AB} : {BC} = {DC} : {CE}, and so on.
+
+diagram:
+  width: 330
+  height: 300
+  elements:
+    - "A;point;free;170,130"
+    - "B;point;free;40,260"
+    - "C;point;free;200,260"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "E;point;lineSlider;B,C,290,260"
+    - "D1;point;parallelogram;A,B,C;0;0"
+    - "D2;point;parallelogram;A,C,E;0;0"
+    - "D;point;intersection;C,D1,E,D2"
+    - "DCE;polygon;triangle;D,C,E;0;0;black;#dfe7ea"
+    - "F;point;intersection;B,A,E,D"
+    - "AF;line;connect;A,F"
+    - "DF;line;connect;D,F"
+    - "BC;line;connect;B,C;0;0;0"
+    - "CE;line;connect;C,E;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "BF;line;connect;B,F;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "FACD;polygon;quadrilateral;F,A,C,D;0;0;0;0"
+    - "FBE;polygon;triangle;F,B,E;0;0;0;0"
+    - "angABC;sector;angleMarker;B,A,C"
+    - "angDCE;sector;angleMarker;C,D,E"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angCDE;sector;angleMarker;D,C,E"
+    - "angACB;sector;angleMarker;C,A,B"
+    - "angCED;sector;angleMarker;E,C,D"
+  aliases:
+    BA: AB
+    CA: AC
+    DC: CD
+    ED: DE
+    FA: AF
+    FD: DF
+    FE: EF
+    ACB: angACB
+    angDEC: angCED
+    DEC: angCED
+  given: [A, B, C, ABC, E, D, DCE, BC, CE, BE, AB, AC, CD, DE, angABC, angDCE, angBAC, angCDE, angACB, angCED]
+  caption: |
+    {DCE} is built with its angles equal to those of {ABC}, set on the same line {BCE}. Drag {A}, {B}, {C}, or slide {E}.
+    {BA} and {ED} produced meet at {F}, and {FACD} is a parallelogram.
+
+steps:
+  - part: enunciation
+    text: "In equiangular triangles the sides about the equal angles are proportional, and those are corresponding sides which subtend the equal angles."
+    highlight: [ABC, DCE]
+    hint: |
+      Equal angles ⇒ proportional sides: the AAA similarity criterion.
+    explain:
+      implicit: |
+        "Equiangular triangles" means two triangles whose angles are equal *to each other*, one to one — not
+        triangles each of whose angles are equal (Joyce's warning).
+    modern: |
+      $$\triangle ABC,\ \triangle DCE \text{ equiangular} \ \Rightarrow\ \frac{AB}{DC} = \frac{BC}{CE} = \frac{CA}{ED}$$
+
+  - part: setting-out
+    text: "Let ABC, DCE be equiangular triangles having the angle ABC equal to the angle DCE, the angle BAC to the angle CDE, and further the angle ACB to the angle CED;"
+    highlight: [angABC, angDCE, angBAC, angCDE, angACB, angCED]
+    hint: |
+      Corresponding angles: {B} ↔ {C}, {A} ↔ {D}, {C} ↔ {E}.
+
+  - part: specification
+    text: "I say that in the triangles ABC, DCE the sides about the equal angles are proportional, and those are corresponding sides which subtend the equal angles."
+    highlight: [ABC, DCE]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let BC be placed in a straight line with CE."
+    highlight: [BC, CE]
+    hint: |
+      Move the second triangle so that its base continues the first base. Joyce notes that such placing
+      is common in Book VI and easily justified (copy the triangle with [[I.23]] and [[I.22]]).
+    explain:
+      implicit: |
+        Positioning a figure is a construction; Euclid treats it as harmless, since the hypotheses only
+        concern angles and the conclusion only ratios, both of which are unchanged by moving a triangle.
+
+  - part: proof
+    text: "Then, since the angles ABC, ACB are less than two right angles, and the angle ACB is equal to the angle DEC, therefore the angles ABC, DEC are less than two right angles;"
+    highlight: [angABC, angACB, angCED]
+    hint: |
+      Two angles of a triangle are less than two right angles ([[I.17]]); swap in the equal angle at {E}.
+
+  - part: proof
+    text: "therefore BA, ED, when produced, will meet."
+    highlight: [BA, ED]
+    hint: |
+      By the parallel postulate ([[I.Post.5]]): the interior angles at {B} and {E} on the same side of {BE} are less
+      than two right angles.
+
+  - part: construction
+    text: "Let them be produced and meet at F."
+    highlight: [F, BF, EF]
+    adds: [F, AF, DF, BF, EF, FACD, FBE]
+    hint: |
+      {F} is the apex of the big triangle {FBE}.
+
+  - part: proof
+    text: "Now, since the angle DCE is equal to the angle ABC, BF is parallel to CD."
+    highlight: [angDCE, angABC, BF, CD]
+    hint: |
+      Equal corresponding angles ([[I.28]]).
+
+  - part: proof
+    text: "Again, since the angle ACB is equal to the angle DEC, AC is parallel to FE."
+    highlight: [angACB, angDEC, AC, FE]
+    hint: |
+      Likewise ([[I.28]]).
+
+  - part: proof
+    text: "Therefore FACD is a parallelogram; therefore FA is equal to DC, and AC to FD."
+    highlight: [FACD, FA, DC, AC, FD]
+    hint: |
+      Opposite sides of a parallelogram are equal ([[I.34]]).
+
+  - part: proof
+    text: "And, since AC has been drawn parallel to FE, one side of the triangle FBE, therefore, as BA is to AF, so is BC to CE."
+    highlight: [AC, FE, FBE, BA, AF, BC, CE]
+    hint: |
+      [[VI.2]] in triangle {FBE}.
+
+  - part: proof
+    text: "But AF is equal to CD; therefore, as BA is to CD, so is BC to CE,"
+    highlight: [AF, CD, BA, BC, CE]
+    hint: |
+      Replace {AF} by {CD} ([[V.7]]).
+    cites: [V.7, V.11]
+
+  - part: proof
+    text: "and alternately, as AB is to BC, so is DC to CE."
+    highlight: [AB, BC, DC, CE]
+    hint: |
+      Alternate ([[V.16]]) — legitimate, since all four are lines.
+
+  - part: proof
+    text: "Again, since CD is parallel to BF, therefore, as BC is to CE, so is FD to DE."
+    highlight: [CD, BF, BC, CE, FD, DE]
+    hint: |
+      [[VI.2]] again, with the other parallel.
+
+  - part: proof
+    text: "But FD is equal to AC; therefore, as BC is to CE, so is AC to DE,"
+    highlight: [FD, AC, BC, CE, DE]
+    hint: |
+      Replace {FD} by {AC}.
+    cites: [V.7, V.11]
+
+  - part: proof
+    text: "and alternately, as BC is to CA, so is CE to ED."
+    highlight: [BC, CA, CE, ED]
+    hint: |
+      Alternate ([[V.16]]).
+
+  - part: proof
+    text: "Since then it was proved that, as AB is to BC, so is DC to CE, and, as BC is to CA, so is CE to ED; therefore, ex aequali, as BA is to AC, so is CD to DE."
+    highlight: [BA, AC, CD, DE]
+    hint: |
+      The third pair, *ex aequali* ([[V.22]]).
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6]
+      text: |
+        Place the triangles with bases {BC}, {CE} on one line; {BA} and {ED} meet at {F}.
+    - steps: [7, 8, 9]
+      text: |
+        Equal corresponding angles give $BF \parallel CD$ and $AC \parallel FE$, so {FACD} is a parallelogram.
+    - steps: [10, 11, 12, 13, 14, 15, 16]
+      text: |
+        Two applications of [[VI.2]] in {FBE} give $AB : BC = DC : CE$ and $BC : CA = CE : ED$; then
+        $BA : AC = CD : DE$. $\blacksquare$
+  closing: |
+    In trigonometric terms, the law of sines: $\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$, so
+    triangles with the same angles have sides in the same ratios.
+
+commentary: |
+  With VI.4 and its converse [[VI.5]], and the side-angle-side version [[VI.6]], Euclid has the three
+  similarity criteria for triangles. Joyce notes that VI.4 shows equiangular triangles are similar in the
+  sense of [[VI.Def.1]] — Euclid makes the point explicit in the proof of [[VI.8]].
+
+gaps: |
+  - **Moving a triangle** (step 3) is taken for granted.

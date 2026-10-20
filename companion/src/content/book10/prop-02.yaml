@@ -1,0 +1,145 @@
+id: X.2
+kind: theorem
+title: If the Euclidean algorithm never ends, the magnitudes are incommensurable
+
+paraphrase: |
+  If, when the less of two magnitudes is subtracted alternately from the greater, the remainder never
+  measures the one before it, then the magnitudes have no common measure.
+
+diagram:
+  width: 300
+  height: 100
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "C0;point;free;-1000,70;0;0"
+    - "C3;point;free;1000,70;0;0"
+    - "A;point;lineSlider;A0,A3,160,0"
+    - "B;point;lineSlider;A0,A3,260,0"
+    - "AB;line;connect;A,B"
+    - "C;point;lineSlider;C0,C3,30,0"
+    - "D;point;lineSlider;C0,C3,260,0"
+    - "CD;line;connect;C,D"
+    - "E1;point;lineSlider;A0,A3,30,0;0"
+    - "E2;point;lineSlider;A0,A3,80,0;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;cutoff;D,C,A,B;0;0"
+    - "F;point;cutoff;F1,C,A,B"
+    - "G1;point;cutoff;B,A,C,F;0;0"
+    - "G;point;cutoff;G1,A,C,F"
+    - "FD;line;connect;F,D;0;0;0"
+    - "CF;line;connect;C,F;0;0;0"
+    - "BG;line;connect;B,G;0;0;0"
+    - "AG;line;connect;A,G;0;0;0"
+  aliases: { DF: FD, GA: AG }
+  caption: |
+    {AB} measures {FD} leaving {CF}; {CF} measures {BG} leaving {AG}; and so on. {E} is the supposed common
+    measure.
+
+steps:
+  - part: enunciation
+    text: "If, when the less of two unequal magnitudes is continually subtracted in turn from the greater, that which is left never measures the one before it, the magnitudes will be incommensurable."
+    highlight: [AB, CD]
+    hint: |
+      A never-ending Euclidean algorithm means incommensurable.
+    modern: |
+      If the continued fraction of $a/b$ is infinite, $a/b$ is irrational.
+
+  - part: setting-out
+    text: "For, there being two unequal magnitudes AB, CD, and AB being the less, when the less is continually subtracted in turn from the greater, let that which is left over never measure the one before it;"
+    highlight: [AB, CD]
+    hint: |
+      The algorithm on {AB} < {CD} never stops.
+
+  - part: specification
+    text: "I say that the magnitudes AB, CD are incommensurable."
+    highlight: [AB, CD]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, if they are commensurable, some magnitude will measure them."
+    highlight: [AB, CD]
+    hint: |
+      Suppose a common measure.
+
+  - part: construction
+    text: "Let a magnitude measure them, if possible, and let it be E;"
+    highlight: [E]
+    hint: |
+      Call it {E}.
+
+  - part: construction
+    text: "let AB, measuring FD, leave CF less than itself, let CF measuring BG, leave AG less than itself, and let this process be repeated continually, until there is left some magnitude which is less than E."
+    highlight: [FD, CF, BG, AG]
+    hint: |
+      Run the algorithm until a remainder is less than {E}.
+    explain:
+      implicit: |
+        That a remainder less than {E} must appear: Heath cites [[X.1]] here, since each remainder is less
+        than half of the one two steps before. Joyce notes that Euclid does not say so, and that both
+        magnitudes being multiples of {E} would make the [[VII.2]]-style argument enough.
+    cites: [X.1]
+
+  - part: construction
+    text: "Suppose this done, and let there be left AG less than E."
+    highlight: [AG, E]
+    hint: |
+      Let {AG} < {E}.
+
+  - part: proof
+    text: "Then, since E measures AB, while AB measures DF, therefore E will also measure FD."
+    highlight: [E, AB, FD]
+    hint: |
+      {E} measures {AB}, hence {FD}.
+
+  - part: proof
+    text: "But it measures the whole CD also; therefore it will also measure the remainder CF."
+    highlight: [E, CD, CF]
+    hint: |
+      Hence the remainder {CF}.
+
+  - part: proof
+    text: "But CF measures BG; therefore E also measures BG."
+    highlight: [E, CF, BG]
+    hint: |
+      Hence {BG}.
+
+  - part: proof
+    text: "But it measures the whole AB also; therefore it will also measure the remainder AG, the greater the less: which is impossible."
+    highlight: [E, AB, AG]
+    hint: |
+      Hence {AG} — but {AG} < {E}: impossible.
+
+  - part: proof
+    text: "Therefore no magnitude will measure the magnitudes AB, CD; therefore the magnitudes AB, CD are incommensurable."
+    highlight: [AB, CD]
+    hint: |
+      Incommensurable ([[X.Def.1]]).
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        If $e$ divides $a$ and $b$, it divides every remainder $r_k$.
+    - steps: [7, 8, 9, 10, 11]
+      text: |
+        The remainders decrease without end (at least halving every two steps), so some $r_k < e$ — yet $e \mid
+        r_k$ and $r_k > 0$. $\blacksquare$
+
+commentary: |
+  The magnitude version of [[VII.1]]: there, the algorithm on numbers always stops; for magnitudes it may
+  not, and when it does not, they are incommensurable. Joyce's example: the side and diagonal of the regular
+  pentagon (the 36°-72°-72° triangle of [[IV.10]]) — each subtraction produces a smaller similar triangle,
+  so the process never ends.
+
+historical: |
+  Many historians (Zeuthen, Fowler, Knorr) think incommensurability was first discovered through this
+  process (*anthyphairesis*), perhaps on the pentagon, rather than through the arithmetic of $\sqrt2$.

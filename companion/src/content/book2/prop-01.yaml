@@ -1,0 +1,202 @@
+id: II.1
+kind: theorem
+title: The distributive law, in rectangles
+
+paraphrase: |
+  Take two lines, {A} and {BC}, and cut {BC} into pieces. The rectangle on {A} and {BC} equals the
+  sum of the rectangles on {A} and each piece. In algebra: $a(b + c + d) = ab + ac + ad$.
+
+diagram:
+  width: 330
+  height: 250
+  elements:
+    - "A0;point;free;-1000,40;0"
+    - "A3;point;free;1000,40;0"
+    - "A1;point;lineSlider;A0,A3,90,40;0"
+    - "A2;point;lineSlider;A0,A3,200,40;0"
+    - "A;line;connect;A1,A2;black"
+    - "B;point;free;40,80"
+    - "Cp;point;parallelogram;B,A;0;0"
+    - "C;point;lineSlider;B,Cp,290,80"
+    - "BC;line;connect;B,C"
+    - "D;point;lineSlider;BC,110,80"
+    - "E;point;lineSlider;BC,220,80"
+    - "BFp;line;perpendicular;B,C;0;0;0"
+    - "F;point;lineSlider;BFp,30,230"
+    - "BF;line;connect;B,F"
+    - "G;point;cutoff;BF,A"
+    - "DBGK;polygon;parallelogram;D,B,G;0;0;black;#efe4d2"
+    - "K;point;vertex;DBGK,4"
+    - "EDKL;polygon;parallelogram;E,D,K;0;0;black;#dfe7ea"
+    - "L;point;vertex;EDKL,4"
+    - "CELH;polygon;parallelogram;C,E,L;0;0;black;#efe4d2"
+    - "H;point;vertex;CELH,4"
+    - "BD;line;connect;B,D;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "EC;line;connect;E,C;0;0;0"
+    - "BG;line;connect;B,G;0;0;0"
+    - "GH;line;connect;G,H;0;0;0"
+    - "DK;line;connect;D,K;0;0;0"
+    - "EL;line;connect;E,L;0;0;0"
+    - "CH;line;connect;C,H;0;0;0"
+    - "BCHG;polygon;quadrilateral;B,C,H,G;0;0;0;0"
+  aliases:
+    BH: BCHG
+    BK: DBGK
+    DL: EDKL
+    EH: CELH
+    GB: BG
+    KD: DK
+    LE: EL
+    HC: CH
+    CB: BC
+    DB: BD
+    ED: DE
+    CE: EC
+  given: [A, A1, A2, B, C, D, E, BC]
+  caption: |
+    Drag the ends of {A} to change its length, slide {D}, {E} and {C} along {BC}. The three
+    rectangles always fill the big one.
+
+steps:
+  - part: enunciation
+    text: "If there be two straight lines, and one of them be cut into any number of segments whatever, the rectangle contained by the two straight lines is equal to the rectangles contained by the uncut straight line and each of the segments."
+    highlight: [BH, BK, DL, EH]
+    hint: |
+      A rectangle can be cut into strips: the whole equals the sum of the parts. In algebra, the
+      distributive law $a(b + c + d) = ab + ac + ad$.
+    explain:
+      fact: |
+        "The rectangle contained by" two lines is the rectangle with those lines as adjacent sides
+        ([[II.Def.1]]). The two lines here are separate: the rectangle is built from their lengths.
+    cites: [II.Def.1]
+
+  - part: setting-out
+    text: "Let A, BC be two straight lines, and let BC be cut at random at the points D, E;"
+    highlight: [A, BC, D, E]
+    hint: |
+      A line {A}, and a line {BC} cut at {D} and {E}. (Three pieces stand for "any number".)
+
+  - part: specification
+    text: "I say that the rectangle contained by A, BC is equal to the rectangle contained by A, BD, that contained by A, DE and that contained by A, EC."
+    highlight: [A, BC, BD, DE, EC]
+    hint: |
+      The goal.
+    modern: |
+      $$a\,(b_1 + b_2 + b_3) = a b_1 + a b_2 + a b_3$$
+
+  - part: construction
+    text: "For let BF be drawn from B at right angles to BC;"
+    highlight: [BF]
+    adds: [BF, F]
+    hint: |
+      Raise a perpendicular at {B} ([[I.11]]).
+
+  - part: construction
+    text: "let BG be made equal to A,"
+    highlight: [BG, A, G]
+    adds: [G]
+    hint: |
+      Mark off {BG} = {A} on it ([[I.3]]). Now {A} stands at right angles to {BC}.
+
+  - part: construction
+    text: "through G let GH be drawn parallel to BC,"
+    highlight: [GH]
+    adds: [GH, H]
+    hint: |
+      The top side of the big rectangle ([[I.31]]).
+    cites: [I.31]
+
+  - part: construction
+    text: "and through D, E, C let DK, EL, CH be drawn parallel to BG."
+    highlight: [DK, EL, CH]
+    adds: [K, L, DBGK, EDKL, CELH]
+    hint: |
+      Verticals at {D}, {E}, {C} cut the big rectangle into three strips ([[I.31]]).
+
+  - part: proof
+    text: "Then BH is equal to BK, DL, EH."
+    highlight: [BH, BK, DL, EH]
+    hint: |
+      The whole rectangle {BH} is made up of the three strips.
+    explain:
+      fact: |
+        Euclid names a rectangle by two opposite corners: {BH} is {BCHG}, {BK} is {DBGK}, and so on.
+      implicit: |
+        "The whole is equal to the sum of its parts" — not among the common notions, though
+        [[I.CN.2]] and [[I.CN.5]] come close. Euclid uses it throughout Book II without comment.
+
+  - part: proof
+    text: "Now BH is the rectangle A, BC, for it is contained by GB, BC, and BG is equal to A;"
+    highlight: [BH, BG, BC, A]
+    hint: |
+      {BH} has sides {GB} (= {A}) and {BC}.
+    explain:
+      implicit: |
+        "The rectangle {A}, {BC}": from here on, Heath notes, Euclid often leaves out "contained by",
+        and the Greek even omits the word "rectangle" (his note on line 20).
+
+  - part: proof
+    text: "BK is the rectangle A, BD, for it is contained by GB, BD, and BG is equal to A;"
+    highlight: [BK, BG, BD]
+    hint: |
+      The first strip: sides {BG} (= {A}) and {BD}.
+
+  - part: proof
+    text: "and DL is the rectangle A, DE, for DK, that is BG, is equal to A."
+    highlight: [DL, DK, DE]
+    hint: |
+      The second strip: {DK} equals {BG} as opposite sides of a parallelogram ([[I.34]]).
+
+  - part: proof
+    text: "Similarly also EH is the rectangle A, EC."
+    highlight: [EH, EC]
+    hint: |
+      The third strip.
+
+  - part: conclusion
+    text: "Therefore the rectangle A, BC is equal to the rectangle A, BD, the rectangle A, DE and the rectangle A, EC."
+    highlight: [BH, BK, DL, EH]
+    hint: |
+      Done.
+    modern: |
+      $$a\cdot BC = a\cdot BD + a\cdot DE + a\cdot EC$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* With lengths as real numbers and area as
+    their product, II.1 is the distributive law:
+  lines:
+    - steps: [1, 2]
+      text: Let $a = A$ and $BC = b_1 + b_2 + b_3$.
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11]
+      text: $a(b_1 + b_2 + b_3) = ab_1 + ab_2 + ab_3$, since area is additive over disjoint pieces. $\blacksquare$
+  closing: |
+    In Euclid the "product" is a figure and the "sum" is putting figures side by side; no
+    multiplication of numbers is involved.
+
+commentary: |
+  II.1 is the general form of the next nine propositions, which are all special cases where the
+  lines and their pieces are related: [[II.2]] and [[II.3]] follow from it directly, and [[II.4]]–[[II.10]]
+  rearrange squares and rectangles cut from a single line.
+
+  The standard reading of Book II as **geometric algebra** starts here: rectangle = product,
+  square = square, and I.4-style congruence replaced by area bookkeeping. See [[II.Def.1]].
+
+gaps: |
+  - **Whole equals sum of parts**, used in step 5, is never stated.
+
+historical: |
+  [[II.2]] and [[II.3]] are special cases of II.1, but Euclid gives each its own figure and proof.
+  The Book II style — a line cut into pieces, with squares and rectangles drawn on the pieces —
+  is probably much older than Euclid; it is often associated with the Pythagoreans.

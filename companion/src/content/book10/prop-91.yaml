@@ -1,0 +1,252 @@
+id: X.91
+kind: theorem
+title: The side of a rational line times a first apotome is an apotome
+
+paraphrase: |
+  If an area {AB} is contained by a rational line {AC} and a first apotome {AD}, its side {LN} is an apotome. The
+  subtractive twin of [[X.54]]: $\sqrt{\rho(a - \sqrt b)} = \sqrt u - \sqrt v$.
+
+diagram:
+  width: 410
+  height: 190
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "A;point;lineSlider;A0,A3,40,0"
+    - "D;point;lineSlider;A0,A3,80,0"
+    - "C';point;perpendicular;A,D;0;0"
+    - "C;point;lineSlider;A,C',0,150"
+    - "B;point;parallelogram;C,A,D"
+    - "ACBD;polygon;quadrilateral;A,C,B,D;0;0;black;random"
+    - "G;point;lineSlider;A0,A3,200,0"
+    - "E;point;midpoint;G,D"
+    - "AGmid;point;midpoint;A,G;0;0"
+    - "AGquar;point;midpoint;G,AGmid;0;0"
+    - "GEcirc;circle;radius;G,E;0;0;0;0"
+    - "GAcirc;circle;radius;AGquar,G;0;0;0;0"
+    - "bich;line;bichord;GEcirc,GAcirc;0;0;0"
+    - "F';point;first;bich;0;0"
+    - "F;point;cutoff;AGmid,G,AGmid,F'"
+    - "H;point;parallelogram;C,A,E"
+    - "I;point;parallelogram;C,A,F"
+    - "K;point;parallelogram;C,A,G"
+    - "DFIB;polygon;quadrilateral;D,F,I,B;0;0;black;random"
+    - "EH;line;connect;E,H"
+    - "IFGK;polygon;quadrilateral;I,F,G,K;0;0;black;140,80,100"
+    - "R0;point;free;-1000,160;0;0"
+    - "R3;point;free;1000,160;0;0"
+    - "R;point;lineSlider;R0,R3,240,0"
+    - "M;point;meanProportional;A,F,F,I,R,R3"
+    - "RMPL;polygon;square;R,M;0;0;black;random"
+    - "P;point;vertex;RMPL,3"
+    - "L;point;vertex;RMPL,4"
+    - "N;point;meanProportional;F,I,I,K,P,L"
+    - "PNXO;polygon;square;P,N;0;0;black;140,80,100"
+    - "O;point;vertex;PNXO,4"
+    - "X;point;vertex;PNXO,3;0"
+    - "S;point;intersection;L,R,X,O"
+    - "T;point;intersection;R,M,X,N"
+    - "SX;line;connect;S,X"
+    - "TX;line;connect;T,X"
+    - "RP;line;connect;R,P"
+    - "Z;point;midpoint;X,O;0;0"
+    - "U;point;cutoff;X,S,X,Z"
+    - "V;point;cutoff;X,P,X,Z"
+    - "W;point;cutoff;X,T,X,Z"
+    - "UVW;sector;arc;W,V,U;0;0;gray;0"
+    - "LN;line;connect;L,N;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "AG;line;connect;A,G;0;0;0"
+    - "DG;line;connect;D,G;0;0;0"
+    - "AF;line;connect;A,F;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+    - "EG;line;connect;E,G;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "LP;line;connect;L,P;0;0;0"
+    - "PN;line;connect;P,N;0;0;0"
+    - "GD;line;connect;G,D;0;0;0"
+  aliases: { AB: ACBD, LM: RMPL, NO: PNXO, HE: EH, XS: SX, XT: TX, PR: RP, NL: LN, CA: AC, DA: AD, GA: AG, FA: AF, GF: FG, GE: EG, ED: DE, PL: LP, NP: PN }
+  caption: |
+    The area {AB} on the rational line {AC} and the apotome {AD} (annex {DG}). Squares {LM} = *AI* and {NO} =
+    *FK* share an angle; {LN} is the side of {AB}.
+
+steps:
+  - part: enunciation
+    text: "If an area be contained by a rational straight line and a first apotome, the “side” of the area is an apotome."
+    highlight: [AB, LN]
+    hint: |
+      √(rational × first apotome) is an apotome.
+
+  - part: setting-out
+    text: "For let the area AB be contained by the rational straight line AC and the first apotome AD;"
+    highlight: [AB, AC, AD]
+    hint: |
+      Setup.
+
+  - part: specification
+    text: "I say that the “side” of the area AB is an apotome."
+    highlight: [LN]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since AD is a first apotome, let DG be its annex; therefore AG, GD are rational straight lines commensurable in square only."
+    highlight: [AG, DG]
+    hint: |
+      The annex {DG}: {AG}, {GD} rational, commensurable in square only.
+
+  - part: proof
+    text: "And the whole AG is commensurable with the rational straight line AC set out, and the square on AG is greater than the square on GD by the square on a straight line commensurable in length with AG; if therefore there be applied to AG a parallelogram equal to the fourth part of the square on DG and deficient by a square figure, it divides it into commensurable parts."
+    highlight: [AG, AC]
+    hint: |
+      {AG} commensurable with {AC}; excess commensurable with {AG} ([[X.Def.III.1]]); so [[X.17]] applies.
+
+  - part: construction
+    text: "Let DG be bisected at E, let there be applied to AG a parallelogram equal to the square on EG and deficient by a square figure, and let it be the rectangle AF, FG; therefore AF is commensurable with FG."
+    highlight: [AF, FG, EG]
+    hint: |
+      Bisect {DG} at {E}; rect({AF},{FG}) = sq({EG}); {AF}, {FG} commensurable.
+
+  - part: construction
+    text: "And through the points E, F, G let EH, FI, GK be drawn parallel to AC."
+    highlight: [EH]
+    hint: |
+      Draw {EH}, *FI*, *GK* parallel to {AC}.
+
+  - part: proof
+    text: "Now, since AF is commensurable in length with FG, therefore AG is also commensurable in length with each of the straight lines AF, FG."
+    highlight: [AG, AF, FG]
+    hint: |
+      {AG} commensurable with {AF}, {FG} ([[X.15]]) …
+
+  - part: proof
+    text: "But AG is commensurable with AC; therefore each of the straight lines AF, FG is commensurable in length with AC."
+    highlight: [AF, FG, AC]
+    hint: |
+      … which are commensurable with {AC} …
+
+  - part: proof
+    text: "And AC is rational; therefore each of the straight lines AF, FG is also rational, so that each of the rectangles AI, FK is also rational."
+    highlight: [AF, FG]
+    hint: |
+      … so *AI*, *FK* rational.
+
+  - part: proof
+    text: "Now, since DE is commensurable in length with EG, therefore DG is also commensurable in length with each of the straight lines DE, EG."
+    highlight: [DE, EG, DG]
+    hint: |
+      {DE}, {EG} commensurable with {DG} …
+
+  - part: proof
+    text: "But DG is rational and incommensurable in length with AC; therefore each of the straight lines DE, EG is also rational and incommensurable in length with AC; therefore each of the rectangles DH, EK is medial."
+    highlight: [DE, EG]
+    hint: |
+      … rational, incommensurable with {AC}: *DH*, *EK* medial.
+
+  - part: construction
+    text: "Now let the square LM be made equal to AI, and let there be subtracted the square NO having a common angle with it, the angle LPM, and equal to FK; therefore the squares LM, NO are about the same diameter."
+    highlight: [LM, NO]
+    hint: |
+      Square {LM} = *AI*; subtract {NO} = *FK* about the same angle ([[VI.26]]).
+
+  - part: construction
+    text: "Let PR be their diameter, and let the figure be drawn."
+    highlight: [LM, NO]
+    hint: |
+      Diameter *PR*; draw the figure.
+
+  - part: proof
+    text: "Since then the rectangle contained by AF, FG is equal to the square on EG, therefore, as AF is to EG, so is EG to FG."
+    highlight: [EG]
+    hint: |
+      rect({AF},{FG}) = sq({EG}), so {AF} : {EG} = {EG} : {FG} ([[VI.17]]).
+
+  - part: proof
+    text: "But, as AF is to EG, so is AI to EK, and, as EG is to FG, so is EK to KF; therefore EK is a mean proportional between AI, KF."
+    highlight: [LM, NO]
+    hint: |
+      *EK* is the mean between *AI*, *FK* ([[VI.1]]).
+
+  - part: proof
+    text: "But MN is also a mean proportional between LM, NO, as was before proved, and AI is equal to the square LM, and KF to NO; therefore MN is also equal to EK."
+    highlight: [LM, NO]
+    hint: |
+      *MN* is the mean between {LM}, {NO} (lemma of [[X.53]]), so *EK* = *MN*.
+
+  - part: proof
+    text: "But EK is equal to DH, and MN to LO; therefore DK is equal to the gnomon UVW and NO."
+    highlight: [LM, NO]
+    hint: |
+      *DK* = gnomon *UVW* + {NO}.
+
+  - part: proof
+    text: "But AK is also equal to the squares LM, NO; therefore the remainder AB is equal to ST."
+    highlight: [AB]
+    hint: |
+      *AK* = {LM} + {NO}, so the remainder {AB} = *ST*.
+
+  - part: proof
+    text: "But ST is the square on LN; therefore the square on LN is equal to AB; therefore LN is the “side” of AB."
+    highlight: [LN, AB]
+    hint: |
+      *ST* = sq({LN}): {LN} is the side of {AB}.
+
+  - part: specification
+    text: "I say next that LN is an apotome."
+    highlight: [LN]
+    hint: |
+      {LN} is an apotome:
+
+  - part: proof
+    text: "For, since each of the rectangles AI, FK is rational, and they are equal to LM, NO, therefore each of the squares LM, NO, that is, the squares on LP, PN respectively, is also rational; therefore each of the straight lines LP, PN is also rational."
+    highlight: [LM, NO]
+    hint: |
+      {LM}, {NO} rational and commensurable; i.e. sq({LP}), sq({PN}).
+
+  - part: proof
+    text: "Again, since DH is medial and is equal to LO, therefore LO is also medial."
+    highlight: [LM, NO]
+    hint: |
+      *LO* = *DH* is medial.
+
+  - part: proof
+    text: "Since then LO is medial, while NO is rational, therefore LO is incommensurable with NO."
+    highlight: [LM, NO]
+    hint: |
+      *LO* medial, {NO} rational: incommensurable.
+
+  - part: proof
+    text: "But, as LO is to NO, so is LP to PN; therefore LP is incommensurable in length with PN."
+    highlight: [LP, PN]
+    hint: |
+      So {LP}, {PN} incommensurable in length.
+
+  - part: proof
+    text: "And both are rational; therefore LP, PN are rational straight lines commensurable in square only; therefore LN is an apotome."
+    highlight: [LP, PN, LN]
+    hint: |
+      Rational, commensurable in square only: {LN} an apotome ([[X.73]]).
+
+  - part: proof
+    text: "And it is the “side” of the area AB; therefore the “side” of the area AB is an apotome."
+    highlight: [LN, AB]
+    hint: |
+      And it is the side of {AB}.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [AB]
+    hint: |
+      The enunciation, now proved.
+
+reconstruction:
+  lines:
+    - text: |
+        $\rho(a - \sqrt b) = (\sqrt u - \sqrt v)^2$ with $u + v = a$, $4uv = b$, $u, v$ rational ([[X.17]]).
+        $\blacksquare$
+
+commentary: |
+  [[X.91]]–[[X.96]] mirror [[X.54]]–[[X.59]]: the side of $\rho\times$(the $n$th apotome) is the $n$th
+  subtractive irrational. The square is built by subtracting one square from another about a common angle,
+  leaving a gnomon.

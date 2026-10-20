@@ -1,0 +1,123 @@
+id: XI.16
+kind: theorem
+title: A plane cuts parallel planes in parallel lines
+
+paraphrase: |
+  If two parallel planes are cut by a third plane, the lines of intersection {EF}, {GH} are parallel.
+
+diagram:
+  width: 320
+  height: 230
+  elements:
+    - "X;point;free;100000,200"
+    - "Y;point;free;200,-100000"
+    - "Z;point;free;30000,-100000"
+    - "A;point;free;40,100"
+    - "B;point;free;170,30"
+    - "P1;point;intersection;A,X,B,Z;0;0"
+    - "P3;point;intersection;B,X,A,Z;0;0"
+    - "P;polygon;quadrilateral;A,P1,B,P3;0;0;gray;brighter"
+    - "C;point;free;40,180"
+    - "D;point;free;170,110"
+    - "Q1;point;intersection;C,X,D,Z;0;0"
+    - "Q3;point;intersection;D,X,C,Z;0;0"
+    - "Q;polygon;quadrilateral;C,Q1,D,Q3;0;0;gray;brighter"
+    - "E;point;lineSlider;A,P3,40,50"
+    - "F;point;intersection;E,X,B,P1"
+    - "EF;line;connect;E,F"
+    - "G;point;lineSlider;C,Q3,60,160"
+    - "H;point;intersection;G,X,D,Q1"
+    - "GH;line;connect;G,H"
+    - "EG;line;connect;E,G"
+    - "FH;line;connect;F,H"
+    - "M;point;midpoint;E,G;0;0"
+    - "K;point;lineSlider;M,X,270,100"
+    - "FK;line;connect;F,K"
+    - "HK;line;connect;H,K"
+    - "EFK;polygon;triangle;E,F,K;0;0;0"
+  aliases: { FE: EF, HG: GH, GE: EG, HF: FH, KF: FK, KH: HK }
+  caption: |
+    The cutting plane {EFGH} meets the parallel planes in {EF} and {GH}; {K} is their supposed meeting point.
+
+steps:
+  - part: enunciation
+    text: "If two parallel planes be cut by any plane, their common sections are parallel."
+    highlight: [EF, GH]
+    hint: |
+      Parallel planes cut by a plane give parallel lines.
+
+  - part: setting-out
+    text: "For let the two parallel planes AB, CD be cut by the plane EFGH, and let EF, GH be their common sections; I say that EF is parallel to GH."
+    highlight: [EF, GH]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For, if not, EF, GH will, when produced, meet either in the direction of F, H or of E, G."
+    highlight: [EF, GH]
+    hint: |
+      Otherwise they meet on one side or the other …
+
+  - part: proof
+    text: "Let them be produced, as in the direction of F, H, and let them, first, meet at K."
+    highlight: [EF, GH]
+    hint: |
+      … say at {K}.
+
+  - part: proof
+    text: "Now, since EFK is in the plane AB, therefore all the points on EFK are also in the plane AB."
+    highlight: [EF]
+    hint: |
+      {EFK} lies in plane *AB* ([[XI.1]]) …
+
+  - part: proof
+    text: "But K is one of the points on the straight line EFK; therefore K is in the plane AB."
+    highlight: [EF]
+    hint: |
+      … so {K} is in *AB* …
+
+  - part: proof
+    text: "For the same reason K is also in the plane CD; therefore the planes AB, CD will meet when produced."
+    highlight: [GH]
+    hint: |
+      … and in *CD*: the planes meet, though parallel.
+
+  - part: proof
+    text: "But they do not meet, because they are, by hypothesis, parallel; therefore the straight lines EF, GH will not meet when produced in the direction of F, H."
+    highlight: [EF, GH]
+    hint: |
+      Contradiction.
+
+  - part: proof
+    text: "Similarly we can prove that neither will the straight lines EF, GH meet when produced in the direction of E, G."
+    highlight: [EF, GH]
+    hint: |
+      Likewise on the other side.
+
+  - part: proof
+    text: "But straight lines which do not meet in either direction are parallel."
+    highlight: [EF, GH]
+    hint: |
+      Lines in one plane that never meet are parallel ([[I.Def.23]]).
+
+  - part: proof
+    text: "Therefore EF is parallel to GH."
+    highlight: [EF, GH]
+    hint: |
+      {EF} ∥ {GH}.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [EF, GH]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Both lines lie in the cutting plane and never meet. $\blacksquare$

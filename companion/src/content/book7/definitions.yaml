@@ -1,0 +1,292 @@
+# Book VII, Definitions 1–22. Euclid's words come from Heath via the extracted
+# JSON; everything here is this edition's commentary.
+
+items:
+  - id: VII.Def.1
+    title: Unit
+    paraphrase: |
+      A *unit* is what makes each thing that exists count as *one*.
+    meaning: |
+      The unit is the "one" of counting, not itself a number (Def. 2). Euclid draws it, like every number in
+      Books VII–IX, as a short straight line; but the definition is philosophical rather than mathematical,
+      and nothing in the proofs uses it except the fact that a unit measures every number.
+    modern: |
+      The number $1$. Euclid's "numbers" are the whole numbers $2, 3, 4, \dots$; the unit stands apart.
+    notes: |
+      Greek arithmetic treats the unit as the *source* of number, not a number. Euclid is not always
+      consistent: several proofs (for example [[VII.15]], [[VII.16]]) treat the unit exactly like a number
+      that measures others.
+    interpretations: |
+      The wording echoes the Pythagorean and Platonic tradition (and Aristotle, *Metaphysics* Δ.6) in which
+      unity is the principle of number. Whether Euclid meant anything more by it than "the thing we count
+      by" is disputed; Heath's note collects the ancient discussions.
+
+  - id: VII.Def.2
+    title: Number
+    paraphrase: |
+      A *number* is a multitude made up of units.
+    meaning: |
+      A number is a collection of units: two, three, four, and so on. One is not a number in this sense, and
+      there is no zero, no fraction and no negative number anywhere in Euclid.
+    modern: |
+      A whole number $n \ge 2$. Euclid represents a number by a line, which is measured by the unit $n$
+      times.
+    examples:
+      - 'two, three, ten'
+    nonExamples:
+      - 'the unit (one)'
+      - 'one half; zero'
+    figure: |
+      <svg viewBox="0 0 300 70"><line class="l2" x1="30" y1="25" x2="70" y2="25"/><line class="l" x1="30" y1="50" x2="230" y2="50"/><line class="thin" x1="70" y1="44" x2="70" y2="56"/><line class="thin" x1="110" y1="44" x2="110" y2="56"/><line class="thin" x1="150" y1="44" x2="150" y2="56"/><line class="thin" x1="190" y1="44" x2="190" y2="56"/><text class="fig-note" x="78" y="29">unit</text><text class="fig-note" x="238" y="54">5 units</text></svg>
+    figureCaption: |
+      Euclid draws every number as a line, made up of units.
+
+  - id: VII.Def.3
+    title: A part (a divisor)
+    paraphrase: |
+      A smaller number is *a part* of a larger one when it measures it.
+    meaning: |
+      "Measures" means "goes into exactly": 3 is a part of 12, namely its fourth part. A *part* is always a
+      unit fraction ($1/n$) of the greater. The same word as in [[V.Def.1]], now for numbers.
+    modern: |
+      $a$ is a part of $b$ when $a < b$ and $a \mid b$: $b = n a$ for some whole $n$.
+    examples:
+      - '3 is a part of 12 (a fourth part)'
+    nonExamples:
+      - '8 is not a part of 12'
+
+  - id: VII.Def.4
+    title: Parts
+    paraphrase: |
+      A smaller number that does not measure a larger one is said to be *parts* of it.
+    meaning: |
+      8 does not measure 12, but it is two of the thirds of 12 (each third is 4): 8 is "parts" of 12. Any
+      smaller number is parts of a larger one, since the unit measures both; "parts" corresponds to a proper
+      fraction $m/n$ not of the form $1/n$.
+    modern: |
+      $a$ is parts of $b$ when $a < b$ and $a \nmid b$; then $a = \tfrac{m}{n}\,b$ for whole numbers
+      $1 < m < n$.
+    examples:
+      - '8 is parts (two thirds) of 12'
+      - '2 is parts (two fifths) of 5'
+
+  - id: VII.Def.5
+    title: Multiple
+    paraphrase: |
+      The larger number is a *multiple* of the smaller when the smaller measures it.
+    meaning: |
+      The converse of Def. 3: 12 is a multiple of 3.
+    modern: |
+      $b$ is a multiple of $a$ when $b = n a$ for a whole number $n \ge 2$.
+
+  - id: VII.Def.6
+    title: Even number
+    paraphrase: |
+      An *even number* is one that can be divided into two equal parts.
+    modern: |
+      $n$ is even when $n = 2k$.
+    examples:
+      - '2, 4, 10'
+
+  - id: VII.Def.7
+    title: Odd number
+    paraphrase: |
+      An *odd number* cannot be divided into two equal parts; equivalently, it differs from an even number by
+      a unit.
+    meaning: |
+      Two definitions are given, and Euclid uses both: the second ("differs by a unit") is the one that does
+      the work in Book IX ([[IX.22]]–[[IX.34]]).
+    modern: |
+      $n$ is odd when $n = 2k + 1$.
+    examples:
+      - '3, 5, 9'
+
+  - id: VII.Def.8
+    title: Even-times even number
+    paraphrase: |
+      An *even-times even* number is measured by an even number an even number of times.
+    meaning: |
+      The definition as Heath translates it makes every multiple of 4 even-times even (24 = 6 × 4). But
+      [[IX.32]]–[[IX.34]] use the term as if it meant "only even-times even", that is, a power of 2.
+    modern: |
+      Literally: $n = (2a)(2b)$, i.e. $4 \mid n$. In use (IX.32): $n = 2^k$.
+    examples:
+      - '8 = 2 × 4; 16'
+    interpretations: |
+      The mismatch between Def. 8 and [[IX.32]]–[[IX.34]] has been noticed since antiquity. Iamblichus and
+      Nicomachus use "even-times even" for powers of 2 only; Heath thinks Euclid's definition is looser than
+      his use, and that the difficulty is real rather than a corruption of the text.
+
+  - id: VII.Def.9
+    title: Even-times odd number
+    paraphrase: |
+      An *even-times odd* number is measured by an even number an odd number of times.
+    modern: |
+      $n = (2a)(2b + 1)$ — for example $6 \cdot 3 = 18$. Again [[IX.33]] reads it more narrowly: twice an
+      odd number.
+    examples:
+      - '6 = 2 × 3; 18 = 6 × 3'
+
+  - id: VII.Def.10
+    title: Odd-times odd number
+    paraphrase: |
+      An *odd-times odd* number is measured by an odd number an odd number of times.
+    modern: |
+      A product of two odd numbers, such as $9 = 3 \cdot 3$ or $15 = 3 \cdot 5$.
+    notes: |
+      Some manuscripts add a definition of an *odd-times even* number (measured by an odd number an even
+      number of times). Heath, following Heiberg, rejects it as an addition; such a number is the same as an
+      even-times odd one.
+
+  - id: VII.Def.11
+    title: Prime number
+    paraphrase: |
+      A *prime number* is one measured by the unit alone.
+    meaning: |
+      No number other than the unit goes into it (Euclid does not count the number itself as "measuring" it
+      in this sense). 2 is a prime: Euclid's primes are the modern ones.
+    modern: |
+      $p$ is prime when its only divisors are $1$ and $p$.
+    examples:
+      - '2, 3, 5, 7, 11'
+    nonExamples:
+      - '9 (measured by 3)'
+
+  - id: VII.Def.12
+    title: Numbers prime to one another (coprime)
+    paraphrase: |
+      Two numbers are *prime to one another* when the only common measure they have is the unit.
+    modern: |
+      $\gcd(a, b) = 1$.
+    examples:
+      - '8 and 15'
+    nonExamples:
+      - '8 and 12 (both measured by 4)'
+
+  - id: VII.Def.13
+    title: Composite number
+    paraphrase: |
+      A *composite number* is one that some number measures.
+    modern: |
+      $n$ is composite when it has a divisor $d$ with $1 < d < n$.
+    examples:
+      - '6, 9, 15'
+
+  - id: VII.Def.14
+    title: Numbers composite to one another
+    paraphrase: |
+      Two numbers are *composite to one another* when some number is a common measure of both.
+    modern: |
+      $\gcd(a, b) > 1$.
+    examples:
+      - '9 and 12 (both measured by 3)'
+
+  - id: VII.Def.15
+    title: Multiplication
+    paraphrase: |
+      A number *multiplies* another when the other is added to itself as many times as there are units in
+      the first; the result is their product.
+    meaning: |
+      Multiplication is repeated addition: "$a$ multiplied by $b$" is $b$ copies of $a$. That the order does
+      not matter ($ab = ba$) is not assumed; Euclid proves it in [[VII.16]].
+    modern: |
+      $a \cdot b = \underbrace{a + a + \dots + a}_{b \text{ times}}$.
+    notes: |
+      The phrase "*A* multiplied by *B* makes *C*" is how Euclid writes $C = A\cdot B$ throughout Books VII–IX;
+      in [[VII.17]]–[[VII.19]] it is converted into proportions using [[VII.Def.20]].
+
+  - id: VII.Def.16
+    title: Plane number
+    paraphrase: |
+      A number made by multiplying two numbers is *plane*; the two numbers are its *sides*.
+    meaning: |
+      The image is a rectangle of dots, $a$ by $b$. Since any number at all can be written as a product (if
+      only as itself times the unit — which Euclid would not allow), "plane" in practice means "composite,
+      with the two factors given".
+    modern: |
+      $n = a b$, with the sides $a, b$ specified.
+    examples:
+      - '12, with sides 3 and 4 (or 2 and 6)'
+    figure: |
+      <svg viewBox="0 0 300 90"><g class="pt"><circle cx="110" cy="20" r="4"/><circle cx="135" cy="20" r="4"/><circle cx="160" cy="20" r="4"/><circle cx="185" cy="20" r="4"/><circle cx="110" cy="45" r="4"/><circle cx="135" cy="45" r="4"/><circle cx="160" cy="45" r="4"/><circle cx="185" cy="45" r="4"/><circle cx="110" cy="70" r="4"/><circle cx="135" cy="70" r="4"/><circle cx="160" cy="70" r="4"/><circle cx="185" cy="70" r="4"/></g><text class="fig-note" x="205" y="50">12 = 3 × 4</text></svg>
+
+  - id: VII.Def.17
+    title: Solid number
+    paraphrase: |
+      A number made by multiplying three numbers is *solid*; the three numbers are its *sides*.
+    modern: |
+      $n = a b c$ — a box of dots.
+    examples:
+      - '30, with sides 2, 3, 5'
+
+  - id: VII.Def.18
+    title: Square number
+    paraphrase: |
+      A *square number* is a number multiplied by itself: a plane number with equal sides.
+    modern: |
+      $n = a^2$.
+    examples:
+      - '4, 9, 16'
+
+  - id: VII.Def.19
+    title: Cube
+    paraphrase: |
+      A *cube* is a number multiplied by itself and again by itself: a solid number with three equal sides.
+    modern: |
+      $n = a^3$.
+    examples:
+      - '8, 27, 64'
+
+  - id: VII.Def.20
+    title: Proportional numbers
+    paraphrase: |
+      Four numbers are *proportional* when the first is the same multiple, or the same part, or the same
+      parts, of the second as the third is of the fourth.
+    meaning: |
+      The number-theoretic definition of proportion, much simpler than Book V's ([[V.Def.5]]): $a : b = c :
+      d$ when $a$ is the same fraction of $b$ as $c$ is of $d$. It works because numbers always have a
+      common measure (the unit), which incommensurable magnitudes do not.
+    modern: |
+      $a : b = c : d$ when $a/b = c/d$ as fractions; equivalently $a d = b c$ (that is [[VII.19]]).
+    examples:
+      - '6 : 9 = 4 : 6 (each first is two thirds of the second)'
+    interpretations: |
+      Euclid never proves that this definition agrees with Book V's when both apply, yet [[X.5]]–[[X.8]]
+      pass freely between a ratio of magnitudes and a ratio of numbers, which needs exactly that agreement.
+      Book VII also re-proves for numbers facts Book V already has for magnitudes (alternation is [[VII.13]],
+      compare [[V.16]]). Most historians take Book VII to preserve an older, pre-Eudoxan theory of proportion
+      for numbers that Euclid kept alongside Book V; whether he regarded the two as connected is debated.
+    notes: |
+      "Parts" needs both Def. 3 and Def. 4: "the same parts" means the same numerator over the same
+      denominator, and [[VII.4]]–[[VII.10]] build the arithmetic of such fractions before proportion is
+      used.
+
+  - id: VII.Def.21
+    title: Similar plane and solid numbers
+    paraphrase: |
+      Plane or solid numbers are *similar* when their sides are proportional.
+    meaning: |
+      6 (= 2 × 3) and 24 (= 4 × 6) are similar plane numbers: their sides are in the ratio $2 : 3 = 4 : 6$.
+      The name comes from similar rectangles ([[VI.Def.1]]).
+    modern: |
+      $ab$ and $cd$ are similar when $a : b = c : d$ (for suitable choices of the sides); for plane numbers
+      this holds exactly when their ratio is the ratio of two squares ([[VIII.18]], [[VIII.26]]).
+    examples:
+      - '6 and 24; any two square numbers'
+
+  - id: VII.Def.22
+    title: Perfect number
+    paraphrase: |
+      A *perfect number* is equal to the sum of its own parts.
+    meaning: |
+      "Its own parts" are its proper divisors, including the unit: $6 = 1 + 2 + 3$ and $28 = 1 + 2 + 4 + 7
+      + 14$. Book IX ends with Euclid's construction of perfect numbers ([[IX.36]]).
+    modern: |
+      $n$ is perfect when $\sigma(n) - n = n$, where $\sigma(n)$ is the sum of all divisors of $n$.
+    examples:
+      - '6, 28, 496, 8128'
+    nonExamples:
+      - '12 (its parts sum to 16)'
+    notes: |
+      Euler proved, two thousand years later, that every *even* perfect number is of Euclid's form. Whether
+      there is any odd perfect number is still unknown.

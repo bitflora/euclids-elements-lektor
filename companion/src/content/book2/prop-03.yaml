@@ -1,0 +1,139 @@
+id: II.3
+kind: theorem
+title: Rectangle on the whole and a piece
+
+paraphrase: |
+  Cut {AB} at {C}. The rectangle on the whole line and one piece equals the rectangle on the two
+  pieces plus the square on that piece. In algebra: $(a + b)b = ab + b^2$.
+
+diagram:
+  width: 280
+  height: 200
+  elements:
+    - "A0;point;free;-1000,30;0"
+    - "A3;point;free;1000,30;0"
+    - "A;point;lineSlider;A0,A3,40,0"
+    - "B;point;lineSlider;A0,A3,240,0"
+    - "C;point;lineSlider;A0,A3,130,0"
+    - "BCDE;polygon;square;B,C;0;0;black;#dfe7ea"
+    - "E;point;vertex;BCDE,4"
+    - "D;point;vertex;BCDE,3"
+    - "DCAF;polygon;parallelogram;D,C,A;0;0;black;#efe4d2"
+    - "F;point;vertex;DCAF,4"
+    - "AB;line;connect;A,B"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "AF;line;connect;A,F;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "ABEF;polygon;quadrilateral;A,B,E,F;0;0;0;0"
+  aliases:
+    CDEB: BCDE
+    CE: BCDE
+    DB: BCDE
+    AD: DCAF
+    AE: ABEF
+    CB: BC
+    DC: CD
+    ED: DE
+  given: [A, B, C, AB]
+  caption: |
+    Slide {A}, {B}, and the cut {C}.
+
+steps:
+  - part: enunciation
+    text: "If a straight line be cut at random, the rectangle contained by the whole and one of the segments is equal to the rectangle contained by the segments and the square on the aforesaid segment."
+    highlight: [AE, AD, CE]
+    hint: |
+      Whole × piece = (piece × other piece) + piece².
+
+  - part: setting-out
+    text: "For let the straight line AB be cut at random at C;"
+    highlight: [AB, C]
+    hint: |
+      {AB} cut at {C}.
+
+  - part: specification
+    text: "I say that the rectangle contained by AB, BC is equal to the rectangle contained by AC, CB together with the square on BC."
+    highlight: [AB, BC, AC]
+    hint: |
+      The goal.
+    modern: |
+      $$AB\cdot BC = AC\cdot CB + BC^2$$
+
+  - part: construction
+    text: "For let the square CDEB be described on CB;"
+    highlight: [CE]
+    adds: [BCDE, D, E]
+    hint: |
+      The square on the piece {CB} ([[I.46]]).
+
+  - part: construction
+    text: "let ED be drawn through to F, and through A let AF be drawn parallel to either CD or BE."
+    highlight: [DF, AF]
+    adds: [F, DCAF]
+    hint: |
+      Extend the top of the square to {F}, above {A} ([[I.31]]).
+
+  - part: proof
+    text: "Then AE is equal to AD, CE."
+    highlight: [AE, AD, CE]
+    hint: |
+      The big rectangle {AE} is made of {AD} and the square {CE}.
+
+  - part: proof
+    text: "Now AE is the rectangle contained by AB, BC, for it is contained by AB, BE, and BE is equal to BC;"
+    highlight: [AE, AB, BE]
+    hint: |
+      {AE} has sides {AB} and {BE} (= {BC}).
+
+  - part: proof
+    text: "AD is the rectangle AC, CB, for DC is equal to CB;"
+    highlight: [AD, AC, CD]
+    hint: |
+      {AD} has sides {AC} and {CD} (= {CB}).
+
+  - part: proof
+    text: "and DB is the square on CB."
+    highlight: [DB]
+    hint: |
+      And {DB} — the same square as {CE}, named by its other diagonal — is the square on {CB}.
+
+  - part: conclusion
+    text: "Therefore the rectangle contained by AB, BC is equal to the rectangle contained by AC, CB together with the square on BC."
+    highlight: [AE, AD, CE]
+    hint: |
+      Done.
+    modern: |
+      $$(a + b)\,b = ab + b^2$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: Let $AC = a$, $CB = b$.
+    - steps: [3, 4, 5, 6, 7, 8, 9]
+      text: $(a + b)b = ab + b \cdot b$ (distributive law). $\blacksquare$
+
+commentary: |
+  Another special case of [[II.1]]: the uncut line is now one of the segments. Note that the square
+  {CE} is named {DB} in step 6 — the same figure by its other diagonal.
+
+gaps: |
+  - **Whole equals sum of parts** (step 3).
+
+historical: |
+  Like [[II.2]], II.3 could have been a corollary of II.1; Euclid prefers a self-contained figure.

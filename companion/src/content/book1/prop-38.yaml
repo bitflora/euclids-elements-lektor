@@ -1,0 +1,166 @@
+id: I.38
+kind: theorem
+title: Triangles on equal bases and between the same parallels
+
+paraphrase: |
+  Triangles on equal bases, with their bases on one line and their apexes on a parallel line, have
+  equal areas.
+
+diagram:
+  width: 310
+  height: 210
+  elements:
+    - "B;point;free;60,170"
+    - "C;point;free;130,170"
+    - "A;point;free;120,40"
+    - "ADp;line;parallel;A,B,C;0;0;0"
+    - "D;point;lineSlider;ADp,160,40"
+    - "E;point;lineSlider;B,C,190,170"
+    - "F;point;parallelogram;C,B,E"
+    - "G;point;parallelogram;A,C,B"
+    - "H;point;parallelogram;D,E,F"
+    - "BF;line;connect;B,F"
+    - "AD;line;connect;A,D"
+    - "GH;line;connect;G,H"
+    - "BG;line;connect;B,G"
+    - "FH;line;connect;F,H"
+    - "AC;line;connect;A,C"
+    - "DE;line;connect;D,E"
+    - "BC;line;connect;B,C;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "ABC;polygon;triangle;A,B,C;0;0;0;#efe4d2"
+    - "DEF;polygon;triangle;D,E,F;0;0;0;#dfe7ea"
+    - "GBCA;polygon;quadrilateral;G,B,C,A;0;0;0;0"
+    - "DEFH;polygon;quadrilateral;D,E,F,H;0;0;0;0"
+  aliases:
+    FED: DEF
+    BA: AB
+    FD: DF
+    CA: AC
+    ED: DE
+    GB: BG
+    HF: FH
+    DA: AD
+    HG: GH
+    FB: BF
+    CB: BC
+    FE: EF
+  given: [A, B, C, D, E, F, BF, AD, AC, DE, ABC, DEF]
+  caption: |
+    Drag {A}, {B}, {C}; slide {D} along the upper parallel and {E} along the base line. {EF} stays
+    equal to {BC}.
+
+steps:
+  - part: enunciation
+    text: "Triangles which are on equal bases and in the same parallels are equal to one another."
+    highlight: [ABC, DEF]
+    hint: |
+      Equal bases, same height ⇒ same area. The triangle version of [[I.36]].
+
+  - part: setting-out
+    text: "Let ABC, DEF be triangles on equal bases BC, EF and in the same parallels BF, AD;"
+    highlight: [ABC, DEF, BC, EF, BF, AD]
+    hint: |
+      The data: {BC} = {EF}, bases on {BF}, apexes on {AD} ∥ {BF}.
+
+  - part: specification
+    text: "I say that the triangle ABC is equal to the triangle DEF."
+    highlight: [ABC, DEF]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let AD be produced in both directions to G, H;"
+    highlight: [GH]
+    adds: [GH, G, H]
+    hint: |
+      Extend {AD} both ways.
+
+  - part: construction
+    text: "through B let BG be drawn parallel to CA,"
+    highlight: [BG, AC]
+    adds: [BG]
+    hint: |
+      {BG} ∥ {CA} ([[I.31]]).
+
+  - part: construction
+    text: "and through F let FH be drawn parallel to DE."
+    highlight: [FH, DE]
+    adds: [FH]
+    hint: |
+      {FH} ∥ {DE} ([[I.31]], not bracketed by Heath here).
+    cites: [I.31]
+
+  - part: proof
+    text: "Then each of the figures GBCA, DEFH is a parallelogram;"
+    highlight: [GBCA, DEFH]
+    hint: |
+      Two parallelograms, one around each triangle.
+
+  - part: proof
+    text: "and GBCA is equal to DEFH;"
+    highlight: [GBCA, DEFH]
+    hint: |
+      They are equal…
+
+  - part: proof
+    text: "for they are on equal bases BC, EF and in the same parallels BF, GH."
+    highlight: [BC, EF, BF, GH]
+    hint: |
+      …by [[I.36]].
+
+  - part: proof
+    text: "Moreover the triangle ABC is half of the parallelogram GBCA; for the diameter AB bisects it."
+    highlight: [ABC, GBCA, AB]
+    hint: |
+      [[I.34]].
+
+  - part: proof
+    text: "And the triangle FED is half of the parallelogram DEFH; for the diameter DF bisects it."
+    highlight: [DEF, DEFH, DF]
+    hint: |
+      [[I.34]].
+
+  - part: proof
+    text: "[But the halves of equal things are equal to one another.]"
+    hint: |
+      Halves of equals are equal — bracketed by Heiberg as an interpolation, as in [[I.37]].
+
+  - part: proof
+    text: "Therefore the triangle ABC is equal to the triangle DEF."
+    highlight: [ABC, DEF]
+    hint: |
+      Done.
+    modern: |
+      $$[ABC] = \tfrac12 [GBCA] = \tfrac12 [DEFH] = [DEF]$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      text: $[ABC] = \tfrac12\, BC \cdot h = \tfrac12\, EF \cdot h = [DEF]$. $\blacksquare$
+
+commentary: |
+  The same pattern as [[I.37]], using [[I.36]] in place of [[I.35]]. It is used in Book VI to show
+  that triangles of the same height are to one another as their bases ([[VI.1]]).
+
+gaps: |
+  - As in [[I.37]].
+
+historical: |
+  By I.38, dividing the base of a triangle into equal parts divides the triangle into equal parts —
+  the simplest case of the "division of figures", the subject of Euclid's *On Divisions*, a work
+  that survives only in Arabic.

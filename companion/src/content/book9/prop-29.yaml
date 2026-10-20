@@ -1,0 +1,82 @@
+id: IX.29
+kind: theorem
+title: Odd times odd is odd
+
+paraphrase: |
+  If an odd number {A} multiplies an odd number {B}, the product {C} is odd.
+
+diagram:
+  width: 250
+  height: 140
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "C0;point;free;-1000,110;0;0"
+    - "C3;point;free;1000,110;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,35;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,90,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,130,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;U1,U2,A1,A2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+  caption: |
+    {C} = {A}·{B}.
+
+steps:
+  - part: enunciation
+    text: "If an odd number by multiplying an odd number make some number, the product will be odd."
+    highlight: [A, B, C]
+    hint: |
+      odd × odd = odd.
+    modern: |
+      $(2a + 1)(2b + 1) = 2(2ab + a + b) + 1$.
+
+  - part: setting-out
+    text: "For let the odd number A by multiplying the odd number B make C;"
+    highlight: [A, B, C]
+    hint: |
+      {C} = {A}{B}.
+
+  - part: specification
+    text: "I say that C is odd."
+    highlight: [C]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since A by multiplying B has made C, therefore C is made up of as many numbers equal to B as there are units in A."
+    highlight: [C, B, A]
+    hint: |
+      [[VII.Def.15]].
+
+  - part: proof
+    text: "And each of the numbers A, B is odd; therefore C is made up of odd numbers the multitude of which is odd."
+    highlight: [C]
+    hint: |
+      An odd number of odd summands.
+
+  - part: proof
+    text: "Thus C is odd."
+    highlight: [C]
+    hint: |
+      [[IX.23]].
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5]
+      text: |
+        $C$ is $A$ copies of the odd $B$, and $A$ is odd. $\blacksquare$

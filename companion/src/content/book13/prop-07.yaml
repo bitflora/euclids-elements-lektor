@@ -1,0 +1,153 @@
+id: XIII.7
+kind: theorem
+title: An equilateral pentagon with three equal angles is equiangular
+
+paraphrase: |
+  If an equilateral pentagon has three equal angles — consecutive or not — it is equiangular (hence regular).
+
+diagram:
+  width: 265
+  height: 240
+  elements:
+    - "A;point;free;130,40"
+    - "B;point;free;39,106"
+    - "ABCDE;polygon;regularPolygon;A,B,5;0;0;black;random"
+    - "C;point;vertex;ABCDE,3"
+    - "D;point;vertex;ABCDE,4"
+    - "E;point;vertex;ABCDE,5"
+    - "AC;line;connect;A,C"
+    - "BE;line;connect;B,E"
+    - "F;point;intersection;AC,BE"
+    - "FC;line;connect;F,D"
+    - "BD;line;connect;B,D"
+    - "FD;line;connect;F,D;0;0;0"
+    - "FE;line;connect;F,E;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "FA;line;connect;F,A;0;0;0"
+    - "FB;line;connect;F,B;0;0;0"
+  aliases: { CA: AC, EB: BE, CF: FC, DB: BD, DF: FD, EF: FE, DC: CD, ED: DE, AF: FA, BF: FB }
+  caption: |
+    The equilateral pentagon {ABCDE}.
+
+steps:
+  - part: enunciation
+    text: "If three angles of an equilateral pentagon, taken either in order or not in order, be equal, the pentagon will be equiangular."
+    highlight: [ABCDE]
+    hint: |
+      Three equal angles force a regular pentagon.
+
+  - part: setting-out
+    text: "For in the equilateral pentagon ABCDE let, first, three angles taken in order, those at A, B, C, be equal to one another; I say that the pentagon ABCDE is equiangular."
+    highlight: [ABCDE]
+    hint: |
+      Case 1: equal angles at {A}, {B}, {C}.
+
+  - part: construction
+    text: "For let AC, BE, FD be joined."
+    highlight: [AC, BE, FD]
+    hint: |
+      Join {AC}, {BE}, {FD}.
+
+  - part: proof
+    text: "Now, since the two sides CB, BA are equal to the two sides BA, AE respectively, and the angle CBA is equal to the angle BAE, therefore the base AC is equal to the base BE, the triangle ABC is equal to the triangle ABE, and the remaining angles will be equal to the remaining angles, namely those which the equal sides subtend, that is, the angle BCA to the angle BEA, and the angle ABE to the angle CAB; hence the side AF is also equal to the side BF."
+    highlight: [AC, BE]
+    hint: |
+      Triangles *CBA*, *BAE*: {AC} = {BE}, with equal base angles ([[I.4]]); so {FA} = {FB} ([[I.6]]).
+
+  - part: proof
+    text: "But the whole AC was also proved equal to the whole BE; therefore the remainder FC is also equal to the remainder FE."
+    highlight: [FC, FE]
+    hint: |
+      So {FC} = {FE}.
+
+  - part: proof
+    text: "But CD is also equal to DE."
+    highlight: [CD, DE]
+    hint: |
+      And {CD} = {DE}.
+
+  - part: proof
+    text: "Therefore the two sides FC, CD are equal to the two sides FE, ED; and the base FD is common to them; therefore the angle FCD is equal to the angle FED."
+    highlight: [FC, FE, FD]
+    hint: |
+      So ∠*FCD* = ∠*FED* ([[I.8]]).
+
+  - part: proof
+    text: "But the angle BCA was also proved equal to the angle AEB; therefore the whole angle BCD is also equal to the whole angle AED."
+    highlight: [FC, FE]
+    hint: |
+      Adding ∠*BCA* = ∠*AEB*: ∠*BCD* = ∠*AED*.
+
+  - part: proof
+    text: "But, by hypothesis, the angle BCD is equal to the angles at A, B; therefore the angle AED is also equal to the angles at A, B."
+    highlight: [ABCDE]
+    hint: |
+      So the angle at {E} equals those at {A}, {B}.
+
+  - part: proof
+    text: "Similarly we can prove that the angle CDE is also equal to the angles at A, B, C; therefore the pentagon ABCDE is equiangular."
+    highlight: [ABCDE]
+    hint: |
+      Likewise at {D}: equiangular.
+
+  - part: specification
+    text: "Next, let the given equal angles not be angles taken in order, but let the angles at the points A, C, D be equal; I say that in this case too the pentagon ABCDE is equiangular."
+    highlight: [ABCDE]
+    hint: |
+      Case 2: equal angles at {A}, {C}, {D}.
+
+  - part: construction
+    text: "For let BD be joined."
+    highlight: [BD, BE]
+    hint: |
+      Join {BD}.
+
+  - part: proof
+    text: "Then, since the two sides BA, AE are equal to the two sides BC, CD, and they contain equal angles, therefore the base BE is equal to the base BD, the triangle ABE is equal to the triangle BCD, and the remaining angles will be equal to the remaining angles, namely those which the equal sides subtend; therefore the angle AEB is equal to the angle CDB."
+    highlight: [BE, BD]
+    hint: |
+      {BE} = {BD} and ∠*AEB* = ∠*CDB* ([[I.4]]).
+
+  - part: proof
+    text: "But the angle BED is also equal to the angle BDE, since the side BE is also equal to the side BD."
+    highlight: [BE, BD]
+    hint: |
+      ∠*BED* = ∠*BDE* ([[I.5]]).
+
+  - part: proof
+    text: "Therefore the whole angle AED is equal to the whole angle CDE."
+    highlight: [ABCDE]
+    hint: |
+      So ∠*AED* = ∠*CDE*.
+
+  - part: proof
+    text: "But the angle CDE is, by hypothesis, equal to the angles at A, C; therefore the angle AED is also equal to the angles at A, C."
+    highlight: [ABCDE]
+    hint: |
+      So the angle at {E} equals the others.
+
+  - part: proof
+    text: "For the same reason the angle ABC is also equal to the angles at A, C, D."
+    highlight: [ABCDE]
+    hint: |
+      Likewise at {B}.
+
+  - part: proof
+    text: "Therefore the pentagon ABCDE is equiangular."
+    highlight: [ABCDE]
+    hint: |
+      Equiangular.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        An equilateral pentagon has two degrees of freedom; three equal angles remove them. $\blacksquare$
+
+commentary: |
+  Used in [[XIII.17]] to show that the faces of the dodecahedron are regular.

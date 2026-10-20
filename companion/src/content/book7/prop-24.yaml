@@ -1,0 +1,179 @@
+id: VII.24
+kind: theorem
+title: A product of numbers coprime to a number is coprime to it
+
+paraphrase: |
+  If {A} and {B} are each prime to {C}, then their product {D} is prime to {C}.
+
+diagram:
+  width: 200
+  height: 270
+  elements:
+    - "A0;point;free;30,-1000;0;0"
+    - "A3;point;free;30,1000;0;0"
+    - "A1;point;lineSlider;A0,A3,30,30;0"
+    - "A2;point;lineSlider;A0,A3,30,140;0"
+    - "A;line;connect;A1,A2;black"
+    - "B0;point;free;60,-1000;0;0"
+    - "B3;point;free;60,1000;0;0"
+    - "B1;point;lineSlider;B0,B3,60,30;0"
+    - "B2;point;lineSlider;B0,B3,60,125;0"
+    - "B;line;connect;B1,B2;black"
+    - "C0;point;free;90,-1000;0;0"
+    - "C3;point;free;90,1000;0;0"
+    - "C1;point;lineSlider;C0,C3,90,30;0"
+    - "C2;point;lineSlider;C0,C3,90,170;0"
+    - "C;line;connect;C1,C2;black"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,50;0;0"
+    - "D0;point;free;120,-1000;0;0"
+    - "D3;point;free;120,1000;0;0"
+    - "D1;point;lineSlider;D0,D3,120,30;0"
+    - "D2;point;proportion;U1,U2,A1,A2,B1,B2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+    - "E0;point;free;150,-1000;0;0"
+    - "E3;point;free;150,1000;0;0"
+    - "E1;point;lineSlider;E0,E3,90,30;0"
+    - "E2;point;lineSlider;E0,E3,90,90;0;black"
+    - "E;line;connect;E1,E2;black"
+    - "F0;point;free;180,-1000;0;0"
+    - "F3;point;free;180,1000;0;0"
+    - "F1;point;lineSlider;F0,F3,180,30;0"
+    - "F2;point;lineSlider;F0,F3,180,55;0;black"
+    - "F;line;connect;F1,F2;black"
+  caption: |
+    {D} = {A}·{B}. {E} is the supposed common measure of {C} and {D}, and {D} = {E}·{F}.
+
+steps:
+  - part: enunciation
+    text: "If two numbers be prime to any number, their product also will be prime to the same."
+    highlight: [A, B, C, D]
+    hint: |
+      $\gcd(a, c) = \gcd(b, c) = 1 \Rightarrow \gcd(ab, c) = 1$.
+    modern: |
+      $\gcd(a, c) = \gcd(b, c) = 1 \Rightarrow \gcd(ab, c) = 1$.
+
+  - part: setting-out
+    text: "For let the two numbers A, B be prime to any number C, and let A by multiplying B make D;"
+    highlight: [A, B, C, D]
+    hint: |
+      {A}, {B} each coprime to {C}; {D} = {A}·{B}.
+
+  - part: specification
+    text: "I say that C, D are prime to one another."
+    highlight: [C, D]
+    hint: |
+      To prove: {C}, {D} coprime.
+
+  - part: proof
+    text: "For, if C, D are not prime to one another, some number will measure C, D."
+    highlight: [C, D]
+    hint: |
+      Suppose not.
+
+  - part: construction
+    text: "Let a number measure them, and let it be E."
+    highlight: [E]
+    hint: |
+      A common measure {E}.
+
+  - part: proof
+    text: "Now, since C, A are prime to one another, and a certain number E measures C, therefore A, E are prime to one another."
+    highlight: [C, A, E]
+    hint: |
+      {E} measures {C}, which is coprime to {A}; so {E} is coprime to {A} ([[VII.23]]).
+
+  - part: construction
+    text: "As many times, then, as E measures D, so many units let there be in F;"
+    highlight: [F]
+    hint: |
+      {D} = {F} copies of {E}.
+
+  - part: proof
+    text: "therefore F also measures D according to the units in E."
+    highlight: [F, D, E]
+    hint: |
+      … and so {D} is also {E} copies of {F} ([[VII.16]]).
+
+  - part: proof
+    text: "Therefore E by multiplying F has made D."
+    highlight: [E, F, D]
+    hint: |
+      {D} = {E}·{F} ([[VII.Def.15]]).
+
+  - part: proof
+    text: "But, further, A by multiplying B has also made D; therefore the product of E, F is equal to the product of A, B."
+    highlight: [E, F, A, B, D]
+    hint: |
+      {E}·{F} = {A}·{B}.
+
+  - part: proof
+    text: "But, if the product of the extremes be equal to that of the means, the four numbers are proportional;"
+    highlight: [E, F, A, B]
+    hint: |
+      [[VII.19]], in its converse direction.
+
+  - part: proof
+    text: "therefore, as E is to A, so is B to F."
+    highlight: [E, A, B, F]
+    hint: |
+      {E} : {A} = {B} : {F}.
+
+  - part: proof
+    text: "But A, E are prime to one another, numbers which are prime to one another are also the least of those which have the same ratio, and the least numbers of those which have the same ratio with them measure those which have the same ratio the same number of times, the greater the greater and the less the less, that is, the antecedent the antecedent and the consequent the consequent;"
+    highlight: [A, E]
+    hint: |
+      {E} : {A} is in lowest terms ([[VII.21]]), so it measures any ratio equal to it ([[VII.20]]).
+
+  - part: proof
+    text: "therefore E measures B."
+    highlight: [E, B]
+    hint: |
+      {E} measures {B}.
+
+  - part: proof
+    text: "But it also measures C; therefore E measures B, C which are prime to one another: which is impossible."
+    highlight: [E, B, C]
+    hint: |
+      {E} would be a common measure of the coprime {B}, {C}: impossible.
+
+  - part: proof
+    text: "Therefore no number will measure the numbers C, D."
+    highlight: [C, D]
+    hint: |
+      No common measure.
+
+  - part: proof
+    text: "Therefore C, D are prime to one another."
+    highlight: [C, D]
+    hint: |
+      Coprime.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5]
+      text: |
+        Suppose $e \ge 2$ divides $c$ and $ab$; then $\gcd(e, a) = 1$ ([[VII.23]]).
+    - steps: [6, 7, 8, 9, 10, 11]
+      text: |
+        Write $ab = ef$; then $e : a = b : f$ ([[VII.19]]).
+    - steps: [12, 13]
+      text: |
+        $e : a$ is in lowest terms ([[VII.21]]), so $e \mid b$ ([[VII.20]]).
+    - steps: [14, 15, 16]
+      text: |
+        So $e$ divides $b$ and $c$, contradicting $\gcd(b, c) = 1$. $\blacksquare$
+  closing: |
+    Steps 6–13 are in effect *Euclid's lemma* ($\gcd(e, a) = 1$ and $e \mid ab \Rightarrow e \mid b$),
+    proved here inside the argument; [[VII.30]] states the prime case.
+
+commentary: |
+  The first substantial result about coprimality. It feeds [[VII.25]]–[[VII.27]] (powers of coprime
+  numbers are coprime), which Book VIII relies on throughout.

@@ -1,0 +1,86 @@
+id: IX.25
+kind: theorem
+title: Even minus odd is odd
+
+paraphrase: |
+  If an odd number {BC} is subtracted from an even number {AB}, the remainder {CA} is odd.
+
+diagram:
+  width: 230
+  height: 60
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,20;0;0"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "B;point;lineSlider;A0,A3,200,0"
+    - "C;point;lineSlider;A0,A3,130,0"
+    - "D;point;cutoff;C,B,U1,U2"
+    - "AB;line;connect;A,B"
+    - "BC;line;connect;B,C;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+  aliases: { CA: AC }
+  caption: |
+    {BC} odd; the unit {CD} is taken off it, leaving the even {DB}.
+
+steps:
+  - part: enunciation
+    text: "If from an even number an odd number be subtracted, the remainder will be odd."
+    highlight: [AB, BC]
+    hint: |
+      even − odd = odd.
+    modern: |
+      $2a - (2b + 1) = 2(a - b - 1) + 1$.
+
+  - part: setting-out
+    text: "For from the even number AB let the odd number BC be subtracted;"
+    highlight: [AB, BC]
+    hint: |
+      {AB} even, {BC} odd.
+
+  - part: specification
+    text: "I say that the remainder CA is odd."
+    highlight: [AC]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For let the unit CD be subtracted from BC;"
+    highlight: [CD]
+    hint: |
+      Take a unit off {BC}.
+
+  - part: proof
+    text: "therefore DB is even."
+    highlight: [DB]
+    hint: |
+      [[VII.Def.7]].
+
+  - part: proof
+    text: "But AB is also even; therefore the remainder AD is also even."
+    highlight: [AB, AD]
+    hint: |
+      [[IX.24]].
+
+  - part: proof
+    text: "And CD is an unit; therefore CA is odd."
+    highlight: [CD, AC]
+    hint: |
+      {AD} = {AC} + {CD} is even and {CD} is a unit, so {AC} is odd ([[VII.Def.7]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        $2a - (2b + 1) = (2a - 2b) - 1$, an even number less one. $\blacksquare$

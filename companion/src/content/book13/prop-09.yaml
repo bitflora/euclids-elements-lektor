@@ -1,0 +1,142 @@
+id: XIII.9
+kind: theorem
+title: Hexagon side + decagon side is cut in golden section
+
+paraphrase: |
+  In a circle, the side {CD} of the inscribed hexagon and the side {BC} of the inscribed decagon, placed in a straight
+  line, make a line {BD} cut in extreme and mean ratio at {C}, the hexagon side being the greater segment.
+
+diagram:
+  width: 240
+  height: 260
+  pivot: "E"
+  elements:
+    - "A;point;free;200,110"
+    - "B;point;free;40,110"
+    - "AB;line;connect;A,B"
+    - "E;point;midpoint;AB;black;green"
+    - "ABC;circle;radius;E,A;0;0;black;random"
+    - "EBX;polygon;equilateralTriangle;E,B;0;0;0;0"
+    - "X;point;vertex;EBX,3;0;0"
+    - "Y;point;midpoint;B,X;0;0"
+    - "C;point;cutoff;E,Y,E,A"
+    - "CE;line;connect;C,E"
+    - "D;point;extend;B,C,A,E"
+    - "BD;line;connect;B,D"
+    - "DE;line;connect;D,E"
+    - "F;point;cutoff;E,D,E,A;black;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "EC;line;connect;E,C;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+    - "DC;line;connect;D,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+  aliases: { BA: AB }
+  caption: |
+    The circle with centre {E}; {BC} the decagon side, {CD} = radius (hexagon side) in line with it.
+
+steps:
+  - part: enunciation
+    text: "If the side of the hexagon and that of the decagon inscribed in the same circle be added together, the whole straight line has been cut in extreme and mean ratio, and its greater segment is the side of the hexagon."
+    highlight: [BD, BC, CD]
+    hint: |
+      radius + decagon side, cut in golden section.
+    modern: |
+      The decagon side is $r/\varphi$: $(r + r/\varphi) : r = r : r/\varphi$.
+
+  - part: setting-out
+    text: "Let ABC be a circle; of the figures inscribed in the circle ABC let BC be the side of a decagon, CD that of a hexagon, and let them be in a straight line; I say that the whole straight line BD has been cut in extreme and mean ratio, and CD is its greater segment."
+    highlight: [BC, CD]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let the centre of the circle, the point E, be taken, let EB, EC, ED be joined, and let BE be carried through to A."
+    highlight: [BE, CE, DE]
+    hint: |
+      Centre {E}; join {EB}, {EC}, {ED}; extend {BE} to {A}.
+
+  - part: proof
+    text: "Since BC is the side of an equilateral decagon, therefore the circumference ACB is five times the circumference BC; therefore the circumference AC is quadruple of CB."
+    highlight: [BC]
+    hint: |
+      Arc *ACB* is five times arc {BC}, so arc *AC* is four times it.
+
+  - part: proof
+    text: "But, as the circumference AC is to CB, so is the angle AEC to the angle CEB; therefore the angle AEC is quadruple of the angle CEB."
+    highlight: [CE]
+    hint: |
+      So ∠*AEC* = 4∠*CEB* ([[VI.33]]).
+
+  - part: proof
+    text: "And, since the angle EBC is equal to the angle ECB, therefore the angle AEC is double of the angle ECB."
+    highlight: [CE]
+    hint: |
+      ∠*EBC* = ∠*ECB* ([[I.5]]), so ∠*AEC* = 2∠*ECB* ([[I.32]]).
+
+  - part: proof
+    text: "And, since the straight line EC is equal to CD, for each of them is equal to the side of the hexagon inscribed in the circle ABC, the angle CED is also equal to the angle CDE; therefore the angle ECB is double of the angle EDC."
+    highlight: [CD, CE]
+    hint: |
+      {EC} = {CD} (both equal the radius, [[IV.15]], porism), so ∠*CED* = ∠*CDE* and ∠*ECB* = 2∠*EDC*.
+
+  - part: proof
+    text: "But the angle AEC was proved double of the angle ECB; therefore the angle AEC is quadruple of the angle EDC."
+    highlight: [CE]
+    hint: |
+      So ∠*AEC* = 4∠*EDC* …
+
+  - part: proof
+    text: "But the angle AEC was also proved quadruple of the angle BEC; therefore the angle EDC is equal to the angle BEC."
+    highlight: [CE, DE]
+    hint: |
+      … hence ∠*EDC* = ∠*BEC*.
+
+  - part: proof
+    text: "But the angle EBD is common to the two triangles BEC and BED; therefore the remaining angle BED is also equal to the remaining angle ECB; therefore the triangle EBD is equiangular with the triangle EBC."
+    highlight: [BE, DE]
+    hint: |
+      Triangles *BEC*, *BED* equiangular ([[I.32]]).
+
+  - part: proof
+    text: "Therefore, proportionally, as DB is to BE, so is EB to BC."
+    highlight: [BD, BE, BC]
+    hint: |
+      {DB} : {BE} = {EB} : {BC} ([[VI.4]]).
+
+  - part: proof
+    text: "But EB is equal to CD."
+    highlight: [BE, CD]
+    hint: |
+      {EB} = {CD}.
+
+  - part: proof
+    text: "Therefore, as BD is to DC, so is DC to CB."
+    highlight: [BD, CD, BC]
+    hint: |
+      So {BD} : {DC} = {DC} : {CB}.
+
+  - part: proof
+    text: "And BD is greater than DC; therefore DC is also greater than CB."
+    highlight: [BD, CD, BC]
+    hint: |
+      {BD} > {DC} > {CB}.
+
+  - part: proof
+    text: "Therefore the straight line BD has been cut in extreme and mean ratio, and DC is its greater segment."
+    highlight: [BD, CD]
+    hint: |
+      So {BD} is cut in extreme and mean ratio at {C}.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Isosceles triangles with angles 36°, 72°, 72° do the work. $\blacksquare$

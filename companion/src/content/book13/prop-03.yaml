@@ -1,0 +1,158 @@
+id: XIII.3
+kind: theorem
+title: "Golden section: (lesser part + half the greater)² = 5 × (half the greater)²"
+
+paraphrase: |
+  If {AB} is cut in extreme and mean ratio at {C} and {D} bisects the greater part {AC}, then the square on {DB} is five
+  times the square on {DC}.
+
+diagram:
+  width: 280
+  height: 270
+  elements:
+    - "A;point;free;30,30"
+    - "B;point;free;240,30"
+    - "BATE;polygon;square;B,A;0;0;black;random"
+    - "T;point;vertex;BATE,3;0;0"
+    - "E;point;vertex;BATE,4"
+    - "X;point;midpoint;A,B;0;0"
+    - "Y;point;extend;A,X,X,E;0;0"
+    - "C;point;cutoff;A,B,B,Y"
+    - "D;point;midpoint;A,C"
+    - "BT;line;connect;B,T"
+    - "L;point;parallelogram;D,B,E"
+    - "S;point;parallelogram;C,B,E"
+    - "DL;line;connect;D,L"
+    - "CS;line;connect;C,S"
+    - "K;point;intersection;B,T,D,L"
+    - "U;point;intersection;B,T,C,S"
+    - "H;point;parallelogram;T,L,K"
+    - "N;point;parallelogram;H,T,E"
+    - "HN;line;connect;H,N"
+    - "R;point;parallelogram;T,S,U"
+    - "M;point;parallelogram;R,T,E"
+    - "RM;line;connect;R,M"
+    - "F;point;intersection;C,S,H,N"
+    - "G;point;intersection;D,L,R,M"
+    - "O;point;midpoint;G,U"
+    - "P;point;cutoff;U,B,U,O"
+    - "Q;point;cutoff;U,S,U,O"
+    - "QPO;sector;arc;Q,P,O;0;0;gray"
+    - "DB;line;connect;D,B;0;0;0"
+    - "DC;line;connect;D,C;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+  aliases: { TB: BT, LD: DL, SC: CS, NH: HN, MR: RM, BD: DB, CD: DC, BA: AB, CA: AC, CB: BC, DA: AD }
+  caption: |
+    {AB} cut at {C}; {D} the midpoint of {AC}; the square on {AB} with its subdivisions.
+
+steps:
+  - part: enunciation
+    text: "If a straight line be cut in extreme and mean ratio, the square on the lesser segment added to the half of the greater segment is five times the square on the half of the greater segment."
+    highlight: [DB, DC]
+    hint: |
+      Another $\sqrt5$ identity of the golden section.
+    modern: |
+      $AB = 1$, $AC = x$: $(1 - \tfrac{x}{2})^2 = 5(\tfrac{x}{2})^2$, since $x^2 = 1 - x$.
+
+  - part: setting-out
+    text: "For let any straight line AB be cut in extreme and mean ratio at the point C, let AC be the greater segment, and let AC be bisected at D; I say that the square on BD is five times the square on DC."
+    highlight: [AB, C, D]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let the square AE be described on AB, and let the figure be drawn double."
+    highlight: [AB]
+    hint: |
+      Square on {AB}; draw the figure.
+
+  - part: proof
+    text: "Since AC is double of DC, therefore the square on AC is quadruple of the square on DC, that is, RS is quadruple of FG."
+    highlight: [AC, DC]
+    hint: |
+      sq({AC}) = 4 sq({DC}): *RS* = 4 *FG*.
+
+  - part: proof
+    text: "And, since the rectangle AB, BC is equal to the square on AC, and CE is the rectangle AB, BC, therefore CE is equal to RS."
+    highlight: [AB, BC, AC]
+    hint: |
+      rect({AB},{BC}) = sq({AC}): *CE* = *RS*.
+
+  - part: proof
+    text: "But RS is quadruple of FG; therefore CE is also quadruple of FG."
+    highlight: [DC]
+    hint: |
+      So *CE* = 4 *FG*.
+
+  - part: proof
+    text: "Again, since AD is equal to DC, HK is also equal to KF."
+    highlight: [DC]
+    hint: |
+      {AD} = {DC}, so *HK* = *KF* …
+
+  - part: proof
+    text: "Hence the square GF is also equal to the square HL."
+    highlight: [DC]
+    hint: |
+      … *GF* = *HL* …
+
+  - part: proof
+    text: "Therefore GK is equal to KL, that is, MN to NE; hence MF is also equal to FE."
+    highlight: [DC]
+    hint: |
+      … *MF* = *FE* …
+
+  - part: proof
+    text: "But MF is equal to CG; therefore CG is also equal to FE."
+    highlight: [DC]
+    hint: |
+      … *CG* = *FE*.
+
+  - part: proof
+    text: "Let CN be added to each; therefore the gnomon OPQ is equal to CE."
+    highlight: [DC]
+    hint: |
+      Adding *CN*: gnomon *OPQ* = *CE* …
+
+  - part: proof
+    text: "But CE was proved quadruple of GF; therefore the gnomon OPQ is also quadruple of the square FG."
+    highlight: [DC]
+    hint: |
+      … = 4 *FG*.
+
+  - part: proof
+    text: "Therefore the gnomon OPQ and the square FG are five times FG."
+    highlight: [DC]
+    hint: |
+      So gnomon + *FG* = 5 *FG* …
+
+  - part: proof
+    text: "But the gnomon OPQ and the square FG are the square DN."
+    highlight: [DB]
+    hint: |
+      … and that is the square *DN* on {DB}.
+
+  - part: proof
+    text: "And DN is the square on DB, and GF the square on DC."
+    highlight: [DB, DC]
+    hint: |
+      *DN* = sq({DB}), *GF* = sq({DC}).
+
+  - part: proof
+    text: "Therefore the square on DB is five times the square on DC."
+    highlight: [DB, DC]
+    hint: |
+      So sq({DB}) = 5 sq({DC}).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $(1 - x/2)^2 = 1 - x + x^2/4 = x^2 + x^2/4 = 5x^2/4$. $\blacksquare$

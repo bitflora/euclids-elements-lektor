@@ -1,0 +1,140 @@
+id: II.13
+kind: theorem
+title: Pythagoras extended to an acute angle
+
+paraphrase: |
+  In a triangle with an acute angle at {B}, the square on the opposite side {AC} falls short of the
+  squares on {CB} and {BA} by twice the rectangle on {CB} and {BD}, where {D} is the foot of the
+  perpendicular from {A} to {BC}. The law of cosines for an acute angle.
+
+diagram:
+  width: 250
+  height: 230
+  elements:
+    - "A;point;free;100,30"
+    - "B;point;free;30,200"
+    - "C;point;free;220,200"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "AD;line;foot;A,B,C"
+    - "D;point;last;AD"
+    - "DA;line;connect;D,A"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "DC;line;connect;D,C;0;0;0"
+    - "ADB;polygon;triangle;A,D,B;0;0;0;0"
+    - "ADC;polygon;triangle;A,D,C;0;0;0;0"
+    - "angABC;sector;angleMarker;B,A,C"
+    - "angD;sector;angleMarker;D,A,C"
+  aliases:
+    CB: BC
+    BA: AB
+    CA: AC
+    DB: BD
+    CD: DC
+  given: [A, B, C, ABC, angABC]
+  caption: |
+    Drag the vertices. With all three angles acute, the foot {D} lies between {B} and {C}.
+
+steps:
+  - part: enunciation
+    text: "In acute-angled triangles the square on the side subtending the acute angle is less than the squares on the sides containing the acute angle by twice the rectangle contained by one of the sides about the acute angle, namely that on which the perpendicular falls, and the straight line cut off within by the perpendicular towards the acute angle."
+    highlight: [AC, BC, AB, BD, angABC]
+    hint: |
+      Acute angle: the opposite square is *less* than the other two by $2\cdot CB\cdot BD$.
+    explain:
+      implicit: |
+        "Acute-angled triangles", but the argument only needs the angle at {B} to be acute; Heath
+        discusses the case where another angle is obtuse and {D} falls outside {BC}.
+
+  - part: setting-out
+    text: "Let ABC be an acute-angled triangle having the angle at B acute, and let AD be drawn from the point A perpendicular to BC;"
+    highlight: [ABC, angABC, AD, D]
+    adds: [AD, D, angD]
+    hint: |
+      Drop the perpendicular from {A} to {BC} ([[I.12]]).
+    cites: [I.12]
+
+  - part: specification
+    text: "I say that the square on AC is less than the squares on CB, BA by twice the rectangle contained by CB, BD."
+    highlight: [AC, BC, AB, BD]
+    hint: |
+      The goal.
+    modern: |
+      $$AC^2 = CB^2 + BA^2 - 2\,CB\cdot BD$$
+
+  - part: proof
+    text: "For, since the straight line CB has been cut at random at D, the squares on CB, BD are equal to twice the rectangle contained by CB, BD and the square on DC."
+    highlight: [BC, BD, DC]
+    hint: |
+      [[II.7]] applied to {CB} cut at {D}.
+    modern: |
+      $$CB^2 + BD^2 = 2\,CB\cdot BD + DC^2$$
+
+  - part: proof
+    text: "Let the square on DA be added to each; therefore the squares on CB, BD, DA are equal to twice the rectangle contained by CB, BD and the squares on AD, DC."
+    highlight: [DA]
+    hint: |
+      Add {DA}² to both sides.
+
+  - part: proof
+    text: "But the square on AB is equal to the squares on BD, DA, for the angle at D is right;"
+    highlight: [ADB, AB]
+    hint: |
+      Pythagoras in {ADB} ([[I.47]]).
+
+  - part: proof
+    text: "and the square on AC is equal to the squares on AD, DC;"
+    highlight: [ADC, AC]
+    hint: |
+      And in {ADC} ([[I.47]], not bracketed).
+    cites: [I.47]
+
+  - part: proof
+    text: "therefore the squares on CB, BA are equal to the square on AC and twice the rectangle CB, BD,"
+    highlight: [BC, AB, AC]
+    hint: |
+      Substitute both.
+
+  - part: conclusion
+    text: "so that the square on AC alone is less than the squares on CB, BA by twice the rectangle contained by CB, BD."
+    highlight: [AC, BC, AB]
+    hint: |
+      Done.
+    modern: |
+      $$b^2 = a^2 + c^2 - 2\,a\cdot BD,\qquad BD = c\cos B$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: Let $a = BC$, $c = BA$, $h = AD$, $p = BD$, with $D$ between $B$ and $C$.
+    - steps: [3, 4, 5, 6, 7, 8]
+      text: $AC^2 = (a - p)^2 + h^2 = a^2 - 2ap + (p^2 + h^2) = a^2 + c^2 - 2ap$. $\blacksquare$
+  closing: |
+    With $p = c\cos B$ this is $b^2 = a^2 + c^2 - 2ac\cos B$ — the law of cosines. With [[II.12]] it
+    covers every case; with a right angle, $p = 0$ and it is [[I.47]].
+
+commentary: |
+  The acute counterpart of [[II.12]], using [[II.7]] (square of a difference) where II.12 used [[II.4]]
+  (square of a sum).
+
+gaps: |
+  - **Position of {D}**: Euclid takes {D} between {B} and {C}. If the angle at {C} is obtuse, {D}
+    falls beyond {C}; the theorem still holds, with {DC} now outside, and [[II.7]] still applies to
+    {BD} cut at {C}. Heath discusses the cases.
+
+historical: |
+  The Perseus text of the enunciation has a misprint ("acutc") corrected here; see the About page.

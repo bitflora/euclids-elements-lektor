@@ -1,0 +1,91 @@
+id: X.73
+kind: theorem
+title: The apotome
+
+paraphrase: |
+  If from a rational line {AB} a rational line {BC} commensurable with it in square only is subtracted, the
+  remainder {AC} is irrational: an *apotome* ("cut off"). Example: $\sqrt2 - 1$.
+
+diagram:
+  width: 250
+  height: 65
+  elements:
+    - "A0;point;free;-1000,35"
+    - "A3;point;free;1000,35"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "B;point;lineSlider;A0,A3,210,0"
+    - "C;point;lineSlider;A0,A3,100,0"
+    - "AB;line;connect;A,B"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "CA;line;connect;C,A;0;0;0"
+  aliases: { BA: AB, CB: BC }
+  caption: |
+    {AC} = {AB} − {BC}.
+
+steps:
+  - part: enunciation
+    text: "If from a rational straight line there be subtracted a rational straight line commensurable with the whole in square only, the remainder is irrational; and let it be called an apotome."
+    highlight: [AC]
+    hint: |
+      $a - b$ with $a^2, b^2$ rational, $a/b$ irrational: the apotome, the subtractive twin of the binomial.
+    modern: |
+      $(\sqrt p - \sqrt q)^2 = p + q - 2\sqrt{pq}$.
+
+  - part: setting-out
+    text: "For from the rational straight line AB let the rational straight line BC, commensurable with the whole in square only, be subtracted;"
+    highlight: [AB, BC]
+    hint: |
+      Setup.
+
+  - part: specification
+    text: "I say that the remainder AC is the irrational straight line called apotome."
+    highlight: [AC]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since AB is incommensurable in length with BC, and, as AB is to BC, so is the square on AB to the rectangle AB, BC, therefore the square on AB is incommensurable with the rectangle AB, BC."
+    highlight: [AB, BC]
+    hint: |
+      sq({AB}) incommensurable with rect({AB},{BC}).
+
+  - part: proof
+    text: "But the squares on AB, BC are commensurable with the square on AB, and twice the rectangle AB, BC is commensurable with the rectangle AB, BC."
+    highlight: [AB, BC]
+    hint: |
+      Sum of squares commensurable with sq({AB}); 2·rect with rect.
+
+  - part: proof
+    text: "And, inasmuch as the squares on AB, BC are equal to twice the rectangle AB, BC together with the square on CA, therefore the squares on AB, BC are also incommensurable with the remainder, the square on AC."
+    highlight: [AC]
+    hint: |
+      Sum of squares = 2·rect + sq({CA}) ([[II.7]]): so the sum is incommensurable with sq({CA}).
+
+  - part: proof
+    text: "But the squares on AB, BC are rational; therefore AC is irrational."
+    highlight: [AC]
+    hint: |
+      Sum rational, so sq({AC}) and {AC} irrational.
+
+  - part: proof
+    text: "And let it be called an apotome."
+    hint: |
+      The name: ἀποτομή.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        $AC^2 = (AB^2 + BC^2) - 2AB\cdot BC$: rational minus medial, irrational. $\blacksquare$
+
+commentary: |
+  [[X.73]]–[[X.78]] define the six subtractive irrationals, mirroring [[X.36]]–[[X.41]]: apotome, first and
+  second apotome of a medial, minor, "that which produces with a rational area a medial whole", and "that
+  which produces with a medial area a medial whole". The theory that follows ([[X.79]]–[[X.111]]) repeats the
+  additive theory with "−" for "+".

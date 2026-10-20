@@ -1,0 +1,196 @@
+id: III.3
+kind: theorem
+title: A diameter bisecting a chord is perpendicular to it
+
+paraphrase: |
+  A line through the centre that bisects a chord (not a diameter) is perpendicular to it; and a line
+  through the centre perpendicular to a chord bisects it.
+
+diagram:
+  width: 240
+  height: 250
+  elements:
+    - "A;point;free;60,190"
+    - "B;point;free;180,190"
+    - "AB;line;connect;A,B"
+    - "F;point;midpoint;A,B"
+    - "FCp;line;perpendicular;F,B;0;0;0"
+    - "C;point;lineSlider;FCp,120,30"
+    - "ABC;circle;circumcircle;A,B,C;0;0;black;0"
+    - "E;point;center;ABC"
+    - "D;point;extend;C,E,C,E"
+    - "CD;line;connect;C,D"
+    - "AE;line;connect;A,E"
+    - "BE;line;connect;B,E"
+    - "AF;line;connect;A,F;0;0;0"
+    - "FB;line;connect;F,B;0;0;0"
+    - "FE;line;connect;F,E;0;0;0"
+    - "EAF;polygon;triangle;E,A,F;0;0;0;0"
+    - "EBF;polygon;triangle;E,B,F;0;0;0;0"
+    - "angAFE;sector;angleMarker;F,A,E"
+    - "angBFE;sector;angleMarker;F,E,B"
+    - "angEAF;sector;angleMarker;A,E,F"
+    - "angEBF;sector;angleMarker;B,F,E"
+  aliases:
+    EA: AE
+    EB: BE
+    EF: FE
+    AFE: angAFE
+    BFE: angBFE
+  given: [A, B, C, ABC, AB, CD, F]
+  caption: |
+    Drag {A}, {B} or {C}. The line {CD} through the centre {E} meets the chord {AB} at its midpoint {F},
+    at right angles.
+
+steps:
+  - part: enunciation
+    text: "If in a circle a straight line through the centre bisect a straight line not through the centre, it also cuts it at right angles; and if it cut it at right angles, it also bisects it."
+    highlight: [CD, AB, F]
+    hint: |
+      Through the centre: bisects a chord ⇔ is perpendicular to it.
+
+  - part: setting-out
+    text: "Let ABC be a circle, and in it let a straight line CD through the centre bisect a straight line AB not through the centre at the point F;"
+    highlight: [ABC, CD, AB, F]
+    hint: |
+      First half: {CD} passes through the centre and bisects {AB} at {F}.
+
+  - part: specification
+    text: "I say that it also cuts it at right angles."
+    highlight: [angAFE, angBFE]
+    hint: |
+      To prove: the angles at {F} are right.
+
+  - part: construction
+    text: "For let the centre of the circle ABC be taken, and let it be E;"
+    highlight: [E]
+    adds: [E]
+    hint: |
+      The centre {E} ([[III.1]]), which is on {CD}.
+    cites: [III.1]
+
+  - part: construction
+    text: "let EA, EB be joined."
+    highlight: [AE, BE]
+    adds: [AE, BE]
+    hint: |
+      Join the radii.
+
+  - part: proof
+    text: "Then, since AF is equal to FB, and FE is common, two sides are equal to two sides;"
+    highlight: [AF, FB, FE]
+    hint: |
+      Triangles {EAF} and {EBF}.
+
+  - part: proof
+    text: "and the base EA is equal to the base EB;"
+    highlight: [AE, BE]
+    hint: |
+      Radii.
+    cites: [I.Def.15]
+
+  - part: proof
+    text: "therefore the angle AFE is equal to the angle BFE."
+    highlight: [angAFE, angBFE]
+    hint: |
+      SSS ([[I.8]]).
+
+  - part: proof
+    text: "But, when a straight line set up on a straight line makes the adjacent angles equal to one another, each of the equal angles is right;"
+    highlight: [angAFE, angBFE]
+    hint: |
+      [[I.Def.10]].
+
+  - part: proof
+    text: "therefore each of the angles AFE, BFE is right."
+    highlight: [angAFE, angBFE]
+    hint: |
+      Both right.
+
+  - part: proof
+    text: "Therefore CD, which is through the centre, and bisects AB which is not through the centre, also cuts it at right angles."
+    highlight: [CD, AB]
+    hint: |
+      First half proved.
+
+  - part: setting-out
+    text: "Again, let CD cut AB at right angles;"
+    highlight: [CD, AB, angAFE]
+    hint: |
+      Second half (the converse): now suppose {CD} ⊥ {AB}.
+
+  - part: specification
+    text: "I say that it also bisects it; that is, that AF is equal to FB."
+    highlight: [AF, FB]
+    hint: |
+      To prove: {AF} = {FB}.
+
+  - part: proof
+    text: "For, with the same construction, since EA is equal to EB, the angle EAF is also equal to the angle EBF."
+    highlight: [angEAF, angEBF]
+    hint: |
+      Isosceles triangle {EAB|AB}: base angles equal ([[I.5]]).
+    explain:
+      implicit: |
+        "With the same construction" (τῶν αὐτῶν κατασκευασθέντων) — the same centre and radii
+        (Heath's note on line 26).
+
+  - part: proof
+    text: "But the right angle AFE is equal to the right angle BFE,"
+    highlight: [angAFE, angBFE]
+    hint: |
+      Right angles are equal ([[I.Post.4]]).
+    cites: [I.Post.4]
+
+  - part: proof
+    text: "therefore EAF, EBF are two triangles having two angles equal to two angles and one side equal to one side, namely EF, which is common to them, and subtends one of the equal angles;"
+    highlight: [EAF, EBF, FE]
+    hint: |
+      Two angles and a side opposite one of them: the AAS case of [[I.26]].
+
+  - part: proof
+    text: "therefore they will also have the remaining sides equal to the remaining sides;"
+    highlight: [EAF, EBF]
+    hint: |
+      [[I.26]].
+
+  - part: proof
+    text: "therefore AF is equal to FB."
+    highlight: [AF, FB]
+    hint: |
+      Second half proved.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      text: |
+        $EA = EB$, so $E$ is on the perpendicular bisector of $AB$. If $F$ is the midpoint, line $EF$
+        is that bisector, hence $\perp AB$.
+    - steps: [10, 11, 12, 13, 14, 15, 16]
+      text: |
+        Conversely, the perpendicular from $E$ to $AB$ is unique, so it is the bisector and meets $AB$
+        at its midpoint. $\blacksquare$
+
+commentary: |
+  III.3 is the converse partner of the porism to [[III.1]]. Together: for a chord, "passes through the
+  centre", "bisects" and "is perpendicular" — any two imply the third.
+
+gaps: |
+  - **Not through the centre**: if {AB} were a diameter, {CD} could bisect it without being
+    perpendicular. Hence the condition.
+
+historical: |
+  Heath's text reads "bisects it. that is" here, a full stop for a semicolon in the Perseus
+  transcription, corrected in this edition (see the About page).

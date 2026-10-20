@@ -1,0 +1,167 @@
+id: V.10
+kind: theorem
+title: The magnitude with the greater ratio is greater
+
+paraphrase: |
+  If {A} : {C} is greater than {B} : {C}, then {A} is greater than {B}; and if {C} : {B} is greater than {C} : {A}, then {B}
+  is less than {A}. The converse of [[V.8]].
+
+diagram:
+  width: 250
+  height: 90
+  elements:
+    - "U0;point;free;-1000,40;0;0"
+    - "U1;point;free;1000,40;0;0"
+    - "V0;point;free;-1000,75;0;0"
+    - "V1;point;free;1000,75;0;0"
+    - "A0;point;lineSlider;U0,U1,30,40;0"
+    - "A1;point;lineSlider;U0,U1,120,40;0"
+    - "A;line;connect;A0,A1;black;0;green"
+    - "B0;point;lineSlider;U0,U1,150,40;0"
+    - "B1;point;lineSlider;U0,U1,200,40;0"
+    - "B;line;connect;B0,B1;black;0;green"
+    - "C0;point;lineSlider;V0,V1,70,40;0"
+    - "C1;point;lineSlider;V0,V1,170,40;0"
+    - "C;line;connect;C0,C1;black;0;green"
+
+steps:
+  - part: enunciation
+    text: "Of magnitudes which have a ratio to the same, that which has a greater ratio is greater; and that to which the same has a greater ratio is less."
+    highlight: [A, B, C]
+    hint: |
+      $A : C > B : C \Rightarrow A > B$; $C : B > C : A \Rightarrow B < A$.
+
+  - part: setting-out
+    text: "For let A have to C a greater ratio than B has to C;"
+    highlight: [A, B, C]
+    hint: |
+      Suppose $A : C > B : C$.
+
+  - part: specification
+    text: "I say that A is greater than B."
+    highlight: [A, B]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, if not, A is either equal to B or less."
+    highlight: [A, B]
+    hint: |
+      Proof by exhausting the alternatives.
+
+  - part: proof
+    text: "Now A is not equal to B; for in that case each of the magnitudes A, B would have had the same ratio to C;"
+    highlight: [A, B, C]
+    hint: |
+      If {A} = {B}, then $A : C = B : C$ ([[V.7]]).
+
+  - part: proof
+    text: "but they have not; therefore A is not equal to B."
+    highlight: [A, B]
+    hint: |
+      But the ratios are not the same — one is greater.
+    explain:
+      implicit: |
+        That a ratio cannot be both *the same as* and *greater than* another.
+    gap: |
+      Euclid treats "greater", "same" and "less" ratio as mutually exclusive, as if ratios were magnitudes.
+      That is true, but it has to be proved from [[V.Def.5]] and [[V.Def.7]].
+
+  - part: proof
+    text: "Nor again is A less than B; for in that case A would have had to C a less ratio than B has to C;"
+    highlight: [A, B, C]
+    hint: |
+      If {A} < {B}, then $A : C < B : C$ ([[V.8]]).
+
+  - part: proof
+    text: "but it has not; therefore A is not less than B."
+    highlight: [A, B]
+    hint: |
+      Again contradicting the hypothesis.
+    explain:
+      implicit: |
+        That "less" and "greater" ratio exclude each other — again assumed.
+
+  - part: proof
+    text: "But it was proved not to be equal either; therefore A is greater than B."
+    highlight: [A, B]
+    hint: |
+      Only "greater" is left.
+
+  - part: setting-out
+    text: "Again, let C have to B a greater ratio than C has to A;"
+    highlight: [C, B, A]
+    hint: |
+      Suppose $C : B > C : A$.
+
+  - part: specification
+    text: "I say that B is less than A."
+    highlight: [B, A]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, if not, it is either equal or greater."
+    highlight: [B, A]
+    hint: |
+      The alternatives.
+
+  - part: proof
+    text: "Now B is not equal to A; for in that case C would have had the same ratio to each of the magnitudes A, B;"
+    highlight: [B, A, C]
+    hint: |
+      [[V.7]].
+
+  - part: proof
+    text: "but it has not; therefore A is not equal to B."
+    highlight: [A, B]
+    hint: |
+      Not equal.
+
+  - part: proof
+    text: "Nor again is B greater than A; for in that case C would have had to B a less ratio than it has to A;"
+    highlight: [B, A, C]
+    hint: |
+      [[V.8]], second part.
+
+  - part: proof
+    text: "but it has not; therefore B is not greater than A."
+    highlight: [B, A]
+    hint: |
+      Not greater.
+
+  - part: proof
+    text: "But it was proved that it is not equal either; therefore B is less than A."
+    highlight: [B, A]
+    hint: |
+      So less.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument; it avoids the trichotomy of ratios.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: |
+        $A : C > B : C$ gives, by [[V.Def.7]], $m, n$ with $mA > nC$ but $mB \le nC$. So $mA > mB$, hence
+        $A > B$ (if $A \le B$ then $mA \le mB$).
+    - steps: [9, 10, 11, 12, 13, 14, 15, 16]
+      text: |
+        $C : B > C : A$ gives $m, n$ with $mC > nB$ but $mC \le nA$. So $nB < nA$, hence $B < A$. $\blacksquare$
+  closing: |
+    This direct proof, which Joyce gives, needs neither [[V.8]] nor the Archimedean property.
+
+commentary: |
+  Euclid's indirect proof is the one place where Book V visibly treats ratios as if they were themselves
+  magnitudes, obeying "exactly one of greater, equal, less". The statement is right, but the reasoning
+  borrows the trichotomy without proof. Heath reports that Robert Simson, in his 1756 edition, objected to
+  the proof on these grounds and substituted a direct one.

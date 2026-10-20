@@ -1,0 +1,102 @@
+id: VIII.16
+kind: theorem
+title: If a square does not measure a square, the side does not measure the side
+
+paraphrase: |
+  The contrapositive of [[VIII.14]]: {A} = {C}² fails to measure {B} = {D}² exactly when {C} fails to measure
+  {D}.
+
+diagram:
+  width: 250
+  height: 170
+  elements:
+    - "A0;point;free;-1000,35;0;0"
+    - "A3;point;free;1000,35;0;0"
+    - "B0;point;free;-1000,70;0;0"
+    - "B3;point;free;1000,70;0;0"
+    - "C0;point;free;-1000,105;0;0"
+    - "C3;point;free;1000,105;0;0"
+    - "D0;point;free;-1000,140;0;0"
+    - "D3;point;free;1000,140;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,25;0;0"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,80,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;lineSlider;D0,D3,100,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;proportion;U1,U2,C1,C2,C1,C2,A1,A3;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;proportion;U1,U2,D1,D2,D1,D2,B1,B3;0"
+    - "B;line;connect;B1,B2;black"
+  caption: |
+    {A} = {C}², {B} = {D}².
+
+steps:
+  - part: enunciation
+    text: "If a square number do not measure a square number, neither will the side measure the side; and, if the side do not measure the side, neither will the square measure the square."
+    highlight: [A, B, C, D]
+    hint: |
+      $c^2 \nmid d^2 \iff c \nmid d$.
+
+  - part: setting-out
+    text: "Let A, B be square numbers, and let C, D be their sides; and let A not measure B;"
+    highlight: [A, B, C, D]
+    hint: |
+      {A} does not measure {B}.
+
+  - part: specification
+    text: "I say that neither does C measure D."
+    highlight: [C, D]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, if C measures D, A will also measure B."
+    highlight: [C, D, A, B]
+    hint: |
+      [[VIII.14]].
+
+  - part: proof
+    text: "But A does not measure B; therefore neither will C measure D."
+    highlight: [C, D]
+    hint: |
+      So {C} does not measure {D}.
+
+  - part: specification
+    text: "Again, let C not measure D; I say that neither will A measure B."
+    highlight: [C, D, A, B]
+    hint: |
+      The converse.
+
+  - part: proof
+    text: "For, if A measures B, C will also measure D."
+    highlight: [A, B, C, D]
+    hint: |
+      [[VIII.14]].
+
+  - part: proof
+    text: "But C does not measure D; therefore neither will A measure B."
+    highlight: [A, B]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6, 7]
+      text: |
+        Contrapositive of [[VIII.14]]. $\blacksquare$
+
+commentary: |
+  Joyce: "It is unclear why papyrus was wasted to state and prove it." Greek mathematicians often stated a
+  contrapositive separately when they meant to cite it.

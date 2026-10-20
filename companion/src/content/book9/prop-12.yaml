@@ -1,0 +1,231 @@
+id: IX.12
+kind: theorem
+title: A prime dividing a power divides the base
+
+paraphrase: |
+  In a continued proportion 1, {A}, {B}, {C}, {D} from the unit, every prime that measures the last term {D}
+  also measures {A}. In powers: if $p \mid a^n$ then $p \mid a$.
+
+diagram:
+  width: 290
+  height: 200
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "B0;point;free;-1000,65;0;0"
+    - "B3;point;free;1000,65;0;0"
+    - "C0;point;free;-1000,100;0;0"
+    - "C3;point;free;1000,100;0;0"
+    - "D0;point;free;-1000,135;0;0"
+    - "D3;point;free;1000,135;0;0"
+    - "E0;point;free;-1000,170;0;0"
+    - "E3;point;free;1000,170;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,20;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,90,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,105,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;A1,A2,B1,B2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;E0,E3,30,0;0"
+    - "E2;point;lineSlider;E0,E3,60,0;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;A0,A3,180,0;0"
+    - "F2;point;proportion;E1,E2,D1,D2,U1,U2,F1,A3;0"
+    - "F;line;connect;F1,F2;black"
+    - "G1;point;lineSlider;B0,B3,180,0;0"
+    - "G2;point;proportion;E1,E2,C1,C2,U1,U2,G1,B3;0"
+    - "G;line;connect;G1,G2;black"
+    - "H1;point;lineSlider;C0,C3,180,0;0"
+    - "H2;point;proportion;E1,E2,B1,B2,U1,U2,H1,C3;0"
+    - "H;line;connect;H1,H2;black"
+  caption: |
+    {A}, {B}, {C}, {D} are $a, a^2, a^3, a^4$; {E} is a prime measuring {D}; {D} = {E}{F}, {C} = {E}{G}, {B} =
+    {E}{H}.
+
+steps:
+  - part: enunciation
+    text: "If as many numbers as we please beginning from an unit be in continued proportion, by however many prime numbers the last is measured, the next to the unit will also be measured by the same."
+    highlight: [A, D]
+    hint: |
+      $p$ prime, $p \mid a^n \Rightarrow p \mid a$.
+    modern: |
+      $p$ prime, $p \mid a^n \Rightarrow p \mid a$.
+
+  - part: setting-out
+    text: "Let there be as many numbers as we please, A, B, C, D, beginning from an unit, and in continued proportion;"
+    highlight: [A, B, C, D]
+    hint: |
+      {A}, {B}, {C}, {D}: $a, \dots, a^4$.
+
+  - part: specification
+    text: "I say that, by however many prime numbers D is measured, A will also be measured by the same."
+    highlight: [A, D]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For let D be measured by any prime number E; I say that E measures A."
+    highlight: [E, D, A]
+    hint: |
+      A prime {E} measuring {D}.
+
+  - part: proof
+    text: "For suppose it does not; now E is prime, and any prime number is prime to any which it does not measure; therefore E, A are prime to one another."
+    highlight: [E, A]
+    hint: |
+      Suppose not; then {E}, {A} coprime ([[VII.29]]).
+
+  - part: construction
+    text: "And, since E measures D, let it measure it according to F, therefore E by multiplying F has made D."
+    highlight: [F]
+    hint: |
+      {D} = {E}{F}.
+
+  - part: proof
+    text: "Again, since A measures D according to the units in C, therefore A by multiplying C has made D."
+    highlight: [A, C, D]
+    hint: |
+      {D} = {A}{C} ([[IX.11]] and porism).
+
+  - part: proof
+    text: "But, further, E has also by multiplying F made D; therefore the product of A, C is equal to the product of E, F."
+    highlight: [A, C, E, F]
+    hint: |
+      {A}{C} = {E}{F}.
+
+  - part: proof
+    text: "Therefore, as A is to E, so is F to C."
+    highlight: [A, E, F, C]
+    hint: |
+      [[VII.19]].
+
+  - part: proof
+    text: "But A, E are prime, primes are also least, and the least measure those which have the same ratio the same number of times, the antecedent the antecedent and the consequent the consequent; therefore E measures C."
+    highlight: [E, C]
+    hint: |
+      [[VII.21]], [[VII.20]]: {E} measures {C}.
+
+  - part: construction
+    text: "Let it measure it according to G; therefore E by multiplying G has made C."
+    highlight: [G]
+    hint: |
+      {C} = {E}{G}.
+
+  - part: proof
+    text: "But, further, by the theorem before this, A has also by multiplying B made C."
+    highlight: [A, B, C]
+    hint: |
+      {C} = {A}{B}.
+
+  - part: proof
+    text: "Therefore the product of A, B is equal to the product of E, G."
+    highlight: [A, B, E, G]
+    hint: |
+      {A}{B} = {E}{G}.
+
+  - part: proof
+    text: "Therefore, as A is to E, so is G to B."
+    highlight: [A, E, G, B]
+    hint: |
+      [[VII.19]].
+
+  - part: proof
+    text: "But A, E are prime, primes are also least, and the least numbers measure those which have the same ratio with them the same number of times, the antecedent the antecedent and the consequent the consequent: therefore E measures B."
+    highlight: [E, B]
+    hint: |
+      {E} measures {B}.
+
+  - part: construction
+    text: "Let it measure it according to H; therefore E by multiplying H has made B."
+    highlight: [H]
+    hint: |
+      {B} = {E}{H}.
+
+  - part: proof
+    text: "But further A has also by multiplying itself made B; therefore the product of E, H is equal to the square on A."
+    highlight: [E, H, A]
+    hint: |
+      {E}{H} = {A}² ([[IX.8]]).
+
+  - part: proof
+    text: "Therefore, as E is to A, so is A to H."
+    highlight: [E, A, H]
+    hint: |
+      [[VII.19]].
+
+  - part: proof
+    text: "But A, E are prime, primes are also least, and the least measure those which have the same ratio the same number of times, the antecedent the antecedent and the consequent the consequent; therefore E measures A, as antecedent antecedent."
+    highlight: [E, A]
+    hint: |
+      So {E} measures {A}.
+
+  - part: proof
+    text: "But, again, it also does not measure it: which is impossible."
+    highlight: [E, A]
+    hint: |
+      Contradiction.
+
+  - part: proof
+    text: "Therefore E, A are not prime to one another."
+    highlight: [E, A]
+    hint: |
+      Not coprime.
+
+  - part: proof
+    text: "Therefore they are composite to one another."
+    highlight: [E, A]
+    hint: |
+      [[VII.Def.14]].
+
+  - part: proof
+    text: "But numbers composite to one another are measured by some number."
+    highlight: [E, A]
+    hint: |
+      A common measure.
+
+  - part: proof
+    text: "And, since E is by hypothesis prime, and the prime is not measured by any number other than itself, therefore E measures A, E, so that E measures A."
+    highlight: [E, A]
+    hint: |
+      The only common measure can be {E} itself.
+
+  - part: proof
+    text: "[But it also measures D; therefore E measures A, D.]"
+    highlight: [E, A, D]
+    hint: |
+      A bracketed (probably interpolated) remark.
+
+  - part: proof
+    text: "Similarly we can prove that, by however many prime numbers D is measured, A will also be measured by the same."
+    highlight: [A, D]
+    hint: |
+      Any prime.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+      text: |
+        By [[VII.30]] repeatedly: $p \mid a \cdot a^{n-1}$ gives $p \mid a$ or $p \mid a^{n-1}$, and so on down.
+        $\blacksquare$
+  closing: |
+    Euclid avoids [[VII.30]] and descends the progression with [[VII.20]] instead, reaching a contradiction.
+
+commentary: |
+  Joyce calls the proof "both elegant and inelegant": the descent is neat, but the final steps (19–23) take a
+  detour — having shown that {E} measures {A}, which already contradicts the assumption, Euclid goes on to
+  argue it again through "composite to one another".

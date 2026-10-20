@@ -1,0 +1,139 @@
+id: IX.35
+kind: theorem
+title: The sum of a geometric progression
+
+paraphrase: |
+  If {A}, {BC}, {D}, {EF} are in continued proportion, then (second − first) : first = (last − first) : (sum of
+  all but the last). This gives the sum of a geometric series.
+
+diagram:
+  width: 280
+  height: 165
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "D0;point;free;-1000,110;0;0"
+    - "D3;point;free;1000,110;0;0"
+    - "E0;point;free;-1000,145;0;0"
+    - "E3;point;free;1000,145;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,35;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,70,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B;point;lineSlider;B0,B3,30,0"
+    - "C;point;lineSlider;B0,B3,100,0"
+    - "BC;line;connect;B,C"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;proportion;A1,A2,B,C,B,C,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+    - "E;point;lineSlider;E0,E3,30,0"
+    - "F;point;proportion;A1,A2,B,C,D1,D2,E,E3"
+    - "EF;line;connect;E,F"
+    - "G;point;cutoff;B,C,A1,A2"
+    - "H;point;cutoff;F,E,A1,A2"
+    - "K;point;cutoff;F,E,B,C"
+    - "L;point;cutoff;F,E,D1,D2"
+    - "BG;line;connect;B,G;0;0;0"
+    - "GC;line;connect;G,C;0;0;0"
+    - "FH;line;connect;F,H;0;0;0"
+    - "FK;line;connect;F,K;0;0;0"
+    - "FL;line;connect;F,L;0;0;0"
+    - "EH;line;connect;E,H;0;0;0"
+    - "HK;line;connect;H,K;0;0;0"
+    - "KL;line;connect;K,L;0;0;0"
+    - "LE;line;connect;L,E;0;0;0"
+  aliases: { CG: GC, KH: HK, LK: KL, EL: LE, LF: FL, HF: FH }
+  caption: |
+    {A}, {BC}, {D}, {EF} in continued proportion; {BG} and {FH} are equal to {A}; {FK} = {BC}, {FL} = {D}.
+
+steps:
+  - part: enunciation
+    text: "If as many numbers as we please be in continued proportion, and there be subtracted from the second and the last numbers equal to the first, then, as the excess of the second is to the first, so will the excess of the last be to all those before it."
+    highlight: [A, BC, D, EF]
+    hint: |
+      $(a_2 - a_1) : a_1 = (a_{n+1} - a_1) : (a_1 + \dots + a_n)$.
+    modern: |
+      $\dfrac{ar - a}{a} = \dfrac{ar^n - a}{a + ar + \dots + ar^{n-1}}$, i.e. $\displaystyle\sum_{k=0}^{n-1}
+      ar^k = \frac{a(r^n - 1)}{r - 1}$.
+
+  - part: setting-out
+    text: "Let there be as many numbers as we please in continued proportion, A, BC, D, EF, beginning from A as least, and let there be subtracted from BC and EF the numbers BG, FH, each equal to A;"
+    highlight: [A, BC, D, EF, BG, FH]
+    hint: |
+      {BG} = {FH} = {A}.
+
+  - part: specification
+    text: "I say that, as GC is to A, so is EH to A, BC, D."
+    highlight: [GC, A, EH]
+    hint: |
+      To prove: {GC} : {A} = {EH} : ({A} + {BC} + {D}).
+
+  - part: construction
+    text: "For let FK be made equal to BC, and FL equal to D."
+    highlight: [FK, FL]
+    hint: |
+      Mark the earlier terms inside {EF}.
+
+  - part: proof
+    text: "Then, since FK is equal to BC, and of these the part FH is equal to the part BG, therefore the remainder HK is equal to the remainder GC."
+    highlight: [HK, GC]
+    hint: |
+      {HK} = {GC}.
+
+  - part: proof
+    text: "And since, as EF is to D, so is D to BC, and BC to A, while D is equal to FL, BC to FK, and A to FH, therefore, as EF is to FL, so is LF to FK, and FK to FH."
+    highlight: [EF, FL, FK, FH]
+    hint: |
+      The progression laid inside {EF}.
+
+  - part: proof
+    text: "Separando, as EL is to LF, so is LK to FK, and KH to FH."
+    highlight: [LE, FL, KL, FK, HK, FH]
+    hint: |
+      Subtract: differences in the same ratio ([[VII.11]], [[VII.13]]).
+
+  - part: proof
+    text: "Therefore also, as one of the antecedents is to one of the consequents, so are all the antecedents to all the consequents;"
+    hint: |
+      [[VII.12]].
+
+  - part: proof
+    text: "therefore, as KH is to FH, so are EL, LK, KH to LF, FK, HF."
+    highlight: [HK, FH, EH]
+    hint: |
+      {KH} : {FH} = ({EL} + {LK} + {KH}) : ({LF} + {FK} + {HF}), and the left sum is {EH}.
+
+  - part: proof
+    text: "But KH is equal to CG, FH to A, and LF, FK, HF to D, BC, A; therefore, as CG is to A, so is EH to D, BC, A."
+    highlight: [GC, A, EH]
+    hint: |
+      Translate back.
+
+  - part: proof
+    text: "Therefore, as the excess of the second is to the first, so is the excess of the last to all those before it."
+    highlight: [GC, EH]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Terms $a, ar, ar^2, ar^3$.
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        $ar^3 - ar^2 : ar^2 = ar^2 - ar : ar = ar - a : a = r - 1$.
+    - steps: [7, 8, 9, 10]
+      text: |
+        Adding: $(ar^3 - a) : (a + ar + ar^2) = r - 1$, i.e. $S = (ar^3 - a)/(r - 1)$. $\blacksquare$
+
+commentary: |
+  The formula for the sum of a geometric series, in ratio form. It is the key to the perfect numbers of
+  [[IX.36]], where it shows $1 + 2 + \dots + 2^{n-1} = 2^n - 1$.

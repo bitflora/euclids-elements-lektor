@@ -1,0 +1,147 @@
+id: VIII.11
+kind: theorem
+title: One mean between two squares
+
+paraphrase: |
+  Between two square numbers {A} = {C}² and {B} = {D}² there is one mean proportional, {C}{D}; and {A} : {B} is
+  the duplicate of {C} : {D}.
+
+diagram:
+  width: 250
+  height: 200
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "C0;point;free;-1000,110;0;0"
+    - "C3;point;free;1000,110;0;0"
+    - "E0;point;free;-1000,145;0;0"
+    - "E3;point;free;1000,145;0;0"
+    - "U1;point;free;0,1000;0;0"
+    - "U2;point;free;0,1025;0;0"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,80,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;C0,C3,130,0;0"
+    - "D2;point;lineSlider;C0,C3,200,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;proportion;U1,U2,C1,C2,C1,C2,A1,A3;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;proportion;U1,U2,D1,D2,D1,D2,B1,B3;0"
+    - "B;line;connect;B1,B2;black"
+    - "E1;point;lineSlider;E0,E3,30,0;0"
+    - "E2;point;proportion;U1,U2,C1,C2,D1,D2,E1,E3;0"
+    - "E;line;connect;E1,E2;black"
+  caption: |
+    {A} = {C}², {B} = {D}², {E} = {C}{D}.
+
+steps:
+  - part: enunciation
+    text: "Between two square numbers there is one mean proportional number, and the square has to the square the ratio duplicate of that which the side has to the side."
+    highlight: [A, B]
+    hint: |
+      $c^2 : cd = cd : d^2$, and $c^2 : d^2 = (c : d)^2$.
+    modern: |
+      $c^2 : cd = cd : d^2 = c : d$, so $c^2 : d^2 = (c/d)^2$.
+
+  - part: setting-out
+    text: "Let A, B be square numbers, and let C be the side of A, and D of B;"
+    highlight: [A, B, C, D]
+    hint: |
+      {A} = {C}², {B} = {D}².
+
+  - part: specification
+    text: "I say that between A, B there is one mean proportional number, and A has to B the ratio duplicate of that which C has to D."
+    highlight: [A, B]
+    hint: |
+      Two claims.
+
+  - part: construction
+    text: "For let C by multiplying D make E."
+    highlight: [E]
+    hint: |
+      {E} = {C}{D}.
+
+  - part: proof
+    text: "Now, since A is a square and C is its side, therefore C by multiplying itself has made A."
+    highlight: [C, A]
+    hint: |
+      {A} = {C}·{C} ([[VII.Def.18]]).
+
+  - part: proof
+    text: "For the same reason also D by multiplying itself has made B."
+    highlight: [D, B]
+    hint: |
+      {B} = {D}·{D}.
+
+  - part: proof
+    text: "Since then C by multiplying the numbers C, D has made A, E respectively, therefore, as C is to D, so is A to E."
+    highlight: [C, D, A, E]
+    hint: |
+      [[VII.17]]: {C} : {D} = {A} : {E}.
+
+  - part: proof
+    text: "For the same reason also, as C is to D, so is E to B."
+    highlight: [C, D, E, B]
+    hint: |
+      [[VII.18]]: {C} : {D} = {E} : {B}.
+
+  - part: proof
+    text: "Therefore also, as A is to E, so is E to B."
+    highlight: [A, E, B]
+    hint: |
+      {A}, {E}, {B} in continued proportion.
+
+  - part: proof
+    text: "Therefore between A, B there is one mean proportional number."
+    highlight: [E]
+    hint: |
+      {E} is the mean.
+
+  - part: specification
+    text: "I say next that A also has to B the ratio duplicate of that which C has to D."
+    highlight: [A, B, C, D]
+    hint: |
+      Now the second claim.
+
+  - part: proof
+    text: "For, since A, E, B are three numbers in proportion, therefore A has to B the ratio duplicate of that which A has to E."
+    highlight: [A, E, B]
+    hint: |
+      By the definition of duplicate ratio ([[V.Def.9]]).
+
+  - part: proof
+    text: "But, as A is to E, so is C to D."
+    highlight: [A, E, C, D]
+    hint: |
+      Shown above.
+
+  - part: proof
+    text: "Therefore A has to B the ratio duplicate of that which the side C has to D."
+    highlight: [A, B]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [4, 5, 6, 7, 8, 9]
+      text: |
+        $c^2 : cd = c : d = cd : d^2$ ([[VII.17]], [[VII.18]]).
+    - steps: [10, 11, 12, 13]
+      text: |
+        So $c^2 : d^2 = (c : d)^2$. $\blacksquare$
+
+commentary: |
+  The number version of [[VI.20]] (similar polygons are in the duplicate ratio of their sides). Book V's
+  definition of duplicate ratio ([[V.Def.9]]) is used here for numbers — another place where Euclid applies
+  Book V to numbers.

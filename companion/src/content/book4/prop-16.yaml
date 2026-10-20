@@ -1,0 +1,134 @@
+id: IV.16
+kind: problem
+title: Inscribing a regular 15-gon in a circle
+
+paraphrase: |
+  In a given circle, inscribe a regular fifteen-sided figure, using the triangle and the pentagon:
+  $\tfrac13 - \tfrac15 = \tfrac{2}{15}$.
+
+diagram:
+  width: 325
+  height: 350
+  elements:
+    - "Fx;point;free;90,300;0"
+    - "Gx;point;free;260,300;0"
+    - "pentagon;polygon;regularPolygon;Fx,Gx,5;0;0;black;0"
+    - "A;point;vertex;pentagon,4"
+    - "B;point;vertex;pentagon,5"
+    - "ABCD;circle;circumcircle;Fx,Gx,A;0;0;black;0"
+    - "O;point;center;ABCD;0;0"
+    - "Acirc;circle;radius;A,O;0;0;0;0"
+    - "PQ;line;bichord;ABCD,Acirc;0;0;0"
+    - "P;point;first;PQ;0;0"
+    - "C;point;extend;P,O,P,O"
+    - "Q;point;last;PQ;0;0"
+    - "D;point;extend;Q,O,Q,O"
+    - "ACD;polygon;triangle;A,C,D;0;0;black;0"
+    - "OEp;line;angleBisector;B,O,C;0;0;0"
+    - "Ep;point;last;OEp;0;0"
+    - "E;point;cutoff;O,Ep,O,A"
+    - "fifteen;polygon;regularPolygon;B,E,15;0;0;black;#efe4d2"
+    - "AC;line;connect;A,C;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BE;line;connect;B,E"
+    - "EC;line;connect;E,C"
+  aliases:
+    CE: EC
+  given: [ABCD, Fx, Gx, A]
+  caption: |
+    Drag the two lower corners of the pentagon. {AC} is a side of the inscribed triangle, {AB} of the
+    pentagon; the arc {BC} between them is two fifteenths of the circle.
+
+steps:
+  - part: enunciation
+    text: "In a given circle to inscribe a fifteen-angled figure which shall be both equilateral and equiangular."
+    highlight: [ABCD, fifteen]
+    hint: |
+      A problem: the regular 15-gon.
+
+  - part: setting-out
+    text: "Let ABCD be the given circle;"
+    highlight: [ABCD]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to inscribe in the circle ABCD a fifteen-angled figure which shall be both equilateral and equiangular."
+    highlight: [ABCD]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "In the circle ABCD let there be inscribed a side AC of the equilateral triangle inscribed in it, and a side AB of an equilateral pentagon;"
+    highlight: [AC, AB]
+    adds: [C, D, ACD, pentagon, B, AC, AB]
+    hint: |
+      From the same point {A}: a side of the inscribed triangle ([[IV.2]]) and of the pentagon ([[IV.11]]).
+    cites: [IV.2, IV.11]
+
+  - part: proof
+    text: "therefore, of the equal segments of which there are fifteen in the circle ABCD, there will be five in the circumference ABC which is one-third of the circle, and there will be three in the circumference AB which is one-fifth of the circle;"
+    highlight: [AC, AB]
+    hint: |
+      Measure arcs in fifteenths: $\tfrac13 = \tfrac{5}{15}$, $\tfrac15 = \tfrac{3}{15}$.
+
+  - part: proof
+    text: "therefore in the remainder BC there will be two of the equal segments."
+    highlight: [B, C]
+    hint: |
+      $\tfrac{5}{15} - \tfrac{3}{15} = \tfrac{2}{15}$.
+
+  - part: construction
+    text: "Let BC be bisected at E;"
+    highlight: [E]
+    adds: [E, BE, EC]
+    hint: |
+      Bisect the arc ([[III.30]]).
+
+  - part: proof
+    text: "therefore each of the circumferences BE, EC is a fifteenth of the circle ABCD."
+    highlight: [BE, EC]
+    hint: |
+      Each is one fifteenth.
+
+  - part: conclusion
+    text: "If therefore we join BE, EC and fit into the circle ABCD straight lines equal to them and in contiguity, a fifteen-angled figure which is both equilateral and equiangular will have been inscribed in it. Q. E. F."
+    highlight: [fifteen]
+    adds: [fifteen]
+    hint: |
+      Step the chord {BE} round the circle fifteen times ([[IV.1]]).
+    cites: [IV.1]
+
+  - part: proof
+    text: "And, in like manner as in the case of the pentagon, if through the points of division on the circle we draw tangents to the circle, there will be circumscribed about the circle a fifteen-angled figure which is equilateral and equiangular."
+    hint: |
+      The circumscribed 15-gon, as in [[IV.12]].
+
+  - part: proof
+    text: "And further, by proofs similar to those in the case of the pentagon, we can both inscribe a circle in the given fifteen-angled figure and circumscribe one about it."
+    hint: |
+      And its circles.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: $\tfrac{2\pi}{3} - \tfrac{2\pi}{5} = \tfrac{4\pi}{15}$; halving gives $\tfrac{2\pi}{15}$. $\blacksquare$
+  closing: |
+    In general, if regular $m$- and $n$-gons are constructible and $\gcd(m, n) = 1$, so is the $mn$-gon.
+    Gauss's theorem (1796–1801) says the regular $n$-gon is constructible exactly when $n$ is a power of 2
+    times distinct Fermat primes ($3, 5, 17, 257, 65537$).
+
+commentary: |
+  Book IV ends with the 15-gon. Euclid's regular polygons — 3, 4, 5, 6, 15, and by bisection their doubles —
+  were all that was known until Gauss constructed the 17-gon.
+
+historical: |
+  Proclus says that the 15-gon was included for its use in astronomy: the obliquity of the ecliptic was
+  then taken to be about 24°, the side of the inscribed 15-gon.

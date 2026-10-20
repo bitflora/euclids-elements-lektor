@@ -1,0 +1,206 @@
+id: X.44
+kind: theorem
+title: A second bimedial divides at only one point
+
+paraphrase: |
+  A second bimedial line splits into its two medial terms in only one way.
+
+diagram:
+  width: 350
+  height: 200
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "E0;point;free;40,-1000;0;0"
+    - "E3;point;free;40,1000;0;0"
+    - "A;point;lineSlider;A0,A3,90,0"
+    - "B;point;lineSlider;A0,A3,245,0"
+    - "C;point;lineSlider;A0,A3,210,0"
+    - "AB;line;connect;A,B"
+    - "D;point;lineSlider;A0,A3,170,0"
+    - "E;point;lineSlider;E0,E3,0,80"
+    - "F;point;lineSlider;E0,E3,0,170"
+    - "N';point;parallelogram;B,A,E;0;0"
+    - "N;point;proportion;E,F,A,B,A,B,E,N'"
+    - "K;point;parallelogram;F,E,N"
+    - "F,E,N,K;polygon;quadrilateral;F,E,N,K;0;0;black;random"
+    - "H';point;proportion;E,F,A,C,A,C,E,N;0;0"
+    - "H;point;proportion;E,F,C,B,C,B,H',N"
+    - "G;point;parallelogram;F,E,H"
+    - "M';point;proportion;E,F,A,D,A,D,E,N;0;0"
+    - "M;point;proportion;E,F,D,B,D,B,M',N"
+    - "L;point;parallelogram;F,E,M"
+    - "GHML;polygon;quadrilateral;G,H,M,L;0;0;black;random"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "EH;line;connect;E,H;0;0;0"
+    - "HN;line;connect;H,N;0;0;0"
+    - "EM;line;connect;E,M;0;0;0"
+    - "MN;line;connect;M,N;0;0;0"
+    - "EN;line;connect;E,N;0;0;0"
+  aliases: { BA: AB, CA: AC, BC: CB, DA: AD, BD: DB, FE: EF, HE: EH, NH: HN, ME: EM, NM: MN, NE: EN }
+  caption: |
+    sq({AB}) applied to the rational line {EF} as *EK*; the two divisions give two ways of splitting the breadth
+    {EN} into rational terms.
+
+steps:
+  - part: enunciation
+    text: "A second bimedial straight line is divided at one point only."
+    highlight: [AB]
+    hint: |
+      Uniqueness for the second bimedial; reduced to [[X.42]].
+
+  - part: setting-out
+    text: "Let AB be a second bimedial straight line divided at C, so that AC, CB are medial straight lines commensurable in square only and containing a medial rectangle; it is then manifest that C is not at the point of bisection, because the segments are not commensurable in length."
+    highlight: [AC, CB]
+    hint: |
+      The division at {C} (not the midpoint).
+
+  - part: specification
+    text: "I say that AB is not so divided at another point."
+    highlight: [AB]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, if possible, let it be divided at D also, so that AC is not the same with DB, but AC is supposed greater; it is then clear that the squares on AD, DB are also, as we proved above [Lemma], less than the squares on AC, CB; and suppose that AD, DB are medial straight lines commensurable in square only and containing a medial rectangle."
+    highlight: [AD, DB]
+    hint: |
+      Suppose another at {D}, with {AD}, {DB} nearer the middle; by the lemma of [[X.41]] its sum of squares is
+      smaller.
+
+  - part: construction
+    text: "Now let a rational straight line EF be set out, let there be applied to EF the rectangular parallelogram EK equal to the square on AB, and let EG equal to the squares on AC, CB be subtracted; therefore the remainder HK is equal to twice the rectangle AC, CB."
+    highlight: [EF, EH]
+    hint: |
+      Apply sq({AB}) to {EF}; split off *EG* = sq({AC}) + sq({CB}); the rest *HK* = 2·rect.
+
+  - part: construction
+    text: "Again, let there be subtracted EL, equal to the squares on AD, DB, which were proved less than the squares on AC, CB; therefore the remainder MK is also equal to twice the rectangle AD, DB."
+    highlight: [EM]
+    hint: |
+      Likewise *EL* = sq({AD}) + sq({DB}); the rest *MK* = 2·rect({AD},{DB}).
+
+  - part: proof
+    text: "Now, since the squares on AC, CB are medial, therefore EG is medial."
+    highlight: [EH]
+    hint: |
+      *EG* medial …
+
+  - part: proof
+    text: "And it is applied to the rational straight line EF; therefore EH is rational and incommensurable in length with EF."
+    highlight: [EH]
+    hint: |
+      … so {EH} rational, incommensurable in length with {EF} ([[X.22]]).
+
+  - part: proof
+    text: "For the same reason HN is also rational and incommensurable in length with EF."
+    highlight: [HN]
+    hint: |
+      Likewise {HN}.
+
+  - part: proof
+    text: "And, since AC, CB are medial straight lines commensurable in square only, therefore AC is incommensurable in length with CB."
+    highlight: [AC, CB]
+    hint: |
+      {AC}, {CB} incommensurable in length …
+
+  - part: proof
+    text: "But, as AC is to CB, so is the square on AC to the rectangle AC, CB; therefore the square on AC is incommensurable with the rectangle AC, CB."
+    highlight: [AC, CB]
+    hint: |
+      … so sq({AC}) is incommensurable with rect({AC},{CB}) …
+
+  - part: proof
+    text: "But the squares on AC, CB are commensurable with the square on AC; for AC, CB are commensurable in square."
+    highlight: [AC, CB]
+    hint: |
+      … sum of squares commensurable with sq({AC}) …
+
+  - part: proof
+    text: "And twice the rectangle AC, CB is commensurable with the rectangle AC, CB."
+    highlight: [AC, CB]
+    hint: |
+      … 2·rect commensurable with rect …
+
+  - part: proof
+    text: "Therefore the squares on AC, CB are also incommensurable with twice the rectangle AC, CB."
+    highlight: [AC, CB]
+    hint: |
+      … so sum of squares and 2·rect are incommensurable ([[X.13]]).
+
+  - part: proof
+    text: "But EG is equal to the squares on AC, CB, and HK is equal to twice the rectangle AC, CB; therefore EG is incommensurable with HK, so that EH is also incommensurable in length with HN."
+    highlight: [EH, HN]
+    hint: |
+      So {EH}, {HN} incommensurable in length.
+
+  - part: proof
+    text: "And they are rational; therefore EH, HN are rational straight lines commensurable in square only."
+    highlight: [EH, HN]
+    hint: |
+      Rational, commensurable in square only.
+
+  - part: proof
+    text: "But, if two rational straight lines commensurable in square only be added together, the whole is the irrational which is called binomial."
+    highlight: [EN]
+    hint: |
+      [[X.36]].
+
+  - part: proof
+    text: "Therefore EN is a binomial straight line divided at H."
+    highlight: [EN]
+    hint: |
+      {EN} is a binomial divided at *H*.
+
+  - part: proof
+    text: "In the same way EM, MN will also be proved to be rational straight lines commensurable in square only; and EN will be a binomial straight line divided at different points, H and M."
+    highlight: [EM, MN, EN]
+    hint: |
+      Likewise divided at *M* into {EM}, {MN}: two divisions of a binomial.
+
+  - part: proof
+    text: "And EH is not the same with MN."
+    highlight: [EH, MN]
+    hint: |
+      And they really differ: {EH} ≠ {MN} …
+
+  - part: proof
+    text: "For the squares on AC, CB are greater than the squares on AD, DB."
+    highlight: [AC, CB, AD, DB]
+    hint: |
+      … since the squares on {AC}, {CB} exceed those on {AD}, {DB} …
+
+  - part: proof
+    text: "But the squares on AD, DB are greater than twice the rectangle AD, DB; therefore also the squares on AC, CB, that is, EG, are much greater than twice the rectangle AD, DB, that is, MK, so that EH is also greater than MN."
+    highlight: [EH, MN]
+    hint: |
+      … which exceed 2·rect({AD},{DB}); so {EH} > {MN}.
+
+  - part: proof
+    text: "Therefore EH is not the same with MN."
+    highlight: [EH, MN]
+    hint: |
+      Contradicting [[X.42]].
+    cites: [X.42]
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+      text: |
+        Applied to $\rho$, $AB^2 = \rho(h_1 + h_2)$ splits as a binomial in two different ways.
+    - steps: [19, 20, 21, 22]
+      text: |
+        That contradicts [[X.42]]. $\blacksquare$
+
+commentary: |
+  The proofs for the second bimedial, the major and the two "sides" ([[X.44]]–[[X.47]]) all reduce to the
+  uniqueness of the binomial's terms by applying the square to a rational line.

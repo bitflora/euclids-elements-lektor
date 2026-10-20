@@ -1,0 +1,173 @@
+id: VI.25
+kind: problem
+title: A figure similar to one and equal to another
+
+paraphrase: |
+  Construct a figure with the shape of a given figure {ABC} and the size of another given figure {D}.
+
+diagram:
+  width: 520
+  height: 260
+  elements:
+    - "A;point;free;100,60"
+    - "B;point;free;90,160"
+    - "C;point;free;180,160"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "D0;point;free;200,90;0"
+    - "D1;point;free;260,120;0"
+    - "D2;point;free;340,100;0"
+    - "D3;point;free;280,40;0"
+    - "D;polygon;quadrilateral;D0,D1,D2,D3;black;0;black;#dfe7ea"
+    - "Ep;point;free;130,260;0;0"
+    - "CBLE;polygon;application;ABC,C,B,Ep;0;0;black;0"
+    - "L;point;vertex;CBLE,3"
+    - "E;point;vertex;CBLE,4"
+    - "Fp;point;extend;B,C,B,C;0;0"
+    - "CEMF;polygon;application;D,C,E,Fp;0;0;black;0"
+    - "M;point;vertex;CEMF,3"
+    - "F;point;vertex;CEMF,4"
+    - "G0;point;free;-1000,220;0;0"
+    - "G3;point;free;1000,220;0;0"
+    - "G;point;lineSlider;G0,G3,390,0"
+    - "H;point;meanProportional;B,C,C,F,G,G3"
+    - "K;point;similar;G,H,B,C,A"
+    - "GHK;polygon;triangle;G,H,K;0;0;black;#efe4d2"
+    - "BC;line;connect;B,C;0;0;0"
+    - "CF;line;connect;C,F;0;0;0"
+    - "CE;line;connect;C,E;0;0;0"
+    - "LE;line;connect;L,E;0;0;0"
+    - "EM;line;connect;E,M;0;0;0"
+    - "GH;line;connect;G,H;0;0;0"
+    - "angFCE;sector;angleMarker;C,F,E"
+    - "angCBL;sector;angleMarker;B,C,L"
+  aliases:
+    BE: CBLE
+    CM: CEMF
+    EF: CEMF
+    KGH: GHK
+  given: [A, B, C, ABC, D0, D1, D2, D3, D]
+  caption: |
+    Drag the vertices of {ABC} and of {D}. {BE} is applied to {BC} equal to {ABC}, {CM} applied to {CE} equal to {D}; {GH} is the mean
+    proportional between {BC} and {CF}, and {KGH} on it has the shape of {ABC} and the size of {D}.
+
+steps:
+  - part: enunciation
+    text: "To construct one and the same figure similar to a given rectilineal figure and equal to another given rectilineal figure."
+    highlight: [ABC, D]
+    hint: |
+      A problem: the shape of one figure, the size of another.
+    explain:
+      did: |
+        Heath's note: "to which the figure to be constructed must be similar" is literally "to which it is
+        required to construct (one) similar". Joyce mentions that tradition credits the problem to
+        Pythagoras.
+
+  - part: setting-out
+    text: "Let ABC be the given rectilineal figure to which the figure to be constructed must be similar, and D that to which it must be equal;"
+    highlight: [ABC, D]
+    hint: |
+      Shape {ABC} (here a triangle), size {D}.
+
+  - part: specification
+    text: "thus it is required to construct one and the same figure similar to ABC and equal to D."
+    highlight: [ABC, D]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let there be applied to BC the parallelogram BE equal to the triangle ABC, and to CE the parallelogram CM equal to D in the angle FCE which is equal to the angle CBL."
+    highlight: [BE, CM, angFCE, angCBL]
+    adds: [Ep, CBLE, L, E, Fp, CEMF, M, F, BC, CF, CE, LE, EM, angFCE, angCBL]
+    hint: |
+      Convert both figures into parallelograms on adjacent bases {BC} and {CE}, of the same height ([[I.44]],
+      [[I.45]]).
+
+  - part: proof
+    text: "Therefore BC is in a straight line with CF, and LE with EM."
+    highlight: [BC, CF, LE, EM]
+    hint: |
+      The angles were chosen to make the two parallelograms continue one another ([[I.14]], [[I.29]]).
+    cites: [I.14, I.29]
+
+  - part: construction
+    text: "Now let GH be taken a mean proportional to BC, CF, and on GH let KGH be described similar and similarly situated to ABC."
+    highlight: [GH, KGH]
+    adds: [G0, G3, G, H, K, GHK, GH]
+    hint: |
+      $BC : GH = GH : CF$ ([[VI.13]]); then copy the shape of {ABC} onto {GH} ([[VI.18]]).
+
+  - part: proof
+    text: "Then, since, as BC is to GH, so is GH to CF, and, if three straight lines be proportional, as the first is to the third, so is the figure on the first to the similar and similarly situated figure described on the second, therefore, as BC is to CF, so is the triangle ABC to the triangle KGH."
+    highlight: [BC, GH, CF, ABC, KGH]
+    hint: |
+      Porism to [[VI.19]].
+
+  - part: proof
+    text: "But, as BC is to CF, so also is the parallelogram BE to the parallelogram EF."
+    highlight: [BC, CF, BE, EF]
+    hint: |
+      Same height: [[VI.1]].
+
+  - part: proof
+    text: "Therefore also, as the triangle ABC is to the triangle KGH, so is the parallelogram BE to the parallelogram EF;"
+    highlight: [ABC, KGH, BE, EF]
+    hint: |
+      [[V.11]].
+    cites: [V.11]
+
+  - part: proof
+    text: "therefore, alternately, as the triangle ABC is to the parallelogram BE, so is the triangle KGH to the parallelogram EF."
+    highlight: [ABC, BE, KGH, EF]
+    hint: |
+      [[V.16]] — all four are areas.
+
+  - part: proof
+    text: "But the triangle ABC is equal to the parallelogram BE; therefore the triangle KGH is also equal to the parallelogram EF."
+    highlight: [ABC, BE, KGH, EF]
+    hint: |
+      In a proportion, if the first equals the second, the third equals the fourth ([[V.14]], in the form
+      Joyce describes).
+    cites: [V.14]
+
+  - part: proof
+    text: "But the parallelogram EF is equal to D; therefore KGH is also equal to D."
+    highlight: [EF, D, KGH]
+    hint: |
+      By construction.
+
+  - part: proof
+    text: "And KGH is also similar to ABC."
+    highlight: [KGH, ABC]
+    hint: |
+      By construction.
+
+  - part: conclusion
+    text: "Therefore one and the same figure KGH has been constructed similar to the given rectilineal figure ABC and equal to the other given figure D."
+    highlight: [KGH]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      Heath prints Q. E. D. here, though this is a problem.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4]
+      text: |
+        Put both areas on one height: $[ABC] = h\cdot BC$ and $[D] = h\cdot CF$.
+    - steps: [5, 6, 7, 8, 9, 10, 11, 12]
+      text: |
+        Scale {ABC} by $k = \sqrt{CF/BC}$, i.e. take the side $GH = \sqrt{BC\cdot CF}$. The new area is
+        $k^2[ABC] = \tfrac{CF}{BC}[ABC] = [D]$. $\blacksquare$
+
+commentary: |
+  VI.25 combines everything in Book VI so far: application of areas, mean proportionals, similar figures,
+  and the duplicate ratio. Joyce notes it is used in [[VI.28]] and [[VI.29]].
+
+historical: |
+  Plutarch reports a story that Pythagoras sacrificed an ox on discovering this construction (Heath
+  discusses the attribution in his note); the same story is told of the Pythagorean theorem.

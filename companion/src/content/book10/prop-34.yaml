@@ -1,0 +1,114 @@
+id: X.34
+kind: problem
+title: Lines incommensurable in square, medial sum of squares, rational rectangle
+
+paraphrase: |
+  Find lines {AD}, {DB}, incommensurable in square, with sq({AD}) + sq({DB}) medial and rect({AD},{DB})
+  rational. (Components of the line of [[X.40]].)
+
+diagram:
+  width: 360
+  height: 200
+  elements:
+    - "A;point;free;40,160"
+    - "B;point;free;220,160"
+    - "C;point;lineSlider;A,B,320,160"
+    - "BC;line;connect;B,C"
+    - "M;point;midpoint;A,B;0;0"
+    - "ADB;circle;radius;M,B;0;0;0;0"
+    - "E;point;midpoint;B,C"
+    - "F;point;lineSlider;A,B,190,160"
+    - "FD';line;perpendicular;F,A;0;0;0"
+    - "DD';line;chord;FD',ADB;0;0;0"
+    - "D;point;last;DD'"
+    - "semi;sector;arc;B,D,A;0;0;black;random"
+    - "tri;polygon;triangle;A,D,B;0;0;black;random"
+    - "FD;line;connect;F,D"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AF;line;connect;A,F;0;0;0"
+    - "FB;line;connect;F,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+  aliases: { CB: BC, DF: FD, BA: AB, FA: AF, BF: FB, DA: AD, BD: DB, EB: BE }
+  caption: |
+    {AB}, {BC} medial (from [[X.31]]); rect({AF},{FB}) = sq({BE}); {D} on the semicircle above {F}.
+
+steps:
+  - part: enunciation
+    text: "To find two straight lines incommensurable in square which make the sum of the squares on them medial but the rectangle contained by them rational."
+    highlight: [AD, DB]
+    hint: |
+      The mirror image of [[X.33]]: medial sum of squares, rational rectangle.
+
+  - part: construction
+    text: "Let there be set out two medial straight lines AB, BC, commensurable in square only, such that the rectangle which they contain is rational, and the square on AB is greater than the square on BC by the square on a straight line incommensurable with AB; let the semicircle ADB be described on AB, let BC be bisected at E, let there be applied to AB a parallelogram equal to the square on BE and deficient by a square figure, namely the rectangle AF, FB; therefore AF is incommensurable in length with FB."
+    highlight: [AB, BC, AF, FB]
+    hint: |
+      {AB}, {BC} medial, as in [[X.31]] (incommensurable case); apply rect({AF},{FB}) = sq({BE}); {AF}, {FB}
+      incommensurable ([[X.18]]).
+
+  - part: construction
+    text: "Let FD be drawn from F at right angles to AB, and let AD, DB be joined."
+    highlight: [FD, AD, DB]
+    hint: |
+      Erect {FD}; join {AD}, {DB}.
+
+  - part: proof
+    text: "Since AF is incommensurable in length with FB, therefore the rectangle BA, AF is also incommensurable with the rectangle AB, BF."
+    highlight: [AF, FB]
+    hint: |
+      rect({BA},{AF}) and rect({AB},{BF}) incommensurable ([[X.11]]) …
+
+  - part: proof
+    text: "But the rectangle BA, AF is equal to the square on AD, and the rectangle AB, BF to the square on DB; therefore the square on AD is also incommensurable with the square on DB."
+    highlight: [AD, DB]
+    hint: |
+      … i.e. sq({AD}), sq({DB}) incommensurable.
+
+  - part: proof
+    text: "And, since the square on AB is medial, therefore the sum of the squares on AD, DB is also medial."
+    highlight: [AD, DB, AB]
+    hint: |
+      Their sum = sq({AB}), medial.
+
+  - part: proof
+    text: "And, since BC is double of DF, therefore the rectangle AB, BC is also double of the rectangle AB, FD."
+    highlight: [BC, FD]
+    hint: |
+      {BC} = 2{DF}, so rect({AB},{BC}) = 2·rect({AB},{FD}).
+
+  - part: proof
+    text: "But the rectangle AB, BC is rational; therefore the rectangle AB, FD is also rational."
+    highlight: [AB, FD]
+    hint: |
+      Rational ([[X.6]]).
+
+  - part: proof
+    text: "But the rectangle AB, FD is equal to the rectangle AD, DB; [Lemma] so that the rectangle AD, DB is also rational."
+    highlight: [AD, DB]
+    hint: |
+      = rect({AD},{DB}) (lemma): rational.
+
+  - part: proof
+    text: "Therefore two straight lines AD, DB incommensurable in square have been found which make the sum of the squares on them medial, but the rectangle contained by them rational."
+    highlight: [AD, DB]
+    hint: |
+      Found.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: |
+        $AD^2 + DB^2 = AB^2$, medial; $AD^2 : DB^2 = AF : FB$, irrational.
+    - steps: [6, 7, 8, 9]
+      text: |
+        $AD \cdot DB = AB \cdot FD = \tfrac12 AB\cdot BC$, rational. $\blacksquare$
+
+commentary: |
+  Used in [[X.40]].

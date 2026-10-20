@@ -1,0 +1,98 @@
+id: IX.23
+kind: theorem
+title: An odd number of odd numbers adds to an odd number
+
+paraphrase: |
+  The sum {AD} of an odd count of odd numbers {AB}, {BC}, {CD} is odd.
+
+diagram:
+  width: 230
+  height: 60
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,20;0;0"
+    - "A;point;lineSlider;A0,A3,29,0"
+    - "B;point;lineSlider;A0,A3,72,0"
+    - "C;point;lineSlider;A0,A3,120,0"
+    - "D;point;lineSlider;A0,A3,190,0"
+    - "E;point;cutoff;D,A,U1,U2"
+    - "AD;line;connect;A,D"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "CE;line;connect;C,E;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+  aliases: { CA: AC }
+  caption: |
+    Three odd numbers end to end; {DE} is a unit taken off {CD}.
+
+steps:
+  - part: enunciation
+    text: "If as many odd numbers as we please be added together, and their multitude be odd, the whole will also be odd."
+    highlight: [AD]
+    hint: |
+      An odd count of odd numbers sums to an odd number.
+    modern: |
+      $\sum_{i=1}^{2m+1} (2k_i + 1)$ is odd.
+
+  - part: setting-out
+    text: "For let as many odd numbers as we please, AB, BC, CD, the multitude of which is odd, be added together;"
+    highlight: [AB, BC, CD]
+    hint: |
+      Three odd numbers.
+
+  - part: specification
+    text: "I say that the whole AD is also odd."
+    highlight: [AD]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "Let the unit DE be subtracted from CD;"
+    highlight: [DE]
+    hint: |
+      Take a unit off the last.
+
+  - part: proof
+    text: "therefore the remainder CE is even."
+    highlight: [CE]
+    hint: |
+      [[VII.Def.7]].
+
+  - part: proof
+    text: "But CA is also even; therefore the whole AE is also even."
+    highlight: [AE]
+    hint: |
+      {CA} (two odds) is even ([[IX.22]]); so {AE} is even ([[IX.21]]).
+    explain:
+      implicit: |
+        {CA} = {AB} + {BC}.
+
+  - part: proof
+    text: "And DE is an unit."
+    highlight: [DE]
+    hint: |
+      Add the unit back.
+
+  - part: proof
+    text: "Therefore AD is odd."
+    highlight: [AD]
+    hint: |
+      even + 1 is odd ([[VII.Def.7]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6, 7]
+      text: |
+        $\sum_{i=1}^{2m+1} (2k_i + 1) = 2(\sum k_i + m) + 1$. $\blacksquare$

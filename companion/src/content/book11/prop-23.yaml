@@ -1,0 +1,331 @@
+id: XI.23
+kind: problem
+title: To construct a solid angle from three plane angles
+
+paraphrase: |
+  Given three plane angles, any two together greater than the third and all three less than four right angles, to
+  construct a solid angle with them as faces.
+
+diagram:
+  width: 600
+  height: 270
+  elements:
+    - "A0;point;free;-1000,170;0;0"
+    - "A3;point;free;1000,170;0;0"
+    - "D0;point;free;-1000,230;0;0"
+    - "D3;point;free;1000,230;0;0"
+    - "A;point;lineSlider;A0,A3,30,160"
+    - "C;point;lineSlider;A0,A3,130,160"
+    - "ACmid;point;midpoint;A,C;0;0"
+    - "B';point;perpendicular;ACmid,A;0;0"
+    - "B;point;lineSlider;ACmid,B',70,40"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;random"
+    - "D;point;lineSlider;D0,D3,140,160"
+    - "F;point;lineSlider;D0,D3,250,160"
+    - "Dcirc;circle;radius;D,A,B;0;0;0;0"
+    - "Fcirc;circle;radius;F,A,B;0;0;0;0"
+    - "EE';line;bichord;Dcirc,Fcirc;0;0;0"
+    - "E;point;last;EE'"
+    - "DEF;polygon;triangle;D,E,F;0;0;black;random"
+    - "G;point;lineSlider;A0,A3,260,160"
+    - "K;point;lineSlider;A0,A3,375,160"
+    - "Gcirc;circle;radius;G,A,B;0;0;0;0"
+    - "Kcirc;circle;radius;K,A,B;0;0;0;0"
+    - "HH';line;bichord;Gcirc,Kcirc;0;0;0"
+    - "H;point;last;HH'"
+    - "GHK;polygon;triangle;G,H,K;0;0;black;random"
+    - "L;point;free;440,180"
+    - "LMcirc;circle;radius;L,A,C;0;0;0;0"
+    - "M;point;circleSlider;LMcirc,440,100"
+    - "LNcirc;circle;radius;L,G,K;0;0;0;0"
+    - "MNcirc;circle;radius;M,D,F;0;0;0;0"
+    - "NN';line;bichord;LNcirc,MNcirc;0;0;0"
+    - "N;point;first;NN'"
+    - "LMNcirc;circle;circumcircle;L,M,N;0;0;black;random"
+    - "LMN;polygon;triangle;L,M,N"
+    - "O;point;center;LMNcirc"
+    - "OL;line;connect;O,L"
+    - "OM;line;connect;O,M"
+    - "ON;line;connect;O,N"
+    - "P';point;midpoint;O,L;0;0"
+    - "P;point;midpoint;P',L"
+    - "Q;point;cutoff;O,M,O,P"
+    - "PQ;line;connect;P,Q"
+    - "AC;line;connect;A,C;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "GK;line;connect;G,K;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+  aliases: { LO: OL, MO: OM, NO: ON, QP: PQ, CA: AC, FD: DF, KG: GK, BA: AB, CB: BC }
+  caption: |
+    The three given angles {ABC}, {DEF}, {GHK} with equal arms; the triangle *LMN* with sides equal to their chords,
+    inscribed in a circle with centre *O*; *R* above *O*.
+
+steps:
+  - part: enunciation
+    text: "To construct a solid angle out of three plane angles two of which, taken together in any manner, are greater than the remaining one: thus the three angles must be less than four right angles."
+    highlight: [ABC, DEF, GHK]
+    hint: |
+      The converse of [[XI.20]]–[[XI.21]]: such angles always form a trihedral angle.
+
+  - part: setting-out
+    text: "Let the angles ABC, DEF, GHK be the three given plane angles, and let two of these, taken together in any manner, be greater than the remaining one, while, further, the three are less than four right angles; thus it is required to construct a solid angle out of angles equal to the angles ABC, DEF, GHK."
+    highlight: [ABC, DEF, GHK]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "Let AB, BC, DE, EF, GH, HK be cut off equal to one another, and let AC, DF, GK be joined; it is therefore possible to construct a triangle out of straight lines equal to AC, DF, GK."
+    highlight: [AC, DF, GK]
+    hint: |
+      Equal arms; chords {AC}, {DF}, {GK} form a triangle ([[XI.22]]).
+
+  - part: construction
+    text: "Let LMN be so constructed that AC is equal to LM, DF to MN, and further GK to NL, let the circle LMN be described about the triangle LMN, let its centre be taken, and let it be O; let LO, MO, NO be joined; I say that AB is greater than LO."
+    highlight: [ABC]
+    hint: |
+      Triangle *LMN* with those sides, inscribed in a circle, centre *O*. Claim: {AB} > *LO*.
+
+  - part: proof
+    text: "For, if not, AB is either equal to LO, or less."
+    highlight: [AB]
+    hint: |
+      Otherwise {AB} = *LO* or {AB} < *LO*.
+
+  - part: proof
+    text: "First, let it be equal."
+    highlight: [AB]
+    hint: |
+      Case {AB} = *LO*:
+
+  - part: proof
+    text: "Then, since AB is equal to LO, while AB is equal to BC, and OL to OM, the two sides AB, BC are equal to the two sides LO, OM respectively; and, by hypothesis, the base AC is equal to the base LM; therefore the angle ABC is equal to the angle LOM."
+    highlight: [ABC]
+    hint: |
+      ∠{ABC} = ∠*LOM* ([[I.8]]) …
+
+  - part: proof
+    text: "For the same reason the angle DEF is also equal to the angle MON, and further the angle GHK to the angle NOL; therefore the three angles ABC, DEF, GHK are equal to the three angles LOM, MON, NOL."
+    highlight: [ABC, DEF, GHK]
+    hint: |
+      … and likewise the others …
+
+  - part: proof
+    text: "But the three angles LOM, MON, NOL are equal to four right angles; therefore the angles ABC, DEF, GHK are equal to four right angles."
+    highlight: [ABC, DEF, GHK]
+    hint: |
+      … so the three angles equal the angles at *O*, four right angles …
+
+  - part: proof
+    text: "But they are also, by hypothesis, less than four right angles: which is absurd."
+    highlight: [ABC, DEF, GHK]
+    hint: |
+      … contradicting the hypothesis.
+
+  - part: proof
+    text: "Therefore AB is not equal to LO."
+    highlight: [AB]
+    hint: |
+      So {AB} ≠ *LO*.
+
+  - part: specification
+    text: "I say next that neither is AB less than LO."
+    highlight: [AB]
+    hint: |
+      Case {AB} < *LO*:
+
+  - part: construction
+    text: "For, if possible, let it be so, and let OP be made equal to AB, and OQ equal to BC, and let PQ be joined."
+    highlight: [AB]
+    hint: |
+      *OP* = {AB}, *OQ* = {BC}; join *PQ*.
+
+  - part: proof
+    text: "Then, since AB is equal to BC, OP is also equal to OQ, so that the remainder LP is equal to QM."
+    highlight: [AB]
+    hint: |
+      *LP* = *QM* …
+
+  - part: proof
+    text: "Therefore LM is parallel to PQ, and LMO is equiangular with PQO; therefore, as OL is to LM, so is OP to PQ; and alternately, as LO is to OP, so is LM to PQ."
+    highlight: [AB]
+    hint: |
+      … so *PQ* ∥ *LM* and *LO* : *OP* = *LM* : *PQ* ([[VI.2]], [[VI.4]]).
+
+  - part: proof
+    text: "But LO is greater than OP; therefore LM is also greater than PQ."
+    highlight: [AB]
+    hint: |
+      *LO* > *OP* so *LM* > *PQ* …
+
+  - part: proof
+    text: "But LM was made equal to AC; therefore AC is also greater than PQ."
+    highlight: [AC]
+    hint: |
+      … so {AC} > *PQ* …
+
+  - part: proof
+    text: "Since, then, the two sides AB, BC are equal to the two sides PO, OQ, and the base AC is greater than the base PQ, therefore the angle ABC is greater than the angle POQ."
+    highlight: [ABC]
+    hint: |
+      … so ∠{ABC} > ∠*POQ* ([[I.25]]).
+
+  - part: proof
+    text: "Similarly we can prove that the angle DEF is also greater than the angle MON, and the angle GHK greater than the angle NOL."
+    highlight: [DEF, GHK]
+    hint: |
+      Likewise.
+
+  - part: proof
+    text: "Therefore the three angles ABC, DEF, GHK are greater than the three angles LOM, MON, NOL."
+    highlight: [ABC, DEF, GHK]
+    hint: |
+      So the given angles exceed the angles at *O* …
+
+  - part: proof
+    text: "But, by hypothesis, the angles ABC, DEF, GHK are less than four right angles; therefore the angles LOM, MON, NOL are much less than four right angles."
+    highlight: [ABC, DEF, GHK]
+    hint: |
+      … so those are less than four right angles …
+
+  - part: proof
+    text: "But they are also equal to four right angles: which is absurd."
+    highlight: [ABC, DEF, GHK]
+    hint: |
+      … but they equal four right angles: absurd.
+
+  - part: proof
+    text: "Therefore AB is not less than LO."
+    highlight: [AB]
+    hint: |
+      So {AB} is not less than *LO*.
+
+  - part: proof
+    text: "And it was proved that neither is it equal; therefore AB is greater than LO."
+    highlight: [AB]
+    hint: |
+      So {AB} > *LO*.
+
+  - part: construction
+    text: "Let then OR be set up from the point O at right angles to the plane of the circle LMN, and let the square on OR be equal to that area by which the square on AB is greater than the square on LO; [Lemma] let RL, RM, RN be joined."
+    highlight: [AB]
+    hint: |
+      Erect *OR* ⊥ the circle's plane with sq(*OR*) = sq({AB}) − sq(*LO*).
+
+  - part: proof
+    text: "Then, since RO is at right angles to the plane of the circle LMN, therefore RO is also at right angles to each of the straight lines LO, MO, NO."
+    highlight: [AB]
+    hint: |
+      *RO* ⊥ *LO*, *MO*, *NO*.
+
+  - part: proof
+    text: "And, since LO is equal to OM, while OR is common and at right angles, therefore the base RL is equal to the base RM."
+    highlight: [AB]
+    hint: |
+      *RL* = *RM* ([[I.4]]) …
+
+  - part: proof
+    text: "For the same reason RN is also equal to each of the straight lines RL, RM; therefore the three straight lines RL, RM, RN are equal to one another."
+    highlight: [AB]
+    hint: |
+      … = *RN*.
+
+  - part: proof
+    text: "Next, since by hypothesis the square on OR is equal to that area by which the square on AB is greater than the square on LO, therefore the square on AB is equal to the squares on LO, OR."
+    highlight: [AB]
+    hint: |
+      sq({AB}) = sq(*LO*) + sq(*OR*) …
+
+  - part: proof
+    text: "But the square on LR is equal to the squares on LO, OR, for the angle LOR is right; therefore the square on AB is equal to the square on RL; therefore AB is equal to RL."
+    highlight: [AB]
+    hint: |
+      … = sq(*LR*) ([[I.47]]): {AB} = *RL*.
+
+  - part: proof
+    text: "But each of the straight lines BC, DE, EF, GH, HK is equal to AB, while each of the straight lines RM, RN is equal to RL; therefore each of the straight lines AB, BC, DE, EF, GH, HK is equal to each of the straight lines RL, RM, RN."
+    highlight: [AB]
+    hint: |
+      All the arms equal *RL*, *RM*, *RN*.
+
+  - part: proof
+    text: "And, since the two sides LR, RM are equal to the two sides AB, BC, and the base LM is by hypothesis equal to the base AC, therefore the angle LRM is equal to the angle ABC."
+    highlight: [ABC]
+    hint: |
+      ∠*LRM* = ∠{ABC} ([[I.8]]) …
+
+  - part: proof
+    text: "For the same reason the angle MRN is also equal to the angle DEF, and the angle LRN to the angle GHK."
+    highlight: [DEF, GHK]
+    hint: |
+      … and the others.
+
+  - part: proof
+    text: "Therefore, out of the three plane angles LRM, MRN, LRN, which are equal to the three given angles ABC, DEF, GHK, the solid angle at R has been constructed, which is contained by the angles LRM, MRN, LRN. Q. E. F."
+    highlight: [ABC, DEF, GHK]
+    hint: |
+      So the solid angle at *R* has the given faces.
+
+  - part: lemma
+    text: "Lemma. But how it is possible to take the square on OR equal to that area by which the square on AB is greater than the square on LO, we can show as follows."
+    highlight: [AB]
+    hint: |
+      Lemma: how to make sq(*OR*) = sq({AB}) − sq(*LO*).
+
+  - part: lemma
+    text: "Let the straight lines AB, LO be set out, and let AB be the greater; let the semicircle ABC be described on AB, and into the semicircle ABC let AC be fitted equal to the straight line LO, not being greater than the diameter AB; let CB be joined"
+    highlight: [AB]
+    hint: |
+      Semicircle on {AB}; fit a chord equal to *LO*.
+
+  - part: lemma
+    text: "Since then the angle ACB is an angle in the semicircle ACB, therefore the angle ACB is right."
+    highlight: [AB]
+    hint: |
+      Angle in a semicircle is right ([[III.31]]) …
+
+  - part: lemma
+    text: "Therefore the square on AB is equal to the squares on AC, CB."
+    highlight: [AB]
+    hint: |
+      … [[I.47]] …
+
+  - part: lemma
+    text: "Hence the square on AB is greater than the square on AC by the square on CB."
+    highlight: [AB]
+    hint: |
+      … the difference of squares is a square …
+
+  - part: lemma
+    text: "But AC is equal to LO."
+    highlight: [AB]
+    hint: |
+      … with the fitted chord equal to *LO* …
+
+  - part: lemma
+    text: "Therefore the square on AB is greater than the square on LO by the square on CB."
+    highlight: [AB]
+    hint: |
+      … so the other chord is the required line.
+
+  - part: lemma
+    text: "If then we cut off OR equal to BC, the square on AB will be greater than the square on LO by the square on OR."
+    highlight: [AB]
+    hint: |
+      Take *OR* equal to it.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  lines:
+    - text: |
+        Put the apex *R* above the circumcentre of the triangle of chords, at the height that makes the slant edges
+        equal to the given arms. $\blacksquare$
+
+commentary: |
+  The construction shows that [[XI.20]] and [[XI.21]] are not only necessary but sufficient conditions for three
+  angles to form a solid angle. Euclid assumes, without proof, that the centre *O* of the circle lies inside the
+  triangle *LMN*; the cases where it lies on or outside a side need separate treatment.

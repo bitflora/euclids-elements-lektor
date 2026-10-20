@@ -1,0 +1,177 @@
+id: V.5
+kind: theorem
+title: A multiple of a difference is the difference of the multiples
+
+paraphrase: |
+  If {AB} is the same multiple of {CD} that a piece {AE} cut from it is of a piece {CF} cut from {CD}, then the
+  rest {EB} is that same multiple of the rest {FD}. In algebra: $m a - m b = m(a - b)$.
+
+diagram:
+  width: 300
+  height: 100
+  elements:
+    - "U0;point;free;-1000,40;0;0"
+    - "U1;point;free;1000,40;0;0"
+    - "V0;point;free;-1000,80;0;0"
+    - "V1;point;free;1000,80;0;0"
+    - "C;point;lineSlider;V0,V1,125,80"
+    - "F;point;lineSlider;V0,V1,170,80"
+    - "D;point;lineSlider;V0,V1,205,80"
+    - "G;point;cutoff;C,V0,D,F"
+    - "GD;line;connect;G,D;0;0;red"
+    - "E;point;lineSlider;U0,U1,160,40"
+    - "A2;point;cutoff;E,U0,F,C;0;lightGray"
+    - "A1;point;cutoff;A2,U0,F,C;0;lightGray"
+    - "A;point;cutoff;A1,U0,F,C"
+    - "B2;point;cutoff;E,U1,F,D;0;lightGray"
+    - "B1;point;cutoff;B2,U1,F,D;0;lightGray"
+    - "B;point;cutoff;B1,U1,F,D"
+    - "AB;line;connect;A,B;0;0;red"
+    - "CD;line;connect;C,D;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "CF;line;connect;C,F;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+    - "CG;line;connect;C,G;0;0;0"
+    - "GF;line;connect;G,F;0;0;0"
+  aliases:
+    GC: CG
+    DF: FD
+  caption: |
+    Slide {C}, {F}, {D}. {AE} is three times {CF}, {EB} three times {CG}; the proof shows {CG} must equal {FD}.
+
+steps:
+  - part: enunciation
+    text: "If a magnitude be the same multiple of a magnitude that a part subtracted is of a part subtracted, the remainder will also be the same multiple of the remainder that the whole is of the whole."
+    highlight: [AB, CD, AE, CF]
+    hint: |
+      The subtraction counterpart of [[V.1]].
+    modern: |
+      $$AB = m\,CD,\ AE = m\,CF \ \Rightarrow\ AB - AE = m(CD - CF)$$
+
+  - part: setting-out
+    text: "For let the magnitude AB be the same multiple of the magnitude CD that the part AE subtracted is of the part CF subtracted;"
+    highlight: [AB, CD, AE, CF]
+    hint: |
+      {AB} = $m${CD} and {AE} = $m${CF}, with {AE} part of {AB} and {CF} part of {CD}.
+
+  - part: specification
+    text: "I say that the remainder EB is also the same multiple of the remainder FD that the whole AB is of the whole CD."
+    highlight: [EB, FD]
+    hint: |
+      The goal: {EB} = $m${FD}.
+
+  - part: construction
+    text: "For, whatever multiple AE is of CF, let EB be made that multiple of CG."
+    highlight: [EB, CG]
+    hint: |
+      Find {CG} with {EB} = $m${CG}: divide {EB} into $m$ equal parts and lay one off from {C}, beyond {C}.
+    explain:
+      did: |
+        Constructs a submultiple. Heath remarks that the wording ("let {EB} be made that multiple of {CG}")
+        reads as if {CG} were given; in fact {EB} is given and {CG} has to be found.
+      implicit: |
+        That a magnitude can be divided into $m$ equal parts. For straight lines this is [[VI.9]] (later in
+        the *Elements*); for an arbitrary magnitude it is an assumption.
+    gap: |
+      Dividing a magnitude into equal parts is not possible for every kind of magnitude with Euclid's tools
+      (trisecting an angle, for one). The proof can be rearranged to avoid it, by subtracting instead of
+      dividing.
+
+  - part: proof
+    text: "Then, since AE is the same multiple of CF that EB is of GC, therefore AE is the same multiple of CF that AB is of GF."
+    highlight: [AE, CF, EB, GC, AB, GF]
+    hint: |
+      Add: {AE} + {EB} = $m${CF} + $m${GC} = $m$({GC} + {CF}), so {AB} = $m${GF} ([[V.1]]).
+
+  - part: proof
+    text: "But, by the assumption, AE is the same multiple of CF that AB is of CD."
+    highlight: [AE, CF, AB, CD]
+    hint: |
+      And {AB} = $m${CD}.
+
+  - part: proof
+    text: "Therefore AB is the same multiple of each of the magnitudes GF, CD;"
+    highlight: [AB, GF, CD]
+    hint: |
+      {AB} = $m${GF} = $m${CD}.
+
+  - part: proof
+    text: "therefore GF is equal to CD."
+    highlight: [GF, CD]
+    hint: |
+      Magnitudes of which the same magnitude is the same multiple are equal.
+    explain:
+      implicit: |
+        If $mX = mY$ then $X = Y$. Euclid treats this as evident; it is the cancellation law for multiples,
+        which follows from the fact that $X > Y$ would give $mX > mY$.
+    gap: |
+      The cancellation $mX = mY \Rightarrow X = Y$ is used without proof.
+
+  - part: proof
+    text: "Let CF be subtracted from each; therefore the remainder GC is equal to the remainder FD."
+    highlight: [GC, FD, CF]
+    hint: |
+      {GF} − {CF} = {CD} − {CF} ([[I.CN.3]]).
+    cites: [I.CN.3]
+
+  - part: proof
+    text: "And, since AE is the same multiple of CF that EB is of GC, and GC is equal to DF, therefore AE is the same multiple of CF that EB is of FD."
+    highlight: [EB, GC, FD]
+    hint: |
+      Replace {GC} by the equal {FD}.
+
+  - part: proof
+    text: "But, by hypothesis,"
+    hint: |
+      Recall the hypothesis.
+
+  - part: proof
+    text: "AE is the same multiple of CF that AB is of CD;"
+    highlight: [AE, CF, AB, CD]
+    hint: |
+      {AB} = $m${CD}, with the same $m$ as {AE} = $m${CF}.
+
+  - part: proof
+    text: "therefore EB is the same multiple of FD that AB is of CD."
+    highlight: [EB, FD, AB, CD]
+    hint: |
+      So {EB} = $m${FD}.
+
+  - part: conclusion
+    text: "That is, the remainder EB will be the same multiple of the remainder FD that the whole AB is of the whole CD."
+    highlight: [EB, FD]
+    hint: |
+      The claim.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: |
+        Let $AB = m\,CD$ and $AE = m\,CF$; write $EB = AB - AE$, $FD = CD - CF$.
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      text: |
+        $m\,FD + m\,CF = m(FD + CF) = m\,CD = AB = AE + EB = m\,CF + EB$ ([[V.1]]), so, cancelling $m\,CF$,
+        $EB = m\,FD$. $\blacksquare$
+  closing: |
+    This version needs no construction, and so works for any kind of magnitude: it is the rearrangement
+    hinted at in the gap note on step 3.
+
+commentary: |
+  Euclid's route is indirect: he builds a candidate {CG} with the right multiple, then shows it equals {FD}.
+  Joyce notes that V.5 is not cited again in the *Elements*.
+
+gaps: |
+  - **Existence of submultiples** (step 3) and the **cancellation law** (step 7) are both assumed.

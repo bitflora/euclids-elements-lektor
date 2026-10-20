@@ -1,0 +1,78 @@
+id: X.106
+kind: theorem
+title: A line commensurable with that which produces with a rational area a medial whole is such a line
+
+paraphrase: |
+  A line {CD} commensurable in length with the line which produces with a rational area a medial whole {AB} is itself the line which produces with a rational area a medial whole (of the same order). The
+  subtractive counterpart of [[X.69]].
+
+diagram:
+  width: 250
+  height: 100
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "C0;point;free;-1000,65;0;0"
+    - "C3;point;free;1000,65;0;0"
+    - "A;point;lineSlider;A0,A3,60,0"
+    - "B;point;lineSlider;A0,A3,130,0"
+    - "C;point;lineSlider;C0,C3,30,0"
+    - "D;point;lineSlider;C0,C3,150,0"
+    - "E;point;lineSlider;A0,A3,170,0"
+    - "AE;line;connect;A,E"
+    - "F;point;proportion;A,B,C,D,B,E,D,C3"
+    - "CF;line;connect;C,F"
+    - "AB;line;connect;A,B;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+  aliases: { EA: AE, FC: CF, BA: AB, DC: CD, EB: BE, FD: DF }
+  caption: |
+    {AB} with annex {BE} (whole {AE}); {CD} commensurable with {AB}, with annex {DF} in the same ratio.
+
+steps:
+  - part: enunciation
+    text: "A straight line commensurable with that which produces with a rational area a medial whole is a straight line which produces with a rational area a medial whole."
+    highlight: [AB, CD]
+    hint: |
+      The kinds are closed under rational scaling.
+
+  - part: setting-out
+    text: "Let AB be a straight line which produces with a rational area a medial whole, and CD commensurable with AB; I say that CD is also a straight line which produces with a rational area a medial whole."
+    highlight: [AB, CD]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For let BE be the annex to AB; therefore AE, EB are straight lines incommensurable in square which make the sum of the squares on AE, EB medial, but the rectangle contained by them rational."
+    highlight: [BE, AE]
+    hint: |
+      The annex {BE}.
+
+  - part: construction
+    text: "Let the same construction be made."
+    highlight: [CF, DF]
+    hint: |
+      Same construction.
+
+  - part: proof
+    text: "Then we can prove, in manner similar to the foregoing, that CF, FD are in the same ratio as AE, EB, the sum of the squares on AE, EB is commensurable with the sum of the squares on CF, FD, and the rectangle AE, EB with the rectangle CF, FD; so that CF, FD are also straight lines incommensurable in square which make the sum of the squares on CF, FD medial, but the rectangle contained by them rational."
+    highlight: [CF, DF]
+    hint: |
+      As in [[X.105]], the properties carry over.
+
+  - part: proof
+    text: "Therefore CD is a straight line which produces with a rational area a medial whole."
+    highlight: [CD]
+    hint: |
+      Done ([[X.77]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        As [[X.69]]: scaling by a rational preserves every defining property. $\blacksquare$

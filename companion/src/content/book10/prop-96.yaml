@@ -1,0 +1,202 @@
+id: X.96
+kind: theorem
+title: The side of a rational line times a sixth apotome produces with a medial area a medial whole
+
+paraphrase: |
+  If an area {AB} is contained by a rational line {AC} and a sixth apotome {AD}, its side {LN} is "that which produces
+  with a medial area a medial whole".
+
+diagram:
+  width: 410
+  height: 190
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "A;point;lineSlider;A0,A3,40,0"
+    - "D;point;lineSlider;A0,A3,90,0"
+    - "C';point;perpendicular;A,D;0;0"
+    - "C;point;lineSlider;A,C',0,150"
+    - "B;point;parallelogram;C,A,D"
+    - "ACBD;polygon;quadrilateral;A,C,B,D;0;0;black;random"
+    - "G;point;lineSlider;A0,A3,210,0"
+    - "E;point;midpoint;G,D"
+    - "AGmid;point;midpoint;A,G;0;0"
+    - "AGquar;point;midpoint;G,AGmid;0;0"
+    - "GEcirc;circle;radius;G,E;0;0;0;0"
+    - "GAcirc;circle;radius;AGquar,G;0;0;0;0"
+    - "bich;line;bichord;GEcirc,GAcirc;0;0;0"
+    - "F';point;first;bich;0;0"
+    - "F;point;cutoff;AGmid,G,AGmid,F'"
+    - "H;point;parallelogram;C,A,E"
+    - "I;point;parallelogram;C,A,F"
+    - "K;point;parallelogram;C,A,G"
+    - "DFIB;polygon;quadrilateral;D,F,I,B;0;0;black;random"
+    - "EH;line;connect;E,H"
+    - "IFGK;polygon;quadrilateral;I,F,G,K;0;0;black;310,80,100"
+    - "R0;point;free;-1000,160;0;0"
+    - "R3;point;free;1000,160;0;0"
+    - "R;point;lineSlider;R0,R3,240,0"
+    - "M;point;meanProportional;A,F,F,I,R,R3"
+    - "RMPL;polygon;square;R,M;0;0;black;random"
+    - "P;point;vertex;RMPL,3"
+    - "L;point;vertex;RMPL,4"
+    - "N;point;meanProportional;F,I,I,K,P,L"
+    - "PNQO;polygon;square;P,N;0;0;black;310,80,100"
+    - "O;point;vertex;PNQO,4"
+    - "Q;point;vertex;PNQO,3"
+    - "S;point;intersection;L,R,Q,O"
+    - "T;point;intersection;R,M,Q,N"
+    - "SQ;line;connect;S,Q"
+    - "TQ;line;connect;T,Q"
+    - "RP;line;connect;R,P"
+    - "Z;point;midpoint;Q,O;0;0"
+    - "U;point;cutoff;Q,S,Q,Z"
+    - "V;point;cutoff;Q,P,Q,Z"
+    - "W;point;cutoff;Q,T,Q,Z"
+    - "UVW;sector;arc;W,V,U;0;0;gray;0"
+    - "LN;line;connect;L,N;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "AG;line;connect;A,G;0;0;0"
+    - "DG;line;connect;D,G;0;0;0"
+    - "AF;line;connect;A,F;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+    - "EG;line;connect;E,G;0;0;0"
+    - "LP;line;connect;L,P;0;0;0"
+    - "PN;line;connect;P,N;0;0;0"
+    - "GD;line;connect;G,D;0;0;0"
+  aliases: { AB: ACBD, LM: RMPL, NO: PNQO, HE: EH, QS: SQ, QT: TQ, PR: RP, NL: LN, CA: AC, DA: AD, GA: AG, FA: AF, GF: FG, GE: EG, PL: LP, NP: PN }
+  caption: |
+    The area {AB} on the rational line {AC} and the apotome {AD} (annex {DG}). Squares {LM} = *AI* and {NO} =
+    *FK* share an angle; {LN} is the side of {AB}.
+
+steps:
+  - part: enunciation
+    text: "If an area be contained by a rational straight line and a sixth apotome, the “side” of the area is a straight line which produces with a medial area a medial whole."
+    highlight: [AB, LN]
+    hint: |
+      √(rational × sixth apotome).
+
+  - part: setting-out
+    text: "For let the area AB be contained by the rational straight line AC and the sixth apotome AD; I say that the “side” of the area AB is a straight line which produces with a medial area a medial whole."
+    highlight: [AB, AC, AD]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For let DG be the annex to AD; therefore AG, GD are rational straight lines commensurable in square only, neither of them is commensurable in length with the rational straight line AC set out, and the square on the whole AG is greater than the square on the annex DG by the square on a straight line incommensurable in length with AG."
+    highlight: [AG, DG]
+    hint: |
+      Annex {DG}; neither term commensurable with {AC} ([[X.Def.III.6]]).
+
+  - part: proof
+    text: "Since then the square on AG is greater than the square on GD by the square on a straight line incommensurable in length with AG, therefore, if there be applied to AG a parallelogram equal to the fourth part of the square on DG and deficient by a square figure, it will divide it into incommensurable parts."
+    highlight: [AG]
+    hint: |
+      [[X.18]].
+
+  - part: construction
+    text: "Let then DG be bisected at E, let there be applied to AG a parallelogram equal to the square on EG and deficient by a square figure, and let it be the rectangle AF, FG; therefore AF is incommensurable in length with FG."
+    highlight: [AF, FG, EG]
+    hint: |
+      Bisect and apply: {AF}, {FG} incommensurable.
+
+  - part: proof
+    text: "But, as AF is to FG, so is AI to FK. therefore AI is incommensurable with FK."
+    highlight: [AF, FG]
+    hint: |
+      *AI*, *FK* incommensurable.
+
+  - part: proof
+    text: "And, since AG, AC are rational straight lines commensurable in square only, AK is medial."
+    highlight: [AG, AC]
+    hint: |
+      *AK* medial.
+
+  - part: proof
+    text: "Again, since AC, DG are rational straight lines and incommensurable in length, DK is also medial."
+    highlight: [DG, AC]
+    hint: |
+      *DK* medial.
+
+  - part: proof
+    text: "Now, since AG, GD are commensurable in square only, therefore AG is incommensurable in length with GD."
+    highlight: [AG, DG]
+    hint: |
+      {AG}, {GD} incommensurable in length …
+
+  - part: proof
+    text: "But, as AG is to GD, so is AK to KD; therefore AK is incommensurable with KD."
+    highlight: [AG, DG]
+    hint: |
+      … so *AK*, *KD* incommensurable.
+
+  - part: construction
+    text: "Now let the square LM be constructed equal to AI, and let NO equal to FK, and about the same angle, be subtracted; therefore the squares LM, NO are about the same diameter."
+    highlight: [LM, NO]
+    hint: |
+      Squares {LM}, {NO}.
+
+  - part: construction
+    text: "Let PR be their diameter, and let the figure be drawn."
+    highlight: [LM, NO]
+    hint: |
+      Diameter.
+
+  - part: proof
+    text: "Then in manner similar to the above we can prove that LN is the “side” of the area AB."
+    highlight: [LN, AB]
+    hint: |
+      {LN} is the side.
+
+  - part: specification
+    text: "I say that LN is a straight line which produces with a medial area a medial whole."
+    highlight: [LN]
+    hint: |
+      Of the named kind:
+
+  - part: proof
+    text: "For, since AK was proved medial and is equal to the squares on LP, PN, therefore the sum of the squares on LP, PN is medial."
+    highlight: [LP, PN]
+    hint: |
+      Sum of squares medial.
+
+  - part: proof
+    text: "Again, since DK was proved medial and is equal to twice the rectangle LP, PN, twice the rectangle LP, PN is also medial."
+    highlight: [LP, PN]
+    hint: |
+      2·rect medial.
+
+  - part: proof
+    text: "And, since AK was proved incommensurable with DK, the squares on LP, PN are also incommensurable with twice the rectangle LP, PN."
+    highlight: [LP, PN]
+    hint: |
+      The two incommensurable.
+
+  - part: proof
+    text: "And, since AI is incommensurable with FK, therefore the square on LP is also incommensurable with the square on PN; therefore LP, PN are straight lines incommensurable in square which make the sum of the squares on them medial, twice the rectangle contained by them medial, and further the squares on them incommensurable with twice the rectangle contained by them."
+    highlight: [LP, PN]
+    hint: |
+      sq({LP}), sq({PN}) incommensurable.
+
+  - part: proof
+    text: "Therefore LN is the irrational straight line called that which produces with a medial area a medial whole; and it is the “side” of the area AB."
+    highlight: [LN]
+    hint: |
+      [[X.78]].
+
+  - part: proof
+    text: "Therefore the “side” of the area is a straight line which produces with a medial area a medial whole."
+    highlight: [LN, AB]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Mirror of [[X.59]]. $\blacksquare$

@@ -1,0 +1,197 @@
+id: XII.5
+kind: theorem
+title: Triangular pyramids of the same height are as their bases
+
+paraphrase: |
+  Pyramids of the same height on triangular bases are to one another as their bases. Proved by exhaustion, like
+  [[XII.2]].
+
+diagram:
+  width: 550
+  height: 280
+  elements:
+    - "origin;point;fixed;-10,250,0;0;0"
+    - "1X;point;fixed;242,250,-91;0;0"
+    - "1Y;point;fixed;-105,550,-120;0;0"
+    - "1Z;point;fixed;14,375,288;0;0"
+    - "floor;plane;3points;origin,1X,1Y;0;0;0;0"
+    - "G;point;lineSlider;origin,1Y,-10,0,0"
+    - "A;point;planeSlider;floor,29,179,0"
+    - "B;point;planeSlider;floor,115,260,0"
+    - "C;point;planeSlider;floor,210,208,0"
+    - "K;point;midpoint;A,B;black;green"
+    - "O;point;midpoint;B,C"
+    - "L;point;midpoint;A,C"
+    - "P;point;midpoint;A,G"
+    - "M;point;midpoint;B,G"
+    - "N;point;midpoint;C,G"
+    - "PMOL;polygon;quadrilateral;P,M,O,L;0;0;black;lightGray"
+    - "AKLP;polyhedron;tetrahedron;A,K,L,P;0;0;black;random"
+    - "PMNG;polyhedron;tetrahedron;P,M,N,G;0;0;black;random"
+    - "CB;line;connect;C,B"
+    - "CL;line;connect;C,L"
+    - "KB;line;connect;K,B"
+    - "MB;line;connect;M,B"
+    - "CN;line;connect;C,N"
+    - "GX;point;parallelogram;G,origin,1X;0;0"
+    - "GY;point;parallelogram;G,origin,1Y;0;0"
+    - "ceiling;plane;3points;G,GX,GY;0;0;0;0"
+    - "H;point;planeSlider;ceiling,450,60,0"
+    - "D;point;planeSlider;floor,310,191,0"
+    - "E;point;planeSlider;floor,420,280,0"
+    - "F;point;planeSlider;floor,510,224,0"
+    - "Q;point;midpoint;D,E"
+    - "V;point;midpoint;E,F"
+    - "R;point;midpoint;D,F"
+    - "S;point;midpoint;D,H"
+    - "T;point;midpoint;E,H"
+    - "U;point;midpoint;F,H"
+    - "STVR;polygon;quadrilateral;S,T,V,R;0;0;black;lightGray"
+    - "DQRS;polyhedron;tetrahedron;D,Q,R,S;0;0;black;random"
+    - "STUH;polyhedron;tetrahedron;S,T,U,H;0;0;black;random"
+    - "EF;line;connect;E,F"
+    - "FR;line;connect;F,R"
+    - "QE;line;connect;Q,E"
+    - "TE;line;connect;T,E"
+    - "FU;line;connect;F,U"
+    - "W1;point;planeSlider;ceiling,150,20,0;0;0"
+    - "W2;point;planeSlider;ceiling,170,0,0;0;0"
+    - "W3;point;planeSlider;ceiling,310,46,0;0;0"
+    - "W4;point;parallelogram;origin,1Y,W1;0;0"
+    - "W5;point;lineSlider;W1,W4,210,99,0;0;0"
+    - "W;polyhedron;parallelepiped;W1,W2,W3,W5;black;0;black;random"
+    - "ABC;polygon;triangle;A,B,C;0;0;0"
+    - "DEF;polygon;triangle;D,E,F;0;0;0"
+  aliases: { BC: CB, LC: CL, BK: KB, BM: MB, NC: CN, FE: EF, RF: FR, EQ: QE, ET: TE, UF: FU }
+  caption: |
+    Pyramids *ABCG*, *DEFH* of equal height; {W} is the supposed fourth proportional solid.
+
+steps:
+  - part: enunciation
+    text: "Pyramids which are of the same height and have triangular bases are to one another as the bases."
+    highlight: [ABC, DEF]
+    hint: |
+      Pyramids of equal height are as their bases (triangular case), by exhaustion.
+    modern: |
+      $V = \tfrac13 B h$; here only $V_1 : V_2 = B_1 : B_2$.
+
+  - part: setting-out
+    text: "Let there be pyramids of the same height, of which the triangles ABC, DEF are the bases and the points G, H the vertices; I say that, as the base ABC is to the base DEF, so is the pyramid ABCG to the pyramid DEFH."
+    highlight: [ABC, DEF]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For, if the pyramid ABCG is not to the pyramid DEFH as the base ABC is to the base DEF, then, as the base ABC is to the base DEF, so will the pyramid ABCG be either to some solid less than the pyramid DEFH or to a greater."
+    highlight: [W]
+    hint: |
+      If not, base : base = pyramid *ABCG* : some solid {W}, smaller or larger than *DEFH*.
+
+  - part: construction
+    text: "Let it, first, be in that ratio to a less solid W, and let the pyramid DEFH be divided into two pyramids equal to one another and similar to the whole and into two equal prisms; then the two prisms are greater than the half of the whole pyramid."
+    highlight: [W]
+    hint: |
+      Case 1: {W} smaller. Divide *DEFH* as in [[XII.3]].
+
+  - part: proof
+    text: "Again, let the pyramids arising from the division be similarly divided, and let this be done continually until there are left over from the pyramid DEFH some pyramids which are less than the excess by which the pyramid DEFH exceeds the solid W."
+    highlight: [W]
+    hint: |
+      Keep dividing until the leftover pyramids are less than *DEFH* − {W} ([[X.1]]).
+    cites: [X.1]
+
+  - part: proof
+    text: "Let such be left, and let them be, for the sake of argument, DQRS, STUH; therefore the remainders, the prisms in the pyramid DEFH, are greater than the solid W."
+    highlight: [DQRS, STUH, W]
+    hint: |
+      Say {DQRS}, {STUH}; the prisms in *DEFH* exceed {W}.
+
+  - part: construction
+    text: "Let the pyramid ABCG also be divided similarly, and a similar number of times, with the pyramid DEFH; therefore, as the base ABC is to the base DEF, so are the prisms in the pyramid ABCG to the prisms in the pyramid DEFH."
+    highlight: [W]
+    hint: |
+      Divide *ABCG* the same number of times: prisms : prisms = {ABC} : {DEF} ([[XII.4]]).
+
+  - part: proof
+    text: "But, as the base ABC is to the base DEF, so also is the pyramid ABCG to the solid W; therefore also, as the pyramid ABCG is to the solid W, so are the prisms in the pyramid ABCG to the prisms in the pyramid DEFH; therefore, alternately, as the pyramid ABCG is to the prisms in it, so is the solid W to the prisms in the pyramid DEFH."
+    highlight: [W]
+    hint: |
+      So *ABCG* : {W} = prisms : prisms; alternately …
+
+  - part: proof
+    text: "But the pyramid ABCG is greater than the prisms in it; therefore the solid W is also greater than the prisms in the pyramid DEFH."
+    highlight: [W]
+    hint: |
+      … *ABCG* exceeds its prisms, so {W} exceeds the prisms in *DEFH* …
+
+  - part: proof
+    text: "But it is also less: which is impossible."
+    highlight: [W]
+    hint: |
+      … but it is less: impossible.
+
+  - part: proof
+    text: "Therefore the prism ABCG is not to any solid less than the pyramid DEFH as the base ABC is to the base DEF."
+    highlight: [W]
+    hint: |
+      So not to a smaller solid.
+
+  - part: proof
+    text: "Similarly it can be proved that neither is the pyramid DEFH to any solid less than the pyramid ABCG as the base DEF is to the base ABC."
+    highlight: [W]
+    hint: |
+      Likewise with the pyramids exchanged.
+
+  - part: specification
+    text: "I say next that neither is the pyramid ABCG to any solid greater than the pyramid DEFH as the base ABC is to the base DEF."
+    highlight: [W]
+    hint: |
+      Case 2: {W} larger.
+
+  - part: proof
+    text: "For, if possible, let it be in that ratio to a greater solid W; therefore, inversely, as the base DEF is to the base ABC, so is the solid W to the pyramid ABCG."
+    highlight: [W]
+    hint: |
+      Inversely …
+
+  - part: proof
+    text: "But, as the solid W is to the solid ABCG, so is the pyramid DEFH to some solid less than the pyramid ABCG, as was before proved; therefore also, as the base DEF is to the base ABC, so is the pyramid DEFH to some solid less than the pyramid ABCG: which was proved absurd."
+    highlight: [W]
+    hint: |
+      … reduces to case 1 (lemma of [[XII.2]]).
+
+  - part: proof
+    text: "Therefore the pyramid ABCG is not to any solid greater than the pyramid DEFH as the base ABC is to the base DEF."
+    highlight: [W]
+    hint: |
+      Impossible.
+
+  - part: proof
+    text: "But it was proved that neither is it in that ratio to a less solid."
+    highlight: [W]
+    hint: |
+      So neither smaller nor larger …
+
+  - part: proof
+    text: "Therefore, as the base ABC is to the base DEF, so is the pyramid ABCG to the pyramid DEFH."
+    highlight: [ABC, DEF]
+    hint: |
+      … and the pyramids are as the bases.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [2, 3, 4, 5, 6, 7, 8, 9]
+      text: |
+        If $V_1 : w = B_1 : B_2$ with $w < V_2$, divide until the prisms in pyramid 2 exceed $w$; the matching prisms
+        in pyramid 1 are in the ratio $B_1 : B_2$, giving $w >$ prisms$_2$: contradiction.
+    - steps: [12, 13, 14, 15, 16, 17]
+      text: |
+        The other case reduces to this one. $\blacksquare$
+
+commentary: |
+  The same structure as [[XII.2]], with the prisms of [[XII.3]]–[[XII.4]] in place of inscribed polygons.

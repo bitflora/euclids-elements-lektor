@@ -1,0 +1,182 @@
+id: X.25
+kind: theorem
+title: A rectangle on medials commensurable in square only is rational or medial
+
+paraphrase: |
+  If {AB}, {BC} are medial and commensurable in square only, the rectangle {AC} is either rational or medial.
+
+diagram:
+  width: 340
+  height: 270
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "A;point;lineSlider;A0,A3,120,0"
+    - "B';point;perpendicular;A,A3;0;0"
+    - "B;point;lineSlider;A,B',0,120"
+    - "C';point;parallelogram;A3,A,B;0;0"
+    - "C;point;lineSlider;B,C',180,0"
+    - "AC;polygon;parallelogram;A,B,C;0;0;black;yellow"
+    - "AD;polygon;square;B,A;0;0;black;orange"
+    - "D;point;vertex;AD,4"
+    - "BE;polygon;square;C,B;0;0;black;pink"
+    - "O;point;vertex;BE,3"
+    - "E;point;vertex;BE,4"
+    - "F;point;lineSlider;A0,A3,220,0"
+    - "G;point;lineSlider;A0,A3,300,0"
+    - "M';point;perpendicular;G,A0;0;0"
+    - "M;point;proportion;F,G,A,B,A,B,G,M'"
+    - "GH;polygon;parallelogram;F,G,M;0;0;black;orange"
+    - "H;point;vertex;GH,4"
+    - "N;point;proportion;F,G,A,B,C,B,M,M'"
+    - "HN;polygon;parallelogram;H,M,N;0;0;black;yellow"
+    - "K;point;vertex;HN,4"
+    - "P;point;proportion;F,G,B,C,B,C,N,M';0;0"
+    - "LN;polygon;parallelogram;K,N,P;0;0;black;pink"
+    - "L;point;vertex;LN,4"
+    - "FG;line;connect;F,G;0;0;0"
+    - "FH;line;connect;F,H;0;0;0"
+    - "HK;line;connect;H,K;0;0;0"
+    - "KL;line;connect;K,L;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+  aliases: { MK: HN, NL: LN, KH: HK, DA: AD }
+  caption: |
+    The squares {AD}, {BE} and the rectangle {AC} are applied in turn to the rational line {FG}, giving
+    breadths {FH}, {HK}, {KL}.
+
+steps:
+  - part: enunciation
+    text: "The rectangle contained by medial straight lines commensurable in square only is either rational or medial."
+    highlight: [AC]
+    hint: |
+      E.g. $\sqrt[4]2 \cdot \sqrt[4]8 = 2$ (rational), but $\sqrt[4]2\cdot\sqrt[4]{18} = \sqrt6$ (medial).
+    modern: |
+      $a, b$ medial, $a^2/b^2 \in \mathbb Q$ $\Rightarrow$ $ab$ rational or medial.
+
+  - part: setting-out
+    text: "For let the rectangle AC be contained by the medial straight lines AB, BC which are commensurable in square only;"
+    highlight: [AC]
+    hint: |
+      Setup.
+
+  - part: specification
+    text: "I say that AC is either rational or medial."
+    highlight: [AC]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For on AB, BC let the squares AD, BE be described;"
+    highlight: [AD, BE]
+    hint: |
+      Squares on both.
+
+  - part: proof
+    text: "therefore each of the squares AD, BE is medial."
+    highlight: [AD, BE]
+    hint: |
+      Both medial.
+
+  - part: construction
+    text: "Let a rational straight line FG be set out, to FG let there be applied the rectangular parallelogram GH equal to AD, producing FH as breadth, to HM let there be applied the rectangular parallelogram MK equal to AC, producing HK as breadth, and further to KN let there be similarly applied NL equal to BE, producing KL as breadth; therefore FH, HK, KL are in a straight line."
+    highlight: [GH, HN, LN, FH, HK, KL]
+    hint: |
+      Apply {AD}, {AC}, {BE} to {FG} in turn: breadths {FH}, {HK}, {KL}.
+
+  - part: proof
+    text: "Since then each of the squares AD, BE is medial, and AD is equal to GH, and BE to NL, therefore each of the rectangles GH, NL is also medial."
+    highlight: [GH, LN]
+    hint: |
+      {GH}, {NL} medial …
+
+  - part: proof
+    text: "And they are applied to the rational straight line FG; therefore each of the straight lines FH, KL is rational and incommensurable in length with FG."
+    highlight: [FH, KL]
+    hint: |
+      … so {FH}, {KL} rational, incommensurable in length with {FG} ([[X.22]]).
+
+  - part: proof
+    text: "And, since AD is commensurable with BE, therefore GH is also commensurable with NL."
+    highlight: [GH, LN]
+    hint: |
+      {AD}, {BE} commensurable, so {GH}, {NL} are.
+
+  - part: proof
+    text: "And, as GH is to NL, so is FH to KL; therefore FH is commensurable in length with KL."
+    highlight: [FH, KL]
+    hint: |
+      So {FH}, {KL} commensurable in length.
+
+  - part: proof
+    text: "Therefore FH, KL are rational straight lines commensurable in length; therefore the rectangle FH, KL is rational."
+    highlight: [FH, KL]
+    hint: |
+      So rect({FH},{KL}) is rational ([[X.19]]).
+
+  - part: proof
+    text: "And, since DB is equal to BA, and OB to BC, therefore, as DB is to BC, so is AB to BO."
+    highlight: [AD, BE]
+    hint: |
+      Now *DB* : *BC* = *AB* : *BO* (sides of the squares).
+
+  - part: proof
+    text: "But, as DB is to BC, so is DA to AC, and, as AB is to BO, so is AC to CO; [id.] therefore, as DA is to AC, so is AC to CO."
+    highlight: [AD, AC]
+    hint: |
+      So {DA} : {AC} = {AC} : CO — {AC} is the mean between the two squares.
+
+  - part: proof
+    text: "But AD is equal to GH, AC to MK and CO to NL; therefore, as GH is to MK, so is MK to NL; therefore also, as FH is to HK, so is HK to KL; therefore the rectangle FH, KL is equal to the square on HK."
+    highlight: [FH, HK, KL]
+    hint: |
+      Transferred: {FH} : {HK} = {HK} : {KL}, so sq({HK}) = rect({FH},{KL}) ([[VI.17]]).
+
+  - part: proof
+    text: "But the rectangle FH, KL is rational; therefore the square on HK is also rational."
+    highlight: [HK]
+    hint: |
+      Rational.
+
+  - part: proof
+    text: "Therefore HK is rational."
+    highlight: [HK]
+    hint: |
+      So {HK} is rational.
+
+  - part: proof
+    text: "And, if it is commensurable in length with FG, HN is rational; but, if it is incommensurable in length with FG, KH, HM are rational straight lines commensurable in square only, and therefore HN is medial."
+    highlight: [HN]
+    hint: |
+      If {HK} is commensurable in length with {FG}, {HN} is rational ([[X.19]]); otherwise medial ([[X.21]]).
+
+  - part: proof
+    text: "Therefore HN is either rational or medial."
+    highlight: [HN]
+    hint: |
+      Either way.
+
+  - part: proof
+    text: "But HN is equal to AC; therefore AC is either rational or medial."
+    highlight: [HN, AC]
+    hint: |
+      And {HN} = {AC}.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Take $\rho = 1$, $a^2 = r\sqrt q$, $b^2 = s\sqrt q$.
+  lines:
+    - steps: [5, 6, 7, 8, 9, 10]
+      text: |
+        $(ab)^2 = rs\,q$ is rational.
+    - steps: [11, 12, 13, 14, 15, 16, 17, 18]
+      text: |
+        So $ab = \sqrt{rsq}$: rational if $rsq$ is a square, medial-area otherwise. $\blacksquare$
+
+commentary: |
+  This dichotomy (rational or medial) generates the two *bimedial* lines of [[X.37]] and [[X.38]].

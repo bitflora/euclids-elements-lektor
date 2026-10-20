@@ -1,0 +1,151 @@
+id: X.75
+kind: theorem
+title: The second apotome of a medial
+
+paraphrase: |
+  Subtracting from a medial {AB} a medial {CB}, commensurable with it in square only and containing with it a
+  *medial* rectangle, leaves an irrational {AC}: a *second apotome of a medial*.
+
+diagram:
+  width: 310
+  height: 200
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "D0;point;free;40,-1000;0;0"
+    - "D3;point;free;40,1000;0;0"
+    - "A;point;lineSlider;A0,A3,90,0"
+    - "B;point;lineSlider;A0,A3,220,0"
+    - "C;point;lineSlider;A0,A3,170,0"
+    - "AB;line;connect;A,B"
+    - "D;point;lineSlider;D0,D3,0,80"
+    - "I;point;lineSlider;D0,D3,0,165"
+    - "G'';point;perpendicular;D,D3;0;0"
+    - "G';point;proportion;D,I,A,B,A,B,D,G'';0;0"
+    - "G;point;proportion;D,I,B,C,B,C,G',G''"
+    - "E;point;parallelogram;I,D,G"
+    - "F';point;proportion;D,I,A,B,B,C,D,G'';0;0"
+    - "F;point;extend;D,F',D,F'"
+    - "H;point;parallelogram;I,D,F"
+    - "IDFH;polygon;quadrilateral;I,D,F,H;0;0;black;random"
+    - "HFGE;polygon;quadrilateral;H,F,G,E;0;0;black;random"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "DG;line;connect;D,G;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+    - "DI;line;connect;D,I;0;0;0"
+    - "GD;line;connect;G,D;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+  aliases: { DH: IDFH, FE: HFGE, BA: AB, CA: AC, FD: DF, GF: FG, ID: DI }
+  caption: |
+    The squares on {AB}, {BC} applied to the rational line {DI} give breadth {DG}; twice their rectangle, {DH},
+    gives {DF}; the remainder {FE} = sq({AC}).
+
+steps:
+  - part: enunciation
+    text: "If from a medial straight line there be subtracted a medial straight line which is commensurable with the whole in square only, and which contains with the whole a medial rectangle, the remainder is irrational; and let it be called a second apotome of a medial straight line."
+    highlight: [AC]
+    hint: |
+      Medial − medial with medial rectangle.
+
+  - part: setting-out
+    text: "For from the medial straight line AB let there be subtracted the medial straight line CB which is commensurable with the whole AB in square only and such that the rectangle AB, BC, which it contains with the whole AB, is medial; I say that the remainder AC is irrational; and let it be called a second apotome of a medial straight line."
+    highlight: [AB, BC]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let a rational straight line DI be set out, let DE equal to the squares on AB, BC be applied to DI, producing DG as breadth, and let DH equal to twice the rectangle AB, BC be applied to DI, producing DF as breadth; therefore the remainder FE is equal to the square on AC."
+    highlight: [DG, DH, DF]
+    hint: |
+      Apply the sum of squares and 2·rect to the rational {DI}: breadths {DG} and {DF}.
+
+  - part: proof
+    text: "Now, since the squares on AB, BC are medial and commensurable, therefore DE is also medial."
+    highlight: [DG]
+    hint: |
+      The sum of squares is medial …
+
+  - part: proof
+    text: "And it is applied to the rational straight line DI, producing DG as breadth; therefore DG is rational and incommensurable in length with DI."
+    highlight: [DG]
+    hint: |
+      … so {DG} rational, incommensurable with {DI}.
+
+  - part: proof
+    text: "Again, since the rectangle AB, BC is medial, therefore twice the rectangle AB, BC is also medial."
+    highlight: [DH]
+    hint: |
+      2·rect medial …
+
+  - part: proof
+    text: "And it is equal to DH; therefore DH is also medial."
+    highlight: [DH]
+    hint: |
+      … equal to {DH} …
+
+  - part: proof
+    text: "And it has been applied to the rational straight line DI, producing DF as breadth; therefore DF is rational and incommensurable in length with DI."
+    highlight: [DF]
+    hint: |
+      … so {DF} rational, incommensurable with {DI}.
+
+  - part: proof
+    text: "And, since AB, BC are commensurable in square only, therefore AB is incommensurable in length with BC; therefore the square on AB is also incommensurable with the rectangle AB, BC."
+    highlight: [AB, BC]
+    hint: |
+      sq({AB}) incommensurable with rect({AB},{BC}) …
+
+  - part: proof
+    text: "But the squares on AB, BC are commensurable with the square on AB, and twice the rectangle AB, BC is commensurable with the rectangle AB, BC; therefore twice the rectangle AB, BC is incommensurable with the squares on AB, BC."
+    highlight: [AB, BC]
+    hint: |
+      … so the sum of squares with 2·rect.
+
+  - part: proof
+    text: "But DE is equal to the squares on AB, BC, and DH to twice the rectangle AB, BC; therefore DE is incommensurable with DH."
+    highlight: [DH]
+    hint: |
+      Transfer to *DE*, {DH} …
+
+  - part: proof
+    text: "But, as DE is to DH, so is GD to DF; therefore GD is incommensurable with DF."
+    highlight: [DG, DF]
+    hint: |
+      … so {GD}, {DF} incommensurable.
+
+  - part: proof
+    text: "And both are rational; therefore GD, DF are rational straight lines commensurable in square only; therefore FG is an apotome."
+    highlight: [FG]
+    hint: |
+      {FG} is an apotome ([[X.73]]).
+
+  - part: proof
+    text: "But DI is rational, and the rectangle contained by a rational and an irrational straight line is irrational, and its ’side’ is irrational."
+    highlight: [FE]
+    hint: |
+      Rational × apotome is irrational (from [[X.20]]) …
+
+  - part: proof
+    text: "And AC is the ’side’ of FE; therefore AC is irrational."
+    highlight: [AC, FE]
+    hint: |
+      … and {AC} is its side.
+
+  - part: proof
+    text: "And let it be called a second apotome of a medial straight line."
+    hint: |
+      The name.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+      text: |
+        $AC^2 = M_1 - M_2$, two incommensurable medial areas; divided by $\rho$ the difference is an apotome.
+        $\blacksquare$

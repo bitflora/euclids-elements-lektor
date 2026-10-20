@@ -1,0 +1,299 @@
+id: II.8
+kind: theorem
+title: Four rectangles and a square
+
+paraphrase: |
+  Cut {AB} at {C}. Four times the rectangle on {AB}, {BC}, plus the square on {AC}, equals the
+  square on {AB} and {BC} laid end to end. In algebra, with $AB = a$, $BC = b$:
+  $4ab + (a - b)^2 = (a + b)^2$.
+
+diagram:
+  width: 300
+  height: 300
+  elements:
+    - "A0;point;free;-1000,40;0"
+    - "A3;point;free;1000,40;0"
+    - "A;point;lineSlider;A0,A3,40,0"
+    - "B;point;lineSlider;A0,A3,210,0"
+    - "C;point;lineSlider;A0,A3,160,0"
+    - "D;point;extend;A,B,C,B"
+    - "DAEF;polygon;square;D,A;0;0;black;0"
+    - "E;point;vertex;DAEF,3"
+    - "F;point;vertex;DAEF,4"
+    - "DE;line;connect;D,E"
+    - "CH;line;parallel;C,D,F"
+    - "H;point;last;CH"
+    - "BL;line;parallel;B,D,F"
+    - "L;point;last;BL"
+    - "K;point;intersection;D,E,B,L"
+    - "Q;point;intersection;D,E,C,H"
+    - "M;point;parallelogram;K,B,A"
+    - "O;point;parallelogram;Q,C,A"
+    - "MN;line;parallel;M,A,D"
+    - "OP;line;parallel;O,A,D"
+    - "N;point;last;MN"
+    - "P;point;last;OP"
+    - "G;point;intersection;M,N,C,H"
+    - "R;point;intersection;B,L,O,P"
+    - "OQHE;polygon;quadrilateral;O,Q,H,E;0;0;0;#e6e0ef"
+    - "Np;point;midpoint;K,N;0;0"
+    - "S;point;cutoff;Q,O,K,Np;black;lightGray"
+    - "T;point;cutoff;K,D,K,Np;black;lightGray"
+    - "U;point;cutoff;Q,H,K,Np;black;lightGray"
+    - "UTS;sector;arc;U,T,S;0;0;lightGray;0"
+    - "AB;line;connect;A,B"
+    - "BD;line;connect;B,D"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "GK;line;connect;G,K;0;0;0"
+    - "KN;line;connect;K,N;0;0;0"
+    - "QR;line;connect;Q,R;0;0;0"
+    - "RP;line;connect;R,P;0;0;0"
+    - "BK;line;connect;B,K;0;0;0"
+    - "CG;line;connect;C,G;0;0;0"
+    - "GQ;line;connect;G,Q;0;0;0"
+    - "AEFD;polygon;quadrilateral;A,E,F,D;0;0;0;0"
+    - "AK;polygon;quadrilateral;A,B,K,M;0;0;0;0"
+    - "CP;polygon;quadrilateral;C,D,P,Q;0;0;0;0"
+    - "ML;polygon;quadrilateral;M,K,L,E;0;0;0;0"
+    - "STU;polygon;hexagon;A,D,F,H,Q,O;0;0;0;0"
+    - "CK;polygon;quadrilateral;C,B,K,G;0;0;0;#efe4d2"
+    - "KD;polygon;quadrilateral;K,B,D,N;0;0;0;#efe4d2"
+    - "GR;polygon;quadrilateral;G,K,R,Q;0;0;0;#efe4d2"
+    - "RN;polygon;quadrilateral;R,K,N,P;0;0;0;#efe4d2"
+    - "AG;polygon;quadrilateral;A,C,G,M;0;0;0;#dfe7ea"
+    - "MQ;polygon;quadrilateral;M,G,Q,O;0;0;0;#dfe7ea"
+    - "QL;polygon;quadrilateral;Q,R,L,H;0;0;0;#dfe7ea"
+    - "RF;polygon;quadrilateral;R,P,F,L;0;0;0;#dfe7ea"
+  aliases:
+    BC: CB
+    DK: KD
+    OH: OQHE
+  given: [A, B, C, AB]
+  caption: |
+    Slide {A}, {B} and the cut {C}. The eight rectangles (four of each colour) make up the gnomon
+    {STU}; with the small square {OH} they fill the square on {AD}.
+
+steps:
+  - part: enunciation
+    text: "If a straight line be cut at random, four times the rectangle contained by the whole and one of the segments together with the square on the remaining segment is equal to the square described on the whole and the aforesaid segment as on one straight line."
+    highlight: [AEFD, OH]
+    hint: |
+      $4ab + (a - b)^2 = (a + b)^2$, where $a$ is the whole and $b$ one segment.
+
+  - part: setting-out
+    text: "For let a straight line AB be cut at random at the point C;"
+    highlight: [AB, C]
+    hint: |
+      {AB} cut at {C}.
+
+  - part: specification
+    text: "I say that four times the rectangle contained by AB, BC together with the square on AC is equal to the square described on AB, BC as on one straight line."
+    highlight: [AB, CB, AC]
+    hint: |
+      The goal.
+    modern: |
+      $$4\,AB\cdot BC + AC^2 = (AB + BC)^2$$
+
+  - part: construction
+    text: "For let [the straight line] BD be produced in a straight line [with AB], and let BD be made equal to CB;"
+    highlight: [BD, D]
+    adds: [D, BD]
+    hint: |
+      Extend {AB} by {BD} = {CB}, so that {AD} is {AB} and {BC} "as on one straight line".
+    explain:
+      implicit: |
+        The square brackets are Heath's: words he supplies that are not in the Greek.
+
+  - part: construction
+    text: "let the square AEFD be described on AD, and let the figure be drawn double."
+    highlight: [AEFD]
+    adds: [DAEF, E, F, DE, CH, BL, H, L, K, Q, M, O, N, P, G, R, CK, KD, GR, RN, AG, MQ, QL, RF, OQHE, S, T, U, UTS]
+    hint: |
+      The square on {AD}, with its diagonal and the [[II.4]] construction carried out *twice* — through
+      {C} and through {B}.
+    explain:
+      implicit: |
+        "Drawn double": parallels to the sides through {C} and {B} (meeting the diagonal at {Q} and
+        {K}), and parallels to the base through {K} and {Q}. The square is cut into a grid.
+
+  - part: proof
+    text: "Then, since CB is equal to BD, while CB is equal to GK, and BD to KN, therefore GK is also equal to KN."
+    highlight: [CB, BD, GK, KN]
+    hint: |
+      Opposite sides of parallelograms ([[I.34]]): {GK} = {CB} = {BD} = {KN}.
+
+  - part: proof
+    text: "For the same reason QR is also equal to RP."
+    highlight: [QR, RP]
+    hint: |
+      Likewise one row up.
+
+  - part: proof
+    text: "And, since BC is equal to BD, and GK to KN, therefore CK is also equal to KD, and GR to RN."
+    highlight: [CK, KD, GR, RN]
+    hint: |
+      Equal bases, same parallels ([[I.36]]).
+
+  - part: proof
+    text: "But CK is equal to RN, for they are complements of the parallelogram CP;"
+    highlight: [CK, RN, CP]
+    hint: |
+      Complements about the diagonal of {CP} ([[I.43]]).
+
+  - part: proof
+    text: "therefore KD is also equal to GR;"
+    highlight: [KD, GR]
+    hint: |
+      Chain of equalities ([[I.CN.1]]).
+
+  - part: proof
+    text: "therefore the four areas DK, CK, GR, RN are equal to one another."
+    highlight: [KD, CK, GR, RN]
+    hint: |
+      All four of the first colour are equal.
+
+  - part: proof
+    text: "Therefore the four are quadruple of CK."
+    highlight: [CK, KD, GR, RN]
+    hint: |
+      Together they are four times {CK}.
+
+  - part: proof
+    text: "Again, since CB is equal to BD, while BD is equal to BK, that is CG, and CB is equal to GK, that is GQ, therefore CG is also equal to GQ."
+    highlight: [CG, GQ]
+    hint: |
+      The squares about the diagonal make {BK} = {BD} and {GQ} = {GK}; so {CG} = {GQ}.
+
+  - part: proof
+    text: "And, since CG is equal to GQ, and QR to RP, AG is also equal to MQ, and QL to RF."
+    highlight: [AG, MQ, QL, RF]
+    hint: |
+      Equal bases, same parallels ([[I.36]]).
+
+  - part: proof
+    text: "But MQ is equal to QL, for they are complements of the parallelogram ML;"
+    highlight: [MQ, QL, ML]
+    hint: |
+      Complements again ([[I.43]]).
+
+  - part: proof
+    text: "therefore AG is also equal to RF;"
+    highlight: [AG, RF]
+    hint: |
+      [[I.CN.1]].
+
+  - part: proof
+    text: "therefore the four areas AG, MQ, QL, RF are equal to one another."
+    highlight: [AG, MQ, QL, RF]
+    hint: |
+      All four of the second colour are equal.
+
+  - part: proof
+    text: "Therefore the four are quadruple of AG."
+    highlight: [AG, MQ, QL, RF]
+    hint: |
+      Together, four times {AG}.
+
+  - part: proof
+    text: "But the four areas CK, KD, GR, RN were proved to be quadruple of CK;"
+    highlight: [CK, KD, GR, RN]
+    hint: |
+      Recall.
+
+  - part: proof
+    text: "therefore the eight areas, which contain the gnomon STU, are quadruple of AK."
+    highlight: [STU, AK]
+    hint: |
+      {AG} + {CK} is the rectangle {AK}; so all eight pieces — the gnomon {STU} — are four times {AK}.
+    explain:
+      implicit: |
+        The eight areas *make up* the gnomon; "contain" here means "compose".
+
+  - part: proof
+    text: "Now, since AK is the rectangle AB, BD, for BK is equal to BD, therefore four times the rectangle AB, BD is quadruple of AK."
+    highlight: [AK, BK, BD]
+    hint: |
+      {AK} has sides {AB} and {BK} (= {BD}).
+
+  - part: proof
+    text: "But the gnomon STU was also proved to be quadruple of AK; therefore four times the rectangle AB, BD is equal to the gnomon STU."
+    highlight: [STU, AK]
+    hint: |
+      So the gnomon is four times the rectangle {AB}, {BD}.
+
+  - part: proof
+    text: "Let OH, which is equal to the square on AC, be added to each;"
+    highlight: [OH]
+    hint: |
+      Add the small square {OH} (its side equals {AC}).
+
+  - part: proof
+    text: "therefore four times the rectangle AB, BD together with the square on AC is equal to the gnomon STU and OH."
+    highlight: [STU, OH]
+    hint: |
+      [[I.CN.2]].
+
+  - part: proof
+    text: "But the gnomon STU and OH are the whole square AEFD, which is described on AD."
+    highlight: [STU, OH, AEFD]
+    hint: |
+      Gnomon + {OH} fills the big square.
+
+  - part: proof
+    text: "therefore four times the rectangle AB, BD together with the square on AC is equal to the square on AD"
+    highlight: [AEFD]
+    hint: |
+      So $4\cdot AB\cdot BD + AC^2 = AD^2$.
+
+  - part: proof
+    text: "But BD is equal to BC;"
+    highlight: [BD, CB]
+    hint: |
+      By construction.
+
+  - part: conclusion
+    text: "therefore four times the rectangle contained by AB, BC together with the square on AC is equal to the square on AD, that is to the square described on AB and BC as on one straight line."
+    highlight: [AEFD, OH]
+    hint: |
+      Done.
+    modern: |
+      $$4ab + (a - b)^2 = (a + b)^2$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: Let $AB = a$, $BC = BD = b$, so $AC = a - b$ and $AD = a + b$.
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+      text: $4ab + (a - b)^2 = a^2 + 2ab + b^2 = (a + b)^2$. $\blacksquare$
+  closing: |
+    A one-line identity in algebra takes Euclid twenty-odd steps; the figure must be cut into
+    nine pieces and the pieces matched up.
+
+commentary: |
+  The most elaborate figure in Book II. Algebraically II.8 follows at once from [[II.4]] and [[II.7]]:
+  $(a + b)^2 = a^2 + b^2 + 2ab = (a - b)^2 + 4ab$.
+
+  The nine pieces: four rectangles {CK}, {KD}, {GR}, {RN}; four rectangles {AG}, {MQ}, {QL}, {RF};
+  and the square {OH}. Each colour group is shown equal by [[I.36]] and [[I.43]].
+
+gaps: |
+  - **Squares about the diagonal** (step 10: {BK} = {BD}, {GQ} = {GK}), as in [[II.4]].
+  - **Grid bookkeeping**: that the eight rectangles exactly make up the gnomon is read off the figure.
+
+historical: |
+  Heath's bracketed words in step 1 ("[the straight line]", "[with {AB}]") mark his own additions to
+  the Greek, which is terser.

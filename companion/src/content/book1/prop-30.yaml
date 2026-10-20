@@ -1,0 +1,137 @@
+id: I.30
+kind: theorem
+title: Parallels to the same line are parallel
+
+paraphrase: |
+  If {AB} and {CD} are each parallel to {EF}, they are parallel to each other.
+
+diagram:
+  width: 250
+  height: 210
+  elements:
+    - "A;point;free;30,60"
+    - "B;point;free;220,60"
+    - "AB;line;connect;A,B"
+    - "C;point;free;30,170"
+    - "Dp;point;parallelogram;C,A,B;0;0"
+    - "D;point;lineSlider;C,Dp,220,170"
+    - "CD;line;connect;C,D"
+    - "E;point;free;30,120"
+    - "Fp;point;parallelogram;E,A,B;0;0"
+    - "F;point;lineSlider;E,Fp,220,120"
+    - "EF;line;connect;E,F"
+    - "G;point;lineSlider;A,B,80,60"
+    - "K;point;lineSlider;C,D,150,170"
+    - "H;point;intersection;E,F,G,K"
+    - "Gx;point;extend;K,G,K,G;0;0"
+    - "Kx;point;extend;G,K,G,K;0;0"
+    - "GK;line;connect;Gx,Kx"
+    - "angAGK;sector;angleMarker;G,A,K"
+    - "angGHF;sector;angleMarker;H,G,F"
+    - "angGKD;sector;angleMarker;K,G,D"
+  aliases:
+    AGK: angAGK
+    GHF: angGHF
+    GKD: angGKD
+  given: [A, B, C, D, E, F, AB, CD, EF]
+  caption: |
+    {AB} and {CD} are both kept parallel to {EF}. Slide {G} and {K} to tilt the transversal.
+
+steps:
+  - part: enunciation
+    text: "Straight lines parallel to the same straight line are also parallel to one another."
+    highlight: [AB, CD, EF]
+    hint: |
+      Parallelism is transitive.
+
+  - part: setting-out
+    text: "Let each of the straight lines AB, CD be parallel to EF;"
+    highlight: [AB, CD, EF]
+    hint: |
+      The data: {AB} ∥ {EF} and {CD} ∥ {EF}.
+
+  - part: specification
+    text: "I say that AB is also parallel to CD."
+    highlight: [AB, CD]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let the straight line GK fall upon them;"
+    highlight: [GK]
+    adds: [GK, G, K, H]
+    hint: |
+      Draw a transversal {GK} across all three.
+
+  - part: proof
+    text: "Then, since the straight line GK has fallen on the parallel straight lines AB, EF, the angle AGK is equal to the angle GHF."
+    highlight: [angAGK, angGHF, AB, EF]
+    adds: [angAGK, angGHF]
+    hint: |
+      {AB} ∥ {EF}: alternate angles are equal ([[I.29]]).
+    modern: |
+      $$\angle AGK = \angle GHF$$
+
+  - part: proof
+    text: "Again, since the straight line GK has fallen on the parallel straight lines EF, CD, the angle GHF is equal to the angle GKD."
+    highlight: [angGHF, angGKD, EF, CD]
+    adds: [angGKD]
+    hint: |
+      {EF} ∥ {CD}: corresponding angles are equal ([[I.29]]).
+    modern: |
+      $$\angle GHF = \angle GKD$$
+
+  - part: proof
+    text: "But the angle AGK was also proved equal to the angle GHF; therefore the angle AGK is also equal to the angle GKD;"
+    highlight: [angAGK, angGKD]
+    hint: |
+      Both equal ∠{GHF} ([[I.CN.1]]).
+    modern: |
+      $$\angle AGK = \angle GKD$$
+
+  - part: proof
+    text: "and they are alternate."
+    highlight: [angAGK, angGKD]
+    hint: |
+      ∠{AGK} and ∠{GKD} are alternate angles for {AB}, {CD}.
+
+  - part: proof
+    text: "Therefore AB is parallel to CD."
+    highlight: [AB, CD]
+    hint: |
+      By [[I.27]].
+    explain:
+      implicit: |
+        Heath remarks that the usual closing "Therefore etc." is, curiously, missing here (his note on line 20).
+    cites: [I.27]
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* With Playfair's axiom it is one line:
+  lines:
+    - steps: [1, 2]
+      text: Let $AB \parallel EF$ and $CD \parallel EF$, and suppose $AB$ and $CD$ meet at a point $P$.
+    - steps: [3, 4, 5, 6, 7]
+      text: |
+        Then $AB$ and $CD$ are two lines through $P$ parallel to $EF$; by Playfair they coincide.
+        So either $AB = CD$ or $AB \parallel CD$. $\blacksquare$
+  closing: |
+    In neutral geometry the transitivity of parallelism is *equivalent* to the parallel postulate.
+
+commentary: |
+  Euclid's figure puts {EF} between {AB} and {CD}. If it lies outside them, the argument is the
+  same with a different pair of angles.
+
+  The same statement for lines in space, not necessarily in one plane, is [[XI.9]].
+
+gaps: |
+  - **{EF} between the other two**: only this case is drawn.
+  - **{AB} and {CD} distinct**: if they coincide, "parallel" does not apply.
+
+historical: |
+  Proclus notes the case where {EF} is not between the other two lines and treats it.

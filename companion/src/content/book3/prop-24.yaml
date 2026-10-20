@@ -1,0 +1,121 @@
+id: III.24
+kind: theorem
+title: Similar segments on equal chords are equal
+
+paraphrase: |
+  Similar segments of circles on equal chords are equal (congruent).
+
+diagram:
+  width: 350
+  height: 120
+  elements:
+    - "A;point;free;40,90"
+    - "B;point;free;160,90"
+    - "AB;line;connect;A,B"
+    - "E;point;free;90,40;black;0"
+    - "AEB;sector;arc;B,E,A;0;0;black;0"
+    - "C;point;free;190,90"
+    - "Ccirc;circle;radius;C,AB;0;0;0;0"
+    - "D;point;circleSlider;Ccirc,310,90"
+    - "CD;line;connect;C,D"
+    - "Fp;point;similar;C,D,A,B,E;0;0"
+    - "CFGc;circle;circumcircle;D,Fp,C;0;0;0;0"
+    - "F;point;circleSlider;CFGc,230,45;black;0"
+    - "CFD;sector;arc;D,F,C;0;0;black;0"
+    - "G;point;circleSlider;CFGc,270,50"
+    - "GCH;polygon;equilateralTriangle;G,C;0;0;0;0"
+    - "H;point;vertex;GCH,3;0;0"
+    - "GCarc;sector;sector;H,G,C;0;0;black;0"
+    - "M;point;midpoint;D,G;0;0"
+    - "Mp;point;perpendicular;M,D;0;0"
+    - "K;point;intersection;M,Mp,H,G;0;0"
+    - "DGarc;sector;sector;K,D,G;0;0;black;0"
+  aliases:
+    CGD: GCarc
+  given: [A, B, AB, E, AEB, C, D, CD, F, CFD]
+  caption: |
+    {CGD} pictures the segment that "falls awry" — impossible, since it would cut the circle {CFD} too
+    often. Drag {G}.
+
+steps:
+  - part: enunciation
+    text: "Similar segments of circles on equal straight lines are equal to one another."
+    highlight: [AEB, CFD]
+    hint: |
+      Same chord length + same angle ⇒ congruent segments.
+
+  - part: setting-out
+    text: "For let AEB, CFD be similar segments of circles on equal straight lines AB, CD;"
+    highlight: [AEB, CFD, AB, CD]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the segment AEB is equal to the segment CFD."
+    highlight: [AEB, CFD]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, if the segment AEB be applied to CFD, and if the point A be placed on C and the straight line AB on CD, the point B will also coincide with the point D, because AB is equal to CD;"
+    highlight: [AB, CD]
+    hint: |
+      Superposition, as in [[I.4]] and [[I.8]].
+    gap: |
+      **Superposition** again (see [[I.4]]).
+
+  - part: proof
+    text: "and, AB coinciding with CD, the segment AEB will also coincide with CFD."
+    highlight: [AEB, CFD]
+    hint: |
+      Claim: the arcs coincide too.
+
+  - part: proof
+    text: "For, if the straight line AB coincide with CD but the segment AEB do not coincide with CFD, it will either fall with it, or outside it; or it will fall awry, as CGD, and a circle cuts a circle at more points than two: which is impossible."
+    highlight: [CGD, CFD]
+    adds: [G, GCarc, DGarc]
+    hint: |
+      Inside or outside contradicts [[III.23]]; crossing ("awry") contradicts [[III.10]].
+    explain:
+      implicit: |
+        "Fall awry" (παραλλάξει) is the word used in [[I.8]]: partly short of, partly overlapping the other
+        figure (Heath's note on line 15). The inside/outside cases are dismissed tacitly by [[III.23]].
+    cites: [III.23]
+
+  - part: proof
+    text: "Therefore, if the straight line AB be applied to CD, the segment AEB will not fail to coincide with CFD also;"
+    highlight: [AEB, CFD]
+    hint: |
+      So it coincides.
+
+  - part: proof
+    text: "therefore it will coincide with it and will be equal to it."
+    highlight: [AEB, CFD]
+    hint: |
+      [[I.CN.4]].
+    cites: [I.CN.4]
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7]
+      text: |
+        A segment is determined up to congruence by its chord and inscribed angle: the radius is
+        $r = AB / (2\sin\alpha)$ (law of sines). $\blacksquare$
+
+commentary: |
+  One of the very few places outside [[I.4]] and [[I.8]] where Euclid argues by superposition.
+
+gaps: |
+  - **The inside/outside cases** are only named, not refuted; they follow from [[III.23]].

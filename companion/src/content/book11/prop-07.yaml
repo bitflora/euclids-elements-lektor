@@ -1,0 +1,80 @@
+id: XI.7
+kind: theorem
+title: The line joining points on two parallels lies in their plane
+
+paraphrase: |
+  If {AB}, {CD} are parallel and {E}, {F} are points on them, the line {EF} lies in the plane of the parallels.
+
+diagram:
+  width: 250
+  height: 200
+  elements:
+    - "A;point;free;40,40"
+    - "B;point;free;210,40"
+    - "C;point;free;40,160"
+    - "D';point;parallelogram;B,A,C;0;0"
+    - "D;point;lineSlider;C,D',210,160"
+    - "AB;line;connect;A,B"
+    - "CD;line;connect;C,D"
+    - "E;point;lineSlider;A,B,100,40"
+    - "F;point;lineSlider;C,D,150,160"
+    - "EF;line;connect;E,F"
+    - "H;point;midpoint;E,F"
+    - "Z;point;free;100000,-100000"
+    - "M;point;midpoint;E,H;0;0"
+    - "G;point;cutoff;H,Z,E,M"
+    - "FGE;sector;arc;F,G,E;0;0;black;0"
+    - "EGF;polygon;triangle;E,G,F;0;0;0"
+  aliases: { BA: AB, DC: CD, FE: EF }
+  caption: |
+    {AB} ∥ {CD}; {EGF} is the supposed line out of the plane.
+
+steps:
+  - part: enunciation
+    text: "If two straight lines be parallel and points be taken at random on each of them, the straight line joining the points is in the same plane with the parallel straight lines."
+    highlight: [AB, CD, EF]
+    hint: |
+      A line joining points of two parallels lies in their plane.
+
+  - part: setting-out
+    text: "Let AB, CD be two parallel straight lines, and let points E, F be taken at random on them respectively; I say that the straight line joining the points E, F is in the same plane with the parallel straight lines."
+    highlight: [AB, CD, EF]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For suppose it is not, but, if possible, let it be in a more elevated plane as EGF, and let a plane be drawn through EGF; it will then make, as section in the plane of reference, a straight line."
+    highlight: [FGE]
+    hint: |
+      Suppose it were in a higher plane, as {EGF}; the plane through it meets the plane of the parallels in a line ([[XI.3]]) …
+
+  - part: proof
+    text: "Let it make it, as EF; therefore the two straight lines EGF, EF will enclose an area: which is impossible."
+    highlight: [EF, FGE]
+    hint: |
+      … {EF}; then {EGF} and {EF} would enclose an area: impossible.
+
+  - part: proof
+    text: "Therefore the straight line joined from E to F is not in a plane more elevated; therefore the straight line joined from E to F is in the plane through the parallel straight lines AB, CD."
+    highlight: [EF]
+    hint: |
+      So {EF} lies in the plane of {AB}, {CD}.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [EF]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Immediate from the definition of a plane through two lines. $\blacksquare$
+
+commentary: |
+  The argument is the same as in [[XI.3]]: two straight lines cannot enclose an area.

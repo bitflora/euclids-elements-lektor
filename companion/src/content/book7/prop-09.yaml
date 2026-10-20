@@ -1,0 +1,122 @@
+id: VII.9
+kind: theorem
+title: Alternation for a part
+
+paraphrase: |
+  If {A} is the same part of {BC} as {D} is of {EF}, then whatever part or parts {A} is of {D}, {BC} is the
+  same of {EF}. In fractions: if $a = b/n$ and $d = e/n$, then $a/d = b/e$.
+
+diagram:
+  width: 150
+  height: 250
+  elements:
+    - "A0;point;free;30,-1000;0;0"
+    - "A3;point;free;30,1000;0;0"
+    - "A1;point;lineSlider;A0,A3,30,30;0"
+    - "B0;point;free;60,-1000;0;0"
+    - "B3;point;free;60,1000;0;0"
+    - "B;point;lineSlider;B0,B3,60,30"
+    - "D0;point;free;90,-1000;0;0"
+    - "D3;point;free;90,1000;0;0"
+    - "D1;point;lineSlider;D0,D3,90,30;0"
+    - "E0;point;free;120,-1000;0;0"
+    - "E3;point;free;120,1000;0;0"
+    - "E;point;lineSlider;E0,E3,120,30"
+    - "A2;point;lineSlider;A0,A3,30,110;0"
+    - "A;line;connect;A1,A2;black"
+    - "G;point;cutoff;B,B3,A1,A2"
+    - "C;point;cutoff;G,B3,A1,A2"
+    - "BC;line;connect;B,C"
+    - "D2;point;lineSlider;D0,D3,30,80;0"
+    - "D;line;connect;D1,D2;black"
+    - "H;point;cutoff;E,E3,D1,D2"
+    - "F;point;cutoff;H,E3,D1,D2"
+    - "EF;line;connect;E,F"
+    - "BG;line;connect;B,G;0;0;0"
+    - "GC;line;connect;G,C;0;0;0"
+    - "EH;line;connect;E,H;0;0;0"
+    - "HF;line;connect;H,F;0;0;0"
+  caption: |
+    {A} is half of {BC}, {D} half of {EF}.
+
+steps:
+  - part: enunciation
+    text: "If a number be a part of a number, and another be the same part of another, alternately also, whatever part or parts the first is of the third, the same part, or the same parts, will the second also be of the fourth."
+    highlight: [A, BC, D, EF]
+    hint: |
+      Alternation, first case: $a = \tfrac1n b,\ d = \tfrac1n e \Rightarrow a : d = b : e$.
+    modern: |
+      $a = \tfrac1n b,\ d = \tfrac1n e \ \Rightarrow\ \tfrac{a}{d} = \tfrac{b}{e}$.
+
+  - part: setting-out
+    text: "For let the number A be a part of the number BC, and another, D, the same part of another, EF, that A is of BC;"
+    highlight: [A, BC, D, EF]
+    hint: |
+      {A} is $1/n$ of {BC}; {D} is $1/n$ of {EF}.
+
+  - part: specification
+    text: "I say that, alternately also, whatever part or parts A is of D, the same part or parts is BC of EF also."
+    highlight: [A, D, BC, EF]
+    hint: |
+      To prove: {A} is to {D} as {BC} to {EF}, as fractions.
+
+  - part: proof
+    text: "For since, whatever part A is of BC, the same part also is D of EF, therefore, as many numbers as there are in BC equal to A, so many also are there in EF equal to D."
+    highlight: [A, BC, D, EF]
+    hint: |
+      {BC} holds $n$ copies of {A}; {EF} holds $n$ copies of {D}.
+
+  - part: construction
+    text: "Let BC be divided into the numbers equal to A, namely BG, GC, and EF into those equal to D, namely EH, HF;"
+    highlight: [BG, GC, EH, HF]
+    hint: |
+      The copies {BG}, {GC} and {EH}, {HF}.
+
+  - part: proof
+    text: "thus the multitude of BG, GC will be equal to the multitude of EH, HF."
+    highlight: [BG, GC, EH, HF]
+    hint: |
+      $n$ pieces each.
+
+  - part: proof
+    text: "Now, since the numbers BG, GC are equal to one another, and the numbers EH, HF are also equal to one another, while the multitude of BG, GC is equal to the multitude of EH, HF, therefore, whatever part or parts BG is of EH, the same part or the same parts is GC of HF also;"
+    highlight: [BG, EH, GC, HF]
+    hint: |
+      Each piece of {BC} is the same fraction of the matching piece of {EF}.
+
+  - part: proof
+    text: "so that, in addition, whatever part or parts BG is of EH, the same part also, or the same parts, is the sum BC of the sum EF."
+    highlight: [BC, EF]
+    hint: |
+      Adding the pieces ([[VII.5]], [[VII.6]]): {BC} is that same fraction of {EF}.
+
+  - part: proof
+    text: "But BG is equal to A, and EH to D; therefore, whatever part or parts A is of D, the same part or the same parts is BC of EF also."
+    highlight: [A, D, BC, EF]
+    hint: |
+      And {BG} = {A}, {EH} = {D}. Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: |
+        $b = n a$, $e = n d$.
+    - steps: [6, 7, 8]
+      text: |
+        If $a = \tfrac{p}{q} d$, then $b = n a = \tfrac{p}{q}(n d) = \tfrac{p}{q} e$ ([[VII.5]], [[VII.6]]).
+        $\blacksquare$
+
+commentary: |
+  The first step toward *alternation* ($a : b = c : d \Rightarrow a : c = b : d$), which for numbers is
+  [[VII.13]]. [[VII.9]] handles "a part", [[VII.10]] "parts". The proofs need only the distributive laws of
+  [[VII.5]] and [[VII.6]]; Book V's alternation [[V.16]] is not used.
+
+gaps: |
+  - Typical case (halves).

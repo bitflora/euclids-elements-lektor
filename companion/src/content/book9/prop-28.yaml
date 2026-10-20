@@ -1,0 +1,92 @@
+id: IX.28
+kind: theorem
+title: Odd times even is even
+
+paraphrase: |
+  If an odd number {A} multiplies an even number {B}, the product {C} is even.
+
+diagram:
+  width: 250
+  height: 130
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "C0;point;free;-1000,110;0;0"
+    - "C3;point;free;1000,110;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,35;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,90,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,130,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;U1,U2,A1,A2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+  caption: |
+    {C} = {A}·{B}.
+
+steps:
+  - part: enunciation
+    text: "If an odd number by multiplying an even number make some number, the product will be even."
+    highlight: [A, B, C]
+    hint: |
+      odd × even = even.
+    modern: |
+      $a \cdot 2b = 2(ab)$.
+
+  - part: setting-out
+    text: "For let the odd number A by multiplying the even number B make C;"
+    highlight: [A, B, C]
+    hint: |
+      {C} = {A}{B}.
+
+  - part: specification
+    text: "I say that C is even."
+    highlight: [C]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since A by multiplying B has made C, therefore C is made up of as many numbers equal to B as there are units in A."
+    highlight: [C, B, A]
+    hint: |
+      [[VII.Def.15]].
+
+  - part: proof
+    text: "And B is even; therefore C is made up of even numbers."
+    highlight: [B, C]
+    hint: |
+      A sum of copies of the even {B}.
+
+  - part: proof
+    text: "But, if as many even numbers as we please be added together, the whole is even."
+    highlight: [C]
+    hint: |
+      [[IX.21]].
+
+  - part: proof
+    text: "Therefore C is even."
+    highlight: [C]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        $C = B + B + \dots + B$, a sum of even numbers. $\blacksquare$
+
+commentary: |
+  The hypothesis "odd" is never used: any number times an even number is even. With [[IX.29]] it completes
+  the parity rules for multiplication.

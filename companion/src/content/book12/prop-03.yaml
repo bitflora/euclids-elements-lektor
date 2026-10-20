@@ -1,0 +1,280 @@
+id: XII.3
+kind: theorem
+title: A triangular pyramid splits into two similar pyramids and two prisms
+
+paraphrase: |
+  A pyramid on a triangular base can be divided into two equal pyramids similar to it (each with half its edges) and
+  two equal prisms, the prisms together making up more than half of the whole. The engine of the exhaustion
+  argument for pyramids ([[XII.5]]).
+
+diagram:
+  width: 280
+  height: 300
+  pivot: "G,floor"
+  elements:
+    - "origin;point;fixed;90,250,0;0;0"
+    - "1X;point;fixed;342,250,-91;0;0"
+    - "1Y;point;fixed;-5,550,-120;0;0"
+    - "1Z;point;fixed;114,375,288;0;0"
+    - "floor;plane;3points;origin,1X,1Y;0;0;0;0"
+    - "D;point;lineSlider;origin,1Y,90,-20,0"
+    - "A;point;planeSlider;floor,40,179,0"
+    - "B;point;planeSlider;floor,175,280,0"
+    - "C;point;planeSlider;floor,241,212,0"
+    - "E;point;midpoint;A,B"
+    - "F;point;midpoint;B,C"
+    - "G;point;midpoint;A,C;black;green"
+    - "H;point;midpoint;A,D"
+    - "K;point;midpoint;B,D"
+    - "L;point;midpoint;C,D"
+    - "HKFG;polygon;quadrilateral;H,K,F,G;0;0;black;120,30,100"
+    - "AEGH;polyhedron;tetrahedron;A,E,G,H;0;0;black;random"
+    - "HKLD;polyhedron;tetrahedron;H,K,L,D;0;0;black;random"
+    - "CB;line;connect;C,B"
+    - "CG;line;connect;C,G"
+    - "EF;line;connect;E,F"
+    - "EB;line;connect;E,B"
+    - "KB;line;connect;K,B"
+    - "CL;line;connect;C,L"
+    - "ABC;polygon;triangle;A,B,C;0;0;0"
+    - "EH;line;connect;E,H;0;0;0"
+    - "EG;line;connect;E,G;0;0;0"
+    - "GH;line;connect;G,H;0;0;0"
+    - "HK;line;connect;H,K;0;0;0"
+    - "KL;line;connect;K,L;0;0;0"
+    - "LH;line;connect;L,H;0;0;0"
+    - "KF;line;connect;K,F;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "AEH;polygon;triangle;A,E,H;0;0;0"
+    - "HKD;polygon;triangle;H,K,D;0;0;0"
+    - "AHG;polygon;triangle;A,H,G;0;0;0"
+    - "HLD;polygon;triangle;H,L,D;0;0;0"
+    - "HG;line;connect;H,G;0;0;0"
+    - "KD;line;connect;K,D;0;0;0"
+    - "DL;line;connect;D,L;0;0;0"
+    - "EHG;polygon;triangle;E,H,G;0;0;0"
+    - "KDL;polygon;triangle;K,D,L;0;0;0"
+    - "AEG;polygon;triangle;A,E,G;0;0;0"
+    - "HKL;polygon;triangle;H,K,L;0;0;0"
+    - "ADB;polygon;triangle;A,D,B;0;0;0"
+    - "DHK;polygon;triangle;D,H,K;0;0;0"
+    - "DBC;polygon;triangle;D,B,C;0;0;0"
+    - "DKL;polygon;triangle;D,K,L;0;0;0"
+    - "BA;line;connect;B,A;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "KH;line;connect;K,H;0;0;0"
+    - "HL;line;connect;H,L;0;0;0"
+    - "BAC;polygon;triangle;B,A,C;0;0;0"
+    - "KHL;polygon;triangle;K,H,L;0;0;0"
+    - "GFC;polygon;triangle;G,F,C;0;0;0"
+  aliases: { BC: CB, GC: CG, FE: EF, BE: EB, BK: KB, LC: CL, HE: EH, GE: EG, LK: KL, FK: KF, GF: FG, BD: DB, EA: AE, DK: KD, LD: DL, CA: AC }
+  caption: |
+    Pyramid *ABCD*; the midpoints of the edges are {E}, {F}, {G}, {H}, {K}, {L}. Drag to rotate.
+
+steps:
+  - part: enunciation
+    text: "Any pyramid which has a triangular base is divided into two pyramids equal and similar to one another, similar to the whole and having triangular bases, and into two equal prisms; and the two prisms are greater than the half of the whole pyramid."
+    highlight: [AEGH, HKLD]
+    hint: |
+      A tetrahedron splits into two half-size tetrahedra and two equal prisms, the prisms making up more than half.
+
+  - part: setting-out
+    text: "Let there be a pyramid of which the triangle ABC is the base and the point D the vertex; I say that the pyramid ABCD is divided into two pyramids equal to one another, having triangular bases and similar to the whole pyramid, and into two equal prisms; and the two prisms are greater than the half of the whole pyramid."
+    highlight: [ABC, D]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let AB, BC, CA, AD, DB, DC be bisected at the points E, F, G, H, K, L, and let HE, EG, GH, HK, KL, LH, KF, FG be joined."
+    highlight: [EH, EG, GH, HK, KL, LH, KF, FG]
+    hint: |
+      Bisect all six edges; join the midpoints.
+
+  - part: proof
+    text: "Since AE is equal to EB, and AH to DH, therefore EH is parallel to DB."
+    highlight: [EH, DB]
+    hint: |
+      {EH} ∥ {DB} ([[VI.2]]).
+
+  - part: proof
+    text: "For the same reason HK is also parallel to AB."
+    highlight: [HK, AB]
+    hint: |
+      {HK} ∥ {AB}.
+
+  - part: proof
+    text: "Therefore HEBK is a parallelogram; therefore HK is equal to EB."
+    highlight: [HK, EB]
+    hint: |
+      *HEBK* is a parallelogram: {HK} = {EB} ([[I.34]]).
+
+  - part: proof
+    text: "But EB is equal to EA; therefore AE is also equal to HK."
+    highlight: [HK, AE]
+    hint: |
+      So {AE} = {HK}.
+
+  - part: proof
+    text: "But AH is also equal to HD; therefore the two sides EA, AH are equal to the two sides KH, HD respectively, and the angle EAH is equal to the angle KHD; therefore the base EH is equal to the base KD."
+    highlight: [AEH, HKD]
+    hint: |
+      Triangles {AEH}, {HKD}: two sides and the included angle ([[I.4]]) …
+
+  - part: proof
+    text: "Therefore the triangle AEH is equal and similar to the triangle HKD."
+    highlight: [AEH, HKD]
+    hint: |
+      … equal and similar.
+
+  - part: proof
+    text: "For the same reason the triangle AHG is also equal and similar to the triangle HLD."
+    highlight: [AHG, HLD]
+    hint: |
+      Likewise {AHG}, {HLD}.
+
+  - part: proof
+    text: "Now, since two straight lines EH, HG meeting one another are parallel to two straight lines KD, DL meeting one another, and are not in the same plane, they will contain equal angles."
+    highlight: [EH, HG, KD, DL]
+    hint: |
+      Parallel arms, not coplanar: equal angles ([[XI.10]]) …
+
+  - part: proof
+    text: "Therefore the angle EHG is equal to the angle KDL."
+    highlight: [EHG, KDL]
+    hint: |
+      … ∠{EHG} = ∠{KDL}.
+
+  - part: proof
+    text: "And, since the two straight lines EH, HG are equal to the two KD, DL respectively, and the angle EHG is equal to the angle KDL, therefore the base EG is equal to the base KL; therefore the triangle EHG is equal and similar to the triangle KDL."
+    highlight: [EG, KL]
+    hint: |
+      So {EG} = {KL} ([[I.4]]) …
+
+  - part: proof
+    text: "For the same reason the triangle AEG is also equal and similar to the triangle HKL."
+    highlight: [AEG, HKL]
+    hint: |
+      … and {AEG} ≅ {HKL}.
+
+  - part: proof
+    text: "Therefore the pyramid of which the triangle AEG is the base and the point H the vertex is equal and similar to the pyramid of which the triangle HKL is the base and the point D the vertex."
+    highlight: [AEGH, HKLD]
+    hint: |
+      So the pyramids {AEGH}, {HKLD} are equal and similar ([[XI.Def.10]]).
+
+  - part: proof
+    text: "And, since HK has been drawn parallel to AB, one of the sides of the triangle ADB, the triangle ADB is equiangular to the triangle DHK, and they have their sides proportional; therefore the triangle ADB is similar to the triangle DHK."
+    highlight: [ADB, DHK]
+    hint: |
+      {HK} ∥ {AB}: {ADB} ~ {DHK} ([[I.29]], [[VI.4]]).
+
+  - part: proof
+    text: "For the same reason the triangle DBC is also similar to the triangle DKL, and the triangle ADC to the triangle DLH."
+    highlight: [DBC, DKL]
+    hint: |
+      Likewise the other faces.
+
+  - part: proof
+    text: "Now, since the two straight lines BA, AC meeting one another are parallel to the two straight lines KH, HL meeting one another, not in the same plane, they will contain equal angles."
+    highlight: [BA, AC, KH, HL]
+    hint: |
+      Parallel arms ([[XI.10]]) …
+
+  - part: proof
+    text: "Therefore the angle BAC is equal to the angle KHL."
+    highlight: [BAC, KHL]
+    hint: |
+      … ∠{BAC} = ∠{KHL}.
+
+  - part: proof
+    text: "And, as BA is to AC, so is KH to HL; therefore the triangle ABC is similar to the triangle HKL."
+    highlight: [ABC, HKL]
+    hint: |
+      {ABC} ~ {HKL}.
+
+  - part: proof
+    text: "Therefore also the pyramid of which the triangle ABC is the base and the point D the vertex is similar to the pyramid of which the triangle HKL is the base and the point D the vertex."
+    highlight: [HKLD]
+    hint: |
+      So pyramid *ABCD* ~ {HKLD} …
+
+  - part: proof
+    text: "But the pyramid of which the triangle HKL is the base and the point D the vertex was proved similar to the pyramid of which the triangle AEG is the base and the point H the vertex."
+    highlight: [AEGH]
+    hint: |
+      … ~ {AEGH}.
+
+  - part: proof
+    text: "Therefore each of the pyramids AEGH, HKLD is similar to the whole pyramid ABCD."
+    highlight: [AEGH, HKLD]
+    hint: |
+      Each similar to the whole.
+
+  - part: proof
+    text: "Next, since BF is equal to FC, the parallelogram EBFG is double of the triangle GFC."
+    highlight: [EB, GFC]
+    hint: |
+      Next the prisms: parallelogram *EBFG* = 2 × triangle {GFC}.
+
+  - part: proof
+    text: "And since, if there be two prisms of equal height, and one have a parallelogram as base, and the other a triangle, and if the parallelogram be double of the triangle, the prisms are equal, therefore the prism contained by the two triangles BKF, EHG, and the three parallelograms EBFG, EBKH, HKFG is equal to the prism contained by the two triangles GFC, HKL and the three parallelograms KFCL, LCGH, HKFG."
+    highlight: [GFC]
+    hint: |
+      So the two prisms are equal ([[XI.39]]).
+
+  - part: proof
+    text: "And it is manifest that each of the prisms, namely that in which the parallelogram EBFG is the base and the straight line HK is its opposite, and that in which the triangle GFC is the base and the triangle HKL its opposite, is greater than each of the pyramids of which the triangles AEG, HKL are the bases and the points H, D the vertices, inasmuch as, if we join the straight lines EF, EK, the prism in which the parallelogram EBFG is the base and the straight line HK its opposite is greater than the pyramid of which the triangle EBF is the base and the point K the vertex."
+    highlight: [GFC]
+    hint: |
+      Each prism is greater than the pyramid inside it.
+
+  - part: proof
+    text: "But the pyramid of which the triangle EBF is the base and the point K the vertex is equal to the pyramid of which the triangle AEG is the base and the point H the vertex; for they are contained by equal and similar planes."
+    highlight: [AEGH]
+    hint: |
+      The pyramid *EBFK* equals {AEGH} (equal and similar faces).
+
+  - part: proof
+    text: "Hence also the prism in which the parallelogram EBFG is the base and the straight line HK its opposite is greater than the pyramid of which the triangle AEG is the base and the point H the vertex."
+    highlight: [AEGH]
+    hint: |
+      So the first prism exceeds {AEGH} …
+
+  - part: proof
+    text: "But the prism in which the parallelogram EBFG is the base and the straight line HK its opposite is equal to the prism in which the triangle GFC is the base and the triangle HKL its opposite, and the pyramid of which the triangle AEG is the base and the point H the vertex is equal to the pyramid of which the triangle HKL is the base and the point D the vertex."
+    highlight: [HKLD]
+    hint: |
+      … and the second exceeds {HKLD}.
+
+  - part: proof
+    text: "Therefore the said two prisms are greater than the said two pyramids of which the triangles AEG, HKL are the bases and the points H, D the vertices."
+    highlight: [AEGH, HKLD]
+    hint: |
+      So the two prisms exceed the two pyramids: more than half of the whole.
+
+  - part: proof
+    text: "Therefore the whole pyramid, of which the triangle ABC is the base and the point D the vertex, has been divided into two pyramids equal to one another and into two equal prisms, and the two prisms are greater than the half of the whole pyramid."
+    highlight: [AEGH, HKLD]
+    hint: |
+      Summary.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+      text: |
+        The two corner pyramids are copies of the whole scaled by ½: each has $\tfrac18$ of the volume.
+    - steps: [22, 23, 24, 25, 26, 27, 28, 29]
+      text: |
+        The two prisms fill the remaining $\tfrac34$, which is more than half. $\blacksquare$
+
+commentary: |
+  Repeating the division on the two small pyramids, and again, leaves pyramids whose total is less than any
+  given volume ([[X.1]]): the step [[XII.5]] needs to compare pyramids on different bases.

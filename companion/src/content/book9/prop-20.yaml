@@ -1,0 +1,176 @@
+id: IX.20
+kind: theorem
+title: There are infinitely many primes
+
+paraphrase: |
+  Given any primes {A}, {B}, {C}, there is a prime not among them. So no finite list contains all the primes.
+
+diagram:
+  width: 250
+  height: 170
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "C0;point;free;-1000,110;0;0"
+    - "C3;point;free;1000,110;0;0"
+    - "E0;point;free;-1000,145;0;0"
+    - "E3;point;free;1000,145;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,30;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,71,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,83,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,91,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "E;point;lineSlider;E0,E3,30,0"
+    - "B4;point;proportion;U1,U2,A1,A2,B1,B2,B1,B3;0;0"
+    - "D;point;proportion;U1,U2,B1,B4,C1,C2,E,E3"
+    - "F;point;extend;E,D,U1,U2"
+    - "EF;line;connect;E,F"
+    - "DE;line;connect;D,E;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+  caption: |
+    {DE} is the least number measured by {A}, {B}, {C}; {DF} is a unit added, so {EF} = {DE} + 1. {G} (not
+    drawn) is a prime measuring {EF}.
+
+steps:
+  - part: enunciation
+    text: "Prime numbers are more than any assigned multitude of prime numbers."
+    highlight: [A, B, C]
+    hint: |
+      There are infinitely many primes — said as Euclid can say it: more than any given number of them.
+    modern: |
+      For any primes $p_1, \dots, p_n$ there is a prime $q \notin \{p_1, \dots, p_n\}$.
+
+  - part: setting-out
+    text: "Let A, B, C be the assigned prime numbers;"
+    highlight: [A, B, C]
+    hint: |
+      Any given primes {A}, {B}, {C}.
+
+  - part: specification
+    text: "I say that there are more prime numbers than A, B, C."
+    highlight: [A, B, C]
+    hint: |
+      To prove: another prime exists.
+
+  - part: construction
+    text: "For let the least number measured by A, B, C be taken, and let it be DE; let the unit DF be added to DE."
+    highlight: [DE, DF, EF]
+    hint: |
+      {DE} = lcm({A}, {B}, {C}) ([[VII.36]]); then {EF} = {DE} + 1.
+    explain:
+      did: |
+        Euclid uses the least common multiple, not the product. For distinct primes they are the same, but
+        nothing needs that: any common multiple would do.
+    cites: [VII.36]
+
+  - part: proof
+    text: "Then EF is either prime or not."
+    highlight: [EF]
+    hint: |
+      Two cases.
+
+  - part: proof
+    text: "First, let it be prime; then the prime numbers A, B, C, EF have been found which are more than A, B, C."
+    highlight: [EF]
+    hint: |
+      If {EF} is prime, it is a new prime (it is larger than each of {A}, {B}, {C}).
+
+  - part: proof
+    text: "Next, let EF not be prime; therefore it is measured by some prime number."
+    highlight: [EF]
+    hint: |
+      Otherwise a prime measures it ([[VII.31]]).
+
+  - part: construction
+    text: "Let it be measured by the prime number G."
+    highlight: [EF]
+    hint: |
+      Call it *G*.
+
+  - part: specification
+    text: "I say that G is not the same with any of the numbers A, B, C."
+    highlight: [A, B, C]
+    hint: |
+      *G* is new.
+
+  - part: proof
+    text: "For, if possible, let it be so."
+    highlight: [A, B, C]
+    hint: |
+      Suppose *G* is one of them.
+
+  - part: proof
+    text: "Now A, B, C measure DE; therefore G also will measure DE."
+    highlight: [DE]
+    hint: |
+      Then *G* measures {DE}.
+
+  - part: proof
+    text: "But it also measures EF."
+    highlight: [EF]
+    hint: |
+      And {EF}.
+
+  - part: proof
+    text: "Therefore G, being a number, will measure the remainder, the unit DF: which is absurd."
+    highlight: [DF]
+    hint: |
+      So it measures the difference, the unit {DF}: absurd.
+
+  - part: proof
+    text: "Therefore G is not the same with any one of the numbers A, B, C."
+    highlight: [A, B, C]
+    hint: |
+      *G* is new.
+
+  - part: proof
+    text: "And by hypothesis it is prime."
+    hint: |
+      And prime.
+
+  - part: proof
+    text: "Therefore the prime numbers A, B, C, G have been found which are more than the assigned multitude of A, B, C."
+    highlight: [A, B, C]
+    hint: |
+      More primes than the given ones.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [4, 5, 6, 7, 8]
+      text: |
+        Let $N = p_1 p_2 \cdots p_n + 1$ and let $q$ be a prime factor of $N$ (possibly $N$ itself).
+    - steps: [9, 10, 11, 12, 13, 14, 15]
+      text: |
+        If $q = p_i$, then $q \mid N - p_1\cdots p_n = 1$: impossible. $\blacksquare$
+  closing: |
+    The proof is direct, not by contradiction: it constructs a new prime from any finite list. It is often
+    misremembered as "suppose there are finitely many primes …".
+
+commentary: |
+  One of the most famous proofs in mathematics. Note what it does *not* say: that $p_1 \cdots p_n + 1$ is
+  itself prime. It need not be: $2 \cdot 3 \cdot 5 \cdot 7 \cdot 11 \cdot 13 + 1 = 30031 = 59 \cdot 509$.
+
+  Euclid does not speak of an "infinite" set; Greek mathematics avoided actual infinity. The enunciation is
+  potential: given any multitude, there are more.
+
+gaps: |
+  - Euclid shows three primes; the argument is general.
+
+historical: |
+  G. H. Hardy, in *A Mathematician's Apology*, chose this proof and the irrationality of $\sqrt2$ as his two
+  examples of "first-rate" mathematics.

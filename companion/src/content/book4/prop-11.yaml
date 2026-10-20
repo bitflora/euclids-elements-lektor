@@ -1,0 +1,198 @@
+id: IV.11
+kind: problem
+title: Inscribing a regular pentagon in a circle
+
+paraphrase: |
+  In a given circle, inscribe a regular pentagon (all sides and all angles equal).
+
+diagram:
+  width: 350
+  height: 250
+  elements:
+    - "A;point;free;98,30"
+    - "B;point;free;30,80"
+    - "ABCDE;polygon;regularPolygon;A,B,5;0;0;black;#efe4d2"
+    - "C;point;vertex;ABCDE,3"
+    - "D;point;vertex;ABCDE,4"
+    - "E;point;vertex;ABCDE,5"
+    - "circ;circle;circumcircle;A,B,C;0;0;black;0"
+    - "AC;line;connect;A,C"
+    - "AD;line;connect;A,D"
+    - "BD;line;connect;B,D"
+    - "CE;line;connect;C,E"
+    - "G;point;free;210,220"
+    - "H;point;free;310,220"
+    - "F;point;similar;G,H,C,D,A"
+    - "FGH;polygon;triangle;F,G,H;0;0;black;#dfe7ea"
+    - "ACD;polygon;triangle;A,C,D;0;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "EA;line;connect;E,A;0;0;0"
+    - "angCAD;sector;angleMarker;A,C,D"
+    - "angACE;sector;angleMarker;C,A,E"
+    - "angECD;sector;angleMarker;C,E,D"
+    - "angCDB;sector;angleMarker;D,C,B"
+    - "angBDA;sector;angleMarker;D,B,A"
+    - "angBAE;sector;angleMarker;A,B,E"
+    - "angAED;sector;angleMarker;E,A,D"
+  aliases:
+    ABCDEc: circ
+    DB: BD
+    DAC: angCAD
+    CAD: angCAD
+    ACE: angACE
+    ECD: angECD
+    CDB: angCDB
+    BDA: angBDA
+    BAE: angBAE
+    AED: angAED
+  given: [circ, FGH, F, G, H]
+  caption: |
+    Drag {A} or {B} (the pentagon and its circle), or {G}, {H} (the golden triangle {FGH} of [[IV.10]]).
+
+steps:
+  - part: enunciation
+    text: "In a given circle to inscribe an equilateral and equiangular pentagon."
+    highlight: [circ, ABCDE]
+    hint: |
+      A problem: the regular pentagon.
+
+  - part: setting-out
+    text: "Let ABCDE be the given circle;"
+    highlight: [circ]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to inscribe in the circle ABCDE an equilateral and equiangular pentagon."
+    highlight: [circ]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let the isosceles triangle FGH be set out having each of the angles at G, H double of the angle at F;"
+    highlight: [FGH]
+    hint: |
+      The golden triangle of [[IV.10]].
+
+  - part: construction
+    text: "let there be inscribed in the circle ABCDE the triangle ACD equiangular with the triangle FGH, so that the angle CAD is equal to the angle at F and the angles at G, H respectively equal to the angles ACD, CDA;"
+    highlight: [ACD, FGH]
+    adds: [A, C, D, ACD, AC, AD, CD]
+    hint: |
+      Copy it into the circle ([[IV.2]]).
+
+  - part: proof
+    text: "therefore each of the angles ACD, CDA is also double of the angle CAD."
+    highlight: [ACD]
+    hint: |
+      Base angles 72°, apex 36°.
+
+  - part: construction
+    text: "Now let the angles ACD, CDA be bisected respectively by the straight lines CE, DB,"
+    highlight: [CE, BD]
+    adds: [E, B, CE, BD]
+    hint: |
+      Bisect the base angles ([[I.9]]); the bisectors meet the circle at {E} and {B}.
+
+  - part: construction
+    text: "and let AB, BC, DE, EA be joined."
+    highlight: [AB, BC, DE, EA]
+    adds: [AB, BC, DE, EA, ABCDE]
+    hint: |
+      The pentagon.
+
+  - part: proof
+    text: "Then, since each of the angles ACD, CDA is double of the angle CAD, and they have been bisected by the straight lines CE, DB, therefore the five angles DAC, ACE, ECD, CDB, BDA are equal to one another."
+    highlight: [angCAD, angACE, angECD, angCDB, angBDA]
+    hint: |
+      Five angles of 36°, each inscribed in the circle.
+
+  - part: proof
+    text: "But equal angles stand on equal circumferences;"
+    hint: |
+      [[III.26]].
+
+  - part: proof
+    text: "therefore the five circumferences AB, BC, CD, DE, EA are equal to one another."
+    highlight: [ABCDE]
+    hint: |
+      Five equal arcs.
+
+  - part: proof
+    text: "But equal circumferences are subtended by equal straight lines;"
+    hint: |
+      [[III.29]].
+
+  - part: proof
+    text: "therefore the five straight lines AB, BC, CD, DE, EA are equal to one another;"
+    highlight: [AB, BC, CD, DE, EA]
+    hint: |
+      Five equal sides.
+
+  - part: proof
+    text: "therefore the pentagon ABCDE is equilateral."
+    highlight: [ABCDE]
+    hint: |
+      Equilateral.
+
+  - part: specification
+    text: "I say next that it is also equiangular."
+    highlight: [ABCDE]
+    hint: |
+      Now the angles.
+
+  - part: proof
+    text: "For, since the circumference AB is equal to the circumference DE, let BCD be added to each; therefore the whole circumference ABCD is equal to the whole circumference EDCB."
+    hint: |
+      Add the same arc *BCD* to equal arcs.
+
+  - part: proof
+    text: "And the angle AED stands on the circumference ABCD, and the angle BAE on the circumference EDCB; therefore the angle BAE is also equal to the angle AED."
+    highlight: [angBAE, angAED]
+    hint: |
+      [[III.27]].
+
+  - part: proof
+    text: "For the same reason each of the angles ABC, BCD, CDE is also equal to each of the angles BAE, AED; therefore the pentagon ABCDE is equiangular."
+    highlight: [ABCDE]
+    hint: |
+      All five angles equal.
+
+  - part: conclusion
+    text: "But it was also proved equilateral; therefore in the given circle an equilateral and equiangular pentagon has been inscribed."
+    highlight: [ABCDE]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+      text: Inscribed angles of $36^\circ$ stand on arcs of $72^\circ$, a fifth of the circle; five such arcs give five equal chords.
+    - steps: [14, 15, 16, 17]
+      text: Each angle of the pentagon stands on three fifths of the circle, so all equal $108^\circ$. $\blacksquare$
+  closing: |
+    The regular pentagon is constructible because $\cos 72^\circ = (\sqrt 5 - 1)/4$ involves only square roots.
+    Gauss (1796) showed exactly which regular polygons are constructible; the 17-gon was the first new one
+    since antiquity.
+
+commentary: |
+  The high point of Book IV, resting on the golden section ([[II.11]]) through [[IV.10]]. [[IV.12]]–[[IV.14]]
+  give the circumscribed pentagon and the circles in and about a pentagon.
+
+gaps: |
+  - **The bisectors meet the circle at the right points**: {E} and {B} are taken where they meet the
+    circle — obvious, but not argued.
+
+historical: |
+  The pentagram (the five diagonals of the pentagon) was a recognition sign of the Pythagoreans, and the
+  incommensurability of side and diagonal may have been one of their earliest discoveries of irrationals.

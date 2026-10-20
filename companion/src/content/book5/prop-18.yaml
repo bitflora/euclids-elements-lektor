@@ -1,0 +1,167 @@
+id: V.18
+kind: theorem
+title: Composition (componendo)
+
+paraphrase: |
+  If {AE} : {EB} = {CF} : {FD}, then {AB} : {BE} = {CD} : {FD}. In fractions: if $\frac{a}{b} = \frac{c}{d}$ then
+  $\frac{a + b}{b} = \frac{c + d}{d}$. The converse of [[V.17]].
+
+diagram:
+  width: 300
+  height: 100
+  elements:
+    - "U0;point;free;-1000,30;0;0"
+    - "U1;point;free;1000,30;0;0"
+    - "V0;point;free;-1000,70;0;0"
+    - "V1;point;free;1000,70;0;0"
+    - "A;point;lineSlider;U0,U1,70,30"
+    - "B;point;lineSlider;U0,U1,220,30"
+    - "AB;line;connect;A,B;0;0;magenta"
+    - "E;point;lineSlider;A,B,160,30"
+    - "C;point;lineSlider;V0,V1,20,70"
+    - "D;point;lineSlider;V0,V1,280,50"
+    - "CD;line;connect;C,D;0;0;green"
+    - "F;point;proportion;A,B,C,D,A,E,C,V1"
+    - "G;point;proportion;A,B,F,D,A,E,F,V1"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "CF;line;connect;C,F;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+    - "CG;line;connect;C,G;0;0;0"
+    - "DG;line;connect;D,G;0;0;0"
+  aliases:
+    BE: EB
+    DF: FD
+    GD: DG
+  caption: |
+    {F} is placed so that $AE : EB = CF : FD$. {G} is the hypothetical point of the proof, with {DG} "less than
+    {DF}" — the proof shows it cannot exist.
+
+steps:
+  - part: enunciation
+    text: "If magnitudes be proportional separando, they will also be proportional componendo."
+    highlight: [AE, EB, CF, FD]
+    hint: |
+      $A : B = C : D \Rightarrow (A + B) : B = (C + D) : D$ ([[V.Def.14]]).
+    modern: |
+      $$\frac{AE}{EB} = \frac{CF}{FD} \ \Rightarrow\ \frac{AE + EB}{EB} = \frac{CF + FD}{FD}$$
+    cites: [V.Def.14]
+
+  - part: setting-out
+    text: "Let AE, EB, CF, FD be magnitudes proportional separando, so that, as AE is to EB, so is CF to FD;"
+    highlight: [AE, EB, CF, FD]
+    hint: |
+      The hypothesis.
+
+  - part: specification
+    text: "I say that they will also be proportional componendo, that is, as AB is to BE, so is CD to FD."
+    highlight: [AB, BE, CD, FD]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, if CD be not to DF as AB to BE, then, as AB is to BE, so will CD be either to some magnitude less than DF or to a greater."
+    highlight: [CD, DF, AB, BE]
+    hint: |
+      Suppose not. Then the ratio $AB : BE$ is the ratio of {CD} to some *other* magnitude.
+    explain:
+      implicit: |
+        That, given {AB}, {BE} and {CD}, there *is* a magnitude $X$ with $AB : BE = CD : X$ — a fourth proportional.
+        Euclid assumes it without comment.
+    gap: |
+      **The existence of a fourth proportional** is assumed. For straight lines it can be constructed
+      ([[VI.12]], later); for magnitudes in general it is an unstated postulate. Joyce points out that some
+      fourth proportionals cannot be constructed at all with ruler and compass — doubling the cube asks for
+      one — so "exists" here cannot mean "can be constructed". Book XII uses the same assumption (e.g. in
+      [[XII.2]]).
+
+  - part: setting-out
+    text: "First, let it be in that ratio to a less magnitude DG."
+    highlight: [DG]
+    hint: |
+      Case 1: $AB : BE = CD : DG$ with {DG} < {DF}.
+
+  - part: proof
+    text: "Then, since, as AB is to BE, so is CD to DG, they are magnitudes proportional componendo; so that they will also be proportional separando."
+    highlight: [AB, BE, CD, DG]
+    hint: |
+      Apply [[V.17]] to $AB : BE = CD : DG$.
+
+  - part: proof
+    text: "Therefore, as AE is to EB, so is CG to GD."
+    highlight: [AE, EB, CG, GD]
+    hint: |
+      Subtracting: {AB} − {BE} = {AE}, {CD} − {DG} = {CG}.
+
+  - part: proof
+    text: "But also, by hypothesis, as AE is to EB, so is CF to FD."
+    highlight: [AE, EB, CF, FD]
+    hint: |
+      The hypothesis.
+
+  - part: proof
+    text: "Therefore also, as CG is to GD, so is CF to FD."
+    highlight: [CG, GD, CF, FD]
+    hint: |
+      [[V.11]].
+
+  - part: proof
+    text: "But the first CG is greater than the third CF; therefore the second GD is also greater than the fourth FD."
+    highlight: [CG, CF, GD, FD]
+    hint: |
+      {DG} < {DF} makes {CG} > {CF}; then [[V.14]] gives {GD} > {FD}.
+
+  - part: proof
+    text: "But it is also less: which is impossible."
+    highlight: [GD, FD]
+    hint: |
+      Contradiction with the choice {DG} < {DF}.
+
+  - part: proof
+    text: "Therefore, as AB is to BE, so is not CD to a less magnitude than FD."
+    highlight: [AB, BE, CD, FD]
+    hint: |
+      Case 1 is impossible.
+
+  - part: proof
+    text: "Similarly we can prove that neither is it in that ratio to a greater;"
+    highlight: [CD, FD]
+    hint: |
+      Case 2 likewise.
+
+  - part: proof
+    text: "it is therefore in that ratio to FD itself."
+    highlight: [AB, BE, CD, FD]
+    hint: |
+      Only {FD} is left.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument; it avoids fourth proportionals.* Write $a = AE$,
+    $b = EB$, $c = CF$, $d = FD$, with $a : b = c : d$.
+  lines:
+    - steps: [1, 2, 3]
+      text: |
+        To show $(a + b) : b = (c + d) : d$, fix $m, n$ and compare $m(a + b)$ with $nb$.
+    - steps: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+      text: |
+        If $n \le m$, then $m(a + b) > nb$ and $m(c + d) > nd$ outright. If $n > m$, then
+        $m(a + b) \gtreqless nb \iff ma \gtreqless (n - m)b$, which by hypothesis matches
+        $mc \gtreqless (n - m)d \iff m(c + d) \gtreqless nd$. $\blacksquare$
+  closing: |
+    A direct proof along the lines of [[V.17]], needing no fourth proportional.
+
+commentary: |
+  V.18 is the converse of [[V.17]], but Euclid does not prove it directly. He argues by contradiction,
+  and for that needs a fourth proportional. The objection is an old one, and Heath discusses it together
+  with direct proofs that avoid the assumption.

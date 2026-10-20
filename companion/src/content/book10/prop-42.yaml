@@ -1,0 +1,124 @@
+id: X.42
+kind: theorem
+title: A binomial divides into its terms at only one point
+
+paraphrase: |
+  A binomial line {AB} can be split into two rational lines commensurable in square only in just one way.
+  In algebra: if $\sqrt a + \sqrt b = \sqrt c + \sqrt d$ (suitably), then $\{a, b\} = \{c, d\}$.
+
+diagram:
+  width: 260
+  height: 70
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "B;point;lineSlider;A0,A3,220,0"
+    - "AB;line;connect;A,B;0;0"
+    - "C;point;lineSlider;A0,A3,170,0"
+    - "D;point;lineSlider;A0,A3,130,0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+  aliases: { BA: AB, CA: AC, BC: CB, DA: AD, BD: DB }
+  caption: |
+    {AB} divided at {C} and, supposedly, at {D}.
+
+steps:
+  - part: enunciation
+    text: "A binomial straight line is divided into its terms at one point only."
+    highlight: [AB]
+    hint: |
+      The terms of a binomial are unique.
+    modern: |
+      $\sqrt{p} + \sqrt{q} = \sqrt{r} + \sqrt{s}$ (rational squares, irrational ratios) $\Rightarrow \{p, q\} =
+      \{r, s\}$.
+
+  - part: setting-out
+    text: "Let AB be a binomial straight line divided into its terms at C; therefore AC, CB are rational straight lines commensurable in square only."
+    highlight: [AC, CB]
+    hint: |
+      {AB} = {AC} + {CB}, rational and commensurable in square only.
+
+  - part: specification
+    text: "I say that AB is not divided at another point into two rational straight lines commensurable in square only."
+    highlight: [AB]
+    hint: |
+      To prove: no other such division.
+
+  - part: proof
+    text: "For, if possible, let it be divided at D also, so that AD, DB are also rational straight lines commensurable in square only."
+    highlight: [AD, DB]
+    hint: |
+      Suppose a second division at {D}.
+
+  - part: proof
+    text: "It is then manifest that AC is not the same with DB."
+    highlight: [AC, DB]
+    hint: |
+      {AC} ≠ {DB} …
+
+  - part: proof
+    text: "For, if possible, let it be so."
+    highlight: [AC, DB]
+    hint: |
+      … for if equal …
+
+  - part: proof
+    text: "Then AD will also be the same as CB, and, as AC is to CB, so will BD be to DA; thus AB will be divided at D also in the same way as by the division at C: which is contrary to the hypothesis."
+    highlight: [AD, CB]
+    hint: |
+      … the division at {D} would be the same as at {C}, just reversed.
+
+  - part: proof
+    text: "Therefore AC is not the same with DB."
+    highlight: [AC, DB]
+    hint: |
+      So {AC} ≠ {DB}.
+
+  - part: proof
+    text: "For this reason also the points C, D are not equidistant from the point of bisection."
+    highlight: [AB]
+    hint: |
+      And {C}, {D} are at different distances from the midpoint.
+
+  - part: proof
+    text: "Therefore that by which the squares on AC, CB differ from the squares on AD, DB is also that by which twice the rectangle AD, DB differs from twice the rectangle AC, CB, because both the squares on AC, CB together with twice the rectangle AC, CB, and the squares on AD, DB together with twice the rectangle AD, DB, are equal to the square on AB."
+    highlight: [AC, CB, AD, DB]
+    hint: |
+      sq({AC}) + sq({CB}) + 2·rect = sq({AB}) = sq({AD}) + sq({DB}) + 2·rect ([[II.4]]); so the sums of squares
+      differ by exactly as much as the doubled rectangles.
+
+  - part: proof
+    text: "But the squares on AC, CB differ from the squares on AD, DB by a rational area, for both are rational; therefore twice the rectangle AD, DB also differs from twice the rectangle AC, CB by a rational area, though they are medial: which is absurd, for a medial area does not exceed a medial by a rational area."
+    highlight: [AC, CB, AD, DB]
+    hint: |
+      The sums of squares are rational, so the medial doubled rectangles ([[X.21]]) differ by a rational area —
+      impossible ([[X.26]]).
+    explain:
+      implicit: |
+        The difference is not zero: by the lemma of [[X.41]], the division nearer the middle has the smaller sum
+        of squares.
+
+  - part: proof
+    text: "Therefore a binomial straight line is not divided at different points; therefore it is divided at one point only."
+    highlight: [AB]
+    hint: |
+      Only one division.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10]
+      text: |
+        $(\sqrt p + \sqrt q)^2 = p + q + 2\sqrt{pq}$; two divisions would give $2\sqrt{pq} - 2\sqrt{rs} = r + s - p
+        - q$, rational and nonzero, contradicting [[X.26]]. $\blacksquare$
+
+commentary: |
+  [[X.42]]–[[X.47]] prove that each of the six additive irrationals splits into its components in only one
+  way — so the six names are well defined, and the "terms" of a binomial are determined.

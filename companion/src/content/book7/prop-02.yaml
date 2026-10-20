@@ -1,0 +1,243 @@
+id: VII.2
+kind: problem
+title: The greatest common measure of two numbers (the Euclidean algorithm)
+
+paraphrase: |
+  To find the greatest common divisor of two numbers that are not coprime: subtract the smaller from the
+  larger repeatedly, then the remainder from the smaller, and so on, until one remainder measures the one
+  before it. That remainder is the greatest common measure.
+
+diagram:
+  width: 120
+  height: 280
+  elements:
+    - "A0;point;free;30,-1000;0;0"
+    - "A3;point;free;30,1000;0;0"
+    - "C0;point;free;60,-1000;0;0"
+    - "C3;point;free;60,1000;0;0"
+    - "G0;point;free;90,-1000;0;0"
+    - "G3;point;free;90,1000;0;0"
+    - "A;point;lineSlider;A0,A3,30,30"
+    - "C;point;lineSlider;C0,C3,60,30"
+    - "G1;point;lineSlider;G0,G3,90,30;0"
+    - "F;point;lineSlider;C,C3,60,60"
+    - "E';point;cutoff;A,A3,C,F;0;0"
+    - "E;point;cutoff;E',A3,C,F"
+    - "D';point;cutoff;F,C3,A,E;0;0"
+    - "D;point;cutoff;D',C3,A,E"
+    - "B;point;cutoff;E,A3,C,D"
+    - "AB;line;connect;A,B"
+    - "CD;line;connect;C,D"
+    - "G2;point;cutoff;G1,G3,C,F;0"
+    - "G;line;connect;G1,G2;black"
+    - "BE;line;connect;B,E;0;0;0"
+    - "EA;line;connect;E,A;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "FC;line;connect;F,C;0;0;0"
+  aliases: { BA: AB, DC: CD, AE: EA, CF: FC }
+  caption: |
+    {CD} measures {BE} leaving {EA}; {EA} measures {DF} leaving {FC}; {FC} measures {AE} exactly, so {CF} is
+    the greatest common measure. {G} is the supposed greater common measure of the proof by contradiction.
+
+steps:
+  - part: enunciation
+    text: "Given two numbers not prime to one another, to find their greatest common measure."
+    highlight: [AB, CD]
+    hint: |
+      Find the greatest common divisor of two numbers.
+    modern: |
+      Given $a, b$ with $\gcd(a, b) > 1$, find $\gcd(a, b)$.
+
+  - part: setting-out
+    text: "Let AB, CD be the two given numbers not prime to one another."
+    highlight: [AB, CD]
+    hint: |
+      The two numbers {AB} > {CD}, not coprime.
+
+  - part: specification
+    text: "Thus it is required to find the greatest common measure of AB, CD."
+    highlight: [AB, CD]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "If now CD measures AB—and it also measures itself—CD is a common measure of CD, AB."
+    highlight: [CD, AB]
+    hint: |
+      Easy case first: if the smaller measures the larger, it is a common measure.
+
+  - part: proof
+    text: "And it is manifest that it is also the greatest; for no greater number than CD will measure CD."
+    highlight: [CD]
+    hint: |
+      And it is the greatest, since nothing greater than {CD} measures {CD}.
+    modern: |
+      If $b \mid a$, then $\gcd(a, b) = b$.
+
+  - part: construction
+    text: "But, if CD does not measure AB, then, the less of the numbers AB, CD being continually subtracted from the greater, some number will be left which will measure the one before it."
+    highlight: [AB, CD]
+    hint: |
+      Otherwise run the algorithm. It must stop at a remainder that measures the one before it.
+
+  - part: proof
+    text: "For an unit will not be left; otherwise AB, CD will be prime to one another, which is contrary to the hypothesis."
+    highlight: [AB, CD]
+    hint: |
+      It cannot end in the unit, since then the numbers would be coprime by [[VII.1]].
+    explain:
+      follows: |
+        The process must end somehow: either a remainder measures the one before it, or the remainder is the
+        unit (which measures everything). The second is excluded by [[VII.1]].
+      implicit: |
+        That the process ends at all (the remainders strictly decrease).
+
+  - part: proof
+    text: "Therefore some number will be left which will measure the one before it."
+    highlight: [AB, CD]
+    hint: |
+      So it ends with a number measuring the previous remainder.
+
+  - part: construction
+    text: "Now let CD, measuring BE, leave EA less than itself, let EA, measuring DF, leave FC less than itself, and let CF measure AE."
+    highlight: [BE, EA, DF, FC]
+    hint: |
+      In the figure: {CD} into {BE} leaves {EA}; {EA} into {DF} leaves {FC}; {CF} measures {AE} exactly.
+    modern: |
+      $a = q_1 b + r_1,\ b = q_2 r_1 + r_2,\ r_1 = q_3 r_2$.
+
+  - part: proof
+    text: "Since then, CF measures AE, and AE measures DF, therefore CF will also measure DF."
+    highlight: [FC, EA, DF]
+    hint: |
+      Work back up: {CF} measures {AE}, hence {DF}.
+
+  - part: proof
+    text: "But it also measures itself; therefore it will also measure the whole CD."
+    highlight: [FC, DF, CD]
+    hint: |
+      {CF} measures {DF} and itself, so their sum {CD}.
+    explain:
+      fact: |
+        A common measure of two numbers measures their sum.
+
+  - part: proof
+    text: "But CD measures BE; therefore CF also measures BE."
+    highlight: [FC, CD, BE]
+    hint: |
+      {CF} measures {CD}, which measures {BE}.
+
+  - part: proof
+    text: "But it also measures EA; therefore it will also measure the whole BA."
+    highlight: [FC, BE, EA, AB]
+    hint: |
+      {CF} measures {BE} and {EA}, so all of {BA}.
+
+  - part: proof
+    text: "But it also measures CD; therefore CF measures AB, CD."
+    highlight: [FC, AB, CD]
+    hint: |
+      So {CF} measures both numbers.
+
+  - part: proof
+    text: "Therefore CF is a common measure of AB, CD."
+    highlight: [FC]
+    hint: |
+      {CF} is a common measure.
+
+  - part: specification
+    text: "I say next that it is also the greatest."
+    highlight: [FC]
+    hint: |
+      Now: no common measure is greater.
+
+  - part: proof
+    text: "For, if CF is not the greatest common measure of AB, CD, some number which is greater than CF will measure the numbers AB, CD."
+    highlight: [AB, CD]
+    hint: |
+      Suppose a greater common measure exists.
+
+  - part: construction
+    text: "Let such a number measure them, and let it be G."
+    highlight: [G]
+    hint: |
+      Call it {G}.
+
+  - part: proof
+    text: "Now, since G measures CD, while CD measures BE, G also measures BE."
+    highlight: [G, CD, BE]
+    hint: |
+      Run the algorithm's chain downward, as in [[VII.1]]: {G} measures {BE}.
+
+  - part: proof
+    text: "But it also measures the whole BA; therefore it will also measure the remainder AE."
+    highlight: [G, AB, EA]
+    hint: |
+      … hence the remainder {AE} …
+
+  - part: proof
+    text: "But AE measures DF; therefore G will also measure DF."
+    highlight: [G, EA, DF]
+    hint: |
+      … hence {DF} …
+
+  - part: proof
+    text: "But it also measures the whole DC; therefore it will also measure the remainder CF, that is, the greater will measure the less: which is impossible."
+    highlight: [G, CD, FC]
+    hint: |
+      … hence {CF}. But {G} is greater than {CF}, and the greater cannot measure the less.
+
+  - part: proof
+    text: "Therefore no number which is greater than CF will measure the numbers AB, CD; therefore CF is the greatest common measure of AB, CD."
+    highlight: [FC, AB, CD]
+    hint: |
+      So {CF} is the greatest common measure.
+    explain:
+      implicit: |
+        The argument proves more than "greatest": every common measure measures {CF}. That stronger fact is
+        the porism printed after the proposition, and it is what [[VII.3]] and later propositions use.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Run the division algorithm $r_{k-1} = q_{k+1} r_k +
+    r_{k+1}$ from $r_{-1} = a$, $r_0 = b$ until $r_{n+1} = 0$.
+  lines:
+    - steps: [3, 4]
+      text: |
+        If $b \mid a$, then $\gcd(a, b) = b$.
+    - steps: [5, 6, 7]
+      text: |
+        Otherwise the remainders decrease, so the process stops; by [[VII.1]] the last nonzero remainder
+        $r_n$ is not $1$.
+    - steps: [8, 9, 10, 11, 12, 13, 14]
+      text: |
+        Backwards: $r_n \mid r_{n-1}$, and if $r_n$ divides $r_k$ and $r_{k+1}$ it divides $r_{k-1} = q
+        r_k + r_{k+1}$; so $r_n \mid a$ and $r_n \mid b$.
+    - steps: [15, 16, 17, 18, 19, 20, 21, 22]
+      text: |
+        Forwards: any common divisor $g$ of $a, b$ divides every $r_k$, so $g \mid r_n$, and $g \le r_n$.
+        Hence $r_n = \gcd(a, b)$. $\blacksquare$
+  closing: |
+    The porism — every common divisor divides the gcd — is the real content, and it is what modern
+    treatments take as the definition of "greatest" common divisor.
+
+commentary: |
+  The first *problem* in the arithmetic books. Euclid treats coprime numbers separately ([[VII.1]]) because
+  for him the unit is not a number, so "the greatest common measure" of coprime numbers would not be a
+  number at all.
+
+  The **porism** printed after the proof — a number measuring two numbers measures their greatest common
+  measure — is cited constantly: in [[VII.3]], [[VII.33]], [[VII.34]], [[VII.36]] and beyond.
+
+  The same algorithm for magnitudes is [[X.3]] (and [[X.2]] is its failure for incommensurables).
+
+gaps: |
+  - **Termination** is assumed: Euclid says "some number will be left" without arguing that the subtractions
+    must stop.
+  - **Typical case**: three stages are shown.
+  - Sums and differences of numbers with a common measure have that common measure: used without proof.
+
+historical: |
+  Knuth calls it "the granddaddy of all algorithms, because it is the oldest nontrivial algorithm that has
+  survived to the present day." It is described here with subtraction, not division; the quotient never
+  appears.

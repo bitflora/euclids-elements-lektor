@@ -1,0 +1,65 @@
+# Book II, Definitions 1–2. Euclid's words come from Heath via the extracted
+# JSON; everything here is this edition's commentary.
+
+items:
+  - id: II.Def.1
+    title: The rectangle contained by two lines
+    paraphrase: |
+      A rectangle is said to be *contained* by two of its sides that meet at a right angle. So
+      "the rectangle contained by *AB* and *BC*" means the rectangle with those two adjacent sides.
+    meaning: |
+      This is a naming convention, and the whole of Book II depends on it. Euclid has no way to
+      multiply two lengths; instead he speaks of the rectangle they *contain*. Where we would
+      write $ab$, Euclid writes "the rectangle contained by *a*, *b*" — and where we write
+      $a^2$, "the square on *a*".
+    modern: |
+      "The rectangle $a, b$" corresponds to the product $ab$; "the square on $a$" to $a^2$.
+      Equality of such figures means equality of area.
+    examples:
+      - |
+        the rectangle with adjacent sides *AB* and *BC*; Euclid later shortens this to "the rectangle *AB*, *BC*"
+      - any square, which is the rectangle contained by a side and itself
+    nonExamples:
+      - a parallelogram without a right angle — it is not "contained" by its sides in this sense
+    notes: |
+      Two lines need not be sides of the same figure to "contain" a rectangle: in [[II.1]] the
+      rectangle contained by a separate line *A* and *BC* is built by setting *A* up at right
+      angles to *BC*. Only the lengths matter. Heath notes (on [[II.1]]) that from there on Euclid
+      often drops even the word "contained": "the rectangle *A*, *BC*".
+    interpretations: |
+      **Geometric algebra.** Since the 19th century (Zeuthen, Tannery) many historians have read
+      Book II as algebra in geometric dress: identities such as $(a+b)^2 = a^2 + 2ab + b^2$ ([[II.4]])
+      stated with rectangles and squares. Others (notably Unguru, 1975) object that this reading
+      imposes modern algebra on a purely geometric text. The definition itself is neutral: it fixes
+      a name for a figure.
+    figure: |
+      <svg viewBox="0 0 300 120"><rect class="fill" x="60" y="25" width="150" height="70"/><line class="l2" x1="60" y1="95" x2="210" y2="95"/><line class="l2" x1="60" y1="25" x2="60" y2="95"/><path class="thin" d="M60,85 h10 v10"/><text class="fig-label" x="45" y="22">A</text><text class="fig-label" x="45" y="108">B</text><text class="fig-label" x="214" y="108">C</text><text class="fig-note" x="240" y="62">"the rectangle</text><text class="fig-note" x="240" y="76">AB, BC"</text></svg>
+
+  - id: II.Def.2
+    title: Gnomon
+    paraphrase: |
+      In a parallelogram cut by lines through a point of its diagonal, a *gnomon* is one of the
+      small parallelograms along the diagonal together with the two complements — an L-shaped figure.
+    meaning: |
+      Refers back to [[I.43]]: lines through a point *K* of the diagonal, parallel to the sides,
+      cut the parallelogram into two parallelograms "about the diameter" and two *complements*.
+      Take one of the diagonal parallelograms with both complements: what is left of the whole
+      when the other diagonal parallelogram is removed is a gnomon.
+    modern: |
+      In a square of side $a + b$ cut into squares $a^2$, $b^2$ and two rectangles $ab$, the gnomon
+      round the square $a^2$ is $b^2 + 2ab$, the difference $(a+b)^2 - a^2$.
+    examples:
+      - the L-shaped region of a square left when a smaller square is removed from one corner
+      - |
+        "the gnomon *NOP*" of [[II.5]] and [[II.6]], marked in Heath's figures by three letters and a curve
+    notes: |
+      The word means a carpenter's square, or the upright pointer of a sundial (compare the note on
+      [[I.12]]). Heath notes that Euclid's figures mark a gnomon with three letters placed on its
+      three parts and a dotted arc — clearer, he says, than the usual textbook practice (his note on
+      [[II.5]]).
+    interpretations: |
+      Euclid's definition is for any parallelogram, but in Book II gnomons are always taken in
+      squares. Heron later generalised the term to any figure which, added to a figure, makes a
+      similar figure.
+    figure: |
+      <svg viewBox="0 0 300 130"><rect class="l" x="80" y="10" width="110" height="110"/><path class="fill" d="M80,10 h110 v110 h-40 v-70 h-70 z"/><rect class="fill2" x="80" y="50" width="70" height="70"/><line class="thin" x1="80" y1="120" x2="190" y2="10"/><line class="l" x1="150" y1="10" x2="150" y2="120"/><line class="l" x1="80" y1="50" x2="190" y2="50"/><text class="fig-note" x="225" y="40">gnomon</text><text class="fig-note" x="225" y="54">(shaded L)</text></svg>

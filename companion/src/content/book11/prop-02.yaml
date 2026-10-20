@@ -1,0 +1,97 @@
+id: XI.2
+kind: theorem
+title: Two intersecting lines lie in one plane, and so does every triangle
+
+paraphrase: |
+  Two straight lines that cut one another lie in one plane; and every triangle lies in one plane.
+
+diagram:
+  width: 250
+  height: 300
+  elements:
+    - "A;point;free;60,40"
+    - "B;point;free;210,250"
+    - "C;point;free;50,260"
+    - "D;point;free;190,50"
+    - "E;point;intersection;A,B,C,D"
+    - "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;random"
+    - "F;point;lineSlider;C,E,80,190"
+    - "G;point;lineSlider;B,E,150,180"
+    - "H;point;lineSlider;C,B,100,200"
+    - "K;point;lineSlider;C,B,140,200"
+    - "FG;line;connect;F,G"
+    - "FH;line;connect;F,H"
+    - "GK;line;connect;G,K"
+    - "EC;line;connect;E,C;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "ECB;polygon;triangle;E,C,B;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+  aliases: { GF: FG, HF: FH, KG: GK, CE: EC, BE: EB, BA: AB, DC: CD }
+  caption: |
+    {AB} and {CD} cut at {E}; the triangle {ECB} with points {F}, {G} on its sides.
+
+steps:
+  - part: enunciation
+    text: "If two straight lines cut one another, they are in one plane, and every triangle is in one plane."
+    highlight: [E]
+    hint: |
+      Intersecting lines determine a plane.
+    modern: |
+      Two intersecting lines (or three non-collinear points) determine a unique plane.
+
+  - part: setting-out
+    text: "For let the two straight lines AB, CD cut one another at the point E; I say that AB, CD are in one plane, and every triangle is in one plane."
+    highlight: [E]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let points F, G be taken at random on EC, EB, let CB, FG be joined, and let FH, GK be drawn across; I say first that the triangle ECB is in one plane."
+    highlight: [FG, FH, GK]
+    hint: |
+      Points {F}, {G} on {EC}, {EB}; join *CB*, {FG}; draw {FH}, {GK}.
+
+  - part: proof
+    text: "For, if part of the triangle ECB, either FHC or GBK, is in the plane of reference, and the rest in another, a part also of one of the straight lines EC, EB will be in the plane of reference, and a part in another."
+    highlight: [FG]
+    hint: |
+      If part of the triangle were in the plane and part out, part of {EC} or {EB} would be in and part out …
+
+  - part: proof
+    text: "But, if the part FCBG of the triangle ECB be in the plane of reference, and the rest in another, a part also of both the straight lines EC, EB will be in the plane of reference and a part in another: which was proved absurd."
+    highlight: [FG]
+    hint: |
+      … contradicting [[XI.1]].
+
+  - part: proof
+    text: "Therefore the triangle ECB is in one plane."
+    highlight: [E]
+    hint: |
+      So the triangle {ECB} is in one plane.
+
+  - part: proof
+    text: "But, in whatever plane the triangle ECB is, in that plane also is each of the straight lines EC, EB, and, in whatever plane each of the straight lines EC, EB is, in that plane are AB, CD also."
+    highlight: [E]
+    hint: |
+      And so are {EC}, {EB}, and with them {AB}, {CD} ([[XI.1]]).
+
+  - part: proof
+    text: "Therefore the straight lines AB, CD are in one plane, and every triangle is in one plane."
+    highlight: [E]
+    hint: |
+      Done.
+    gap: |
+      Joyce: the proof never produces a plane. "The plane of reference" is assumed to contain part of the
+      triangle; nothing shows that some plane contains the whole of it.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Also an axiom in modern treatments (Hilbert I.4–5: three non-collinear points determine a plane).
+        $\blacksquare$

@@ -1,0 +1,204 @@
+id: III.14
+kind: theorem
+title: Equal chords are equally distant from the centre
+
+paraphrase: |
+  In a circle, equal chords are the same distance from the centre, and chords the same distance from
+  the centre are equal.
+
+diagram:
+  width: 270
+  height: 270
+  elements:
+    - "A;point;free;135,235"
+    - "E;point;free;135,135"
+    - "ABDC;circle;radius;E,A;0;0;black;0"
+    - "B;point;circleSlider;ABDC,40,70"
+    - "AB;line;connect;A,B"
+    - "C;point;circleSlider;ABDC,150,35"
+    - "ECD;polygon;similar;E,C,E,B,A;0;0;0;0"
+    - "D;point;vertex;ECD,3"
+    - "CD;line;connect;C,D"
+    - "EA;line;connect;E,A"
+    - "EC;line;connect;E,C"
+    - "F;point;midpoint;AB"
+    - "G;point;midpoint;CD"
+    - "EF;line;connect;E,F"
+    - "EG;line;connect;E,G"
+    - "AF;line;connect;A,F;0;0;0"
+    - "FB;line;connect;F,B;0;0;0"
+    - "CG;line;connect;C,G;0;0;0"
+    - "EAF;polygon;triangle;E,A,F;0;0;0;0"
+    - "ECG;polygon;triangle;E,C,G;0;0;0;0"
+  aliases:
+    AE: EA
+    CE: EC
+    FE: EF
+    GE: EG
+    FA: AF
+    GC: CG
+  given: [A, B, C, D, E, ABDC, AB, CD]
+  caption: |
+    Drag {A} or {C} and slide {B}. {CD} is kept equal to {AB}; the perpendiculars {EF} and {EG} stay equal.
+
+steps:
+  - part: enunciation
+    text: "In a circle equal straight lines are equally distant from the centre, and those which are equally distant from the centre are equal to one another."
+    highlight: [AB, CD, EF, EG]
+    hint: |
+      Equal chords ⇔ equal distances from the centre.
+
+  - part: setting-out
+    text: "Let ABDC be a circle, and let AB, CD be equal straight lines in it;"
+    highlight: [AB, CD]
+    hint: |
+      First half: {AB} = {CD}.
+
+  - part: specification
+    text: "I say that AB, CD are equally distant from the centre."
+    highlight: [EF, EG]
+    hint: |
+      To prove: the perpendiculars from the centre are equal ([[III.Def.4]]).
+
+  - part: construction
+    text: "For let the centre of the circle ABDC be taken, and let it be E;"
+    highlight: [E]
+    hint: |
+      The centre {E} ([[III.1]]).
+
+  - part: construction
+    text: "from E let EF, EG be drawn perpendicular to AB, CD, and let AE, EC be joined."
+    highlight: [EF, EG, EA, EC]
+    hint: |
+      Perpendiculars from the centre ([[I.12]]), and two radii.
+    cites: [I.12]
+
+  - part: proof
+    text: "Then, since a straight line EF through the centre cuts a straight line AB not through the centre at right angles, it also bisects it."
+    highlight: [EF, AB]
+    hint: |
+      [[III.3]].
+
+  - part: proof
+    text: "Therefore AF is equal to FB; therefore AB is double of AF."
+    highlight: [AF, FB]
+    hint: |
+      {F} is the midpoint.
+
+  - part: proof
+    text: "For the same reason CD is also double of CG; and AB is equal to CD; therefore AF is also equal to CG."
+    highlight: [CG, AF]
+    hint: |
+      Halves of equals.
+
+  - part: proof
+    text: "And, since AE is equal to EC, the square on AE is also equal to the square on EC."
+    highlight: [EA, EC]
+    hint: |
+      Radii.
+
+  - part: proof
+    text: "But the squares on AF, EF are equal to the square on AE, for the angle at F is right; and the squares on EG, GC are equal to the square on EC, for the angle at G is right;"
+    highlight: [EAF, ECG]
+    hint: |
+      Pythagoras twice ([[I.47]]).
+
+  - part: proof
+    text: "therefore the squares on AF, FE are equal to the squares on CG, GE, of which the square on AF is equal to the square on CG, for AF is equal to CG;"
+    highlight: [AF, CG]
+    hint: |
+      $AF^2 + FE^2 = CG^2 + GE^2$ and $AF^2 = CG^2$.
+
+  - part: proof
+    text: "therefore the square on FE which remains is equal to the square on EG, therefore EF is equal to EG."
+    highlight: [EF, EG]
+    hint: |
+      So $EF = EG$.
+    explain:
+      implicit: |
+        Equal squares ⇒ equal sides, as in [[I.48]].
+
+  - part: proof
+    text: "But in a circle straight lines are said to be equally distant from the centre when the perpendiculars drawn to them from the centre are equal;"
+    highlight: [EF, EG]
+    hint: |
+      [[III.Def.4]].
+
+  - part: proof
+    text: "therefore AB, CD are equally distant from the centre."
+    highlight: [AB, CD]
+    hint: |
+      First half proved.
+
+  - part: setting-out
+    text: "Next, let the straight lines AB, CD be equally distant from the centre; that is, let EF be equal to EG."
+    highlight: [EF, EG]
+    hint: |
+      Converse: {EF} = {EG}.
+
+  - part: specification
+    text: "I say that AB is also equal to CD."
+    highlight: [AB, CD]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, with the same construction, we can prove, similarly, that AB is double of AF, and CD of CG."
+    highlight: [AF, CG]
+    hint: |
+      As before.
+
+  - part: proof
+    text: "And, since AE is equal to CE, the square on AE is equal to the square on CE."
+    highlight: [EA, EC]
+    hint: |
+      Radii.
+
+  - part: proof
+    text: "But the squares on EF, FA are equal to the square on AE, and the squares on EG, GC equal to the square on CE."
+    highlight: [EAF, ECG]
+    hint: |
+      [[I.47]].
+
+  - part: proof
+    text: "Therefore the squares on EF, FA are equal to the squares on EG, GC, of which the square on EF is equal to the square on EG, for EF is equal to EG;"
+    highlight: [EF, EG]
+    hint: |
+      Same bookkeeping.
+
+  - part: proof
+    text: "therefore the square on AF which remains is equal to the square on CG; therefore AF is equal to CG."
+    highlight: [AF, CG]
+    hint: |
+      $AF = CG$.
+
+  - part: proof
+    text: "And AB is double of AF, and CD double of CG; therefore AB is equal to CD."
+    highlight: [AB, CD]
+    hint: |
+      Converse proved.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+      text: A chord at distance $d$ from the centre has half-length $\sqrt{r^2 - d^2}$ (Pythagoras).
+    - steps: [14, 15, 16, 17, 18, 19, 20]
+      text: So chord length and distance determine each other. $\blacksquare$
+
+commentary: |
+  The first use of [[I.47]] in Book III. With [[III.15]] it orders chords by distance from the centre.
+
+gaps: |
+  - **Equal squares, equal lines** (steps 11, 20), as in [[I.48]].

@@ -1,0 +1,256 @@
+id: XII.11
+kind: theorem
+title: Cones and cylinders of the same height are as their bases
+
+paraphrase: |
+  Cones of the same height are to one another as their base circles, and so are cylinders of the same height.
+
+diagram:
+  width: 560
+  height: 300
+  elements:
+    - "A0;point;free;-1000,160;0;0"
+    - "A3;point;free;1000,160;0;0"
+    - "A;point;lineSlider;A0,A3,40,0"
+    - "C;point;lineSlider;A0,A3,210,0"
+    - "K;point;midpoint;A,C"
+    - "Kcirc;circle;radius;K,A;0;0;black;random"
+    - "B;point;perpendicular;K,A"
+    - "D;point;extend;B,K,K,A"
+    - "U';point;midpoint;A,B;0;0"
+    - "U;point;cutoff;K,U',K,A"
+    - "V';point;midpoint;B,C;0;0"
+    - "V;point;cutoff;K,V',K,A"
+    - "W';point;midpoint;C,D;0;0"
+    - "W;point;cutoff;K,W',K,A"
+    - "T';point;midpoint;D,A;0;0"
+    - "T;point;cutoff;K,T',K,A"
+    - "AUBVCWDT;polygon;octagon;A,U,B,V,C,W,D,T;0;0;black;random"
+    - "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;random"
+    - "AC;line;connect;A,C"
+    - "E;point;lineSlider;A0,A3,260,0"
+    - "G;point;lineSlider;A0,A3,390,0"
+    - "M;point;midpoint;E,G"
+    - "Mcirc;circle;radius;M,E;0;0;black;random"
+    - "F;point;perpendicular;M,E"
+    - "H;point;extend;F,M,M,E"
+    - "Q';point;midpoint;E,F;0;0"
+    - "Q;point;cutoff;M,Q',M,E"
+    - "R';point;midpoint;F,G;0;0"
+    - "R;point;cutoff;M,R',M,E"
+    - "S';point;midpoint;G,H;0;0"
+    - "S;point;cutoff;M,S',M,E"
+    - "P';point;midpoint;H,E;0;0"
+    - "P;point;cutoff;M,P',M,E"
+    - "EQFRGSHP;polygon;octagon;E,Q,F,R,G,S,H,P;0;0;black;random"
+    - "EFGH;polygon;quadrilateral;E,F,G,H;0;0;black;random"
+    - "EG;line;connect;E,G"
+    - "L3;point;free;2000,-10000;0;0"
+    - "L;point;lineSlider;K,L3,130,40"
+    - "KL;line;connect;K,L"
+    - "N;point;cutoff;M,L3,K,L"
+    - "MN;line;connect;M,N"
+    - "O0;point;free;440,240;0;0"
+    - "O1;point;free;440,160;0;0"
+    - "O2;point;free;480,210;0;0"
+    - "O3;point;free;510,240;0;0"
+    - "O;polyhedron;parallelepiped;O0,O1,O2,O3;black;0;black;random"
+    - "X0;point;free;480,100;0;0"
+    - "X1;point;free;480,60;0;0"
+    - "X2;point;free;500,80;0;0"
+    - "X3;point;free;530,100;0;0"
+    - "X;polyhedron;parallelepiped;X0,X1,X2,X3;black;0;black;random"
+    - "HP;line;connect;H,P;0;0;0"
+    - "PE;line;connect;P,E;0;0;0"
+    - "EQ;line;connect;E,Q;0;0;0"
+    - "QF;line;connect;Q,F;0;0;0"
+    - "FR;line;connect;F,R;0;0;0"
+    - "RG;line;connect;R,G;0;0;0"
+    - "GS;line;connect;G,S;0;0;0"
+    - "SH;line;connect;S,H;0;0;0"
+  aliases: { DTAUBVCW: AUBVCWDT, HPEQFRGS: EQFRGSHP, CA: AC, GE: EG, LK: KL, NM: MN, PH: HP, EP: PE, QE: EQ, FQ: QF, RF: FR, GR: RG, SG: GS, HS: SH }
+  caption: |
+    Base circles {ABCD}, {EFGH} with axes {KL}, {MN}; inscribed similar polygons {DTAUBVCW}, {HPEQFRGS}; {O} is the
+    supposed fourth proportional solid.
+
+steps:
+  - part: enunciation
+    text: "Cones and cylinders which are of the same height are to one another as their bases."
+    highlight: [ABCD, EFGH]
+    hint: |
+      Cones (and cylinders) of equal height are as their bases.
+    modern: |
+      $V = \tfrac13 \pi r^2 h$: with $h$ fixed, $V \propto r^2$.
+
+  - part: setting-out
+    text: "Let there be cones and cylinders of the same height, let the circles ABCD, EFGH be their bases, KL, MN their axes and AC, EG the diameters of their bases; I say that, as the circle ABCD is to the circle EFGH, so is the cone AL to the cone EN."
+    highlight: [ABCD, EFGH, KL, MN]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For, if not, then, as the circle ABCD is to the circle EFGH, so will the cone AL be either to some solid less than the cone EN or to a greater."
+    highlight: [O]
+    hint: |
+      If not, circle {ABCD} : circle {EFGH} = cone *AL* : some solid {O}, smaller or larger than cone *EN*.
+
+  - part: specification
+    text: "First, let it be in that ratio to a less solid O, and let the solid X be equal to that by which the solid O is less than the cone EN; therefore the cone EN is equal to the solids O, X."
+    highlight: [O, X]
+    hint: |
+      Case 1: {O} smaller, by the solid {X}.
+
+  - part: construction
+    text: "Let the square EFGH be inscribed in the circle EFGH; therefore the square is greater than the half of the circle."
+    highlight: [EFGH]
+    hint: |
+      Inscribe the square *EFGH*: more than half the circle.
+
+  - part: construction
+    text: "Let there be set up from the square EFGH a pyramid of equal height with the cone; therefore the pyramid so set up is greater than the half of the cone, inasmuch as, if we circumscribe a square about the circle, and set up from it a pyramid of equal height with the cone, the inscribed pyramid is half of the circumscribed pyramid, for they are to one another as their bases, while the cone is less than the circumscribed pyramid."
+    highlight: [EFGH]
+    hint: |
+      Its pyramid is more than half the cone.
+
+  - part: construction
+    text: "Let the circumferences EF, FG, GH, HE be bisected at the points P, Q, R, S, and let HP, PE, EQ, QF, FR, RG, GS, SH be joined."
+    highlight: [HP, PE, EQ, QF, FR, RG, GS, SH]
+    hint: |
+      Bisect the arcs; join.
+
+  - part: proof
+    text: "Therefore each of the triangles HPE, EQF, FRG, GSH is greater than the half of that segment of the circle which is about it."
+    highlight: [HP, PE, EQ, QF, FR, RG, GS, SH]
+    hint: |
+      Each triangle exceeds half its segment …
+
+  - part: construction
+    text: "On each of the triangles HPE, EQF, FRG, GSH let there be set up a pyramid of equal height with the cone; therefore, also, each of the pyramids so set up is greater than the half of that segment of the cone which is about it."
+    highlight: [HP, PE, EQ, QF, FR, RG, GS, SH]
+    hint: |
+      … and so do the pyramids on them.
+
+  - part: proof
+    text: "Thus, bisecting the circumferences which are left, joining straight lines, setting up on each of the triangles pyramids of equal height with the cone, and doing this continually, we shall leave some segments of the cone which will be less than the solid X."
+    highlight: [HP, PE, EQ, QF, FR, RG, GS, SH]
+    hint: |
+      Repeat until the leftover is less than {X} ([[X.1]]).
+    cites: [X.1]
+
+  - part: proof
+    text: "Let such be left, and let them be the segments on HP, PE, EQ, QF, FR, RG, GS, SH; therefore the remainder, the pyramid of which the polygon HPEQFRGS is the base and the height the same with that of the cone, is greater than the solid O."
+    highlight: [HPEQFRGS]
+    hint: |
+      Then the pyramid on {HPEQFRGS} exceeds {O}.
+
+  - part: construction
+    text: "Let there also be inscribed in the circle ABCD the polygon DTAUBVCW similar and similarly situated to the polygon HPEQFRGS, and on it let a pyramid be set up of equal height with the cone AL."
+    highlight: [DTAUBVCW]
+    hint: |
+      Inscribe the similar polygon {DTAUBVCW} in circle {ABCD} and its pyramid.
+
+  - part: proof
+    text: "Since then, as the square on AC is to the square on EG, so is the polygon DTAUBVCW to the polygon HPEQFRGS, while, as the square on AC is to the square on EG, so is the circle ABCD to the circle EFGH, therefore also, as the circle ABCD is to the circle EFGH, so is the polygon DTAUBVCW to the polygon HPEQFRGS."
+    highlight: [DTAUBVCW, HPEQFRGS, AC, EG]
+    hint: |
+      Polygons as the squares on the diameters ([[XII.1]]); circles likewise ([[XII.2]]).
+
+  - part: proof
+    text: "But, as the circle ABCD is to the circle EFGH, so is the cone AL to the solid O, and, as the polygon DTAUBVCW is to the polygon HPEQFRGS, so is the pyramid of which the polygon DTAUBVCW is the base and the point L the vertex to the pyramid of which the polygon HPEQFRGS is the base and the point N the vertex."
+    highlight: [DTAUBVCW, HPEQFRGS]
+    hint: |
+      Pyramids of equal height as their bases ([[XII.6]]) …
+
+  - part: proof
+    text: "Therefore also, as the cone AL is to the solid O, so is the pyramid of which the polygon DTAUBVCW is the base and the point L the vertex to the pyramid of which the polygon HPEQFRGS is the base and the point N the vertex; therefore, alternately, as the cone AL is to the pyramid in it, so is the solid O to the pyramid in the cone EN."
+    highlight: [DTAUBVCW, HPEQFRGS]
+    hint: |
+      … so cone *AL* : {O} = pyramid : pyramid.
+
+  - part: proof
+    text: "But the cone AL is greater than the pyramid in it; therefore the solid O is also greater than the pyramid in the cone EN."
+    highlight: [DTAUBVCW, O]
+    hint: |
+      The cone exceeds its pyramid, so {O} exceeds the pyramid in cone *EN* ([[V.14]]) …
+    cites: [V.14]
+
+  - part: proof
+    text: "But it is also less: which is absurd."
+    highlight: [O]
+    hint: |
+      … but it is less: absurd.
+
+  - part: proof
+    text: "Therefore the cone AL is not to any solid less than the cone EN as the circle ABCD is to the circle EFGH."
+    highlight: [O]
+    hint: |
+      So not a smaller solid.
+
+  - part: proof
+    text: "Similarly we can prove that neither is the cone EN to any solid less than the cone AL as the circle EFGH is to the circle ABCD."
+    highlight: [O]
+    hint: |
+      Likewise exchanged.
+
+  - part: specification
+    text: "I say next that neither is the cone AL to any solid greater than the cone EN as the circle ABCD is to the circle EFGH."
+    highlight: [O]
+    hint: |
+      Case 2: {O} larger.
+
+  - part: proof
+    text: "For, if possible, let it be in that ratio to a greater solid O; therefore, inversely, as the circle EFGH is to the circle ABCD, so is the solid O to the cone AL."
+    highlight: [O]
+    hint: |
+      Inversely …
+
+  - part: proof
+    text: "But, as the solid O is to the cone AL, so is the cone EN to some solid less than the cone AL; therefore also, as the circle EFGH is to the circle ABCD, so is the cone EN to some solid less than the cone AL: which was proved impossible."
+    highlight: [O]
+    hint: |
+      … reduces to case 1 (lemma of [[XII.2]]).
+
+  - part: proof
+    text: "Therefore the cone AL is not to any solid greater than the cone EN as the circle ABCD is to the circle EFGH."
+    highlight: [O]
+    hint: |
+      So not a larger solid.
+
+  - part: proof
+    text: "But it was proved that neither is it in this ratio to a less solid; therefore, as the circle ABCD is to the circle EFGH, so is the cone AL to the cone EN."
+    highlight: [ABCD, EFGH]
+    hint: |
+      Hence the cones are as the bases.
+
+  - part: proof
+    text: "But, as the cone is to the cone, so is the cylinder to the cylinder, for each is triple of each;"
+    highlight: [ABCD, EFGH]
+    hint: |
+      Cylinders are three times the cones ([[XII.10]]) …
+
+  - part: proof
+    text: "Therefore also, as the circle ABCD is to the circle EFGH, so are the cylinders on them which are of equal height."
+    highlight: [ABCD, EFGH]
+    hint: |
+      … so they too are as the bases.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [ABCD, EFGH]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+      text: |
+        If the ratio were cone$_1 : o$ with $o < $ cone$_2$, an inscribed pyramid in cone$_2$ exceeds $o$; the
+        similar pyramid in cone$_1$ gives $o >$ that pyramid: contradiction.
+    - steps: [19, 20, 21, 22, 23, 24, 25]
+      text: |
+        The other case reduces to it; cylinders follow from [[XII.10]]. $\blacksquare$

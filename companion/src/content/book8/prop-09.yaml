@@ -1,0 +1,205 @@
+id: VIII.9
+kind: theorem
+title: Coprime ends of a progression are powers
+
+paraphrase: |
+  If {A} and {B} are coprime and {C}, {D} fall between them in continued proportion, then as many numbers fall
+  in continued proportion between each of {A}, {B} and the unit. In effect: {A} and {B} are cubes (squares, if
+  one mean; $n$th powers in general).
+
+diagram:
+  width: 500
+  height: 170
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "C0;point;free;-1000,70;0;0"
+    - "C3;point;free;1000,70;0;0"
+    - "D0;point;free;-1000,110;0;0"
+    - "D3;point;free;1000,110;0;0"
+    - "B0;point;free;-1000,150;0;0"
+    - "B3;point;free;1000,150;0;0"
+    - "H0;point;free;-1000,50;0;0"
+    - "H3;point;free;1000,50;0;0"
+    - "E0;point;free;-1000,90;0;0"
+    - "E3;point;free;1000,90;0;0"
+    - "L0;point;free;-1000,130;0;0"
+    - "L3;point;free;1000,130;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,110,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,130,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;proportion;A1,A2,C1,C2,C1,C2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;proportion;A1,A2,C1,C2,D1,D2,B1,B3;0"
+    - "B;line;connect;B1,B2;black"
+    - "E1;point;lineSlider;E0,E3,180,0;0"
+    - "E2;point;lineSlider;E0,E3,202,0;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;C0,C3,230,0;0"
+    - "F2;point;lineSlider;C0,C3,260,0;0"
+    - "F;line;connect;F1,F2;black"
+    - "G1;point;lineSlider;D0,D3,230,0;0"
+    - "G2;point;proportion;A1,A2,C1,C2,F1,F2,G1,D3;0"
+    - "G;line;connect;G1,G2;black"
+    - "H1;point;lineSlider;H0,H3,290,0;0"
+    - "H2;point;proportion;E1,E2,F1,F2,F1,F2,H1,H3;0"
+    - "H;line;connect;H1,H2;black"
+    - "K1;point;lineSlider;E0,E3,290,0;0"
+    - "K2;point;proportion;E1,E2,F1,F2,G1,G2,K1,E3;0"
+    - "K;line;connect;K1,K2;black"
+    - "L1;point;lineSlider;L0,L3,290,0;0"
+    - "L2;point;proportion;E1,E2,G1,G2,G1,G2,L1,L3;0"
+    - "L;line;connect;L1,L2;black"
+    - "M1;point;lineSlider;A0,A3,380,0;0"
+    - "M2;point;proportion;E1,E2,F1,F2,H1,H2,M1,A3;0"
+    - "M;line;connect;M1,M2;black"
+    - "N1;point;lineSlider;C0,C3,380,0;0"
+    - "N2;point;proportion;F1,F2,H1,H2,K1,K2,N1,C3;0"
+    - "N;line;connect;N1,N2;black"
+    - "O1;point;lineSlider;D0,D3,380,0;0"
+    - "O2;point;proportion;G1,G2,K1,K2,L1,L2,O1,D3;0"
+    - "O;line;connect;O1,O2;black"
+    - "P1;point;lineSlider;B0,B3,380,0;0"
+    - "P2;point;proportion;E1,E2,G1,G2,L1,L2,P1,B3;0"
+    - "P;line;connect;P1,P2;black"
+  caption: |
+    {A}, {C}, {D}, {B} in continued proportion, {A}, {B} coprime; {E} is the unit. {F} : {G} is the ratio in
+    lowest terms, {H}, {K}, {L} and {M}, {N}, {O}, {P} the least progressions built from it.
+
+steps:
+  - part: enunciation
+    text: "If two numbers be prime to one another, and numbers fall between them in continued proportion, then, however many numbers fall between them in continued proportion, so many will also fall between each of them and an unit in continued proportion."
+    highlight: [A, B, E]
+    hint: |
+      Coprime ends of a geometric progression of $n$ terms are $(n-1)$th powers.
+    modern: |
+      $\gcd(a, b) = 1$ and $a, c_1, \dots, c_k, b$ geometric $\Rightarrow$ $a = f^{k+1}$, $b = g^{k+1}$.
+
+  - part: setting-out
+    text: "Let A, B be two numbers prime to one another, and let C, D fall between them in continued proportion, and let the unit E be set out;"
+    highlight: [A, C, D, B, E]
+    hint: |
+      {A}, {C}, {D}, {B} in continued proportion, {A}, {B} coprime; {E} the unit.
+
+  - part: specification
+    text: "I say that, as many numbers as fall between A, B in continued proportion, so many will also fall between either of the numbers A, B and the unit in continued proportion."
+    highlight: [A, B, E]
+    hint: |
+      To prove: two numbers fall between {E} and {A}, and between {E} and {B}.
+
+  - part: construction
+    text: "For let two numbers F, G, the least that are in the ratio of A, C, D, B, be taken, three numbers H, K, L with the same property, and others more by one continually, until their multitude is equal to the multitude of A, C, D, B."
+    highlight: [F, G, H, K, L]
+    hint: |
+      The ratio in lowest terms {F} : {G}; then the least progressions {H}, {K}, {L} and so on ([[VIII.2]]).
+
+  - part: construction
+    text: "Let them be taken, and let them be M, N, O, P."
+    highlight: [M, N, O, P]
+    hint: |
+      The four-term one {M}, {N}, {O}, {P}.
+
+  - part: proof
+    text: "It is now manifest that F by multiplying itself has made H and by multiplying H has made M, while G by multiplying itself has made L and by multiplying L has made P."
+    highlight: [F, H, M, G, L, P]
+    hint: |
+      {H} = {F}², {M} = {F}³; {L} = {G}², {P} = {G}³ ([[VIII.2]], porism).
+
+  - part: proof
+    text: "And, since M, N, O, P are the least of those which have the same ratio with F, G, and A, C, D, B are also the least of those which have the same ratio with F, G, while the multitude of the numbers M, N, O, P is equal to the multitude of the numbers A, C, D, B, therefore M, N, O, P are equal to A, C, D, B respectively;"
+    highlight: [M, N, O, P, A, C, D, B]
+    hint: |
+      {A}, {C}, {D}, {B} is least ([[VIII.1]], coprime extremes), so it *is* {M}, {N}, {O}, {P}.
+
+  - part: proof
+    text: "therefore M is equal to A, and P to B."
+    highlight: [M, A, P, B]
+    hint: |
+      {A} = {F}³, {B} = {G}³.
+
+  - part: proof
+    text: "Now, since F by multiplying itself has made H, therefore F measures H according to the units in F."
+    highlight: [F, H]
+    hint: |
+      {H} = {F}·{F}.
+
+  - part: proof
+    text: "But the unit E also measures F according to the units in it; therefore the unit E measures the number F the same number of times as F measures H."
+    highlight: [E, F, H]
+    hint: |
+      As the unit to {F}, so {F} to {H}.
+
+  - part: proof
+    text: "Therefore, as the unit E is to the number F, so is F to H."
+    highlight: [E, F, H]
+    hint: |
+      {E} : {F} = {F} : {H} ([[VII.Def.20]]).
+
+  - part: proof
+    text: "Again, since F by multiplying H has made M, therefore H measures M according to the units in F."
+    highlight: [H, M, F]
+    hint: |
+      {M} = {F}·{H}.
+
+  - part: proof
+    text: "But the unit E also measures the number F according to the units in it; therefore the unit E measures the number F the same number of times as H measures M."
+    highlight: [E, F, H, M]
+    hint: |
+      Likewise.
+
+  - part: proof
+    text: "Therefore, as the unit E is to the number F, so is H to M."
+    highlight: [E, F, H, M]
+    hint: |
+      {E} : {F} = {H} : {M}.
+    cites: [VII.Def.20]
+
+  - part: proof
+    text: "But it was also proved that, as the unit E is to the number F, so is F to H; therefore also, as the unit E is to the number F, so is F to H, and H to M."
+    highlight: [E, F, H, M]
+    hint: |
+      {E}, {F}, {H}, {M} are in continued proportion.
+
+  - part: proof
+    text: "But M is equal to A; therefore, as the unit E is to the number F, so is F to H, and H to A."
+    highlight: [E, F, H, A]
+    hint: |
+      Two numbers {F}, {H} fall between the unit and {A}.
+
+  - part: proof
+    text: "For the same reason also, as the unit E is to the number G, so is G to L and L to B."
+    highlight: [E, G, L, B]
+    hint: |
+      And {G}, {L} between the unit and {B}.
+
+  - part: proof
+    text: "Therefore, as many numbers as have fallen between A, B in continued proportion, so many numbers also have fallen between each of the numbers A, B and the unit E in continued proportion."
+    highlight: [A, B, E]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [4, 5, 6, 7, 8]
+      text: |
+        With ratio $f : g$ in lowest terms, the least four-term progression is $f^3, f^2g, fg^2, g^3$; a
+        progression with coprime ends is least ([[VIII.1]]), so $a = f^3$, $b = g^3$.
+    - steps: [9, 10, 11, 12, 13, 14, 15, 16, 17]
+      text: |
+        And $1, f, f^2, f^3$ and $1, g, g^2, g^3$ are progressions. $\blacksquare$
+
+commentary: |
+  Joyce's example: 8 and 27 are coprime and 8, 12, 18, 27 is a progression; so 8 and 27 are cubes. Euclid
+  has no word for "$n$th power"; "as many numbers fall between it and the unit" is how he says it.

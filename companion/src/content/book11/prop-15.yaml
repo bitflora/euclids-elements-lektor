@@ -1,0 +1,133 @@
+id: XI.15
+kind: theorem
+title: Planes through pairs of parallel lines are parallel
+
+paraphrase: |
+  If two intersecting lines {AB}, {BC} are parallel to two intersecting lines {DE}, {EF} not in the same plane, the
+  planes through them are parallel.
+
+diagram:
+  width: 260
+  height: 310
+  elements:
+    - "X;point;free;100000,200"
+    - "Y;point;free;200,-100000"
+    - "Z;point;free;30000,-100000"
+    - "P0;point;free;30,100;0;0,75,100"
+    - "P2;point;free;180,20;0;0,75,100"
+    - "P1;point;intersection;P0,X,P2,Z;0;0"
+    - "P3;point;intersection;P2,X,P0,Z;0;0"
+    - "P;polygon;quadrilateral;P0,P1,P2,P3;0;0;gray;brighter"
+    - "Q0;point;free;30,280;0;0,75,100"
+    - "Q2;point;free;230,140;0;0,75,100"
+    - "Q1;point;intersection;Q0,X,Q2,Z;0;0"
+    - "Q3;point;intersection;Q2,X,Q0,Z;0;0"
+    - "Q;polygon;quadrilateral;Q0,Q1,Q2,Q3;0;0;gray;brighter"
+    - "A;point;free;70,80"
+    - "B;point;free;110,50"
+    - "C;point;free;140,70"
+    - "AB;line;connect;A,B"
+    - "BC;line;connect;B,C"
+    - "E;point;free;140,160"
+    - "D';point;parallelogram;A,B,E;0;0"
+    - "D;point;lineSlider;E,D',80,210"
+    - "F';point;parallelogram;C,B,E;0;0"
+    - "F;point;lineSlider;E,F',180,210"
+    - "DE;line;connect;D,E"
+    - "EF;line;connect;E,F"
+    - "G;point;lineSlider;B,Y,110,220"
+    - "BG;line;connect;B,G"
+    - "H';point;parallelogram;D,E,G;0;0"
+    - "H;point;lineSlider;G,H',80,250"
+    - "K';point;parallelogram;F,E,G;0;0"
+    - "K;point;lineSlider;G,K',160,250"
+    - "GH;line;connect;G,H"
+    - "GK;line;connect;G,K"
+    - "DEF;polygon;triangle;D,E,F;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "BGH;polygon;triangle;B,G,H;0;0;0"
+    - "BGK;polygon;triangle;B,G,K;0;0;0"
+    - "BA;line;connect;B,A;0;0;0"
+    - "GBA;polygon;triangle;G,B,A;0;0;0"
+    - "GB;line;connect;G,B;0;0;0"
+    - "ABC;polygon;triangle;A,B,C;0;0;0"
+  aliases: { CB: BC, FE: EF, HG: GH, KG: GK }
+  caption: |
+    {BG} perpendicular to the plane of {DE}, {EF}; {GH} ∥ {ED}, {GK} ∥ {EF}.
+
+steps:
+  - part: enunciation
+    text: "If two straight lines meeting one another be parallel to two straight lines meeting one another, not being in the same plane, the planes through them are parallel."
+    highlight: [AB, BC, DE, EF]
+    hint: |
+      Parallel pairs of lines span parallel planes.
+
+  - part: setting-out
+    text: "For let the two straight lines AB, BC meeting one another be parallel to the two straight lines DE, EF meeting one another, not being in the same plane; I say that the planes produced through AB, BC and DE, EF will not meet one another."
+    highlight: [AB, BC, DE, EF]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let BG be drawn from the point B perpendicular to the plane through DE, EF, and let it meet the plane at the point G; through G let GH be drawn parallel to ED, and GK parallel to EF."
+    highlight: [BG, GH, GK]
+    hint: |
+      Drop {BG} ⊥ plane {DEF} ([[XI.11]]); {GH} ∥ {ED}, {GK} ∥ {EF}.
+
+  - part: proof
+    text: "Now, since BG is at right angles to the plane through DE, EF, therefore it will also make right angles with all the straight lines which meet it and are in the plane through DE, EF."
+    highlight: [BG]
+    hint: |
+      {BG} ⊥ every line in that plane through {G} …
+
+  - part: proof
+    text: "But each of the straight lines GH, GK meets it and is in the plane through DE, EF; therefore each of the angles BGH, BGK is right."
+    highlight: [BG, GH, GK]
+    hint: |
+      … so ∠{BGH}, ∠{BGK} are right.
+
+  - part: proof
+    text: "And, since BA is parallel to GH, therefore the angles GBA, BGH are equal to two right angles."
+    highlight: [AB, GH]
+    hint: |
+      {BA} ∥ {GH} ([[XI.9]]), so ∠{GBA} + ∠{BGH} = two right angles ([[I.29]]) …
+
+  - part: proof
+    text: "But the angle BGH is right; therefore the angle GBA is also right; therefore GB is at right angles to BA."
+    highlight: [BG, AB]
+    hint: |
+      … so {GB} ⊥ {BA}.
+
+  - part: proof
+    text: "For the same reason GB is also at right angles to BC."
+    highlight: [BG, BC]
+    hint: |
+      Likewise {GB} ⊥ {BC}.
+
+  - part: proof
+    text: "Since then the straight line GB is set up at right angles to the two straight lines BA, BC which cut one another, therefore GB is also at right angles to the plane through BA, BC."
+    highlight: [BG]
+    hint: |
+      So {GB} ⊥ plane {ABC} ([[XI.4]]).
+
+  - part: proof
+    text: "But planes to which the same straight line is at right angles are parallel; therefore the plane through AB, BC is parallel to the plane through DE, EF."
+    highlight: [BG]
+    hint: |
+      Common perpendicular: parallel planes ([[XI.14]]).
+
+  - part: proof
+    text: "Therefore, if two straight lines meeting one another be parallel to two straight lines meeting one another, not in the same plane, the planes through them are parallel."
+    highlight: [BG]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Both planes are spanned by the same two directions. $\blacksquare$

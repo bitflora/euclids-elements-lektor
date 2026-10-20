@@ -1,0 +1,159 @@
+id: XI.25
+kind: theorem
+title: A parallelepiped cut parallel to its faces is divided as its bases
+
+paraphrase: |
+  If a parallelepiped is cut by a plane parallel to two opposite faces, the two parts are to one another as their
+  bases — proved with the equimultiples of [[V.Def.5]].
+
+diagram:
+  width: 600
+  height: 220
+  elements:
+    - "A;point;free;220,180"
+    - "B;point;free;195,80"
+    - "C;point;free;395,135"
+    - "D;point;parallelogram;B,A,C"
+    - "H;point;free;380,180"
+    - "V;point;parallelogram;C,H,A"
+    - "R;point;parallelogram;B,H,C"
+    - "H';point;parallelogram;B,A,H;0"
+    - "E;point;lineSlider;A,H,290,180"
+    - "F;point;parallelogram;E,A,V"
+    - "G;point;parallelogram;E,A,B"
+    - "U;point;parallelogram;E,A,R"
+    - "RUFV;polygon;quadrilateral;R,U,F,V;0;0;black;240,60,100"
+    - "VFEA;polygon;quadrilateral;V,F,E,A;0;0;black;240,60,100"
+    - "ABRV;polygon;quadrilateral;A,B,R,V;0;0;black;240,60,100"
+    - "UDCF;polygon;quadrilateral;U,D,C,F;0;0;black;65,70,100"
+    - "EFCH;polygon;quadrilateral;E,F,C,H;0;0;black;65,70,100"
+    - "DCHH';polygon;quadrilateral;D,C,H,H';0;0;black;60,70,100"
+    - "BH';line;connect;B,H'"
+    - "GE;line;connect;G,E"
+    - "GU;line;connect;G,U"
+    - "K;point;extend;E,A,E,A"
+    - "L;point;extend;A,K,E,A"
+    - "VK;polygon;parallelogram;V,A,K;0;0;black;0"
+    - "P;point;vertex;VK,4"
+    - "PL;polygon;parallelogram;P,K,L;0;0;black;0"
+    - "BQ;polygon;parallelogram;R,V,P;0;0;black;0"
+    - "Q;point;vertex;BQ,4"
+    - "KQ;polygon;parallelogram;K,P,Q;0;0;black;0"
+    - "BL;polygon;parallelogram;B,A,L;0;0;black;0"
+    - "O;point;vertex;BL,4"
+    - "X;point;parallelogram;A,E,Q"
+    - "XO;line;connect;X,O"
+    - "XQ;line;connect;X,Q"
+    - "X';point;vertex;PL,4;0"
+    - "XX';line;connect;X,X'"
+    - "M;point;extend;E,H,E,H"
+    - "N;point;extend;H,M,E,H"
+    - "CM;polygon;parallelogram;C,H,M;0;0;black;0"
+    - "W;point;vertex;CM,4"
+    - "WN;polygon;parallelogram;W,M,N;0;0;black;0"
+    - "S;point;vertex;WN,4"
+    - "DW;polygon;parallelogram;D,C,W;0;0;black;0"
+    - "Y;point;vertex;DW,4"
+    - "SY;polygon;parallelogram;S,W,Y;0;0;black;0"
+    - "T;point;vertex;SY,4"
+    - "HI;polygon;parallelogram;M,H,H';0;0;black;0"
+    - "I;point;vertex;HI,4"
+    - "IT;polygon;parallelogram;I,Y,T;0;0;black;0"
+    - "N';point;vertex;IT,4"
+    - "NN';line;connect;N,N'"
+  aliases: { EG: GE, UG: GU, OX: XO, QX: XQ }
+  caption: |
+    The parallelepiped cut by the plane *FG*; copies laid along both sides give equimultiples of bases and solids.
+
+steps:
+  - part: enunciation
+    text: "If a parallelepipedal solid be cut by a plane which is parallel to the opposite planes, then, as the base is to the base, so will the solid be to the solid."
+    highlight: [E]
+    hint: |
+      Solids of equal height are as their bases (first case).
+
+  - part: setting-out
+    text: "For let the parallelepipedal solid ABCD be cut by the plane FG which is parallel to the opposite planes RA, DH; I say that, as the base AEFV is to the base EHCF, so is the solid ABFU to the solid EGCD."
+    highlight: [E]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let AH be produced in each direction, let any number of straight lines whatever, AK, KL, be made equal to AE, and any number whatever, HM, MN, equal to EH; and let the parallelograms LP, KV, HW, MS and the solids LQ, KR, DM, MT be completed."
+    highlight: [E]
+    hint: |
+      Lay off equal copies of each part along the line.
+
+  - part: proof
+    text: "Then, since the straight lines LK, KA, AE are equal to one another, the parallelograms LP, KV, AF are also equal to one another, KO, KB, AG are equal to one another, and further LX, KQ, AR are equal to one another, for they are opposite."
+    highlight: [E]
+    hint: |
+      The faces of the copies are equal …
+
+  - part: proof
+    text: "For the same reason the parallelograms EC, HW, MS are also equal to one another, HG, HI, IN are equal to one another, and further DH, MY, NT are equal to one another."
+    highlight: [E]
+    hint: |
+      … likewise on the other side.
+
+  - part: proof
+    text: "Therefore in the solids LQ, KR, AU three planes are equal to three planes."
+    highlight: [E]
+    hint: |
+      So the copied solids have three faces equal to three faces …
+
+  - part: proof
+    text: "But the three planes are equal to the three opposite; therefore the three solids LQ, KR, AU are equal to one another."
+    highlight: [E]
+    hint: |
+      … hence are equal ([[XI.24]], [[XI.Def.10]]).
+
+  - part: proof
+    text: "For the same reason the three solids ED, DM, MT are also equal to one another."
+    highlight: [E]
+    hint: |
+      Likewise on the other side.
+
+  - part: proof
+    text: "Therefore, whatever multiple the base LF is of the base AF, the same multiple also is the solid LU of the solid AU."
+    highlight: [E]
+    hint: |
+      The bases and the solids are equimultiples.
+
+  - part: proof
+    text: "For the same reason, whatever multiple the base NF is of the base FH, the same multiple also is the solid NU of the solid HU."
+    highlight: [E]
+    hint: |
+      Likewise for the other part.
+
+  - part: proof
+    text: "And, if the base LF is equal to the base NF, the solid LU is also equal to the solid NU; if the base LF exceeds the base NF, the solid LU also exceeds the solid NU; and, if one falls short, the other falls short."
+    highlight: [E]
+    hint: |
+      Greater, equal, less go together.
+
+  - part: proof
+    text: "Therefore, there being four magnitudes, the two bases AF, FH, and the two solids AU, UH, equimultiples have been taken of the base AF and the solid AU, namely the base LF and the solid LU, and equimultiples of the base HF and the solid HU, namely the base NF and the solid NU, and it has been proved that, if the base LF exceeds the base FN, the solid LU also exceeds the solid NU, if the bases are equal, the solids are equal, and if the base falls short, the solid falls short."
+    highlight: [E]
+    hint: |
+      That is [[V.Def.5]] …
+
+  - part: proof
+    text: "Therefore, as the base AF is to the base FH, so is the solid AU to the solid UH."
+    highlight: [E]
+    hint: |
+      … so base : base = solid : solid.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $V = \text{(base)} \times h$ with the same $h$. $\blacksquare$
+
+commentary: |
+  The first volume theorem; it imitates the proof of [[VI.1]]. Joyce notes that the equality of the copied solids
+  rests on [[XI.Def.10]], which is not a satisfactory definition of equality of solids.

@@ -1,0 +1,156 @@
+id: I.36
+kind: theorem
+title: Parallelograms on equal bases and between the same parallels
+
+paraphrase: |
+  Parallelograms on *equal* bases (not necessarily the same one), between the same pair of
+  parallels, have equal areas.
+
+diagram:
+  width: 370
+  height: 210
+  elements:
+    - "B;point;free;60,170"
+    - "C;point;free;150,170"
+    - "A;point;free;30,40"
+    - "D;point;parallelogram;A,B,C"
+    - "E;point;lineSlider;A,D,240,40"
+    - "H;point;parallelogram;E,B,C"
+    - "F;point;lineSlider;B,C,215,170"
+    - "G;point;parallelogram;H,E,F"
+    - "AH;line;connect;A,H"
+    - "BG;line;connect;B,G"
+    - "AB;line;connect;A,B"
+    - "CD;line;connect;C,D"
+    - "EF;line;connect;E,F"
+    - "GH;line;connect;G,H"
+    - "BE;line;connect;B,E"
+    - "CH;line;connect;C,H"
+    - "BC;line;connect;B,C;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+    - "EH;line;connect;E,H;0;0;0"
+    - "ABCD;polygon;quadrilateral;A,B,C,D;0;0;0;#efe4d2"
+    - "EFGH;polygon;quadrilateral;E,F,G,H;0;0;0;#dfe7ea"
+    - "EBCH;polygon;quadrilateral;E,B,C,H;0;0;0;0"
+  aliases:
+    EB: BE
+    HC: CH
+    HE: EH
+    GF: FG
+    CB: BC
+  given: [A, B, C, D, E, F, G, H, AH, BG, AB, CD, EF, GH, ABCD, EFGH]
+  caption: |
+    Drag {A}, {B}, {C}, and slide {E} and {F}: {FG} stays equal to {BC}, and the two parallelograms
+    keep equal areas.
+
+steps:
+  - part: enunciation
+    text: "Parallelograms which are on equal bases and in the same parallels are equal to one another."
+    highlight: [ABCD, EFGH]
+    hint: |
+      Equal bases, same height ⇒ equal area. Generalises [[I.35]].
+
+  - part: setting-out
+    text: "Let ABCD, EFGH be parallelograms which are on equal bases BC, FG and in the same parallels AH, BG;"
+    highlight: [ABCD, EFGH, BC, FG, AH, BG]
+    hint: |
+      The data: {BC} = {FG}, both bases on {BG}, both tops on {AH}.
+
+  - part: specification
+    text: "I say that the parallelogram ABCD is equal to EFGH."
+    highlight: [ABCD, EFGH]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let BE, CH be joined."
+    highlight: [BE, CH]
+    adds: [BE, CH]
+    hint: |
+      Join {BE} and {CH}, making a third, "bridging" parallelogram {EBCH}.
+
+  - part: proof
+    text: "Then, since BC is equal to FG while FG is equal to EH, BC is also equal to EH."
+    highlight: [BC, FG, EH]
+    hint: |
+      {FG} = {EH} ([[I.34]]), so {BC} = {EH} ([[I.CN.1]]).
+    cites: [I.34]
+
+  - part: proof
+    text: "But they are also parallel."
+    highlight: [BC, EH]
+    hint: |
+      They lie on the two parallels.
+
+  - part: proof
+    text: "And EB, HC join them;"
+    highlight: [BE, CH]
+    hint: |
+      {EB} and {HC} join their ends on the same side.
+
+  - part: proof
+    text: "but straight lines joining equal and parallel straight lines (at the extremities which are) in the same directions (respectively) are equal and parallel."
+    highlight: [BE, CH]
+    hint: |
+      [[I.33]], quoted: so {EB} and {HC} are equal and parallel.
+
+  - part: proof
+    text: "Therefore EBCH is a parallelogram."
+    highlight: [EBCH]
+    hint: |
+      Both pairs of opposite sides are parallel.
+
+  - part: proof
+    text: "And it is equal to ABCD; for it has the same base BC with it, and is in the same parallels BC, AH with it."
+    highlight: [EBCH, ABCD]
+    hint: |
+      {EBCH} and {ABCD} share the base {BC}: equal by [[I.35]].
+
+  - part: proof
+    text: "For the same reason also EFGH is equal to the same EBCH;"
+    highlight: [EFGH, EBCH]
+    hint: |
+      {EFGH} and {EBCH} share the base {EH} (top and bottom swapped): equal by [[I.35]].
+    explain:
+      implicit: |
+        Here I.35 is applied with {EH} as the base and {BG} as the opposite parallel — turned upside down.
+
+  - part: proof
+    text: "so that the parallelogram ABCD is also equal to EFGH."
+    highlight: [ABCD, EFGH]
+    hint: |
+      Both equal {EBCH} ([[I.CN.1]]).
+    modern: |
+      $$[ABCD] = [EBCH] = [EFGH]$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3]
+      text: $EBCH$ is a parallelogram (I.33).
+    - steps: [4, 5, 6, 7, 8, 9, 10]
+      text: $[ABCD] = [EBCH]$ (common base $BC$) and $[EFGH] = [EBCH]$ (common base $EH$), by I.35. $\blacksquare$
+
+commentary: |
+  A neat reduction: two parallelograms with *equal* bases are linked by a third that shares a base
+  with each. [[I.38]] does the same for triangles.
+
+gaps: |
+  - **{EBCH} is a parallelogram**: Euclid shows {EB} and {HC} are equal and parallel ([[I.33]]);
+    Heath brackets [[I.34]] there too.
+  - **Cases**: the figure separates the two parallelograms; overlapping positions are left aside.
+
+historical: |
+  Proclus remarks that I.35 and I.36 together say the area of a parallelogram depends only on its
+  base and height — though neither "height" nor a formula for area appears in Euclid.

@@ -1,0 +1,203 @@
+id: III.16
+kind: theorem
+title: The tangent at the end of a diameter, and the horn angle
+
+paraphrase: |
+  The line perpendicular to a diameter at its end lies outside the circle (it is the tangent); no
+  straight line fits between it and the circle; and the "angle" between the circle and the tangent (the
+  horn angle) is smaller than every rectilinear angle.
+
+diagram:
+  width: 380
+  height: 270
+  elements:
+    - "A;point;free;240,240"
+    - "B;point;free;240,30"
+    - "AB;line;connect;A,B"
+    - "D;point;midpoint;A,B"
+    - "ABC;circle;radius;D,A;0;0;black;0"
+    - "C;point;circleSlider;ABC,145,190"
+    - "CA;line;connect;C,A"
+    - "CD;line;connect;C,D"
+    - "AEp;line;perpendicular;A,D;0;0;0"
+    - "E;point;lineSlider;AEp,40,240"
+    - "AE;line;connect;A,E"
+    - "F;point;free;40,150"
+    - "FA;line;connect;A,F"
+    - "G;point;foot;D,FA"
+    - "H;point;cutoff;D,G,D,A"
+    - "DH;line;connect;D,H"
+    - "DA;line;connect;D,A;0;0;0"
+    - "DG;line;connect;D,G;0;0;0"
+    - "ACD;polygon;triangle;A,C,D;0;0;0;0"
+    - "angDAC;sector;angleMarker;A,D,C"
+    - "angACD;sector;angleMarker;C,A,D"
+    - "angAGD;sector;angleMarker;G,A,D"
+  aliases:
+    AC: CA
+    DC: CD
+    BA: AB
+    AD: DA
+    AF: FA
+    DAC: angDAC
+    AGD: angAGD
+    DAG: angDAC
+  given: [A, B, AB, D, ABC]
+  caption: |
+    {AE} is the tangent at {A}. {C} and {F} picture the impossible cases: a perpendicular falling inside
+    the circle, and a line squeezed between the tangent and the circle.
+
+steps:
+  - part: enunciation
+    text: "The straight line drawn at right angles to the diameter of a circle from its extremity will fall outside the circle, and into the space between the straight line and the circumference another straight line cannot be interposed; further the angle of the semicircle is greater, and the remaining angle less, than any acute rectilineal angle."
+    highlight: [AE, ABC, AB]
+    hint: |
+      Three claims about the perpendicular at the end of a diameter: it lies outside; nothing fits
+      between it and the circle; and the curvilinear angles there are "infinitely" close to a right angle
+      and to zero.
+    explain:
+      fact: |
+        The "angle of the semicircle" is between the diameter {BA} and the arc; the "remaining angle" is
+        between the arc and the tangent — the *horn angle* (angle of contact). See [[III.Def.7]].
+
+  - part: setting-out
+    text: "Let ABC be a circle about D as centre and AB as diameter;"
+    highlight: [ABC, D, AB]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the straight line drawn from A at right angles to AB from its extremity will fall outside the circle."
+    highlight: [AB, A]
+    hint: |
+      First claim.
+
+  - part: proof
+    text: "For suppose it does not, but, if possible, let it fall within as CA, and let DC be joined."
+    highlight: [CA, CD]
+    adds: [C, CA, CD]
+    hint: |
+      Suppose the perpendicular {CA} went inside, meeting the circle again at {C}.
+
+  - part: proof
+    text: "Since DA is equal to DC, the angle DAC is also equal to the angle ACD."
+    highlight: [angDAC, angACD]
+    hint: |
+      Isosceles ([[I.5]]).
+
+  - part: proof
+    text: "But the angle DAC is right; therefore the angle ACD is also right:"
+    highlight: [angDAC, angACD]
+    hint: |
+      So both base angles would be right.
+
+  - part: proof
+    text: "thus, in the triangle ACD, the two angles DAC, ACD are equal to two right angles: which is impossible."
+    highlight: [ACD]
+    hint: |
+      Contradicts [[I.17]].
+
+  - part: proof
+    text: "Therefore the straight line drawn from the point A at right angles to BA will not fall within the circle."
+    highlight: [AE]
+    hint: |
+      Not inside.
+
+  - part: proof
+    text: "Similarly we can prove that neither will it fall on the circumference; therefore it will fall outside."
+    highlight: [AE]
+    hint: |
+      Nor along the circumference: so outside.
+
+  - part: specification
+    text: "Let it fall as AE; I say next that into the space between the straight line AE and the circumference CHA another straight line cannot be interposed."
+    highlight: [AE]
+    adds: [E, AE]
+    hint: |
+      Second claim.
+    explain:
+      implicit: |
+        "Cannot be interposed" is literally "will not fall in between" (Heath's note on line 4).
+
+  - part: proof
+    text: "For, if possible, let another straight line be so interposed, as FA, and let DG be drawn from the point D perpendicular to FA."
+    highlight: [FA, DG]
+    adds: [F, FA, G, DG, H, DH]
+    hint: |
+      Suppose a line {FA} fits between; drop the perpendicular {DG} to it.
+
+  - part: proof
+    text: "Then, since the angle AGD is right, and the angle DAG is less than a right angle, AD is greater than DG."
+    highlight: [angAGD, DA, DG]
+    hint: |
+      [[I.19]]: the side opposite the right angle is longer.
+
+  - part: proof
+    text: "But DA is equal to DH; therefore DH is greater than DG, the less than the greater: which is impossible."
+    highlight: [DH, DG]
+    hint: |
+      {DH} is a radius but only part of {DG}. Contradiction.
+
+  - part: proof
+    text: "Therefore another straight line cannot be interposed into the space between the straight line and the circumference."
+    highlight: [AE, ABC]
+    hint: |
+      Second claim proved.
+
+  - part: specification
+    text: "I say further that the angle of the semicircle contained by the straight line BA and the circumference CHA is greater than any acute rectilineal angle, and the remaining angle contained by the circumference CHA and the straight line AE is less than any acute rectilineal angle."
+    highlight: [AB, AE, ABC]
+    hint: |
+      Third claim: about the curvilinear angles at {A}.
+
+  - part: proof
+    text: "For, if there is any rectilineal angle greater than the angle contained by the straight line BA and the circumference CHA, and any rectilineal angle less than the angle contained by the circumference CHA and the straight line AE, then into the space between the circumference and the straight line AE a straight line will be interposed such as will make an angle contained by straight lines which is greater than the angle contained by the straight line BA and the circumference CHA, and another angle contained by straight lines which is less than the angle contained by the circumference CHA and the straight line AE."
+    highlight: [AE, ABC]
+    hint: |
+      Any such rectilinear angle would put a straight line between the circle and the tangent.
+
+  - part: proof
+    text: "But such a straight line cannot be interposed;"
+    highlight: [AE]
+    hint: |
+      By the second claim.
+
+  - part: proof
+    text: "therefore there will not be any acute angle contained by straight lines which is greater than the angle contained by the straight line BA and the circumference CHA, nor yet any acute angle contained by straight lines which is less than the angle contained by the circumference CHA and the straight line AE.—"
+    highlight: [AE, AB]
+    hint: |
+      Third claim proved. Heath prints a porism next: the perpendicular at the end of a diameter
+      *touches* the circle.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: |
+        Every point $P$ of the line $x = r$ (tangent at $A = (r, 0)$ to $x^2 + y^2 = r^2$) other than $A$ has
+        $|P| > r$: the tangent meets the circle only at $A$.
+    - steps: [9, 10, 11, 12, 13]
+      text: |
+        Any other line through $A$ makes a positive angle with the tangent and so cuts the circle at a
+        second point. $\blacksquare$
+  closing: |
+    The horn angle has no counterpart in modern geometry: angles between curves are defined as angles
+    between their tangents, so the horn angle is $0$.
+
+commentary: |
+  The **porism** printed after this proposition is the standard way of drawing a tangent: *the straight
+  line at right angles to a diameter at its end touches the circle*. It is used in [[III.17]], [[III.33]],
+  [[III.37]] and throughout Book IV.
+
+  The third claim makes the horn angle (between a circle and its tangent) a magnitude smaller than any
+  rectilinear angle yet, apparently, greater than zero — a non-Archimedean quantity.
+
+gaps: |
+  - **"Similarly" for the circumference** (step 9), as in [[III.2]].
+
+
+historical: |
+  The status of the horn angle was fought over in the 16th and 17th centuries, most famously between
+  Jacques Peletier, who denied that it was an angle at all, and Christopher Clavius, who defended it as a
+  genuine magnitude. Wallis took Peletier's side.

@@ -1,0 +1,108 @@
+id: VII.14
+kind: theorem
+title: Ex aequali for numbers
+
+paraphrase: |
+  If {A} : {B} = {D} : {E} and {B} : {C} = {E} : {F}, then {A} : {C} = {D} : {F}.
+
+diagram:
+  width: 280
+  height: 140
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "C0;point;free;-1000,110;0;0"
+    - "C3;point;free;1000,110;0;0"
+    - "A1;point;lineSlider;A0,A3,30,40;0"
+    - "A2;point;lineSlider;A0,A3,150,40;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,40;0"
+    - "B2;point;lineSlider;B0,B3,130,40;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,40;0"
+    - "C2;point;lineSlider;C0,C3,120,40;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;A0,A3,180,40;0"
+    - "D2;point;lineSlider;A0,A3,250,40;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;B0,B3,180,75;0"
+    - "E2;point;proportion;A1,A2,B1,B2,D1,D2,E1,B3;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;C0,C3,180,40;0"
+    - "F2;point;proportion;A1,A2,C1,C2,D1,D2,F1,C3;0"
+    - "F;line;connect;F1,F2;black"
+  caption: |
+    {E} and {F} are computed to keep the two proportions.
+
+steps:
+  - part: enunciation
+    text: "If there be as many numbers as we please, and others equal to them in multitude, which taken two and two are in the same ratio, they will also be in the same ratio ex aequali."
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      The numerical version of [[V.22]].
+    modern: |
+      $a : b = d : e,\ b : c = e : f \Rightarrow a : c = d : f$.
+
+  - part: setting-out
+    text: "Let there be as many numbers as we please A, B, C, and others equal to them in multitude D, E, F, which taken two and two are in the same ratio, so that, as A is to B, so is D to E, and, as B is to C, so is E to F;"
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      Two rows, {A}, {B}, {C} and {D}, {E}, {F}, with matching successive ratios.
+
+  - part: specification
+    text: "I say that, ex aequali, as A is to C, so also is D to F."
+    highlight: [A, C, D, F]
+    hint: |
+      To prove: {A} : {C} = {D} : {F}.
+    explain:
+      fact: |
+        *Ex aequali* ("from equality"): skipping the middle terms ([[V.Def.17]]).
+
+  - part: proof
+    text: "For, since, as A is to B, so is D to E, therefore, alternately, as A is to D, so is B to E."
+    highlight: [A, D, B, E]
+    hint: |
+      Alternate ([[VII.13]]): {A} : {D} = {B} : {E}.
+
+  - part: proof
+    text: "Again, since, as B is to C, so is E to F, therefore, alternately, as B is to E, so is C to F."
+    highlight: [B, E, C, F]
+    hint: |
+      Likewise {B} : {E} = {C} : {F}.
+
+  - part: proof
+    text: "But, as B is to E, so is A to D; therefore also, as A is to D, so is C to F."
+    highlight: [A, D, C, F]
+    hint: |
+      Ratios equal to the same ratio are equal: {A} : {D} = {C} : {F}.
+    explain:
+      fact: |
+        Transitivity of "same ratio", proved for magnitudes in [[V.11]]. For numbers it follows at once from
+        [[VII.Def.20]] (the same fraction as the same fraction).
+      implicit: |
+        Joyce points out that Euclid cites nothing here: the numerical analogue of [[V.11]] is never stated.
+
+  - part: proof
+    text: "Therefore, alternately, as A is to C, so is D to F. [id.]"
+    highlight: [A, C, D, F]
+    hint: |
+      Alternate once more ([[VII.13]]): {A} : {C} = {D} : {F}.
+    cites: [VII.13]
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        $\tfrac{a}{c} = \tfrac{a}{b}\cdot\tfrac{b}{c} = \tfrac{d}{e}\cdot\tfrac{e}{f} = \tfrac{d}{f}$.
+        $\blacksquare$
+  closing: |
+    Euclid avoids multiplying ratios; three alternations do the work.
+
+commentary: |
+  Much shorter than [[V.22]], because alternation for numbers ([[VII.13]]) holds without restriction (in
+  Book V alternation needs the four magnitudes to be of one kind). Euclid shows three numbers in each row;
+  the general case follows the same way.

@@ -1,0 +1,124 @@
+id: III.11
+kind: theorem
+title: Internally touching circles — the line of centres meets the point of contact
+
+paraphrase: |
+  If two circles touch internally, the line through their centres, produced, passes through the
+  point of contact.
+
+diagram:
+  width: 290
+  height: 280
+  elements:
+    - "A;point;free;50,70"
+    - "B;point;free;260,160;black;0"
+    - "C;point;free;110,260;black;0"
+    - "ABC;circle;circumcircle;A,B,C;0;0;black;0"
+    - "F;point;center;ABC"
+    - "AF;line;connect;A,F"
+    - "D;point;free;143,50"
+    - "M;point;midpoint;A,D;0;0"
+    - "MN;line;perpendicular;M,D;0;0;0"
+    - "Fp;point;intersection;MN,AF;0;0"
+    - "ADE;circle;radius;Fp,A;0;0;black;0"
+    - "E;point;circleSlider;ADE,110,210;black;0"
+    - "G;point;lineSlider;D,F,90,110"
+    - "AG;line;connect;A,G"
+    - "AH;line;cutoff;F,D,F,A"
+    - "H;point;last;AH"
+    - "FH;line;connect;F,H;0;0;0"
+    - "GH;line;connect;G,H;0;0;0"
+    - "GF;line;connect;G,F;0;0;0"
+    - "GD;line;connect;G,D;0;0;0"
+  aliases:
+    FA: AF
+    GA: AG
+    FG: GF
+    FGH: FH
+  given: [A, ABC, F, ADE, D]
+  caption: |
+    {G} is the supposed centre of the inner circle off the line {FA}; the proof shows this is impossible.
+    Drag {D} and slide {G}.
+
+steps:
+  - part: enunciation
+    text: "If two circles touch one another internally, and their centres be taken, the straight line joining their centres, if it be also produced, will fall on the point of contact of the circles."
+    highlight: [ABC, ADE, A, F]
+    hint: |
+      For internally touching circles, the centres and the point of contact are in a line.
+    explain:
+      implicit: |
+        "The straight line joining their centres" is literally "joined to their centres" (Heath's
+        note on line 2); "point of contact" here is συναφή (note on line 3).
+
+  - part: setting-out
+    text: "For let the two circles ABC, ADE touch one another internally at the point A, and let the centre F of the circle ABC, and the centre G of ADE, be taken;"
+    highlight: [ABC, ADE, A, F, G]
+    adds: [G]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the straight line joined from G to F and produced will fall on A."
+    highlight: [GF, A]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For suppose it does not, but, if possible, let it fall as FGH, and let AF, AG be joined."
+    highlight: [FH, AF, AG]
+    adds: [FH, H, AG]
+    hint: |
+      Suppose {FG} produced misses {A} and meets the outer circle at {H}.
+
+  - part: proof
+    text: "Then, since AG, GF are greater than FA, that is, than FH,"
+    highlight: [AG, GF, AF, FH]
+    hint: |
+      Triangle inequality ([[I.20]]), and {FA} = {FH} (radii of {ABC}).
+    cites: [I.20, I.Def.15]
+
+  - part: proof
+    text: "let FG be subtracted from each; therefore the remainder AG is greater than the remainder GH."
+    highlight: [AG, GH]
+    hint: |
+      Subtract {FG}.
+
+  - part: proof
+    text: "But AG is equal to GD; therefore GD is also greater than GH, the less than the greater: which is impossible."
+    highlight: [GD, GH]
+    hint: |
+      {GA} = {GD} (radii of {ADE}); but {GD} is part of {GH}. Contradiction.
+
+  - part: proof
+    text: "Therefore the straight line joined from F to G will not fall outside; therefore it will fall at A on the point of contact."
+    highlight: [AF]
+    hint: |
+      So it passes through {A}.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: |
+        If $A$ is on both circles with $|A - F| = R$, $|A - G| = r < R$, then $|F - G| \ge R - r$ by the
+        triangle inequality, with equality only when $A$ lies on ray $FG$ beyond $G$. For internal
+        tangency $|F - G| = R - r$, so $A$ is on line $FG$. $\blacksquare$
+
+commentary: |
+  III.11 and [[III.12]] (external contact) are used in [[III.13]] to show that circles touch at only one
+  point.
+
+gaps: |
+  - **{D} on {GH}**: the point {D} where {GH} meets the inner circle is assumed to lie between {G} and {H}.

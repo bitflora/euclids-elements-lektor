@@ -1,0 +1,268 @@
+id: I.6
+kind: theorem
+title: Equal base angles make equal sides
+
+paraphrase: |
+  If two angles of a triangle are equal, the sides opposite them are equal: the triangle is
+  isosceles. This is the converse of the first half of [[I.5]].
+
+diagram:
+  width: 320
+  height: 280
+  pivot: M
+  elements:
+    - "B;point;free;50,240"
+    - "C;point;free;240,240"
+    - "M;point;midpoint;B,C;0;0"
+    - "MM;line;perpendicular;M,B;0;0;0"
+    - "A;point;lineSlider;MM,145,40"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "D;point;lineSlider;A,B,121,95"
+    - "DC;line;connect;D,C"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+    - "DBC;polygon;triangle;D,B,C;0;0;0;0"
+    - "ADC;polygon;triangle;A,D,C;0;0;0;0"
+    - "angABC;sector;angleMarker;B,A,C"
+    - "angACB;sector;angleMarker;C,A,B"
+  aliases:
+    BA: AB
+    CA: AC
+    CB: BC
+    BD: DB
+    CD: DC
+    ACB: ABC
+    angDBC: angABC
+    angCBA: angABC
+    angBCA: angACB
+  given: [A, B, C, ABC, angABC, angACB]
+  caption: |
+    Drag {B} or {C}, or slide {A}: it stays on the line that keeps ∠{ABC|angABC} = ∠{ACB|angACB}.
+    {D} is the point the proof *supposes* — with {DB} = {AC} it cannot exist, so wherever you
+    slide it the figure is "wrong", which is the point of the argument.
+
+steps:
+  - part: enunciation
+    text: "If in a triangle two angles be equal to one another, the sides which subtend the equal angles will also be equal to one another."
+    highlight: [angABC, angACB, AB, AC]
+    hint: |
+      Equal angles in a triangle face equal sides. This is the converse of [[I.5]], which went
+      from equal sides to equal angles.
+    explain:
+      did: |
+        States the theorem.
+      fact: |
+        A side "subtends" the angle it is opposite: it stretches across the angle's opening.
+        {AC} subtends the angle at {B}, {AB} the angle at {C}.
+      implicit: |
+        Only the first half of I.5 is reversed. The angles under the base have no counterpart here.
+
+  - part: setting-out
+    text: "Let ABC be a triangle having the angle ABC equal to the angle ACB;"
+    highlight: [ABC, angABC, angACB]
+    hint: |
+      The data: in triangle {ABC}, the angles at {B} and {C} are equal.
+    modern: |
+      $$\angle ABC = \angle ACB$$
+
+  - part: specification
+    text: "I say that the side AB is also equal to the side AC."
+    highlight: [AB, AC]
+    hint: |
+      The goal: {AB} = {AC}, the sides opposite the equal angles.
+    modern: |
+      $$\text{To prove: } AB = AC$$
+
+  - part: proof
+    text: "For, if AB is unequal to AC, one of them is greater."
+    highlight: [AB, AC]
+    hint: |
+      Euclid supposes the opposite of what he wants and looks for a contradiction. If the two
+      sides are not equal, one is longer.
+    explain:
+      did: |
+        Opens the first *proof by contradiction* (reductio ad absurdum) in the *Elements*.
+      fact: |
+        Of two magnitudes of the same kind, either they are equal or one is greater
+        (the law of trichotomy).
+      justification: |
+        Nothing in the postulates or common notions states trichotomy; Euclid treats it as
+        evident. Joyce's guide discusses it.
+      implicit: |
+        Which one is greater does not matter: the two cases are alike with {B} and {C}
+        exchanged, so Euclid treats only one.
+
+  - part: construction
+    text: "Let AB be greater; and from AB the greater let DB be cut off equal to AC the less;"
+    highlight: [AB, DB, AC, D]
+    adds: [D]
+    hint: |
+      Supposing {AB} is the longer, mark {D} on it so that {DB} = {AC}. [[I.3]] does this.
+    explain:
+      did: |
+        Uses I.3 to cut a segment equal to {AC} off {AB}, measured from {B}.
+      fact: |
+        After this step $DB = AC$, and {D} lies between {A} and {B}.
+      justification: "[[I.3]] (not bracketed by Heath here)."
+      implicit: |
+        That {D} falls *between* {A} and {B}, not on {A} — that is what "{AB} the greater"
+        secures. Without it {DBC} would not be a part of {ABC}.
+    cites: [I.3]
+
+  - part: construction
+    text: "let DC be joined."
+    highlight: [DC]
+    adds: [DC]
+    hint: |
+      Draw {DC}, making a smaller triangle {DBC} inside {ABC} ([[I.Post.1]]).
+    explain:
+      did: |
+        Completes the auxiliary figure.
+      justification: "[[I.Post.1]]"
+    cites: [I.Post.1]
+
+  - part: proof
+    text: "Then, since DB is equal to AC, and BC is common, the two sides DB, BC are equal to the two sides AC, CB respectively;"
+    highlight: [DBC, ABC, DB, AC, BC]
+    hint: |
+      Compare the small triangle {DBC} with the whole triangle {ACB}. Two sides match:
+      {DB} = {AC} by construction, and {BC} belongs to both.
+    explain:
+      did: |
+        Begins checking the hypothesis of [[I.4]] for the triangles {DBC} and {ACB}.
+      fact: |
+        $DB = AC$ (step 2), and $BC = CB$ since it is the same segment.
+      implicit: |
+        The correspondence is {D} ↔ {A}, {B} ↔ {C}, {C} ↔ {B}: the triangle {ABC} is read
+        "backwards", as {ACB}, to line its parts up with {DBC}.
+    modern: |
+      $$DB = AC,\qquad BC = CB$$
+
+  - part: proof
+    text: "and the angle DBC is equal to the angle ACB;"
+    highlight: [angABC, angACB]
+    hint: |
+      And the angles between those sides are equal: ∠{DBC|angDBC} is the angle at {B}, which is
+      given equal to the angle at {C}.
+    explain:
+      did: |
+        Supplies the angle that completes the SAS hypothesis.
+      fact: |
+        ∠{DBC|angDBC} is the same angle as ∠{ABC|angABC}, because {D} lies on {BA}. And
+        ∠{ABC|angABC} = ∠{ACB|angACB} is the hypothesis.
+      implicit: |
+        The identification ∠{DBC|angDBC} = ∠{ABC|angABC} is silent, as in [[I.5]].
+    modern: |
+      $$\angle DBC = \angle ABC = \angle ACB$$
+
+  - part: proof
+    text: "therefore the base DC is equal to the base AB, and the triangle DBC will be equal to the triangle ACB,"
+    highlight: [DC, AB, DBC, ABC]
+    hint: |
+      By [[I.4]] (SAS) the two triangles are equal in every respect — including in size.
+    explain:
+      did: |
+        Applies I.4.
+      fact: |
+        I.4 concludes that the bases are equal and that "the triangle will be equal to the
+        triangle". Here it is that second conclusion — equal *area* — that matters.
+      justification: "[[I.4]] (Heath does not bracket it)."
+    modern: |
+      $$\triangle DBC \cong \triangle ACB \;\Longrightarrow\; DC = AB,\quad \operatorname{area}(DBC) = \operatorname{area}(ACB)$$
+    cites: [I.4]
+
+  - part: proof
+    text: "the less to the greater: which is absurd."
+    highlight: [DBC, ABC]
+    hint: |
+      But {DBC} is only *part* of {ABC}, and the whole is greater than the part
+      ([[I.CN.5]]). A part cannot equal its whole. Contradiction.
+    explain:
+      did: |
+        Finds the contradiction.
+      fact: |
+        Triangle {DBC} lies inside triangle {ABC}, with the region {ADC} left over.
+      justification: "[[I.CN.5]]: the whole is greater than the part."
+      follows: |
+        Step 6 says the two triangles are equal; [[I.CN.5]] says the part is less than the whole.
+        Both cannot hold.
+      implicit: |
+        That {DBC} really is a *proper* part of {ABC}: this rests on {D} lying strictly between
+        {A} and {B} (step 2), which the figure shows.
+    gap: |
+      **What "equal" means here.** I.4's "the triangle is equal to the triangle" is equality of
+      area, but Euclid never defines area or proves that a proper part of a triangle has
+      smaller area. He relies on [[I.CN.5]] for that. A modern proof avoids area altogether
+      (see the reconstruction).
+    cites: [I.CN.5]
+
+  - part: proof
+    text: "Therefore AB is not unequal to AC; it is therefore equal to it."
+    highlight: [AB, AC]
+    hint: |
+      So the supposition that {AB} is greater fails; by the same argument, so does {AC}
+      greater. Hence {AB} = {AC}.
+    explain:
+      did: |
+        Concludes the reductio.
+      follows: |
+        The case "{AB} greater" led to an absurdity. The case "{AC} greater" is the same
+        argument with {B} and {C} exchanged. Of the three possibilities only equality is left.
+      implicit: |
+        The second case is never written out.
+    modern: |
+      $$AB \ne AC \Rightarrow \bot, \quad\text{so}\quad AB = AC$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* With ASA congruence (proved later as
+    [[I.26]], an axiom or early theorem in modern systems) the converse is immediate, by the
+    same trick Pappus used for I.5:
+  lines:
+    - steps: [1, 2]
+      text: Let $\angle ABC = \angle ACB$; we show $AB = AC$.
+    - steps: [3, 4, 5, 6, 7, 8, 9]
+      text: |
+        Compare $\triangle ABC$ with $\triangle ACB$: $\angle ABC = \angle ACB$,
+        $BC = CB$, $\angle ACB = \angle ABC$. By ASA, $\triangle ABC \cong \triangle ACB$, and the
+        side opposite $C$ in the first equals the side opposite $B$ in the second:
+        $AB = AC$. $\blacksquare$
+  closing: |
+    Euclid cannot argue this way: ASA is I.26, still far off, so he reduces the claim to SAS
+    (I.4) by contradiction. A modern SAS-only proof would follow Euclid but conclude from
+    $\angle DCB = \angle ABC = \angle ACB$ that rays $CD$ and $CA$ coincide (uniqueness of
+    angle transfer), so $D = A$ — a contradiction about angles rather than areas.
+
+commentary: |
+  Two firsts. I.6 is the first **converse** in the *Elements*: I.5 says equal sides give equal
+  angles; I.6 says equal angles give equal sides. And it is the first **proof by
+  contradiction**: Euclid supposes {AB} ≠ {AC} and derives that a triangle equals a part of
+  itself.
+
+  The contradiction runs through *area*: the small triangle {DBC} would be equal (I.4) to the
+  whole triangle {ABC}, against [[I.CN.5]].
+
+  I.6 is not used again in Book I, but it is used in later books.
+
+gaps: |
+  - **Trichotomy** (step 1): "if unequal, one is greater" is assumed without statement.
+  - **The other case** ({AC} greater) is left to the reader.
+  - **Area and parts** (step 7): that a triangle cannot equal a proper part of itself rests on
+    [[I.CN.5]] with no theory of area behind it.
+
+historical: |
+  Proclus uses I.6 to discuss *conversion*: a theorem and its converse exchange hypothesis and
+  conclusion, wholly or in part. I.6 converts only part of I.5. A converse must be proved
+  on its own; it is not automatically true (Joyce's guide gives a false one from Book III).

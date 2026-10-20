@@ -1,0 +1,146 @@
+id: X.58
+kind: theorem
+title: The side of a rational line times a fifth binomial is the side of a rational plus a medial area
+
+paraphrase: |
+  If an area {AC} is contained by a rational line {AB} and a fifth binomial {AD}, its side {MO} is "the side of
+  a rational plus a medial area".
+
+diagram:
+  width: 400
+  height: 200
+  elements:
+    - "A0;point;free;-1000,60;0;0"
+    - "A3;point;free;1000,60;0;0"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "D;point;lineSlider;A0,A3,200,0"
+    - "B';point;perpendicular;A,D;0;0"
+    - "B;point;lineSlider;A,B',0,150"
+    - "C;point;parallelogram;B,A,D"
+    - "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;random"
+    - "E;point;lineSlider;A,D,120,0"
+    - "F;point;midpoint;E,D"
+    - "AEmid;point;midpoint;A,E;0;0"
+    - "AEquar;point;midpoint;E,AEmid;0;0"
+    - "EFcirc;circle;radius;E,F;0;0;0;0"
+    - "EAcirc;circle;radius;AEquar,E;0;0;0;0"
+    - "bich;line;bichord;EFcirc,EAcirc;0;0;0"
+    - "G';point;first;bich;0;0"
+    - "G;point;cutoff;AEmid,D,AEmid,G'"
+    - "H;point;parallelogram;B,A,G"
+    - "K;point;parallelogram;B,A,E"
+    - "L;point;parallelogram;B,A,F"
+    - "HGEK;polygon;quadrilateral;H,G,E,K;0;0;black;290,80,100"
+    - "FL;line;connect;F,L"
+    - "AH;polygon;quadrilateral;A,B,H,G;0;0;0;230,80,100"
+    - "S0;point;free;-1000,175;0;0"
+    - "S3;point;free;1000,175;0;0"
+    - "S;point;lineSlider;S0,S3,240,0"
+    - "P;point;meanProportional;A,G,G,H,S,S3"
+    - "SPNM;polygon;square;S,P;0;0;black;230,80,100"
+    - "M;point;vertex;SPNM,4"
+    - "N;point;vertex;SPNM,3"
+    - "T;point;meanProportional;G,E,E,K,P,S3;0"
+    - "O;point;parallelogram;M,S,T"
+    - "NOQR;polygon;square;N,O;0;0;black;290,80,100"
+    - "Q;point;vertex;NOQR,3"
+    - "R;point;vertex;NOQR,4"
+    - "SQ;polygon;parallelogram;S,T,Q;0;0;black;0"
+    - "MO;line;connect;M,O;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "MN;line;connect;M,N;0;0;0"
+    - "NO;line;connect;N,O;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "EK;line;connect;E,K;0;0;0"
+    - "AG;line;connect;A,G;0;0;0"
+    - "GE;line;connect;G,E;0;0;0"
+  aliases: { AC: ABCD, SN: SPNM, NQ: NOQR, GK: HGEK, LF: FL, OM: MO, BA: AB, DA: AD, NM: MN, ON: NO, DE: ED, EA: AE, FE: EF, KE: EK, GA: AG, EG: GE }
+  caption: |
+    As in [[X.54]]: {AD} = {AE} + {ED} on the rational {AB}; {MO} is the side of {AC}.
+
+steps:
+  - part: enunciation
+    text: "If an area be contained by a rational straight line and the fifth binomial, the “side” of the area is the irrational straight line called the side of a rational plus a medial area."
+    highlight: [AC, MO]
+    hint: |
+      √(rational × fifth binomial).
+
+  - part: proof
+    text: "For let the area AC be contained by the rational straight line AB and the fifth binomial AD divided into its terms at E, so that AE is the greater term; I say that the “side” of the area AC is the irrational straight line called the side of a rational plus a medial area."
+    highlight: [AC, AB, AD]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let the same construction be made as before shown; it is then manifest that MO is the “side” of the area AC."
+    highlight: [MO]
+    hint: |
+      Same construction; {MO} is the side.
+
+  - part: specification
+    text: "It is then to be proved that MO is the side of a rational plus a medial area."
+    highlight: [MO]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since AG is incommensurable with GE, therefore AH is also commensurable with HE, that is, the square on MN with the square on NO; therefore MN, NO are incommensurable in square."
+    highlight: [MN, NO]
+    hint: |
+      {AG}, {GE} incommensurable ([[X.18]]), so {MN}, {NO} incommensurable in square.
+
+  - part: proof
+    text: "And, since AD is a fifth binomial straight line, and ED the lesser segment, therefore ED is commensurable in length with AB."
+    highlight: [ED, AB]
+    hint: |
+      Fifth binomial: the lesser {ED} commensurable with {AB} ([[X.Def.II.5]]).
+
+  - part: proof
+    text: "But AE is incommensurable with ED; therefore AB is also incommensurable in length with AE."
+    highlight: [AB, AE]
+    hint: |
+      So {AB}, {AE} incommensurable in length ([[X.13]]).
+
+  - part: proof
+    text: "Therefore AK, that is, the sum of the squares on MN, NO, is medial."
+    highlight: [MN, NO]
+    hint: |
+      *AK* = sq({MN}) + sq({NO}) is medial ([[X.21]]).
+
+  - part: proof
+    text: "And, since DE is commensurable in length with AB, that is, with EK, while DE is commensurable with EF, therefore EF is also commensurable with EK."
+    highlight: [EF, EK]
+    hint: |
+      {EF} commensurable with {EK} …
+
+  - part: proof
+    text: "And EK is rational; therefore EL, that is, MR, that is, the rectangle MN, NO, is also rational."
+    highlight: [MN, NO]
+    hint: |
+      … so rect({MN},{NO}) is rational ([[X.19]]).
+
+  - part: proof
+    text: "Therefore MN, NO are straight lines incommensurable in square which make the sum of the squares on them medial, but the rectangle contained by them rational."
+    highlight: [MN, NO]
+    hint: |
+      Medial sum of squares, rational rectangle.
+
+  - part: proof
+    text: "Therefore MO is the side of a rational plus a medial area and is the “side” of the area AC."
+    highlight: [MO]
+    hint: |
+      [[X.40]].
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11]
+      text: |
+        Medial sum of squares, rational mean: the side of a rational plus a medial area. $\blacksquare$

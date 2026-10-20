@@ -1,0 +1,100 @@
+id: IX.34
+kind: theorem
+title: Other even numbers are both even-times even and even-times odd
+
+paraphrase: |
+  An even number {A} that is neither a power of 2 nor twice an odd number is both even-times even and
+  even-times odd: it is divisible by 4 and by an odd number greater than 1.
+
+diagram:
+  width: 200
+  height: 60
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,160,0;0"
+    - "A;line;connect;A1,A2;black"
+  caption: |
+    A number {A}, e.g. 24.
+
+steps:
+  - part: enunciation
+    text: "If a number neither be one of those which are continually doubled from a dyad, nor have its half odd, it is both even-times even and even-times odd."
+    highlight: [A]
+    hint: |
+      E.g. 24 = 4·6 = 8·3.
+    modern: |
+      $a = 2^k m$ with $k \ge 2$, $m > 1$ odd.
+
+  - part: setting-out
+    text: "For let the number A neither be one of those doubled from a dyad, nor have its half odd;"
+    highlight: [A]
+    hint: |
+      Not $2^n$, not $2 \times$ odd.
+
+  - part: specification
+    text: "I say that A is both even-times even and even-times odd."
+    highlight: [A]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "Now that A is even-times even is manifest; for it has not its half odd."
+    highlight: [A]
+    hint: |
+      Its half is even, so {A} = 2 × even ([[VII.Def.8]]).
+
+  - part: specification
+    text: "I say next that it is also even-times odd."
+    highlight: [A]
+    hint: |
+      Now even-times odd.
+
+  - part: proof
+    text: "For, if we bisect A, then bisect its half, and do this continually, we shall come upon some odd number which will measure A according to an even number."
+    highlight: [A]
+    hint: |
+      Halve repeatedly until an odd number appears.
+
+  - part: proof
+    text: "For, if not, we shall come upon a dyad, and A will be among those which are doubled from a dyad: which is contrary to the hypothesis."
+    highlight: [A]
+    hint: |
+      Otherwise {A} would be a power of 2.
+
+  - part: proof
+    text: "Thus A is even-times odd."
+    highlight: [A]
+    hint: |
+      {A} = (even) × (odd).
+
+  - part: proof
+    text: "But it was also proved even-times even."
+    highlight: [A]
+    hint: |
+      Recalled.
+
+  - part: proof
+    text: "Therefore A is both even-times even and even-times odd."
+    highlight: [A]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9]
+      text: |
+        Write $a = 2^k m$, $m$ odd. Not $2 \times$ odd means $k \ge 2$; not a power of 2 means $m > 1$. Then
+        $a = (2^{k-1}m)\cdot 2 = 2^k \cdot m$. $\blacksquare$
+
+commentary: |
+  This ends the theory of odd and even ([[IX.21]]–[[IX.34]]). Together, [[IX.32]]–[[IX.34]] classify the even
+  numbers: powers of 2; twice odd numbers; and the rest.

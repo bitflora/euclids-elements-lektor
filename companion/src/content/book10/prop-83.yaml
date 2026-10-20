@@ -1,0 +1,75 @@
+id: X.83
+kind: theorem
+title: Only one line can be annexed to the line that produces with a rational area a medial whole
+
+paraphrase: |
+  A line that produces with a rational area a medial whole {AB} has only one annex {BC} of the kind its definition ([[X.77]]) requires. The subtractive
+  counterpart of [[X.46]].
+
+diagram:
+  width: 250
+  height: 65
+  elements:
+    - "A0;point;free;-1000,35"
+    - "A3;point;free;1000,35"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "B;point;lineSlider;A0,A3,90,0"
+    - "C;point;lineSlider;A0,A3,180,0"
+    - "D;point;lineSlider;A0,A3,210,0"
+    - "AD;line;connect;A,D"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+  aliases: { DA: AD, BA: AB, CB: BC, CA: AC, DB: BD }
+  caption: |
+    {AB} with the annex {BC} (whole {AC}) and, supposedly, a second annex {BD} (whole {AD}).
+
+steps:
+  - part: enunciation
+    text: "To a straight line which produces with a rational area a medial whole only one straight line can be annexed which is incommensurable in square with the whole straight line and which with the whole straight line makes the sum of the squares on them medial, but twice the rectangle contained by them rational."
+    highlight: [AB, BC]
+    hint: |
+      The annex is unique.
+
+  - part: setting-out
+    text: "Let AB be the straight line which produces with a rational area a medial whole, and let BC be an annex to AB; therefore AC, CB are straight lines incommensurable in square which fulfil the given conditions."
+    highlight: [AB, BC, AC]
+    hint: |
+      {AB} a line that produces with a rational area a medial whole, annex {BC}.
+
+  - part: specification
+    text: "I say that no other straight line can be annexed to AB which fulfils the same conditions."
+    highlight: [AB]
+    hint: |
+      To prove: unique.
+
+  - part: proof
+    text: "For, if possible, let BD be so annexed; therefore AD, DB are also straight lines incommensurable in square which fulfil the given conditions."
+    highlight: [BD, AD]
+    hint: |
+      Suppose another annex {BD}.
+
+  - part: proof
+    text: "Since then, as in the preceding cases, the excess of the squares on AD, DB over the squares on AC, CB is also the excess of twice the rectangle AD, DB over twice the rectangle AC, CB, while twice the rectangle AD, DB exceeds twice the rectangle AC, CB by a rational area, for both are rational, therefore the squares on AD, DB also exceed the squares on AC, CB by a rational area: which is impossible, for both are medial."
+    highlight: [AD, BD, AC, BC]
+    hint: |
+      The sums of squares are medial and the doubled rectangles rational, and they differ by the same amount: so
+      two medial areas would differ by a rational one ([[X.26]]).
+
+  - part: proof
+    text: "Therefore no other straight line can be annexed to AB which is incommensurable in square with the whole and which with the whole fulfils the aforesaid conditions; therefore only one straight line can be so annexed."
+    highlight: [AB]
+    hint: |
+      Only one.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        As [[X.46]]: two annexes would make two medial areas differ by a rational area, contradicting [[X.26]].
+        $\blacksquare$

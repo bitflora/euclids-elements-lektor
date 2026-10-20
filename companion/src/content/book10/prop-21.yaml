@@ -1,0 +1,142 @@
+id: X.21
+kind: theorem
+title: The medial line
+
+paraphrase: |
+  A rectangle contained by rational lines commensurable in square only is irrational, and so is the side of
+  the equal square. That side is called *medial*. With unit 1: the rectangle $1 \times \sqrt2$ has area
+  $\sqrt2$, and its side $\sqrt[4]{2}$ is medial.
+
+diagram:
+  width: 180
+  height: 220
+  elements:
+    - "A0;point;free;-1000,130;0;0"
+    - "A3;point;free;1000,130;0;0"
+    - "A;point;lineSlider;A0,A3,140,0"
+    - "B;point;lineSlider;A0,A3,40,0"
+    - "AD;polygon;square;B,A;0;0;black;random"
+    - "D;point;vertex;AD,4"
+    - "C;point;lineSlider;B,D,0,200"
+    - "AC;polygon;parallelogram;A,B,C"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+  aliases: { DA: AD, DB: BD }
+  caption: |
+    {AC} = {AB}·{BC} with {AB}, {BC} commensurable in square only; {AD} the square on {AB}.
+
+steps:
+  - part: enunciation
+    text: "The rectangle contained by rational straight lines commensurable in square only is irrational, and the side of the square equal to it is irrational. Let the latter be called medial."
+    highlight: [AC]
+    hint: |
+      The first irrational line: the *medial*, the side of a square equal to $\rho \cdot \rho\sqrt{q}$.
+    modern: |
+      $\rho\sqrt{\rho\cdot\rho\sqrt q} = \rho\sqrt[4]{q}$, $q$ not a square.
+
+  - part: setting-out
+    text: "For let the rectangle AC be contained by the rational straight lines AB, BC commensurable in square only;"
+    highlight: [AB, BC, AC]
+    hint: |
+      {AB}, {BC} rational, commensurable in square only.
+
+  - part: specification
+    text: "I say that AC is irrational, and the side of the square equal to it is irrational; and let the latter be called medial."
+    highlight: [AC]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For on AB let the square AD be described;"
+    highlight: [AD]
+    hint: |
+      The square {AD} on {AB} …
+
+  - part: proof
+    text: "therefore AD is rational."
+    highlight: [AD]
+    hint: |
+      … rational.
+
+  - part: proof
+    text: "And, since AB is incommensurable in length with BC, for by hypothesis they are commensurable in square only, while AB is equal to BD, therefore DB is also incommensurable in length with BC."
+    highlight: [BD, BC]
+    hint: |
+      {BD} = {AB} is incommensurable in length with {BC}.
+
+  - part: proof
+    text: "And, as DB is to BC, so is AD to AC; therefore DA is incommensurable with AC."
+    highlight: [AD, AC]
+    hint: |
+      {DB} : {BC} = {AD} : {AC} ([[VI.1]]), so {DA}, {AC} incommensurable ([[X.11]]).
+
+  - part: proof
+    text: "But DA is rational; therefore AC is irrational, so that the side of the square equal to AC is also irrational."
+    highlight: [AC]
+    hint: |
+      {DA} rational, so {AC} is irrational, and so is its side ([[X.Def.4]]).
+
+  - part: proof
+    text: "And let the latter be called medial."
+    hint: |
+      The name: *medial* (μέση), because it is the mean proportional between {AB} and {BC}.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+  - part: lemma
+    text: "Lemma. If there be two straight lines, then, as the first is to the second, so is the square on the first to the rectangle contained by the two straight lines."
+    hint: |
+      Lemma: $a : b = a^2 : ab$.
+    modern: |
+      $\dfrac{a}{b} = \dfrac{a^2}{ab}$.
+
+  - part: lemma
+    text: "Let FE, EG be two straight lines."
+    hint: |
+      Lines *FE*, *EG*.
+
+  - part: lemma
+    text: "I say that, as FE is to EG, so is the square on FE to the rectangle FE, EG."
+    hint: |
+      The claim.
+
+  - part: lemma
+    text: "For on FE let the square DF be described, and let GD be completed."
+    hint: |
+      Square *DF* on *FE*; complete *GD*.
+
+  - part: lemma
+    text: "Since then, as FE is to EG, so is FD to DG, and FD is the square on FE, and DG the rectangle DE, EG, that is, the rectangle FE, EG, therefore, as FE is to EG, so is the square on FE to the rectangle FE, EG."
+    hint: |
+      Same height, so ratio of bases ([[VI.1]]).
+
+  - part: lemma
+    text: "Similarly also, as the rectangle GE, EF is to the square on EF, that is, as GD is to FD, so is GE to EF."
+    hint: |
+      And inversely.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      End of the lemma.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8]
+      text: |
+        $AB \cdot BC = \rho^2\sqrt q$, an irrational area since $\sqrt q \notin \mathbb Q$; its side
+        $\rho\sqrt[4]q$ is irrational. $\blacksquare$
+
+commentary: |
+  The medial is the mean proportional between two rational lines commensurable in square only — hence the
+  name. Book X goes on to classify thirteen kinds of irrational line: the medial, six formed by addition
+  ([[X.36]]–[[X.41]]: binomial, first and second bimedial, major, "side of a rational plus a medial", "side of
+  the sum of two medials"), and six by subtraction ([[X.73]]–[[X.78]]).
+
+historical: |
+  The scholiast and Pappus attribute the medial, binomial and apotome to Theaetetus, and connect them with
+  the geometric, arithmetic and harmonic means.

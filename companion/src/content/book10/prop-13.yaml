@@ -1,0 +1,139 @@
+id: X.13
+kind: theorem
+title: Commensurable with a magnitude incommensurable with another
+
+paraphrase: |
+  If {A} and {B} are commensurable, and {A} is incommensurable with {C}, then {B} is incommensurable with {C}.
+  Followed by a lemma: how to find the line whose square is the difference (or sum) of two given squares.
+
+diagram:
+  width: 230
+  height: 120
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "B0;point;free;-1000,65;0;0"
+    - "B3;point;free;1000,65;0;0"
+    - "C0;point;free;-1000,100;0;0"
+    - "C3;point;free;1000,100;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,170,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,200,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,150,0;0"
+    - "C;line;connect;C1,C2;black"
+  caption: |
+    {A}, {B} commensurable; {A}, {C} incommensurable.
+
+steps:
+  - part: enunciation
+    text: "If two magnitudes be commensurable, and the one of them be incommensurable with any magnitude, the remaining one will also be incommensurable with the same."
+    highlight: [A, B, C]
+    hint: |
+      Rational multiples of an irrational are irrational.
+    modern: |
+      $a/b \in \mathbb{Q},\ a/c \notin \mathbb{Q} \Rightarrow b/c \notin \mathbb{Q}$.
+
+  - part: setting-out
+    text: "Let A, B be two commensurable magnitudes, and let one of them, A, be incommensurable with any other magnitude C;"
+    highlight: [A, B, C]
+    hint: |
+      The hypotheses.
+
+  - part: specification
+    text: "I say that the remaining one, B, will also be incommensurable with C."
+    highlight: [B, C]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, if B is commensurable with C, while A is also commensurable with B, A is also commensurable with C."
+    highlight: [A, B, C]
+    hint: |
+      Otherwise {A} would be commensurable with {C} ([[X.12]]).
+
+  - part: proof
+    text: "But it is also incommensurable with it: which is impossible."
+    highlight: [A, C]
+    hint: |
+      Contradiction.
+
+  - part: proof
+    text: "Therefore B is not commensurable with C; therefore it is incommensurable with it."
+    highlight: [B, C]
+    hint: |
+      So {B}, {C} are incommensurable.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: lemma
+    text: "Lemma. Given two unequal straight lines, to find by what square the square on the greater is greater than the square on the less."
+    hint: |
+      Lemma: given two lines, find the line whose square is the difference of their squares.
+    modern: |
+      Given $a > c$, find $\sqrt{a^2 - c^2}$.
+
+  - part: lemma
+    text: "Let AB, C be the given two unequal straight lines, and let AB be the greater of them;"
+    hint: |
+      Lines *AB* > *C*.
+
+  - part: lemma
+    text: "thus it is required to find by what square the square on AB is greater than the square on C."
+    hint: |
+      The goal.
+
+  - part: lemma
+    text: "Let the semicircle ADB be described on AB, and let AD be fitted into it equal to C; let DB be joined."
+    hint: |
+      Semicircle on *AB*; fit the chord *AD* = *C* ([[IV.1]]).
+
+  - part: lemma
+    text: "It is then manifest that the angle ADB is right, and that the square on AB is greater than the square on AD, that is, C, by the square on DB."
+    hint: |
+      The angle in a semicircle is right ([[III.31]]), so $AB^2 = AD^2 + DB^2$ ([[I.47]]): *DB* is the answer.
+
+  - part: lemma
+    text: "Similarly also, if two straight lines be given, the straight line the square on which is equal to the sum of the squares on them is found in this manner."
+    hint: |
+      Similarly for a sum of squares:
+
+  - part: lemma
+    text: "Let AD, DB be the given two straight lines, and let it be required to find the straight line the square on which is equal to the sum of the squares on them."
+    hint: |
+      given *AD*, *DB* …
+
+  - part: lemma
+    text: "Let them be placed so as to contain a right angle, that formed by AD, DB; and let AB be joined."
+    hint: |
+      … set them at right angles and join *AB* …
+
+  - part: lemma
+    text: "It is again manifest that the straight line the square on which is equal to the sum of the squares on AD, DB is AB."
+    hint: |
+      … then $AB^2 = AD^2 + DB^2$ ([[I.47]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5]
+      text: |
+        If $b/c \in \mathbb{Q}$ then $a/c = (a/b)(b/c) \in \mathbb{Q}$. $\blacksquare$
+    - steps: [7, 8, 9, 10]
+      text: |
+        Lemma: $\sqrt{a^2 - c^2}$ is the other leg of a right triangle with hypotenuse $a$ and leg $c$.
+
+commentary: |
+  The lemma's figure is not drawn here. The phrase "the square on {A} is greater than the square on {B} by the
+  square on a line commensurable (or incommensurable) with {A}" runs through the rest of Book X; the lemma shows
+  that such a line always exists.

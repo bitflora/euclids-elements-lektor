@@ -1,0 +1,230 @@
+id: I.9
+kind: problem
+title: Bisecting an angle
+
+paraphrase: |
+  Given an angle {BAC|angBAC}, draw a line {AF} through its vertex that cuts it into two equal angles.
+
+diagram:
+  width: 300
+  height: 260
+  elements:
+    - "A;point;free;150,35"
+    - "B;point;free;45,175"
+    - "C;point;free;255,175"
+    - "AB;line;connect;A,B"
+    - "AC;line;connect;A,C"
+    - "D;point;lineSlider;A,B,85,122"
+    - "E;point;cutoff;A,C,A,D"
+    - "DE;line;connect;D,E"
+    - "DEF;polygon;equilateralTriangle;E,D;0;0;black;#efe4d2"
+    - "F;point;vertex;DEF,3"
+    - "AF;line;connect;A,F"
+    - "AD;line;connect;A,D;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "ADF;polygon;triangle;A,D,F;0;0;0;0"
+    - "AEF;polygon;triangle;A,E,F;0;0;0;0"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angDAF;sector;angleMarker;A,D,F"
+    - "angEAF;sector;angleMarker;A,E,F"
+  aliases:
+    BA: AB
+    CA: AC
+    DA: AD
+    EA: AE
+    FA: AF
+    ED: DE
+    FD: DF
+    FE: EF
+    BAC: angBAC
+    DAF: angDAF
+    EAF: angEAF
+  given: [A, B, C, AB, AC, angBAC]
+  caption: |
+    Drag {A}, {B} or {C}, and slide {D} along {AB}: {E} keeps {AE} = {AD}, the triangle on {DE}
+    stays equilateral, and {AF} keeps halving the angle.
+
+steps:
+  - part: enunciation
+    text: "To bisect a given rectilineal angle."
+    highlight: [angBAC, AF]
+    hint: |
+      A problem: cut a given angle into two equal halves.
+    explain:
+      did: |
+        States the task.
+      fact: |
+        A *rectilineal* angle is one contained by straight lines ([[I.Def.9]]), as opposed to
+        angles between curves, which Euclid also admits ([[I.Def.8]]).
+      implicit: |
+        Only bisection. Dividing an angle into *three* equal parts with straightedge and compass
+        is impossible in general — a fact not proved until the 19th century.
+
+  - part: setting-out
+    text: "Let the angle BAC be the given rectilineal angle."
+    highlight: [angBAC]
+    hint: |
+      Name the angle: vertex {A}, arms {AB} and {AC}.
+
+  - part: specification
+    text: "Thus it is required to bisect it."
+    highlight: [angBAC]
+    hint: |
+      The goal restated for the lettered figure.
+
+  - part: construction
+    text: "Let a point D be taken at random on AB;"
+    highlight: [D, AB]
+    adds: [D]
+    hint: |
+      Pick any point {D} on one arm.
+    explain:
+      did: |
+        Chooses an auxiliary point, as in [[I.5]].
+      implicit: |
+        That a point can be chosen on a line at all is never postulated.
+
+  - part: construction
+    text: "let AE be cut off from AC equal to AD;"
+    highlight: [AE, AD, E]
+    adds: [E]
+    hint: |
+      Mark {E} on the other arm with {AE} = {AD} ([[I.3]]).
+    explain:
+      did: |
+        Applies I.3 so that {D} and {E} are the same distance from {A}.
+      justification: "[[I.3]]"
+      implicit: |
+        That {AC} is at least as long as {AD}; it can be produced if not ([[I.Post.2]]).
+    modern: |
+      $$AE = AD$$
+
+  - part: construction
+    text: "let DE be joined, and on DE let the equilateral triangle DEF be constructed;"
+    highlight: [DE, DEF, F]
+    adds: [DE, DEF, F]
+    hint: |
+      Join {DE} and build an equilateral triangle {DEF} on it ([[I.1]]), on the side away from {A}.
+    explain:
+      did: |
+        Builds a point {F} equally far from {D} and {E}.
+      fact: |
+        All that matters is $DF = EF$. Equilateral is just the easiest way to get it.
+      justification: "[[I.Post.1]] for {DE}; [[I.1]] for the triangle (not bracketed by Heath)."
+      implicit: |
+        Which side of {DE} to build on. If {F} were on the same side as {A}, it could coincide with
+        {A}, and {AF} would not be a line at all. Heath (following Proclus) notes that Euclid
+        silently takes the other side.
+    gap: |
+      **Which side?** I.1 gives two possible apexes. The construction works with the one on the
+      far side of {DE} from {A}; Euclid does not say so.
+    cites: [I.Post.1, I.1]
+
+  - part: construction
+    text: "let AF be joined."
+    highlight: [AF]
+    adds: [AF]
+    hint: |
+      Draw {AF} ([[I.Post.1]]). This is the bisector.
+    cites: [I.Post.1]
+
+  - part: proof
+    text: "I say that the angle BAC has been bisected by the straight line AF."
+    highlight: [angBAC, AF]
+    hint: |
+      The claim to be proved: ∠{DAF} = ∠{EAF}.
+    explain:
+      did: |
+        Opens the proof. For a problem, the claim is that the construction does what was asked.
+
+  - part: proof
+    text: "For, since AD is equal to AE, and AF is common, the two sides DA, AF are equal to the two sides EA, AF respectively."
+    highlight: [ADF, AEF, AD, AE, AF]
+    hint: |
+      Compare triangles {ADF} and {AEF}: {AD} = {AE} by construction, and {AF} is shared.
+    modern: |
+      $$DA = EA,\qquad AF = AF$$
+
+  - part: proof
+    text: "And the base DF is equal to the base EF;"
+    highlight: [DF, EF]
+    hint: |
+      The third sides are equal too — {DEF} is equilateral.
+    explain:
+      justification: "[[I.Def.20]]"
+    modern: |
+      $$DF = EF$$
+    cites: [I.Def.20]
+
+  - part: proof
+    text: "therefore the angle DAF is equal to the angle EAF."
+    highlight: [angDAF, angEAF]
+    hint: |
+      Three pairs of equal sides: by [[I.8]] (SSS) the angles at {A} are equal.
+    explain:
+      did: |
+        Applies I.8.
+      justification: "[[I.8]]"
+      follows: |
+        In I.8 the equal angles are those "contained by the equal straight lines": here
+        {DA}, {AF} and {EA}, {AF}, which contain ∠{DAF} and ∠{EAF}.
+    modern: |
+      $$\triangle ADF \cong \triangle AEF \;\Longrightarrow\; \angle DAF = \angle EAF$$
+
+  - part: conclusion
+    text: "Therefore the given rectilineal angle BAC has been bisected by the straight line AF."
+    highlight: [angDAF, angEAF, AF]
+    hint: |
+      ∠{DAF} and ∠{EAF} are the two halves of ∠{BAC|angBAC}. Done.
+    explain:
+      implicit: |
+        That {AF} lies *inside* the angle, so that ∠{DAF} and ∠{EAF} really are its two parts.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3]
+      text: Let $D \in AB$ and $E \in AC$ with $AD = AE$.
+    - steps: [4, 5]
+      text: |
+        Let $F$ be a point with $DF = EF$ on the side of line $DE$ opposite $A$ (e.g. the apex of
+        an equilateral triangle on $DE$).
+    - steps: [6, 7, 8]
+      text: |
+        $AD = AE$, $DF = EF$, $AF = AF$, so $\triangle ADF \cong \triangle AEF$ (SSS) and
+        $\angle DAF = \angle EAF$.
+    - steps: [9]
+      text: |
+        $A$ and $F$ both lie on the perpendicular bisector of $DE$, which meets segment $DE$ at its
+        midpoint — an interior point of the angle. So ray $AF$ lies inside $\angle BAC$ and bisects
+        it. $\blacksquare$
+  closing: |
+    The last line supplies what Euclid takes from the figure: that the bisector runs *inside*
+    the angle.
+
+commentary: |
+  The first of four construction problems built on the congruence theorems: bisecting an angle
+  (I.9), bisecting a segment ([[I.10]]), and raising ([[I.11]]) or dropping ([[I.12]]) a
+  perpendicular. In each, the construction makes some triangles with equal sides, and I.8 or I.4
+  shows that the required parts are equal.
+
+  Only the equality $DF = EF$ is needed; the equilateral triangle is a convenience that [[I.1]]
+  happens to provide.
+
+gaps: |
+  - **Side of {DE}** (step 4): the apex {F} must be on the far side from {A}.
+  - **{AF} inside the angle** (conclusion): taken from the figure.
+
+historical: |
+  Proclus's commentary on this proposition turns to the *trisection* of an angle, which the
+  Greeks could do only with curves beyond the circle — the quadratrix of Hippias, the conchoid
+  of Nicomedes. That it cannot be done with straightedge and compass alone was proved by
+  Pierre Wantzel in 1837.

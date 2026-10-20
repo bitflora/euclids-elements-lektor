@@ -1,0 +1,66 @@
+id: X.76
+kind: theorem
+title: The minor line
+
+paraphrase: |
+  Subtracting from {AB} a line {BC} incommensurable with it in square, the squares on them adding to a rational
+  area and their rectangle medial, leaves an irrational {AC}: the *minor* line (counterpart of the major,
+  [[X.39]]).
+
+diagram:
+  width: 240
+  height: 65
+  elements:
+    - "A0;point;free;-1000,35"
+    - "A3;point;free;1000,35"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "B;point;lineSlider;A0,A3,210,0"
+    - "C;point;lineSlider;A0,A3,100,0"
+    - "AB;line;connect;A,B"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+  aliases: { BA: AB, CA: AC, CB: BC }
+  caption: |
+    {AC} = {AB} − {BC}, with {AB}, {BC} as in [[X.33]].
+
+steps:
+  - part: enunciation
+    text: "If from a straight line there be subtracted a straight line which is incommensurable in square with the whole and which with the whole makes the squares on them added together rational, but the rectangle contained by them medial, the remainder is irrational; and let it be called minor."
+    highlight: [AC]
+    hint: |
+      Rational sum of squares, medial rectangle, subtracted: the minor.
+
+  - part: setting-out
+    text: "For from the straight line AB let there be subtracted the straight line BC which is incommensurable in square with the whole and fulfils the given conditions."
+    highlight: [AB, BC]
+    hint: |
+      Setup ([[X.33]]).
+
+  - part: specification
+    text: "I say that the remainder AC is the irrational straight line called minor."
+    highlight: [AC]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since the sum of the squares on AB, BC is rational, while twice the rectangle AB, BC is medial, therefore the squares on AB, BC are incommensurable with twice the rectangle AB, BC; and, convertendo, the squares on AB, BC are incommensurable with the remainder, the square on AC."
+    highlight: [AC]
+    hint: |
+      The sum of squares (rational) is incommensurable with 2·rect (medial), hence with sq({AC}).
+
+  - part: proof
+    text: "But the squares on AB, BC are rational; therefore the square on AC is irrational; therefore AC is irrational."
+    highlight: [AC]
+    hint: |
+      So {AC} is irrational.
+
+  - part: proof
+    text: "And let it be called minor."
+    hint: |
+      The name: "minor" (ἐλάσσων), its square being rational *minus* medial.
+
+reconstruction:
+  lines:
+    - steps: [3, 4]
+      text: |
+        rational − medial is irrational. $\blacksquare$

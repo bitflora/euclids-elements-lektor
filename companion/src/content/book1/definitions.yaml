@@ -1,0 +1,339 @@
+# Book I, Definitions 1–23. Euclid's words come from Heath via the extracted
+# JSON; everything here is this edition's commentary.
+#
+# Figures are inline SVG styled by the app's CSS: .l line, .l2 emphasised line,
+# .thin dashed guide, .fill/.fill2 shaded region, .pt point, .arc angle mark,
+# .no a non-example, .fig-label italic letter, .fig-note small caption.
+
+items:
+  - id: I.Def.1
+    title: Point
+    paraphrase: |
+      A point is a location with no size.
+    meaning: |
+      "No part" means nothing smaller can be distinguished inside it: a point has no length,
+      breadth or depth. Euclid is describing an idea, not a dot on a page.
+    notes: |
+      Definitions 1–7 describe the basic objects rather than define them in a modern sense:
+      nothing later is ever proved *from* "a point is that which has no part". Modern axiom
+      systems (Hilbert, 1899) leave *point*, *line* and *plane* undefined and let the axioms
+      say how they behave. Euclid's word is σημεῖον, "sign" or "mark".
+    figure: |
+      <svg viewBox="0 0 300 110"><circle class="pt" cx="150" cy="50" r="3"/><text class="fig-label" x="158" y="45">A</text><text class="fig-note" x="150" y="95" text-anchor="middle">A drawn dot has size; the point it marks does not.</text></svg>
+
+  - id: I.Def.2
+    title: Line
+    paraphrase: |
+      A line has length but no width. It may be curved.
+    meaning: |
+      Euclid's *line* (γραμμή) is any curve. A straight line is a special kind (Def. 4), and in
+      Book I "line" almost always means a straight line *segment*.
+    examples:
+      - a straight segment
+      - the circumference of a circle
+      - any curve drawn without lifting the pen
+    nonExamples:
+      - a band with some width (that would be a surface)
+    notes: |
+      The modern "line" (straight and infinite in both directions) is narrower than Euclid's
+      word. Euclid's straight lines are finite but can always be produced (Post. 2).
+    figure: |
+      <svg viewBox="0 0 300 110"><path class="l" d="M30,80 C90,10 150,100 270,30"/><line class="l" x1="40" y1="95" x2="260" y2="95"/></svg>
+
+  - id: I.Def.3
+    title: Ends of a line
+    paraphrase: |
+      The ends of a line are points.
+    meaning: |
+      Where a line stops, it stops at a point. So a line is bounded by points just as a surface
+      is bounded by lines (Def. 6) and a solid by surfaces (XI.Def.2).
+    interpretations: |
+      Does this say that *every* line has ends? A circle's circumference does not. Most
+      commentators, from Proclus on, read it as: *if* a line has extremities, they are points.
+    figure: |
+      <svg viewBox="0 0 300 100"><line class="l" x1="60" y1="55" x2="240" y2="55"/><circle class="pt" cx="60" cy="55" r="3.5"/><circle class="pt" cx="240" cy="55" r="3.5"/><text class="fig-label" x="48" y="45">A</text><text class="fig-label" x="244" y="45">B</text></svg>
+
+  - id: I.Def.4
+    title: Straight line
+    paraphrase: |
+      A straight line is a line that does not bend — it "lies evenly" with its own points.
+    meaning: |
+      Everyone agrees on what is meant; no one agrees on what the words mean. "Lies evenly
+      with the points on itself" (ἐξ ἴσου) seems to say that the line is the same all along,
+      with no point placed differently from any other.
+    interpretations: |
+      The phrase is famously obscure, and several readings have been proposed:
+
+      - **Uniform in all its parts**: the line looks the same from every one of its points.
+      - **Seen end-on**: Plato's definition (*Parmenides* 137e), "straight is that whose middle
+        is in front of both its ends", i.e. sighting along it hides the rest behind the nearest
+        point. Proclus relates Euclid's wording to Plato's.
+      - **Shortest path**: Archimedes, *On the Sphere and Cylinder* I, assumes that of all lines
+        with the same ends the straight line is the least. That is a property, not Euclid's
+        definition.
+
+      None of these is ever used in a proof. What Euclid actually relies on about straight
+      lines is in the postulates.
+    modern: |
+      Undefined in modern axiomatics. In coordinates, the straight line through distinct
+      points $P, Q$ is $\{P + t(Q-P) : t \in \mathbb{R}\}$ and a segment takes $0 \le t \le 1$.
+    nonExamples:
+      - an arc of a circle
+      - a zig-zag of straight pieces
+    figure: |
+      <svg viewBox="0 0 300 110"><line class="l2" x1="30" y1="40" x2="270" y2="40"/><path class="no" d="M30,90 Q150,55 270,90"/><text class="fig-note" x="275" y="44">straight</text><text class="fig-note" x="200" y="104">not straight</text></svg>
+
+  - id: I.Def.5
+    title: Surface
+    paraphrase: |
+      A surface has length and breadth but no thickness.
+    meaning: |
+      The two-dimensional analogue of Def. 2. A surface may be curved, like the surface of a sphere.
+    figure: |
+      <svg viewBox="0 0 300 110"><path class="fill" d="M50,80 C80,20 200,10 250,40 L240,95 C190,70 90,100 50,80 Z"/></svg>
+
+  - id: I.Def.6
+    title: Edges of a surface
+    paraphrase: |
+      The edges of a surface are lines.
+    meaning: |
+      The analogue of Def. 3, one dimension up.
+
+  - id: I.Def.7
+    title: Plane
+    paraphrase: |
+      A plane is a surface that is flat — it "lies evenly" with the straight lines on it.
+    meaning: |
+      Modelled on Def. 4 and as obscure. The intended idea is flatness: a plane bends in no
+      direction.
+    modern: |
+      A later reformulation, used by Robert Simson in his 18th-century edition, is easier to
+      use: a plane is a surface such that the straight line through any two of its points lies
+      wholly in it.
+    notes: |
+      Books I–VI take place in a single plane without saying so. Several of Euclid's tacit
+      assumptions (for example, that the figure in [[I.1]] lies in a plane) are only
+      addressed in Book XI.
+
+  - id: I.Def.8
+    title: Plane angle
+    paraphrase: |
+      An angle is the inclination of two lines that meet in a plane without forming a single straight line.
+    meaning: |
+      An angle is how two lines lean towards each other where they meet. Because Euclid's lines
+      may be curved, so may the sides of an angle: Book III compares the angle between a circle
+      and a tangent (the "horn angle") with rectilineal angles.
+
+      "Do not lie in a straight line" excludes the straight angle. Euclid's angles are always
+      less than two right angles; there are no angles of 180° or more, and no zero angle.
+    interpretations: |
+      Is an angle a *quantity* (a size), a *quality* (a shape of inclination), or a *relation*
+      between two lines? Proclus reports all three views among his predecessors. The
+      definition says "inclination", which suits the second, but in the proofs angles are
+      treated as magnitudes that can be added, subtracted and compared.
+    figure: |
+      <svg viewBox="0 0 300 120"><path class="l" d="M60,95 L250,95"/><path class="l" d="M60,95 Q140,70 220,20"/><path class="arc" d="M95,95 A35,35 0 0 0 93,83"/><text class="fig-note" x="150" y="112">two lines, possibly curved, meeting</text></svg>
+
+  - id: I.Def.9
+    title: Rectilineal angle
+    paraphrase: |
+      A rectilineal angle is one whose sides are straight.
+    meaning: |
+      Almost every angle in the *Elements* is rectilineal. Euclid names an angle by three
+      letters with the vertex in the middle: the angle {ABC} has its vertex at {B}.
+    modern: |
+      $\angle ABC$ is the angle at $B$ between rays $BA$ and $BC$, with measure strictly between
+      $0^\circ$ and $180^\circ$.
+    figure: |
+      <svg viewBox="0 0 300 120"><line class="l" x1="80" y1="95" x2="250" y2="95"/><line class="l" x1="80" y1="95" x2="200" y2="20"/><path class="arc" d="M115,95 A35,35 0 0 0 110,77"/><text class="fig-label" x="64" y="104">B</text><text class="fig-label" x="204" y="20">A</text><text class="fig-label" x="254" y="104">C</text><text class="fig-note" x="150" y="116">the angle ABC</text></svg>
+
+  - id: I.Def.10
+    title: Right angle; perpendicular
+    paraphrase: |
+      When a line standing on another makes the two angles on either side equal, each is a
+      *right angle*, and the standing line is *perpendicular* to the other.
+    meaning: |
+      A right angle is defined without any measure: it is half of what a straight line makes
+      when another line stands on it. Euclid never uses degrees; the right angle *is* his unit
+      of angle ("two right angles", "less than two right angles").
+    modern: |
+      If $D$ lies on line $AB$ between $A$ and $B$ and $\angle ADC = \angle CDB$, each is a right
+      angle ($90^\circ$) and $CD \perp AB$.
+    examples:
+      - the corner of a square
+    nonExamples:
+      - a line standing on another at a slant, making one angle obtuse and the other acute
+    notes: |
+      That any two right angles are equal — at different places in the figure — is not
+      deducible from this definition as it stands; Euclid makes it [[I.Post.4]].
+    figure: |
+      <svg viewBox="0 0 300 120"><line class="l" x1="40" y1="95" x2="260" y2="95"/><line class="l2" x1="150" y1="95" x2="150" y2="15"/><path class="l" d="M150,82 L163,82 L163,95" /><path class="l" d="M150,82 L137,82 L137,95" /><text class="fig-label" x="30" y="112">A</text><text class="fig-label" x="262" y="112">B</text><text class="fig-label" x="146" y="112">D</text><text class="fig-label" x="156" y="18">C</text></svg>
+
+  - id: I.Def.11
+    title: Obtuse angle
+    paraphrase: |
+      An obtuse angle is greater than a right angle.
+    modern: |
+      $90^\circ < \angle ABC < 180^\circ$
+    figure: |
+      <svg viewBox="0 0 300 110"><line class="l" x1="150" y1="90" x2="270" y2="90"/><line class="l" x1="150" y1="90" x2="60" y2="25"/><path class="arc" d="M180,90 A30,30 0 0 0 126,73"/><line class="thin" x1="150" y1="90" x2="150" y2="20"/></svg>
+
+  - id: I.Def.12
+    title: Acute angle
+    paraphrase: |
+      An acute angle is less than a right angle.
+    modern: |
+      $0^\circ < \angle ABC < 90^\circ$
+    notes: |
+      Defs. 11–12 compare angles with the right angle. That angles can be compared at all ("greater",
+      "less") is taken for granted, as it is for all magnitudes of one kind.
+    figure: |
+      <svg viewBox="0 0 300 110"><line class="l" x1="90" y1="90" x2="250" y2="90"/><line class="l" x1="90" y1="90" x2="210" y2="25"/><path class="arc" d="M120,90 A30,30 0 0 0 116,76"/><line class="thin" x1="90" y1="90" x2="90" y2="20"/></svg>
+
+  - id: I.Def.13
+    title: Boundary
+    paraphrase: |
+      A boundary is an edge — the extremity of something.
+    meaning: |
+      A general word covering the ends of lines (points) and the edges of surfaces (lines).
+
+  - id: I.Def.14
+    title: Figure
+    paraphrase: |
+      A figure is whatever is enclosed by a boundary or boundaries.
+    meaning: |
+      For Euclid a figure is a bounded region: a triangle is the region inside three lines, not
+      just the three lines. "One boundary" covers the circle; "boundaries", polygons.
+    notes: |
+      This is why Euclid can say that two figures are *equal* (in size) without being congruent:
+      a figure is a magnitude, like a length or an angle.
+
+  - id: I.Def.15
+    title: Circle
+    paraphrase: |
+      A circle is a plane figure bounded by one line, such that every straight line from a
+      certain interior point to the boundary is equal.
+    meaning: |
+      The boundary line is the *circumference*; the equal lines from the centre are what we
+      call radii. Euclid's *circle* is the whole region (what we call a disk), not only its
+      boundary. The equality of all radii is what I.1, I.2 and I.3 use.
+    modern: |
+      With centre $O$ and radius $r > 0$: the disk $\{P : OP \le r\}$ is Euclid's circle, and
+      its boundary $\{P : OP = r\}$ is the modern "circle". Every $P$ on the boundary has $OP = r$.
+    figureCaption: "{C} the centre; {AB} a diameter; {CD} a radius; the shaded half a semicircle."
+    figure: |
+      <svg viewBox="0 0 300 170"><path class="fill" d="M80,85 A70,70 0 0 1 220,85 Z"/><circle class="l" cx="150" cy="85" r="70"/><line class="l2" x1="80" y1="85" x2="220" y2="85"/><line class="l" x1="150" y1="85" x2="200" y2="136"/><circle class="pt" cx="150" cy="85" r="3"/><text class="fig-label" x="146" y="102">C</text><text class="fig-label" x="64" y="90">A</text><text class="fig-label" x="226" y="90">B</text><text class="fig-label" x="204" y="150">D</text></svg>
+
+  - id: I.Def.16
+    title: Centre
+    paraphrase: |
+      That interior point is the *centre* of the circle.
+    meaning: |
+      The definition does not say the centre is unique; that is proved later
+      ([[III.9]], and how to find it, [[III.1]]).
+    figureCaption: "{C} the centre."
+    figure: |
+      <svg viewBox="0 0 300 170"><circle class="l" cx="150" cy="85" r="70"/><line class="l" x1="150" y1="85" x2="220" y2="85"/><line class="l" x1="150" y1="85" x2="100" y2="36"/><line class="l" x1="150" y1="85" x2="130" y2="152"/><circle class="pt" cx="150" cy="85" r="3"/><text class="fig-label" x="140" y="80">C</text></svg>
+
+  - id: I.Def.17
+    title: Diameter
+    paraphrase: |
+      A diameter is a straight line through the centre with both ends on the circumference.
+      Every diameter bisects the circle.
+    meaning: |
+      The second clause is not a definition but a theorem, and Euclid never proves it.
+      Proclus reports that Thales was the first to prove it.
+    modern: |
+      A chord $AB$ with the centre $O$ on it; then $AO = OB = r$ and the two halves of the disk
+      have equal area.
+    figureCaption: "{AB} a diameter through the centre {C}."
+    figure: |
+      <svg viewBox="0 0 300 170"><circle class="l" cx="150" cy="85" r="70"/><line class="l2" x1="80" y1="85" x2="220" y2="85"/><circle class="pt" cx="150" cy="85" r="3"/><text class="fig-label" x="146" y="102">C</text><text class="fig-label" x="64" y="90">A</text><text class="fig-label" x="226" y="90">B</text></svg>
+
+  - id: I.Def.18
+    title: Semicircle
+    paraphrase: |
+      A semicircle is the figure bounded by a diameter and the part of the circumference it cuts off.
+      Its centre is the centre of the circle.
+    figure: |
+      <svg viewBox="0 0 300 120"><path class="fill" d="M80,95 A70,70 0 0 1 220,95 Z"/><circle class="pt" cx="150" cy="95" r="3"/></svg>
+
+  - id: I.Def.19
+    title: Rectilineal figures
+    paraphrase: |
+      Figures bounded by straight lines: *trilateral* (three sides), *quadrilateral* (four),
+      *multilateral* (more than four).
+    meaning: |
+      What we call polygons, classified by the number of sides.
+    figure: |
+      <svg viewBox="0 0 300 110"><polygon class="fill" points="30,90 90,90 60,30"/><polygon class="fill" points="115,90 185,90 185,30 115,30"/><polygon class="fill" points="240,25 272,48 260,88 220,88 208,48"/></svg>
+
+  - id: I.Def.20
+    title: Equilateral, isosceles, scalene
+    paraphrase: |
+      A triangle is *equilateral* if all three sides are equal, *isosceles* if exactly two are,
+      and *scalene* if no two are.
+    meaning: |
+      Note Heath's "two of its sides **alone** equal": Euclid's classes do not overlap, so an
+      equilateral triangle is *not* isosceles. Modern usage ("at least two equal sides") makes
+      every equilateral triangle isosceles.
+    modern: |
+      Equilateral: $AB = BC = CA$. Isosceles (Euclid): exactly two of $AB, BC, CA$ equal.
+      Scalene: $AB \ne BC \ne CA \ne AB$.
+    examples:
+      - "Isosceles: sides 5, 5, 3."
+      - "Scalene: sides 3, 4, 5."
+    nonExamples:
+      - "For Euclid, a triangle with sides 4, 4, 4 is not isosceles."
+    notes: |
+      Used at the end of [[I.1]] (the triangle is equilateral) and in [[I.5]] (isosceles
+      triangles). The exclusive reading means I.5, strictly, says nothing about equilateral
+      triangles; the proof works for them unchanged.
+    figure: |
+      <svg viewBox="0 0 300 110"><polygon class="fill" points="20,90 90,90 55,29"/><polygon class="fill" points="120,90 180,90 150,20"/><polygon class="fill" points="210,90 290,90 235,45"/><text class="fig-note" x="55" y="106" text-anchor="middle">equilateral</text><text class="fig-note" x="150" y="106" text-anchor="middle">isosceles</text><text class="fig-note" x="250" y="106" text-anchor="middle">scalene</text></svg>
+
+  - id: I.Def.21
+    title: Right-, obtuse-, acute-angled triangles
+    paraphrase: |
+      A triangle is *right-angled* if it has a right angle, *obtuse-angled* if it has an obtuse
+      angle, and *acute-angled* if all three angles are acute.
+    meaning: |
+      Implicit here is that a triangle cannot have two right or obtuse angles. That is only
+      proved in [[I.17]] (any two angles of a triangle are less than two right angles).
+    figure: |
+      <svg viewBox="0 0 300 110"><polygon class="fill" points="20,90 90,90 20,35"/><path class="l" d="M20,80 L30,80 L30,90"/><polygon class="fill" points="115,90 185,90 100,55"/><polygon class="fill" points="215,90 285,90 255,30"/><text class="fig-note" x="50" y="106" text-anchor="middle">right</text><text class="fig-note" x="145" y="106" text-anchor="middle">obtuse</text><text class="fig-note" x="250" y="106" text-anchor="middle">acute</text></svg>
+
+  - id: I.Def.22
+    title: Kinds of quadrilateral
+    paraphrase: |
+      A *square* has equal sides and right angles; an *oblong* has right angles but unequal
+      sides; a *rhombus* has equal sides but no right angles; a *rhomboid* has opposite sides and
+      angles equal but is neither equilateral nor right-angled. Any other quadrilateral is a
+      *trapezium*.
+    meaning: |
+      Again the classes are exclusive: a square is not an oblong or a rhombus. What we call a
+      rectangle is Euclid's square-or-oblong; his rhomboid is a parallelogram that is neither a
+      rectangle nor a rhombus. His *trapezium* is any quadrilateral outside these four classes
+      — not the modern trapezium/trapezoid.
+    notes: |
+      Apart from the square, these names are hardly used in the *Elements*. Euclid works instead
+      with the *parallelogram*, a word he introduces in [[I.34]] without a definition.
+    figure: |
+      <svg viewBox="0 0 300 110"><rect class="fill" x="10" y="35" width="50" height="50"/><rect class="fill" x="72" y="45" width="70" height="40"/><polygon class="fill" points="155,85 200,85 225,50 180,50"/><polygon class="fill" points="232,85 290,85 280,50 238,62"/><text class="fig-note" x="35" y="102" text-anchor="middle">square</text><text class="fig-note" x="107" y="102" text-anchor="middle">oblong</text><text class="fig-note" x="190" y="102" text-anchor="middle">rhomboid</text><text class="fig-note" x="262" y="102" text-anchor="middle">trapezium</text></svg>
+
+  - id: I.Def.23
+    title: Parallel straight lines
+    paraphrase: |
+      Parallel lines are straight lines in the same plane that never meet, however far they are
+      extended in either direction.
+    meaning: |
+      "Produced indefinitely" matters: Euclid's straight lines are finite, so being parallel is a
+      claim about all possible extensions. The definition says nothing about the lines being
+      equidistant; that they are is a consequence, and only in Euclidean geometry.
+    modern: |
+      Distinct coplanar lines $\ell, m$ with $\ell \cap m = \varnothing$.
+    notes: |
+      Parallels are constructed in [[I.31]]; their properties depend on [[I.Post.5]], first used
+      in [[I.29]].
+    figure: |
+      <svg viewBox="0 0 300 100"><line class="l2" x1="30" y1="35" x2="270" y2="35"/><line class="l2" x1="30" y1="70" x2="270" y2="70"/><line class="thin" x1="0" y1="35" x2="30" y2="35"/><line class="thin" x1="270" y1="35" x2="300" y2="35"/><line class="thin" x1="0" y1="70" x2="30" y2="70"/><line class="thin" x1="270" y1="70" x2="300" y2="70"/></svg>

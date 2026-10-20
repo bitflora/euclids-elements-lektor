@@ -1,0 +1,140 @@
+id: V.15
+kind: theorem
+title: Parts and their equimultiples have the same ratio
+
+paraphrase: |
+  If {AB} and {DE} are the same multiple of {C} and {F}, then {C} : {F} = {AB} : {DE}. In algebra: $c : f = nc : nf$.
+
+diagram:
+  width: 380
+  height: 150
+  elements:
+    - "U0;point;free;-1000,30;0;0"
+    - "U1;point;free;1000,30;0;0"
+    - "V0;point;free;-1000,60;0;0"
+    - "V1;point;free;1000,60;0;0"
+    - "W0;point;free;-1000,90;0;0"
+    - "W1;point;free;1000,90;0;0"
+    - "X0;point;free;-1000,120;0;0"
+    - "X1;point;free;1000,120;0;0"
+    - "C0;point;lineSlider;W0,W1,20,90;0"
+    - "C1;point;lineSlider;W0,W1,70,90;0"
+    - "C;line;connect;C0,C1;black;0;green"
+    - "F0;point;lineSlider;X0,X1,280,120;0"
+    - "F1;point;lineSlider;X0,X1,350,120;0"
+    - "F;line;connect;F0,F1;black;0;green"
+    - "A;point;lineSlider;U0,U1,20,30"
+    - "G;point;cutoff;A,U1,C0,C1"
+    - "H;point;cutoff;G,U1,C0,C1"
+    - "B;point;cutoff;H,U1,C0,C1"
+    - "AB;line;connect;A,B;0;0;green"
+    - "E;point;lineSlider;V0,V1,350,60"
+    - "L;point;cutoff;E,V0,F0,F1"
+    - "K;point;cutoff;L,V0,F0,F1"
+    - "D;point;cutoff;K,V0,F0,F1"
+    - "DE;line;connect;D,E;0;0;green"
+    - "AG;line;connect;A,G;0;0;0"
+    - "GH;line;connect;G,H;0;0;0"
+    - "HB;line;connect;H,B;0;0;0"
+    - "DK;line;connect;D,K;0;0;0"
+    - "KL;line;connect;K,L;0;0;0"
+    - "LE;line;connect;L,E;0;0;0"
+  caption: |
+    {AB} is three times {C}, {DE} three times {F}. Drag the ends of {C} and {F}.
+
+steps:
+  - part: enunciation
+    text: "Parts have the same ratio as the same multiples of them taken in corresponding order."
+    highlight: [C, F, AB, DE]
+    hint: |
+      $C : F = nC : nF$.
+    explain:
+      implicit: |
+        {C} and {F} must be of the same kind (they form a ratio), and so must {AB}, {DE}.
+    modern: |
+      $$c : f = nc : nf$$
+
+  - part: setting-out
+    text: "For let AB be the same multiple of C that DE is of F;"
+    highlight: [AB, C, DE, F]
+    hint: |
+      {AB} = $n${C}, {DE} = $n${F}; in the figure $n = 3$.
+
+  - part: specification
+    text: "I say that, as C is to F, so is AB to DE."
+    highlight: [C, F, AB, DE]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, since AB is the same multiple of C that DE is of F, as many magnitudes as there are in AB equal to C, so many are there also in DE equal to F."
+    highlight: [AB, C, DE, F]
+    hint: |
+      The same number of copies in each ([[V.Def.2]]).
+
+  - part: construction
+    text: "Let AB be divided into the magnitudes AG, GH, HB equal to C, and DE into the magnitudes DK, KL, LE equal to F;"
+    highlight: [AG, GH, HB, DK, KL, LE]
+    hint: |
+      Mark off the copies.
+
+  - part: proof
+    text: "then the multitude of the magnitudes AG, GH, HB will be equal to the multitude of the magnitudes DK, KL, LE."
+    highlight: [AG, GH, HB, DK, KL, LE]
+    hint: |
+      Three each.
+
+  - part: proof
+    text: "And, since AG, GH, HB are equal to one another, and DK, KL, LE are also equal to one another, therefore, as AG is to DK, so is GH to KL, and HB to LE."
+    highlight: [AG, DK, GH, KL, HB, LE]
+    hint: |
+      Equal magnitudes to equal magnitudes: the same ratio ([[V.7]]).
+    explain:
+      implicit: |
+        [[V.7]] gives $AG : DK = GH : DK$ and $GH : DK = GH : KL$; [[V.11]] joins them. Heath's bracket
+        cites only [[V.7]].
+    cites: [V.11]
+
+  - part: proof
+    text: "Therefore, as one of the antecedents is to one of the consequents, so will all the antecedents be to all the consequents;"
+    highlight: [AG, DK, AB, DE]
+    hint: |
+      [[V.12]]: equal ratios, summed.
+
+  - part: proof
+    text: "therefore, as AG is to DK, so is AB to DE."
+    highlight: [AG, DK, AB, DE]
+    hint: |
+      {AB} = {AG} + {GH} + {HB} and {DE} = {DK} + {KL} + {LE}.
+
+  - part: proof
+    text: "But AG is equal to C and DK to F; therefore, as C is to F, so is AB to DE."
+    highlight: [AG, C, DK, F, AB, DE]
+    hint: |
+      Replace {AG}, {DK} by the equal {C}, {F} ([[V.7]], [[V.11]]).
+    cites: [V.7, V.11]
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      text: |
+        Directly from [[V.Def.5]]: for all $p, q$,
+        $$p(nC) \gtreqless q(nF) \iff n(pC) \gtreqless n(qF) \iff pC \gtreqless qF.$$
+        So $nC : nF = C : F$. $\blacksquare$
+
+commentary: |
+  A ratio is unchanged when both terms are multiplied by the same number: the first step toward treating
+  ratios like fractions. Used in [[V.16]], and in Book VI for parallelograms that are double the triangles
+  on the same base ([[VI.1]]).

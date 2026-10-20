@@ -1,0 +1,148 @@
+id: VI.31
+kind: theorem
+title: The Pythagorean theorem for similar figures
+
+paraphrase: |
+  In a right-angled triangle {ABC}, any figure on the hypotenuse {BC} equals the sum of the similar, similarly drawn
+  figures on {BA} and {AC}. [[I.47]] is the case of squares.
+
+diagram:
+  width: 380
+  height: 280
+  elements:
+    - "B;point;free;60,180"
+    - "C;point;free;300,180"
+    - "M;point;midpoint;B,C;0;0"
+    - "circ;circle;radius;M,B;0;0;0;0"
+    - "A;point;circleSlider;circ,120,80"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;0"
+    - "D;point;foot;A,B,C;black;green"
+    - "AD;line;connect;A,D"
+    - "E;point;free;60,260;0"
+    - "F;point;free;300,260;0"
+    - "BCFE;polygon;quadrilateral;B,C,F,E;0;0;black;#efe4d2"
+    - "G;point;similar;A,B,B,C,E;0"
+    - "H;point;similar;A,B,B,C,F;0"
+    - "ABHG;polygon;quadrilateral;A,B,H,G;0;0;black;#dfe7ea"
+    - "K;point;similar;C,A,B,C,E;0"
+    - "N;point;similar;C,A,B,C,F;0"
+    - "CANK;polygon;quadrilateral;C,A,N,K;0;0;black;#dfe7ea"
+    - "BC;line;connect;B,C;0;0;0"
+    - "BA;line;connect;B,A;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "DC;line;connect;D,C;0;0;0"
+    - "ABD;polygon;triangle;A,B,D;0;0;0;0"
+    - "ADC;polygon;triangle;A,D,C;0;0;0;0"
+    - "angBAC;sector;angleMarker;A,B,C"
+  aliases:
+    CB: BC
+    AB: BA
+    CA: AC
+    CD: DC
+  caption: |
+    Slide {A} round the semicircle (the angle at {A} stays right), drag {B}, {C}, or the free corners {E}, {F} of the figure on {BC}: the
+    figures on {BA} and {AC} keep its shape, and their areas always add up to its area.
+
+steps:
+  - part: enunciation
+    text: "In right-angled triangles the figure on the side subtending the right angle is equal to the similar and similarly described figures on the sides containing the right angle."
+    highlight: [ABC, BCFE, ABHG, CANK]
+    hint: |
+      [[I.47]] with squares replaced by any similar figures.
+    modern: |
+      $$[\text{figure on } BC] = [\text{figure on } BA] + [\text{figure on } AC]$$
+
+  - part: setting-out
+    text: "Let ABC be a right-angled triangle having the angle BAC right;"
+    highlight: [ABC, angBAC]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the figure on BC is equal to the similar and similarly described figures on BA, AC."
+    highlight: [BCFE, ABHG, CANK]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let AD be drawn perpendicular."
+    highlight: [AD]
+    hint: |
+      The altitude to the hypotenuse ([[I.12]]).
+
+  - part: proof
+    text: "Then since, in the right-angled triangle ABC, AD has been drawn from the right angle at A perpendicular to the base BC, the triangles ABD, ADC adjoining the perpendicular are similar both to the whole ABC and to one another."
+    highlight: [ABD, ADC, ABC]
+    hint: |
+      [[VI.8]].
+
+  - part: proof
+    text: "And, since ABC is similar to ABD, therefore, as CB is to BA, so is AB to BD."
+    highlight: [CB, BA, BD]
+    hint: |
+      {BA} is the mean proportional between {CB} and {BD} ([[VI.Def.1]]).
+
+  - part: proof
+    text: "And, since three straight lines are proportional, as the first is to the third, so is the figure on the first to the similar and similarly described figure on the second."
+    highlight: [CB, BA, BD]
+    hint: |
+      The porism to [[VI.19]] (with [[VI.20]] for polygons).
+
+  - part: proof
+    text: "Therefore, as CB is to BD, so is the figure on CB to the similar and similarly described figure on BA."
+    highlight: [CB, BD, BCFE, ABHG]
+    hint: |
+      Figure on {BC} : figure on {BA} = {CB} : {BD}.
+
+  - part: proof
+    text: "For the same reason also, as BC is to CD, so is the figure on BC to that on CA;"
+    highlight: [BC, CD, BCFE, CANK]
+    hint: |
+      Likewise with {C}.
+
+  - part: proof
+    text: "so that, in addition, as BC is to BD, DC, so is the figure on BC to the similar and similarly described figures on BA, AC."
+    highlight: [BC, BD, DC, BCFE, ABHG, CANK]
+    hint: |
+      Invert both and add the consequents ([[V.24]], with inversion).
+    explain:
+      implicit: |
+        From $BD : BC = [BA\text{-figure}] : [BC\text{-figure}]$ and $DC : BC = [AC\text{-figure}] : [BC\text{-figure}]$,
+        [[V.24]] gives $(BD + DC) : BC = ([BA] + [AC]) : [BC]$; inverting once more gives Euclid's statement.
+    cites: [V.24]
+
+  - part: proof
+    text: "But BC is equal to BD, DC; therefore the figure on BC is also equal to the similar and similarly described figures on BA, AC."
+    highlight: [BC, BD, DC, BCFE, ABHG, CANK]
+    hint: |
+      The first term equals the second, so the third equals the fourth ([[V.14]], [[V.9]]).
+    cites: [V.9]
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Let the figure on a side $s$ have area $k s^2$ (same $k$
+    for similar figures).
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      text: |
+        $k\,BA^2 + k\,AC^2 = k(BA^2 + AC^2) = k\,BC^2$ by [[I.47]]. $\blacksquare$
+  closing: |
+    Euclid's proof does not use [[I.47]]: it goes through the similar triangles of [[VI.8]], so it also
+    gives a second proof of [[I.47]] itself (take squares).
+
+commentary: |
+  Proclus says that this generalisation is Euclid's own. Joyce describes the use of the idea, for curved
+  figures, a century before Euclid by Hippocrates of Chios in his quadrature of lunes: the semicircle on the
+  hypotenuse of a right isosceles triangle equals the semicircles on the legs, and subtracting the common
+  segments leaves a crescent equal to a triangle.

@@ -1,0 +1,198 @@
+# Book X, Definitions I.1–4 (before X.1), II.1–6 (before X.48) and III.1–6
+# (before X.85). Euclid's words come from Heath via the extracted JSON;
+# everything here is this edition's commentary.
+
+items:
+  - id: X.Def.1
+    title: Commensurable and incommensurable magnitudes
+    paraphrase: |
+      Two magnitudes are *commensurable* if some one magnitude measures both; *incommensurable* if none does.
+    meaning: |
+      Commensurable magnitudes are, in effect, whole-number multiples of a common unit, so their ratio is a
+      ratio of numbers ([[X.5]], [[X.6]]). The side and diagonal of a square are the classic incommensurable
+      pair: no unit, however small, fits a whole number of times into both.
+    modern: |
+      $a$ and $b$ are commensurable iff $a/b \in \mathbb{Q}$.
+    examples:
+      - 'lines of length 2 and 3 (measured by 1)'
+      - 'lines of length ¾ and ½ (measured by ¼)'
+    nonExamples:
+      - 'the side and diagonal of a square ($1$ and $\sqrt2$)'
+    notes: |
+      The definition applies to magnitudes of any kind (lines, areas, solids). [[X.2]] gives a test by the
+      Euclidean algorithm: if it never ends, the magnitudes are incommensurable.
+
+  - id: X.Def.2
+    title: Commensurable in square
+    paraphrase: |
+      Two straight lines are *commensurable in square* when the squares on them are commensurable.
+    meaning: |
+      Lines can be incommensurable themselves ("in length") yet have commensurable squares: 1 and $\sqrt2$
+      have squares 1 and 2. Lines commensurable in length are always commensurable in square, not
+      conversely ([[X.9]]).
+    modern: |
+      $a, b$ commensurable in square iff $a^2/b^2 \in \mathbb{Q}$.
+    examples:
+      - '$1$ and $\sqrt2$ (squares 1 and 2)'
+      - '$\sqrt3$ and $\sqrt{12}$ (commensurable in length too)'
+    nonExamples:
+      - '$1$ and $\sqrt[4]{2}$ (squares 1 and $\sqrt2$)'
+
+  - id: X.Def.3
+    title: Rational and irrational straight lines
+    paraphrase: |
+      Fix a straight line and call it *rational*. Lines commensurable with it — in length, or at least in
+      square — are also *rational*; lines incommensurable with it even in square are *irrational*.
+    meaning: |
+      Euclid's "rational" is wider than ours: with the unit line rational, a line of length $\sqrt2$ is
+      "rational" (it is commensurable in square with the unit). His "irrational" lines are those like
+      $\sqrt[4]{2}$ or $1 + \sqrt2$ whose squares are not rational multiples of the unit square.
+    modern: |
+      With unit $\rho$: a line $a$ is rational iff $a^2/\rho^2 \in \mathbb{Q}$, i.e. $a = \rho\sqrt{q}$, $q \in
+      \mathbb{Q}_{>0}$. "Rational in length" means $a/\rho \in \mathbb{Q}$.
+    examples:
+      - '$1$, $\tfrac32$, $\sqrt2$, $\sqrt{\tfrac35}$ (taking the unit as rational)'
+    nonExamples:
+      - '$\sqrt[4]{2}$ (a *medial* line, [[X.21]])'
+      - '$1 + \sqrt2$ (a *binomial*, [[X.36]])'
+    interpretations: |
+      Heath translates ῥητός as "rational" and ἄλογος as "irrational", but warns that the words do not
+      match modern usage. Some translators prefer "expressible" for ῥητός. Book X's whole classification —
+      medials, binomials, apotomes and their kinds — is a classification of lines whose squares involve
+      nested square roots, all relative to the chosen rational line.
+
+  - id: X.Def.4
+    title: Rational and irrational areas
+    paraphrase: |
+      The square on the chosen line is a *rational* area, and so is any area commensurable with it; other
+      areas are *irrational*, and so are the lines whose squares equal them.
+    meaning: |
+      An area is rational if it is a rational multiple of the unit square. An irrational area's side (the
+      side of the equal square) is an irrational line: for instance the rectangle $1 \times \sqrt2$ is
+      irrational, and its side $\sqrt[4]{2}$ is the *medial* line of [[X.21]].
+    modern: |
+      Area $A$ rational iff $A/\rho^2 \in \mathbb{Q}$; the line "producing" $A$ is $\sqrt{A}$.
+
+  - id: X.Def.II.1
+    title: First binomial
+    paraphrase: |
+      A binomial $a + b$ ($a > b$, the terms rational but commensurable in square only) is a *first binomial*
+      when $\sqrt{a^2 - b^2}$ is commensurable with $a$, and $a$ is commensurable with the rational line.
+    meaning: |
+      The six kinds of binomial are distinguished by two questions. (1) Is $\sqrt{a^2 - b^2}$ commensurable in
+      length with the greater term $a$? (Yes: kinds 1–3; no: kinds 4–6.) (2) Which term is commensurable in
+      length with the rational line — the greater (1, 4), the lesser (2, 5), or neither (3, 6)?
+    modern: |
+      Rational line 1: e.g. $3 + \sqrt5$ ($\sqrt{9 - 5} = 2$, commensurable with 3).
+    examples:
+      - '$3 + \sqrt5$'
+    notes: |
+      Defined before [[X.48]], which constructs a first binomial. The first binomials are exactly the
+      squares of the binomials of [[X.36]], after "application" to a rational line ([[X.60]]).
+
+  - id: X.Def.II.2
+    title: Second binomial
+    paraphrase: |
+      As the first, but the *lesser* term is commensurable with the rational line.
+    modern: |
+      E.g. $\sqrt{12} + 3$: $\sqrt{12 - 9} = \sqrt3$, commensurable with $\sqrt{12}$; the lesser term 3 is
+      rational in length.
+    examples:
+      - '$\sqrt{12} + 3$'
+
+  - id: X.Def.II.3
+    title: Third binomial
+    paraphrase: |
+      As the first, but *neither* term is commensurable with the rational line.
+    modern: |
+      E.g. $\sqrt{8} + \sqrt{6}$: $\sqrt{8 - 6} = \sqrt2$, commensurable with $\sqrt8$, and neither term
+      rational in length.
+    examples:
+      - '$\sqrt8 + \sqrt6$'
+
+  - id: X.Def.II.4
+    title: Fourth binomial
+    paraphrase: |
+      Now $\sqrt{a^2 - b^2}$ is *incommensurable* with $a$; and the greater term is commensurable with the
+      rational line.
+    modern: |
+      E.g. $3 + \sqrt3$: $\sqrt{9 - 3} = \sqrt6$, incommensurable with 3.
+    examples:
+      - '$3 + \sqrt3$'
+
+  - id: X.Def.II.5
+    title: Fifth binomial
+    paraphrase: |
+      As the fourth, but the lesser term is commensurable with the rational line.
+    modern: |
+      E.g. $\sqrt{6} + 2$: $\sqrt{6 - 4} = \sqrt2$, incommensurable with $\sqrt6$.
+    examples:
+      - '$\sqrt6 + 2$'
+
+  - id: X.Def.II.6
+    title: Sixth binomial
+    paraphrase: |
+      As the fourth, but neither term is commensurable with the rational line.
+    modern: |
+      E.g. $\sqrt5 + \sqrt3$: $\sqrt{5 - 3} = \sqrt2$, incommensurable with $\sqrt5$.
+    examples:
+      - '$\sqrt5 + \sqrt3$'
+
+  - id: X.Def.III.1
+    title: First apotome
+    paraphrase: |
+      An *apotome* is a difference $a - b$ of two rational lines commensurable in square only ([[X.73]]); $b$
+      is the *annex*. It is a *first apotome* when $\sqrt{a^2 - b^2}$ is commensurable with $a$ and $a$ is
+      commensurable with the rational line.
+    meaning: |
+      The six apotomes mirror the six binomials exactly, with $-$ in place of $+$.
+    modern: |
+      E.g. $3 - \sqrt5$.
+    examples:
+      - '$3 - \sqrt5$'
+
+  - id: X.Def.III.2
+    title: Second apotome
+    paraphrase: |
+      As the first, but the annex is commensurable with the rational line.
+    modern: |
+      E.g. $\sqrt{12} - 3$.
+    examples:
+      - '$\sqrt{12} - 3$'
+
+  - id: X.Def.III.3
+    title: Third apotome
+    paraphrase: |
+      As the first, but neither the whole nor the annex is commensurable with the rational line.
+    modern: |
+      E.g. $\sqrt8 - \sqrt6$.
+    examples:
+      - '$\sqrt8 - \sqrt6$'
+
+  - id: X.Def.III.4
+    title: Fourth apotome
+    paraphrase: |
+      Now $\sqrt{a^2 - b^2}$ is incommensurable with $a$, and the whole $a$ is commensurable with the rational
+      line.
+    modern: |
+      E.g. $3 - \sqrt3$.
+    examples:
+      - '$3 - \sqrt3$'
+
+  - id: X.Def.III.5
+    title: Fifth apotome
+    paraphrase: |
+      As the fourth, but the annex is commensurable with the rational line.
+    modern: |
+      E.g. $\sqrt6 - 2$.
+    examples:
+      - '$\sqrt6 - 2$'
+
+  - id: X.Def.III.6
+    title: Sixth apotome
+    paraphrase: |
+      As the fourth, but neither is commensurable with the rational line.
+    modern: |
+      E.g. $\sqrt5 - \sqrt3$.
+    examples:
+      - '$\sqrt5 - \sqrt3$'

@@ -1,0 +1,89 @@
+id: XI.1
+kind: theorem
+title: A straight line cannot be partly in a plane and partly above it
+
+paraphrase: |
+  No straight line lies partly in a given plane and partly in a higher one.
+
+diagram:
+  width: 300
+  height: 230
+  elements:
+    - "P1;point;free;80,200;0;0,75,100"
+    - "P2;point;free;260,200;0;0,75,100"
+    - "P3;point;free;40,90;0;0,75,100"
+    - "plane;polygon;parallelogram;P3,P1,P2;0;0;lightGray;brighter"
+    - "A1;point;midpoint;P1,P3;0;0"
+    - "A2;point;parallelogram;P2,P1,A1;0;0"
+    - "A;point;lineSlider;A1,A2,90,155"
+    - "B;point;lineSlider;A1,A2,140,155"
+    - "D;point;lineSlider;A1,A2,200,155"
+    - "AD;line;connect;A,D"
+    - "Z;point;free;150,100000;0;0"
+    - "C;point;lineSlider;D,Z,230,80"
+    - "BD;line;connect;B,C"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "ABC;polygon;triangle;A,B,C;0;0;0"
+    - "ABD;polygon;triangle;A,B,D;0;0;0"
+  aliases: { DA: AD, DB: BD, BA: AB, CB: BC }
+  caption: |
+    {AB} in the plane; {BC} supposedly above it; {BD} continues {AB} in the plane.
+
+steps:
+  - part: enunciation
+    text: "A part of a straight line cannot be in the plane of reference and a part in a plane more elevated."
+    highlight: [AB, BC]
+    hint: |
+      A line meeting a plane in a segment lies entirely in it.
+    modern: |
+      If two points of a line lie in a plane, the whole line does.
+
+  - part: proof
+    text: "For, if possible, let a part AB of the straight line ABC be in the plane of reference, and a part BC in a plane more elevated."
+    highlight: [AB, BC]
+    hint: |
+      Suppose part {AB} lies in the plane and part {BC} above it.
+
+  - part: proof
+    text: "There will then be in the plane of reference some straight line continuous with AB in a straight line."
+    highlight: [BD]
+    hint: |
+      Continue {AB} in the plane.
+
+  - part: proof
+    text: "Let it be BD; therefore AB is a common segment of the two straight lines ABC, ABD: which is impossible, inasmuch as, if we describe a circle with centre B and distance AB, the diameters will cut off unequal circumferences of the circle."
+    highlight: [BD]
+    hint: |
+      Then two straight lines {ABC}, {ABD} share the segment {AB}: impossible.
+    explain:
+      fact: |
+        Two straight lines cannot have a common segment — the circle argument: diameters through {B} would cut
+        off unequal arcs.
+      implicit: |
+        Heath and Joyce both find the argument unsatisfactory. It assumes a plane through the two lines exists
+        to draw the circle in, which is what is in question.
+    gap: |
+      The proof assumes what it proves. Modern axioms (Hilbert's I.6) simply postulate that a line with two
+      points in a plane lies in it.
+
+  - part: conclusion
+    text: "Therefore a part of a straight line cannot be in the plane of reference, and a part in a plane more elevated."
+    hint: |
+      So no such line.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        In modern axiomatics this is an axiom (Hilbert, *Grundlagen*, I.6), not a theorem. $\blacksquare$
+
+commentary: |
+  Books XI–XIII turn to solid geometry. The first three propositions try to prove basic incidence facts — a
+  line in a plane, two intersecting lines in one plane, two planes meeting in a line — that later axiom systems
+  take as postulates. Joyce calls both the statement and the proof "unclear": "the plane of reference" is never
+  defined.

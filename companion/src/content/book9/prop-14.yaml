@@ -1,0 +1,127 @@
+id: IX.14
+kind: theorem
+title: The least number measured by given primes has no other prime factor
+
+paraphrase: |
+  If {A} is the least number measured by the primes {B}, {C}, {D}, then no other prime measures {A}.
+
+diagram:
+  width: 290
+  height: 130
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "E0;point;free;-1000,65;0;0"
+    - "E3;point;free;1000,65;0;0"
+    - "F0;point;free;-1000,100;0;0"
+    - "F3;point;free;1000,100;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,35;0;0"
+    - "B1;point;lineSlider;A0,A3,180,0;0"
+    - "B2;point;lineSlider;A0,A3,220,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;E0,E3,180,0;0"
+    - "C2;point;lineSlider;E0,E3,230,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;F0,F3,180,0;0"
+    - "D2;point;lineSlider;F0,F3,250,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "C4;point;proportion;U1,U2,B1,B2,C1,C2,C1,E3;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;proportion;U1,U2,C1,C4,D1,D2,A1,A3;0"
+    - "A;line;connect;A1,A2;black"
+    - "E1;point;lineSlider;E0,E3,30,0;0"
+    - "E2;point;lineSlider;E0,E3,80,0;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;F0,F3,30,0;0"
+    - "F2;point;proportion;E1,E2,A1,A2,U1,U2,F1,F3;0"
+    - "F;line;connect;F1,F2;black"
+  caption: |
+    {A} is the least number measured by the primes {B}, {C}, {D}; {E} is a supposed further prime, {A} = {E}{F}.
+
+steps:
+  - part: enunciation
+    text: "If a number be the least that is measured by prime numbers, it will not be measured by any other prime number except those originally measuring it."
+    highlight: [A, B, C, D]
+    hint: |
+      $\operatorname{lcm}(p_1, \dots, p_k)$ has no other prime factors.
+    modern: |
+      If $a = \operatorname{lcm}(p_1, \dots, p_k)$ and $q$ is a prime dividing $a$, then $q$ is some $p_i$.
+
+  - part: setting-out
+    text: "For let the number A be the least that is measured by the prime numbers B, C, D;"
+    highlight: [A, B, C, D]
+    hint: |
+      {A} = lcm({B}, {C}, {D}).
+
+  - part: specification
+    text: "I say that A will not be measured by any other prime number except B, C, D."
+    highlight: [A]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, if possible, let it be measured by the prime number E, and let E not be the same with any one of the numbers B, C, D."
+    highlight: [E]
+    hint: |
+      Suppose another prime {E}.
+
+  - part: construction
+    text: "Now, since E measures A, let it measure it according to F; therefore E by multiplying F has made A."
+    highlight: [E, F, A]
+    hint: |
+      {A} = {E}{F}.
+
+  - part: proof
+    text: "And A is measured by the prime numbers B, C, D."
+    highlight: [A, B, C, D]
+    hint: |
+      Recalled.
+
+  - part: proof
+    text: "But, if two numbers by multiplying one another make some number, and any prime number measure the product, it will also measure one of the original numbers; therefore B, C, D will measure one of the numbers E, F."
+    highlight: [B, C, D, E, F]
+    hint: |
+      [[VII.30]].
+
+  - part: proof
+    text: "Now they will not measure E; for E is prime and not the same with any one of the numbers B, C, D."
+    highlight: [E]
+    hint: |
+      Not {E}.
+
+  - part: proof
+    text: "Therefore they will measure F, which is less than A: which is impossible, for A is by hypothesis the least number measured by B, C, D."
+    highlight: [F, A]
+    hint: |
+      So they all measure the smaller {F}: contradiction.
+
+  - part: proof
+    text: "Therefore no prime number will measure A except B, C, D."
+    highlight: [A]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9]
+      text: |
+        If $a = qf$, each $p_i$ divides $q$ or $f$ ([[VII.30]]); not $q$, so all divide $f < a$ — contradicting
+        minimality. $\blacksquare$
+
+commentary: |
+  Often cited as Euclid's version of the uniqueness half of the fundamental theorem of arithmetic. It shows
+  that a product of distinct primes has no other prime factor; it does not address repeated factors, and it
+  never states that factorisation is unique. Joyce notes that the least common multiple of distinct primes is
+  their product, though Euclid does not say so.
+
+historical: |
+  Heath regards this as "the nearest" Euclid comes to unique factorisation. The full theorem was first
+  stated and proved by Gauss (*Disquisitiones Arithmeticae*, 1801, §16).

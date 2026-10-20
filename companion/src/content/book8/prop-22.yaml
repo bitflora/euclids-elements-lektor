@@ -1,0 +1,82 @@
+id: VIII.22
+kind: theorem
+title: If the first of three in continued proportion is square, so is the third
+
+paraphrase: |
+  If {A}, {B}, {C} are in continued proportion and {A} is a square, then {C} is a square.
+
+diagram:
+  width: 220
+  height: 140
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "C0;point;free;-1000,110;0;0"
+    - "C3;point;free;1000,110;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,90,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,120,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;A1,A2,B1,B2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+  caption: |
+    {A} : {B} = {B} : {C}.
+
+steps:
+  - part: enunciation
+    text: "If three numbers be in continued proportion, and the first be square, the third will also be square."
+    highlight: [A, B, C]
+    hint: |
+      $a : b = b : c$, $a$ square $\Rightarrow$ $c$ square.
+    modern: |
+      $ac = b^2$, $a = s^2 \Rightarrow c = (b/s)^2$, a square.
+
+  - part: setting-out
+    text: "Let A, B, C be three numbers in continued proportion, and let A the first be square;"
+    highlight: [A, B, C]
+    hint: |
+      {A} square.
+
+  - part: specification
+    text: "I say that C the third is also square."
+    highlight: [C]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since between A, C there is one mean proportional number, B, therefore A, C are similar plane numbers."
+    highlight: [A, B, C]
+    hint: |
+      [[VIII.20]].
+
+  - part: proof
+    text: "But A is square; therefore C is also square."
+    highlight: [A, C]
+    hint: |
+      A plane number similar to a square is a square.
+    gap: |
+      Euclid does not prove that a number similar to a square is a square. It is true: if {A} = $s \cdot s$ and
+      {C} = $p q$ with $s : s = p : q$, then $p = q$. But the sides of a plane number are not unique (12 = 2·6
+      = 3·4), so one must check that *some* pair of sides of {C} is proportional to *the* sides of {A}; here
+      the proof of [[VIII.20]] supplies such a pair.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4]
+      text: |
+        $c = b^2 / a = (b/s)^2$, and $b/s$ is rational with rational square $c$, so it is whole. $\blacksquare$
+
+commentary: |
+  Used in [[VIII.24]] and in Book IX. [[VIII.23]] is the version for cubes.

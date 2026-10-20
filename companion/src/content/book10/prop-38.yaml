@@ -1,0 +1,170 @@
+id: X.38
+kind: theorem
+title: The second bimedial line
+
+paraphrase: |
+  The sum of two medial lines commensurable in square only that contain a *medial* rectangle is irrational:
+  the *second bimedial*.
+
+diagram:
+  width: 250
+  height: 250
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "D0;point;free;40,-1000;0;0"
+    - "D3;point;free;40,1000;0;0"
+    - "A;point;lineSlider;A0,A3,40,0"
+    - "B;point;lineSlider;A0,A3,140,0"
+    - "C;point;lineSlider;A0,A3,180,0"
+    - "AC;line;connect;A,C"
+    - "D;point;lineSlider;D0,D3,0,90"
+    - "E;point;lineSlider;D0,D3,0,210"
+    - "DG';line;perpendicular;D,E;0;0;0"
+    - "G';point;last;DG';0;0"
+    - "G;point;proportion;D,E,A,C,A,C,D,G'"
+    - "F;point;parallelogram;E,D,G"
+    - "DEFG;polygon;quadrilateral;D,E,F,G;0;0;black;random"
+    - "H';point;proportion;D,E,A,B,A,B,D,G;0;0"
+    - "H;point;proportion;D,E,B,C,B,C,H',G"
+    - "EH;polygon;parallelogram;E,D,H;0;0;black;random"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "DH;line;connect;D,H;0;0;0"
+    - "HG;line;connect;H,G;0;0;0"
+    - "DG;line;connect;D,G;0;0;0"
+  aliases: { DF: DEFG, CA: AC, BA: AB, CB: BC, ED: DE, HD: DH, GH: HG, GD: DG }
+  caption: |
+    {DF} = sq({AC}) applied to the rational line {DE}; {EH} = sq({AB}) + sq({BC}), the rest = 2·rect({AB},{BC}).
+
+steps:
+  - part: enunciation
+    text: "If two medial straight lines commensurable in square only and containing a medial rectangle be added together, the whole is irrational; and let it be called a second bimedial straight line."
+    highlight: [AC]
+    hint: |
+      Medial + medial with medial product: the second bimedial.
+    modern: |
+      $a, b$ medial, $a^2/b^2 \in \mathbb Q$, $ab$ medial; e.g. $\sqrt[4]{2} + \sqrt[4]{18}$, with $ab =
+      \sqrt6$.
+
+  - part: setting-out
+    text: "For let two medial straight lines AB, BC commensurable in square only and containing a medial rectangle be added together;"
+    highlight: [AB, BC]
+    hint: |
+      The parts.
+
+  - part: specification
+    text: "I say that AC is irrational."
+    highlight: [AC]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For let a rational straight line DE be set out, and let the parallelogram DF equal to the square on AC be applied to DE, producing DG as breadth."
+    highlight: [DE, DF, DG]
+    hint: |
+      Apply sq({AC}) to a rational {DE} as {DF}, breadth {DG} ([[I.44]]).
+
+  - part: construction
+    text: "Then, since the square on AC is equal to the squares on AB, BC and twice the rectangle AB, BC, let EH, equal to the squares on AB, BC, be applied to DE; therefore the remainder HF is equal to twice the rectangle AB, BC."
+    highlight: [EH]
+    hint: |
+      Apply the sum of squares as {EH}; the remainder *HF* is 2·rect.
+
+  - part: proof
+    text: "And, since each of the straight lines AB, BC is medial, therefore the squares on AB, BC are also medial."
+    highlight: [AB, BC]
+    hint: |
+      The squares are medial …
+
+  - part: proof
+    text: "But, by hypothesis, twice the rectangle AB, BC is also medial."
+    highlight: [AB, BC]
+    hint: |
+      … and so is 2·rect.
+
+  - part: proof
+    text: "And EH is equal to the squares on AB, BC, while FH is equal to twice the rectangle AB, BC; therefore each of the rectangle EH, HF is medial."
+    highlight: [EH]
+    hint: |
+      Both pieces medial …
+
+  - part: proof
+    text: "And they are applied to the rational straight line DE; therefore each of the straight lines DH, HG is rational and incommensurable in length with DE."
+    highlight: [DH, HG]
+    hint: |
+      … so both breadths {DH}, {HG} are rational, incommensurable in length with {DE} ([[X.22]]).
+
+  - part: proof
+    text: "Since then AB is incommensurable in length with BC, and, as AB is to BC, so is the square on AB to the rectangle AB, BC, therefore the square on AB is incommensurable with the rectangle AB, BC."
+    highlight: [AB, BC]
+    hint: |
+      sq({AB}) incommensurable with rect({AB},{BC}) ([[X.11]]) …
+
+  - part: proof
+    text: "But the sum of the squares on AB, BC is commensurable with the square on AB, and twice the rectangle AB, BC is commensurable with the rectangle AB, BC."
+    highlight: [AB, BC]
+    hint: |
+      … and the sum of squares commensurable with sq({AB}), 2·rect with rect …
+
+  - part: proof
+    text: "Therefore the sum of the squares on AB, BC is incommensurable with twice the rectangle AB, BC."
+    highlight: [AB, BC]
+    hint: |
+      … so they are incommensurable ([[X.13]]).
+
+  - part: proof
+    text: "But EH is equal to the squares on AB, BC, and HF is equal to twice the rectangle AB, BC."
+    highlight: [EH]
+    hint: |
+      Transfer to {EH} and *HF*.
+
+  - part: proof
+    text: "Therefore EH is incommensurable with HF, so that DH is also incommensurable in length with HG."
+    highlight: [DH, HG]
+    hint: |
+      So {DH}, {HG} are incommensurable in length.
+
+  - part: proof
+    text: "Therefore DH, HG are rational straight lines commensurable in square only; so that DG is irrational."
+    highlight: [DG]
+    hint: |
+      Rational, commensurable in square only: {DG} is a binomial, irrational ([[X.36]]).
+
+  - part: proof
+    text: "But DE is rational; and the rectangle contained by an irrational and a rational straight line is irrational; therefore the area DF is irrational, and the side of the square equal to it is irrational."
+    highlight: [DF]
+    hint: |
+      Rational × irrational is irrational (cf. [[X.20]]): {DF} irrational, and its side.
+
+  - part: proof
+    text: "But AC is the side of the square equal to DF; therefore AC is irrational."
+    highlight: [AC, DF]
+    hint: |
+      That side is {AC}.
+
+  - part: proof
+    text: "And let it be called a second bimedial straight line."
+    hint: |
+      The name.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [4, 5, 6, 7, 8, 9]
+      text: |
+        $AC^2 = M_1 + M_2$, two medial areas; applied to $\rho$ they give $\rho(h_1 + h_2)$ with $h_1, h_2$
+        rational.
+    - steps: [10, 11, 12, 13, 14, 15, 16]
+      text: |
+        $h_1/h_2$ is irrational, so $h_1 + h_2$ is a binomial and $AC^2 = \rho(h_1 + h_2)$ is irrational.
+        $\blacksquare$
+
+commentary: |
+  The technique — apply the square to a rational line and examine the breadth — is the one Book X uses from
+  here on to tell the irrationals apart ([[X.60]]–[[X.65]]).

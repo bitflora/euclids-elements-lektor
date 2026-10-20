@@ -1,0 +1,168 @@
+id: IV.7
+kind: problem
+title: Circumscribing a square about a circle
+
+paraphrase: |
+  About a given circle, draw a square: tangents at the ends of two perpendicular diameters.
+
+diagram:
+  width: 290
+  height: 290
+  elements:
+    - "A;point;free;145,40"
+    - "C;point;free;145,250"
+    - "E;point;midpoint;A,C"
+    - "B;point;perpendicular;E,A"
+    - "D;point;perpendicular;E,C"
+    - "F;point;parallelogram;A,E,D"
+    - "G;point;parallelogram;B,E,A"
+    - "H;point;parallelogram;C,E,B"
+    - "K;point;parallelogram;D,E,C"
+    - "FGHK;polygon;quadrilateral;F,G,H,K;0;0;black;#efe4d2"
+    - "ABCD;circle;radius;E,A;0;0;black;0"
+    - "AC;line;connect;A,C"
+    - "BD;line;connect;B,D"
+    - "FG;line;connect;F,G;0;0;0"
+    - "GH;line;connect;G,H;0;0;0"
+    - "HK;line;connect;H,K;0;0;0"
+    - "KF;line;connect;K,F;0;0;0"
+    - "EA;line;connect;E,A;0;0;0"
+    - "GBEA;polygon;quadrilateral;G,B,E,A;0;0;0;0"
+    - "angAEB;sector;angleMarker;E,A,B"
+    - "angEBG;sector;angleMarker;B,E,G"
+    - "angAGB;sector;angleMarker;G,A,B"
+  aliases:
+    GF: FG
+    FK: KF
+    BED: BD
+    AEB: angAEB
+    EBG: angEBG
+    AGB: angAGB
+  given: [ABCD, A, C, E]
+  caption: |
+    Drag {A} or {C}. The tangents at the ends of two perpendicular diameters form a square.
+
+steps:
+  - part: enunciation
+    text: "About a given circle to circumscribe a square."
+    highlight: [ABCD, FGHK]
+    hint: |
+      A problem: the circumscribed square.
+
+  - part: setting-out
+    text: "Let ABCD be the given circle;"
+    highlight: [ABCD]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to circumscribe a square about the circle ABCD."
+    highlight: [ABCD]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let two diameters AC, BD of the circle ABCD be drawn at right angles to one another,"
+    highlight: [AC, BD]
+    adds: [AC, B, D, BD]
+    hint: |
+      Perpendicular diameters.
+
+  - part: construction
+    text: "and through the points A, B, C, D let FG, GH, HK, KF be drawn touching the circle ABCD."
+    highlight: [FGHK]
+    adds: [F, G, H, K, FGHK]
+    hint: |
+      Tangents at their ends (porism to [[III.16]]).
+
+  - part: proof
+    text: "Then, since FG touches the circle ABCD, and EA has been joined from the centre E to the point of contact at A, therefore the angles at A are right."
+    highlight: [FG, EA]
+    hint: |
+      [[III.18]].
+
+  - part: proof
+    text: "For the same reason the angles at the points B, C, D are also right."
+    hint: |
+      Same at {B}, {C}, {D}.
+
+  - part: proof
+    text: "Now, since the angle AEB is right, and the angle EBG is also right, therefore GH is parallel to AC."
+    highlight: [angAEB, angEBG, GH, AC]
+    hint: |
+      Co-interior angles summing to two right angles ([[I.28]]).
+
+  - part: proof
+    text: "For the same reason AC is also parallel to FK, so that GH is also parallel to FK."
+    highlight: [GH, KF]
+    hint: |
+      [[I.30]].
+
+  - part: proof
+    text: "Similarly we can prove that each of the straight lines GF, HK is parallel to BED."
+    highlight: [FG, HK, BD]
+    hint: |
+      Same for the other pair.
+
+  - part: proof
+    text: "Therefore GK, GC, AK, FB, BK are parallelograms; therefore GF is equal to HK, and GH to FK."
+    highlight: [FG, HK, GH, KF]
+    hint: |
+      Opposite sides ([[I.34]]).
+
+  - part: proof
+    text: "And, since AC is equal to BD, and AC is also equal to each of the straight lines GH, FK, while BD is equal to each of the straight lines GF, HK, therefore the quadrilateral FGHK is equilateral."
+    highlight: [FGHK]
+    hint: |
+      All sides equal to a diameter.
+
+  - part: specification
+    text: "I say next that it is also right-angled."
+    highlight: [FGHK]
+    hint: |
+      Now the angles.
+
+  - part: proof
+    text: "For, since GBEA is a parallelogram, and the angle AEB is right, therefore the angle AGB is also right."
+    highlight: [GBEA, angAEB, angAGB]
+    hint: |
+      Opposite angles of a parallelogram ([[I.34]]).
+
+  - part: proof
+    text: "Similarly we can prove that the angles at H, K, F are also right."
+    hint: |
+      All four.
+
+  - part: proof
+    text: "Therefore FGHK is right-angled."
+    highlight: [FGHK]
+    hint: |
+      Right-angled.
+
+  - part: proof
+    text: "But it was also proved equilateral; therefore it is a square; and it has been circumscribed about the circle ABCD."
+    highlight: [FGHK]
+    hint: |
+      [[I.Def.22]].
+    cites: [I.Def.22]
+
+  - part: conclusion
+    text: "Therefore about the given circle a square has been circumscribed."
+    highlight: [FGHK]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+      text: The lines $x = \pm r$, $y = \pm r$ are tangent to $x^2 + y^2 = r^2$ and bound a square of side $2r$. $\blacksquare$
+
+commentary: |
+  The dual of [[IV.6]]. Note the Perseus misprint "parailel" corrected here (About page).

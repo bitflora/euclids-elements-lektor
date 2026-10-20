@@ -1,0 +1,237 @@
+# Book V, Definitions 1–18. Euclid's words come from Heath via the extracted
+# JSON; everything here is this edition's commentary.
+
+items:
+  - id: V.Def.1
+    title: Part (submultiple)
+    paraphrase: |
+      A smaller magnitude is a *part* of a larger one when it measures it: some whole number of copies of
+      the smaller makes up exactly the larger.
+    meaning: |
+      "Part" here means an *aliquot* part: one third of a line is a part of it; two thirds is not (Euclid
+      calls that "parts" in Book VII). "Measures" is undefined; it means "goes into exactly", as a rod
+      measures a length by being laid off along it a whole number of times.
+    modern: |
+      $a$ is a part of $b$ when $b = n\,a$ for some whole number $n \ge 2$.
+    examples:
+      - 'a third of a line is a part of it'
+    nonExamples:
+      - 'two thirds of a line (a sum of parts, not a part)'
+    figure: |
+      <svg viewBox="0 0 300 80"><line class="l2" x1="40" y1="25" x2="100" y2="25"/><line class="l" x1="40" y1="55" x2="220" y2="55"/><line class="thin" x1="100" y1="48" x2="100" y2="62"/><line class="thin" x1="160" y1="48" x2="160" y2="62"/><text class="fig-label" x="108" y="30">a</text><text class="fig-label" x="228" y="60">b = 3a</text></svg>
+
+  - id: V.Def.2
+    title: Multiple
+    paraphrase: |
+      The larger is a *multiple* of the smaller when the smaller measures it.
+    meaning: |
+      The converse of Def. 1. Book V works constantly with *equimultiples*: "the same multiple" of two
+      different magnitudes, $m\,a$ and $m\,b$ with the same whole number $m$.
+    modern: |
+      $b$ is a multiple of $a$ when $b = n\,a$ for a whole number $n$. Equimultiples of $a, b$: $m a, m b$.
+    notes: |
+      Euclid has no symbol for the number $m$; he says "the same multiple … that …", and proves facts about
+      all multiples by drawing a case with two or three copies ([[V.1]]–[[V.6]]).
+
+  - id: V.Def.3
+    title: Ratio
+    paraphrase: |
+      A *ratio* is a kind of relation in size between two magnitudes of the same kind.
+    meaning: |
+      Not a working definition: nothing in Book V uses it. What Euclid actually works with is *sameness* of
+      ratio (Def. 5) and *greater* ratio (Def. 7). Ratios are never added or multiplied as quantities in
+      Book V; they are compared.
+    nonExamples:
+      - 'a line and an area: they are not of the same kind, so have no ratio'
+    interpretations: |
+      Because it is vague and never used, some editors have doubted that Def. 3 (like Def. 8) is Euclid's.
+      Others read it as a deliberate preface: an informal gloss before the precise definitions. Either way,
+      the working content of "ratio" is fixed by Def. 5, which says when two ratios are the same without
+      saying what a ratio *is*.
+
+  - id: V.Def.4
+    title: Having a ratio (the Archimedean condition)
+    paraphrase: |
+      Two magnitudes *have a ratio* to one another if each, multiplied enough times, can exceed the other.
+    meaning: |
+      This excludes pairs where one is "infinitely small" compared with the other, such as the horn angle
+      between a circle and its tangent compared with any rectilinear angle ([[III.16]]): no multiple of the
+      horn angle exceeds even a small rectilinear angle. Such pairs have no ratio.
+    modern: |
+      $a$ and $b$ have a ratio when there are whole numbers $m, n$ with $m a > b$ and $n b > a$. This is
+      the *Archimedean property*, named after Archimedes, who states it as an assumption and says earlier
+      geometers had used it.
+    examples:
+      - 'any two straight lines'
+      - 'any two rectilinear angles'
+    nonExamples:
+      - 'a horn angle and a right angle ([[III.16]])'
+    notes: |
+      Used explicitly in [[V.8]]. It is also the tacit assumption behind the "method of exhaustion" in Book
+      XII, via [[X.1]].
+
+  - id: V.Def.5
+    title: Same ratio (Eudoxus's definition)
+    paraphrase: |
+      $A$ is to $B$ as $C$ is to $D$ when, for every choice of whole numbers $m$ and $n$, the multiple $mA$
+      compares with $nB$ exactly as $mC$ compares with $nD$: greater with greater, equal with equal, less
+      with less.
+    meaning: |
+      The heart of Book V. It does not say what a ratio is; it says when two ratios are the *same*, by a
+      test over infinitely many pairs $(m, n)$. The test works whether or not $A$ and $B$ are commensurable,
+      which is its whole point: the older, Pythagorean theory of proportion covered only magnitudes with a
+      common measure, and the discovery of incommensurables broke every proof built on it.
+    modern: |
+      $$A : B = C : D \iff \forall m, n \in \mathbb{N}:\ \begin{cases} mA > nB \Rightarrow mC > nD \\ mA = nB \Rightarrow mC = nD \\ mA < nB \Rightarrow mC < nD \end{cases}$$
+      In terms of fractions: $A : B = C : D$ exactly when the fractions $n/m$ below $A/B$ are the same as
+      those below $C/D$ — the same *Dedekind cut* of the rationals.
+    figure: |
+      <svg viewBox="0 0 300 120"><line class="l2" x1="20" y1="20" x2="80" y2="20"/><line class="l2" x1="20" y1="40" x2="110" y2="40"/><line class="l" x1="20" y1="70" x2="200" y2="70"/><line class="l" x1="20" y1="95" x2="200" y2="95"/><line class="thin" x1="80" y1="64" x2="80" y2="76"/><line class="thin" x1="140" y1="64" x2="140" y2="76"/><line class="thin" x1="110" y1="89" x2="110" y2="101"/><text class="fig-label" x="86" y="25">A</text><text class="fig-label" x="116" y="45">B</text><text class="fig-label" x="208" y="75">3A</text><text class="fig-label" x="208" y="100">2B</text><text class="fig-note" x="150" y="25">compare mA with nB …</text></svg>
+    figureCaption: |
+      Three times $A$ against twice $B$: one of the infinitely many comparisons Def. 5 calls for. The same
+      comparison must come out the same way for $C$ and $D$.
+    interpretations: |
+      Richard Dedekind (1872) said that his definition of the real numbers by cuts was inspired by this
+      definition; Heath, in his long note, sets the two side by side. The difference is one of aim: Euclid
+      compares ratios that are given by magnitudes, while Dedekind's cuts *create* the numbers. Euclid never
+      asserts that for every cut there is a ratio of magnitudes realising it (that would be a completeness
+      axiom), and [[V.18]] has been criticised because its proof tacitly assumes a fourth proportional exists.
+    notes: |
+      Used to prove proportions throughout Book V and in [[VI.1]], the bridge to geometry. The three-way test
+      is redundant: the "equal" clause follows from the other two when the magnitudes have a ratio (Def. 4).
+
+  - id: V.Def.6
+    title: Proportional
+    paraphrase: |
+      Four magnitudes that have the same ratio (Def. 5) are called *proportional*.
+    modern: |
+      $A, B, C, D$ proportional: $A : B = C : D$ (often written $A : B :: C : D$).
+    notes: |
+      Heath's translation uses "as $A$ is to $B$, so is $C$ to $D$" throughout; the Greek has no symbol.
+
+  - id: V.Def.7
+    title: Greater ratio
+    paraphrase: |
+      $A$ has to $B$ a *greater ratio* than $C$ has to $D$ if there is at least one pair of whole numbers
+      $m, n$ for which $mA$ exceeds $nB$ but $mC$ does not exceed $nD$.
+    meaning: |
+      The negation of "same ratio", made one-sided: a single witness pair $(m, n)$ suffices. Euclid never
+      proves that "greater ratio" is a strict linear order; he uses its properties as needed ([[V.8]],
+      [[V.10]], [[V.13]]).
+    modern: |
+      $A : B > C : D \iff \exists m, n:\ mA > nB \text{ and } mC \le nD$, i.e. some fraction $n/m$ lies
+      below $A/B$ but not below $C/D$.
+
+  - id: V.Def.8
+    title: Proportion in three terms
+    paraphrase: |
+      A proportion needs at least three terms.
+    meaning: |
+      $A : B = B : C$ — a *continued* proportion, in which the middle term serves twice. It cannot have
+      fewer than three terms. Since Def. 6 has just described a proportion as four terms, the remark only
+      makes sense for continued proportion, and some editors regard it as an interpolation.
+    examples:
+      - '$4 : 6 = 6 : 9$ (three terms, $6$ used twice)'
+
+  - id: V.Def.9
+    title: Duplicate ratio
+    paraphrase: |
+      If $A : B = B : C$, then $A$ is said to have to $C$ the *duplicate* of the ratio of $A$ to $B$.
+    meaning: |
+      In modern terms, the ratio squared: if $A/B = B/C = r$ then $A/C = r^2$. "Duplicate" (διπλασίων)
+      does not mean "double". Euclid defines it only via a continued proportion; Book VI uses it for similar
+      figures, whose areas are in the duplicate ratio of their sides ([[VI.19]], [[VI.20]]).
+    modern: |
+      $A : B = B : C \Rightarrow A : C = (A : B)^2$.
+    examples:
+      - '$9 : 6 = 6 : 4$, so $9 : 4$ is the duplicate of $9 : 6$ ($\tfrac94 = (\tfrac32)^2$)'
+
+  - id: V.Def.10
+    title: Triplicate ratio
+    paraphrase: |
+      If $A : B = B : C = C : D$, then $A$ has to $D$ the *triplicate* ratio of $A$ to $B$, and so on for
+      longer continued proportions.
+    meaning: |
+      The ratio cubed. Heath supplies "continuously" (in angle brackets): the four magnitudes are in
+      *continued* proportion. Used for similar solids in Books XI–XII (volumes are in the triplicate
+      ratio of corresponding sides).
+    modern: |
+      $A : B = B : C = C : D \Rightarrow A : D = (A : B)^3$.
+
+  - id: V.Def.11
+    title: Corresponding magnitudes
+    paraphrase: |
+      In a proportion $A : B = C : D$, the *antecedents* $A, C$ correspond to each other, and so do the
+      *consequents* $B, D$.
+    meaning: |
+      Antecedent (ἡγούμενον, "leading") is the first term of a ratio; consequent (ἑπόμενον, "following") is
+      the second. Heath renders the Greek ὁμόλογα, "homologous", as "corresponding".
+
+  - id: V.Def.12
+    title: Alternate ratio (alternando)
+    paraphrase: |
+      From $A : B = C : D$, taking *alternately*: $A : C = B : D$.
+    meaning: |
+      The first of six standard transformations of a proportion (Defs. 12–17), each named by the Greek word
+      Euclid then uses as a one-word justification ("alternately", "componendo", …). The definitions only
+      name the operations; the theorems that they preserve proportion come later. Alternation is
+      [[V.16]], and it requires all four magnitudes to be of the same kind (you cannot compare a line with
+      an area).
+    modern: |
+      $A : B = C : D \Rightarrow A : C = B : D$ ([[V.16]]).
+
+  - id: V.Def.13
+    title: Inverse ratio (invertendo)
+    paraphrase: |
+      From $A : B = C : D$, taking *inversely*: $B : A = D : C$.
+    modern: |
+      $A : B = C : D \Rightarrow B : A = D : C$ (the porism to [[V.7]]).
+
+  - id: V.Def.14
+    title: Composition of a ratio (componendo)
+    paraphrase: |
+      From the ratio $A : B$, *composition* forms $(A + B) : B$.
+    modern: |
+      $A : B = C : D \Rightarrow (A + B) : B = (C + D) : D$ ([[V.18]]).
+    notes: |
+      Not to be confused with a *compound* ratio (the product of ratios, used in [[VI.23]]).
+
+  - id: V.Def.15
+    title: Separation of a ratio (separando)
+    paraphrase: |
+      From the ratio $A : B$ (with $A > B$), *separation* forms $(A - B) : B$.
+    modern: |
+      $A : B = C : D \Rightarrow (A - B) : B = (C - D) : D$ ([[V.17]]).
+
+  - id: V.Def.16
+    title: Conversion of a ratio (convertendo)
+    paraphrase: |
+      From the ratio $A : B$ (with $A > B$), *conversion* forms $A : (A - B)$.
+    modern: |
+      $A : B = C : D \Rightarrow A : (A - B) = C : (C - D)$ (the porism to [[V.19]]).
+
+  - id: V.Def.17
+    title: Ratio ex aequali
+    paraphrase: |
+      Given $A, B, C$ and $D, E, F$ with $A : B = D : E$ and $B : C = E : F$, the conclusion
+      $A : C = D : F$ is reached *ex aequali* ("from equality" of the number of terms): the middle terms
+      are struck out.
+    meaning: |
+      Latin *ex aequali* translates δι' ἴσου, "through an equal (number)". The pairs are matched in the same
+      order. The theorem is [[V.22]]; the case where the pairs are matched crosswise is the *perturbed*
+      proportion of Def. 18.
+    modern: |
+      $\dfrac{A}{B} = \dfrac{D}{E},\ \dfrac{B}{C} = \dfrac{E}{F} \Rightarrow \dfrac{A}{C} = \dfrac{D}{F}$
+      ([[V.22]]).
+
+  - id: V.Def.18
+    title: Perturbed proportion
+    paraphrase: |
+      $A, B, C$ and $D, E, F$ are in *perturbed* proportion when $A : B = E : F$ and $B : C = D : E$: the
+      second set matches the first crosswise.
+    meaning: |
+      The conclusion *ex aequali* still holds: $A : C = D : F$ ([[V.23]]). Algebraically both are obvious
+      by multiplying fractions; Euclid needs separate proofs because he cannot multiply ratios.
+    modern: |
+      $\dfrac{A}{B} = \dfrac{E}{F},\ \dfrac{B}{C} = \dfrac{D}{E} \Rightarrow \dfrac{A}{C} = \dfrac{D}{F}$
+      ([[V.23]]).

@@ -1,0 +1,65 @@
+id: X.77
+kind: theorem
+title: That which produces with a rational area a medial whole
+
+paraphrase: |
+  Subtracting from {AB} a line {BC} incommensurable with it in square, the squares adding to a medial area and
+  twice the rectangle rational, leaves an irrational {AC}: "that which produces with a rational area a medial
+  whole" (counterpart of [[X.40]]).
+
+diagram:
+  width: 240
+  height: 65
+  elements:
+    - "A0;point;free;-1000,35"
+    - "A3;point;free;1000,35"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "B;point;lineSlider;A0,A3,210,0"
+    - "C;point;lineSlider;A0,A3,100,0"
+    - "AB;line;connect;A,B"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+  aliases: { BA: AB, CA: AC, CB: BC }
+  caption: |
+    {AC} = {AB} − {BC}, with {AB}, {BC} as in [[X.34]].
+
+steps:
+  - part: enunciation
+    text: "If from a straight line there be subtracted a straight line which is incommensurable in square with the whole, and which with the whole makes the sum of the squares on them medial, but twice the rectangle contained by them rational, the remainder is irrational: and let it be called that which produces with a rational area a medial whole."
+    highlight: [AC]
+    hint: |
+      Medial sum of squares, rational rectangle, subtracted.
+
+  - part: setting-out
+    text: "For from the straight line AB let there be subtracted the straight line BC which is incommensurable in square with AB and fulfils the given conditions; I say that the remainder AC is the irrational straight line aforesaid."
+    highlight: [AB, BC]
+    hint: |
+      Setup ([[X.34]]).
+
+  - part: proof
+    text: "For, since the sum of the squares on AB, BC is medial, while twice the rectangle AB, BC is rational, therefore the squares on AB, BC are incommensurable with twice the rectangle AB, BC; therefore the remainder also, the square on AC, is incommensurable with twice the rectangle AB, BC."
+    highlight: [AC]
+    hint: |
+      The squares (medial) are incommensurable with 2·rect (rational), hence with sq({AC}).
+
+  - part: proof
+    text: "And twice the rectangle AB, BC is rational; therefore the square on AC is irrational; therefore AC is irrational."
+    highlight: [AC]
+    hint: |
+      So {AC} irrational.
+
+  - part: proof
+    text: "And let it be called that which produces with a rational area a medial whole."
+    hint: |
+      The name: sq({AC}) plus the rational area 2·rect gives the medial whole sq({AB}) + sq({BC}).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [2, 3]
+      text: |
+        medial − rational is irrational. $\blacksquare$

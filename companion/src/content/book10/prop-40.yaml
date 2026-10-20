@@ -1,0 +1,78 @@
+id: X.40
+kind: theorem
+title: The side of a rational plus a medial area
+
+paraphrase: |
+  The sum of two lines incommensurable in square whose squares add to a medial area and whose rectangle is
+  rational is irrational: "the side of a rational plus a medial area" (its square is exactly that).
+
+diagram:
+  width: 230
+  height: 80
+  elements:
+    - "X0;point;free;-1000,50"
+    - "X1;point;free;1000,50"
+    - "A;point;lineSlider;X0,X1,30,0"
+    - "B;point;lineSlider;X0,X1,100,0"
+    - "C;point;lineSlider;X0,X1,200,0"
+    - "AC;line;connect;A,C"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+  aliases: { CA: AC, BA: AB, CB: BC }
+  caption: |
+    {AC} = {AB} + {BC}, the lines of [[X.34]].
+
+steps:
+  - part: enunciation
+    text: "If two straight lines incommensurable in square which make the sum of the squares on them medial, but the rectangle contained by them rational, be added together, the whole straight line is irrational; and let it be called the side of a rational plus a medial area."
+    highlight: [AC]
+    hint: |
+      Medial sum of squares, rational rectangle.
+    modern: |
+      $AC^2 = \underbrace{(x^2 + y^2)}_{\text{medial}} + \underbrace{2xy}_{\text{rational}}$.
+
+  - part: setting-out
+    text: "For let two straight lines AB, BC incommensurable in square, and fulfilling the given conditions, be added together;"
+    highlight: [AB, BC]
+    hint: |
+      The parts, from [[X.34]].
+
+  - part: specification
+    text: "I say that AC is irrational."
+    highlight: [AC]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since the sum of the squares on AB, BC is medial, while twice the rectangle AB, BC is rational, therefore the sum of the squares on AB, BC is incommensurable with twice the rectangle AB, BC; so that the square on AC is also incommensurable with twice the rectangle AB, BC."
+    highlight: [AB, BC, AC]
+    hint: |
+      Medial and rational are incommensurable, so sq({AC}) is incommensurable with 2·rect ([[X.16]]).
+
+  - part: proof
+    text: "But twice the rectangle AB, BC is rational; therefore the square on AC is irrational."
+    highlight: [AC]
+    hint: |
+      2·rect is rational, so sq({AC}) is irrational …
+
+  - part: proof
+    text: "Therefore AC is irrational."
+    highlight: [AC]
+    hint: |
+      … and {AC} too.
+
+  - part: proof
+    text: "And let it be called the side of a rational plus a medial area."
+    hint: |
+      The name.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5]
+      text: |
+        rational + medial is irrational. $\blacksquare$

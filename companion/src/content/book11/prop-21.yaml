@@ -1,0 +1,87 @@
+id: XI.21
+kind: theorem
+title: The face angles of a solid angle sum to less than four right angles
+
+paraphrase: |
+  The plane angles containing any solid angle add up to less than four right angles (360°). This is why only five
+  regular solids exist ([[XIII.18]]).
+
+diagram:
+  width: 230
+  height: 220
+  elements:
+    - "A;point;free;140,110"
+    - "B;point;free;40,180"
+    - "C;point;free;100,40"
+    - "D;point;free;190,130"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;random"
+    - "ABD;polygon;triangle;A,B,D;0;0;black;random"
+    - "ACD;polygon;triangle;A,C,D;0;0;black;random"
+  caption: |
+    A solid angle at *A*, cut by the plane *BCD*.
+
+steps:
+  - part: enunciation
+    text: "Any solid angle is contained by plane angles less than four right angles."
+    highlight: [ABC, ABD, ACD]
+    hint: |
+      Face angles at a vertex sum to less than 360°.
+    modern: |
+      $\sum \alpha_i < 2\pi$ for a convex solid angle.
+
+  - part: setting-out
+    text: "Let the angle at A be a solid angle contained by the plane angles BAC, CAD, DAB; I say that the angles BAC, CAD, DAB are less than four right angles."
+    highlight: [ABC, ABD, ACD]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let points B, C, D be taken at random on the straight lines AB, AC, AD respectively, and let BC, CD, DB be joined."
+    highlight: [ABC, ABD, ACD]
+    hint: |
+      Cut by a plane: points *B*, *C*, *D* on the edges.
+
+  - part: proof
+    text: "Now, since the solid angle at B is contained by the three plane angles CBA, ABD, CBD, any two are greater than the remaining one; therefore the angles CBA, ABD are greater than the angle CBD."
+    highlight: [ABC, ABD]
+    hint: |
+      At *B*: ∠*CBA* + ∠*ABD* > ∠*CBD* ([[XI.20]]).
+
+  - part: proof
+    text: "For the same reason the angles BCA, ACD are also greater than the angle BCD, and the angles CDA, ADB are greater than the angle CDB; therefore the six angles CBA, ABD, BCA, ACD, CDA, ADB are greater than the three angles CBD, BCD, CDB."
+    highlight: [ACD]
+    hint: |
+      Likewise at *C* and *D*; adding, the six base angles of the side triangles exceed the angles of triangle *BCD* …
+
+  - part: proof
+    text: "But the three angles CBD, BDC, BCD are equal to two right angles; therefore the six angles CBA, ABD, BCA, ACD, CDA, ADB are greater than two right angles."
+    highlight: [ACD]
+    hint: |
+      … which sum to two right angles ([[I.32]]).
+
+  - part: proof
+    text: "And, since the three angles of each of the triangles ABC, ACD, ADB are equal to two right angles, therefore the nine angles of the three triangles, the angles CBA, ACB, BAC, ACD, CDA, CAD, ADB, DBA, BAD are equal to six right angles; and of them the six angles ABC, BCA, ACD, CDA, ADB, DBA are greater than two right angles; therefore the remaining three angles BAC, CAD, DAB containing the solid angle are less than four right angles."
+    highlight: [ABC, ABD, ACD]
+    hint: |
+      The three side triangles have nine angles summing to six right angles; take away the six base angles (more than two right angles) and the three angles at *A* are less than four right angles.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [ABC, ABD, ACD]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $\sum(\text{angles at }A) = 3\pi - \sum(\text{base angles}) < 3\pi - \pi = 2\pi$. $\blacksquare$
+
+commentary: |
+  Euclid proves the case of three faces; for more faces the same argument works with a polygonal base, as
+  Heath remarks, and the result is needed in that generality in [[XIII.18]]. Joyce notes the tacit assumption
+  that the solid angle is convex.

@@ -1,0 +1,303 @@
+id: VII.34
+kind: problem
+title: The least common multiple of two numbers
+
+paraphrase: |
+  To find the least number that two given numbers {A}, {B} both measure. If they are coprime it is their
+  product; otherwise reduce {A} : {B} to lowest terms {F} : {E}, and the answer is {A}·{E} (= {B}·{F}).
+
+diagram:
+  width: 250
+  height: 205
+  elements:
+    - "A0;point;free;-1000,35;0;0"
+    - "A3;point;free;1000,35;0;0"
+    - "F0;point;free;-1000,70;0;0"
+    - "F3;point;free;1000,70;0;0"
+    - "C0;point;free;-1000,105;0;0"
+    - "C3;point;free;1000,105;0;0"
+    - "D0;point;free;-1000,140;0;0"
+    - "D3;point;free;1000,140;0;0"
+    - "G0;point;free;-1000,175;0;0"
+    - "G3;point;free;1000,175;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,40;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,100,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;A0,A3,130,0;0"
+    - "B2;point;lineSlider;A0,A3,220,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "F1;point;lineSlider;F0,F3,30,0;0"
+    - "F2;point;lineSlider;F0,F3,65,0;0"
+    - "F;line;connect;F1,F2;black"
+    - "E1;point;lineSlider;F0,F3,130,0;0"
+    - "E2;point;proportion;A1,A2,B1,B2,F1,F2,E1,F3;0"
+    - "E;line;connect;E1,E2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;U1,U2,A1,A2,E1,E2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;lineSlider;D0,D3,90,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "G1;point;lineSlider;G0,G3,30,0;0"
+    - "G2;point;proportion;A1,A2,D1,D2,U1,U2,G1,G3;0"
+    - "G;line;connect;G1,G2;black"
+    - "H1;point;lineSlider;G0,G3,130,0;0"
+    - "H2;point;proportion;B1,B2,D1,D2,U1,U2,H1,G3;0"
+    - "H;line;connect;H1,H2;black"
+  caption: |
+    {F} : {E} is {A} : {B} in lowest terms, and {C} = {A}·{E} = {B}·{F}. {D}, {G}, {H} belong to the proof
+    that nothing smaller works.
+
+steps:
+  - part: enunciation
+    text: "Given two numbers, to find the least number which they measure."
+    highlight: [A, B]
+    hint: |
+      Find the least common multiple.
+    modern: |
+      $\operatorname{lcm}(a, b) = ab / \gcd(a, b)$.
+
+  - part: setting-out
+    text: "Let A, B be the two given numbers;"
+    highlight: [A, B]
+    hint: |
+      Given {A}, {B}.
+
+  - part: specification
+    text: "thus it is required to find the least number which they measure."
+    highlight: [A, B]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "Now A, B are either prime to one another or not."
+    highlight: [A, B]
+    hint: |
+      Two cases.
+
+  - part: construction
+    text: "First, let A, B be prime to one another, and let A by multiplying B make C;"
+    highlight: [A, B, C]
+    hint: |
+      Case 1, coprime: let {C} = {A}·{B}.
+
+  - part: proof
+    text: "therefore also B by multiplying A has made C."
+    highlight: [B, A, C]
+    hint: |
+      And {C} = {B}·{A} ([[VII.16]]).
+
+  - part: proof
+    text: "Therefore A, B measure C"
+    highlight: [A, B, C]
+    hint: |
+      Both measure {C}.
+
+  - part: specification
+    text: "I say next that it is also the least number they measure."
+    highlight: [C]
+    hint: |
+      And {C} is least.
+
+  - part: proof
+    text: "For, if not, A, B will measure some number which is less than C."
+    highlight: [A, B, C]
+    hint: |
+      Suppose a smaller common multiple.
+
+  - part: construction
+    text: "Let them measure D."
+    highlight: [D]
+    hint: |
+      Call it {D}.
+
+  - part: proof
+    text: "Then, as many times as A measures D, so many units let there be in E, and, as many times as B measures D, so many units let there be in F; therefore A by multiplying E has made D, and B by multiplying F has made D;"
+    highlight: [A, E, B, F, D]
+    hint: |
+      {D} = {A}·{E} = {B}·{F} (here {E}, {F} are counts, not the {E}, {F} of the figure's second case).
+
+  - part: proof
+    text: "therefore the product of A, E is equal to the product of B, F."
+    highlight: [A, E, B, F]
+    hint: |
+      {A}·{E} = {B}·{F}.
+
+  - part: proof
+    text: "Therefore, as A is to B, so is F to E."
+    highlight: [A, B, F, E]
+    hint: |
+      By [[VII.19]].
+
+  - part: proof
+    text: "But A, B are prime, primes are also least, and the least measure the numbers which have the same ratio the same number of times, the greater the greater and the less the less;"
+    highlight: [A, B]
+    hint: |
+      {A} : {B} is in lowest terms ([[VII.21]]), so measures equal ratios term by term ([[VII.20]]).
+
+  - part: proof
+    text: "therefore B measures E, as consequent consequent."
+    highlight: [B, E]
+    hint: |
+      So {B} measures {E}.
+
+  - part: proof
+    text: "And, since A by multiplying B, E has made C, D, therefore, as B is to E, so is C to D."
+    highlight: [B, E, C, D]
+    hint: |
+      {B} : {E} = {C} : {D} ([[VII.17]]).
+
+  - part: proof
+    text: "But B measures E; therefore C also measures D, the greater the less: which is impossible."
+    highlight: [C, D]
+    hint: |
+      So {C} measures the smaller {D}: impossible.
+
+  - part: proof
+    text: "Therefore A, B do not measure any number less than C; therefore C is the least that is measured by A, B."
+    highlight: [C]
+    hint: |
+      Case 1 done.
+
+  - part: construction
+    text: "Next, let A, B not be prime to one another, and let F, E, the least numbers of those which have the same ratio with A, B, be taken;"
+    highlight: [F, E]
+    hint: |
+      Case 2: let {F} : {E} be {A} : {B} in lowest terms ([[VII.33]]).
+
+  - part: proof
+    text: "therefore the product of A, E is equal to the product of B, F."
+    highlight: [A, E, B, F]
+    hint: |
+      {A}·{E} = {B}·{F} ([[VII.19]]).
+
+  - part: construction
+    text: "And let A by multiplying E make C;"
+    highlight: [C]
+    hint: |
+      Let {C} = {A}·{E}.
+
+  - part: proof
+    text: "therefore also B by multiplying F has made C; therefore A, B measure C."
+    highlight: [A, B, C]
+    hint: |
+      {C} = {B}·{F} too, so both measure {C}.
+
+  - part: specification
+    text: "I say next that it is also the least number that they measure."
+    highlight: [C]
+    hint: |
+      And it is least.
+
+  - part: proof
+    text: "For, if not, A, B will measure some number which is less than C."
+    highlight: [C]
+    hint: |
+      Suppose not.
+
+  - part: construction
+    text: "Let them measure D."
+    highlight: [D]
+    hint: |
+      A smaller common multiple {D}.
+
+  - part: construction
+    text: "And, as many times as A measures D, so many units let there be in G, and, as many times as B measures D, so many units let there be in H."
+    highlight: [G, H]
+    hint: |
+      {D} = {A}·{G} = {B}·{H}.
+
+  - part: proof
+    text: "Therefore A by multiplying G has made D, and B by multiplying H has made D."
+    highlight: [A, G, B, H, D]
+    hint: |
+      Restated as products.
+
+  - part: proof
+    text: "Therefore the product of A, G is equal to the product of B, H; therefore, as A is to B, so is H to G."
+    highlight: [A, B, H, G]
+    hint: |
+      [[VII.19]]: {A} : {B} = {H} : {G}.
+
+  - part: proof
+    text: "But, as A is to B, so is F to E."
+    highlight: [A, B, F, E]
+    hint: |
+      By choice of {F}, {E}.
+
+  - part: proof
+    text: "Therefore also, as F is to E, so is H to G."
+    highlight: [F, E, H, G]
+    hint: |
+      {F} : {E} = {H} : {G}.
+
+  - part: proof
+    text: "But F, E are least, and the least measure the numbers which have the same ratio the same number of times, the greater the greater and the less the less;"
+    highlight: [F, E]
+    hint: |
+      [[VII.20]] again.
+
+  - part: proof
+    text: "therefore E measures G."
+    highlight: [E, G]
+    hint: |
+      {E} measures {G}.
+
+  - part: proof
+    text: "And, since A by multiplying E, G has made C, D, therefore, as E is to G, so is C to D."
+    highlight: [E, G, C, D]
+    hint: |
+      [[VII.17]]: {E} : {G} = {C} : {D}.
+
+  - part: proof
+    text: "But E measures G; therefore C also measures D, the greater the less: which is impossible."
+    highlight: [C, D]
+    hint: |
+      {C} would measure the smaller {D}.
+
+  - part: proof
+    text: "Therefore A, B will not measure any number which is less than C."
+    highlight: [C]
+    hint: |
+      No smaller common multiple.
+
+  - part: proof
+    text: "Therefore C is the least that is measured by A, B."
+    highlight: [C]
+    hint: |
+      {C} is the least common multiple.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Let $d = \gcd(a, b)$, $a = d f$, $b = d e$ with
+    $\gcd(f, e) = 1$ (case 1 is $d = 1$).
+  lines:
+    - steps: [18, 19, 20, 21]
+      text: |
+        $c = ae = d f e = bf$ is a common multiple.
+    - steps: [22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+      text: |
+        If $m = ag = bh$ is any common multiple, $f : e = h : g$, and since $f : e$ is in lowest terms, $e
+        \mid g$ ([[VII.20]]).
+    - steps: [32, 33, 34, 35]
+      text: |
+        So $c = ae$ divides $m = ag$; in particular $c \le m$. $\blacksquare$
+  closing: |
+    The argument proves more than "least": every common multiple is a multiple of {C}. That is
+    [[VII.35]].
+
+commentary: |
+  The least common multiple, constructed as $ab/\gcd(a, b)$ — though Euclid never divides: {E} is "{B} in
+  lowest terms", i.e. $b/\gcd(a, b)$. Used in [[VII.36]] and [[VIII.4]].
+
+gaps: |
+  - In case 1 the letters {E}, {F} are used for numbers different from the {E}, {F} of case 2.
+  - [[VII.20]] is applied to the least numbers {F}, {E} found by [[VII.33]], whose proof itself relies on
+    [[VII.20]] being applicable — a tidy but unremarked dependence.

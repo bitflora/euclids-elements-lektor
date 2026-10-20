@@ -1,0 +1,190 @@
+id: XIII.2
+kind: theorem
+title: Converse of XIII.1
+
+paraphrase: |
+  If the square on {AB} is five times the square on a part {AC} of it, then when twice {AC} is cut in extreme and mean
+  ratio, the greater segment is the rest of {AB}.
+
+diagram:
+  width: 240
+  height: 320
+  elements:
+    - "B;point;free;150,160"
+    - "A;point;free;30,160"
+    - "ABFL;polygon;square;A,B;0;0;black;random"
+    - "F;point;vertex;ABFL,3"
+    - "L;point;vertex;ABFL,4"
+    - "A1;point;perpendicular;A,B;0;0"
+    - "B1;point;perpendicular;B,A;0;0"
+    - "B2;point;extend;B,B1,B,B1;0;0"
+    - "B4;point;extend;B,B2,B,B2;0;0"
+    - "AB/5;point;intersection;A,B,A1,B4;0;0"
+    - "C;point;meanProportional;A,B,A,AB/5,A,B"
+    - "D';point;extend;A,C,A,C;0;0"
+    - "D;point;extend;A,D',A,C"
+    - "DCKG;polygon;square;D,C;0;0;black;random"
+    - "K;point;vertex;DCKG,3"
+    - "G;point;vertex;DCKG,4"
+    - "AF;line;connect;A,F"
+    - "E;point;intersection;F,B,K,G"
+    - "BE;line;connect;B,E"
+    - "Q;point;intersection;F,L,C,K;0;0"
+    - "CQ;line;connect;C,Q"
+    - "H;point;intersection;CQ,AF"
+    - "P;point;parallelogram;A,C,H;0;0"
+    - "R;point;intersection;P,H,B,F;0;0"
+    - "PR;line;connect;P,R"
+    - "O;point;midpoint;H,C"
+    - "M;point;cutoff;H,P,H,O"
+    - "N;point;cutoff;H,F,H,O"
+    - "ONM;sector;arc;O,N,M;0;0;gray"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+  aliases: { MNO: ONM, CG: DCKG, FA: AF, EB: BE, QC: CQ, RP: PR, BA: AB, CA: AC, DC: CD }
+  caption: |
+    Squares {AF} on {AB} and {CG} on {CD} = 2{AC}; gnomon {MNO}.
+
+steps:
+  - part: enunciation
+    text: "If the square on a straight line be five times the square on a segment of it, then, when the double of the said segment is cut in extreme and mean ratio, the greater segment is the remaining part of the original straight line."
+    highlight: [AB, AC]
+    hint: |
+      The converse of [[XIII.1]].
+
+  - part: setting-out
+    text: "For let the square on the straight line AB be five times the square on the segment AC of it, and let CD be double of AC; I say that, when CD is cut in extreme and mean ratio, the greater segment is CB."
+    highlight: [AB, AC, CD]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "Let the squares AF, CG be described on AB, CD respectively, let the figure in AF be drawn, and let BE be drawn through."
+    highlight: [AF, CG]
+    hint: |
+      Squares {AF}, {CG}; draw the figure.
+
+  - part: proof
+    text: "Now, since the square on BA is five times the square on AC, AF is five times AH."
+    highlight: [AF]
+    hint: |
+      {AF} = 5 *AH*.
+
+  - part: proof
+    text: "Therefore the gnomon MNO is quadruple of AH."
+    highlight: [MNO]
+    hint: |
+      So the gnomon {MNO} = 4 *AH*.
+
+  - part: proof
+    text: "And, since DC is double of CA, therefore the square on DC is quadruple of the square on CA, that is, CG is quadruple of AH."
+    highlight: [CG]
+    hint: |
+      {CG} = 4 *AH*.
+
+  - part: proof
+    text: "But the gnomon MNO was also proved quadruple of AH; therefore the gnomon MNO is equal to CG."
+    highlight: [MNO, CG]
+    hint: |
+      So {MNO} = {CG}.
+
+  - part: proof
+    text: "And, since DC is double of CA, while DC is equal to CK, and AC to CH, therefore KB is also double of BH."
+    highlight: [AC]
+    hint: |
+      *KB* = 2*BH* ([[VI.1]]).
+
+  - part: proof
+    text: "But LH, HB are also double of HB; therefore KB is equal to LH, HB."
+    highlight: [AC]
+    hint: |
+      So *KB* = *LH* + *HB*.
+
+  - part: proof
+    text: "But the whole gnomon MNO was also proved equal to the whole CG; therefore the remainder HF is equal to BG."
+    highlight: [MNO, CG]
+    hint: |
+      Subtracting: *HF* = *BG*.
+
+  - part: proof
+    text: "And BG is the rectangle CD, DB, for CD is equal to DG; and HF is the square on CB; therefore the rectangle CD, DB is equal to the square on CB."
+    highlight: [CD]
+    hint: |
+      rect({CD},*DB*) = sq(*CB*).
+
+  - part: proof
+    text: "Therefore, as DC is to CB, so is CB to BD."
+    highlight: [CD]
+    hint: |
+      So *DC* : *CB* = *CB* : *BD*.
+
+  - part: proof
+    text: "But DC is greater than CB; therefore CB is also greater than BD."
+    highlight: [CD]
+    hint: |
+      *DC* > *CB* > *BD*.
+
+  - part: proof
+    text: "Therefore, when the straight line CD is cut in extreme and mean ratio, CB is the greater segment."
+    highlight: [CD]
+    hint: |
+      So *CB* is the greater segment.
+
+  - part: conclusion
+    text: "Therefore etc. Q. E. D."
+    highlight: [AB]
+    hint: |
+      The enunciation.
+
+  - part: lemma
+    text: "Lemma. That the double of AC is greater than BC is to be proved thus."
+    highlight: [AC]
+    hint: |
+      Lemma: 2{AC} > *BC*.
+
+  - part: lemma
+    text: "If not, let BC be, if possible, double of CA."
+    highlight: [AC]
+    hint: |
+      If *BC* = 2*CA* …
+
+  - part: lemma
+    text: "Therefore the square on BC is quadruple of the square on CA; therefore the squares on BC, CA are five times the square on CA."
+    highlight: [AC]
+    hint: |
+      … sq(*BC*) + sq(*CA*) = 5 sq(*CA*) …
+
+  - part: lemma
+    text: "But, by hypothesis, the square on BA is also five times the square on CA; therefore the square on BA is equal to the squares on BC, CA: which is impossible."
+    highlight: [AC]
+    hint: |
+      … = sq(*BA*): impossible ([[II.4]]).
+
+  - part: lemma
+    text: "Therefore CB is not double of AC."
+    highlight: [AC]
+    hint: |
+      So not equal …
+
+  - part: lemma
+    text: "Similarly we can prove that neither is a straight line less than CB double of CA; for the absurdity is much greater."
+    highlight: [AC]
+    hint: |
+      … nor less.
+
+  - part: lemma
+    text: "Therefore the double of AC is greater than CB."
+    highlight: [AC]
+    hint: |
+      So 2{AC} > *BC*.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Reverse the computation of [[XIII.1]]. $\blacksquare$

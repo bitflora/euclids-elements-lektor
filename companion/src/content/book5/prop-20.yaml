@@ -1,0 +1,121 @@
+id: V.20
+kind: theorem
+title: Ex aequali, comparing the extremes
+
+paraphrase: |
+  If {A} : {B} = {D} : {E} and {B} : {C} = {E} : {F}, then {A} greater than, equal to or less than {C} makes {D} greater
+  than, equal to or less than {F}. The lemma for [[V.22]].
+
+diagram:
+  width: 300
+  height: 130
+  elements:
+    - "U0;point;free;-1000,30;0;0"
+    - "U1;point;free;1000,30;0;0"
+    - "V0;point;free;-1000,65;0;0"
+    - "V1;point;free;1000,65;0;0"
+    - "W0;point;free;-1000,100;0;0"
+    - "W1;point;free;1000,100;0;0"
+    - "A0;point;lineSlider;U0,U1,30,30;0"
+    - "A1;point;lineSlider;U0,U1,140,30;0"
+    - "A;line;connect;A0,A1;black;0;30,100,80"
+    - "B0;point;lineSlider;V0,V1,30,65;0"
+    - "B1;point;lineSlider;V0,V1,80,65;0"
+    - "B;line;connect;B0,B1;black;0;30,100,80"
+    - "C0;point;lineSlider;W0,W1,30,100;0"
+    - "C1;point;lineSlider;W0,W1,120,100;0"
+    - "C;line;connect;C0,C1;black;0;30,100,80"
+    - "D0;point;lineSlider;U0,U1,190,30;0"
+    - "D1;point;lineSlider;U0,U1,270,30;0"
+    - "D;line;connect;D0,D1;black;0;blue"
+    - "E0;point;lineSlider;V0,V1,190,65;0"
+    - "E1;point;proportion;A0,A1,B0,B1,D0,D1,E0,V1;0"
+    - "E;line;connect;E0,E1;black;0;blue"
+    - "F0;point;lineSlider;W0,W1,190,100;0"
+    - "F1;point;proportion;B0,B1,C0,C1,E0,E1,F0,W1;0"
+    - "F;line;connect;F0,F1;black;0;blue"
+  caption: |
+    {E} and {F} are constructed so that $A : B = D : E$ and $B : C = E : F$. Drag the ends of {A}, {B}, {C}, {D}:
+    {D} is longer than {F} exactly when {A} is longer than {C}.
+
+steps:
+  - part: enunciation
+    text: "If there be three magnitudes, and others equal to them in multitude, which taken two and two are in the same ratio, and if ex aequali the first be greater than the third, the fourth will also be greater than the sixth; if equal, equal; and, if less, less."
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      $A : B = D : E$, $B : C = E : F$ and $A \gtreqless C$ give $D \gtreqless F$.
+    explain:
+      implicit: |
+        {A} is compared with {C} and {D} with {F}, so {A}, {B}, {C} are of one kind and {D}, {E}, {F} of one (perhaps
+        different) kind.
+
+  - part: setting-out
+    text: "Let there be three magnitudes A, B, C, and others D, E, F equal to them in multitude, which taken two and two are in the same ratio, so that, as A is to B, so is D to E, and as B is to C, so is E to F; and let A be greater than C ex aequali;"
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      Take the case {A} > {C}.
+
+  - part: specification
+    text: "I say that D will also be greater than F; if A is equal to C, equal; and, if less, less."
+    highlight: [D, F]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, since A is greater than C, and B is some other magnitude, and the greater has to the same a greater ratio than the less has, therefore A has to B a greater ratio than C has to B."
+    highlight: [A, C, B]
+    hint: |
+      $A : B > C : B$ ([[V.8]]).
+
+  - part: proof
+    text: "But, as A is to B, so is D to E, and, as C is to B, inversely, so is F to E;"
+    highlight: [A, B, D, E, C, F]
+    hint: |
+      $A : B = D : E$; and inverting $B : C = E : F$ gives $C : B = F : E$ (porism to [[V.7]]).
+    cites: [V.7]
+
+  - part: proof
+    text: "therefore D has also to E a greater ratio than F has to E."
+    highlight: [D, E, F]
+    hint: |
+      $D : E = A : B > C : B = F : E$ ([[V.13]]).
+    explain:
+      implicit: |
+        [[V.13]] covers "the same as, then greater than"; here Euclid also needs "greater than, then the same
+        as" ($A : B > C : B = F : E$), the unstated companion Joyce mentions.
+
+  - part: proof
+    text: "But, of magnitudes which have a ratio to the same, that which has a greater ratio is greater; therefore D is greater than F."
+    highlight: [D, F]
+    hint: |
+      [[V.10]].
+
+  - part: proof
+    text: "Similarly we can prove that, if A be equal to C, D will also be equal to F; and if less, less."
+    highlight: [A, C, D, F]
+    hint: |
+      The other cases ([[V.7]], [[V.9]] for equality).
+    cites: [V.9]
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: |
+        With ratios as numbers: $D/E = A/B$ and $F/E = C/B$, so $D - F = E(A - C)/B$, which has the sign of
+        $A - C$. $\blacksquare$
+
+commentary: |
+  A lemma: [[V.22]] needs to know that, in an *ex aequali* arrangement, the extremes compare alike. The
+  perturbed version is [[V.21]].

@@ -1,0 +1,141 @@
+id: X.26
+kind: theorem
+title: A medial area does not exceed a medial area by a rational area
+
+paraphrase: |
+  The difference of two medial areas is never rational.
+
+diagram:
+  width: 250
+  height: 220
+  elements:
+    - "O;point;free;0,0;0;0"
+    - "X;point;free;1000,0;0;0"
+    - "Y;point;free;0,1000;0;0"
+    - "A;point;free;40,40"
+    - "B;point;free;110,170"
+    - "AX;point;parallelogram;X,O,A;0;0"
+    - "BY;point;parallelogram;Y,O,B;0;0"
+    - "A';point;intersection;A,AX,B,BY;0;0"
+    - "C;point;lineSlider;A',B,0,90"
+    - "AC;polygon;parallelogram;A,A',C;0;0;black;cyan"
+    - "D;point;vertex;AC,4"
+    - "BD;polygon;parallelogram;B,C,D;0;0;black;pink"
+    - "E;point;free;210,40"
+    - "E';point;parallelogram;X,O,E;0;0"
+    - "F;point;lineSlider;E,E',150,40"
+    - "G';point;parallelogram;Y,O,E;0;0"
+    - "G;point;proportion;E,F,C,D,A,D,E,G'"
+    - "FG;polygon;parallelogram;F,E,G;0;0;black;cyan"
+    - "K;point;vertex;FG,4"
+    - "H;point;proportion;E,F,C,D,A',B,E,G'"
+    - "HK;polygon;parallelogram;H,G,K;0;0;black;pink"
+  aliases: { DB: BD, KH: HK }
+  caption: |
+    The medial areas *AB* and {AC}, applied to the rational line *EF* as *FH* and {FG}; their difference {BD}
+    becomes {KH}.
+
+steps:
+  - part: enunciation
+    text: "A medial area does not exceed a medial area by a rational area."
+    highlight: [AC, BD]
+    hint: |
+      medial − medial ≠ rational.
+    modern: |
+      $\sqrt{a} - \sqrt{b} \ne r$ for rational $a, b, r$ with $\sqrt a, \sqrt b$ irrational (as areas over $\rho^2$).
+
+  - part: setting-out
+    text: "For, if possible, let the medial area AB exceed the medial area AC by the rational area DB,"
+    highlight: [AC, BD]
+    hint: |
+      Suppose medial *AB* exceeds medial {AC} by a rational {DB}.
+
+  - part: construction
+    text: "and let a rational straight line EF be set out; to EF let there be applied the rectangular parallelogram FH equal to AB, producing EH as breadth, and let the rectangle FG equal to AC be subtracted; therefore the remainder BD is equal to the remainder KH."
+    highlight: [FG, HK]
+    hint: |
+      Apply both to a rational line *EF*; the difference becomes {KH}.
+
+  - part: proof
+    text: "But DB is rational; therefore KH is also rational."
+    highlight: [HK]
+    hint: |
+      {KH} = {DB}, rational.
+
+  - part: proof
+    text: "Since, then, each of the rectangles AB, AC is medial, and AB is equal to FH, and AC to FG, therefore each of the rectangles FH, FG is also medial."
+    highlight: [FG]
+    hint: |
+      *FH*, {FG} are medial …
+
+  - part: proof
+    text: "And they are applied to the rational straight line EF; therefore each of the straight lines HE, EG is rational and incommensurable in length with EF."
+    hint: |
+      … so their breadths *HE*, *EG* are rational and incommensurable in length with *EF* ([[X.22]]).
+
+  - part: proof
+    text: "And, since [DB is rational and is equal to KH, therefore] KH is [also] rational; and it is applied to the rational straight line EF; therefore GH is rational and commensurable in length with EF."
+    highlight: [HK]
+    hint: |
+      {KH} rational, so its breadth *GH* is commensurable in length with *EF* ([[X.20]]).
+    explain:
+      implicit: |
+        The bracketed words are, in Heath's view, a later gloss.
+
+  - part: proof
+    text: "But EG is also rational, and is incommensurable in length with EF; therefore EG is incommensurable in length with GH."
+    hint: |
+      So *EG*, *GH* are incommensurable in length ([[X.13]]).
+
+  - part: proof
+    text: "And, as EG is to GH, so is the square on EG to the rectangle EG, GH; therefore the square on EG is incommensurable with the rectangle EG, GH."
+    hint: |
+      So sq(*EG*) is incommensurable with rect(*EG*, *GH*) (lemma of [[X.21]], [[X.11]]).
+
+  - part: proof
+    text: "But the squares on EG, GH are commensurable with the square on EG, for both are rational; and twice the rectangle EG, GH is commensurable with the rectangle EG, GH, for it is double of it; therefore the squares on EG, GH are incommensurable with twice the rectangle EG, GH; therefore also the sum of the squares on EG, GH and twice the rectangle EG, GH, that is, the square on EH, is incommensurable with the squares on EG, GH."
+    hint: |
+      sq(*EG*) + sq(*GH*) is rational, 2·rect(*EG*, *GH*) is incommensurable with it; hence sq(*EH*) =
+      their sum ([[II.4]]) is incommensurable with the rational part ([[X.16]]).
+
+  - part: proof
+    text: "But the squares on EG, GH are rational; therefore the square on EH is irrational."
+    hint: |
+      So sq(*EH*) is irrational …
+
+  - part: proof
+    text: "Therefore EH is irrational."
+    hint: |
+      … and *EH* is irrational.
+
+  - part: proof
+    text: "But it is also rational: which is impossible."
+    hint: |
+      But *EH* is rational: contradiction.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* With $\rho = 1$, medial areas are $\sqrt a$, $\sqrt b$
+    ($a, b$ rational, not squares).
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6]
+      text: |
+        Suppose $\sqrt a - \sqrt b = r \in \mathbb Q$, $r \ne 0$.
+    - steps: [7, 8, 9, 10, 11, 12]
+      text: |
+        Then $a = b + 2r\sqrt b + r^2$, so $\sqrt b = (a - b - r^2)/(2r)$ is rational: contradiction.
+        $\blacksquare$
+
+commentary: |
+  Joyce: "It's hard to follow this proof." The modern version above is the whole idea. The result is needed
+  to show that the irrationals of [[X.37]]–[[X.41]] are distinct kinds.

@@ -1,0 +1,113 @@
+id: X.35
+kind: problem
+title: Lines incommensurable in square, medial sum of squares, medial rectangle incommensurable with it
+
+paraphrase: |
+  Find lines {AD}, {DB}, incommensurable in square, with sq({AD}) + sq({DB}) medial, rect({AD},{DB}) medial,
+  and the two incommensurable. (Components of the line of [[X.41]].)
+
+diagram:
+  width: 360
+  height: 200
+  elements:
+    - "A;point;free;40,160"
+    - "B;point;free;220,160"
+    - "C;point;lineSlider;A,B,320,160"
+    - "BC;line;connect;B,C"
+    - "M;point;midpoint;A,B;0;0"
+    - "ADB;circle;radius;M,B;0;0;0;0"
+    - "E;point;midpoint;B,C"
+    - "F;point;lineSlider;A,B,190,160"
+    - "FD';line;perpendicular;F,A;0;0;0"
+    - "DD';line;chord;FD',ADB;0;0;0"
+    - "D;point;last;DD'"
+    - "semi;sector;arc;B,D,A;0;0;black;random"
+    - "tri;polygon;triangle;A,D,B;0;0;black;random"
+    - "FD;line;connect;F,D"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AF;line;connect;A,F;0;0;0"
+    - "FB;line;connect;F,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+  aliases: { CB: BC, DF: FD, BA: AB, FA: AF, BF: FB, DA: AD, BD: DB, EB: BE }
+  caption: |
+    As in [[X.34]], now starting from the medials of [[X.32]].
+
+steps:
+  - part: enunciation
+    text: "To find two straight lines incommensurable in square which make the sum of the squares on them medial and the rectangle contained by them medial and moreover incommensurable with the sum of the squares on them."
+    highlight: [AD, DB]
+    hint: |
+      Both the sum of squares and the rectangle medial, and incommensurable with each other.
+
+  - part: construction
+    text: "Let there be set out two medial straight lines AB, BC commensurable in square only, containing a medial rectangle, and such that the square on AB is greater than the square on BC by the square on a straight line incommensurable with AB; let the semicircle ADB be described on AB, and let the rest of the construction be as above."
+    highlight: [AB, BC, AD, DB]
+    hint: |
+      {AB}, {BC} medial as in [[X.32]] (incommensurable case); construction as in [[X.34]].
+
+  - part: proof
+    text: "Then, since AF is incommensurable in length with FB, AD is also incommensurable in square with DB."
+    highlight: [AD, DB]
+    hint: |
+      {AD}, {DB} incommensurable in square ([[X.18]], [[X.11]]).
+
+  - part: proof
+    text: "And, since the square on AB is medial, therefore the sum of the squares on AD, DB is also medial."
+    highlight: [AD, DB, AB]
+    hint: |
+      Sum of squares = sq({AB}), medial.
+
+  - part: proof
+    text: "And, since the rectangle AF, FB is equal to the square on each of the straight lines BE, DF, therefore BE is equal to DF; therefore BC is double of FD, so that the rectangle AB, BC is also double of the rectangle AB, FD."
+    highlight: [BE, FD, BC]
+    hint: |
+      {BE} = {DF}, so rect({AB},{BC}) = 2·rect({AB},{FD}).
+
+  - part: proof
+    text: "But the rectangle AB, BC is medial; therefore the rectangle AB, FD is also medial."
+    highlight: [AB, FD]
+    hint: |
+      Medial: an area commensurable with a medial area is medial ([[X.23]], porism).
+    cites: [X.23]
+
+  - part: proof
+    text: "And it is equal to the rectangle AD, DB; therefore the rectangle AD, DB is also medial."
+    highlight: [AD, DB]
+    hint: |
+      = rect({AD},{DB}): medial.
+
+  - part: proof
+    text: "And, since AB is incommensurable in length with BC, while CB is commensurable with BE, therefore AB is also incommensurable in length with BE, so that the square on AB is also incommensurable with the rectangle AB, BE."
+    highlight: [AB, BC, BE]
+    hint: |
+      {AB} incommensurable with {BC}, hence with {BE} ([[X.13]]): sq({AB}) incommensurable with rect({AB},{BE}).
+
+  - part: proof
+    text: "But the squares on AD, DB are equal to the square on AB, and the rectangle AB, FD, that is, the rectangle AD, DB, is equal to the rectangle AB, BE; therefore the sum of the squares on AD, DB is incommensurable with the rectangle AD, DB."
+    highlight: [AD, DB]
+    hint: |
+      So the sum of squares is incommensurable with the rectangle.
+
+  - part: proof
+    text: "Therefore two straight lines AD, DB incommensurable in square have been found which make the sum of the squares on them medial and the rectangle contained by them medial and moreover incommensurable with the sum of the squares on them."
+    highlight: [AD, DB]
+    hint: |
+      Found.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      text: |
+        $AD^2 + DB^2 = AB^2$ and $AD\cdot DB = AB\cdot BE$, with $AB/BE$ irrational and both areas medial.
+        $\blacksquare$
+
+commentary: |
+  Used in [[X.41]] and [[X.78]]. The bracketed reference in step 6 reads "X. 32, Por." in the transcription;
+  the fact used is the porism of [[X.23]] (X.32 has no porism).

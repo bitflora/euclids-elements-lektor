@@ -1,0 +1,164 @@
+id: V.7
+kind: theorem
+title: Equal magnitudes have the same ratio to the same
+
+paraphrase: |
+  If {A} equals {B}, then {A} : {C} = {B} : {C}, and {C} : {A} = {C} : {B}.
+
+diagram:
+  width: 350
+  height: 130
+  elements:
+    - "U0;point;free;-1000,30;0;0"
+    - "U1;point;free;1000,30;0;0"
+    - "V0;point;free;-1000,70;0;0"
+    - "V1;point;free;1000,70;0;0"
+    - "W0;point;free;-1000,110;0;0"
+    - "W1;point;free;1000,110;0;0"
+    - "A0;point;lineSlider;U0,U1,20,30;0"
+    - "A1;point;lineSlider;U0,U1,65,30;0"
+    - "A;line;connect;A0,A1;black;0;30,100,80"
+    - "B0;point;lineSlider;V0,V1,20,70;0"
+    - "B1;point;cutoff;B0,V1,A0,A1;0"
+    - "B;line;connect;B0,B1;black;0;30,100,80"
+    - "C0;point;lineSlider;W0,W1,20,110;0"
+    - "C1;point;lineSlider;W0,W1,85,110;0"
+    - "C;line;connect;C0,C1;black;0;30,100,80"
+    - "D0;point;lineSlider;U0,U1,120,30;0"
+    - "D1;point;cutoff;D0,U1,A0,A1;0;lightGray"
+    - "D2;point;cutoff;D1,U1,A0,A1;0;lightGray"
+    - "D3;point;cutoff;D2,U1,A0,A1;0"
+    - "D;line;connect;D0,D3;black;0;30,100,80"
+    - "E0;point;lineSlider;V0,V1,120,70;0"
+    - "E1;point;cutoff;E0,V1,A0,A1;0;lightGray"
+    - "E2;point;cutoff;E1,V1,A0,A1;0;lightGray"
+    - "E3;point;cutoff;E2,V1,A0,A1;0"
+    - "E;line;connect;E0,E3;black;0;30,100,80"
+    - "F0;point;lineSlider;W0,W1,120,110;0"
+    - "F1;point;cutoff;F0,W1,C0,C1;0;lightGray"
+    - "F2;point;cutoff;F1,W1,C0,C1;0;lightGray"
+    - "F3;point;cutoff;F2,W1,C0,C1;0"
+    - "F;line;connect;F0,F3;black;0;30,100,80"
+  caption: |
+    {B} is made equal to {A}; {D}, {E}, {F} are three times {A}, {B}, {C}. Drag the ends of {A} and {C}:
+    {D} and {E} always compare with {F} in the same way.
+
+steps:
+  - part: enunciation
+    text: "Equal magnitudes have to the same the same ratio, as also has the same to equal magnitudes."
+    highlight: [A, B, C]
+    hint: |
+      $A = B \Rightarrow A : C = B : C$ and $C : A = C : B$.
+    explain:
+      implicit: |
+        Obvious if a ratio were a number; but a ratio is only fixed by [[V.Def.5]], so even this needs a
+        proof from that definition.
+
+  - part: setting-out
+    text: "Let A, B be equal magnitudes and C any other, chance, magnitude;"
+    highlight: [A, B, C]
+    hint: |
+      {A} = {B}; {C} arbitrary (of the same kind, so that ratios exist).
+
+  - part: specification
+    text: "I say that each of the magnitudes A, B has the same ratio to C, and C has the same ratio to each of the magnitudes A, B."
+    highlight: [A, B, C]
+    hint: |
+      Two claims.
+
+  - part: construction
+    text: "For let equimultiples D, E of A, B be taken, and of C another, chance, multiple F."
+    highlight: [D, E, F]
+    hint: |
+      The test of [[V.Def.5]]: {D} = $m${A}, {E} = $m${B}, {F} = $n${C}, with $m$, $n$ arbitrary.
+    cites: [V.Def.5]
+
+  - part: proof
+    text: "Then, since D is the same multiple of A that E is of B, while A is equal to B, therefore D is equal to E."
+    highlight: [D, E]
+    hint: |
+      Equal magnitudes, multiplied alike, stay equal.
+    explain:
+      implicit: |
+        $A = B \Rightarrow mA = mB$: $m$ copies of equals are equal ([[I.CN.2]], applied $m - 1$ times).
+    cites: [I.CN.2]
+
+  - part: proof
+    text: "But F is another, chance, magnitude."
+    highlight: [F]
+    hint: |
+      {F} is unrelated to {D}, {E}.
+
+  - part: proof
+    text: "If therefore D is in excess of F, E is also in excess of F, if equal to it, equal; and, if less, less."
+    highlight: [D, E, F]
+    hint: |
+      {D} and {E} are equal, so they compare with {F} identically.
+
+  - part: proof
+    text: "And D, E are equimultiples of A, B, while F is another, chance, multiple of C;"
+    highlight: [D, E, F]
+    hint: |
+      These are exactly the multiples [[V.Def.5]] asks about.
+
+  - part: proof
+    text: "therefore, as A is to C, so is B to C."
+    highlight: [A, B, C]
+    hint: |
+      First claim, by [[V.Def.5]].
+
+  - part: specification
+    text: "I say next that C also has the same ratio to each of the magnitudes A, B."
+    highlight: [C, A, B]
+    hint: |
+      Second claim.
+
+  - part: proof
+    text: "For, with the same construction, we can prove similarly that D is equal to E; and F is some other magnitude."
+    highlight: [D, E, F]
+    hint: |
+      Same multiples; {D} = {E} again.
+
+  - part: proof
+    text: "If therefore F is in excess of D, it is also in excess of E, if equal, equal; and, if less, less."
+    highlight: [F, D, E]
+    hint: |
+      {F} compares with {D} and {E} identically.
+
+  - part: proof
+    text: "And F is a multiple of C, while D, E are other, chance, equimultiples of A, B;"
+    highlight: [F, D, E]
+    hint: |
+      Now {C} is the antecedent of both ratios, so {F} plays the first role in [[V.Def.5]].
+
+  - part: proof
+    text: "therefore, as C is to A, so is C to B."
+    highlight: [C, A, B]
+    hint: |
+      Second claim, by [[V.Def.5]].
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved. Heath then prints a porism (below the proof).
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: |
+        If $A = B$ then $mA = mB$ for every $m$, so for every $m, n$ the comparison of $mA$ with $nC$ is the
+        comparison of $mB$ with $nC$: $A : C = B : C$ by [[V.Def.5]].
+    - steps: [9, 10, 11, 12, 13]
+      text: |
+        Likewise $nC$ vs. $mA$ is $nC$ vs. $mB$: $C : A = C : B$. $\blacksquare$
+
+commentary: |
+  The porism Heath prints after V.7 — "if any magnitudes are proportional, they will also be proportional
+  inversely" ($A : B = C : D \Rightarrow B : A = D : C$, [[V.Def.13]]) — has little to do with V.7 itself.
+  It follows directly from [[V.Def.5]]: the test for $B : A = D : C$ is the test for $A : B = C : D$ read
+  with the inequalities reversed. Joyce calls the porism misplaced; it is nevertheless what later
+  propositions cite as *inversely*.
+
+  The converse of V.7 is [[V.9]].

@@ -1,0 +1,79 @@
+id: IX.33
+kind: theorem
+title: Twice an odd number is even-times odd only
+
+paraphrase: |
+  If half of {A} is odd, then {A} is *even-times odd only*: it has no factorisation into two even numbers.
+
+diagram:
+  width: 190
+  height: 60
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,160,0;0"
+    - "A;line;connect;A1,A2;black"
+  caption: |
+    A number {A} whose half is odd.
+
+steps:
+  - part: enunciation
+    text: "If a number have its half odd, it is even-times odd only."
+    highlight: [A]
+    hint: |
+      $2 \times$ odd is not divisible by 4.
+    modern: |
+      $a = 2(2k + 1) \Rightarrow 4 \nmid a$.
+
+  - part: setting-out
+    text: "For let the number A have its half odd;"
+    highlight: [A]
+    hint: |
+      Half of {A} odd.
+
+  - part: specification
+    text: "I say that A is even-times odd only."
+    highlight: [A]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "Now that it is even-times odd is manifest; for the half of it, being odd, measures it an even number of times."
+    highlight: [A]
+    hint: |
+      The odd half measures {A} twice ([[VII.Def.9]]).
+
+  - part: specification
+    text: "I say next that it is also even-times odd only."
+    highlight: [A]
+    hint: |
+      And not even-times even.
+
+  - part: proof
+    text: "For, if A is even-times even also, it will be measured by an even number according to an even number; so that the half of it will also be measured by an even number though it is odd: which is absurd."
+    highlight: [A]
+    hint: |
+      If {A} = even × even, its half = even × (half of the other), measured by an even number — but it is odd.
+
+  - part: proof
+    text: "Therefore A is even-times odd only."
+    highlight: [A]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [5, 6]
+      text: |
+        $a = (2x)(2y) \Rightarrow a/2 = 2xy$, even. $\blacksquare$
+
+gaps: |
+  - Step 6 uses, without comment, that half of (even × even) is measured by an even number.

@@ -1,0 +1,96 @@
+id: III.23
+kind: theorem
+title: No two similar unequal segments on the same chord and side
+
+paraphrase: |
+  On a given chord, on one side of it, there cannot be two different similar segments of circles.
+
+diagram:
+  width: 250
+  height: 140
+  elements:
+    - "A;point;free;40,110"
+    - "B;point;free;210,110"
+    - "AB;line;connect;A,B"
+    - "C;point;free;115,65"
+    - "ACB;sector;arc;B,C,A;0;0;black;0"
+    - "BC;line;connect;B,C"
+    - "D;point;lineSlider;A,C,150,35"
+    - "ADB;sector;arc;B,D,A;0;0;black;0"
+    - "AD;line;connect;A,D"
+    - "DB;line;connect;D,B"
+    - "angACB;sector;angleMarker;C,A,B"
+    - "angADB;sector;angleMarker;D,A,B"
+  aliases:
+    ACD: AD
+    CB: BC
+    BD: DB
+  given: [A, B, AB, C, ACB]
+  caption: |
+    The two segments on {AB}: slide {D} along {AC} produced. ∠{ACB|angACB} is always bigger than
+    ∠{ADB|angADB}, so the segments are never similar.
+
+steps:
+  - part: enunciation
+    text: "On the same straight line there cannot be constructed two similar and unequal segments of circles on the same side."
+    highlight: [AB, ACB, ADB]
+    hint: |
+      A chord and an angle fix the segment.
+    explain:
+      fact: |
+        Similar segments are those that "admit equal angles" ([[III.Def.11]]): the angles in them are equal.
+      implicit: |
+        "Cannot be constructed" uses the same phrase as [[I.7]] (Heath's note on line 1).
+
+  - part: setting-out
+    text: "For, if possible, on the same straight line AB let two similar and unequal segments of circles ACB, ADB be constructed on the same side;"
+    highlight: [ACB, ADB, AB]
+    adds: [D, ADB]
+    hint: |
+      Reductio: suppose two such segments.
+
+  - part: construction
+    text: "let ACD be drawn through, and let CB, DB be joined."
+    highlight: [AD, BC, DB]
+    adds: [AD, DB]
+    hint: |
+      A line from {A} through {C} meeting the outer arc at {D}; join {CB}, {DB}.
+
+  - part: proof
+    text: "Then, since the segment ACB is similar to the segment ADB, and similar segments of circles are those which admit equal angles, the angle ACB is equal to the angle ADB,"
+    highlight: [angACB, angADB]
+    hint: |
+      By the definition of similar segments.
+
+  - part: proof
+    text: "the exterior to the interior: which is impossible."
+    highlight: [angACB, angADB]
+    hint: |
+      ∠{ACB|angACB} is an exterior angle of triangle {CDB|DB}, so it is greater than ∠{ADB|angADB} ([[I.16]]).
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4]
+      text: |
+        The locus of points $P$ on one side of $AB$ with $\angle APB = \alpha$ is a single arc. So the angle
+        determines the segment. $\blacksquare$
+
+commentary: |
+  III.23 and [[III.24]] set up [[III.26]]–[[III.29]], which relate equal angles, arcs and chords in equal
+  circles.
+
+gaps: |
+  - **One arc inside the other**: the line from {A} through {C} meets the second arc beyond {C}. If the
+    arcs crossed, the argument would need changing; two arcs on the same chord cannot cross ([[III.10]]).

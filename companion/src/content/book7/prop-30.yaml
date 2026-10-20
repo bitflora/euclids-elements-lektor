@@ -1,0 +1,155 @@
+id: VII.30
+kind: theorem
+title: Euclid's lemma — a prime dividing a product divides a factor
+
+paraphrase: |
+  If a prime {D} measures the product {C} = {A}·{B}, it measures {A} or {B}.
+
+diagram:
+  width: 270
+  height: 185
+  elements:
+    - "A0;point;free;-1000,35;0;0"
+    - "A3;point;free;1000,35;0;0"
+    - "B0;point;free;-1000,70;0;0"
+    - "B3;point;free;1000,70;0;0"
+    - "C0;point;free;-1000,105;0;0"
+    - "C3;point;free;1000,105;0;0"
+    - "D0;point;free;-1000,140;0;0"
+    - "D3;point;free;1000,140;0;0"
+    - "E0;point;free;-1000,175;0;0"
+    - "E3;point;free;1000,175;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,40;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,100,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,150,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;U1,U2,A1,A2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;lineSlider;D0,D3,90,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;E0,E3,30,0;0"
+    - "E2;point;proportion;D1,D2,C1,C2,U1,U2,E1,E3;0"
+    - "E;line;connect;E1,E2;black"
+  caption: |
+    {C} = {A}·{B}; {D} is prime and measures {C}, with {C} = {D}·{E}.
+
+steps:
+  - part: enunciation
+    text: "If two numbers by multiplying one another make some number, and any prime number measure the product, it will also measure one of the original numbers."
+    highlight: [A, B, C, D]
+    hint: |
+      $p$ prime, $p \mid ab \Rightarrow p \mid a$ or $p \mid b$.
+    modern: |
+      $p$ prime, $p \mid ab \ \Rightarrow\ p \mid a \ \text{or}\ p \mid b$.
+
+  - part: setting-out
+    text: "For let the two numbers A, B by multiplying one another make C, and let any prime number D measure C;"
+    highlight: [A, B, C, D]
+    hint: |
+      {C} = {A}·{B}; the prime {D} measures {C}.
+
+  - part: specification
+    text: "I say that D measures one of the numbers A, B."
+    highlight: [D, A, B]
+    hint: |
+      To prove: {D} measures {A} or {B}.
+
+  - part: proof
+    text: "For let it not measure A."
+    highlight: [D, A]
+    hint: |
+      Suppose {D} does not measure {A}; show it measures {B}.
+
+  - part: proof
+    text: "Now D is prime; therefore A, D are prime to one another."
+    highlight: [A, D]
+    hint: |
+      By [[VII.29]], {A} and {D} are coprime.
+
+  - part: construction
+    text: "And, as many times as D measures C, so many units let there be in E."
+    highlight: [E]
+    hint: |
+      {C} = {E} copies of {D}.
+
+  - part: proof
+    text: "Since then D measures C according to the units in E, therefore D by multiplying E has made C."
+    highlight: [D, E, C]
+    hint: |
+      {C} = {D}·{E} ([[VII.Def.15]]).
+
+  - part: proof
+    text: "Further, A by multiplying B has also made C; therefore the product of D, E is equal to the product of A, B."
+    highlight: [D, E, A, B]
+    hint: |
+      {D}·{E} = {A}·{B}.
+
+  - part: proof
+    text: "Therefore, as D is to A, so is B to E."
+    highlight: [D, A, B, E]
+    hint: |
+      By [[VII.19]]: {D} : {A} = {B} : {E}.
+
+  - part: proof
+    text: "But D, A are prime to one another, primes are also least, and the least measure the numbers which have the same ratio the same number of times, the greater the greater and the less the less, that is, the antecedent the antecedent and the consequent the consequent;"
+    highlight: [D, A]
+    hint: |
+      {D} : {A} is in lowest terms ([[VII.21]]), so it measures equal ratios term by term ([[VII.20]]).
+
+  - part: proof
+    text: "therefore D measures B."
+    highlight: [D, B]
+    hint: |
+      So {D} measures {B}.
+
+  - part: proof
+    text: "Similarly we can also show that, if D do not measure B, it will measure A."
+    highlight: [D, A, B]
+    hint: |
+      Symmetrically.
+
+  - part: proof
+    text: "Therefore D measures one of the numbers A, B."
+    highlight: [D, A, B]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4]
+      text: |
+        If $p \nmid a$, then $\gcd(p, a) = 1$ ([[VII.29]]).
+    - steps: [5, 6, 7, 8]
+      text: |
+        Write $ab = pe$; then $p : a = b : e$ ([[VII.19]]).
+    - steps: [9, 10]
+      text: |
+        $p : a$ is in lowest terms ([[VII.21]]), so $p \mid b$ ([[VII.20]]). $\blacksquare$
+  closing: |
+    The modern proof uses Bézout's identity ($xp + ya = 1$, so $b = xpb + yab$ is divisible by $p$). Euclid's
+    route, through lowest terms ([[VII.20]]), avoids negative numbers and needs no identity.
+
+commentary: |
+  *Euclid's lemma*, the key to the uniqueness of prime factorisation. Euclid does not state unique
+  factorisation; the closest he comes is [[IX.14]] (a number measured by primes is measured by no other
+  prime). Gauss gave the first full statement and proof, in the *Disquisitiones Arithmeticae* (1801).
+
+  Joyce notes that the property characterises primes: a composite $c = ab$ divides $ab$ but neither factor.
+
+historical: |
+  Whether Euclid "had" the fundamental theorem of arithmetic is a classic question. Most historians answer
+  that every ingredient is in Book VII ([[VII.30]], [[VII.31]], [[VII.32]]) and [[IX.14]], but that the
+  statement itself — every number is a product of primes in essentially one way — is not.

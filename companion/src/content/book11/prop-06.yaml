@@ -1,0 +1,133 @@
+id: XI.6
+kind: theorem
+title: Two lines perpendicular to the same plane are parallel
+
+paraphrase: |
+  If {AB} and {CD} are both perpendicular to a plane, they are parallel.
+
+diagram:
+  width: 280
+  height: 260
+  elements:
+    - "X;point;free;100000,100"
+    - "Y;point;free;100,-100000"
+    - "Z;point;free;50000,-100000"
+    - "P0;point;free;20,240;0;0,75,100"
+    - "P1;point;lineSlider;P0,X,190,230;0;30,75,100"
+    - "P2;point;lineSlider;P0,Z,60,100;0;30,75,100"
+    - "P3;point;intersection;P1,Z,P2,X;0;0"
+    - "P;polygon;quadrilateral;P0,P1,P3,P2;0;0;lightGray;brighter"
+    - "A;point;free;90,40"
+    - "B;point;lineSlider;A,Y,40,160"
+    - "AB;line;connect;A,B"
+    - "C;point;free;200,40"
+    - "D;point;intersection;B,X,C,Y"
+    - "CD;line;connect;C,D"
+    - "AD;line;connect;A,D"
+    - "M;point;midpoint;A,B;0;0"
+    - "E;point;extend;Z,D,A,M"
+    - "BDE;polygon;triangle;B,D,E;0;0;black;random"
+    - "AE;line;connect;A,E"
+    - "BD;line;connect;B,D;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+    - "ABD;polygon;triangle;A,B,D;0;0;0"
+    - "ABE;polygon;triangle;A,B,E;0;0;0"
+    - "CDB;polygon;triangle;C,D,B;0;0;0"
+    - "CDE;polygon;triangle;C,D,E;0;0;0"
+    - "EDA;polygon;triangle;E,D,A;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "DA;line;connect;D,A;0;0;0"
+    - "DC;line;connect;D,C;0;0;0"
+  aliases: { BA: AB, EA: AE, DB: BD, EB: BE }
+  caption: |
+    {AB}, {CD} perpendicular to the plane at {B}, {D}; {DE} in the plane perpendicular to {BD}, equal to {AB}.
+
+steps:
+  - part: enunciation
+    text: "If two straight lines be at right angles to the same plane, the straight lines will be parallel."
+    highlight: [AB, CD]
+    hint: |
+      Perpendiculars to one plane are parallel.
+
+  - part: setting-out
+    text: "For let the two straight lines AB, CD be at right angles to the plane of reference; I say that AB is parallel to CD."
+    highlight: [AB, CD]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let them meet the plane of reference at the points B, D, let the straight line BD be joined, let DE be drawn, in the plane of reference, at right angles to BD, let DE be made equal to AB, and let BE, AE, AD be joined."
+    highlight: [BD, DE, BE, AE, AD]
+    hint: |
+      Join {BD}; draw {DE} ⊥ {BD} in the plane with {DE} = {AB}; join {BE}, {AE}, {AD}.
+
+  - part: proof
+    text: "Now, since AB is at right angles to the plane of reference, it will also make right angles with all the straight lines which meet it and are in the plane of reference."
+    highlight: [AB]
+    hint: |
+      {AB} is perpendicular to every line in the plane through {B} …
+
+  - part: proof
+    text: "But each of the straight lines BD, BE is in the plane of reference and meets AB; therefore each of the angles ABD, ABE is right."
+    highlight: [AB, BD, BE]
+    hint: |
+      … so ∠{ABD}, ∠{ABE} are right.
+
+  - part: proof
+    text: "For the same reason each of the angles CDB, CDE is also right."
+    highlight: [CD]
+    hint: |
+      Likewise ∠{CDB}, ∠{CDE}.
+
+  - part: proof
+    text: "And, since AB is equal to DE, and BD is common, the two sides AB, BD are equal to the two sides ED, DB; and they include right angles; therefore the base AD is equal to the base BE."
+    highlight: [AD, BE]
+    hint: |
+      [[I.4]]: {AD} = {BE}.
+
+  - part: proof
+    text: "And, since AB is equal to DE, while AD is also equal to BE, the two sides AB, BE are equal to the two sides ED, DA; and AE is their common base; therefore the angle ABE is equal to the angle EDA."
+    highlight: [AE]
+    hint: |
+      [[I.8]]: ∠{ABE} = ∠{EDA}.
+
+  - part: proof
+    text: "But the angle ABE is right; therefore the angle EDA is also right; therefore ED is at right angles to DA."
+    highlight: [DE, AD]
+    hint: |
+      So {ED} ⊥ {DA}.
+
+  - part: proof
+    text: "But it is also at right angles to each of the straight lines BD, DC; therefore ED is set up at right angles to the three straight lines BD, DA, DC at their point of meeting; therefore the three straight lines BD, DA, DC are in one plane."
+    highlight: [DE]
+    hint: |
+      {ED} is perpendicular to {BD}, {DA}, {DC}: they lie in one plane ([[XI.5]]).
+
+  - part: proof
+    text: "But, in whatever plane DB, DA are, in that plane is AB also, for every triangle is in one plane; therefore the straight lines AB, BD, DC are in one plane."
+    highlight: [AB, BD, CD]
+    hint: |
+      {AB} is in that plane too ([[XI.2]]).
+
+  - part: proof
+    text: "And each of the angles ABD, BDC is right; therefore AB is parallel to CD."
+    highlight: [AB, CD]
+    hint: |
+      Two right angles at {B}, {D}: parallel ([[I.28]]).
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [AB, CD]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Both are parallel to the normal vector of the plane. $\blacksquare$

@@ -1,0 +1,167 @@
+id: VII.20
+kind: theorem
+title: The least numbers in a ratio measure all others in that ratio
+
+paraphrase: |
+  If {CD} : {EF} is a ratio in lowest terms and {A} : {B} is the same ratio, then {CD} goes into {A} exactly
+  as many times as {EF} goes into {B}.
+
+diagram:
+  width: 160
+  height: 280
+  elements:
+    - "A0;point;free;30,-1000;0;0"
+    - "A3;point;free;30,1000;0;0"
+    - "A1;point;lineSlider;A0,A3,30,30;0"
+    - "A2;point;lineSlider;A0,A3,30,240;0"
+    - "A;line;connect;A1,A2;black"
+    - "B0;point;free;60,-1000;0;0"
+    - "B3;point;free;60,1000;0;0"
+    - "B1;point;lineSlider;B0,B3,60,30;0"
+    - "B2;point;lineSlider;B0,B3,60,190;0"
+    - "B;line;connect;B1,B2;black"
+    - "C0;point;free;100,-1000;0;0"
+    - "C3;point;free;100,1000;0;0"
+    - "C;point;lineSlider;C0,C3,100,30"
+    - "M;point;midpoint;A1,A2;0;0"
+    - "D;point;cutoff;C,C3,A1,M"
+    - "CD;line;connect;C,D"
+    - "G;point;midpoint;CD"
+    - "E0;point;free;130,-1000;0;0"
+    - "E3;point;free;130,1000;0;0"
+    - "E;point;lineSlider;E0,E3,130,30"
+    - "F;point;proportion;A1,A2,B1,B2,C,D,E,E3"
+    - "EF;line;connect;E,F"
+    - "H;point;midpoint;EF"
+    - "CG;line;connect;C,G;0;0;0"
+    - "GD;line;connect;G,D;0;0;0"
+    - "EH;line;connect;E,H;0;0;0"
+    - "HF;line;connect;H,F;0;0;0"
+  caption: |
+    {CD} : {EF} is {A} : {B} in lowest terms. The pieces {CG}, {GD}, {EH}, {HF} belong to the impossible case
+    of the proof.
+
+steps:
+  - part: enunciation
+    text: "The least numbers of those which have the same ratio with them measure those which have the same ratio the same number of times, the greater the greater and the less the less."
+    highlight: [CD, EF, A, B]
+    hint: |
+      If $c : e$ is in lowest terms and $a : b = c : e$, then $a = nc$ and $b = ne$ for one $n$.
+    modern: |
+      $c : e$ in lowest terms and $a : b = c : e$ $\Rightarrow$ $a = nc$, $b = ne$.
+
+  - part: setting-out
+    text: "For let CD, EF be the least numbers of those which have the same ratio with A, B;"
+    highlight: [CD, EF, A, B]
+    hint: |
+      {CD} : {EF} is the ratio {A} : {B} in lowest terms.
+
+  - part: specification
+    text: "I say that CD measures A the same number of times that EF measures B."
+    highlight: [CD, A, EF, B]
+    hint: |
+      To prove: {CD} goes into {A} as often as {EF} into {B}.
+
+  - part: proof
+    text: "Now CD is not parts of A."
+    highlight: [CD, A]
+    hint: |
+      Claim: {CD} is not "parts" of {A} ([[VII.Def.4]]).
+
+  - part: proof
+    text: "For, if possible, let it be so; therefore EF is also the same parts of B that CD is of A."
+    highlight: [CD, A, EF, B]
+    hint: |
+      Suppose it is. Alternating the proportion ([[VII.13]]), {EF} is the same parts of {B}.
+
+  - part: proof
+    text: "Therefore, as many parts of A as there are in CD, so many parts of B are there also in EF."
+    highlight: [CD, EF]
+    hint: |
+      {CD} and {EF} each consist of $m$ pieces.
+
+  - part: construction
+    text: "Let CD be divided into the parts of A, namely CG, GD, and EF into the parts of B, namely EH, HF;"
+    highlight: [CG, GD, EH, HF]
+    hint: |
+      The pieces {CG}, {GD} and {EH}, {HF}.
+
+  - part: proof
+    text: "thus the multitude of CG, GD will be equal to the multitude of EH, HF."
+    highlight: [CG, GD, EH, HF]
+    hint: |
+      The same number of pieces in each.
+
+  - part: proof
+    text: "Now, since the numbers CG, GD are equal to one another, and the numbers EH, HF are also equal to one another, while the multitude of CG, GD is equal to the multitude of EH, HF, therefore, as CG is to EH, so is GD to HF."
+    highlight: [CG, EH, GD, HF]
+    hint: |
+      Equal pieces are in equal ratio.
+
+  - part: proof
+    text: "Therefore also, as one of the antecedents is to one of the consequents, so will all the antecedents be to all the consequents."
+    highlight: [CD, EF]
+    hint: |
+      Sum them ([[VII.12]]).
+
+  - part: proof
+    text: "Therefore, as CG is to EH, so is CD to EF."
+    highlight: [CG, EH, CD, EF]
+    hint: |
+      {CG} : {EH} = {CD} : {EF}.
+
+  - part: proof
+    text: "Therefore CG, EH are in the same ratio with CD, EF, being less than they: which is impossible, for by hypothesis CD, EF are the least numbers of those which have the same ratio with them."
+    highlight: [CG, EH, CD, EF]
+    hint: |
+      But {CG}, {EH} are smaller numbers in the same ratio — contradicting "least".
+
+  - part: proof
+    text: "Therefore CD is not parts of A; therefore it is a part of it."
+    highlight: [CD, A]
+    hint: |
+      So {CD} is *a part* of {A} ([[VII.4]]): it measures {A}.
+
+  - part: proof
+    text: "And EF is the same part of B that CD is of A;"
+    highlight: [EF, B]
+    hint: |
+      And {EF} is the same part of {B} ([[VII.13]], [[VII.Def.20]]).
+
+  - part: proof
+    text: "therefore CD measures A the same number of times that EF measures B."
+    highlight: [CD, A, EF, B]
+    hint: |
+      The same part means the same number of times.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11]
+      text: |
+        Suppose $c = \tfrac{m}{n} a$ with $m \ge 2$. Then $e = \tfrac{m}{n} b$ too, and $c/m : e/m = c : e$ with
+        $c/m < c$: contradicting minimality.
+    - steps: [12, 13, 14]
+      text: |
+        So $c = \tfrac1n a$, and $e = \tfrac1n b$: $a = nc$, $b = ne$. $\blacksquare$
+  closing: |
+    In modern terms: if $\gcd(c, e) = 1$ and $a e = b c$, then $c \mid a$ — the heart of unique
+    factorisation, reached here without primes.
+
+commentary: |
+  The *least numbers* of a ratio are the ratio in lowest terms. That they exist is taken for granted here
+  (every collection of numbers has a least); [[VII.33]] shows how to find them.
+
+  This is the key lemma of Book VII's theory of divisibility. With [[VII.21]] and [[VII.22]] (least numbers
+  are exactly the coprime ones) it gives [[VII.24]]–[[VII.30]], culminating in [[VII.30]] (Euclid's lemma:
+  a prime dividing a product divides one of the factors).
+
+gaps: |
+  - **Existence of least numbers** is assumed: it is the well-ordering of the numbers.
+  - Step 5 applies alternation to the proportion in the form "same parts", as [[VII.Def.20]] allows.

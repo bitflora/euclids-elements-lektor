@@ -1,0 +1,162 @@
+id: I.37
+kind: theorem
+title: Triangles on the same base and between the same parallels
+
+paraphrase: |
+  Two triangles on the same base {BC}, with their apexes on one line parallel to {BC}, have equal
+  areas.
+
+diagram:
+  width: 310
+  height: 210
+  elements:
+    - "B;point;free;80,170"
+    - "C;point;free;170,170"
+    - "A;point;free;130,40"
+    - "ADp;line;parallel;A,B,C;0;0;0"
+    - "D;point;lineSlider;ADp,175,40"
+    - "E;point;parallelogram;B,C,A"
+    - "F;point;parallelogram;C,B,D"
+    - "BC;line;connect;B,C"
+    - "AD;line;connect;A,D"
+    - "EF;line;connect;E,F"
+    - "BE;line;connect;B,E"
+    - "CF;line;connect;C,F"
+    - "AC;line;connect;A,C"
+    - "BD;line;connect;B,D"
+    - "AB;line;connect;A,B;0;0;0"
+    - "DC;line;connect;D,C;0;0;0"
+    - "ABC;polygon;triangle;A,B,C;0;0;0;#efe4d2"
+    - "BCD;polygon;triangle;B,C,D;0;0;0;#dfe7ea"
+    - "EBCA;polygon;quadrilateral;E,B,C,A;0;0;0;0"
+    - "DBCF;polygon;quadrilateral;D,B,C,F;0;0;0;0"
+  aliases:
+    DBC: BCD
+    BA: AB
+    CD: DC
+    CA: AC
+    DB: BD
+    EB: BE
+    FC: CF
+    DA: AD
+    FE: EF
+  given: [A, B, C, D, BC, AD, AC, BD, AB, DC, ABC, BCD]
+  caption: |
+    Drag {B} or {C}, or {A}; slide {D} along the parallel through {A}. The two triangles keep equal areas.
+
+steps:
+  - part: enunciation
+    text: "Triangles which are on the same base and in the same parallels are equal to one another."
+    highlight: [ABC, BCD]
+    hint: |
+      Same base, same height ⇒ same area. The triangle version of [[I.35]].
+
+  - part: setting-out
+    text: "Let ABC, DBC be triangles on the same base BC and in the same parallels AD, BC;"
+    highlight: [ABC, BCD, BC, AD]
+    hint: |
+      The data: triangles {ABC}, {DBC} on base {BC}, with {AD} ∥ {BC}.
+
+  - part: specification
+    text: "I say that the triangle ABC is equal to the triangle DBC."
+    highlight: [ABC, BCD]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let AD be produced in both directions to E, F;"
+    highlight: [AD, EF]
+    adds: [EF, E, F]
+    hint: |
+      Extend {AD} both ways ([[I.Post.2]]).
+    cites: [I.Post.2]
+
+  - part: construction
+    text: "through B let BE be drawn parallel to CA,"
+    highlight: [BE, AC]
+    adds: [BE]
+    hint: |
+      Draw {BE} ∥ {CA} ([[I.31]]), completing a parallelogram {EBCA} around {ABC}.
+
+  - part: construction
+    text: "and through C let CF be drawn parallel to BD."
+    highlight: [CF, BD]
+    adds: [CF]
+    hint: |
+      And {CF} ∥ {BD}, completing a parallelogram {DBCF} around {DBC}.
+
+  - part: proof
+    text: "Then each of the figures EBCA, DBCF is a parallelogram; and they are equal,"
+    highlight: [EBCA, DBCF]
+    hint: |
+      Two parallelograms…
+
+  - part: proof
+    text: "for they are on the same base BC and in the same parallels BC, EF."
+    highlight: [EBCA, DBCF, BC, EF]
+    hint: |
+      …on the same base, between the same parallels: equal by [[I.35]].
+
+  - part: proof
+    text: "Moreover the triangle ABC is half of the parallelogram EBCA; for the diameter AB bisects it."
+    highlight: [ABC, EBCA, AB]
+    hint: |
+      A diagonal halves a parallelogram ([[I.34]]).
+
+  - part: proof
+    text: "And the triangle DBC is half of the parallelogram DBCF; for the diameter DC bisects it."
+    highlight: [BCD, DBCF, DC]
+    hint: |
+      Likewise ([[I.34]]).
+
+  - part: proof
+    text: "[But the halves of equal things are equal to one another.]"
+    hint: |
+      Halves of equals are equal.
+    dispute: |
+      Heiberg brackets these words as an early interpolation: the common notion they quote ("halves
+      of equal things are equal") is itself judged spurious, added before Theon's edition, and the
+      words here probably at the same time (Heath's note on line 21).
+
+  - part: proof
+    text: "Therefore the triangle ABC is equal to the triangle DBC."
+    highlight: [ABC, BCD]
+    hint: |
+      Done.
+    modern: |
+      $$[ABC] = \tfrac12 [EBCA] = \tfrac12 [DBCF] = [DBC]$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: Both triangles have base $BC$ and the same height $h$.
+    - steps: [6, 7, 8, 9, 10]
+      text: $[ABC] = \tfrac12\, BC \cdot h = [DBC]$. $\blacksquare$
+  closing: |
+    The modern formula "half base times height" is exactly what Euclid's argument proves, without
+    numbers: a triangle is half the parallelogram on the same base and between the same parallels
+    ([[I.41]]).
+
+commentary: |
+  I.37–I.40 repeat [[I.35]] and [[I.36]] for triangles, and then reverse them. The method is to double
+  each triangle into a parallelogram ([[I.34]]).
+
+gaps: |
+  - **Halving**: that halves of equals are equal is not one of the genuine common notions.
+
+historical: |
+  The step "halves of equal things are equal" is one of the clearest examples of the textual history
+  of the *Elements*: words that seem natural were added by early editors, and recovered as additions
+  only by comparison of manuscripts.

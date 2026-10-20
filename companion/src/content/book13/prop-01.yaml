@@ -1,0 +1,151 @@
+id: XIII.1
+kind: theorem
+title: "Golden section: (greater part + half the whole)² = 5 × (half)²"
+
+paraphrase: |
+  If {AB} is cut in extreme and mean ratio at {C} ({AC} the greater part), and {AD} is half of {AB} laid off in line,
+  then the square on {DC} is five times the square on {AD}.
+
+diagram:
+  width: 260
+  height: 350
+  elements:
+    - "A;point;free;100,170"
+    - "B;point;free;220,170"
+    - "BAKE;polygon;square;B,A;0;0;black;random"
+    - "E;point;vertex;BAKE,4"
+    - "K;point;vertex;BAKE,3"
+    - "K';point;midpoint;A,K;0;0"
+    - "C';point;extend;K,K',K',B;0;0"
+    - "C;point;cutoff;A,B,A,C'"
+    - "D;point;extend;B,A,A,K'"
+    - "DCFL;polygon;square;D,C;0;0;black;random"
+    - "F;point;vertex;DCFL,3"
+    - "L;point;vertex;DCFL,4"
+    - "DF;line;connect;D,F"
+    - "G;point;intersection;C,F,E,K"
+    - "CG;line;connect;C,G"
+    - "Q;point;intersection;F,L,A,K;0;0"
+    - "AQ;line;connect;A,Q"
+    - "H;point;intersection;AQ,DF"
+    - "P;point;parallelogram;D,A,H"
+    - "R;point;intersection;P,H,C,F;0;0"
+    - "PR;line;connect;P,R"
+    - "O;point;midpoint;A,H"
+    - "M;point;cutoff;H,P,H,O"
+    - "N;point;cutoff;H,F,H,O"
+    - "ONM;sector;arc;O,N,M;0;0;gray"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "DC;line;connect;D,C;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "DA;line;connect;D,A;0;0;0"
+  aliases: { AE: BAKE, MNO: ONM, FD: DF, GC: CG, QA: AQ, RP: PR, BA: AB, CA: AC }
+  caption: |
+    {AB} cut in extreme and mean ratio at {C}; {AD} = half {AB}; the square {AE} on {AB} and {DCFL} on {DC}, with the
+    gnomon {MNO}.
+
+steps:
+  - part: enunciation
+    text: "If a straight line be cut in extreme and mean ratio, the square on the greater segment added to the half of the whole is five times the square on the half."
+    highlight: [AB, C]
+    hint: |
+      The golden section and $\sqrt5$.
+    modern: |
+      With $AB = 1$, $AC = \varphi^{-1} = \tfrac{\sqrt5 - 1}{2}$: $(AC + \tfrac12)^2 = \tfrac54 = 5\cdot(\tfrac12)^2$.
+
+  - part: setting-out
+    text: "For let the straight line AB be cut in extreme and mean ratio at the point C, and let AC be the greater segment; let the straight line AD be produced in a straight line with CA, and let AD be made half of AB; I say that the square on CD is five times the square on AD."
+    highlight: [AB, C, AD]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let the squares AE, DF be described on AB, DC, and let the figure in DF be drawn; let FC be carried through to G."
+    highlight: [AE, DCFL]
+    hint: |
+      Squares {AE} on {AB} and {DCFL} on {DC}; draw the figure.
+
+  - part: proof
+    text: "Now, since AB has been cut in extreme and mean ratio at C, therefore the rectangle AB, BC is equal to the square on AC."
+    highlight: [AB, C]
+    hint: |
+      Extreme and mean ratio: rect({AB},*BC*) = sq({AC}) ([[VI.Def.3]], [[VI.17]]).
+
+  - part: proof
+    text: "And CE is the rectangle AB, BC, and FH the square on AC; therefore CE is equal to FH."
+    highlight: [AE]
+    hint: |
+      So *CE* = *FH*.
+
+  - part: proof
+    text: "And, since BA is double of AD, while BA is equal to KA, and AD to AH, therefore KA is also double of AH."
+    highlight: [AD]
+    hint: |
+      *KA* = 2*AH*.
+
+  - part: proof
+    text: "But, as KA is to AH, so is CK to CH; therefore CK is double of CH."
+    highlight: [AD]
+    hint: |
+      So *CK* = 2*CH* ([[VI.1]]) …
+
+  - part: proof
+    text: "But LH, HC are also double of CH."
+    highlight: [AD]
+    hint: |
+      … and *LH* + *HC* = 2*CH* …
+
+  - part: proof
+    text: "Therefore KC is equal to LH, HC."
+    highlight: [AD]
+    hint: |
+      … so *KC* = *LH* + *HC*.
+
+  - part: proof
+    text: "But CE was also proved equal to HF; therefore the whole square AE is equal to the gnomon MNO."
+    highlight: [MNO, AE]
+    hint: |
+      So the square {AE} equals the gnomon {MNO}.
+
+  - part: proof
+    text: "And, since BA is double of AD, the square on BA is quadruple of the square on AD, that is, AE is quadruple of DH."
+    highlight: [AE, AD]
+    hint: |
+      {AE} = 4 sq({AD}).
+
+  - part: proof
+    text: "But AE is equal to the gnomon MNO; therefore the gnomon MNO is also quadruple of AP; therefore the whole DF is five times AP."
+    highlight: [MNO, DCFL]
+    hint: |
+      So the gnomon is 4 sq({AD}), and {DCFL} = 5 sq({AD}).
+
+  - part: proof
+    text: "And DF is the square on DC, and AP the square on DA; therefore the square on CD is five times the square on DA."
+    highlight: [DCFL, AD]
+    hint: |
+      That is, sq({CD}) = 5 sq({DA}).
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [AB]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $x = AC$ satisfies $x^2 = 1 - x$ (with $AB = 1$), so $(x + \tfrac12)^2 = x^2 + x + \tfrac14 = \tfrac54$.
+        $\blacksquare$
+
+commentary: |
+  Book XIII constructs the five regular solids and compares their edges with the diameter of the circumscribed
+  sphere. [[XIII.1]]–[[XIII.6]] are lemmas on the golden section ("extreme and mean ratio", [[VI.Def.3]]),
+  which governs the pentagon, icosahedron and dodecahedron. Heath notes that some ancient sources attribute
+  these first propositions, with their "analysis and synthesis", to Eudoxus.

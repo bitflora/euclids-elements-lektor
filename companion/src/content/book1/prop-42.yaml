@@ -1,0 +1,183 @@
+id: I.42
+kind: problem
+title: A parallelogram equal to a triangle, in a given angle
+
+paraphrase: |
+  Given a triangle {ABC} and an angle {D|angD}, construct a parallelogram with one angle equal to
+  {D|angD} and area equal to the triangle.
+
+diagram:
+  width: 320
+  height: 210
+  elements:
+    - "B0;point;free;-1000,180;0;0"
+    - "B3;point;free;1000,180;0;0"
+    - "B;point;lineSlider;B0,B3,90,0"
+    - "C;point;lineSlider;B0,B3,210,0"
+    - "A;point;free;120,30"
+    - "AB;line;connect;A,B"
+    - "AC;line;connect;A,C"
+    - "BC;line;connect;B,C"
+    - "D1;point;free;45,25;0"
+    - "D2;point;free;30,75;0"
+    - "D3;point;free;80,75;0"
+    - "D1D2;line;connect;D1,D2"
+    - "D2D3;line;connect;D2,D3"
+    - "D;polygon;triangle;D1,D2,D3;0,0,0;0;0;0"
+    - "E;point;midpoint;B,C"
+    - "AE;line;connect;A,E"
+    - "Fp;point;similar;C,E,D3,D2,D1;0;0"
+    - "Gp;point;parallelogram;C,B,A;0;0"
+    - "F;point;intersection;A,Gp,E,Fp"
+    - "EF;line;connect;E,F"
+    - "G;point;parallelogram;C,E,F"
+    - "AG;line;connect;A,G"
+    - "CG;line;connect;C,G"
+    - "FG;line;connect;F,G"
+    - "BE;line;connect;B,E;0;0;0"
+    - "EC;line;connect;E,C;0;0;0"
+    - "ABC;polygon;triangle;A,B,C;0;0;0;#efe4d2"
+    - "FECG;polygon;quadrilateral;F,E,C,G;0;0;0;#dfe7ea"
+    - "ABE;polygon;triangle;A,B,E;0;0;0;0"
+    - "AEC;polygon;triangle;A,E,C;0;0;0;0"
+    - "angD;sector;angleMarker;D2,D1,D3;0;0;magenta;magenta"
+    - "angCEF;sector;angleMarker;E,C,F;0;0;magenta;magenta"
+  aliases:
+    CE: EC
+    EB: BE
+    BA: AB
+    CA: AC
+    CB: BC
+    EA: AE
+    FE: EF
+    GA: AG
+    GC: CG
+    GF: FG
+    AEB: ABE
+    ACE: AEC
+    CEF: angCEF
+  given: [A, B, C, AB, AC, BC, D1D2, D2D3, D, ABC, angD]
+  caption: |
+    Drag {A}, slide {B} and {C}, or move the corners of the angle {D|angD}. The parallelogram {FECG}
+    keeps the triangle's area and the angle at {E} equal to {D|angD}.
+
+steps:
+  - part: enunciation
+    text: "To construct, in a given rectilineal angle, a parallelogram equal to a given triangle."
+    highlight: [ABC, FECG, angD]
+    hint: |
+      A problem: turn a triangle into a parallelogram of the same area, with a prescribed angle.
+
+  - part: setting-out
+    text: "Let ABC be the given triangle, and D the given rectilineal angle;"
+    highlight: [ABC, angD]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to construct in the rectilineal angle D a parallelogram equal to the triangle ABC."
+    highlight: [ABC, angD]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let BC be bisected at E, and let AE be joined;"
+    highlight: [E, AE, BE, EC]
+    adds: [E, AE]
+    hint: |
+      Find the midpoint {E} of {BC} ([[I.10]]) and join {AE}.
+    cites: [I.10, I.Post.1]
+
+  - part: construction
+    text: "on the straight line EC, and at the point E on it, let the angle CEF be constructed equal to the angle D;"
+    highlight: [angCEF, angD, EF]
+    adds: [angCEF, EF]
+    hint: |
+      Copy the given angle to {E} on {EC} ([[I.23]]).
+
+  - part: construction
+    text: "through A let AG be drawn parallel to EC, and through C let CG be drawn parallel to EF."
+    highlight: [AG, CG, F, G]
+    adds: [AG, CG, F, G, FG]
+    hint: |
+      Draw the parallel to {BC} through {A}, meeting {EF} at {F}; and the parallel to {EF} through
+      {C}, meeting it at {G} ([[I.31]]).
+    explain:
+      implicit: |
+        That these lines meet where needed ({AG} meets {EF} at {F}, and {CG} meets {AG} at {G}).
+        Euclid does not argue it.
+
+  - part: proof
+    text: "Then FECG is a parallelogram."
+    highlight: [FECG]
+    adds: [FECG]
+    hint: |
+      Both pairs of opposite sides are parallel.
+
+  - part: proof
+    text: "And, since BE is equal to EC, the triangle ABE is also equal to the triangle AEC, for they are on equal bases BE, EC and in the same parallels BC, AG;"
+    highlight: [ABE, AEC]
+    hint: |
+      The median {AE} halves the triangle: equal bases, same parallels ([[I.38]]).
+
+  - part: proof
+    text: "therefore the triangle ABC is double of the triangle AEC."
+    highlight: [ABC, AEC]
+    hint: |
+      So [{ABC}] = 2[{AEC}].
+
+  - part: proof
+    text: "But the parallelogram FECG is also double of the triangle AEC, for it has the same base with it and is in the same parallels with it;"
+    highlight: [FECG, AEC]
+    hint: |
+      {FECG} and {AEC} share the base {EC} and the parallels: [[I.41]].
+
+  - part: proof
+    text: "therefore the parallelogram FECG is equal to the triangle ABC."
+    highlight: [FECG, ABC]
+    hint: |
+      Both are double {AEC}.
+    modern: |
+      $$[FECG] = 2[AEC] = [ABC]$$
+
+  - part: proof
+    text: "And it has the angle CEF equal to the given angle D."
+    highlight: [angCEF, angD]
+    hint: |
+      By construction.
+
+  - part: conclusion
+    text: "Therefore the parallelogram FECG has been constructed equal to the given triangle ABC, in the angle CEF which is equal to D."
+    highlight: [FECG, angCEF]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3]
+      text: Let $h$ be the height of $\triangle ABC$ over $BC$.
+    - steps: [4, 5, 6, 7]
+      text: |
+        The parallelogram $FECG$ has base $EC = \tfrac12 BC$ and the same height $h$, with angle
+        $\angle CEF = D$.
+    - steps: [8, 9, 10, 11, 12]
+      text: $[FECG] = \tfrac12 BC \cdot h = [ABC]$. $\blacksquare$
+
+commentary: |
+  The first of the "application of areas" constructions that close Book I. It is generalised in
+  [[I.44]] (prescribe one side too) and [[I.45]] (any rectilinear figure), and in Book II and VI to
+  the geometric solution of quadratic problems.
+
+gaps: |
+  - **Intersections** in step 3: {AG} meeting {EF}, and {CG} meeting {AG}.
+
+historical: |
+  The method — halve the base, keep the height — is how the area of a triangle is reduced to that of
+  a parallelogram, and so in the end to a rectangle (with a right angle for {D|angD}).

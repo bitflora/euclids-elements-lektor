@@ -1,0 +1,110 @@
+id: III.34
+kind: problem
+title: Cutting off a segment admitting a given angle
+
+paraphrase: |
+  From a given circle, cut off a segment in which the inscribed angle equals a given angle {D|angD}.
+
+diagram:
+  width: 320
+  height: 240
+  elements:
+    - "D1;point;free;290,120;0"
+    - "D2;point;free;240,180;0"
+    - "D3;point;free;300,180;0"
+    - "D12;line;connect;D1,D2"
+    - "D23;line;connect;D2,D3"
+    - "D;polygon;triangle;D1,D2,D3;black;0;0;0"
+    - "angD;sector;angleMarker;D2,D1,D3"
+    - "A;point;free;185,195"
+    - "E;point;free;30,210"
+    - "F;point;free;30,30"
+    - "EF;line;connect;E,F"
+    - "B;point;lineSlider;EF,30,120"
+    - "BOp;line;perpendicular;B,E;0;0;0"
+    - "M;point;midpoint;B,A;0;0"
+    - "MMp;line;perpendicular;M,A;0;0;0"
+    - "O;point;intersection;BOp,MMp;0;0"
+    - "ABC;circle;radius;O,B;0;0;black;0"
+    - "Cp;point;similar;F,B,D1,D2,D3;0;0"
+    - "BC;line;chord;B,Cp,ABC"
+    - "C;point;last;BC"
+    - "triABC;polygon;triangle;A,B,C;0;0;black;0"
+    - "angFBC;sector;angleMarker;B,F,C"
+    - "angBAC;sector;angleMarker;A,B,C"
+  aliases:
+    FB: EF
+    BAC: angBAC
+    FBC: angFBC
+  given: [ABC, A, D, D12, D23, angD]
+  caption: |
+    Move the given angle's corners or the circle. The angle at {A} in the segment {BAC} always equals
+    the angle {D|angD}.
+
+steps:
+  - part: enunciation
+    text: "From a given circle to cut off a segment admitting an angle equal to a given rectilineal angle."
+    highlight: [ABC, angD]
+    hint: |
+      A problem: inside a given circle this time.
+
+  - part: setting-out
+    text: "Let ABC be the given circle, and the angle at D the given rectilineal angle;"
+    highlight: [ABC, angD]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to cut off from the circle ABC a segment admitting an angle equal to the given rectilineal angle, the angle at D."
+    highlight: [ABC, angD]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let EF be drawn touching ABC at the point B,"
+    highlight: [EF, B]
+    adds: [EF, E, F, B]
+    hint: |
+      A tangent at any point {B} ([[III.17]], or the porism to [[III.16]]).
+    cites: [III.17]
+
+  - part: construction
+    text: "and on the straight line FB, and at the point B on it, let the angle FBC be constructed equal to the angle at D."
+    highlight: [angFBC, angD, BC]
+    adds: [BC, C, angFBC]
+    hint: |
+      Copy the angle at {B} against the tangent ([[I.23]]).
+
+  - part: proof
+    text: "Then, since a straight line EF touches the circle ABC, and BC has been drawn across from the point of contact at B, the angle FBC is equal to the angle constructed in the alternate segment BAC."
+    highlight: [angFBC, angBAC]
+    adds: [triABC, angBAC]
+    hint: |
+      [[III.32]].
+
+  - part: proof
+    text: "But the angle FBC is equal to the angle at D; therefore the angle in the segment BAC is equal to the angle at D."
+    highlight: [angBAC, angD]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Therefore from the given circle ABC the segment BAC has been cut off admitting an angle equal to the given rectilineal angle, the angle at D."
+    highlight: [triABC]
+    hint: |
+      The segment cut off by {BC}.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6]
+      text: A chord subtending central angle $2\delta$ cuts off a segment with inscribed angle $\delta$ (III.20); the tangent–chord angle gives it directly. $\blacksquare$
+
+commentary: |
+  The companion of [[III.33]]: there the chord was given, here the circle. Both rest on [[III.32]].

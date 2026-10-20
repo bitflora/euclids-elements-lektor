@@ -1,0 +1,146 @@
+id: X.86
+kind: problem
+title: To find the second apotome
+
+paraphrase: |
+  Construct a second apotome {BC} = {BG} − {GC} ([[X.Def.III.2]]): now the annex {GC} is commensurable with the
+  rational line {A}. Example: $\sqrt{12} - 3$.
+
+diagram:
+  width: 280
+  height: 90
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "H0;point;free;-1000,65;0;0"
+    - "H3;point;free;1000,65;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,100,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "C;point;lineSlider;A0,A3,160,0"
+    - "G;point;lineSlider;A0,A3,240,0"
+    - "D;point;lineSlider;H0,H3,230,0"
+    - "E;point;lineSlider;H0,H3,160,0"
+    - "F;point;lineSlider;H0,H3,190,0"
+    - "DE;line;connect;D,E;0;0;blue"
+    - "B';point;proportion;F,D,D,E,C,G,G,C;0;0"
+    - "B;point;meanProportional;C,G,G,B',G,C"
+    - "BG;line;connect;B,G"
+    - "H1;point;lineSlider;H0,H3,30,0;0"
+    - "M;point;midpoint;B,G;0;0"
+    - "BGcirc;circle;radius;M,G;0;0;0;0"
+    - "CGcirc;circle;radius;G,C;0;0;0;0"
+    - "bich;line;bichord;BGcirc,CGcirc;0;0;0"
+    - "H2';point;first;bich;0;0"
+    - "H2;point;cutoff;H1,H3,G,H2';0"
+    - "H;line;connect;H1,H2;black"
+    - "BC;line;connect;B,C;0;0;0"
+    - "GB;line;connect;G,B;0;0;0"
+    - "GC;line;connect;G,C;0;0;0"
+  aliases: { ED: DE, CB: BC, CG: GC }
+steps:
+  - part: enunciation
+    text: "To find the second apotome."
+    highlight: [BC]
+    hint: |
+      Mirror of [[X.49]].
+
+  - part: construction
+    text: "Let a rational straight line A be set out, and GC commensurable in length with A; therefore GC is rational."
+    highlight: [A]
+    hint: |
+      *GC* commensurable with {A}.
+
+  - part: construction
+    text: "Let two square numbers DE, EF be set out, and let their difference DF not be square."
+    highlight: [DE]
+    hint: |
+      Square numbers *DE*, *EF*, non-square difference.
+
+  - part: construction
+    text: "Now let it be contrived that, as FD is to DE, so is the square on CG to the square on GB."
+    highlight: [BG]
+    hint: |
+      sq(*CG*) : sq({GB}) = *FD* : *DE*.
+
+  - part: proof
+    text: "Therefore the square on CG is commensurable with the square on GB."
+    highlight: [BG]
+    hint: |
+      Commensurable squares …
+
+  - part: proof
+    text: "But the square on CG is rational; therefore the square on GB is also rational; therefore BG is rational."
+    highlight: [BG]
+    hint: |
+      … {BG} rational.
+
+  - part: proof
+    text: "And, since the square on GC has not to the square on GB the ratio which a square number has to a square number, CG is incommensurable in length with GB."
+    highlight: [BG]
+    hint: |
+      Incommensurable in length with *CG*.
+
+  - part: proof
+    text: "And both are rational; therefore CG, GB are rational straight lines commensurable in square only; therefore BC is an apotome."
+    highlight: [BC]
+    hint: |
+      {BC} an apotome.
+
+  - part: specification
+    text: "I say next that it is also a second apotome."
+    highlight: [BC]
+    hint: |
+      A second apotome:
+
+  - part: construction
+    text: "For let the square on H be that by which the square on BG is greater than the square on GC."
+    highlight: [BG]
+    hint: |
+      Let sq(*H*) = sq({BG}) − sq(*GC*).
+
+  - part: proof
+    text: "Since then, as the square on BG is to the square on GC, so is the number ED to the number DF, therefore, convertendo, as the square on BG is to the square on H, so is DE to EF."
+    highlight: [BG]
+    hint: |
+      Convertendo …
+
+  - part: proof
+    text: "And each of the numbers DE, EF is square; therefore the square on BG has to the square on H the ratio which a square number has to a square number; therefore BG is commensurable in length with H."
+    highlight: [BG]
+    hint: |
+      … square to square …
+
+  - part: proof
+    text: "And the square on BG is greater than the square on GC by the square on H; therefore the square on BG is greater than the square on GC by the square on a straight line commensurable in length with BG."
+    highlight: [BG]
+    hint: |
+      … so the excess is commensurable with {BG}.
+
+  - part: proof
+    text: "And CG, the annex, is commensurable with the rational straight line A set out."
+    highlight: [A]
+    hint: |
+      The annex *CG* is commensurable with {A}.
+
+  - part: proof
+    text: "Therefore BC is a second apotome."
+    highlight: [BC]
+    hint: |
+      Second apotome.
+
+  - part: proof
+    text: "Therefore the second apotome BC has been found."
+    highlight: [BC]
+    hint: |
+      Found.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        As [[X.49]] with "−". $\blacksquare$

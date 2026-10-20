@@ -1,0 +1,236 @@
+id: I.22
+kind: problem
+title: A triangle from three given lines
+
+paraphrase: |
+  Given three segments {A}, {B}, {C}, each two of which together exceed the third, build a
+  triangle whose sides equal them.
+
+diagram:
+  width: 360
+  height: 310
+  elements:
+    - "A0;point;free;-1000,50;0"
+    - "A3;point;free;1000,50;0"
+    - "A1;point;lineSlider;A0,A3,230,50;0"
+    - "A2;point;lineSlider;A0,A3,320,50;0"
+    - "A;line;connect;A1,A2;black"
+    - "B0;point;free;-1000,90;0"
+    - "B0B3;line;parallel;B0,A0,A3;0;0;0"
+    - "B3;point;last;B0B3;0"
+    - "B1;point;lineSlider;B0,B3,260,100;0"
+    - "B2;point;lineSlider;B0,B3,320,100;0"
+    - "B;line;connect;B1,B2;black"
+    - "C0;point;free;-1000,130;0"
+    - "C0C3;line;parallel;C0,A0,A3;0;0;0"
+    - "C3;point;last;C0C3;0"
+    - "C1;point;lineSlider;C0,C3,265,100;0"
+    - "C2;point;lineSlider;C0,C3,320,100;0"
+    - "C;line;connect;C1,C2;black"
+    - "D;point;free;30,230"
+    - "E;point;free;340,230"
+    - "DE;line;connect;D,E"
+    - "DF;line;cutoff;DE,A;0;0;0"
+    - "F;point;last;DF"
+    - "FG;line;cutoff;F,E,B1,B2;0;0;0"
+    - "G;point;last;FG"
+    - "GH;line;cutoff;G,E,C1,C2;0;0;0"
+    - "H;point;last;GH"
+    - "DKL;circle;radius;F,D;0;0;black;0"
+    - "KLH;circle;radius;GH;0;0;black;0"
+    - "KL;line;bichord;DKL,KLH;0;0;0"
+    - "K;point;last;KL"
+    - "L;point;first;KL"
+    - "FGK;polygon;triangle;F,G,K;0;0;black;#efe4d2"
+    - "KF;line;connect;K,F;black"
+    - "KG;line;connect;K,G;black"
+  aliases:
+    KFG: FGK
+    FK: KF
+    GK: KG
+    FD: DF
+    LKH: KLH
+  given: [A, B, C, A1, A2, B1, B2, C1, C2]
+  caption: |
+    Drag the ends of {A}, {B} and {C} to change their lengths. When one becomes as long as the
+    other two together, the circles stop meeting and {K} disappears — the condition in the
+    enunciation is exactly what makes the construction work.
+
+steps:
+  - part: enunciation
+    text: "Out of three straight lines, which are equal to three given straight lines, to construct a triangle:"
+    highlight: [A, B, C, FGK]
+    hint: |
+      A problem: build a triangle with sides equal to three given segments.
+
+  - part: enunciation
+    text: "thus it is necessary that two of the straight lines taken together in any manner should be greater than the remaining one."
+    highlight: [A, B, C]
+    hint: |
+      The condition for a solution: each two must together exceed the third. [[I.20]] shows it
+      is necessary.
+    explain:
+      did: |
+        States a *diorismos* in its second sense: the limits within which the problem can be solved
+        (Heath's notes on lines 2–4). This is the first in the *Elements*.
+      fact: |
+        Without the condition no triangle exists ([[I.20]]). Euclid's construction shows it is also
+        sufficient — though the proof does not say so explicitly.
+      implicit: |
+        Heath notes that the manuscripts add a reason after this ("because in any triangle two
+        sides … are greater than the remaining one"), which he treats as a gloss, since Proclus
+        does not have it.
+
+  - part: setting-out
+    text: "Let the three given straight lines be A, B, C, and of these let two taken together in any manner be greater than the remaining one, namely A, B greater than C, A, C greater than B, and B, C greater than A;"
+    highlight: [A, B, C]
+    hint: |
+      The data: three segments satisfying the three inequalities.
+    modern: |
+      $$a + b > c,\quad a + c > b,\quad b + c > a$$
+
+  - part: specification
+    text: "thus it is required to construct a triangle out of straight lines equal to A, B, C."
+    highlight: [A, B, C]
+    hint: |
+      The goal restated.
+
+  - part: construction
+    text: "Let there be set out a straight line DE, terminated at D but of infinite length in the direction of E,"
+    highlight: [DE, D]
+    adds: [D, E, DE]
+    hint: |
+      Take a line starting at {D} and running on as far as needed.
+    explain:
+      implicit: |
+        "Of infinite length" means only: as long as required. Euclid's lines are potentially, not
+        actually, infinite ([[I.Post.2]]).
+
+  - part: construction
+    text: "and let DF be made equal to A, FG equal to B, and GH equal to C."
+    highlight: [DF, FG, GH, F, G, H]
+    adds: [F, G, H]
+    hint: |
+      Lay the three segments end to end along it ([[I.3]]): {DF} = {A}, {FG} = {B}, {GH} = {C}.
+
+  - part: construction
+    text: "With centre F and distance FD let the circle DKL be described;"
+    highlight: [DKL, F]
+    adds: [DKL]
+    hint: |
+      Circle about {F} with radius {FD} (= {A}) ([[I.Post.3]]).
+    cites: [I.Post.3]
+
+  - part: construction
+    text: "again, with centre G and distance GH let the circle KLH be described;"
+    highlight: [KLH, G]
+    adds: [KLH, K, L]
+    hint: |
+      Circle about {G} with radius {GH} (= {C}). The two circles cross at {K} (and {L}).
+    gap: |
+      **Do the circles meet?** This is where the condition of the enunciation is needed: the
+      circles of radius $a$ and $c$ with centres $b$ apart meet exactly when each of $a, b, c$ is
+      less than the other two together. Euclid states the condition but never shows that it makes
+      the circles intersect; as in [[I.1]], the point {K} is taken from the figure.
+
+  - part: construction
+    text: "and let KF, KG be joined;"
+    highlight: [KF, KG, FGK]
+    adds: [KF, KG, FGK]
+    hint: |
+      Join {K} to {F} and {G} ([[I.Post.1]]). Triangle {KFG} is the answer.
+    cites: [I.Post.1]
+
+  - part: proof
+    text: "I say that the triangle KFG has been constructed out of three straight lines equal to A, B, C."
+    highlight: [FGK]
+    hint: |
+      The claim.
+
+  - part: proof
+    text: "For, since the point F is the centre of the circle DKL, FD is equal to FK."
+    highlight: [DF, KF, DKL]
+    hint: |
+      Radii of circle {DKL} ([[I.Def.15]]).
+    cites: [I.Def.15]
+    modern: |
+      $$FK = FD$$
+
+  - part: proof
+    text: "But FD is equal to A; therefore KF is also equal to A."
+    highlight: [KF, A]
+    hint: |
+      So {KF} = {A} ([[I.CN.1]]).
+    cites: [I.CN.1]
+    modern: |
+      $$KF = FD = a$$
+
+  - part: proof
+    text: "Again, since the point G is the centre of the circle LKH, GH is equal to GK."
+    highlight: [GH, KG, KLH]
+    hint: |
+      Radii of circle {LKH}.
+    modern: |
+      $$GK = GH$$
+
+  - part: proof
+    text: "But GH is equal to C; therefore KG is also equal to C."
+    highlight: [KG, C]
+    hint: |
+      So {KG} = {C}.
+    modern: |
+      $$KG = GH = c$$
+
+  - part: proof
+    text: "And FG is also equal to B; therefore the three straight lines KF, FG, GK are equal to the three straight lines A, B, C."
+    highlight: [KF, FG, KG, A, B, C]
+    hint: |
+      {FG} = {B} by construction. All three sides match.
+    modern: |
+      $$KF = a,\quad FG = b,\quad GK = c$$
+
+  - part: conclusion
+    text: "Therefore out of the three straight lines KF, FG, GK, which are equal to the three given straight lines A, B, C, the triangle KFG has been constructed."
+    highlight: [FGK]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* With the circle–circle intersection
+    property (see [[I.1]]):
+  lines:
+    - steps: [1, 2]
+      text: Let $a, b, c > 0$, each less than the sum of the other two.
+    - steps: [3, 4]
+      text: Take $F$, $G$ with $FG = b$.
+    - steps: [5, 6]
+      text: |
+        Let $\Gamma = \odot(F, a)$ and $\Delta = \odot(G, c)$. $\Gamma$ meets line $FG$ in two points,
+        at distances $|b - a|$ and $b + a$ from $G$. Since $|b - a| < c < b + a$, one is inside
+        $\Delta$ and the other outside, so $\Gamma \cap \Delta \ne \varnothing$; let $K$ be a
+        common point.
+    - steps: [7, 8, 9, 10, 11, 12, 13]
+      text: Then $KF = a$, $FG = b$, $KG = c$; and $K \notin FG$ since $a + c > b$. $\blacksquare$
+  closing: |
+    The third line is the proof that Euclid omits: it is where all three inequalities are used.
+
+commentary: |
+  I.22 generalises [[I.1]] — there the three lines were all equal — and is used at once in
+  [[I.23]] to copy an angle. With [[I.20]] it gives a complete answer: three lengths form a
+  triangle if and only if each is less than the sum of the other two.
+
+gaps: |
+  - **Intersection of the circles** (step 4): the condition is stated but not used in the proof.
+  - **The two circles** are named {DKL} and {KLH} after points that only exist if they meet.
+
+historical: |
+  Heath points out that "thus it is necessary" (δεῖ δή) is the formula that introduces a
+  diorismos; Simson and Williamson's "But it is necessary" misreads the particle. The
+  Proclus's history of geometry credits Leon, a predecessor of Euclid, with discovering
+  diorismi — determinations of when a problem can be solved.

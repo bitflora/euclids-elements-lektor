@@ -1,0 +1,210 @@
+id: I.46
+kind: problem
+title: Describing a square on a line
+
+paraphrase: |
+  Given a segment {AB}, construct a square on it.
+
+diagram:
+  width: 230
+  height: 230
+  elements:
+    - "A;point;free;50,190"
+    - "B;point;free;170,190"
+    - "AB;line;connect;A,B"
+    - "ABED;polygon;square;A,B;0;0;0;#efe4d2"
+    - "E;point;vertex;ABED,3"
+    - "D;point;vertex;ABED,4"
+    - "C;point;lineSlider;A,D,40,25"
+    - "CD;line;connect;C,D"
+    - "AD;line;connect;A,D"
+    - "DE;line;connect;D,E"
+    - "BE;line;connect;B,E"
+    - "AC;line;connect;A,C;0;0;0"
+    - "angBAD;sector;angleMarker;A,B,D"
+    - "angADE;sector;angleMarker;D,A,E"
+    - "angABE;sector;angleMarker;B,A,E"
+    - "angBED;sector;angleMarker;E,B,D"
+  aliases:
+    ADEB: ABED
+    BA: AB
+    EB: BE
+    ED: DE
+    DA: AD
+    CA: AC
+    DC: CD
+    BAD: angBAD
+    ADE: angADE
+    ABE: angABE
+    BED: angBED
+  given: [A, B, AB]
+  caption: |
+    Drag {A} or {B}.
+
+steps:
+  - part: enunciation
+    text: "On a given straight line to describe a square."
+    highlight: [AB, ABED]
+    hint: |
+      A problem: build a square on a segment.
+    explain:
+      fact: |
+        Proclus notes the change of verb: a triangle is *constructed* (συστήσασθαι), a square
+        *described on* a line (ἀναγράφειν ἀπό) — the square is drawn up from its side (Heath's note).
+
+  - part: setting-out
+    text: "Let AB be the given straight line;"
+    highlight: [AB]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to describe a square on the straight line AB."
+    highlight: [AB]
+    hint: |
+      The goal. A square is a four-sided figure both equilateral and right-angled ([[I.Def.22]]).
+    cites: [I.Def.22]
+
+  - part: construction
+    text: "Let AC be drawn at right angles to the straight line AB from the point A on it,"
+    highlight: [AC]
+    adds: [C, AC, CD]
+    hint: |
+      Raise the perpendicular at {A} ([[I.11]]).
+
+  - part: construction
+    text: "and let AD be made equal to AB;"
+    highlight: [AD, AB]
+    adds: [D, AD]
+    hint: |
+      Mark {D} on it with {AD} = {AB} ([[I.3]]).
+    cites: [I.3]
+
+  - part: construction
+    text: "through the point D let DE be drawn parallel to AB,"
+    highlight: [DE]
+    adds: [DE]
+    hint: |
+      Parallel to {AB} through {D} ([[I.31]]).
+    cites: [I.31]
+
+  - part: construction
+    text: "and through the point B let BE be drawn parallel to AD."
+    highlight: [BE]
+    adds: [BE, E, ABED]
+    hint: |
+      Parallel to {AD} through {B} ([[I.31]]). The two meet at {E}.
+
+  - part: proof
+    text: "Therefore ADEB is a parallelogram;"
+    highlight: [ABED]
+    hint: |
+      Opposite sides parallel.
+
+  - part: proof
+    text: "therefore AB is equal to DE, and AD to BE."
+    highlight: [AB, DE, AD, BE]
+    hint: |
+      Opposite sides equal ([[I.34]]).
+
+  - part: proof
+    text: "But AB is equal to AD;"
+    highlight: [AB, AD]
+    hint: |
+      By construction.
+
+  - part: proof
+    text: "therefore the four straight lines BA, AD, DE, EB are equal to one another;"
+    highlight: [AB, AD, DE, BE]
+    hint: |
+      All four sides equal ([[I.CN.1]]).
+    cites: [I.CN.1]
+
+  - part: proof
+    text: "therefore the parallelogram ADEB is equilateral."
+    highlight: [ABED]
+    hint: |
+      Equilateral.
+
+  - part: specification
+    text: "I say next that it is also right-angled."
+    highlight: [angBAD, angADE, angABE, angBED]
+    hint: |
+      Now the angles.
+
+  - part: proof
+    text: "For, since the straight line AD falls upon the parallels AB, DE, the angles BAD, ADE are equal to two right angles."
+    highlight: [angBAD, angADE, AD]
+    adds: [angBAD, angADE]
+    hint: |
+      Interior angles on one side of a transversal of parallels ([[I.29]]).
+
+  - part: proof
+    text: "But the angle BAD is right; therefore the angle ADE is also right."
+    highlight: [angBAD, angADE]
+    hint: |
+      ∠{BAD} is right by construction, so ∠{ADE} is the other right angle.
+
+  - part: proof
+    text: "And in parallelogrammic areas the opposite sides and angles are equal to one another;"
+    highlight: [ABED]
+    hint: |
+      [[I.34]], quoted.
+
+  - part: proof
+    text: "therefore each of the opposite angles ABE, BED is also right."
+    highlight: [angABE, angBED]
+    adds: [angABE, angBED]
+    hint: |
+      The angles opposite the two right angles are right.
+
+  - part: proof
+    text: "Therefore ADEB is right-angled."
+    highlight: [ABED]
+    hint: |
+      All four angles right.
+
+  - part: proof
+    text: "And it was also proved equilateral."
+    highlight: [ABED]
+    hint: |
+      And all four sides equal.
+
+  - part: conclusion
+    text: "Therefore it is a square; and it is described on the straight line AB."
+    highlight: [ABED, AB]
+    hint: |
+      By [[I.Def.22]], a square. Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4]
+      text: Let $AD \perp AB$, $AD = AB$; let $E$ complete the parallelogram $ABED$.
+    - steps: [5, 6, 7, 8, 9]
+      text: Opposite sides are equal, so all four sides equal $AB$.
+    - steps: [10, 11, 12, 13, 14, 15, 16]
+      text: |
+        Co-interior angles: $\angle ADE = 180^\circ - 90^\circ = 90^\circ$; opposite angles give the other two. $\blacksquare$
+  closing: |
+    The construction depends on the parallel postulate through [[I.29]]. In hyperbolic geometry there
+    are no squares at all: a quadrilateral with four equal sides and four equal angles has angles
+    *less* than right angles.
+
+commentary: |
+  Needed for the next proposition: [[I.47]] is about the squares on the sides of a right triangle,
+  and I.46 shows they can be drawn. Euclid never speaks of a figure before showing how to construct
+  it.
+
+gaps: |
+  - **Do the parallels meet?** That the lines through {D} and {B} meet at a point {E} is assumed.
+
+historical: |
+  Proclus remarks that Euclid gives the construction of the square — not of the rectangle, which he
+  never constructs on its own — because the square is the figure needed in I.47 and Book II.

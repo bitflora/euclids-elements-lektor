@@ -1,0 +1,96 @@
+id: X.30
+kind: problem
+title: Rational lines in square only, the square on the greater exceeding by an incommensurable square
+
+paraphrase: |
+  As [[X.29]], but with $\sqrt{AB^2 - AF^2}$ incommensurable in length with {AB}. Example: $AB = \sqrt2$,
+  $AF = 1$.
+
+diagram:
+  width: 280
+  height: 200
+  elements:
+    - "A0;point;free;-1000,130;0;0"
+    - "A3;point;free;1000,130;0;0"
+    - "C0;point;free;-1000,170;0;0"
+    - "C3;point;free;1000,170;0;0"
+    - "A;point;lineSlider;A0,A3,40,0"
+    - "B;point;lineSlider;A0,A3,240,0"
+    - "AB;line;connect;A,B"
+    - "C;point;lineSlider;C0,C3,50,0"
+    - "D;point;lineSlider;C0,C3,200,0"
+    - "CD;line;connect;C,D;0;0;green"
+    - "E;point;lineSlider;C0,C3,150,0"
+    - "M;point;midpoint;A,B;0;0"
+    - "ABF;circle;radius;M,A;0;0;0;0"
+    - "G;point;meanProportional;D,C,C,E,C,D;0;0"
+    - "F';point;proportion;D,C,C,G,A,B,A,B;0;0"
+    - "AFcirc;circle;radius;A,F';0;0;0;0"
+    - "FF'';line;bichord;ABF,AFcirc;0;0;0"
+    - "F;point;first;FF''"
+    - "semi;sector;arc;B,F,A;0;0;black;random"
+    - "tri;polygon;triangle;A,B,F;0;0;black;random"
+    - "AF;line;connect;A,F;0;0;0"
+    - "FB;line;connect;F,B;0;0;0"
+    - "CE;line;connect;C,E;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+  aliases: { BA: AB, BF: FB, DC: CD, FA: AF, EC: CE, ED: DE }
+  caption: |
+    {CE}, {ED} square numbers whose sum {CD} is not square.
+
+steps:
+  - part: enunciation
+    text: "To find two rational straight lines commensurable in square only and such that the square on the greater is greater than the square on the less by the square on a straight line incommensurable in length with the greater."
+    highlight: [AB, AF]
+    hint: |
+      Like $\sqrt2$ and 1: $\sqrt{2 - 1} = 1$, incommensurable with $\sqrt2$.
+    modern: |
+      $AB^2 - AF^2$ in a non-square ratio to $AB^2$.
+
+  - part: construction
+    text: "Let there be set out a rational straight line AB, and two square numbers CE, ED such that their sum CD is not square; let there be described on AB the semicircle AFB, let it be contrived that, as DC is to CE, so is the square on BA to the square on AF, and let FB be joined."
+    highlight: [AB, CE, DE, CD, AF, FB]
+    hint: |
+      As in [[X.29]], but now {CE}, {ED} squares with non-square sum {CD} (lemma 2 of [[X.28]]).
+
+  - part: proof
+    text: "Then, in a similar manner to the preceding, we can prove that BA, AF are rational straight lines commensurable in square only."
+    highlight: [AB, AF]
+    hint: |
+      {BA}, {AF} rational, commensurable in square only, as before.
+
+  - part: proof
+    text: "And since, as DC is to CE, so is the square on BA to the square on AF, therefore, convertendo, as CD is to DE, so is the square on AB to the square on BF."
+    highlight: [AB, FB]
+    hint: |
+      Convertendo: sq({AB}) : sq({BF}) = {CD} : {DE}.
+
+  - part: proof
+    text: "But CD has not to DE the ratio which a square number has to a square number; therefore neither has the square on AB to the square on BF the ratio which a square number has to a square number; therefore AB is incommensurable in length with BF."
+    highlight: [AB, FB]
+    hint: |
+      Not a ratio of squares: {AB}, {BF} incommensurable in length ([[X.9]]).
+
+  - part: proof
+    text: "And the square on AB is greater than the square on AF by the square on FB incommensurable with AB."
+    highlight: [AB, AF, FB]
+    hint: |
+      sq({AB}) − sq({AF}) = sq({FB}).
+
+  - part: proof
+    text: "Therefore AB, AF are rational straight lines commensurable in square only, and the square on AB is greater than the square on AF by the square on FB incommensurable in length with AB."
+    highlight: [AB, AF, FB]
+    hint: |
+      Found.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: |
+        $AB^2 : AF^2 = (e^2 + d^2) : e^2$ with $e^2 + d^2$ not a square; then $AB^2 : BF^2 = (e^2 + d^2) : d^2$,
+        not a ratio of squares. $\blacksquare$

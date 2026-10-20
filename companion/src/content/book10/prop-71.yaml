@@ -1,0 +1,240 @@
+id: X.71
+kind: theorem
+title: The side of a rational plus a medial area
+
+paraphrase: |
+  If a rational area {AB} and a medial area {CD} are added, the side of the sum is one of four irrationals: a
+  binomial, a first bimedial, a major, or a "side of a rational plus a medial area".
+
+diagram:
+  width: 390
+  height: 220
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "A;point;lineSlider;A0,A3,40,0"
+    - "C;point;lineSlider;A0,A3,90,0"
+    - "CB';line;perpendicular;C,A;0;0;0"
+    - "B;point;lineSlider;CB',0,190"
+    - "AB;polygon;parallelogram;A,C,B;0;0;black;180,70,100"
+    - "D';point;parallelogram;B,A0,A3;0;0"
+    - "D;point;lineSlider;B,D',140,0"
+    - "CD;polygon;parallelogram;C,B,D;0;0;black;300,50,100"
+    - "E;point;free;190,60"
+    - "F';point;parallelogram;E,C,B;0;0"
+    - "F;point;lineSlider;E,F',0,160"
+    - "H';point;parallelogram;E,A0,A3;0;0"
+    - "H;point;proportion;E,F,B,C,A,C,E,H'"
+    - "G;point;parallelogram;H,E,F"
+    - "EFGH;polygon;quadrilateral;E,F,G,H;0;0;black;180,70,100"
+    - "K;point;proportion;E,F,B,C,B,D,H,H'"
+    - "I;point;parallelogram;K,E,F"
+    - "GHKI;polygon;quadrilateral;G,H,K,I;0;0;black;300,50,100"
+    - "EH;line;connect;E,H;0;0;0"
+    - "HK;line;connect;H,K;0;0;0"
+    - "EK;line;connect;E,K;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+  aliases: { EG: EFGH, HI: GHKI, HE: EH, KH: HK, KE: EK, FE: EF }
+  caption: |
+    {AB} rational and {CD} medial, applied to the rational line {EF} as {EG} and {HI}, with breadths {EH}, {HK}.
+
+steps:
+  - part: enunciation
+    text: "If a rational and a medial area be added together, four irrational straight lines arise, namely a binomial or a first bimedial or a major or a side of a rational plus a medial area."
+    highlight: [AB, CD]
+    hint: |
+      √(rational + medial) is one of four kinds, depending on which is larger and on the excess.
+    modern: |
+      $\sqrt{r + \sqrt s}$ (with $r$, $s$ rational) is one of: binomial, first bimedial, major, side of a rational
+      plus a medial area.
+
+  - part: setting-out
+    text: "Let AB be rational, and CD medial; I say that the “side” of the area AD is a binomial or a first bimedial or a major or a side of a rational plus a medial area."
+    highlight: [AB, CD]
+    hint: |
+      {AB} rational, {CD} medial.
+
+  - part: proof
+    text: "For AB is either greater or less than CD."
+    highlight: [AB, CD]
+    hint: |
+      Two cases.
+
+  - part: construction
+    text: "First, let it be greater; let a rational straight line EF be set out, let there be applied to EF the rectangle EG equal to AB, producing EH as breadth, and let HI, equal to DC, be applied to EF, producing HK as breadth."
+    highlight: [EG, HI, EH, HK]
+    hint: |
+      Case {AB} > {CD}: apply {AB} as {EG} and {CD} as {HI} to the rational {EF}.
+
+  - part: proof
+    text: "Then, since AB is rational and is equal to EG, therefore EG is also rational."
+    highlight: [EG]
+    hint: |
+      {EG} rational …
+
+  - part: proof
+    text: "And it has been applied to EF, producing EH as breadth; therefore EH is rational and commensurable in length with EF."
+    highlight: [EH]
+    hint: |
+      … so {EH} rational, commensurable with {EF} ([[X.20]]).
+
+  - part: proof
+    text: "Again, since CD is medial and is equal to HI, therefore HI is also medial."
+    highlight: [HI]
+    hint: |
+      {HI} medial …
+
+  - part: proof
+    text: "And it is applied to the rational straight line EF, producing HK as breadth; therefore HK is rational and incommensurable in length with EF"
+    highlight: [HK]
+    hint: |
+      … so {HK} rational, incommensurable with {EF} ([[X.22]]).
+
+  - part: proof
+    text: "And, since CD is medial, while AB is rational, therefore AB is incommensurable with CD, so that EG is also incommensurable with HI."
+    highlight: [EG, HI]
+    hint: |
+      Rational and medial are incommensurable …
+
+  - part: proof
+    text: "But, as EG is to HI, so is EH to HK; therefore EH is also incommensurable in length with HK."
+    highlight: [EH, HK]
+    hint: |
+      … so {EH}, {HK} are.
+
+  - part: proof
+    text: "And both are rational; therefore EH, HK are rational straight lines commensurable in square only; therefore EK is a binomial straight line, divided at H."
+    highlight: [EK]
+    hint: |
+      {EK} is a binomial.
+
+  - part: proof
+    text: "And, since AB is greater than CD, while AB is equal to EG and CD to HI, therefore EG is also greater than HI; therefore EH is also greater than HK."
+    highlight: [EH, HK]
+    hint: |
+      {EH} > {HK}.
+
+  - part: proof
+    text: "The square, then, on EH is greater than the square on HK either by the square on a straight line commensurable in length with EH or by the square on a straight line incommensurable with it."
+    highlight: [EH, HK]
+    hint: |
+      Two sub-cases for the excess.
+
+  - part: proof
+    text: "First, let the square on it be greater by the square on a straight line commensurable with itself."
+    highlight: [EH, HK]
+    hint: |
+      Commensurable excess:
+
+  - part: proof
+    text: "Now the greater straight line HE is commensurable in length with the rational straight line EF set out; therefore EK is a first binomial."
+    highlight: [EK]
+    hint: |
+      {EK} is a first binomial …
+
+  - part: proof
+    text: "But EF is rational; and, if an area be contained by a rational straight line and the first binomial, the side of the square equal to the area is binomial."
+    highlight: [EK]
+    hint: |
+      … and the side is a binomial ([[X.54]]) …
+
+  - part: proof
+    text: "Therefore the “side” of EI is binomial; so that the “side” of AD is also binomial."
+    highlight: [AB, CD]
+    hint: |
+      … so the side of the sum is a binomial.
+
+  - part: proof
+    text: "Next, let the square on EH be greater than the square on HK by the square on a straight line incommensurable with EH."
+    highlight: [EH, HK]
+    hint: |
+      Incommensurable excess:
+
+  - part: proof
+    text: "Now the greater straight line EH is commensurable in length with the rational straight line EF set out; therefore EK is a fourth binomial."
+    highlight: [EK]
+    hint: |
+      fourth binomial …
+
+  - part: proof
+    text: "But EF is rational; and, if an area be contained by a rational straight line and the fourth binomial, the “side” of the area is the irrational straight line called major."
+    highlight: [EK]
+    hint: |
+      … whose side is major ([[X.57]]) …
+
+  - part: proof
+    text: "Therefore the “side” of the area EI is major; so that the “side” of the area AD is also major."
+    highlight: [AB, CD]
+    hint: |
+      … so the side of the sum is major.
+
+  - part: proof
+    text: "Next, let AB be less than CD; therefore EG is also less than HI, so that EH is also less than HK."
+    highlight: [EH, HK]
+    hint: |
+      Case {AB} < {CD}: {EH} < {HK}.
+
+  - part: proof
+    text: "Now the square on HK is greater than the square on EH either by the square on a straight line commensurable with HK or by the square on a straight line incommensurable with it."
+    highlight: [EH, HK]
+    hint: |
+      Two sub-cases.
+
+  - part: proof
+    text: "First, let the square on it be greater by the square on a straight line commensurable in length with itself."
+    highlight: [EH, HK]
+    hint: |
+      Commensurable excess:
+
+  - part: proof
+    text: "Now the lesser straight line EH is commensurable in length with the rational straight line EF set out; therefore EK is a second binomial."
+    highlight: [EK]
+    hint: |
+      second binomial …
+
+  - part: proof
+    text: "But EF is rational, and, if an area be contained by a rational straight line and the second binomial, the side of the square equal to it is a first bimedial; therefore the “side” of the area EI is a first bimedial, so that the “side” of AD is also a first bimedial."
+    highlight: [AB, CD]
+    hint: |
+      … side a first bimedial ([[X.55]]).
+
+  - part: proof
+    text: "Next, let the square on HK be greater than the square on HE by the square on a straight line incommensurable with HK."
+    highlight: [EH, HK]
+    hint: |
+      Incommensurable excess:
+
+  - part: proof
+    text: "Now the lesser straight line EH is commensurable with the rational straight line EF set out; therefore EK is a fifth binomial."
+    highlight: [EK]
+    hint: |
+      fifth binomial …
+
+  - part: proof
+    text: "But EF is rational; and, if an area be contained by a rational straight line and the fifth binomial, the side of the square equal to the area is a side of a rational plus a medial area."
+    highlight: [EK]
+    hint: |
+      … side a side of a rational plus a medial area ([[X.58]]) …
+
+  - part: proof
+    text: "Therefore the “side” of the area EI is a side of a rational plus a medial area, so that the “side” of the area AD is also a side of a rational plus a medial area."
+    highlight: [AB, CD]
+    hint: |
+      … and so for the sum.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Dividing by $\rho$, rational + medial becomes a binomial breadth; which of the six it is (1, 2, 4 or 5 —
+        never 3 or 6, since one term is rational in length) fixes the kind of the side by [[X.54]]–[[X.58]].
+        $\blacksquare$

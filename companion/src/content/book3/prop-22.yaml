@@ -1,0 +1,139 @@
+id: III.22
+kind: theorem
+title: Opposite angles of a cyclic quadrilateral
+
+paraphrase: |
+  In a quadrilateral inscribed in a circle, opposite angles add up to two right angles.
+
+diagram:
+  width: 260
+  height: 230
+  elements:
+    - "A;point;free;50,50"
+    - "B;point;free;200,40"
+    - "C;point;free;200,180"
+    - "ABCDc;circle;circumcircle;A,B,C;0;0;black;0"
+    - "D;point;circleSlider;ABCDc,110,205"
+    - "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;#efe4d2"
+    - "AC;line;connect;A,C"
+    - "BD;line;connect;B,D"
+    - "ABC;polygon;triangle;A,B,C;0;0;0;0"
+    - "angCAB;sector;angleMarker;A,C,B"
+    - "angABC;sector;angleMarker;B,A,C"
+    - "angBCA;sector;angleMarker;C,B,A"
+    - "angBDC;sector;angleMarker;D,B,C"
+    - "angADB;sector;angleMarker;D,A,B"
+    - "angADC;sector;angleMarker;D,A,C"
+    - "angBAD;sector;angleMarker;A,B,D"
+    - "angDCB;sector;angleMarker;C,D,B"
+  aliases:
+    CAB: angCAB
+    BAC: angCAB
+    BCA: angBCA
+    ACB: angBCA
+    BDC: angBDC
+    ADB: angADB
+    ADC: angADC
+    BAD: angBAD
+    DCB: angDCB
+  given: [A, B, C, D, ABCDc, ABCD]
+  caption: |
+    Drag {A}, {B}, {C} and slide {D} round the circle: the angles at {B} and {D} always sum to two right
+    angles.
+
+steps:
+  - part: enunciation
+    text: "The opposite angles of quadrilaterals in circles are equal to two right angles."
+    highlight: [ABCD, angABC, angADC]
+    hint: |
+      Cyclic quadrilateral: opposite angles are supplementary.
+
+  - part: setting-out
+    text: "Let ABCD be a circle, and let ABCD be a quadrilateral in it;"
+    highlight: [ABCDc, ABCD]
+    hint: |
+      Euclid uses the same letters for the circle and the quadrilateral.
+
+  - part: specification
+    text: "I say that the opposite angles are equal to two right angles."
+    highlight: [angABC, angADC]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let AC, BD be joined."
+    highlight: [AC, BD]
+    adds: [AC, BD]
+    hint: |
+      The diagonals.
+
+  - part: proof
+    text: "Then, since in any triangle the three angles are equal to two right angles, the three angles CAB, ABC, BCA of the triangle ABC are equal to two right angles."
+    highlight: [ABC, angCAB, angABC, angBCA]
+    hint: |
+      Angle sum ([[I.32]]).
+
+  - part: proof
+    text: "But the angle CAB is equal to the angle BDC, for they are in the same segment BADC;"
+    highlight: [angCAB, angBDC]
+    hint: |
+      [[III.21]].
+
+  - part: proof
+    text: "and the angle ACB is equal to the angle ADB, for they are in the same segment ADCB;"
+    highlight: [angBCA, angADB]
+    hint: |
+      [[III.21]] again.
+    cites: [III.21]
+
+  - part: proof
+    text: "therefore the whole angle ADC is equal to the angles BAC, ACB."
+    highlight: [angADC, angCAB, angBCA]
+    hint: |
+      ∠{ADC} = ∠{ADB} + ∠{BDC}.
+
+  - part: proof
+    text: "Let the angle ABC be added to each; therefore the angles ABC, BAC, ACB are equal to the angles ABC, ADC."
+    highlight: [angABC, angADC]
+    hint: |
+      Add ∠{ABC|angABC}.
+
+  - part: proof
+    text: "But the angles ABC, BAC, ACB are equal to two right angles; therefore the angles ABC, ADC are also equal to two right angles."
+    highlight: [angABC, angADC]
+    hint: |
+      Done for one pair.
+
+  - part: proof
+    text: "Similarly we can prove that the angles BAD, DCB are also equal to two right angles."
+    highlight: [angBAD, angDCB]
+    hint: |
+      And the other pair.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      text: |
+        $\angle B$ and $\angle D$ stand on the two arcs $ADC$ and $ABC$, which make up the whole circle; their
+        central angles sum to $360^\circ$, so the inscribed angles sum to $180^\circ$ (III.20). $\blacksquare$
+  closing: |
+    The converse — a quadrilateral with supplementary opposite angles is cyclic — is not in Euclid.
+
+commentary: |
+  The defining property of cyclic quadrilaterals. Euclid's proof avoids reflex angles at the centre by
+  going through [[III.21]] and the triangle's angle sum.
+
+gaps: |
+  - **{BD} inside ∠{ADC|angADC}**: the diagonal splits the angle, read off the convex figure.

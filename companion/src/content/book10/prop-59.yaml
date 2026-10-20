@@ -1,0 +1,170 @@
+id: X.59
+kind: theorem
+title: The side of a rational line times a sixth binomial is the side of the sum of two medial areas
+
+paraphrase: |
+  If an area {AC} is contained by a rational line {AB} and a sixth binomial {AD}, its side {MO} is "the side of
+  the sum of two medial areas". A bracketed lemma follows.
+
+diagram:
+  width: 400
+  height: 210
+  elements:
+    - "A0;point;free;-1000,60;0;0"
+    - "A3;point;free;1000,60;0;0"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "D;point;lineSlider;A0,A3,200,0"
+    - "B';point;perpendicular;A,D;0;0"
+    - "B;point;lineSlider;A,B',0,150"
+    - "C;point;parallelogram;B,A,D"
+    - "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;random"
+    - "E;point;lineSlider;A,D,120,0"
+    - "F;point;midpoint;E,D"
+    - "AEmid;point;midpoint;A,E;0;0"
+    - "AEquar;point;midpoint;E,AEmid;0;0"
+    - "EFcirc;circle;radius;E,F;0;0;0;0"
+    - "EAcirc;circle;radius;AEquar,E;0;0;0;0"
+    - "bich;line;bichord;EFcirc,EAcirc;0;0;0"
+    - "G';point;first;bich;0;0"
+    - "G;point;cutoff;AEmid,D,AEmid,G'"
+    - "H;point;parallelogram;B,A,G"
+    - "K;point;parallelogram;B,A,E"
+    - "L;point;parallelogram;B,A,F"
+    - "HGEK;polygon;quadrilateral;H,G,E,K;0;0;black;190,80,100"
+    - "FL;line;connect;F,L"
+    - "AH;polygon;quadrilateral;A,B,H,G;0;0;0;130,80,100"
+    - "S0;point;free;-1000,175;0;0"
+    - "S3;point;free;1000,175;0;0"
+    - "S;point;lineSlider;S0,S3,240,0"
+    - "P;point;meanProportional;A,G,G,H,S,S3"
+    - "SPNM;polygon;square;S,P;0;0;black;130,80,100"
+    - "M;point;vertex;SPNM,4"
+    - "N;point;vertex;SPNM,3"
+    - "T;point;meanProportional;G,E,E,K,P,S3;0"
+    - "O;point;parallelogram;M,S,T"
+    - "NOQR;polygon;square;N,O;0;0;black;190,80,100"
+    - "Q;point;vertex;NOQR,3"
+    - "R;point;vertex;NOQR,4"
+    - "SQ;polygon;parallelogram;S,T,Q;0;0;black;0"
+    - "MO;line;connect;M,O;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "MN;line;connect;M,N;0;0;0"
+    - "NO;line;connect;N,O;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "EK;line;connect;E,K;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EA;line;connect;E,A;0;0;0"
+    - "FE;line;connect;F,E;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+  aliases: { AC: ABCD, SN: SPNM, NQ: NOQR, GK: HGEK, LF: FL, OM: MO, BA: AB, DA: AD, NM: MN, ON: NO, KE: EK, DE: ED }
+  caption: |
+    As in [[X.54]]: {AD} = {AE} + {ED} on the rational {AB}; {MO} is the side of {AC}.
+
+steps:
+  - part: enunciation
+    text: "If an area be contained by a rational straight line and the sixth binomial, the “side” of the area is the irrational straight line called the side of the sum of two medial areas."
+    highlight: [AC, MO]
+    hint: |
+      √(rational × sixth binomial).
+
+  - part: proof
+    text: "For let the area ABCD be contained by the rational straight line AB and the sixth binomial AD, divided into its terms at E, so that AE is the greater term; I say that the “side” of AC is the side of the sum of two medial areas."
+    highlight: [AC, AB, AD]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "Let the same construction be made as before shown."
+    highlight: [SQ]
+    hint: |
+      Same construction.
+
+  - part: proof
+    text: "It is then manifest that MO is the “side” of AC, and that MN is incommensurable in square with NO."
+    highlight: [MO, MN, NO]
+    hint: |
+      {MO} is the side; {MN}, {NO} incommensurable in square.
+
+  - part: proof
+    text: "Now, since EA is incommensurable in length with AB, therefore EA, AB are rational straight lines commensurable in square only; therefore AK, that is, the sum of the squares on MN, NO, is medial."
+    highlight: [MN, NO]
+    hint: |
+      {EA}, {AB} commensurable in square only: *AK* (sum of squares) medial.
+
+  - part: proof
+    text: "Again, since ED is incommensurable in length with AB, therefore FE is also incommensurable with EK; therefore FE, EK are rational straight lines commensurable in square only; therefore EL, that is, MR, that is, the rectangle MN, NO, is medial."
+    highlight: [EF, EK]
+    hint: |
+      {FE}, {EK} commensurable in square only: *EL* (the rectangle) medial.
+
+  - part: proof
+    text: "And, since AE is incommensurable with EF, AK is also incommensurable with EL."
+    highlight: [AE, EF]
+    hint: |
+      {AE}, {EF} incommensurable, so *AK*, *EL* are.
+
+  - part: proof
+    text: "But AK is the sum of the squares on MN, NO, and EL is the rectangle MN, NO; therefore the sum of the squares on MN, NO is incommensurable with the rectangle MN, NO."
+    highlight: [MN, NO]
+    hint: |
+      Sum of squares incommensurable with the rectangle.
+
+  - part: proof
+    text: "And each of them is medial, and MN, NO are incommensurable in square."
+    highlight: [MN, NO]
+    hint: |
+      Both medial; incommensurable in square.
+
+  - part: proof
+    text: "Therefore MO is the side of the sum of two medial areas, and is the “side” of AC."
+    highlight: [MO]
+    hint: |
+      [[X.41]].
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+  - part: lemma
+    text: "[LEMMA. If a straight line be cut into unequal parts, the squares on the unequal parts are greater than twice the rectangle contained by the unequal parts."
+    hint: |
+      Bracketed lemma: for unequal parts, the sum of squares exceeds twice the rectangle.
+    modern: |
+      $a \ne b \Rightarrow a^2 + b^2 > 2ab$.
+
+  - part: lemma
+    text: "Let AB be a straight line, and let it be cut into unequal parts at C, and let AC be the greater; I say that the squares on AC, CB are greater than twice the rectangle AC, CB."
+    hint: |
+      *AB* cut unequally at *C*.
+
+  - part: lemma
+    text: "For let AB be bisected at D."
+    hint: |
+      Bisect at *D*.
+
+  - part: lemma
+    text: "Since then a straight line has been cut into equal parts at D, and into unequal parts at C, therefore the rectangle AC, CB together with the square on CD is equal to the square on AD, so that the rectangle AC, CB is less than double of the square on AD."
+    hint: |
+      [[II.5]] …
+
+  - part: lemma
+    text: "But the squares on AC, CB are double of the squares on AD, DC; therefore the squares on AC, CB are greater than twice the rectangle AC, CB.]"
+    hint: |
+      … and [[II.9]].
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9]
+      text: |
+        Both parts medial and mutually incommensurable: the side of two medials. $\blacksquare$
+
+commentary: |
+  The lemma (^2 + b^2 > 2ab$ for  \ne b$) is used in [[X.60]]–[[X.65]] to tell which of the two applied
+  areas is greater.

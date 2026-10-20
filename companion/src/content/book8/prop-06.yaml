@@ -1,0 +1,161 @@
+id: VIII.6
+kind: theorem
+title: If the first does not measure the second, no term measures a later one
+
+paraphrase: |
+  In a continued proportion {A}, {B}, {C}, {D}, {E}, if {A} does not measure {B}, then no term measures any
+  later term.
+
+diagram:
+  width: 280
+  height: 210
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "C0;point;free;-1000,110;0;0"
+    - "C3;point;free;1000,110;0;0"
+    - "D0;point;free;-1000,145;0;0"
+    - "D3;point;free;1000,145;0;0"
+    - "E0;point;free;-1000,180;0;0"
+    - "E3;point;free;1000,180;0;0"
+    - "U0;point;free;1000,0;0;0"
+    - "U1;point;free;1000,20;0;0"
+    - "U2;point;free;1000,30;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,90,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,110,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;A1,A2,B1,B2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;E0,E3,30,0;0"
+    - "E2;point;proportion;A1,A2,B1,B2,D1,D2,E1,E3;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;A0,A3,180,0;0"
+    - "F2;point;proportion;U0,U2,U1,U2,A1,A2,F1,A3;0"
+    - "F;line;connect;F1,F2;black"
+    - "G1;point;lineSlider;B0,B3,180,0;0"
+    - "G2;point;proportion;U0,U2,U1,U2,B1,B2,G1,B3;0"
+    - "G;line;connect;G1,G2;black"
+    - "H1;point;lineSlider;C0,C3,180,0;0"
+    - "H2;point;proportion;U0,U2,U1,U2,C1,C2,H1,C3;0"
+    - "H;line;connect;H1,H2;black"
+  caption: |
+    {A}, …, {E} in continued proportion; {F}, {G}, {H} are least in the ratio of {A}, {B}, {C}.
+
+steps:
+  - part: enunciation
+    text: "If there be as many numbers as we please in continued proportion, and the first do not measure the second, neither will any other measure any other."
+    highlight: [A, B, C, D, E]
+    hint: |
+      In a geometric progression, if the ratio is not a whole number, no term divides a later one.
+    modern: |
+      $a_{k+1} = a_k \cdot \tfrac{q}{p}$ with $p \nmid q$ $\Rightarrow$ $a_i \nmid a_j$ for $i < j$.
+    dispute: |
+      As stated ("neither will any other measure any other") the proposition is false: in 24, 12, 6, 3, 24
+      does not measure 12, but 3 measures 6. Euclid means a term measuring a *later* term, and the proof
+      shows only that. Joyce suggests adding "later" to the enunciation.
+
+  - part: setting-out
+    text: "Let there be as many numbers as we please, A, B, C, D, E, in continued proportion, and let A not measure B;"
+    highlight: [A, B, C, D, E]
+    hint: |
+      {A} does not measure {B}.
+
+  - part: specification
+    text: "I say that neither will any other measure any other."
+    highlight: [A, B, C, D, E]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "Now it is manifest that A, B, C, D, E do not measure one another in order; for A does not even measure B."
+    highlight: [A, B]
+    hint: |
+      Neighbours first: each is to the next as {A} to {B}, so none measures the next.
+
+  - part: specification
+    text: "I say, then, that neither will any other measure any other."
+    highlight: [A, C]
+    hint: |
+      Now terms further apart.
+
+  - part: proof
+    text: "For, if possible, let A measure C."
+    highlight: [A, C]
+    hint: |
+      Suppose {A} measures {C}.
+
+  - part: construction
+    text: "And, however many A, B, C are, let as many numbers F, G, H, the least of those which have the same ratio with A, B, C, be taken."
+    highlight: [F, G, H]
+    hint: |
+      Reduce {A}, {B}, {C} to least terms {F}, {G}, {H} ([[VII.33]]).
+
+  - part: proof
+    text: "Now, since F, G, H are in the same ratio with A, B, C, and the multitude of the numbers A, B, C is equal to the multitude of the numbers F, G, H, therefore, ex aequali, as A is to C, so is F to H."
+    highlight: [A, C, F, H]
+    hint: |
+      {A} : {C} = {F} : {H} ([[VII.14]]).
+
+  - part: proof
+    text: "And since, as A is to B, so is F to G, while A does not measure B, therefore neither does F measure G;"
+    highlight: [F, G]
+    hint: |
+      {F} does not measure {G} ([[VII.Def.20]]).
+
+  - part: proof
+    text: "therefore F is not an unit, for the unit measures any number."
+    highlight: [F]
+    hint: |
+      So {F} is a number, not the unit.
+
+  - part: proof
+    text: "Now F, H are prime to one another."
+    highlight: [F, H]
+    hint: |
+      Extremes of a least progression are coprime ([[VIII.3]]).
+
+  - part: proof
+    text: "And, as F is to H, so is A to C; therefore neither does A measure C."
+    highlight: [A, C]
+    hint: |
+      {F} (not the unit) cannot measure the coprime {H}; so {A} does not measure {C}.
+    explain:
+      implicit: |
+        If {A} measured {C}, then {F} would measure {H} ([[VII.Def.20]]); but {F} > 1 and {F}, {H} are
+        coprime.
+
+  - part: proof
+    text: "Similarly we can prove that neither will any other measure any other."
+    highlight: [A, B, C, D, E]
+    hint: |
+      The same for any pair.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Let the ratio in lowest terms be $p : q$, so $a_k = c
+    p^{n-k} q^{k-1}$.
+  lines:
+    - steps: [1, 2, 3, 4]
+      text: |
+        $a_1 \nmid a_2$ means $p \ne 1$.
+    - steps: [5, 6, 7, 8, 9, 10, 11]
+      text: |
+        For $i < j$, $a_j / a_i = (q/p)^{j-i}$ with $\gcd(p^{j-i}, q^{j-i}) = 1$ and $p^{j-i} > 1$: not a whole
+        number. $\blacksquare$
+
+commentary: |
+  Used in [[VIII.7]] (its contrapositive) and in the theory of mean proportionals ([[VIII.14]], [[VIII.15]]).

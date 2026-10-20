@@ -1,0 +1,162 @@
+id: V.12
+kind: theorem
+title: Sum of antecedents to sum of consequents
+
+paraphrase: |
+  If {A} : {B} = {C} : {D} = {E} : {F}, then each of these ratios equals ({A} + {C} + {E}) : ({B} + {D} + {F}).
+
+diagram:
+  width: 500
+  height: 150
+  elements:
+    - "U0;point;free;-1000,30;0;0"
+    - "U1;point;free;1000,30;0;0"
+    - "V0;point;free;-1000,60;0;0"
+    - "V1;point;free;1000,60;0;0"
+    - "W0;point;free;-1000,100;0;0"
+    - "W1;point;free;1000,100;0;0"
+    - "X0;point;free;-1000,130;0;0"
+    - "X1;point;free;1000,130;0;0"
+    - "A0;point;lineSlider;U0,U1,30,30;0"
+    - "A1;point;lineSlider;U0,U1,80,30;0"
+    - "A;line;connect;A0,A1;black;0;blue"
+    - "B0;point;lineSlider;V0,V1,30,60;0"
+    - "B1;point;lineSlider;V0,V1,70,60;0"
+    - "B;line;connect;B0,B1;black;0;blue"
+    - "C0;point;lineSlider;U0,U1,200,30;0"
+    - "C1;point;lineSlider;U0,U1,260,30;0"
+    - "C;line;connect;C0,C1;black;0;blue"
+    - "D0;point;lineSlider;V0,V1,200,60;0"
+    - "D1;point;proportion;A0,A1,B0,B1,C0,C1,D0,V1;0"
+    - "D;line;connect;D0,D1;black;0;blue"
+    - "E0;point;lineSlider;U0,U1,370,30;0"
+    - "E1;point;lineSlider;U0,U1,410,30;0"
+    - "E;line;connect;E0,E1;black;0;blue"
+    - "F0;point;lineSlider;V0,V1,370,60;0"
+    - "F1;point;proportion;A0,A1,B0,B1,E0,E1,F0,V1;0"
+    - "F;line;connect;F0,F1;black;0;blue"
+    - "G0;point;lineSlider;W0,W1,30,30;0"
+    - "G1;point;cutoff;G0,W1,A0,A1;0;lightGray"
+    - "G2;point;cutoff;G1,W1,A0,A1;0"
+    - "G;line;connect;G0,G2;black;0;blue"
+    - "L0;point;lineSlider;X0,X1,30,60;0"
+    - "L1;point;cutoff;L0,X1,B0,B1;0;lightGray"
+    - "L2;point;cutoff;L1,X1,B0,B1;0;lightGray"
+    - "L3;point;cutoff;L2,X1,B0,B1;0"
+    - "L;line;connect;L0,L3;black;0;blue"
+    - "H0;point;lineSlider;W0,W1,200,30;0"
+    - "H1;point;cutoff;H0,W1,C0,C1;0;lightGray"
+    - "H2;point;cutoff;H1,W1,C0,C1;0"
+    - "H;line;connect;H0,H2;black;0;blue"
+    - "M0;point;lineSlider;X0,X1,200,60;0"
+    - "M1;point;cutoff;M0,X1,D0,D1;0;lightGray"
+    - "M2;point;cutoff;M1,X1,D0,D1;0;lightGray"
+    - "M3;point;cutoff;M2,X1,D0,D1;0"
+    - "M;line;connect;M0,M3;black;0;blue"
+    - "K0;point;lineSlider;W0,W1,370,30;0"
+    - "K1;point;cutoff;K0,W1,E0,E1;0;lightGray"
+    - "K2;point;cutoff;K1,W1,E0,E1;0"
+    - "K;line;connect;K0,K2;black;0;blue"
+    - "N0;point;lineSlider;X0,X1,370,60;0"
+    - "N1;point;cutoff;N0,X1,F0,F1;0;lightGray"
+    - "N2;point;cutoff;N1,X1,F0,F1;0;lightGray"
+    - "N3;point;cutoff;N2,X1,F0,F1;0"
+    - "N;line;connect;N0,N3;black;0;blue"
+  caption: |
+    {D} and {F} are constructed so that the three ratios agree. {G}, {H}, {K} are twice {A}, {C}, {E}; {L}, {M}, {N}
+    three times {B}, {D}, {F}.
+
+steps:
+  - part: enunciation
+    text: "If any number of magnitudes be proportional, as one of the antecedents is to one of the consequents, so will all the antecedents be to all the consequents."
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      Equal ratios: the sum of the antecedents is to the sum of the consequents in the same ratio.
+    explain:
+      implicit: |
+        All six magnitudes must be of one kind, since the antecedents are added together, and so are the
+        consequents.
+    modern: |
+      $$\frac{a_1}{b_1} = \frac{a_2}{b_2} = \dots = \frac{a_k}{b_k} \ \Rightarrow\ \frac{a_1}{b_1} = \frac{a_1 + a_2 + \dots + a_k}{b_1 + b_2 + \dots + b_k}$$
+
+  - part: setting-out
+    text: "Let any number of magnitudes A, B, C, D, E, F be proportional, so that, as A is to B, so is C to D and E to F;"
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      $A : B = C : D = E : F$.
+
+  - part: specification
+    text: "I say that, as A is to B, so are A, C, E to B, D, F."
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      Goal: $A : B = (A + C + E) : (B + D + F)$.
+
+  - part: construction
+    text: "For of A, C, E let equimultiples G, H, K be taken, and of B, D, F other, chance, equimultiples L, M, N."
+    highlight: [G, H, K, L, M, N]
+    hint: |
+      The test of [[V.Def.5]].
+    cites: [V.Def.5]
+
+  - part: proof
+    text: "Then since, as A is to B, so is C to D, and E to F, and of A, C, E equimultiples G, H, K have been taken, and of B, D, F other, chance, equimultiples L, M, N, therefore, if G is in excess of L, H is also in excess of M, and K of N, if equal, equal, and if less, less;"
+    highlight: [G, L, H, M, K, N]
+    hint: |
+      All three comparisons go alike.
+    cites: [V.Def.5]
+
+  - part: proof
+    text: "so that, in addition, if G is in excess of L, then G, H, K are in excess of L, M, N, if equal, equal, and if less, less."
+    highlight: [G, H, K, L, M, N]
+    hint: |
+      Add them up: if each exceeds, the sums exceed; if each is equal, the sums are equal; if each falls short,
+      the sums fall short.
+    explain:
+      implicit: |
+        Adding inequalities: $G > L$, $H > M$, $K > N$ give $G + H + K > L + M + N$. Euclid treats this as
+        evident (it is a form of [[I.CN.2]] and [[I.CN.5]]).
+
+  - part: proof
+    text: "Now G and G, H, K are equimultiples of A and A, C, E, since, if any number of magnitudes whatever are respectively equimultiples of any magnitudes equal in multitude, whatever multiple one of the magnitudes is of one, that multiple also will all be of all."
+    highlight: [G, H, K, A, C, E]
+    hint: |
+      {G} + {H} + {K} = $m$({A} + {C} + {E}), by [[V.1]], which Heath quotes in full.
+
+  - part: proof
+    text: "For the same reason L and L, M, N are also equimultiples of B and B, D, F;"
+    highlight: [L, M, N, B, D, F]
+    hint: |
+      {L} + {M} + {N} = $n$({B} + {D} + {F}).
+
+  - part: proof
+    text: "therefore, as A is to B, so are A, C, E to B, D, F."
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      [[V.Def.5]], backwards.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: |
+        Fix $m, n$. If $mA > nB$ then $mC > nD$ and $mE > nF$; adding, $m(A + C + E) > n(B + D + F)$
+        ([[V.1]]). Likewise for $=$ and $<$.
+    - steps: [6, 7, 8]
+      text: |
+        So $A : B = (A + C + E) : (B + D + F)$ by [[V.Def.5]]. $\blacksquare$
+
+commentary: |
+  The "adding fractions the wrong way" rule that is right for *equal* fractions: if
+  $\frac{a}{b} = \frac{c}{d}$ then both equal $\frac{a + c}{b + d}$. It is used in [[V.15]] and,
+  repeatedly, in Book VI ([[VI.20]]) and in Book XII.

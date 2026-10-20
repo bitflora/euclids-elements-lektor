@@ -1,0 +1,118 @@
+id: III.6
+kind: theorem
+title: Touching circles have different centres
+
+paraphrase: |
+  Two circles that touch one another cannot have the same centre.
+
+diagram:
+  width: 230
+  height: 230
+  elements:
+    - "A;point;free;90,190"
+    - "B;point;free;200,120"
+    - "C;point;free;60,60"
+    - "ABC;circle;circumcircle;A,B,C;0;0;black;0"
+    - "F;point;center;ABC"
+    - "D;point;free;90,160"
+    - "FB;line;connect;F,B"
+    - "FC;line;connect;F,C"
+    - "M;point;midpoint;C,D;0;0"
+    - "MN;line;perpendicular;M,C;0;0;0"
+    - "Fp;point;intersection;MN,FC;0;0"
+    - "CDE;circle;radius;Fp,C;0;0;black;0"
+    - "EEx;line;chord;FB,CDE;0;0;0"
+    - "E;point;first;EEx"
+    - "FE;line;connect;F,E;0;0;0"
+  aliases:
+    FEB: FB
+    CF: FC
+  given: [A, B, C, D, ABC, CDE]
+  caption: |
+    Two circles touching at {C}. {F} is the centre of the outer one; the proof shows it cannot also be the
+    centre of the inner one.
+
+steps:
+  - part: enunciation
+    text: "If two circles touch one another, they will not have the same centre."
+    highlight: [ABC, CDE]
+    hint: |
+      Touching circles are not concentric.
+    explain:
+      fact: |
+        Circles *touch* when they meet without cutting ([[III.Def.3]]).
+    cites: [III.Def.3]
+
+  - part: setting-out
+    text: "For let the two circles ABC, CDE touch one another at the point C;"
+    highlight: [ABC, CDE, C]
+    hint: |
+      Two circles touching at {C}.
+
+  - part: specification
+    text: "I say that they will not have the same centre."
+    highlight: [ABC, CDE]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, if possible, let it be F;"
+    highlight: [F]
+    hint: |
+      Suppose {F} is the centre of both.
+
+  - part: construction
+    text: "let FC be joined, and let FEB be drawn through at random."
+    highlight: [FC, FB, E, B]
+    hint: |
+      Join {FC}; draw {FEB} meeting the inner circle at {E} and the outer at {B}.
+
+  - part: proof
+    text: "Then, since the point F is the centre of the circle ABC, FC is equal to FB."
+    highlight: [FC, FB]
+    hint: |
+      Radii of {ABC}.
+    cites: [I.Def.15]
+
+  - part: proof
+    text: "Again, since the point F is the centre of the circle CDE, FC is equal to FE."
+    highlight: [FC, FE]
+    hint: |
+      Radii of {CDE}.
+
+  - part: proof
+    text: "But FC was proved equal to FB; therefore FE is also equal to FB, the less to the greater: which is impossible."
+    highlight: [FE, FB]
+    hint: |
+      {FE} is part of {FB}. Contradiction.
+    cites: [I.CN.1, I.CN.5]
+
+  - part: proof
+    text: "Therefore F is not the centre of the circles ABC, CDE."
+    highlight: [F]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: Concentric circles are equal or disjoint; touching circles are neither. $\blacksquare$
+
+commentary: |
+  The same argument as [[III.5]], word for word, with "touch" in place of "cut". Euclid treats only
+  circles touching *internally*, as in the figure; for external contact the conclusion is obvious.
+
+gaps: |
+  - **Internal contact only** is drawn; external contact is not discussed.

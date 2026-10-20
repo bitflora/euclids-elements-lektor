@@ -1,0 +1,144 @@
+id: VII.5
+kind: theorem
+title: The same part of two numbers is that part of their sum
+
+paraphrase: |
+  If {A} is some part of {BC} and {D} the same part of {EF}, then {A} + {D} is that same part of
+  {BC} + {EF}. In fractions: $\tfrac1n b + \tfrac1n e = \tfrac1n (b + e)$.
+
+diagram:
+  width: 150
+  height: 220
+  elements:
+    - "A0;point;free;30,-1000;0;0"
+    - "A3;point;free;30,1000;0;0"
+    - "A1;point;lineSlider;A0,A3,30,30;0"
+    - "B0;point;free;60,-1000;0;0"
+    - "B3;point;free;60,1000;0;0"
+    - "B;point;lineSlider;B0,B3,60,30"
+    - "D0;point;free;90,-1000;0;0"
+    - "D3;point;free;90,1000;0;0"
+    - "D1;point;lineSlider;D0,D3,90,30;0"
+    - "E0;point;free;120,-1000;0;0"
+    - "E3;point;free;120,1000;0;0"
+    - "E;point;lineSlider;E0,E3,120,30"
+    - "A2;point;lineSlider;A0,A3,30,110;0"
+    - "A;line;connect;A1,A2;black"
+    - "G;point;cutoff;B,B3,A1,A2"
+    - "C;point;cutoff;G,B3,A1,A2"
+    - "BC;line;connect;B,C"
+    - "D2;point;lineSlider;D0,D3,30,80;0"
+    - "D;line;connect;D1,D2;black"
+    - "H;point;cutoff;E,E3,D1,D2"
+    - "F;point;cutoff;H,E3,D1,D2"
+    - "EF;line;connect;E,F"
+    - "BG;line;connect;B,G;0;0;0"
+    - "GC;line;connect;G,C;0;0;0"
+    - "EH;line;connect;E,H;0;0;0"
+    - "HF;line;connect;H,F;0;0;0"
+  caption: |
+    {A} is half of {BC} and {D} half of {EF}. Drag the ends to change the numbers.
+
+steps:
+  - part: enunciation
+    text: "If a number be a part of a number, and another be the same part of another, the sum will also be the same part of the sum that the one is of the one."
+    highlight: [A, BC, D, EF]
+    hint: |
+      Taking a part distributes over addition.
+    modern: |
+      $\tfrac1n b + \tfrac1n e = \tfrac1n (b + e)$.
+
+  - part: setting-out
+    text: "For let the number A be a part of BC, and another, D, the same part of another EF that A is of BC;"
+    highlight: [A, BC, D, EF]
+    hint: |
+      {A} is the same part of {BC} as {D} is of {EF}.
+
+  - part: specification
+    text: "I say that the sum of A, D is also the same part of the sum of BC, EF that A is of BC."
+    highlight: [A, D, BC, EF]
+    hint: |
+      To prove: {A} + {D} is that part of {BC} + {EF}.
+
+  - part: proof
+    text: "For since, whatever part A is of BC, D is also the same part of EF, therefore, as many numbers as there are in BC equal to A, so many numbers are there also in EF equal to D."
+    highlight: [A, BC, D, EF]
+    hint: |
+      "The same part" means: {BC} holds as many copies of {A} as {EF} holds of {D}.
+
+  - part: construction
+    text: "Let BC be divided into the numbers equal to A, namely BG, GC, and EF into the numbers equal to D, namely EH, HF;"
+    highlight: [BG, GC, EH, HF]
+    hint: |
+      Mark the copies: {BG}, {GC} each equal to {A}; {EH}, {HF} each equal to {D}.
+
+  - part: proof
+    text: "then the multitude of BG, GC will be equal to the multitude of EH, HF."
+    highlight: [BG, GC, EH, HF]
+    hint: |
+      As many pieces in {BC} as in {EF} (two each in the figure).
+
+  - part: proof
+    text: "And, since BG is equal to A, and EH to D, therefore BG, EH are also equal to A, D."
+    highlight: [BG, EH, A, D]
+    hint: |
+      {BG} + {EH} = {A} + {D}.
+
+  - part: proof
+    text: "For the same reason GC, HF are also equal to A, D."
+    highlight: [GC, HF, A, D]
+    hint: |
+      And {GC} + {HF} = {A} + {D}.
+
+  - part: proof
+    text: "Therefore, as many numbers as there are in BC equal to A, so many are there also in BC, EF equal to A, D."
+    highlight: [BC, EF, A, D]
+    hint: |
+      So {BC} + {EF} holds as many copies of {A} + {D} as {BC} holds of {A}.
+    explain:
+      implicit: |
+        Regrouping the pieces in pairs: $(BG + GC) + (EH + HF) = (BG + EH) + (GC + HF)$.
+
+  - part: proof
+    text: "Therefore, whatever multiple BC is of A, the same multiple also is the sum of BC, EF of the sum of A, D."
+    highlight: [BC, EF, A, D]
+    hint: |
+      As multiples: {BC} + {EF} is the same multiple of {A} + {D} as {BC} is of {A}.
+
+  - part: proof
+    text: "Therefore, whatever part A is of BC, the same part also is the sum of A, D of the sum of BC, EF."
+    highlight: [A, D, BC, EF]
+    hint: |
+      Turned round: {A} + {D} is the same part of {BC} + {EF}.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5]
+      text: |
+        $b = n a$ and $e = n d$ for one $n$.
+    - steps: [6, 7, 8, 9, 10]
+      text: |
+        $b + e = n a + n d = n(a + d)$, so $a + d = \tfrac1n (b + e)$. $\blacksquare$
+  closing: |
+    This is [[V.1]] again, now for numbers; Euclid proves it afresh because Book VII does not rely on Book
+    V.
+
+commentary: |
+  The first of four distributive laws ([[VII.5]]–[[VII.8]]): a part, or parts, of a sum (or difference) is
+  the sum (or difference) of the parts. They are the arithmetic behind alternation ([[VII.9]], [[VII.10]])
+  and the proportion theory of [[VII.11]]–[[VII.19]].
+
+  Joyce observes that no earlier result can be cited for any step: the argument rests on counting and
+  regrouping, which Euclid treats as evident. The proof shows only the case of halves, but it is used for
+  any part.
+
+gaps: |
+  - **Proof by a typical case** (halves).
+  - **Regrouping** of sums is assumed, as in Book V.

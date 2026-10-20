@@ -1,0 +1,129 @@
+id: I.19
+kind: theorem
+title: The greater angle faces the greater side
+
+paraphrase: |
+  The converse of [[I.18]]: in a triangle, a larger angle lies opposite a longer side.
+
+diagram:
+  width: 260
+  height: 230
+  elements:
+    - "A;point;free;200,40"
+    - "B;point;free;60,80"
+    - "C;point;free;95,200"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "AC;line;connect;A,C;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "angABC;sector;angleMarker;B,C,A"
+    - "angBCA;sector;angleMarker;C,B,A"
+  aliases:
+    BA: AB
+    CA: AC
+    CBA: angABC
+    BCA: angBCA
+    ACB: angBCA
+  given: [A, B, C, ABC, angABC, angBCA]
+  caption: |
+    Drag the vertices: whenever the angle at {B} is the larger, {AC} is the longer side.
+
+steps:
+  - part: enunciation
+    text: "In any triangle the greater angle is subtended by the greater side."
+    highlight: [angABC, angBCA, AC, AB]
+    hint: |
+      The larger of two angles is opposite the longer of two sides. The converse of [[I.18]].
+
+  - part: setting-out
+    text: "Let ABC be a triangle having the angle ABC greater than the angle BCA;"
+    highlight: [angABC, angBCA]
+    hint: |
+      The data: the angle at {B} exceeds the angle at {C}.
+    modern: |
+      $$\angle ABC > \angle BCA$$
+
+  - part: specification
+    text: "I say that the side AC is also greater than the side AB."
+    highlight: [AC, AB]
+    hint: |
+      The goal: {AC} > {AB}.
+
+  - part: proof
+    text: "For, if not, AC is either equal to AB or less."
+    highlight: [AC, AB]
+    hint: |
+      Euclid rules out the other two possibilities one at a time.
+    explain:
+      did: |
+        A proof by elimination of cases — trichotomy again, as in [[I.6]].
+
+  - part: proof
+    text: "Now AC is not equal to AB; for then the angle ABC would also have been equal to the angle ACB;"
+    highlight: [AC, AB, angABC, angBCA]
+    hint: |
+      If {AC} = {AB}, the triangle would be isosceles and the angles at {B} and {C} equal ([[I.5]]).
+
+  - part: proof
+    text: "but it is not; therefore AC is not equal to AB."
+    highlight: [angABC, angBCA]
+    hint: |
+      But they are not equal — the angle at {B} is greater. So {AC} ≠ {AB}.
+
+  - part: proof
+    text: "Neither is AC less than AB, for then the angle ABC would also have been less than the angle ACB;"
+    highlight: [AC, AB, angABC, angBCA]
+    hint: |
+      If {AC} < {AB}, then by [[I.18]] the angle opposite {AB} (at {C}) would be the greater.
+
+  - part: proof
+    text: "but it is not; therefore AC is not less than AB."
+    highlight: [angABC, angBCA]
+    hint: |
+      But the angle at {B} is the greater. So {AC} is not less.
+
+  - part: proof
+    text: "And it was proved that it is not equal either. Therefore AC is greater than AB."
+    highlight: [AC, AB]
+    hint: |
+      Only one possibility remains: {AC} > {AB}.
+    modern: |
+      $$AC \not= AB,\; AC \not< AB \;\Longrightarrow\; AC > AB$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Euclid's proof is already modern in form:
+  lines:
+    - steps: [1, 2]
+      text: Let $\angle B > \angle C$.
+    - steps: [3, 4, 5, 6, 7, 8]
+      text: |
+        By trichotomy $AC = AB$, $AC < AB$ or $AC > AB$. The first gives $\angle B = \angle C$ (I.5),
+        the second $\angle B < \angle C$ (I.18); both contradict $\angle B > \angle C$. So $AC > AB$.
+        $\blacksquare$
+  closing: |
+    The pattern — prove $P \Rightarrow Q$ for all three cases of $P$, then reverse all three at once —
+    is how converses of inequalities are usually proved.
+
+commentary: |
+  I.19 completes the side–angle correspondence begun in [[I.18]]. Its next use is immediate: in
+  [[I.20]] (the triangle inequality), the greater angle in triangle *DCB* gives the greater side.
+
+  Joyce's guide adds that the law of sines, $a/\sin A = b/\sin B$, contains both I.18 and I.19 in
+  quantitative form.
+
+gaps: |
+  - **Trichotomy** for lengths, and the fact that the three cases exclude one another, are assumed.
+
+historical: |
+  Proclus notes that I.19 is proved "by reduction to the impossible" from earlier theorems rather
+  than by a new construction, and contrasts it with I.18.

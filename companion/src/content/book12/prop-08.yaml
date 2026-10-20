@@ -1,0 +1,149 @@
+id: XII.8
+kind: theorem
+title: Similar pyramids are in the triplicate ratio of their sides
+
+paraphrase: |
+  Similar pyramids on triangular bases are to one another in the triplicate ratio of corresponding sides (and, by
+  the porism, so are similar pyramids on polygonal bases).
+
+diagram:
+  width: 440
+  height: 280
+  elements:
+    - "C;point;fixed;100,250,0;black;green"
+    - "1X;point;fixed;412,250,-91;0;0"
+    - "1Y;point;fixed;65,550,-120;0;0"
+    - "1Z;point;fixed;184,375,288;0;0"
+    - "floor;plane;3points;C,1X,1Y;0;0;0;0"
+    - "B;point;lineSlider;C,1X,40,280,0"
+    - "N;point;planeSlider;floor,180,180,0"
+    - "M;point;lineSlider;C,1Y,150,190,160"
+    - "L;point;parallelogram;N,C,M"
+    - "A;point;parallelogram;B,C,M"
+    - "G;point;parallelogram;B,C,N"
+    - "K;point;parallelogram;G,C,M"
+    - "E;point;lineSlider;C,1X,230,250,0"
+    - "F;point;lineSlider;C,1X,305,250,0"
+    - "R;point;similar;E,F,floor,B,C,N,floor"
+    - "Q';point;parallelogram;M,C,F;0;0"
+    - "Q;point;proportion;B,C,E,F,C,M,F,Q'"
+    - "D;point;parallelogram;E,F,Q"
+    - "H;point;parallelogram;E,F,R"
+    - "P;point;parallelogram;R,F,Q"
+    - "O;point;parallelogram;H,F,Q"
+    - "ABCG;polyhedron;tetrahedron;A,B,C,G;0;0;black;random"
+    - "DEFH;polyhedron;tetrahedron;D,E,F,H;0;0;black;random"
+    - "GNLK;polygon;quadrilateral;G,N,L,K;0;0;black;0"
+    - "HRPO;polygon;quadrilateral;H,R,P,O;0;0;black;0"
+    - "KAML;polygon;quadrilateral;K,A,M,L;0;0;black;0"
+    - "ODQP;polygon;quadrilateral;O,D,Q,P;0;0;black;0"
+    - "MC;line;connect;M,C"
+    - "CN;line;connect;C,N"
+    - "QF;line;connect;Q,F"
+    - "FR;line;connect;F,R"
+  aliases: { CM: MC, NC: CN, FQ: QF, RF: FR }
+  caption: |
+    The pyramids *ABCG*, *DEFH* completed to parallelepipeds *BGML*, *EHQP*.
+
+steps:
+  - part: enunciation
+    text: "Similar pyramids which have triangular bases are in the triplicate ratio of their corresponding sides."
+    highlight: [B]
+    hint: |
+      $V_1 : V_2 = (a_1 : a_2)^3$ for similar pyramids.
+
+  - part: setting-out
+    text: "Let there be similar and similarly situated pyramids of which the triangles ABC, DEF, are the bases and the points G, H the vertices; I say that the pyramid ABCG has to the pyramid DEFH the ratio triplicate of that which BC has to EF."
+    highlight: [B]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let the parallelepipedal solids BGML, EHQP be completed."
+    highlight: [B]
+    hint: |
+      Complete the parallelepipeds *BGML*, *EHQP*.
+
+  - part: proof
+    text: "Now, since the pyramid ABCG is similar to the pyramid DEFH, therefore the angle ABC is equal to the angle DEF, the angle GBC to the angle HEF, and the angle ABG to the angle DEH; and, as AB is to DE, so is BC to EF, and BG to EH."
+    highlight: [B]
+    hint: |
+      Similar pyramids: equal angles at *B* and *E*, proportional edges.
+
+  - part: proof
+    text: "And since, as AB is to DE, so is BC to EF, and the sides are proportional about equal angles, therefore the parallelogram BM is similar to the parallelogram EQ."
+    highlight: [B]
+    hint: |
+      So the faces at *B*, *E* are similar parallelograms …
+
+  - part: proof
+    text: "For the same reason BN is also similar to ER, and BK to EO; therefore the three parallelograms MB, BK, BN are similar to the three EQ, EO, ER."
+    highlight: [B]
+    hint: |
+      … all three pairs …
+
+  - part: proof
+    text: "But the three parallelograms MB, BK, BN are equal and similar to their three opposites, and the three EQ, EO, ER are equal and similar to their three opposites."
+    highlight: [B]
+    hint: |
+      … and their opposites ([[XI.24]]).
+
+  - part: proof
+    text: "Therefore the solids BGML, EHQP are contained by similar planes equal in multitude."
+    highlight: [B]
+    hint: |
+      Similar faces, equal in number …
+
+  - part: proof
+    text: "Therefore the solid BGML is similar to the solid EHQP."
+    highlight: [B]
+    hint: |
+      … similar parallelepipeds ([[XI.Def.9]]).
+
+  - part: proof
+    text: "But similar parallelepipedal solids are in the triplicate ratio of their corresponding sides."
+    highlight: [B]
+    hint: |
+      [[XI.33]] …
+
+  - part: proof
+    text: "Therefore the solid BGML has to the solid EHQP the ratio triplicate of that which the corresponding side BC has to the corresponding side EF."
+    highlight: [B]
+    hint: |
+      … triplicate ratio.
+
+  - part: proof
+    text: "But, as the solid BGML is to the solid EHQP, so is the pyramid ABCG to the pyramid DEFH, inasmuch as the pyramid is a sixth part of the solid, because the prism which is half of the parallelepipedal solid is also triple of the pyramid."
+    highlight: [B]
+    hint: |
+      Each pyramid is a sixth of its parallelepiped (half the prism, [[XI.28]]; a third of that, [[XII.7]]).
+    cites: [XII.7, XI.28]
+
+  - part: proof
+    text: "Therefore the pyramid ABCG also has to the pyramid DEFH the ratio triplicate of that which BC has to EF. Q. E. D."
+    highlight: [B]
+    hint: |
+      So the pyramids are in the triplicate ratio.
+
+  - part: porism
+    text: "Porism. From this it is manifest that similar pyramids which have polygonal bases are also to one another in the triplicate ratio of their corresponding sides."
+    highlight: [B]
+    hint: |
+      Porism: likewise for polygonal bases …
+
+  - part: porism
+    text: "For, if they are divided into the pyramids contained in them which have triangular bases, by virtue of the fact that the similar polygons forming their bases are also divided into similar triangles equal in multitude and corresponding to the wholes, then, as the one pyramid which has a triangular base in the one complete pyramid is to the one pyramid which has a triangular base in the other complete pyramid, so also will all the pyramids which have triangular bases contained in the one pyramid be to all the pyramids which have triangular bases contained in the other pyramid, that is, the pyramid itself which has a polygonal base to the pyramid which has a polygonal base."
+    highlight: [B]
+    hint: |
+      … splitting into triangular pyramids …
+
+  - part: porism
+    text: "But the pyramid which has a triangular base is to the pyramid which has a triangular base in the triplicate ratio of the corresponding sides; therefore also the pyramid which has a polygonal base has to the pyramid which has a similar base the ratio triplicate of that which the side has to the side."
+    highlight: [B]
+    hint: |
+      … and adding ([[V.12]]).
+
+reconstruction:
+  lines:
+    - text: |
+        Scaling by $r$ multiplies volume by $r^3$. $\blacksquare$

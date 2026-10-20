@@ -1,0 +1,242 @@
+id: X.54
+kind: theorem
+title: The side of a rational line times a first binomial is a binomial
+
+paraphrase: |
+  If an area {AC} is contained by a rational line {AB} and a first binomial {AD}, the side of the square equal
+  to it is a binomial. In algebra: $\sqrt{\rho\,(a + \sqrt{b})}$ is of the form $\sqrt x + \sqrt y$ — a
+  "denesting" of a nested square root.
+
+diagram:
+  width: 400
+  height: 200
+  elements:
+    - "A0;point;free;-1000,60;0;0"
+    - "A3;point;free;1000,60;0;0"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "D;point;lineSlider;A0,A3,200,0"
+    - "B';point;perpendicular;A,D;0;0"
+    - "B;point;lineSlider;A,B',0,150"
+    - "C;point;parallelogram;B,A,D"
+    - "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;random"
+    - "E;point;lineSlider;A,D,120,0"
+    - "F;point;midpoint;E,D"
+    - "AEmid;point;midpoint;A,E;0;0"
+    - "AEquar;point;midpoint;E,AEmid;0;0"
+    - "EFcirc;circle;radius;E,F;0;0;0;0"
+    - "EAcirc;circle;radius;AEquar,E;0;0;0;0"
+    - "bich;line;bichord;EFcirc,EAcirc;0;0;0"
+    - "G';point;first;bich;0;0"
+    - "G;point;cutoff;AEmid,D,AEmid,G'"
+    - "H;point;parallelogram;B,A,G"
+    - "K;point;parallelogram;B,A,E"
+    - "L;point;parallelogram;B,A,F"
+    - "HGEK;polygon;quadrilateral;H,G,E,K;0;0;black;90,80,100"
+    - "FL;line;connect;F,L"
+    - "AH;polygon;quadrilateral;A,B,H,G;0;0;0;30,80,100"
+    - "S0;point;free;-1000,175;0;0"
+    - "S3;point;free;1000,175;0;0"
+    - "S;point;lineSlider;S0,S3,240,0"
+    - "P;point;meanProportional;A,G,G,H,S,S3"
+    - "SPNM;polygon;square;S,P;0;0;black;30,80,100"
+    - "M;point;vertex;SPNM,4"
+    - "N;point;vertex;SPNM,3"
+    - "T;point;meanProportional;G,E,E,K,P,S3;0"
+    - "O;point;parallelogram;M,S,T"
+    - "NOQR;polygon;square;N,O;0;0;black;90,80,100"
+    - "Q;point;vertex;NOQR,3"
+    - "R;point;vertex;NOQR,4"
+    - "SQ;polygon;parallelogram;S,T,Q;0;0;black;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "AG;line;connect;A,G;0;0;0"
+    - "GE;line;connect;G,E;0;0;0"
+    - "MN;line;connect;M,N;0;0;0"
+    - "NO;line;connect;N,O;0;0;0"
+    - "MO;line;connect;M,O;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "EG;line;connect;E,G;0;0;0"
+    - "FE;line;connect;F,E;0;0;0"
+  aliases: { AC: ABCD, SN: SPNM, NQ: NOQR, GK: HGEK, LF: FL, EA: AE, DE: ED, GA: AG, NM: MN, ON: NO, OM: MO, BA: AB, DA: AD }
+  caption: |
+    {AD} = {AE} + {ED} is the first binomial on the rational {AB}. {AE} is split at {G} so that rect({AG},{GE}) =
+    sq({EF}); squares {SN} = {AH} and {NQ} = {GK} make the square {SQ} = {AC}, with side {MO}.
+
+steps:
+  - part: enunciation
+    text: "If an area be contained by a rational straight line and the first binomial, the “side” of the area is the irrational straight line which is called binomial."
+    highlight: [AC, MO]
+    hint: |
+      √(rational × first binomial) is a binomial.
+    modern: |
+      $\sqrt{\rho(a + \sqrt b)} = \sqrt{\rho\,\tfrac{a + c}{2}} + \sqrt{\rho\,\tfrac{a - c}{2}}$ with $c =
+      \sqrt{a^2 - b}$ rational (that is what "first" guarantees).
+
+  - part: setting-out
+    text: "For let the area AC be contained by the rational straight line AB and the first binomial AD;"
+    highlight: [AC, AB]
+    hint: |
+      Setup.
+
+  - part: specification
+    text: "I say that the “side” of the area AC is the irrational straight line which is called binomial."
+    highlight: [AC]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For, since AD is a first binomial straight line, let it be divided into its terms at E, and let AE be the greater term."
+    highlight: [AE, ED]
+    hint: |
+      The terms of {AD}: {AE} > {ED}.
+
+  - part: proof
+    text: "It is then manifest that AE, ED are rational straight lines commensurable in square only, the square on AE is greater than the square on ED by the square on a straight line commensurable with AE, and AE is commensurable in length with the rational straight line AB set out."
+    highlight: [AE, ED, AB]
+    hint: |
+      What "first binomial" means ([[X.Def.II.1]]).
+
+  - part: construction
+    text: "Let ED be bisected at the point F."
+    highlight: [EF]
+    hint: |
+      Bisect {ED} at {F}.
+
+  - part: proof
+    text: "Then, since the square on AE is greater than the square on ED by the square on a straight line commensurable with AE, therefore, if there be applied to the greater AE a parallelogram equal to the fourth part of the square on the less, that is, to the square on EF, and deficient by a square figure, it divides it into commensurable parts."
+    highlight: [AE, EF]
+    hint: |
+      By [[X.17]], the rectangle equal to sq({EF}) applied to {AE} divides it into commensurable parts.
+
+  - part: construction
+    text: "Let then the rectangle AG, GE equal to the square on EF be applied to AE; therefore AG is commensurable in length with EG."
+    highlight: [AG, GE]
+    hint: |
+      rect({AG},{GE}) = sq({EF}); {AG}, {EG} commensurable.
+
+  - part: construction
+    text: "Let GH, EK, FL be drawn from G, E, F parallel to either of the straight lines AB, CD; let the square SN be constructed equal to the parallelogram AH, and the square NQ equal to GK, and let them be placed so that MN is in a straight line with NO; therefore RN is also in a straight line with NP."
+    highlight: [AH, GK, SN, NQ]
+    hint: |
+      Parallels through {G}, {E}, {F}; squares {SN} = {AH}, {NQ} = {GK} placed corner to corner ([[II.14]]).
+
+  - part: construction
+    text: "And let the parallelogram SQ be completed; therefore SQ is a square. [Lemma]"
+    highlight: [SQ]
+    hint: |
+      Complete {SQ}, a square (lemma of [[X.53]]).
+
+  - part: proof
+    text: "Now, since the rectangle AG, GE is equal to the square on EF, therefore, as AG is to EF, so is FE to EG; therefore also, as AH is to EL, so is EL to KG; therefore EL is a mean proportional between AH, GK."
+    highlight: [AH, GK]
+    hint: |
+      {AG} : {EF} = {FE} : {EG} ([[VI.17]]); so *EL* is the mean between {AH}, {GK} ([[VI.1]]).
+
+  - part: proof
+    text: "But AH is equal to SN, and GK to NQ; therefore EL is a mean proportional between SN, NQ."
+    highlight: [SN, NQ]
+    hint: |
+      I.e. between {SN}, {NQ}.
+
+  - part: proof
+    text: "But MR is also a mean proportional between the same SN, NQ; [Lemma] therefore EL is equal to MR, so that it is also equal to PO."
+    highlight: [SN, NQ]
+    hint: |
+      *MR* is also their mean (lemma), so *EL* = *MR* = *PO*.
+
+  - part: proof
+    text: "But AH, GK are also equal to SN, NQ; therefore the whole AC is equal to the whole SQ, that is, to the square on MO; therefore MO is the “side” of AC."
+    highlight: [AC, SQ, MO]
+    hint: |
+      Adding up: {AC} = {SQ} = sq({MO}). So {MO} is the side.
+
+  - part: specification
+    text: "I say next that MO is binomial."
+    highlight: [MO]
+    hint: |
+      Now: {MO} is a binomial.
+
+  - part: proof
+    text: "For, since AG is commensurable with GE, therefore AE is also commensurable with each of the straight lines AG, GE."
+    highlight: [AE, AG, GE]
+    hint: |
+      {AE} commensurable with {AG}, {GE} ([[X.15]]) …
+
+  - part: proof
+    text: "But AE is also, by hypothesis, commensurable with AB; therefore AG, GE are also commensurable with AB."
+    highlight: [AG, GE, AB]
+    hint: |
+      … and so they are commensurable with {AB} ([[X.12]]).
+
+  - part: proof
+    text: "And AB is rational; therefore each of the straight lines AG, GE is also rational; therefore each of the rectangles AH, GK is rational, and AH is commensurable with GK."
+    highlight: [AH, GK]
+    hint: |
+      Hence {AH}, {GK} rational and commensurable ([[X.19]]).
+
+  - part: proof
+    text: "But AH is equal to SN, and GK to NQ; therefore SN, NQ, that is, the squares on MN, NO, are rational and commensurable."
+    highlight: [MN, NO]
+    hint: |
+      So sq({MN}), sq({NO}) rational and commensurable.
+
+  - part: proof
+    text: "And, since AE is incommensurable in length with ED, while AE is commensurable with AG, and DE is commensurable with EF, therefore AG is also incommensurable with EF, so that AH is also incommensurable with EL."
+    highlight: [AG, EF]
+    hint: |
+      {AG} incommensurable with {EF} ([[X.13]]), so {AH} with *EL*.
+
+  - part: proof
+    text: "But AH is equal to SN, and EL to MR; therefore SN is also incommensurable with MR."
+    highlight: [SN]
+    hint: |
+      So {SN} with *MR*.
+
+  - part: proof
+    text: "But, as SN is to MR, so is PN to NR; therefore PN is incommensurable with NR."
+    highlight: [MN, NO]
+    hint: |
+      Hence *PN*, *NR* incommensurable ([[VI.1]], [[X.11]]) …
+
+  - part: proof
+    text: "But PN is equal to MN, and NR to NO; therefore MN is incommensurable with NO."
+    highlight: [MN, NO]
+    hint: |
+      … i.e. {MN}, {NO}.
+
+  - part: proof
+    text: "And the square on MN is commensurable with the square on NO, and each is rational; therefore MN, NO are rational straight lines commensurable in square only."
+    highlight: [MN, NO]
+    hint: |
+      Rational, commensurable in square only.
+
+  - part: proof
+    text: "Therefore MO is binomial and the “side” of AC."
+    highlight: [MO]
+    hint: |
+      {MO} is a binomial ([[X.36]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* $\rho = 1$, $AD = a + \sqrt b$ with $a^2 - b = c^2$.
+  lines:
+    - steps: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+      text: |
+        Split $a = u + v$ with $uv = b/4$ ([[X.17]]): $u, v = \tfrac{a \pm c}{2}$, rational.
+    - steps: [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+      text: |
+        Then $(\sqrt u + \sqrt v)^2 = a + 2\sqrt{uv} = a + \sqrt b$, and $\sqrt u, \sqrt v$ are rational lines
+        commensurable in square only: a binomial. $\blacksquare$
+
+commentary: |
+  [[X.54]]–[[X.59]] show that the side of $\rho\times$(the $n$th binomial) is the $n$th additive irrational:
+  binomial, first bimedial, second bimedial, major, side of a rational plus a medial, side of two medials.
+  [[X.60]]–[[X.65]] prove the converses. In modern language, this is the theory of denesting $\sqrt{a +
+  \sqrt b}$.

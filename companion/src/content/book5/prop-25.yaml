@@ -1,0 +1,138 @@
+id: V.25
+kind: theorem
+title: Greatest and least exceed the other two
+
+paraphrase: |
+  If {AB} : {CD} = {E} : {F}, with {AB} the greatest of the four and {F} the least, then {AB} + {F} > {CD} + {E}.
+
+diagram:
+  width: 300
+  height: 150
+  elements:
+    - "U0;point;free;-1000,30;0;0"
+    - "U1;point;free;1000,30;0;0"
+    - "V0;point;free;-1000,60;0;0"
+    - "V1;point;free;1000,60;0;0"
+    - "W0;point;free;-1000,100;0;0"
+    - "W1;point;free;1000,100;0;0"
+    - "X0;point;free;-1000,130;0;0"
+    - "X1;point;free;1000,130;0;0"
+    - "A;point;lineSlider;U0,U1,30,30"
+    - "B;point;lineSlider;U0,U1,270,30"
+    - "AB;line;connect;A,B;0;0;green"
+    - "C;point;lineSlider;W0,W1,30,100"
+    - "D;point;lineSlider;W0,W1,220,100"
+    - "CD;line;connect;C,D;0;0;green"
+    - "E1;point;lineSlider;V0,V1,30,60;0"
+    - "E2;point;lineSlider;V0,V1,170,60;0"
+    - "E;line;connect;E1,E2;black;0;green"
+    - "F1;point;lineSlider;X0,X1,30,130;0"
+    - "F2;point;proportion;A,B,C,D,E1,E2,F1,X1;0"
+    - "F;line;connect;F1,F2;black;0;green"
+    - "G;point;cutoff;A,B,E1,E2"
+    - "H;point;cutoff;C,D,F1,F2"
+    - "AG;line;connect;A,G;0;0;0"
+    - "GB;line;connect;G,B;0;0;0"
+    - "CH;line;connect;C,H;0;0;0"
+    - "HD;line;connect;H,D;0;0;0"
+  caption: |
+    {F} is constructed so that $AB : CD = E : F$. {AG} is cut equal to {E} and {CH} equal to {F}.
+
+steps:
+  - part: enunciation
+    text: "If four magnitudes be proportional, the greatest and the least are greater than the remaining two."
+    highlight: [AB, CD, E, F]
+    hint: |
+      In a proportion, the extremes (if they are the greatest and least) sum to more than the means.
+    modern: |
+      $$a : b = c : d,\ a \text{ greatest},\ d \text{ least} \ \Rightarrow\ a + d > b + c$$
+
+  - part: setting-out
+    text: "Let the four magnitudes AB, CD, E, F be proportional so that, as AB is to CD, so is E to F, and let AB be the greatest of them and F the least;"
+    highlight: [AB, CD, E, F]
+    hint: |
+      The data. All four must be of one kind (they are added and compared).
+
+  - part: specification
+    text: "I say that AB, F are greater than CD, E."
+    highlight: [AB, F, CD, E]
+    hint: |
+      The goal: {AB} + {F} > {CD} + {E}.
+
+  - part: construction
+    text: "For let AG be made equal to E, and CH equal to F."
+    highlight: [AG, E, CH, F]
+    hint: |
+      Cut off {AG} = {E} from {AB} and {CH} = {F} from {CD} (possible since {AB} > {E} and {CD} > {F}).
+
+  - part: proof
+    text: "Since, as AB is to CD, so is E to F, and E is equal to AG, and F to CH, therefore, as AB is to CD, so is AG to CH."
+    highlight: [AB, CD, AG, CH]
+    hint: |
+      Replace {E}, {F} by the equal {AG}, {CH} ([[V.7]], [[V.11]]).
+    cites: [V.7, V.11]
+
+  - part: proof
+    text: "And since, as the whole AB is to the whole CD, so is the part AG subtracted to the part CH subtracted, the remainder GB will also be to the remainder HD as the whole AB is to the whole CD."
+    highlight: [GB, HD, AB, CD]
+    hint: |
+      [[V.19]].
+
+  - part: proof
+    text: "But AB is greater than CD; therefore GB is also greater than HD."
+    highlight: [AB, CD, GB, HD]
+    hint: |
+      $GB : HD = AB : CD$ with {AB} > {CD}: so {GB} > {HD} ([[V.16]] and [[V.14]]).
+    explain:
+      implicit: |
+        Alternating $GB : HD = AB : CD$ gives $GB : AB = HD : CD$; then [[V.14]] compares. Or use the form of
+        [[V.14]] Joyce describes: in $AB : CD = GB : HD$, the first exceeds the second, so the third
+        exceeds the fourth.
+    cites: [V.16, V.14]
+
+  - part: proof
+    text: "And, since AG is equal to E, and CH to F, therefore AG, F are equal to CH, E."
+    highlight: [AG, F, CH, E]
+    hint: |
+      {AG} + {F} = {E} + {CH} — each side is {E} + {F}.
+
+  - part: proof
+    text: "And if, GB, HD being unequal, and GB greater, AG, F be added to GB and CH, E be added to HD, it follows that AB, F are greater than CD, E."
+    highlight: [GB, HD, AB, F, CD, E]
+    hint: |
+      {GB} + ({AG} + {F}) > {HD} + ({CH} + {E}), i.e. {AB} + {F} > {CD} + {E}.
+    cites: [I.CN.2]
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Let $a : b = c : d$ with $a$ greatest, $d$ least.
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: |
+        By [[V.19]], $(a - c) : (b - d) = a : b$.
+    - steps: [6]
+      text: |
+        Since $a > b$, also $a - c > b - d$.
+    - steps: [7, 8]
+      text: |
+        Adding $c + d$ to both sides, $a + d > b + c$. $\blacksquare$
+  closing: |
+    The special case $a : b = b : d$ gives $a + d > 2b$: the arithmetic mean of two unequal magnitudes is
+    greater than their mean proportional ($\frac{a + d}{2} > \sqrt{ad}$).
+
+commentary: |
+  An inequality to close the book. Joyce notes that it is not used elsewhere in the *Elements*, and that it
+  fails without [[V.Def.4]]: with $y$ infinitesimal compared with $x$, $(x + 5y) : (x + 2y) = (x + 4y) : x$
+  holds in the sense of [[V.Def.5]], yet $(x + 5y) + x$ is less than $(x + 2y) + (x + 4y)$.
+
+  Book V ends here; Book VI applies its theory to geometry, beginning with [[VI.1]].

@@ -1,0 +1,97 @@
+id: VI.21
+kind: theorem
+title: Figures similar to the same figure are similar to each other
+
+paraphrase: |
+  If {A} and {B} are each similar to {C}, then {A} is similar to {B}.
+
+diagram:
+  width: 450
+  height: 250
+  elements:
+    - "A1;point;free;30,40;0"
+    - "A2;point;free;70,210;0"
+    - "A3;point;free;170,210;0"
+    - "A4;point;free;155,100;0"
+    - "A;polygon;quadrilateral;A1,A2,A3,A4;black;0;black;#efe4d2"
+    - "B2;point;free;240,210;0"
+    - "B3;point;free;310,210;0"
+    - "B1;point;similar;B2,B3,A2,A3,A1;0"
+    - "B4;point;similar;B2,B3,A2,A3,A4;0"
+    - "B;polygon;quadrilateral;B1,B2,B3,B4;black;0;black;#dfe7ea"
+    - "C2;point;free;350,210;0"
+    - "C3;point;free;400,210;0"
+    - "C1;point;similar;C2,C3,A2,A3,A1;0"
+    - "C4;point;similar;C2,C3,A2,A3,A4;0"
+    - "C;polygon;quadrilateral;C1,C2,C3,C4;black;0;black;#f3eee4"
+  caption: |
+    Three similar quadrilaterals; drag the vertices of {A} or the base ends of {B} and {C}.
+
+steps:
+  - part: enunciation
+    text: "Figures which are similar to the same rectilineal figure are also similar to one another."
+    highlight: [A, B, C]
+    hint: |
+      Similarity is transitive.
+    modern: |
+      $$A \sim C,\ B \sim C \ \Rightarrow\ A \sim B$$
+
+  - part: setting-out
+    text: "For let each of the rectilineal figures A, B be similar to C;"
+    highlight: [A, B, C]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that A is also similar to B."
+    highlight: [A, B]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, since A is similar to C, it is equiangular with it and has the sides about the equal angles proportional."
+    highlight: [A, C]
+    hint: |
+      [[VI.Def.1]].
+
+  - part: proof
+    text: "Again, since B is similar to C, it is equiangular with it and has the sides about the equal angles proportional."
+    highlight: [B, C]
+    hint: |
+      Likewise.
+    cites: [VI.Def.1]
+
+  - part: proof
+    text: "Therefore each of the figures A, B is equiangular with C and with C has the sides about the equal angles proportional;"
+    highlight: [A, B, C]
+    hint: |
+      Both match {C}.
+
+  - part: proof
+    text: "therefore A is similar to B."
+    highlight: [A, B]
+    hint: |
+      Equal angles by [[I.CN.1]]; proportional sides by [[V.11]] (and alternation, [[V.16]]).
+    explain:
+      implicit: |
+        The step from "each proportional to {C}" to "proportional to each other" uses [[V.11]] on the ratios of
+        corresponding sides. Euclid leaves it unsaid.
+    cites: [I.CN.1, V.11]
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6]
+      text: |
+        A similarity is a composition of a scaling and a rigid motion; composing the similarity $A \to C$ with
+        the inverse of $B \to C$ gives one from $A$ to $B$. $\blacksquare$
+
+commentary: |
+  Joyce notes that VI.21 is used in [[VI.24]], [[VI.28]] and [[VI.29]], and that it would have shortened
+  the proof of [[VI.8]], where the triangle case is argued out again.

@@ -1,0 +1,109 @@
+id: XI.14
+kind: theorem
+title: Planes perpendicular to the same line are parallel
+
+paraphrase: |
+  If {AB} is perpendicular to two planes *CD* and *EF*, the planes are parallel.
+
+diagram:
+  width: 310
+  height: 200
+  elements:
+    - "X;point;free;100000,200"
+    - "Y;point;free;200,-100000"
+    - "Z;point;free;40000,-100000"
+    - "C;point;free;160,40;black;0,75,100"
+    - "D;point;free;40,100;black;0,75,100"
+    - "C1;point;intersection;C,X,D,Z;0;0"
+    - "D1;point;intersection;D,X,C,Z;0;0"
+    - "P;polygon;quadrilateral;C,C1,D,D1;0;0;gray;brighter"
+    - "F;point;free;160,120;black;0,75,100"
+    - "E;point;free;40,180;black;0,75,100"
+    - "F1;point;intersection;F,X,E,Z;0;0"
+    - "E1;point;intersection;E,X,F,Z;0;0"
+    - "Q;polygon;quadrilateral;F,F1,E,E1;0;0;gray;brighter"
+    - "A;point;free;100,75"
+    - "B;point;lineSlider;A,Y,100,145"
+    - "AB;line;connect;A,B"
+    - "G;point;free;270,30"
+    - "H;point;lineSlider;G,Z,210,170"
+    - "GH;line;connect;G,H"
+    - "K;point;lineSlider;GH,240,125"
+    - "AK;line;connect;A,K"
+    - "BK;line;connect;B,K"
+    - "ABK;polygon;triangle;A,B,K;0;0;0"
+    - "BAK;polygon;triangle;B,A,K;0;0;0"
+  aliases: { BA: AB, HG: GH, KA: AK, KB: BK }
+  caption: |
+    {GH} is the supposed common line of the two planes; {K} a point on it.
+
+steps:
+  - part: enunciation
+    text: "Planes to which the same straight line is at right angles will be parallel."
+    highlight: [AB]
+    hint: |
+      Two planes with a common perpendicular never meet.
+
+  - part: setting-out
+    text: "For let any straight line AB be at right angles to each of the planes CD, EF; I say that the planes are parallel."
+    highlight: [AB]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For, if not, they will meet when produced."
+    highlight: [AB]
+    hint: |
+      Suppose they meet …
+
+  - part: proof
+    text: "Let them meet; they will then make, as common section, a straight line."
+    highlight: [GH]
+    hint: |
+      … in a line ([[XI.3]]) …
+
+  - part: construction
+    text: "Let them make GH; let a point K be taken at random on GH, and let AK, BK be joined."
+    highlight: [GH, AK, BK]
+    hint: |
+      … {GH}; take {K} on it, join {AK}, {BK}.
+
+  - part: proof
+    text: "Now, since AB is at right angles to the plane EF, therefore AB is also at right angles to BK which is a straight line in the plane EF produced; therefore the angle ABK is right."
+    highlight: [AB, BK]
+    hint: |
+      ∠{ABK} right ([[XI.Def.3]]).
+
+  - part: proof
+    text: "For the same reason the angle BAK is also right."
+    highlight: [AB, AK]
+    hint: |
+      ∠{BAK} right.
+
+  - part: proof
+    text: "Thus, in the triangle ABK, the two angles ABK, BAK are equal to two right angles: which is impossible."
+    highlight: [ABK]
+    hint: |
+      Two right angles in a triangle: impossible ([[I.17]]).
+
+  - part: proof
+    text: "Therefore the planes CD, EF will not meet when produced; therefore the planes CD, EF are parallel."
+    highlight: [AB]
+    hint: |
+      So the planes do not meet: parallel ([[XI.Def.8]]).
+
+  - part: proof
+    text: "Therefore planes to which the same straight line is at right angles are parallel."
+    highlight: [AB]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Both planes have normal $AB$. $\blacksquare$

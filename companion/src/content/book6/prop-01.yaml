@@ -1,0 +1,209 @@
+id: VI.1
+kind: theorem
+title: Triangles and parallelograms of the same height are as their bases
+
+paraphrase: |
+  Triangles (and parallelograms) of the same height are to one another as their bases:
+  {ABC} : {ACD} = {BC} : {CD}, and likewise for the parallelograms {EC}, {CF}.
+
+diagram:
+  width: 520
+  height: 230
+  elements:
+    - "B0;point;free;-1000,200;0;0"
+    - "B3;point;free;1000,200;0;0"
+    - "A;point;free;230,40"
+    - "B;point;lineSlider;B0,B3,150,210"
+    - "C;point;lineSlider;B0,B3,205,210"
+    - "D;point;lineSlider;B0,B3,290,210"
+    - "ACBE;polygon;parallelogram;A,C,B;0;0;black;0"
+    - "ACDF;polygon;parallelogram;A,C,D;0;0;black;0"
+    - "E;point;vertex;ACBE,4"
+    - "F;point;vertex;ACDF,4"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "ACD;polygon;triangle;A,C,D;0;0;black;#dfe7ea"
+    - "G;point;extend;C,B,C,B"
+    - "H;point;extend;B,G,C,B"
+    - "K;point;extend;C,D,C,D"
+    - "L;point;extend;D,K,C,D"
+    - "HL;line;connect;H,L"
+    - "AH;line;connect;A,H"
+    - "AG;line;connect;A,G"
+    - "AK;line;connect;A,K"
+    - "AL;line;connect;A,L"
+    - "BC;line;connect;B,C;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BG;line;connect;B,G;0;0;0"
+    - "GH;line;connect;G,H;0;0;0"
+    - "DK;line;connect;D,K;0;0;0"
+    - "KL;line;connect;K,L;0;0;0"
+    - "HC;line;connect;H,C;0;0;0"
+    - "LC;line;connect;L,C;0;0;0"
+    - "AGB;polygon;triangle;A,G,B;0;0;0;0"
+    - "AHG;polygon;triangle;A,H,G;0;0;0;0"
+    - "AHC;polygon;triangle;A,H,C;0;0;0;0"
+    - "ALC;polygon;triangle;A,L,C;0;0;0;0"
+  aliases:
+    CB: BC
+    DC: CD
+    EC: ACBE
+    CF: ACDF
+    FC: ACDF
+    ADC: ACD
+    ACL: ALC
+    CL: LC
+  given: [A, B, C, D, E, F, ABC, ACD, ACBE, ACDF, BC, CD, BD]
+  caption: |
+    Drag {A} (the common vertex) and the points {B}, {C}, {D} on the base line. {BG}, {GH} copy {BC}; {DK}, {KL} copy
+    {CD}. Whenever the base {HC} is longer than {CL}, the triangle {AHC} is larger than {ALC}.
+
+steps:
+  - part: enunciation
+    text: "Triangles and parallelograms which are under the same height are to one another as their bases."
+    highlight: [ABC, ACD, BC, CD]
+    hint: |
+      The bridge from Book V to geometry: areas of the same height are proportional to their bases.
+    explain:
+      implicit: |
+        A ratio between two *areas* is set equal to a ratio between two *lines* — magnitudes of different
+        kinds. Book V allows this: a proportion $A : B = C : D$ only needs $A$, $B$ of one kind and $C$, $D$ of
+        one kind.
+    modern: |
+      $$\frac{[ABC]}{[ACD]} = \frac{BC}{CD} \quad (\text{same height } h:\ [ABC] = \tfrac12 h\cdot BC)$$
+
+  - part: setting-out
+    text: "Let ABC, ACD be triangles and EC, CF parallelograms under the same height;"
+    highlight: [ABC, ACD, EC, CF]
+    hint: |
+      Two triangles with a common vertex {A} and bases on one line; two parallelograms on the same bases.
+    explain:
+      did: |
+        Heath's note: the Greek says "under the same height {AC}", with a figure in which {AC} is perpendicular to
+        the base. Heath drops "{AC}" and draws the figure in the usual way, since nothing requires {AC} to be the
+        height.
+
+  - part: specification
+    text: "I say that, as the base BC is to the base CD, so is the triangle ABC to the triangle ACD, and the parallelogram EC to the parallelogram CF."
+    highlight: [BC, CD, ABC, ACD, EC, CF]
+    hint: |
+      Two claims: $BC : CD = ABC : ACD$ and $= EC : CF$.
+
+  - part: construction
+    text: "For let BD be produced in both directions to the points H, L and let [any number of straight lines] BG, GH be made equal to the base BC, and any number of straight lines DK, KL equal to the base CD;"
+    highlight: [HL, BG, GH, DK, KL]
+    adds: [G, H, K, L, HL, BG, GH, DK, KL, HC, LC]
+    hint: |
+      Lay off copies of {BC} to the left and of {CD} to the right ([[I.3]]): {HC} is a multiple of {BC}, {LC} a
+      multiple of {CD}.
+    explain:
+      did: |
+        Builds the multiples needed for [[V.Def.5]]: $m$ copies of {BC} and $n$ copies of {CD}. Heath brackets
+        "any number of straight lines": Euclid draws two extra copies each, so $m = n = 3$.
+    cites: [I.3]
+
+  - part: construction
+    text: "let AG, AH, AK, AL be joined."
+    highlight: [AG, AH, AK, AL]
+    adds: [AG, AH, AK, AL, AGB, AHG, AHC, ALC]
+    hint: |
+      Triangles on the copies, all with vertex {A}.
+
+  - part: proof
+    text: "Then, since CB, BG, GH are equal to one another, the triangles ABC, AGB, AHG are also equal to one another."
+    highlight: [ABC, AGB, AHG]
+    hint: |
+      Equal bases, same vertex: equal triangles ([[I.38]]).
+
+  - part: proof
+    text: "Therefore, whatever multiple the base HC is of the base BC, that multiple also is the triangle AHC of the triangle ABC."
+    highlight: [HC, BC, AHC, ABC]
+    hint: |
+      {HC} = $m${BC} and {AHC} = $m${ABC}, with the same $m$.
+
+  - part: proof
+    text: "For the same reason, whatever multiple the base LC is of the base CD, that multiple also is the triangle ALC of the triangle ACD;"
+    highlight: [LC, CD, ALC, ACD]
+    hint: |
+      {LC} = $n${CD} and {ALC} = $n${ACD}.
+    cites: [I.38]
+
+  - part: proof
+    text: "and, if the base HC is equal to the base CL, the triangle AHC is also equal to the triangle ACL, if the base HC is in excess of the base CL, the triangle AHC is also in excess of the triangle ACL, and, if less, less."
+    highlight: [HC, CL, AHC, ACL]
+    hint: |
+      Triangles of the same height compare as their bases: equal if the bases are equal ([[I.38]]), greater
+      if the base is greater.
+    explain:
+      implicit: |
+        [[I.38]] gives only the "equal" case. That a greater base gives a greater triangle follows by cutting
+        off from the greater base a part equal to the smaller — the whole is greater than the part
+        ([[I.CN.5]]).
+    gap: |
+      The "greater" and "less" cases are asserted, not proved; they need the argument just described.
+    cites: [I.CN.5]
+
+  - part: proof
+    text: "Thus, there being four magnitudes, two bases BC, CD and two triangles ABC, ACD, equimultiples have been taken of the base BC and the triangle ABC, namely the base HC and the triangle AHC, and of the base CD and the triangle ADC other, chance, equimultiples, namely the base LC and the triangle ALC; and it has been proved that, if the base HC is in excess of the base CL, the triangle AHC is also in excess of the triangle ALC; if equal, equal; and, if less, less."
+    highlight: [HC, AHC, LC, ALC]
+    hint: |
+      Exactly the condition of [[V.Def.5]] for $BC : CD = ABC : ACD$.
+    explain:
+      follows: |
+        {HC}, {AHC} are $m$ times {BC}, {ABC}; {LC}, {ALC} are $n$ times {CD}, {ACD}; and the comparisons agree. Since
+        $m$, $n$ were arbitrary ("any number"), the test passes for all $m$, $n$.
+
+  - part: proof
+    text: "Therefore, as the base BC is to the base CD, so is the triangle ABC to the triangle ACD."
+    highlight: [BC, CD, ABC, ACD]
+    hint: |
+      First claim ([[V.Def.5]]).
+
+  - part: proof
+    text: "Next, since the parallelogram EC is double of the triangle ABC, and the parallelogram FC is double of the triangle ACD, while parts have the same ratio as the same multiples of them, therefore, as the triangle ABC is to the triangle ACD, so is the parallelogram EC to the parallelogram FC."
+    highlight: [EC, ABC, FC, ACD]
+    hint: |
+      Each parallelogram is twice its triangle ([[I.41]]), and doubling keeps ratios ([[V.15]]).
+
+  - part: proof
+    text: "Since, then, it was proved that, as the base BC is to CD, so is the triangle ABC to the triangle ACD, and, as the triangle ABC is to the triangle ACD, so is the parallelogram EC to the parallelogram CF, therefore also, as the base BC is to the base CD, so is the parallelogram EC to the parallelogram FC."
+    highlight: [BC, CD, EC, FC]
+    hint: |
+      Second claim, by [[V.11]].
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Let $h$ be the common height.
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      text: |
+        $[ABC] = \tfrac12 h\cdot BC$ and $[ACD] = \tfrac12 h\cdot CD$, so $[ABC] : [ACD] = BC : CD$.
+    - steps: [10, 11]
+      text: |
+        The parallelograms are $h\cdot BC$ and $h\cdot CD$: the same ratio. $\blacksquare$
+  closing: |
+    The modern proof uses the area formula, which presupposes real numbers for lengths and areas.
+    Euclid's proof needs neither: it checks [[V.Def.5]] directly, using only [[I.38]].
+
+commentary: |
+  VI.1 is the foundation of Book VI. Book I could only say when areas are *equal*; with [[V.Def.5]],
+  Euclid can now say when areas are *proportional*. Every similarity theorem that follows rests on it,
+  through [[VI.2]].
+
+  Joyce notes that the same pattern of proof — multiples on one side match multiples on the other — returns
+  in [[VI.33]] (angles and arcs), and for solids in Books XI and XII.
+
+historical: |
+  Heath's note: the Greek text specifies the height as the common side {AC}, drawn perpendicular to the base;
+  Theon, "on this occasion making an improvement", rewrote it as "the perpendicular drawn from {A} to {BD}".

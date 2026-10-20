@@ -1,0 +1,111 @@
+id: IX.32
+kind: theorem
+title: Powers of two are even-times even only
+
+paraphrase: |
+  Each number obtained by doubling repeatedly from 2 — 4, 8, 16, … — is *even-times even only*: its only
+  factorisations are into even factors.
+
+diagram:
+  width: 250
+  height: 170
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "B0;point;free;-1000,65;0;0"
+    - "B3;point;free;1000,65;0;0"
+    - "C0;point;free;-1000,100;0;0"
+    - "C3;point;free;1000,100;0;0"
+    - "D0;point;free;-1000,135;0;0"
+    - "D3;point;free;1000,135;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1025,0;0;0"
+    - "U3;point;free;1050,0;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;cutoff;A1,A3,U1,U2;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;cutoff;B1,B3,U1,U3;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;A1,A2,B1,B2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+  caption: |
+    {A} = 2, {B} = 4, {C} = 8, {D} = 16.
+
+steps:
+  - part: enunciation
+    text: "Each of the numbers which are continually doubled beginning from a dyad is even-times even only."
+    highlight: [A, B, C, D]
+    hint: |
+      $2^n$ has no odd divisor but 1.
+    modern: |
+      The only odd divisor of $2^n$ is $1$.
+
+  - part: setting-out
+    text: "For let as many numbers as we please, B, C, D, have been continually doubled beginning from the dyad A;"
+    highlight: [A, B, C, D]
+    hint: |
+      2, 4, 8, 16.
+
+  - part: specification
+    text: "I say that B, C, D are even-times even only."
+    highlight: [B, C, D]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "Now that each of the numbers B, C, D is even-times even is manifest; for it is doubled from a dyad."
+    highlight: [B, C, D]
+    hint: |
+      Even-times even, clearly ([[VII.Def.8]]).
+
+  - part: specification
+    text: "I say that it is also even-times even only."
+    highlight: [D]
+    hint: |
+      "Only": no odd factor.
+
+  - part: construction
+    text: "For let an unit be set out."
+    hint: |
+      Start the progression at 1.
+
+  - part: proof
+    text: "Since then as many numbers as we please beginning from an unit are in continued proportion, and the number A after the unit is prime, therefore D, the greatest of the numbers A, B, C, D, will not be measured by any other number except A, B, C."
+    highlight: [A, B, C, D]
+    hint: |
+      1, 2, 4, 8, 16 with 2 prime: the divisors of 16 are 2, 4, 8 ([[IX.13]]).
+
+  - part: proof
+    text: "And each of the numbers A, B, C is even; therefore D is even-times even only."
+    highlight: [D]
+    hint: |
+      All its divisors are even.
+
+  - part: proof
+    text: "Similarly we can prove that each of the numbers B, C is even-times even only."
+    highlight: [B, C]
+    hint: |
+      Likewise.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [5, 6, 7, 8]
+      text: |
+        The divisors of $2^n$ are $2^k$ ([[IX.13]]), all even except $1$. $\blacksquare$
+
+commentary: |
+  "Even-times even *only*" means not also even-times odd: the powers of 2. The proposition reads
+  [[VII.Def.8]] in this narrower sense (see the note there). Joyce gives an alternative proof by [[IX.30]]:
+  an odd divisor of 16 would divide 8, 4, 2 in turn.

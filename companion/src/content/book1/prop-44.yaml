@@ -1,0 +1,269 @@
+id: I.44
+kind: problem
+title: Applying a parallelogram to a given line
+
+paraphrase: |
+  Given a segment {AB}, a triangle {C} and an angle {D|angD}: construct on {AB} a parallelogram
+  with an angle equal to {D|angD} and area equal to {C}.
+
+diagram:
+  width: 320
+  height: 310
+  elements:
+    - "A0;point;free;-1000,230;0;0"
+    - "A3;point;free;1000,230;0;0"
+    - "A;point;lineSlider;A0,A3,70,0"
+    - "B;point;lineSlider;A0,A3,140,0"
+    - "E;point;lineSlider;A0,A3,240,0"
+    - "AB;line;connect;A,B"
+    - "C1;point;free;130,40;0"
+    - "C2;point;free;20,40;0"
+    - "C3;point;free;50,130;0"
+    - "C;polygon;triangle;C1,C2,C3;0,0,0;0;0,0,0;#efe4d2"
+    - "D1;point;free;150,90;0"
+    - "D2;point;free;210,90;0"
+    - "D3;point;free;230,30;0"
+    - "D1D2;line;connect;D1,D2"
+    - "D2D3;line;connect;D2,D3"
+    - "D;polygon;triangle;D1,D2,D3;0,0,0;0;0;0"
+    - "Gp;point;similar;E,B,D1,D2,D3;0;0"
+    - "BEFG;polygon;application;C,B,E,Gp;0;0;0;#efe4d2"
+    - "G;point;vertex;BEFG,4"
+    - "F;point;vertex;BEFG,3"
+    - "ABGH;polygon;parallelogram;A,B,G;0;0;0;0"
+    - "H;point;vertex;ABGH,4"
+    - "K;point;intersection;F,E,H,B"
+    - "L;point;parallelogram;K,F,H"
+    - "M;point;intersection;L,K,G,B"
+    - "BE;line;connect;B,E"
+    - "BG;line;connect;B,G"
+    - "EF;line;connect;E,F"
+    - "FG;line;connect;F,G"
+    - "HF;line;connect;H,F"
+    - "AH;line;connect;A,H"
+    - "HB;line;connect;H,B"
+    - "EK;line;connect;E,K"
+    - "KL;line;connect;K,L"
+    - "AL;line;connect;A,L"
+    - "BM;line;connect;B,M"
+    - "LM;line;connect;L,M"
+    - "KM;line;connect;K,M"
+    - "HK;line;connect;H,K"
+    - "AE;line;connect;A,E;0;0;0"
+    - "HLKF;polygon;quadrilateral;H,L,K,F;0;0;0;0"
+    - "BMKE;polygon;quadrilateral;B,M,K,E;0;0;0;0"
+    - "LABM;polygon;quadrilateral;L,A,B,M;0;0;0;#dfe7ea"
+    - "angD;sector;angleMarker;D2,D1,D3;0;0;magenta;magenta"
+    - "angGBE;sector;angleMarker;B,G,E,22;0;0;magenta;magenta"
+    - "angABM;sector;angleMarker;B,A,M,22;0;0;magenta;magenta"
+    - "angAHF;sector;angleMarker;H,A,F,30"
+    - "angBHG;sector;angleMarker;H,B,G,18"
+    - "angHFE;sector;angleMarker;F,H,E,22"
+  aliases:
+    AG: ABGH
+    ME: BMKE
+    LB: LABM
+    BF: BEFG
+    EBG: angGBE
+    GBE: angGBE
+    ABM: angABM
+    AHF: angAHF
+    BHG: angBHG
+    HFE: angHFE
+    GFE: angHFE
+    EA: AE
+    FH: HF
+    HA: AH
+    GB: BG
+    FE: EF
+    GF: FG
+    BH: HB
+    KH: HK
+    LK: KL
+    MB: BM
+    ML: LM
+    MK: KM
+    EB: BE
+  given: [A, B, AB, C, D1D2, D2D3, D, angD]
+  caption: |
+    Slide {A}, {B}, {E} along the base line, and move the corners of the triangle {C} and the angle
+    {D|angD}. The parallelogram {LB} on {AB} keeps the area of {C} and the angle {D|angD}.
+
+steps:
+  - part: enunciation
+    text: "To a given straight line to apply, in a given rectilineal angle, a parallelogram equal to a given triangle."
+    highlight: [AB, C, LB, angD]
+    hint: |
+      A problem: build, *on a given segment*, a parallelogram with given angle and given area. The
+      classic "application of areas".
+    explain:
+      fact: |
+        To "apply" (παραβάλλειν) a figure to a line means to build it with that line as one side.
+
+  - part: setting-out
+    text: "Let AB be the given straight line, C the given triangle and D the given rectilineal angle;"
+    highlight: [AB, C, angD]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to apply to the given straight line AB, in an angle equal to the angle D, a parallelogram equal to the given triangle C."
+    highlight: [AB, C, angD]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let the parallelogram BEFG be constructed equal to the triangle C, in the angle EBG which is equal to D;"
+    highlight: [BF, angGBE]
+    adds: [E, F, G, BEFG, BE, BG, EF, FG, angGBE]
+    hint: |
+      First make *some* parallelogram {BEFG|BF} with the right area and angle ([[I.42]]).
+
+  - part: construction
+    text: "let it be placed so that BE is in a straight line with AB;"
+    highlight: [BE, AB]
+    hint: |
+      Put it next to {AB}, with {BE} continuing {AB}.
+    explain:
+      implicit: |
+        "Placed" suggests moving the parallelogram. Heath remarks that Euclid could instead have built
+        it there from the start, by carrying out I.42 with {BE} on {AB} produced.
+
+  - part: construction
+    text: "let FG be drawn through to H, and let AH be drawn through A parallel to either BG or EF."
+    highlight: [HF, AH, H]
+    adds: [H, HF, AH]
+    hint: |
+      Extend {FG} to {H}, on the parallel to {BG} through {A} ([[I.31]]).
+
+  - part: construction
+    text: "Let HB be joined."
+    highlight: [HB]
+    adds: [HB]
+    hint: |
+      Join {HB}: it will be the diagonal of a large parallelogram.
+
+  - part: proof
+    text: "Then, since the straight line HF falls upon the parallels AH, EF, the angles AHF, HFE are equal to two right angles."
+    highlight: [angAHF, angHFE, HF]
+    adds: [angAHF, angHFE]
+    hint: |
+      Interior angles on one side of a transversal of parallels ([[I.29]]).
+    explain:
+      implicit: |
+        "Falls" is in the aorist in the Greek (ἐνέπεσεν), here and later (Heath's note on line 14).
+
+  - part: proof
+    text: "Therefore the angles BHG, GFE are less than two right angles;"
+    highlight: [angBHG, angHFE]
+    adds: [angBHG]
+    hint: |
+      ∠{BHG} is part of ∠{AHF}, so the pair at {H} and {F} falls short.
+
+  - part: proof
+    text: "and straight lines produced indefinitely from angles less than two right angles meet;"
+    highlight: [angBHG, angHFE]
+    hint: |
+      **Postulate 5** ([[I.Post.5]]), quoted.
+
+  - part: proof
+    text: "therefore HB, FE, when produced, will meet."
+    highlight: [HB, EF]
+    hint: |
+      So {HB} and {FE} meet — the second (and last) direct use of the postulate in Book I after [[I.29]].
+
+  - part: construction
+    text: "Let them be produced and meet at K;"
+    highlight: [K, HK, EK]
+    adds: [K, HK, EK]
+    hint: |
+      Call the meeting point {K}.
+
+  - part: construction
+    text: "through the point K let KL be drawn parallel to either EA or FH,"
+    highlight: [KL]
+    adds: [KL, L]
+    hint: |
+      Through {K}, a parallel to the base line ([[I.31]]).
+
+  - part: construction
+    text: "and let HA, GB be produced to the points L, M."
+    highlight: [AL, BM, L, M]
+    adds: [AL, BM, M, LM, KM, LB]
+    hint: |
+      Extend {HA} to {L} and {GB} to {M}. The parallelogram {LB} (= {LABM|LB}) on {AB} is the answer.
+
+  - part: proof
+    text: "Then HLKF is a parallelogram, HK is its diameter, and AG, ME are parallelograms, and LB, BF the so-called complements, about HK;"
+    highlight: [HLKF, HK, AG, ME, LB, BF]
+    hint: |
+      {HK} is the diagonal of the big parallelogram {HLKF}; {LB} and {BF} are its complements.
+
+  - part: proof
+    text: "therefore LB is equal to BF."
+    highlight: [LB, BF]
+    hint: |
+      Complements are equal ([[I.43]]).
+
+  - part: proof
+    text: "But BF is equal to the triangle C; therefore LB is also equal to C."
+    highlight: [LB, BF, C]
+    hint: |
+      So {LB} has the area of {C} ([[I.CN.1]]).
+
+  - part: proof
+    text: "And, since the angle GBE is equal to the angle ABM,"
+    highlight: [angGBE, angABM]
+    adds: [angABM]
+    hint: |
+      Vertical angles ([[I.15]]).
+
+  - part: proof
+    text: "while the angle GBE is equal to D, the angle ABM is also equal to the angle D."
+    highlight: [angGBE, angABM, angD]
+    hint: |
+      So {LB} has the angle {D|angD}.
+
+  - part: conclusion
+    text: "Therefore the parallelogram LB equal to the given triangle C has been applied to the given straight line AB, in the angle ABM which is equal to D."
+    highlight: [LB, AB, angABM]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Algebraically, the problem is a division:
+    find the second side $x$ of a parallelogram with first side $a = AB$, angle $\delta$, and area
+    $S$; i.e. $a\, x \sin\delta = S$.
+  lines:
+    - steps: [1, 2, 3, 4]
+      text: Build any parallelogram $BF$ with angle $\delta$ and area $S$, with sides $b = BE$ and $y = BG$, so $b\,y \sin\delta = S$.
+    - steps: [5, 6, 7, 8, 9, 10, 11, 12, 13]
+      text: |
+        The diagonal $HK$ cuts the line $BG$ produced at $M$ so that $BM : BG = BE : AB$ (similar
+        triangles). With $x = BM$: $a x = b y$.
+    - steps: [14, 15, 16, 17, 18]
+      text: Hence $[LB] = a\,x \sin\delta = b\,y\sin\delta = S$. $\blacksquare$
+  closing: |
+    Euclid performs the division $x = by/a$ with no theory of proportion at all — only the equality
+    of complements ([[I.43]]).
+
+commentary: |
+  One of the most important constructions in the *Elements*. With [[I.45]] it lets any rectilinear
+  area be "applied" to any segment, which is the geometric equivalent of dividing an area by a
+  length. Books II and VI extend it to applications that fall short or exceed — the geometric
+  solution of quadratic equations.
+
+gaps: |
+  - **"Placed"** (step 2): moving the parallelogram is a kind of superposition, avoidable as Heath notes.
+  - **Intersections** of the parallels, taken from the figure.
+
+historical: |
+  Proclus, citing Eudemus, calls the application of areas an ancient discovery of the Pythagoreans.
+  Its three forms — *parabolē* (exact application), *elleipsis* (falling short) and *hyperbolē*
+  (exceeding) — gave Apollonius the names of the conic sections: parabola, ellipse, hyperbola.

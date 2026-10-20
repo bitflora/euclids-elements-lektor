@@ -1,0 +1,159 @@
+id: X.57
+kind: theorem
+title: The side of a rational line times a fourth binomial is a major line
+
+paraphrase: |
+  If an area {AC} is contained by a rational line {AB} and a fourth binomial {AD}, its side {MO} is a major
+  line.
+
+diagram:
+  width: 400
+  height: 210
+  elements:
+    - "A0;point;free;-1000,60;0;0"
+    - "A3;point;free;1000,60;0;0"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "D;point;lineSlider;A0,A3,200,0"
+    - "B';point;perpendicular;A,D;0;0"
+    - "B;point;lineSlider;A,B',0,150"
+    - "C;point;parallelogram;B,A,D"
+    - "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;random"
+    - "E;point;lineSlider;A,D,120,0"
+    - "F;point;midpoint;E,D"
+    - "AEmid;point;midpoint;A,E;0;0"
+    - "AEquar;point;midpoint;E,AEmid;0;0"
+    - "EFcirc;circle;radius;E,F;0;0;0;0"
+    - "EAcirc;circle;radius;AEquar,E;0;0;0;0"
+    - "bich;line;bichord;EFcirc,EAcirc;0;0;0"
+    - "G';point;first;bich;0;0"
+    - "G;point;cutoff;AEmid,D,AEmid,G'"
+    - "H;point;parallelogram;B,A,G"
+    - "K;point;parallelogram;B,A,E"
+    - "L;point;parallelogram;B,A,F"
+    - "HGEK;polygon;quadrilateral;H,G,E,K;0;0;black;150,80,100"
+    - "FL;line;connect;F,L"
+    - "AH;polygon;quadrilateral;A,B,H,G;0;0;0;300,80,100"
+    - "S0;point;free;-1000,175;0;0"
+    - "S3;point;free;1000,175;0;0"
+    - "S;point;lineSlider;S0,S3,240,0"
+    - "P;point;meanProportional;A,G,G,H,S,S3"
+    - "SPNM;polygon;square;S,P;0;0;black;300,80,100"
+    - "M;point;vertex;SPNM,4"
+    - "N;point;vertex;SPNM,3"
+    - "T;point;meanProportional;G,E,E,K,P,S3;0"
+    - "O;point;parallelogram;M,S,T"
+    - "NOQR;polygon;square;N,O;0;0;black;150,80,100"
+    - "Q;point;vertex;NOQR,3"
+    - "R;point;vertex;NOQR,4"
+    - "SQ;polygon;parallelogram;S,T,Q;0;0;black;0"
+    - "MO;line;connect;M,O;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "AG;line;connect;A,G;0;0;0"
+    - "GE;line;connect;G,E;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "MN;line;connect;M,N;0;0;0"
+    - "NO;line;connect;N,O;0;0;0"
+    - "EK;line;connect;E,K;0;0;0"
+  aliases: { AC: ABCD, SN: SPNM, NQ: NOQR, GK: HGEK, LF: FL, OM: MO, BA: AB, DA: AD, EA: AE, DE: ED, GA: AG, EG: GE, FE: EF, NM: MN, ON: NO, KE: EK }
+  caption: |
+    As in [[X.54]]: {AD} = {AE} + {ED} on the rational {AB}; squares {SN} = {AH}, {NQ} = {GK}; {MO} is the
+    side of {AC}.
+
+steps:
+  - part: enunciation
+    text: "If an area be contained by a rational straight line and the fourth binomial, the “side” of the area is the irrational straight line called major."
+    highlight: [AC, MO]
+    hint: |
+      √(rational × fourth binomial) = major.
+
+  - part: proof
+    text: "For let the area AC be contained by the rational straight line AB and the fourth binomial AD divided into its terms at E, of which terms let AE be the greater; I say that the “side” of the area AC is the irrational straight line called major."
+    highlight: [AC, AB, AD]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For, since AD is a fourth binomial straight line, therefore AE, ED are rational straight lines commensurable in square only, the square on AE is greater than the square on ED by the square on a straight line incommensurable with AE, and AE is commensurable in length with AB."
+    highlight: [AE, ED]
+    hint: |
+      Fourth binomial: {AE} commensurable with {AB}, the excess incommensurable with {AE} ([[X.Def.II.4]]).
+
+  - part: construction
+    text: "Let DE be bisected at F, and let there be applied to AE a parallelogram, the rectangle AG, GE, equal to the square on EF; therefore AG is incommensurable in length with GE."
+    highlight: [AG, GE, EF]
+    hint: |
+      Now {AG}, {GE} are *incommensurable* ([[X.18]]).
+
+  - part: construction
+    text: "Let GH, EK, FL be drawn parallel to AB, and let the rest of the construction be as before; it is then manifest that MO is the “side” of the area AC."
+    highlight: [SQ, MO]
+    hint: |
+      Same construction: {MO} is the side.
+
+  - part: specification
+    text: "It is next to be proved that MO is the irrational straight line called major."
+    highlight: [MO]
+    hint: |
+      {MO} is major.
+
+  - part: proof
+    text: "Since AG is incommensurable with EG, AH is also incommensurable with GK, that is, SN with NQ; therefore MN, NO are incommensurable in square."
+    highlight: [MN, NO]
+    hint: |
+      {AH}, {GK} incommensurable, so {MN}, {NO} incommensurable in square.
+
+  - part: proof
+    text: "And, since AE is commensurable with AB, AK is rational; and it is equal to the squares on MN, NO; therefore the sum of the squares on MN, NO is also rational."
+    highlight: [MN, NO]
+    hint: |
+      *AK* is rational ([[X.19]]) and equals sq({MN}) + sq({NO}).
+
+  - part: proof
+    text: "And, since DE is incommensurable in length with AB, that is, with EK, while DE is commensurable with EF, therefore EF is incommensurable in length with EK."
+    highlight: [EF, EK]
+    hint: |
+      {EF}, {EK} incommensurable in length …
+
+  - part: proof
+    text: "Therefore EK, EF are rational straight lines commensurable in square only; therefore LE, that is, MR, is medial."
+    highlight: [MN, NO]
+    hint: |
+      … so *MR* = rect({MN},{NO}) is medial.
+
+  - part: proof
+    text: "And it is contained by MN, NO; therefore the rectangle MN, NO is medial."
+    highlight: [MN, NO]
+    hint: |
+      Medial rectangle.
+
+  - part: proof
+    text: "And the [sum] of the squares on MN, NO is rational, and MN, NO are incommensurable in square."
+    highlight: [MN, NO]
+    hint: |
+      Rational sum of squares, incommensurable in square.
+
+  - part: proof
+    text: "But, if two straight lines incommensurable in square and making the sum of the squares on them rational, but the rectangle contained by them medial, be added together, the whole is irrational and is called major."
+    highlight: [MO]
+    hint: |
+      [[X.39]].
+
+  - part: proof
+    text: "Therefore MO is the irrational straight line called major and is the “side” of the area AC."
+    highlight: [MO]
+    hint: |
+      Major.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [5, 6, 7, 8, 9, 10, 11, 12]
+      text: |
+        $\rho\,AD$ splits into incommensurable parts with rational sum and medial mean: the major. $\blacksquare$

@@ -1,0 +1,139 @@
+id: III.26
+kind: theorem
+title: Equal angles stand on equal arcs
+
+paraphrase: |
+  In equal circles, equal angles (at the centre or at the circumference) stand on equal arcs.
+
+diagram:
+  width: 465
+  height: 240
+  elements:
+    - "G;point;free;120,115"
+    - "A;point;free;75,30"
+    - "ABC;circle;radius;G,A;0;0;black;0"
+    - "B;point;circleSlider;ABC,60,190"
+    - "C;point;circleSlider;ABC,180,190"
+    - "H;point;free;340,115"
+    - "DEF;circle;radius;H,G,A;0;0;black;0"
+    - "D;point;circleSlider;DEF,380,25"
+    - "E;point;circleSlider;DEF,280,190"
+    - "F;point;similar;H,E,G,B,C"
+    - "triABC;polygon;triangle;A,B,C;0;0;black;0"
+    - "triDEF;polygon;triangle;D,E,F;0;0;black;0"
+    - "GB;line;connect;G,B"
+    - "GC;line;connect;G,C"
+    - "HF;line;connect;H,F"
+    - "HE;line;connect;H,E"
+    - "K;point;circleSlider;ABC,120,215;black;0"
+    - "L;point;circleSlider;DEF,340,215;black;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "BKC;sector;arc;B,K,C;0;0;0;0"
+    - "ELF;sector;arc;E,L,F;0;0;0;0"
+    - "angBGC;sector;angleMarker;G,B,C"
+    - "angEHF;sector;angleMarker;H,E,F"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angEDF;sector;angleMarker;D,E,F"
+  aliases:
+    BG: GB
+    BAC: angBAC
+    EDF: angEDF
+    BGC: angBGC
+    EHF: angEHF
+  given: [ABC, DEF, A, B, C, D, E, F, G, H, triABC, triDEF, GB, GC, HE, HF, K, L]
+  caption: |
+    Two equal circles with equal central angles at {G} and {H}. Slide the points: the arcs {BKC} and {ELF}
+    stay equal.
+
+steps:
+  - part: enunciation
+    text: "In equal circles equal angles stand on equal circumferences, whether they stand at the centres or at the circumferences."
+    highlight: [BKC, ELF, angBGC, angEHF]
+    hint: |
+      Equal angles ⇒ equal arcs (in equal circles).
+
+  - part: setting-out
+    text: "Let ABC, DEF be equal circles, and in them let there be equal angles, namely at the centres the angles BGC, EHF, and at the circumferences the angles BAC, EDF;"
+    highlight: [angBGC, angEHF, angBAC, angEDF]
+    hint: |
+      The data.
+    explain:
+      fact: |
+        Equal circles: equal radii ([[III.Def.1]]).
+    cites: [III.Def.1]
+
+  - part: specification
+    text: "I say that the circumference BKC is equal to the circumference ELF."
+    highlight: [BKC, ELF]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let BC, EF be joined."
+    highlight: [BC, EF]
+    hint: |
+      The chords.
+
+  - part: proof
+    text: "Now, since the circles ABC, DEF are equal, the radii are equal."
+    highlight: [GB, GC, HE, HF]
+    hint: |
+      [[III.Def.1]].
+
+  - part: proof
+    text: "Thus the two straight lines BG, GC are equal to the two straight lines EH, HF; and the angle at G is equal to the angle at H; therefore the base BC is equal to the base EF."
+    highlight: [BC, EF]
+    hint: |
+      SAS ([[I.4]]): equal chords.
+
+  - part: proof
+    text: "And, since the angle at A is equal to the angle at D, the segment BAC is similar to the segment EDF;"
+    highlight: [angBAC, angEDF]
+    hint: |
+      [[III.Def.11]].
+
+  - part: proof
+    text: "and they are upon equal straight lines."
+    highlight: [BC, EF]
+    hint: |
+      Equal chords.
+
+  - part: proof
+    text: "But similar segments of circles on equal straight lines are equal to one another; therefore the segment BAC is equal to EDF."
+    highlight: [triABC, triDEF]
+    hint: |
+      [[III.24]].
+
+  - part: proof
+    text: "But the whole circle ABC is also equal to the whole circle DEF; therefore the circumference BKC which remains is equal to the circumference ELF."
+    highlight: [BKC, ELF]
+    hint: |
+      Subtract from equal circles ([[I.CN.3]]).
+    cites: [I.CN.3]
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      text: Arc length $= r\theta$ for central angle $\theta$; equal $r$ and $\theta$ give equal arcs. $\blacksquare$
+  closing: |
+    Euclid has no arc length; "equal circumferences" means arcs that can be made to coincide.
+
+commentary: |
+  III.26–III.29 are a group of four: in equal circles, equal angles ⇔ equal arcs ⇔ equal chords.
+
+gaps: |
+  - **Equality of arcs** is undefined; it is treated like equality of areas, by subtraction from equal
+    wholes.

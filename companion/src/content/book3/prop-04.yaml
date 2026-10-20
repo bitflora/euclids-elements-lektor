@@ -1,0 +1,140 @@
+id: III.4
+kind: theorem
+title: Two chords not through the centre do not bisect each other
+
+paraphrase: |
+  If two chords of a circle, neither of them a diameter, cross, they cannot both be cut in half at
+  the crossing point.
+
+diagram:
+  width: 255
+  height: 250
+  elements:
+    - "A;point;free;40,150"
+    - "C;point;free;210,150"
+    - "AC;line;connect;A,C"
+    - "B;point;free;120,215"
+    - "ABCD;circle;circumcircle;A,B,C;0;0;black;0"
+    - "D;point;circleSlider;ABCD,200,85"
+    - "BD;line;connect;B,D"
+    - "E;point;intersection;A,C,B,D"
+    - "F;point;center;ABCD"
+    - "EF;line;connect;E,F"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EC;line;connect;E,C;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "angFEA;sector;angleMarker;E,F,A"
+    - "angFEB;sector;angleMarker;E,F,B"
+  aliases:
+    FE: EF
+    FEA: angFEA
+    FEB: angFEB
+  given: [A, B, C, D, ABCD, AC, BD, E]
+  caption: |
+    Drag the points. {E} is never the midpoint of both chords unless both pass through the centre {F}.
+
+steps:
+  - part: enunciation
+    text: "If in a circle two straight lines cut one another which are not through the centre, they do not bisect one another."
+    highlight: [AC, BD, E]
+    hint: |
+      Two crossing chords, not diameters, never bisect each other.
+
+  - part: setting-out
+    text: "Let ABCD be a circle, and in it let the two straight lines AC, BD, which are not through the centre, cut one another at E;"
+    highlight: [AC, BD, E]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that they do not bisect one another."
+    highlight: [AC, BD]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, if possible, let them bisect one another, so that AE is equal to EC, and BE to ED;"
+    highlight: [AE, EC, BE, ED]
+    hint: |
+      Reductio: suppose {E} is the midpoint of both.
+
+  - part: construction
+    text: "let the centre of the circle ABCD be taken, and let it be F;"
+    highlight: [F]
+    adds: [F]
+    hint: |
+      The centre {F} ([[III.1]]).
+
+  - part: construction
+    text: "let FE be joined."
+    highlight: [EF]
+    adds: [EF]
+    hint: |
+      Join {FE}.
+
+  - part: proof
+    text: "Then, since a straight line FE through the centre bisects a straight line AC not through the centre, it also cuts it at right angles;"
+    highlight: [EF, AC, angFEA]
+    hint: |
+      [[III.3]]: through the centre and bisecting ⇒ perpendicular.
+
+  - part: proof
+    text: "therefore the angle FEA is right."
+    highlight: [angFEA]
+    hint: |
+      So ∠{FEA} is right.
+
+  - part: proof
+    text: "Again, since a straight line FE bisects a straight line BD, it also cuts it at right angles;"
+    highlight: [EF, BD, angFEB]
+    hint: |
+      [[III.3]] again, for {BD}.
+
+  - part: proof
+    text: "therefore the angle FEB is right."
+    highlight: [angFEB]
+    hint: |
+      So ∠{FEB} is right too.
+
+  - part: proof
+    text: "But the angle FEA was also proved right; therefore the angle FEA is equal to the angle FEB, the less to the greater: which is impossible."
+    highlight: [angFEA, angFEB]
+    hint: |
+      Two right angles at {E} with one inside the other: a part equal to the whole ([[I.CN.5]]).
+    cites: [I.CN.5]
+
+  - part: proof
+    text: "Therefore AC, BD do not bisect one another."
+    highlight: [AC, BD]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+      text: |
+        If $E$ were the midpoint of both chords and $E \ne F$, then $FE$ would be perpendicular to both,
+        so the chords would be parallel — but they meet at $E$. So $E = F$ and both chords are diameters,
+        contrary to hypothesis. $\blacksquare$
+
+commentary: |
+  A short reductio from [[III.3]]. In a parallelogram the diagonals bisect each other; III.4 shows that
+  a quadrilateral inscribed in a circle can have this property only if it is a rectangle.
+
+gaps: |
+  - **One chord a diameter**: the enunciation excludes only the case where *both* chords pass through
+    the centre. If just one does, it can bisect the other (perpendicularly, [[III.3]]) but is not itself
+    bisected unless {E} is the centre. Euclid does not discuss this case.

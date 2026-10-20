@@ -1,0 +1,137 @@
+id: IV.9
+kind: problem
+title: Circumscribing a circle about a square
+
+paraphrase: |
+  About a given square, draw a circle through its four corners: its centre is where the diagonals cross.
+
+diagram:
+  width: 280
+  height: 270
+  elements:
+    - "A;point;free;140,30"
+    - "C;point;free;140,235"
+    - "E;point;midpoint;A,C"
+    - "ABCDc;circle;radius;E,A;0;0;black;0"
+    - "B;point;perpendicular;E,A"
+    - "D;point;perpendicular;E,C"
+    - "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;#efe4d2"
+    - "AC;line;connect;A,C"
+    - "BD;line;connect;B,D"
+    - "EA;line;connect;E,A;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "EC;line;connect;E,C;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "DA;line;connect;D,A;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "DC;line;connect;D,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "angDAC;sector;angleMarker;A,D,C"
+    - "angBAC;sector;angleMarker;A,C,B"
+    - "angEAB;sector;angleMarker;A,E,B"
+    - "angEBA;sector;angleMarker;B,A,E"
+  aliases:
+    DB: BD
+    AD: DA
+    BA: AB
+    DAC: angDAC
+    BAC: angBAC
+    EAB: angEAB
+    EBA: angEBA
+  given: [A, B, C, D, ABCD]
+  caption: |
+    Drag {A} or {C}. The diagonals cross at the centre {E} of the circle through all four corners.
+
+steps:
+  - part: enunciation
+    text: "About a given square to circumscribe a circle."
+    highlight: [ABCD, ABCDc]
+    hint: |
+      A problem: the circumcircle of a square.
+
+  - part: setting-out
+    text: "Let ABCD be the given square;"
+    highlight: [ABCD]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to circumscribe a circle about the square ABCD."
+    highlight: [ABCD]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let AC, BD be joined, and let them cut one another at E."
+    highlight: [AC, BD, E]
+    hint: |
+      The diagonals.
+
+  - part: proof
+    text: "Then, since DA is equal to AB, and AC is common, therefore the two sides DA, AC are equal to the two sides BA, AC; and the base DC is equal to the base BC; therefore the angle DAC is equal to the angle BAC."
+    highlight: [angDAC, angBAC]
+    hint: |
+      SSS ([[I.8]]).
+
+  - part: proof
+    text: "Therefore the angle DAB is bisected by AC."
+    highlight: [AC]
+    hint: |
+      The diagonal bisects the corner angle.
+
+  - part: proof
+    text: "Similarly we can prove that each of the angles ABC, BCD, CDA is bisected by the straight lines AC, DB."
+    highlight: [AC, BD]
+    hint: |
+      All four corners.
+
+  - part: proof
+    text: "Now, since the angle DAB is equal to the angle ABC, and the angle EAB is half the angle DAB, and the angle EBA half the angle ABC, therefore the angle EAB is also equal to the angle EBA; so that the side EA is also equal to EB."
+    highlight: [angEAB, angEBA, EA, EB]
+    hint: |
+      Halves of equal angles; then [[I.6]].
+
+  - part: proof
+    text: "Similarly we can prove that each of the straight lines EA, EB is equal to each of the straight lines EC, ED."
+    highlight: [EA, EB, EC, ED]
+    hint: |
+      All four.
+
+  - part: proof
+    text: "Therefore the four straight lines EA, EB, EC, ED are equal to one another."
+    highlight: [EA, EB, EC, ED]
+    hint: |
+      {E} is equidistant from the corners.
+
+  - part: proof
+    text: "Therefore the circle described with centre E and distance one of the straight lines EA, EB, EC, ED will pass also through the remaining points; and it will have been circumscribed about the square ABCD."
+    highlight: [ABCDc]
+    hint: |
+      The circle.
+
+  - part: proof
+    text: "Let it be circumscribed, as ABCD."
+    highlight: [ABCDc]
+    hint: |
+      Name it.
+
+  - part: conclusion
+    text: "Therefore about the given square a circle has been circumscribed."
+    highlight: [ABCDc]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      text: The diagonals of a square are equal and bisect each other; their midpoint is equidistant from the vertices. $\blacksquare$
+
+commentary: |
+  The last of the four square–circle problems ([[IV.6]]–IV.9).

@@ -1,0 +1,94 @@
+id: XI.13
+kind: theorem
+title: Only one perpendicular to a plane at a point
+
+paraphrase: |
+  At a point {A} of a plane there cannot be two different perpendiculars to the plane on the same side.
+
+diagram:
+  width: 270
+  height: 250
+  elements:
+    - "X;point;free;100000,100"
+    - "Y;point;free;-10000,-100000"
+    - "Y';point;free;10000,-100000"
+    - "Z;point;free;50000,-100000"
+    - "P0;point;free;30,220;0;0,75,100"
+    - "P1;point;lineSlider;P0,X,180,220;0;30,75,100"
+    - "P3;point;lineSlider;P0,Z,100,120;0;30,75,100"
+    - "P2;point;parallelogram;P3,P0,P1;0;0"
+    - "P;polygon;quadrilateral;P0,P1,P2,P3;0;0;lightGray;brighter"
+    - "A;point;free;130,170"
+    - "B;point;lineSlider;A,Y,130,40"
+    - "C;point;lineSlider;A,Y',130,40"
+    - "AB;line;connect;A,B"
+    - "AC;line;connect;A,C"
+    - "D;point;lineSlider;P0,P3,40,140"
+    - "E;point;intersection;A,D,P1,P2"
+    - "DE;line;connect;D,E"
+    - "DAE;polygon;triangle;D,A,E;0;0;0"
+    - "CA;line;connect;C,A;0;0;0"
+    - "CAE;polygon;triangle;C,A,E;0;0;0"
+    - "BAE;polygon;triangle;B,A,E;0;0;0"
+  aliases: { BA: AB, ED: DE }
+  caption: |
+    {AB}, {AC} the supposed perpendiculars; {DAE} where their plane meets the given plane.
+
+steps:
+  - part: enunciation
+    text: "From the same point two straight lines cannot be set up at right angles to the same plane on the same side."
+    highlight: [AB, AC]
+    hint: |
+      The perpendicular at a point is unique.
+
+  - part: setting-out
+    text: "For, if possible, from the same point A let the two straight lines AB, AC be set up at right angles to the plane of reference and on the same side, and let a plane be drawn through BA, AC; it will then make, as section through A in the plane of reference, a straight line."
+    highlight: [AB, AC]
+    hint: |
+      Suppose two; their plane meets the given plane in a line ([[XI.3]]) …
+
+  - part: proof
+    text: "Let it make DAE; therefore the straight lines AB, AC, DAE are in one plane."
+    highlight: [DE]
+    hint: |
+      … {DAE}.
+
+  - part: proof
+    text: "And, since CA is at right angles to the plane of reference, it will also make right angles with all the straight lines which meet it and are in the plane of reference."
+    highlight: [AC]
+    hint: |
+      {CA} ⊥ every line in the plane through {A} …
+
+  - part: proof
+    text: "But DAE meets it and is in the plane of reference; therefore the angle CAE is right."
+    highlight: [AC, DE]
+    hint: |
+      … so ∠{CAE} is right.
+
+  - part: proof
+    text: "For the same reason the angle BAE is also right; therefore the angle CAE is equal to the angle BAE."
+    highlight: [AB, DE]
+    hint: |
+      Likewise ∠{BAE}: equal angles …
+
+  - part: proof
+    text: "And they are in one plane: which is impossible."
+    highlight: [AB, AC]
+    hint: |
+      … in one plane: impossible.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [AB]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        The normal direction is unique. $\blacksquare$

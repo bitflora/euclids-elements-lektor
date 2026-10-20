@@ -1,0 +1,278 @@
+id: VIII.19
+kind: theorem
+title: Two means between similar solid numbers
+
+paraphrase: |
+  Between two similar solid numbers {A} = {C}{D}{E} and {B} = {F}{G}{H} there fall two mean proportionals,
+  and {A} : {B} is the triplicate of {C} : {F}.
+
+diagram:
+  width: 500
+  height: 170
+  elements:
+    - "U1;point;free;0,0;0;0"
+    - "U2;point;free;25,0;0;0"
+    - "U;line;connect;U1,U2;0;0;0"
+    - "C1;point;free;30,30;0"
+    - "C3;point;parallelogram;C1,U;0;0"
+    - "C2;point;lineSlider;C1,C3,65,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;free;30,70;0"
+    - "D3;point;parallelogram;D1,U;0;0"
+    - "D2;point;lineSlider;D1,D3,80,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;free;30,110;0"
+    - "E3;point;parallelogram;E1,U;0;0"
+    - "E2;point;lineSlider;E1,E3,70,0;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;free;100,50;0"
+    - "F3;point;parallelogram;F1,U;0;0"
+    - "F2;point;lineSlider;F1,F3,140,0;0"
+    - "F;line;connect;F1,F2;black"
+    - "G1;point;free;100,90;0"
+    - "G3;point;parallelogram;G1,U;0;0"
+    - "G2;point;proportion;C,F,D,G1,G3;0"
+    - "G;line;connect;G1,G2;black"
+    - "H1;point;free;100,130;0"
+    - "H3;point;parallelogram;H1,U;0;0"
+    - "H2;point;proportion;C,F,E,H1,H3;0"
+    - "H;line;connect;H1,H2;black"
+    - "K1;point;free;190,50;0"
+    - "K3;point;parallelogram;K1,U;0;0"
+    - "K2;point;proportion;U,C,D,K1,K3;0"
+    - "K;line;connect;K1,K2;black"
+    - "L1;point;free;190,130;0"
+    - "L3;point;parallelogram;L1,U;0;0"
+    - "L2;point;proportion;U,F,G,L1,L3;0"
+    - "L;line;connect;L1,L2;black"
+    - "M1;point;free;190,90;0"
+    - "M3;point;parallelogram;M1,U;0;0"
+    - "M2;point;proportion;C,F,K,M1,M3;0"
+    - "M;line;connect;M1,M2;black"
+    - "A1;point;free;310,30;0"
+    - "A3;point;parallelogram;A1,U;0;0"
+    - "A2;point;proportion;U,E,K,A1,A3;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;free;310,150;0"
+    - "B3;point;parallelogram;B1,U;0;0"
+    - "B2;point;proportion;U,H,L,B1,B3;0"
+    - "B;line;connect;B1,B2;black"
+    - "N1;point;free;310,70;0"
+    - "N3;point;parallelogram;N1,U;0;0"
+    - "N2;point;proportion;C,F,A,N1,N3;0"
+    - "N;line;connect;N1,N2;black"
+    - "O1;point;free;310,110;0"
+    - "O3;point;parallelogram;O1,U;0;0"
+    - "O2;point;proportion;C,F,N,O1,O3;0"
+    - "O;line;connect;O1,O2;black"
+  caption: |
+    {K} = {C}{D}, {L} = {F}{G}, {M} = {D}{F} their mean; {N} = {E}{M}, {O} = {H}{M}. {A}, {N}, {O}, {B} is
+    the progression.
+
+steps:
+  - part: enunciation
+    text: "Between two similar solid numbers there fall two mean proportional numbers; and the solid number has to the similar solid number the ratio triplicate of that which the corresponding side has to the corresponding side."
+    highlight: [A, B]
+    hint: |
+      Generalises [[VIII.12]] from cubes to similar boxes.
+    modern: |
+      $c : f = d : g = e : h = r \Rightarrow cde, \ldots, fgh$ has two means and $cde : fgh = r^3$.
+
+  - part: setting-out
+    text: "Let A, B be two similar solid numbers, and let C, D, E be the sides of A, and F, G, H of B."
+    highlight: [A, B, C, D, E, F, G, H]
+    hint: |
+      {A} = {C}{D}{E}, {B} = {F}{G}{H}.
+
+  - part: proof
+    text: "Now, since similar solid numbers are those which have their sides proportional, therefore, as C is to D, so is F to G, and, as D is to E, so is G to H."
+    highlight: [C, D, E, F, G, H]
+    hint: |
+      [[VII.Def.21]].
+
+  - part: specification
+    text: "I say that between A, B there fall two mean proportional numbers, and A has to B the ratio triplicate of that which C has to F, D to G, and also E to H."
+    highlight: [A, B]
+    hint: |
+      Two claims.
+
+  - part: construction
+    text: "For let C by multiplying D make K, and let F by multiplying G make L."
+    highlight: [K, L]
+    hint: |
+      {K} = {C}{D}, {L} = {F}{G}.
+
+  - part: proof
+    text: "Now, since C, D are in the same ratio with F, G, and K is the product of C, D, and L the product of F, G, K, L are similar plane numbers; therefore between K, L there is one mean proportional number."
+    highlight: [K, L]
+    hint: |
+      {K}, {L} similar plane numbers, so one mean ([[VIII.18]]).
+
+  - part: construction
+    text: "Let it be M"
+    highlight: [M]
+    hint: |
+      The mean {M}.
+
+  - part: proof
+    text: "Therefore M is the product of D, F, as was proved in the theorem preceding this."
+    highlight: [M, D, F]
+    hint: |
+      {M} = {D}{F} (from the proof of [[VIII.18]]).
+
+  - part: proof
+    text: "Now, since D by multiplying C has made K, and by multiplying F has made M, therefore, as C is to F, so is K to M."
+    highlight: [C, F, K, M]
+    hint: |
+      [[VII.17]].
+
+  - part: proof
+    text: "But, as K is to M, so is M to L."
+    highlight: [K, M, L]
+    hint: |
+      {M} is the mean.
+
+  - part: proof
+    text: "Therefore K, M, L are continuously proportional in the ratio of C to F."
+    highlight: [K, M, L]
+    hint: |
+      Ratio {C} : {F}.
+
+  - part: proof
+    text: "And since, as C is to D, so is F to G, alternately therefore, as C is to F, so is D to G."
+    highlight: [C, F, D, G]
+    hint: |
+      [[VII.13]].
+
+  - part: proof
+    text: "For the same reason also, as D is to G, so is E to H."
+    highlight: [D, G, E, H]
+    hint: |
+      Likewise.
+
+  - part: proof
+    text: "Therefore K, M, L are continuously proportional in the ratio of C to F, in the ratio of D to G, and also in the ratio of E to H."
+    highlight: [K, M, L]
+    hint: |
+      All the side ratios are equal.
+
+  - part: construction
+    text: "Next, let E, H by multiplying M make N, O respectively."
+    highlight: [N, O]
+    hint: |
+      {N} = {E}{M}, {O} = {H}{M}.
+
+  - part: proof
+    text: "Now, since A is a solid number, and C, D, E are its sides, therefore E by multiplying the product of C, D has made A."
+    highlight: [E, A]
+    hint: |
+      {A} = {E}·({C}{D}).
+
+  - part: proof
+    text: "But the product of C, D is K; therefore E by multiplying K has made A."
+    highlight: [E, K, A]
+    hint: |
+      {A} = {E}{K}.
+
+  - part: proof
+    text: "For the same reason also H by multiplying L has made B."
+    highlight: [H, L, B]
+    hint: |
+      {B} = {H}{L}.
+
+  - part: proof
+    text: "Now, since E by multiplying K has made A, and further also by multiplying M has made N, therefore, as K is to M, so is A to N."
+    highlight: [K, M, A, N]
+    hint: |
+      [[VII.17]].
+
+  - part: proof
+    text: "But, as K is to M, so is C to F, D to G, and also E to H; therefore also, as C is to F, D to G, and E to H, so is A to N."
+    highlight: [A, N]
+    hint: |
+      {A} : {N} = the common ratio.
+
+  - part: proof
+    text: "Again, since E, H by multiplying M have made N, O respectively, therefore, as E is to H, so is N to O."
+    highlight: [E, H, N, O]
+    hint: |
+      [[VII.18]].
+
+  - part: proof
+    text: "But, as E is to H, so is C to F and D to G; therefore also, as C is to F, D to G, and E to H, so is A to N and N to O."
+    highlight: [A, N, O]
+    hint: |
+      {N} : {O} too.
+
+  - part: proof
+    text: "Again, since H by multiplying M has made O, and further also by multiplying L has made B, therefore, as M is to L, so is O to B."
+    highlight: [M, L, O, B]
+    hint: |
+      [[VII.17]].
+
+  - part: proof
+    text: "But, as M is to L, so is C to F, D to G, and E to H."
+    highlight: [M, L]
+    hint: |
+      Shown above.
+
+  - part: proof
+    text: "Therefore also, as C is to F, D to G, and E to H, so not only is O to B, but also A to N and N to O."
+    highlight: [A, N, O, B]
+    hint: |
+      All three ratios equal.
+
+  - part: proof
+    text: "Therefore A, N, O, B are continuously proportional in the aforesaid ratios of the sides."
+    highlight: [A, N, O, B]
+    hint: |
+      Two means {N}, {O}.
+
+  - part: specification
+    text: "I say that A also has to B the ratio triplicate of that which the corresponding side has to the corresponding side, that is, of the ratio which the number C has to F, or D to G, and also E to H."
+    highlight: [A, B]
+    hint: |
+      Second claim.
+
+  - part: proof
+    text: "For, since A, N, O, B are four numbers in continued proportion, therefore A has to B the ratio triplicate of that which A has to N."
+    highlight: [A, N, O, B]
+    hint: |
+      [[V.Def.10]].
+
+  - part: proof
+    text: "But, as A is to N, so it was proved that C is to F, D to G, and also E to H."
+    highlight: [A, N]
+    hint: |
+      Shown above.
+
+  - part: proof
+    text: "Therefore A also has to B the ratio triplicate of that which the corresponding side has to the corresponding side, that is, of the ratio which the number C has to F, D to G, and also E to H."
+    highlight: [A, B]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Let $c : f = d : g = e : h = r$.
+  lines:
+    - steps: [5, 6, 7, 8, 9, 10, 11, 12, 13]
+      text: |
+        $cd, df, fg$ is a progression with ratio $r$.
+    - steps: [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+      text: |
+        $cde : dfe : dfh : fgh$, each step a ratio $r$: two means.
+    - steps: [26, 27, 28, 29]
+      text: |
+        So $cde : fgh = r^3$. $\blacksquare$
+  closing: |
+    Joyce's form: $cde, fde, fge, fgh$ — replace the sides one at a time.
+
+commentary: |
+  The converse is [[VIII.21]]. Together, [[VIII.18]]–[[VIII.21]] characterise the numbers between which one
+  (or two) means fall.

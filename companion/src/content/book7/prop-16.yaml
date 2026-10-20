@@ -1,0 +1,133 @@
+id: VII.16
+kind: theorem
+title: Multiplication is commutative
+
+paraphrase: |
+  {A} times {B} equals {B} times {A}.
+
+diagram:
+  width: 250
+  height: 200
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "C0;point;free;-1000,110;0;0"
+    - "C3;point;free;1000,110;0;0"
+    - "D0;point;free;-1000,145;0;0"
+    - "D3;point;free;1000,145;0;0"
+    - "E0;point;free;-1000,180;0;0"
+    - "E3;point;free;1000,180;0;0"
+    - "A1;point;lineSlider;A0,A3,30,40;0"
+    - "A2;point;lineSlider;A0,A3,80,40;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,75;0"
+    - "B2;point;lineSlider;B0,B3,100,75;0"
+    - "B;line;connect;B1,B2;black"
+    - "E1;point;lineSlider;E0,E3,30,170;0"
+    - "E2;point;lineSlider;E0,E3,50,170;0"
+    - "E;line;connect;E1,E2;black"
+    - "C1;point;lineSlider;C0,C3,30,110;0"
+    - "C2;point;proportion;E1,E2,A1,A2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,145;0"
+    - "D2;point;cutoff;D1,D3,C1,C2;0"
+    - "D;line;connect;D1,D2;black"
+  caption: |
+    {C} is {A} multiplied by {B}; {D} is {B} multiplied by {A}. {E} is the unit.
+
+steps:
+  - part: enunciation
+    text: "If two numbers by multiplying one another make certain numbers, the numbers so produced will be equal to one another."
+    highlight: [A, B, C, D]
+    hint: |
+      $ab = ba$.
+    modern: |
+      $a \cdot b = b \cdot a$.
+
+  - part: setting-out
+    text: "Let A, B be two numbers, and let A by multiplying B make C, and B by multiplying A make D;"
+    highlight: [A, B, C, D]
+    hint: |
+      {C} = {A} × {B} ({B} added to itself {A} times); {D} = {B} × {A}.
+    explain:
+      fact: |
+        "{A} multiplying {B}" means {B} taken as many times as there are units in {A} ([[VII.Def.15]]).
+
+  - part: specification
+    text: "I say that C is equal to D."
+    highlight: [C, D]
+    hint: |
+      To prove: {C} = {D}.
+
+  - part: proof
+    text: "For, since A by multiplying B has made C, therefore B measures C according to the units in A."
+    highlight: [B, C, A]
+    hint: |
+      {B} goes into {C} as many times as {A} has units.
+    cites: [VII.Def.15]
+
+  - part: proof
+    text: "But the unit E also measures the number A according to the units in it; therefore the unit E measures A the same number of times that B measures C."
+    highlight: [E, A, B, C]
+    hint: |
+      And the unit {E} goes into {A} that many times.
+
+  - part: proof
+    text: "Therefore, alternately, the unit E measures the number B the same number of times that A measures C."
+    highlight: [E, B, A, C]
+    hint: |
+      Alternate ([[VII.15]]): {A} goes into {C} as many times as {B} has units.
+
+  - part: proof
+    text: "Again, since B by multiplying A has made D, therefore A measures D according to the units in B."
+    highlight: [A, D, B]
+    hint: |
+      And by definition {A} goes into {D} as many times as {B} has units.
+
+  - part: proof
+    text: "But the unit E also measures B according to the units in it; therefore the unit E measures the number B the same number of times that A measures D."
+    highlight: [E, B, A, D]
+    hint: |
+      Restated with the unit.
+
+  - part: proof
+    text: "But the unit E measured the number B the same number of times that A measures C; therefore A measures each of the numbers C, D the same number of times."
+    highlight: [A, C, D]
+    hint: |
+      So {A} goes into {C} and into {D} the same number of times.
+
+  - part: proof
+    text: "Therefore C is equal to D."
+    highlight: [C, D]
+    hint: |
+      Hence {C} = {D}.
+    explain:
+      implicit: |
+        Equal multiples of the same number are equal: evident from counting, not stated.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Write $a = n \cdot 1$, $b = m \cdot 1$.
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: |
+        $ab$ is $b$ taken $n$ times; by [[VII.15]], $b$ taken $n$ times is $n$ taken $m$ times, i.e. $a$
+        taken $m$ times.
+    - steps: [6, 7, 8, 9]
+      text: |
+        And $ba$ is $a$ taken $m$ times. So $ab = ba$. $\blacksquare$
+
+commentary: |
+  Euclid does not assume that multiplication is commutative; [[VII.Def.15]] defines $ab$ asymmetrically,
+  and this proposition is the proof that the order does not matter. It is the basis of [[VII.18]] and much
+  else.
+
+  A modern axiomatic treatment (Peano arithmetic) proves commutativity by a double induction; Euclid's proof
+  hides that induction inside [[VII.12]] and [[VII.15]].

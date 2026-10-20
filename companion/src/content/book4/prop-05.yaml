@@ -1,0 +1,176 @@
+id: IV.5
+kind: problem
+title: Circumscribing a circle about a triangle
+
+paraphrase: |
+  About a given triangle, draw a circle through all three vertices. Its centre is where the perpendicular
+  bisectors of the sides meet: the *circumcentre*.
+
+diagram:
+  width: 250
+  height: 230
+  elements:
+    - "A;point;free;140,40"
+    - "B;point;free;50,180"
+    - "C;point;free;200,180"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "circABC;circle;circumcircle;A,B,C;0;0;black;0"
+    - "D;point;midpoint;A,B"
+    - "E;point;midpoint;A,C"
+    - "F;point;center;circABC"
+    - "AF;line;connect;A,F"
+    - "BF;line;connect;B,F"
+    - "CF;line;connect;C,F"
+    - "DF;line;connect;D,F"
+    - "EF;line;connect;E,F"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+    - "angBAC;sector;angleMarker;A,B,C"
+  aliases:
+    FA: AF
+    FB: BF
+    FC: CF
+    BAC: angBAC
+  given: [A, B, C, ABC]
+  caption: |
+    Drag the vertices. The centre {F} is inside the triangle when the angle at {A} is acute, on {BC} when
+    it is right, and outside when it is obtuse — Euclid's three cases.
+
+steps:
+  - part: enunciation
+    text: "About a given triangle to circumscribe a circle."
+    highlight: [ABC, circABC]
+    hint: |
+      A problem: the circumcircle.
+    explain:
+      fact: |
+        "A circle circumscribed about a figure" passes through every vertex ([[IV.Def.6]]).
+    cites: [IV.Def.6]
+
+  - part: setting-out
+    text: "Let ABC be the given triangle;"
+    highlight: [ABC]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to circumscribe a circle about the given triangle ABC."
+    highlight: [ABC]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let the straight lines AB, AC be bisected at the points D, E,"
+    highlight: [D, E]
+    adds: [D, E]
+    hint: |
+      Midpoints of two sides ([[I.10]]).
+
+  - part: construction
+    text: "and from the points D, E let DF, EF be drawn at right angles to AB, AC;"
+    highlight: [DF, EF]
+    adds: [DF, EF, F]
+    hint: |
+      The perpendicular bisectors ([[I.11]]); they meet at {F}.
+    cites: [I.11]
+
+  - part: proof
+    text: "they will then meet within the triangle ABC, or on the straight line BC, or outside BC."
+    highlight: [F]
+    hint: |
+      Three cases.
+    explain:
+      implicit: |
+        That they meet at all is assumed: two lines perpendicular to non-parallel lines are not parallel.
+
+  - part: construction
+    text: "First let them meet within at F, and let FB, FC, FA be joined."
+    highlight: [AF, BF, CF]
+    adds: [AF, BF, CF]
+    hint: |
+      Case 1 (as drawn).
+
+  - part: proof
+    text: "Then, since AD is equal to DB, and DF is common and at right angles, therefore the base AF is equal to the base FB."
+    highlight: [AD, DB, DF, AF, BF]
+    hint: |
+      SAS ([[I.4]]).
+
+  - part: proof
+    text: "Similarly we can prove that CF is also equal to AF; so that FB is also equal to FC; therefore the three straight lines FA, FB, FC are equal to one another."
+    highlight: [AF, BF, CF]
+    hint: |
+      {F} is equidistant from all three vertices.
+
+  - part: proof
+    text: "Therefore the circle described with centre F and distance one of the straight lines FA, FB, FC will pass also through the remaining points, and the circle will have been circumscribed about the triangle ABC."
+    highlight: [circABC]
+    adds: [circABC]
+    hint: |
+      The circle about {F}.
+
+  - part: proof
+    text: "Let it be circumscribed, as ABC."
+    highlight: [circABC]
+    hint: |
+      Name it.
+
+  - part: proof
+    text: "Next, let DF, EF meet on the straight line BC at F, as is the case in the second figure; and let AF be joined."
+    hint: |
+      Case 2: the centre on {BC}.
+
+  - part: proof
+    text: "Then, similarly, we shall prove that the point F is the centre of the circle circumscribed about the triangle ABC."
+    hint: |
+      Same argument.
+
+  - part: proof
+    text: "Again, let DF, EF meet outside the triangle ABC at F, as is the case in the third figure, and let AF, BF, CF be joined."
+    hint: |
+      Case 3: outside.
+
+  - part: proof
+    text: "Then again, since AD is equal to DB, and DF is common and at right angles, therefore the base AF is equal to the base BF."
+    hint: |
+      [[I.4]].
+
+  - part: proof
+    text: "Similarly we can prove that CF is also equal to AF; so that BF is also equal to FC; therefore the circle described with centre F and distance one of the straight lines FA, FB, FC will pass also through the remaining points, and will have been circumscribed about the triangle ABC."
+    hint: |
+      Same conclusion.
+
+  - part: conclusion
+    text: "Therefore about the given triangle a circle has been circumscribed. Q. E. F."
+    highlight: [circABC]
+    hint: |
+      Done. Heath adds a remark on the three cases (next).
+
+  - part: proof
+    text: "And it is manifest that, when the centre of the circle falls within the triangle, the angle BAC, being in a segment greater than the semicircle, is less than a right angle; when the centre falls on the straight line BC, the angle BAC, being in a semicircle, is right; and when the centre of the circle falls outside the triangle, the angle BAC, being in a segment less than the semicircle, is greater than a right angle."
+    highlight: [angBAC, F]
+    hint: |
+      The position of the centre tells the type of angle at {A} ([[III.31]]).
+    explain:
+      implicit: |
+        This remark has the form of a porism, appended after the Q.E.F.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: Points on the perpendicular bisector of $AB$ are equidistant from $A$ and $B$; likewise for $AC$.
+    - steps: [6, 7, 8, 9, 10]
+      text: Their intersection $F$ has $FA = FB = FC$; the circle $\odot(F, FA)$ passes through all three. $\blacksquare$
+  closing: |
+    Not stated: the third perpendicular bisector (of {BC}) also passes through {F}.
+
+commentary: |
+  The circumcircle; with [[IV.4]] (the incircle), the two classical centres of a triangle.
+
+gaps: |
+  - **The perpendiculars meet** (step 3): not argued.

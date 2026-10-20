@@ -1,0 +1,204 @@
+id: X.3
+kind: problem
+title: The greatest common measure of two commensurable magnitudes
+
+paraphrase: |
+  Given two commensurable magnitudes, find their greatest common measure — by the Euclidean algorithm, as
+  for numbers in [[VII.2]].
+
+diagram:
+  width: 300
+  height: 100
+  elements:
+    - "A0;point;free;-1000,35;0;0"
+    - "A3;point;free;1000,35;0;0"
+    - "C0;point;free;-1000,70;0;0"
+    - "C3;point;free;1000,70;0;0"
+    - "A;point;lineSlider;A0,A3,160,0"
+    - "B;point;lineSlider;A0,A3,260,0"
+    - "AB;line;connect;A,B"
+    - "C;point;lineSlider;C0,C3,30,0"
+    - "D;point;lineSlider;C0,C3,260,0"
+    - "CD;line;connect;C,D"
+    - "E1;point;cutoff;D,C,A,B;0;0"
+    - "E;point;cutoff;E1,C,A,B"
+    - "F1;point;cutoff;B,A,C,E;0;0"
+    - "F;point;cutoff;F1,A,C,E"
+    - "G1;point;lineSlider;A0,A3,30,0;0"
+    - "G2;point;lineSlider;A0,A3,80,0;0"
+    - "G;line;connect;G1,G2;black"
+    - "ED;line;connect;E,D;0;0;0"
+    - "EC;line;connect;E,C;0;0;0"
+    - "FB;line;connect;F,B;0;0;0"
+    - "AF;line;connect;A,F;0;0;0"
+  aliases: { DE: ED, CE: EC }
+  caption: |
+    {AB} measures {ED} leaving {EC}; {EC} measures {FB} leaving {AF}; {AF} measures {CE} exactly.
+
+steps:
+  - part: enunciation
+    text: "Given two commensurable magnitudes, to find their greatest common measure."
+    highlight: [AB, CD]
+    hint: |
+      The Euclidean algorithm for commensurable magnitudes.
+    modern: |
+      For $a/b \in \mathbb{Q}$ the algorithm stops, at the greatest common measure.
+
+  - part: setting-out
+    text: "Let the two given commensurable magnitudes be AB, CD of which AB is the less;"
+    highlight: [AB, CD]
+    hint: |
+      {AB} < {CD}, commensurable.
+
+  - part: specification
+    text: "thus it is required to find the greatest common measure of AB, CD."
+    highlight: [AB, CD]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "Now the magnitude AB either measures CD or it does not."
+    highlight: [AB, CD]
+    hint: |
+      Two cases.
+
+  - part: proof
+    text: "If then it measures it—and it measures itself also—AB is a common measure of AB, CD."
+    highlight: [AB]
+    hint: |
+      If {AB} measures {CD}, it is a common measure …
+
+  - part: proof
+    text: "And it is manifest that it is also the greatest; for a greater magnitude than the magnitude AB will not measure AB."
+    highlight: [AB]
+    hint: |
+      … and the greatest.
+
+  - part: proof
+    text: "Next, let AB not measure CD."
+    highlight: [AB, CD]
+    hint: |
+      Otherwise …
+
+  - part: construction
+    text: "Then, if the less be continually subtracted in turn from the greater, that which is left over will sometime measure the one before it, because AB, CD are not incommensurable;"
+    highlight: [AB, CD]
+    hint: |
+      … run the algorithm; it must stop, else they would be incommensurable ([[X.2]]).
+
+  - part: construction
+    text: "let AB, measuring ED, leave EC less than itself, let EC, measuring FB, leave AF less than itself, and let AF measure CE."
+    highlight: [ED, EC, FB, AF]
+    hint: |
+      In the figure: {AB} into {ED} leaves {EC}; {EC} into {FB} leaves {AF}; {AF} measures {CE}.
+
+  - part: proof
+    text: "Since, then, AF measures CE, while CE measures FB, therefore AF will also measure FB."
+    highlight: [AF, EC, FB]
+    hint: |
+      Work back up: {AF} measures {FB} …
+
+  - part: proof
+    text: "But it measures itself also; therefore AF will also measure the whole AB."
+    highlight: [AF, AB]
+    hint: |
+      … and {AB} …
+
+  - part: proof
+    text: "But AB measures DE; therefore AF will also measure ED."
+    highlight: [AF, ED]
+    hint: |
+      … and {ED} …
+
+  - part: proof
+    text: "But it measures CE also; therefore it also measures the whole CD."
+    highlight: [AF, CD]
+    hint: |
+      … and {CD}.
+
+  - part: proof
+    text: "Therefore AF is a common measure of AB, CD."
+    highlight: [AF]
+    hint: |
+      {AF} is a common measure.
+
+  - part: specification
+    text: "I say next that it is also the greatest."
+    highlight: [AF]
+    hint: |
+      And the greatest.
+
+  - part: proof
+    text: "For, if not, there will be some magnitude greater than AF which will measure AB, CD."
+    highlight: [AB, CD]
+    hint: |
+      Suppose a greater one.
+
+  - part: construction
+    text: "Let it be G."
+    highlight: [G]
+    hint: |
+      Call it {G}.
+
+  - part: proof
+    text: "Since then G measures AB, while AB measures ED, therefore G will also measure ED."
+    highlight: [G, ED]
+    hint: |
+      {G} measures {ED} …
+
+  - part: proof
+    text: "But it measures the whole CD also; therefore G will also measure the remainder CE."
+    highlight: [G, EC]
+    hint: |
+      … the remainder {CE} …
+
+  - part: proof
+    text: "But CE measures FB; therefore G will also measure FB."
+    highlight: [G, FB]
+    hint: |
+      … {FB} …
+
+  - part: proof
+    text: "But it measures the whole AB also, and it will therefore measure the remainder AF, the greater the less: which is impossible."
+    highlight: [G, AF]
+    hint: |
+      … and {AF}, which is less than {G}: impossible.
+
+  - part: proof
+    text: "Therefore no magnitude greater than AF will measure AB, CD; therefore AF is the greatest common measure of AB, CD."
+    highlight: [AF]
+    hint: |
+      {AF} is the greatest common measure.
+
+  - part: proof
+    text: "Therefore the greatest common measure of the two given commensurable magnitudes AB, CD has been found."
+    highlight: [AF]
+    hint: |
+      Found.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [7, 8, 9]
+      text: |
+        If $a = m u$, $b = n u$, the algorithm on $a, b$ is the algorithm on $m, n$ scaled by $u$, so it stops.
+    - steps: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+      text: |
+        As in [[VII.2]], the last remainder is a common measure that every common measure measures.
+        $\blacksquare$
+  closing: |
+    The porism (printed after the proposition): a common measure of two magnitudes measures their greatest
+    common measure.
+
+commentary: |
+  Word for word [[VII.2]], for magnitudes. Heath's "cf. [[X.2]]" for the termination is a little loose: [[X.2]]
+  gives the contrapositive (non-termination implies incommensurable).
+
+gaps: |
+  - That the algorithm stops for commensurable magnitudes is inferred from [[X.2]] by contraposition.

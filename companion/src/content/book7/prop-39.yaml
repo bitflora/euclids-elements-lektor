@@ -1,0 +1,158 @@
+id: VII.39
+kind: problem
+title: The least number having given parts
+
+paraphrase: |
+  To find the least number that has given parts — say a fourth part and a sixth part: it is the least common
+  multiple of the "names" of the parts (here lcm(4, 6) = 12).
+
+diagram:
+  width: 280
+  height: 205
+  elements:
+    - "A0;point;free;-1000,35;0;0"
+    - "A3;point;free;1000,35;0;0"
+    - "D0;point;free;-1000,70;0;0"
+    - "D3;point;free;1000,70;0;0"
+    - "F0;point;free;-1000,105;0;0"
+    - "F3;point;free;1000,105;0;0"
+    - "G0;point;free;-1000,140;0;0"
+    - "G3;point;free;1000,140;0;0"
+    - "H0;point;free;-1000,175;0;0"
+    - "H3;point;free;1000,175;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,50;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,70,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;A0,A3,100,0;0"
+    - "B2;point;lineSlider;A0,A3,160,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;A0,A3,190,0;0"
+    - "C2;point;lineSlider;A0,A3,260,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;lineSlider;D0,D3,90,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;D0,D3,140,0;0"
+    - "E2;point;proportion;A1,A2,D1,D2,B1,B2,E1,D3;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;F0,F3,30,0;0"
+    - "F2;point;proportion;A1,A2,D1,D2,B1,B2,F1,F3;0"
+    - "F;line;connect;F1,F2;black"
+    - "G1;point;lineSlider;G0,G3,30,0;0"
+    - "X;point;proportion;U1,U2,D1,D2,E1,E2,G1,G3;0;0"
+    - "G2;point;proportion;U1,U2,F1,F2,G1,X,G1,G3;0"
+    - "G;line;connect;G1,G2;black"
+    - "H1;point;lineSlider;H0,H3,30,0;0"
+    - "H2;point;lineSlider;H0,H3,200,0;0"
+    - "H;line;connect;H1,H2;black"
+  caption: |
+    {A}, {B}, {C} are the given parts, {D}, {E}, {F} the numbers they are named after, {G} their least common
+    multiple. {H} is the supposed smaller number.
+
+steps:
+  - part: enunciation
+    text: "To find the number which is the least that will have given parts."
+    highlight: [A, B, C]
+    hint: |
+      The least number with, say, a half, a third and a fourth part.
+    modern: |
+      The least $n$ such that $\tfrac1d n, \tfrac1e n, \tfrac1f n$ are whole: $n = \operatorname{lcm}(d, e,
+      f)$.
+
+  - part: setting-out
+    text: "Let A, B, C be the given parts;"
+    highlight: [A, B, C]
+    hint: |
+      The given parts {A}, {B}, {C} — named, not sized: "a fourth", "a sixth".
+    explain:
+      implicit: |
+        {A}, {B}, {C} stand for *kinds* of part (a half, a third, …), not for definite numbers; the figure
+        cannot draw that distinction. Joyce calls the wording "somewhat unclear".
+
+  - part: specification
+    text: "thus it is required to find the number which is the least that will have the parts A, B, C."
+    highlight: [A, B, C]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let D, E, F be numbers called by the same name as the parts A, B, C, and let G, the least number measured by D, E, F, be taken."
+    highlight: [D, E, F, G]
+    hint: |
+      {D}, {E}, {F}: the numbers the parts are named after. {G} = lcm({D}, {E}, {F}) ([[VII.36]]).
+
+  - part: proof
+    text: "Therefore G has parts called by the same name as D, E, F."
+    highlight: [G, D, E, F]
+    hint: |
+      By [[VII.37]].
+
+  - part: proof
+    text: "But A, B, C are parts called by the same name as D, E, F; therefore G has the parts A, B, C."
+    highlight: [G, A, B, C]
+    hint: |
+      So {G} has the required parts.
+
+  - part: specification
+    text: "I say next that it is also the least number that has."
+    highlight: [G]
+    hint: |
+      And it is least.
+
+  - part: proof
+    text: "For, if not, there will be some number less than G which will have the parts A, B, C."
+    highlight: [G]
+    hint: |
+      Suppose a smaller one.
+
+  - part: construction
+    text: "Let it be H."
+    highlight: [H]
+    hint: |
+      Call it {H}.
+
+  - part: proof
+    text: "Since H has the parts A, B, C, therefore H will be measured by numbers called by the same name as the parts A, B, C."
+    highlight: [H]
+    hint: |
+      By [[VII.38]], {H} is measured by {D}, {E}, {F}.
+
+  - part: proof
+    text: "But D, E, F are numbers called by the same name as the parts A, B, C; therefore H is measured by D, E, F."
+    highlight: [H, D, E, F]
+    hint: |
+      So {H} is a common multiple of {D}, {E}, {F}.
+
+  - part: proof
+    text: "And it is less than G: which is impossible."
+    highlight: [H, G]
+    hint: |
+      … smaller than the least: impossible.
+
+  - part: proof
+    text: "Therefore there will be no number less than G that will have the parts A, B, C."
+    highlight: [G]
+    hint: |
+      {G} is the least.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5]
+      text: |
+        $n$ has parts $1/d$, $1/e$, $1/f$ iff $d, e, f \mid n$ ([[VII.37]], [[VII.38]]).
+    - steps: [6, 7, 8, 9, 10, 11, 12]
+      text: |
+        So the least such $n$ is $\operatorname{lcm}(d, e, f)$ ([[VII.36]]). $\blacksquare$
+
+commentary: |
+  The last proposition of Book VII, and a practical one: the least common denominator of the fractions
+  $\tfrac1d, \tfrac1e, \tfrac1f$. Book VIII turns to continued proportions.

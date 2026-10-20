@@ -1,0 +1,95 @@
+id: X.11
+kind: theorem
+title: Proportional magnitudes are alike commensurable or incommensurable
+
+paraphrase: |
+  If {A} : {B} = {C} : {D}, then {C}, {D} are commensurable if {A}, {B} are, and incommensurable if {A}, {B}
+  are.
+
+diagram:
+  width: 260
+  height: 100
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "B0;point;free;-1000,65;0;0"
+    - "B3;point;free;1000,65;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,130,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,109,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;A0,A3,160,0;0"
+    - "C2;point;lineSlider;A0,A3,230,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;B0,B3,160,0;0"
+    - "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,B3;0"
+    - "D;line;connect;D1,D2;black"
+  caption: |
+    {A} : {B} = {C} : {D}.
+
+steps:
+  - part: enunciation
+    text: "If four magnitudes be proportional, and the first be commensurable with the second, the third will also be commensurable with the fourth; and, if the first be incommensurable with the second, the third will also be incommensurable with the fourth."
+    highlight: [A, B, C, D]
+    hint: |
+      Commensurability depends only on the ratio.
+    modern: |
+      $a/b = c/d \Rightarrow (a/b \in \mathbb{Q} \iff c/d \in \mathbb{Q})$.
+
+  - part: setting-out
+    text: "Let A, B, C, D be four magnitudes in proportion, so that, as A is to B, so is C to D, and let A be commensurable with B;"
+    highlight: [A, B, C, D]
+    hint: |
+      {A} : {B} = {C} : {D}; {A}, {B} commensurable.
+
+  - part: specification
+    text: "I say that C will also be commensurable with D."
+    highlight: [C, D]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since A is commensurable with B, therefore A has to B the ratio which a number has to a number."
+    highlight: [A, B]
+    hint: |
+      Ratio of numbers ([[X.5]]) …
+
+  - part: proof
+    text: "And, as A is to B, so is C to D; therefore C also has to D the ratio which a number has to a number; therefore C is commensurable with D."
+    highlight: [C, D]
+    hint: |
+      … so {C} : {D} is too, and they are commensurable ([[X.6]]).
+
+  - part: specification
+    text: "Next, let A be incommensurable with B; I say that C will also be incommensurable with D."
+    highlight: [A, B, C, D]
+    hint: |
+      The incommensurable case.
+
+  - part: proof
+    text: "For, since A is incommensurable with B, therefore A has not to B the ratio which a number has to a number."
+    highlight: [A, B]
+    hint: |
+      Not a ratio of numbers ([[X.7]]) …
+
+  - part: proof
+    text: "And, as A is to B, so is C to D; therefore neither has C to D the ratio which a number has to a number; therefore C is incommensurable with D."
+    highlight: [C, D]
+    hint: |
+      … so neither is {C} : {D} ([[X.8]]).
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 6, 7]
+      text: |
+        Commensurability is a property of the ratio ([[X.5]]–[[X.8]]). $\blacksquare$
+
+commentary: |
+  Used constantly in Book X, beginning with [[X.10]] (which precedes it) and [[X.14]].

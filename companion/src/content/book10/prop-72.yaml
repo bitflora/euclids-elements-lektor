@@ -1,0 +1,163 @@
+id: X.72
+kind: theorem
+title: The side of the sum of two incommensurable medial areas
+
+paraphrase: |
+  If two medial areas {AB}, {CD} incommensurable with each other are added, the side of the sum is either a
+  second bimedial or the side of the sum of two medial areas.
+
+diagram:
+  width: 390
+  height: 210
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "A;point;lineSlider;A0,A3,40,0"
+    - "C;point;lineSlider;A0,A3,100,0"
+    - "CB';line;perpendicular;C,A;0;0;0"
+    - "B;point;lineSlider;CB',0,190"
+    - "AB;polygon;parallelogram;A,C,B;0;0;black;0,20,70"
+    - "D';point;parallelogram;B,A0,A3;0;0"
+    - "D;point;lineSlider;B,D',150,0"
+    - "CD;polygon;parallelogram;C,B,D;0;0;black;60,50,100"
+    - "E;point;free;190,60"
+    - "F';point;parallelogram;E,C,B;0;0"
+    - "F;point;lineSlider;E,F',0,170"
+    - "H';point;parallelogram;E,A0,A3;0;0"
+    - "H;point;proportion;E,F,B,C,A,C,E,H'"
+    - "G;point;parallelogram;H,E,F"
+    - "EFGH;polygon;quadrilateral;E,F,G,H;0;0;black;0,20,70"
+    - "K;point;proportion;E,F,B,C,B,D,H,H'"
+    - "I;point;parallelogram;K,E,F"
+    - "GHKI;polygon;quadrilateral;G,H,K,I;0;0;black;60,50,100"
+    - "EH;line;connect;E,H;0;0;0"
+    - "HK;line;connect;H,K;0;0;0"
+    - "EK;line;connect;E,K;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+  aliases: { EG: EFGH, HI: GHKI, HE: EH, KH: HK, KE: EK, FE: EF }
+  caption: |
+    {AB}, {CD} medial, applied to the rational line {EF} as {EG} and {HI}, with breadths {EH}, {HK}.
+
+steps:
+  - part: enunciation
+    text: "If two medial areas incommensurable with one another be added together, the remaining two irrational straight lines arise, namely either a second bimedial or a side of the sum of two medial areas."
+    highlight: [AB, CD]
+    hint: |
+      √(medial + medial) is a second bimedial or a side of two medials.
+
+  - part: setting-out
+    text: "For let two medial areas AB, CD incommensurable with one another be added together; I say that the “side” of the area AD is either a second bimedial or a side of the sum of two medial areas."
+    highlight: [AB, CD]
+    hint: |
+      Two incommensurable medial areas.
+
+  - part: proof
+    text: "For AB is either greater or less than CD."
+    highlight: [AB, CD]
+    hint: |
+      Which is greater?
+
+  - part: proof
+    text: "First, if it so chance, let AB be greater than CD."
+    highlight: [AB, CD]
+    hint: |
+      Say {AB}.
+
+  - part: construction
+    text: "Let the rational straight line EF be set out, and to EF let there be applied the rectangle EG equal to AB and producing EH as breadth, and the rectangle HI equal to CD and producing HK as breadth."
+    highlight: [EG, HI, EH, HK]
+    hint: |
+      Apply both to a rational line {EF}.
+
+  - part: proof
+    text: "Now, since each of the areas AB, CD is medial, therefore each of the areas EG, HI is also medial."
+    highlight: [EG, HI]
+    hint: |
+      Both medial …
+
+  - part: proof
+    text: "And they are applied to the rational straight line FE, producing EH, HK as breadth; therefore each of the straight lines EH, HK is rational and incommensurable in length with EF."
+    highlight: [EH, HK]
+    hint: |
+      … so both breadths rational, incommensurable with {EF}.
+
+  - part: proof
+    text: "And, since AB is incommensurable with CD, and AB is equal to EG, and CD to HI, therefore EG is also incommensurable with HI."
+    highlight: [EG, HI]
+    hint: |
+      {EG}, {HI} incommensurable …
+
+  - part: proof
+    text: "But, as EG is to HI, so is EH to HK; therefore EH is incommensurable in length with HK."
+    highlight: [EH, HK]
+    hint: |
+      … so {EH}, {HK} are.
+
+  - part: proof
+    text: "Therefore EH, HK are rational straight lines commensurable in square only; therefore EK is binomial."
+    highlight: [EK]
+    hint: |
+      {EK} binomial.
+
+  - part: proof
+    text: "But the square on EH is greater than the square on HK either by the square on a straight line commensurable with EH or by the square on a straight line incommensurable with it."
+    highlight: [EH, HK]
+    hint: |
+      Two sub-cases.
+
+  - part: proof
+    text: "First, let the square on it be greater by the square on a straight line commensurable in length with itself."
+    highlight: [EH, HK]
+    hint: |
+      Commensurable excess:
+
+  - part: proof
+    text: "Now neither of the straight lines EH, HK is commensurable in length with the rational straight line EF set out; therefore EK is a third binomial."
+    highlight: [EK]
+    hint: |
+      neither term commensurable with {EF}: third binomial.
+
+  - part: proof
+    text: "But EF is rational; and, if an area be contained by a rational straight line and the third binomial, the “side” of the area is a second bimedial; therefore the “side” of EI, that is, of AD, is a second bimedial."
+    highlight: [AB, CD]
+    hint: |
+      Side: a second bimedial ([[X.56]]).
+
+  - part: proof
+    text: "Next, let the square on EH be greater than the square on HK by the square on a straight line incommensurable in length with EH."
+    highlight: [EH, HK]
+    hint: |
+      Incommensurable excess:
+
+  - part: proof
+    text: "Now each of the straight lines EH, HK is incommensurable in length with EF; therefore EK is a sixth binomial."
+    highlight: [EK]
+    hint: |
+      sixth binomial.
+
+  - part: proof
+    text: "But, if an area be contained by a rational straight line and the sixth binomial, the “side” of the area is the side of the sum of two medial areas; so that the “side” of the area AD is also the side of the sum of two medial areas."
+    highlight: [AB, CD]
+    hint: |
+      Side: the side of two medials ([[X.59]]).
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Both breadths are irrational in length, so the binomial is third or sixth, and [[X.56]] or [[X.59]]
+        gives the kind. $\blacksquare$
+
+commentary: |
+  This closes the theory of the six additive irrationals. The kinds are all distinct: their squares,
+  applied to a rational line, give different kinds of breadth ([[X.60]]–[[X.65]]), and the medial's square
+  gives a rational breadth ([[X.22]]). The six subtractive irrationals follow ([[X.73]]–[[X.78]]).

@@ -1,0 +1,132 @@
+id: X.108
+kind: theorem
+title: "Rational minus medial: the side is an apotome or a minor"
+
+paraphrase: |
+  If a medial area {BD} is subtracted from a rational area {BC}, the side of the remainder is an apotome or a minor
+  line. The subtractive counterpart of [[X.71]].
+
+diagram:
+  width: 280
+  height: 240
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "A;point;lineSlider;A0,A3,70,0"
+    - "B;point;lineSlider;A0,A3,200,0"
+    - "C';point;perpendicular;A,B;0;0;0"
+    - "C;point;lineSlider;A,C',0,110"
+    - "BC;polygon;parallelogram;B,A,C;0;0;black;50,100,100"
+    - "E;point;lineSlider;A0,A3,150,0"
+    - "D;point;parallelogram;E,A,C"
+    - "BD;polygon;parallelogram;B,E,D;0;0;black;90,100,100"
+    - "F0;point;free;240,-1000;0;0"
+    - "F3;point;free;240,1000;0;0"
+    - "F;point;lineSlider;F0,F3,0,200"
+    - "G;point;lineSlider;F0,F3,0,140"
+    - "H';point;perpendicular;F,G;0;0"
+    - "H;point;proportion;G,F,A,C,A,B,F,H'"
+    - "GH;polygon;parallelogram;G,F,H;0;0;black;50,100,100"
+    - "K;point;proportion;G,F,E,B,E,D,F,H'"
+    - "L;point;parallelogram;G,F,K"
+    - "GFKL;polygon;quadrilateral;G,F,K,L;0;0;black;90,100,100"
+    - "FH;line;connect;F,H;0;0;0"
+    - "FK;line;connect;F,K;0;0;0"
+    - "KH;line;connect;K,H;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+    - "KF;line;connect;K,F;0;0;0"
+    - "HF;line;connect;H,F;0;0;0"
+  aliases: { GK: GFKL, HK: KH, GF: FG }
+  caption: |
+    {BC} and {BD} applied to the rational line {FG} as {GH} and {GK}, with breadths {FH} and {FK}; the remainder
+    *EC* becomes *LH*, of breadth {KH}.
+
+steps:
+  - part: enunciation
+    text: "If from a rational area a medial area be subtracted, the “side” of the remaining area becomes one of two irrational straight lines, either an apotome or a minor straight line."
+    highlight: [BC, BD]
+    hint: |
+      √(rational − medial) is an apotome or a minor.
+
+  - part: setting-out
+    text: "For from the rational area BC let the medial area BD be subtracted; I say that the “side” of the remainder EC becomes one of two irrational straight lines, either an apotome or a minor straight line."
+    highlight: [BC, BD]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let a rational straight line FG be set out, to FG let there be applied the rectangular parallelogram GH equal to BC, and let GK equal to DB be subtracted; therefore the remainder EC is equal to LH."
+    highlight: [GH, GK, FH, FK]
+    hint: |
+      Apply {BC} and {BD} to a rational line {FG}.
+
+  - part: proof
+    text: "Since then BC is rational, and BD medial, while BC is equal to GH, and BD to GK, therefore GH is rational, and GK medial."
+    highlight: [GH, GK]
+    hint: |
+      {GH} rational, {GK} medial.
+
+  - part: proof
+    text: "And they are applied to the rational straight line FG; therefore FH is rational and commensurable in length with FG, while FK is rational and incommensurable in length with FG; therefore FH is incommensurable in length with FK."
+    highlight: [FH, FK]
+    hint: |
+      {FH} commensurable with {FG} ([[X.20]]); {FK} incommensurable ([[X.22]]).
+
+  - part: proof
+    text: "Therefore FH, FK are rational straight lines commensurable in square only; therefore KH is an apotome, and KF the annex to it."
+    highlight: [KH]
+    hint: |
+      So {KH} is an apotome with annex {KF}.
+
+  - part: proof
+    text: "Now the square on HF is greater than the square on FK by the square on a straight line either commensurable with HF or not commensurable."
+    highlight: [FH, FK]
+    hint: |
+      Two cases for the excess.
+
+  - part: proof
+    text: "First, let the square on it be greater by the square on a straight line commensurable with it."
+    highlight: [FH]
+    hint: |
+      Commensurable excess:
+
+  - part: proof
+    text: "Now the whole HF is commensurable in length with the rational straight line FG set out; therefore KH is a first apotome."
+    highlight: [KH]
+    hint: |
+      {HF} commensurable with {FG}: a first apotome.
+
+  - part: proof
+    text: "But the “side” of the rectangle contained by a rational straight line and a first apotome is an apotome."
+    highlight: [KH]
+    hint: |
+      [[X.91]] …
+
+  - part: proof
+    text: "Therefore the “side” of LH, that is, of EC, is an apotome."
+    highlight: [KH]
+    hint: |
+      … so the side of *LH* = *EC* is an apotome.
+
+  - part: proof
+    text: "But, if the square on HF is greater than the square on FK by the square on a straight line incommensurable with HF, while the whole FH is commensurable in length with the rational straight line FG set out, KH is a fourth apotome."
+    highlight: [KH]
+    hint: |
+      Incommensurable excess: a fourth apotome …
+
+  - part: proof
+    text: "But the “side” of the rectangle contained by a rational straight line and a fourth apotome is minor."
+    highlight: [KH]
+    hint: |
+      … whose side is minor ([[X.94]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $\rho(h - k)$ with $h$ rational in length and $k$ not: a first or fourth apotome; [[X.91]], [[X.94]].
+        $\blacksquare$

@@ -1,0 +1,216 @@
+id: III.7
+kind: theorem
+title: Lines from a point on a diameter (inside the circle)
+
+paraphrase: |
+  From a point {F} on a diameter {AD}, not the centre, draw lines to the circle. The one through the
+  centre ({FA}) is longest, the rest of the diameter ({FD}) shortest; lines closer to {FA} are longer;
+  and equal lines come only in pairs, one on each side of {FD}.
+
+diagram:
+  width: 270
+  height: 250
+  elements:
+    - "A;point;free;30,125"
+    - "D;point;free;230,125"
+    - "AD;line;connect;A,D"
+    - "E;point;midpoint;A,D"
+    - "ABCD;circle;radius;E,A;0;0;black;0"
+    - "B;point;circleSlider;ABCD,50,50"
+    - "C;point;circleSlider;ABCD,100,30"
+    - "G;point;circleSlider;ABCD,200,30"
+    - "BE;line;connect;B,E"
+    - "CE;line;connect;C,E"
+    - "GE;line;connect;G,E"
+    - "F;point;lineSlider;E,D,195,125"
+    - "BF;line;connect;B,F"
+    - "CF;line;connect;C,F"
+    - "GF;line;connect;G,F"
+    - "Mg;point;foot;G,A,D;0;0"
+    - "H;point;extend;G,Mg,G,Mg"
+    - "FH;line;connect;F,H"
+    - "EH;line;connect;E,H"
+    - "FA;line;connect;F,A;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "angBEF;sector;angleMarker;E,B,F"
+    - "angCEF;sector;angleMarker;E,C,F"
+    - "angGEF;sector;angleMarker;E,G,F"
+    - "angFEH;sector;angleMarker;E,F,H"
+  aliases:
+    EB: BE
+    EC: CE
+    EG: GE
+    FB: BF
+    FC: CF
+    FG: GF
+    AF: FA
+    DF: FD
+    FE: EF
+    HE: EH
+    BEF: angBEF
+    CEF: angCEF
+    GEF: angGEF
+    FEH: angFEH
+    HEF: angFEH
+  given: [A, D, AD, E, ABCD, F, B, C, G, BF, CF, GF]
+  caption: |
+    Slide {F} along the diameter and {B}, {C}, {G} round the circle. Lines from {F} grow as they swing
+    toward {A}. {H} is the mirror image of {G} in the diameter, so {FH} = {FG}.
+
+steps:
+  - part: enunciation
+    text: "If on the diameter of a circle a point be taken which is not the centre of the circle, and from the point straight lines fall upon the circle, that will be greatest on which the centre is, the remainder of the same diameter will be least, and of the rest the nearer to the straight line through the centre is always greater than the more remote, and only two equal straight lines will fall from the point on the circle, one on each side of the least straight line."
+    highlight: [FA, FD, BF, CF, GF]
+    hint: |
+      From an interior point, distances to the circle grow steadily from the nearest point {D} to the
+      farthest {A}, symmetric about the diameter.
+    explain:
+      implicit: |
+        "Of the same diameter" and "one" (in "one on each side") are Heath's insertions for clarity
+        (his notes on lines 4 and 7).
+
+  - part: setting-out
+    text: "Let ABCD be a circle, and let AD be a diameter of it; on AD let a point F be taken which is not the centre of the circle, let E be the centre of the circle, and from F let straight lines FB, FC, FG fall upon the circle ABCD;"
+    highlight: [AD, F, E, BF, CF, GF]
+    hint: |
+      The data: diameter {AD}, centre {E}, a point {F} on {ED}, and three lines {FB}, {FC}, {FG}.
+
+  - part: specification
+    text: "I say that FA is greatest, FD is least, and of the rest FB is greater than FC, and FC than FG."
+    highlight: [FA, FD, BF, CF, GF]
+    hint: |
+      The first claims.
+
+  - part: construction
+    text: "For let BE, CE, GE be joined."
+    highlight: [BE, CE, GE]
+    adds: [BE, CE, GE]
+    hint: |
+      Join the radii.
+
+  - part: proof
+    text: "Then, since in any triangle two sides are greater than the remaining one, EB, EF are greater than BF."
+    highlight: [BE, EF, BF]
+    hint: |
+      Triangle inequality ([[I.20]]).
+
+  - part: proof
+    text: "But AE is equal to BE; therefore AF is greater than BF."
+    highlight: [FA, BF]
+    hint: |
+      {EB} + {EF} = {AE} + {EF} = {AF}. So {FA} is greatest.
+
+  - part: proof
+    text: "Again, since BE is equal to CE, and FE is common, the two sides BE, EF are equal to the two sides CE, EF."
+    highlight: [BE, CE, EF]
+    hint: |
+      Triangles {BEF|BF} and {CEF|CF}: two pairs of equal sides.
+
+  - part: proof
+    text: "But the angle BEF is also greater than the angle CEF; therefore the base BF is greater than the base CF."
+    highlight: [angBEF, angCEF, BF, CF]
+    hint: |
+      Wider angle, longer base: the hinge theorem ([[I.24]]).
+
+  - part: proof
+    text: "For the same reason CF is also greater than FG."
+    highlight: [CF, GF]
+    hint: |
+      Same argument.
+
+  - part: proof
+    text: "Again, since GF, FE are greater than EG, and EG is equal to ED, GF, FE are greater than ED."
+    highlight: [GF, EF, GE, ED]
+    hint: |
+      Triangle inequality in {EFG|GF}, and {EG} = {ED}.
+
+  - part: proof
+    text: "Let EF be subtracted from each; therefore the remainder GF is greater than the remainder FD."
+    highlight: [GF, FD]
+    hint: |
+      So {FD} is least.
+
+  - part: proof
+    text: "Therefore FA is greatest, FD is least, and FB is greater than FC, and FC than FG."
+    highlight: [FA, FD, BF, CF, GF]
+    hint: |
+      First claims proved.
+
+  - part: specification
+    text: "I say also that from the point F only two equal straight lines will fall on the circle ABCD, one on each side of the least FD."
+    highlight: [GF, FH]
+    hint: |
+      Second claim: equal lines come in mirror pairs.
+
+  - part: construction
+    text: "For on the straight line EF, and at the point E on it, let the angle FEH be constructed equal to the angle GEF, and let FH be joined."
+    highlight: [angFEH, angGEF, FH]
+    adds: [H, EH, FH]
+    hint: |
+      Copy ∠{GEF} to the other side of the diameter ([[I.23]]).
+
+  - part: proof
+    text: "Then, since GE is equal to EH, and EF is common, the two sides GE, EF are equal to the two sides HE, EF; and the angle GEF is equal to the angle HEF; therefore the base FG is equal to the base FH."
+    highlight: [GF, FH]
+    hint: |
+      SAS ([[I.4]]): {FG} = {FH}.
+
+  - part: proof
+    text: "I say again that another straight line equal to FG will not fall on the circle from the point F."
+    highlight: [GF]
+    hint: |
+      No third line equals {FG}.
+
+  - part: proof
+    text: "For, if possible, let FK so fall."
+    hint: |
+      Suppose some other line *FK* did.
+
+  - part: proof
+    text: "Then, since FK is equal to FG, and FH to FG, FK is also equal to FH, the nearer to the straight line through the centre being thus equal to the more remote: which is impossible."
+    highlight: [FH]
+    hint: |
+      Then one of *FK* and {FH} is nearer to {FA} than the other, yet they are equal — contradicting the
+      first part.
+
+  - part: proof
+    text: "Therefore another straight line equal to GF will not fall from the point F upon the circle; therefore only one straight line will so fall."
+    highlight: [GF, FH]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Use the law of cosines.
+  lines:
+    - steps: [1, 2, 3]
+      text: Let $EF = d > 0$, radius $r > d$, and $P$ on the circle with $\theta = \angle PEF$.
+    - steps: [4, 5, 6, 7, 8, 9, 10, 11]
+      text: |
+        $FP^2 = r^2 + d^2 - 2rd\cos\theta$ is strictly increasing in $\theta \in [0, \pi]$: least at
+        $\theta = 0$ ($P = D$), greatest at $\theta = \pi$ ($P = A$).
+    - steps: [12, 13, 14, 15, 16, 17, 18]
+      text: |
+        Equal values occur only for $\pm\theta$: mirror images in the diameter. $\blacksquare$
+
+commentary: |
+  III.7 and [[III.8]] (point outside the circle) describe how the distance from a fixed point to a
+  point moving round the circle varies. They are used in [[III.9]] to locate the centre.
+
+gaps: |
+  - **Ordering of the lines**: "nearer to the line through the centre" is read off the figure; the
+    proof compares angles at {E}, so it assumes the lines are ordered by those angles.
+  - **FK in step 17** is never drawn: the contradiction uses the ordering proved earlier.

@@ -1,0 +1,154 @@
+id: VII.31
+kind: theorem
+title: Every composite number has a prime divisor
+
+paraphrase: |
+  A composite number {A} is measured by some prime.
+
+diagram:
+  width: 290
+  height: 140
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "C0;point;free;-1000,110;0;0"
+    - "C3;point;free;1000,110;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,250,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,140,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,73,0;0"
+    - "C;line;connect;C1,C2;black"
+  caption: |
+    {B} measures {A}; {C} measures {B}; and so on until a prime is reached.
+
+steps:
+  - part: enunciation
+    text: "Any composite number is measured by some prime number."
+    highlight: [A]
+    hint: |
+      Every composite number has a prime factor.
+    modern: |
+      $n$ composite $\Rightarrow$ some prime $p \mid n$.
+
+  - part: setting-out
+    text: "Let A be a composite number;"
+    highlight: [A]
+    hint: |
+      {A} composite ([[VII.Def.13]]).
+
+  - part: specification
+    text: "I say that A is measured by some prime number."
+    highlight: [A]
+    hint: |
+      To prove: a prime measures {A}.
+
+  - part: proof
+    text: "For, since A is composite, some number will measure it."
+    highlight: [A]
+    hint: |
+      By definition of composite.
+    cites: [VII.Def.13]
+
+  - part: construction
+    text: "Let a number measure it, and let it be B."
+    highlight: [B]
+    hint: |
+      A divisor {B} of {A}.
+
+  - part: proof
+    text: "Now, if B is prime, what was enjoined will have been done."
+    highlight: [B]
+    hint: |
+      If {B} is prime, done.
+
+  - part: proof
+    text: "But if it is composite, some number will measure it."
+    highlight: [B]
+    hint: |
+      Otherwise {B} has a divisor in turn.
+
+  - part: construction
+    text: "Let a number measure it, and let it be C."
+    highlight: [C]
+    hint: |
+      Call it {C}.
+
+  - part: proof
+    text: "Then, since C measures B, and B measures A, therefore C also measures A."
+    highlight: [C, B, A]
+    hint: |
+      {C} measures {A} too.
+
+  - part: proof
+    text: "And, if C is prime, what was enjoined will have been done."
+    highlight: [C]
+    hint: |
+      If {C} is prime, done.
+
+  - part: proof
+    text: "But if it is composite, some number will measure it."
+    highlight: [C]
+    hint: |
+      Otherwise continue.
+
+  - part: proof
+    text: "Thus, if the investigation be continued in this way, some prime number will be found which will measure the number before it, which will also measure A."
+    highlight: [A]
+    hint: |
+      Continuing, some prime is reached.
+
+  - part: proof
+    text: "For, if it is not found, an infinite series of numbers will measure the number A, each of which is less than the other: which is impossible in numbers."
+    highlight: [A]
+    hint: |
+      Otherwise there would be an endless decreasing chain of numbers — impossible.
+    explain:
+      fact: |
+        There is no infinite strictly decreasing sequence of whole numbers.
+      implicit: |
+        Euclid states this principle outright here, a rare thing in the *Elements*. It is
+        equivalent to the well-ordering of the numbers, used tacitly elsewhere (for example in [[VII.1]]
+        and [[VII.20]]).
+    modern: |
+      Infinite descent: $b_1 > b_2 > b_3 > \cdots$ in $\mathbb{N}$ must stop.
+
+  - part: proof
+    text: "Therefore some prime number will be found which will measure the one before it, which will also measure A."
+    highlight: [A]
+    hint: |
+      So a prime measures {A}.
+
+  - part: conclusion
+    text: "Therefore any composite number is measured by some prime number."
+    highlight: [A]
+    hint: |
+      The enunciation, now proved.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4]
+      text: |
+        Let $d$ be the least divisor of $n$ with $d > 1$ (it exists: $n$ is composite).
+    - steps: [5, 6, 7, 8, 9, 10, 11, 12, 13]
+      text: |
+        If $d$ were composite, a divisor $e$ of $d$ with $1 < e < d$ would divide $n$: contradicting the
+        choice of $d$. So $d$ is prime. $\blacksquare$
+  closing: |
+    The modern proof uses the least element; Euclid descends, and appeals to the impossibility of an infinite
+    descent. The two principles are equivalent.
+
+commentary: |
+  Euclid's argument is the earliest explicit appeal to *infinite descent*, later Fermat's favourite method.
+  The proposition is used in [[VII.32]], [[IX.13]] and [[IX.20]] (the infinitude of primes).
+
+gaps: |
+  - Euclid does not say why the numbers {B}, {C}, … decrease, though it is clear: a divisor of a number,
+    other than the number itself, is less than it.

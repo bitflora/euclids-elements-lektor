@@ -1,0 +1,126 @@
+id: X.89
+kind: problem
+title: To find the fifth apotome
+
+paraphrase: |
+  Construct a fifth apotome {BC} ([[X.Def.III.5]]): the annex commensurable with the rational line {A}, the excess
+  incommensurable with the whole. Example: $\sqrt6 - 2$.
+
+diagram:
+  width: 280
+  height: 100
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "H0;point;free;-1000,75;0;0"
+    - "H3;point;free;1000,75;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,100,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "C;point;lineSlider;A0,A3,165,0"
+    - "G;point;lineSlider;A0,A3,240,0"
+    - "D;point;lineSlider;H0,H3,230,0"
+    - "E;point;lineSlider;H0,H3,150,0"
+    - "F;point;lineSlider;H0,H3,190,0"
+    - "DE;line;connect;D,E;0;0;blue"
+    - "B';point;proportion;F,E,E,D,C,G,G,C;0;0"
+    - "B;point;meanProportional;C,G,G,B',G,C"
+    - "BG;line;connect;B,G"
+    - "H1;point;lineSlider;H0,H3,30,0;0"
+    - "M;point;midpoint;B,G;0;0"
+    - "BGcirc;circle;radius;M,G;0;0;0;0"
+    - "CGcirc;circle;radius;G,C;0;0;0;0"
+    - "bich;line;bichord;BGcirc,CGcirc;0;0;0"
+    - "H2';point;first;bich;0;0"
+    - "H2;point;cutoff;H1,H3,G,H2';0"
+    - "H;line;connect;H1,H2;black"
+    - "BC;line;connect;B,C;0;0;0"
+  aliases: { ED: DE, GB: BG, CB: BC }
+steps:
+  - part: enunciation
+    text: "To find the fifth apotome."
+    highlight: [BC]
+    hint: |
+      Mirror of [[X.52]].
+
+  - part: construction
+    text: "Let a rational straight line A be set out, and let CG be commensurable in length with A; therefore CG is rational."
+    highlight: [A]
+    hint: |
+      *CG* commensurable with {A}.
+
+  - part: construction
+    text: "Let two numbers DF, FE be set out such that DE again has not to either of the numbers DF, FE the ratio which a square number has to a square number; and let it be contrived that, as FE is to ED, so is the square on CG to the square on GB."
+    highlight: [DE, BG]
+    hint: |
+      Numbers as in [[X.88]]; sq({BG}) : sq(*GC*) = *DE* : *EF*.
+
+  - part: proof
+    text: "Therefore the square on GB is also rational; therefore BG is also rational."
+    highlight: [BG]
+    hint: |
+      {BG} rational.
+
+  - part: proof
+    text: "Now since, as DE is to EF, so is the square on BG to the square on GC, while DE has not to EF the ratio which a square number has to a square number, therefore neither has the square on BG to the square on GC the ratio which a square number has to a square number; therefore BG is incommensurable in length with GC."
+    highlight: [BG]
+    hint: |
+      Incommensurable in length with *GC*.
+
+  - part: proof
+    text: "And both are rational; therefore BG, GC are rational straight lines commensurable in square only; therefore BC is an apotome."
+    highlight: [BC]
+    hint: |
+      {BC} an apotome.
+
+  - part: specification
+    text: "I say next that it is also a fifth apotome."
+    highlight: [BC]
+    hint: |
+      A fifth apotome:
+
+  - part: construction
+    text: "For let the square on H be that by which the square on BG is greater than the square on GC."
+    highlight: [BG]
+    hint: |
+      Let sq(*H*) = sq({BG}) − sq(*GC*).
+
+  - part: proof
+    text: "Since then, as the square on BG is to the square on GC, so is DE to EF, therefore, convertendo, as ED is to DF, so is the square on BG to the square on H."
+    highlight: [BG]
+    hint: |
+      Convertendo …
+
+  - part: proof
+    text: "But ED has not to DF the ratio which a square number has to a square number; therefore neither has the square on BG to the square on H the ratio which a square number has to a square number; therefore BG is incommensurable in length with H."
+    highlight: [BG]
+    hint: |
+      … not square to square …
+
+  - part: proof
+    text: "And the square on BG is greater than the square on GC by the square on H; therefore the square on GB is greater than the square on GC by the square on a straight line incommensurable in length with GB."
+    highlight: [BG]
+    hint: |
+      … so the excess is incommensurable with {BG}.
+
+  - part: proof
+    text: "And the annex CG is commensurable in length with the rational straight line A set out; therefore BC is a fifth apotome."
+    highlight: [BC]
+    hint: |
+      Annex commensurable with {A}: fifth apotome.
+
+  - part: proof
+    text: "Therefore the fifth apotome BC has been found."
+    highlight: [BC]
+    hint: |
+      Found.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        As [[X.52]] with "−". $\blacksquare$

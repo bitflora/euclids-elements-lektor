@@ -1,0 +1,211 @@
+id: I.11
+kind: problem
+title: A perpendicular from a point on a line
+
+paraphrase: |
+  Given a line {AB} and a point {C} on it, draw the line {CF} through {C} at right angles to {AB}.
+
+diagram:
+  width: 300
+  height: 210
+  elements:
+    - "A;point;free;30,170"
+    - "B;point;free;270,170"
+    - "AB;line;connect;A,B"
+    - "C;point;lineSlider;AB,150,170"
+    - "D;point;lineSlider;AB,85,170"
+    - "E;point;extend;D,C,D,C"
+    - "DEF;polygon;equilateralTriangle;D,E;0;0;0;#efe4d2"
+    - "F;point;vertex;DEF,3"
+    - "DF;line;connect;D,F"
+    - "EF;line;connect;E,F"
+    - "CF;line;connect;C,F"
+    - "CD;line;connect;C,D;0;0;0"
+    - "CE;line;connect;C,E;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+    - "DCF;polygon;triangle;D,C,F;0;0;0;0"
+    - "ECF;polygon;triangle;E,C,F;0;0;0;0"
+    - "angDCF;sector;angleMarker;C,D,F"
+    - "angECF;sector;angleMarker;C,E,F"
+  aliases:
+    BA: AB
+    DC: CD
+    EC: CE
+    FC: CF
+    FD: DF
+    FE: EF
+    FDE: DEF
+    angFCE: angECF
+  given: [A, B, AB, C]
+  caption: |
+    Drag {A} or {B}, slide {C} along {AB}, and slide {D} — "a point taken at random". {E} keeps
+    {CE} = {CD}, and {CF} stays perpendicular.
+
+steps:
+  - part: enunciation
+    text: "To draw a straight line at right angles to a given straight line from a given point on it."
+    highlight: [AB, C, CF]
+    hint: |
+      A problem: raise a perpendicular at a point of a line.
+
+  - part: setting-out
+    text: "Let AB be the given straight line, and C the given point on it."
+    highlight: [AB, C]
+    hint: |
+      The data: a line {AB} and a point {C} on it.
+
+  - part: specification
+    text: "Thus it is required to draw from the point C a straight line at right angles to the straight line AB."
+    highlight: [C, AB]
+    hint: |
+      The goal restated.
+
+  - part: construction
+    text: "Let a point D be taken at random on AC;"
+    highlight: [D, AC]
+    adds: [D]
+    hint: |
+      Pick any point {D} on {AB} to one side of {C}.
+
+  - part: construction
+    text: "let CE be made equal to CD;"
+    highlight: [CE, CD, E]
+    adds: [E]
+    hint: |
+      Mark {E} on the other side of {C}, as far from {C} as {D} is ([[I.3]]). Now {C} is the midpoint of {DE}.
+    explain:
+      did: |
+        Applies I.3 along {CB}.
+      justification: "[[I.3]]"
+      implicit: |
+        "Made equal" renders κείσθω, "let it be placed", the usual Greek for setting out one line
+        equal to another (Heath's note on line 10).
+    modern: |
+      $$CE = CD$$
+
+  - part: construction
+    text: "on DE let the equilateral triangle FDE be constructed,"
+    highlight: [DEF, F]
+    adds: [DEF, F, DF, EF]
+    hint: |
+      Build an equilateral triangle on {DE} ([[I.1]]).
+    explain:
+      fact: |
+        As in [[I.9]], all that matters is $FD = FE$.
+      justification: "[[I.1]]"
+
+  - part: construction
+    text: "and let FC be joined;"
+    highlight: [CF]
+    adds: [CF]
+    hint: |
+      Join {FC} ([[I.Post.1]]). This is the perpendicular.
+    cites: [I.Post.1]
+
+  - part: proof
+    text: "I say that the straight line FC has been drawn at right angles to the given straight line AB from C the given point on it."
+    highlight: [CF, AB]
+    hint: |
+      The claim.
+
+  - part: proof
+    text: "For, since DC is equal to CE, and CF is common, the two sides DC, CF are equal to the two sides EC, CF respectively;"
+    highlight: [DCF, ECF, CD, CE, CF]
+    hint: |
+      Triangles {DCF} and {ECF}: {DC} = {CE} by construction, {CF} shared.
+    modern: |
+      $$DC = EC,\qquad CF = CF$$
+
+  - part: proof
+    text: "and the base DF is equal to the base FE;"
+    highlight: [DF, EF]
+    hint: |
+      Sides of the equilateral triangle.
+    cites: [I.Def.20]
+    modern: |
+      $$DF = FE$$
+
+  - part: proof
+    text: "therefore the angle DCF is equal to the angle ECF;"
+    highlight: [angDCF, angECF]
+    hint: |
+      SSS ([[I.8]]): the angles at {C} are equal.
+    explain:
+      justification: "[[I.8]]"
+    modern: |
+      $$\triangle DCF \cong \triangle ECF \;\Longrightarrow\; \angle DCF = \angle ECF$$
+
+  - part: proof
+    text: "and they are adjacent angles."
+    highlight: [angDCF, angECF]
+    hint: |
+      The two angles sit side by side on the straight line {DE}, sharing the arm {CF}.
+    explain:
+      did: |
+        Notes the configuration that Definition 10 speaks of.
+      implicit: |
+        That {D}, {C}, {E} lie on one straight line, so that the two angles together fill the
+        straight angle at {C}.
+
+  - part: proof
+    text: "But, when a straight line set up on a straight line makes the adjacent angles equal to one another, each of the equal angles is right;"
+    highlight: [angDCF, angECF]
+    hint: |
+      That is the *definition* of a right angle ([[I.Def.10]]).
+    explain:
+      fact: |
+        Euclid does not define a right angle as 90°. A right angle is one of two equal adjacent
+        angles made by a line standing on a line.
+      justification: "[[I.Def.10]], quoted."
+
+  - part: proof
+    text: "therefore each of the angles DCF, FCE is right."
+    highlight: [angDCF, angECF]
+    hint: |
+      So both angles are right.
+    modern: |
+      $$\angle DCF = \angle FCE = \tfrac{\pi}{2}$$
+
+  - part: conclusion
+    text: "Therefore the straight line CF has been drawn at right angles to the given straight line AB from the given point C on it."
+    highlight: [CF, AB, C]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3]
+      text: Choose $D \ne C$ on line $AB$ and $E$ on the opposite ray with $CE = CD$.
+    - steps: [4, 5]
+      text: Let $F \notin AB$ with $FD = FE$ (e.g. an equilateral triangle on $DE$).
+    - steps: [6, 7, 8]
+      text: By SSS, $\triangle DCF \cong \triangle ECF$, so $\angle DCF = \angle ECF$.
+    - steps: [9, 10, 11]
+      text: |
+        These are supplementary (a linear pair, since $D$–$C$–$E$) and equal, so each is a right
+        angle. $\blacksquare$
+  closing: |
+    In modern terms, $CF$ is the perpendicular bisector of $DE$: every point equidistant from
+    $D$ and $E$ lies on it.
+
+commentary: |
+  Same pattern as [[I.9]]: an equilateral triangle on a segment, and [[I.8]] to show two
+  angles equal. Indeed I.11 is I.9 applied to the straight angle {DCE|DE}. What is new is
+  Definition 10: two *equal adjacent* angles on a line are right angles.
+
+gaps: |
+  - **Which side?** As in I.9, either apex will do here — the perpendicular is the same line.
+
+historical: |
+  Robert Simson (1756) attached a corollary to this proposition: two straight lines cannot have
+  a common segment. Heath discusses it; Euclid needs the fact (it is behind the uniqueness of
+  the line in [[I.Post.1]]) but never states it.

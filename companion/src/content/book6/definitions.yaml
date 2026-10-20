@@ -1,0 +1,104 @@
+# Book VI, Definitions 1–5. Euclid's words come from Heath via the extracted
+# JSON; everything here is this edition's commentary.
+
+items:
+  - id: VI.Def.1
+    title: Similar figures
+    paraphrase: |
+      Two rectilinear figures are *similar* when their angles are equal one to one, and the sides about
+      the equal angles are proportional.
+    meaning: |
+      Two conditions, both needed: equal angles (the same *shape* of corners) and proportional sides (the
+      same *proportions*). For triangles either condition implies the other ([[VI.4]], [[VI.5]]); for other
+      polygons it does not — a square and a long rectangle have equal angles, a square and a rhombus have
+      proportional sides.
+    modern: |
+      $ABC\ldots \sim A'B'C'\ldots$ when $\angle A = \angle A'$, $\angle B = \angle B'$, … and
+      $AB : A'B' = BC : B'C' = \dots$ — the same ratio for every pair of corresponding sides.
+    examples:
+      - 'any two squares'
+      - 'any two equilateral triangles'
+      - 'the two triangles cut off by a parallel to a side ([[VI.2]])'
+    nonExamples:
+      - 'a square and a rhombus that is not a square (sides proportional, angles not equal)'
+      - 'a square and a non-square rectangle (angles equal, sides not proportional)'
+    figure: |
+      <svg viewBox="0 0 300 120"><polygon class="fill" points="30,100 110,100 60,40"/><polygon class="fill" points="150,105 270,105 195,15"/><text class="fig-note" x="70" y="116" text-anchor="middle">ABC</text><text class="fig-note" x="210" y="118" text-anchor="middle">DEF</text></svg>
+    figureCaption: |
+      Same angles; every side of the second is 1½ times the corresponding side of the first.
+    notes: |
+      Joyce points out that the definition takes for granted a *correspondence* between the vertices,
+      taken in order; "the sides about the equal angles" only makes sense once it is fixed which angle
+      corresponds to which.
+
+  - id: VI.Def.2
+    title: Reciprocally related figures
+    paraphrase: |
+      Heath prints only a bracketed heading: the definition found in the manuscripts is, in his view,
+      corrupt or interpolated, and he discusses it in a note.
+    meaning: |
+      The idea, as it is used in [[VI.14]] and [[VI.15]]: two figures have their sides *reciprocally
+      proportional* when a side of the first is to a side of the second as the other side of the second is
+      to the other side of the first. For two triangles with an equal angle, $CA : AD = EA : AB$: the
+      sides are in inverse proportion.
+    modern: |
+      Reciprocal proportion $a : b = b' : a'$ is the same as $a\,a' = b\,b'$: equal products, hence (for
+      parallelograms and triangles with an equal angle) equal areas.
+    interpretations: |
+      The manuscripts' wording ("figures are reciprocally related when there are in each of the two
+      figures antecedent and consequent ratios") is too vague to use, and the term defined is not the one
+      the propositions use ("reciprocally proportional"). Heath and Joyce both regard it as probably added
+      after Euclid. Later editors, Simson among them, substituted a definition of reciprocal proportion.
+
+  - id: VI.Def.3
+    title: Extreme and mean ratio
+    paraphrase: |
+      A line is cut in *extreme and mean ratio* when the whole is to the greater part as the greater part
+      is to the less.
+    meaning: |
+      The cut of [[II.11]], now described by a ratio instead of an equality of areas: there, the rectangle
+      on the whole and the less part equals the square on the greater. The construction in ratio form is
+      [[VI.30]]. It is the section used for the regular pentagon ([[IV.10]]–[[IV.11]]) and again for the
+      regular solids in Book XIII.
+    modern: |
+      $AB : AC = AC : CB$ with $AC > CB$. If $AB = 1$ and $AC = x$, then $1/x = x/(1 - x)$, so
+      $x^2 + x - 1 = 0$ and $x = \frac{\sqrt5 - 1}{2} \approx 0.618$; the ratio $AB : AC$ is the golden
+      ratio $\varphi = \frac{1 + \sqrt5}{2} \approx 1.618$.
+    figure: |
+      <svg viewBox="0 0 300 70"><line class="l" x1="30" y1="35" x2="270" y2="35"/><circle class="pt" cx="30" cy="35" r="2.5"/><circle class="pt" cx="178" cy="35" r="2.5"/><circle class="pt" cx="270" cy="35" r="2.5"/><text class="fig-label" x="26" y="58">A</text><text class="fig-label" x="174" y="58">C</text><text class="fig-label" x="266" y="58">B</text></svg>
+    figureCaption: |
+      $AB : AC = AC : CB$.
+    notes: |
+      The name "golden section" is modern (19th century); Euclid's term is ἄκρος καὶ μέσος λόγος, "extreme
+      and mean ratio".
+
+  - id: VI.Def.4
+    title: Height of a figure
+    paraphrase: |
+      The *height* of a figure is the perpendicular from its vertex to its base.
+    meaning: |
+      "Vertex" means the point (or side) farthest from the base. For a triangle: the altitude. For a
+      parallelogram: the distance between the base and the opposite side. Figures "under the same height"
+      ([[VI.1]]) lie between the same parallels, as in [[I.35]]–[[I.41]].
+    figure: |
+      <svg viewBox="0 0 300 120"><polygon class="fill" points="30,100 140,100 70,25"/><line class="thin" x1="70" y1="25" x2="70" y2="100"/><polygon class="fill" points="170,100 260,100 280,40 190,40"/><line class="thin" x1="280" y1="40" x2="280" y2="100"/><line class="thin" x1="260" y1="100" x2="280" y2="100"/></svg>
+    notes: |
+      The propositions speak of figures "under the same height" ([[VI.1]]) rather than of "the height of" a
+      figure; the definition fixes what that common height is.
+
+  - id: VI.Def.5
+    title: Compound ratio (relegated by Heath)
+    paraphrase: |
+      Heath prints no text for Def. 5. The definition of a *compound ratio* found in the manuscripts — a
+      ratio is compounded of ratios when their "sizes" multiplied together make some ratio — is generally
+      regarded as an interpolation, and Heath leaves it out of his text and discusses it in his notes.
+    meaning: |
+      Compound ratio is the product of ratios: the ratio $a : c$ compounded of $a : b$ and $b : c$.
+      [[VI.23]] uses it ("the ratio compounded of the ratios of the sides") without a definition; what the
+      phrase means there is fixed by the proof, which chains the ratios through a common middle term as in
+      [[V.22]].
+    modern: |
+      $(a : b) \cdot (c : d) = ac : bd$; with a common middle term, $(a : b)(b : c) = a : c$.
+    interpretations: |
+      The interpolated definition speaks of multiplying the "sizes" (πηλικότητες) of ratios — treating
+      ratios as numbers, which Book V carefully avoids. That is one reason for thinking it is not Euclid's.

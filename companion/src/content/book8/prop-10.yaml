@@ -1,0 +1,207 @@
+id: VIII.10
+kind: theorem
+title: Means from the unit give means between the numbers
+
+paraphrase: |
+  If {D}, {E} fall in continued proportion between the unit {C} and {A}, and {F}, {G} between the unit and
+  {B}, then as many fall between {A} and {B}. In effect: between $d^3$ and $f^3$ fall $d^2f$ and $df^2$.
+
+diagram:
+  width: 450
+  height: 170
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "E0;point;free;-1000,50;0;0"
+    - "E3;point;free;1000,50;0;0"
+    - "D0;point;free;-1000,70;0;0"
+    - "D3;point;free;1000,70;0;0"
+    - "C0;point;free;-1000,90;0;0"
+    - "C3;point;free;1000,90;0;0"
+    - "F0;point;free;-1000,110;0;0"
+    - "F3;point;free;1000,110;0;0"
+    - "G0;point;free;-1000,130;0;0"
+    - "G3;point;free;1000,130;0;0"
+    - "B0;point;free;-1000,150;0;0"
+    - "B3;point;free;1000,150;0;0"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,55,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,90,0;0"
+    - "D2;point;lineSlider;D0,D3,125,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "F1;point;lineSlider;F0,F3,90,0;0"
+    - "F2;point;lineSlider;F0,F3,135,0;0"
+    - "F;line;connect;F1,F2;black"
+    - "E1;point;lineSlider;E0,E3,170,0;0"
+    - "E2;point;proportion;C1,C2,D1,D2,D1,D2,E1,E3;0"
+    - "E;line;connect;E1,E2;black"
+    - "G1;point;lineSlider;G0,G3,170,0;0"
+    - "G2;point;proportion;C1,C2,F1,F2,F1,F2,G1,G3;0"
+    - "G;line;connect;G1,G2;black"
+    - "A1;point;lineSlider;A0,A3,300,0;0"
+    - "A2;point;proportion;C1,C2,D1,D2,E1,E2,A1,A3;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,300,0;0"
+    - "B2;point;proportion;C1,C2,F1,F2,G1,G2,B1,B3;0"
+    - "B;line;connect;B1,B2;black"
+    - "H1;point;lineSlider;C0,C3,170,0;0"
+    - "H2;point;proportion;C1,C2,D1,D2,F1,F2,H1,C3;0"
+    - "H;line;connect;H1,H2;black"
+    - "K1;point;lineSlider;D0,D3,300,0;0"
+    - "K2;point;proportion;C1,C2,D1,D2,H1,H2,K1,D3;0"
+    - "K;line;connect;K1,K2;black"
+    - "L1;point;lineSlider;F0,F3,300,0;0"
+    - "L2;point;proportion;C1,C2,F1,F2,H1,H2,L1,F3;0"
+    - "L;line;connect;L1,L2;black"
+  caption: |
+    {C} is the unit; {E} = {D}², {A} = {D}³; {G} = {F}², {B} = {F}³. {H} = {D}{F}, {K} = {D}{H}, {L} = {F}{H}.
+
+steps:
+  - part: enunciation
+    text: "If numbers fall between each of two numbers and an unit in continued proportion, however many numbers fall between each of them and an unit in continued proportion, so many also will fall between the numbers themselves in continued proportion."
+    highlight: [A, B, C]
+    hint: |
+      Between two $n$th powers fall $n-1$ geometric means.
+    modern: |
+      $d^3, d^2f, df^2, f^3$ is a geometric progression.
+
+  - part: setting-out
+    text: "For let the numbers D, E and F, G respectively fall between the two numbers A, B and the unit C in continued proportion;"
+    highlight: [C, D, E, A, F, G, B]
+    hint: |
+      {C}, {D}, {E}, {A} and {C}, {F}, {G}, {B} in continued proportion.
+
+  - part: specification
+    text: "I say that, as many numbers as have fallen between each of the numbers A, B and the unit C in continued proportion, so many numbers will also fall between A, B in continued proportion."
+    highlight: [A, B]
+    hint: |
+      To prove: two means between {A} and {B}.
+
+  - part: construction
+    text: "For let D by multiplying F make H, and let the numbers D, F by multiplying H make K, L respectively."
+    highlight: [H, K, L]
+    hint: |
+      {H} = {D}{F}, {K} = {D}{H}, {L} = {F}{H}.
+
+  - part: proof
+    text: "Now, since, as the unit C is to the number D, so is D to E, therefore the unit C measures the number D the same number of times as D measures E."
+    highlight: [C, D, E]
+    hint: |
+      Unpack {C} : {D} = {D} : {E}.
+
+  - part: proof
+    text: "But the unit C measures the number D according to the units in D; therefore the number D also measures E according to the units in D; therefore D by multiplying itself has made E."
+    highlight: [D, E]
+    hint: |
+      {E} = {D}².
+
+  - part: proof
+    text: "Again, since, as C is to the number D, so is E to A, therefore the unit C measures the number D the same number of times as E measures A."
+    highlight: [C, D, E, A]
+    hint: |
+      Unpack {C} : {D} = {E} : {A}.
+
+  - part: proof
+    text: "But the unit C measures the number D according to the units in D; therefore E also measures A according to the units in D; therefore D by multiplying E has made A."
+    highlight: [D, E, A]
+    hint: |
+      {A} = {D}{E} = {D}³.
+
+  - part: proof
+    text: "For the same reason also F by multiplying itself has made G, and by multiplying G has made B."
+    highlight: [F, G, B]
+    hint: |
+      {G} = {F}², {B} = {F}³.
+
+  - part: proof
+    text: "And, since D by multiplying itself has made E and by multiplying F has made H, therefore, as D is to F, so is E to H."
+    highlight: [D, F, E, H]
+    hint: |
+      [[VII.17]]: {D} : {F} = {E} : {H}.
+
+  - part: proof
+    text: "For the same reason also, as D is to F, so is H to G."
+    highlight: [D, F, H, G]
+    hint: |
+      [[VII.18]]: {D} : {F} = {H} : {G}.
+
+  - part: proof
+    text: "Therefore also, as E is to H, so is H to G."
+    highlight: [E, H, G]
+    hint: |
+      {E}, {H}, {G} in continued proportion.
+
+  - part: proof
+    text: "Again, since D by multiplying the numbers E, H has made A, K respectively, therefore, as E is to H, so is A to K."
+    highlight: [E, H, A, K]
+    hint: |
+      [[VII.17]].
+
+  - part: proof
+    text: "But, as E is to H, so is D to F; therefore also, as D is to F, so is A to K."
+    highlight: [D, F, A, K]
+    hint: |
+      {A} : {K} = {D} : {F}.
+
+  - part: proof
+    text: "Again, since the numbers D, F by multiplying H have made K, L respectively, therefore, as D is to F, so is K to L."
+    highlight: [D, F, K, L]
+    hint: |
+      [[VII.18]].
+
+  - part: proof
+    text: "But, as D is to F, so is A to K; therefore also, as A is to K, so is K to L."
+    highlight: [A, K, L]
+    hint: |
+      {A} : {K} = {K} : {L}.
+
+  - part: proof
+    text: "Further, since F by multiplying the numbers H, G has made L, B respectively, therefore, as H is to G, so is L to B."
+    highlight: [H, G, L, B]
+    hint: |
+      [[VII.17]].
+
+  - part: proof
+    text: "But, as H is to G, so is D to F; therefore also, as D is to F, so is L to B."
+    highlight: [D, F, L, B]
+    hint: |
+      {L} : {B} = {D} : {F}.
+
+  - part: proof
+    text: "But it was also proved that, as D is to F, so is A to K and K to L; therefore also, as A is to K, so is K to L and L to B."
+    highlight: [A, K, L, B]
+    hint: |
+      All three ratios equal {D} : {F}.
+
+  - part: proof
+    text: "Therefore A, K, L, B are in continued proportion."
+    highlight: [A, K, L, B]
+    hint: |
+      Two means {K}, {L} between {A} and {B}.
+
+  - part: proof
+    text: "Therefore, as many numbers as fall between each of the numbers A, B and the unit C in continued proportion, so many also will fall between A, B in continued proportion."
+    highlight: [A, B]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [4, 5, 6, 7, 8, 9]
+      text: |
+        $a = d^3$, $b = f^3$.
+    - steps: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+      text: |
+        $d^3 : d^2f = d^2f : df^2 = df^2 : f^3 = d : f$. $\blacksquare$
+
+commentary: |
+  A partial converse of [[VIII.9]] that does not need {D}, {F} coprime. Its special cases are [[VIII.11]]
+  (one mean between two squares) and [[VIII.12]] (two means between two cubes).

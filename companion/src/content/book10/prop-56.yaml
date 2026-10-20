@@ -1,0 +1,140 @@
+id: X.56
+kind: theorem
+title: The side of a rational line times a third binomial is a second bimedial
+
+paraphrase: |
+  If an area {AC} is contained by a rational line {AB} and a third binomial {AD}, its side {MO} is a second
+  bimedial.
+
+diagram:
+  width: 400
+  height: 210
+  elements:
+    - "A0;point;free;-1000,60;0;0"
+    - "A3;point;free;1000,60;0;0"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "D;point;lineSlider;A0,A3,200,0"
+    - "B';point;perpendicular;A,D;0;0"
+    - "B;point;lineSlider;A,B',0,150"
+    - "C;point;parallelogram;B,A,D"
+    - "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;random"
+    - "E;point;lineSlider;A,D,120,0"
+    - "F;point;midpoint;E,D"
+    - "AEmid;point;midpoint;A,E;0;0"
+    - "AEquar;point;midpoint;E,AEmid;0;0"
+    - "EFcirc;circle;radius;E,F;0;0;0;0"
+    - "EAcirc;circle;radius;AEquar,E;0;0;0;0"
+    - "bich;line;bichord;EFcirc,EAcirc;0;0;0"
+    - "G';point;first;bich;0;0"
+    - "G;point;cutoff;AEmid,D,AEmid,G'"
+    - "H;point;parallelogram;B,A,G"
+    - "K;point;parallelogram;B,A,E"
+    - "L;point;parallelogram;B,A,F"
+    - "HGEK;polygon;quadrilateral;H,G,E,K;0;0;black;0,80,100"
+    - "FL;line;connect;F,L"
+    - "AH;polygon;quadrilateral;A,B,H,G;0;0;0;45,80,100"
+    - "S0;point;free;-1000,175;0;0"
+    - "S3;point;free;1000,175;0;0"
+    - "S;point;lineSlider;S0,S3,240,0"
+    - "P;point;meanProportional;A,G,G,H,S,S3"
+    - "SPNM;polygon;square;S,P;0;0;black;45,80,100"
+    - "M;point;vertex;SPNM,4"
+    - "N;point;vertex;SPNM,3"
+    - "T;point;meanProportional;G,E,E,K,P,S3;0"
+    - "O;point;parallelogram;M,S,T"
+    - "NOQR;polygon;square;N,O;0;0;black;0,80,100"
+    - "Q;point;vertex;NOQR,3"
+    - "R;point;vertex;NOQR,4"
+    - "SQ;polygon;parallelogram;S,T,Q;0;0;black;0"
+    - "MO;line;connect;M,O;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "MN;line;connect;M,N;0;0;0"
+    - "NO;line;connect;N,O;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "EK;line;connect;E,K;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+  aliases: { AC: ABCD, SN: SPNM, NQ: NOQR, GK: HGEK, LF: FL, OM: MO, BA: AB, DA: AD, EA: AE, NM: MN, ON: NO, FE: EF, KE: EK }
+  caption: |
+    As in [[X.54]]: {AD} = {AE} + {ED} on the rational {AB}; squares {SN} = {AH}, {NQ} = {GK}; {MO} is the
+    side of {AC}.
+
+steps:
+  - part: enunciation
+    text: "If an area be contained by a rational straight line and the third binomial, the “side” of the area is the irrational straight line called a second bimedial."
+    highlight: [AC, MO]
+    hint: |
+      √(rational × third binomial) = second bimedial.
+
+  - part: proof
+    text: "For let the area ABCD be contained by the rational straight line AB and the third binomial AD divided into its terms at E, of which terms AE is the greater; I say that the “side” of the area AC is the irrational straight line called a second bimedial."
+    highlight: [AC, AB, AD]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let the same construction be made as before."
+    highlight: [SQ]
+    hint: |
+      The construction of [[X.54]].
+
+  - part: proof
+    text: "Now, since AD is a third binomial straight line, therefore AE, ED are rational straight lines commensurable in square only, the square on AE is greater than the square on ED by the square on a straight line commensurable with AE, and neither of the terms AE, ED is commensurable in length with AB."
+    highlight: [AE, ED]
+    hint: |
+      Neither term commensurable with {AB} ([[X.Def.II.3]]).
+
+  - part: proof
+    text: "Then, in manner similar to the foregoing, we shall prove that MO is the “side” of the area AC, and MN, NO are medial straight lines commensurable in square only; so that MO is bimedial."
+    highlight: [MO, MN, NO]
+    hint: |
+      As in [[X.55]], {MO} is the side and {MN}, {NO} are medial, commensurable in square only.
+
+  - part: specification
+    text: "It is next to be proved that it is also a second bimedial straight line."
+    highlight: [MO]
+    hint: |
+      Now: a *second* bimedial.
+
+  - part: proof
+    text: "Since DE is incommensurable in length with AB, that is, with EK, and DE is commensurable with EF, therefore EF is incommensurable in length with EK."
+    highlight: [EF, EK]
+    hint: |
+      {DE} incommensurable with {AB} = {EK}, commensurable with {EF}: {EF}, {EK} incommensurable ([[X.13]]).
+
+  - part: proof
+    text: "And they are rational; therefore FE, EK are rational straight lines commensurable in square only."
+    highlight: [EF, EK]
+    hint: |
+      Rational, commensurable in square only …
+
+  - part: proof
+    text: "Therefore EL, that is, MR, is medial."
+    highlight: [MN, NO]
+    hint: |
+      … so *EL* = *MR* is medial ([[X.21]]) …
+
+  - part: proof
+    text: "And it is contained by MN, NO; therefore the rectangle MN, NO is medial."
+    highlight: [MN, NO]
+    hint: |
+      … i.e. rect({MN},{NO}) is medial.
+
+  - part: proof
+    text: "Therefore MO is a second bimedial straight line."
+    highlight: [MO]
+    hint: |
+      Second bimedial ([[X.38]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [6, 7, 8, 9, 10]
+      text: |
+        As [[X.55]], but now the mean $\rho\,EF$ is medial. $\blacksquare$

@@ -1,0 +1,114 @@
+id: IV.14
+kind: problem
+title: Circumscribing a circle about a regular pentagon
+
+paraphrase: |
+  About a given regular pentagon, draw a circle through its five vertices.
+
+diagram:
+  width: 250
+  height: 230
+  elements:
+    - "C;point;free;70,200"
+    - "D;point;free;170,200"
+    - "ABCDE;polygon;regularPolygon;C,D,5;0;0;black;#efe4d2"
+    - "E;point;vertex;ABCDE,3"
+    - "A;point;vertex;ABCDE,4"
+    - "B;point;vertex;ABCDE,5"
+    - "circ;circle;circumcircle;A,B,C;0;0;black;0"
+    - "F;point;center;circ"
+    - "FA;line;connect;F,A"
+    - "FB;line;connect;F,B"
+    - "FC;line;connect;F,C"
+    - "FD;line;connect;F,D"
+    - "FE;line;connect;F,E"
+    - "angFCD;sector;angleMarker;C,F,D"
+    - "angCDF;sector;angleMarker;D,C,F"
+  aliases:
+    CF: FC
+    DF: FD
+    FCD: angFCD
+    CDF: angCDF
+  given: [A, B, C, D, E, ABCDE]
+  caption: |
+    Drag {C} or {D}. The bisectors meet at {F}, equidistant from all five vertices.
+
+steps:
+  - part: enunciation
+    text: "About a given pentagon, which is equilateral and equiangular, to circumscribe a circle."
+    highlight: [ABCDE, circ]
+    hint: |
+      A problem: the circumcircle of a regular pentagon.
+
+  - part: setting-out
+    text: "Let ABCDE be the given pentagon, which is equilateral and equiangular;"
+    highlight: [ABCDE]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to circumscribe a circle about the pentagon ABCDE."
+    highlight: [ABCDE]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let the angles BCD, CDE be bisected by the straight lines CF, DF respectively, and from the point F, at which the straight lines meet, let the straight lines FB, FA, FE be joined to the points B, A, E."
+    highlight: [FC, FD, FB, FA, FE]
+    adds: [F, FC, FD, FB, FA, FE]
+    hint: |
+      As in [[IV.13]].
+    cites: [I.9]
+
+  - part: proof
+    text: "Then in manner similar to the preceding it can be proved that the angles CBA, BAE, AED have also been bisected by the straight lines FB, FA, FE respectively."
+    highlight: [FB, FA, FE]
+    hint: |
+      All five angles bisected ([[IV.13]]).
+
+  - part: proof
+    text: "Now, since the angle BCD is equal to the angle CDE, and the angle FCD is half of the angle BCD, and the angle CDF half of the angle CDE, therefore the angle FCD is also equal to the angle CDF, so that the side FC is also equal to the side FD."
+    highlight: [angFCD, angCDF, FC, FD]
+    hint: |
+      Halves of equal angles; [[I.6]].
+
+  - part: proof
+    text: "Similarly it can be proved that each of the straight lines FB, FA, FE is also equal to each of the straight lines FC, FD; therefore the five straight lines FA, FB, FC, FD, FE are equal to one another."
+    highlight: [FA, FB, FC, FD, FE]
+    hint: |
+      {F} equidistant from all vertices.
+
+  - part: proof
+    text: "Therefore the circle described with centre F and distance one of the straight lines FA, FB, FC, FD, FE will pass also through the remaining points, and will have been circumscribed."
+    highlight: [circ]
+    adds: [circ]
+    hint: |
+      The circle.
+
+  - part: proof
+    text: "Let it be circumscribed, and let it be ABCDE."
+    highlight: [circ]
+    hint: |
+      Name it.
+
+  - part: conclusion
+    text: "Therefore about the given pentagon, which is equilateral and equiangular, a circle has been circumscribed."
+    highlight: [circ]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: The centre of a regular polygon is equidistant from its vertices. $\blacksquare$
+
+commentary: |
+  With [[IV.11]]–[[IV.14]] the pentagon gets all four constructions that [[IV.6]]–[[IV.9]] gave the square.
+  For a regular pentagon the incircle and circumcircle have the same centre.

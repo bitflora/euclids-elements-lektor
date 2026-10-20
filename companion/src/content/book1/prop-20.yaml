@@ -1,0 +1,184 @@
+id: I.20
+kind: theorem
+title: The triangle inequality
+
+paraphrase: |
+  In any triangle, any two sides together are longer than the third.
+
+diagram:
+  width: 250
+  height: 250
+  elements:
+    - "A;point;free;85,140"
+    - "B;point;free;40,200"
+    - "C;point;free;210,200"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "AD;line;extend;B,A,A,C"
+    - "D;point;last;AD"
+    - "CD;line;connect;C,D"
+    - "triACD;polygon;triangle;A,C,D;0;0;0;#dfe7ea"
+    - "DCB;polygon;triangle;D,C,B;0;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "angADC;sector;angleMarker;D,A,C"
+    - "angACD;sector;angleMarker;C,D,A"
+    - "angBCD;sector;angleMarker;C,B,D"
+  aliases:
+    BA: AB
+    CA: AC
+    CB: BC
+    DA: AD
+    DC: CD
+    BD: DB
+    ADC: angADC
+    ACD: angACD
+    BDC: angADC
+    BCD: angBCD
+  given: [A, B, C, ABC]
+  caption: |
+    Drag the vertices. {D} is on {BA} produced with {AD} = {AC}, so {BD} = {BA} + {AC}; and {BD}
+    is always longer than {BC}.
+
+steps:
+  - part: enunciation
+    text: "In any triangle two sides taken together in any manner are greater than the remaining one."
+    highlight: [AB, AC, BC]
+    hint: |
+      The triangle inequality: the sum of any two sides exceeds the third.
+    explain:
+      implicit: |
+        Equivalently: the straight path between two points is shorter than any path through a
+        third point not on it.
+
+  - part: setting-out
+    text: "For let ABC be a triangle;"
+    highlight: [ABC]
+    hint: |
+      A triangle {ABC}.
+
+  - part: specification
+    text: "I say that in the triangle ABC two sides taken together in any manner are greater than the remaining one, namely BA, AC greater than BC, AB, BC greater than AC, BC, CA greater than AB."
+    highlight: [AB, AC, BC]
+    hint: |
+      Three inequalities, one for each side.
+    modern: |
+      $$BA + AC > BC,\quad AB + BC > AC,\quad BC + CA > AB$$
+
+  - part: construction
+    text: "For let BA be drawn through to the point D,"
+    highlight: [AD]
+    adds: [AD, D]
+    hint: |
+      Extend {BA} past {A} ([[I.Post.2]]).
+
+  - part: construction
+    text: "let DA be made equal to CA,"
+    highlight: [AD, AC]
+    hint: |
+      Choose {D} so that {AD} = {AC} ([[I.3]]). Now {BD} = {BA} + {AC}: the two sides laid end to end.
+    cites: [I.3]
+    modern: |
+      $$AD = AC,\qquad BD = BA + AC$$
+
+  - part: construction
+    text: "and let DC be joined."
+    highlight: [CD]
+    adds: [CD, triACD]
+    hint: |
+      Join {DC} ([[I.Post.1]]). Triangle {ACD|triACD} is isosceles.
+    cites: [I.Post.1]
+
+  - part: proof
+    text: "Then, since DA is equal to AC, the angle ADC is also equal to the angle ACD;"
+    highlight: [triACD, angADC, angACD]
+    adds: [angADC, angACD]
+    hint: |
+      Base angles of the isosceles triangle {ACD|triACD} are equal ([[I.5]]).
+    modern: |
+      $$\angle ADC = \angle ACD$$
+
+  - part: proof
+    text: "therefore the angle BCD is greater than the angle ADC."
+    highlight: [angBCD, angADC, angACD]
+    adds: [angBCD]
+    hint: |
+      ∠{ACD} is part of ∠{BCD}, so ∠{BCD} > ∠{ACD} = ∠{ADC} ([[I.CN.5]]).
+    explain:
+      implicit: |
+        That {CA} lies inside ∠{BCD}: true because {A} is between {B} and {D}.
+    modern: |
+      $$\angle BCD > \angle ACD = \angle ADC$$
+
+  - part: proof
+    text: "And, since DCB is a triangle having the angle BCD greater than the angle BDC, and the greater angle is subtended by the greater side,"
+    highlight: [DCB, angBCD, angADC]
+    hint: |
+      In triangle {DCB}, the angle at {C} beats the angle at {D}. By [[I.19]], the side opposite
+      the larger angle is longer.
+    explain:
+      implicit: |
+        ∠{BDC} is ∠{ADC}: {A} lies on {DB}.
+
+  - part: proof
+    text: "therefore DB is greater than BC."
+    highlight: [DB, BC]
+    hint: |
+      {DB} (opposite the angle at {C}) is longer than {BC} (opposite the angle at {D}).
+    modern: |
+      $$DB > BC$$
+
+  - part: proof
+    text: "But DA is equal to AC; therefore BA, AC are greater than BC."
+    highlight: [AB, AC, BC]
+    hint: |
+      {DB} = {BA} + {AD} = {BA} + {AC}. So {BA} + {AC} > {BC}.
+    modern: |
+      $$BA + AC = BA + AD = BD > BC$$
+
+  - part: proof
+    text: "Similarly we can prove that AB, BC are also greater than CA, and BC, CA than AB."
+    highlight: [AB, BC, AC]
+    hint: |
+      The other two inequalities, by the same construction at another vertex.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: Let $\triangle ABC$.
+    - steps: [3, 4, 5]
+      text: Let $D$ on ray $BA$ beyond $A$ with $AD = AC$; then $BD = BA + AC$.
+    - steps: [6, 7]
+      text: $\angle ADC = \angle ACD < \angle BCD$, since ray $CA$ lies inside $\angle BCD$.
+    - steps: [8, 9, 10]
+      text: In $\triangle BCD$, the larger angle is at $C$, so $BD > BC$ (I.19). $\blacksquare$
+  closing: |
+    In a metric space the triangle inequality is an *axiom*; in Euclid it is a theorem about
+    angles and sides.
+
+commentary: |
+  The best-known inequality in mathematics, proved here from angle facts: [[I.5]] (isosceles),
+  [[I.19]] (greater angle, greater side). It is the heart of [[I.22]], which builds a triangle from
+  three given lines — possible exactly when each two together exceed the third.
+
+gaps: |
+  - **{CA} inside ∠{BCD}** (step 5): from {A} between {B} and {D}.
+
+historical: |
+  Proclus reports that the Epicureans ridiculed this theorem as evident "even to an ass": a
+  donkey heading for its hay walks straight to it, not along two sides of a triangle. Proclus
+  answers that perceiving a fact is not the same as knowing why it is true. He also gives
+  alternative proofs, attributed to Heron and Porphyry.

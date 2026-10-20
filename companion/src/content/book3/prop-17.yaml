@@ -1,0 +1,166 @@
+id: III.17
+kind: problem
+title: Drawing a tangent from a point
+
+paraphrase: |
+  From a given point {A} outside a circle, draw a line touching the circle.
+
+diagram:
+  width: 280
+  height: 280
+  elements:
+    - "A;point;free;140,30"
+    - "E;point;free;140,150"
+    - "D;point;lineSlider;A,E,140,90"
+    - "AFG;circle;radius;E,A;0;0;black;0"
+    - "BCD;circle;radius;E,D;0;0;black;0"
+    - "C;point;circleSlider;BCD,230,160;black;0"
+    - "G;point;circleSlider;AFG,220,220;black;0"
+    - "AE;line;connect;A,E"
+    - "DFp;line;perpendicular;D,E;0;0;0"
+    - "FFx;line;chord;DFp,AFG;0;0;0"
+    - "F;point;first;FFx"
+    - "FD;line;connect;F,D"
+    - "FE;line;connect;F,E"
+    - "B;point;cutoff;E,F,E,D"
+    - "BA;line;connect;B,A"
+    - "EB;line;connect;E,B;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "DEF;polygon;triangle;D,E,F;0;0;0;0"
+    - "BEA;polygon;triangle;B,E,A;0;0;0;0"
+    - "angEDF;sector;angleMarker;D,E,F"
+    - "angEBA;sector;angleMarker;B,E,A"
+  aliases:
+    EA: AE
+    EF: FE
+    DF: FD
+    AB: BA
+    BE: EB
+    DE: ED
+    EDF: angEDF
+    EBA: angEBA
+  given: [A, BCD, E]
+  caption: |
+    Drag {A} or {E} and slide {D} (which sets the circle's size). {AB} always touches the circle at {B}.
+
+steps:
+  - part: enunciation
+    text: "From a given point to draw a straight line touching a given circle."
+    highlight: [A, BCD, BA]
+    hint: |
+      A problem: the tangent from a point.
+
+  - part: setting-out
+    text: "Let A be the given point, and BCD the given circle;"
+    highlight: [A, BCD]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to draw from the point A a straight line touching the circle BCD."
+    highlight: [A, BCD]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let the centre E of the circle be taken;"
+    highlight: [E]
+    hint: |
+      [[III.1]].
+
+  - part: construction
+    text: "let AE be joined, and with centre E and distance EA let the circle AFG be described;"
+    highlight: [AE, AFG]
+    adds: [AE, D, AFG, G]
+    hint: |
+      A larger concentric circle through {A}; {AE} meets the given circle at {D}.
+
+  - part: construction
+    text: "from D let DF be drawn at right angles to EA, and let EF, AB be joined;"
+    highlight: [FD, FE, BA]
+    adds: [F, FD, FE, B, BA]
+    hint: |
+      The perpendicular to {EA} at {D} meets the big circle at {F}; {EF} meets the small one at {B}. Join {AB}.
+
+  - part: specification
+    text: "I say that AB has been drawn from the point A touching the circle BCD."
+    highlight: [BA]
+    hint: |
+      The claim.
+
+  - part: proof
+    text: "For, since E is the centre of the circles BCD, AFG, EA is equal to EF, and ED to EB;"
+    highlight: [AE, FE, ED, EB]
+    hint: |
+      Radii of the two circles.
+
+  - part: proof
+    text: "therefore the two sides AE, EB are equal to the two sides FE, ED:"
+    highlight: [BEA, DEF]
+    hint: |
+      Triangles {BEA} and {DEF}…
+
+  - part: proof
+    text: "and they contain a common angle, the angle at E;"
+    highlight: [E]
+    hint: |
+      …with the same angle at {E}.
+
+  - part: proof
+    text: "therefore the base DF is equal to the base AB, and the triangle DEF is equal to the triangle BEA, and the remaining angles to the remaining angles;"
+    highlight: [DEF, BEA]
+    hint: |
+      SAS ([[I.4]]).
+
+  - part: proof
+    text: "therefore the angle EDF is equal to the angle EBA."
+    highlight: [angEDF, angEBA]
+    hint: |
+      Corresponding angles.
+
+  - part: proof
+    text: "But the angle EDF is right; therefore the angle EBA is also right."
+    highlight: [angEBA]
+    hint: |
+      So {AB} ⊥ {EB}.
+
+  - part: proof
+    text: "Now EB is a radius; and the straight line drawn at right angles to the diameter of a circle, from its extremity, touches the circle;"
+    highlight: [EB, BA]
+    hint: |
+      Porism of [[III.16]].
+
+  - part: proof
+    text: "therefore AB touches the circle BCD."
+    highlight: [BA, BCD]
+    hint: |
+      {AB} is tangent at {B}.
+
+  - part: conclusion
+    text: "Therefore from the given point A the straight line AB has been drawn touching the circle BCD."
+    highlight: [BA]
+    hint: |
+      Done.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7]
+      text: |
+        Rotate the right triangle $EDF$ (right angle at $D$, on the small circle) about $E$ until $F$ lands
+        on $A$: $D$ goes to $B$ on the small circle, with $\angle EBA = 90^\circ$.
+    - steps: [8, 9, 10, 11, 12, 13, 14, 15]
+      text: A line perpendicular to a radius at its end is tangent. $\blacksquare$
+  closing: |
+    The more familiar modern construction uses the circle on diameter $AE$ (Thales) to find $B$ with
+    $\angle EBA = 90^\circ$ ([[III.31]]); Euclid's avoids III.31, which comes later.
+
+commentary: |
+  The first problem of Book III after [[III.1]]. Euclid treats only {A} outside the circle; if {A} is on
+  it, the tangent is the perpendicular to the radius ([[III.16]]).
+
+gaps: |
+  - **{A} on or inside the circle** is not treated. Inside, there is no tangent.
+  - **Intersections**: the perpendicular at {D} meets the big circle, and {EF} meets the small one —
+    read off the figure.

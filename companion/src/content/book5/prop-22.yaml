@@ -1,0 +1,165 @@
+id: V.22
+kind: theorem
+title: Ex aequali
+
+paraphrase: |
+  If {A} : {B} = {D} : {E} and {B} : {C} = {E} : {F}, then {A} : {C} = {D} : {F} — and so on for any number of
+  magnitudes. The middle terms "cancel".
+
+diagram:
+  width: 500
+  height: 150
+  elements:
+    - "U0;point;free;-1000,30;0;0"
+    - "U1;point;free;1000,30;0;0"
+    - "V0;point;free;-1000,60;0;0"
+    - "V1;point;free;1000,60;0;0"
+    - "W0;point;free;-1000,100;0;0"
+    - "W1;point;free;1000,100;0;0"
+    - "X0;point;free;-1000,130;0;0"
+    - "X1;point;free;1000,130;0;0"
+    - "A0;point;lineSlider;U0,U1,30,30;0"
+    - "A1;point;lineSlider;U0,U1,90,30;0"
+    - "A;line;connect;A0,A1;black;0;blue"
+    - "B0;point;lineSlider;U0,U1,200,30;0"
+    - "B1;point;lineSlider;U0,U1,240,30;0"
+    - "B;line;connect;B0,B1;black;0;blue"
+    - "C0;point;lineSlider;U0,U1,370,30;0"
+    - "C1;point;lineSlider;U0,U1,420,30;0"
+    - "C;line;connect;C0,C1;black;0;blue"
+    - "D0;point;lineSlider;V0,V1,30,60;0"
+    - "D1;point;lineSlider;V0,V1,70,60;0"
+    - "D;line;connect;D0,D1;black;0;red"
+    - "E0;point;lineSlider;V0,V1,200,60;0"
+    - "E1;point;proportion;A0,A1,B0,B1,D0,D1,E0,V1;0"
+    - "E;line;connect;E0,E1;black;0;red"
+    - "F0;point;lineSlider;V0,V1,370,60;0"
+    - "F1;point;proportion;B0,B1,C0,C1,E0,E1,F0,V1;0"
+    - "F;line;connect;F0,F1;black;0;red"
+    - "G0;point;lineSlider;W0,W1,30,30;0"
+    - "G1;point;cutoff;G0,W1,A0,A1;0;lightGray"
+    - "G2;point;cutoff;G1,W1,A0,A1;0"
+    - "G;line;connect;G0,G2;black;0;blue"
+    - "H0;point;lineSlider;X0,X1,30,60;0"
+    - "H1;point;cutoff;H0,X1,D0,D1;0;lightGray"
+    - "H2;point;cutoff;H1,X1,D0,D1;0"
+    - "H;line;connect;H0,H2;black;0;red"
+    - "K0;point;lineSlider;W0,W1,200,30;0"
+    - "K1;point;cutoff;K0,W1,B0,B1;0;lightGray"
+    - "K2;point;cutoff;K1,W1,B0,B1;0;lightGray"
+    - "K3;point;cutoff;K2,W1,B0,B1;0"
+    - "K;line;connect;K0,K3;black;0;blue"
+    - "L0;point;lineSlider;X0,X1,200,60;0"
+    - "L1;point;cutoff;L0,X1,E0,E1;0;lightGray"
+    - "L2;point;cutoff;L1,X1,E0,E1;0;lightGray"
+    - "L3;point;cutoff;L2,X1,E0,E1;0"
+    - "L;line;connect;L0,L3;black;0;red"
+    - "M0;point;lineSlider;W0,W1,370,30;0"
+    - "M1;point;cutoff;M0,W1,C0,C1;0;lightGray"
+    - "M2;point;cutoff;M1,W1,C0,C1;0"
+    - "M;line;connect;M0,M2;black;0;blue"
+    - "N0;point;lineSlider;X0,X1,370,60;0"
+    - "N1;point;cutoff;N0,X1,F0,F1;0;lightGray"
+    - "N2;point;cutoff;N1,X1,F0,F1;0"
+    - "N;line;connect;N0,N2;black;0;red"
+  caption: |
+    {E} and {F} are constructed from {A}, {B}, {C}, {D}. {G}, {H} are twice {A}, {D}; {K}, {L} three times {B}, {E};
+    {M}, {N} twice {C}, {F}. Drag the ends of the top lines.
+
+steps:
+  - part: enunciation
+    text: "If there be any number of magnitudes whatever, and others equal to them in multitude, which taken two and two together are in the same ratio, they will also be in the same ratio ex aequali."
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      $A : B = D : E$ and $B : C = E : F$ give $A : C = D : F$ ([[V.Def.17]]).
+    modern: |
+      $$\frac{A}{B} = \frac{D}{E},\ \frac{B}{C} = \frac{E}{F} \ \Rightarrow\ \frac{A}{C} = \frac{D}{F}$$
+    cites: [V.Def.17]
+
+  - part: setting-out
+    text: "Let there be any number of magnitudes A, B, C, and others D, E, F equal to them in multitude, which taken two and two together are in the same ratio, so that, as A is to B, so is D to E, and, as B is to C, so is E to F;"
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      Three and three. "Any number", but Euclid takes three.
+
+  - part: specification
+    text: "I say that they will also be in the same ratio ex aequali, ⟨that is, as A is to C, so is D to F⟩."
+    highlight: [A, C, D, F]
+    hint: |
+      The goal. The words in angle brackets are Heath's addition, to say what *ex aequali* means here.
+
+  - part: construction
+    text: "For of A, D let equimultiples G, H be taken, and of B, E other, chance, equimultiples K, L; and, further, of C, F other, chance, equimultiples M, N."
+    highlight: [G, H, K, L, M, N]
+    hint: |
+      Three independent multipliers: {G}, {H} = $p$ × {A}, {D}; {K}, {L} = $q$ × {B}, {E}; {M}, {N} = $r$ × {C}, {F}.
+    explain:
+      did: |
+        Only $p$ and $r$ matter for the test of $A : C = D : F$ ([[V.Def.5]]); the middle multiplier $q$ is
+        a scaffold, to carry the hypotheses over to the multiples.
+
+  - part: proof
+    text: "Then, since, as A is to B, so is D to E, and of A, D equimultiples G, H have been taken, and of B, E other, chance, equimultiples K, L, therefore, as G is to K, so is H to L."
+    highlight: [G, K, H, L]
+    hint: |
+      $pA : qB = pD : qE$ ([[V.4]]).
+
+  - part: proof
+    text: "For the same reason also, as K is to M, so is L to N."
+    highlight: [K, M, L, N]
+    hint: |
+      $qB : rC = qE : rF$ ([[V.4]]).
+    cites: [V.4]
+
+  - part: proof
+    text: "Since, then, there are three magnitudes G, K, M, and others H, L, N equal to them in multitude, which taken two and two together are in the same ratio, therefore, ex aequali, if G is in excess of M, H is also in excess of N; if equal, equal; and if less, less."
+    highlight: [G, M, H, N]
+    hint: |
+      Apply [[V.20]] to the multiples: {G} vs {M} goes like {H} vs {N}.
+
+  - part: proof
+    text: "And G, H are equimultiples of A, D, and M, N other, chance, equimultiples of C, F."
+    highlight: [G, H, M, N]
+    hint: |
+      The multiples [[V.Def.5]] asks for.
+
+  - part: proof
+    text: "Therefore, as A is to C, so is D to F."
+    highlight: [A, C, D, F]
+    hint: |
+      $pA$ vs $rC$ always goes like $pD$ vs $rF$: [[V.Def.5]].
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3]
+      text: |
+        Fix $p, r$; pick any $q$.
+    - steps: [4, 5]
+      text: |
+        By [[V.4]], $pA : qB = pD : qE$ and $qB : rC = qE : rF$.
+    - steps: [6, 7, 8]
+      text: |
+        By [[V.20]], $pA \gtreqless rC \Rightarrow pD \gtreqless rF$. So $A : C = D : F$ by [[V.Def.5]].
+        $\blacksquare$
+  closing: |
+    For more than three terms, apply the result repeatedly (an induction Euclid leaves implicit).
+
+commentary: |
+  *Ex aequali* is how Euclid composes ratios without multiplying them. It is everywhere in Book VI (e.g.
+  [[VI.22]], [[VI.23]]) and in the solid geometry of Books XI–XII. Joyce notes that Book VII proves the
+  analogue for numbers separately ([[VII.14]]).
+
+  Unlike [[V.23]], this proof does not alternate, so {A}, {B}, {C} and {D}, {E}, {F} may be of two different
+  kinds.

@@ -1,0 +1,174 @@
+id: III.20
+kind: theorem
+title: The angle at the centre is double the angle at the circumference
+
+paraphrase: |
+  An angle at the centre is twice any angle at the circumference standing on the same arc.
+
+diagram:
+  width: 280
+  height: 270
+  elements:
+    - "A;point;free;40,110"
+    - "Fx;point;free;240,170;0"
+    - "E;point;midpoint;A,Fx"
+    - "ABC;circle;radius;E,A;0;0;black;0"
+    - "F;point;extend;A,E,A,E"
+    - "B;point;circleSlider;ABC,190,215"
+    - "C;point;circleSlider;ABC,220,80"
+    - "AC;line;connect;A,C"
+    - "AB;line;connect;A,B"
+    - "EC;line;connect;E,C"
+    - "EB;line;connect;E,B"
+    - "AF;line;connect;A,F"
+    - "D;point;circleSlider;ABC,170,35"
+    - "DC;line;connect;D,C"
+    - "DB;line;connect;D,B"
+    - "G;point;extend;D,E,D,E"
+    - "DG;line;connect;D,G"
+    - "EA;line;connect;E,A;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "angBEC;sector;angleMarker;E,B,C"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angBDC;sector;angleMarker;D,B,C"
+    - "angEAB;sector;angleMarker;A,E,B"
+    - "angEBA;sector;angleMarker;B,E,A"
+    - "angBEF;sector;angleMarker;E,B,F"
+    - "angFEC;sector;angleMarker;E,F,C"
+  aliases:
+    CE: EC
+    BE: EB
+    AE: EA
+    BEC: angBEC
+    BAC: angBAC
+    BDC: angBDC
+    EAB: angEAB
+    EBA: angEBA
+    BEF: angBEF
+    FEC: angFEC
+  given: [ABC, A, B, C, E, EC, EB, AB, AC]
+  caption: |
+    Drag {A}, {B}, {C} or {D} round the circle: the angle at the centre stays twice the angle at {A}
+    (and at {D}), as long as they stand on the same arc {BC}.
+
+steps:
+  - part: enunciation
+    text: "In a circle the angle at the centre is double of the angle at the circumference, when the angles have the same circumference as base."
+    highlight: [angBEC, angBAC]
+    hint: |
+      Central angle = 2 × inscribed angle on the same arc.
+
+  - part: setting-out
+    text: "Let ABC be a circle, let the angle BEC be an angle at its centre, and the angle BAC an angle at the circumference, and let them have the same circumference BC as base;"
+    highlight: [angBEC, angBAC]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the angle BEC is double of the angle BAC."
+    highlight: [angBEC, angBAC]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let AE be joined and drawn through to F."
+    highlight: [AF]
+    adds: [AF, F]
+    hint: |
+      Draw the diameter through {A}.
+
+  - part: proof
+    text: "Then, since EA is equal to EB, the angle EAB is also equal to the angle EBA;"
+    highlight: [angEAB, angEBA]
+    hint: |
+      Isosceles {EAB|AB} ([[I.5]]).
+
+  - part: proof
+    text: "therefore the angles EAB, EBA are double of the angle EAB."
+    highlight: [angEAB, angEBA]
+    hint: |
+      Two equal angles make twice one.
+
+  - part: proof
+    text: "But the angle BEF is equal to the angles EAB, EBA;"
+    highlight: [angBEF, angEAB, angEBA]
+    hint: |
+      Exterior angle = sum of the two remote ones ([[I.32]]).
+
+  - part: proof
+    text: "therefore the angle BEF is also double of the angle EAB."
+    highlight: [angBEF, angEAB]
+    hint: |
+      So ∠{BEF} = 2∠{EAB}.
+
+  - part: proof
+    text: "For the same reason the angle FEC is also double of the angle EAC."
+    highlight: [angFEC]
+    hint: |
+      Same on the other side.
+
+  - part: proof
+    text: "Therefore the whole angle BEC is double of the whole angle BAC."
+    highlight: [angBEC, angBAC]
+    hint: |
+      Add the two halves.
+
+  - part: proof
+    text: "Again let another straight line be inflected, and let there be another angle BDC;"
+    highlight: [angBDC, DB, DC]
+    adds: [D, DB, DC]
+    hint: |
+      Second case: an angle {BDC} where the centre is *outside* the angle.
+    explain:
+      fact: |
+        "Inflected" (κεκλάσθω) is the technical term for drawing a broken line from one point, bent at a
+        point of a curve, to another (Heath's note on line 25).
+
+  - part: construction
+    text: "let DE be joined and produced to G."
+    highlight: [DG]
+    adds: [DG, G]
+    hint: |
+      The diameter through {D}.
+
+  - part: proof
+    text: "Similarly then we can prove that the angle GEC is double of the angle EDC, of which the angle GEB is double of the angle EDB;"
+    highlight: [DG]
+    hint: |
+      As in the first case, applied to both lines from {D}.
+
+  - part: proof
+    text: "therefore the angle BEC which remains is double of the angle BDC."
+    highlight: [angBEC, angBDC]
+    hint: |
+      Subtract instead of adding.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* With directed angles:
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      text: |
+        For $A$ on the circle, $\angle(EA, EB)$ external to isosceles $EAB$ gives $\angle FEB = 2\angle FAB$;
+        likewise $\angle FEC = 2\angle FAC$.
+    - steps: [10, 11, 12, 13]
+      text: Adding or subtracting (signed), $\angle BEC = 2\angle BAC$ in every position. $\blacksquare$
+
+commentary: |
+  The **inscribed angle theorem**, the key to the rest of Book III: [[III.21]] (angles in the same segment
+  are equal), [[III.22]] (cyclic quadrilaterals), [[III.31]] (angle in a semicircle).
+
+gaps: |
+  - **Only two cases**: centre inside the angle, and outside it (with the arc {BC} less than a semicircle).
+    When {BC} is greater than a semicircle, the angle "at the centre" would exceed two right angles — an
+    angle Euclid does not recognise. Heath discusses this limitation.

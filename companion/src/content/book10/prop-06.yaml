@@ -1,0 +1,192 @@
+id: X.6
+kind: theorem
+title: Magnitudes in the ratio of numbers are commensurable
+
+paraphrase: |
+  If {A} : {B} = {D} : {E} for numbers {D}, {E}, then {A} and {B} are commensurable. The converse of [[X.5]];
+  with a porism on constructing figures in a given numerical ratio.
+
+diagram:
+  width: 290
+  height: 120
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "D0;point;free;-1000,70;0;0"
+    - "D3;point;free;1000,70;0;0"
+    - "E0;point;free;-1000,100;0;0"
+    - "E3;point;free;1000,100;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,20;0;0"
+    - "C1;point;lineSlider;A0,A3,230,0;0"
+    - "C2;point;lineSlider;A0,A3,260,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "A1;point;cutoff;A,A3,C1,C2;0"
+    - "A4;point;cutoff;A1,A3,C1,C2;0"
+    - "A5;point;cutoff;A4,A3,C1,C2;0"
+    - "AA5;line;connect;A,A5"
+    - "B1;point;lineSlider;A0,A3,140,0;0"
+    - "B2;point;cutoff;B1,A3,A,A4;0"
+    - "B;line;connect;B1,B2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;proportion;C1,C2,A,A5,U1,U2,D1,D3;0"
+    - "D;line;connect;D1,D2;black;0;blue"
+    - "E1;point;lineSlider;D0,D3,120,0;0"
+    - "E2;point;proportion;C1,C2,B1,B2,U1,U2,E1,D3;0"
+    - "E;line;connect;E1,E2;black;0;blue"
+    - "F1;point;lineSlider;D0,D3,190,0;0"
+    - "F2;point;cutoff;F1,D3,B1,B2;0"
+    - "F;line;connect;F1,F2;black"
+  caption: |
+    {A} is cut into {D} equal parts, one of which is {C}; {F} is {E} copies of {C}.
+
+steps:
+  - part: enunciation
+    text: "If two magnitudes have to one another the ratio which a number has to a number, the magnitudes will be commensurable."
+    highlight: [AA5, B, D, E]
+    hint: |
+      Rational ratio ⇒ commensurable.
+    modern: |
+      $a : b = m : n$ $\Rightarrow$ $c = a/m$ measures both.
+
+  - part: setting-out
+    text: "For let the two magnitudes A, B have to one another the ratio which the number D has to the number E;"
+    highlight: [AA5, B, D, E]
+    hint: |
+      {A} : {B} = {D} : {E}.
+
+  - part: specification
+    text: "I say that the magnitudes A, B are commensurable."
+    highlight: [AA5, B]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For let A be divided into as many equal parts as there are units in D, and let C be equal to one of them;"
+    highlight: [C]
+    hint: |
+      Divide {A} into {D} equal parts; {C} is one.
+    explain:
+      implicit: |
+        That a magnitude can be divided into any number of equal parts. True for lines ([[VI.9]]); Joyce notes
+        it is not constructible for every kind of magnitude (an angle cannot in general be trisected by
+        ruler and compass).
+    gap: |
+      Divisibility of the magnitude into $n$ equal parts is assumed.
+
+  - part: construction
+    text: "and let F be made up of as many magnitudes equal to C as there are units in E."
+    highlight: [F]
+    hint: |
+      {F} = {E} copies of {C}.
+
+  - part: proof
+    text: "Since then there are in A as many magnitudes equal to C as there are units in D, whatever part the unit is of D, the same part is C of A also; therefore, as C is to A, so is the unit to D."
+    highlight: [C, AA5, D]
+    hint: |
+      {C} : {A} = 1 : {D}.
+
+  - part: proof
+    text: "But the unit measures the number D; therefore C also measures A."
+    highlight: [C, AA5]
+    hint: |
+      So {C} measures {A}.
+
+  - part: proof
+    text: "And since, as C is to A, so is the unit to D, therefore, inversely, as A is to C, so is the number D to the unit."
+    highlight: [AA5, C, D]
+    hint: |
+      {A} : {C} = {D} : 1.
+
+  - part: proof
+    text: "Again, since there are in F as many magnitudes equal to C as there are units in E, therefore, as C is to F, so is the unit to E."
+    highlight: [C, F, E]
+    hint: |
+      {C} : {F} = 1 : {E}.
+
+  - part: proof
+    text: "But it was also proved that, as A is to C, so is D to the unit; therefore, ex aequali, as A is to F, so is D to E."
+    highlight: [AA5, F, D, E]
+    hint: |
+      Ex aequali ([[V.22]]): {A} : {F} = {D} : {E}.
+
+  - part: proof
+    text: "But, as D is to E, so is A to B; therefore also, as A is to B, so is it to F also."
+    highlight: [AA5, B, F]
+    hint: |
+      So {A} : {B} = {A} : {F} ([[V.11]]).
+
+  - part: proof
+    text: "Therefore A has the same ratio to each of the magnitudes B, F; therefore B is equal to F."
+    highlight: [B, F]
+    hint: |
+      Hence {B} = {F} ([[V.9]]).
+
+  - part: proof
+    text: "But C measures F; therefore it measures B also."
+    highlight: [C, F, B]
+    hint: |
+      {C} measures {F} = {B} …
+
+  - part: proof
+    text: "Further it measures A also; therefore C measures A, B."
+    highlight: [C, AA5, B]
+    hint: |
+      … and {A}.
+
+  - part: proof
+    text: "Therefore A is commensurable with B."
+    highlight: [AA5, B]
+    hint: |
+      Commensurable.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: porism
+    text: "Porism. From this it is manifest that, if there be two numbers, as D, E, and a straight line, as A, it is possible to make a straight line [F] such that the given straight line is to it as the number D is to the number E."
+    highlight: [AA5, F, D, E]
+    hint: |
+      Porism: given numbers {D}, {E} and a line {A}, one can find {F} with {A} : {F} = {D} : {E}.
+
+  - part: porism
+    text: "And, if a mean proportional be also taken between A, F, as B,"
+    highlight: [AA5, F, B]
+    hint: |
+      Take {B} the mean proportional between {A} and {F} …
+
+  - part: porism
+    text: "as A is to F, so will the square on A be to the square on B, that is, as the first is to the third, so is the figure on the first to that which is similar and similarly described on the second."
+    highlight: [AA5, B]
+    hint: |
+      … then {A} : {F} = square on {A} : square on {B} ([[VI.19]], porism).
+
+  - part: porism
+    text: "But, as A is to F, so is the number D to the number E; therefore it has been contrived that, as the number D is to the number E, so also is the figure on the straight line A to the figure on the straight line B."
+    highlight: [AA5, B]
+    hint: |
+      So the squares on {A}, {B} are in the given ratio {D} : {E}.
+    modern: |
+      $a^2 : b^2 = d : e$ with $b = a\sqrt{e/d}$.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+      text: |
+        $a/b = m/n \Rightarrow b = n(a/m)$, so $a/m$ measures both. $\blacksquare$
+  closing: |
+    The porism is the tool for constructing lines commensurable *in square only* with a given line (used in
+    [[X.10]]).
+
+commentary: |
+  With [[X.5]]: commensurable exactly when the ratio is that of numbers.

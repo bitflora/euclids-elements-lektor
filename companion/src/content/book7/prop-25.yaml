@@ -1,0 +1,101 @@
+id: VII.25
+kind: theorem
+title: The square of a number coprime to another is coprime to it
+
+paraphrase: |
+  If {A} and {B} are prime to one another, then {A}·{A} is prime to {B}.
+
+diagram:
+  width: 130
+  height: 250
+  elements:
+    - "A0;point;free;30,-1000;0;0"
+    - "A3;point;free;30,1000;0;0"
+    - "A1;point;lineSlider;A0,A3,30,30;0"
+    - "A2;point;lineSlider;A0,A3,30,110;0"
+    - "A;line;connect;A1,A2;black"
+    - "B0;point;free;65,-1000;0;0"
+    - "B3;point;free;65,1000;0;0"
+    - "B1;point;lineSlider;B0,B3,65,30;0"
+    - "B2;point;lineSlider;B0,B3,65,130;0"
+    - "B;line;connect;B1,B2;black"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,50;0;0"
+    - "C0;point;free;100,-1000;0;0"
+    - "C3;point;free;100,1000;0;0"
+    - "C1;point;lineSlider;C0,C3,100,30;0"
+    - "C2;point;proportion;U1,U2,A1,A2,A1,A2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;A0,A3,30,140;0"
+    - "D2;point;cutoff;D1,A3,A1,A2;0"
+    - "D;line;connect;D1,D2;black"
+  caption: |
+    {C} = {A}·{A}; {D} is a copy of {A}.
+
+steps:
+  - part: enunciation
+    text: "If two numbers be prime to one another, the product of one of them into itself will be prime to the remaining one."
+    highlight: [A, B, C]
+    hint: |
+      $\gcd(a, b) = 1 \Rightarrow \gcd(a^2, b) = 1$.
+    modern: |
+      $\gcd(a, b) = 1 \Rightarrow \gcd(a^2, b) = 1$.
+
+  - part: setting-out
+    text: "Let A, B be two numbers prime to one another, and let A by multiplying itself make C:"
+    highlight: [A, B, C]
+    hint: |
+      {A}, {B} coprime; {C} = {A}².
+
+  - part: specification
+    text: "I say that B, C are prime to one another."
+    highlight: [B, C]
+    hint: |
+      To prove: {B}, {C} coprime.
+
+  - part: construction
+    text: "For let D be made equal to A."
+    highlight: [D]
+    hint: |
+      A second copy {D} of {A}, so that [[VII.24]] (about two numbers) applies.
+
+  - part: proof
+    text: "Since A, B are prime to one another, and A is equal to D, therefore D, B are also prime to one another."
+    highlight: [D, B]
+    hint: |
+      {D} is coprime to {B}, being equal to {A}.
+
+  - part: proof
+    text: "Therefore each of the two numbers D, A is prime to B; therefore the product of D, A will also be prime to B."
+    highlight: [D, A, B]
+    hint: |
+      By [[VII.24]], {D}·{A} is coprime to {B}.
+
+  - part: proof
+    text: "But the number which is the product of D, A is C."
+    highlight: [C]
+    hint: |
+      And {D}·{A} = {A}·{A} = {C}.
+
+  - part: proof
+    text: "Therefore C, B are prime to one another."
+    highlight: [C, B]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6, 7]
+      text: |
+        [[VII.24]] with $b = a$: $\gcd(a \cdot a, c) = 1$. $\blacksquare$
+
+commentary: |
+  A special case of [[VII.24]]. The copy {D} is there because Euclid's [[VII.24]] speaks of "two numbers",
+  and he does not apply it to one number taken twice. Used in [[VII.27]] and [[IX.15]].

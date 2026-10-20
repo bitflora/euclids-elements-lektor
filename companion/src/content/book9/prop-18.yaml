@@ -1,0 +1,158 @@
+id: IX.18
+kind: problem
+title: When does a third proportional exist?
+
+paraphrase: |
+  Given {A} and {B}, decide whether there is a number {D} with {A} : {B} = {B} : {D}. It exists exactly when
+  {A} measures {B}·{B}.
+
+diagram:
+  width: 250
+  height: 170
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "C0;point;free;-1000,110;0;0"
+    - "C3;point;free;1000,110;0;0"
+    - "D0;point;free;-1000,145;0;0"
+    - "D3;point;free;1000,145;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,35;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,95,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,110,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;U1,U2,B1,B2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;proportion;U1,U2,A1,A2,B1,B2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+  caption: |
+    {C} = {B}²; {D} = {C} / {A} when {A} measures {C}.
+
+steps:
+  - part: enunciation
+    text: "Given two numbers, to investigate whether it is possible to find a third proportional to them."
+    highlight: [A, B]
+    hint: |
+      A third proportional exists iff $a \mid b^2$.
+    modern: |
+      $\exists d:\ a : b = b : d \iff a \mid b^2$ (and then $d = b^2/a$).
+
+  - part: setting-out
+    text: "Let A, B be the given two numbers, and let it be required to investigate whether it is possible to find a third proportional to them."
+    highlight: [A, B]
+    hint: |
+      The given numbers.
+
+  - part: proof
+    text: "Now A, B are either prime to one another or not."
+    highlight: [A, B]
+    hint: |
+      Two cases.
+
+  - part: proof
+    text: "And, if they are prime to one another, it has been proved that it is impossible to find a third proportional to them."
+    highlight: [A, B]
+    hint: |
+      [[IX.16]].
+
+  - part: construction
+    text: "Next, let A, B not be prime to one another, and let B by multiplying itself make C."
+    highlight: [C]
+    hint: |
+      {C} = {B}².
+
+  - part: proof
+    text: "Then A either measures C or does not measure it."
+    highlight: [A, C]
+    hint: |
+      Two subcases.
+
+  - part: proof
+    text: "First, let it measure it according to D; therefore A by multiplying D has made C."
+    highlight: [A, D, C]
+    hint: |
+      {C} = {A}{D}.
+
+  - part: proof
+    text: "But, further, B has also by multiplying itself made C; therefore the product of A, D is equal to the square on B."
+    highlight: [A, D, B]
+    hint: |
+      {A}{D} = {B}².
+
+  - part: proof
+    text: "Therefore, as A is to B, so is B to D; therefore a third proportional number D has been found to A, B."
+    highlight: [A, B, D]
+    hint: |
+      [[VII.19]].
+
+  - part: proof
+    text: "Next, let A not measure C; I say that it is impossible to find a third proportional number to A, B."
+    highlight: [A, C]
+    hint: |
+      If {A} does not measure {C}, none exists.
+
+  - part: proof
+    text: "For, if possible, let D, such third proportional, have been found."
+    highlight: [D]
+    hint: |
+      Suppose {D}.
+
+  - part: proof
+    text: "Therefore the product of A, D is equal to the square on B."
+    highlight: [A, D, B]
+    hint: |
+      [[VII.19]].
+    cites: [VII.19]
+
+  - part: proof
+    text: "But the square on B is C; therefore the product of A, D is equal to C."
+    highlight: [A, D, C]
+    hint: |
+      {A}{D} = {C}.
+
+  - part: proof
+    text: "Hence A by multiplying D has made C; therefore A measures C according to D."
+    highlight: [A, C]
+    hint: |
+      So {A} measures {C}.
+
+  - part: proof
+    text: "But, by hypothesis, it also does not measure it: which is absurd."
+    highlight: [A, C]
+    hint: |
+      Contradiction.
+
+  - part: proof
+    text: "Therefore it is not possible to find a third proportional number to A, B when A does not measure C."
+    highlight: [A, B]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [4, 5, 6, 7, 8]
+      text: |
+        If $a \mid b^2$, $d = b^2/a$ works ([[VII.19]]).
+    - steps: [9, 10, 11, 12, 13, 14, 15]
+      text: |
+        If $ad = b^2$ then $a \mid b^2$. $\blacksquare$
+  closing: |
+    The coprime case is not really separate: there $a \mid b^2$ only if $a = 1$.
+
+commentary: |
+  Joyce: the third proportional must be $b^2/a$, so it exists when $a$ divides $b^2$ — which is all the
+  proposition says. Euclid's separate coprime case is redundant.

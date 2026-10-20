@@ -1,0 +1,97 @@
+id: X.36
+kind: theorem
+title: The binomial line
+
+paraphrase: |
+  The sum of two rational lines commensurable in square only is irrational; it is called a *binomial*
+  (ἐκ δύο ὀνομάτων, "from two names"). Example: $1 + \sqrt2$.
+
+diagram:
+  width: 230
+  height: 80
+  elements:
+    - "X0;point;free;-1000,50"
+    - "X1;point;free;1000,50"
+    - "A;point;lineSlider;X0,X1,30,0"
+    - "B;point;lineSlider;X0,X1,100,0"
+    - "C;point;lineSlider;X0,X1,200,0"
+    - "AC;line;connect;A,C"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+  aliases: { CA: AC, BA: AB, CB: BC }
+  caption: |
+    {AC} = {AB} + {BC}, with {AB}, {BC} rational and commensurable in square only.
+
+steps:
+  - part: enunciation
+    text: "If two rational straight lines commensurable in square only be added together, the whole is irrational; and let it be called binomial."
+    highlight: [AC]
+    hint: |
+      $a + b$ with $a^2, b^2$ rational and $a/b$ irrational: the binomial.
+    modern: |
+      $(\sqrt p + \sqrt q)^2 = p + q + 2\sqrt{pq}$ is irrational when $\sqrt{p/q} \notin \mathbb Q$.
+
+  - part: setting-out
+    text: "For let two rational straight lines AB, BC commensurable in square only be added together;"
+    highlight: [AB, BC]
+    hint: |
+      {AB}, {BC} rational, commensurable in square only.
+
+  - part: specification
+    text: "I say that the whole AC is irrational."
+    highlight: [AC]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since AB is incommensurable in length with BC— for they are commensurable in square only— and, as AB is to BC, so is the rectangle AB, BC to the square on BC, therefore the rectangle AB, BC is incommensurable with the square on BC."
+    highlight: [AB, BC]
+    hint: |
+      rect({AB},{BC}) : sq({BC}) = {AB} : {BC}, irrational ([[X.11]]).
+
+  - part: proof
+    text: "But twice the rectangle AB, BC is commensurable with the rectangle AB, BC, and the squares on AB, BC are commensurable with the square on BC—for AB, BC are rational straight lines commensurable in square only— therefore twice the rectangle AB, BC is incommensurable with the squares on AB, BC."
+    highlight: [AB, BC]
+    hint: |
+      2·rect is commensurable with rect; sq({AB}) + sq({BC}) with sq({BC}) ([[X.15]]); so 2·rect is
+      incommensurable with the sum of squares ([[X.13]]).
+
+  - part: proof
+    text: "And, componendo, twice the rectangle AB, BC together with the squares on AB, BC, that is, the square on AC, is incommensurable with the sum of the squares on AB, BC."
+    highlight: [AC]
+    hint: |
+      Adding: sq({AC}) ([[II.4]]) is incommensurable with the (rational) sum of squares ([[X.16]]).
+
+  - part: proof
+    text: "But the sum of the squares on AB, BC is rational; therefore the square on AC is irrational, so that AC is also irrational."
+    highlight: [AC]
+    hint: |
+      So sq({AC}) is irrational, and {AC} is irrational.
+
+  - part: proof
+    text: "And let it be called binomial."
+    hint: |
+      The name.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        $(a + b)^2 = (a^2 + b^2) + 2ab$; the first part is rational, $2ab$ is not (it is $2b^2 \cdot a/b$), so the
+        whole is irrational. $\blacksquare$
+
+commentary: |
+  [[X.36]]–[[X.41]] define six irrational lines formed by *addition*, each the sum of two lines with specified
+  properties (from [[X.29]]–[[X.35]]):
+
+  | | name | parts |
+  |---|---|---|
+  | [[X.36]] | binomial | rational, commensurable in square only |
+  | [[X.37]] | first bimedial | medial, commensurable in square only, rational rectangle |
+  | [[X.38]] | second bimedial | medial, commensurable in square only, medial rectangle |
+  | [[X.39]] | major | incommensurable in square; sum of squares rational, rectangle medial |
+  | [[X.40]] | side of a rational plus a medial | sum of squares medial, rectangle rational |
+  | [[X.41]] | side of the sum of two medials | both medial and incommensurable |
+
+  [[X.42]]–[[X.47]] then show each divides into its parts in only one way, and [[X.73]]–[[X.78]] give the
+  six corresponding "subtractive" irrationals.

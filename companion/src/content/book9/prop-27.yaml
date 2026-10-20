@@ -1,0 +1,86 @@
+id: IX.27
+kind: theorem
+title: Odd minus even is odd
+
+paraphrase: |
+  If an even number {BC} is subtracted from an odd number {AB}, the remainder {CA} is odd.
+
+diagram:
+  width: 230
+  height: 60
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,20;0;0"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "B;point;lineSlider;A0,A3,200,0"
+    - "C;point;lineSlider;A0,A3,130,0"
+    - "D;point;cutoff;A,B,U1,U2"
+    - "AB;line;connect;A,B"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+  aliases: { CA: AC }
+  caption: |
+    {AD} is a unit taken off {AB}.
+
+steps:
+  - part: enunciation
+    text: "If from an odd number an even number be subtracted, the remainder will be odd."
+    highlight: [AB, BC]
+    hint: |
+      odd − even = odd.
+    modern: |
+      $(2a + 1) - 2b = 2(a - b) + 1$.
+
+  - part: setting-out
+    text: "For from the odd number AB let the even number BC be subtracted;"
+    highlight: [AB, BC]
+    hint: |
+      {AB} odd, {BC} even.
+
+  - part: specification
+    text: "I say that the remainder CA is odd."
+    highlight: [AC]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "Let the unit AD be subtracted;"
+    highlight: [AD]
+    hint: |
+      Take a unit off.
+
+  - part: proof
+    text: "therefore DB is even."
+    highlight: [DB]
+    hint: |
+      [[VII.Def.7]].
+
+  - part: proof
+    text: "But BC is also even; therefore the remainder CD is even."
+    highlight: [BC, CD]
+    hint: |
+      [[IX.24]].
+
+  - part: proof
+    text: "Therefore CA is odd."
+    highlight: [AC]
+    hint: |
+      {CA} = {CD} + the unit {AD} ([[VII.Def.7]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        $(2a + 1) - 2b = (2a - 2b) + 1$. $\blacksquare$

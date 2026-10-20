@@ -1,0 +1,229 @@
+id: XI.35
+kind: theorem
+title: Equally inclined lines on equal angles have equal heights
+
+paraphrase: |
+  If two equal plane angles have lines set up at their vertices making equal angles with the arms, then the
+  perpendiculars from points at equal distances on those lines to the planes are equal, and the lines make equal
+  angles with the perpendiculars' feet. (The porism: equal heights.)
+
+diagram:
+  width: 440
+  height: 280
+  elements:
+    - "origin;point;fixed;90,80,0;0;green"
+    - "1X;point;fixed;290,107,36;0;0"
+    - "1Y;point;fixed;45,200,160;0;0"
+    - "1Z;point;fixed;90,-64,123;0;0"
+    - "x;point;lineSlider;origin,1X,410,127,36;0"
+    - "y;point;lineSlider;origin,1Y,45,230,160;0"
+    - "z;point;lineSlider;origin,1Z,90,-34,123;0;0"
+    - "floorplane;plane;3points;origin,x,y;0;0;lightGray"
+    - "floorcenter;point;midpoint;x,y;0;0"
+    - "wallcenter;point;midpoint;y,z;0;0"
+    - "ceilingcenter;point;parallelogram;z,origin,floorcenter;0;0"
+    - "midplane;plane;3points;wallcenter,floorcenter,ceilingcenter;0;0;0;0"
+    - "A;point;planeSlider;floorplane,100,70,80"
+    - "b;point;planeSlider;floorplane,230,190,20;0"
+    - "c;point;planeSlider;floorplane,140,160,180;0"
+    - "D;point;planeSlider;floorplane,250,30,180"
+    - "e;point;planeSlider;floorplane,360,150,110;0"
+    - "f';point;similar;e,D,floorplane,b,A,c,floorplane;0;0"
+    - "f;point;lineSlider;D,f',340,210,180;0"
+    - "Ab;line;connect;A,b"
+    - "Ac;line;connect;A,c"
+    - "De;line;connect;D,e"
+    - "Df;line;connect;D,f"
+    - "Acmid;point;midpoint;A,c;0;0"
+    - "b';point;extend;A,b,A,Acmid;0;0"
+    - "Asphere;sphere;radius;A,b';0;0;0;0"
+    - "G;point;sphereSlider;Asphere,180,60,200"
+    - "L;point;foot;G,floorplane"
+    - "AGL;polygon;triangle;A,G,L;0;0;black;0"
+    - "N;point;similar;e,D,floorplane,b,A,L,floorplane"
+    - "M';point;parallelogram;G,L,N;0;0"
+    - "M;point;proportion;A,L,D,N,L,G,N,M'"
+    - "MDN;polygon;triangle;M,D,N;0;0;black;0"
+    - "H;point;cutoff;A,G,D,M"
+    - "K;point;foot;H,floorplane"
+    - "HK;line;connect;H,K"
+    - "B;point;foot;K,A,b"
+    - "C;point;foot;K,A,c"
+    - "E;point;foot;N,D,e"
+    - "F;point;foot;N,D,f"
+    - "BC;line;connect;B,C"
+    - "EF;line;connect;E,F"
+    - "ABKC;polygon;quadrilateral;A,B,K,C;0;0;black;120,50,80"
+    - "BAH;polygon;triangle;B,A,H;0;0;black;120,75,90"
+    - "HAC;polygon;triangle;H,A,C;0;0;black;120,50,100"
+    - "DENF;polygon;quadrilateral;D,E,N,F;0;0;black;300,50,90"
+    - "MED;polygon;triangle;M,E,D;0;0;black;300,75,100"
+    - "MDF;polygon;triangle;M,D,F;0;0;black;300,50,100"
+  aliases: { KH: HK, CB: BC, FE: EF }
+  caption: |
+    Joyce's three-dimensional figure; drag to rotate.
+
+steps:
+  - part: enunciation
+    text: "If there be two equal plane angles, and on their vertices there be set up elevated straight lines containing equal angles with the original straight lines respectively, if on the elevated straight lines points be taken at random and perpendiculars be drawn from them to the planes in which the original angles are, and if from the points so arising in the planes straight lines be joined to the vertices of the original angles, they will contain, with the elevated straight lines, equal angles."
+    highlight: [A]
+    hint: |
+      Equal angles with equally inclined "elevated" lines have equal heights.
+
+  - part: setting-out
+    text: "Let the angles BAC, EDF be two equal rectilineal angles, and from the points A, D let the elevated straight lines AG, DM be set up containing, with the original straight lines, equal angles respectively, namely, the angle MDE to the angle GAB and the angle MDF to the angle GAC, let points G, M be taken at random on AG, DM, let GL, MN be drawn from the points G, M perpendicular to the planes through BA, AC and ED, DF, and let them meet the planes at L, N, and let LA, ND be joined; I say that the angle GAL is equal to the angle MDN."
+    highlight: [A]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "Let AH be made equal to DM, and let HK be drawn through the point H parallel to GL."
+    highlight: [A]
+    hint: |
+      *AH* = *DM*; *HK* ∥ *GL*.
+
+  - part: proof
+    text: "But GL is perpendicular to the plane through BA, AC; therefore HK is also perpendicular to the plane through BA, AC."
+    highlight: [A]
+    hint: |
+      *HK* ⊥ the plane *BAC* ([[XI.8]]).
+
+  - part: construction
+    text: "From the points K, N let KC, NF, KB, NE be drawn perpendicular to the straight lines AC, DF, AB, DE, and let HC, CB, MF, FE be joined."
+    highlight: [A]
+    hint: |
+      Drop perpendiculars *KC*, *NF*, *KB*, *NE*; join *HC*, *CB*, *MF*, *FE*.
+
+  - part: proof
+    text: "Since the square on HA is equal to the squares on HK, KA, and the squares on KC, CA are equal to the square on KA, therefore the square on HA is also equal to the squares on HK, KC, CA."
+    highlight: [A]
+    hint: |
+      sq(*HA*) = sq(*HK*) + sq(*KC*) + sq(*CA*) …
+
+  - part: proof
+    text: "But the square on HC is equal to the squares on HK, KC; therefore the square on HA is equal to the squares on HC, CA."
+    highlight: [A]
+    hint: |
+      … = sq(*HC*) + sq(*CA*) …
+
+  - part: proof
+    text: "Therefore the angle HCA is right."
+    highlight: [A]
+    hint: |
+      … so ∠*HCA* is right ([[I.48]]).
+
+  - part: proof
+    text: "For the same reason the angle DFM is also right."
+    highlight: [A]
+    hint: |
+      Likewise ∠*DFM*.
+
+  - part: proof
+    text: "Therefore the angle ACH is equal to the angle DFM."
+    highlight: [A]
+    hint: |
+      Equal right angles …
+
+  - part: proof
+    text: "But the angle HAC is also equal to the angle MDF."
+    highlight: [A]
+    hint: |
+      … and ∠*HAC* = ∠*MDF* …
+
+  - part: proof
+    text: "Therefore MDF, HAC are two triangles which have two angles equal to two angles respectively, and one side equal to one side, namely, that subtending one of the equal angles, that is, HA equal to MD; therefore they will also have the remaining sides equal to the remaining sides respectively."
+    highlight: [A]
+    hint: |
+      … so the triangles are congruent ([[I.26]]) …
+
+  - part: proof
+    text: "Therefore AC is equal to DF."
+    highlight: [A]
+    hint: |
+      … *AC* = *DF*.
+
+  - part: proof
+    text: "Similarly we can prove that AB is also equal to DE."
+    highlight: [A]
+    hint: |
+      Likewise *AB* = *DE*.
+
+  - part: proof
+    text: "Since then AC is equal to DF, and AB to DE, the two sides CA, AB are equal to the two sides FD, DE."
+    highlight: [A]
+    hint: |
+      Two sides …
+
+  - part: proof
+    text: "But the angle CAB is also equal to the angle FDE; therefore the base BC is equal to the base EF, the triangle to the triangle, and the remaining angles to the remaining angles; therefore the angle ACB is equal to the angle DFE."
+    highlight: [A]
+    hint: |
+      … and the angle: *BC* = *EF*, with equal angles ([[I.4]]).
+
+  - part: proof
+    text: "But the right angle ACK is also equal to the right angle DFN; therefore the remaining angle BCK is also equal to the remaining angle EFN."
+    highlight: [A]
+    hint: |
+      Subtracting from right angles: ∠*BCK* = ∠*EFN* …
+
+  - part: proof
+    text: "For the same reason the angle CBK is also equal to the angle FEN."
+    highlight: [A]
+    hint: |
+      … and ∠*CBK* = ∠*FEN* …
+
+  - part: proof
+    text: "Therefore BCK, EFN are two triangles which have two angles equal to two angles respectively, and one side equal to one side, namely, that adjacent to the equal angles, that is, BC equal to EF; therefore they will also have the remaining sides equal to the remaining sides."
+    highlight: [A]
+    hint: |
+      … so triangles *BCK*, *EFN* are congruent ([[I.26]]) …
+
+  - part: proof
+    text: "Therefore CK is equal to FN."
+    highlight: [A]
+    hint: |
+      … *CK* = *FN*.
+
+  - part: proof
+    text: "But AC is also equal to DF; therefore the two sides AC, CK are equal to the two sides DF, FN; and they contain right angles."
+    highlight: [A]
+    hint: |
+      Two sides and a right angle …
+
+  - part: proof
+    text: "Therefore the base AK is equal to the base DN."
+    highlight: [A]
+    hint: |
+      … *AK* = *DN* ([[I.4]]).
+
+  - part: proof
+    text: "And, since AH is equal to DM, the square on AH is also equal to the square on DM."
+    highlight: [A]
+    hint: |
+      sq(*AH*) = sq(*DM*) …
+
+  - part: proof
+    text: "But the squares on AK, KH are equal to the square on AH, for the angle AKH is right; and the squares on DN, NM are equal to the square on DM, for the angle DNM is right; therefore the squares on AK, KH are equal to the squares on DN, NM; and of these the square on AK is equal to the square on DN; therefore the remaining square on KH is equal to the square on NM; therefore HK is equal to MN."
+    highlight: [A]
+    hint: |
+      … so sq(*KH*) = sq(*NM*) ([[I.47]]) …
+
+  - part: proof
+    text: "And, since the two sides HA, AK are equal to the two sides MD, DN respectively, and the base HK was proved equal to the base MN, therefore the angle HAK is equal to the angle MDN."
+    highlight: [A]
+    hint: |
+      … and ∠*HAK* = ∠*MDN* ([[I.8]]).
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [A]
+    hint: |
+      The enunciation.
+
+reconstruction:
+  lines:
+    - text: |
+        Two congruent trihedral configurations, compared by repeated congruent triangles. $\blacksquare$
+
+commentary: |
+  A lemma for [[XI.36]]: the porism says that such configurations have equal heights.

@@ -1,0 +1,98 @@
+id: XI.3
+kind: theorem
+title: Two planes meet in a straight line
+
+paraphrase: |
+  If two planes cut one another, their common section is a straight line.
+
+diagram:
+  width: 260
+  height: 290
+  elements:
+    - "X;point;free;100000,0"
+    - "Y;point;free;0,-100000"
+    - "Z;point;free;100000,-50000"
+    - "A;point;free;210,220"
+    - "D;point;lineSlider;A,X,150,220"
+    - "C;point;lineSlider;D,Z,80,280"
+    - "B;point;lineSlider;D,Y,150,50"
+    - "A1;point;parallelogram;A,D,B;0;0"
+    - "A2;point;extend;A,D,A,D;0;0"
+    - "A3;point;extend;A1,B,A1,B;0;0"
+    - "C1;point;extend;C,D,C,D;0;0"
+    - "C3;point;parallelogram;C,D,B;0;0"
+    - "C2;point;extend;C3,B,C3,B;0;0"
+    - "backC;polygon;quadrilateral;B,D,C1,C2;0;0;lightGray;cyan"
+    - "Aplane;polygon;quadrilateral;A,A1,A3,A2;0;0;lightGray;random"
+    - "frontC;polygon;quadrilateral;B,D,C,C3;0;0;lightGray;cyan"
+    - "M;point;midpoint;B,D;0;0"
+    - "M1;point;midpoint;B,M;0;0"
+    - "N;point;midpoint;B,M1;0;0"
+    - "E;point;cutoff;M,X,B,N;black"
+    - "BED;sector;arc;D,E,B;0;0;black;0"
+    - "F;point;extend;Z,M,B,N;black"
+    - "BFD;sector;arc;B,F,D;0;0;black;0"
+    - "BD;line;connect;B,D"
+    - "DB;line;connect;D,B;0;0;0"
+  caption: |
+    Planes *AB* and *BC* with common section {BD}; the arcs {BED}, {BFD} stand for supposed straight lines in each.
+
+steps:
+  - part: enunciation
+    text: "If two planes cut one another, their common section is a straight line."
+    highlight: [BD]
+    hint: |
+      Two planes meet in a line.
+
+  - part: setting-out
+    text: "For let the two planes AB, BC cut one another, and let the line DB be their common section; I say that the line DB is a straight line."
+    highlight: [BD]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For, if not, from D to B let the straight line DEB be joined in the plane AB, and in the plane BC the straight line DFB."
+    highlight: [BED, BFD]
+    hint: |
+      If not, join *D* to *B* by a straight line in each plane.
+
+  - part: proof
+    text: "Then the two straight lines DEB, DFB will have the same extremities, and will clearly enclose an area: which is absurd."
+    highlight: [BED, BFD]
+    hint: |
+      Two straight lines with the same ends would enclose an area: absurd.
+    explain:
+      fact: |
+        Two straight lines cannot enclose a space — in some manuscripts an axiom after Book I's common notions,
+        which Heath brackets as interpolated, but which Euclid uses here.
+
+  - part: proof
+    text: "Therefore DEB, DFB are not straight lines."
+    highlight: [BD]
+    hint: |
+      So the lines drawn are not straight …
+
+  - part: proof
+    text: "Similarly we can prove that neither will there be any other straight line joined from D to B except DB the common section of the planes AB, BC."
+    highlight: [BD]
+    hint: |
+      … and the only straight line from *D* to *B* is the common section.
+    gap: |
+      The argument shows only that the straight line {DB} lies in both planes; that the *whole* common section
+      is that line is assumed.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        In modern geometry: the intersection of two distinct non-parallel planes is a line (an axiom, or a
+        consequence of linear algebra). $\blacksquare$

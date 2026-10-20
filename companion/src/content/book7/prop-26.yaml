@@ -1,0 +1,125 @@
+id: VII.26
+kind: theorem
+title: Products of coprime pairs are coprime
+
+paraphrase: |
+  If each of {A}, {B} is prime to each of {C}, {D}, then {A}·{B} is prime to {C}·{D}.
+
+diagram:
+  width: 280
+  height: 170
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "E0;point;free;-1000,110;0;0"
+    - "E3;point;free;1000,110;0;0"
+    - "F0;point;free;-1000,145;0;0"
+    - "F3;point;free;1000,145;0;0"
+    - "A1;point;lineSlider;A0,A3,30,40;0"
+    - "A2;point;lineSlider;A0,A3,130,40;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,75;0"
+    - "B2;point;lineSlider;B0,B3,110,75;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;A0,A3,150,40;0"
+    - "C2;point;lineSlider;A0,A3,260,40;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;B0,B3,150,75;0"
+    - "D2;point;lineSlider;B0,B3,225,75;0"
+    - "D;line;connect;D1,D2;black"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,40;0;0"
+    - "E1;point;lineSlider;E0,E3,30,145;0"
+    - "E2;point;proportion;U1,U2,A1,A2,B1,B2,E1,E3;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;F0,F3,30,145;0"
+    - "F2;point;proportion;U1,U2,C1,C2,D1,D2,F1,F3;0"
+    - "F;line;connect;F1,F2;black"
+  caption: |
+    {E} = {A}·{B}, {F} = {C}·{D}.
+
+steps:
+  - part: enunciation
+    text: "If two numbers be prime to two numbers, both to each, their products also will be prime to one another."
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      If $a, b$ are each coprime to each of $c, d$, then $ab$ and $cd$ are coprime.
+    modern: |
+      $\gcd(a, c) = \gcd(a, d) = \gcd(b, c) = \gcd(b, d) = 1 \Rightarrow \gcd(ab, cd) = 1$.
+
+  - part: setting-out
+    text: "For let the two numbers A, B be prime to the two numbers C, D; both to each, and let A by multiplying B make E, and let C by multiplying D make F;"
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      {E} = {A}·{B}, {F} = {C}·{D}.
+
+  - part: specification
+    text: "I say that E, F are prime to one another."
+    highlight: [E, F]
+    hint: |
+      To prove: {E}, {F} coprime.
+
+  - part: proof
+    text: "For, since each of the numbers A, B is prime to C, therefore the product of A, B will also be prime to C."
+    highlight: [A, B, C]
+    hint: |
+      By [[VII.24]], {A}·{B} is prime to {C}.
+
+  - part: proof
+    text: "But the product of A, B is E; therefore E, C are prime to one another."
+    highlight: [E, C]
+    hint: |
+      So {E} is prime to {C}.
+
+  - part: proof
+    text: "For the same reason E, D are also prime to one another."
+    highlight: [E, D]
+    hint: |
+      And to {D}.
+    cites: [VII.24]
+
+  - part: proof
+    text: "Therefore each of the numbers C, D is prime to E."
+    highlight: [C, D, E]
+    hint: |
+      Turned round: {C} and {D} are each prime to {E}.
+
+  - part: proof
+    text: "Therefore the product of C, D will also be prime to E."
+    highlight: [C, D, E]
+    hint: |
+      [[VII.24]] again: {C}·{D} is prime to {E}.
+
+  - part: proof
+    text: "But the product of C, D is F."
+    highlight: [F]
+    hint: |
+      That product is {F}.
+
+  - part: proof
+    text: "Therefore E, F are prime to one another."
+    highlight: [E, F]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        $\gcd(ab, c) = \gcd(ab, d) = 1$ by [[VII.24]].
+    - steps: [7, 8, 9]
+      text: |
+        So $\gcd(ab, cd) = 1$ by [[VII.24]] again. $\blacksquare$
+
+commentary: |
+  Joyce's example: 45 and 75 are each coprime to 26 and 77, so 3375 and 2002 are coprime. Used in
+  [[VII.27]].

@@ -1,0 +1,329 @@
+id: I.4
+kind: theorem
+title: Side–angle–side
+
+paraphrase: |
+  If two triangles have two sides and the angle between them equal, they are equal in every
+  respect: the third sides are equal, the triangles are equal, and the remaining angles are
+  equal in pairs. In modern terms: **SAS congruence**.
+
+diagram:
+  width: 340
+  height: 240
+  elements:
+    - "D;point;free;255,55"
+    - "E;point;free;205,195"
+    - "F;point;free;310,195"
+    - "DEF;polygon;triangle;D,E,F;0;0;black;#dfe7ea"
+    - "A;point;free;85,55"
+    - "CircAB;circle;radius;A,D,E;0;0;0;0"
+    - "B;point;circleSlider;CircAB,35,195"
+    - "CircAC;circle;radius;A,D,F;0;0;0;0"
+    - "CircBC;circle;radius;B,E,F;0;0;0;0"
+    - "CCx;line;bichord;CircAC,CircBC;0;0;0"
+    - "C;point;last;CCx"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angABC;sector;angleMarker;B,A,C"
+    - "angACB;sector;angleMarker;C,A,B"
+    - "angEDF;sector;angleMarker;D,E,F"
+    - "angDEF;sector;angleMarker;E,D,F"
+    - "angDFE;sector;angleMarker;F,D,E"
+  aliases:
+    BA: AB
+    CA: AC
+    CB: BC
+    ED: DE
+    FD: DF
+    FE: EF
+    angCAB: angBAC
+    angFDE: angEDF
+    angCBA: angABC
+    angFED: angDEF
+    angBCA: angACB
+    angEFD: angDFE
+  given: [A, B, C, D, E, F, ABC, DEF]
+  caption: |
+    Drag {D}, {E}, {F} or {A}, and slide {B}: the figure keeps {AB} = {DE}, {AC} = {DF} and
+    ∠{BAC} = ∠{EDF}, so it always satisfies the hypothesis.
+
+steps:
+  - part: enunciation
+    text: "If two triangles have the two sides equal to two sides respectively, and have the angles contained by the equal straight lines equal,"
+    highlight: [AB, AC, DE, DF, angBAC, angEDF]
+    hint: |
+      The hypothesis — two sides and the angle between them.
+    explain:
+      did: |
+        States what is given.
+      fact: |
+        "Respectively" means one side equals one side and the other equals the other (Heath's
+        note on line 2); not that all four are equal.
+      implicit: |
+        "The angles contained by the equal straight lines" are the angles *between* the equal
+        sides. Heath notes that the Greek describes only one of the two angles this way and
+        leaves the other to be understood.
+
+  - part: enunciation
+    text: "they will also have the base equal to the base, the triangle will be equal to the triangle, and the remaining angles will be equal to the remaining angles respectively, namely those which the equal sides subtend."
+    highlight: [BC, EF, ABC, DEF]
+    hint: |
+      The conclusion — the third sides, the triangles, and the other two pairs of angles are
+      equal.
+    explain:
+      fact: |
+        "Base" appears here for the first time; it means the third side (Heath's note on line 3).
+        An angle is *subtended* by the side opposite it.
+      implicit: |
+        "The triangle will be equal to the triangle" is not congruence. For Euclid, figures are
+        *equal* when they are equal in magnitude — in size. Congruence as such has no name in
+        the *Elements*.
+    dispute: |
+      How to take "the triangle will be equal to the triangle". Most commentators, Heath
+      included, read Euclid's "equal" for figures as equal in *area*; here the triangles are
+      also shown to *coincide*, which is more. Some modern readers therefore see I.4 as a
+      congruence theorem in all but name; others stress that Euclid never separates the two
+      ideas, and that treating "coincide" as a definition of equality would be anachronistic.
+
+  - part: setting-out
+    text: "Let ABC, DEF be two triangles having the two sides AB, AC equal to the two sides DE, DF respectively, namely AB to DE and AC to DF, and the angle BAC equal to the angle EDF."
+    highlight: [AB, DE, AC, DF, angBAC, angEDF]
+    hint: "{AB} = {DE}, {AC} = {DF}, and the angles at {A} and {D} are equal."
+    modern: |
+      $$AB = DE,\qquad AC = DF,\qquad \angle BAC = \angle EDF$$
+
+  - part: specification
+    text: "I say that the base BC is also equal to the base EF, the triangle ABC will be equal to the triangle DEF, and the remaining angles will be equal to the remaining angles respectively, namely those which the equal sides subtend, that is, the angle ABC to the angle DEF, and the angle ACB to the angle DFE."
+    highlight: [BC, EF, angABC, angDEF, angACB, angDFE]
+    hint: |
+      What is to be proved, for these letters.
+    explain:
+      did: |
+        "I say that" (φημί) opens the specification of a theorem, as "it is required to" opens that
+        of a problem.
+      implicit: |
+        Which angles pair up: the angle at {B} with the angle at {E} (both opposite the equal
+        sides {AC}, {DF}), the angle at {C} with the angle at {F}.
+    modern: |
+      $$BC = EF,\quad \triangle ABC = \triangle DEF,\quad \angle ABC = \angle DEF,\quad \angle ACB = \angle DFE$$
+      where "$\triangle ABC = \triangle DEF$" is Euclid's equality of figures (see the enunciation).
+
+  - part: proof
+    text: "For, if the triangle ABC be applied to the triangle DEF, and if the point A be placed on the point D and the straight line AB on DE,"
+    highlight: [ABC, DEF, A, D, AB, DE]
+    hint: |
+      Imagine picking up triangle {ABC} and laying it on {DEF}, with {A} on {D} and {AB} along {DE}.
+      This is the *method of superposition*.
+    explain:
+      did: |
+        Moves one triangle onto the other in thought. The Greek verb (ἐφαρμόζεσθαι, "to be
+        applied") is a technical term; Heath's note on C.N. 4 discusses it.
+      fact: |
+        That a figure can be moved without changing its shape or size.
+      justification: |
+        None is given, and none is available in Euclid's postulates. The step leans on
+        [[I.CN.4]], "things which coincide with one another are equal to one another",
+        read as a statement about moving figures.
+      implicit: |
+        That {C} will land on the same side of {DE} as {F}. If it does not, the triangle must
+        be turned over. Euclid does not raise the question.
+    gap: |
+      **Superposition is not licensed by any postulate.** Nothing in Post. 1–5 says a figure can
+      be moved rigidly. Modern axiom systems either take a form of this proposition as an
+      axiom (Hilbert's congruence axiom III.5 is essentially the angle part of SAS) or add
+      axioms of rigid motion.
+    dispute: |
+      Did Euclid regard superposition as legitimate? He uses it openly only here and in [[I.8]]
+      (and arguably in III.24). Heath and many others infer that he disliked it and used it
+      only where he saw no alternative. Others argue that "application" was an accepted
+      technique in Greek geometry, and that I.4 functions in practice as an assumption stated
+      in the form of a theorem.
+
+  - part: proof
+    text: "then the point B will also coincide with E, because AB is equal to DE."
+    highlight: [B, E, AB, DE]
+    hint: "{AB} and {DE} lie along the same line from the same point and are equal, so their far ends meet."
+    explain:
+      fact: |
+        Equal lengths laid off from the same point along the same line end at the same point.
+      implicit: |
+        This is the uniqueness half of laying off a length (compare [[I.3]]): if {B} fell short
+        of {E} or beyond it, {AB} would be less or greater than {DE}. Euclid regards it as
+        evident.
+    modern: |
+      $$A \mapsto D,\;\; \text{ray } AB \mapsto \text{ray } DE,\;\; AB = DE \;\Longrightarrow\; B \mapsto E$$
+
+  - part: proof
+    text: "Again, AB coinciding with DE, the straight line AC will also coincide with DF, because the angle BAC is equal to the angle EDF;"
+    highlight: [AC, DF, angBAC, angEDF]
+    hint: |
+      The angles at {A} and {D} are equal, so once {AB} lies on {DE}, the side {AC} must lie
+      along {DF}.
+    explain:
+      fact: |
+        Equal angles on the same line, on the same side, have their other sides along the same line.
+      justification: |
+        Implicitly the *converse* of [[I.CN.4]]: C.N. 4 says that things which coincide are
+        equal; here Euclid needs that equal angles, suitably placed, coincide. That is not
+        stated anywhere.
+      implicit: |
+        The same-side assumption from step 3.
+    modern: |
+      $$\angle BAC = \angle EDF,\ \text{ray } AB = \text{ray } DE \;\Longrightarrow\; \text{ray } AC = \text{ray } DF$$
+      (the uniqueness of angle construction on a given side of a ray; an axiom in Hilbert).
+
+  - part: proof
+    text: "hence the point C will also coincide with the point F, because AC is again equal to DF."
+    highlight: [C, F, AC, DF]
+    hint: |
+      The argument of step 4 again, now for {AC} and {DF}.
+    modern: |
+      $$\text{ray } AC = \text{ray } DF,\;\; AC = DF \;\Longrightarrow\; C \mapsto F$$
+
+  - part: proof
+    text: "But B also coincided with E; hence the base BC will coincide with the base EF."
+    highlight: [BC, EF, B, E, C, F]
+    hint: |
+      Both ends of {BC} land on the ends of {EF}, so {BC} lies along {EF}.
+    explain:
+      fact: |
+        Only one straight line joins two points.
+      implicit: |
+        The uniqueness of the line in [[I.Post.1]], which Euclid never states. The next,
+        bracketed sentences try to supply it.
+    modern: |
+      $$B \mapsto E,\; C \mapsto F \;\Longrightarrow\; \overline{BC} \mapsto \overline{EF}$$
+
+  - part: proof
+    text: "[For if, when B coincides with E and C with F, the base BC does not coincide with the base EF, two straight lines will enclose a space: which is impossible."
+    highlight: [BC, EF]
+    hint: |
+      A bracketed passage — probably **not by Euclid**. If {BC} and {EF} did not coincide, two
+      straight lines would enclose a space, which is impossible.
+    explain:
+      did: |
+        Justifies step 7 by contradiction.
+      fact: |
+        Two straight lines cannot enclose a space (a region).
+      justification: |
+        No postulate. The principle "two straight lines do not enclose a space" appears in
+        some manuscripts among the common notions; Heiberg and Heath reject it as a later
+        addition.
+    dispute: |
+      Heath, following Heiberg, prints these words in brackets as an early interpolation: the
+      Arabic tradition of an-Nairīzī has them *after* the Q.E.D., which suggests a marginal
+      comment (a scholium) that later crept into the text (Heath's note on lines 32–36). Heath
+      adds that the inference really follows from the definition of a straight line and Post. 1.
+
+  - part: proof
+    text: "Therefore the base BC will coincide with EF] and will be equal to it."
+    highlight: [BC, EF]
+    hint: |
+      The bracket closes after "EF". What is Euclid's is "…and will be equal to it": things
+      that coincide are equal, [[I.CN.4]].
+    explain:
+      follows: "{BC} coincides with {EF}, so by C.N. 4 they are equal."
+    modern: |
+      $$BC = EF$$
+
+  - part: proof
+    text: "Thus the whole triangle ABC will coincide with the whole triangle DEF, and will be equal to it."
+    highlight: [ABC, DEF]
+    hint: |
+      All three sides coincide, so the triangles coincide and are equal ([[I.CN.4]] again).
+    explain:
+      implicit: |
+        That coinciding sides make coinciding regions: the triangle is taken to be the region
+        its sides bound.
+    cites: [I.CN.4]
+
+  - part: proof
+    text: "And the remaining angles will also coincide with the remaining angles and will be equal to them, the angle ABC to the angle DEF, and the angle ACB to the angle DFE."
+    highlight: [angABC, angDEF, angACB, angDFE]
+    hint: |
+      The angles at {B} and {E} coincide, as do those at {C} and {F}; so they are equal.
+    explain:
+      justification: "[[I.CN.4]] once more."
+    modern: |
+      $$\angle ABC = \angle DEF,\qquad \angle ACB = \angle DFE$$
+    cites: [I.CN.4]
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      "Therefore etc." is Heath's shorthand: Euclid repeats the enunciation word for word here,
+      and Heath does not (his note on line 44).
+    explain:
+      did: |
+        The *conclusion* (συμπέρασμα) restates the general enunciation, now proved. Heath
+        abbreviates it whenever it is an exact repetition.
+
+  - part: conclusion
+    text: "(Being) what it was required to prove."
+    hint: |
+      Q.E.D. — this is a theorem, not a problem.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* In Hilbert's *Foundations of Geometry*
+    (1899) superposition is replaced by an axiom. Hilbert's axiom **III.5** says: if
+    $AB \cong DE$, $AC \cong DF$ and $\angle BAC \cong \angle EDF$, then
+    $\angle ABC \cong \angle DEF$. The rest of I.4 is then proved:
+  lines:
+    - steps: [1, 2]
+      text: Suppose $AB \cong DE$, $AC \cong DF$, $\angle BAC \cong \angle EDF$.
+    - steps: [11]
+      text: |
+        By III.5, $\angle ABC \cong \angle DEF$; applying III.5 with the roles of $B$ and $C$
+        exchanged, $\angle ACB \cong \angle DFE$.
+    - steps: [3, 4, 5, 6, 7, 8, 9]
+      text: |
+        Suppose $BC \not\cong EF$. Lay off $G$ on ray $BC$ with $BG \cong EF$ (segment transfer);
+        $G \ne C$. In $\triangle ABG$ and $\triangle DEF$: $AB \cong DE$, $BG \cong EF$, and
+        $\angle ABG = \angle ABC \cong \angle DEF$ (previous line). By III.5, with the vertices
+        relabelled, $\angle BAG \cong \angle EDF \cong \angle BAC$. So rays $AG$ and $AC$ make equal angles
+        with ray $AB$ on the same side — contradicting the uniqueness of angle transfer (III.4).
+        Hence $BC \cong EF$.
+    - steps: [10]
+      text: |
+        So $\triangle ABC \cong \triangle DEF$ (all sides and angles). Equality of *area*
+        follows once a theory of area is set up, which in Hilbert comes much later.
+        $\blacksquare$
+  closing: |
+    Axiomatizing SAS rather than proving it is the standard modern repair. Hilbert shows that
+    III.5 cannot be derived from his other axioms.
+
+commentary: |
+  I.4 is the first theorem, and with [[I.8]] and [[I.26]] one of the three congruence
+  theorems of Book I. It is used constantly: immediately in [[I.5]], then throughout.
+
+  I.4 does not depend on I.1–I.3. Euclid could have put it first; Joyce's guide to [[I.1]]
+  suggests why he did not.
+
+gaps: |
+  - **Superposition** itself (step 3): moving a figure rigidly is not provided for by any postulate.
+  - **Equal angles coincide** (step 5): the converse of [[I.CN.4]], assumed.
+  - **Side of the line** (step 3): that {C} lands on the same side of {DE} as {F}, or that the
+    triangle may be turned over.
+  - **Uniqueness of the straight line** (step 7), supplied by the bracketed interpolation (step 8)
+    through a principle Euclid does not state.
+
+interpretations: |
+  **Is I.4 a theorem or an axiom?** Heath argues that Euclid used superposition reluctantly;
+  on that view the proposition is a genuine but unsatisfactory proof. Many modern writers
+  (Hilbert among them) conclude that SAS cannot be proved from the other principles and must
+  be assumed; in that sense I.4 is an axiom in disguise.
+
+  **What "equal" means.** Whether "the triangle will be equal to the triangle" asserts equal
+  area only, or something like congruence, is discussed at the enunciation.
+
+historical: |
+  Heath's note on this proposition points to his longer discussion of Common Notion 4, where
+  he takes up the technical verbs of superposition (ἐφαρμόζεσθαι, "to be applied";
+  ἐφαρμόζειν, "to coincide") and the objections to the method.

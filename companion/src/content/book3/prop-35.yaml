@@ -1,0 +1,170 @@
+id: III.35
+kind: theorem
+title: Intersecting chords
+
+paraphrase: |
+  If two chords of a circle cross at {E}, the rectangle on the pieces of one equals the rectangle on the
+  pieces of the other: $AE \cdot EC = DE \cdot EB$.
+
+diagram:
+  width: 260
+  height: 270
+  elements:
+    - "A;point;free;40,80"
+    - "C;point;free;160,230"
+    - "AC;line;connect;A,C"
+    - "G;point;midpoint;A,C"
+    - "GFp;line;perpendicular;G,A;0;0;0"
+    - "F;point;lineSlider;GFp,130,140"
+    - "FG;line;connect;F,G"
+    - "ABCD;circle;radius;F,A;0;0;black;0"
+    - "B;point;circleSlider;ABCD,100,230"
+    - "D;point;circleSlider;ABCD,210,80"
+    - "BD;line;connect;B,D"
+    - "E;point;intersection;A,C,B,D"
+    - "EF;line;connect;E,F"
+    - "BF;line;connect;B,F"
+    - "CF;line;connect;C,F"
+    - "H;point;midpoint;B,D"
+    - "HF;line;connect;H,F"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EC;line;connect;E,C;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "GE;line;connect;G,E;0;0;0"
+    - "GC;line;connect;G,C;0;0;0"
+    - "AG;line;connect;A,G;0;0;0"
+  aliases:
+    DB: BD
+    GF: FG
+    FE: EF
+    FB: BF
+    FC: CF
+    FH: HF
+    CE: EC
+    EG: GE
+    CG: GC
+  given: [ABCD, A, B, C, D, AC, BD, E]
+  caption: |
+    Slide the four points round the circle: the product of the pieces of one chord always equals that
+    of the other.
+
+steps:
+  - part: enunciation
+    text: "If in a circle two straight lines cut one another, the rectangle contained by the segments of the one is equal to the rectangle contained by the segments of the other."
+    highlight: [AE, EC, DE, EB]
+    hint: |
+      Intersecting chords: $AE \cdot EC = DE \cdot EB$.
+
+  - part: setting-out
+    text: "For in the circle ABCD let the two straight lines AC, BD cut one another at the point E;"
+    highlight: [AC, BD, E]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the rectangle contained by AE, EC is equal to the rectangle contained by DE, EB."
+    highlight: [AE, EC, DE, EB]
+    hint: |
+      The goal.
+    modern: |
+      $$AE\cdot EC = DE\cdot EB$$
+
+  - part: proof
+    text: "If now AC, BD are through the centre, so that E is the centre of the circle ABCD, it is manifest that, AE, EC, DE, EB being equal, the rectangle contained by AE, EC is also equal to the rectangle contained by DE, EB."
+    highlight: [E]
+    hint: |
+      Trivial case: both are diameters, all four pieces are radii.
+
+  - part: construction
+    text: "Next let AC, DB not be through the centre; let the centre of ABCD be taken, and let it be F; from F let FG, FH be drawn perpendicular to the straight lines AC, DB, and let FB, FC, FE be joined."
+    highlight: [F, FG, HF, BF, CF, EF]
+    adds: [F, G, H, FG, HF, BF, CF, EF]
+    hint: |
+      The general case. Centre {F}, perpendiculars to both chords, and radii.
+
+  - part: proof
+    text: "Then, since a straight line GF through the centre cuts a straight line AC not through the centre at right angles, it also bisects it;"
+    highlight: [FG, AC]
+    hint: |
+      [[III.3]].
+
+  - part: proof
+    text: "therefore AG is equal to GC."
+    highlight: [AG, GC]
+    hint: |
+      {G} is the midpoint.
+
+  - part: proof
+    text: "Since, then, the straight line AC has been cut into equal parts at G and into unequal parts at E, the rectangle contained by AE, EC together with the square on EG is equal to the square on GC;"
+    highlight: [AE, EC, GE, GC]
+    hint: |
+      [[II.5]].
+    modern: |
+      $$AE\cdot EC + EG^2 = GC^2$$
+
+  - part: proof
+    text: "Let the square on GF be added; therefore the rectangle AE, EC together with the squares on GE, GF is equal to the squares on CG, GF."
+    highlight: [FG]
+    hint: |
+      Add {GF}².
+
+  - part: proof
+    text: "But the square on FE is equal to the squares on EG, GF, and the square on FC is equal to the squares on CG, GF;"
+    highlight: [EF, CF]
+    hint: |
+      Pythagoras twice ([[I.47]]).
+
+  - part: proof
+    text: "therefore the rectangle AE, EC together with the square on FE is equal to the square on FC."
+    highlight: [EF, CF]
+    hint: |
+      $AE\cdot EC + FE^2 = FC^2$.
+
+  - part: proof
+    text: "And FC is equal to FB; therefore the rectangle AE, EC together with the square on EF is equal to the square on FB."
+    highlight: [CF, BF]
+    hint: |
+      Radii.
+
+  - part: proof
+    text: "For the same reason, also, the rectangle DE, EB together with the square on FE is equal to the square on FB."
+    highlight: [DE, EB, EF, BF]
+    hint: |
+      Same argument for the chord {BD}.
+
+  - part: proof
+    text: "But the rectangle AE, EC together with the square on FE was also proved equal to the square on FB; therefore the rectangle AE, EC together with the square on FE is equal to the rectangle DE, EB together with the square on FE."
+    highlight: [EF]
+    hint: |
+      Both equal {FB}².
+
+  - part: proof
+    text: "Let the square on FE be subtracted from each; therefore the rectangle contained by AE, EC which remains is equal to the rectangle contained by DE, EB."
+    highlight: [AE, EC, DE, EB]
+    hint: |
+      Done: both equal $FB^2 - FE^2$.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved. (Heath's text has no Q.E.D. here.)
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+      text: |
+        For any chord through $E$, the product of its pieces is $r^2 - FE^2$ (II.5 + Pythagoras). This
+        does not depend on the chord. $\blacksquare$
+  closing: |
+    The common value $r^2 - d^2$ is (minus) the **power of the point** {E} with respect to the circle; III.36
+    gives the same for points outside.
+
+commentary: |
+  The intersecting chords theorem. Euclid treats the case where both chords pass through the centre and
+  the case where neither does.
+
+gaps: |
+  - **Cases**: the case where exactly one chord passes through the centre is not written out.

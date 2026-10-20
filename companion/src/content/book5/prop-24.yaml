@@ -1,0 +1,117 @@
+id: V.24
+kind: theorem
+title: Adding ratios with a common consequent
+
+paraphrase: |
+  If {AB} : {C} = {DE} : {F} and {BG} : {C} = {EH} : {F}, then ({AB} + {BG}) : {C} = ({DE} + {EH}) : {F}, i.e.
+  {AG} : {C} = {DH} : {F}.
+
+diagram:
+  width: 300
+  height: 150
+  elements:
+    - "U0;point;free;-1000,30;0;0"
+    - "U1;point;free;1000,30;0;0"
+    - "V0;point;free;-1000,60;0;0"
+    - "V1;point;free;1000,60;0;0"
+    - "W0;point;free;-1000,100;0;0"
+    - "W1;point;free;1000,100;0;0"
+    - "X0;point;free;-1000,130;0;0"
+    - "X1;point;free;1000,130;0;0"
+    - "A;point;lineSlider;U0,U1,50,30"
+    - "B;point;lineSlider;U0,U1,200,30"
+    - "C0;point;lineSlider;V0,V1,50,60;0"
+    - "C1;point;lineSlider;V0,V1,110,60;0"
+    - "C;line;connect;C0,C1;black;0;red"
+    - "D;point;lineSlider;W0,W1,50,100"
+    - "E;point;lineSlider;W0,W1,150,100"
+    - "F0;point;lineSlider;X0,X1,50,130;0"
+    - "F1;point;proportion;A,B,D,E,C0,C1,F0,X1;0"
+    - "F;line;connect;F0,F1;black;0;green"
+    - "G;point;lineSlider;U0,U1,270,30"
+    - "AG;line;connect;A,G;0;0;red"
+    - "H;point;proportion;C0,C1,F0,F1,B,G,E,W1"
+    - "DH;line;connect;D,H;0;0;green"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BG;line;connect;B,G;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "EH;line;connect;E,H;0;0;0"
+  aliases:
+    GB: BG
+    HE: EH
+  caption: |
+    {F} is constructed so that $AB : C = DE : F$, and {H} so that $BG : C = EH : F$. Slide {A}, {B}, {G}, {D}, {E}.
+
+steps:
+  - part: enunciation
+    text: "If a first magnitude have to a second the same ratio as a third has to a fourth, and also a fifth have to the second the same ratio as a sixth to the fourth, the first and fifth added together will have to the second the same ratio as the third and sixth have to the fourth."
+    highlight: [AG, C, DH, F]
+    hint: |
+      $\frac{a}{c} = \frac{d}{f}$ and $\frac{b}{c} = \frac{e}{f}$ give $\frac{a + b}{c} = \frac{d + e}{f}$.
+    modern: |
+      $$AB : C = DE : F,\ BG : C = EH : F \ \Rightarrow\ (AB + BG) : C = (DE + EH) : F$$
+
+  - part: setting-out
+    text: "Let a first magnitude AB have to a second C the same ratio as a third DE has to a fourth F; and let also a fifth BG have to the second C the same ratio as a sixth EH has to the fourth F;"
+    highlight: [AB, C, DE, F, BG, EH]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the first and fifth added together, AG, will have to the second C the same ratio as the third and sixth, DH, has to the fourth F."
+    highlight: [AG, C, DH, F]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For since, as BG is to C, so is EH to F, inversely, as C is to BG, so is F to EH."
+    highlight: [C, BG, F, EH]
+    hint: |
+      Invert (porism to [[V.7]]).
+    cites: [V.7]
+
+  - part: proof
+    text: "Since, then, as AB is to C, so is DE to F, and, as C is to BG, so is F to EH, therefore, ex aequali, as AB is to BG, so is DE to EH."
+    highlight: [AB, BG, DE, EH]
+    hint: |
+      *Ex aequali* ([[V.22]]) through {C} and {F}.
+
+  - part: proof
+    text: "And, since the magnitudes are proportional separando, they will also be proportional componendo; therefore, as AG is to GB, so is DH to HE."
+    highlight: [AG, GB, DH, HE]
+    hint: |
+      *Componendo* ([[V.18]]).
+
+  - part: proof
+    text: "But also, as BG is to C, so is EH to F; therefore, ex aequali, as AG is to C, so is DH to F."
+    highlight: [AG, C, DH, F]
+    hint: |
+      *Ex aequali* again ([[V.22]]), through {GB} and {HE}.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: |
+        Inverting and composing: $AB : BG = DE : EH$.
+    - steps: [6]
+      text: |
+        Componendo: $AG : GB = DH : HE$.
+    - steps: [7]
+      text: |
+        With $GB : C = HE : F$, *ex aequali*: $AG : C = DH : F$. $\blacksquare$
+
+commentary: |
+  Joyce calls this the closest Euclid comes to *adding* ratios — possible here because the two ratios
+  have the same consequent. Book V never defines a sum of ratios in general, and never needs one.

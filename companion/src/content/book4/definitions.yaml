@@ -1,0 +1,64 @@
+# Book IV, Definitions 1–7. Euclid's words come from Heath via the extracted
+# JSON; everything here is this edition's commentary.
+
+items:
+  - id: IV.Def.1
+    title: A figure inscribed in a figure
+    paraphrase: |
+      One polygon is *inscribed in* another when each vertex of the first lies on a side of the second.
+    meaning: |
+      Defined for rectilinear figures only. Book IV never actually uses it — it is about polygons and
+      circles — but Definitions 1–2 set up the pattern that 3–6 repeat for circles.
+    figure: |
+      <svg viewBox="0 0 300 120"><polygon class="l" points="60,105 240,105 150,15"/><polygon class="fill" points="150,105 195,60 105,60"/></svg>
+
+  - id: IV.Def.2
+    title: A figure circumscribed about a figure
+    paraphrase: |
+      One polygon is *circumscribed about* another when each side of the first passes through a vertex of
+      the second.
+    meaning: |
+      The mirror image of Def. 1.
+
+  - id: IV.Def.3
+    title: A figure inscribed in a circle
+    paraphrase: |
+      A polygon is *inscribed in a circle* when all its vertices lie on the circle.
+    examples:
+      - 'the triangle of [[IV.2]], the square of [[IV.6]], the pentagon of [[IV.11]]'
+    figure: |
+      <svg viewBox="0 0 300 120"><circle class="l" cx="150" cy="60" r="50"/><polygon class="fill" points="150,10 197,75 103,75"/></svg>
+
+  - id: IV.Def.4
+    title: A figure circumscribed about a circle
+    paraphrase: |
+      A polygon is *circumscribed about a circle* when each of its sides touches the circle.
+    examples:
+      - 'the triangle of [[IV.3]], the square of [[IV.7]], the pentagon of [[IV.12]]'
+    figure: |
+      <svg viewBox="0 0 300 120"><rect class="fill" x="100" y="10" width="100" height="100"/><circle class="l" cx="150" cy="60" r="50"/></svg>
+
+  - id: IV.Def.5
+    title: A circle inscribed in a figure
+    paraphrase: |
+      A circle is *inscribed in* a polygon when it touches each side.
+    meaning: |
+      The same configuration as Def. 4, described from the circle's side: the incircle.
+    examples:
+      - '[[IV.4]] (triangle), [[IV.8]] (square), [[IV.13]] (pentagon)'
+
+  - id: IV.Def.6
+    title: A circle circumscribed about a figure
+    paraphrase: |
+      A circle is *circumscribed about* a polygon when it passes through each vertex.
+    meaning: |
+      The same configuration as Def. 3, from the circle's side: the circumcircle.
+    examples:
+      - '[[IV.5]] (triangle), [[IV.9]] (square), [[IV.14]] (pentagon)'
+
+  - id: IV.Def.7
+    title: A line fitted into a circle
+    paraphrase: |
+      A straight line is *fitted into* a circle when its ends are on the circle: it is a chord.
+    meaning: |
+      The verb (ἐναρμόζεσθαι) is the one used in [[IV.1]]: to place a chord of given length.

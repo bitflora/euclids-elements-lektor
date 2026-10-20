@@ -1,0 +1,104 @@
+id: XI.18
+kind: theorem
+title: Planes through a perpendicular are perpendicular
+
+paraphrase: |
+  If {AB} is perpendicular to a plane, every plane through {AB} is perpendicular to that plane.
+
+diagram:
+  width: 290
+  height: 220
+  elements:
+    - "X;point;free;100000,200"
+    - "Y;point;free;200,-100000"
+    - "Z;point;free;30000,-100000"
+    - "P0;point;free;30,200;0;0,75,100"
+    - "P2;point;free;260,70;0;0,75,100"
+    - "P1;point;intersection;P0,X,P2,Z;0;0"
+    - "P3;point;intersection;P2,X,P0,Z;0;0"
+    - "P;polygon;quadrilateral;P0,P1,P2,P3;0;0;lightGray;brighter"
+    - "A;point;free;180,40"
+    - "B;point;lineSlider;A,Y,180,140"
+    - "AB;line;connect;A,B"
+    - "E;point;lineSlider;P1,P2,200,120"
+    - "C;point;intersection;E,B,P0,P3"
+    - "D;point;parallelogram;A,B,C"
+    - "DE;polygon;parallelogram;D,C,E;0;0;black;random"
+    - "F;point;lineSlider;C,E,100,150"
+    - "G;point;intersection;A,D,F,Y"
+    - "FG;line;connect;F,G"
+    - "GFB;polygon;triangle;G,F,B;0;0;0"
+  aliases: { BA: AB, GF: FG }
+  caption: |
+    *DE* a plane through {AB}, meeting the base plane in *CE*; {FG} in *DE*, perpendicular to *CE*.
+
+steps:
+  - part: enunciation
+    text: "If a straight line be at right angles to any plane, all the planes through it will also be at right angles to the same plane."
+    highlight: [AB]
+    hint: |
+      A plane containing a normal is perpendicular.
+
+  - part: setting-out
+    text: "For let any straight line AB be at right angles to the plane of reference; I say that all the planes through AB are also at right angles to the plane of reference."
+    highlight: [AB]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let the plane DE be drawn through AB, let CE be the common section of the plane DE and the plane of reference, let a point F be taken at random on CE, and from F let FG be drawn in the plane DE at right angles to CE."
+    highlight: [FG]
+    hint: |
+      Any plane *DE* through {AB}; at {F} on *CE* draw {FG} ⊥ *CE* in *DE*.
+
+  - part: proof
+    text: "Now, since AB is at right angles to the plane of reference, AB is also at right angles to all the straight lines which meet it and are in the plane of reference; so that it is also at right angles to CE; therefore the angle ABF is right."
+    highlight: [AB]
+    hint: |
+      {AB} ⊥ *CE* …
+
+  - part: proof
+    text: "But the angle GFB is also right; therefore AB is parallel to FG."
+    highlight: [AB, FG]
+    hint: |
+      … and ∠{GFB} is right, so {AB} ∥ {FG} ([[I.28]]).
+
+  - part: proof
+    text: "But AB is at right angles to the plane of reference; therefore FG is also at right angles to the plane of reference."
+    highlight: [FG]
+    hint: |
+      So {FG} ⊥ the base plane ([[XI.8]]).
+
+  - part: proof
+    text: "Now a plane is at right angles to a plane, when the straight lines drawn, in one of the planes, at right angles to the common section of the planes are at right angles to the remaining plane."
+    highlight: [FG]
+    hint: |
+      That is the definition of perpendicular planes ([[XI.Def.4]]) …
+
+  - part: proof
+    text: "And FG, drawn in one of the planes DE at right angles to CE, the common section of the planes, was proved to be at right angles to the plane of reference; therefore the plane DE is at right angles to the plane of reference."
+    highlight: [FG]
+    hint: |
+      … so *DE* is perpendicular.
+
+  - part: proof
+    text: "Similarly also it can be proved that all the planes through AB are at right angles to the plane of reference."
+    highlight: [AB]
+    hint: |
+      Likewise for every plane through {AB}.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [AB]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        A plane containing the normal of another is perpendicular to it. $\blacksquare$

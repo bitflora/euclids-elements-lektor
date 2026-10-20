@@ -1,0 +1,126 @@
+id: XI.5
+kind: theorem
+title: Three lines perpendicular to one line at a point lie in one plane
+
+paraphrase: |
+  If {AB} is perpendicular to three lines {BC}, {BD}, {BE} at their common point {B}, those three lines lie in one
+  plane.
+
+diagram:
+  width: 290
+  height: 230
+  elements:
+    - "P1;point;free;30,200;0;0,75,100"
+    - "P2;point;free;220,200;0;0,75,100"
+    - "P3;point;free;70,70;0;0,75,100"
+    - "plane;polygon;parallelogram;P3,P1,P2;0;0;lightGray;brighter"
+    - "A;point;free;80,40"
+    - "B;point;free;80,140"
+    - "C;point;free;170,60"
+    - "D;point;free;200,140"
+    - "E;point;free;190,170"
+    - "AB;line;connect;A,B"
+    - "BC;line;connect;B,C"
+    - "BD;line;connect;B,D"
+    - "BE;line;connect;B,E"
+    - "F;point;free;200,110"
+    - "BF;line;connect;B,F"
+    - "ABF;polygon;triangle;A,B,F;0;0;0"
+    - "ABC;polygon;triangle;A,B,C;0;0;0"
+  aliases: { BA: AB, CB: BC, DB: BD, EB: BE, FB: BF }
+  caption: |
+    {AB} perpendicular to {BC}, {BD}, {BE} at {B}; {BF} is where the plane of {AB}, {BC} meets the plane of {BD}, {BE}.
+
+steps:
+  - part: enunciation
+    text: "If a straight line be set up at right angles to three straight lines which meet one another, at their common point of section, the three straight lines are in one plane."
+    highlight: [AB, BC, BD, BE]
+    hint: |
+      All lines perpendicular to a given line at a point form a plane.
+    modern: |
+      The set of vectors orthogonal to $v$ is a plane.
+
+  - part: setting-out
+    text: "For let a straight line AB be set up at right angles to the three straight lines BC, BD, BE, at their point of meeting at B; I say that BC, BD, BE are in one plane."
+    highlight: [AB, BC, BD, BE]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For suppose they are not, but, if possible, let BD, BE be in the plane of reference and BC in one more elevated; let the plane through AB, BC be produced; it will thus make, as common section in the plane of reference, a straight line."
+    highlight: [BD, BE, BC]
+    hint: |
+      Suppose {BC} is above the plane of {BD}, {BE}; the plane of {AB}, {BC} meets it in a line ([[XI.3]]) …
+
+  - part: proof
+    text: "Let it make BF."
+    highlight: [BF]
+    hint: |
+      … call it {BF}.
+
+  - part: proof
+    text: "Therefore the three straight lines AB, BC, BF are in one plane, namely that drawn through AB, BC."
+    highlight: [AB, BC, BF]
+    hint: |
+      {AB}, {BC}, {BF} lie in one plane.
+
+  - part: proof
+    text: "Now, since AB is at right angles to each of the straight lines BD, BE, therefore AB is also at right angles to the plane through BD, BE."
+    highlight: [AB]
+    hint: |
+      {AB} is perpendicular to the plane of {BD}, {BE} ([[XI.4]]) …
+
+  - part: proof
+    text: "But the plane through BD, BE is the plane of reference; therefore AB is at right angles to the plane of reference."
+    highlight: [AB]
+    hint: |
+      … the plane of reference.
+
+  - part: proof
+    text: "Thus AB will also make right angles with all the straight lines which meet it and are in the plane of reference."
+    highlight: [AB]
+    hint: |
+      So it is perpendicular to every line in it through {B} ([[XI.Def.3]]) …
+
+  - part: proof
+    text: "But BF which is in the plane of reference meets it; therefore the angle ABF is right."
+    highlight: [AB, BF]
+    hint: |
+      … including {BF}: ∠{ABF} is right.
+
+  - part: proof
+    text: "But, by hypothesis, the angle ABC is also right; therefore the angle ABF is equal to the angle ABC."
+    highlight: [AB, BC, BF]
+    hint: |
+      ∠{ABC} is right too, so ∠{ABF} = ∠{ABC} …
+
+  - part: proof
+    text: "And they are in one plane: which is impossible."
+    highlight: [BC, BF]
+    hint: |
+      … in one plane, the part equal to the whole: impossible.
+
+  - part: proof
+    text: "Therefore the straight line BC is not in a more elevated plane; therefore the three straight lines BC, BD, BE are in one plane."
+    highlight: [BC, BD, BE]
+    hint: |
+      So {BC} lies in the plane of {BD}, {BE}.
+
+  - part: proof
+    text: "Therefore, if a straight line be set up at right angles to three straight lines, at their point of meeting, the three straight lines are in one plane."
+    highlight: [BC, BD, BE]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        The lines through {B} perpendicular to {AB} form the plane $AB^\perp$. $\blacksquare$
+
+commentary: |
+  Used in [[XI.6]] to prove that two perpendiculars to a plane are parallel.

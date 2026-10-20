@@ -1,0 +1,120 @@
+id: X.33
+kind: problem
+title: Lines incommensurable in square, rational sum of squares, medial rectangle
+
+paraphrase: |
+  Find lines {AF}, {FB}, incommensurable in square, such that sq({AF}) + sq({FB}) is rational but rect({AF},
+  {FB}) is medial. (They are the components of the *major* line, [[X.39]].)
+
+diagram:
+  width: 330
+  height: 200
+  elements:
+    - "A;point;free;40,160"
+    - "B;point;free;200,160"
+    - "C;point;lineSlider;A,B,290,160"
+    - "BC;line;connect;B,C"
+    - "M;point;midpoint;A,B;0;0"
+    - "AFB;circle;radius;M,B;0;0;0;0"
+    - "D;point;midpoint;B,C"
+    - "E;point;lineSlider;A,B,170,160"
+    - "EF';line;perpendicular;E,A;0;0;0"
+    - "FF';line;chord;EF',AFB;0;0;0"
+    - "F;point;last;FF'"
+    - "semi;sector;arc;B,F,A;0;0;black;random"
+    - "ABB;polygon;triangle;A,B,F;0;0;black;random"
+    - "EF;line;connect;E,F"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "AF;line;connect;A,F;0;0;0"
+    - "FB;line;connect;F,B;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+  aliases: { CB: BC, FE: EF, BA: AB, EA: AE, BE: EB, FA: AF, BF: FB, DB: BD }
+  caption: |
+    {AB}, {BC} from [[X.30]]; rect({AE},{EB}) = sq({BD}) with {D} the midpoint of {BC}; {F} on the semicircle
+    above {E}.
+
+steps:
+  - part: enunciation
+    text: "To find two straight lines incommensurable in square which make the sum of the squares on them rational but the rectangle contained by them medial."
+    highlight: [AF, FB]
+    hint: |
+      The two parts of a *major* line.
+    modern: |
+      $x^2 + y^2$ rational, $xy$ medial, $x^2/y^2 \notin \mathbb Q$.
+
+  - part: construction
+    text: "Let there be set out two rational straight lines AB, BC commensurable in square only and such that the square on the greater AB is greater than the square on the less BC by the square on a straight line incommensurable with AB, let BC be bisected at D, let there be applied to AB a parallelogram equal to the square on either of the straight lines BD, DC and deficient by a square figure, and let it be the rectangle AE, EB; let the semicircle AFB be described on AB, let EF be drawn at right angles to AB, and let AF, FB be joined."
+    highlight: [AB, BC, AE, EB, EF, AF, FB]
+    hint: |
+      {AB}, {BC} as in [[X.30]]; apply rect({AE},{EB}) = sq(½{BC}) to {AB} ([[VI.28]]); erect {EF}; join {AF},
+      {FB}.
+
+  - part: proof
+    text: "Then, since AB, BC are unequal straight lines, and the square on AB is greater than the square on BC by the square on a straight line incommensurable with AB, while there has been applied to AB a parallelogram equal to the fourth part of the square on BC, that is, to the square on half of it, and deficient by a square figure, making the rectangle AE, EB, therefore AE is incommensurable with EB."
+    highlight: [AE, EB]
+    hint: |
+      [[X.18]]: {AE}, {EB} incommensurable.
+
+  - part: proof
+    text: "And, as AE is to EB, so is the rectangle BA, AE to the rectangle AB, BE, while the rectangle BA, AE is equal to the square on AF, and the rectangle AB, BE to the square on BF; therefore the square on AF is incommensurable with the square on FB; therefore AF, FB are incommensurable in square."
+    highlight: [AF, FB]
+    hint: |
+      sq({AF}) = {BA}·{AE}, sq({FB}) = {AB}·{BE} ([[X.32]] lemma), in the ratio {AE} : {EB}: incommensurable.
+
+  - part: proof
+    text: "And, since AB is rational, therefore the square on AB is also rational; so that the sum of the squares on AF, FB is also rational."
+    highlight: [AF, FB, AB]
+    hint: |
+      Their sum = sq({AB}), rational ([[I.47]]).
+
+  - part: proof
+    text: "And since, again, the rectangle AE, EB is equal to the square on EF, and, by hypothesis, the rectangle AE, EB is also equal to the square on BD, therefore FE is equal to BD; therefore BC is double of FE, so that the rectangle AB, BC is also commensurable with the rectangle AB, EF."
+    highlight: [EF, BD, BC]
+    hint: |
+      sq({EF}) = rect({AE},{EB}) = sq({BD}), so {BC} = 2{FE} and rect({AB},{BC}) is commensurable with
+      rect({AB},{EF}).
+
+  - part: proof
+    text: "But the rectangle AB, BC is medial; therefore the rectangle AB, EF is also medial."
+    highlight: [AB, BC]
+    hint: |
+      rect({AB},{BC}) is medial ([[X.21]]), so rect({AB},{EF}) is ([[X.23]], porism).
+
+  - part: proof
+    text: "But the rectangle AB, EF is equal to the rectangle AF, FB; [Lemma] therefore the rectangle AF, FB is also medial."
+    highlight: [AF, FB]
+    hint: |
+      rect({AB},{EF}) = rect({AF},{FB}) (lemma of [[X.32]]): medial.
+
+  - part: proof
+    text: "But it was also proved that the sum of the squares on these straight lines is rational."
+    highlight: [AF, FB]
+    hint: |
+      And the sum of squares is rational.
+
+  - part: proof
+    text: "Therefore two straight lines AF, FB incommensurable in square have been found which make the sum of the squares on them rational, but the rectangle contained by them medial."
+    highlight: [AF, FB]
+    hint: |
+      Found.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [1, 2, 3, 4]
+      text: |
+        $AF^2 = AB\cdot AE$, $FB^2 = AB\cdot EB$, with $AE/EB$ irrational.
+    - steps: [5, 6, 7, 8, 9]
+      text: |
+        $AF\cdot FB = AB\cdot EF = \tfrac12 AB\cdot BC$, medial. $\blacksquare$
+
+commentary: |
+  [[X.33]]–[[X.35]] construct the components of the last three of the six "additive" irrationals: the
+  major ([[X.39]]), the "side of a rational plus a medial area" ([[X.40]]) and the "side of the sum of two
+  medial areas" ([[X.41]]).

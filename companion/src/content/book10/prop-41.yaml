@@ -1,0 +1,177 @@
+id: X.41
+kind: theorem
+title: The side of the sum of two medial areas
+
+paraphrase: |
+  The sum of two lines incommensurable in square whose squares add to a medial area and whose rectangle is
+  medial and incommensurable with that sum is irrational: "the side of the sum of two medial areas". A lemma
+  follows, preparing the uniqueness theorems [[X.42]]–[[X.47]].
+
+diagram:
+  width: 210
+  height: 350
+  elements:
+    - "A0;point;free;-1000,320;0;0"
+    - "A3;point;free;1000,320;0;0"
+    - "D0;point;free;-1000,280;0;0"
+    - "D3;point;free;1000,280;0;0"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "B;point;lineSlider;A0,A3,120,0"
+    - "C;point;lineSlider;A0,A3,170,0"
+    - "AC;line;connect;A,C"
+    - "D;point;lineSlider;D0,D3,60,0"
+    - "E;point;lineSlider;D0,D3,140,0"
+    - "DD';line;perpendicular;D,E;0;0;0"
+    - "D2;point;last;DD';0;0"
+    - "D';point;cutoff;D,D2,A0,A3;0;0"
+    - "G';point;proportion;D,E,A,B,A,B,D,D';0;0"
+    - "G;point;proportion;D,E,B,C,B,C,G',D'"
+    - "F;point;parallelogram;E,D,G"
+    - "DEFG;polygon;quadrilateral;D,E,F,G;0;0;black;random"
+    - "K';point;proportion;G,F,B,C,A,B,G,D';0;0"
+    - "K;point;extend;D,K',G,K'"
+    - "FGKH;polygon;parallelogram;F,G,K;0;0;black;random"
+    - "H;point;vertex;FGKH,4"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "DG;line;connect;D,G;0;0;0"
+    - "GK;line;connect;G,K;0;0;0"
+    - "DK;line;connect;D,K;0;0;0"
+  aliases: { DF: DEFG, GH: FGKH, CA: AC, BA: AB, CB: BC, ED: DE, GD: DG, KG: GK, KD: DK }
+  caption: |
+    {DF} = sq({AB}) + sq({BC}) and {GH} = 2·rect({AB},{BC}), both applied to the rational line {DE}.
+
+steps:
+  - part: enunciation
+    text: "If two straight lines incommensurable in square which make the sum of the squares on them medial, and the rectangle contained by them medial and also incommensurable with the sum of the squares on them, be added together, the whole straight line is irrational; and let it be called the side of the sum of two medial areas."
+    highlight: [AC]
+    hint: |
+      Two incommensurable medial areas make a square whose side is irrational.
+
+  - part: setting-out
+    text: "For let two straight lines AB, BC incommensurable in square and satisfying the given conditions be added together;"
+    highlight: [AB, BC]
+    hint: |
+      The parts, from [[X.35]].
+
+  - part: specification
+    text: "I say that AC is irrational."
+    highlight: [AC]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "Let a rational straight line DE be set out, and let there be applied to DE the rectangle DF equal to the squares on AB, BC, and the rectangle GH equal to twice the rectangle AB, BC; therefore the whole DH is equal to the square on AC."
+    highlight: [DE, DF, GH]
+    hint: |
+      Apply the two medial areas to {DE}: {DF} and {GH}, together sq({AC}) ([[II.4]]).
+
+  - part: proof
+    text: "Now, since the sum of the squares on AB, BC is medial, and is equal to DF, therefore DF is also medial."
+    highlight: [DF]
+    hint: |
+      {DF} medial …
+
+  - part: proof
+    text: "And it is applied to the rational straight line DE; therefore DG is rational and incommensurable in length with DE."
+    highlight: [DG]
+    hint: |
+      … so {DG} rational, incommensurable in length with {DE} ([[X.22]]).
+
+  - part: proof
+    text: "For the same reason GK is also rational and incommensurable in length with GF, that is, DE."
+    highlight: [GK]
+    hint: |
+      Likewise {GK}.
+
+  - part: proof
+    text: "And, since the squares on AB, BC are incommensurable with twice the rectangle AB, BC, DF is incommensurable with GH; so that DG is also incommensurable with GK."
+    highlight: [DG, GK]
+    hint: |
+      {DF}, {GH} incommensurable, so {DG}, {GK} are ([[VI.1]], [[X.11]]).
+
+  - part: proof
+    text: "And they are rational; therefore DG, GK are rational straight lines commensurable in square only; therefore DK is irrational and what is called binomial."
+    highlight: [DK]
+    hint: |
+      So {DK} is a binomial ([[X.36]]).
+
+  - part: proof
+    text: "But DE is rational; therefore DH is irrational, and the side of the square which is equal to it is irrational."
+    highlight: [DF, GH]
+    hint: |
+      Rational × binomial: irrational area, irrational side.
+
+  - part: proof
+    text: "But AC is the side of the square equal to HD; therefore AC is irrational."
+    highlight: [AC]
+    hint: |
+      That side is {AC}.
+
+  - part: proof
+    text: "And let it be called the side of the sum of two medial areas."
+    hint: |
+      The name.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+  - part: lemma
+    text: "Lemma. And that the aforesaid irrational straight lines are divided only in one way into the straight lines of which they are the sum and which produce the types in question, we will now prove after premising the following lemma."
+    hint: |
+      Lemma, for the uniqueness theorems: of two divisions of a line, the one nearer the middle has the smaller
+      sum of squares.
+    modern: |
+      $x^2 + (s - x)^2$ increases as $x$ moves away from $s/2$.
+
+  - part: lemma
+    text: "Let the straight line AB be set out, let the whole be cut into unequal parts at each of the points C, D, and let AC be supposed greater than DB; I say that the squares on AC, CB are greater than the squares on AD, DB."
+    hint: |
+      *AB* cut at *C* and *D*, *AC* > *DB*.
+
+  - part: lemma
+    text: "For let AB be bisected at E."
+    hint: |
+      Bisect at *E*.
+
+  - part: lemma
+    text: "Then, since AC is greater than DB, let DC be subtracted from each; therefore the remainder AD is greater than the remainder CB."
+    hint: |
+      *AD* > *CB* …
+
+  - part: lemma
+    text: "But AE is equal to EB; therefore DE is less than EC; therefore the points C, D are not equidistant from the point of bisection."
+    hint: |
+      … so *DE* < *EC*.
+
+  - part: lemma
+    text: "And, since the rectangle AC, CB together with the square on EC is equal to the square on EB, and, further, the rectangle AD, DB together with the square on DE is equal to the square on EB, [id.] therefore the rectangle AC, CB together with the square on EC is equal to the rectangle AD, DB together with the square on DE."
+    hint: |
+      [[II.5]]: *AC*·*CB* + *EC*² = *EB*² = *AD*·*DB* + *DE*².
+
+  - part: lemma
+    text: "And of these the square on DE is less than the square on EC; therefore the remainder, the rectangle AC, CB, is also less than the rectangle AD, DB, so that twice the rectangle AC, CB is also less than twice the rectangle AD, DB."
+    hint: |
+      So *AC*·*CB* < *AD*·*DB* …
+
+  - part: lemma
+    text: "Therefore also the remainder, the sum of the squares on AC, CB, is greater than the sum of the squares on AD, DB."
+    hint: |
+      … and *AC*² + *CB*² > *AD*² + *DB*².
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      End of the lemma.
+
+reconstruction:
+  lines:
+    - steps: [4, 5, 6, 7, 8, 9]
+      text: |
+        $AC^2 = \rho(g + k)$ with $g, k$ rational and $g/k$ irrational: a binomial times $\rho$.
+    - steps: [10, 11]
+      text: |
+        Hence irrational. $\blacksquare$

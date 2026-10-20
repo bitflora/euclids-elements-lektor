@@ -1,0 +1,159 @@
+id: XII.18
+kind: theorem
+title: Spheres are in the triplicate ratio of their diameters
+
+paraphrase: |
+  Two spheres are to one another in the triplicate ratio of their diameters — volume scales as the cube of the
+  diameter. The last proposition of Book XII, again by exhaustion.
+
+diagram:
+  width: 540
+  height: 300
+  elements:
+    - "B0;point;free;-1000,100;0;0"
+    - "B3;point;free;1000,100;0;0"
+    - "B;point;lineSlider;B0,B3,40,0"
+    - "C;point;lineSlider;B0,B3,155,0"
+    - "BC;line;connect;B,C"
+    - "ABCcenter;point;midpoint;B,C;0;0"
+    - "A;point;perpendicular;ABCcenter,C"
+    - "ABCsphere;circle;radius;ABCcenter,B;0;0;black;random"
+    - "E;point;lineSlider;B0,B3,355,0"
+    - "F;point;lineSlider;B0,B3,500,0"
+    - "EF;line;connect;E,F"
+    - "DEFcenter;point;midpoint;EF;0;0"
+    - "D;point;perpendicular;DEFcenter,F"
+    - "DEFsphere;circle;radius;DEFcenter,D;0;0;black;random"
+    - "H;point;lineSlider;B0,B3,380,0"
+    - "K;point;extend;H,DEFcenter,H,DEFcenter"
+    - "G;point;perpendicular;DEFcenter,K"
+    - "GHKsphere;circle;radius;DEFcenter,H;0;0;black;random"
+    - "M0;point;free;-1000,200;0;0"
+    - "M3;point;free;1000,200;0;0"
+    - "M;point;lineSlider;M0,M3,180,0"
+    - "N;point;lineSlider;M0,M3,340,0"
+    - "LMNcenter;point;midpoint;M,N;0;0"
+    - "L;point;perpendicular;LMNcenter,N"
+    - "LMNsphere;circle;radius;LMNcenter,M;0;0;black;random"
+  aliases: { CB: BC, FE: EF }
+  caption: |
+    Spheres {ABC|ABCsphere}, {DEF|DEFsphere} with diameters {BC}, {EF}; {GHK|GHKsphere} and {LMN|LMNsphere} are the supposed smaller and larger
+    spheres.
+
+steps:
+  - part: enunciation
+    text: "Spheres are to one another in the triplicate ratio of their respective diameters."
+    highlight: [BC, EF]
+    hint: |
+      Sphere volumes are as the cubes of the diameters.
+    modern: |
+      $V = \tfrac{\pi}{6} d^3$; Euclid proves only $V_1 : V_2 = d_1^3 : d_2^3$.
+
+  - part: setting-out
+    text: "Let the spheres ABC, DEF be conceived, and let BC, EF be their diameters; I say that the sphere ABC has to the sphere DEF the ratio triplicate of that which BC has to EF."
+    highlight: [ABCsphere, DEFsphere]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For, if the sphere ABC has not to the sphere DEF the ratio triplicate of that which BC has to EF, then the sphere ABC will have either to some less sphere than the sphere DEF, or to a greater, the ratio triplicate of that which BC has to EF."
+    highlight: [GHKsphere, LMNsphere]
+    hint: |
+      Otherwise the triplicate ratio is sphere *ABC* to a smaller or a larger sphere.
+
+  - part: construction
+    text: "First, let it have that ratio to a less sphere GHK, let DEF be conceived about the same centre with GHK, let there be inscribed in the greater sphere DEF a polyhedral solid which does not touch the lesser sphere GHK at its surface, and let there also be inscribed in the sphere ABC a polyhedral solid similar to the polyhedral solid in the sphere DEF; therefore the polyhedral solid in ABC has to the polyhedral solid in DEF the ratio triplicate of that which BC has to EF."
+    highlight: [GHKsphere]
+    hint: |
+      Case 1: a smaller sphere *GHK*, concentric with *DEF*. Inscribe in *DEF* a polyhedron missing *GHK* ([[XII.17]]), and a similar one in *ABC*.
+
+  - part: proof
+    text: "But the sphere ABC also has to the sphere GHK the ratio triplicate of that which BC has to EF; therefore, as the sphere ABC is to the sphere GHK, so is the polyhedral solid in the sphere ABC to the polyhedral solid in the sphere DEF; and, alternately, as the sphere ABC is to the polyhedron in it, so is the sphere GHK to the polyhedral solid in the sphere DEF."
+    highlight: [BC, EF]
+    hint: |
+      The polyhedra are in the triplicate ratio of {BC} : {EF} ([[XII.17]], porism), so sphere *ABC* : sphere *GHK* = polyhedron : polyhedron.
+
+  - part: proof
+    text: "But the sphere ABC is greater than the polyhedron in it; therefore the sphere GHK is also greater than the polyhedron in the sphere DEF."
+    highlight: [GHKsphere]
+    hint: |
+      Sphere *ABC* exceeds its polyhedron, so *GHK* exceeds the polyhedron in *DEF* …
+
+  - part: proof
+    text: "But it is also less, for it is enclosed by it."
+    highlight: [GHKsphere]
+    hint: |
+      … though it lies inside it: impossible.
+
+  - part: proof
+    text: "Therefore the sphere ABC has not to a less sphere than the sphere DEF the ratio triplicate of that which the diameter BC has to EF."
+    highlight: [GHKsphere]
+    hint: |
+      So not to a smaller sphere.
+
+  - part: proof
+    text: "Similarly we can prove that neither has the sphere DEF to a less sphere than the sphere ABC the ratio triplicate of that which EF has to BC."
+    highlight: [GHKsphere]
+    hint: |
+      Likewise exchanged.
+
+  - part: specification
+    text: "I say next that neither has the sphere ABC to any greater sphere than the sphere DEF the ratio triplicate of that which BC has to EF."
+    highlight: [LMNsphere]
+    hint: |
+      Case 2: a larger sphere *LMN*.
+
+  - part: proof
+    text: "For, if possible, let it have that ratio to a greater, LMN; therefore, inversely, the sphere LMN has to the sphere ABC the ratio triplicate of that which the diameter EF has to the diameter BC."
+    highlight: [LMNsphere]
+    hint: |
+      Inversely …
+
+  - part: proof
+    text: "But, inasmuch as LMN is greater than DEF, therefore, as the sphere LMN is to the sphere ABC, so is the sphere DEF to some less sphere than the sphere ABC, as was before proved."
+    highlight: [LMNsphere]
+    hint: |
+      … sphere *LMN* : sphere *ABC* = sphere *DEF* : some smaller sphere (lemma of [[XII.2]]) …
+
+  - part: proof
+    text: "Therefore the sphere DEF also has to some less sphere than the sphere ABC the ratio triplicate of that which EF has to BC: which was proved impossible."
+    highlight: [LMNsphere]
+    hint: |
+      … which case 1 excluded.
+
+  - part: proof
+    text: "Therefore the sphere ABC has not to any sphere greater than the sphere DEF the ratio triplicate of that which BC has to EF."
+    highlight: [LMNsphere]
+    hint: |
+      So not to a larger sphere.
+
+  - part: proof
+    text: "But it was proved that neither has it that ratio to a less sphere."
+    highlight: [GHKsphere]
+    hint: |
+      Recalled.
+
+  - part: proof
+    text: "Therefore the sphere ABC has to the sphere DEF the ratio triplicate of that which BC has to EF."
+    highlight: [BC, EF]
+    hint: |
+      Hence the triplicate ratio.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8]
+      text: |
+        If $V_1 : w = d_1^3 : d_2^3$ with $w$ a smaller sphere, the polyhedra of [[XII.17]] give a contradiction.
+    - steps: [9, 10, 11, 12, 13, 14]
+      text: |
+        The other case reduces to it. $\blacksquare$
+
+commentary: |
+  Euclid assumes, as in [[XII.2]], that a sphere exists in any given ratio to another (here a concentric sphere
+  of suitable size). The constant ($\pi/6$) was found by Archimedes (*On the Sphere and Cylinder*), who also
+  proved that the sphere is two thirds of the circumscribed cylinder.

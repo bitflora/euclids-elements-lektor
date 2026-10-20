@@ -1,0 +1,147 @@
+id: III.37
+kind: theorem
+title: Converse of the tangent–secant theorem
+
+paraphrase: |
+  If from an outside point {D} one line cuts the circle at {C}, {A} and another meets it at {B}, and
+  $AD \cdot DC = DB^2$, then {DB} touches the circle.
+
+diagram:
+  width: 315
+  height: 260
+  elements:
+    - "A;point;free;218,225"
+    - "D;point;free;40,39"
+    - "F;point;free;180,136"
+    - "ABC;circle;radius;F,A;0;0;black;0"
+    - "AD;line;connect;A,D"
+    - "FD;line;connect;F,D"
+    - "ACx;line;chord;AD,ABC;0;0;0"
+    - "C;point;last;ACx"
+    - "M;point;midpoint;FD;0;0"
+    - "BCEF;circle;radius;M,F;0;0;0;0"
+    - "EBx;line;bichord;ABC,BCEF;0;0;0"
+    - "E;point;first;EBx"
+    - "B;point;last;EBx"
+    - "ED;line;connect;E,D"
+    - "BD;line;connect;B,D"
+    - "EF;line;connect;E,F"
+    - "BF;line;connect;B,F"
+    - "DC;line;connect;D,C;0;0;0"
+    - "DEF;polygon;triangle;D,E,F;0;0;0;0"
+    - "DBF;polygon;triangle;D,B,F;0;0;0;0"
+    - "angFED;sector;angleMarker;E,F,D"
+    - "angDBF;sector;angleMarker;B,D,F"
+  aliases:
+    DCA: AD
+    DB: BD
+    DE: ED
+    FE: EF
+    FB: BF
+    DF: FD
+    FED: angFED
+  given: [ABC, A, D, C, AD, B, BD]
+  caption: |
+    {DB} is placed so that $AD \cdot DC = DB^2$; {DE} is the true tangent. The two triangles {DEF} and
+    {DBF} are congruent, so {DB} is a tangent too.
+
+steps:
+  - part: enunciation
+    text: "If a point be taken outside a circle and from the point there fall on the circle two straight lines, if one of them cut the circle, and the other fall on it, and if further the rectangle contained by the whole of the straight line which cuts the circle and the straight line intercepted on it outside between the point and the convex circumference be equal to the square on the straight line which falls on the circle, the straight line which falls on it will touch the circle."
+    highlight: [AD, DC, BD]
+    hint: |
+      The converse of [[III.36]].
+
+  - part: setting-out
+    text: "For let a point D be taken outside the circle ABC; from D let the two straight lines DCA, DB fall on the circle ACB; let DCA cut the circle and DB fall on it; and let the rectangle AD, DC be equal to the square on DB."
+    highlight: [AD, BD]
+    hint: |
+      The data: $AD\cdot DC = DB^2$.
+
+  - part: specification
+    text: "I say that DB touches the circle ABC."
+    highlight: [BD]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let DE be drawn touching ABC; let the centre of the circle ABC be taken, and let it be F; let FE, FB, FD be joined."
+    highlight: [ED, F, EF, BF, FD]
+    adds: [E, ED, EF, BF, FD]
+    hint: |
+      Draw a genuine tangent {DE} ([[III.17]]) and the centre {F} ([[III.1]]).
+    cites: [III.17, III.1]
+
+  - part: proof
+    text: "Thus the angle FED is right."
+    highlight: [angFED]
+    hint: |
+      [[III.18]].
+
+  - part: proof
+    text: "Now, since DE touches the circle ABC, and DCA cuts it, the rectangle AD, DC is equal to the square on DE."
+    highlight: [ED]
+    hint: |
+      [[III.36]].
+
+  - part: proof
+    text: "But the rectangle AD, DC was also equal to the square on DB; therefore the square on DE is equal to the square on DB; therefore DE is equal to DB."
+    highlight: [ED, BD]
+    hint: |
+      Equal squares, equal lines.
+
+  - part: proof
+    text: "And FE is equal to FB; therefore the two sides DE, EF are equal to the two sides DB, BF; and FD is the common base of the triangles; therefore the angle DEF is equal to the angle DBF."
+    highlight: [DEF, DBF, angFED, angDBF]
+    hint: |
+      SSS ([[I.8]]).
+
+  - part: proof
+    text: "But the angle DEF is right; therefore the angle DBF is also right."
+    highlight: [angDBF]
+    hint: |
+      So {DB} ⊥ {FB}.
+
+  - part: proof
+    text: "And FB produced is a diameter; and the straight line drawn at right angles to the diameter of a circle, from its extremity, touches the circle;"
+    highlight: [BF, BD]
+    hint: |
+      Porism to [[III.16]].
+
+  - part: proof
+    text: "therefore DB touches the circle."
+    highlight: [BD]
+    hint: |
+      Done.
+
+  - part: proof
+    text: "Similarly this can be proved to be the case even if the centre be on AC."
+    hint: |
+      The other case is the same.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+      text: |
+        $DB^2 = ED^2 - r^2 = FD^2 - FB^2$, so $FB^2 + DB^2 = FD^2$ and $\angle FBD = 90^\circ$ (I.48): $DB$ is
+        tangent. $\blacksquare$
+
+commentary: |
+  The last proposition of Book III. Euclid's proof uses a second, genuine tangent and congruent triangles;
+  a shorter route is the converse of Pythagoras ([[I.48]]), as in the reconstruction.
+
+gaps: |
+  - **{DE} and {DB} on opposite sides of {DF}**: the figure assumes {B} is not {E}; if it were, there is
+    nothing to prove.

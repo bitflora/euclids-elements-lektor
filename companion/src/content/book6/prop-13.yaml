@@ -1,0 +1,98 @@
+id: VI.13
+kind: problem
+title: Finding a mean proportional
+
+paraphrase: |
+  Given two lines {AB}, {BC}, find a line {DB} with {AB} : {DB} = {DB} : {BC}: the geometric mean.
+
+diagram:
+  width: 300
+  height: 200
+  elements:
+    - "A;point;free;40,150"
+    - "C;point;free;250,150"
+    - "B;point;lineSlider;A,C,170,150"
+    - "M;point;midpoint;A,C;0;0"
+    - "ADC;sector;sector;M,C,A;0;0;black;#f3eee4"
+    - "circ;circle;radius;M,A;0;0;0;0"
+    - "Dp;point;perpendicular;B,C;0;0"
+    - "DpD;line;chord;B,Dp,circ;0;0;0"
+    - "D;point;first;DpD"
+    - "BD;line;connect;B,D"
+    - "ACD;polygon;triangle;A,C,D;0;0;black;#dfe7ea"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "DC;line;connect;D,C;0;0;0"
+    - "angADC;sector;angleMarker;D,A,C"
+  aliases:
+    DB: BD
+  given: [A, B, C, AB, BC, AC]
+  caption: |
+    Slide {B} along {AC}, or drag {A}, {C}. {DB} is always the mean proportional between {AB} and {BC}.
+
+steps:
+  - part: enunciation
+    text: "To two given straight lines to find a mean proportional."
+    highlight: [AB, BC]
+    hint: |
+      Given $a, b$, find $x$ with $a : x = x : b$, i.e. $x = \sqrt{ab}$.
+    modern: |
+      $$x^2 = ab$$
+
+  - part: setting-out
+    text: "Let AB, BC be the two given straight lines;"
+    highlight: [AB, BC]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to find a mean proportional to AB, BC."
+    highlight: [AB, BC]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let them be placed in a straight line, and let the semicircle ADC be described on AC; let BD be drawn from the point B at right angles to the straight line AC, and let AD, DC be joined."
+    highlight: [ADC, BD, AD, DC]
+    adds: [M, ADC, circ, Dp, DpD, D, BD, ACD, AD, DC, angADC]
+    hint: |
+      Semicircle on {AC}; perpendicular at {B} ([[I.11]]) meets it at {D}.
+
+  - part: proof
+    text: "Since the angle ADC is an angle in a semicircle, it is right."
+    highlight: [angADC]
+    hint: |
+      [[III.31]].
+
+  - part: proof
+    text: "And, since, in the right-angled triangle ADC, DB has been drawn from the right angle perpendicular to the base, therefore DB is a mean proportional between the segments of the base, AB, BC."
+    highlight: [ACD, DB, AB, BC]
+    hint: |
+      The porism to [[VI.8]].
+
+  - part: conclusion
+    text: "Therefore to the two given straight lines AB, BC a mean proportional DB has been found."
+    highlight: [DB]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: |
+        With the centre {M} of the semicircle and radius $r = \tfrac12(a + b)$, the half-chord at {B} has
+        $BD^2 = r^2 - (r - a)^2 = a(2r - a) = ab$. $\blacksquare$
+
+commentary: |
+  The same figure as [[II.14]] (squaring a rectangle): Joyce notes that, by [[VI.17]], a mean proportional
+  between two lines is the side of a square equal to their rectangle. With {BC} a unit length, the
+  construction gives the square root of {AB}.

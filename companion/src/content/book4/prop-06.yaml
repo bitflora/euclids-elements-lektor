@@ -1,0 +1,130 @@
+id: IV.6
+kind: problem
+title: Inscribing a square in a circle
+
+paraphrase: |
+  In a given circle, inscribe a square: draw two perpendicular diameters and join their ends.
+
+diagram:
+  width: 290
+  height: 290
+  elements:
+    - "A;point;free;145,30"
+    - "C;point;free;145,260"
+    - "E;point;midpoint;A,C"
+    - "ABCDc;circle;radius;E,A;0;0;black;0"
+    - "B;point;perpendicular;E,A"
+    - "D;point;perpendicular;E,C"
+    - "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;#efe4d2"
+    - "AC;line;connect;A,C"
+    - "BD;line;connect;B,D"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "EA;line;connect;E,A;0;0;0"
+    - "angBAD;sector;angleMarker;A,B,D"
+    - "angABC;sector;angleMarker;B,A,C"
+    - "angBCD;sector;angleMarker;C,B,D"
+    - "angCDA;sector;angleMarker;D,C,A"
+  aliases:
+    DA: AD
+    BAD: angBAD
+    BCD: angBCD
+    CDA: angCDA
+  given: [ABCDc, A, C, E]
+  caption: |
+    Drag {A} or {C}: the perpendicular diameters always cut the circle at the corners of a square.
+
+steps:
+  - part: enunciation
+    text: "In a given circle to inscribe a square."
+    highlight: [ABCDc, ABCD]
+    hint: |
+      A problem: the inscribed square.
+
+  - part: setting-out
+    text: "Let ABCD be the given circle;"
+    highlight: [ABCDc]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to inscribe a square in the circle ABCD."
+    highlight: [ABCDc]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let two diameters AC, BD of the circle ABCD be drawn at right angles to one another, and let AB, BC, CD, DA be joined."
+    highlight: [AC, BD, ABCD]
+    adds: [AC, B, D, BD, ABCD]
+    hint: |
+      Two perpendicular diameters ([[I.11]]) and the four chords.
+    cites: [I.11]
+
+  - part: proof
+    text: "Then, since BE is equal to ED, for E is the centre, and EA is common and at right angles, therefore the base AB is equal to the base AD."
+    highlight: [BE, ED, EA, AB, AD]
+    hint: |
+      SAS ([[I.4]]).
+
+  - part: proof
+    text: "For the same reason each of the straight lines BC, CD is also equal to each of the straight lines AB, AD; therefore the quadrilateral ABCD is equilateral."
+    highlight: [AB, BC, CD, AD]
+    hint: |
+      All four sides equal.
+
+  - part: specification
+    text: "I say next that it is also right-angled."
+    highlight: [ABCD]
+    hint: |
+      Now the angles.
+
+  - part: proof
+    text: "For, since the straight line BD is a diameter of the circle ABCD, therefore BAD is a semicircle; therefore the angle BAD is right."
+    highlight: [angBAD]
+    hint: |
+      Angle in a semicircle ([[III.31]]).
+
+  - part: proof
+    text: "For the same reason each of the angles ABC, BCD, CDA is also right; therefore the quadrilateral ABCD is right-angled."
+    highlight: [angABC, angBCD, angCDA]
+    hint: |
+      All four right.
+
+  - part: proof
+    text: "But it was also proved equilateral; therefore it is a square;"
+    highlight: [ABCD]
+    hint: |
+      [[I.Def.22]].
+
+  - part: proof
+    text: "and it has been inscribed in the circle ABCD."
+    highlight: [ABCD, ABCDc]
+    hint: |
+      All corners on the circle.
+
+  - part: conclusion
+    text: "Therefore in the given circle the square ABCD has been inscribed."
+    highlight: [ABCD]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      text: The points $(\pm r, 0)$, $(0, \pm r)$ are the vertices of a square of side $r\sqrt 2$. $\blacksquare$
+
+commentary: |
+  The first regular polygon of Book IV. The square, triangle ([[IV.2]]), pentagon ([[IV.11]]), hexagon
+  ([[IV.15]]) and 15-gon ([[IV.16]]) are the regular polygons Euclid constructs.

@@ -1,0 +1,238 @@
+id: II.5
+kind: theorem
+title: Equal and unequal segments (difference of squares)
+
+paraphrase: |
+  Cut {AB} in half at {C} and somewhere else at {D}. The rectangle on the unequal pieces {AD},
+  {DB}, plus the square on the gap {CD}, equals the square on the half. In algebra:
+  $(a + b)(a - b) + b^2 = a^2$, where $a$ is the half and $b$ the gap.
+
+diagram:
+  width: 350
+  height: 210
+  elements:
+    - "A0;point;free;-1000,40;0"
+    - "A3;point;free;1000,40;0"
+    - "A;point;lineSlider;A0,A3,40,0"
+    - "B;point;lineSlider;A0,A3,310,0"
+    - "C;point;midpoint;A,B"
+    - "D;point;lineSlider;A0,A3,230,0"
+    - "BCEF;polygon;square;B,C;0;0;black;0"
+    - "E;point;vertex;BCEF,3"
+    - "F;point;vertex;BCEF,4"
+    - "BE;line;connect;B,E"
+    - "G;point;parallelogram;D,B,F"
+    - "H;point;intersection;D,G,B,E"
+    - "M;point;parallelogram;H,D,B"
+    - "K;point;parallelogram;H,D,A"
+    - "L;point;intersection;K,M,C,E"
+    - "ACLK;polygon;quadrilateral;A,C,L,K;0;0;0;#efe4d2"
+    - "LHGE;polygon;quadrilateral;L,H,G,E;0;0;0;#dfe7ea"
+    - "DBMH;polygon;quadrilateral;D,B,M,H;0;0;0;0"
+    - "Op;point;midpoint;H,L;0;0"
+    - "N;point;cutoff;H,K,H,Op;black;lightGray"
+    - "O;point;cutoff;H,D,H,Op;black;lightGray"
+    - "P;point;cutoff;H,G,H,Op;black;lightGray"
+    - "NOPmark;sector;arc;P,O,N;0;0;lightGray;0"
+    - "AB;line;connect;A,B"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "CE;line;connect;C,E;0;0;0"
+    - "BF;line;connect;B,F;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "CL;line;connect;C,L;0;0;0"
+    - "BM;line;connect;B,M;0;0;0"
+    - "DG;line;connect;D,G"
+    - "KM;line;connect;K,M"
+    - "AK;line;connect;A,K"
+    - "DH;line;connect;D,H;0;0;0"
+    - "LH;line;connect;L,H;0;0;0"
+    - "CDHL;polygon;quadrilateral;C,D,H,L;0;0;0;0"
+    - "HMFG;polygon;quadrilateral;H,M,F,G;0;0;0;0"
+    - "CBML;polygon;quadrilateral;C,B,M,L;0;0;0;0"
+    - "DBFG;polygon;quadrilateral;D,B,F,G;0;0;0;0"
+    - "ADHK;polygon;quadrilateral;A,D,H,K;0;0;0;0"
+    - "CEFB;polygon;quadrilateral;C,E,F,B;0;0;0;0"
+    - "NOP;polygon;hexagon;C,B,F,G,H,L;0;0;0;0"
+  aliases:
+    CH: CDHL
+    HF: HMFG
+    DM: DBMH
+    CM: CBML
+    DF: DBFG
+    AL: ACLK
+    AH: ADHK
+    LG: LHGE
+    BC: CB
+  given: [A, B, C, D, AB]
+  caption: |
+    Slide {A}, {B} and the cut {D}; {C} stays the midpoint. The gnomon {NOP} (marked by the grey
+    arc) always equals the rectangle {AH}.
+
+steps:
+  - part: enunciation
+    text: "If a straight line be cut into equal and unequal segments, the rectangle contained by the unequal segments of the whole together with the square on the straight line between the points of section is equal to the square on the half."
+    highlight: [AH, LG, CEFB]
+    hint: |
+      (rectangle on the unequal pieces) + (square on the gap between the cuts) = (square on the half).
+    explain:
+      fact: |
+        "Between the points of section" is literally "between the *sections*", the same word (τομή)
+        later used for the conic *sections* (Heath's note on line 3).
+      implicit: |
+        With $a$ = the half and $b$ = the gap: the unequal pieces are $a + b$ and $a - b$, so the
+        theorem says $(a + b)(a - b) + b^2 = a^2$ — the difference of two squares.
+
+  - part: setting-out
+    text: "For let a straight line AB be cut into equal segments at C and into unequal segments at D;"
+    highlight: [AB, C, D]
+    hint: |
+      {C} is the midpoint, {D} another point.
+
+  - part: specification
+    text: "I say that the rectangle contained by AD, DB together with the square on CD is equal to the square on CB."
+    highlight: [AD, DB, CD, CB]
+    hint: |
+      The goal.
+    modern: |
+      $$AD\cdot DB + CD^2 = CB^2$$
+
+  - part: construction
+    text: "For let the square CEFB be described on CB,"
+    highlight: [CEFB]
+    adds: [BCEF, E, F]
+    hint: |
+      The square on the half ([[I.46]]).
+
+  - part: construction
+    text: "and let BE be joined;"
+    highlight: [BE]
+    adds: [BE]
+    hint: |
+      Its diagonal.
+
+  - part: construction
+    text: "through D let DG be drawn parallel to either CE or BF, through H again let KM be drawn parallel to either AB or EF, and again through A let AK be drawn parallel to either CL or BM."
+    highlight: [DG, KM, AK]
+    adds: [G, H, K, L, M, DG, KM, AK, ACLK, LHGE, N, O, P, NOPmark]
+    hint: |
+      A vertical through {D}, meeting the diagonal at {H}; a horizontal through {H}, extended back to
+      above {A}; and a vertical at {A} ([[I.31]]).
+
+  - part: proof
+    text: "Then, since the complement CH is equal to the complement HF,"
+    highlight: [CH, HF]
+    hint: |
+      The complements about the diagonal are equal ([[I.43]]).
+
+  - part: proof
+    text: "let DM be added to each; therefore the whole CM is equal to the whole DF."
+    highlight: [DM, CM, DF]
+    hint: |
+      Add the small square {DM} to both ([[I.CN.2]]).
+    cites: [I.CN.2]
+
+  - part: proof
+    text: "But CM is equal to AL, since AC is also equal to CB;"
+    highlight: [CM, AL]
+    hint: |
+      {CM} and {AL} have equal bases {CB}, {AC} and the same height ([[I.36]]).
+
+  - part: proof
+    text: "therefore AL is also equal to DF."
+    highlight: [AL, DF]
+    hint: |
+      So {AL} = {DF}.
+
+  - part: proof
+    text: "Let CH be added to each; therefore the whole AH is equal to the gnomon NOP."
+    highlight: [AH, NOP]
+    hint: |
+      Add {CH}: on the left, {AL} + {CH} is the rectangle {AH}; on the right, {DF} + {CH} is the
+      L-shaped *gnomon* {NOP} ([[II.Def.2]]).
+    cites: [II.Def.2]
+
+  - part: proof
+    text: "But AH is the rectangle AD, DB, for DH is equal to DB,"
+    highlight: [AH, AD, DH]
+    hint: |
+      {AH} has sides {AD} and {DH} (= {DB}).
+    explain:
+      implicit: |
+        That {DH} = {DB}: {DBMH|DM} is a square about the diagonal, as in [[II.4]].
+
+  - part: proof
+    text: "therefore the gnomon NOP is also equal to the rectangle AD, DB."
+    highlight: [NOP, AH]
+    hint: |
+      The gnomon equals the rectangle on the unequal pieces.
+
+  - part: proof
+    text: "Let LG, which is equal to the square on CD, be added to each;"
+    highlight: [LG]
+    hint: |
+      Add the small square {LG} (its side {LH} equals {CD}).
+    explain:
+      implicit: |
+        That {LG} is a square on a line equal to {CD} is again the [[II.4]] fact about squares on the
+        diagonal, plus [[I.34]].
+
+  - part: proof
+    text: "therefore the gnomon NOP and LG are equal to the rectangle contained by AD, DB and the square on CD."
+    highlight: [NOP, LG]
+    hint: |
+      [[I.CN.2]].
+
+  - part: proof
+    text: "But the gnomon NOP and LG are the whole square CEFB, which is described on CB;"
+    highlight: [NOP, LG, CEFB]
+    hint: |
+      Gnomon plus the small square fills the square on the half.
+
+  - part: conclusion
+    text: "therefore the rectangle contained by AD, DB together with the square on CD is equal to the square on CB."
+    highlight: [AH, LG, CEFB]
+    hint: |
+      Done.
+    modern: |
+      $$(a + b)(a - b) + b^2 = a^2$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: Let $CB = AC = a$ and $CD = b$, so $AD = a + b$, $DB = a - b$.
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+      text: $AD \cdot DB + CD^2 = (a + b)(a - b) + b^2 = a^2 - b^2 + b^2 = a^2 = CB^2$. $\blacksquare$
+  closing: |
+    Read as a problem, II.5 solves "find two lines with given sum $2a$ and given rectangle $p$": the
+    square on the gap must be $a^2 - p$. That is the geometric form of solving $x(2a - x) = p$,
+    and [[II.14]] uses it in exactly this way.
+
+commentary: |
+  The first of a pair: II.5 (point *inside* the line) and [[II.6]] (point *outside*, on the line
+  produced). Both turn on the gnomon: rearranging a rectangle into an L-shape that, with a small
+  square, completes a large square.
+
+gaps: |
+  - **Squares about the diagonal** ({DM}, {LG}) are taken to be squares; the proof is the one in [[II.4]].
+
+historical: |
+  Heath points out that his figure marks the gnomon with three letters and a dotted arc, as the
+  manuscripts do; in this case the manuscript figure has two *M*'s, and he reletters it (his note
+  on line 3). II.5 and II.6 are the geometric basis of the "application of areas" with a deficiency or
+  excess, which Book VI generalises (VI.27–29).

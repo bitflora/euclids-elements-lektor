@@ -1,0 +1,190 @@
+id: VII.19
+kind: theorem
+title: Four numbers are proportional exactly when the product of the extremes equals that of the means
+
+paraphrase: |
+  {A} : {B} = {C} : {D} if and only if {A}·{D} = {B}·{C}.
+
+diagram:
+  width: 180
+  height: 330
+  elements:
+    - "A0;point;free;30,-1000;0;0"
+    - "A3;point;free;30,1000;0;0"
+    - "A1;point;lineSlider;A0,A3,30,20;0"
+    - "B0;point;free;60,-1000;0;0"
+    - "B3;point;free;60,1000;0;0"
+    - "B1;point;lineSlider;B0,B3,60,20;0"
+    - "C0;point;free;90,-1000;0;0"
+    - "C3;point;free;90,1000;0;0"
+    - "C1;point;lineSlider;C0,C3,90,20;0"
+    - "D0;point;free;120,-1000;0;0"
+    - "D3;point;free;120,1000;0;0"
+    - "D1;point;lineSlider;D0,D3,120,20;0"
+    - "A2;point;lineSlider;A0,A3,30,80;0"
+    - "A;line;connect;A1,A2;black"
+    - "B2;point;lineSlider;B0,B3,60,90;0"
+    - "B;line;connect;B1,B2;black"
+    - "C2;point;lineSlider;C0,C3,90,100;0"
+    - "C;line;connect;C1,C2;black"
+    - "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,35;0;0"
+    - "E1;point;lineSlider;A0,A3,30,150;0"
+    - "E2;point;proportion;U1,U2,A1,A2,D1,D2,E1,A3;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;B0,B3,60,150;0"
+    - "F2;point;cutoff;F1,B3,E1,E2;0"
+    - "F;line;connect;F1,F2;black"
+    - "G0;point;free;150,-1000;0;0"
+    - "G3;point;free;150,1000;0;0"
+    - "G1;point;lineSlider;G0,G3,150,20;0"
+    - "G2;point;proportion;U1,U2,A1,A2,C1,C2,G1,G3;0"
+    - "G;line;connect;G1,G2;black"
+  caption: |
+    {E} = {A}·{D}, {F} = {B}·{C}, and the auxiliary {G} = {A}·{C}. {D} is computed so that the four are
+    proportional.
+
+steps:
+  - part: enunciation
+    text: "If four numbers be proportional, the number produced from the first and fourth will be equal to the number produced from the second and third; and, if the number produced from the first and fourth be equal to that produced from the second and third, the four numbers will be proportional."
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      Cross-multiplication: $a : b = c : d \iff ad = bc$.
+    modern: |
+      $a : b = c : d \iff ad = bc$.
+
+  - part: setting-out
+    text: "Let A, B, C, D be four numbers in proportion, so that, as A is to B, so is C to D; and let A by multiplying D make E, and let B by multiplying C make F;"
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      {A} : {B} = {C} : {D}; {E} = {A}·{D}, {F} = {B}·{C}.
+
+  - part: specification
+    text: "I say that E is equal to F."
+    highlight: [E, F]
+    hint: |
+      First direction: {E} = {F}.
+
+  - part: construction
+    text: "For let A by multiplying C make G."
+    highlight: [G]
+    hint: |
+      An auxiliary product {G} = {A}·{C}.
+
+  - part: proof
+    text: "Since, then, A by multiplying C has made G, and by multiplying D has made E, the number A by multiplying the two numbers C, D has made G, E."
+    highlight: [A, C, D, G, E]
+    hint: |
+      {A} multiplies {C} and {D}, giving {G} and {E}.
+
+  - part: proof
+    text: "Therefore, as C is to D, so is G to E."
+    highlight: [C, D, G, E]
+    hint: |
+      By [[VII.17]]: {C} : {D} = {G} : {E}.
+
+  - part: proof
+    text: "But, as C is to D, so is A to B; therefore also, as A is to B, so is G to E."
+    highlight: [A, B, G, E]
+    hint: |
+      So {A} : {B} = {G} : {E}.
+
+  - part: proof
+    text: "Again, since A by multiplying C has made G, but, further, B has also by multiplying C made F, the two numbers A, B by multiplying a certain number C have made G, F."
+    highlight: [A, B, C, G, F]
+    hint: |
+      {A} and {B} multiply {C}, giving {G} and {F}.
+
+  - part: proof
+    text: "Therefore, as A is to B, so is G to F."
+    highlight: [A, B, G, F]
+    hint: |
+      By [[VII.18]]: {A} : {B} = {G} : {F}.
+
+  - part: proof
+    text: "But further, as A is to B, so is G to E also; therefore also, as G is to E, so is G to F."
+    highlight: [G, E, F]
+    hint: |
+      {G} : {E} = {G} : {F}.
+
+  - part: proof
+    text: "Therefore G has to each of the numbers E, F the same ratio; therefore E is equal to F."
+    highlight: [E, F]
+    hint: |
+      A number with the same ratio to two numbers: they are equal (cf. [[V.9]]).
+    explain:
+      fact: |
+        If $g : e = g : f$, then $e = f$. For magnitudes this is [[V.9]]; for numbers it follows from
+        [[VII.Def.20]], but Euclid never proves it.
+      implicit: |
+        Heath's "cf." marks that the reference is to a result about magnitudes, used here for numbers.
+    gap: |
+      The numerical analogue of [[V.9]] is neither stated nor proved in Book VII.
+
+  - part: specification
+    text: "Again, let E be equal to F; I say that, as A is to B, so is C to D."
+    highlight: [E, F, A, B, C, D]
+    hint: |
+      The converse: if {E} = {F}, the four are proportional.
+
+  - part: proof
+    text: "For, with the same construction, since E is equal to F, therefore, as G is to E, so is G to F."
+    highlight: [G, E, F]
+    hint: |
+      Equal numbers: {G} has the same ratio to each (cf. [[V.7]]).
+    gap: |
+      Again a Book V result ([[V.7]]) applied to numbers without a numerical proof.
+
+  - part: proof
+    text: "But, as G is to E, so is C to D, and, as G is to F, so is A to B."
+    highlight: [G, E, C, D, F, A, B]
+    hint: |
+      {G} : {E} = {C} : {D} ([[VII.17]]) and {G} : {F} = {A} : {B} ([[VII.18]]).
+
+  - part: proof
+    text: "Therefore also, as A is to B, so is C to D."
+    highlight: [A, B, C, D]
+    hint: |
+      Hence {A} : {B} = {C} : {D}.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* With fractions: $a : b = c : d$ means $a/b = c/d$.
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        $c : d = ac : ad$ ([[VII.17]]), so $a : b = ac : ad$.
+    - steps: [7, 8]
+      text: |
+        $a : b = ac : bc$ ([[VII.18]]).
+    - steps: [9, 10]
+      text: |
+        So $ac : ad = ac : bc$, hence $ad = bc$.
+    - steps: [11, 12, 13, 14]
+      text: |
+        Conversely, $ad = bc$ gives $ac : ad = ac : bc$, i.e. $c : d = a : b$. $\blacksquare$
+
+commentary: |
+  The arithmetic counterpart of [[VI.16]] (for lines: the rectangle of the extremes equals that of the
+  means). It is the most-used result of Book VII; from here on, many proofs switch between a proportion and
+  an equation of products at will.
+
+  Joyce draws attention to the two uses of Book V facts ([[V.9]], [[V.7]]) for numbers, which Book VII never
+  proves. Either Euclid regarded them as obvious for numbers (Heath's view), or he took Book V to apply to
+  numbers as a special kind of magnitude — which would sit uneasily with Book VII's separate definition of
+  proportion ([[VII.Def.20]]).
+
+gaps: |
+  - **[[V.7]] and [[V.9]] for numbers** are used without proof.
+  - **Transitivity** of "same ratio" for numbers (steps 6 and 9) is assumed.
+
+historical: |
+  The *rule of three* of later commercial arithmetic (given three terms of a proportion, find the fourth as
+  $d = bc/a$) rests on this proposition.

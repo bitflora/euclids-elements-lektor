@@ -1,0 +1,82 @@
+id: VIII.23
+kind: theorem
+title: If the first of four in continued proportion is a cube, so is the fourth
+
+paraphrase: |
+  If {A}, {B}, {C}, {D} are in continued proportion and {A} is a cube, then {D} is a cube.
+
+diagram:
+  width: 250
+  height: 170
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "C0;point;free;-1000,110;0;0"
+    - "C3;point;free;1000,110;0;0"
+    - "D0;point;free;-1000,145;0;0"
+    - "D3;point;free;1000,145;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,90,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,115,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;A1,A2,B1,B2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+  caption: |
+    {A}, {B}, {C}, {D} in continued proportion.
+
+steps:
+  - part: enunciation
+    text: "If four numbers be in continued proportion, and the first be cube, the fourth will also be cube."
+    highlight: [A, B, C, D]
+    hint: |
+      The cube version of [[VIII.22]].
+    modern: |
+      $a, b, c, d$ geometric, $a$ a cube $\Rightarrow$ $d$ a cube.
+
+  - part: setting-out
+    text: "Let A, B, C, D be four numbers in continued proportion, and let A be cube;"
+    highlight: [A, B, C, D]
+    hint: |
+      {A} a cube.
+
+  - part: specification
+    text: "I say that D is also cube."
+    highlight: [D]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since between A, D there are two mean proportional numbers B, C, therefore A, D are similar solid numbers."
+    highlight: [A, B, C, D]
+    hint: |
+      [[VIII.21]].
+
+  - part: proof
+    text: "But A is cube; therefore D is also cube."
+    highlight: [A, D]
+    hint: |
+      A solid number similar to a cube is a cube.
+    gap: |
+      As in [[VIII.22]], "similar to a cube, hence a cube" is not proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4]
+      text: |
+        With ratio $r = b/a$, $d = a r^3 = (s r)^3$ where $a = s^3$; $sr$ is rational with whole cube, so
+        whole. $\blacksquare$

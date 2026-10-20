@@ -1,0 +1,217 @@
+id: XII.4
+kind: theorem
+title: The prisms of the division are as the bases
+
+paraphrase: |
+  If two pyramids of the same height on triangular bases {ABC}, {DEF} are each divided as in [[XII.3]], the prisms
+  in one are to the prisms in the other as the bases — and the same holds at every further stage of division.
+
+diagram:
+  width: 550
+  height: 280
+  elements:
+    - "origin;point;fixed;90,250,0;0;0"
+    - "1X;point;fixed;342,250,-91;0;0"
+    - "1Y;point;fixed;-5,550,-120;0;0"
+    - "1Z;point;fixed;114,375,288;0;0"
+    - "floor;plane;3points;origin,1X,1Y;0;0;0;0"
+    - "G;point;lineSlider;origin,1Y,90,0,0"
+    - "A;point;planeSlider;floor,29,179,0"
+    - "B;point;planeSlider;floor,110,250,0"
+    - "C;point;planeSlider;floor,210,209,0"
+    - "K;point;midpoint;A,B;black;green"
+    - "O;point;midpoint;B,C"
+    - "L;point;midpoint;A,C"
+    - "P;point;midpoint;A,G"
+    - "M;point;midpoint;B,G"
+    - "N;point;midpoint;C,G"
+    - "PMOL;polygon;quadrilateral;P,M,O,L;0;0;black;lightGray"
+    - "AKLP;polyhedron;tetrahedron;A,K,L,P;0;0;black;random"
+    - "PMNG;polyhedron;tetrahedron;P,M,N,G;0;0;black;random"
+    - "CB;line;connect;C,B"
+    - "CL;line;connect;C,L"
+    - "KB;line;connect;K,B"
+    - "MB;line;connect;M,B"
+    - "CN;line;connect;C,N"
+    - "GX;point;parallelogram;G,origin,1X;0;0"
+    - "GY;point;parallelogram;G,origin,1Y;0;0"
+    - "ceiling;plane;3points;G,GX,GY;0;0;0;0"
+    - "H;point;planeSlider;ceiling,420,40,0"
+    - "D;point;planeSlider;floor,290,190,0"
+    - "E;point;planeSlider;floor,370,270,0"
+    - "F;point;planeSlider;floor,520,228,0"
+    - "Q;point;midpoint;D,E"
+    - "V;point;midpoint;E,F"
+    - "R;point;midpoint;D,F"
+    - "S;point;midpoint;D,H"
+    - "T;point;midpoint;E,H"
+    - "U;point;midpoint;F,H"
+    - "STVR;polygon;quadrilateral;S,T,V,R;0;0;black;lightGray"
+    - "DQRS;polyhedron;tetrahedron;D,Q,R,S;0;0;black;random"
+    - "STUH;polyhedron;tetrahedron;S,T,U,H;0;0;black;random"
+    - "EF;line;connect;E,F"
+    - "FR;line;connect;F,R"
+    - "QE;line;connect;Q,E"
+    - "TE;line;connect;T,E"
+    - "FU;line;connect;F,U"
+    - "ABC;polygon;triangle;A,B,C;0;0;0"
+    - "DEF;polygon;triangle;D,E,F;0;0;0"
+    - "LOC;polygon;triangle;L,O,C;0;0;0"
+    - "RVF;polygon;triangle;R,V,F;0;0;0"
+    - "CO;line;connect;C,O;0;0;0"
+    - "FV;line;connect;F,V;0;0;0"
+    - "PMN;polygon;triangle;P,M,N;0;0;0"
+    - "STU;polygon;triangle;S,T,U;0;0;0"
+    - "LO;line;connect;L,O;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "GC;line;connect;G,C;0;0;0"
+  aliases: { LC: CL, BK: KB, BM: MB, NC: CN, FE: EF, RF: FR, EQ: QE, ET: TE, UF: FU, OC: CO, VF: FV, OL: LO, BA: AB, CG: GC }
+  caption: |
+    Two pyramids *ABCG*, *DEFH* of the same height, each divided at the midpoints of its edges.
+
+steps:
+  - part: enunciation
+    text: "If there be two pyramids of the same height which have triangular bases, and each of them be divided into two pyramids equal to one another and similar to the whole, and into two equal prisms, then, as the base of the one pyramid is to the base of the other pyramid, so will all the prisms in the one pyramid be to all the prisms, being equal in multitude, in the other pyramid."
+    highlight: [ABC, DEF]
+    hint: |
+      The prism parts are in the ratio of the bases.
+
+  - part: setting-out
+    text: "Let there be two pyramids of the same height which have the triangular bases ABC, DEF, and vertices the points G, H, and let each of them be divided into two pyramids equal to one another and similar to the whole and into two equal prisms; I say that, as the base ABC is to the base DEF, so are all the prisms in the pyramid ABCG to all the prisms, being equal in multitude, in the pyramid DEFH,"
+    highlight: [ABC, DEF]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For, since BO is equal to OC, and AL to LC, therefore LO is parallel to AB, and the triangle ABC is similar to the triangle LOC."
+    highlight: [LOC]
+    hint: |
+      {LO} ∥ {AB}; {ABC} ~ {LOC}.
+
+  - part: proof
+    text: "For the same reason the triangle DEF is also similar to the triangle RVF."
+    highlight: [DEF, RVF]
+    hint: |
+      Likewise {DEF} ~ {RVF}.
+
+  - part: proof
+    text: "And, since BC is double of CO, and EF of FV, therefore, as BC is to CO, so is EF to FV."
+    highlight: [CO, FV]
+    hint: |
+      {BC} : {CO} = {EF} : {FV} (each 2 : 1).
+
+  - part: proof
+    text: "And on BC, CO are described the similar and similarly situated rectilineal figures ABC, LOC, and on EF, FV the similar and similarly situated figures DEF, RVF; therefore, as the triangle ABC is to the triangle LOC, so is the triangle DEF to the triangle RVF; therefore, alternately, as the triangle ABC is to the triangle DEF, so is the triangle LOC to the triangle RVF."
+    highlight: [ABC, LOC, DEF, RVF]
+    hint: |
+      So {ABC} : {DEF} = {LOC} : {RVF} ([[VI.22]]).
+    cites: [VI.22]
+
+  - part: proof
+    text: "But, as the triangle LOC is to the triangle RVF, so is the prism in which the triangle LOC is the base and PMN its opposite to the prism in which the triangle RVF is the base and STU its opposite; [Lemma following] therefore also, as the triangle ABC is to the triangle DEF, so is the prism in which the triangle LOC is the base and PMN its opposite to the prism in which the triangle RVF is the base and STU its opposite."
+    highlight: [LOC, RVF]
+    hint: |
+      {LOC} : {RVF} = prism : prism (the lemma below).
+
+  - part: proof
+    text: "But, as the said prisms are to one another, so is the prism in which the parallelogram KBOL is the base and the straight line PM its opposite to the prism in which the parallelogram QEVR is the base and the straight line ST its opposite."
+    highlight: [LOC, RVF]
+    hint: |
+      And each prism equals its companion ([[XI.39]]).
+
+  - part: proof
+    text: "Therefore also the two prisms, that in which the parallelogram KBOL is the base and PM its opposite, and that in which the triangle LOC is the base and PMN its opposite, are to the prisms in which QEVR is the base and the straight line ST its opposite and in which the triangle RVF is the base and STU its opposite in the same ratio"
+    highlight: [LOC, RVF]
+    hint: |
+      So the two prisms are to the two prisms as {LOC} : {RVF} …
+
+  - part: proof
+    text: "Therefore also, as the base ABC is to the base DEF, so are the said two prisms to the said two prisms."
+    highlight: [ABC, DEF]
+    hint: |
+      … = {ABC} : {DEF}.
+
+  - part: proof
+    text: "And similarly, if the pyramids PMNG, STUH be divided into two prisms and two pyramids, as the base PMN is to the base STU, so will the two prisms in the pyramid PMNG be to the two prisms in the pyramid STUH."
+    highlight: [PMN, STU]
+    hint: |
+      Dividing {PMNG}, {STUH} again gives the same ratio {PMN} : {STU} …
+
+  - part: proof
+    text: "But, as the base PMN is to the base STU, so is the base ABC to the base DEF; for the triangles PMN, STU are equal to the triangles LOC, RVF respectively."
+    highlight: [PMN, STU]
+    hint: |
+      … = {ABC} : {DEF}.
+
+  - part: proof
+    text: "Therefore also, as the base ABC is to the base DEF, so are the four prisms to the four prisms."
+    highlight: [ABC, DEF]
+    hint: |
+      So four prisms : four prisms = {ABC} : {DEF} ([[V.12]]).
+    cites: [V.12]
+
+  - part: proof
+    text: "And similarly also, if we divide the remaining pyramids into two pyramids and into two prisms, then, as the base ABC is to the base DEF, so will all the prisms in the pyramid ABCG be to all the prisms, being equal in multitude, in the pyramid DEFH. Q. E. D."
+    highlight: [ABC, DEF]
+    hint: |
+      And so at every stage.
+
+  - part: lemma
+    text: "Lemma. But that, as the triangle LOC is to the triangle RVF, so is the prism in which the triangle LOC is the base and PMN its opposite to the prism in which the triangle RVF is the base and STU its opposite, we must prove as follows."
+    highlight: [LOC, RVF]
+    hint: |
+      Lemma: prisms on {LOC}, {RVF} with tops {PMN}, {STU} are as their bases.
+
+  - part: lemma
+    text: "For in the same figure let perpendiculars be conceived drawn from G, H to the planes ABC, DEF; these are of course equal because, by hypothesis, the pyramids are of equal height."
+    highlight: [G, H]
+    hint: |
+      The perpendiculars from {G}, {H} are equal (same height).
+
+  - part: lemma
+    text: "Now, since the two straight lines GC and the perpendicular from G are cut by the parallel planes ABC, PMN, they will be cut in the same ratios."
+    highlight: [G]
+    hint: |
+      Parallel planes cut {GC} and the perpendicular proportionally ([[XI.17]]) …
+
+  - part: lemma
+    text: "And GC is bisected by the plane PMN at N; therefore the perpendicular from G to the plane ABC will also be bisected by the plane PMN."
+    highlight: [N]
+    hint: |
+      … {GC} is bisected at {N}, so the perpendicular is bisected.
+
+  - part: lemma
+    text: "For the same reason the perpendicular from H to the plane DEF will also be bisected by the plane STU."
+    highlight: [H]
+    hint: |
+      Likewise from {H}.
+
+  - part: lemma
+    text: "And the perpendiculars from G, H to the planes ABC, DEF are equal; therefore the perpendiculars from the triangles PMN, STU to the planes ABC, DEF are also equal."
+    highlight: [PMN, STU]
+    hint: |
+      So the perpendiculars from {PMN}, {STU} are equal …
+
+  - part: lemma
+    text: "Therefore the prisms in which the triangles LOC, RVF are bases, and PMN, STU their opposites, are of equal height."
+    highlight: [LOC, RVF]
+    hint: |
+      … so the prisms have equal heights.
+
+  - part: lemma
+    text: "Hence also the parallelepipedal solids described from the said prisms are of equal height and are to one another as their bases; therefore their halves, namely the said prisms, are to one another as the base LOC is to the base RVF."
+    highlight: [LOC, RVF]
+    hint: |
+      Their parallelepipeds are as their bases ([[XI.32]]), and the prisms are halves of them.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Every prism in the division has height ½ of the pyramid's, so its volume is its base times a common factor.
+        $\blacksquare$

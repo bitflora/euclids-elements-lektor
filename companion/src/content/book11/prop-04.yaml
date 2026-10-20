@@ -1,0 +1,221 @@
+id: XI.4
+kind: theorem
+title: Perpendicular to two lines at their intersection, perpendicular to their plane
+
+paraphrase: |
+  If {EF} is perpendicular to two lines {AB}, {CD} at their point of intersection {E}, it is perpendicular to the
+  plane through them — that is, to every line in that plane through {E}.
+
+diagram:
+  width: 320
+  height: 250
+  elements:
+    - "P1;point;fixed;30,210,100;0;0"
+    - "P2;point;fixed;250,210,100;0;0"
+    - "P3;point;fixed;70,60,0;0;0"
+    - "baseplane;plane;3points;P1,P2,P3;0;0;lightGray;brighter"
+    - "A;point;planeSlider;baseplane,90,50,80"
+    - "E;point;planeSlider;baseplane,160,150,0"
+    - "B;point;extend;A,E,A,E"
+    - "C;point;planeSlider;baseplane,250,30,90"
+    - "D;point;extend;C,E,C,E"
+    - "Z;point;fixed;100,100000,0"
+    - "F;point;lineSlider;E,Z,160,40,0"
+    - "EF;line;connect;E,F"
+    - "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;random"
+    - "AF;line;connect;A,F"
+    - "BF;line;connect;B,F"
+    - "CF;line;connect;C,F"
+    - "DF;line;connect;D,F"
+    - "G;point;lineSlider;A,D,80,140,40"
+    - "H;point;intersection;G,E,B,C"
+    - "GH;line;connect;G,H"
+    - "GF;line;connect;G,F"
+    - "HF;line;connect;H,F"
+    - "AB;line;connect;A,B;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+    - "GE;line;connect;G,E;0;0;0"
+    - "EH;line;connect;E,H;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "CE;line;connect;C,E;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "GEH;polygon;triangle;G,E,H;0;0;0"
+    - "AED;polygon;triangle;A,E,D;0;0;0"
+    - "CEB;polygon;triangle;C,E,B;0;0;0"
+    - "DAE;polygon;triangle;D,A,E;0;0;0"
+    - "EBC;polygon;triangle;E,B,C;0;0;0"
+    - "AGE;polygon;triangle;A,G,E;0;0;0"
+    - "BEH;polygon;triangle;B,E,H;0;0;0"
+    - "AG;line;connect;A,G;0;0;0"
+    - "BH;line;connect;B,H;0;0;0"
+    - "FA;line;connect;F,A;0;0;0"
+    - "FB;line;connect;F,B;0;0;0"
+    - "FC;line;connect;F,C;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+    - "FAD;polygon;triangle;F,A,D;0;0;0"
+    - "FBC;polygon;triangle;F,B,C;0;0;0"
+    - "FAG;polygon;triangle;F,A,G;0;0;0"
+    - "FBH;polygon;triangle;F,B,H;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+    - "FH;line;connect;F,H;0;0;0"
+    - "GEF;polygon;triangle;G,E,F;0;0;0"
+    - "HEF;polygon;triangle;H,E,F;0;0;0"
+    - "FE;line;connect;F,E;0;0;0"
+  aliases: { HG: GH, BA: AB, DC: CD, DA: AD, BC: CB, EG: GE, HE: EH, EA: AE, BE: EB, EC: CE, DE: ED, GA: AG, HB: BH }
+  caption: |
+    {EF} is perpendicular to {AB} and {CD} at {E}; {GH} is any other line through {E} in their plane. Drag the
+    points to tilt the view.
+
+steps:
+  - part: enunciation
+    text: "If a straight line be set up at right angles to two straight lines which cut one another, at their common point of section, it will also be at right angles to the plane through them."
+    highlight: [EF]
+    hint: |
+      Two right angles suffice for perpendicularity to a plane.
+    modern: |
+      $v \perp a$, $v \perp b$ $\Rightarrow$ $v \perp \lambda a + \mu b$ for all $\lambda, \mu$.
+
+  - part: setting-out
+    text: "For let a straight line EF be set up at right angles to the two straight lines AB, CD, which cut one another at the point E, from E;"
+    highlight: [EF, AB, CD]
+    hint: |
+      {EF} ⊥ {AB}, {EF} ⊥ {CD} at {E}.
+
+  - part: specification
+    text: "I say that EF is also at right angles to the plane through AB, CD."
+    highlight: [EF]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For let AE, EB, CE, ED be cut off equal to one another, and let any straight line GEH be drawn across through E, at random; let AD, CB be joined, and further let FA, FG, FD, FC, FH, FB be joined from the point F taken at random ⟨on EF⟩."
+    highlight: [GH, AF, BF, CF, DF, GF, HF]
+    hint: |
+      Make {AE}, {EB}, {CE}, {ED} equal; draw any {GEH}; join {AD}, {CB}, and {F} to the points.
+
+  - part: proof
+    text: "Now, since the two straight lines AE, ED are equal to the two straight lines CE, EB, and contain equal angles, therefore the base AD is equal to the base CB, and the triangle AED will be equal to the triangle CEB; so that the angle DAE is also equal to the angle EBC."
+    highlight: [AD, CB]
+    hint: |
+      Triangles {AED}, {CEB}: {AD} = {CB}, ∠{DAE} = ∠{EBC} ([[I.15]], [[I.4]]).
+
+  - part: proof
+    text: "But the angle AEG is also equal to the angle BEH; therefore AGE, BEH are two triangles which have two angles equal to two angles respectively, and one side equal to one side, namely that adjacent to the equal angles, that is to say, AE to EB; therefore they will also have the remaining sides equal to the remaining sides."
+    highlight: [GE, EH]
+    hint: |
+      Triangles {AGE}, {BEH}: angle-side-angle ([[I.26]]) …
+    cites: [I.26]
+
+  - part: proof
+    text: "Therefore GE is equal to EH, and AG to BH."
+    highlight: [GE, EH]
+    hint: |
+      … so {GE} = {EH}, {AG} = {BH}.
+
+  - part: proof
+    text: "And, since AE is equal to EB, while FE is common and at right angles, therefore the base FA is equal to the base FB."
+    highlight: [AF, BF]
+    hint: |
+      {FA} = {FB} ([[I.4]], right angles at {E}).
+
+  - part: proof
+    text: "For the same reason FC is also equal to FD."
+    highlight: [CF, DF]
+    hint: |
+      {FC} = {FD}.
+
+  - part: proof
+    text: "And, since AD is equal to CB, and FA is also equal to FB, the two sides FA, AD are equal to the two sides FB, BC respectively; and the base FD was proved equal to the base FC; therefore the angle FAD is also equal to the angle FBC."
+    highlight: [AF, BF, AD, CB]
+    hint: |
+      Triangles {FAD}, {FBC} have equal sides, so ∠{FAD} = ∠{FBC} ([[I.8]]).
+
+  - part: proof
+    text: "And since, again, AG was proved equal to BH, and further FA also equal to FB, the two sides FA, AG are equal to the two sides FB, BH."
+    highlight: [AF, BF]
+    hint: |
+      Triangles {FAG}, {FBH}: two sides …
+
+  - part: proof
+    text: "And the angle FAG was proved equal to the angle FBH; therefore the base FG is equal to the base FH."
+    highlight: [GF, HF]
+    hint: |
+      … and the included angle: {FG} = {FH} ([[I.4]]).
+
+  - part: proof
+    text: "Now since, again, GE was proved equal to EH, and EF is common, the two sides GE, EF are equal to the two sides HE, EF; and the base FG is equal to the base FH; therefore the angle GEF is equal to the angle HEF."
+    highlight: [GF, HF, EF]
+    hint: |
+      Triangles {GEF}, {HEF}: three sides equal, so ∠{GEF} = ∠{HEF} ([[I.8]]).
+
+  - part: proof
+    text: "Therefore each of the angles GEF, HEF is right."
+    highlight: [EF, GH]
+    hint: |
+      Adjacent and equal: both right ([[I.Def.10]]).
+    cites: [I.Def.10]
+
+  - part: proof
+    text: "Therefore FE is at right angles to GH drawn at random through E."
+    highlight: [EF, GH]
+    hint: |
+      {FE} ⊥ {GH}, any line through {E}.
+
+  - part: proof
+    text: "Similarly we can prove that FE will also make right angles with all the straight lines which meet it and are in the plane of reference."
+    highlight: [EF]
+    hint: |
+      So for every line in the plane through {E}.
+
+  - part: proof
+    text: "But a straight line is at right angles to a plane when it makes right angles with all the straight lines which meet it and are in that same plane; therefore FE is at right angles to the plane of reference."
+    highlight: [EF]
+    hint: |
+      Which is the definition ([[XI.Def.3]]).
+
+  - part: proof
+    text: "But the plane of reference is the plane through the straight lines AB, CD."
+    highlight: [EF]
+    hint: |
+      The plane of reference is that of {AB}, {CD}.
+
+  - part: proof
+    text: "Therefore FE is at right angles to the plane through AB, CD."
+    highlight: [EF]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Vectors from {E}: $a$, $c$ along the two lines, $f$ along
+    {EF}.
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      text: |
+        Any $g$ in the plane is $\lambda a + \mu c$.
+    - steps: [13, 14, 15, 16, 17]
+      text: |
+        $f\cdot g = \lambda f\cdot a + \mu f\cdot c = 0$. $\blacksquare$
+  closing: |
+    Euclid's proof is synthetic: a chain of congruent triangles shows {F} is equidistant from {G} and {H}, so the
+    angles at {E} are equal and hence right.
+
+commentary: |
+  The basic theorem of perpendicularity in space, used constantly in Book XI ([[XI.5]], [[XI.6]], [[XI.8]],
+  [[XI.11]] …).
+
+gaps: |
+  - That the line {GH} drawn "at random" through {E} meets {AD} and {CB} at {G} and {H} is taken from the figure.

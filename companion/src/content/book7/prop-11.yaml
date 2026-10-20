@@ -1,0 +1,91 @@
+id: VII.11
+kind: theorem
+title: Remainder to remainder as whole to whole
+
+paraphrase: |
+  If the whole {AB} is to the whole {CD} as the piece {AE} is to the piece {CF}, then the remainders are in
+  the same ratio: {EB} is to {FD} as {AB} to {CD}.
+
+diagram:
+  width: 100
+  height: 210
+  elements:
+    - "A0;point;free;30,-1000;0;0"
+    - "A3;point;free;30,1000;0;0"
+    - "A;point;lineSlider;A0,A3,30,30"
+    - "C0;point;free;60,-1000;0;0"
+    - "C3;point;free;60,1000;0;0"
+    - "C;point;lineSlider;C0,C3,60,30"
+    - "B;point;lineSlider;A0,A3,30,150"
+    - "AB;line;connect;A,B"
+    - "D;point;lineSlider;C0,C3,60,180"
+    - "CD;line;connect;C,D"
+    - "E;point;lineSlider;A,B,30,80"
+    - "F;point;proportion;A,B,A,E,C,D,C,D"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "CF;line;connect;C,F;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+  caption: |
+    Drag {E}: {F} follows so that {AE} : {CF} stays equal to {AB} : {CD}.
+
+steps:
+  - part: enunciation
+    text: "If, as whole is to whole, so is a number subtracted to a number subtracted, the remainder will also be to the remainder as whole to whole."
+    highlight: [AB, CD, AE, CF]
+    hint: |
+      The numerical version of [[V.19]].
+    modern: |
+      $a : c = e : f \Rightarrow (a - e) : (c - f) = a : c$.
+
+  - part: setting-out
+    text: "As the whole AB is to the whole CD, so let AE subtracted be to CF subtracted;"
+    highlight: [AB, CD, AE, CF]
+    hint: |
+      {AB} : {CD} = {AE} : {CF}.
+
+  - part: specification
+    text: "I say that the remainder EB is also to the remainder FD as the whole AB to the whole CD."
+    highlight: [EB, FD]
+    hint: |
+      To prove: {EB} : {FD} = {AB} : {CD}.
+
+  - part: proof
+    text: "Since, as AB is to CD, so is AE to CF, whatever part or parts AB is of CD, the same part or the same parts is AE of CF also;"
+    highlight: [AB, CD, AE, CF]
+    hint: |
+      Translate the proportion into "the same part or parts" ([[VII.Def.20]]).
+
+  - part: proof
+    text: "Therefore also the remainder EB is the same part or parts of FD that AB is of CD."
+    highlight: [EB, FD]
+    hint: |
+      By [[VII.7]] (a part) or [[VII.8]] (parts), the remainder is the same fraction of the remainder.
+
+  - part: proof
+    text: "Therefore, as EB is to FD, so is AB to CD."
+    highlight: [EB, FD, AB, CD]
+    hint: |
+      Back into a proportion.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5]
+      text: |
+        $a = r c$ and $e = r f$ for one fraction $r$ ([[VII.Def.20]]), hence $a - e = r(c - f)$.
+        $\blacksquare$
+  closing: |
+    The fraction $r = a/c$ is the same for the wholes and the pieces, and multiplication by a fraction
+    distributes over subtraction ([[VII.7]], [[VII.8]]).
+
+commentary: |
+  From here to [[VII.19]] Book VII rebuilds, for numbers, the results of Book V that it will need: this is
+  [[V.19]]; [[VII.12]] is [[V.12]]; [[VII.13]] is [[V.16]]; [[VII.14]] is [[V.22]]. Each proof is a line or
+  two, because [[VII.Def.20]] turns a proportion into an equality of fractions.

@@ -1,0 +1,106 @@
+id: VIII.27
+kind: theorem
+title: Similar solid numbers are as a cube to a cube
+
+paraphrase: |
+  Two similar solid numbers {A}, {B} have the ratio of one cube number to another.
+
+diagram:
+  width: 420
+  height: 140
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,75;0;0"
+    - "B3;point;free;1000,75;0;0"
+    - "E0;point;free;-1000,110;0;0"
+    - "E3;point;free;1000,110;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,100,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "C1;point;lineSlider;A0,A3,250,0;0"
+    - "C2;point;lineSlider;A0,A3,340,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;B0,B3,250,0;0"
+    - "D2;point;proportion;A1,A2,C1,C2,C1,C2,D1,B3;0"
+    - "D;line;connect;D1,D2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;proportion;A1,A2,C1,C2,D1,D2,B1,B3;0"
+    - "B;line;connect;B1,B2;black"
+    - "E1;point;lineSlider;E0,E3,30,0;0"
+    - "E2;point;lineSlider;E0,E3,75,0;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;E0,E3,110,0;0"
+    - "F2;point;proportion;A1,A2,E1,E2,C1,C2,F1,E3;0"
+    - "F;line;connect;F1,F2;black"
+    - "G1;point;lineSlider;E0,E3,200,0;0"
+    - "G2;point;proportion;A1,A2,E1,E2,D1,D2,G1,E3;0"
+    - "G;line;connect;G1,G2;black"
+    - "H1;point;lineSlider;E0,E3,300,0;0"
+    - "H2;point;proportion;A1,A2,E1,E2,B1,B2,H1,E3;0"
+    - "H;line;connect;H1,H2;black"
+  caption: |
+    {C}, {D} are the two means between {A} and {B}; {E}, {F}, {G}, {H} are least in their ratio.
+
+steps:
+  - part: enunciation
+    text: "Similar solid numbers have to one another the ratio which a cube number has to a cube number."
+    highlight: [A, B]
+    hint: |
+      The solid version of [[VIII.26]].
+    modern: |
+      $a, b$ similar solid $\Rightarrow a : b = s^3 : t^3$.
+
+  - part: setting-out
+    text: "Let A, B be similar solid numbers;"
+    highlight: [A, B]
+    hint: |
+      {A}, {B} similar solid numbers.
+
+  - part: specification
+    text: "I say that A has to B the ratio which a cube number has to a cube number."
+    highlight: [A, B]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since A, B are similar solid numbers, therefore two mean proportional numbers fall between A, B."
+    highlight: [A, B]
+    hint: |
+      [[VIII.19]].
+
+  - part: construction
+    text: "Let C, D so fall, and let E, F, G, H, the least numbers of those which have the same ratio with A, C, D, B, and equal with them in multitude, be taken;"
+    highlight: [C, D, E, F, G, H]
+    hint: |
+      Means {C}, {D}; least numbers {E}, {F}, {G}, {H}.
+
+  - part: proof
+    text: "therefore the extremes of them E, H are cube."
+    highlight: [E, H]
+    hint: |
+      The porism of [[VIII.2]].
+
+  - part: proof
+    text: "And, as E is to H, so is A to B; therefore A also has to B the ratio which a cube number has to a cube number."
+    highlight: [E, H, A, B]
+    hint: |
+      Ex aequali ([[VII.14]]).
+    cites: [VII.14]
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        With side ratio $u/v$, $a/b = u^3/v^3$. $\blacksquare$
+
+commentary: |
+  The last proposition of Book VIII. Book IX continues the theory with squares, cubes and products of
+  similar numbers ([[IX.1]]–[[IX.10]]).

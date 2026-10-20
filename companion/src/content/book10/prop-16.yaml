@@ -1,0 +1,184 @@
+id: X.16
+kind: theorem
+title: A sum is incommensurable with its parts exactly when they are incommensurable
+
+paraphrase: |
+  If {AB}, {BC} are incommensurable, their sum {AC} is incommensurable with each; and if {AC} is
+  incommensurable with one of them, the two are incommensurable. Followed by a lemma on applied rectangles.
+
+diagram:
+  width: 110
+  height: 270
+  elements:
+    - "A0;point;free;40,-1000;0;0"
+    - "A3;point;free;40,1000;0;0"
+    - "D0;point;free;75,-1000;0;0"
+    - "D3;point;free;75,1000;0;0"
+    - "A;point;lineSlider;A0,A3,0,40"
+    - "B;point;lineSlider;A0,A3,0,170"
+    - "C;point;lineSlider;A0,A3,0,240"
+    - "AC;line;connect;A,C"
+    - "D1;point;lineSlider;D0,D3,0,40;0"
+    - "D2;point;lineSlider;D0,D3,0,70;0"
+    - "D;line;connect;D1,D2;black"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+  aliases: { CA: AC, CB: BC }
+  caption: |
+    {AC} = {AB} + {BC}; {D} the supposed common measure.
+
+steps:
+  - part: enunciation
+    text: "If two incommensurable magnitudes be added together, the whole will also be incommensurable with each of them; and, if the whole be incommensurable with one of them, the original magnitudes will also be incommensurable."
+    highlight: [AB, BC, AC]
+    hint: |
+      The counterpart of [[X.15]] for incommensurables.
+    modern: |
+      $a/b \notin \mathbb{Q} \iff (a + b)/a \notin \mathbb{Q}$.
+
+  - part: setting-out
+    text: "For let the two incommensurable magnitudes AB, BC be added together;"
+    highlight: [AB, BC]
+    hint: |
+      First direction.
+
+  - part: specification
+    text: "I say that the whole AC is also incommensurable with each of the magnitudes AB, BC."
+    highlight: [AC]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, if CA, AB are not incommensurable, some magnitude will measure them."
+    highlight: [AC, AB]
+    hint: |
+      Suppose {CA}, {AB} commensurable.
+
+  - part: construction
+    text: "Let it measure them, if possible, and let it be D."
+    highlight: [D]
+    hint: |
+      A common measure {D}.
+
+  - part: proof
+    text: "Since then D measures CA, AB, therefore it will also measure the remainder BC."
+    highlight: [D, BC]
+    hint: |
+      It measures the remainder {BC} …
+
+  - part: proof
+    text: "But it measures AB also; therefore D measures AB, BC."
+    highlight: [D, AB, BC]
+    hint: |
+      … and {AB} …
+
+  - part: proof
+    text: "Therefore AB, BC are commensurable; but they were also, by hypothesis, incommensurable: which is impossible."
+    highlight: [AB, BC]
+    hint: |
+      … contradiction.
+
+  - part: proof
+    text: "Therefore no magnitude will measure CA, AB; therefore CA, AB are incommensurable."
+    highlight: [AC, AB]
+    hint: |
+      So {CA}, {AB} incommensurable.
+
+  - part: proof
+    text: "Similarly we can prove that AC, CB are also incommensurable."
+    highlight: [AC, BC]
+    hint: |
+      Likewise {AC}, {CB}.
+
+  - part: proof
+    text: "Therefore AC is incommensurable with each of the magnitudes AB, BC."
+    highlight: [AC]
+    hint: |
+      First half.
+
+  - part: specification
+    text: "Next, let AC be incommensurable with one of the magnitudes AB, BC."
+    highlight: [AC]
+    hint: |
+      Converse.
+
+  - part: specification
+    text: "First, let it be incommensurable with AB; I say that AB, BC are also incommensurable."
+    highlight: [AC, AB]
+    hint: |
+      Say {AC} incommensurable with {AB}.
+
+  - part: proof
+    text: "For, if they are commensurable, some magnitude will measure them."
+    highlight: [AB, BC]
+    hint: |
+      Suppose {AB}, {BC} commensurable.
+
+  - part: construction
+    text: "Let it measure them, and let it be D."
+    highlight: [D]
+    hint: |
+      Common measure {D}.
+
+  - part: proof
+    text: "Since then D measures AB, BC. therefore it will also measure the whole AC."
+    highlight: [D, AC]
+    hint: |
+      It measures {AC} …
+
+  - part: proof
+    text: "But it measures AB also; therefore D measures CA, AB."
+    highlight: [D, AC, AB]
+    hint: |
+      … and {AB} …
+
+  - part: proof
+    text: "Therefore CA, AB are commensurable; but they were also, by hypothesis, incommensurable: which is impossible."
+    highlight: [AC, AB]
+    hint: |
+      … contradiction.
+
+  - part: proof
+    text: "Therefore no magnitude will measure AB, BC; therefore AB, BC are incommensurable."
+    highlight: [AB, BC]
+    hint: |
+      So {AB}, {BC} incommensurable.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: lemma
+    text: "Lemma. If to any straight line there be applied a parallelogram deficient by a square figure, the applied parallelogram is equal to the rectangle contained by the segments of the straight line resulting from the application."
+    hint: |
+      Lemma (used in [[X.17]]): a rectangle applied to a line, falling short by a square, equals the rectangle
+      contained by the two segments.
+    modern: |
+      A rectangle on $AC$ with height $CD = CB$: area $AC \cdot CB$.
+
+  - part: lemma
+    text: "For let there be applied to the straight line AB the parallelogram AD deficient by the square figure DB; I say that AD is equal to the rectangle contained by AC, CB."
+    hint: |
+      Rectangle *AD* on *AB*, deficient by the square *DB*.
+
+  - part: lemma
+    text: "This is indeed at once manifest; for, since DB is a square, DC is equal to CB; and AD is the rectangle AC, CD, that is, the rectangle AC, CB."
+    hint: |
+      *DC* = *CB* since *DB* is a square; so *AD* = *AC*·*CB*.
+
+  - part: lemma
+    text: "Therefore etc."
+    hint: |
+      End of the lemma.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10]
+      text: |
+        If $a + b$ and $a$ were commensurable, their difference $b$ would be too. Conversely. $\blacksquare$
+
+commentary: |
+  The lemma explains the language of [[X.17]] and later propositions: "to apply to {BC} a parallelogram
+  deficient by a square" means finding $x$ with $x(b - x)$ equal to a given area — solving a quadratic
+  ([[VI.28]]). Its figure (Joyce's first figure for [[X.17]]) is not drawn here.

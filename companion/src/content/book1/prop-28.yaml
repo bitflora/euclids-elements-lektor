@@ -1,0 +1,147 @@
+id: I.28
+kind: theorem
+title: Two more tests for parallel lines
+
+paraphrase: |
+  A transversal {EF} crossing {AB} and {CD} shows them parallel if *either* the exterior angle
+  equals the interior opposite angle on the same side (∠{EGB} = ∠{GHD}) *or* the two interior
+  angles on one side add up to two right angles (∠{BGH} + ∠{GHD}).
+
+diagram:
+  width: 250
+  height: 210
+  elements:
+    - "A;point;free;30,85"
+    - "B;point;free;220,85"
+    - "AB;line;connect;A,B"
+    - "C;point;free;30,135"
+    - "Dp;point;parallelogram;C,A,B;0;0"
+    - "D;point;lineSlider;C,Dp,220,135"
+    - "CD;line;connect;C,D"
+    - "E;point;free;80,35"
+    - "F;point;free;150,190"
+    - "EF;line;connect;E,F"
+    - "G;point;intersection;A,B,E,F"
+    - "H;point;intersection;C,D,E,F"
+    - "GH;line;connect;G,H;0;0;0"
+    - "angEGB;sector;angleMarker;G,E,B,22"
+    - "angAGH;sector;angleMarker;G,A,H,22"
+    - "angBGH;sector;angleMarker;G,B,H,14"
+    - "angGHD;sector;angleMarker;H,G,D,22"
+  aliases:
+    EGB: angEGB
+    AGH: angAGH
+    BGH: angBGH
+    GHD: angGHD
+  given: [A, B, C, D, E, F, G, H, AB, CD, EF]
+  caption: |
+    Drag {E} or {F} to tilt the transversal; drag {A}, {B}, {C}. The figure keeps {CD} parallel to
+    {AB}, so both conditions of the theorem hold however you move it.
+
+steps:
+  - part: enunciation
+    text: "If a straight line falling on two straight lines make the exterior angle equal to the interior and opposite angle on the same side, or the interior angles on the same side equal to two right angles, the straight lines will be parallel to one another."
+    highlight: [EF, AB, CD, angEGB, angGHD, angBGH]
+    hint: |
+      Two more sufficient conditions for parallels, both reduced to [[I.27]].
+
+  - part: setting-out
+    text: "For let the straight line EF falling on the two straight lines AB, CD make the exterior angle EGB equal to the interior and opposite angle GHD, or the interior angles on the same side, namely BGH, GHD, equal to two right angles;"
+    highlight: [angEGB, angGHD, angBGH]
+    hint: |
+      The data, in two versions: ∠{EGB} = ∠{GHD}, *or* ∠{BGH} + ∠{GHD} = two right angles.
+    modern: |
+      $$\angle EGB = \angle GHD \quad\text{or}\quad \angle BGH + \angle GHD = 2R$$
+
+  - part: specification
+    text: "I say that AB is parallel to CD."
+    highlight: [AB, CD]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, since the angle EGB is equal to the angle GHD, while the angle EGB is equal to the angle AGH,"
+    highlight: [angEGB, angGHD, angAGH]
+    hint: |
+      First version. ∠{EGB} and ∠{AGH} are vertical angles, so equal ([[I.15]]).
+
+  - part: proof
+    text: "the angle AGH is also equal to the angle GHD;"
+    highlight: [angAGH, angGHD]
+    hint: |
+      So ∠{AGH} = ∠{GHD} ([[I.CN.1]]).
+    modern: |
+      $$\angle AGH = \angle EGB = \angle GHD$$
+
+  - part: proof
+    text: "and they are alternate; therefore AB is parallel to CD."
+    highlight: [angAGH, angGHD, AB, CD]
+    hint: |
+      These are alternate angles, so [[I.27]] applies.
+
+  - part: proof
+    text: "Again, since the angles BGH, GHD are equal to two right angles, and the angles AGH, BGH are also equal to two right angles,"
+    highlight: [angBGH, angGHD, angAGH]
+    hint: |
+      Second version. ∠{AGH} + ∠{BGH} = two right angles too, since {GH} stands on {AB} ([[I.13]]).
+
+  - part: proof
+    text: "the angles AGH, BGH are equal to the angles BGH, GHD."
+    highlight: [angAGH, angBGH, angGHD]
+    hint: |
+      Both pairs equal two right angles ([[I.Post.4]], [[I.CN.1]]).
+    cites: [I.Post.4, I.CN.1]
+    modern: |
+      $$\angle AGH + \angle BGH = \angle BGH + \angle GHD$$
+
+  - part: proof
+    text: "Let the angle BGH be subtracted from each; therefore the remaining angle AGH is equal to the remaining angle GHD;"
+    highlight: [angAGH, angGHD]
+    hint: |
+      Subtract ∠{BGH} ([[I.CN.3]]).
+    cites: [I.CN.3]
+    modern: |
+      $$\angle AGH = \angle GHD$$
+
+  - part: proof
+    text: "and they are alternate; therefore AB is parallel to CD."
+    highlight: [AB, CD]
+    hint: |
+      [[I.27]] again.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: Let transversal $EF$ meet $AB$ at $G$ and $CD$ at $H$.
+    - steps: [3, 4, 5]
+      text: If $\angle EGB = \angle GHD$ (corresponding angles), then $\angle AGH = \angle EGB$ (vertical), so alternate angles are equal.
+    - steps: [6, 7, 8, 9]
+      text: If $\angle BGH + \angle GHD = 180^\circ$, then $\angle AGH = 180^\circ - \angle BGH = \angle GHD$.
+    - steps: [5, 9]
+      text: Either way, I.27 gives $AB \parallel CD$. $\blacksquare$
+
+commentary: |
+  I.28 restates [[I.27]] in two other forms that come up in practice. Together they give three
+  equivalent conditions: equal alternate angles, equal corresponding angles, and interior angles
+  summing to two right angles. The last is the form that matches [[I.Post.5]], which says what
+  happens when the interior angles sum to *less*.
+
+gaps: |
+  - None beyond those of [[I.27]].
+
+historical: |
+  Proclus discusses at length why the parallel postulate is not needed until [[I.29]], and argues
+  (as many after him) that it should be provable. It is not: in the 19th century hyperbolic
+  geometry showed that I.27 and I.28 can hold while I.29 fails.

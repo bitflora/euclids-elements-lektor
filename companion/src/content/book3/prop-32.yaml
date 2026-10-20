@@ -1,0 +1,149 @@
+id: III.32
+kind: theorem
+title: The tangent–chord angle
+
+paraphrase: |
+  The angle between a tangent and a chord through the point of contact equals the inscribed angle in the
+  alternate segment.
+
+diagram:
+  width: 270
+  height: 260
+  elements:
+    - "A;point;free;130,30"
+    - "B;point;free;130,230"
+    - "AB;line;connect;A,B"
+    - "O;point;midpoint;AB;0;0"
+    - "ABCD;circle;radius;O,B;0;0;black;0"
+    - "C;point;circleSlider;ABCD,205,175"
+    - "D;point;circleSlider;ABCD,200,85"
+    - "AD;line;connect;A,D"
+    - "BD;line;connect;B,D"
+    - "BC;line;connect;B,C"
+    - "CD;line;connect;C,D"
+    - "BEp;line;perpendicular;B,A;0;0;0"
+    - "E;point;lineSlider;BEp,30,230"
+    - "F;point;lineSlider;BEp,230,230"
+    - "EF;line;connect;E,F"
+    - "angFBD;sector;angleMarker;B,F,D"
+    - "angEBD;sector;angleMarker;B,E,D"
+    - "angBAD;sector;angleMarker;A,B,D"
+    - "angDCB;sector;angleMarker;C,D,B"
+    - "angADB;sector;angleMarker;D,A,B"
+    - "angABD;sector;angleMarker;B,A,D"
+    - "angABF;sector;angleMarker;B,A,F"
+  aliases:
+    BA: AB
+    DB: BD
+    CB: BC
+    DC: CD
+    FBD: angFBD
+    DBF: angFBD
+    EBD: angEBD
+    DBE: angEBD
+    BAD: angBAD
+    DCB: angDCB
+    BCD: angDCB
+    ADB: angADB
+    ABD: angABD
+    ABF: angABF
+  given: [ABCD, B, D, EF, E, F, BD]
+  caption: |
+    Slide {D} round the circle: the angle between the tangent {EF} and the chord {BD} keeps matching the
+    angle at {A} (and the angle at {C} on the other side).
+
+steps:
+  - part: enunciation
+    text: "If a straight line touch a circle, and from the point of contact there be drawn across, in the circle, a straight line cutting the circle, the angles which it makes with the tangent will be equal to the angles in the alternate segments of the circle."
+    highlight: [EF, BD, angFBD, angBAD]
+    hint: |
+      Tangent–chord angle = inscribed angle on the other side.
+
+  - part: setting-out
+    text: "For let a straight line EF touch the circle ABCD at the point B, and from the point B let there be drawn across, in the circle ABCD, a straight line BD cutting it;"
+    highlight: [EF, B, BD]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the angles which BD makes with the tangent EF will be equal to the angles in the alternate segments of the circle, that is, that the angle FBD is equal to the angle constructed in the segment BAD, and the angle EBD is equal to the angle constructed in the segment DCB."
+    highlight: [angFBD, angBAD, angEBD, angDCB]
+    hint: |
+      Two claims.
+
+  - part: construction
+    text: "For let BA be drawn from B at right angles to EF, let a point C be taken at random on the circumference BD, and let AD, DC, CB be joined."
+    highlight: [AB, C, AD, CD, BC]
+    adds: [A, AB, C, AD, CD, BC]
+    hint: |
+      The perpendicular to the tangent at {B}; a point {C} on the other arc.
+
+  - part: proof
+    text: "Then, since a straight line EF touches the circle ABCD at B, and BA has been drawn from the point of contact at right angles to the tangent, the centre of the circle ABCD is on BA."
+    highlight: [AB]
+    hint: |
+      [[III.19]].
+
+  - part: proof
+    text: "Therefore BA is a diameter of the circle ABCD; therefore the angle ADB, being an angle in a semicircle, is right."
+    highlight: [angADB]
+    hint: |
+      [[III.31]].
+
+  - part: proof
+    text: "Therefore the remaining angles BAD, ABD are equal to one right angle."
+    highlight: [angBAD, angABD]
+    hint: |
+      [[I.32]].
+
+  - part: proof
+    text: "But the angle ABF is also right; therefore the angle ABF is equal to the angles BAD, ABD."
+    highlight: [angABF, angBAD, angABD]
+    hint: |
+      Both equal a right angle.
+
+  - part: proof
+    text: "Let the angle ABD be subtracted from each; therefore the angle DBF which remains is equal to the angle BAD in the alternate segment of the circle."
+    highlight: [angFBD, angBAD]
+    hint: |
+      First claim.
+
+  - part: proof
+    text: "Next, since ABCD is a quadrilateral in a circle, its opposite angles are equal to two right angles."
+    highlight: [angBAD, angDCB]
+    hint: |
+      [[III.22]].
+
+  - part: proof
+    text: "But the angles DBF, DBE are also equal to two right angles; therefore the angles DBF, DBE are equal to the angles BAD, BCD, of which the angle BAD was proved equal to the angle DBF; therefore the angle DBE which remains is equal to the angle DCB in the alternate segment DCB of the circle."
+    highlight: [angEBD, angDCB]
+    hint: |
+      Second claim ([[I.13]], subtraction).
+    cites: [I.13]
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: |
+        The tangent–chord angle is half the central angle on arc $BD$ (the tangent is the limit of chords
+        $BX$ as $X \to B$); so is the inscribed angle at $A$. $\blacksquare$
+
+commentary: |
+  The **alternate segment theorem**. It is the tool for [[III.33]] and [[III.34]], which construct segments
+  admitting a given angle.
+
+gaps: |
+  - **{BD} not a diameter**: if it were, both angles would be right and the proof's construction collapses;
+    Euclid does not consider it.

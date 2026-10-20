@@ -1,0 +1,142 @@
+id: X.78
+kind: theorem
+title: That which produces with a medial area a medial whole
+
+paraphrase: |
+  Subtracting from {AB} a line {BC} incommensurable with it in square, the squares adding to a medial area and
+  the rectangle medial and incommensurable with it, leaves an irrational {AC}: "that which produces with a
+  medial area a medial whole" (counterpart of [[X.41]]).
+
+diagram:
+  width: 320
+  height: 180
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "D0;point;free;40,-1000;0;0"
+    - "D3;point;free;40,1000;0;0"
+    - "A;point;lineSlider;A0,A3,90,0"
+    - "B;point;lineSlider;A0,A3,210,0"
+    - "C;point;lineSlider;A0,A3,160,0"
+    - "AB;line;connect;A,B"
+    - "D;point;lineSlider;D0,D3,0,70"
+    - "I;point;lineSlider;D0,D3,0,145"
+    - "G'';point;perpendicular;D,D3;0;0"
+    - "G';point;proportion;D,I,A,B,A,B,D,G'';0;0"
+    - "G;point;proportion;D,I,B,C,B,C,G',G''"
+    - "E;point;parallelogram;I,D,G"
+    - "F';point;proportion;D,I,A,B,B,C,D,G'';0;0"
+    - "F;point;extend;D,F',D,F'"
+    - "H;point;parallelogram;I,D,F"
+    - "IDFH;polygon;quadrilateral;I,D,F,H;0;0;black;random"
+    - "HFGE;polygon;quadrilateral;H,F,G,E;0;0;black;random"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "DG;line;connect;D,G;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+    - "DI;line;connect;D,I;0;0;0"
+  aliases: { DH: IDFH, FE: HFGE, BA: AB, CA: AC, CB: BC, GD: DG, FD: DF, GF: FG, ID: DI }
+  caption: |
+    As in [[X.75]].
+
+steps:
+  - part: enunciation
+    text: "If from a straight line there be subtracted a straight line which is incommensurable in square with the whole and which with the whole makes the sum of the squares on them medial, twice the rectangle contained by them medial, and further the squares on them incommensurable with twice the rectangle contained by them, the remainder is irrational; and let it be called that which produces with a medial area a medial whole."
+    highlight: [AC]
+    hint: |
+      Both parts medial and incommensurable, subtracted.
+
+  - part: setting-out
+    text: "For from the straight line AB let there be subtracted the straight line BC incommensurable in square with AB and fulfilling the given conditions; I say that the remainder AC is the irrational straight line called that which produces with a medial area a medial whole."
+    highlight: [AB, BC]
+    hint: |
+      Setup ([[X.35]]).
+
+  - part: construction
+    text: "For let a rational straight line DI be set out, to DI let there be applied DE equal to the squares on AB, BC, producing DG as breadth, and let DH equal to twice the rectangle AB, BC be subtracted."
+    highlight: [DG, DH, DF]
+    hint: |
+      Apply to the rational {DI}: breadths {DG}, {DF}.
+
+  - part: proof
+    text: "Therefore the remainder FE is equal to the square on AC, so that AC is the “side” of FE."
+    highlight: [FE, AC]
+    hint: |
+      The remainder {FE} = sq({AC}) ([[II.7]]).
+
+  - part: proof
+    text: "Now, since the sum of the squares on AB, BC is medial and is equal to DE, therefore DE is medial."
+    highlight: [DG]
+    hint: |
+      Sum of squares medial …
+
+  - part: proof
+    text: "And it is applied to the rational straight line DI, producing DG as breadth; therefore DG is rational and incommensurable in length with DI."
+    highlight: [DG]
+    hint: |
+      … so {DG} rational, incommensurable with {DI}.
+
+  - part: proof
+    text: "Again, since twice the rectangle AB, BC is medial and is equal to DH, therefore DH is medial."
+    highlight: [DH]
+    hint: |
+      2·rect medial …
+
+  - part: proof
+    text: "And it is applied to the rational straight line DI, producing DF as breadth; therefore DF is also rational and incommensurable in length with DI."
+    highlight: [DF]
+    hint: |
+      … so {DF} likewise.
+
+  - part: proof
+    text: "And, since the squares on AB, BC are incommensurable with twice the rectangle AB, BC, therefore DE is also incommensurable with DH."
+    highlight: [DH]
+    hint: |
+      The two areas incommensurable …
+
+  - part: proof
+    text: "But, as DE is to DH, so also is DG to DF; therefore DG is incommensurable with DF."
+    highlight: [DG, DF]
+    hint: |
+      … so {DG}, {DF} are.
+
+  - part: proof
+    text: "And both are rational; therefore GD, DF are rational straight lines commensurable in square only."
+    highlight: [DG, DF]
+    hint: |
+      Rational, commensurable in square only.
+
+  - part: proof
+    text: "Therefore FG is an apotome."
+    highlight: [FG]
+    hint: |
+      {FG} an apotome.
+
+  - part: proof
+    text: "And FH is rational; but the rectangle contained by a rational straight line and an apotome is irrational, and its “side” is irrational."
+    highlight: [FE]
+    hint: |
+      Rational × apotome: irrational.
+
+  - part: proof
+    text: "And AC is the “side” of FE; therefore AC is irrational."
+    highlight: [AC]
+    hint: |
+      Its side {AC} is irrational.
+
+  - part: proof
+    text: "And let it be called that which produces with a medial area a medial whole."
+    hint: |
+      The name.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+      text: |
+        As [[X.75]]. $\blacksquare$

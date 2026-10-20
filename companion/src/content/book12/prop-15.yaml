@@ -1,0 +1,190 @@
+id: XII.15
+kind: theorem
+title: Equal cones and cylinders have bases reciprocally proportional to heights
+
+paraphrase: |
+  Cones or cylinders are equal exactly when their bases are reciprocally proportional to their heights.
+
+diagram:
+  width: 550
+  height: 270
+  elements:
+    - "K0;point;fixed;110,100,0;0;0"
+    - "Ky;point;fixed;110,-1000,400;0;0"
+    - "Kx;point;fixed;1000,100,0;0;0"
+    - "K;point;lineSlider;K0,Ky,0,220,0"
+    - "L;point;lineSlider;K0,Ky,0,80,0"
+    - "A';point;parallelogram;K,K0,Kx;0;0"
+    - "A;point;lineSlider;K,A',30,0,0"
+    - "C;point;extend;A,K,A,K"
+    - "O;point;parallelogram;L,K,C"
+    - "Kplane;plane;perpendicular;K,Ky;0;0;0;0"
+    - "Lplane;plane;perpendicular;L,Ky;0;0;0;0"
+    - "Lcirc;circle;radius;L,O,Lplane;0;0;black;180,40,100"
+    - "ACO;polygon;parallelogram;A,C,O;0;0;0;180,40,100"
+    - "Kcirc;circle;radius;K,A,Kplane;0;0;black;240,40,100"
+    - "ACL;polygon;triangle;A,C,L;0;0;black;240,40,100"
+    - "LK;line;connect;L,K"
+    - "OC;line;connect;O,C"
+    - "AA'';line;parallel;A,K,L"
+    - "B;point;perpendicular;K,A,Kplane;black;0"
+    - "D;point;extend;B,K,B,K;black;0"
+    - "N0;point;fixed;400,140,0;0;0"
+    - "Nx;point;fixed;0,140,300;0;0"
+    - "Ny;point;fixed;400,-1000,0;0;0"
+    - "N;point;lineSlider;N0,Nx,510,0,0"
+    - "M;point;lineSlider;N0,Nx,200,0,0"
+    - "E';point;parallelogram;N,N0,Ny;0;0"
+    - "E;point;lineSlider;N,E',0,90,0"
+    - "G;point;extend;E,N,E,N"
+    - "R;point;parallelogram;M,N,E"
+    - "P;point;extend;R,M,R,M"
+    - "Mplane;plane;perpendicular;M,Nx;0;0;0;0"
+    - "Nplane;plane;perpendicular;N,Nx;0;0;0;0"
+    - "Mcirc;circle;radius;M,R,Mplane;0;0;black;0,40,100"
+    - "EGPR;polygon;quadrilateral;E,G,P,R;0;0;0;0,40,100"
+    - "Ncirc;circle;radius;N,E,Nplane;0;0;black;340,70,100"
+    - "EGM;polygon;triangle;E,G,M;0;0;black;340,70,100"
+    - "MN;line;connect;M,N"
+    - "ER;line;connect;E,R"
+    - "GP;line;connect;G,P"
+    - "F;point;circleSlider;Ncirc,440,130,0;black;0"
+    - "H;point;extend;F,N,F,N;black;0"
+    - "Q;point;cutoff;N,M,K,L"
+    - "S;point;parallelogram;G,N,Q"
+    - "U;point;parallelogram;E,N,Q"
+    - "Qplane;plane;perpendicular;Q,Nx;0;0;0;0"
+    - "Qcirc;circle;radius;Q,N,E,Qplane;0;0;black;0"
+    - "T;point;parallelogram;F,N,Q;black;0"
+    - "SUM;polygon;triangle;S,U,M;0;0;black;0"
+    - "KL;line;connect;K,L;0;0;0"
+  aliases: { CO: OC, NM: MN, RE: ER, PG: GP }
+  caption: |
+    Cylinders *AO*, *EP* on bases {ACO}, {EGM} with axes {LK}, {MN}.
+
+steps:
+  - part: enunciation
+    text: "In equal cones and cylinders the bases are reciprocally proportional to the heights; and those cones and cylinders in which the bases are reciprocally proportional to the heights are equal."
+    highlight: [ACO, EGM]
+    hint: |
+      Equal volume iff bases reciprocally as heights.
+    modern: |
+      $B_1h_1 = B_2h_2$.
+
+  - part: setting-out
+    text: "Let there be equal cones and cylinders of which the circles ABCD, EFGH are the bases; let AC, EG be the diameters of the bases, and KL, MN the axes, which are also the heights of the cones or cylinders; let the cylinders AO, EP be completed."
+    highlight: [ACO, EGM]
+    hint: |
+      Setup.
+
+  - part: specification
+    text: "I say that in the cylinders AO, EP the bases are reciprocally proportional to the heights, that is, as the base ABCD is to the base EFGH, so is the height MN to the height KL."
+    highlight: [ACO, EGM]
+    hint: |
+      To prove (first part).
+
+  - part: proof
+    text: "For the height LK is either equal to the height MN or not equal."
+    highlight: [LK, MN]
+    hint: |
+      Heights equal or not.
+
+  - part: proof
+    text: "First, let it be equal."
+    highlight: [LK, MN]
+    hint: |
+      Equal heights:
+
+  - part: proof
+    text: "Now the cylinder AO is also equal to the cylinder EP."
+    highlight: [ACO, EGM]
+    hint: |
+      equal cylinders …
+
+  - part: proof
+    text: "But cones and cylinders which are of the same height are to one another as their bases; therefore the base ABCD is also equal to the base EFGH."
+    highlight: [ACO, EGM]
+    hint: |
+      … so equal bases ([[XII.11]]) …
+
+  - part: proof
+    text: "Hence also, reciprocally, as the base ABCD is to the base EFGH, so is the height MN to the height KL."
+    highlight: [ACO, EGM]
+    hint: |
+      … and the reciprocal proportion holds trivially.
+
+  - part: construction
+    text: "Next, let the height LK not be equal to MN, but let MN be greater; from the height MN let QN be cut off equal to KL, through the point Q let the cylinder EP be cut by the plane TUS parallel to the planes of the circles EFGH, RP, and let the cylinder ES be conceived erected from the circle EFGH as base and with height NQ."
+    highlight: [MN]
+    hint: |
+      Unequal: cut off *QN* = {LK} from {MN}; the cylinder *ES* on it.
+
+  - part: proof
+    text: "Now, since the cylinder AO is equal to the cylinder EP, therefore, as the cylinder AO is to the cylinder ES, so is the cylinder EP to the cylinder ES."
+    highlight: [ACO, EGM]
+    hint: |
+      *AO* : *ES* = *EP* : *ES* ([[V.7]]).
+
+  - part: proof
+    text: "But, as the cylinder AO is to the cylinder ES, so is the base ABCD to the base EFGH, for the cylinders AO, ES are of the same height; and, as the cylinder EP is to the cylinder ES, so is the height MN to the height QN, for the cylinder EP has been cut by a plane which is parallel to its opposite planes."
+    highlight: [ACO, EGM]
+    hint: |
+      *AO* : *ES* = base : base ([[XII.11]]); *EP* : *ES* = {MN} : *QN* ([[XII.13]]).
+
+  - part: proof
+    text: "Therefore also, as the base ABCD is to the base EFGH, so is the height MN to the height QN."
+    highlight: [MN]
+    hint: |
+      So base : base = {MN} : *QN* …
+
+  - part: proof
+    text: "But the height QN is equal to the height KL; therefore, as the base ABCD is to the base EFGH, so is the height MN to the height KL."
+    highlight: [MN, LK]
+    hint: |
+      … = {MN} : {KL}.
+
+  - part: proof
+    text: "Therefore in the cylinders AO, EP the bases are reciprocally proportional to the heights."
+    highlight: [ACO, EGM]
+    hint: |
+      First part done.
+
+  - part: specification
+    text: "Next, in the cylinders AO, EP let the bases be reciprocally proportional to the heights, that is, as the base ABCD is to the base EFGH, so let the height MN be to the height KL; I say that the cylinder AO is equal to the cylinder EP."
+    highlight: [ACO, EGM]
+    hint: |
+      Converse.
+
+  - part: proof
+    text: "For, with the same construction, since, as the base ABCD is to the base EFGH, so is the height MN to the height KL, while the height KL is equal to the height QN, therefore, as the base ABCD is to the base EFGH, so is the height MN to the height QN"
+    highlight: [MN]
+    hint: |
+      Same construction …
+
+  - part: proof
+    text: "But, as the base ABCD is to the base EFGH, so is the cylinder AO to the cylinder ES, for they are of the same height; and, as the height MN is to QN, so is the cylinder EP to the cylinder ES; therefore, as the cylinder AO is to the cylinder ES, so is the cylinder EP to the cylinder ES."
+    highlight: [ACO, EGM]
+    hint: |
+      … *AO* : *ES* = *EP* : *ES* …
+
+  - part: proof
+    text: "Therefore the cylinder AO is equal to the cylinder EP."
+    highlight: [ACO, EGM]
+    hint: |
+      … so *AO* = *EP* ([[V.9]]).
+
+  - part: proof
+    text: "And the same is true for the cones also."
+    highlight: [ACO, EGM]
+    hint: |
+      Cones likewise.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $B_1h_1 = B_2h_2 \iff B_1 : B_2 = h_2 : h_1$. $\blacksquare$

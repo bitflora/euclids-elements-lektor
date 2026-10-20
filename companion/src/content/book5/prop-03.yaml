@@ -1,0 +1,154 @@
+id: V.3
+kind: theorem
+title: Multiples of multiples
+
+paraphrase: |
+  If {A} is the same multiple of {B} that {C} is of {D}, and {EF}, {GH} are equimultiples of {A}, {C}, then
+  {EF} is the same multiple of {B} that {GH} is of {D}. In algebra: $m(n b) = (mn) b$.
+
+diagram:
+  width: 300
+  height: 150
+  elements:
+    - "U1;point;free;0,0;0;0"
+    - "U2;point;free;25,0;0;0"
+    - "U;line;connect;U1,U2;0;0;0"
+    - "B1;point;free;270,30;0"
+    - "B3;point;parallelogram;B1,U2,U1;0;0"
+    - "B2;point;lineSlider;B1,B3,240,0;0"
+    - "B;line;connect;B1,B2;black;0;blue"
+    - "D1;point;free;270,100;0"
+    - "D3;point;parallelogram;D1,U2,U1;0;0"
+    - "D2;point;lineSlider;D1,D3,230,0;0"
+    - "D;line;connect;D1,D2;black;0;red"
+    - "A0;point;free;30,30;0"
+    - "Ap;point;parallelogram;A0,U;0;0"
+    - "A1;point;cutoff;A0,Ap,B;0;lightGray"
+    - "A2;point;extend;A0,A1,B;0;lightGray"
+    - "A3;point;extend;A0,A2,B;0"
+    - "A;line;connect;A0,A3;black;0;blue"
+    - "C0;point;free;30,100;0"
+    - "Cp;point;parallelogram;C0,U;0;0"
+    - "C1;point;cutoff;C0,Cp,D;0;lightGray"
+    - "C2;point;extend;C0,C1,D;0;lightGray"
+    - "C3;point;extend;C0,C2,D;0"
+    - "C;line;connect;C0,C3;black;0;red"
+    - "E;point;free;30,60"
+    - "Ep;point;parallelogram;E,U;0;0"
+    - "K;point;cutoff;E,Ep,A"
+    - "F;point;extend;E,K,A"
+    - "EF;line;connect;E,F;0;0;blue"
+    - "G;point;free;30,130"
+    - "Gp;point;parallelogram;G,U;0;0"
+    - "L;point;cutoff;G,Gp,C"
+    - "H;point;extend;G,L,C"
+    - "GH;line;connect;G,H;0;0;red"
+    - "EK;line;connect;E,K;0;0;0"
+    - "KF;line;connect;K,F;0;0;0"
+    - "GL;line;connect;G,L;0;0;0"
+    - "LH;line;connect;L,H;0;0;0"
+  caption: |
+    {A} is three times {B} and {C} three times {D}; {EF} and {GH} are twice {A} and {C}. Drag the left ends of
+    {B} and {D} to change them.
+
+steps:
+  - part: enunciation
+    text: "If a first magnitude be the same multiple of a second that a third is of a fourth, and if equimultiples be taken of the first and third, then also ex aequali the magnitudes taken will be equimultiples respectively, the one of the second and the other of the fourth."
+    highlight: [EF, GH, B, D]
+    hint: |
+      Equimultiples of equimultiples are equimultiples.
+    explain:
+      implicit: |
+        *Ex aequali* is used loosely here: there is no proportion to strike terms out of, as in
+        [[V.Def.17]]. The phrase only signals that the intermediate magnitudes {A}, {C} drop out.
+    modern: |
+      $$a = n b,\ c = n d \ \Rightarrow\ m a = (mn) b,\ m c = (mn) d$$
+
+  - part: setting-out
+    text: "Let a first magnitude A be the same multiple of a second B that a third C is of a fourth D, and let equimultiples EF, GH be taken of A, C;"
+    highlight: [A, B, C, D, EF, GH]
+    hint: |
+      {A} = $n${B}, {C} = $n${D}; {EF} = $m${A}, {GH} = $m${C}. In the figure $n = 3$, $m = 2$.
+
+  - part: specification
+    text: "I say that EF is the same multiple of B that GH is of D."
+    highlight: [EF, B, GH, D]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, since EF is the same multiple of A that GH is of C, therefore, as many magnitudes as there are in EF equal to A, so many also are there in GH equal to C."
+    highlight: [EF, A, GH, C]
+    hint: |
+      Equal numbers of copies ([[V.Def.2]]).
+    cites: [V.Def.2]
+
+  - part: construction
+    text: "Let EF be divided into the magnitudes EK, KF equal to A, and GH into the magnitudes GL, LH equal to C;"
+    highlight: [EK, KF, GL, LH]
+    hint: |
+      Mark off the copies of {A} in {EF} and of {C} in {GH}.
+
+  - part: proof
+    text: "then the multitude of the magnitudes EK, KF will be equal to the multitude of the magnitudes GL, LH."
+    highlight: [EK, KF, GL, LH]
+    hint: |
+      Two pieces each.
+
+  - part: proof
+    text: "And, since A is the same multiple of B that C is of D, while EK is equal to A, and GL to C, therefore EK is the same multiple of B that GL is of D."
+    highlight: [EK, B, GL, D]
+    hint: |
+      {EK} = {A} and {GL} = {C}, so {EK}, {GL} are equimultiples of {B}, {D}.
+
+  - part: proof
+    text: "For the same reason"
+    highlight: [KF, LH]
+    hint: |
+      The same for the second pieces.
+
+  - part: proof
+    text: "KF is the same multiple of B that LH is of D."
+    highlight: [KF, B, LH, D]
+    hint: |
+      {KF}, {LH} are equimultiples of {B}, {D}.
+
+  - part: proof
+    text: "Since, then, a first magnitude EK is the same multiple of a second B that a third GL is of a fourth D, and a fifth KF is also the same multiple of the second B that a sixth LH is of the fourth D, therefore the sum of the first and fifth, EF, is also the same multiple of the second B that the sum of the third and sixth, GH, is of the fourth D."
+    highlight: [EK, KF, GL, LH, EF, GH]
+    hint: |
+      Add the pieces with [[V.2]].
+    explain:
+      justification: |
+        [[V.2]], with first = {EK}, second = {B}, third = {GL}, fourth = {D}, fifth = {KF}, sixth = {LH}.
+      implicit: |
+        With $m$ pieces instead of two, [[V.2]] would be applied $m - 1$ times.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: |
+        Let $A = nB$, $C = nD$, $EF = mA$, $GH = mC$.
+    - steps: [3, 4, 5, 6, 7, 8, 9]
+      text: |
+        $EF = mA = A + \dots + A = nB + \dots + nB = (mn)B$, using [[V.2]] $m - 1$ times; likewise
+        $GH = (mn)D$. $\blacksquare$
+
+commentary: |
+  The associative law $m(nb) = (mn)b$. It is the step [[V.4]] needs: multiples of the multiples in a
+  proportion are again multiples of the original terms.
+
+gaps: |
+  - **Typical case** again: two pieces stand for $m$ pieces.

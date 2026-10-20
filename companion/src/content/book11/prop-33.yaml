@@ -1,0 +1,173 @@
+id: XI.33
+kind: theorem
+title: Similar parallelepipeds are in the triplicate ratio of their sides
+
+paraphrase: |
+  Similar parallelepipeds are to one another in the triplicate ratio of corresponding sides: if the sides are as
+  $a : b$, the solids are as $a^3 : b^3$. The solid version of [[VI.20]].
+
+diagram:
+  width: 500
+  height: 350
+  elements:
+    - "C0;point;free;-1000,80;0;0"
+    - "C3;point;free;1000,80;0;0"
+    - "C;point;lineSlider;C0,C3,40,0"
+    - "F;point;lineSlider;C0,C3,120,0"
+    - "N;point;free;140,45"
+    - "R;point;free;150,160"
+    - "D;point;parallelogram;N,F,R;black;green"
+    - "a;point;parallelogram;N,F,C;0"
+    - "b;point;parallelogram;C,F,R;0"
+    - "c;point;parallelogram;D,N,a;0"
+    - "aCFN;polygon;quadrilateral;a,C,F,N;0;0;black;80,50,100"
+    - "FNDR;polygon;quadrilateral;F,N,D,R;0;0;black;80,75,100"
+    - "bCFR;polygon;quadrilateral;b,C,F,R;0;0;black;80,100,100"
+    - "ac;line;connect;a,c"
+    - "bc;line;connect;b,c"
+    - "Dc;line;connect;D,c"
+    - "d;point;lineSlider;C0,C3,200,0;0"
+    - "H;point;lineSlider;C0,C3,300,0"
+    - "B';point;parallelogram;N,F,H;0;0"
+    - "B;point;proportion;C,F,F,N,d,H,H,B'"
+    - "e;point;parallelogram;d,H,B;0"
+    - "E';point;parallelogram;R,F,H;0;0"
+    - "E;point;proportion;C,F,F,R,d,H,H,E'"
+    - "A;point;parallelogram;d,H,E"
+    - "G;point;parallelogram;B,H,E"
+    - "f;point;parallelogram;e,H,E;0"
+    - "edHB;polygon;quadrilateral;e,d,H,B;0;0;black;150,50,100"
+    - "HBGE;polygon;quadrilateral;H,B,G,E;0;0;black;150,75,100"
+    - "AdHE;polygon;quadrilateral;A,d,H,E;0;0;black;150,100,100"
+    - "ef;line;connect;e,f"
+    - "Af;line;connect;A,f"
+    - "Gf;line;connect;G,f"
+    - "K;point;extend;A,E,C,F"
+    - "L;point;extend;G,E,F,N"
+    - "M;point;extend;H,E,F,R"
+    - "P;point;parallelogram;L,E,M"
+    - "g;point;parallelogram;L,E,K;0;0"
+    - "h;point;parallelogram;K,E,M;0;0"
+    - "i;point;parallelogram;L,E,h;0;0"
+    - "ELgK;polygon;quadrilateral;E,L,g,K;0;0;black;20,40,100"
+    - "gKhi;polygon;quadrilateral;g,K,h,i;0;0;black;20,70,100"
+    - "PLgi;polygon;quadrilateral;P,L,g,i;0;0;black;20,90,100"
+    - "EM;line;connect;E,M"
+    - "PM;line;connect;P,M"
+    - "hM;line;connect;h,M"
+    - "j;point;parallelogram;G,E,K;0"
+    - "Q;point;parallelogram;H,E,K"
+    - "O;point;parallelogram;B,E,K"
+    - "k;point;parallelogram;H,E,L;0"
+    - "l;point;parallelogram;Q,E,L;0"
+    - "KjOQ;polygon;quadrilateral;K,j,O,Q;0;0;black;0"
+    - "Gj;line;connect;G,j"
+    - "HQlk;polygon;quadrilateral;H,Q,l,k;0;0;black;0"
+    - "kL;line;connect;k,L"
+    - "lg;line;connect;l,g"
+    - "BO;line;connect;B,O"
+  aliases: { ME: EM, MP: PM, OB: BO }
+  caption: |
+    The given solid *AB* and the solid *KP* equal and similar to *CD*, set at the same corner; *EO*, *LQ* fill in.
+
+steps:
+  - part: enunciation
+    text: "Similar parallelepipedal solids are to one another in the triplicate ratio of their corresponding sides."
+    highlight: [C, F]
+    hint: |
+      Volumes of similar solids scale as the cube of the ratio.
+    modern: |
+      $V_1 : V_2 = (a_1 : a_2)^3$.
+
+  - part: setting-out
+    text: "Let AB, CD be similar parallelepipedal solids, and let AE be the side corresponding to CF; I say that the solid AB has to the solid CD the ratio triplicate of that which AE has to CF."
+    highlight: [C, F]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let EK, EL, EM be produced in a straight line with AE, GE, HE, let EK be made equal to CF, EL equal to FN, and further EM equal to FR, and let the parallelogram KL and the solid KP be completed."
+    highlight: [C, F]
+    hint: |
+      Extend the edges at *E* and set off *EK* = *CF*, *EL* = *FN*, *EM* = *FR*; complete the solid *KP*.
+
+  - part: proof
+    text: "Now, since the two sides KE, EL are equal to the two sides CF, FN, while the angle KEL is also equal to the angle CFN, inasmuch as the angle AEG is also equal to the angle CFN because of the similarity of the solids AB, CD, therefore the parallelogram KL is equal ⟨and similar⟩ to the parallelogram CN."
+    highlight: [C, F]
+    hint: |
+      Its faces are equal and similar to those of *CD* …
+
+  - part: proof
+    text: "For the same reason the parallelogram KM is also equal and similar to CR, and further EP to DF; therefore three parallelograms of the solid KP are equal and similar to three parallelograms of the solid CD."
+    highlight: [C, F]
+    hint: |
+      … likewise …
+
+  - part: proof
+    text: "But the former three parallelograms are equal and similar to their opposites, and the latter three to their opposites; therefore the whole solid KP is equal and similar to the whole solid CD."
+    highlight: [C, F]
+    hint: |
+      … so *KP* = *CD* ([[XI.24]]).
+
+  - part: construction
+    text: "Let the parallelogram GK be completed, and on the parallelograms GK, KL as bases, and with the same height as that of AB, let the solids EO, LQ be completed."
+    highlight: [C, F]
+    hint: |
+      Complete *EO*, *LQ* between them.
+
+  - part: proof
+    text: "Then since; owing to the similarity of the solids AB, CD, as AE is to CF, so is EG to FN, and EH to FR, while CF is equal to EK, FN to EL, and FR to EM, therefore, as AE is to EK, so is GE to EL, and HE to EM."
+    highlight: [C, F]
+    hint: |
+      *AE* : *EK* = *GE* : *EL* = *HE* : *EM* (similarity).
+
+  - part: proof
+    text: "But, as AE is to EK, so is AG to the parallelogram GK, as GE is to EL, so is GK to KL, and, as HE is to EM, so is QE to KM; therefore also, as the parallelogram AG is to GK, so is GK to KL, and QE to KM."
+    highlight: [C, F]
+    hint: |
+      So the faces are in continued proportion ([[VI.1]]) …
+
+  - part: proof
+    text: "But, as AG is to GK, so is the solid AB to the solid EO, as GK is to KL, so is the solid OE to the solid QL, and, as QE is to KM, so is the solid QL to the solid KP; therefore also, as the solid AB is to EO, so is EO to QL, and QL to KP."
+    highlight: [C, F]
+    hint: |
+      … and so are the solids *AB*, *EO*, *QL*, *KP* ([[XI.25]]).
+
+  - part: proof
+    text: "But, if four magnitudes be continuously proportional, the first has to the fourth the ratio triplicate of that which it has to the second; therefore the solid AB has to KP the ratio triplicate of that which AB has to EO."
+    highlight: [C, F]
+    hint: |
+      Four in continued proportion: first to fourth is the triplicate ratio ([[V.Def.10]]).
+
+  - part: proof
+    text: "But, as AB is to EO, so is the parallelogram AG to GK, and the straight line AE to EK; hence the solid AB has also to KP the ratio triplicate of that which AE has to EK."
+    highlight: [C, F]
+    hint: |
+      And *AB* : *EO* = *AE* : *EK*.
+
+  - part: proof
+    text: "But the solid KP is equal to the solid CD, and the straight line EK to CF; therefore the solid AB has also to the solid CD the ratio triplicate of that which the corresponding side of it, AE, has to the corresponding side CF."
+    highlight: [C, F]
+    hint: |
+      So *AB* : *CD* is the triplicate of *AE* : *CF*.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [C, F]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Scaling each of three dimensions by $r$ scales volume by $r^3$. $\blacksquare$
+
+commentary: |
+  The porism: if four lines are in continued proportion, a parallelepiped on the first is to a similar one on the
+  second as the first line is to the fourth. That is the link to the classical problem of doubling the cube
+  (two mean proportionals).

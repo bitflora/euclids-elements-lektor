@@ -1,0 +1,266 @@
+id: I.16
+kind: theorem
+title: The exterior angle exceeds each remote interior angle
+
+paraphrase: |
+  Extend one side of a triangle. The angle outside the triangle ({ACD}) is greater than each of
+  the two interior angles at the other vertices ({CBA} and {BAC}).
+
+diagram:
+  width: 300
+  height: 280
+  elements:
+    - "A;point;free;95,35"
+    - "B;point;free;30,185"
+    - "C;point;free;160,185"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "D;point;lineSlider;B,C,260,185"
+    - "CD;line;connect;C,D"
+    - "E;point;midpoint;A,C"
+    - "F;point;extend;B,E,B,E"
+    - "BF;line;connect;B,F"
+    - "FC;line;connect;F,C"
+    - "G;point;lineSlider;A,C,205,265"
+    - "CG;line;connect;C,G"
+    - "ABE;polygon;triangle;A,B,E;0;0;0;0"
+    - "CFE;polygon;triangle;C,F,E;0;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EC;line;connect;E,C;0;0;0"
+    - "angACD;sector;angleMarker;C,A,D"
+    - "angCBA;sector;angleMarker;B,C,A"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angAEB;sector;angleMarker;E,A,B"
+    - "angFEC;sector;angleMarker;E,F,C"
+    - "angECF;sector;angleMarker;C,E,F"
+    - "angBCG;sector;angleMarker;C,B,G"
+  aliases:
+    BA: AB
+    CB: BC
+    CA: AC
+    EB: BE
+    CE: EC
+    FE: EF
+    CF: FC
+    ACD: angACD
+    ECD: angACD
+    CBA: angCBA
+    BAC: angBAC
+    BAE: angBAC
+    AEB: angAEB
+    FEC: angFEC
+    ECF: angECF
+    BCG: angBCG
+  given: [A, B, C, ABC]
+  caption: |
+    Drag {A}, {B} or {C}, and slide {D} and {G}. {E} stays the midpoint of {AC} and {EF} = {BE},
+    so ∠{ECF} always equals ∠{BAE} — and always sits inside the exterior angle at {C}.
+
+steps:
+  - part: enunciation
+    text: "In any triangle, if one of the sides be produced, the exterior angle is greater than either of the interior and opposite angles."
+    highlight: [angACD, angCBA, angBAC]
+    hint: |
+      The angle outside a triangle, made by extending a side, is bigger than each of the two
+      angles of the triangle not next to it.
+    explain:
+      fact: |
+        "Exterior angle" is literally "the outside angle"; the "interior and opposite" angles are
+        the two at the far vertices (Heath's notes on lines 1–2).
+      implicit: |
+        Only *greater than either* — not that the exterior angle *equals the sum* of the two.
+        That stronger statement needs the parallel postulate and comes in [[I.32]].
+
+  - part: setting-out
+    text: "Let ABC be a triangle, and let one side of it BC be produced to D;"
+    highlight: [ABC, CD]
+    adds: [D, CD, angACD]
+    hint: |
+      Triangle {ABC}, with {BC} produced to {D}.
+
+  - part: specification
+    text: "I say that the exterior angle ACD is greater than either of the interior and opposite angles CBA, BAC."
+    highlight: [angACD, angCBA, angBAC]
+    adds: [angCBA, angBAC]
+    hint: |
+      Two claims: ∠{ACD} > ∠{BAC} and ∠{ACD} > ∠{CBA}.
+    modern: |
+      $$\angle ACD > \angle BAC,\qquad \angle ACD > \angle CBA$$
+
+  - part: construction
+    text: "Let AC be bisected at E,"
+    highlight: [AC, E]
+    adds: [E]
+    hint: |
+      Find the midpoint {E} of {AC} ([[I.10]]).
+
+  - part: construction
+    text: "and let BE be joined and produced in a straight line to F;"
+    highlight: [BE, BF]
+    adds: [BF, F]
+    hint: |
+      Join {BE} and extend it past {E} ([[I.Post.1]], [[I.Post.2]]).
+    cites: [I.Post.1, I.Post.2]
+
+  - part: construction
+    text: "let EF be made equal to BE,"
+    highlight: [EF, BE]
+    hint: |
+      Choose {F} so that {EF} = {BE} ([[I.3]]): {E} is the midpoint of {BF} too.
+    modern: |
+      $$AE = EC,\qquad BE = EF$$
+
+  - part: construction
+    text: "let FC be joined,"
+    highlight: [FC]
+    adds: [FC]
+    hint: |
+      Join {FC} ([[I.Post.1]]).
+
+  - part: construction
+    text: "and let AC be drawn through to G."
+    highlight: [CG]
+    adds: [CG, G]
+    hint: |
+      Extend {AC} past {C} to {G} ([[I.Post.2]]). Needed only for the second half.
+    explain:
+      implicit: |
+        "Drawn through" (διήχθω) is a variant of the usual "produced" (Heath's note on line 12).
+
+  - part: proof
+    text: "Then, since AE is equal to EC, and BE to EF, the two sides AE, EB are equal to the two sides CE, EF respectively;"
+    highlight: [ABE, CFE, AE, EC, BE, EF]
+    hint: |
+      Triangles {ABE} and {CFE}: two pairs of equal sides, by construction.
+    modern: |
+      $$AE = CE,\qquad EB = EF$$
+
+  - part: proof
+    text: "and the angle AEB is equal to the angle FEC, for they are vertical angles."
+    highlight: [angAEB, angFEC]
+    adds: [angAEB, angFEC]
+    hint: |
+      The angles between them at {E} are vertical, hence equal ([[I.15]]).
+    modern: |
+      $$\angle AEB = \angle FEC$$
+
+  - part: proof
+    text: "Therefore the base AB is equal to the base FC, and the triangle ABE is equal to the triangle CFE, and the remaining angles are equal to the remaining angles respectively, namely those which the equal sides subtend;"
+    highlight: [ABE, CFE, AB, FC]
+    hint: |
+      SAS ([[I.4]]): the triangles are congruent.
+    explain:
+      implicit: |
+        Heath notes that the Greek text has "{FEC}" for "{CFE}" here (his note on line 21).
+    modern: |
+      $$\triangle ABE \cong \triangle CFE$$
+
+  - part: proof
+    text: "therefore the angle BAE is equal to the angle ECF."
+    highlight: [angBAC, angECF]
+    adds: [angECF]
+    hint: |
+      In particular the angle at {A} equals the angle at {C} in the copy: ∠{BAE} = ∠{ECF}.
+    explain:
+      follows: |
+        ∠{BAE} is opposite {BE}; ∠{ECF} is opposite {EF}; and {BE} = {EF}.
+      implicit: |
+        ∠{BAE} is ∠{BAC}, since {E} lies on {AC}.
+    modern: |
+      $$\angle BAE = \angle ECF$$
+
+  - part: proof
+    text: "But the angle ECD is greater than the angle ECF;"
+    highlight: [angACD, angECF]
+    hint: |
+      ∠{ECF} is part of ∠{ECD} — the exterior angle — so it is smaller ([[I.CN.5]]).
+    explain:
+      fact: |
+        {CF} lies inside the angle {ECD}.
+      justification: "[[I.CN.5]]"
+      implicit: |
+        This is the crux, and it is taken from the figure: {F} lies inside ∠{ACD}.
+    gap: |
+      **Is {F} inside the exterior angle?** Euclid reads it off the diagram. It holds because
+      {F} is on the opposite side of {AC} from {B} (as {E} is between {B} and {F}) and on the same
+      side of {BD} as {A} (as {E} is). On the sphere — where "lines" are great circles and a
+      "segment" can be so long that its extension comes back round — exactly this step fails, and so
+      does I.16.
+
+  - part: proof
+    text: "therefore the angle ACD is greater than the angle BAE."
+    highlight: [angACD, angBAC]
+    hint: |
+      So the exterior angle exceeds ∠{BAC}. First claim proved.
+    modern: |
+      $$\angle ACD = \angle ECD > \angle ECF = \angle BAE$$
+
+  - part: proof
+    text: "Similarly also, if BC be bisected, the angle BCG, that is, the angle ACD, can be proved greater than the angle ABC as well."
+    highlight: [angBCG, angACD, angCBA]
+    adds: [angBCG]
+    hint: |
+      For the angle at {B}, repeat with {BC} bisected, using the exterior angle ∠{BCG}, which equals
+      ∠{ACD} (vertical angles, [[I.15]]).
+    explain:
+      did: |
+        Leaves the second half to the reader.
+      implicit: |
+        The argument is the same with {A} and {B} exchanged. That is why {G} was drawn.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* In Hilbert's axioms this is the
+    *exterior angle theorem*, valid in neutral geometry (without the parallel postulate).
+  lines:
+    - steps: [1, 2]
+      text: Let $\triangle ABC$ and $D$ with $C$ between $B$ and $D$.
+    - steps: [3, 4, 5, 6, 7]
+      text: Let $E$ be the midpoint of $AC$, and $F$ on ray $BE$ beyond $E$ with $EF = BE$.
+    - steps: [8, 9, 10, 11]
+      text: SAS gives $\triangle ABE \cong \triangle CFE$, so $\angle BAC = \angle ECF$.
+    - steps: [12]
+      text: |
+        $F$ and $B$ are on opposite sides of line $AC$ (segment $BF$ crosses it at $E$), and so
+        are $D$ and $B$; so $F$ and $D$ are on the same side of $AC$. $F$ and $E$ are on the same side
+        of line $BD$ (both on ray $BE$), and so are $E$ and $A$ (segment $AE$ lies inside $AC$, which
+        meets $BD$ only at $C$). So $F$ is interior to $\angle ACD$, and $\angle ECF < \angle ACD$.
+    - steps: [13, 14]
+      text: The angle at $B$ is treated the same way with $BC$ bisected. $\blacksquare$
+  closing: |
+    The betweenness argument in the fourth line is exactly what the diagram supplies to Euclid.
+
+commentary: |
+  I.16 is the turning point of Book I's first half. It is the first *inequality* for angles in a
+  triangle, and it holds without the parallel postulate. From it come [[I.17]] (two angles of a
+  triangle are less than two right angles), and through [[I.27]] the existence of parallels.
+
+  In [[I.32]], with the parallel postulate, the inequality becomes an equation: the exterior
+  angle *equals* the sum of the two remote interior angles.
+
+gaps: |
+  - **{F} inside ∠{ACD}** (step 10): taken from the figure. This is the step that fails in
+    elliptic (spherical) geometry; see Joyce's guide.
+  - **Lines are unbounded**: producing {BE} to twice its length assumes that a straight line does
+    not close up on itself.
+
+historical: |
+  I.16 is the sharpest marker of what Euclid's geometry assumes before the parallel postulate. On
+  a sphere, triangles can have an exterior angle *less* than a remote interior angle, so I.16
+  silently rules out elliptic geometry — through the assumption that lines are infinitely
+  extendable and do not return.

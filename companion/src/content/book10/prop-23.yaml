@@ -1,0 +1,137 @@
+id: X.23
+kind: theorem
+title: A line commensurable with a medial is medial
+
+paraphrase: |
+  If {A} is medial and {B} is commensurable with {A} (in length, or even in square only), {B} is medial.
+
+diagram:
+  width: 250
+  height: 240
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "C0;point;free;150,-1000;0;0"
+    - "C3;point;free;150,1000;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,120,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;A0,A3,150,0;0"
+    - "B2;point;lineSlider;A0,A3,220,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C;point;lineSlider;C0,C3,0,80"
+    - "D;point;lineSlider;C0,C3,0,200"
+    - "E';point;perpendicular;D,C;0;0"
+    - "E;point;proportion;C,D,A1,A2,A1,A2,D,E'"
+    - "CE;polygon;parallelogram;C,D,E;0;0;black;random"
+    - "F';point;extend;E,D,E,D;0;0"
+    - "F;point;proportion;C,D,B1,B2,B1,B2,D,F'"
+    - "EF;polygon;parallelogram;C,D,F;0;0;black;random"
+    - "CD;line;connect;C,D;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+  aliases: { CF: EF, EC: CE, DC: CD }
+  caption: |
+    {CE} = sq({A}) and {CF} = sq({B}), both applied to the rational line {CD}.
+
+steps:
+  - part: enunciation
+    text: "A straight line commensurable with a medial straight line is medial."
+    highlight: [A, B]
+    hint: |
+      Commensurable with medial ⇒ medial.
+    modern: |
+      $B = r A$ (or $B^2 = r A^2$), $r \in \mathbb{Q}$ $\Rightarrow$ $B$ medial.
+
+  - part: setting-out
+    text: "Let A be medial, and let B be commensurable with A;"
+    highlight: [A, B]
+    hint: |
+      {A} medial; {B} commensurable with it.
+
+  - part: specification
+    text: "I say that B is also medial."
+    highlight: [B]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For let a rational straight line CD be set out, and to CD let the rectangular area CE equal to the square on A be applied, producing ED as breadth; therefore ED is rational and incommensurable in length with CD."
+    highlight: [CD, CE, ED]
+    hint: |
+      Apply sq({A}) to a rational {CD}: breadth {ED} rational, commensurable in square only ([[X.22]]).
+
+  - part: construction
+    text: "And let the rectangular area CF equal to the square on B be applied to CD, producing DF as breadth."
+    highlight: [CF, DF]
+    hint: |
+      Apply sq({B}) too: breadth {DF}.
+
+  - part: proof
+    text: "Since then A is commensurable with B, the square on A is also commensurable with the square on B."
+    highlight: [A, B]
+    hint: |
+      The squares are commensurable.
+
+  - part: proof
+    text: "But EC is equal to the square on A, and CF is equal to the square on B; therefore EC is commensurable with CF."
+    highlight: [CE, CF]
+    hint: |
+      So {EC}, {CF} are.
+
+  - part: proof
+    text: "And, as EC is to CF, so is ED to DF; therefore ED is commensurable in length with DF."
+    highlight: [ED, DF]
+    hint: |
+      [[VI.1]], [[X.11]]: {ED}, {DF} commensurable in length.
+
+  - part: proof
+    text: "But ED is rational and incommensurable in length with DC; therefore DF is also rational and incommensurable in length with DC."
+    highlight: [DF, CD]
+    hint: |
+      {DF} is rational and incommensurable in length with {DC} ([[X.13]]).
+
+  - part: proof
+    text: "Therefore CD, DF are rational and commensurable in square only."
+    highlight: [CD, DF]
+    hint: |
+      {CD}, {DF} rational, commensurable in square only.
+
+  - part: proof
+    text: "But the straight line the square on which is equal to the rectangle contained by rational straight lines commensurable in square only is medial; therefore the side of the square equal to the rectangle CD, DF is medial."
+    highlight: [CD, DF]
+    hint: |
+      So the side of {CD}·{DF} is medial ([[X.21]]) …
+
+  - part: proof
+    text: "And B is the side of the square equal to the rectangle CD, DF; therefore B is medial."
+    highlight: [B]
+    hint: |
+      … and that side is {B}.
+
+  - part: porism
+    text: "Porism. From this it is manifest that an area commensurable with a medial area is medial."
+    hint: |
+      Porism: an area commensurable with a medial area is medial.
+
+  - part: porism
+    text: "[And in the same way as was explained in the case of rationals it follows, as regards medials, that a straight line commensurable in length with a medial straight line is called medial and commensurable with it not only in length but in square also, since, in general, straight lines commensurable in length are always commensurable in square also."
+    hint: |
+      A bracketed note on terms: lines commensurable in length with a medial are "medial and commensurable in
+      length and square" …
+
+  - part: porism
+    text: "But, if any straight line be commensurable in square with a medial straight line, then, if it is also commensurable in length with it, the straight lines are called, in this case too, medial and commensurable in length and in square, but, if in square only, they are called medial straight lines commensurable in square only.]"
+    hint: |
+      … and if in square only, "medial straight lines commensurable in square only".
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11]
+      text: |
+        $B^2 = r A^2 = r\rho^2\sqrt q$, still a rational multiple of $\rho^2\sqrt q$, so $B$ is medial.
+        $\blacksquare$
+
+commentary: |
+  The medials form a family closed under rational scaling — the first sign that Book X classifies irrationals
+  by *kind*, not individually.

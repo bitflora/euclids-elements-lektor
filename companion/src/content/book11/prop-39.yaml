@@ -1,0 +1,107 @@
+id: XI.39
+kind: theorem
+title: "Equal-height prisms: triangle base equal to half a parallelogram base"
+
+paraphrase: |
+  Two prisms of equal height, one on a parallelogram, the other on a triangle half its area, are equal.
+
+diagram:
+  width: 400
+  height: 230
+  elements:
+    - "origin;point;fixed;60,150,0;0;0"
+    - "1X;point;fixed;260,123,36;0;0"
+    - "1Y;point;fixed;5,30,160;0;0"
+    - "1Z;point;fixed;60,294,123;0;0"
+    - "floor;plane;3points;origin,1X,1Y;0;0;0;0"
+    - "A;point;planeSlider;floor,60,150,0"
+    - "B;point;lineSlider;origin,1Z,0,-30,0"
+    - "E;point;planeSlider;floor,90,250,0"
+    - "C;point;planeSlider;floor,140,150,0"
+    - "D;point;parallelogram;B,A,C"
+    - "F;point;parallelogram;C,A,E"
+    - "O;point;parallelogram;B,A,F"
+    - "a;point;parallelogram;B,A,E;0"
+    - "ABE;polygon;triangle;A,B,E;0;0;0;0"
+    - "ABCDEF;polyhedron;prism;ABE,A,C;0;0;black;random"
+    - "BDOa;polygon;quadrilateral;B,D,O,a;0;0;black;0"
+    - "Ea;line;connect;E,a"
+    - "OF;line;connect;O,F"
+    - "H;point;planeSlider;floor,200,170,0"
+    - "ceiling;plane;parallel;floor,B;0;0;0;0"
+    - "M;point;planeSlider;ceiling,200,170,0"
+    - "b;point;planeSlider;floor,300,170,0;0"
+    - "E1;point;perpendicular;A,C,floor;0;0"
+    - "E2;point;intersection;A,E1,E,F,floor;0;0"
+    - "G1;point;perpendicular;H,b,floor;0;0"
+    - "G2;point;proportion;H,b,A,E2,A,C,H,G1;0;0"
+    - "G3;point;parallelogram;b,H,G2;0;0"
+    - "G;point;lineSlider;G2,G3,250,230,0"
+    - "K;point;parallelogram;G,H,b"
+    - "L;point;parallelogram;M,H,G"
+    - "N;point;parallelogram;M,H,K"
+    - "P;point;parallelogram;M,H,b"
+    - "GHK;polygon;triangle;G,H,K;0;0;0;0"
+    - "GHKLMN;polyhedron;prism;GHK,G,L;0;0;black;random"
+    - "HMPb;polygon;quadrilateral;H,M,P,b;0;0;black;0"
+    - "NP;line;connect;N,P"
+    - "bK;line;connect;b,K"
+  aliases: { FO: OF, PN: NP }
+  caption: |
+    The prisms *ABCDEF* and *GHKLMN*, completed to parallelepipeds *AO*, *GP*.
+
+steps:
+  - part: enunciation
+    text: "If there be two prisms of equal height, and one have a parallelogram as base and the other a triangle, and if the parallelogram be double of the triangle, the prisms will be equal."
+    highlight: [A, B]
+    hint: |
+      Volume = base × height for triangular prisms.
+
+  - part: setting-out
+    text: "Let ABCDEF, GHKLMN be two prisms of equal height, let one have the parallelogram AF as base, and the other the triangle GHK, and let the parallelogram AF be double of the triangle GHK; I say that the prism ABCDEF is equal to the prism GHKLMN."
+    highlight: [A, B]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let the solids AO, GP be completed."
+    highlight: [A, B]
+    hint: |
+      Complete the parallelepipeds *AO*, *GP*.
+
+  - part: proof
+    text: "Since the parallelogram AF is double of the triangle GHK, while the parallelogram HK is also double of the triangle GHK, therefore the parallelogram AF is equal to the parallelogram HK."
+    highlight: [A, B]
+    hint: |
+      The bases of *AO*, *GP* are equal ([[I.34]]) …
+
+  - part: proof
+    text: "But parallelepipedal solids which are on equal bases and of the same height are equal to one another; therefore the solid AO is equal to the solid GP."
+    highlight: [A, B]
+    hint: |
+      … so *AO* = *GP* ([[XI.31]]).
+
+  - part: proof
+    text: "And the prism ABCDEF is half of the solid AO, and the prism GHKLMN is half of the solid GP; therefore the prism ABCDEF is equal to the prism GHKLMN."
+    highlight: [A, B]
+    hint: |
+      Each prism is half its parallelepiped ([[XI.28]]): equal.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [A, B]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $\tfrac12 (2T)h = Th$. $\blacksquare$
+
+commentary: |
+  The last proposition of Book XI; used in [[XII.3]] and [[XII.4]] in the volume of the pyramid.

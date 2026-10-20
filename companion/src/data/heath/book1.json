@@ -1,0 +1,1399 @@
+{
+ "book": 1,
+ "source": {
+  "translator": "Thomas Little Heath",
+  "title": "The Thirteen Books of Euclid's Elements",
+  "edition": "Cambridge University Press, 1908",
+  "transcription": "Perseus Digital Library, Tufts University (CC BY-SA 4.0 encoding of the public-domain text)",
+  "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/70427323b61267cdcd0256b9b02009c23392de07/data/tlg1799/tlg001/tlg1799.tlg001.perseus-eng2.xml"
+ },
+ "definitions": [
+  {
+   "id": "I.Def.1",
+   "n": 1,
+   "text": "A _point_ is that which has no part.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.2",
+   "n": 2,
+   "text": "A _line_ is breadthless length.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.3",
+   "n": 3,
+   "text": "The extremities of a line are points.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.4",
+   "n": 4,
+   "text": "A _straight line_ is a line which lies evenly with the points on itself.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.5",
+   "n": 5,
+   "text": "A _surface_ is that which has length and breadth only.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.6",
+   "n": 6,
+   "text": "The extremities of a surface are lines.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.7",
+   "n": 7,
+   "text": "A _plane surface_ is a surface which lies evenly with the straight lines on itself.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.8",
+   "n": 8,
+   "text": "A _plane angle_ is the inclination to one another of two lines in a plane which meet one another and do not lie in a straight line.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.9",
+   "n": 9,
+   "text": "And when the lines containing the angle are straight, the angle is called _rectilineal_.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.10",
+   "n": 10,
+   "text": "When a straight line set up on a straight line makes the adjacent angles equal to one another, each of the equal angles is _right_, and the straight line standing on the other is called a _perpendicular_ to that on which it stands.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.11",
+   "n": 11,
+   "text": "An _obtuse angle_ is an angle greater than a right angle.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.12",
+   "n": 12,
+   "text": "An _acute angle_ is an angle less than a right angle.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.13",
+   "n": 13,
+   "text": "A _boundary_ is that which is an extremity of anything.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.14",
+   "n": 14,
+   "text": "A _figure_ is that which is contained by any boundary or boundaries.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.15",
+   "n": 15,
+   "text": "A _circle_ is a plane figure contained by one line such that all the straight lines falling upon it from one point among those lying within the figure are equal to one another;",
+   "notes": []
+  },
+  {
+   "id": "I.Def.16",
+   "n": 16,
+   "text": "And the point is called the _centre_ of the circle.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.17",
+   "n": 17,
+   "text": "A _diameter_ of the circle is any straight line drawn through the centre and terminated in both directions by the circumference of the circle, and such a straight line also bisects the circle.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.18",
+   "n": 18,
+   "text": "A _semicircle_ is the figure contained by the diameter and the circumference cut off by it. And the centre of the semicircle is the same as that of the circle.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.19",
+   "n": 19,
+   "text": "Rectilineal figures are those which are contained by straight lines, trilateral figures being those contained by three, quadrilateral those contained by four, and multilateral those contained by more than four straight lines.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.20",
+   "n": 20,
+   "text": "Of trilateral figures, an equilateral triangle is that which has its three sides equal, an isosceles triangle that which has two of its sides alone equal, and a scalene triangle that which has its three sides unequal.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.21",
+   "n": 21,
+   "text": "Further, of trilateral figures, a right-angled triangle is that which has a right angle, an obtuse-angled triangle that which has an obtuse angle, and an acute-angled triangle that which has its three angles acute.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.22",
+   "n": 22,
+   "text": "Of quadrilateral figures, a square is that which is both equilateral and right-angled; an oblong that which is right-angled but not equilateral; a rhombus that which is equilateral but not right-angled; and a rhomboid that which has its opposite sides and angles equal to one another but is neither equilateral nor right-angled. And let quadrilaterals other than these be called trapezia.",
+   "notes": []
+  },
+  {
+   "id": "I.Def.23",
+   "n": 23,
+   "text": "Parallel straight lines are straight lines which, being in the same plane and being produced indefinitely in both directions, do not meet one another in either direction.",
+   "notes": []
+  }
+ ],
+ "postulates": [
+  {
+   "id": "I.Post.1",
+   "n": 1,
+   "text": "To draw a straight line from any point to any point.",
+   "notes": [],
+   "intro": "Let the following be postulated:"
+  },
+  {
+   "id": "I.Post.2",
+   "n": 2,
+   "text": "To produce a finite straight line continuously in a straight line.",
+   "notes": []
+  },
+  {
+   "id": "I.Post.3",
+   "n": 3,
+   "text": "To describe a circle with any centre and distance.",
+   "notes": []
+  },
+  {
+   "id": "I.Post.4",
+   "n": 4,
+   "text": "That all right angles are equal to one another.",
+   "notes": []
+  },
+  {
+   "id": "I.Post.5",
+   "n": 5,
+   "text": "That, if a straight line falling on two straight lines make the interior angles on the same side less than two right angles, the two straight lines, if produced indefinitely, meet on that side on which are the angles less than the two right angles.",
+   "notes": []
+  }
+ ],
+ "commonNotions": [
+  {
+   "id": "I.CN.1",
+   "n": 1,
+   "text": "Things which are equal to the same thing are also equal to one another.",
+   "notes": []
+  },
+  {
+   "id": "I.CN.2",
+   "n": 2,
+   "text": "If equals be added to equals, the wholes are equal.",
+   "notes": []
+  },
+  {
+   "id": "I.CN.3",
+   "n": 3,
+   "text": "If equals be subtracted from equals, the remainders are equal.",
+   "notes": []
+  },
+  {
+   "id": "I.CN.4",
+   "n": 4,
+   "text": "Things which coincide with one another are equal to one another.",
+   "notes": [],
+   "heibergNumber": 7
+  },
+  {
+   "id": "I.CN.5",
+   "n": 5,
+   "text": "The whole is greater than the part.",
+   "notes": [],
+   "heibergNumber": 8
+  }
+ ],
+ "propositions": [
+  {
+   "id": "I.1",
+   "n": 1,
+   "enunciation": "On a given finite straight line to construct an equilateral triangle.",
+   "proof": [
+    "Let {AB} be the given finite straight line.",
+    "Thus it is required to construct an equilateral triangle on the straight line {AB}.",
+    "With centre {A} and distance {AB} let the circle {BCD} be described; [[I.Post.3|Post. 3]] again, with centre {B} and distance {BA} let the circle {ACE} be described; [[I.Post.3|Post. 3]] and from the point {C}, in which the circles cut one another, to the points {A}, {B} let the straight lines {CA}, {CB} be joined. [[I.Post.1|Post. 1]]",
+    "Now, since the point {A} is the centre of the circle {CDB}, {AC} is equal to {AB}. [[I.Def.15|Def. 15]]",
+    "Again, since the point {B} is the centre of the circle {CAE}, {BC} is equal to {BA}. [[I.Def.15|Def. 15]]",
+    "But {CA} was also proved equal to {AB}; therefore each of the straight lines {CA}, {CB} is equal to {AB}.",
+    "And things which are equal to the same thing are also equal to one another; [[I.CN.1|C.N. 1]] therefore {CA} is also equal to {CB}.",
+    "Therefore the three straight lines {CA}, {AB}, {BC} are equal to one another.",
+    "Therefore the triangle {ABC} is equilateral; and it has been constructed on the given finite straight line {AB}."
+   ],
+   "qed": "(Being) what it was required to do.",
+   "notes": [
+    {
+     "lemma": "1. On a given finite straight line.",
+     "text": "The Greek usage differs from ours in that the definite article is employed in such a phrase as this where we have the indefinite. ἐπὶ τῆς δοθείσης εὐθείας πεπερασμένης, “on _the_ given finite straight line,” i.e. the finite straight line which we choose to take."
+    },
+    {
+     "lemma": "3. Let AB be the given finite straight line.",
+     "text": "To be strictly literal we should have to translate in the reverse order “let the given finite straight line be the (straight line) {AB}”; but this order is inconvenient in other cases where there is more than one datum, e.g. in the _setting-out_ of [[I.2|I. 2]], “let the given point be {A}, and the given straight line {BC},” the awkwardness arising from the omission of the verb in the second clause. Hence I have, for clearness' sake, adopted the other order throughout the book."
+    },
+    {
+     "lemma": "8. let the circle BCD be described.",
+     "text": "Two things are here to be noted, (1) the elegant and practically universal use of the perfect passive imperative in constructions, γεγράφθω meaning of course “let it _have been_ described” or “suppose it described,” (2) the impossibility of expressing shortly in a translation the force of the words in their original order. κύκλος γεγράφθω ὸ ΒΓΔ means literally “let a circle have been described, the (circle, namely, which I denote by) {BCD}.” Similarly we have lower down “let straight lines, (namely) the (straight lines) {CA}, {CB}, be joined,” ἐπεζεύχθωσαν εὐθεῖαι αί ΓΑ, ΓΒ. There seems to be no practicable alternative, in English, but to translate as I have done in the text."
+    },
+    {
+     "lemma": "13. from the point C....",
+     "text": "Euclid is careful to adhere to the phraseology of [[I.Post.1|Postulate 1]] except that he speaks of “joining” (ἐπεζεύχθωσαν) instead of “drawing” (γράφειν). He does not allow himself to use the shortened expression “let the straight line {FC} be joined” (without mention of the points {F}, {C}) until [[I.5|I. 5]]."
+    },
+    {
+     "lemma": "20. each of the straight lines CA, CB",
+     "text": ", ἑκατέρα τῶν ΓΑ, ΓΒ and **24. the three straight** lines CA, AB, BC, αἱ τρεῖς αἱ ΓΑ, ΑΒ, ΒΓ. I have, here and in all similar expressions, inserted the words “straight lines” which are not in the Greek. The possession of the inflected definite article enables the Greek to omit the words, but this is not possible in English, and it would scarcely be English to write “each of {CA}, {CB}” or “the three {CA}, {AB}, {BC}.”"
+    }
+   ]
+  },
+  {
+   "id": "I.2",
+   "n": 2,
+   "enunciation": "To place at a given point (as an extremity) a straight line equal to a given straight line.",
+   "proof": [
+    "Let {A} be the given point, and {BC} the given straight line.",
+    "Thus it is required to place at the point {A} (as an extremity) a straight line equal to the given straight line {BC}.",
+    "From the point {A} to the point {B} let the straight line {AB} be joined; [[I.Post.1|Post. 1]] and on it let the equilateral triangle {DAB} be constructed. [[I.1|I. 1]]",
+    "Let the straight lines {AE}, {BF} be produced in a straight line with {DA}, {DB}; [[I.Post.2|Post. 2]] with centre {B} and distance {BC} let the circle {CGH} be described; [[I.Post.3|Post. 3]] and again, with centre {D} and distance {DG} let the circle {GKL} be described. [[I.Post.3|Post. 3]]",
+    "Then, since the point {B} is the centre of the circle {CGH}, {BC} is equal to {BG}.",
+    "Again, since the point {D} is the centre of the circle {GKL}, {DL} is equal to {DG}.",
+    "And in these {DA} is equal to {DB}; therefore the remainder {AL} is equal to the remainder {BG}. [[I.CN.3|C.N. 3]]",
+    "But {BC} was also proved equal to {BG}; therefore each of the straight lines {AL}, {BC} is equal to {BG}.",
+    "And things which are equal to the same thing are also equal to one another; [[I.CN.1|C.N. 1]] therefore {AL} is also equal to {BC}.",
+    "Therefore at the given point {A} the straight line {AL} is placed equal to the given straight line {BC}."
+   ],
+   "qed": "(Being) what it was required to do.",
+   "notes": [
+    {
+     "lemma": "1. (as an extremity).",
+     "text": "I have inserted these words because “to place a straight line _at_ a given point” (πρὸς τῷ δοθέντι σημείῳ) is not quite clear enough, at least in English."
+    },
+    {
+     "lemma": "11. Let the straight lines AE, BF be produced....",
+     "text": "It will be observed that in this first application of [[I.Post.2|Postulate 2]], and again in [[I.5|I. 5]], Euclid speaks of the _continuation_ of the straight line as that which is produced in such cases, ἐκβεβλήσθωσαν and προσεκβεβλήσθωσαν meaning little more than _drawing_ straight lines “in a straight line with” the given straight lines. The first place in which Euclid uses phraseology exactly corresponding to ours when speaking of a straight line being produced is in [[I.16|I. 16]]: “let one side of it, {BC}, be produced to {D}” (προσεκβεβλήσθω αὐτοῦ μία πλευρὰ ἡ ΒΓ ἐπὶ τὸ Δ)."
+    },
+    {
+     "lemma": "23. the remainder AL...the remainder BG.",
+     "text": "The Greek expressions are λοιπὴ ἡ ΑΛ and λοιπῇ τῇ BH, and the literal translation would be “{AL} (or {BG}) _remaining_,” but the shade of meaning conveyed by the position of the definite article can hardly be expressed in English."
+    }
+   ]
+  },
+  {
+   "id": "I.3",
+   "n": 3,
+   "enunciation": "Given two unequal straight lines, to cut off from the greater a straight line equal to the less.",
+   "proof": [
+    "Let {AB}, {C} be the two given unequal straight lines, and let {AB} be the greater of them.",
+    "Thus it is required to cut off from {AB} the greater a straight line equal to {C} the less.",
+    "At the point {A} let {AD} be placed equal to the straight line {C}; [[I.2|I. 2]] and with centre {A} and distance {AD} let the circle {DEF} be described. [[I.Post.3|Post. 3]] Now, since the point {A} is the centre of the circle {DEF}, {AE} is equal to {AD}. [[I.Def.15|Def. 15]] But {C} is also equal to {AD}. Therefore each of the straight lines {AE}, {C} is equal to {AD}; so that {AE} is also equal to {C}. [[I.CN.1|C.N. 1]]",
+    "Therefore, given the two straight lines {AB}, {C}, from {AB} the greater {AE} has been cut off equal to {C} the less."
+   ],
+   "qed": "(Being) what it was required to do.",
+   "notes": []
+  },
+  {
+   "id": "I.4",
+   "n": 4,
+   "enunciation": "If two triangles have the two sides equal to two sides respectively, and have the angles contained by the equal straight lines equal, they will also have the base equal to the base, the triangle will be equal to the triangle, and the remaining angles will be equal to the remaining angles respectively, namely those which the equal sides subtend.",
+   "proof": [
+    "Let {ABC}, {DEF} be two triangles having the two sides {AB}, {AC} equal to the two sides {DE}, {DF} respectively, namely {AB} to {DE} and {AC} to {DF}, and the angle {BAC} equal to the angle {EDF}.",
+    "I say that the base {BC} is also equal to the base {EF}, the triangle {ABC} will be equal to the triangle {DEF}, and the remaining angles will be equal to the remaining angles respectively, namely those which the equal sides subtend, that is, the angle {ABC} to the angle {DEF}, and the angle {ACB} to the angle {DFE}.",
+    "For, if the triangle {ABC} be applied to the triangle {DEF}, and if the point {A} be placed on the point {D} and the straight line {AB} on {DE}, then the point {B} will also coincide with {E}, because {AB} is equal to {DE}.",
+    "Again, {AB} coinciding with {DE}, the straight line {AC} will also coincide with {DF}, because the angle {BAC} is equal to the angle {EDF}; hence the point {C} will also coincide with the point {F}, because {AC} is again equal to {DF}.",
+    "But {B} also coincided with {E}; hence the base {BC} will coincide with the base {EF}.",
+    "[For if, when {B} coincides with {E} and {C} with {F}, the base {BC} does not coincide with the base {EF}, two straight lines will enclose a space: which is impossible. Therefore the base {BC} will coincide with {EF}] and will be equal to it. [[I.CN.4|C.N. 4]]",
+    "Thus the whole triangle {ABC} will coincide with the whole triangle {DEF}, and will be equal to it.",
+    "And the remaining angles will also coincide with the remaining angles and will be equal to them, the angle {ABC} to the angle {DEF}, and the angle {ACB} to the angle {DFE}.",
+    "Therefore etc."
+   ],
+   "qed": "(Being) what it was required to prove.",
+   "notes": [
+    {
+     "lemma": "1-3",
+     "text": "It is a fact that Euclid's enunciations not infrequently leave something to be desired in point of clearness and precision. Here he speaks of the triangles having “the angle equal to the angle, namely the angle contained by the equal straight lines” (τὴν γωνίαν τῇ γωνίᾳ ἴσην ἔχῃ τὴν ὑπὸ τῶν ἴσων εὐθειῶν περιεχομένην), only one of the two angles being described in the latter expression (in the accusative), and a similar expression in the dative being left to be understood of the other angle. It is curious too that, after mentioning two “_sides_,” he speaks of the angles contained by the equal “_straight lines_,” not “_sides_.” It may be that he wished to adhere scrupulously, at the outset, to the phraseology of the definitions, where the angle is the inclination to one another of two _lines_ or _straight lines_. Similarly in the enunciation of [[I.5|I. 5]] he speaks of producing the equal “straight lines” as if to keep strictly to the wording of [[I.Post.2|Postulate 2]]."
+    },
+    {
+     "lemma": "2. respectively.",
+     "text": "I agree with Mr H. M. Taylor (Euclid, p. ix) that it is best to abandon the traditional translation of “each to each,” which would naturally seem to imply that all the four magnitudes are equal rather than (as the Greek ὲκατέρα ὲκατέρᾳ does) that one is equal to one and the other to the other."
+    },
+    {
+     "lemma": "3. the base.",
+     "text": "Here we have the word _base_ used for the first time in the Elements. Proclus explains it (p. 236, 12-15) as meaning (1), when no side of a triangle has been mentioned before, the side “which is on a level with the sight” (τὴν πρὸς τῇ ὄψει κειμένην), and (2), when two sides have already been mentioned, the third side. Proclus thus avoids the mistake made by some modern editors who explain the term exclusively with reference to the case where two sides have been mentioned before. That this is an error is proved (1) by the occurrence of the term in the enunciations of [[I.37|I. 37]] etc. about triangles on the same base and equal bases, (2) by the application of the same term to the bases of parallelograms in [[I.35|I. 35]] etc. The truth is that the use of the term must have been suggested by the practice of drawing the particular side horizontally, as it were, and the rest of the figure above it. The _base_ of a figure was therefore spoken of, primarily, in the same sense as the base of anything else, e.g. of a pedestal or column; but when, as in [[I.5|I. 5]], two triangles were compared occupying other than the normal positions which gave rise to the name, and when two sides had been previously mentioned, the base was, as Proclus says, necessarily the third side."
+    },
+    {
+     "lemma": "6. subtend.",
+     "text": "ὑποτείνειν ὑπό, “to stretch under,” with accusative."
+    },
+    {
+     "lemma": "9. the angle BAC.",
+     "text": "The full Greek expression would be ἡ ὑπὸ τῶν ΒΑ, ΑΓ περιεχομένη γωνία, “the angle contained by the (straight lines) {BA}, {AC}.” But it was a common practice of Greek geometers, e.g. of Archimedes and Apollonius (and Euclid too in Books X.—XIII.), to use the abbreviation αἱ ΒΑΓ for αἱ ΒΑ, ΑΓ, “the (straight lines) {BA}, {AC}.” Thus, on περιεχομένη being dropped, the expression would become first ἡ ὑπὸ τῶν ΒΑΓ γωνία, then ἡ ὑπὸ ΒΑΓ γωνία, and finally ἡ ὑπὸ ΒΑΓ, without γωνία, as we regularly find it in Euclid."
+    },
+    {
+     "lemma": "17. if the triangle be applied to..., 23. coincide.",
+     "text": "The difference between the technical use of the passive ἐφαρμόζεσθαι “to be _applied_ (to),” and of the active ἐφαρμόζειν “to _coincide_ (with)” has been noticed above (note on Common Notion 4, pp. 224-5)."
+    },
+    {
+     "lemma": "32. [For if, when B coincides...36. coincide with EF].",
+     "text": "Heiberg (Paralipomena su Euklid in Hermes, XXXVIII., 1903, p. 56) has pointed out, as a conclusive reason for regarding these words as an early interpolation, that the text of an-Nairīzī (Codex Leidensis 399, 1, ed. Besthorn-Heiberg, p. 55) does not give the words in this place but after the conclusion Q.E.D., which shows that they constitute a _scholium_ only. They were doubtless added by some commentator who thought it necessary to explain the immediate inference that, since {B} coincides with {E} and {C} with {F}, the straight line {BC} coincides with the straight line {EF}, an inference which really follows from the definition of a straight line and [[I.Post.1|Post. 1]]; and no doubt the Postulate that “Two straight lines cannot enclose a space” (afterwards placed among the Common Notions) was interpolated at the same time."
+    },
+    {
+     "lemma": "44. Therefore etc.",
+     "text": "Where (as here) Euclid's _conclusion_ merely repeats the enunciation word for word, I shall avoid the repetition and write “Therefore etc.” simply."
+    }
+   ]
+  },
+  {
+   "id": "I.5",
+   "n": 5,
+   "enunciation": "In isosceles triangles the angles at the base are equal to one another, and, if the equal straight lines be produced further, the angles under the base will be equal to one another.",
+   "proof": [
+    "Let {ABC} be an isosceles triangle having the side {AB} equal to the side {AC}; and let the straight lines {BD}, {CE} be produced further in a straight line with {AB}, {AC}. [[I.Post.2|Post. 2]]",
+    "I say that the angle {ABC} is equal to the angle {ACB}, and the angle {CBD} to the angle {BCE}.",
+    "Let a point {F} be taken at random on {BD}; from {AE} the greater let {AG} be cut off equal to {AF} the less; [[I.3|I. 3]] and let the straight lines {FC}, {GB} be joined. [[I.Post.1|Post. 1]]",
+    "Then, since {AF} is equal to {AG} and {AB} to {AC}, the two sides {FA}, {AC} are equal to the two sides {GA}, {AB}, respectively; and they contain a common angle, the angle {FAG}. Therefore the base {FC} is equal to the base {GB}, and the triangle {AFC} is equal to the triangle {AGB}, and the remaining angles will be equal to the remaining angles respectively, namely those which the equal sides subtend, that is, the angle {ACF} to the angle {ABG}, and the angle {AFC} to the angle {AGB}. [[I.4|I. 4]]",
+    "And, since the whole {AF} is equal to the whole {AG}, and in these {AB} is equal to {AC}, the remainder {BF} is equal to the remainder {CG}.",
+    "But {FC} was also proved equal to {GB}; therefore the two sides {BF}, {FC} are equal to the two sides {CG}, {GB} respectively; and the angle {BFC} is equal to the angle {CGB}, while the base {BC} is common to them; therefore the triangle {BFC} is also equal to the triangle {CGB}, and the remaining angles will be equal to the remaining angles respectively, namely those which the equal sides subtend; therefore the angle {FBC} is equal to the angle {GCB}, and the angle {BCF} to the angle {CBG}.",
+    "Accordingly, since the whole angle {ABG} was proved equal to the angle {ACF}, and in these the angle {CBG} is equal to the angle {BCF}, the remaining angle {ABC} is equal to the remaining angle {ACB}; and they are at the base of the triangle {ABC}. But the angle {FBC} was also proved equal to the angle {GCB}; and they are under the base.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "2. the equal straight lines",
+     "text": "(meaning the equal _sides_). Cf. note on the similar expression in [[I.4|Prop. 4]], lines 2, 3."
+    },
+    {
+     "lemma": "10. Let a point F be taken at random on BD",
+     "text": ", εἰλήφθω ἐπὶ τῆς ΒΔ τυχὸν σημεῖον τὸ Ζ, where τυχὸν σημεῖονmeans “a chance point.”"
+    },
+    {
+     "lemma": "17. the two sides FA, AC are equal to the two sides GA, AB respectively,",
+     "text": "δύο αἱ ΖΑ, ΑΓ δυσὶ ταῖς ΗΑ, ΑΒ ἴσαι εἰσὶν ἑκατέρα ἑκατέρᾳ. Here, and in numberless later passages, I have inserted the word “sides” for the reason given in the note on [[I.1|I. 1]], line 20. It would have been permissible to supply either “straight lines” or “sides”; but on the whole “sides” seems to be more in accordance with the phraseology of [[I.4|I. 4]]."
+    },
+    {
+     "lemma": "33. the base BC is common to them,",
+     "text": "i.e., apparently, common to the _angles_, as the αὐτῶν in βάσις αὐτῶν κοινὴ can only refer to γωνία and γωνίᾳ preceding. Simson wrote “and the base {BC} is common to the two triangles {BFC}, {CGB}”; Todhunter left out these words as being of no use and tending to perplex a beginner. But Euclid evidently chose to quote the conclusion of [[I.4|I. 4]] exactly; the first phrase of that conclusion is that the bases (of the two triangles) are equal, and, as the equal bases are here the _same_ base, Euclid naturally substitutes the word “common” for “equal.”"
+    },
+    {
+     "lemma": "48",
+     "text": "As “(Being) what it was required to prove” (or “do” ) is somewhat long, I shall henceforth write the time-honoured “Q. E. D.” and “Q. E. F.” for ὅπερ ἔδει δεῖξαι and ὅπερ ἔδει ποιῆσαι."
+    }
+   ]
+  },
+  {
+   "id": "I.6",
+   "n": 6,
+   "enunciation": "If in a triangle two angles be equal to one another, the sides which subtend the equal angles will also be equal to one another.",
+   "proof": [
+    "Let {ABC} be a triangle having the angle {ABC} equal to the angle {ACB};",
+    "I say that the side {AB} is also equal to the side {AC}.",
+    "For, if {AB} is unequal to {AC}, one of them is greater.",
+    "Let {AB} be greater; and from {AB} the greater let {DB} be cut off equal to {AC} the less;",
+    "let {DC} be joined.",
+    "Then, since {DB} is equal to {AC}, and {BC} is common, the two sides {DB}, {BC} are equal to the two sides {AC}, {CB} respectively; and the angle {DBC} is equal to the angle {ACB}; therefore the base {DC} is equal to the base {AB}, and the triangle {DBC} will be equal to the triangle {ACB}, the less to the greater: which is absurd. Therefore {AB} is not unequal to {AC}; it is therefore equal to it.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": []
+  },
+  {
+   "id": "I.7",
+   "n": 7,
+   "enunciation": "Given two straight lines constructed on a straight line (from its extremities) and meeting in a point, there cannot be constructed on the same straight line (from its extremities), and on the same side of it, two other straight lines meeting in another point and equal to the former two respectively, namely each to that which has the same extremity with it.",
+   "proof": [
+    "For, if possible, given two straight lines {AC}, {CB} constructed on the straight line {AB} and meeting at the point {C}, let two other straight lines {AD}, {DB} be constructed on the same straight line {AB}, on the same side of it, meeting in another point {D} and equal to the former two respectively, namely each to that which has the same extremity with it, so that {CA} is equal to {DA} which has the same extremity {A} with it, and {CB} to {DB} which has the same extremity {B} with it; and let {CD} be joined.",
+    "Then, since {AC} is equal to {AD}, the angle {ACD} is also equal to the angle {ADC}; [[I.5|I. 5]] therefore the angle {ADC} is greater than the angle {DCB}; therefore the angle {CDB} is much greater than the angle {DCB}.",
+    "Again, since {CB} is equal to {DB}, the angle {CDB} is also equal to the angle {DCB}. But it was also proved much greater than it: which is impossible.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "1-6",
+     "text": "In an English translation of the enunciation of this proposition it is absolutely necessary, in order to make it intelligible, to insert some words which are not in the Greek. The reason is partly that the Greek enunciation is itself very elliptical, and partly that some words used in it conveyed more meaning than the corresponding words in English do. Particularly is this the case with οὐ συσταθήσονται ἐπί “there shall not be constructed upon,” since συνίστασθαι is the regular word for constructing a _triangle_ in particular. Thus a Greek would easily understahd συσταθήσονται ἐπί as meaning the construction of two lines _forming a triangle on_ a given straight line as base; whereas to “construct two straight lines on a straight line” is not in English sufficiently definite unless we explain that they are drawn from the _ends_ of the straight line to _meet_ at a point. I have had the less hesitation in putting in the words “from its extremities” because they are actually used by Euclid in the somewhat similar enunciation of [[I.21|I. 21]].\n\nHow impossible a literal translation into English is, if it is to convey the meaning of the enunciation intelligibly, will be clear from the following attempt to render literally: “On the same straight line there shall not be constructed two other straight lines equal, each to each, to the same two straight lines, (terminating) at different points on the same side, having the same extremities as the original straight lines” (ἐπὶ τῆς αὐτῆς εὐθείας δύο ταῖς αὐταῖς εὐθείαις ἄλλαι δύο εὐθεῖαι ἴσαι ἑκατὲρα ἑκατέρα οὐ συσταθήσονται πρὸς ἄλλῳ καἰ ἄλλῳ σημείῳ ἐπἰ τὰ αὐτὰ μέρη τὰ αὐτὰ πέρατα ἔχουσαι ταῖς ἐξ ἀρχῆς εὐθείαις).\n\nThe reason why Euclid allowed himself to use, in this enunciation, language apparently so obscure is no doubt that the phraseology was traditional and therefore, vague as it was, had a conventional meaning which the contemporary geometer well understood. This is proved, I think, by the occurrence in Aristotle (Meteorologica III. 5, 376 a 2 sqq.) of the very same, evidently technical, expressions. Aristotle is there alluding to the theorem given by Eutocius from Apollonius' Plane Loci to the effect that, if {H}, {K} be two fixed points and {M} such a variable point that the ratio of {MH} to {MK} is a given ratio (not one of equality), the locus of {M} is a circle. (For an account of this theorem see note on [[VI.3|VI. 3]] below.) Now Aristotle says “The lines drawn up from {H}, {K} in this ratio cannot be constructed to two different points of the semicircle {A}” (αἰ οὖν ἀπὸ τῶν ΗΚ ἀναγόμεναι γραμμαὶ ἐν τούτῳ τῷ λόγῳ οὐ συσταθήσουται τοῦ ἐφ̓ ᾦ Α ἡμικυκλίου πρὸς ἄλλο καὶ ἄλλο σημεῖον).\n\nIf a paraphrase is allowed instead of a translation adhering as closely as possible to the original, Simson's is the best that could be found, since the fact that the straight lines form _triangles_ on the same base is really conveyed in the Greek. Simson's enunciation is, Upon the same base, _and on the same side of it_, _there cannot be two triangles that have their sides which are terminated in one extremity of the base equal to one another_, _and likewise those which are terminated at the other extremity_. Th. Taylor (the translator of Proclus) attacks Simson's alteration as “indiscreet” and as detracting from the beauty and accuracy of Euclid's enunciation which are enlarged upon by Proclus in his commentary. Yet, when Taylor says “Whatever difficulty learners may find in conceiving this proposition abstractedly is easily removed by its exposition in the figure,” he really gives his case away. The fact is that Taylor, always enthusiastic over his author, was nettled by Simson's slighting remarks on Proclus' comments on the proposition. Simson had said, with reference to Proclus' explanation of the bearing of the second part of [[I.5|I. 5]] on [[I.7|I. 7]], that it was not “worth while to relate his trifles at full length,” to which Taylor retorts “But Mr Simson was no philosopher; and therefore the greatest part of these Commentaries must be considered by him as trifles, from the want of a philosophic genius to comprehend their meaning, and a taste superior to that of a _mere mathematician_, to discover their beauty and elegance.”"
+    },
+    {
+     "lemma": "20",
+     "text": "It would be natural to insert here the step “but the angle {ACD} is greater than the angle {BCD}. [[I.CN.5|C.N. 5]].”"
+    },
+    {
+     "lemma": "21",
+     "text": "much greater, literally “greater by much” (πολλῷ μεἰζων). Simson and those who follow him translate: “_much more then_ is the angle _BDC greater_ than the angle {BCD},” but the Greek for this would have to be πολλῷ (or πολὺ[ρπαρ ] μᾶλλόν ἐστι...μείζων. πολλῷ μᾶλλον, however, though used by Apollonius, is not, apparently, found in Euclid or Archimedes."
+    }
+   ]
+  },
+  {
+   "id": "I.8",
+   "n": 8,
+   "enunciation": "If two triangles have the two sides equal to two sides respectively, and have also the base equal to the base, they will also have the angles equal which are contained by the equal straight lines.",
+   "proof": [
+    "Let {ABC}, {DEF} be two triangles having the two sides {AB}, {AC} equal to the two sides {DE}, {DF} respectively, namely {AB} to {DE}, and {AC} to {DF}; and let them have the base {BC} equal to the base {EF};",
+    "I say that the angle {BAC} is also equal to the angle {EDF}.",
+    "For, if the triangle {ABC} be applied to the triangle {DEF}, and if the point {B} be placed on the point {E} and the straight line {BC} on {EF}, the point {C} will also coincide with {F}, because {BC} is equal to {EF}.",
+    "Then, {BC} coinciding with {EF}, {BA}, {AC} will also coincide with {ED}, {DF}; for, if the base {BC} coincides with the base {EF}, and the sides {BA}, {AC} do not coincide with {ED}, {DF} but fall beside them as {EG}, {GF}, then, given two straight lines constructed on a straight line (from its extremities) and meeting in a point, there will have been constructed on the same straight line (from its extremities), and on the same side of it, two other straight lines meeting in another point and equal to the former two respectively, namely each to that which has the same extremity with it. But they cannot be so constructed. [[I.7|I. 7]]",
+    "Therefore it is not possible that, if the base {BC} be applied to the base {EF}, the sides {BA}, {AC} should not coincide with {ED}, {DF}; they will therefore coincide, so that the angle {BAC} will also coincide with the angle {EDF}, and will be equal to it.",
+    "If therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "19. BA, AC.",
+     "text": "The text has here “{BA}, {CA}.”"
+    },
+    {
+     "lemma": "21",
+     "text": "fall beside them. The Greek has the future, παραλλάξουσι. παραλλάττω means “to pass by without touching,” “to miss” or “to deviate.”"
+    }
+   ]
+  },
+  {
+   "id": "I.9",
+   "n": 9,
+   "enunciation": "To bisect a given rectilineal angle.",
+   "proof": [
+    "Let the angle {BAC} be the given rectilineal angle.",
+    "Thus it is required to bisect it.",
+    "Let a point {D} be taken at random on {AB}; let {AE} be cut off from {AC} equal to {AD}; [[I.3|I. 3]] let {DE} be joined, and on {DE} let the equilateral triangle {DEF} be constructed; let {AF} be joined.",
+    "I say that the angle {BAC} has been bisected by the straight line {AF}.",
+    "For, since {AD} is equal to {AE}, and {AF} is common, the two sides {DA}, {AF} are equal to the two sides {EA}, {AF} respectively.",
+    "And the base {DF} is equal to the base {EF}; therefore the angle {DAF} is equal to the angle {EAF}. [[I.8|I. 8]]",
+    "Therefore the given rectilineal angle {BAC} has been bisected by the straight line {AF}."
+   ],
+   "qed": "Q. E. F.",
+   "notes": []
+  },
+  {
+   "id": "I.10",
+   "n": 10,
+   "enunciation": "To bisect a given finite straight line.",
+   "proof": [
+    "Let {AB} be the given finite straight line.",
+    "Thus it is required to bisect the finite straight line {AB}.",
+    "Let the equilateral triangle {ABC} be constructed on it, [[I.1|I. 1]] and let the angle {ACB} be bisected by the straight line {CD}; [[I.9|I. 9]]",
+    "I say that the straight line {AB} has been bisected at the point {D}.",
+    "For, since {AC} is equal to {CB}, and {CD} is common, the two sides {AC}, {CD} are equal to the two sides {BC}, {CD} respectively; and the angle {ACD} is equal to the angle {BCD}; therefore the base {AD} is equal to the base {BD}. [[I.4|I. 4]]",
+    "Therefore the given finite straight line {AB} has been bisected at {D}."
+   ],
+   "qed": "Q. E. F.",
+   "notes": []
+  },
+  {
+   "id": "I.11",
+   "n": 11,
+   "enunciation": "To draw a straight line at right angles to a given straight line from a given point on it.",
+   "proof": [
+    "Let {AB} be the given straight line, and {C} the given point on it.",
+    "Thus it is required to draw from the point {C} a straight line at right angles to the straight line {AB}.",
+    "Let a point {D} be taken at random on {AC}; let {CE} be made equal to {CD}; [[I.3|I. 3]] on {DE} let the equilateral triangle {FDE} be constructed, [[I.1|I. 1]] and let {FC} be joined;",
+    "I say that the straight line {FC} has been drawn at right angles to the given straight line {AB} from {C} the given point on it.",
+    "For, since {DC} is equal to {CE}, and {CF} is common, the two sides {DC}, {CF} are equal to the two sides {EC}, {CF} respectively; and the base {DF} is equal to the base {FE}; therefore the angle {DCF} is equal to the angle {ECF}; [[I.8|I. 8]] and they are adjacent angles.",
+    "But, when a straight line set up on a straight line makes the adjacent angles equal to one another, each of the equal angles is right; [[I.Def.10|Def. 10]] therefore each of the angles {DCF}, {FCE} is right.",
+    "Therefore the straight line {CF} has been drawn at right angles to the given straight line {AB} from the given point {C} on it."
+   ],
+   "qed": "Q. E. F.",
+   "notes": [
+    {
+     "lemma": "10. let CE be made equal to CD.",
+     "text": "The verb is κείσθω which, as well as the other parts of κεῖμαι, is constantly used for the passive of τίθημι “to _place_”; and the latter word is constantly used in the sense of _making_, e.g., one straight line equal to another straight line."
+    }
+   ]
+  },
+  {
+   "id": "I.12",
+   "n": 12,
+   "enunciation": "To a given infinite straight line, from a given point which is not on it, to draw a perpendicular straight line.",
+   "proof": [
+    "Let {AB} be the given infinite straight line, and {C} the given point which is not on it; thus it is required to draw to the given infinite straight line {AB}, from the given point {C} which is not on it, a perpendicular straight line.",
+    "For let a point {D} be taken at random on the other side of the straight line {AB}, and with centre {C} and distance {CD} let the circle {EFG} be described; [[I.Post.3|Post. 3]] let the straight line {EG} be bisected at {H}, [[I.10|I. 10]] and let the straight lines {CG}, {CH}, {CE} be joined. [[I.Post.1|Post. 1]]",
+    "I say that {CH} has been drawn perpendicular to the given infinite straight line {AB} from the given point {C} which is not on it.",
+    "For, since {GH} is equal to {HE}, and {HC} is common, the two sides {GH}, {HC} are equal to the two sides {EH}, {HC} respectively; and the base {CG} is equal to the base {CE}; therefore the angle {CHG} is equal to the angle {EHC}. [[I.8|I. 8]] And they are adjacent angles.",
+    "But, when a straight line set up on a straight line makes the adjacent angles equal to one another, each of the equal angles is right, and the straight line standing on the other is called a perpendicular to that on which it stands. [[I.Def.10|Def. 10]]",
+    "Therefore {CH} has been drawn perpendicular to the given infinite straight line {AB} from the given point {C} which is not on it."
+   ],
+   "qed": "Q. E. F.",
+   "notes": [
+    {
+     "lemma": "2. a perpendicular straight line",
+     "text": ", κάθετον εὐθεῖαν γραμμἡν. This is the full expression for a _perpendicular_, κάθετος meaning _let fall_ or _let down_, so that the expression corresponds to our _plumb-line_. ἡ κάθετος is however constantly used alone for a perpendicular, γραμμἡ being understood."
+    },
+    {
+     "lemma": "10. on the other side of the straight line AB",
+     "text": ", literally “towards the other parts of the straight line {AB},” ἐπὶ τὰ ἕτερα μέρη τῆς AB. Cf. “on the same side” (ἐπὶ τὰ αὐτὰ μέρη) in [[I.Post.5|Post. 5]] and “in both directions” (ἐφ̓ ἑκάτερα τὰ μἑρη) in [[I.Def.23|Def. 23]]."
+    }
+   ]
+  },
+  {
+   "id": "I.13",
+   "n": 13,
+   "enunciation": "If a straight line set up on a straight line make angles, it will make either two right angles or angles equal to two right angles.",
+   "proof": [
+    "For let any straight line {AB} set up on the straight line {CD} make the angles {CBA}, {ABD};",
+    "I say that the angles {CBA}, {ABD} are either two right angles or equal to two right angles.",
+    "Now, if the angle {CBA} is equal to the angle {ABD}, they are two right angles. [[I.Def.10|Def. 10]]",
+    "But, if not, let {BE} be drawn from the point {B} at right angles to {CD}; [[I.11|I. 11]] therefore the angles {CBE}, {EBD} are two right angles.",
+    "Then, since the angle {CBE} is equal to the two angles {CBA}, {ABE}, let the angle {EBD} be added to each; therefore the angles {CBE}, {EBD} are equal to the three angles {CBA}, {ABE}, {EBD}. [[I.CN.2|C. N. 2]]",
+    "Again, since the angle {DBA} is equal to the two angles {DBE}, {EBA}, let the angle {ABC} be added to each; therefore the angles {DBA}, {ABC} are equal to the three angles {DBE}, {EBA}, {ABC}. [[I.CN.2|C. N. 2]]",
+    "But the angles {CBE}, {EBD} were also proved equal to the same three angles; and things which are equal to the same thing are also equal to one another; [[I.CN.1|C. N. 1]] therefore the angles {CBE}, {EBD} are also equal to the angles {DBA}, {ABC}. But the angles {CBE}, {EBD} are two right angles; therefore the angles {DBA}, {ABC} are also equal to two right angles.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "17. let the angle EBD be added to each,",
+     "text": "literally “let the angle {EBD} be added (so as to be) common,” κοινὴ προσκείσθω ἡ ὑπὸ ΕΒΔ. Similarly κοινὴ ἀφηρήσθω is used of subtracting a straight line or angle from each of two others. “Let the common angle {EBD} be added” is clearly an inaccurate translation, for the angle is not common before it is added, i.e. the κοινὴ is proleptic. “Let the common angle be _subtracted_” as a translation of κοινὴ ἀφηρήσθω would be less unsatisfactory, it is true, but, as it is desirable to use corresponding words when translating the two expressions, it seems hopeless to attempt to keep the word “common,” and I have therefore said “to each” and “from each” simply."
+    }
+   ]
+  },
+  {
+   "id": "I.14",
+   "n": 14,
+   "enunciation": "If with any straight line, and at a point on it, two straight lines not lying on the same side make the adjacent angles equal to two right angles, the two straight lines will be in a straight line with one another.",
+   "proof": [
+    "For with any straight line {AB}, and at the point {B} on it, let the two straight lines {BC}, {BD} not lying on the same side make the adjacent angles {ABC}, {ABD} equal to two right angles;",
+    "I say that {BD} is in a straight line with {CB}.",
+    "For, if {BD} is not in a straight line with {BC}, let {BE} be in a straight line with {CB}.",
+    "Then, since the straight line {AB} stands on the straight line {CBE}, the angles {ABC}, {ABE} are equal to two right angles. [[I.13|I. 13]] But the angles {ABC}, {ABD} are also equal to two right angles; therefore the angles {CBA}, {ABE} are equal to the angles {CBA}, {ABD}. [[I.Post.4 I.CN.1|Post. 4 and C.N. 1]]",
+    "Let the angle {CBA} be subtracted from each; therefore the remaining angle {ABE} is equal to the remaining angle {ABD}, [[I.CN.3|C.N. 3]] the less to the greater: which is impossible. Therefore {BE} is not in a straight line with {CB}.",
+    "Similarly we can prove that neither is any other straight line except {BD}. Therefore {CB} is in a straight line with {BD}.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "1. If with any straight line....",
+     "text": "There is no greater difficulty in translating the works of the Greek geometers than that of accurately giving the force of prepositions. πρός, for instance, is used in all sorts of expressions with various shades of meaning. The present enunciation begins ἐὰν πρός τινι εὐθείᾳ καὶ τῷ πρὸς αὐτῆ σημείῳ, and it is really necessary in this one sentence to translate πρός by three different words, _with_, _at_, and _on_. The first πρός must be translated by _with_ because two straight lines “make” an angle _with_ one another. On the other hand, where the similar expression πρὸς τῇ δοθείση εὐθείᾳ occurs in [[I.23|I. 23]], but it is a question of “constructing” an angle (συστἡσασθαι), we have to say “to construct _on_ a given straight line.” Against would perhaps be the English word coming nearest to expressing all these meanings of πρός, but it would be intolerable as a translation."
+    },
+    {
+     "lemma": "17",
+     "text": "Todhunter points out that for the inference in this line [[I.Post.4|Post. 4]], that all right angles are equal, is necessary as well as the Common Notion that things which are equal to the same thing (or rather, here, to _equal things_) are equal. A similar remark applies to steps in the proofs of [[I.15|I. 15]] and [[I.28|I. 28]]."
+    },
+    {
+     "lemma": "24. we can prove.",
+     "text": "The Greek expresses this by the future of the verb, δείξομεν, “we shall prove,” which however would perhaps be misleading in English."
+    }
+   ]
+  },
+  {
+   "id": "I.15",
+   "n": 15,
+   "enunciation": "If two straight lines cut one another, they make the vertical angles equal to one another.",
+   "proof": [
+    "For let the straight lines {AB}, {CD} cut one another at the point {E};",
+    "I say that the angle {AEC} is equal to the angle {DEB}, and the angle {CEB} to the angle {AED}.",
+    "For, since the straight line {AE} stands on the straight line {CD}, making the angles {CEA}, {AED}, the angles {CEA}, {AED} are equal to two right angles [[I.13|I. 13]]",
+    "Again, since the straight line {DE} stands on the straight line {AB}, making the angles {AED}, {DEB}, the angles {AED}, {DEB} are equal to two right angles. [[I.13|I. 13]]",
+    "But the angles {CEA}, {AED} were also proved equal to two right angles; therefore the angles {CEA}, {AED} are equal to the angles {AED}, {DEB}. [[I.Post.4 I.CN.1|Post. 4 and C. N. 1]] Let the angle {AED} be subtracted from each; therefore the remaining angle {CEA} is equal to the remaining angle {BED}. [[I.CN.3|C. N. 3]]",
+    "Similarly it can be proved that the angles {CEB}, {DEA} are also equal.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "1. the vertical angles.",
+     "text": "The difference between _adjacent_ angles (αἱ ἐφεξῆς γωνίαι) and _vertical_ angles (αἱ κατὰ κορυφὴν γωνίαι) is thus explained by Proclus (p. 298, 14-24). The first term describes the angles made by two straight lines when one only is divided by the other, i.e. when one straight line meets another at a point which is not either of its extremities, but is not itself produced beyond the point of meeting. When the first straight line _is_ produced, so that the lines cross at the point, they make two pairs of _vertical_ angles (which are more clearly described as _vertically opposite_ angles), and which are so called because their convergence is from opposite directions to one point (the intersection of the lines) as vertex (κορυφή)."
+    },
+    {
+     "lemma": "26. at the point of section,",
+     "text": "literally “at the section,” πρὸς τῇ τομῆ."
+    }
+   ],
+   "porism": "[Porism. From this it is manifest that, if two straight lines cut one another, they will make the angles at the point of section equal to four right angles."
+  },
+  {
+   "id": "I.16",
+   "n": 16,
+   "enunciation": "In any triangle, if one of the sides be produced, the exterior angle is greater than either of the interior and opposite angles.",
+   "proof": [
+    "Let {ABC} be a triangle, and let one side of it {BC} be produced to {D};",
+    "I say that the exterior angle {ACD} is greater than either of the interior and opposite angles {CBA}, {BAC}.",
+    "Let {AC} be bisected at {E} [[I.10|I. 10]], and let {BE} be joined and produced in a straight line to {F};",
+    "let {EF} be made equal to {BE}[[I.3|I. 3]], let {FC} be joined [[I.Post.1|Post. 1]], and let {AC} be drawn through to {G} [[I.Post.2|Post. 2]].",
+    "Then, since {AE} is equal to {EC}, and {BE} to {EF}, the two sides {AE}, {EB} are equal to the two sides {CE}, {EF} respectively; and the angle {AEB} is equal to the angle {FEC}, for they are vertical angles. [[I.15|I. 15]] Therefore the base {AB} is equal to the base {FC}, and the triangle {ABE} is equal to the triangle {CFE}, and the remaining angles are equal to the remaining angles respectively, namely those which the equal sides subtend; [[I.4|I. 4]] therefore the angle {BAE} is equal to the angle {ECF}.",
+    "But the angle {ECD} is greater than the angle {ECF}; [[I.CN.5|C. N. 5]] therefore the angle {ACD} is greater than the angle {BAE}.",
+    "Similarly also, if {BC} be bisected, the angle {BCG}, that is, the angle {ACD} [[I.15|I. 15]], can be proved greater than the angle {ABC} as well.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "1. the exterior angle,",
+     "text": "literally “the outside angle,” ἡ ἐκτὸς γωνία."
+    },
+    {
+     "lemma": "2. the interior and opposite angles,",
+     "text": "τῶν ἐντὸς καὶ ἀπεναντίον γωνιῶν."
+    },
+    {
+     "lemma": "12. let AC be drawn through to G.",
+     "text": "The word is διήχθω, a variation on the more usual ἐκβεβλήσθω, “let it be _produced_.”"
+    },
+    {
+     "lemma": "21. CFE,",
+     "text": "in the text “{FEC}.”"
+    }
+   ]
+  },
+  {
+   "id": "I.17",
+   "n": 17,
+   "enunciation": "In any triangle two angles taken together in any manner are less than two right angles.",
+   "proof": [
+    "Let {ABC} be a triangle; I say that two angles of the triangle {ABC} taken together in any manner are less than two right angles.",
+    "For let {BC} be produced to {D}. [[I.Post.2|Post. 2]]",
+    "Then, since the angle {ACD} is an exterior angle of the triangle {ABC},",
+    "it is greater than the interior and opposite angle {ABC}. [[I.16|I. 16]] Let the angle {ACB} be added to each; therefore the angles {ACD}, {ACB} are greater than the angles {ABC}, {BCA}. But the angles {ACD}, {ACB} are equal to two right angles. [[I.13|I. 13]]",
+    "Therefore the angles {ABC}, {BCA} are less than two right angles.",
+    "Similarly we can prove that the angles {BAC}, {ACB} are also less than two right angles, and so are the angles {CAB}, {ABC} as well.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "1. taken together in any manner,",
+     "text": "πάντη μεταλαμβανόμεναι, i.e. any pair added together."
+    }
+   ]
+  },
+  {
+   "id": "I.18",
+   "n": 18,
+   "enunciation": "In any triangle the greater side subtends the greater angle.",
+   "proof": [
+    "For let {ABC} be a triangle having the side {AC} greater than {AB};",
+    "I say that the angle {ABC} is also greater than the angle {BCA}.",
+    "For, since {AC} is greater than {AB}, let {AD} be made equal to {AB} [[I.3|I. 3]], and let {BD} be joined.",
+    "Then, since the angle {ADB} is an exterior angle of the triangle {BCD},",
+    "it is greater than the interior and opposite angle {DCB}. [[I.16|I. 16]]",
+    "But the angle {ADB} is equal to the angle {ABD}, since the side {AB} is equal to {AD}; therefore the angle {ABD} is also greater than the angle {ACB}; therefore the angle {ABC} is much greater than the angle {ACB}.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": []
+  },
+  {
+   "id": "I.19",
+   "n": 19,
+   "enunciation": "In any triangle the greater angle is subtended by the greater side.",
+   "proof": [
+    "Let {ABC} be a triangle having the angle {ABC} greater than the angle {BCA};",
+    "I say that the side {AC} is also greater than the side {AB}.",
+    "For, if not, {AC} is either equal to {AB} or less.",
+    "Now {AC} is not equal to {AB}; for then the angle {ABC} would also have been equal to the angle {ACB}; [[I.5|I. 5]] but it is not; therefore {AC} is not equal to {AB}.",
+    "Neither is {AC} less than {AB}, for then the angle {ABC} would also have been less than the angle {ACB}; [[I.18|I. 18]] but it is not; therefore {AC} is not less than {AB}.",
+    "And it was proved that it is not equal either. Therefore {AC} is greater than {AB}.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": []
+  },
+  {
+   "id": "I.20",
+   "n": 20,
+   "enunciation": "In any triangle two sides taken together in any manner are greater than the remaining one.",
+   "proof": [
+    "For let {ABC} be a triangle; I say that in the triangle {ABC} two sides taken together in any manner are greater than the remaining one, namely {BA}, {AC} greater than {BC}, {AB}, {BC} greater than {AC}, {BC}, {CA} greater than {AB}.",
+    "For let {BA} be drawn through to the point {D}, let {DA} be made equal to {CA}, and let {DC} be joined.",
+    "Then, since {DA} is equal to {AC}, the angle {ADC} is also equal to the angle {ACD}; [[I.5|I. 5]] therefore the angle {BCD} is greater than the angle {ADC}. [[I.CN.5|C.N. 5]]",
+    "And, since {DCB} is a triangle having the angle {BCD} greater than the angle {BDC}, and the greater angle is subtended by the greater side, [[I.19|I. 19]] therefore {DB} is greater than {BC}.",
+    "But {DA} is equal to {AC}; therefore {BA}, {AC} are greater than {BC}.",
+    "Similarly we can prove that {AB}, {BC} are also greater than {CA}, and {BC}, {CA} than {AB}.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": []
+  },
+  {
+   "id": "I.21",
+   "n": 21,
+   "enunciation": "If on one of the sides of a triangle, from its extremities, there be constructed two straight lines meeting within the triangle, the straight lines so constructed will be less than the remaining two sides of the triangle, but will contain a greater angle.",
+   "proof": [
+    "On {BC}, one of the sides of the triangle {ABC}, from its extremities {B}, {C}, let the two straight lines {BD}, {DC} be constructed meeting within the triangle;",
+    "I say that {BD}, {DC} are less than the remaining two sides of the triangle {BA}, {AC}, but contain an angle {BDC} greater than the angle {BAC}.",
+    "For let {BD} be drawn through to {E}.",
+    "Then, since in any triangle two sides are greater than the remaining one, [[I.20|I. 20]] therefore, in the triangle {ABE}, the two sides {AB}, {AE} are greater than {BE}.",
+    "Let {EC} be added to each; therefore {BA}, {AC} are greater than {BE}, {EC}.",
+    "Again, since, in the triangle {CED}, the two sides {CE}, {ED} are greater than {CD}, let {DB} be added to each; therefore {CE}, {EB} are greater than {CD}, {DB}.",
+    "But {BA}, {AC} were proved greater than {BE}, {EC}; therefore {BA}, {AC} are much greater than {BD}, {DC}.",
+    "Again, since in any triangle the exterior angle is greater than the interior and opposite angle, [[I.16|I. 16]] therefore, in the triangle {CDE}, the exterior angle {BDC} is greater than the angle {CED}.",
+    "For the same reason, moreover, in the triangle {ABE} also, the exterior angle {CEB} is greater than the angle {BAC}. But the angle {BDC} was proved greater than the angle {CEB}; therefore the angle {BDC} is much greater than the angle {BAC}.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "2. be constructed...meeting within the triangle.",
+     "text": "The word “meeting” is not in the Greek, where the words are ἐντὸς συσταθῶσιν. συνίστασθαι is the word used of constructing two straight lines _to a point_ (cf. [[I.7|I. 7]]) or so as to form a triangle; but it is necessary in English to indicate that they _meet_."
+    },
+    {
+     "lemma": "3. the straight lines so constructed.",
+     "text": "Observe the elegant brevity of the Greek αἱ συσταθεῖσαι."
+    }
+   ]
+  },
+  {
+   "id": "I.22",
+   "n": 22,
+   "enunciation": "Out of three straight lines, which are equal to three given straight lines, to construct a triangle: thus it is necessary that two of the straight lines taken together in any manner should be greater than the remaining one. [[I.20|I. 20]]",
+   "proof": [
+    "Let the three given straight lines be {A}, {B}, {C}, and of these let two taken together in any manner be greater than the remaining one, namely {A}, {B} greater than {C}, {A}, {C} greater than {B}, and {B}, {C} greater than {A}; thus it is required to construct a triangle out of straight lines equal to {A}, {B}, {C}.",
+    "Let there be set out a straight line {DE}, terminated at {D} but of infinite length in the direction of {E}, and let {DF} be made equal to {A}, {FG} equal to {B}, and {GH} equal to {C}. [[I.3|I. 3]]",
+    "With centre {F} and distance {FD} let the circle {DKL} be described; again, with centre {G} and distance {GH} let the circle {KLH} be described; and let {KF}, {KG} be joined;",
+    "I say that the triangle {KFG} has been constructed out of three straight lines equal to {A}, {B}, {C}.",
+    "For, since the point {F} is the centre of the circle {DKL}, {FD} is equal to {FK}.",
+    "But {FD} is equal to {A}; therefore {KF} is also equal to {A}.",
+    "Again, since the point {G} is the centre of the circle {LKH}, {GH} is equal to {GK}.",
+    "But {GH} is equal to {C}; therefore {KG} is also equal to {C}. And {FG} is also equal to {B}; therefore the three straight lines {KF}, {FG}, {GK} are equal to the three straight lines {A}, {B}, {C}.",
+    "Therefore out of the three straight lines {KF}, {FG}, {GK}, which are equal to the three given straight lines {A}, {B}, {C}, the triangle {KFG} has been constructed."
+   ],
+   "qed": "Q. E. F.",
+   "notes": [
+    {
+     "lemma": "2-4",
+     "text": "This is the first case in the Elements of a διορισμός to a problem in the sense of a statement of the conditions or limits of the possibility of a solution. The criterion is of course supplied by the preceding proposition."
+    },
+    {
+     "lemma": "2. thus it is necessary.",
+     "text": "This is usually translated (e.g. by Williamson and Simson) “But it is necessary,” which is however inaccurate, since the Greek is not δεῖ δέ but δεῖ δή. The words are the same as those used to introduce the διορισμός in the other sense of the “definition” or “particular statement” of a construction to be effected. Hence, as in the latter case we say “thus it is required” (e.g. to bisect the finite straight line {AB}, [[I.10|I. 10]]), we should here translate “_thus_ it is necessary.”"
+    },
+    {
+     "lemma": "4",
+     "text": "To this enunciation all the MSS. and Boethius add, after the διορισμός, the words “because in any triangle two sides taken together in any manner are greater than the remaining one.” But this explanation has the appearance of a gloss, and it is omitted by Proclus and Campanus. Moreover there is no corresponding addition to the διορισμός of [[VI.28|VI. 28]]."
+    }
+   ]
+  },
+  {
+   "id": "I.23",
+   "n": 23,
+   "enunciation": "On a given straight line and at a point on it to construct a rectilineal angle equal to a given rectilineal angle.",
+   "proof": [
+    "Let {AB} be the given straight line, {A} the point on it, and the angle {DCE} the given rectilineal angle;",
+    "thus it is required to construct on the given straight line {AB}, and at the point {A} on it, a rectilineal angle equal to the given rectilineal angle {DCE}.",
+    "On the straight lines {CD}, {CE} respectively let the points {D}, {E} be taken at random; let {DE} be joined, and out of three straight lines which are equal to the three straight lines {CD}, {DE}, {CE} let the triangle {AFG} be constructed in such a way that {CD} is equal to {AF}, {CE} to {AG}, and further {DE} to {FG}.",
+    "Then, since the two sides {DC}, {CE} are equal to the two sides {FA}, {AG} respectively, and the base {DE} is equal to the base {FG}, the angle {DCE} is equal to the angle {FAG}. [[I.8|I. 8]]",
+    "Therefore on the given straight line {AB}, and at the point {A} on it, the rectilineal angle {FAG} has been constructed equal to the given rectilineal angle {DCE}."
+   ],
+   "qed": "Q. E. F.",
+   "notes": []
+  },
+  {
+   "id": "I.24",
+   "n": 24,
+   "enunciation": "If two triangles have the two sides equal to two sides respectively, but have the one of the angles contained by the equal straight lines greater than the other, they will also have the base greater than the base.",
+   "proof": [
+    "Let {ABC}, {DEF} be two triangles having the two sides {AB}, {AC} equal to the two sides {DE}, {DF} respectively, namely {AB} to {DE}, and {AC} to {DF}, and let the angle at {A} be greater than the angle at {D};",
+    "I say that the base {BC} is also greater than the base {EF}.",
+    "For, since the angle {BAC} is greater than the angle {EDF}, let there be constructed, on the straight line {DE}, and at the point {D} on it, the angle {EDG} equal to the angle {BAC}; [[I.23|I. 23]] let {DG} be made equal to either of the two straight lines {AC}, {DF}, and let {EG}, {FG} be joined.",
+    "Then, since {AB} is equal to {DE}, and {AC} to {DG}, the two sides {BA}, {AC} are equal to the two sides {ED}, {DG}, respectively; and the angle {BAC} is equal to the angle {EDG}; therefore the base {BC} is equal to the base {EG}. [[I.4|I. 4]]",
+    "Again, since {DF} is equal to {DG}, the angle {DGF} is also equal to the angle {DFG}; [[I.5|I. 5]] therefore the angle {DFG} is greater than the angle {EGF}.",
+    "Therefore the angle {EFG} is much greater than the angle {EGF}.",
+    "And, since {EFG} is a triangle having the angle {EFG} greater than the angle {EGF}, and the greater angle is subtended by the greater side, [[I.19|I. 19]] the side {EG} is also greater than {EF}.",
+    "But {EG} is equal to {BC}. Therefore {BC} is also greater than {EF}.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "10",
+     "text": "I have naturally left out the well-known words added by Simson in order to avoid the necessity of considering three cases: “Of the two sides {DE}, {DF} let {DE} be the side which is not greater than the other.” I doubt whether Euclid could have been induced to insert the words himself, even if it had been represented to him that their omission meant leaving two possible cases out of consideration. His habit and that of the great Greek geometers was, not to set out all possible cases, but to give as a rule one case, generally the most difficult, as here, and to leave the others to the reader to work out for himself. We have already seen one instance in [[I.7|I. 7]]."
+    }
+   ]
+  },
+  {
+   "id": "I.25",
+   "n": 25,
+   "enunciation": "If two triangles have the two sides equal to two sides respectively, but have the base greater than the base, they will also have the one of the angles contained by the equal straight lines greater than the other.",
+   "proof": [
+    "Let {ABC}, {DEF} be two triangles having the two sides {AB}, {AC} equal to the two sides {DE}, {DF} respectively, namely {AB} to {DE}, and {AC} to {DF}; and let the base {BC} be greater than the base {EF};",
+    "I say that the angle {BAC} is also greater than the angle {EDF}.",
+    "For, if not, it is either equal to it or less.",
+    "Now the angle {BAC} is not equal to the angle {EDF}; for then the base {BC} would also have been equal to the base {EF}, [[I.4|I. 4]] but it is not; therefore the angle {BAC} is not equal to the angle {EDF}.",
+    "Neither again is the angle {BAC} less than the angle {EDF}; for then the base {BC} would also have been less than the base {EF}, [[I.24|I. 24]] but it is not; therefore the angle {BAC} is not less than the angle {EDF}.",
+    "But it was proved that it is not equal either; therefore the angle {BAC} is greater than the angle {EDF}.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": []
+  },
+  {
+   "id": "I.26",
+   "n": 26,
+   "enunciation": "If two triangles have the two angles equal to two angles respectively, and one side equal to one side, namely, either the side adjoining the equal angles, or that subtending one of the equal angles, they will also have the remaining sides equal to the remaining sides and the remaining angle to the remaining angle.",
+   "proof": [
+    "Let {ABC}, {DEF} be two triangles having the two angles {ABC}, {BCA} equal to the two angles {DEF}, {EFD} respectively, namely the angle {ABC} to the angle {DEF}, and the angle {BCA} to the angle {EFD}; and let them also have one side equal to one side, first that adjoining the equal angles, namely {BC} to {EF};",
+    "I say that they will also have the remaining sides equal to the remaining sides respectively, namely {AB} to {DE} and {AC} to {DF}, and the remaining angle to the remaining angle, namely the angle {BAC} to the angle {EDF}.",
+    "For, if {AB} is unequal to {DE}, one of them is greater.",
+    "Let {AB} be greater, and let {BG} be made equal to {DE}; and let {GC} be joined.",
+    "Then, since {BG} is equal to {DE}, and {BC} to {EF}, the two sides {GB}, {BC} are equal to the two sides {DE}, {EF} respectively; and the angle {GBC} is equal to the angle {DEF}; therefore the base {GC} is equal to the base {DF}, and the triangle {GBC} is equal to the triangle {DEF}, and the remaining angles will be equal to the remaining angles, namely those which the equal sides subtend; [[I.4|I. 4]] therefore the angle {GCB} is equal to the angle {DFE}. But the angle {DFE} is by hypothesis equal to the angle {BCA}; therefore the angle {BCG} is equal to the angle {BCA}, the less to the greater: which is impossible. Therefore {AB} is not unequal to {DE}, and is therefore equal to it.",
+    "But {BC} is also equal to {EF}; therefore the two sides {AB}, {BC} are equal to the two sides {DE}, {EF} respectively, and the angle {ABC} is equal to the angle {DEF}; therefore the base {AC} is equal to the base {DF}, and the remaining angle {BAC} is equal to the remaining angle {EDF}. [[I.4|I. 4]]",
+    "Again, let sides subtending equal angles be equal, as {AB} to {DE};",
+    "I say again that the remaining sides will be equal to the remaining sides, namely {AC} to {DF} and {BC} to {EF}, and further the remaining angle {BAC} is equal to the remaining angle {EDF}.",
+    "For, if {BC} is unequal to {EF}, one of them is greater.",
+    "Let {BC} be greater, if possible, and let {BH} be made equal to {EF}; let {AH} be joined.",
+    "Then, since {BH} is equal to {EF}, and {AB} to {DE}, the two sides {AB}, {BH} are equal to the two sides {DE}, {EF} respectively, and they contain equal angles; therefore the base {AH} is equal to the base {DF}, and the triangle {ABH} is equal to the triangle {DEF}, and the remaining angles will be equal to the remaining angles, namely those which the equal sides subtend; [[I.4|I. 4]] therefore the angle {BHA} is equal to the angle {EFD}.",
+    "But the angle {EFD} is equal to the angle {BCA}; therefore, in the triangle {AHC}, the exterior angle {BHA} is equal to the interior and opposite angle {BCA}: which is impossible. [[I.16|I. 16]]",
+    "Therefore {BC} is not unequal to {EF}, and is therefore equal to it.",
+    "But {AB} is also equal to {DE}; therefore the two sides {AB}, {BC} are equal to the two sides {DE}, {EF} respectively, and they contain equal angles; therefore the base {AC} is equal to the base {DF}, the triangle {ABC} equal to the triangle {DEF}, and the remaining angle {BAC} equal to the remaining angle {EDF}. [[I.4|I. 4]]",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "2-3. the side adjoining the equal angles,",
+     "text": "πλευρὰν τὴν πρὸς ταῖς ἴσαις γωνίαις."
+    },
+    {
+     "lemma": "29. is by hypothesis equal.",
+     "text": "ὑπόκειται ἴση, according to the elegant Greek idiom. ὑπόκειμαι is used for the passive of ὑποτίθημι, as κεῖμαι is used for the passive of τίθημι, and so with the other compounds. Cf. προσκεῖσθαι, “to be added.”"
+    }
+   ]
+  },
+  {
+   "id": "I.27",
+   "n": 27,
+   "enunciation": "If a straight line falling on two straight lines make the alternate angles equal to one another, the straight lines will be parallel to one another.",
+   "proof": [
+    "For let the straight line {EF} falling on the two straight lines {AB}, {CD} make the alternate angles {AEF}, {EFD} equal to one another;",
+    "I say that {AB} is parallel to {CD}.",
+    "For, if not, {AB}, {CD} when produced will meet either in the direction of {B}, {D} or towards {A}, {C}.",
+    "Let them be produced and meet, in the direction of {B}, {D}, at {G}.",
+    "Then, in the triangle {GEF}, the exterior angle {AEF} is equal to the interior and opposite angle {EFG}: which is impossible. [[I.16|I. 16]]",
+    "Therefore {AB}, {CD} when produced will not meet in the direction of {B}, {D}.",
+    "Similarly it can be proved that neither will they meet towards {A}, {C}.",
+    "But straight lines which do not meet in either direction are parallel; [[I.Def.23|Def. 23]] therefore {AB} is parallel to {CD}.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "1. falling on two straight lines,",
+     "text": "εὶς δύο εὐθείας ἐμπίπτουσα, the phrase being the same as that used in [[I.Post.5|Post. 5]], meaning a _transversal_."
+    },
+    {
+     "lemma": "2. the alternate angles,",
+     "text": "αἱ ἐναλλὰξ γωνίαι. Proclus (p. 357, 9) explains that Euclid uses the word _alternate_ (or, more exactly, _alternately_, ἐναλλάξ) in two connexions, (1) of a certain transformation of a proportion, as in Book V. and the arithmetical Books, (2) as here, of certain of the angles formed by parallels with a straight line crossing them. Alternate angles are, according to Euclid as interpreted by Proclus, those which are not on the same side of the transversal, and are not adjacent, but are separated by the transversal, both being within the parallels but one “above” and the other “below.” The meaning is natural enough if we imagine the four internal angles to be taken in cyclic order and _alternate_ angles to be any two of them not successive but separated by one angle of the four."
+    },
+    {
+     "lemma": "9. in the direction of B, D or towards A, C,",
+     "text": "literally “towards the _parts B_, {D} or towards {A}, {C},” ἐπὶ τὰ Β, Δ μέρη ἢ ἐπὶ τὰ Α Γ."
+    }
+   ]
+  },
+  {
+   "id": "I.28",
+   "n": 28,
+   "enunciation": "If a straight line falling on two straight lines make the exterior angle equal to the interior and opposite angle on the same side, or the interior angles on the same side equal to two right angles, the straight lines will be parallel to one another.",
+   "proof": [
+    "For let the straight line {EF} falling on the two straight lines {AB}, {CD} make the exterior angle {EGB} equal to the interior and opposite angle {GHD}, or the interior angles on the same side, namely {BGH}, {GHD}, equal to two right angles;",
+    "I say that {AB} is parallel to {CD}.",
+    "For, since the angle {EGB} is equal to the angle {GHD}, while the angle {EGB} is equal to the angle {AGH}, [[I.15|I. 15]] the angle {AGH} is also equal to the angle {GHD}; and they are alternate; therefore {AB} is parallel to {CD}. [[I.27|I. 27]]",
+    "Again, since the angles {BGH}, {GHD} are equal to two right angles, and the angles {AGH}, {BGH} are also equal to two right angles, [[I.13|I. 13]] the angles {AGH}, {BGH} are equal to the angles {BGH}, {GHD}.",
+    "Let the angle {BGH} be subtracted from each; therefore the remaining angle {AGH} is equal to the remaining angle {GHD}; and they are alternate; therefore {AB} is parallel to {CD}. [[I.27|I. 27]]",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": []
+  },
+  {
+   "id": "I.29",
+   "n": 29,
+   "enunciation": "A straight line falling on parallel straight lines makes the alternate angles equal to one another, the exterior angle equal to the interior and opposite angle, and the interior angles on the same side equal to two right angles.",
+   "proof": [
+    "For let the straight line {EF} fall on the parallel straight lines {AB}, {CD};",
+    "I say that it makes the alternate angles {AGH}, {GHD} equal, the exterior angle {EGB} equal to the interior and opposite angle {GHD}, and the interior angles on the same side, namely {BGH}, {GHD}, equal to two right angles.",
+    "For, if the angle {AGH} is unequal to the angle {GHD}, one of them is greater.",
+    "Let the angle {AGH} be greater.",
+    "Let the angle {BGH} be added to each; therefore the angles {AGH}, {BGH} are greater than the angles {BGH}, {GHD}.",
+    "But the angles {AGH}, {BGH} are equal to two right angles; [[I.13|I. 13]] therefore the angles {BGH}, {GHD} are less than two right angles.",
+    "But straight lines produced indefinitely from angles less than two right angles meet; [[I.Post.5|Post. 5]] therefore {AB}, {CD}, if produced indefinitely, will meet; but they do not meet, because they are by hypothesis parallel.",
+    "Therefore the angle {AGH} is not unequal to the angle {GHD}, and is therefore equal to it.",
+    "Again, the angle {AGH} is equal to the angle {EGB}; [[I.15|I. 15]] therefore the angle {EGB} is also equal to the angle {GHD}. [[I.CN.1|C.N. 1]]",
+    "Let the angle {BGH} be added to each; therefore the angles {EGB}, {BGH} are equal to the angles {BGH}, {GHD}. [[I.CN.2|C.N. 2]]",
+    "But the angles {EGB}, {BGH} are equal to two right angles; [[I.13|I. 13]] therefore the angles {BGH}, {GHD} are also equal to two right angles.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "23. straight lines produced indefinitely from angles less than two right angles,",
+     "text": "αἰ δὲ ἀπ· ὲλασσόνων ἢ δύο ὀρθῶν ἐκβαλλόμεναι εἰς ἄπειπον συμπίπτουσιν, a variation from the more explicit language of [[I.Post.5|Postulate 5]]. A good deal is left to be understood, namely that the straight lines begin from points at which they meet a transversal, and make with it internal angles on the same side the sum of which is less than two right angles."
+    },
+    {
+     "lemma": "26. because they are by hypothesis parallel,",
+     "text": "literally “because they are supposed parallel,” διὰ τὸ παραλλήλους αὐτὰς ὑποκεῖσθαι."
+    }
+   ]
+  },
+  {
+   "id": "I.30",
+   "n": 30,
+   "enunciation": "Straight lines parallel to the same straight line are also parallel to one another.",
+   "proof": [
+    "Let each of the straight lines {AB}, {CD} be parallel to {EF}; I say that {AB} is also parallel to {CD}.",
+    "For let the straight line {GK} fall upon them;",
+    "Then, since the straight line {GK} has fallen on the parallel straight lines {AB}, {EF}, the angle {AGK} is equal to the angle {GHF}. [[I.29|I. 29]]",
+    "Again, since the straight line {GK} has fallen on the parallel straight lines {EF}, {CD}, the angle {GHF} is equal to the angle {GKD}. [[I.29|I. 29]]",
+    "But the angle {AGK} was also proved equal to the angle {GHF}; therefore the angle {AGK} is also equal to the angle {GKD}; [[I.CN.1|C.N. 1]] and they are alternate.",
+    "Therefore {AB} is parallel to {CD}."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "20",
+     "text": "The usual _conclusion_ in general terms (“Therefore etc.” ) repeating the enunciation is, curiously enough, wanting at the end of this proposition."
+    }
+   ]
+  },
+  {
+   "id": "I.31",
+   "n": 31,
+   "enunciation": "Through a given point to draw a straight line parallel to a given straight line.",
+   "proof": [
+    "Let {A} be the given point, and {BC} the given straight line; thus it is required to draw through the point {A} a straight line parallel to the straight line {BC}.",
+    "Let a point {D} be taken at random on {BC}, and let {AD} be joined; on the straight line {DA}, and at the point {A} on it, let the angle {DAE} be constructed equal to the angle {ADC} [[I.23|I. 23]]; and let the straight line {AF} be produced in a straight line with {EA}.",
+    "Then, since the straight line {AD} falling on the two straight lines {BC}, {EF} has made the alternate angles {EAD}, {ADC} equal to one another, therefore {EAF} is parallel to {BC}. [[I.27|I. 27]]",
+    "Therefore through the given point {A} the straight line {EAF} has been drawn parallel to the given straight line {BC}."
+   ],
+   "qed": "Q. E. F.",
+   "notes": []
+  },
+  {
+   "id": "I.32",
+   "n": 32,
+   "enunciation": "In any triangle, if one of the sides be produced, the exterior angle is equal to the two interior and opposite angles, and the three interior angles of the triangle are equal to two right angles.",
+   "proof": [
+    "Let {ABC} be a triangle, and let one side of it {BC} be produced to {D};",
+    "I say that the exterior angle {ACD} is equal to the two interior and opposite angles {CAB}, {ABC}, and the three interior angles of the triangle {ABC}, {BCA}, {CAB} are equal to two right angles.",
+    "For let {CE} be drawn through the point {C} parallel to the straight line {AB}. [[I.31|I. 31]]",
+    "Then, since {AB} is parallel to {CE}, and {AC} has fallen upon them, the alternate angles {BAC}, {ACE} are equal to one another. [[I.29|I. 29]]",
+    "Again, since {AB} is parallel to {CE}, and the straight line {BD} has fallen upon them, the exterior angle {ECD} is equal to the interior and opposite angle {ABC}. [[I.29|I. 29]]",
+    "But the angle {ACE} was also proved equal to the angle {BAC}; therefore the whole angle {ACD} is equal to the two interior and opposite angles {BAC}, {ABC}.",
+    "Let the angle {ACB} be added to each; therefore the angles {ACD}, {ACB} are equal to the three angles {ABC}, {BCA}, {CAB}.",
+    "But the angles {ACD}, {ACB} are equal to two right angles; [[I.13|I. 13]] therefore the angles {ABC}, {BCA}, {CAB} are also equal to two right angles.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": []
+  },
+  {
+   "id": "I.33",
+   "n": 33,
+   "enunciation": "The straight lines joining equal and parallel straight lines (at the extremities which are) in the same directions (respectively) are themselves also equal and parallel.",
+   "proof": [
+    "Let {AB}, {CD} be equal and parallel, and let the straight lines {AC}, {BD} join them (at the extremities which are) in the same directions (respectively); I say that {AC}, {BD} are also equal and parallel.",
+    "Let {BC} be joined.",
+    "Then, since {AB} is parallel to {CD}, and {BC} has fallen upon them, the alternate angles {ABC}, {BCD} are equal to one another. [[I.29|I. 29]]",
+    "And, since {AB} is equal to {CD}, and {BC} is common, the two sides {AB}, {BC} are equal to the two sides {DC}, {CB}; and the angle {ABC} is equal to the angle {BCD}; therefore the base {AC} is equal to the base {BD}, and the triangle {ABC} is equal to the triangle {DCB}, and the remaining angles will be equal to the remaining angles respectively, namely those which the equal sides subtend; [[I.4|I. 4]] therefore the angle {ACB} is equal to the angle {CBD}.",
+    "And, since the straight line {BC} falling on the two straight lines {AC}, {BD} has made the alternate angles equal to one another, {AC} is parallel to {BD}. [[I.27|I. 27]]",
+    "And it was also proved equal to it.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "1. joining...(at the extremities which are) in the same directions (respectively).",
+     "text": "I have for clearness' sake inserted the words in brackets though they are not in the original Greek, which has “joining...in the same directions” or “on the same sides,” ἐπὶ τὰ αυτὰ μέρη ἐπιζευγνύουσαι. The expression “tiwards the same parts,” though usage has sanctioned it, is perhaps not quite satisfactory."
+    },
+    {
+     "lemma": "15. DC, CB",
+     "text": "and 18. **DCB**. The Greek has “ {BC}, {CD}” and “{BCD}” in these places respectively. Euclid is not always careful to write in corresponding order the letters denoting corresponding points in congruent figures. On the contrary, he evidently prefers the alphabetical order, and seems to disdain to alter it for the sake of beginners or others who might be confused by it. In the case of angles alteration is perhaps unnecessary; but in the case of triangles and pairs of corresponding sides I have ventured to alter the order to that which the mathematician of to-day expects."
+    }
+   ]
+  },
+  {
+   "id": "I.34",
+   "n": 34,
+   "enunciation": "In parallelogrammic areas the opposite sides and angles are equal to one another, and the diameter bisects the areas.",
+   "proof": [
+    "Let {ACDB} be a parallelogrammic area, and {BC} its diameter; I say that the opposite sides and angles of the parallelogram {ACDB} are equal to one another, and the diameter {BC} bisects it.",
+    "For, since {AB} is parallel to {CD}, and the straight line {BC} has fallen upon them, the alternate angles {ABC}, {BCD} are equal to one another. [[I.29|I. 29]]",
+    "Again, since {AC} is parallel to {BD}, and {BC} has fallen upon them, the alternate angles {ACB}, {CBD} are equal to one another. [[I.29|I. 29]]",
+    "Therefore {ABC}, {DCB} are two triangles having the two angles {ABC}, {BCA} equal to the two angles {DCB}, {CBD} respectively, and one side equal to one side, namely that adjoining the equal angles and common to both of them, {BC}; therefore they will also have the remaining sides equal to the remaining sides respectively, and the remaining angle to the remaining angle; [[I.26|I. 26]] therefore the side {AB} is equal to {CD}, and {AC} to {BD}, and further the angle {BAC} is equal to the angle {CDB}.",
+    "And, since the angle {ABC} is equal to the angle {BCD}, and the angle {CBD} to the angle {ACB}, the whole angle {ABD} is equal to the whole angle {ACD}. [[I.CN.2|C.N. 2]] And the angle {BAC} was also proved equal to the angle {CDB}.",
+    "Therefore in parallelogrammic areas the opposite sides and angles are equal to one another.",
+    "I say, next, that the diameter also bisects the areas.",
+    "For, since {AB} is equal to {CD}, and {BC} is common, the two sides {AB}, {BC} are equal to the two sides {DC}, {CB} respectively; and the angle {ABC} is equal to the angle {BCD}; therefore the base {AC} is also equal to {DB}, and the triangle {ABC} is equal to the triangle {DCB}. [[I.4|I. 4]]",
+    "Therefore the diameter {BC} bisects the parallelogram {ACDB}."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "1",
+     "text": "It is to be observed that, when parallelograms have to be mentioned for the first time, Euclid calls them “parallelogrammic areas” or, more exactly, “parallelogram” areas (παραλληλόγραμμα χωρία). The meaning is simply areas bounded by parallel straight lines with the further limitation placed upon the term by Euclid that only _four-sided_ figures are so called, although of course there are certain regular polygons which have opposite sides parallel, and which therefore might be said to be areas bounded by parallel straight lines. We gather from Proclus (p. 393) that the word “parallelogram” was first introduced by Euclid, that its use was suggested by [[I.33|I. 33]], and that the formation of the word παραλληλόγραμμος (parallel-lined) was analogous to that of εὐθύγραμμος (straight-lined or rectilineal)."
+    },
+    {
+     "lemma": "17, 18, 40. DCB",
+     "text": "and 36. **DC, CB**. The Greek has in these places “{BCD}” and “{CD}, {BC}” respectively. Cf. note on [[I.33|I. 33]], lines 15, 18."
+    }
+   ]
+  },
+  {
+   "id": "I.35",
+   "n": 35,
+   "enunciation": "Parallelograms which are on the same base and in the same parallels are equal to one another.",
+   "proof": [
+    "Let {ABCD}, {EBCF} be parallelograms on the same base {BC} and in the same parallels {AF}, {BC}; I say that {ABCD} is equal to the parallelogram {EBCF}.",
+    "For, since {ABCD} is a parallelogram, {AD} is equal to {BC}. [[I.34|I. 34]]",
+    "For the same reason also {EF} is equal to {BC}, so that {AD} is also equal to {EF}; [[I.CN.1|C.N. 1]] and {DE} is common; therefore the whole {AE} is equal to the whole {DF}. [[I.CN.2|C.N. 2]]",
+    "But {AB} is also equal to {DC}; [[I.34|I. 34]] therefore the two sides {EA}, {AB} are equal to the two sides {FD}, {DC} respectively, and the angle {FDC} is equal to the angle {EAB}, the exterior to the interior; [[I.29|I. 29]] therefore the base {EB} is equal to the base {FC}, and the triangle {EAB} will be equal to the triangle {FDC}. [[I.4|I. 4]]",
+    "Let {DGE} be subtracted from each; therefore the trapezium {ABGD} which remains is equal to the trapezium {EGCF} which remains. [[I.CN.3|C.N. 3]]",
+    "Let the triangle {GBC} be added to each; therefore the whole parallelogram {ABCD} is equal to the whole parallelogram {EBCF}. [[I.CN.2|C.N. 2]]",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "21. FDC.",
+     "text": "The text has “{DFC}.”"
+    },
+    {
+     "lemma": "22. Let DGE be subtracted.",
+     "text": "Euclid speaks of the triangle {DGE} without any explanation that, in the case which he takes (where {AD}, {EF} have no point in common), {BE}, {CD} must meet at a point {G} between the two parallels. He allows this to appear from the figure simply."
+    }
+   ]
+  },
+  {
+   "id": "I.36",
+   "n": 36,
+   "enunciation": "Parallelograms which are on equal bases and in the same parallels are equal to one another.",
+   "proof": [
+    "Let {ABCD}, {EFGH} be parallelograms which are on equal bases {BC}, {FG} and in the same parallels {AH}, {BG}; I say that the parallelogram {ABCD} is equal to {EFGH}.",
+    "For let {BE}, {CH} be joined.",
+    "Then, since {BC} is equal to {FG} while {FG} is equal to {EH}, {BC} is also equal to {EH}. [[I.CN.1|C.N. 1]]",
+    "But they are also parallel.",
+    "And {EB}, {HC} join them; but straight lines joining equal and parallel straight lines (at the extremities which are) in the same directions (respectively) are equal and parallel. [[I.33|I. 33]]",
+    "Therefore {EBCH} is a parallelogram. [[I.34|I. 34]]",
+    "And it is equal to {ABCD}; for it has the same base {BC} with it, and is in the same parallels {BC}, {AH} with it. [[I.35|I. 35]]",
+    "For the same reason also {EFGH} is equal to the same {EBCH}; [[I.35|I. 35]] so that the parallelogram {ABCD} is also equal to {EFGH}. [[I.CN.1|C.N. 1]]",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": []
+  },
+  {
+   "id": "I.37",
+   "n": 37,
+   "enunciation": "Triangles which are on the same base and in the same parallels are equal to one another.",
+   "proof": [
+    "Let {ABC}, {DBC} be triangles on the same base {BC} and in the same parallels {AD}, {BC}; I say that the triangle {ABC} is equal to the triangle {DBC}.",
+    "Let {AD} be produced in both directions to {E}, {F}; through {B} let {BE} be drawn parallel to {CA}, [[I.31|I. 31]] and through {C} let {CF} be drawn parallel to {BD}. [[I.31|I. 31]]",
+    "Then each of the figures {EBCA}, {DBCF} is a parallelogram; and they are equal,",
+    "for they are on the same base {BC} and in the same parallels {BC}, {EF}. [[I.35|I. 35]]",
+    "Moreover the triangle {ABC} is half of the parallelogram {EBCA}; for the diameter {AB} bisects it. [[I.34|I. 34]]",
+    "And the triangle {DBC} is half of the parallelogram {DBCF}; for the diameter {DC} bisects it. [[I.34|I. 34]]",
+    "[But the halves of equal things are equal to one another.]",
+    "Therefore the triangle {ABC} is equal to the triangle {DBC}.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "21",
+     "text": "Here and in the next proposition Heiberg brackets the words “But the halves of equal things are equal to one another” on the ground that, since the Common Notion which asserted this fact was interpolated at a very early date (before the time of Theon), it is probable that the words here were interpolated at the same time. Cf. note above (p. 224) on the interpolated Common Notion."
+    }
+   ]
+  },
+  {
+   "id": "I.38",
+   "n": 38,
+   "enunciation": "Triangles which are on equal bases and in the same parallels are equal to one another.",
+   "proof": [
+    "Let {ABC}, {DEF} be triangles on equal bases {BC}, {EF} and in the same parallels {BF}, {AD}; I say that the triangle {ABC} is equal to the triangle {DEF}.",
+    "For let {AD} be produced in both directions to {G}, {H}; through {B} let {BG} be drawn parallel to {CA}, [[I.31|I. 31]] and through {F} let {FH} be drawn parallel to {DE}.",
+    "Then each of the figures {GBCA}, {DEFH} is a parallelogram; and {GBCA} is equal to {DEFH};",
+    "for they are on equal bases {BC}, {EF} and in the same parallels {BF}, {GH}. [[I.36|I. 36]]",
+    "Moreover the triangle {ABC} is half of the parallelogram {GBCA}; for the diameter {AB} bisects it. [[I.34|I. 34]]",
+    "And the triangle {FED} is half of the parallelogram {DEFH}; for the diameter {DF} bisects it. [[I.34|I. 34]]",
+    "[But the halves of equal things are equal to one another.]",
+    "Therefore the triangle {ABC} is equal to the triangle {DEF}.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": []
+  },
+  {
+   "id": "I.39",
+   "n": 39,
+   "enunciation": "Equal triangles which are on the same base and on the same side are also in the same parallels.",
+   "proof": [
+    "Let {ABC}, {DBC} be equal triangles which are on the same base {BC} and on the same side of it; [I say that they are also in the same parallels.]",
+    "And [For] let {AD} be joined; I say that {AD} is parallel to {BC}.",
+    "For, if not, let {AE} be drawn through the point {A} parallel to the straight line {BC}, [[I.31|I. 31]] and let {EC} be joined.",
+    "Therefore the triangle {ABC} is equal to the triangle {EBC}; for it is on the same base {BC} with it and in the same parallels. [[I.37|I. 37]]",
+    "But {ABC} is equal to {DBC}; therefore {DBC} is also equal to {EBC}, [[I.CN.1|C.N. 1]] the greater to the less: which is impossible.",
+    "Therefore {AE} is not parallel to {BC}.",
+    "Similarly we can prove that neither is any other straight line except {AD}; therefore {AD} is parallel to {BC}.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "5",
+     "text": "[**I say that they are also in the same parallels.**] Heiberg has proved (Hermes, XXXVIII., 1903, p. 50) from a recently discovered papyrus-fragment (Fayūm towns and their papyri, p. 96, No. IX.) that these words are an interpolation by some one who did not observe that the words “And let {AD} be joined” are part of the _setting-out_ (ἔκθεσις), but took them as belonging to the _construction_ (κατασκευή) and consequently thought that a διορισμός or “definition” (of the thing to be proved) should precede. The interpolator then altered “And” into “For” in the next sentence."
+    }
+   ]
+  },
+  {
+   "id": "I.40",
+   "n": 40,
+   "enunciation": "_Equal triangles which are on equal bases and on the same side are also in the same parallels_.",
+   "proof": [
+    "Let {ABC}, {CDE} be equal triangles on equal bases {BC}, {CE} and on the same side.",
+    "I say that they are also in the same parallels.",
+    "For let {AD} be joined; I say that {AD} is parallel to {BE}.",
+    "For, if not, let {AF} be drawn through {A} parallel to {BE} [[I.31|I. 31]], and let {FE} be joined.",
+    "Therefore the triangle {ABC} is equal to the triangle {FCE}; for they are on equal bases {BC}, {CE} and in the same parallels {BE}, {AF}. [[I.38|I. 38]]",
+    "But the triangle {ABC} is equal to the triangle {DCE}; therefore the triangle {DCE} is also equal to the triangle {FCE}, [[I.CN.1|C.N. 1]] the greater to the less: which is impossible. Therefore {AF} is not parallel to {BE}.",
+    "Similarly we can prove that neither is any other straight line except {AD}; therefore {AD} is parallel to {BE}.",
+    "Therefore etc.]"
+   ],
+   "qed": "Q. E. D.",
+   "notes": []
+  },
+  {
+   "id": "I.41",
+   "n": 41,
+   "enunciation": "If a parallelogram have the same base with a triangle and be in the same parallels, the parallelogram is double of the triangle.",
+   "proof": [
+    "For let the parallelogram {ABCD} have the same base {BC} with the triangle {EBC}, and let it be in the same parallels {BC}, {AE};",
+    "I say that the parallelogram {ABCD} is double of the triangle {BEC}.",
+    "For let {AC} be joined.",
+    "Then the triangle {ABC} is equal to the triangle {EBC}; for it is on the same base {BC} with it and in the same parallels {BC}, {AE}. [[I.37|I. 37]]",
+    "But the parallelogram {ABCD} is double of the triangle {ABC}; for the diameter {AC} bisects it; [[I.34|I. 34]] so that the parallelogram {ABCD} is also double of the triangle {EBC}.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": []
+  },
+  {
+   "id": "I.42",
+   "n": 42,
+   "enunciation": "To construct, in a given rectilineal angle, a parallelogram equal to a given triangle.",
+   "proof": [
+    "Let {ABC} be the given triangle, and {D} the given rectilineal angle; thus it is required to construct in the rectilineal angle {D} a parallelogram equal to the triangle {ABC}.",
+    "Let {BC} be bisected at {E}, and let {AE} be joined; on the straight line {EC}, and at the point {E} on it, let the angle {CEF} be constructed equal to the angle {D}; [[I.23|I. 23]] through {A} let {AG} be drawn parallel to {EC}, and [[I.31|I. 31]] through {C} let {CG} be drawn parallel to {EF}.",
+    "Then {FECG} is a parallelogram.",
+    "And, since {BE} is equal to {EC}, the triangle {ABE} is also equal to the triangle {AEC}, for they are on equal bases {BE}, {EC} and in the same parallels {BC}, {AG}; [[I.38|I. 38]] therefore the triangle {ABC} is double of the triangle {AEC}.",
+    "But the parallelogram {FECG} is also double of the triangle {AEC}, for it has the same base with it and is in the same parallels with it; [[I.41|I. 41]] therefore the parallelogram {FECG} is equal to the triangle {ABC}.",
+    "And it has the angle {CEF} equal to the given angle {D}.",
+    "Therefore the parallelogram {FECG} has been constructed equal to the given triangle {ABC}, in the angle {CEF} which is equal to {D}."
+   ],
+   "qed": "Q. E. F.",
+   "notes": []
+  },
+  {
+   "id": "I.43",
+   "n": 43,
+   "enunciation": "In any parallelogram the complements of the parallelograms about the diameter are equal to one another.",
+   "proof": [
+    "Let {ABCD} be a parallelogram, and {AC} its diameter; and about {AC} let {EH}, {FG} be parallelograms, and {BK}, {KD} the so-called complements;",
+    "I say that the complement {BK} is equal to the complement {KD}.",
+    "For, since {ABCD} is a parallelogram, and {AC} its diameter, the triangle {ABC} is equal to the triangle {ACD}. [[I.34|I. 34]]",
+    "Again, since {EH} is a parallelogram, and {AK} is its diameter, the triangle {AEK} is equal to the triangle {AHK}. For the same reason the triangle {KFC} is also equal to {KGC}.",
+    "Now, since the triangle {AEK} is equal to the triangle {AHK}, and {KFC} to {KGC}, the triangle {AEK} together with {KGC} is equal to the triangle {AHK} together with {KFC}. [[I.CN.2|C.N. 2]]",
+    "And the whole triangle {ABC} is also equal to the whole {ADC}; therefore the complement {BK} which remains is equal to the complement {KD} which remains. [[I.CN.3|C.N. 3]]",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "1",
+     "text": "**complements**, παραπληρώματα, the figures put in to fill up (interstices)."
+    },
+    {
+     "lemma": "4. and about AC....",
+     "text": "Euclid's phraseology here and in the next proposition implies that the complements as well as the other parallelograms are “about” the diagonal. The words are here περὶ δὲ τὴν ΑΓ παραλληλόγραμμα μὲν ἔστω τὰ ΕΘ, ΖΗ, τὰ δὲ λεγόμενα παραπληρώματα τὰ ΒΚ, ΚΔ. The expression “the so-called complements” indicates that this technical use of παραπληρώματα was not new, though it might not be universally known."
+    }
+   ]
+  },
+  {
+   "id": "I.44",
+   "n": 44,
+   "enunciation": "To a given straight line to apply, in a given rectilineal angle, a parallelogram equal to a given triangle.",
+   "proof": [
+    "Let {AB} be the given straight line, {C} the given triangle and {D} the given rectilineal angle; thus it is required to apply to the given straight line {AB}, in an angle equal to the angle {D}, a parallelogram equal to the given triangle {C}.",
+    "Let the parallelogram {BEFG} be constructed equal to the triangle {C}, in the angle {EBG} which is equal to {D} [[I.42|I. 42]]; let it be placed so that {BE} is in a straight line with {AB}; let {FG} be drawn through to {H}, and let {AH} be drawn through {A} parallel to either {BG} or {EF}. [[I.31|I. 31]]",
+    "Let {HB} be joined.",
+    "Then, since the straight line {HF} falls upon the parallels {AH}, {EF}, the angles {AHF}, {HFE} are equal to two right angles. [[I.29|I. 29]] Therefore the angles {BHG}, {GFE} are less than two right angles; and straight lines produced indefinitely from angles less than two right angles meet; [[I.Post.5|Post. 5]] therefore {HB}, {FE}, when produced, will meet.",
+    "Let them be produced and meet at {K}; through the point {K} let {KL} be drawn parallel to either {EA} or {FH}, [[I.31|I. 31]] and let {HA}, {GB} be produced to the points {L}, {M}.",
+    "Then {HLKF} is a parallelogram, {HK} is its diameter, and {AG}, {ME} are parallelograms, and {LB}, {BF} the so-called complements, about {HK}; therefore {LB} is equal to {BF}. [[I.43|I. 43]]",
+    "But {BF} is equal to the triangle {C}; therefore {LB} is also equal to {C}. [[I.CN.1|C.N. 1]]",
+    "And, since the angle {GBE} is equal to the angle {ABM}, [[I.15|I. 15]] while the angle {GBE} is equal to {D}, the angle {ABM} is also equal to the angle {D}.",
+    "Therefore the parallelogram {LB} equal to the given triangle {C} has been applied to the given straight line {AB}, in the angle {ABM} which is equal to {D}."
+   ],
+   "qed": "Q. E. F.",
+   "notes": [
+    {
+     "lemma": "14. since the straight line HF falls....",
+     "text": "The verb is in the aorist (ὲνέπεσεν) here and in similar expressions in the following propositions."
+    }
+   ]
+  },
+  {
+   "id": "I.45",
+   "n": 45,
+   "enunciation": "To construct, in a given rectilineal angle, a parallelogram equal to a given rectilineal figure.",
+   "proof": [
+    "Let {ABCD} be the given rectilineal figure and {E} the given rectilineal angle; thus it is required to construct, in the given angle {E}, a parallelogram equal to the rectilineal figure {ABCD}.",
+    "Let {DB} be joined, and let the parallelogram {FH} be constructed equal to the triangle {ABD}, in the angle {HKF} which is equal to {E}; [[I.42|I. 42]] let the parallelogram {GM} equal to the triangle {DBC} be applied to the straight line {GH}, in the angle {GHM} which is equal to {E}. [[I.44|I. 44]]",
+    "Then, since the angle {E} is equal to each of the angles {HKF}, {GHM}, the angle {HKF} is also equal to the angle {GHM}. [[I.CN.1|C.N. 1]]",
+    "Let the angle {KHG} be added to each; therefore the angles {FKH}, {KHG} are equal to the angles {KHG}, {GHM}.",
+    "But the angles {FKH}, {KHG} are equal to two right angles; [[I.29|I. 29]] therefore the angles {KHG}, {GHM} are also equal to two right angles.",
+    "Thus, with a straight line {GH}, and at the point {H} on it, two straight lines {KH}, {HM} not lying on the same side make the adjacent angles equal to two right angles; therefore {KH} is in a straight line with {HM}. [[I.14|I. 14]]",
+    "And, since the straight line {HG} falls upon the parallels {KM}, {FG}, the alternate angles {MHG}, {HGF} are equal to one another. [[I.29|I. 29]]",
+    "Let the angle {HGL} be added to each; therefore the angles {MHG}, {HGL} are equal to the angles {HGF}, {HGL}. [[I.CN.2|C.N. 2]]",
+    "But the angles {MHG}, {HGL} are equal to two right angles; [[I.29|I. 29]] therefore the angles {HGF}, {HGL} are also equal to two right angles. [[I.CN.1|C.N. 1]] Therefore {FG} is in a straight line with {GL}. [[I.14|I. 14]]",
+    "And, since {FK} is equal and parallel to {HG}, [[I.34|I. 34]] and {HG} to {ML} also, {KF} is also equal and parallel to {ML}; [[I.CN.1 I.30|C.N. 1; I. 30]] and the straight lines {KM}, {FL} join them (at their extremities); therefore {KM}, {FL} are also equal and parallel. [[I.33|I. 33]] Therefore {KFLM} is a parallelogram.",
+    "And, since the triangle {ABD} is equal to the parallelogram {FH}, and {DBC} to {GM}, the whole rectilineal figure {ABCD} is equal to the whole parallelogram {KFLM}.",
+    "Therefore the parallelogram {KFLM} has been constructed equal to the given rectilineal figure {ABCD}, in the angle {FKM} which is equal to the given angle {E}."
+   ],
+   "qed": "Q. E. F.",
+   "notes": [
+    {
+     "lemma": "2, 3, 6, 45, 48. rectilineal figure, in the Greek",
+     "text": "“rectilineal” simply, without “figure,” εὐθύγραμμον being here used as a substantive, like the similarly formed παραλληλόγραμμον."
+    }
+   ]
+  },
+  {
+   "id": "I.46",
+   "n": 46,
+   "enunciation": "On a given straight line to describe a square.",
+   "proof": [
+    "Let {AB} be the given straight line; thus it is required to describe a square on the straight line {AB}.",
+    "Let {AC} be drawn at right angles to the straight line {AB} from the point {A} on it [[I.11|I. 11]], and let {AD} be made equal to {AB}; through the point {D} let {DE} be drawn parallel to {AB}, and through the point {B} let {BE} be drawn parallel to {AD}. [[I.31|I. 31]]",
+    "Therefore {ADEB} is a parallelogram; therefore {AB} is equal to {DE}, and {AD} to {BE}. [[I.34|I. 34]]",
+    "But {AB} is equal to {AD}; therefore the four straight lines {BA}, {AD}, {DE}, {EB} are equal to one another; therefore the parallelogram {ADEB} is equilateral.",
+    "I say next that it is also right-angled.",
+    "For, since the straight line {AD} falls upon the parallels {AB}, {DE}, the angles {BAD}, {ADE} are equal to two right angles. [[I.29|I. 29]]",
+    "But the angle {BAD} is right; therefore the angle {ADE} is also right.",
+    "And in parallelogrammic areas the opposite sides and angles are equal to one another; [[I.34|I. 34]] therefore each of the opposite angles {ABE}, {BED} is also right. Therefore {ADEB} is right-angled.",
+    "And it was also proved equilateral.",
+    "Therefore it is a square; and it is described on the straight line {AB}."
+   ],
+   "qed": "Q. E. F.",
+   "notes": [
+    {
+     "lemma": "1, 3, 30",
+     "text": "Proclus (p. 423, 18 sqq.) notes the difference between the word _construct_ (συστἡσασθαι) applied by Euclid to the construction of a _triangle_ (and, he might have added, of an _angle_) and the words _describe on_ (ἀναγράφειν ἀπό) used of drawing a square on a given straight line as one side. The _triangle_ (or _angle_) is, so to say, pieced together, while the describing of a square on a given straight line is the making of a figure “from” _one_ side, and corresponds to the multiplication of the number representing the side by itself."
+    }
+   ]
+  },
+  {
+   "id": "I.47",
+   "n": 47,
+   "enunciation": "In right-angled triangles the square on the side subtending the right angle is equal to the squares on the sides containing the right angle.",
+   "proof": [
+    "Let {ABC} be a right-angled triangle having the angle {BAC} right;",
+    "I say that the square on {BC} is equal to the squares on {BA}, {AC}.",
+    "For let there be described on {BC} the square {BDEC}, and on {BA}, {AC} the squares {GB}, {HC}; [[I.46|I. 46]] through {A} let {AL} be drawn parallel to either {BD} or {CE}, and let {AD}, {FC} be joined.",
+    "Then, since each of the angles {BAC}, {BAG} is right, it follows that with a straight line {BA}, and at the point {A} on it, the two straight lines {AC}, {AG} not lying on the same side make the adjacent angles equal to two right angles; therefore {CA} is in a straight line with {AG}. [[I.14|I. 14]]",
+    "For the same reason {BA} is also in a straight line with {AH}.",
+    "And, since the angle {DBC} is equal to the angle {FBA}: for each is right: let the angle {ABC} be added to each; therefore the whole angle {DBA} is equal to the whole angle {FBC}. [[I.CN.2|C.N. 2]]",
+    "And, since {DB} is equal to {BC}, and {FB} to {BA}, the two sides {AB}, {BD} are equal to the two sides {FB}, {BC} respectively, and the angle {ABD} is equal to the angle {FBC}; therefore the base {AD} is equal to the base {FC}, and the triangle {ABD} is equal to the triangle {FBC}. [[I.4|I. 4]]",
+    "Now the parallelogram {BL} is double of the triangle {ABD}, for they have the same base {BD} and are in the same parallels {BD}, {AL}. [[I.41|I. 41]]",
+    "And the square {GB} is double of the triangle {FBC}, for they again have the same base {FB} and are in the same parallels {FB}, {GC}. [[I.41|I. 41]]",
+    "[But the doubles of equals are equal to one another.] Therefore the parallelogram {BL} is also equal to the square {GB}.",
+    "Similarly, if {AE}, {BK} be joined, the parallelogram {CL} can also be proved equal to the square {HC}; therefore the whole square {BDEC} is equal to the two squares {GB}, {HC}. [[I.CN.2|C.N. 2]]",
+    "And the square {BDEC} is described on {BC}, and the squares {GB}, {HC} on {BA}, {AC}.",
+    "Therefore the square on the side {BC} is equal to the squares on the sides {BA}, {AC}.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": [
+    {
+     "lemma": "1. the square on",
+     "text": ", τὸ ἀπὸ...τετρἁγωνον, the word ἀναγραφέν or ἀναγεγραμμένον being understood."
+    },
+    {
+     "lemma": "33. the two sides AB, BD....",
+     "text": "Euclid actually writes “{DB}, {BA},” and therefore the equal sides in the two triangles are not mentioned in corresponding order, though he adheres to the words ἑκατέρα ἑκατέρα “respectively.” Here {DB} is equal to {BC} and {BA} to {FB}."
+    },
+    {
+     "lemma": "44",
+     "text": "[**But the doubles of equals are equal to one another.**] Heiberg brackets these words as an interpolation, since it quotes a Common Notion which is itself interpolated. Cf. notes on [[I.37|I. 37]], p. 332, and on interpolated Common Notions, pp. 223-4."
+    }
+   ]
+  },
+  {
+   "id": "I.48",
+   "n": 48,
+   "enunciation": "If in a triangle the square on one of the sides be equal to the squares on the remaining two sides of the triangle, the angle contained by the remaining two sides of the triangle is right.",
+   "proof": [
+    "For in the triangle {ABC} let the square on one side {BC} be equal to the squares on the sides {BA}, {AC};",
+    "I say that the angle {BAC} is right.",
+    "For let {AD} be drawn from the point {A} at right angles to the straight line {AC}, let {AD} be made equal to {BA}, and let {DC} be joined.",
+    "Since {DA} is equal to {AB}, the square on {DA} is also equal to the square on {AB}.",
+    "Let the square on {AC} be added to each; therefore the squares on {DA}, {AC} are equal to the squares on {BA}, {AC}.",
+    "But the square on {DC} is equal to the squares on {DA}, {AC}, for the angle {DAC} is right; [[I.47|I. 47]] and the square on {BC} is equal to the squares on {BA}, {AC}, for this is the hypothesis; therefore the square on {DC} is equal to the square on {BC}, so that the side {DC} is also equal to {BC}.",
+    "And, since {DA} is equal to {AB}, and {AC} is common, the two sides {DA}, {AC} are equal to the two sides {BA}, {AC}; and the base {DC} is equal to the base {BC}; therefore the angle {DAC} is equal to the angle {BAC}. [[I.8|I. 8]] But the angle {DAC} is right; therefore the angle {BAC} is also right.",
+    "Therefore etc."
+   ],
+   "qed": "Q. E. D.",
+   "notes": []
+  }
+ ],
+ "corrections": [
+  {
+   "id": "I.3",
+   "from": "the-two given",
+   "to": "the two given",
+   "reason": "stray hyphen in the Perseus transcription"
+  },
+  {
+   "id": "I.Def.21",
+   "from": "acuteangled",
+   "to": "acute-angled",
+   "reason": "hyphen lost at a line break in the Perseus transcription"
+  },
+  {
+   "id": "I.13",
+   "from": "{DBA}. {ABC}",
+   "to": "{DBA}, {ABC}",
+   "reason": "full stop for comma in the Perseus transcription"
+  },
+  {
+   "id": "I.15",
+   "from": "{AED} {DEB}",
+   "to": "{AED}, {DEB}",
+   "reason": "comma lost in the Perseus transcription"
+  },
+  {
+   "id": "I.18",
+   "from": "bejoined",
+   "to": "be joined",
+   "reason": "words run together in the Perseus transcription"
+  },
+  {
+   "id": "I.33",
+   "from": "griangle",
+   "to": "triangle",
+   "reason": "misprint in the Perseus transcription"
+  },
+  {
+   "id": "I.34",
+   "from": "{BC}has",
+   "to": "{BC} has",
+   "reason": "space lost in the Perseus transcription"
+  },
+  {
+   "id": "I.44",
+   "from": "let{FG}",
+   "to": "let {FG}",
+   "reason": "space lost in the Perseus transcription"
+  },
+  {
+   "id": "I.44",
+   "from": "parallelograms. and",
+   "to": "parallelograms, and",
+   "reason": "full stop for comma in the Perseus transcription"
+  }
+ ]
+}

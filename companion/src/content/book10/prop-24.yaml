@@ -1,0 +1,86 @@
+id: X.24
+kind: theorem
+title: A rectangle on medials commensurable in length is medial
+
+paraphrase: |
+  If {AB}, {BC} are medial and commensurable in length, the rectangle {AC} is a medial area.
+
+diagram:
+  width: 170
+  height: 250
+  elements:
+    - "A0;point;free;-1000,120;0;0"
+    - "A3;point;free;1000,120;0;0"
+    - "A;point;lineSlider;A0,A3,40,0"
+    - "B;point;lineSlider;A0,A3,110,0"
+    - "C';point;perpendicular;B,A;0;0"
+    - "C;point;lineSlider;B,C',0,40"
+    - "AC;polygon;parallelogram;A,B,C;0;0;black;random"
+    - "AD;polygon;square;B,A;0;0;black;random"
+    - "D;point;vertex;AD,4"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+  aliases: { DA: AD, DB: BD }
+  caption: |
+    {AC} = {AB}·{BC}; {AD} the square on {AB}.
+
+steps:
+  - part: enunciation
+    text: "The rectangle contained by medial straight lines commensurable in length is medial."
+    highlight: [AC]
+    hint: |
+      Medial × medial (commensurable in length) = medial area.
+    modern: |
+      $(r\rho\sqrt[4]q)(s\rho\sqrt[4]q) = rs\rho^2\sqrt q$.
+
+  - part: setting-out
+    text: "For let the rectangle AC be contained by the medial straight lines AB, BC which are commensurable in length;"
+    highlight: [AB, BC, AC]
+    hint: |
+      Setup.
+
+  - part: specification
+    text: "I say that AC is medial."
+    highlight: [AC]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For on AB let the square AD be described;"
+    highlight: [AD]
+    hint: |
+      The square {AD}, a medial area.
+
+  - part: proof
+    text: "therefore AD is medial."
+    highlight: [AD]
+    hint: |
+      Medial.
+
+  - part: proof
+    text: "And, since AB is commensurable in length with BC, while AB is equal to BD, therefore DB is also commensurable in length with BC; so that DA is also commensurable with AC."
+    highlight: [BD, BC, AD, AC]
+    hint: |
+      {DB}, {BC} commensurable, so {DA}, {AC} are ([[VI.1]], [[X.11]]).
+
+  - part: proof
+    text: "But DA is medial; therefore AC is also medial."
+    highlight: [AC]
+    hint: |
+      Commensurable with a medial area, so medial ([[X.23]], porism).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        $AC = AD \cdot (BC/AB)$, a rational multiple of a medial area. $\blacksquare$
+
+commentary: |
+  Joyce: "medial rectangle" was never defined; from [[X.23]]'s porism it means an area commensurable with the
+  square on a medial line.

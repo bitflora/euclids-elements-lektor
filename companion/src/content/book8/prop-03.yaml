@@ -1,0 +1,167 @@
+id: VIII.3
+kind: theorem
+title: A least continued proportion has coprime extremes
+
+paraphrase: |
+  If {A}, {B}, {C}, {D} are the least numbers in continued proportion in their ratio, then the extremes {A}
+  and {D} are prime to one another. The converse of [[VIII.1]].
+
+diagram:
+  width: 420
+  height: 200
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "B0;point;free;-1000,80;0;0"
+    - "B3;point;free;1000,80;0;0"
+    - "C0;point;free;-1000,120;0;0"
+    - "C3;point;free;1000,120;0;0"
+    - "D0;point;free;-1000,160;0;0"
+    - "D3;point;free;1000,160;0;0"
+    - "G0;point;free;-1000,60;0;0"
+    - "G3;point;free;1000,60;0;0"
+    - "H0;point;free;-1000,100;0;0"
+    - "H3;point;free;1000,100;0;0"
+    - "K0;point;free;-1000,140;0;0"
+    - "K3;point;free;1000,140;0;0"
+    - "U0;point;free;1000,0;0;0"
+    - "U1;point;free;1000,20;0;0"
+    - "E1;point;lineSlider;B0,B3,140,0;0"
+    - "E2;point;lineSlider;B0,B3,168,0;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;C0,C3,140,0;0"
+    - "F2;point;lineSlider;C0,C3,175,0;0"
+    - "F;line;connect;F1,F2;black"
+    - "G1;point;lineSlider;G0,G3,210,0;0"
+    - "G2;point;proportion;U0,U1,E1,E2,E1,E2,G1,G3;0"
+    - "G;line;connect;G1,G2;black"
+    - "H1;point;lineSlider;H0,H3,210,0;0"
+    - "H2;point;proportion;U0,U1,E1,E2,F1,F2,H1,H3;0"
+    - "H;line;connect;H1,H2;black"
+    - "K1;point;lineSlider;K0,K3,210,0;0"
+    - "K2;point;proportion;U0,U1,F1,F2,F1,F2,K1,K3;0"
+    - "K;line;connect;K1,K2;black"
+    - "L1;point;lineSlider;A0,A3,290,0;0"
+    - "L2;point;proportion;U0,U1,E1,E2,G1,G2,L1,A3;0"
+    - "L;line;connect;L1,L2;black"
+    - "M1;point;lineSlider;B0,B3,290,0;0"
+    - "M2;point;proportion;U0,U1,E1,E2,H1,H2,M1,B3;0"
+    - "M;line;connect;M1,M2;black"
+    - "N1;point;lineSlider;C0,C3,290,0;0"
+    - "N2;point;proportion;U0,U1,E1,E2,K1,K2,N1,C3;0"
+    - "N;line;connect;N1,N2;black"
+    - "O1;point;lineSlider;D0,D3,290,0;0"
+    - "O2;point;proportion;U0,U1,F1,F2,K1,K2,O1,D3;0"
+    - "O;line;connect;O1,O2;black"
+    - "A1;point;lineSlider;A0,A3,20,0;0"
+    - "A2;point;cutoff;A1,A3,L1,L2;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,20,0;0"
+    - "B2;point;cutoff;B1,B3,M1,M2;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,20,0;0"
+    - "C2;point;cutoff;C1,C3,N1,N2;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,20,0;0"
+    - "D2;point;cutoff;D1,D3,O1,O2;0"
+    - "D;line;connect;D1,D2;black"
+  caption: |
+    {E} : {F} is the ratio in lowest terms; {G}, {H}, {K} and {L}, {M}, {N}, {O} are the least progressions
+    of three and four terms built from it by [[VIII.2]].
+
+steps:
+  - part: enunciation
+    text: "If as many numbers as we please in continued proportion be the least of those which have the same ratio with them, the extremes of them are prime to one another."
+    highlight: [A, B, C, D]
+    hint: |
+      A least geometric progression has coprime first and last terms.
+    modern: |
+      $(a_1, \dots, a_n)$ least $\Rightarrow \gcd(a_1, a_n) = 1$.
+
+  - part: setting-out
+    text: "Let as many numbers as we please, A, B, C, D, in continued proportion be the least of those which have the same ratio with them;"
+    highlight: [A, B, C, D]
+    hint: |
+      {A}, {B}, {C}, {D}: a least progression.
+
+  - part: specification
+    text: "I say that the extremes of them A, D are prime to one another."
+    highlight: [A, D]
+    hint: |
+      To prove: {A}, {D} coprime.
+
+  - part: construction
+    text: "For let two numbers E, F, the least that are in the ratio of A, B, C, D, be taken, then three others G, H, K with the same property; and others, more by one continually, until the multitude taken becomes equal to the multitude of the numbers A, B, C, D."
+    highlight: [E, F, G, H, K]
+    hint: |
+      Reduce the common ratio to lowest terms {E} : {F} ([[VII.33]]), and build the least progressions of 3,
+      4, … terms ([[VIII.2]]).
+
+  - part: construction
+    text: "Let them be taken, and let them be L, M, N, O."
+    highlight: [L, M, N, O]
+    hint: |
+      The least four-term one: {L}, {M}, {N}, {O}.
+
+  - part: proof
+    text: "Now, since E, F are the least of those which have the same ratio with them, they are prime to one another."
+    highlight: [E, F]
+    hint: |
+      {E}, {F} coprime ([[VII.22]]).
+
+  - part: proof
+    text: "And, since the numbers E, F by multiplying themselves respectively have made the numbers G, K, and by multiplying the numbers G, K respectively have made the numbers L, O, therefore both G, K and L, O are prime to one another."
+    highlight: [G, K, L, O]
+    hint: |
+      {G}, {K} are their squares and {L}, {O} their cubes ([[VIII.2]], porism) — coprime ([[VII.27]]).
+
+  - part: proof
+    text: "And, since A, B, C, D are the least of those which have the same ratio with them, while L, M, N, O are the least that are in the same ratio with A, B, C, D, and the multitude of the numbers A, B, C, D is equal to the multitude of the numbers L, M, N, O, therefore the numbers A, B, C, D are equal to the numbers L, M, N, O respectively;"
+    highlight: [A, B, C, D, L, M, N, O]
+    hint: |
+      Both are *the* least progression in that ratio, so they coincide.
+    explain:
+      implicit: |
+        That the least numbers in given ratios are unique: two different least progressions would each be
+        smaller than the other. Euclid takes it as evident.
+
+  - part: proof
+    text: "therefore A is equal to L, and D to O."
+    highlight: [A, L, D, O]
+    hint: |
+      In particular {A} = {L}, {D} = {O}.
+
+  - part: proof
+    text: "And L, O are prime to one another."
+    highlight: [L, O]
+    hint: |
+      As shown.
+
+  - part: proof
+    text: "Therefore A, D are also prime to one another."
+    highlight: [A, D]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [4, 5, 6, 7]
+      text: |
+        With the ratio $e : f$ in lowest terms, the least progression is $e^3, e^2f, ef^2, f^3$ ([[VIII.2]]),
+        whose extremes are coprime ([[VII.27]]).
+    - steps: [7, 8, 9, 10]
+      text: |
+        A least progression is unique, so $(a, b, c, d)$ is this one, and $\gcd(a, d) = 1$. $\blacksquare$
+  closing: |
+    Consequently every least progression of $n$ terms is $e^{n-1}, e^{n-2} f, \dots, f^{n-1}$; this is the
+    form Book VIII exploits.
+
+commentary: |
+  Used in [[VIII.6]], [[VIII.8]] and [[VIII.21]].

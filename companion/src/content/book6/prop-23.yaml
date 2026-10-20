@@ -1,0 +1,191 @@
+id: VI.23
+kind: theorem
+title: Equiangular parallelograms are in the ratio compounded of their sides
+
+paraphrase: |
+  Two parallelograms {AC}, {CF} with equal angles have the ratio *compounded* of the ratios of their sides:
+  {AC} : {CF} = ({BC} : {CG}) · ({DC} : {CE}).
+
+diagram:
+  width: 380
+  height: 270
+  elements:
+    - "A;point;free;150,30"
+    - "F;point;free;270,230"
+    - "H;point;free;330,30"
+    - "Y;point;parallelogram;A,H,F;0;0"
+    - "C;point;free;200,100"
+    - "Ep;point;parallelogram;F,H,C;0;0"
+    - "E;point;intersection;C,Ep,F,Y"
+    - "D;point;intersection;H,A,C,Ep"
+    - "Bp;point;parallelogram;F,Y,C;0;0"
+    - "B;point;intersection;C,Bp,A,Y"
+    - "G;point;intersection;C,Bp,H,F"
+    - "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;#efe4d2"
+    - "FECG;polygon;quadrilateral;F,E,C,G;0;0;black;#dfe7ea"
+    - "DCGH;polygon;quadrilateral;D,C,G,H;0;0;black;0"
+    - "K0;point;free;30,-1000;0;0"
+    - "K3;point;free;30,1000;0;0"
+    - "K1;point;lineSlider;K0,K3,0,50;0"
+    - "K2;point;lineSlider;K0,K3,0,100;0"
+    - "K;line;connect;K1,K2;black"
+    - "L0;point;free;60,-1000;0;0"
+    - "L3;point;free;60,1000;0;0"
+    - "L1;point;lineSlider;L0,L3,0,50;0"
+    - "L2;point;proportion;B,C,C,G,K1,K2,L1,L3;0"
+    - "L;line;connect;L1,L2;black"
+    - "M0;point;free;90,-1000;0;0"
+    - "M3;point;free;90,1000;0;0"
+    - "M1;point;lineSlider;M0,M3,0,50;0"
+    - "M2;point;proportion;D,C,C,E,L1,L2,M1,M3;0"
+    - "M;line;connect;M1,M2;black"
+    - "BC;line;connect;B,C;0;0;0"
+    - "CG;line;connect;C,G;0;0;0"
+    - "DC;line;connect;D,C;0;0;0"
+    - "CE;line;connect;C,E;0;0;0"
+    - "BG;line;connect;B,G;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "angBCD;sector;angleMarker;C,B,D"
+    - "angECG;sector;angleMarker;C,E,G"
+  aliases:
+    AC: ABCD
+    CF: FECG
+    DG: DCGH
+    CH: DCGH
+    BCG: BG
+    DCE: DE
+  given: [A, F, H, Y, C, Ep, E, D, Bp, B, G, ABCD, FECG, BC, CG, DC, CE, angBCD, angECG]
+  caption: |
+    {AC} and {CF} are placed with their equal angles vertical at {C}. Drag {A}, {C}, {F}, {H}, or the lower end of {K}: {L} and {M}
+    are constructed so that $BC : CG = K : L$ and $DC : CE = L : M$.
+
+steps:
+  - part: enunciation
+    text: "Equiangular parallelograms have to one another the ratio compounded of the ratios of their sides."
+    highlight: [AC, CF]
+    hint: |
+      Area ratio = product of the side ratios. For rectangles: area = length × width.
+    explain:
+      fact: |
+        Heath's note: "the ratio compounded of the ratios of the sides" stands for a Greek phrase that
+        literally says "compounded *of the sides*", a common negligence. A ratio *compounded* of $a : b$ and
+        $b : c$ is $a : c$; to compound arbitrary ratios, first rewrite them with a common middle term, as
+        the proof does with {K}, {L}, {M} (see [[VI.Def.5]]).
+    modern: |
+      $$\frac{[AC]}{[CF]} = \frac{BC}{CG}\cdot\frac{DC}{CE}$$
+
+  - part: setting-out
+    text: "Let AC, CF be equiangular parallelograms having the angle BCD equal to the angle ECG;"
+    highlight: [AC, CF, angBCD, angECG]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the parallelogram AC has to the parallelogram CF the ratio compounded of the ratios of the sides."
+    highlight: [AC, CF]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let them be placed so that BC is in a straight line with CG;"
+    highlight: [BC, CG]
+    hint: |
+      Equal angles vertically opposite at {C}.
+
+  - part: proof
+    text: "therefore DC is also in a straight line with CE."
+    highlight: [DC, CE]
+    hint: |
+      [[I.14]].
+    cites: [I.14]
+
+  - part: construction
+    text: "Let the parallelogram DG be completed; let a straight line K be set out, and let it be contrived that, as BC is to CG, so is K to L, and, as DC is to CE, so is L to M."
+    highlight: [DG, K, L, M]
+    adds: [DCGH, K0, K3, K1, K2, K, L0, L3, L1, L2, L, M0, M3, M1, M2, M]
+    hint: |
+      A third parallelogram {DG} between the two; and three lines {K}, {L}, {M} carrying the two side ratios in a
+      chain ([[VI.12]]).
+    explain:
+      did: |
+        Heath's note: "let it be contrived" renders a terse Greek imperative, literally "and let there be
+        made, as {BC} to {CG}, so {K} to {L}" — {L} being the line to be constructed.
+
+  - part: proof
+    text: "Then the ratios of K to L and of L to M are the same as the ratios of the sides, namely of BC to CG and of DC to CE."
+    highlight: [K, L, M, BC, CG, DC, CE]
+    hint: |
+      By construction.
+
+  - part: proof
+    text: "But the ratio of K to M is compounded of the ratio of K to L and of that of L to M;"
+    highlight: [K, L, M]
+    hint: |
+      What "compounded" means: chain through the middle term.
+
+  - part: proof
+    text: "so that K has also to M the ratio compounded of the ratios of the sides."
+    highlight: [K, M]
+    hint: |
+      $K : M$ is the target ratio.
+
+  - part: proof
+    text: "Now since, as BC is to CG, so is the parallelogram AC to the parallelogram CH, while, as BC is to CG, so is K to L, therefore also, as K is to L, so is AC to CH."
+    highlight: [BC, CG, AC, CH, K, L]
+    hint: |
+      {AC} and {CH} have the same height over the line {BCG}: [[VI.1]], then [[V.11]].
+
+  - part: proof
+    text: "Again, since, as DC is to CE, so is the parallelogram CH to CF, while, as DC is to CE, so is L to M, therefore also, as L is to M, so is the parallelogram CH to the parallelogram CF."
+    highlight: [DC, CE, CH, CF, L, M]
+    hint: |
+      Likewise over the line {DCE}.
+
+  - part: proof
+    text: "Since then it was proved that, as K is to L, so is the parallelogram AC to the parallelogram CH, and, as L is to M, so is the parallelogram CH to the parallelogram CF, therefore, ex aequali, as K is to M, so is AC to the parallelogram CF."
+    highlight: [K, M, AC, CF]
+    hint: |
+      *Ex aequali* ([[V.22]]).
+    cites: [V.22]
+
+  - part: proof
+    text: "But K has to M the ratio compounded of the ratios of the sides;"
+    highlight: [K, M]
+    hint: |
+      As shown.
+
+  - part: proof
+    text: "therefore AC also has to CF the ratio compounded of the ratios of the sides."
+    highlight: [AC, CF]
+    hint: |
+      [[V.11]].
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Let $\theta$ be the common angle.
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: |
+        $[AC] = BC\cdot DC\sin\theta$ and $[CF] = CG\cdot CE\sin\theta$.
+    - steps: [9, 10, 11, 12, 13]
+      text: |
+        So $\frac{[AC]}{[CF]} = \frac{BC}{CG}\cdot\frac{DC}{CE}$. $\blacksquare$
+  closing: |
+    Euclid's {DG} plays the role of the intermediate product: $[AC]/[DG]$ uses only the first ratio,
+    $[DG]/[CF]$ only the second.
+
+commentary: |
+  The one place in the *Elements* where a "product" of ratios is used outright, and the reason the
+  (probably interpolated) definition of compound ratio ([[VI.Def.5]]) exists. Joyce reads VI.23 as Euclid's
+  version of "area = length × width", stated without units: the ratio of a rectangle to a square is the
+  product of the ratios of the rectangle's sides to the square's side.

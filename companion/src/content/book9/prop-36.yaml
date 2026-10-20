@@ -1,0 +1,325 @@
+id: IX.36
+kind: theorem
+title: Euclid's perfect numbers
+
+paraphrase: |
+  If $1 + 2 + 4 + \dots + 2^{n-1}$ is prime, then that sum times the last term $2^{n-1}$ is a perfect number.
+  For example $1 + 2 + 4 = 7$ is prime, and $7 \cdot 4 = 28 = 1 + 2 + 4 + 7 + 14$.
+
+diagram:
+  width: 420
+  height: 230
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "E0;point;free;-1000,65;0;0"
+    - "E3;point;free;1000,65;0;0"
+    - "L0;point;free;-1000,100;0;0"
+    - "L3;point;free;1000,100;0;0"
+    - "M0;point;free;-1000,135;0;0"
+    - "M3;point;free;1000,135;0;0"
+    - "F0;point;free;-1000,170;0;0"
+    - "F3;point;free;1000,170;0;0"
+    - "P0;point;free;-1000,205;0;0"
+    - "P3;point;free;1000,205;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,20;0;0"
+    - "U3;point;free;1000,35;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;cutoff;A1,A3,U1,U2;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;A0,A3,75,0;0"
+    - "B2;point;cutoff;B1,A3,U1,U3;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;A0,A3,135,0;0"
+    - "C2;point;proportion;A1,A2,B1,B2,B1,B2,C1,A3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;A0,A3,230,0;0"
+    - "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,A3;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;E0,E3,30,0;0"
+    - "E2;point;lineSlider;E0,E3,80,0;0"
+    - "E;line;connect;E1,E2;black"
+    - "H;point;lineSlider;E0,E3,130,0"
+    - "K;point;proportion;U1,U2,U1,U3,E1,E2,H,E3"
+    - "HK;line;connect;H,K"
+    - "L1;point;lineSlider;L0,L3,30,0;0"
+    - "L2;point;proportion;E1,E2,H,K,H,K,L1,L3;0"
+    - "L;line;connect;L1,L2;black"
+    - "M1;point;lineSlider;M0,M3,30,0;0"
+    - "M2;point;proportion;E1,E2,H,K,L1,L2,M1,M3;0"
+    - "M;line;connect;M1,M2;black"
+    - "F;point;lineSlider;F0,F3,30,0"
+    - "G;point;proportion;U2,U3,E1,E2,D1,D2,F,F3"
+    - "FG;line;connect;F,G"
+    - "N;point;cutoff;H,K,E1,E2"
+    - "O;point;cutoff;F,G,E1,E2"
+    - "P1;point;lineSlider;P0,P3,30,0;0"
+    - "P2;point;lineSlider;P0,P3,100,0;0"
+    - "P;line;connect;P1,P2;black"
+    - "Q1;point;lineSlider;P0,P3,150,0;0"
+    - "Q2;point;proportion;P1,P2,F,G,U1,U2,Q1,P3;0"
+    - "Q;line;connect;Q1,Q2;black"
+    - "HN;line;connect;H,N;0;0;0"
+    - "NK;line;connect;N,K;0;0;0"
+    - "FO;line;connect;F,O;0;0;0"
+    - "OG;line;connect;O,G;0;0;0"
+  aliases: { KH: HK }
+  caption: |
+    {A}, {B}, {C}, {D} = 2, 4, 8, 16 doubled from the unit; {E} = 1 + 2 + … + 16 = 31 is prime; {FG} = {E}·{D}.
+    {HK}, {L}, {M} continue the doubling from {E}.
+
+steps:
+  - part: enunciation
+    text: "If as many numbers as we please beginning from an unit be set out continuously in double proportion, until the sum of all becomes prime, and if the sum multiplied into the last make some number, the product will be perfect."
+    highlight: [A, B, C, D, E, FG]
+    hint: |
+      If $2^n - 1$ is prime, $2^{n-1}(2^n - 1)$ is perfect.
+    modern: |
+      $2^n - 1$ prime $\Rightarrow$ $2^{n-1}(2^n - 1)$ is perfect.
+
+  - part: setting-out
+    text: "For let as many numbers as we please, A, B, C, D, beginning from an unit be set out in double proportion, until the sum of all becomes prime, let E be equal to the sum, and let E by multiplying D make FG;"
+    highlight: [A, B, C, D, E, FG]
+    hint: |
+      1, {A}, {B}, {C}, {D} doubling; {E} their sum, prime; {FG} = {E}{D}.
+
+  - part: specification
+    text: "I say that FG is perfect."
+    highlight: [FG]
+    hint: |
+      To prove: {FG} equals the sum of its proper divisors ([[VII.Def.22]]).
+
+  - part: construction
+    text: "For, however many A, B, C, D are in multitude, let so many E, HK, L, M be taken in double proportion beginning from E;"
+    highlight: [E, HK, L, M]
+    hint: |
+      {E}, 2{E}, 4{E}, 8{E}.
+
+  - part: proof
+    text: "therefore, ex aequali, as A is to D, so is E to M."
+    highlight: [A, D, E, M]
+    hint: |
+      [[VII.14]].
+
+  - part: proof
+    text: "Therefore the product of E, D is equal to the product of A, M."
+    highlight: [E, D, A, M]
+    hint: |
+      [[VII.19]].
+
+  - part: proof
+    text: "And the product of E, D is FG; therefore the product of A, M is also FG."
+    highlight: [FG, A, M]
+    hint: |
+      {FG} = {A}{M} = 2{M}.
+
+  - part: proof
+    text: "Therefore A by multiplying M has made FG; therefore M measures FG according to the units in A."
+    highlight: [M, FG]
+    hint: |
+      {M} goes twice into {FG}.
+
+  - part: proof
+    text: "And A is a dyad; therefore FG is double of M."
+    highlight: [FG, M]
+    hint: |
+      {FG} = 2{M}.
+
+  - part: proof
+    text: "But M, L, HK, E are continuously double of each other; therefore E, HK, L, M, FG are continuously proportional in double proportion."
+    highlight: [E, HK, L, M, FG]
+    hint: |
+      {E}, {HK}, {L}, {M}, {FG}: a doubling progression.
+
+  - part: construction
+    text: "Now let there be subtracted from the second HK and the last FG the numbers HN, FO, each equal to the first E;"
+    highlight: [HN, FO]
+    hint: |
+      {HN} = {FO} = {E}.
+
+  - part: proof
+    text: "therefore, as the excess of the second is to the first, so is the excess of the last to all those before it."
+    highlight: [NK, OG]
+    hint: |
+      [[IX.35]].
+
+  - part: proof
+    text: "Therefore, as NK is to E, so is OG to M, L, KH, E."
+    highlight: [NK, E, OG]
+    hint: |
+      {NK} : {E} = {OG} : ({M} + {L} + {KH} + {E}).
+
+  - part: proof
+    text: "And NK is equal to E; therefore OG is also equal to M, L, HK, E."
+    highlight: [NK, OG]
+    hint: |
+      {NK} = {E} (doubling), so {OG} = {M} + {L} + {HK} + {E}.
+
+  - part: proof
+    text: "But FO is also equal to E, and E is equal to A, B, C, D and the unit."
+    highlight: [FO, E]
+    hint: |
+      {FO} = {E} = 1 + {A} + {B} + {C} + {D}.
+
+  - part: proof
+    text: "Therefore the whole FG is equal to E, HK, L, M and A, B, C, D and the unit; and it is measured by them."
+    highlight: [FG]
+    hint: |
+      {FG} = sum of 1, {A}, …, {D}, {E}, …, {M} — all of which divide it.
+
+  - part: specification
+    text: "I say also that FG will not be measured by any other number except A, B, C, D, E, HK, L, M and the unit."
+    highlight: [FG]
+    hint: |
+      And these are all its proper divisors.
+
+  - part: proof
+    text: "For, if possible, let some number P measure FG, and let P not be the same with any of the numbers A, B, C, D, E, HK, L, M."
+    highlight: [P]
+    hint: |
+      Suppose another divisor {P}.
+
+  - part: construction
+    text: "And, as many times as P measures FG, so many units let there be in Q; therefore Q by multiplying P has made FG."
+    highlight: [Q]
+    hint: |
+      {FG} = {Q}{P}.
+
+  - part: proof
+    text: "But, further, E has also by multiplying D made FG; therefore, as E is to Q, so is P to D."
+    highlight: [E, Q, P, D]
+    hint: |
+      [[VII.19]].
+
+  - part: proof
+    text: "And, since A, B, C, D are continuously proportional beginning from an unit, therefore D will not be measured by any other number except A, B, C."
+    highlight: [D]
+    hint: |
+      [[IX.13]].
+
+  - part: proof
+    text: "And, by hypothesis, P is not the same with any of the numbers A, B, C; therefore P will not measure D."
+    highlight: [P, D]
+    hint: |
+      {P} does not measure {D}.
+
+  - part: proof
+    text: "But, as P is to D, so is E to Q; therefore neither does E measure Q."
+    highlight: [E, Q]
+    hint: |
+      [[VII.Def.20]].
+
+  - part: proof
+    text: "And E is prime; and any prime number is prime to any number which it does not measure."
+    highlight: [E]
+    hint: |
+      [[VII.29]].
+
+  - part: proof
+    text: "Therefore E, Q are prime to one another."
+    highlight: [E, Q]
+    hint: |
+      Coprime.
+
+  - part: proof
+    text: "But primes are also least, and the least numbers measure those which have the same ratio the same number of times, the antecedent the antecedent and the consequent the consequent; and, as E is to Q, so is P to D; therefore E measures P the same number of times that Q measures D."
+    highlight: [E, P, Q, D]
+    hint: |
+      [[VII.21]], [[VII.20]]: {Q} measures {D}.
+
+  - part: proof
+    text: "But D is not measured by any other number except A, B, C; therefore Q is the same with one of the numbers A, B, C."
+    highlight: [Q]
+    hint: |
+      So {Q} is a power of 2 below {D}.
+
+  - part: proof
+    text: "Let it be the same with B."
+    highlight: [Q, B]
+    hint: |
+      Say {Q} = {B}.
+
+  - part: construction
+    text: "And, however many B, C, D are in multitude, let so many E, HK, L be taken beginning from E."
+    highlight: [E, HK, L]
+    hint: |
+      Match lengths.
+
+  - part: proof
+    text: "Now E, HK, L are in the same ratio with B, C, D; therefore, ex aequali, as B is to D, so is E to L."
+    highlight: [B, D, E, L]
+    hint: |
+      [[VII.14]].
+
+  - part: proof
+    text: "Therefore the product of B, L is equal to the product of D, E."
+    highlight: [B, L, D, E]
+    hint: |
+      [[VII.19]].
+
+  - part: proof
+    text: "But the product of D, E is equal to the product of Q, P; therefore the product of Q, P is also equal to the product of B, L."
+    highlight: [Q, P, B, L]
+    hint: |
+      {Q}{P} = {B}{L}.
+
+  - part: proof
+    text: "Therefore, as Q is to B, so is L to P."
+    highlight: [Q, B, L, P]
+    hint: |
+      [[VII.19]].
+
+  - part: proof
+    text: "And Q is the same with B; therefore L is also the same with P; which is impossible, for by hypothesis P is not the same with any of the numbers set out."
+    highlight: [L, P]
+    hint: |
+      {P} = {L}: contradiction.
+
+  - part: proof
+    text: "Therefore no number will measure FG except A, B, C, D, E, HK, L, M and the unit."
+    highlight: [FG]
+    hint: |
+      The proper divisors are exactly these.
+
+  - part: proof
+    text: "And FG was proved equal to A, B, C, D, E, HK, L, M and the unit; and a perfect number is that which is equal to its own parts; therefore FG is perfect."
+    highlight: [FG]
+    hint: |
+      {FG} is perfect ([[VII.Def.22]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Let $p = 2^n - 1$ be prime and $N = 2^{n-1}p$.
+  lines:
+    - steps: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+      text: |
+        $1 + 2 + \dots + 2^{n-1} = p$ and $p + 2p + \dots + 2^{n-2}p = (2^{n-1} - 1)p$ ([[IX.35]]); together
+        $p + (2^{n-1} - 1)p = 2^{n-1}p = N$.
+    - steps: [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33]
+      text: |
+        The divisors of $N$ are $2^i$ and $2^i p$ ($0 \le i \le n-1$), since $p$ is prime; so the proper divisors
+        are exactly those summed. $\blacksquare$
+  closing: |
+    In modern terms: $\sigma(N) = (2^n - 1)(p + 1) = 2N$.
+
+commentary: |
+  The last proposition of Book IX and of the arithmetic books: a recipe for perfect numbers — 6, 28, 496,
+  8128, … from the primes 3, 7, 31, 127 (now called Mersenne primes). Joyce's long note works through the
+  details.
+
+  Euler proved (published 1849, posthumously) that every *even* perfect number has Euclid's form. Whether an
+  odd perfect number exists is one of the oldest open problems in mathematics.
+
+gaps: |
+  - Step 26 asserts that {Q} must be one of {A}, {B}, {C}; the case {Q} = the unit (i.e. {P} = {FG}) is
+    excluded only because "measures" means a proper divisor here.
+
+historical: |
+  Nicomachus (c. 100 AD) listed the first four perfect numbers and conjectured patterns, some false (for
+  instance that they end alternately in 6 and 8).

@@ -1,0 +1,253 @@
+id: VII.33
+kind: problem
+title: Reducing a ratio of several numbers to lowest terms
+
+paraphrase: |
+  Given numbers {A}, {B}, {C}, find the least numbers in the same ratio: divide each by their greatest
+  common measure {D}.
+
+diagram:
+  width: 270
+  height: 280
+  elements:
+    - "A0;point;free;30,-1000;0;0"
+    - "A3;point;free;30,1000;0;0"
+    - "B0;point;free;65,-1000;0;0"
+    - "B3;point;free;65,1000;0;0"
+    - "C0;point;free;100,-1000;0;0"
+    - "C3;point;free;100,1000;0;0"
+    - "D0;point;free;135,-1000;0;0"
+    - "D3;point;free;135,1000;0;0"
+    - "E0;point;free;170,-1000;0;0"
+    - "E3;point;free;170,1000;0;0"
+    - "F0;point;free;205,-1000;0;0"
+    - "F3;point;free;205,1000;0;0"
+    - "G0;point;free;240,-1000;0;0"
+    - "G3;point;free;240,1000;0;0"
+    - "A1;point;lineSlider;A0,A3,0,30;0"
+    - "A2;point;lineSlider;A0,A3,0,100;0"
+    - "A;line;connect;A1,A2;black"
+    - "X;point;midpoint;A;0;0"
+    - "D1;point;lineSlider;D0,D3,0,30;0"
+    - "D2;point;lineSlider;D0,D3,0,60;0"
+    - "D;line;connect;D1,D2;black"
+    - "B1;point;lineSlider;B0,B3,0,30;0"
+    - "B15;point;cutoff;B1,B3,A1,A2;0;0"
+    - "B2;point;cutoff;B15,B3,A1,X;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,0,30;0"
+    - "C15;point;cutoff;C1,C3,A1,A2;0;0"
+    - "C2;point;cutoff;C15,C3,A1,A2;0"
+    - "C;line;connect;C1,C2;black"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,25;0;0"
+    - "E1;point;lineSlider;E0,E3,0,30;0"
+    - "E2;point;proportion;D1,D2,A1,A2,U1,U2,E1,E3;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;F0,F3,0,30;0"
+    - "F2;point;proportion;D1,D2,B1,B2,U1,U2,F1,F3;0"
+    - "F;line;connect;F1,F2;black"
+    - "G1;point;lineSlider;G0,G3,0,30;0"
+    - "G2;point;proportion;D1,D2,C1,C2,U1,U2,G1,G3;0"
+    - "G;line;connect;G1,G2;black"
+    - "H1;point;lineSlider;E0,E3,0,180;0"
+    - "H2;point;proportion;A1,A2,A1,X,E1,E2,H1,E3;0"
+    - "H;line;connect;H1,H2;black"
+    - "K1;point;lineSlider;F0,F3,0,180;0"
+    - "K2;point;proportion;A1,A2,A1,X,F1,F2,K1,F3;0"
+    - "K;line;connect;K1,K2;black"
+    - "L1;point;lineSlider;G0,G3,0,180;0"
+    - "L2;point;proportion;A1,A2,A1,X,G1,G2,L1,G3;0"
+    - "L;line;connect;L1,L2;black"
+    - "M1;point;lineSlider;A0,A3,0,180;0"
+    - "M2;point;proportion;H1,H2,A1,A2,U1,U2,M1,A3;0"
+    - "M;line;connect;M1,M2;black"
+  caption: |
+    {D} is the greatest common measure of {A}, {B}, {C}; {E}, {F}, {G} count how often it goes into each.
+    {H}, {K}, {L} and {M} belong to the proof by contradiction.
+
+steps:
+  - part: enunciation
+    text: "Given as many numbers as we please, to find the least of those which have the same ratio with them."
+    highlight: [A, B, C]
+    hint: |
+      Reduce $a : b : c$ to lowest terms.
+    modern: |
+      $a : b : c = \tfrac{a}{d} : \tfrac{b}{d} : \tfrac{c}{d}$ with $d = \gcd(a, b, c)$, and these are least.
+
+  - part: setting-out
+    text: "Let A, B, C be the given numbers, as many as we please;"
+    highlight: [A, B, C]
+    hint: |
+      The given numbers {A}, {B}, {C}.
+
+  - part: specification
+    text: "thus it is required to find the least of those which have the same ratio with A, B, C."
+    highlight: [A, B, C]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "A, B, C are either prime to one another or not."
+    highlight: [A, B, C]
+    hint: |
+      Two cases.
+
+  - part: proof
+    text: "Now, if A, B, C are prime to one another, they are the least of those which have the same ratio with them."
+    highlight: [A, B, C]
+    hint: |
+      If coprime, they are already least ([[VII.21]]).
+    explain:
+      implicit: |
+        [[VII.21]] is proved for two numbers; here it is applied to three.
+
+  - part: construction
+    text: "But, if not, let D the greatest common measure of A, B, C be taken, and, as many times as D measures the numbers A, B, C respectively, so many units let there be in the numbers E, F, G respectively."
+    highlight: [D, E, F, G]
+    hint: |
+      Otherwise {D} = gcd ([[VII.3]]), and {E}, {F}, {G} = {A}/{D}, {B}/{D}, {C}/{D}.
+
+  - part: proof
+    text: "Therefore the numbers E, F, G measure the numbers A, B, C respectively according to the units in D."
+    highlight: [E, F, G, A, B, C, D]
+    hint: |
+      By commutativity ([[VII.16]]), {E}, {F}, {G} each go into {A}, {B}, {C} as many times as {D} has units.
+
+  - part: proof
+    text: "Therefore E, F, G measure A, B, C the same number of times; therefore E, F, G are in the same ratio with A, B, C."
+    highlight: [E, F, G, A, B, C]
+    hint: |
+      So {E} : {F} : {G} = {A} : {B} : {C} ([[VII.Def.20]]).
+
+  - part: specification
+    text: "I say next that they are the least that are in that ratio."
+    highlight: [E, F, G]
+    hint: |
+      Now show they are least.
+
+  - part: proof
+    text: "For, if E, F, G are not the least of those which have the same ratio with A, B, C, there will be numbers less than E, F, G which are in the same ratio with A, B, C."
+    highlight: [E, F, G]
+    hint: |
+      Suppose smaller ones exist.
+
+  - part: construction
+    text: "Let them be H, K, L;"
+    highlight: [H, K, L]
+    hint: |
+      {H}, {K}, {L}.
+
+  - part: proof
+    text: "therefore H measures A the same number of times that the numbers K, L measure the numbers B, C respectively."
+    highlight: [H, A, K, B, L, C]
+    hint: |
+      They go into {A}, {B}, {C} equally often ([[VII.20]], tacitly).
+    gap: |
+      This needs [[VII.20]], which applies to the *least* numbers in the ratio; Euclid should take {H}, {K},
+      {L} to be least.
+
+  - part: construction
+    text: "Now, as many times as H measures A, so many units let there be in M;"
+    highlight: [M]
+    hint: |
+      {M} counts how often.
+
+  - part: proof
+    text: "therefore the numbers K, L also measure the numbers B, C respectively according to the units in M."
+    highlight: [K, L, B, C, M]
+    hint: |
+      Same count for {K} in {B} and {L} in {C}.
+
+  - part: proof
+    text: "And, since H measures A according to the units in M, therefore M also measures A according to the units in H."
+    highlight: [M, A, H]
+    hint: |
+      So {M} measures {A} ([[VII.16]]).
+
+  - part: proof
+    text: "For the same reason M also measures the numbers B, C according to the units in the numbers K, L respectively;"
+    highlight: [M, B, C]
+    hint: |
+      And {B}, {C}.
+    cites: [VII.16]
+
+  - part: proof
+    text: "Therefore M measures A, B, C."
+    highlight: [M, A, B, C]
+    hint: |
+      {M} is a common measure.
+
+  - part: proof
+    text: "Now, since H measures A according to the units in M, therefore H by multiplying M has made A."
+    highlight: [H, M, A]
+    hint: |
+      {A} = {H}·{M}.
+
+  - part: proof
+    text: "For the same reason also E by multiplying D has made A."
+    highlight: [E, D, A]
+    hint: |
+      And {A} = {E}·{D}.
+    cites: [VII.Def.15]
+
+  - part: proof
+    text: "Therefore the product of E, D is equal to the product of H, M."
+    highlight: [E, D, H, M]
+    hint: |
+      {E}·{D} = {H}·{M}.
+
+  - part: proof
+    text: "Therefore, as E is to H, so is M to D."
+    highlight: [E, H, M, D]
+    hint: |
+      By [[VII.19]].
+
+  - part: proof
+    text: "But E is greater than H; therefore M is also greater than D."
+    highlight: [M, D]
+    hint: |
+      {E} > {H} forces {M} > {D}.
+
+  - part: proof
+    text: "And it measures A, B, C: which is impossible, for by hypothesis D is the greatest common measure of A, B, C."
+    highlight: [M, A, B, C, D]
+    hint: |
+      A common measure greater than the greatest: impossible.
+
+  - part: proof
+    text: "Therefore there cannot be any numbers less than E, F, G which are in the same ratio with A, B, C."
+    highlight: [E, F, G]
+    hint: |
+      No smaller numbers.
+
+  - part: proof
+    text: "Therefore E, F, G are the least of those which have the same ratio with A, B, C."
+    highlight: [E, F, G]
+    hint: |
+      {E}, {F}, {G} are the least.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [5, 6, 7]
+      text: |
+        Let $d = \gcd(a, b, c)$ and $e = a/d$, $f = b/d$, $g = c/d$; then $a : b : c = e : f : g$.
+    - steps: [8, 9, 10, 11, 12, 13, 14, 15]
+      text: |
+        If $h : k : l$ is the same ratio with $h < e$, then $a = mh$, $b = mk$, $c = ml$, so $m$ is a common
+        divisor of $a, b, c$.
+    - steps: [16, 17, 18, 19, 20, 21]
+      text: |
+        $ed = a = hm$ and $h < e$ give $m > d$: contradiction. $\blacksquare$
+
+commentary: |
+  One of the rare places where Euclid speaks of a ratio of more than two numbers ("the same ratio with {A},
+  {B}, {C}"), meaning $a : b = e : f$ and $b : c = f : g$. It is used for continued proportions in Book VIII
+  ([[VIII.2]], [[VIII.4]]).

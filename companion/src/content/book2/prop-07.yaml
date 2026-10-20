@@ -1,0 +1,202 @@
+id: II.7
+kind: theorem
+title: The square of a difference
+
+paraphrase: |
+  Cut {AB} at {C}. The squares on the whole {AB} and on the piece {BC} together equal twice the
+  rectangle on {AB}, {BC} plus the square on the other piece {CA}. In algebra, with $AB = a$,
+  $BC = b$: $a^2 + b^2 = 2ab + (a - b)^2$.
+
+diagram:
+  width: 250
+  height: 250
+  elements:
+    - "A0;point;free;-1000,40;0"
+    - "A3;point;free;1000,40;0"
+    - "A;point;lineSlider;A0,A3,40,0"
+    - "B;point;lineSlider;A0,A3,210,0"
+    - "C;point;lineSlider;A0,A3,150,0"
+    - "BADE;polygon;square;B,A;0;0;black;0"
+    - "E;point;vertex;BADE,4"
+    - "D;point;vertex;BADE,3"
+    - "BD;line;connect;B,D"
+    - "N;point;parallelogram;D,A,C"
+    - "CN;line;connect;C,N"
+    - "G;point;intersection;C,N,B,D"
+    - "DNGH;polygon;parallelogram;D,N,G;0;0;0;#dfe7ea"
+    - "H;point;vertex;DNGH,4"
+    - "F;point;intersection;G,H,B,E"
+    - "HF;line;connect;H,F"
+    - "Lp;point;midpoint;G,F;0;0"
+    - "K;point;cutoff;G,H,G,Lp;black;lightGray"
+    - "L;point;cutoff;G,B,G,Lp;black;lightGray"
+    - "M;point;cutoff;G,N,G,Lp;black;lightGray"
+    - "KLMarc;sector;arc;M,L,K;0;0;lightGray;0"
+    - "AC;line;connect;A,C;0;0"
+    - "CB;line;connect;C,B;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BF;line;connect;B,F;0;0;0"
+    - "ACGH;polygon;quadrilateral;A,C,G,H;0;0;0;#efe4d2"
+    - "GFEN;polygon;quadrilateral;G,F,E,N;0;0;0;#efe4d2"
+    - "CBFG;polygon;quadrilateral;C,B,F,G;0;0;0;#e6e0ef"
+    - "ABFH;polygon;quadrilateral;A,B,F,H;0;0;0;0"
+    - "CBEN;polygon;quadrilateral;C,B,E,N;0;0;0;0"
+    - "ADEB;polygon;quadrilateral;A,D,E,B;0;0;0;0"
+    - "KLM;polygon;hexagon;A,B,E,N,G,H;0;0;0;0"
+  aliases:
+    AG: ACGH
+    GE: GFEN
+    CF: CBFG
+    BG: CBFG
+    AF: ABFH
+    CE: CBEN
+    DG: DNGH
+    GD: DNGH
+    BA: AB
+    CA: AC
+    BC: CB
+    DB: BD
+    NC: CN
+    FH: HF
+    FB: BF
+  given: [A, B, C, AC, CB]
+  caption: |
+    Slide {A}, {B} and the cut {C}. The gnomon {KLM} plus the small square {CF} is always twice the
+    rectangle {AF}.
+
+steps:
+  - part: enunciation
+    text: "If a straight line be cut at random, the square on the whole and that on one of the segments both together are equal to twice the rectangle contained by the whole and the said segment and the square on the remaining segment."
+    highlight: [ADEB, CF, AF, DG]
+    hint: |
+      whole² + piece² = 2 × whole × piece + (other piece)². In algebra: $a^2 + b^2 = 2ab + (a - b)^2$.
+
+  - part: setting-out
+    text: "For let a straight line AB be cut at random at the point C;"
+    highlight: [AB, C]
+    hint: |
+      {AB} cut at {C}.
+
+  - part: specification
+    text: "I say that the squares on AB, BC are equal to twice the rectangle contained by AB, BC and the square on CA."
+    highlight: [AB, CB, AC]
+    hint: |
+      The goal.
+    modern: |
+      $$AB^2 + BC^2 = 2\,AB\cdot BC + CA^2$$
+
+  - part: construction
+    text: "For let the square ADEB be described on AB,"
+    highlight: [ADEB]
+    adds: [BADE, D, E]
+    hint: |
+      The square on the whole ([[I.46]]).
+
+  - part: construction
+    text: "and let the figure be drawn."
+    highlight: [BD, CN, HF]
+    adds: [BD, CN, HF, N, G, H, F, DNGH, ACGH, GFEN, CBFG, K, L, M, KLMarc]
+    hint: |
+      "Draw the figure" — the diagonal and the two parallels through the cut, as in [[II.4]].
+    explain:
+      implicit: |
+        The phrase stands for the whole construction of [[II.4]]: diagonal {BD}, the parallel {CN}
+        through {C}, and the parallel {HF} through the point {G} where it meets the diagonal. Euclid
+        expects the reader to know it by now.
+
+  - part: proof
+    text: "Then, since AG is equal to GE,"
+    highlight: [AG, GE]
+    hint: |
+      The complements are equal ([[I.43]]).
+
+  - part: proof
+    text: "let CF be added to each; therefore the whole AF is equal to the whole CE."
+    highlight: [CF, AF, CE]
+    hint: |
+      Add the small square {CF}: the rectangles {AF} and {CE} are equal.
+
+  - part: proof
+    text: "Therefore AF, CE are double of AF."
+    highlight: [AF, CE]
+    hint: |
+      Two equal rectangles make twice one of them.
+
+  - part: proof
+    text: "But AF, CE are the gnomon KLM and the square CF; therefore the gnomon KLM and the square CF are double of AF."
+    highlight: [KLM, CF]
+    hint: |
+      {AF} and {CE} overlap in {CF}: together they make the gnomon {KLM} plus {CF} counted twice.
+    explain:
+      implicit: |
+        This is where the overlap matters: {AF} + {CE} covers the gnomon once and the square {CF}
+        twice, so "the gnomon and the square {CF}" here means the gnomon plus {CF} as a second copy.
+
+  - part: proof
+    text: "But twice the rectangle AB, BC is also double of AF; for BF is equal to BC;"
+    highlight: [AF, BF]
+    hint: |
+      {AF} has sides {AB} and {BF} (= {BC}).
+
+  - part: proof
+    text: "therefore the gnomon KLM and the square CF are equal to twice the rectangle AB, BC."
+    highlight: [KLM, CF]
+    hint: |
+      So gnomon + {CF} = 2·{AB}·{BC}.
+
+  - part: proof
+    text: "Let DG, which is the square on AC, be added to each;"
+    highlight: [DG]
+    hint: |
+      Add the square {DG} on {AC}.
+
+  - part: proof
+    text: "therefore the gnomon KLM and the squares BG, GD are equal to twice the rectangle contained by AB, BC and the square on AC."
+    highlight: [KLM, BG, GD]
+    hint: |
+      [[I.CN.2]].
+
+  - part: proof
+    text: "But the gnomon KLM and the squares BG, GD are the whole ADEB and CF, which are squares described on AB, BC;"
+    highlight: [ADEB, CF]
+    hint: |
+      Gnomon + {GD} fills the big square; {BG} is the square on {BC}.
+
+  - part: conclusion
+    text: "therefore the squares on AB, BC are equal to twice the rectangle contained by AB, BC together with the square on AC."
+    highlight: [ADEB, CF, AF, DG]
+    hint: |
+      Done.
+    modern: |
+      $$a^2 + b^2 = 2ab + (a - b)^2$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: Let $AB = a$, $BC = b$, so $CA = a - b$.
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+      text: $2ab + (a - b)^2 = 2ab + a^2 - 2ab + b^2 = a^2 + b^2$. $\blacksquare$
+
+commentary: |
+  II.7 is the "square of a difference" to [[II.4]]'s "square of a sum". It is used in [[II.13]] (the
+  acute-angle extension of Pythagoras) just as II.4 is used in [[II.12]].
+
+gaps: |
+  - **Counting an overlap** (step 6): Euclid adds two overlapping rectangles and reads off "gnomon
+    plus square" — correct, but it requires counting the overlap twice, which is never spelled out.
+
+historical: |
+  "Let the figure be drawn" (καταγεγράφθω τὸ σχῆμα) is a formula Euclid uses when the construction is
+  a standard one already given in full.

@@ -1,0 +1,181 @@
+id: V.1
+kind: theorem
+title: A multiple of a sum is the sum of the multiples
+
+paraphrase: |
+  If {AB} is some multiple of {E} and {CD} is the same multiple of {F}, then {AB} and {CD} together are that
+  same multiple of {E} and {F} together. In algebra: $m a + m b = m(a + b)$.
+
+diagram:
+  width: 280
+  height: 130
+  elements:
+    - "U1;point;free;0,0;0;0"
+    - "U2;point;free;25,0;0;0"
+    - "U;line;connect;U1,U2;0;0;0"
+    - "E1;point;free;30,90;0"
+    - "E3;point;parallelogram;E1,U;0;0"
+    - "E2;point;lineSlider;E1,E3,90,0;0"
+    - "E;line;connect;E1,E2;black;0;red"
+    - "F1;point;free;30,120;0"
+    - "F3;point;parallelogram;F1,U;0;0"
+    - "F2;point;lineSlider;F1,F3,140,0;0"
+    - "F;line;connect;F1,F2;black;0;red"
+    - "A;point;free;30,30"
+    - "A3;point;parallelogram;A,U;0;0"
+    - "G;point;cutoff;A,A3,E"
+    - "B;point;extend;A,G,E"
+    - "AB;line;connect;A,B;0;0;red"
+    - "C;point;free;30,60"
+    - "C3;point;parallelogram;C,U;0;0"
+    - "H;point;cutoff;C,C3,F"
+    - "D;point;extend;C,H,F"
+    - "CD;line;connect;C,D;0;0;red"
+    - "AG;line;connect;A,G;0;0;0"
+    - "GB;line;connect;G,B;0;0;0"
+    - "CH;line;connect;C,H;0;0;0"
+    - "HD;line;connect;H,D;0;0;0"
+  caption: |
+    Drag the right ends of {E} and {F} to change them; {AB} stays twice {E} and {CD} twice {F}. Euclid draws
+    magnitudes as lines, but the argument is about any magnitudes.
+
+steps:
+  - part: enunciation
+    text: "If there be any number of magnitudes whatever which are, respectively, equimultiples of any magnitudes equal in multitude, then, whatever multiple one of the magnitudes is of one, that multiple also will all be of all."
+    highlight: [AB, CD, E, F]
+    hint: |
+      Multiplication by a number distributes over a sum of magnitudes.
+    explain:
+      fact: |
+        *Equimultiples* are "the same multiple" of two magnitudes: $m a$ and $m b$ for one whole number $m$
+        ([[V.Def.2]]).
+      implicit: |
+        "All of all": the sum of the multiples is that multiple of the sum. For this to make sense, the
+        magnitudes {E}, {F} must be of the same kind (they are added).
+    modern: |
+      $$m a_1 + m a_2 + \dots + m a_k = m(a_1 + a_2 + \dots + a_k)$$
+    cites: [V.Def.2]
+
+  - part: setting-out
+    text: "Let any number of magnitudes whatever AB, CD be respectively equimultiples of any magnitudes E, F equal in multitude;"
+    highlight: [AB, CD, E, F]
+    hint: |
+      Two magnitudes {AB}, {CD}, the same multiple of {E}, {F}. "Any number" — but Euclid takes two.
+
+  - part: specification
+    text: "I say that, whatever multiple AB is of E, that multiple will AB, CD also be of E, F."
+    highlight: [AB, CD, E, F]
+    hint: |
+      The goal: {AB} + {CD} is the same multiple of {E} + {F}.
+    modern: |
+      $AB = mE,\ CD = mF \Rightarrow AB + CD = m(E + F)$.
+
+  - part: proof
+    text: "For, since AB is the same multiple of E that CD is of F, as many magnitudes as there are in AB equal to E, so many also are there in CD equal to F."
+    highlight: [AB, CD, E, F]
+    hint: |
+      "The same multiple" means: as many copies of {E} in {AB} as copies of {F} in {CD}.
+    explain:
+      did: |
+        Unpacks the hypothesis into a count.
+      fact: |
+        [[V.Def.2]]: a multiple is measured by the smaller magnitude a whole number of times.
+
+  - part: construction
+    text: "Let AB be divided into the magnitudes AG, GB equal to E, and CD into CH, HD equal to F;"
+    highlight: [AG, GB, CH, HD]
+    hint: |
+      Mark off the copies: {AG}, {GB} each equal to {E}; {CH}, {HD} each equal to {F}.
+
+  - part: proof
+    text: "then the multitude of the magnitudes AG, GB will be equal to the multitude of the magnitudes CH, HD."
+    highlight: [AG, GB, CH, HD]
+    hint: |
+      Two pieces each: the multiple $m$ is 2 in Euclid's figure.
+
+  - part: proof
+    text: "Now, since AG is equal to E, and CH to F, therefore AG is equal to E, and AG, CH to E, F."
+    highlight: [AG, CH, E, F]
+    hint: |
+      Pair the first pieces: {AG} + {CH} = {E} + {F}.
+    explain:
+      fact: |
+        Equals added to equals give equals ([[I.CN.2]]).
+    cites: [I.CN.2]
+
+  - part: proof
+    text: "For the same reason"
+    highlight: [GB, HD]
+    hint: |
+      The same for the second pair of pieces.
+
+  - part: proof
+    text: "GB is equal to E, and GB, HD to E, F;"
+    highlight: [GB, HD, E, F]
+    hint: |
+      {GB} + {HD} = {E} + {F}.
+    cites: [I.CN.2]
+
+  - part: proof
+    text: "therefore, as many magnitudes as there are in AB equal to E, so many also are there in AB, CD equal to E, F;"
+    highlight: [AB, CD, E, F]
+    hint: |
+      Each pair ({AG}, {CH}), ({GB}, {HD}) is one copy of {E} + {F}; there are as many pairs as pieces of
+      {AB}.
+    explain:
+      implicit: |
+        Regrouping: $(AG + GB) + (CH + HD) = (AG + CH) + (GB + HD)$. Euclid takes it for granted that
+        magnitudes can be added in any order and grouping.
+
+  - part: proof
+    text: "therefore, whatever multiple AB is of E, that multiple will AB, CD also be of E, F."
+    highlight: [AB, CD, E, F]
+    hint: |
+      So {AB} + {CD} is the same multiple of {E} + {F} as {AB} is of {E}.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Magnitudes of one kind can be added (commutatively
+    and associatively); $m a$ means $a + a + \dots + a$ ($m$ times).
+  lines:
+    - steps: [1, 2, 3]
+      text: |
+        Let $AB = mE$ and $CD = mF$.
+    - steps: [4, 5, 6, 7, 8]
+      text: |
+        $AB + CD = (E + \dots + E) + (F + \dots + F) = (E + F) + \dots + (E + F)$ ($m$ times), by
+        rearranging the $2m$ terms.
+    - steps: [9]
+      text: |
+        So $AB + CD = m(E + F)$. $\blacksquare$
+  closing: |
+    A full proof is an induction on $m$ (and on the number of magnitudes); Euclid, here and throughout
+    Book V, shows the case $m = 2$ and trusts the reader to see that it is general.
+
+commentary: |
+  Book V opens with six propositions about *multiples* ([[V.1]]–[[V.6]]) before ratios appear. They are
+  the arithmetic that the definition of proportion ([[V.Def.5]]) needs: that definition compares
+  multiples, so facts about multiples are the raw material of every proof that follows.
+
+  The book is generally credited to Eudoxus of Cnidus (4th century BC), and it is abstract in a way the
+  first four books are not: a "magnitude" may be a line, an area, a solid, an angle or a time. Euclid draws
+  every magnitude as a line, but nothing in the proofs depends on the figure.
+
+gaps: |
+  - **Proof by a typical case**: Euclid takes two magnitudes and the multiple 2. The general statement
+    needs induction, which Greek mathematics used implicitly but never formulated.
+  - **Rearranging sums** (commutativity and associativity of addition of magnitudes) is assumed throughout.
+
+historical: |
+  The attribution of Book V to Eudoxus rests on an anonymous scholium (an ancient marginal note) that
+  ascribes the book to Eudoxus of Cnidus, who lived in Plato's time.

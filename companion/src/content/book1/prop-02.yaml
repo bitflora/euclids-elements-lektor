@@ -1,0 +1,308 @@
+id: I.2
+kind: problem
+title: Moving a length to a given point
+
+paraphrase: |
+  Given a point {A} and a segment {BC}, construct a segment that has {A} as an endpoint and
+  is equal in length to {BC}.
+
+diagram:
+  width: 340
+  height: 300
+  pivot: D
+  elements:
+    - "A;point;free;175,185"
+    - "B;point;free;200,160"
+    - "C;point;free;230,106"
+    - "BC;line;connect;B,C"
+    - "AB;line;connect;A,B"
+    - "DABh;polygon;equilateralTriangle;A,B;0;0;0;0"
+    - "D;point;vertex;DABh,3"
+    - "AL;line;extend;D,A,B,C"
+    - "L;point;last;AL"
+    - "LE;line;extend;A,L,A,B"
+    - "E;point;last;LE;black;0"
+    - "BG;line;extend;D,B,B,C"
+    - "G;point;last;BG"
+    - "GF;line;extend;B,G,A,B"
+    - "F;point;last;GF;black;0"
+    - "BH;line;extend;G,B,G,B;0;0;0"
+    - "H;point;last;BH;black;0"
+    - "CGH;circle;radius;B,C;0;0;black"
+    - "GKL;circle;radius;D,G;0;0;black"
+    - "DK;line;extend;G,D,G,D;0;0;0"
+    - "K;point;last;DK;black;0"
+    - "DAB;polygon;equilateralTriangle;A,B;0;0;black;#efe4d2"
+    - "DA;line;connect;D,A;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+    - "DL;line;connect;D,L;0;0;0"
+    - "DG;line;connect;D,G;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "BF;line;connect;B,F;0;0;0"
+  aliases:
+    BA: AB
+    CB: BC
+    AD: DA
+    BD: DB
+    GD: DG
+    LD: DL
+    LA: AL
+    GB: BG
+    ABD: DAB
+    ADB: DAB
+  given: [A, B, C, BC]
+  caption: |
+    Drag {A}, {B} or {C}. Whatever the positions, {AL} comes out equal to {BC}.
+
+steps:
+  - part: enunciation
+    text: "To place at a given point (as an extremity) a straight line equal to a given straight line."
+    highlight: [A, BC, AL]
+    hint: |
+      Copy a length: put a segment equal to {BC} so that it starts at the point {A}.
+    explain:
+      did: |
+        States a second problem, to be *done*.
+      fact: |
+        "(as an extremity)" is Heath's insertion, to make clear that {A} is to be an *end* of the
+        new line, not merely a point on it (his note on line 1).
+      implicit: |
+        The direction of the new line is left free. Euclid will produce one particular line
+        {AL}; any direction would do.
+    dispute: |
+      **Why is this a proposition at all?** It looks trivial: draw a circle with centre {A} and
+      radius {BC}. But [[I.Post.3]] asks for a circle "with any centre and distance", and in
+      Book I Euclid always gives the distance as a line *drawn from the centre* ("with centre
+      {B} and distance {BC}"). Read that way, the postulate does not let one carry a length
+      from one place to another, and I.2 shows that it need not: the carrying can be
+      done with Post. 1–3 alone. Modern writers often call this the "collapsing compass"
+      reading. The phrase and the talk of instruments are modern; Euclid mentions neither, and
+      whether the postulate was *meant* this narrowly is an inference from his usage, not
+      something he says.
+
+  - part: setting-out
+    text: "Let A be the given point, and BC the given straight line."
+    highlight: [A, BC]
+    hint: |
+      Names the data. {A} and {BC} are arbitrary.
+
+  - part: specification
+    text: "Thus it is required to place at the point A (as an extremity) a straight line equal to the given straight line BC."
+    highlight: [A, BC]
+    hint: |
+      The task restated for these letters.
+
+  - part: construction
+    text: "From the point A to the point B let the straight line AB be joined;"
+    highlight: [A, B, AB]
+    adds: [AB]
+    hint: |
+      Join {A} to one end of {BC}. [[I.Post.1]]
+    explain:
+      did: |
+        Draws {AB}.
+      justification: "[[I.Post.1]]: a straight line may be drawn from any point to any point."
+      implicit: |
+        The choice of {B} rather than {C} is arbitrary. Joining {A} to {C} instead gives a
+        different figure but the same result.
+
+  - part: construction
+    text: "and on it let the equilateral triangle DAB be constructed."
+    highlight: [DAB, D, AB]
+    adds: [DAB, D]
+    hint: |
+      Build an equilateral triangle on {AB}, exactly as in [[I.1]].
+    explain:
+      did: |
+        Uses the previous proposition as a tool. Euclid does not repeat the construction of I.1;
+        he cites it. This is the first time a proposition is used in another.
+      fact: "{DA} = {DB} = {AB}: the three sides of an equilateral triangle are equal."
+      justification: "[[I.1]]"
+      implicit: |
+        There are two such triangles, one on each side of {AB}; either works.
+        Only the equality {DA} = {DB} will matter.
+
+  - part: construction
+    text: "Let the straight lines AE, BF be produced in a straight line with DA, DB;"
+    highlight: [DA, DB, AE, BF]
+    adds: [AL, LE, E, BG, GF, F]
+    hint: |
+      Extend the sides {DA} and {DB} past {A} and {B}. [[I.Post.2]]
+    explain:
+      did: |
+        Continues {DA} beyond {A} to {E}, and {DB} beyond {B} to {F}.
+      justification: |
+        [[I.Post.2]]: "to produce a finite straight line continuously in a straight line."
+        Heath notes that Euclid describes this as drawing {AE} and {BF} "in a straight line
+        with" {DA}, {DB}, rather than as extending {DA}, {DB}.
+      implicit: |
+        How far to produce them. The lines have to be long enough to meet the circles drawn
+        next; Post. 2 allows any length.
+
+  - part: construction
+    text: "with centre B and distance BC let the circle CGH be described;"
+    highlight: [B, BC, CGH]
+    adds: [CGH, G, H]
+    hint: |
+      Draw the circle with centre {B} through {C}. Where it crosses {BF} is the point {G}.
+    explain:
+      did: |
+        Draws a circle of radius {BC} about {B}. [[I.Post.3]]
+      fact: |
+        Every point of circle {CGH} is at distance {BC} from {B}.
+      implicit: |
+        **Euclid never says where {G} is.** The name "circle {CGH}" and the next steps only make
+        sense if {G} is the point where this circle meets the produced line {BF}. The reader is
+        expected to take this from the figure.
+    gap: |
+      That the circle meets the line {BF} at all. {B} is inside the circle (it is the centre)
+      and {BF} can be produced as far as we like, so it must leave the circle somewhere; but
+      no postulate says that a line through a point inside a circle meets the circle.
+      Modern systems add a *line–circle intersection* principle.
+
+  - part: construction
+    text: "and again, with centre D and distance DG let the circle GKL be described."
+    highlight: [D, DG, GKL]
+    adds: [GKL, K, L]
+    hint: |
+      Draw the circle with centre {D} through {G}. Where it crosses {AE} is the point {L}.
+    explain:
+      did: |
+        A second circle, centre {D}, radius {DG}. [[I.Post.3]]
+      fact: |
+        Every point of circle {GKL} is at distance {DG} from {D}.
+      implicit: |
+        Again {L} is only fixed by the figure: it is where the circle meets {AE}. That {L} lies
+        beyond {A} (so that {A} is *between* {D} and {L}) also goes unsaid. It is true, because
+        {DL} = {DG} = {DB} + {BG}, which is longer than {DB} = {DA}.
+    gap: |
+      Two things taken from the figure: that circle {GKL} meets line {AE}, and that it meets
+      it beyond {A}. The second is what makes the subtraction in step 10 legitimate.
+
+  - part: proof
+    text: "Then, since the point B is the centre of the circle CGH, BC is equal to BG."
+    highlight: [B, CGH, BC, BG]
+    hint: "{BC} and {BG} are radii of the same circle."
+    explain:
+      fact: |
+        All radii of a circle are equal.
+      justification: "[[I.Def.15]] (Heath does not bracket it here, as he did in I.1)."
+    modern: |
+      $$C, G \in \odot(B, BC) \;\Longrightarrow\; BC = BG$$
+    cites: [I.Def.15]
+
+  - part: proof
+    text: "Again, since the point D is the centre of the circle GKL, DL is equal to DG."
+    highlight: [D, GKL, DL, DG]
+    hint: "{DL} and {DG} are radii of the circle about {D}."
+    explain:
+      justification: "[[I.Def.15]] again."
+    modern: |
+      $$L, G \in \odot(D, DG) \;\Longrightarrow\; DL = DG$$
+    cites: [I.Def.15]
+
+  - part: proof
+    text: "And in these DA is equal to DB; therefore the remainder AL is equal to the remainder BG."
+    highlight: [DA, DB, AL, BG]
+    hint: |
+      Take equal pieces {DA} = {DB} away from the equal wholes {DL} = {DG}: the leftovers
+      {AL} and {BG} are equal.
+    explain:
+      did: |
+        Subtracts {DA} from {DL} and {DB} from {DG}.
+      fact: |
+        Equals subtracted from equals leave equals. "In these" means "within the lines {DL},
+        {DG}": {DA} is part of {DL} and {DB} is part of {DG}.
+      justification: |
+        [[I.CN.3]] for the subtraction; {DA} = {DB} because triangle {DAB} is equilateral
+        ([[I.Def.20]]).
+      follows: |
+        {DL} = {DG} (step 9) and {DA} = {DB}, so {DL} − {DA} = {DG} − {DB}, that is,
+        {AL} = {BG}.
+      implicit: |
+        That {A} lies between {D} and {L}, and {B} between {D} and {G}, so that "the remainder"
+        makes sense. See steps 6 and 7.
+    modern: |
+      $$AL = DL - DA = DG - DB = BG$$
+      using $DL = DG$, $DA = DB$, and the betweenness $D{-}A{-}L$, $D{-}B{-}G$.
+    cites: [I.Def.20]
+
+  - part: proof
+    text: "But BC was also proved equal to BG; therefore each of the straight lines AL, BC is equal to BG."
+    highlight: [AL, BC, BG]
+    hint: |
+      Collects two facts about {BG}: {AL} = {BG} (step 10) and {BC} = {BG} (step 8).
+    modern: |
+      $$AL = BG \quad\text{and}\quad BC = BG$$
+
+  - part: proof
+    text: "And things which are equal to the same thing are also equal to one another; therefore AL is also equal to BC."
+    highlight: [AL, BC]
+    hint: |
+      {AL} and {BC} both equal {BG}, so they equal each other: the transitivity of equality,
+      [[I.CN.1]].
+    explain:
+      justification: "[[I.CN.1]], quoted in full as in I.1."
+      follows: |
+        The same pattern as I.1, step 9.
+    modern: |
+      $$AL = BG,\; BC = BG \;\Longrightarrow\; AL = BC$$
+
+  - part: conclusion
+    text: "Therefore at the given point A the straight line AL is placed equal to the given straight line BC."
+    highlight: [A, AL, BC]
+    hint: "{AL} starts at {A} and equals {BC}. Done."
+    explain:
+      implicit: |
+        Only {AL} matters in the end. The circles, the triangle and the produced lines were
+        scaffolding.
+
+  - part: conclusion
+    text: "(Being) what it was required to do."
+    hint: |
+      Q.E.F. — the end of a problem.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Assume Hilbert's axioms of incidence,
+    order and congruence, and the **line–circle intersection property**: a line through a point
+    inside a circle meets the circle in exactly two points. (Hilbert's segment-transfer axiom
+    III.1 would make I.2 an axiom; the point of this reconstruction is to follow Euclid's route.)
+  lines:
+    - steps: [1, 2]
+      text: Let $A$ be a point and $BC$ a segment; if $A = B$, there is nothing to do, so let $A \ne B$.
+    - steps: [3, 4]
+      text: By I.1, choose $D$ with $DA = DB = AB$.
+    - steps: [5, 6]
+      text: |
+        $B$ is the centre of $\Gamma = \odot(B, BC)$, so $B$ is inside $\Gamma$. The ray from $D$
+        through $B$ therefore meets $\Gamma$ at a point $G$ with $D{-}B{-}G$ and $BG = BC$.
+    - steps: [7]
+      text: |
+        $DG = DB + BG > DB = DA$. The ray from $D$ through $A$ meets $\Delta = \odot(D, DG)$ at a
+        point $L$ with $DL = DG$; since $DL > DA$, $D{-}A{-}L$.
+    - steps: [8, 9, 10]
+      text: $AL = DL - DA = DG - DB = BG$.
+    - steps: [11, 12, 13]
+      text: $BG = BC$, hence $AL = BC$. $\blacksquare$
+  closing: |
+    The modern proof needs the betweenness facts $D{-}B{-}G$ and $D{-}A{-}L$ explicitly; Euclid
+    reads them from the figure.
+
+commentary: |
+  I.2 is the first proposition that uses an earlier one. Its companion [[I.3]] uses it at once,
+  and between them they let later proofs "cut off" or "place" any length anywhere.
+
+  The figure has more in it than the argument needs, because Euclid names circles by three
+  points: {H} and {K} serve only to name circles {CGH} and {GKL}.
+
+gaps: |
+  - **Intersections.** That circle {CGH} meets {BF} and circle {GKL} meets {AE} (steps 6, 7).
+  - **Betweenness.** That {A} lies between {D} and {L} and {B} between {D} and {G}, without which
+    step 10's "remainders" are not defined.
+  - **Cases.** The figure shows one arrangement. Proclus works through several others (for
+    instance, {A} lying on {BC}, or joining {A} to {C}); Euclid gives only one, as is his habit.
+
+historical: |
+  Proclus reports objections to I.2 and answers them by distinguishing cases according to where
+  the given point lies. Heath's commentary on I.2 follows him in detail.

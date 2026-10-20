@@ -1,0 +1,137 @@
+id: IX.17
+kind: theorem
+title: A progression with coprime extremes cannot be extended
+
+paraphrase: |
+  If {A}, {B}, {C}, {D} are in continued proportion with {A}, {D} coprime, there is no number {E} with {A} :
+  {B} = {D} : {E}.
+
+diagram:
+  width: 250
+  height: 200
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "B0;point;free;-1000,65;0;0"
+    - "B3;point;free;1000,65;0;0"
+    - "C0;point;free;-1000,100;0;0"
+    - "C3;point;free;1000,100;0;0"
+    - "D0;point;free;-1000,135;0;0"
+    - "D3;point;free;1000,135;0;0"
+    - "E0;point;free;-1000,170;0;0"
+    - "E3;point;free;1000,170;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,90,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,110,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;A1,A2,B1,B2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;E0,E3,30,0;0"
+    - "E2;point;proportion;A1,A2,B1,B2,D1,D2,E1,E3;0"
+    - "E;line;connect;E1,E2;black"
+  caption: |
+    {A}, {B}, {C}, {D} in continued proportion; {E} is the supposed next term.
+
+steps:
+  - part: enunciation
+    text: "If there be as many numbers as we please in continued proportion, and the extremes of them be prime to one another, the last will not be to any other number as the first to the second."
+    highlight: [A, B, C, D]
+    hint: |
+      A least progression cannot be continued in whole numbers.
+    modern: |
+      $a, ar, \dots, ar^{n-1}$ with $\gcd$ of extremes $1$ $\Rightarrow$ $ar^n$ is not whole.
+
+  - part: setting-out
+    text: "For let there be as many numbers as we please, A, B, C, D, in continued proportion, and let the extremes of them, A, D, be prime to one another;"
+    highlight: [A, B, C, D]
+    hint: |
+      {A}, {D} coprime.
+
+  - part: specification
+    text: "I say that D is not to any other number as A is to B."
+    highlight: [D]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, if possible, as A is to B, so let D be to E;"
+    highlight: [A, B, D, E]
+    hint: |
+      Suppose {E} exists.
+
+  - part: proof
+    text: "therefore, alternately, as A is to D, so is B to E."
+    highlight: [A, D, B, E]
+    hint: |
+      [[VII.13]].
+
+  - part: proof
+    text: "But A, D are prime, primes are also least, and the least numbers measure those which have the same ratio the same number of times, the antecedent the antecedent and the consequent the consequent."
+    highlight: [A, D]
+    hint: |
+      [[VII.21]], [[VII.20]].
+
+  - part: proof
+    text: "Therefore A measures B."
+    highlight: [A, B]
+    hint: |
+      {A} measures {B}.
+
+  - part: proof
+    text: "And, as A is to B, so is B to C."
+    highlight: [A, B, C]
+    hint: |
+      Continued proportion.
+
+  - part: proof
+    text: "Therefore B also measures C; so that A also measures C."
+    highlight: [B, C, A]
+    hint: |
+      Same ratio, so {B} measures {C}.
+
+  - part: proof
+    text: "And since, as B is to C, so is C to D, and B measures C, therefore C also measures D."
+    highlight: [C, D]
+    hint: |
+      And {C} measures {D}.
+
+  - part: proof
+    text: "But A measured C; so that A also measures D."
+    highlight: [A, D]
+    hint: |
+      {A} measures {D}.
+
+  - part: proof
+    text: "But it also measures itself; therefore A measures A, D which are prime to one another: which is impossible."
+    highlight: [A, D]
+    hint: |
+      Contradiction.
+
+  - part: proof
+    text: "Therefore D will not be to any other number as A is to B."
+    highlight: [D]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11]
+      text: |
+        $a : d = b : e$ with $a : d$ in lowest terms forces $a \mid b$; then each term divides the next, so $a
+        \mid d$, contradicting $\gcd(a, d) = 1$ (unless $a = 1$). $\blacksquare$
+
+commentary: |
+  Generalises [[IX.16]] from two terms to any number. Used in [[IX.19]].

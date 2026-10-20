@@ -1,0 +1,158 @@
+id: VII.4
+kind: theorem
+title: The less is a part or parts of the greater
+
+paraphrase: |
+  Of two numbers, the smaller is always either *a part* (a unit fraction, $1/n$) or *parts* (some other
+  proper fraction, $m/n$) of the larger.
+
+diagram:
+  width: 120
+  height: 220
+  elements:
+    - "A0;point;free;30,-1000;0;0"
+    - "A3;point;free;30,1000;0;0"
+    - "A1;point;lineSlider;A0,A3,30,30;0"
+    - "B0;point;free;60,-1000;0;0"
+    - "B3;point;free;60,1000;0;0"
+    - "B;point;lineSlider;B0,B3,60,30"
+    - "D0;point;free;90,-1000;0;0"
+    - "D3;point;free;90,1000;0;0"
+    - "D1;point;lineSlider;D0,D3,90,30;0"
+    - "D2;point;lineSlider;D0,D3,90,70;0"
+    - "D;line;connect;D1,D2;black"
+    - "E;point;cutoff;B,B3,D1,D2"
+    - "F;point;cutoff;E,B3,D1,D2"
+    - "C;point;cutoff;F,B3,D1,D2"
+    - "BC;line;connect;B,C"
+    - "A';point;cutoff;A1,A3,B,C;0;0"
+    - "A2;point;cutoff;A',A3,D1,D2;0"
+    - "A;line;connect;A1,A2;black"
+    - "BE;line;connect;B,E;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "FC;line;connect;F,C;0;0;0"
+  caption: |
+    {D} is the greatest common measure of {A} and {BC}; {BC} is cut into copies {BE}, {EF}, {FC} of {D},
+    each of which is a part of {A}.
+
+steps:
+  - part: enunciation
+    text: "Any number is either a part or parts of any number, the less of the greater."
+    highlight: [A, BC]
+    hint: |
+      A smaller number is always a fraction $m/n$ of a larger one.
+    modern: |
+      For $b < a$ there are whole numbers $m < n$ with $b = \tfrac{m}{n} a$.
+
+  - part: setting-out
+    text: "Let A, BC be two numbers, and let BC be the less;"
+    highlight: [A, BC]
+    hint: |
+      {BC} is the smaller number.
+
+  - part: specification
+    text: "I say that BC is either a part, or parts, of A."
+    highlight: [BC, A]
+    hint: |
+      To prove: {BC} is a part or parts of {A} ([[VII.Def.3]], [[VII.Def.4]]).
+    cites: [VII.Def.3, VII.Def.4]
+
+  - part: proof
+    text: "For A, BC are either prime to one another or not."
+    highlight: [A, BC]
+    hint: |
+      Two cases: coprime or not.
+
+  - part: proof
+    text: "First, let A, BC be prime to one another."
+    highlight: [A, BC]
+    hint: |
+      Case 1: coprime.
+
+  - part: proof
+    text: "Then, if BC be divided into the units in it, each unit of those in BC will be some part of A; so that BC is parts of A."
+    highlight: [BC, A]
+    hint: |
+      Each unit in {BC} is a part of {A} (the unit measures everything), so {BC} is that many parts of {A}.
+    explain:
+      did: |
+        If {A} has $n$ units and {BC} has $m$, then {BC} is $m$ $n$th parts of {A}: $m/n$.
+      implicit: |
+        The same argument works whether or not the numbers are coprime. Euclid splits off this case because
+        for coprime numbers the unit is the largest common "part", and the unit is not a number.
+    modern: |
+      $b = m \cdot 1$ and $1 = \tfrac1n a$, so $b = \tfrac{m}{n} a$.
+
+  - part: proof
+    text: "Next let A, BC not be prime to one another; then BC either measures, or does not measure, A."
+    highlight: [A, BC]
+    hint: |
+      Case 2: not coprime. Either {BC} measures {A}, or not.
+
+  - part: proof
+    text: "If now BC measures A, BC is a part of A."
+    highlight: [BC, A]
+    hint: |
+      If {BC} measures {A}, it is a part of {A} by definition.
+
+  - part: construction
+    text: "But, if not, let the greatest common measure D of A, BC be taken;"
+    highlight: [D, A, BC]
+    hint: |
+      Otherwise take {D} = gcd({A}, {BC}).
+
+  - part: construction
+    text: "and let BC be divided into the numbers equal to D, namely BE, EF, FC."
+    highlight: [BE, EF, FC, D]
+    hint: |
+      Cut {BC} into copies of {D}: {BE}, {EF}, {FC}.
+
+  - part: proof
+    text: "Now, since D measures A, D is a part of A."
+    highlight: [D, A]
+    hint: |
+      {D} measures {A}, so {D} is a part of {A}.
+
+  - part: proof
+    text: "But D is equal to each of the numbers BE, EF, FC; therefore each of the numbers BE, EF, FC is also a part of A; so that BC is parts of A."
+    highlight: [BE, EF, FC, A]
+    hint: |
+      {BC} is three of these parts of {A}: it is "parts" of {A}.
+    modern: |
+      $d = \gcd(a, b)$, $a = n d$, $b = m d$: $b = \tfrac{m}{n} a$, in lowest terms.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5]
+      text: |
+        Any $b < a$: let $d = \gcd(a, b)$ (with $d = 1$ allowed), $a = n d$, $b = m d$, $m < n$.
+    - steps: [6, 7, 8, 9, 10, 11]
+      text: |
+        Then $b = m \cdot \tfrac{1}{n} a$: a part if $m = 1$, parts otherwise. $\blacksquare$
+  closing: |
+    Using the gcd gives the fraction in lowest terms, which is what Euclid needs in [[VII.20]]–[[VII.22]].
+
+commentary: |
+  [[VII.4]]–[[VII.10]] build the arithmetic of fractions that Book VII's definition of proportion
+  ([[VII.Def.20]]) depends on: "the same part" or "the same parts" are, in modern terms, equal fractions.
+  This proposition guarantees that the comparison always makes sense: any smaller number is some fraction of
+  any larger.
+
+  Joyce notes that the proof's third case gives the fraction *in lowest terms*, which the definition does
+  not require; the simpler argument of the first case (count units) works in every case.
+
+gaps: |
+  - "Parts" is ambiguous until the fraction is fixed. Euclid never says that "$m$ $n$th parts" and "$2m$
+    $(2n)$th parts" are the same parts; the use of the greatest common measure sidesteps the question.

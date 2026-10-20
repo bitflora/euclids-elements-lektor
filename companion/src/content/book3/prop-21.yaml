@@ -1,0 +1,118 @@
+id: III.21
+kind: theorem
+title: Angles in the same segment are equal
+
+paraphrase: |
+  Angles at the circumference standing on the same arc (in the same segment) are equal.
+
+diagram:
+  width: 290
+  height: 270
+  elements:
+    - "C;point;free;145,240"
+    - "B;point;free;60,200"
+    - "D;point;free;230,200"
+    - "ABCD;circle;circumcircle;C,B,D;0;0;black;0"
+    - "A;point;circleSlider;ABCD,90,30"
+    - "BD;line;connect;B,D"
+    - "AD;line;connect;A,D"
+    - "BA;line;connect;B,A"
+    - "F;point;center;ABCD"
+    - "BF;line;connect;B,F"
+    - "DF;line;connect;D,F"
+    - "E;point;circleSlider;ABCD,240,110"
+    - "BE;line;connect;B,E"
+    - "DE;line;connect;D,E"
+    - "angBAD;sector;angleMarker;A,B,D"
+    - "angBED;sector;angleMarker;E,B,D"
+    - "angBFD;sector;angleMarker;F,B,D"
+  aliases:
+    AB: BA
+    FD: DF
+    BAD: angBAD
+    BED: angBED
+    BFD: angBFD
+  given: [ABCD, B, C, D, A, E, BA, AD, BE, DE, BD]
+  caption: |
+    Slide {A} and {E} along the upper arc: the two angles stay equal.
+
+steps:
+  - part: enunciation
+    text: "In a circle the angles in the same segment are equal to one another."
+    highlight: [angBAD, angBED]
+    hint: |
+      All inscribed angles on the same arc are equal.
+    explain:
+      fact: |
+        An angle "in a segment" has its vertex on the segment's arc and its arms through the ends of the
+        chord ([[III.Def.8]]).
+    cites: [III.Def.8]
+
+  - part: setting-out
+    text: "Let ABCD be a circle, and let the angles BAD, BED be angles in the same segment BAED;"
+    highlight: [angBAD, angBED]
+    hint: |
+      Two angles with vertices {A}, {E} on the same arc, standing on {BD}.
+
+  - part: specification
+    text: "I say that the angles BAD, BED are equal to one another."
+    highlight: [angBAD, angBED]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let the centre of the circle ABCD be taken, and let it be F;"
+    highlight: [F]
+    adds: [F]
+    hint: |
+      [[III.1]].
+
+  - part: construction
+    text: "let BF, FD be joined."
+    highlight: [BF, DF]
+    adds: [BF, DF]
+    hint: |
+      The central angle ∠{BFD}.
+
+  - part: proof
+    text: "Now, since the angle BFD is at the centre, and the angle BAD at the circumference, and they have the same circumference BCD as base, therefore the angle BFD is double of the angle BAD."
+    highlight: [angBFD, angBAD]
+    hint: |
+      [[III.20]].
+
+  - part: proof
+    text: "For the same reason the angle BFD is also double of the angle BED;"
+    highlight: [angBFD, angBED]
+    hint: |
+      [[III.20]] again.
+
+  - part: proof
+    text: "therefore the angle BAD is equal to the angle BED."
+    highlight: [angBAD, angBED]
+    hint: |
+      Halves of the same angle.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: Both inscribed angles are half the central angle on arc $BCD$. $\blacksquare$
+
+commentary: |
+  A direct corollary of [[III.20]]. Used at once in [[III.22]] and widely in Books IV and VI.
+
+gaps: |
+  - **Only segments greater than a semicircle.** The proof via [[III.20]] works when the angle at the
+    centre is less than two right angles, i.e. when the segment is greater than a semicircle (as
+    drawn). For smaller segments a separate argument is needed — Heath gives one, splitting the angle.

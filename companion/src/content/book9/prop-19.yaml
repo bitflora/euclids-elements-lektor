@@ -1,0 +1,212 @@
+id: IX.19
+kind: problem
+title: When does a fourth proportional exist?
+
+paraphrase: |
+  Given {A}, {B}, {C}, decide whether there is a number with {A} : {B} = {C} : (it). It exists exactly when
+  {A} measures {B}·{C}.
+
+diagram:
+  width: 170
+  height: 120
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "B0;point;free;-1000,60;0;0"
+    - "B3;point;free;1000,60;0;0"
+    - "C0;point;free;-1000,90;0;0"
+    - "C3;point;free;1000,90;0;0"
+    - "D0;point;free;-1000,145;0;0"
+    - "D3;point;free;1000,145;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,35;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,90,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,100,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,130,0;0"
+    - "C;line;connect;C1,C2;black"
+  caption: |
+    The three given numbers {A}, {B}, {C}.
+
+steps:
+  - part: enunciation
+    text: "Given three numbers, to investigate when it is possible to find a fourth proportional to them."
+    highlight: [A, B, C]
+    hint: |
+      A fourth proportional exists iff $a \mid bc$.
+    modern: |
+      $\exists d:\ a : b = c : d \iff a \mid bc$.
+
+  - part: setting-out
+    text: "Let A, B, C be the given three numbers, and let it be required to investigate when it is possible to find a fourth proportional to them."
+    highlight: [A, B, C]
+    hint: |
+      The given numbers.
+
+  - part: proof
+    text: "Now either they are not in continued proportion, and the extremes of them are prime to one another; or they are in continued proportion, and the extremes of them are not prime to one another; or they are not in continued proportion, nor are the extremes of them prime to one another; or they are in continued proportion, and the extremes of them are prime to one another."
+    highlight: [A, B, C]
+    hint: |
+      Four cases.
+
+  - part: proof
+    text: "If then A, B, C are in continued proportion, and the extremes of them A, C are prime to one another, it has been proved that it is impossible to find a fourth proportional number to them."
+    highlight: [A, C]
+    hint: |
+      [[IX.17]].
+
+  - part: proof
+    text: "†Next, let A, B, C not be in continued proportion, the extremes being again prime to one another; I say that in this case also it is impossible to find a fourth proportional to them."
+    highlight: [A, B, C]
+    hint: |
+      The daggered case — and it is wrong.
+    dispute: |
+      Heath's daggers enclose this case (steps 4–10), which is faulty. The claim is false: 2, 4, 3 are not in
+      continued proportion and 2, 3 are coprime, yet 2 : 4 = 3 : 6. The flaw is in step 5: the auxiliary *E*
+      with {B} : {C} = *D* : *E* need not be a whole number. Whether the slip is Euclid's or a later
+      editor's is not known.
+
+  - part: proof
+    text: "For, if possible, let D have been found, so that, as A is to B, so is C to D, and let it be contrived that, as B is to C, so is D to E."
+    highlight: [A, B, C]
+    hint: |
+      Suppose *D* exists; take *E* with {B} : {C} = *D* : *E* — which may not exist as a number.
+    gap: |
+      "Let it be contrived" assumes a fourth proportional to {B}, {C}, *D* exists — the very kind of thing in
+      question.
+
+  - part: proof
+    text: "Now, since, as A is to B, so is C to D, and, as B is to C, so is D to E, therefore, ex aequali, as A is to C, so is C to E."
+    highlight: [A, C]
+    hint: |
+      [[VII.14]].
+
+  - part: proof
+    text: "But A, C are prime, primes are also least, and the least numbers measure those which have the same ratio, the antecedent the antecedent and the consequent the consequent."
+    highlight: [A, C]
+    hint: |
+      [[VII.21]], [[VII.20]].
+
+  - part: proof
+    text: "Therefore A measures C as antecedent antecedent."
+    highlight: [A, C]
+    hint: |
+      …
+
+  - part: proof
+    text: "But it also measures itself; therefore A measures A, C which are prime to one another: which is impossible."
+    highlight: [A, C]
+    hint: |
+      "Contradiction".
+
+  - part: proof
+    text: "Therefore it is not possible to find a fourth proportional to A, B, C.†"
+    highlight: [A, B, C]
+    hint: |
+      End of the faulty case.
+
+  - part: proof
+    text: "Next, let A, B, C be again in continued proportion, but let A, C not be prime to one another."
+    highlight: [A, B, C]
+    hint: |
+      Next case.
+
+  - part: proof
+    text: "I say that it is possible to find a fourth proportional to them."
+    highlight: [A, B, C]
+    hint: |
+      Claimed possible — in fact the real criterion follows.
+
+  - part: proof
+    text: "For let B by multiplying C make D; therefore A either measures D or does not measure it."
+    highlight: [B, C]
+    hint: |
+      *D* = {B}{C}.
+
+  - part: proof
+    text: "First, let it measure it according to E; therefore A by multiplying E has made D."
+    highlight: [A]
+    hint: |
+      If {A} measures *D* = {B}{C}, with quotient *E* …
+
+  - part: proof
+    text: "But, further, B has also by multiplying C made D; therefore the product of A, E is equal to the product of B, C; therefore, proportionally, as A is to B, so is C to E; therefore E has been found a fourth proportional to A, B, C."
+    highlight: [A, B, C]
+    hint: |
+      … then *E* works ([[VII.19]]).
+
+  - part: proof
+    text: "Next, let A not measure D; I say that it is impossible to find a fourth proportional number to A, B, C."
+    highlight: [A]
+    hint: |
+      If {A} does not measure {B}{C}, none exists.
+
+  - part: proof
+    text: "For, if possible, let E have been found; therefore the product of A, E is equal to the product of B, C."
+    highlight: [A, B, C]
+    hint: |
+      [[VII.19]].
+
+  - part: proof
+    text: "But the product of B, C is D; therefore the product of A, E is also equal to D."
+    highlight: [A]
+    hint: |
+      {A}·*E* = *D*.
+
+  - part: proof
+    text: "Therefore A by multiplying E has made D; therefore A measures D according to E, so that A measures D."
+    highlight: [A]
+    hint: |
+      So {A} measures *D*.
+
+  - part: proof
+    text: "But it also does not measure it: which is absurd."
+    highlight: [A]
+    hint: |
+      Contradiction.
+
+  - part: proof
+    text: "Therefore it is not possible to find a fourth proportional number to A, B, C when A does not measure D."
+    highlight: [A, B, C]
+    hint: |
+      Done.
+
+  - part: proof
+    text: "Next, let A, B, C not be in continued proportion, nor the extremes prime to one another."
+    highlight: [A, B, C]
+    hint: |
+      Last case.
+
+  - part: proof
+    text: "And let B by multiplying C make D."
+    highlight: [B, C]
+    hint: |
+      *D* = {B}{C}.
+
+  - part: proof
+    text: "Similarly then it can be proved that, if A measures D, it is possible to find a fourth proportional to them, but, if it does not measure it, impossible."
+    highlight: [A]
+    hint: |
+      The same criterion.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+      text: |
+        A fourth proportional $d$ satisfies $ad = bc$ ([[VII.19]]), so it exists iff $a \mid bc$, in every case.
+        $\blacksquare$
+
+commentary: |
+  Joyce: the fourth proportional must be $bc/a$, so it exists when $a$ divides $bc$. The case analysis is
+  unnecessary, and one of its cases (steps 4–10) is wrong.

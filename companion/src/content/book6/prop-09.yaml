@@ -1,0 +1,141 @@
+id: VI.9
+kind: problem
+title: Cutting off a given part of a line
+
+paraphrase: |
+  From a given line {AB}, cut off a prescribed part — a third, say: find {F} on {AB} with {AF} one third of {AB}.
+
+diagram:
+  width: 290
+  height: 250
+  elements:
+    - "A;point;free;30,220"
+    - "B;point;free;250,220"
+    - "AB;line;connect;A,B"
+    - "D;point;free;80,170"
+    - "E;point;extend;A,D,A,D"
+    - "C;point;extend;D,E,A,D"
+    - "G;point;extend;E,C,A,D;0;0"
+    - "AG;line;connect;A,G"
+    - "Fp;point;parallelogram;B,C,D;0;0"
+    - "F;point;intersection;A,B,D,Fp"
+    - "DF;line;connect;D,F"
+    - "CB;line;connect;C,B"
+    - "AC;line;connect;A,C;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "EC;line;connect;E,C;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "BF;line;connect;B,F;0;0;0"
+    - "FA;line;connect;F,A;0;0;0"
+    - "ABC;polygon;triangle;A,B,C;0;0;0;0"
+  aliases:
+    BC: CB
+    FD: DF
+    DA: AD
+    BA: AB
+    AF: FA
+  given: [A, B, AB]
+  caption: |
+    Drag {A}, {B}, or {D} (which fixes the direction of {AC} and the size of the equal steps {AD}, {DE}, {EC}). {AF} is
+    always a third of {AB}.
+
+steps:
+  - part: enunciation
+    text: "From a given straight line to cut off a prescribed part."
+    highlight: [AB]
+    hint: |
+      A problem: divide a line into $n$ equal parts (here $n = 3$).
+    explain:
+      fact: |
+        "Part" is a submultiple ([[V.Def.1]]): one third, one fifth, …
+
+  - part: setting-out
+    text: "Let AB be the given straight line;"
+    highlight: [AB]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to cut off from AB a prescribed part."
+    highlight: [AB]
+    hint: |
+      The goal.
+
+  - part: setting-out
+    text: "Let the third part be that prescribed."
+    hint: |
+      Euclid works the case $n = 3$. Joyce notes that Simson objected this "is not at all like Euclid's
+      manner"; but proving the general case by a typical number is exactly Euclid's manner throughout Books
+      V and VI.
+
+  - part: construction
+    text: "Let a straight line AC be drawn through from A containing with AB any angle; let a point D be taken at random on AC, and let DE, EC be made equal to AD."
+    highlight: [AC, AD, DE, EC]
+    adds: [D, E, C, G, AG, AC, AD, DE, EC, CD]
+    hint: |
+      Any line from {A}; mark three equal steps {AD}, {DE}, {EC} along it ([[I.3]]).
+    explain:
+      did: |
+        Heath's note on "any angle": the Greek τυχοῦσα γωνία is the same word as in "a point (taken) at
+        random"; here it means drawing a line casually so as to make some angle with {AB}.
+
+  - part: construction
+    text: "Let BC be joined, and through D let DF be drawn parallel to it."
+    highlight: [BC, DF]
+    adds: [CB, Fp, F, DF, BF, FA, ABC]
+    hint: |
+      Join the last step mark {C} to {B}; draw the parallel through {D} ([[I.31]]).
+
+  - part: proof
+    text: "Then, since FD has been drawn parallel to BC, one of the sides of the triangle ABC, therefore, proportionally, as CD is to DA, so is BF to FA."
+    highlight: [FD, BC, ABC, CD, DA, BF, FA]
+    hint: |
+      [[VI.2]].
+
+  - part: proof
+    text: "But CD is double of DA; therefore BF is also double of FA;"
+    highlight: [CD, DA, BF, FA]
+    hint: |
+      $CD = 2\,DA$ and $CD : DA = BF : FA$, so $BF = 2\,FA$.
+    explain:
+      implicit: |
+        That a ratio "double" carries over: if $CD : DA = BF : FA$ and $CD = 2DA$ then $BF = 2FA$. From
+        [[V.Def.5]] with multipliers $1$ and $2$ (Joyce's "second form" of [[V.14]]).
+
+  - part: proof
+    text: "therefore BA is triple of AF."
+    highlight: [BA, AF]
+    hint: |
+      $BA = BF + FA = 3\,FA$.
+
+  - part: conclusion
+    text: "Therefore from the given straight line AB the prescribed third part AF has been cut off."
+    highlight: [AF, AB]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6]
+      text: |
+        Mark $n$ equal steps along any ray from {A}, ending at {C}; join {C} to {B}; the parallel to {CB} through the
+        first mark meets {AB} at the point one $n$-th of the way along.
+    - steps: [7, 8, 9]
+      text: |
+        By [[VI.2]], $AF : FB = AD : DC = 1 : (n - 1)$, so $AF = AB/n$. $\blacksquare$
+
+commentary: |
+  Joyce describes an alternative construction by al-Nayrizi (9th–10th century): erect equal perpendiculars
+  at {A} and {B} on opposite sides, mark $n - 1$ equal steps on each, and join the marks crosswise; the joins
+  cut {AB} into $n$ equal parts. VI.9 is used in Book XIII to find a third or a fifth of a line.
+
+gaps: |
+  - **The general case** is proved only for a third.

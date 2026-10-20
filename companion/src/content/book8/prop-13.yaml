@@ -1,0 +1,143 @@
+id: VIII.13
+kind: theorem
+title: Squares and cubes of a progression are in progression
+
+paraphrase: |
+  If {A}, {B}, {C} are in continued proportion, so are their squares {D}, {E}, {F} and their cubes {G}, {H},
+  {K}.
+
+diagram:
+  width: 480
+  height: 260
+  elements:
+    - "G0;point;free;-1000,30;0;0"
+    - "G3;point;free;1000,30;0;0"
+    - "D0;point;free;-1000,65;0;0"
+    - "D3;point;free;1000,65;0;0"
+    - "A0;point;free;-1000,100;0;0"
+    - "A3;point;free;1000,100;0;0"
+    - "B0;point;free;-1000,135;0;0"
+    - "B3;point;free;1000,135;0;0"
+    - "C0;point;free;-1000,170;0;0"
+    - "C3;point;free;1000,170;0;0"
+    - "F0;point;free;-1000,205;0;0"
+    - "F3;point;free;1000,205;0;0"
+    - "K0;point;free;-1000,240;0;0"
+    - "K3;point;free;1000,240;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,70,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,75,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;A1,A2,B1,B2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "U1;point;lineSlider;B0,B3,0,0;0;0"
+    - "U2;point;lineSlider;B1,B2,25,0;0;0"
+    - "D1;point;lineSlider;D0,D3,110,0;0"
+    - "D2;point;proportion;U1,U2,A1,A2,A1,A2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;B0,B3,110,0;0"
+    - "E2;point;proportion;U1,U2,B1,B2,B1,B2,E1,B3;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;F0,F3,110,0;0"
+    - "F2;point;proportion;U1,U2,C1,C2,C1,C2,F1,F3;0"
+    - "F;line;connect;F1,F2;black"
+    - "G1;point;lineSlider;G0,G3,240,0;0"
+    - "G2;point;proportion;U1,U2,A1,A2,D1,D2,G1,G3;0"
+    - "G;line;connect;G1,G2;black"
+    - "H1;point;lineSlider;B0,B3,240,0;0"
+    - "H2;point;proportion;U1,U2,B1,B2,E1,E2,H1,B3;0"
+    - "H;line;connect;H1,H2;black"
+    - "K1;point;lineSlider;K0,K3,240,0;0"
+    - "K2;point;proportion;U1,U2,C1,C2,F1,F2,K1,K3;0"
+    - "K;line;connect;K1,K2;black"
+    - "L1;point;lineSlider;A0,A3,110,0;0"
+    - "L2;point;proportion;U1,U2,A1,A2,B1,B2,L1,A3;0"
+    - "L;line;connect;L1,L2;black"
+    - "M1;point;lineSlider;D0,D3,240,0;0"
+    - "M2;point;proportion;U1,U2,A1,A2,L1,L2,M1,D3;0"
+    - "M;line;connect;M1,M2;black"
+    - "N1;point;lineSlider;A0,A3,240,0;0"
+    - "N2;point;proportion;U1,U2,B1,B2,L1,L2,N1,A3;0"
+    - "N;line;connect;N1,N2;black"
+    - "O1;point;lineSlider;C0,C3,110,0;0"
+    - "O2;point;proportion;U1,U2,B1,B2,C1,C2,O1,C3;0"
+    - "O;line;connect;O1,O2;black"
+    - "P1;point;lineSlider;C0,C3,240,0;0"
+    - "P2;point;proportion;U1,U2,B1,B2,O1,O2,P1,C3;0"
+    - "P;line;connect;P1,P2;black"
+    - "Q1;point;lineSlider;F0,F3,240,0;0"
+    - "Q2;point;proportion;U1,U2,C1,C2,O1,O2,Q1,F3;0"
+    - "Q;line;connect;Q1,Q2;black"
+  caption: |
+    {D}, {E}, {F} are the squares and {G}, {H}, {K} the cubes of {A}, {B}, {C}; {L}, {M}, {N}, {O}, {P}, {Q}
+    are the intermediate products.
+
+steps:
+  - part: enunciation
+    text: "If there be as many numbers as we please in continued proportion, and each by multiplying itself make some number, the products will be proportional; and, if the original numbers by multiplying the products make certain numbers, the latter will also be proportional."
+    highlight: [A, B, C, D, E, F, G, H, K]
+    hint: |
+      Squaring or cubing a geometric progression gives a geometric progression.
+    modern: |
+      $a : b = b : c \Rightarrow a^2 : b^2 = b^2 : c^2$ and $a^3 : b^3 = b^3 : c^3$.
+
+  - part: setting-out
+    text: "Let there be as many numbers as we please, A, B, C, in continued proportion, so that, as A is to B, so is B to C; let A, B, C by multiplying themselves make D, E, F, and by multiplying D, E, F let them make G, H, K;"
+    highlight: [A, B, C, D, E, F, G, H, K]
+    hint: |
+      {D}, {E}, {F} = squares; {G}, {H}, {K} = cubes.
+
+  - part: specification
+    text: "I say that D, E, F and G, H, K are in continued proportion."
+    highlight: [D, E, F, G, H, K]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "For let A by multiplying B make L, and let the numbers A, B by multiplying L make M, N respectively."
+    highlight: [L, M, N]
+    hint: |
+      {L} = {A}{B}, {M} = {A}²{B}, {N} = {A}{B}².
+
+  - part: construction
+    text: "And again let B by multiplying C make O, and let the numbers B, C by multiplying O make P, Q respectively."
+    highlight: [O, P, Q]
+    hint: |
+      {O} = {B}{C}, {P} = {B}²{C}, {Q} = {B}{C}².
+
+  - part: proof
+    text: "Then, in manner similar to the foregoing, we can prove that D, L, E and G, M, N, H are continuously proportional in the ratio of A to B, and further E, O, F and H, P, Q, K are continuously proportional in the ratio of B to C."
+    highlight: [D, L, E, G, M, N, H, O, F, P, Q, K]
+    hint: |
+      As in [[VIII.11]] and [[VIII.12]].
+
+  - part: proof
+    text: "Now, as A is to B, so is B to C; therefore D, L, E are also in the same ratio with E, O, F, and further G, M, N, H in the same ratio with H, P, Q, K."
+    highlight: [D, L, E, O, F]
+    hint: |
+      The two rows have the same ratios.
+
+  - part: proof
+    text: "And the multitude of D, L, E is equal to the multitude of E, O, F, and that of G, M, N, H to that of H, P, Q, K; therefore, ex aequali, as D is to E, so is E to F, and, as G is to H, so is H to K."
+    highlight: [D, E, F, G, H, K]
+    hint: |
+      Ex aequali ([[VII.14]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [4, 5, 6, 7]
+      text: |
+        $a^2 : b^2 = (a : b)^2 = (b : c)^2 = b^2 : c^2$, likewise for cubes. $\blacksquare$
+
+gaps: |
+  - "In manner similar to the foregoing" — the work of [[VIII.11]] and [[VIII.12]] is left to the reader.

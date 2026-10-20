@@ -1,0 +1,201 @@
+id: V.4
+kind: theorem
+title: Equimultiples of proportionals are proportional
+
+paraphrase: |
+  If {A} is to {B} as {C} is to {D}, then any multiples of {A} and {C} (the same multiple of each) are to any
+  multiples of {B} and {D} (again the same multiple of each) in the same ratio: if $A : B = C : D$ then
+  $pA : qB = pC : qD$.
+
+diagram:
+  width: 350
+  height: 265
+  elements:
+    - "U1;point;free;0,0;0;0"
+    - "U2;point;free;25,0;0;0"
+    - "U;line;connect;U1,U2;0;0;0"
+    - "A1;point;free;20,30;0"
+    - "A3;point;parallelogram;A1,U;0;0"
+    - "A2;point;lineSlider;A1,A3,70,0;0"
+    - "A;line;connect;A1,A2;black;0;magenta"
+    - "B1;point;free;320,30;0"
+    - "B3;point;parallelogram;B1,U2,U1;0;0"
+    - "B2;point;lineSlider;B1,B3,293,0;0"
+    - "B;line;connect;B1,B2;black;0;magenta"
+    - "C1;point;free;20,160;0"
+    - "C3;point;parallelogram;C1,U;0;0"
+    - "C2;point;lineSlider;C1,C3,80,0;0"
+    - "C;line;connect;C1,C2;black;0;green"
+    - "D1;point;free;320,160;0"
+    - "D3;point;parallelogram;D1,U2,U1;0;0"
+    - "D2;point;proportion;A,B,C,D1,D3;0"
+    - "D;line;connect;D1,D2;black;0;green"
+    - "E0;point;free;20,60;0"
+    - "Ep;point;parallelogram;E0,U;0;0"
+    - "E1;point;cutoff;E0,Ep,A;0;lightGray"
+    - "E2;point;extend;E0,E1,A;0"
+    - "E;line;connect;E0,E2;black;0;magenta"
+    - "F0;point;free;20,190;0"
+    - "Fp;point;parallelogram;F0,U;0;0"
+    - "F1;point;cutoff;F0,Fp,C;0;lightGray"
+    - "F2;point;extend;F0,F1,C;0"
+    - "F;line;connect;F0,F2;black;0;green"
+    - "G0;point;free;320,60;0"
+    - "Gp;point;parallelogram;G0,U2,U1;0;0"
+    - "G1;point;cutoff;G0,Gp,B;0;lightGray"
+    - "G2;point;extend;G0,G1,B;0;lightGray"
+    - "G3;point;extend;G0,G2,B;0"
+    - "G;line;connect;G0,G3;black;0;magenta"
+    - "H0;point;free;320,190;0"
+    - "Hp;point;parallelogram;H0,U2,U1;0;0"
+    - "H1;point;cutoff;H0,Hp,D;0;lightGray"
+    - "H2;point;extend;H0,H1,D;0;lightGray"
+    - "H3;point;extend;H0,H2,D;0"
+    - "H;line;connect;H0,H3;black;0;green"
+    - "K0;point;free;20,90;0"
+    - "Kp;point;parallelogram;K0,U;0;0"
+    - "K1;point;cutoff;K0,Kp,E;0;lightGray"
+    - "K2;point;extend;K0,K1,E;0"
+    - "K;line;connect;K0,K2;black;0;magenta"
+    - "L0;point;free;20,220;0"
+    - "Lp;point;parallelogram;L0,U;0;0"
+    - "L1;point;cutoff;L0,Lp,F;0;lightGray"
+    - "L2;point;extend;L0,L1,F;0"
+    - "L;line;connect;L0,L2;black;0;green"
+    - "M0;point;free;320,120;0"
+    - "Mp;point;parallelogram;M0,U2,U1;0;0"
+    - "M1;point;cutoff;M0,Mp,G;0;lightGray"
+    - "M2;point;extend;M0,M1,G;0;lightGray"
+    - "M3;point;extend;M0,M2,G;0"
+    - "M;line;connect;M0,M3;black;0;magenta"
+    - "N0;point;free;320,250;0"
+    - "Np;point;parallelogram;N0,U2,U1;0;0"
+    - "N1;point;cutoff;N0,Np,H;0;lightGray"
+    - "N2;point;extend;N0,N1,H;0;lightGray"
+    - "N3;point;extend;N0,N2,H;0"
+    - "N;line;connect;N0,N3;black;0;green"
+  caption: |
+    {D} is constructed so that $A : B = C : D$. {E}, {F} are twice {A}, {C}; {G}, {H} three times {B}, {D}.
+    {K}, {L} are twice {E}, {F}; {M}, {N} three times {G}, {H}. Change {A}, {B} or {C} by dragging their
+    right (or left) ends: whenever {K} overtakes {M}, {L} overtakes {N}.
+
+steps:
+  - part: enunciation
+    text: "If a first magnitude have to a second the same ratio as a third to a fourth, any equimultiples whatever of the first and third will also have the same ratio to any equimultiples whatever of the second and fourth respectively, taken in corresponding order."
+    highlight: [A, B, C, D, E, F, G, H]
+    hint: |
+      Multiply the antecedents by one number and the consequents by another: the proportion survives.
+    modern: |
+      $$A : B = C : D \ \Rightarrow\ pA : qB = pC : qD \quad \text{for all whole numbers } p, q$$
+
+  - part: setting-out
+    text: "For let a first magnitude A have to a second B the same ratio as a third C to a fourth D;"
+    highlight: [A, B, C, D]
+    hint: |
+      The given proportion $A : B = C : D$.
+
+  - part: setting-out
+    text: "and let equimultiples E, F be taken of A, C, and G, H other, chance, equimultiples of B, D;"
+    highlight: [E, F, G, H]
+    hint: |
+      {E} = $p${A}, {F} = $p${C}; {G} = $q${B}, {H} = $q${D}. "Chance" (τυχόντα): arbitrary, chosen
+      independently of $p$.
+
+  - part: specification
+    text: "I say that, as E is to G, so is F to H."
+    highlight: [E, G, F, H]
+    hint: |
+      The goal: $E : G = F : H$.
+
+  - part: construction
+    text: "For let equimultiples K, L be taken of E, F, and other, chance, equimultiples M, N of G, H."
+    highlight: [K, L, M, N]
+    hint: |
+      To test $E : G = F : H$ by [[V.Def.5]], take arbitrary equimultiples: {K} = $m${E}, {L} = $m${F};
+      {M} = $n${G}, {N} = $n${H}.
+    explain:
+      did: |
+        Sets up the test of [[V.Def.5]] for the ratios to be proved equal.
+      implicit: |
+        $m$ and $n$ are arbitrary; the argument must work for every choice.
+    cites: [V.Def.5]
+
+  - part: proof
+    text: "Since E is the same multiple of A that F is of C, and equimultiples K, L of E, F have been taken, therefore K is the same multiple of A that L is of C."
+    highlight: [K, A, L, C]
+    hint: |
+      {K} = $m(p${A}$) = (mp)${A} and {L} = $(mp)${C}: multiples of multiples ([[V.3]]).
+
+  - part: proof
+    text: "For the same reason M is the same multiple of B that N is of D."
+    highlight: [M, B, N, D]
+    hint: |
+      {M} = $(nq)${B}, {N} = $(nq)${D}.
+    cites: [V.3]
+
+  - part: proof
+    text: "And, since, as A is to B, so is C to D, and of A, C equimultiples K, L have been taken, and of B, D other, chance, equimultiples M, N, therefore, if K is in excess of M, L also is in excess of N, if it is equal, equal, and if less, less."
+    highlight: [K, M, L, N]
+    hint: |
+      Apply the hypothesis $A : B = C : D$ with the numbers $mp$ and $nq$.
+    explain:
+      fact: |
+        [[V.Def.5]], read forwards: since $A : B = C : D$, any equimultiples of {A}, {C} compare with any
+        equimultiples of {B}, {D} alike.
+      follows: |
+        {K}, {L} are equimultiples of {A}, {C} (by $mp$), and {M}, {N} of {B}, {D} (by $nq$).
+    modern: |
+      $(mp)A \gtreqless (nq)B \Rightarrow (mp)C \gtreqless (nq)D$
+
+  - part: proof
+    text: "And K, L are equimultiples of E, F, and M, N other, chance, equimultiples of G, H;"
+    highlight: [K, L, E, F, M, N, G, H]
+    hint: |
+      But {K}, {L} are also equimultiples of {E}, {F}, and {M}, {N} of {G}, {H}.
+
+  - part: proof
+    text: "therefore, as E is to G, so is F to H."
+    highlight: [E, G, F, H]
+    hint: |
+      [[V.Def.5]] read backwards: every comparison of $mE$ with $nG$ comes out as that of $mF$ with $nH$.
+    explain:
+      follows: |
+        Since $m$ and $n$ were arbitrary, the comparison holds for all pairs, which is exactly what
+        [[V.Def.5]] requires for $E : G = F : H$.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Write $x \gtreqless y \Rightarrow u \gtreqless v$
+    for "$x > y \Rightarrow u > v$, $x = y \Rightarrow u = v$, $x < y \Rightarrow u < v$".
+  lines:
+    - steps: [1, 2, 3]
+      text: |
+        Given: for all $m, n$, $mA \gtreqless nB \Rightarrow mC \gtreqless nD$. Let $E = pA$, $F = pC$,
+        $G = qB$, $H = qD$. To show: for all $m, n$, $mE \gtreqless nG \Rightarrow mF \gtreqless nH$.
+    - steps: [4, 5, 6]
+      text: |
+        Fix $m, n$. Then $mE = (mp)A$, $mF = (mp)C$, $nG = (nq)B$, $nH = (nq)D$ ([[V.3]]).
+    - steps: [7, 8, 9]
+      text: |
+        The hypothesis with the numbers $mp$, $nq$ gives $(mp)A \gtreqless (nq)B \Rightarrow (mp)C \gtreqless (nq)D$,
+        which is the required implication. $\blacksquare$
+  closing: |
+    The proof is a direct instance of the definition: the multiples needed for the conclusion are among the
+    multiples the hypothesis already speaks about.
+
+commentary: |
+  The first theorem about ratios, and the first use of [[V.Def.5]] in both directions: forwards, to extract
+  information from a given proportion; backwards, to establish a new one. Every proportion proved in
+  Book V is ultimately proved this way, or derived from one that was.
+  [[V.3]] is the special case of this theorem in which each antecedent is a multiple of its consequent
+  (as Joyce observes), and it is the lemma that makes this proof work.

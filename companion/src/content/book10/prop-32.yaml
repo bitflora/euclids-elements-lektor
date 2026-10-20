@@ -1,0 +1,180 @@
+id: X.32
+kind: problem
+title: Medials in square only, with a medial rectangle and a commensurable excess
+
+paraphrase: |
+  Find medial lines {D}, {E}, commensurable in square only, whose rectangle is medial, with $\sqrt{D^2 - E^2}$
+  commensurable with {D} (or, similarly, incommensurable). A lemma on the right triangle follows.
+
+diagram:
+  width: 360
+  height: 130
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "B0;point;free;-1000,65;0;0"
+    - "B3;point;free;1000,65;0;0"
+    - "C0;point;free;-1000,100;0;0"
+    - "C3;point;free;1000,100;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,120,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,160,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,220,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;A0,A3,180,0;0"
+    - "D2;point;meanProportional;A1,A2,B1,B2,D1,A3;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;B0,B3,180,0;0"
+    - "E2;point;proportion;B1,B2,C1,C2,D1,D2,E1,B3;0"
+    - "E;line;connect;E1,E2;black"
+  caption: |
+    {A}, {B}, {C} rational, commensurable in square only; sq({D}) = rect({A},{B}); rect({D},{E}) = rect({B},{C}).
+
+steps:
+  - part: enunciation
+    text: "To find two medial straight lines commensurable in square only, containing a medial rectangle, and such that the square on the greater is greater than the square on the less by the square on a straight line commensurable with the greater."
+    highlight: [D, E]
+    hint: |
+      [[X.28]] with the extra condition.
+
+  - part: construction
+    text: "Let there be set out three rational straight lines A, B, C commensurable in square only, and such that the square on A is greater than the square on C by the square on a straight line commensurable with A, and let the square on D be equal to the rectangle A, B."
+    highlight: [A, B, C, D]
+    hint: |
+      {A}, {B}, {C} rational, commensurable in square only, with {A}, {C} as in [[X.29]]; sq({D}) =
+      rect({A},{B}).
+
+  - part: proof
+    text: "Therefore the square on D is medial; therefore D is also medial."
+    highlight: [D]
+    hint: |
+      {D} medial ([[X.21]]).
+
+  - part: construction
+    text: "Let the rectangle D, E be equal to the rectangle B, C."
+    highlight: [D, E]
+    hint: |
+      rect({D},{E}) = rect({B},{C}).
+
+  - part: proof
+    text: "Then since, as the rectangle A, B is to the rectangle B, C, so is A to C; while the square on D is equal to the rectangle A, B, and the rectangle D, E is equal to the rectangle B, C, therefore, as A is to C, so is the square on D to the rectangle D, E."
+    highlight: [A, C, D, E]
+    hint: |
+      {A} : {C} = sq({D}) : rect({D},{E}) …
+
+  - part: proof
+    text: "But, as the square on D is to the rectangle D, E, so is D to E; therefore also, as A is to C, so is D to E."
+    highlight: [A, C, D, E]
+    hint: |
+      … = {D} : {E}.
+
+  - part: proof
+    text: "But A is commensurable with C in square only; therefore D is also commensurable with E in square only."
+    highlight: [D, E]
+    hint: |
+      Commensurable in square only ([[X.11]]) …
+
+  - part: proof
+    text: "But D is medial; therefore E is also medial."
+    highlight: [E]
+    hint: |
+      … so {E} is medial.
+
+  - part: proof
+    text: "And, since, as A is to C, so is D to E, while the square on A is greater than the square on C by the square on a straight line commensurable with A, therefore also the square on D will be greater than the square on E by the square on a straight line commensurable with D."
+    highlight: [D, E]
+    hint: |
+      [[X.14]]: the excess condition carries over.
+
+  - part: specification
+    text: "I say next that the rectangle D, E is also medial."
+    highlight: [D, E]
+    hint: |
+      The rectangle is medial:
+
+  - part: proof
+    text: "For, since the rectangle B, C is equal to the rectangle D, E, while the rectangle B, C is medial, therefore the rectangle D, E is also medial."
+    highlight: [D, E]
+    hint: |
+      it equals rect({B},{C}), medial ([[X.21]]).
+
+  - part: proof
+    text: "Therefore two medial straight lines D, E, commensurable in square only, and containing a medial rectangle, have been found such that the square on the greater is greater than the square on the less by the square on a straight line commensurable with the greater."
+    highlight: [D, E]
+    hint: |
+      Found.
+
+  - part: proof
+    text: "Similarly again it can be proved that the square on D is greater than the square on E by the square on a straight line incommensurable with D, when the square on A is greater than the square on C by the square on a straight line incommensurable with A."
+    highlight: [D, E]
+    hint: |
+      Similarly for the incommensurable case.
+
+  - part: lemma
+    text: "Lemma. Let ABC be a right-angled triangle having the angle A right, and let the perpendicular AD be drawn; I say that the rectangle CB, BD is equal to the square on BA, the rectangle BC, CD equal to the square on CA, the rectangle BD, DC equal to the square on AD, and, further, the rectangle BC, AD equal to the rectangle BA, AC."
+    hint: |
+      Lemma: in a right triangle *ABC* with altitude *AD*: *CB*·*BD* = *BA*², *BC*·*CD* = *CA*², *BD*·*DC* =
+      *AD*², *BC*·*AD* = *BA*·*AC*.
+    modern: |
+      $a^2 = c\cdot c_1$, $b^2 = c\cdot c_2$, $h^2 = c_1c_2$, $ch = ab$.
+
+  - part: lemma
+    text: "And first that the rectangle CB, BD is equal to the square on BA."
+    hint: |
+      First claim.
+
+  - part: lemma
+    text: "For, since in a right-angled triangle AD has been drawn from the right angle perpendicular to the base, therefore the triangles ABD, ADC are similar both to the whole ABC and to one another."
+    hint: |
+      The triangles are similar ([[VI.8]]).
+
+  - part: lemma
+    text: "And since the triangle ABC is similar to the triangle ABD, therefore, as CB is to BA, so is BA to BD; therefore the rectangle CB, BD is equal to the square on AB."
+    hint: |
+      *CB* : *BA* = *BA* : *BD* ([[VI.4]], [[VI.17]]).
+
+  - part: lemma
+    text: "For the same reason the rectangle BC, CD is also equal to the square on AC."
+    hint: |
+      Likewise for *AC*.
+
+  - part: lemma
+    text: "And since, if in a right-angled triangle a perpendicular be drawn from the right angle to the base, the perpendicular so drawn is a mean proportional between the segments of the base, therefore, as BD is to DA, so is AD to DC; therefore the rectangle BD, DC is equal to the square on AD."
+    hint: |
+      The altitude is the mean of the segments ([[VI.8]], porism).
+
+  - part: lemma
+    text: "I say that the rectangle BC, AD is also equal to the rectangle BA, AC."
+    hint: |
+      Last claim.
+
+  - part: lemma
+    text: "For since, as we said, ABC is similar to ABD, therefore, as BC is to CA, so is BA to AD."
+    hint: |
+      *BC* : *CA* = *BA* : *AD* …
+
+  - part: lemma
+    text: "Therefore the rectangle BC, AD is equal to the rectangle BA, AC."
+    hint: |
+      … so *BC*·*AD* = *BA*·*AC* ([[VI.16]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: |
+        $D = \sqrt{AB}$, $E = BC/D$, $D/E = A/C$.
+    - steps: [9, 10, 11]
+      text: |
+        $DE = BC$, a medial area. $\blacksquare$
+
+commentary: |
+  Joyce: this proposition is not used later in the *Elements*. The lemma is used in [[X.33]].

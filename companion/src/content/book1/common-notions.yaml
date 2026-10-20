@@ -1,0 +1,80 @@
+items:
+  - id: I.CN.1
+    title: Transitivity of equality
+    paraphrase: |
+      Two things each equal to a third are equal to each other.
+    meaning: |
+      Used in the first three propositions in exactly this form: {AC} and {BC} both equal
+      {AB}, so they equal each other.
+
+      The common notions (κοιναὶ ἔννοιαι, what later tradition calls *axioms*) are about
+      magnitudes in general, not geometry in particular. Following Aristotle, they are the
+      principles common to all sciences; the postulates are specific to geometry.
+    modern: |
+      $$a = c,\; b = c \;\Longrightarrow\; a = b$$
+      In modern logic this, with symmetry ($a = b \Rightarrow b = a$), is part of the logic of
+      equality rather than an axiom about magnitudes.
+    notes: |
+      Euclid's "equal" applies to magnitudes of the same kind: two lengths, two angles, two
+      areas. A line is never compared with an angle.
+
+  - id: I.CN.2
+    title: Equals added to equals
+    paraphrase: |
+      If equals are added to equals, the results are equal.
+    modern: |
+      $$a = b,\; c = d \;\Longrightarrow\; a + c = b + d$$
+    notes: |
+      "Adding" means putting magnitudes together: two lines end to end, two angles side by side,
+      two figures edge to edge.
+
+  - id: I.CN.3
+    title: Equals subtracted from equals
+    paraphrase: |
+      If equals are taken away from equals, the remainders are equal.
+    modern: |
+      $$a = b,\; c = d \;\Longrightarrow\; a - c = b - d$$
+      (where $c$ is part of $a$ and $d$ part of $b$).
+    notes: |
+      Subtraction presupposes that the part really lies within the whole — for lines, a
+      betweenness condition; for angles, that one angle lies inside the other. Euclid reads
+      these conditions from the figure. See [[I.2]] (step 10) and [[I.5]] (step 12).
+
+  - id: I.CN.4
+    title: Things which coincide are equal
+    paraphrase: |
+      If one thing can be laid exactly on another, they are equal.
+    meaning: |
+      The warrant for the method of *superposition* in [[I.4]]: move one triangle onto another,
+      observe that they coincide, conclude that they are equal.
+    notes: |
+      I.4 also needs the converse — that equal angles, placed suitably, will coincide — which is
+      not stated. The Greek verb (ἐφαρμόζειν, "to fit on") suggests moving one figure onto
+      another, which is exactly what makes the method controversial.
+
+      Heath's C.N. 4 and 5 are numbers 7 and 8 in Heiberg's Greek text: Heiberg judged the
+      notions in between to be later additions. One of the rejected ones, "two straight lines
+      do not enclose a space", surfaces in the bracketed passage of I.4.
+    interpretations: |
+      Does "coincide" mean *congruent* — capable of being moved into coincidence — or literally
+      occupying the same place? On the first reading C.N. 4 is a principle about motion, and
+      many modern critics (and perhaps Euclid himself, who uses it sparingly) have regarded that
+      as out of place in geometry. On the second it is nearly trivial and does not support I.4.
+
+  - id: I.CN.5
+    title: The whole is greater than the part
+    paraphrase: |
+      A whole is greater than any part of it.
+    meaning: |
+      Used to reach contradictions: if something would make a part equal to its whole, that
+      something is impossible. The reasoning first appears in [[I.6]] ("the less to the
+      greater: which is absurd"), although Heath first brackets the reference at [[I.20]].
+    modern: |
+      If $b$ is a proper part of $a$, then $a > b$.
+    notes: |
+      True for Euclid's magnitudes (lengths, angles, areas, volumes). It fails for infinite
+      collections if "greater" means "has more members": the even numbers are a proper part of
+      the whole numbers but can be paired off with them one-to-one. Dedekind (1888) made that
+      failure the definition of an infinite set.
+    figure: |
+      <svg viewBox="0 0 300 80"><line class="l" x1="40" y1="45" x2="260" y2="45"/><line class="l2" x1="40" y1="45" x2="160" y2="45"/><circle class="pt" cx="40" cy="45" r="3"/><circle class="pt" cx="160" cy="45" r="3"/><circle class="pt" cx="260" cy="45" r="3"/><text class="fig-note" x="100" y="68" text-anchor="middle">part</text><text class="fig-note" x="150" y="28" text-anchor="middle">whole</text></svg>

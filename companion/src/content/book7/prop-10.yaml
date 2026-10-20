@@ -1,0 +1,127 @@
+id: VII.10
+kind: theorem
+title: Alternation for parts
+
+paraphrase: |
+  If {AB} is the same parts of {C} as {DE} is of {F}, then whatever fraction {AB} is of {DE}, {C} is the
+  same fraction of {F}. In fractions: if $a = \tfrac{m}{n} c$ and $d = \tfrac{m}{n} f$, then $a/d = c/f$.
+
+diagram:
+  width: 150
+  height: 270
+  elements:
+    - "A0;point;free;30,-1000;0;0"
+    - "A3;point;free;30,1000;0;0"
+    - "A;point;lineSlider;A0,A3,30,30"
+    - "C0;point;free;60,-1000;0;0"
+    - "C5;point;free;60,1000;0;0"
+    - "C1;point;lineSlider;C0,C5,60,30;0"
+    - "D0;point;free;90,-1000;0;0"
+    - "D3;point;free;90,1000;0;0"
+    - "D;point;lineSlider;D0,D3,90,30"
+    - "F0;point;free;120,-1000;0;0"
+    - "F5;point;free;120,1000;0;0"
+    - "F1;point;lineSlider;F0,F5,120,30;0"
+    - "B;point;lineSlider;A0,A3,30,150"
+    - "AB;line;connect;A,B"
+    - "G;point;midpoint;AB"
+    - "C2;point;cutoff;C1,C5,A,G;0;0"
+    - "C3;point;cutoff;C2,C5,A,G;0;0"
+    - "C4;point;cutoff;C3,C5,A,G;0"
+    - "C;line;connect;C1,C4;black"
+    - "E;point;lineSlider;D0,D3,30,170"
+    - "DE;line;connect;D,E"
+    - "H;point;midpoint;DE"
+    - "F2;point;cutoff;F1,F5,D,H;0;0"
+    - "F3;point;cutoff;F2,F5,D,H;0;0"
+    - "F4;point;cutoff;F3,F5,D,H;0"
+    - "F;line;connect;F1,F4;black"
+    - "AG;line;connect;A,G;0;0;0"
+    - "GB;line;connect;G,B;0;0;0"
+    - "DH;line;connect;D,H;0;0;0"
+    - "HE;line;connect;H,E;0;0;0"
+  caption: |
+    {AB} is two thirds of {C}; {DE} two thirds of {F}.
+
+steps:
+  - part: enunciation
+    text: "If a number be parts of a number, and another be the same parts of another, alternately also, whatever parts or part the first is of the third, the same parts or the same part will the second also be of the fourth."
+    highlight: [AB, C, DE, F]
+    hint: |
+      [[VII.9]] for "parts".
+    modern: |
+      $a = \tfrac{m}{n} c,\ d = \tfrac{m}{n} f\ \Rightarrow\ \tfrac{a}{d} = \tfrac{c}{f}$.
+
+  - part: setting-out
+    text: "For let the number AB be parts of the number C, and another, DE, the same parts of another, F;"
+    highlight: [AB, C, DE, F]
+    hint: |
+      {AB} is $m/n$ of {C}; {DE} is $m/n$ of {F}.
+
+  - part: specification
+    text: "I say that, alternately also, whatever parts or part AB is of DE, the same parts or the same part is C of F also."
+    highlight: [AB, DE, C, F]
+    hint: |
+      To prove: {AB} is to {DE} as {C} to {F}.
+
+  - part: proof
+    text: "For since, whatever parts AB is of C, the same parts also is DE of F, therefore, as many parts of C as there are in AB, so many parts also of F are there in DE."
+    highlight: [AB, DE]
+    hint: |
+      $m$ pieces in each.
+
+  - part: construction
+    text: "Let AB be divided into the parts of C, namely AG, GB, and DE into the parts of F, namely DH, HE;"
+    highlight: [AG, GB, DH, HE]
+    hint: |
+      The pieces {AG}, {GB} ($n$th parts of {C}) and {DH}, {HE} ($n$th parts of {F}).
+
+  - part: proof
+    text: "thus the multitude of AG, GB will be equal to the multitude of DH, HE."
+    highlight: [AG, GB, DH, HE]
+    hint: |
+      The same number of pieces.
+
+  - part: proof
+    text: "Now since, whatever part AG is of C, the same part also is DH of F, alternately also, whatever part or parts AG is of DH, the same part or the same parts is C of F also."
+    highlight: [AG, DH, C, F]
+    hint: |
+      By [[VII.9]], {AG} is to {DH} as {C} to {F}.
+
+  - part: proof
+    text: "For the same reason also, whatever part or parts GB is of HE, the same part or the same parts is C of F also;"
+    highlight: [GB, HE, C, F]
+    hint: |
+      Likewise {GB} to {HE}.
+    cites: [VII.9]
+
+  - part: proof
+    text: "so that, in addition, whatever parts or part AB is of DE, the same parts also, or the same part, is C of F."
+    highlight: [AB, DE, C, F]
+    hint: |
+      Adding ([[VII.5]], [[VII.6]]): {AB} is to {DE} as {C} to {F}.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6]
+      text: |
+        $a = m \cdot \tfrac1n c$, $d = m \cdot \tfrac1n f$; by [[VII.9]], $\tfrac1n c : \tfrac1n f = c : f$.
+    - steps: [7, 8]
+      text: |
+        Adding $m$ such pieces ([[VII.5]], [[VII.6]]) gives $a : d = c : f$. $\blacksquare$
+
+commentary: |
+  Euclid's figure takes two thirds. The phrase "whatever parts or part" has to cover both the case where
+  {AB} is less than {DE} and the case where it is greater, though "part" and "parts" were defined only for
+  the less of the greater; the proposition tacitly extends the language.
+
+gaps: |
+  - When the first is *greater* than the third, "part or parts" has no meaning under [[VII.Def.3]] and
+    [[VII.Def.4]]; Euclid uses it anyway, reading it as the inverse relation.

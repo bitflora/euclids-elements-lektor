@@ -1,0 +1,150 @@
+id: XI.38
+kind: theorem
+title: The midplanes of a cube and its diagonal bisect each other
+
+paraphrase: |
+  In a cube, the line where two "midplanes" (through the midpoints of opposite edges) meet, and a diagonal of the
+  cube, bisect each other at the centre.
+
+diagram:
+  width: 360
+  height: 340
+  pivot: "T"
+  elements:
+    - "A;point;fixed;140,300,0"
+    - "1X;point;fixed;340,273,36;0;0"
+    - "1Y;point;fixed;85,180,160;0;0"
+    - "1Z;point;fixed;140,444,123;0;0"
+    - "floor;plane;3points;A,1X,1Y;0;0;0;0"
+    - "C;point;lineSlider;A,1Z,160,80,0"
+    - "circ;circle;radius;A,A,C,floor;0;0;0;0"
+    - "B;point;circleSlider;circ,120,210,0"
+    - "G;point;perpendicular;A,B,floor"
+    - "D;point;parallelogram;B,A,C"
+    - "E;point;parallelogram;G,A,C"
+    - "H;point;parallelogram;B,A,G"
+    - "F;point;parallelogram;H,A,C"
+    - "BDFH;polygon;quadrilateral;B,D,F,H;0;0;black;330,30,100"
+    - "BDEG;polygon;quadrilateral;B,D,E,G;0;0;black;330,30,100"
+    - "GHFE;polygon;quadrilateral;G,H,F,E;0;0;black;330,30,100"
+    - "ACEG;polygon;quadrilateral;A,C,E,G;0;0;black;0"
+    - "AB;line;connect;A,B"
+    - "CD;line;connect;C,D"
+    - "K;point;midpoint;D,F"
+    - "L;point;midpoint;C,E"
+    - "M;point;midpoint;B,H"
+    - "N;point;midpoint;A,G"
+    - "O;point;midpoint;C,D"
+    - "P;point;midpoint;E,F"
+    - "Q;point;midpoint;A,B"
+    - "R;point;midpoint;G,H"
+    - "KLNM;polygon;quadrilateral;K,L,N,M;0;0;black;0"
+    - "OPRQ;polygon;quadrilateral;O,P,R,Q;0;0;black;0"
+    - "S;point;midpoint;B,G"
+    - "U;point;midpoint;D,E"
+    - "DE;line;connect;D,E"
+    - "BG;line;connect;B,G"
+    - "SU;line;connect;S,U"
+    - "DG;line;connect;D,G"
+    - "T;point;midpoint;D,G;black;green"
+  aliases: { BA: AB, DC: CD, ED: DE, GB: BG, US: SU, GD: DG }
+  caption: |
+    The cube *AF*, two midplanes meeting in *US*, and the diagonal *DG* meeting it at *T*. Drag to rotate.
+
+steps:
+  - part: enunciation
+    text: "If the sides of the opposite planes of a cube be bisected, and planes be carried through the points of section, the common section of the planes and the diameter of the cube bisect one another."
+    highlight: [D, G]
+    hint: |
+      The centre of a cube bisects its diagonals and its mid-lines.
+
+  - part: setting-out
+    text: "For let the sides of the opposite planes CF, AH of the cube AF be bisected at the points K, L, M, N, O, Q, P, R, and through the points of section let the planes KN, OR be carried; let US be the common section of the planes, and DG the diameter of the cube AF."
+    highlight: [D, G]
+    hint: |
+      Setup.
+
+  - part: specification
+    text: "I say that UT is equal to TS, and DT to TG."
+    highlight: [D, G]
+    hint: |
+      To prove: *UT* = *TS*, *DT* = *TG*.
+
+  - part: construction
+    text: "For let DU, UE, BS, SG be joined."
+    highlight: [D, E]
+    hint: |
+      Join *DU*, *UE*, *BS*, *SG*.
+
+  - part: proof
+    text: "Then, since DO is parallel to PE, the alternate angles DOU, UPE are equal to one another."
+    highlight: [D, E]
+    hint: |
+      Alternate angles ([[I.29]]).
+
+  - part: proof
+    text: "And, since DO is equal to PE, and OU to UP, and they contain equal angles, therefore the base DU is equal to the base UE, the triangle DOU is equal to the triangle PUE, and the remaining angles are equal to the remaining angles; therefore the angle OUD is equal to the angle PUE."
+    highlight: [D, E]
+    hint: |
+      Congruent triangles: *DU* = *UE* …
+
+  - part: proof
+    text: "For this reason DUE is a straight line."
+    highlight: [D, E]
+    hint: |
+      … and *DUE* is straight ([[I.14]]).
+
+  - part: proof
+    text: "For the same reason, BSG is also a straight line, and BS is equal to SG."
+    highlight: [B, G]
+    hint: |
+      Likewise *BSG* straight, *BS* = *SG*.
+
+  - part: proof
+    text: "Now, since CA is equal and parallel to DB, while CA is also equal and parallel to EG, therefore DB is also equal and parallel to EG."
+    highlight: [D, B, E, G]
+    hint: |
+      *DB* equal and parallel to *EG* ([[XI.9]]) …
+
+  - part: proof
+    text: "And the straight lines DE, BG join their extremities; therefore DE is parallel to BG."
+    highlight: [D, E, B, G]
+    hint: |
+      … so *DE* ∥ *BG* ([[I.33]]).
+
+  - part: proof
+    text: "Therefore the angle EDT is equal to the angle BGT, for they are alternate; and the angle DTU is equal to the angle GTS."
+    highlight: [D, G]
+    hint: |
+      Alternate and vertical angles equal ([[I.29]], [[I.15]]) …
+
+  - part: proof
+    text: "Therefore DTU, GTS are two triangles which have two angles equal to two angles, and one side equal to one side, namely that subtending one of the equal angles, that is, DU equal to GS, for they are the halves of DE, BG; therefore they will also have the remaining sides equal to the remaining sides."
+    highlight: [D, G]
+    hint: |
+      … triangles *DTU*, *GTS* congruent ([[I.26]]) …
+
+  - part: proof
+    text: "Therefore DT is equal to TG, and UT to TS."
+    highlight: [D, G]
+    hint: |
+      … *DT* = *TG*, *UT* = *TS*.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [D, G]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        All these lines pass through the centre of symmetry. $\blacksquare$
+
+commentary: |
+  A lemma for [[XIII.17]] (the dodecahedron), placed here among the solid-geometry results.

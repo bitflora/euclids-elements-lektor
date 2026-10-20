@@ -1,0 +1,125 @@
+id: III.18
+kind: theorem
+title: The radius to the point of contact is perpendicular to the tangent
+
+paraphrase: |
+  If a line touches a circle, the radius to the point of contact is perpendicular to it.
+
+diagram:
+  width: 330
+  height: 260
+  elements:
+    - "A;point;free;50,60;black"
+    - "C;point;free;210,190"
+    - "F;point;midpoint;A,C"
+    - "ABC;circle;radius;F,C;0;0;black;0"
+    - "CF;line;connect;C,F"
+    - "CDp;line;perpendicular;CF;0;0;0"
+    - "D;point;lineSlider;CDp,270,80;black;0"
+    - "E;point;lineSlider;CDp,160,230;black;0"
+    - "DE;line;connect;D,E"
+    - "G;point;lineSlider;CDp,240,110"
+    - "GF;line;connect;G,F"
+    - "B;point;cutoff;F,G,F,C"
+    - "FB;line;connect;F,B;0;0;0"
+    - "FGC;polygon;triangle;F,G,C;0;0;0;0"
+    - "angFGC;sector;angleMarker;G,F,C"
+    - "angFCG;sector;angleMarker;C,F,G"
+  aliases:
+    FC: CF
+    FG: GF
+  given: [A, C, F, ABC, DE, D, E, CF]
+  caption: |
+    {DE} touches the circle at {C}. Slide {G} along the tangent: {FG} is never perpendicular unless {G} = {C}.
+
+steps:
+  - part: enunciation
+    text: "If a straight line touch a circle, and a straight line be joined from the centre to the point of contact, the straight line so joined will be perpendicular to the tangent."
+    highlight: [DE, CF]
+    hint: |
+      Tangent ⊥ radius at the point of contact.
+
+  - part: setting-out
+    text: "For let a straight line DE touch the circle ABC at the point C, let the centre F of the circle ABC be taken, and let FC be joined from F to C;"
+    highlight: [DE, C, F, CF]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that FC is perpendicular to DE."
+    highlight: [CF, DE]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, if not, let FG be drawn from F perpendicular to DE."
+    highlight: [GF, G]
+    adds: [G, GF, B]
+    hint: |
+      Suppose instead {FG} is the perpendicular.
+
+  - part: proof
+    text: "Then, since the angle FGC is right, the angle FCG is acute;"
+    highlight: [angFGC, angFCG]
+    hint: |
+      Two angles of a triangle are less than two right angles ([[I.17]]).
+
+  - part: proof
+    text: "and the greater angle is subtended by the greater side; therefore FC is greater than FG."
+    highlight: [CF, GF]
+    hint: |
+      [[I.19]].
+
+  - part: proof
+    text: "But FC is equal to FB; therefore FB is also greater than FG, the less than the greater: which is impossible."
+    highlight: [FB, GF]
+    hint: |
+      {FB} is a radius and part of {FG}: since {DE} only touches, {G} is outside the circle.
+
+  - part: proof
+    text: "Therefore FG is not perpendicular to DE."
+    highlight: [GF]
+    hint: |
+      So not {FG}.
+
+  - part: proof
+    text: "Similarly we can prove that neither is any other straight line except FC;"
+    highlight: [CF]
+    hint: |
+      Nor any other line.
+
+  - part: proof
+    text: "therefore FC is perpendicular to DE."
+    highlight: [CF, DE]
+    hint: |
+      Done.
+    explain:
+      implicit: |
+        That a perpendicular from {F} to {DE} exists ([[I.12]]), so it must be {FC}.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      text: |
+        $C$ is the point of the tangent line nearest to $F$ (every other point is outside the circle), and the
+        nearest point of a line to a point is the foot of the perpendicular. $\blacksquare$
+
+commentary: |
+  III.18 is the converse of the porism to [[III.16]]: the perpendicular at the end of a radius is tangent,
+  and the tangent is perpendicular to the radius. [[III.19]] gives a third variant.
+
+gaps: |
+  - **{B} between {F} and {G}**: that {G} is outside the circle, because {DE} touches without cutting
+    ([[III.Def.2]]).

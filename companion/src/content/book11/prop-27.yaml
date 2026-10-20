@@ -1,0 +1,110 @@
+id: XI.27
+kind: problem
+title: To construct on a line a parallelepiped similar to a given one
+
+paraphrase: |
+  On a given line {AB}, describe a parallelepiped similar and similarly situated to a given parallelepiped *CD*.
+
+diagram:
+  width: 600
+  height: 220
+  elements:
+    - "C0;point;free;-1000,180;0;0"
+    - "C3;point;free;1000,180;0;0"
+    - "A;point;lineSlider;C0,C3,390,0"
+    - "B;point;lineSlider;C0,C3,500,0"
+    - "C;point;lineSlider;C0,C3,100,0"
+    - "E;point;lineSlider;C0,C3,240,0"
+    - "F;point;free;60,100"
+    - "G;point;free;120,120"
+    - "N;point;parallelogram;F,C,G;0"
+    - "O;point;parallelogram;F,C,E;0"
+    - "P;point;parallelogram;G,C,E;0"
+    - "D;point;parallelogram;N,G,P"
+    - "NFCG;polygon;quadrilateral;N,F,C,G;0;0;black;random"
+    - "NGPD;polygon;quadrilateral;N,G,P,D;0;0;black;random"
+    - "CEPG;polygon;quadrilateral;C,E,P,G;0;0;black;random"
+    - "FO;line;connect;F,O"
+    - "DO;line;connect;D,O"
+    - "EO;line;connect;E,O"
+    - "H;point;similar;B,A,E,C,F"
+    - "K;point;similar;B,A,E,C,G"
+    - "R;point;parallelogram;B,A,K;0"
+    - "M;point;parallelogram;B,A,H"
+    - "Q;point;parallelogram;H,A,K;0"
+    - "L;point;parallelogram;M,A,K"
+    - "QHAK;polygon;quadrilateral;Q,H,A,K;0;0;black;random"
+    - "ABRK;polygon;quadrilateral;A,B,R,K;0;0;black;random"
+    - "QKRL;polygon;quadrilateral;Q,K,R,L;0;0;black;random"
+    - "HM;line;connect;H,M"
+    - "LM;line;connect;L,M"
+    - "BM;line;connect;B,M"
+    - "AB;line;connect;A,B;0;0;0"
+  aliases: { OF: FO, OD: DO, OE: EO, MH: HM, ML: LM, MB: BM, BA: AB }
+  caption: |
+    The given solid *CD* and the new one *AL* on {AB}.
+
+steps:
+  - part: enunciation
+    text: "On a given straight line to describe a parallelepipedal solid similar and similarly situated to a given parallelepipedal solid."
+    highlight: [AB]
+    hint: |
+      Scale a parallelepiped to a given edge.
+
+  - part: setting-out
+    text: "Let AB be the given straight line and CD the given parallelepipedal solid; thus it is required to describe on the given straight line AB a parallelepipedal solid similar and similarly situated to the given parallelepipedal solid CD."
+    highlight: [AB]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For on the straight line AB and at the point A on it let the solid angle, contained by the angles BAH, HAK, KAB, be constructed equal to the solid angle at C, so that the angle BAH is equal to the angle ECF, the angle BAK equal to the angle ECG, and the angle KAH to the angle GCF; and let it be contrived that, as EC is to CG, so is BA to AK, and, as GC is to CF, so is KA to AH."
+    highlight: [AB]
+    hint: |
+      Copy the solid angle at *C* at {A} ([[XI.26]]) with edges in the same ratios as at *C*.
+
+  - part: proof
+    text: "Therefore also, ex aequali, as EC is to CF, so is BA to AH."
+    highlight: [AB]
+    hint: |
+      Ex aequali ([[V.22]]).
+
+  - part: construction
+    text: "Let the parallelogram HB and the solid AL be completed."
+    highlight: [AB]
+    hint: |
+      Complete the solid *AL*.
+
+  - part: proof
+    text: "Now since, as EC is to CG, so is BA to AK, and the sides about the equal angles ECG, BAK are thus proportional, therefore the parallelogram GE is similar to the parallelogram KB."
+    highlight: [AB]
+    hint: |
+      Faces with equal angles and proportional sides are similar …
+
+  - part: proof
+    text: "For the same reason the parallelogram KH is also similar to the parallelogram GF, and further FE to HB; therefore three parallelograms of the solid CD are similar to three parallelograms of the solid AL."
+    highlight: [AB]
+    hint: |
+      … three faces similar to three …
+
+  - part: proof
+    text: "But the former three are both equal and similar to the three opposite parallelograms, and the latter three are both equal and similar to the three opposite parallelograms; therefore the whole solid CD is similar to the whole solid AL."
+    highlight: [AB]
+    hint: |
+      … and the opposite faces too ([[XI.24]]): similar solids ([[XI.Def.9]]).
+
+  - part: proof
+    text: "Therefore on the given straight line AB there has been described AL similar and similarly situated to the given parallelepipedal solid CD."
+    highlight: [AB]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  lines:
+    - text: |
+        Scale every edge by the same factor. $\blacksquare$

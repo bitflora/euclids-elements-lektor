@@ -1,0 +1,117 @@
+id: X.15
+kind: theorem
+title: A sum is commensurable with its parts exactly when they are commensurable
+
+paraphrase: |
+  If {AB} and {BC} are commensurable, their sum {AC} is commensurable with each; and if {AC} is commensurable
+  with one of them, the two are commensurable.
+
+diagram:
+  width: 230
+  height: 100
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "D0;point;free;-1000,65;0;0"
+    - "D3;point;free;1000,65;0;0"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "C;point;lineSlider;A0,A3,200,0"
+    - "AC;line;connect;A,C"
+    - "B;point;lineSlider;A0,A3,140,0"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;lineSlider;D0,D3,60,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+  aliases: { CA: AC }
+  caption: |
+    {AC} = {AB} + {BC}; {D} a common measure.
+
+steps:
+  - part: enunciation
+    text: "If two commensurable magnitudes be added together, the whole will also be commensurable with each of them; and, if the whole be commensurable with one of them, the original magnitudes will also be commensurable."
+    highlight: [AB, BC, AC]
+    hint: |
+      $a, b$ commensurable $\iff$ $a + b$ commensurable with $a$.
+    modern: |
+      $a/b \in \mathbb{Q} \iff (a + b)/a \in \mathbb{Q}$.
+
+  - part: setting-out
+    text: "For let the two commensurable magnitudes AB, BC be added together;"
+    highlight: [AB, BC]
+    hint: |
+      First direction.
+
+  - part: specification
+    text: "I say that the whole AC is also commensurable with each of the magnitudes AB, BC."
+    highlight: [AC]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since AB, BC are commensurable, some magnitude will measure them."
+    highlight: [AB, BC]
+    hint: |
+      A common measure exists.
+
+  - part: construction
+    text: "Let it measure them, and let it be D."
+    highlight: [D]
+    hint: |
+      Call it {D}.
+
+  - part: proof
+    text: "Since then D measures AB, BC, it will also measure the whole AC."
+    highlight: [D, AC]
+    hint: |
+      {D} measures the sum {AC} …
+
+  - part: proof
+    text: "But it measures AB, BC also; therefore D measures AB, BC, AC; therefore AC is commensurable with each of the magnitudes AB, BC."
+    highlight: [D, AC, AB, BC]
+    hint: |
+      … so {AC} is commensurable with each ([[X.Def.1]]).
+
+  - part: specification
+    text: "Next, let AC be commensurable with AB; I say that AB, BC are also commensurable."
+    highlight: [AC, AB, BC]
+    hint: |
+      Converse.
+
+  - part: proof
+    text: "For, since AC, AB are commensurable, some magnitude will measure them."
+    highlight: [AC, AB]
+    hint: |
+      A common measure …
+
+  - part: construction
+    text: "Let it measure them, and let it be D."
+    highlight: [D]
+    hint: |
+      … {D}.
+
+  - part: proof
+    text: "Since then D measures CA, AB, it will also measure the remainder BC."
+    highlight: [D, BC]
+    hint: |
+      It measures the difference {BC} …
+
+  - part: proof
+    text: "But it measures AB also; therefore D will measure AB, BC; therefore AB, BC are commensurable."
+    highlight: [D, AB, BC]
+    hint: |
+      … so {AB}, {BC} are commensurable.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        A common measure of $a, b$ measures $a + b$; one of $a + b, a$ measures $b$. $\blacksquare$
+
+commentary: |
+  The magnitude analogue of [[VII.28]]; used constantly from [[X.17]] on.

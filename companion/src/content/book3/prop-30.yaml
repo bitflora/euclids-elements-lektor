@@ -1,0 +1,122 @@
+id: III.30
+kind: problem
+title: Bisecting an arc
+
+paraphrase: |
+  Cut a given arc into two equal arcs.
+
+diagram:
+  width: 260
+  height: 150
+  elements:
+    - "A;point;free;40,120"
+    - "B;point;free;220,120"
+    - "AB;line;connect;A,B"
+    - "C;point;midpoint;AB"
+    - "CDp;line;perpendicular;C,B;0;0;0"
+    - "D;point;lineSlider;CDp,130,45"
+    - "CD;line;connect;C,D"
+    - "ADB;sector;arc;B,D,A;0;0;black;0"
+    - "AD;line;connect;A,D"
+    - "DB;line;connect;D,B"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+    - "angACD;sector;angleMarker;C,A,D"
+    - "angBCD;sector;angleMarker;C,D,B"
+  aliases:
+    BD: DB
+    DC: CD
+    BC: CB
+    ACD: angACD
+    BCD: angBCD
+  given: [A, B, ADB]
+  caption: |
+    Drag {A}, {B}, or slide {D} to change the arc. {D}, on the perpendicular bisector of {AB}, halves it.
+
+steps:
+  - part: enunciation
+    text: "To bisect a given circumference."
+    highlight: [ADB, D]
+    hint: |
+      A problem: bisect an arc.
+
+  - part: setting-out
+    text: "Let ADB be the given circumference;"
+    highlight: [ADB]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to bisect the circumference ADB."
+    highlight: [ADB]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let AB be joined and bisected at C;"
+    highlight: [AB, C]
+    adds: [AB, C]
+    hint: |
+      The chord and its midpoint ([[I.10]]).
+    cites: [I.10]
+
+  - part: construction
+    text: "from the point C let CD be drawn at right angles to the straight line AB, and let AD, DB be joined."
+    highlight: [CD, AD, DB]
+    adds: [CD, D, AD, DB]
+    hint: |
+      The perpendicular at {C} meets the arc at {D} ([[I.11]]).
+    cites: [I.11]
+
+  - part: proof
+    text: "Then, since AC is equal to CB, and CD is common, the two sides AC, CD are equal to the two sides BC, CD; and the angle ACD is equal to the angle BCD, for each is right; therefore the base AD is equal to the base DB."
+    highlight: [AD, DB]
+    hint: |
+      SAS ([[I.4]]).
+
+  - part: proof
+    text: "But equal straight lines cut off equal circumferences, the greater equal to the greater, and the less to the less;"
+    highlight: [AD, DB]
+    hint: |
+      [[III.28]].
+
+  - part: proof
+    text: "and each of the circumferences AD, DB is less than a semicircle;"
+    highlight: [ADB]
+    hint: |
+      Both arcs are the *smaller* ones cut off by their chords.
+    explain:
+      implicit: |
+        This holds because {DC}, produced, passes through the centre (porism to [[III.1]]), so {D} is the
+        midpoint of the arc and each half is less than a semicircle. Euclid asserts it.
+
+  - part: proof
+    text: "therefore the circumference AD is equal to the circumference DB."
+    highlight: [ADB]
+    hint: |
+      So the arc is bisected.
+
+  - part: conclusion
+    text: "Therefore the given circumference has been bisected at the point D."
+    highlight: [D]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      text: The perpendicular bisector of $AB$ passes through the centre and is an axis of symmetry of the arc. $\blacksquare$
+
+commentary: |
+  The arc counterpart of [[I.10]]. Repeated, it divides an arc into 4, 8, 16, … equal parts — used in
+  Book XII's method of exhaustion.
+
+gaps: |
+  - **"Each less than a semicircle"** (step 7) is asserted without proof.

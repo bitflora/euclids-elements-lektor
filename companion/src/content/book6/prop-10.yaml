@@ -1,0 +1,152 @@
+id: VI.10
+kind: problem
+title: Cutting a line as a given line is cut
+
+paraphrase: |
+  Given a line {AB} and a line {AC} already cut at {D}, {E}, cut {AB} at {F}, {G} in the same ratios:
+  {AF} : {FG} : {GB} = {AD} : {DE} : {EC}.
+
+diagram:
+  width: 340
+  height: 300
+  elements:
+    - "A;point;free;30,270"
+    - "B;point;free;250,270"
+    - "C;point;free;290,30"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;0"
+    - "D;point;lineSlider;A,C,90,200"
+    - "E;point;lineSlider;A,C,150,80"
+    - "Fp;point;parallelogram;B,C,D;0;0"
+    - "F;point;intersection;A,B,D,Fp"
+    - "DF;line;connect;D,F"
+    - "Gp;point;parallelogram;B,C,E;0;0"
+    - "G;point;intersection;A,B,E,Gp"
+    - "EG;line;connect;E,G"
+    - "K;point;parallelogram;D,F,B"
+    - "DK;line;connect;D,K"
+    - "H;point;intersection;D,K,E,G"
+    - "FGHD;polygon;quadrilateral;F,G,H,D;0;0;0;#efe4d2"
+    - "HGBK;polygon;quadrilateral;H,G,B,K;0;0;0;#dfe7ea"
+    - "DKC;polygon;triangle;D,K,C;0;0;0;0"
+    - "AGE;polygon;triangle;A,G,E;0;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+    - "DH;line;connect;D,H;0;0;0"
+    - "HK;line;connect;H,K;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+    - "GB;line;connect;G,B;0;0;0"
+    - "HE;line;connect;H,E;0;0;0"
+    - "KC;line;connect;K,C;0;0;0"
+    - "CE;line;connect;C,E;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "DA;line;connect;D,A;0;0;0"
+    - "FA;line;connect;F,A;0;0;0"
+  aliases:
+    BC: CB
+    DHK: DK
+    FH: FGHD
+    HB: HGBK
+    KH: HK
+    HD: DH
+    BG: GB
+    GF: FG
+    GE: EG
+    FD: DF
+    AF: FA
+    AD: DA
+    DE: ED
+    EC: CE
+  given: [A, B, C, ABC, D, E, AB, AC, CE, ED, DA]
+  caption: |
+    Slide {D}, {E} along {AC} or drag {A}, {B}, {C}: {F} and {G} cut {AB} in the same ratios.
+
+steps:
+  - part: enunciation
+    text: "To cut a given uncut straight line similarly to a given cut straight line."
+    highlight: [AB, AC]
+    hint: |
+      A problem: transfer a division from one line to another.
+    modern: |
+      $$AF : FG : GB = AD : DE : EC$$
+
+  - part: setting-out
+    text: "Let AB be the given uncut straight line, and AC the straight line cut at the points D, E;"
+    highlight: [AB, AC, D, E]
+    hint: |
+      The data.
+
+  - part: construction
+    text: "and let them be so placed as to contain any angle; let CB be joined, and through D, E let DF, EG be drawn parallel to BC, and through D let DHK be drawn parallel to AB."
+    highlight: [CB, DF, EG, DHK]
+    adds: [CB, Fp, F, DF, Gp, G, EG, K, DK, H, FGHD, HGBK, DKC, AGE, DH, HK, FG, GB, HE, KC, FA]
+    hint: |
+      Put the lines at an angle at {A}; join {CB}; parallels to {CB} through {D}, {E}, and a parallel to {AB} through {D}
+      ([[I.31]]).
+
+  - part: proof
+    text: "Therefore each of the figures FH, HB is a parallelogram;"
+    highlight: [FH, HB]
+    hint: |
+      Both pairs of opposite sides are parallel.
+
+  - part: proof
+    text: "therefore DH is equal to FG and HK to GB."
+    highlight: [DH, FG, HK, GB]
+    hint: |
+      Opposite sides ([[I.34]]).
+
+  - part: proof
+    text: "Now, since the straight line HE has been drawn parallel to KC, one of the sides of the triangle DKC, therefore, proportionally, as CE is to ED, so is KH to HD."
+    highlight: [HE, KC, DKC, CE, ED, KH, HD]
+    hint: |
+      [[VI.2]] in triangle {DKC}.
+
+  - part: proof
+    text: "But KH is equal to BG, and HD to GF; therefore, as CE is to ED, so is BG to GF."
+    highlight: [KH, BG, HD, GF, CE, ED]
+    hint: |
+      Substitute the equal lines ([[V.7]], [[V.11]]).
+    cites: [V.7, V.11]
+
+  - part: proof
+    text: "Again, since FD has been drawn parallel to GE, one of the sides of the triangle AGE, therefore, proportionally, as ED is to DA, so is GF to FA."
+    highlight: [FD, GE, AGE, ED, DA, GF, FA]
+    hint: |
+      [[VI.2]] in triangle {AGE}.
+
+  - part: proof
+    text: "But it was also proved that, as CE is to ED, so is BG to GF; therefore, as CE is to ED, so is BG to GF, and, as ED is to DA, so is GF to FA."
+    highlight: [CE, ED, DA, BG, GF, FA]
+    hint: |
+      Both ratios agree.
+
+  - part: conclusion
+    text: "Therefore the given uncut straight line AB has been cut similarly to the given cut straight line AC."
+    highlight: [AB, AC]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: |
+        Join {C} to {B}; the parallels to {CB} through {D}, {E} meet {AB} at {F}, {G}.
+    - steps: [3, 4, 5, 6, 7, 8]
+      text: |
+        Parallel lines cut transversals proportionally (repeated [[VI.2]]), so $AF : FG : GB = AD : DE : EC$.
+        $\blacksquare$
+  closing: |
+    The auxiliary parallel {DHK} is only there because [[VI.2]] is about a triangle: it makes a triangle
+    {DKC} in which {HE} is the parallel.
+
+commentary: |
+  Joyce: VI.10 generalises [[VI.9]] — instead of a numerical ratio, the ratio is given by another line. It
+  is not used later in the *Elements*, but it is a basic construction.

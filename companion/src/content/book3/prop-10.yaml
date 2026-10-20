@@ -1,0 +1,139 @@
+id: III.10
+kind: theorem
+title: Two circles meet in at most two points
+
+paraphrase: |
+  Two distinct circles cannot cut each other at more than two points.
+
+diagram:
+  width: 300
+  height: 300
+  elements:
+    - "B;point;free;150,40"
+    - "F;point;free;150,260"
+    - "H;point;free;40,180"
+    - "ABC;circle;circumcircle;B,F,H;0;0;black;0"
+    - "P;point;center;ABC"
+    - "G;point;circleSlider;ABC,210,150"
+    - "HB;line;connect;H,B"
+    - "BG;line;connect;B,G"
+    - "K;point;midpoint;HB"
+    - "L;point;midpoint;BG"
+    - "S;point;midpoint;H,F;0;0"
+    - "BHY;polygon;equilateralTriangle;B,H;0;0;0;0"
+    - "Y;point;vertex;BHY,3;0;0"
+    - "Z;point;intersection;H,Y,S,P;0;0"
+    - "W;point;intersection;B,Y,L,P;0;0"
+    - "X;point;intersection;F,Z,G,W;0;0"
+    - "arcFG;sector;sector;X,F,G;0;0;black;0"
+    - "arcGB;sector;sector;W,G,B;0;0;black;0"
+    - "arcBH;sector;sector;Y,B,H;0;0;black;0"
+    - "arcHF;sector;sector;Z,H,F;0;0;black;0"
+    - "A;point;cutoff;P,K,P,B"
+    - "C;point;extend;A,P,A,P"
+    - "AC;line;connect;A,C"
+    - "O;point;cutoff;P,L,P,B"
+    - "N;point;extend;O,P,O,P"
+    - "NO;line;connect;N,O"
+    - "circGB;circle;radius;W,B;0;0;0;0"
+    - "circHF;circle;radius;Z,H;0;0;0;0"
+    - "EEx;line;chord;N,O,circGB;0;0;0"
+    - "MMx;line;chord;N,O,circHF;0;0;0"
+    - "E;point;last;EEx"
+    - "M;point;first;MMx"
+    - "D;point;cutoff;Y,A,Y,B;black;0"
+    - "DEF;polygon;quadrilateral;B,G,F,H;0;0;0;0"
+  aliases:
+    BH: HB
+    KC: AC
+    LM: NO
+  given: [ABC, B, F, H, G, P, arcFG, arcGB, arcBH, arcHF, D]
+  caption: |
+    The four arcs form the impossible second "circle" {DEF} that the proof supposes meets {ABC} at four
+    points. Drag {B}, {F}, {H}, {G}.
+
+steps:
+  - part: enunciation
+    text: "A circle does not cut a circle at more points than two."
+    highlight: [ABC]
+    hint: |
+      Two circles meet in at most two points.
+    explain:
+      implicit: |
+        "Circle" here means the circumference, an unusual sense of the word (Heath's note on line 1).
+
+  - part: setting-out
+    text: "For, if possible, let the circle ABC cut the circle DEF at more points than two, namely B, G, F, H;"
+    highlight: [B, G, F, H]
+    hint: |
+      Reductio: suppose two circles share four points.
+
+  - part: construction
+    text: "let BH, BG be joined and bisected at the points K, L, and from K, L let KC, LM be drawn at right angles to BH, BG and carried through to the points A, E."
+    highlight: [HB, BG, K, L, AC, NO]
+    adds: [HB, BG, K, L, A, C, AC, N, O, NO, E, M]
+    hint: |
+      Perpendicular bisectors of the common chords {BH} and {BG}.
+
+  - part: proof
+    text: "Then, since in the circle ABC a straight line AC cuts a straight line BH into two equal parts and at right angles, the centre of the circle ABC is on AC."
+    highlight: [AC, HB]
+    hint: |
+      Porism to [[III.1]].
+
+  - part: proof
+    text: "Again, since in the same circle ABC a straight line NO cuts a straight line BG into two equal parts and at right angles, the centre of the circle ABC is on NO."
+    highlight: [NO, BG]
+    hint: |
+      Same for {BG}.
+    cites: [III.1]
+
+  - part: proof
+    text: "But it was also proved to be on AC, and the straight lines AC, NO meet at no point except at P; therefore the point P is the centre of the circle ABC."
+    highlight: [AC, NO, P]
+    hint: |
+      The centre of {ABC} is their intersection {P}.
+
+  - part: proof
+    text: "Similarly we can prove that P is also the centre of the circle DEF;"
+    highlight: [P, DEF]
+    hint: |
+      The same chords lie in {DEF}, so its centre is also {P}.
+
+  - part: proof
+    text: "therefore the two circles ABC, DEF which cut one another have the same centre P: which is impossible."
+    highlight: [ABC, P]
+    hint: |
+      Contradicts [[III.5]].
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7]
+      text: |
+        Three non-collinear points determine one circle (its centre is where the perpendicular bisectors
+        meet). If two circles share three points, they are the same circle. $\blacksquare$
+  closing: |
+    In coordinates, subtracting the equations of two circles leaves a linear equation — the radical
+    axis — which meets a circle in at most two points.
+
+commentary: |
+  Only three common points are actually needed; the fourth in Euclid's setting-out plays no role. The
+  proof is [[III.9]]'s idea applied to two circles at once.
+
+gaps: |
+  - **The figure is impossible**: the "circle" {DEF} has to be drawn as a curve through four points of
+    {ABC}, which no circle can be.
+  - The Perseus text lists the common points as *B*, *C*, *F*, *H*; the proof uses {G}, and this
+    edition corrects the slip (see the About page).

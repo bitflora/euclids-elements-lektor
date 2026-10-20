@@ -1,0 +1,270 @@
+id: XIII.13
+kind: problem
+title: To construct a regular tetrahedron in a sphere
+
+paraphrase: |
+  Construct a pyramid of four equilateral triangles inscribed in a given sphere, and show that the square on the
+  sphere's diameter is one and a half times the square on its edge.
+
+diagram:
+  width: 440
+  height: 280
+  elements:
+    - "A0;point;free;40,-1000;0;0"
+    - "A3;point;free;40,1000;0;0"
+    - "A;point;lineSlider;A0,A3,0,40"
+    - "B;point;lineSlider;A0,A3,0,250"
+    - "AB;line;connect;A,B"
+    - "ABmid;point;midpoint;A,B;0;0"
+    - "ABcirc;circle;radius;ABmid,B;0;0;0;0"
+    - "semi;sector;sector;ABmid,B,A;0;0;black;random"
+    - "A1;point;perpendicular;A,B;0;0"
+    - "A2;point;extend;A,A1,A,A1;0;0"
+    - "B1;point;perpendicular;B,A;0;0"
+    - "C;point;intersection;A,B,A2,B1"
+    - "D';point;perpendicular;C,A;0;0"
+    - "Dch;line;chord;C,D',ABcirc;0;0;0"
+    - "D;point;last;Dch"
+    - "CD;line;connect;C,D"
+    - "AD;line;connect;A,D"
+    - "M;point;free;290,145;0"
+    - "Msphere;sphere;radius;M,ABmid,A;0;0;lightGray"
+    - "K;point;sphereSlider;Msphere,200,80,100"
+    - "L;point;extend;K,M,M,K"
+    - "H;point;cutoff;K,L,A,C"
+    - "KL;line;connect;K,L"
+    - "EFGplane;plane;perpendicular;H,K;0;0;0;0"
+    - "EFGcirc;circle;radius;H,D,C,EFGplane"
+    - "E;point;circleSlider;EFGcirc,260,30,-20"
+    - "N;point;extend;E,H,E,H;0;0"
+    - "Ncirc;circle;radius;N,H,EFGplane;0;0;0;0"
+    - "FG;line;bichord;EFGcirc,Ncirc;0;0;0"
+    - "F;point;first;FG"
+    - "G;point;last;FG"
+    - "EFGK;polyhedron;tetrahedron;E,F,G,K;0;0;black;random"
+    - "HE;line;connect;H,E"
+    - "HF;line;connect;H,F"
+    - "HG;line;connect;H,G"
+    - "KH;line;connect;K,H;0;0;0"
+    - "KE;line;connect;K,E;0;0;0"
+    - "EH;line;connect;E,H;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+    - "EFG;polygon;triangle;E,F,G;0;0;0"
+    - "HK;line;connect;H,K;0;0;0"
+    - "DA;line;connect;D,A;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "DC;line;connect;D,C;0;0;0"
+    - "HL;line;connect;H,L;0;0;0"
+    - "BA;line;connect;B,A;0;0;0"
+  aliases: { LK: KL, GF: FG, FH: HF, GH: HG, EK: KE, DB: BD, CA: AC, LH: HL }
+  caption: |
+    The diameter {AB} cut at {C} with {AC} = 2{CB}; the triangle {EFG} in a circle of radius {CD}; the apex {K} above
+    its centre {H}; {KL} the sphere's diameter.
+
+steps:
+  - part: enunciation
+    text: "To construct a pyramid, to comprehend it in a given sphere, and to prove that the square on the diameter of the sphere is one and a half times the square on the side of the pyramid."
+    highlight: [EFGK]
+    hint: |
+      Construct the regular tetrahedron in a sphere: diameter² = 3/2 · edge².
+    modern: |
+      $d^2 = \tfrac32 a^2$, i.e. $a = d\sqrt{2/3}$.
+
+  - part: construction
+    text: "Let the diameter AB of the given sphere be set out, and let it be cut at the point C so that AC is double of CB; let the semicircle ADB be described on AB, let CD be drawn from the point C at right angles to AB, and let DA be joined; let the circle EFG which has its radius equal to DC be set out, let the equilateral triangle EFG be inscribed in the circle EFG, let the centre of the circle, the point H, be taken, let EH, HF, HG be joined; from the point H let HK be set up at right angles to the plane of the circle EFG, let HK equal to the straight line AC be cut off from HK, and let KE, KF, KG be joined."
+    highlight: [AB, CD, AD]
+    hint: |
+      Diameter {AB} cut at {C} with {AC} = 2{CB}; {CD} ⊥ at {C} meets the semicircle at {D}; the circle {EFG} with radius {CD}, its inscribed equilateral triangle, and {HK} = {AC} perpendicular at its centre {H}.
+
+  - part: proof
+    text: "Now, since KH is at right angles to the plane of the circle EFG, therefore it will also make right angles with all the straight lines which meet it and are in the plane of the circle EFG."
+    highlight: [KH]
+    hint: |
+      {KH} ⊥ the plane of the circle …
+
+  - part: proof
+    text: "But each of the straight lines HE, HF, HG meets it: therefore HK is at right angles to each of the straight lines HE, HF, HG."
+    highlight: [KH, HE, HF, HG]
+    hint: |
+      … so ⊥ {HE}, {HF}, {HG}.
+
+  - part: proof
+    text: "And, since AC is equal to HK, and CD to HE, and they contain right angles, therefore the base DA is equal to the base KE."
+    highlight: [AD, KE]
+    hint: |
+      {AC} = {HK}, {CD} = {HE}, right angles: {DA} = *KE* ([[I.4]]).
+
+  - part: proof
+    text: "For the same reason each of the straight lines KF, KG is also equal to DA; therefore the three straight lines KE, KF, KG are equal to one another."
+    highlight: [AD]
+    hint: |
+      Likewise *KF*, *KG* = {DA}.
+
+  - part: proof
+    text: "And, since AC is double of CB, therefore AB is triple of BC."
+    highlight: [AB]
+    hint: |
+      {AB} = 3{BC}.
+
+  - part: proof
+    text: "But, as AB is to BC, so is the square on AD to the square on DC, as will be proved afterwards."
+    highlight: [AD, CD]
+    hint: |
+      {AB} : {BC} = sq({AD}) : sq({DC}) (lemma below).
+
+  - part: proof
+    text: "Therefore the square on AD is triple of the square on DC."
+    highlight: [AD, CD]
+    hint: |
+      So sq({AD}) = 3 sq({DC}).
+
+  - part: proof
+    text: "But the square on FE is also triple of the square on EH, and DC is equal to EH; therefore DA is also equal to EF."
+    highlight: [FG, EH]
+    hint: |
+      sq(*FE*) = 3 sq({EH}) ([[XIII.12]]) and {DC} = {EH}: {DA} = *EF*.
+
+  - part: proof
+    text: "But DA was proved equal to each of the straight lines KE, KF, KG; therefore each of the straight lines EF, FG, GE is also equal to each of the straight lines KE, KF, KG; therefore the four triangles EFG, KEF, KFG, KEG are equilateral."
+    highlight: [EFGK]
+    hint: |
+      So all six edges are equal.
+
+  - part: proof
+    text: "Therefore a pyramid has been constructed out of four equilateral triangles, the triangle EFG being its base and the point K its vertex."
+    highlight: [EFGK]
+    hint: |
+      A pyramid of four equilateral triangles.
+
+  - part: specification
+    text: "It is next required to comprehend it in the given sphere and to prove that the square on the diameter of the sphere is one and a half times the square on the side of the pyramid."
+    highlight: [EFGK]
+    hint: |
+      Now inscribe it in the sphere.
+
+  - part: construction
+    text: "For let the straight line HL be produced in a straight line with KH, and let HL be made equal to CB."
+    highlight: [KL]
+    hint: |
+      Extend {KH} to {L} with {HL} = {CB}.
+
+  - part: proof
+    text: "Now, since, as AC is to CD, so is CD to CB, while AC is equal to KH, CD to HE, and CB to HL, therefore, as KH is to HE, so is EH to HL; therefore the rectangle KH, HL is equal to the square on EH."
+    highlight: [KL, HE]
+    hint: |
+      {AC} : {CD} = {CD} : {CB} ([[VI.8]], porism), so *KH* : {HE} = {HE} : *HL* …
+
+  - part: proof
+    text: "And each of the angles KHE. EHL is right; therefore the semicircle described on KL will pass through E also."
+    highlight: [KL, HE]
+    hint: |
+      … so the semicircle on {KL} passes through {E} (cf. [[VI.8]], [[III.31]]).
+
+  - part: proof
+    text: "If then, KL remaining fixed, the semicircle be carried round and restored to the same position from which it began to be moved, it will also pass through the points F, G, since, if FL, LG be joined, the angles at F, G similarly become right angles; and the pyramid will be comprehended in the given sphere."
+    highlight: [KL]
+    hint: |
+      Rotating it about {KL}, the sphere passes through {E}, {F}, {G} and {K}.
+
+  - part: proof
+    text: "For KL, the diameter of the sphere, is equal to the diameter AB of the given sphere, inasmuch as KH was made equal to AC, and HL to CB."
+    highlight: [KL, AB]
+    hint: |
+      And {KL} = {AB}: it is the given sphere.
+
+  - part: specification
+    text: "I say next that the square on the diameter of the sphere is one and a half times the square on the side of the pyramid"
+    highlight: [AB]
+    hint: |
+      Diameter² = 3/2 · edge²:
+
+  - part: proof
+    text: "For, since AC is double of CB, therefore AB is triple of BC; and, convertendo, BA is one and a half times AC."
+    highlight: [AB]
+    hint: |
+      {AB} = 3{BC}, so {BA} = 3/2 {AC}.
+
+  - part: proof
+    text: "But, as BA is to AC, so is the square on BA to the square on AD."
+    highlight: [AB, AD]
+    hint: |
+      {BA} : {AC} = sq({BA}) : sq({AD}).
+
+  - part: proof
+    text: "Therefore the square on BA is also one and a half times the square on AD."
+    highlight: [AB, AD]
+    hint: |
+      So sq({BA}) = 3/2 sq({AD}).
+
+  - part: proof
+    text: "And BA is the diameter of the given sphere, and AD is equal to the side of the pyramid."
+    highlight: [AB, AD]
+    hint: |
+      {BA} the diameter, {AD} the edge.
+
+  - part: proof
+    text: "Therefore the square on the diameter of the sphere is one and a half times the square on the side of the pyramid. Q. E. D."
+    highlight: [AB, AD]
+    hint: |
+      Done.
+
+  - part: lemma
+    text: "Lemma. It is to be proved that, as AB is to BC, so is the square on AD to the square on DC."
+    highlight: [AB, AD, CD]
+    hint: |
+      Lemma: {AB} : {BC} = sq({AD}) : sq({DC}).
+
+  - part: lemma
+    text: "For let the figure of the semicircle be set out, let DB be joined, let the square EC be described on AC, and let the parallelogram FB be completed."
+    highlight: [AB, BD]
+    hint: |
+      Join {BD}; square on {AC}; complete the parallelograms.
+
+  - part: lemma
+    text: "Since then, because the triangle DAB is equiangular with the triangle DAC, as BA is to AD, so is DA to AC, therefore the rectangle BA, AC is equal to the square on AD."
+    highlight: [AD]
+    hint: |
+      {BA} : {AD} = {DA} : {AC} ([[VI.8]], [[VI.4]]), so rect({BA},{AC}) = sq({AD}).
+
+  - part: lemma
+    text: "And since, as AB is to BC, so is EB to BF, and EB is the rectangle BA, AC, for EA is equal to AC, and BF is the rectangle AC, CB, therefore, as AB is to BC, so is the rectangle BA, AC to the rectangle AC, CB."
+    highlight: [AB]
+    hint: |
+      {AB} : {BC} = rect({BA},{AC}) : rect({AC},{CB}) ([[VI.1]]).
+
+  - part: lemma
+    text: "And the rectangle BA, AC is equal to the square on AD, and the rectangle AC, CB to the square on DC, for the perpendicular DC is a mean proportional between the segments AC, CB of the base, because the angle ADB is right."
+    highlight: [AD, CD]
+    hint: |
+      = sq({AD}) : sq({DC}) ([[VI.8]], porism).
+
+  - part: lemma
+    text: "Therefore, as AB is to BC, so is the square on AD to the square on DC."
+    highlight: [AD, CD]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+      text: |
+        Apex height $h = \tfrac23 d$ above a triangle of circumradius $\rho = \sqrt{\tfrac23 d\cdot\tfrac13 d}$; all edges
+        come out equal to $a = \rho\sqrt3$.
+    - steps: [12, 13, 14, 15, 16, 17]
+      text: |
+        The sphere on $KL$ passes through the base vertices because $\rho^2 = h\cdot(d - h)$.
+    - steps: [18, 19, 20, 21, 22, 23]
+      text: |
+        $a^2 = 3\rho^2 = 3\cdot\tfrac29 d^2 = \tfrac23 d^2$. $\blacksquare$
+
+commentary: |
+  [[XIII.13]]–[[XIII.17]] construct the five regular solids, each inscribed in a sphere of given diameter, and
+  compute the edge: tetrahedron, octahedron ([[XIII.14]]), cube ([[XIII.15]]), icosahedron ([[XIII.16]]),
+  dodecahedron ([[XIII.17]]). [[XIII.18]] compares the five edges and proves there are no others.

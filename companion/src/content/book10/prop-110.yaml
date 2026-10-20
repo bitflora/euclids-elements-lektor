@@ -1,0 +1,105 @@
+id: X.110
+kind: theorem
+title: "Medial minus incommensurable medial: two more irrationals"
+
+paraphrase: |
+  If a medial area {BD} incommensurable with a medial area {BC} is subtracted from it, the side of the remainder is a
+  second apotome of a medial or the line that produces with a medial area a medial whole.
+
+diagram:
+  width: 280
+  height: 240
+  elements:
+    - "B0;point;free;30,-1000;0;0"
+    - "B3;point;free;30,1000;0;0"
+    - "A;point;lineSlider;B0,B3,0,190"
+    - "B;point;lineSlider;B0,B3,0,70"
+    - "C';point;perpendicular;A,B;0;0;0"
+    - "C;point;lineSlider;A,C',130,0"
+    - "BC;polygon;parallelogram;B,A,C;0;0;black;150,100,100"
+    - "D;point;lineSlider;A,C,90,0"
+    - "E;point;parallelogram;B,A,D"
+    - "BD;polygon;parallelogram;B,A,D;0;0;black;190,100,100"
+    - "F0;point;free;-1000,30;0;0"
+    - "F3;point;free;1000,30;0;0"
+    - "F;point;lineSlider;F0,F3,170,0"
+    - "G';point;perpendicular;F,F3;0;0"
+    - "G;point;lineSlider;F,G',0,210"
+    - "H;point;proportion;F,G,A,C,B,A,F,F3"
+    - "GH;polygon;parallelogram;G,F,H;0;0;black;150,100,100"
+    - "K;point;proportion;F,G,A,D,B,A,F,F3"
+    - "L;point;parallelogram;G,F,K"
+    - "GFKL;polygon;quadrilateral;G,F,K,L;0;0;black;190,100,100"
+    - "FH;line;connect;F,H;0;0;0"
+    - "FK;line;connect;F,K;0;0;0"
+    - "KH;line;connect;K,H;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+  aliases: { GK: GFKL, HF: FH, KF: FK, HK: KH, GF: FG }
+  caption: |
+    {BC} and {BD} applied to the rational line {FG} as {GH} and {GK}, with breadths {FH} and {FK}; the remainder
+    *EC* becomes *LH*, of breadth {KH}.
+
+steps:
+  - part: enunciation
+    text: "If from a medial area there be subtracted a medial area incommensurable with the whole, the two remaining irrational straight lines arise, either a second apotome of a medial straight line or a straight line which produces with a medial area a medial whole."
+    highlight: [BC, BD]
+    hint: |
+      √(medial − medial).
+
+  - part: setting-out
+    text: "For, as in the foregoing figures, let there be subtracted from the medial area BC the medial area BD incommensurable with the whole; I say that the “side” of EC is one of two irrational straight lines, either a second apotome of a medial straight line or a straight line which produces with a medial area a medial whole."
+    highlight: [BC, BD]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For, since each of the rectangles BC, BD is medial, and BC is incommensurable with BD, it follows that each of the straight lines FH, FK will be rational and incommensurable in length with FG."
+    highlight: [FH, FK]
+    hint: |
+      Both breadths rational, incommensurable with {FG}.
+
+  - part: proof
+    text: "And, since BC is incommensurable with BD, that is, GH with GK, HF is also incommensurable with FK; therefore FH, FK are rational straight lines commensurable in square only; therefore KH is an apotome."
+    highlight: [FH, FK, KH]
+    hint: |
+      Incommensurable with each other: {KH} an apotome.
+
+  - part: proof
+    text: "If then the square on FH is greater than the square on FK by the square on a straight line commensurable with FH, while neither of the straight lines FH, FK is commensurable in length with the rational straight line FG set out, KH is a third apotome."
+    highlight: [KH]
+    hint: |
+      Commensurable excess, neither term commensurable with {FG}: a third apotome …
+
+  - part: proof
+    text: "But KL is rational, and the rectangle contained by a rational straight line and a third apotome is irrational, and the “side” of it is irrational, and is called a second apotome of a medial straight line; so that the “side” of LH, that is, of EC, is a second apotome of a medial straight line."
+    highlight: [KH]
+    hint: |
+      … side: second apotome of a medial ([[X.93]]).
+
+  - part: proof
+    text: "But, if the square on FH is greater than the square on FK by the square on a straight line incommensurable with FH, while neither of the straight lines HF, FK is commensurable in length with FG, KH is a sixth apotome."
+    highlight: [KH]
+    hint: |
+      Incommensurable excess: a sixth apotome …
+
+  - part: proof
+    text: "But the “side” of the rectangle contained by a rational straight line and a sixth apotome is a straight line which produces with a medial area a medial whole."
+    highlight: [KH]
+    hint: |
+      … side: produces with a medial area a medial whole ([[X.96]]).
+
+  - part: proof
+    text: "Therefore the “side” of LH, that is, of EC, is a straight line which produces with a medial area a medial whole."
+    highlight: [KH]
+    hint: |
+      So for *EC*.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        A third or sixth apotome: [[X.93]], [[X.96]]. $\blacksquare$

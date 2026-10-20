@@ -1,0 +1,178 @@
+id: V.16
+kind: theorem
+title: Alternation (alternando)
+
+paraphrase: |
+  If {A} : {B} = {C} : {D}, then {A} : {C} = {B} : {D}. All four magnitudes must be of one kind.
+
+diagram:
+  width: 450
+  height: 150
+  elements:
+    - "U1;point;free;0,0;0;0"
+    - "U2;point;free;25,0;0;0"
+    - "U;line;connect;U1,U2;0;0;0"
+    - "A1;point;free;30,30;0"
+    - "A3;point;parallelogram;A1,U;0;0"
+    - "A2;point;lineSlider;A1,A3,90,0;0"
+    - "A;line;connect;A1,A2;black;0;magenta"
+    - "B1;point;free;30,60;0"
+    - "B3;point;parallelogram;B1,U;0;0"
+    - "B2;point;lineSlider;B1,B3,80,0;0"
+    - "B;line;connect;B1,B2;black;0;magenta"
+    - "C1;point;free;280,30;0"
+    - "C3;point;parallelogram;C1,U;0;0"
+    - "C2;point;lineSlider;C1,C3,335,0;0"
+    - "C;line;connect;C1,C2;black;0;magenta"
+    - "D1;point;free;280,60;0"
+    - "D3;point;parallelogram;D1,U;0;0"
+    - "D2;point;proportion;A,B,C,D1,D3;0"
+    - "D;line;connect;D1,D2;black;0;magenta"
+    - "E0;point;free;30,100;0"
+    - "Ep;point;parallelogram;E0,U;0;0"
+    - "E1;point;cutoff;E0,Ep,A;0;lightGray"
+    - "E2;point;extend;E0,E1,A;0;lightGray"
+    - "E3;point;extend;E0,E2,A;0"
+    - "E;line;connect;E0,E3;black;0;magenta"
+    - "F0;point;free;30,130;0"
+    - "Fp;point;parallelogram;F0,U;0;0"
+    - "F1;point;cutoff;F0,Fp,B;0;lightGray"
+    - "F2;point;extend;F0,F1,B;0;lightGray"
+    - "F3;point;extend;F0,F2,B;0"
+    - "F;line;connect;F0,F3;black;0;magenta"
+    - "G0;point;free;280,100;0"
+    - "Gp;point;parallelogram;G0,U;0;0"
+    - "G1;point;cutoff;G0,Gp,C;0;lightGray"
+    - "G2;point;extend;G0,G1,C;0"
+    - "G;line;connect;G0,G2;black;0;magenta"
+    - "H0;point;free;280,130;0"
+    - "Hp;point;parallelogram;H0,U;0;0"
+    - "H1;point;cutoff;H0,Hp,D;0;lightGray"
+    - "H2;point;extend;H0,H1,D;0"
+    - "H;line;connect;H0,H2;black;0;magenta"
+  caption: |
+    {D} is constructed so that $A : B = C : D$. {E}, {F} are three times {A}, {B}; {G}, {H} twice {C}, {D}. Drag the
+    ends of {A}, {B}, {C}: {E} and {G} compare as {F} and {H} do.
+
+steps:
+  - part: enunciation
+    text: "If four magnitudes be proportional, they will also be proportional alternately."
+    highlight: [A, B, C, D]
+    hint: |
+      $A : B = C : D \Rightarrow A : C = B : D$ ([[V.Def.12]]).
+    explain:
+      implicit: |
+        {A} : {C} must be a ratio, so {A} and {C} are of the same kind: all four magnitudes are. Joyce
+        observes that Greek geometry never formed "mixed" ratios such as distance to time; alternation is
+        where the restriction matters.
+    modern: |
+      $$\frac{A}{B} = \frac{C}{D} \ \Rightarrow\ \frac{A}{C} = \frac{B}{D}$$
+    cites: [V.Def.12]
+
+  - part: setting-out
+    text: "Let A, B, C, D be four proportional magnitudes, so that, as A is to B, so is C to D;"
+    highlight: [A, B, C, D]
+    hint: |
+      The proportion. Heath notes that the Greek is terser still: "let {A}, {B}, {C}, {D} be four proportional
+      magnitudes, as {A} to {B}, so {C} to {D}".
+
+  - part: specification
+    text: "I say that they will also be so alternately, that is, as A is to C, so is B to D."
+    highlight: [A, C, B, D]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For of A, B let equimultiples E, F be taken, and of C, D other, chance, equimultiples G, H."
+    highlight: [E, F, G, H]
+    hint: |
+      To test $A : C = B : D$: {E} = $m${A}, {F} = $m${B}; {G} = $n${C}, {H} = $n${D}.
+    explain:
+      did: |
+        The multiples for [[V.Def.5]], arranged for the *alternate* ratios: one multiplier on the first pair
+        {A}, {B}, another on {C}, {D}.
+
+  - part: proof
+    text: "Then, since E is the same multiple of A that F is of B, and parts have the same ratio as the same multiples of them, therefore, as A is to B, so is E to F."
+    highlight: [A, B, E, F]
+    hint: |
+      $A : B = mA : mB$ ([[V.15]]).
+
+  - part: proof
+    text: "But as A is to B, so is C to D; therefore also, as C is to D, so is E to F."
+    highlight: [C, D, E, F]
+    hint: |
+      Transitivity ([[V.11]]).
+
+  - part: proof
+    text: "Again, since G, H are equimultiples of C, D, therefore, as C is to D, so is G to H."
+    highlight: [C, D, G, H]
+    hint: |
+      $C : D = nC : nD$ ([[V.15]]).
+
+  - part: proof
+    text: "But, as C is to D, so is E to F; therefore also, as E is to F, so is G to H."
+    highlight: [E, F, G, H]
+    hint: |
+      So $E : F = G : H$ ([[V.11]]).
+
+  - part: proof
+    text: "But, if four magnitudes be proportional, and the first be greater than the third, the second will also be greater than the fourth; if equal, equal; and if less, less."
+    highlight: [E, F, G, H]
+    hint: |
+      Heath quotes [[V.14]].
+
+  - part: proof
+    text: "Therefore, if E is in excess of G, F is also in excess of H, if equal, equal, and if less, less."
+    highlight: [E, G, F, H]
+    hint: |
+      Apply it to $E : F = G : H$: {E} vs {G} goes like {F} vs {H}.
+
+  - part: proof
+    text: "Now E, F are equimultiples of A, B, and G, H other, chance, equimultiples of C, D;"
+    highlight: [E, F, G, H]
+    hint: |
+      {E}, {F} are $m$ times {A}, {B}; {G}, {H} are $n$ times {C}, {D}.
+
+  - part: proof
+    text: "therefore, as A is to C, so is B to D."
+    highlight: [A, C, B, D]
+    hint: |
+      $mA$ vs $nC$ always goes like $mB$ vs $nD$: [[V.Def.5]] for $A : C = B : D$.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7]
+      text: |
+        Fix $m, n$. By [[V.15]] and [[V.11]], $mA : mB = A : B = C : D = nC : nD$.
+    - steps: [8, 9]
+      text: |
+        By [[V.14]], $mA \gtreqless nC \Rightarrow mB \gtreqless nD$.
+    - steps: [10, 11]
+      text: |
+        As $m, n$ were arbitrary, $A : C = B : D$ by [[V.Def.5]]. $\blacksquare$
+
+commentary: |
+  Alternation is one of the most used results in the *Elements*: every "alternately" in Books VI–XIII
+  cites it. It needs the Archimedean property ([[V.Def.4]]) through [[V.14]] and [[V.8]].
+
+  The definitions name six operations on proportions (Defs. 12–16 and the *ex aequali* of Def. 17); V.16
+  proves the first. Inversion is the porism to [[V.7]]; *separando* is [[V.17]], *componendo* [[V.18]],
+  *convertendo* the porism to [[V.19]], *ex aequali* [[V.22]] and [[V.23]].
+
+historical: |
+  Aristotle (*Posterior Analytics* I.5) mentions that alternation "used to be proved separately" for
+  numbers, lines, solids and times, but can now be proved universally — evidence that a general theory of
+  proportion like Eudoxus's was new in his day.

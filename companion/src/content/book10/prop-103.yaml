@@ -1,0 +1,131 @@
+id: X.103
+kind: theorem
+title: A line commensurable with an apotome is an apotome of the same order
+
+paraphrase: |
+  A line {CD} commensurable in length with an apotome {AB} is itself an apotome (of the same order). The
+  subtractive counterpart of [[X.66]].
+
+diagram:
+  width: 260
+  height: 100
+  elements:
+    - "A0;point;free;-1000,35;0;0"
+    - "A3;point;free;1000,35;0;0"
+    - "C0;point;free;-1000,70;0;0"
+    - "C3;point;free;1000,70;0;0"
+    - "A;point;lineSlider;A0,A3,60,0"
+    - "B;point;lineSlider;A0,A3,130,0"
+    - "C;point;lineSlider;C0,C3,30,0"
+    - "D;point;lineSlider;C0,C3,150,0"
+    - "E;point;lineSlider;A0,A3,170,0"
+    - "AE;line;connect;A,E"
+    - "F;point;proportion;A,B,C,D,B,E,D,C3"
+    - "CF;line;connect;C,F"
+    - "AB;line;connect;A,B;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+  aliases: { EA: AE, FC: CF, BA: AB, DC: CD }
+  caption: |
+    {AB} with annex {BE} (whole {AE}); {CD} commensurable with {AB}, with annex {DF} in the same ratio.
+
+steps:
+  - part: enunciation
+    text: "A straight line commensurable in length with an apotome is an apotome and the same in order."
+    highlight: [AB, CD]
+    hint: |
+      The kinds are closed under rational scaling.
+
+  - part: setting-out
+    text: "Let AB be an apotome, and let CD be commensurable in length with AB; I say that CD is also an apotome and the same in order with AB."
+    highlight: [AB, CD]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For, since AB is an apotome, let BE be the annex to it; therefore AE, EB are rational straight lines commensurable in square only."
+    highlight: [BE, AE]
+    hint: |
+      The annex {BE}; {AE}, {EB} rational, commensurable in square only.
+
+  - part: construction
+    text: "Let it be contrived that the ratio of BE to DF is the same as the ratio of AB to CD; therefore also, as one is to one, so are all to all; therefore also, as the whole AE is to the whole CF, so is AB to CD."
+    highlight: [DF, CF]
+    hint: |
+      Make {BE} : {DF} = {AB} : {CD}; then also {AE} : {CF} ([[V.19]]).
+
+  - part: proof
+    text: "But AB is commensurable in length with CD."
+    highlight: [AB, CD]
+    hint: |
+      {AB}, {CD} commensurable …
+
+  - part: proof
+    text: "Therefore AE is also commensurable with CF, and BE with DF."
+    highlight: [AE, CF, BE, DF]
+    hint: |
+      … so {AE}, {CF} and {BE}, {DF} commensurable.
+
+  - part: proof
+    text: "And AE, EB are rational straight lines commensurable in square only; therefore CF, FD are also rational straight lines commensurable in square only."
+    highlight: [CF, DF]
+    hint: |
+      {CF}, {FD} rational, commensurable in square only: {CD} an apotome.
+
+  - part: proof
+    text: "Now since, as AE is to CF, so is BE to DF, alternately therefore, as AE is to EB, so is CF to FD."
+    highlight: [AE, BE, CF, DF]
+    hint: |
+      Alternately {AE} : {EB} = {CF} : {FD}.
+
+  - part: proof
+    text: "And the square on AE is greater than the square on EB either by the square on a straight line commensurable with AE or by the square on a straight line incommensurable with it."
+    highlight: [AE, BE]
+    hint: |
+      Two cases for the excess.
+
+  - part: proof
+    text: "If then the square on AE is greater than the square on EB by the square on a straight line commensurable with AE, the square on CF will also be greater than the square on FD by the square on a straight line commensurable with CF."
+    highlight: [CF, DF]
+    hint: |
+      Commensurable excess carries over ([[X.14]]) …
+
+  - part: proof
+    text: "And, if AE is commensurable in length with the rational straight line set out, CF is so also, if BE, then DF also, [id.] and, if neither of the straight lines AE, EB, then neither of the straight lines CF, FD."
+    highlight: [CF, DF]
+    hint: |
+      … first, second or third apotome according to which term is commensurable with the rational line.
+
+  - part: proof
+    text: "But, if the square on AE is greater than the square on EB by the square on a straight line incommensurable with AE, the square on CF will also be greater than the square on FD by the square on a straight line incommensurable with CF."
+    highlight: [CF, DF]
+    hint: |
+      Incommensurable excess carries over …
+
+  - part: proof
+    text: "And, if AE is commensurable in length with the rational straight line set out, CF is so also, if BE, then DF also, and, if neither of the straight lines AE, EB, then neither of the straight lines CF, FD."
+    highlight: [CF, DF]
+    hint: |
+      … fourth, fifth or sixth.
+
+  - part: proof
+    text: "Therefore CD is an apotome and the same in order with AB."
+    highlight: [CD]
+    hint: |
+      Same order.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        As [[X.66]]: scaling by a rational preserves every defining property. $\blacksquare$
+
+commentary: |
+  [[X.103]]–[[X.107]] mirror [[X.66]]–[[X.70]].

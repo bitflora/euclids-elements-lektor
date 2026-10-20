@@ -1,0 +1,206 @@
+id: III.36
+kind: theorem
+title: Tangent and secant from a point
+
+paraphrase: |
+  From a point {D} outside a circle draw a tangent {DB} and a line cutting the circle at {C} and {A}. Then
+  $AD \cdot DC = DB^2$.
+
+diagram:
+  width: 280
+  height: 230
+  elements:
+    - "A;point;free;220,170"
+    - "D;point;free;30,204"
+    - "AD;line;connect;A,D"
+    - "E;point;free;150,115"
+    - "ABC;circle;radius;E,A;0;0;black;0"
+    - "ACx;line;chord;A,D,ABC;0;0;0"
+    - "C;point;last;ACx"
+    - "F;point;midpoint;A,C"
+    - "DE;line;connect;D,E"
+    - "EF;line;connect;E,F"
+    - "EC;line;connect;E,C"
+    - "M;point;midpoint;D,E;0;0"
+    - "BDE;circle;radius;M,D;0;0;0;0"
+    - "BBx;line;bichord;ABC,BDE;0;0;0"
+    - "B;point;last;BBx"
+    - "BE;line;connect;B,E"
+    - "BD;line;connect;B,D"
+    - "DC;line;connect;D,C;0;0;0"
+    - "AF;line;connect;A,F;0;0;0"
+    - "FC;line;connect;F,C;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+    - "angEBD;sector;angleMarker;B,E,D"
+    - "angEFC;sector;angleMarker;F,E,C"
+  aliases:
+    DCA: AD
+    DB: BD
+    EB: BE
+    ED: DE
+    FE: EF
+    CE: EC
+    CF: FC
+    DF: FD
+    EBD: angEBD
+    EFC: angEFC
+  given: [ABC, A, D, C, AD, BD, B]
+  caption: |
+    Drag {A}, {D}, or the centre {E}. The rectangle {AD}·{DC} always equals the square on the tangent {DB}.
+
+steps:
+  - part: enunciation
+    text: "If a point be taken outside a circle and from it there fall on the circle two straight lines, and if one of them cut the circle and the other touch it, the rectangle contained by the whole of the straight line which cuts the circle and the straight line intercepted on it outside between the point and the convex circumference will be equal to the square on the tangent."
+    highlight: [AD, DC, BD]
+    hint: |
+      Secant × external part = tangent².
+
+  - part: setting-out
+    text: "For let a point D be taken outside the circle ABC, and from D let the two straight lines DCA, DB fall on the circle ABC; let DCA cut the circle ABC and let BD touch it;"
+    highlight: [D, AD, BD]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the rectangle contained by AD, DC is equal to the square on DB."
+    highlight: [AD, DC, BD]
+    hint: |
+      The goal.
+    modern: |
+      $$AD\cdot DC = DB^2$$
+
+  - part: proof
+    text: "Then DCA is either through the centre or not through the centre."
+    hint: |
+      Two cases.
+
+  - part: proof
+    text: "First let it be through the centre, and let F be the centre of the circle ABC; let FB be joined; therefore the angle FBD is right."
+    hint: |
+      Case 1 (the line through the centre; Euclid calls the centre *F* in this case). The radius to the point
+      of contact is perpendicular to the tangent ([[III.18]]).
+
+  - part: proof
+    text: "And, since AC has been bisected at F, and CD is added to it, the rectangle AD, DC together with the square on FC is equal to the square on FD."
+    hint: |
+      [[II.6]].
+
+  - part: proof
+    text: "But FC is equal to FB; therefore the rectangle AD, DC together with the square on FB is equal to the square on FD."
+    hint: |
+      Radii.
+
+  - part: proof
+    text: "And the squares on FB, BD are equal to the square on FD;"
+    hint: |
+      [[I.47]].
+
+  - part: proof
+    text: "therefore the rectangle AD, DC together with the square on FB is equal to the squares on FB, BD."
+    hint: |
+      Collect.
+
+  - part: proof
+    text: "Let the square on FB be subtracted from each; therefore the rectangle AD, DC which remains is equal to the square on the tangent DB."
+    highlight: [BD]
+    hint: |
+      Case 1 done.
+
+  - part: construction
+    text: "Again, let DCA not be through the centre of the circle ABC; let the centre E be taken, and from E let EF be drawn perpendicular to AC; let EB, EC, ED be joined."
+    highlight: [E, EF, BE, EC, DE]
+    adds: [E, F, EF, BE, EC, DE]
+    hint: |
+      Case 2 (as drawn): centre {E}, perpendicular {EF} to the secant.
+
+  - part: proof
+    text: "Then the angle EBD is right."
+    highlight: [angEBD]
+    hint: |
+      [[III.18]].
+
+  - part: proof
+    text: "And, since a straight line EF through the centre cuts a straight line AC not through the centre at right angles, it also bisects it;"
+    highlight: [EF]
+    hint: |
+      [[III.3]].
+
+  - part: proof
+    text: "therefore AF is equal to FC."
+    highlight: [AF, FC]
+    hint: |
+      {F} is the midpoint of the chord.
+
+  - part: proof
+    text: "Now, since the straight line AC has been bisected at the point F, and CD is added to it, the rectangle contained by AD, DC together with the square on FC is equal to the square on FD."
+    highlight: [AD, DC, FC, FD]
+    hint: |
+      [[II.6]].
+    modern: |
+      $$AD\cdot DC + FC^2 = FD^2$$
+
+  - part: proof
+    text: "Let the square on FE be added to each; therefore the rectangle AD, DC together with the squares on CF, FE is equal to the squares on FD, FE."
+    highlight: [EF]
+    hint: |
+      Add {FE}².
+
+  - part: proof
+    text: "But the square on EC is equal to the squares on CF, FE, for the angle EFC is right; and the square on ED is equal to the squares on DF, FE;"
+    highlight: [EC, DE, angEFC]
+    hint: |
+      Pythagoras twice ([[I.47]]).
+
+  - part: proof
+    text: "therefore the rectangle AD, DC together with the square on EC is equal to the square on ED."
+    highlight: [EC, DE]
+    hint: |
+      $AD\cdot DC + EC^2 = ED^2$.
+
+  - part: proof
+    text: "And EC is equal to EB; therefore the rectangle AD, DC together with the square on EB is equal to the square on ED."
+    highlight: [EC, BE]
+    hint: |
+      Radii.
+
+  - part: proof
+    text: "But the squares on EB, BD are equal to the square on ED, for the angle EBD is right;"
+    highlight: [BE, BD, DE]
+    hint: |
+      [[I.47]] in the right triangle at {B}.
+
+  - part: proof
+    text: "therefore the rectangle AD, DC together with the square on EB is equal to the squares on EB, BD."
+    highlight: [BE, BD]
+    hint: |
+      Collect.
+
+  - part: proof
+    text: "Let the square on EB be subtracted from each; therefore the rectangle AD, DC which remains is equal to the square on DB."
+    highlight: [AD, DC, BD]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+      text: |
+        Both sides equal $ED^2 - r^2$: the secant by II.6 and Pythagoras, the tangent by Pythagoras in the
+        right triangle $EBD$. $\blacksquare$
+  closing: |
+    $ED^2 - r^2$ is the **power** of {D} with respect to the circle; compare [[III.35]] for points inside.
+
+commentary: |
+  The tangent–secant theorem, the outside-point companion of [[III.35]]. Its converse is [[III.37]].

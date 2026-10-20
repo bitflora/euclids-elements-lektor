@@ -1,0 +1,216 @@
+id: VI.18
+kind: problem
+title: Drawing a similar figure on a given line
+
+paraphrase: |
+  On a given line {AB}, construct a rectilinear figure similar and similarly situated to a given figure {CE}, with
+  {AB} corresponding to {CD}.
+
+diagram:
+  width: 350
+  height: 270
+  elements:
+    - "A0;point;free;-1000,240;0;0"
+    - "A3;point;free;1000,240;0;0"
+    - "A;point;lineSlider;A0,A3,220,0"
+    - "B;point;lineSlider;A0,A3,310,0"
+    - "C;point;lineSlider;A0,A3,30,0"
+    - "D;point;lineSlider;A0,A3,160,0"
+    - "E;point;free;130,30"
+    - "F;point;free;60,130"
+    - "CDEF;polygon;quadrilateral;C,D,E,F;0;0;black;#efe4d2"
+    - "DF;line;connect;D,F"
+    - "G;point;similar;A,B,C,D,F"
+    - "ABG;polygon;triangle;A,B,G;0;0;black;#dfe7ea"
+    - "H;point;similar;B,G,D,F,E"
+    - "BGH;polygon;triangle;B,G,H;0;0;black;#dfe7ea"
+    - "ABHG;polygon;quadrilateral;A,B,H,G;0;0;0;0"
+    - "CDF;polygon;triangle;C,D,F;0;0;0;0"
+    - "DFE;polygon;triangle;D,F,E;0;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "FC;line;connect;F,C;0;0;0"
+    - "FE;line;connect;F,E;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "GA;line;connect;G,A;0;0;0"
+    - "GB;line;connect;G,B;0;0;0"
+    - "GH;line;connect;G,H;0;0;0"
+    - "HB;line;connect;H,B;0;0;0"
+    - "angGAB;sector;angleMarker;A,G,B"
+    - "angDCF;sector;angleMarker;C,D,F"
+    - "angABG;sector;angleMarker;B,A,G"
+    - "angCDF;sector;angleMarker;D,C,F"
+    - "angCFD;sector;angleMarker;F,C,D"
+    - "angAGB;sector;angleMarker;G,A,B"
+    - "angBGH;sector;angleMarker;G,B,H"
+    - "angDFE;sector;angleMarker;F,D,E"
+    - "angGBH;sector;angleMarker;B,G,H"
+    - "angFDE;sector;angleMarker;D,F,E"
+    - "angDEF;sector;angleMarker;E,D,F"
+    - "angBHG;sector;angleMarker;H,B,G"
+  aliases:
+    CE: CDEF
+    AH: ABHG
+    FCD: CDF
+    GAB: ABG
+    FDE: DFE
+    GBH: BGH
+    FD: DF
+    AG: GA
+    BG: GB
+  given: [A0, A3, A, B, C, D, E, F, CDEF, AB, CD, FC, FE, ED]
+  caption: |
+    Drag {E}, {F} or slide {A}, {B}, {C}, {D} along the base line. The diagonal {DF} splits {CE} into triangles; on {AB} Euclid
+    builds triangles {GAB}, {GBH} equiangular with them.
+
+steps:
+  - part: enunciation
+    text: "On a given straight line to describe a rectilineal figure similar and similarly situated to a given rectilineal figure."
+    highlight: [AB, CE]
+    hint: |
+      A problem: copy a polygon's shape at a new scale, with a given side.
+    explain:
+      implicit: |
+        "Similarly situated": the given line plays the role of a particular side ({AB} ↔ {CD}), and the figure is
+        built on the same side of it. Joyce notes the correspondence is clear from the figure more than the text.
+
+  - part: setting-out
+    text: "Let AB be the given straight line and CE the given rectilineal figure;"
+    highlight: [AB, CE]
+    hint: |
+      The data: here a quadrilateral.
+
+  - part: specification
+    text: "thus it is required to describe on the straight line AB a rectilineal figure similar and similarly situated to the rectilineal figure CE."
+    highlight: [AB, CE]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let DF be joined, and on the straight line AB, and at the points A, B on it, let the angle GAB be constructed equal to the angle at C, and the angle ABG equal to the angle CDF."
+    highlight: [DF, angGAB, angDCF, angABG, angCDF]
+    adds: [DF, G, ABG, GA, GB, angGAB, angABG, angAGB, angDCF, angCDF, angCFD, CDF]
+    hint: |
+      Cut {CE} into triangles by the diagonal {DF}; copy the angles of {FCD} at {A} and {B} ([[I.23]]).
+
+  - part: proof
+    text: "Therefore the remaining angle CFD is equal to the angle AGB;"
+    highlight: [angCFD, angAGB]
+    hint: |
+      [[I.32]].
+
+  - part: proof
+    text: "therefore the triangle FCD is equiangular with the triangle GAB."
+    highlight: [FCD, GAB]
+    hint: |
+      All three angles match.
+
+  - part: proof
+    text: "Therefore, proportionally, as FD is to GB, so is FC to GA, and CD to AB."
+    highlight: [FD, GB, FC, GA, CD, AB]
+    hint: |
+      [[VI.4]] (with alternation, [[V.16]]).
+    cites: [VI.4, V.16]
+
+  - part: construction
+    text: "Again, on the straight line BG, and at the points B, G on it, let the angle BGH be constructed equal to the angle DFE, and the angle GBH equal to the angle FDE."
+    highlight: [angBGH, angDFE, angGBH, angFDE]
+    adds: [H, BGH, GH, HB, ABHG, DFE, angBGH, angGBH, angBHG, angDFE, angFDE, angDEF]
+    hint: |
+      Now copy the second triangle {FDE} onto {GB} ([[I.23]]).
+
+  - part: proof
+    text: "Therefore the remaining angle at E is equal to the remaining angle at H;"
+    highlight: [angDEF, angBHG]
+    hint: |
+      [[I.32]].
+
+  - part: proof
+    text: "therefore the triangle FDE is equiangular with the triangle GBH;"
+    highlight: [FDE, GBH]
+    hint: |
+      Equiangular.
+
+  - part: proof
+    text: "therefore, proportionally, as FD is to GB, so is FE to GH, and ED to HB."
+    highlight: [FD, GB, FE, GH, ED, HB]
+    hint: |
+      [[VI.4]].
+
+  - part: proof
+    text: "But it was also proved that, as FD is to GB, so is FC to GA, and CD to AB;"
+    highlight: [FD, GB, FC, GA, CD, AB]
+    hint: |
+      From the first pair of triangles.
+
+  - part: proof
+    text: "therefore also, as FC is to AG, so is CD to AB, and FE to GH, and further ED to HB."
+    highlight: [FC, AG, CD, AB, FE, GH, ED, HB]
+    hint: |
+      All sides in one ratio, the ratio $FD : GB$ linking the two triangles ([[V.11]]).
+    cites: [V.11]
+
+  - part: proof
+    text: "And, since the angle CFD is equal to the angle AGB, and the angle DFE to the angle BGH, therefore the whole angle CFE is equal to the whole angle AGH."
+    highlight: [angCFD, angAGB, angDFE, angBGH]
+    hint: |
+      Add the parts ([[I.CN.2]]).
+    cites: [I.CN.2]
+
+  - part: proof
+    text: "For the same reason the angle CDE is also equal to the angle ABH."
+    highlight: [angCDF, angFDE, angABG, angGBH]
+    hint: |
+      Likewise at {D} and {B}.
+
+  - part: proof
+    text: "And the angle at C is also equal to the angle at A, and the angle at E to the angle at H."
+    highlight: [angDCF, angGAB, angDEF, angBHG]
+    hint: |
+      By construction and by the step above.
+
+  - part: proof
+    text: "Therefore AH is equiangular with CE; and they have the sides about their equal angles proportional;"
+    highlight: [AH, CE]
+    hint: |
+      Both conditions of [[VI.Def.1]].
+
+  - part: proof
+    text: "therefore the rectilineal figure AH is similar to the rectilineal figure CE."
+    highlight: [AH, CE]
+    hint: |
+      [[VI.Def.1]].
+
+  - part: conclusion
+    text: "Therefore on the given straight line AB the rectilineal figure AH has been described similar and similarly situated to the given rectilineal figure CE."
+    highlight: [AH, AB]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+      text: |
+        Triangulate {CE} by diagonals from one vertex; copy each triangle in turn onto the new figure, each sharing a
+        side with the last, scaled by the ratio $AB : CD$.
+    - steps: [12, 13, 14, 15, 16]
+      text: |
+        Corresponding angles add up to equal angles, and all sides are in the ratio $AB : CD$: the figures are
+        similar. $\blacksquare$
+  closing: |
+    In coordinates: the similarity that sends {C} to {A} and {D} to {B} (a rotation, scaling and translation) carries
+    {CE} onto the required figure.
+
+commentary: |
+  Euclid shows a quadrilateral; Joyce notes that the method clearly extends to more sides (one more
+  triangle per vertex). VI.18 is used in [[VI.22]], [[VI.25]] and [[VI.28]].
+
+gaps: |
+  - **Convexity**: adding angles at {F} and {D} assumes the diagonal {DF} lies inside the figure.

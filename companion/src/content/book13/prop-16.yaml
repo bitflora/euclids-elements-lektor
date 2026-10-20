@@ -1,0 +1,435 @@
+id: XIII.16
+kind: problem
+title: To construct a regular icosahedron in a sphere
+
+paraphrase: |
+  Construct an icosahedron inscribed in a given sphere, and show that its edge is the irrational line called *minor*
+  when the diameter is rational.
+
+diagram:
+  width: 600
+  height: 400
+  elements:
+    - "A0;point;free;25,-1000;0;0"
+    - "A3;point;free;25,1000;0;0"
+    - "A;point;lineSlider;A0,A3,0,40"
+    - "B;point;lineSlider;A0,A3,0,360"
+    - "AB;line;connect;A,B"
+    - "ABmid;point;midpoint;A,B;0;0"
+    - "ABcirc;circle;radius;ABmid,B;0;0;0;0"
+    - "semi;sector;sector;ABmid,B,A;0;0;black;random"
+    - "A1;point;perpendicular;A,B;0;0"
+    - "A2;point;extend;A,A1,A,A1;0;0"
+    - "A4;point;extend;A,A2,A,A2;0;0"
+    - "B1;point;perpendicular;B,A;0;0"
+    - "C;point;intersection;A,B,A4,B1"
+    - "D';point;perpendicular;C,A;0;0"
+    - "Dch;line;chord;C,D',ABcirc;0;0;0"
+    - "D;point;last;Dch"
+    - "CD;line;connect;C,D"
+    - "BD;line;connect;B,D"
+    - "a;point;free;410,200;0"
+    - "sphere;sphere;radius;a,ABmid,A;0;0;lightGray"
+    - "X;point;sphereSlider;sphere,410,160,100"
+    - "Z;point;extend;X,a,X,a"
+    - "XZ;line;connect;X,Z"
+    - "b;point;midpoint;B,D;0;0"
+    - "V;point;cutoff;a,X,b,B"
+    - "W;point;extend;V,a,V,a"
+    - "Vplane;plane;perpendicular;V,a;0;0;0;0"
+    - "Vcirc;circle;radius;V,D,B,Vplane;0;0;black;0"
+    - "E;point;circleSlider;Vcirc,240,30,-20"
+    - "ELcirc;circle;radius;E,W,Z,Vplane;0;0;0;0"
+    - "LP;line;bichord;Vcirc,ELcirc;0;0"
+    - "L;point;first;LP"
+    - "dec;polygon;regularPolygon;L,E,10,Vplane;0;0;black;0"
+    - "P;point;vertex;dec,3"
+    - "K;point;vertex;dec,4"
+    - "O;point;vertex;dec,5"
+    - "H;point;vertex;dec,6"
+    - "N;point;vertex;dec,7"
+    - "G;point;vertex;dec,8"
+    - "M;point;vertex;dec,9"
+    - "F;point;vertex;dec,10"
+    - "EFpent;polygon;pentagon;E,F,G,H,K;0;0;black;0"
+    - "LMpent;polygon;pentagon;L,M,N,O,P;0;0;black;0"
+    - "Q;point;perpendicular;E,Vplane,D,B"
+    - "EQ;line;connect;E,Q"
+    - "R;point;perpendicular;F,Vplane,D,B"
+    - "FR;line;connect;F,R"
+    - "S;point;perpendicular;G,Vplane,D,B"
+    - "GS;line;connect;G,S"
+    - "T;point;perpendicular;H,Vplane,D,B"
+    - "HT;line;connect;H,T"
+    - "U;point;perpendicular;K,Vplane,D,B"
+    - "KU;line;connect;K,U"
+    - "LQR;polygon;triangle;L,Q,R;0;0;black;90,50,100"
+    - "MRS;polygon;triangle;M,R,S;0;0;black;90,50,100"
+    - "NST;polygon;triangle;N,S,T;0;0;black;90,50,100"
+    - "OUT;polygon;triangle;O,U,T;0;0;black;90,50,100"
+    - "QUP;polygon;triangle;Q,U,P;0;0;black;90,50,100"
+    - "LMR;polygon;triangle;L,M,R;0;0;black;50,50,100"
+    - "MNS;polygon;triangle;M,N,S;0;0;black;50,50,100"
+    - "NOT;polygon;triangle;N,O,T;0;0;black;50,50,100"
+    - "POU;polygon;triangle;P,O,U;0;0;black;50,50,100"
+    - "LPQ;polygon;triangle;L,P,Q;0;0;black;50,50,100"
+    - "QZ;line;connect;Q,Z"
+    - "QW;line;connect;Q,W"
+    - "UZ;line;connect;U,Z"
+    - "EV;line;connect;E,V"
+    - "LV;line;connect;L,V"
+    - "LX;line;connect;L,X"
+    - "XM;line;connect;X,M"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+    - "EP;line;connect;E,P;0;0;0"
+    - "QLR;polygon;triangle;Q,L,R;0;0;0"
+    - "RMS;polygon;triangle;R,M,S;0;0;0"
+    - "SNT;polygon;triangle;S,N,T;0;0;0"
+    - "TOU;polygon;triangle;T,O,U;0;0;0"
+    - "LRM;polygon;triangle;L,R,M;0;0;0"
+    - "MSN;polygon;triangle;M,S,N;0;0;0"
+    - "NTO;polygon;triangle;N,T,O;0;0;0"
+    - "OUP;polygon;triangle;O,U,P;0;0;0"
+    - "VZ;line;connect;V,Z;0;0;0"
+    - "VW;line;connect;V,W;0;0;0"
+    - "WZ;line;connect;W,Z;0;0;0"
+    - "VX;line;connect;V,X;0;0;0"
+    - "QE;line;connect;Q,E;0;0;0"
+    - "VL;line;connect;V,L;0;0;0"
+    - "MX;line;connect;M,X;0;0;0"
+    - "VE;line;connect;V,E;0;0;0"
+    - "ZX;line;connect;Z,X;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+  aliases: { BA: AB, DC: CD, PL: LP, RF: FR, SG: GS, TH: HT, UK: KU, ZQ: QZ, WQ: QW, ZU: UZ, XL: LX, CA: AC, PE: EP, ZV: VZ, WV: VW, ZW: WZ, XV: VX }
+  caption: |
+    Two pentagons (*EFGHK* in the circle, *LMNOP* raised above it) and the apexes {X}, {Z} on the axis through the
+    centre {V}. Drag to rotate.
+
+steps:
+  - part: enunciation
+    text: "To construct an icosahedron and comprehend it in a sphere, like the aforesaid figures; and to prove that the side of the icosahedron is the irrational straight line called minor."
+    highlight: [XZ]
+    hint: |
+      The icosahedron: edge = side of a pentagon in a circle of radius √(1/5)·diameter; edge is a minor line.
+    modern: |
+      $a = \tfrac{d}{\sqrt{\varphi\sqrt5}}$; $d^2 = 5r^2$ where $r$ is the radius of the circle of the pentagons.
+
+  - part: construction
+    text: "Let the diameter AB of the given sphere be set out, and let it be cut at C so that AC is quadruple of CB, let the semicircle ADB be described on AB, let the straight line CD be drawn from C at right angles to AB, and let DB be joined; let the circle EFGHK be set out and let its radius be equal to DB, let the equilateral and equiangular pentagon EFGHK be inscribed in the circle EFGHK, let the circumferences EF, FG, GH, HK, KE be bisected at the points L, M, N, O, P, and let LM, MN, NO, OP, PL, EP be joined."
+    highlight: [AB, EFpent, LMpent]
+    hint: |
+      {AB} cut so that {AC} = 4{CB}; the circle {EFGHK|Vcirc} with radius {BD}; the regular pentagon *EFGHK* in it and the pentagon *LMNOP* through the midpoints of the arcs.
+
+  - part: proof
+    text: "Therefore the pentagon LMNOP is also equilateral, and the straight line EP belongs to a decagon."
+    highlight: [LMpent, LP]
+    hint: |
+      *LMNOP* is equilateral; {EP} is a decagon side.
+
+  - part: construction
+    text: "Now from the points E, F, G, H, K let the straight lines EQ, FR, GS, HT, KU be set up at right angles to the plane of the circle, and let them be equal to the radius of the circle EFGHK, let QR, RS, ST, TU, UQ, QL, LR, RM, MS, SN, NT, TO, OU, UP, PQ be joined."
+    highlight: [EQ, FR, GS, HT, KU]
+    hint: |
+      Erect {EQ}, {FR}, {GS}, {HT}, {KU} perpendicular to the circle, each equal to the radius; join *QR*, *RS*, *ST*, *TU*, *UQ*, and *QL*, *LR*, …
+
+  - part: proof
+    text: "Now, since each of the straight lines EQ, KU is at right angles to the same plane, therefore EQ is parallel to KU."
+    highlight: [EQ, KU]
+    hint: |
+      {EQ} ∥ {KU} ([[XI.6]]) …
+
+  - part: proof
+    text: "But it is also equal to it; and the straight lines joining those extremities of equal and parallel straight lines which are in the same direction are equal and parallel."
+    highlight: [EQ, KU]
+    hint: |
+      … and equal: *QU* equal and parallel to *EK* ([[I.33]]) …
+
+  - part: proof
+    text: "Therefore QU is equal and parallel to EK."
+    highlight: [EQ, KU]
+    hint: |
+      … *QU* = *EK*.
+
+  - part: proof
+    text: "But EK belongs to an equilateral pentagon; therefore QU also belongs to the equilateral pentagon inscribed in the circle EFGHK."
+    highlight: [EQ, KU]
+    hint: |
+      *EK* is a pentagon side, so *QU* is.
+
+  - part: proof
+    text: "For the same reason each of the straight lines QR, RS, ST, TU also belongs to the equilateral pentagon inscribed in the circle EFGHK; therefore the pentagon QRSTU is equilateral."
+    highlight: [EQ, FR, GS, HT, KU]
+    hint: |
+      Likewise *QR*, *RS*, *ST*, *TU*.
+
+  - part: proof
+    text: "And, since QE belongs to a hexagon, and EP to a decagon, and the angle QEP is right, therefore QP belongs to a pentagon; for the square on the side of the pentagon is equal to the square on the side of the hexagon and the square on the side of the decagon inscribed in the same circle."
+    highlight: [QUP]
+    hint: |
+      {EQ} hexagon side, {EP} decagon side, right angle: *QP* is a pentagon side ([[XIII.10]]).
+
+  - part: proof
+    text: "For the same reason PU is also a side of a pentagon."
+    highlight: [QUP]
+    hint: |
+      Likewise *PU*.
+
+  - part: proof
+    text: "But QU also belongs to a pentagon; therefore the triangle QPU is equilateral."
+    highlight: [QUP]
+    hint: |
+      So triangle {QUP} is equilateral.
+
+  - part: proof
+    text: "For the same reason each of the triangles QLR, RMS, SNT, TOU is also equilateral."
+    highlight: [LQR, MRS, NST, OUT]
+    hint: |
+      Likewise {QLR}, {RMS}, {SNT}, {TOU}.
+
+  - part: proof
+    text: "And, since each of the straight lines QL, QP was proved to belong to a pentagon, and LP also belongs to a pentagon, therefore the triangle QLP is equilateral."
+    highlight: [LPQ]
+    hint: |
+      And {LPQ} …
+
+  - part: proof
+    text: "For the same reason each of the triangles LRM, MSN, NTO, OUP is also equilateral."
+    highlight: [LMR, MNS, NOT, POU]
+    hint: |
+      … and {LRM}, {MSN}, {NTO}, {OUP}.
+
+  - part: construction
+    text: "Let the centre of the circle EFGHK the point V, be taken; from V let VZ be set up at right angles to the plane of the circle, let it be produced in the other direction, as VX, let there be cut off VW, the side of a hexagon, and each of the straight lines VX, WZ, being sides of a decagon, and let QZ, QW, UZ, EV, LV, LX, XM be joined."
+    highlight: [V, W, XZ]
+    hint: |
+      Centre {V}; erect {VZ} ⊥ the plane: {VW} = hexagon side, {WZ} = {VX} = decagon side.
+
+  - part: proof
+    text: "Now, since each of the straight lines VW, QE is at right angles to the plane of the circle, therefore VW is parallel to QE."
+    highlight: [V, W]
+    hint: |
+      {VW} ∥ {QE} ([[XI.6]]) …
+
+  - part: proof
+    text: "But they are also equal; therefore EV, QW are also equal and parallel."
+    highlight: [QW, EV]
+    hint: |
+      … equal, so {EV}, {QW} equal and parallel ([[I.33]]) …
+
+  - part: proof
+    text: "But EV belongs to a hexagon; therefore QW also belongs to a hexagon."
+    highlight: [QW]
+    hint: |
+      … {QW} a hexagon side.
+
+  - part: proof
+    text: "And, since QW belongs to a hexagon, and WZ to a decagon, and the angle QWZ is right, therefore QZ belongs to a pentagon."
+    highlight: [QZ]
+    hint: |
+      {QW} hexagon, *WZ* decagon, right angle: {QZ} a pentagon side ([[XIII.10]]).
+
+  - part: proof
+    text: "For the same reason UZ also belongs to a pentagon, inasmuch as, if we join VK, WU, they will be equal and opposite, and VK, being a radius, belongs to a hexagon; therefore WU also belongs to a hexagon."
+    highlight: [UZ]
+    hint: |
+      Likewise {UZ} …
+
+  - part: proof
+    text: "But WZ belongs to a decagon, and the angle UWZ is right; therefore UZ belongs to a pentagon."
+    highlight: [UZ]
+    hint: |
+      … ([[XIII.10]]).
+
+  - part: proof
+    text: "But QU also belongs to a pentagon; therefore the triangle QUZ is equilateral."
+    highlight: [QZ, UZ]
+    hint: |
+      So triangle *QUZ* is equilateral.
+
+  - part: proof
+    text: "For the same reason each of the remaining triangles of which the straight lines QR, RS, ST, TU are the bases, and the point Z the vertex, is also equilateral."
+    highlight: [QZ, UZ]
+    hint: |
+      Likewise the other four triangles at {Z}.
+
+  - part: proof
+    text: "Again, since VL belongs to a hexagon, and VX to a decagon, and the angle LVX is right, therefore LX belongs to a pentagon."
+    highlight: [LX, LV]
+    hint: |
+      {VL} hexagon, {VX} decagon, right angle: {LX} a pentagon side.
+
+  - part: proof
+    text: "For the same reason, if we join MV, which belongs to a hexagon, MX is also inferred to belong to a pentagon."
+    highlight: [XM]
+    hint: |
+      Likewise {MX}.
+
+  - part: proof
+    text: "But LM also belongs to a pentagon; therefore the triangle LMX is equilateral."
+    highlight: [LX, XM]
+    hint: |
+      So *LMX* is equilateral.
+
+  - part: proof
+    text: "Similarly it can be proved that each of the remaining triangles of which MN, NO, OP, PL are the bases, and the point X the vertex, is also equilateral."
+    highlight: [LX, XM]
+    hint: |
+      Likewise the other four at {X}.
+
+  - part: proof
+    text: "Therefore an icosahedron has been constructed which is contained by twenty equilateral triangles."
+    highlight: [XZ]
+    hint: |
+      Twenty equilateral triangles: an icosahedron.
+
+  - part: specification
+    text: "It is next required to comprehend it in the given sphere, and to prove that the side of the icosahedron is the irrational straight line called minor."
+    highlight: [XZ]
+    hint: |
+      Inscribe it and compute.
+
+  - part: proof
+    text: "For, since VW belongs to a hexagon, and WZ to a decagon, therefore VZ has been cut in extreme and mean ratio at W, and VW is its greater segment; therefore, as ZV is to VW, so is VW to WZ."
+    highlight: [XZ]
+    hint: |
+      {VW} hexagon, *WZ* decagon: {VZ} cut in golden section at {W} ([[XIII.9]]) …
+
+  - part: proof
+    text: "But VW is equal to VE, and WZ to VX; therefore, as ZV is to VE, so is EV to VX."
+    highlight: [XZ, EV]
+    hint: |
+      … so *ZV* : {VE} = {EV} : {VX} …
+
+  - part: proof
+    text: "And the angles ZVE, EVX are right; therefore, if we join the straight line EZ, the angle XEZ will be right because of the similarity of the triangles XEZ, VEZ."
+    highlight: [XZ]
+    hint: |
+      … so ∠*XEZ* is right ([[VI.8]]), and the semicircle on {XZ} passes through {E}.
+
+  - part: proof
+    text: "For the same reason, since, as ZV is to VW, so is VW to WZ, and ZV is equal to XW, and VW to WQ, therefore, as XW is to WQ, so is QW to WZ."
+    highlight: [XZ, QW]
+    hint: |
+      Likewise ∠*XQZ* …
+
+  - part: proof
+    text: "And for this reason again, if we join QX, the angle at Q will be right; therefore the semicircle described on XZ will also pass through Q."
+    highlight: [XZ]
+    hint: |
+      … and through every vertex.
+
+  - part: proof
+    text: "And if, XZ remaining fixed, the semicircle be carried round and restored to the same position from which it began to be moved, it will also pass through Q and the remaining angular points of the icosahedron, and the icosahedron will have been comprehended in a sphere."
+    highlight: [XZ]
+    hint: |
+      Rotating gives the sphere.
+
+  - part: specification
+    text: "I say next that it is also comprehended in the given sphere."
+    highlight: [XZ]
+    hint: |
+      It is the given sphere:
+
+  - part: construction
+    text: "For let VW be bisected at A'."
+    highlight: [V, W]
+    hint: |
+      Bisect {VW} at *A′*.
+
+  - part: proof
+    text: "Then, since the straight line VZ has been cut in extreme and mean ratio at W, and ZW is its lesser segment, therefore the square on ZW added to the half of the greater segment, that is WA', is five times the square on the half of the greater segment; therefore the square on ZA' is five times the square on."
+    highlight: [XZ]
+    hint: |
+      *ZA′* squared is five times *A′W* squared ([[XIII.3]]) …
+
+  - part: proof
+    text: "And ZX is double of ZA', and VW double of VA'; therefore the square on ZX is five times the square on WV."
+    highlight: [XZ, V, W]
+    hint: |
+      … so sq({ZX}) = 5 sq(*WV*).
+
+  - part: proof
+    text: "And, since AC is quadruple of CB, therefore AB is five times BC."
+    highlight: [AB]
+    hint: |
+      {AC} = 4{CB}, so {AB} = 5{BC} …
+
+  - part: proof
+    text: "But, as AB is to BC, so is the square on AB to the square on BD; therefore the square on AB is five times the square on BD."
+    highlight: [AB, BD]
+    hint: |
+      … sq({AB}) = 5 sq({BD}) ([[VI.8]], [[V.Def.9]]).
+
+  - part: proof
+    text: "But the square on ZX was also proved to be five times the square on VW."
+    highlight: [XZ]
+    hint: |
+      Recalled.
+
+  - part: proof
+    text: "And DB is equal to VW, for each of them is equal to the radius of the circle EFGHK; therefore AB is also equal to XZ."
+    highlight: [BD, AB, XZ]
+    hint: |
+      {DB} = {VW} (both radii), so {AB} = {XZ} …
+
+  - part: proof
+    text: "And AB is the diameter of the given sphere; therefore XZ is also equal to the diameter of the given sphere."
+    highlight: [AB, XZ]
+    hint: |
+      … the given diameter.
+
+  - part: proof
+    text: "Therefore the icosahedron has been comprehended in the given sphere"
+    highlight: [XZ]
+    hint: |
+      Inscribed.
+
+  - part: specification
+    text: "I say next that the side of the icosahedron is the irrational straight line called minor."
+    highlight: [EFpent]
+    hint: |
+      The edge is minor:
+
+  - part: proof
+    text: "For, since the diameter of the sphere is rational, and the square on it is five times the square on the radius of the circle EFGHK, therefore the radius of the circle EFGHK is also rational; hence its diameter is also rational."
+    highlight: [EFpent]
+    hint: |
+      The diameter is rational and sq(diameter) = 5 sq(radius of *EFGHK*), so the circle's diameter is rational …
+
+  - part: proof
+    text: "But, if an equilateral pentagon be inscribed in a circle which has its diameter rational, the side of the pentagon is the irrational straight line called minor."
+    highlight: [EFpent]
+    hint: |
+      … so the pentagon side is minor ([[XIII.11]]).
+
+  - part: proof
+    text: "And the side of the pentagon EFGHK is the side of the icosahedron."
+    highlight: [EFpent]
+    hint: |
+      That side is the edge.
+
+  - part: proof
+    text: "Therefore the side of the icosahedron is the irrational straight line called minor."
+    highlight: [EFpent]
+    hint: |
+      Done.
+
+reconstruction:
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
+      text: |
+        Two staggered pentagons at height $r$ apart and two apexes at distance $s_{10}$ beyond them; every edge is a
+        pentagon side because $s_5^2 = s_6^2 + s_{10}^2$ ([[XIII.10]]).
+    - steps: [28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]
+      text: |
+        All vertices lie on the sphere with diameter $XZ = r + 2s_{10}$, and $XZ^2 = 5r^2$.
+    - steps: [45, 46, 47, 48, 49]
+      text: |
+        Hence the edge (a pentagon side in a rational circle) is minor ([[XIII.11]]). $\blacksquare$
+
+commentary: |
+  The porism: the square on the diameter of the sphere is five times the square on the radius of the circle
+  from which the icosahedron was described. In coordinates the vertices are the cyclic permutations of
+  $(0, \pm1, \pm\varphi)$.

@@ -1,0 +1,186 @@
+id: I.35
+kind: theorem
+title: Parallelograms on the same base and between the same parallels
+
+paraphrase: |
+  Two parallelograms with the same base {BC}, whose opposite sides lie on the same parallel line
+  {AF}, have equal areas — however slanted they are.
+
+diagram:
+  width: 300
+  height: 210
+  elements:
+    - "B;point;free;60,180"
+    - "C;point;free;150,180"
+    - "BC;line;connect;B,C"
+    - "A;point;free;30,40"
+    - "AB;line;connect;A,B"
+    - "D;point;parallelogram;A,B,C"
+    - "CD;line;connect;C,D"
+    - "E1;point;free;10000,0;0;0"
+    - "Ep;point;extend;A,D,A,E1;0;0"
+    - "E;point;lineSegmentSlider;D,Ep,185,40"
+    - "BE;line;connect;B,E"
+    - "F;point;parallelogram;E,B,C"
+    - "CF;line;connect;C,F"
+    - "DE;line;connect;D,E"
+    - "AF;line;connect;A,F"
+    - "G;point;intersection;CD,BE"
+    - "AD;line;connect;A,D;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "ABCD;polygon;quadrilateral;A,B,C,D;0;0;0;0"
+    - "EBCF;polygon;quadrilateral;E,B,C,F;0;0;0;0"
+    - "EAB;polygon;triangle;E,A,B;0;0;0;0"
+    - "FDC;polygon;triangle;F,D,C;0;0;0;0"
+    - "DGE;polygon;triangle;D,G,E;0;0;0;0"
+    - "GBC;polygon;triangle;G,B,C;0;0;0;#efe4d2"
+    - "ABGD;polygon;quadrilateral;A,B,G,D;0;0;0;0"
+    - "EGCF;polygon;quadrilateral;E,G,C,F;0;0;0;0"
+    - "angEAB;sector;angleMarker;A,E,B,22"
+    - "angFDC;sector;angleMarker;D,F,C,22"
+  aliases:
+    EA: AE
+    FD: DF
+    DC: CD
+    EB: BE
+    FC: CF
+  given: [A, B, C, D, E, F, G, BC, AB, CD, BE, CF, DE, AF, GBC]
+  caption: |
+    Drag {A}, {B} or {C}, and slide {E} along the top line. The two parallelograms change shape but
+    keep the same area.
+
+steps:
+  - part: enunciation
+    text: "Parallelograms which are on the same base and in the same parallels are equal to one another."
+    highlight: [ABCD, EBCF]
+    hint: |
+      Same base, same height ⇒ same area. The first theorem about area that is not about congruence.
+    explain:
+      fact: |
+        "In the same parallels" means: the base lies on one line and the opposite side on a parallel
+        line. In modern terms, the parallelograms have the same *height*.
+      implicit: |
+        "Equal" now means equal in area. The parallelograms here are not congruent.
+
+  - part: setting-out
+    text: "Let ABCD, EBCF be parallelograms on the same base BC and in the same parallels AF, BC;"
+    highlight: [ABCD, EBCF, BC, AF]
+    hint: |
+      The data: two parallelograms on base {BC}, tops on the line {AF}.
+
+  - part: specification
+    text: "I say that ABCD is equal to the parallelogram EBCF."
+    highlight: [ABCD, EBCF]
+    hint: |
+      The goal: equal areas.
+
+  - part: proof
+    text: "For, since ABCD is a parallelogram, AD is equal to BC."
+    highlight: [AD, BC]
+    hint: |
+      Opposite sides of a parallelogram ([[I.34]]).
+
+  - part: proof
+    text: "For the same reason also EF is equal to BC, so that AD is also equal to EF;"
+    highlight: [EF, BC, AD]
+    hint: |
+      {EF} = {BC} too, so {AD} = {EF} ([[I.CN.1]]).
+
+  - part: proof
+    text: "and DE is common; therefore the whole AE is equal to the whole DF."
+    highlight: [DE, AE, DF]
+    hint: |
+      Add {DE} to both ([[I.CN.2]]): {AE} = {DF}.
+    explain:
+      implicit: |
+        This assumes the order {A}, {D}, {E}, {F} along the line — the case drawn, where the two tops
+        do not overlap. If they overlap, {DE} must be *subtracted*.
+    modern: |
+      $$AE = AD + DE = EF + DE = DF$$
+
+  - part: proof
+    text: "But AB is also equal to DC;"
+    highlight: [AB, CD]
+    hint: |
+      Opposite sides of {ABCD} ([[I.34]]).
+
+  - part: proof
+    text: "therefore the two sides EA, AB are equal to the two sides FD, DC respectively, and the angle FDC is equal to the angle EAB, the exterior to the interior;"
+    highlight: [EAB, FDC, AE, AB, DF, CD, angEAB, angFDC]
+    adds: [angEAB, angFDC]
+    hint: |
+      Triangles {EAB} and {FDC}: two sides and the included angle. The angles are equal because
+      {AB} ∥ {DC} ([[I.29]], exterior = interior opposite).
+    explain:
+      implicit: |
+        Heath notes that the Greek has "*DFC*" for "{FDC|angFDC}" (his note on line 21).
+
+  - part: proof
+    text: "therefore the base EB is equal to the base FC, and the triangle EAB will be equal to the triangle FDC."
+    highlight: [EAB, FDC]
+    hint: |
+      SAS ([[I.4]]): the two side triangles are congruent, so equal in area.
+
+  - part: proof
+    text: "Let DGE be subtracted from each; therefore the trapezium ABGD which remains is equal to the trapezium EGCF which remains."
+    highlight: [DGE, ABGD, EGCF]
+    hint: |
+      Take away the small triangle {DGE} where they overlap ([[I.CN.3]]).
+    explain:
+      implicit: |
+        Heath points out that Euclid never says where {G} is: in the case drawn, {BE} and {CD} cross
+        at a point between the parallels, and that is taken from the figure (his note on line 22).
+        A "trapezium" here is any four-sided figure that is not a parallelogram.
+    modern: |
+      $$[ABGD] = [EAB] - [DGE] = [FDC] - [DGE] = [EGCF]$$
+
+  - part: proof
+    text: "Let the triangle GBC be added to each; therefore the whole parallelogram ABCD is equal to the whole parallelogram EBCF."
+    highlight: [GBC, ABCD, EBCF]
+    hint: |
+      Add the shared triangle {GBC} ([[I.CN.2]]). Done.
+    modern: |
+      $$[ABCD] = [ABGD] + [GBC] = [EGCF] + [GBC] = [EBCF]$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* With a measure of area (area = base ×
+    height) the theorem is a one-liner; Euclid has no such formula and argues by cut-and-paste.
+  lines:
+    - steps: [1, 2]
+      text: Both parallelograms have base $BC$ and height $h$ = distance between the parallels.
+    - steps: [3, 4, 5, 6, 7, 8, 9]
+      text: $[ABCD] = BC \cdot h = [EBCF]$. $\blacksquare$
+  closing: |
+    Euclid's proof is more elementary: it shows the two figures are *equidecomposable* by adding and
+    removing congruent pieces. Hilbert showed that in the plane, area theory can be built on exactly
+    such decompositions without real numbers.
+
+commentary: |
+  I.35 opens the theory of area in the *Elements*: [[I.36]] (equal bases), [[I.37]]–[[I.40]] (the same
+  for triangles), and on to [[I.47]], whose proof is a chain of such equalities.
+
+  "Equal" in Euclid is never defined. From here on it plainly means equal in area, governed by the
+  common notions: equals added to or subtracted from equals give equals.
+
+gaps: |
+  - **Only one case** is proved: the tops {AD} and {EF} do not overlap. Proclus treats the other
+    cases (where {E} lies between {A} and {D}, or coincides with {D}).
+  - **Existence of {G}** between the parallels, read off the figure.
+
+historical: |
+  Proclus calls this the first of the "locus theorems" in the *Elements*: all parallelograms on a
+  given base with a given area have their tops on one line. He also notes the paradox — to the
+  untutored — that parallelograms of unbounded perimeter can have the same area.

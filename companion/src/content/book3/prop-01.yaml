@@ -1,0 +1,199 @@
+id: III.1
+kind: problem
+title: Finding the centre of a circle
+
+paraphrase: |
+  Given a circle, find its centre: draw any chord {AB}, take the perpendicular bisector {CE} of it
+  (a diameter), and bisect that at {F}.
+
+diagram:
+  width: 260
+  height: 260
+  elements:
+    - "A;point;free;60,190"
+    - "B;point;free;200,190"
+    - "Cp;point;free;130,30;0"
+    - "ABC;circle;circumcircle;A,B,Cp;0;0;black;0"
+    - "AB;line;connect;A,B"
+    - "D;point;midpoint;A,B"
+    - "DEp;line;perpendicular;D,A;0;0;0"
+    - "EC;line;chord;DEp,ABC"
+    - "C;point;last;EC"
+    - "E;point;first;EC"
+    - "F;point;midpoint;C,E"
+    - "G;point;free;160,120"
+    - "AG;line;connect;A,G"
+    - "BG;line;connect;B,G"
+    - "DG;line;connect;D,G"
+    - "AD;line;connect;A,D;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+    - "angADG;sector;angleMarker;D,A,G"
+    - "angGDB;sector;angleMarker;D,G,B"
+    - "angFDB;sector;angleMarker;D,F,B"
+  aliases:
+    CE: EC
+    DC: EC
+    GA: AG
+    GB: BG
+    GD: DG
+    BD: DB
+    DF: FD
+    ADG: angADG
+    GDB: angGDB
+    FDB: angFDB
+  given: [A, B, ABC]
+  caption: |
+    Drag {A} or {B} (the circle passes through them and a fixed third point). {G} is the "if possible"
+    centre of the proof: drag it off the line {CE} and the angles at {D} come apart.
+
+steps:
+  - part: enunciation
+    text: "To find the centre of a given circle."
+    highlight: [ABC, F]
+    hint: |
+      A problem: given a circle (but not its centre), find the centre.
+    explain:
+      implicit: |
+        A circle has a centre by definition ([[I.Def.15]]), but a drawn circle does not show where it
+        is. Book III begins by recovering it.
+
+  - part: setting-out
+    text: "Let ABC be the given circle;"
+    highlight: [ABC]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to find the centre of the circle ABC."
+    highlight: [ABC]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let a straight line AB be drawn through it at random, and let it be bisected at the point D;"
+    highlight: [AB, D]
+    adds: [AB, D]
+    hint: |
+      Draw any chord {AB} and find its midpoint {D} ([[I.10]]).
+    cites: [I.10]
+
+  - part: construction
+    text: "from D let DC be drawn at right angles to AB and let it be drawn through to E;"
+    highlight: [EC]
+    adds: [EC, C, E]
+    hint: |
+      Raise the perpendicular at {D} ([[I.11]]) and extend it both ways to meet the circle at {C} and {E}.
+    cites: [I.11]
+
+  - part: construction
+    text: "let CE be bisected at F;"
+    highlight: [F, EC]
+    adds: [F]
+    hint: |
+      Bisect {CE} at {F} ([[I.10]]).
+
+  - part: specification
+    text: "I say that F is the centre of the circle ABC."
+    highlight: [F]
+    hint: |
+      The claim.
+
+  - part: proof
+    text: "For suppose it is not, but, if possible, let G be the centre, and let GA, GD, GB be joined."
+    highlight: [G, AG, DG, BG]
+    adds: [G, AG, DG, BG]
+    hint: |
+      Reductio: suppose some other point {G}, off the line {CE}, is the centre.
+    explain:
+      implicit: |
+        "For suppose it is not" is two words in Greek, μὴ γάρ (Heath's note on line 12).
+
+  - part: proof
+    text: "Then, since AD is equal to DB, and DG is common, the two sides AD, DG are equal to the two sides BD, DG respectively;"
+    highlight: [AD, DB, DG]
+    hint: |
+      Triangles {ADG|AG} and {BDG|BG}: two pairs of equal sides.
+
+  - part: proof
+    text: "and the base GA is equal to the base GB, for they are radii;"
+    highlight: [AG, BG]
+    hint: |
+      If {G} were the centre, {GA} and {GB} would be radii ([[I.Def.15]]).
+    cites: [I.Def.15]
+
+  - part: proof
+    text: "therefore the angle ADG is equal to the angle GDB."
+    highlight: [angADG, angGDB]
+    hint: |
+      SSS ([[I.8]]).
+
+  - part: proof
+    text: "But, when a straight line set up on a straight line makes the adjacent angles equal to one another, each of the equal angles is right;"
+    highlight: [angADG, angGDB]
+    hint: |
+      [[I.Def.10]].
+
+  - part: proof
+    text: "therefore the angle GDB is right."
+    highlight: [angGDB]
+    hint: |
+      So {GD} would be perpendicular to {AB}.
+
+  - part: proof
+    text: "But the angle FDB is also right; therefore the angle FDB is equal to the angle GDB, the greater to the less: which is impossible."
+    highlight: [angFDB, angGDB]
+    hint: |
+      But {FD} is already perpendicular, and ∠{GDB} is only part of ∠{FDB} ([[I.CN.5]]). Contradiction.
+    cites: [I.CN.5]
+
+  - part: proof
+    text: "Therefore G is not the centre of the circle ABC."
+    highlight: [G]
+    hint: |
+      So {G} is not the centre.
+
+  - part: proof
+    text: "Similarly we can prove that neither is any other point except F."
+    highlight: [F]
+    hint: |
+      No point off {CE} is the centre; the centre must be on {CE}, equidistant from {C} and {E}.
+    explain:
+      implicit: |
+        The argument rules out points *off* the line {CE}. For points on {CE} one needs a second step:
+        the centre is equidistant from {C} and {E}, so it is the midpoint {F}. Euclid does not say this.
+    gap: |
+      **Points on {CE}.** The reductio only handles a supposed centre off the line {CE}. That the centre
+      on {CE} must be {F} follows because it is equally distant from {C} and {E} — left implicit.
+
+  - part: conclusion
+    text: "Therefore the point F is the centre of the circle ABC."
+    highlight: [F]
+    hint: |
+      Done. Heath prints a porism next (see the commentary).
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: The centre $O$ is equidistant from $A$ and $B$, so lies on the perpendicular bisector of $AB$ — the line $CE$.
+    - steps: [6, 7, 8, 9, 10, 11, 12, 13, 14]
+      text: $O$ is equidistant from $C$ and $E$, both on the circle and on the line, so $O$ is the midpoint $F$ of $CE$. $\blacksquare$
+  closing: |
+    The modern proof is direct; Euclid argues by contradiction and leaves the second half implicit.
+
+commentary: |
+  The first proposition of Book III, the book of the circle. Its **porism** (corollary), printed by
+  Heath after the proof, is used constantly: *if in a circle a straight line cuts a chord into two
+  equal parts and at right angles, the centre of the circle is on the cutting line.* That is, the
+  perpendicular bisector of any chord passes through the centre ([[III.9]], [[III.10]], …).
+
+gaps: |
+  - **Only points off {CE}** are excluded explicitly (step 12).
+  - **The chord meets the circle twice**, and the perpendicular meets it at {C} and {E}: circle–line
+    intersections, as in Book I.
+
+historical: |
+  Heath notes that in step 4 Euclid writes "{GD}, {DB}" where the correspondence needs "{BD}, {DG}"
+  (his note on line 17) — a reminder that Euclid often prefers alphabetical order to matching order.

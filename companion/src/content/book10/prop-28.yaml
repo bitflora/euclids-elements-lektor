@@ -1,0 +1,297 @@
+id: X.28
+kind: problem
+title: Medials commensurable in square only containing a medial rectangle; Pythagorean triples
+
+paraphrase: |
+  Find two medial lines {D}, {E}, commensurable in square only, whose rectangle is medial. Two lemmas follow:
+  how to find two square numbers whose sum is a square (Pythagorean triples), and two whose sum is not.
+
+diagram:
+  width: 360
+  height: 130
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "B0;point;free;-1000,65;0;0"
+    - "B3;point;free;1000,65;0;0"
+    - "C0;point;free;-1000,100;0;0"
+    - "C3;point;free;1000,100;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,120,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,160,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,220,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;A0,A3,180,0;0"
+    - "D2;point;meanProportional;A1,A2,B1,B2,D1,A3;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;B0,B3,180,0;0"
+    - "E2;point;proportion;B1,B2,C1,C2,D1,D2,E1,B3;0"
+    - "E;line;connect;E1,E2;black"
+  caption: |
+    {A}, {B}, {C} rational, commensurable in square only; {D} the mean of {A}, {B}; {B} : {C} = {D} : {E}.
+
+steps:
+  - part: enunciation
+    text: "To find medial straight lines commensurable in square only which contain a medial rectangle."
+    highlight: [D, E]
+    hint: |
+      Medials whose rectangle is medial.
+    modern: |
+      $A = 1$, $B = \sqrt2$, $C = \sqrt3$: $D = 2^{1/4}$, $E = 3^{1/2}2^{-1/4}$, $DE = \sqrt3$.
+
+  - part: construction
+    text: "Let the rational straight lines A, B, C commensurable in square only be set out; let D be taken a mean proportional between A, B, and let it be contrived that, as B is to C, so is D to E."
+    highlight: [A, B, C, D, E]
+    hint: |
+      {D} = mean of {A}, {B}; {E} with {B} : {C} = {D} : {E}.
+
+  - part: proof
+    text: "Since A, B are rational straight lines commensurable in square only, therefore the rectangle A, B, that is, the square on D, is medial."
+    highlight: [D]
+    hint: |
+      sq({D}) = rect({A},{B}), medial …
+
+  - part: proof
+    text: "Therefore D is medial."
+    highlight: [D]
+    hint: |
+      … so {D} medial.
+
+  - part: proof
+    text: "And since B, C are commensurable in square only, and, as B is to C, so is D to E, therefore D, E are also commensurable in square only."
+    highlight: [D, E]
+    hint: |
+      {D}, {E} commensurable in square only ([[X.11]]) …
+
+  - part: proof
+    text: "But D is medial; therefore E is also medial."
+    highlight: [E]
+    hint: |
+      … so {E} medial.
+
+  - part: proof
+    text: "Therefore D, E are medial straight lines commensurable in square only."
+    highlight: [D, E]
+    hint: |
+      As required so far.
+
+  - part: specification
+    text: "I say next that they also contain a medial rectangle."
+    highlight: [D, E]
+    hint: |
+      Now the rectangle.
+
+  - part: proof
+    text: "For since, as B is to C, so is D to E, therefore, alternately, as B is to D, so is C to E."
+    highlight: [B, D, C, E]
+    hint: |
+      Alternately: {B} : {D} = {C} : {E}.
+
+  - part: proof
+    text: "But, as B is to D, so is D to A; therefore also, as D is to A, so is C to E; therefore the rectangle A, C is equal to the rectangle D, E."
+    highlight: [A, C, D, E]
+    hint: |
+      {B} : {D} = {D} : {A}, so {D} : {A} = {C} : {E}: rect({A},{C}) = rect({D},{E}) ([[VI.16]]).
+
+  - part: proof
+    text: "But the rectangle A, C is medial; therefore the rectangle D, E is also medial."
+    highlight: [D, E]
+    hint: |
+      rect({A},{C}) is medial ([[X.21]]), so rect({D},{E}) is.
+
+  - part: proof
+    text: "Therefore medial straight lines commensurable in square only have been found which contain a medial rectangle."
+    highlight: [D, E]
+    hint: |
+      Found.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to do.
+
+  - part: lemma
+    text: "LEMMA I. To find two square numbers such that their sum is also square."
+    hint: |
+      Lemma 1: find two squares whose sum is a square.
+    modern: |
+      With $m, n$ both odd or both even and similar plane numbers, $mn + \left(\tfrac{m-n}{2}\right)^2 =
+      \left(\tfrac{m+n}{2}\right)^2$.
+
+  - part: lemma
+    text: "Let two numbers AB, BC be set out, and let them be either both even or both odd."
+    hint: |
+      Numbers *AB*, *BC*, both even or both odd …
+
+  - part: lemma
+    text: "Then since, whether an even number is subtracted from an even number, or an odd number from an odd number, the remainder is even, therefore the remainder AC is even."
+    hint: |
+      … so *AC* = *AB* − *BC* is even ([[IX.24]], [[IX.26]]) …
+
+  - part: lemma
+    text: "Let AC be bisected at D."
+    hint: |
+      … bisect it at *D*.
+
+  - part: lemma
+    text: "Let AB, BC also be either similar plane numbers, or square numbers, which are themselves also similar plane numbers."
+    hint: |
+      Take *AB*, *BC* similar plane numbers (e.g. squares).
+
+  - part: lemma
+    text: "Now the product of AB, BC together with the square on CD is equal to the square on BD."
+    hint: |
+      [[II.6]]: *AB*·*BC* + *CD*² = *BD*².
+
+  - part: lemma
+    text: "And the product of AB, BC is square, inasmuch as it was proved that, if two similar plane numbers by multiplying one another make some number the product is square."
+    hint: |
+      *AB*·*BC* is a square ([[IX.1]]).
+
+  - part: lemma
+    text: "Therefore two square numbers, the product of AB, BC, and the square on CD, have been found which, when added together, make the square on BD."
+    hint: |
+      So two squares sum to a square.
+    modern: |
+      E.g. $m = 9$, $n = 1$: $9 + 16 = 25$.
+
+  - part: lemma
+    text: "And it is manifest that two square numbers, the square on BD and the square on CD, have again been found such that their difference, the product of AB, BC, is a square, whenever AB, BC are similar plane numbers."
+    hint: |
+      Also *BD*² − *CD*² is a square when *AB*, *BC* are similar …
+
+  - part: lemma
+    text: "But when they are not similar plane numbers, two square numbers, the square on BD and the square on DC, have been found such that their difference, the product of AB, BC, is not square. Q. E. D."
+    hint: |
+      … and not a square when they are not similar. That gives the two cases needed in [[X.29]] and [[X.30]].
+
+  - part: lemma
+    text: "LEMMA 2. To find two square numbers such that their sum is not square."
+    hint: |
+      Lemma 2: find two squares whose sum is *not* a square.
+
+  - part: lemma
+    text: "For let the product of AB, BC, as we said, be square, and CA even, and let CA be bisected by D."
+    hint: |
+      Start as before: *AB*·*BC* square, *CA* even, bisected at *D*.
+
+  - part: lemma
+    text: "It is then manifest that the square product of AB, BC together with the square on CD is equal to the square on BD."
+    hint: |
+      *AB*·*BC* + *CD*² = *BD*².
+
+  - part: lemma
+    text: "Let the unit DE be subtracted; therefore the product of AB, BC together with the square on CE is less than the square on BD."
+    hint: |
+      Take away the unit *DE*: *AB*·*BC* + *CE*² < *BD*².
+
+  - part: lemma
+    text: "I say then that the square product of AB, BC together with the square on CE will not be square."
+    hint: |
+      Claim: *AB*·*BC* + *CE*² is not a square.
+
+  - part: lemma
+    text: "For, if it is square, it is either equal to the square on BE, or less than the square on BE, but cannot any more be greater, lest the unit be divided."
+    hint: |
+      If it were, it would be *BE*² or less (it lies strictly between *BE*² and *BD*², and no square lies
+      between consecutive squares).
+
+  - part: lemma
+    text: "First, if possible, let the product of AB, BC together with the square on CE be equal to the square on BE, and let GA be double of the unit DE."
+    hint: |
+      Suppose it equals *BE*²; let *GA* = 2*DE*.
+
+  - part: lemma
+    text: "Since then the whole AC is double of the whole CD, and in them AG is double of DE, therefore the remainder GC is also double of the remainder EC; therefore GC is bisected by E."
+    hint: |
+      Then *E* bisects *GC*.
+
+  - part: lemma
+    text: "Therefore the product of GB, BC together with the square on CE is equal to the square on BE."
+    hint: |
+      [[II.6]]: *GB*·*BC* + *CE*² = *BE*².
+
+  - part: lemma
+    text: "But the product of AB, BC together with the square on CE is also, by hypothesis, equal to the square on BE; therefore the product of GB, BC together with the square on CE is equal to the product of AB, BC together with the square on CE."
+    hint: |
+      So *GB*·*BC* = *AB*·*BC* …
+
+  - part: lemma
+    text: "And, if the common square on CE be subtracted, it follows that AB is equal to GB: which is absurd."
+    hint: |
+      … *AB* = *GB*: absurd.
+
+  - part: lemma
+    text: "Therefore the product of AB, BC together with the square on CE is not equal to the square on BE."
+    hint: |
+      Not equal to *BE*².
+
+  - part: lemma
+    text: "I say next that neither is it less than the square on BE."
+    hint: |
+      Nor less:
+
+  - part: lemma
+    text: "For, if possible, let it be equal to the square on BF, and let HA be double of DF."
+    hint: |
+      if it equals *BF*², let *HA* = 2*DF* …
+
+  - part: lemma
+    text: "Now it will again follow that HC is double of CF; so that CH has also been bisected at F, and for this reason the product of HB, BC together with the square on FC is equal to the square on BF."
+    hint: |
+      … then *HB*·*BC* + *FC*² = *BF*² ([[II.6]]) …
+
+  - part: lemma
+    text: "But, by hypothesis, the product of AB, BC together with the square on CE is also equal to the square on BF."
+    hint: |
+      … but by hypothesis it also equals *AB*·*BC* + *CE*² …
+
+  - part: lemma
+    text: "Thus the product of HB, BC together with the square on CF will also be equal to the product of AB, BC together with the square on CE: which is absurd."
+    hint: |
+      … absurd.
+    gap: |
+      This step is not convincing as written: the absurdity is asserted, not shown.
+
+  - part: lemma
+    text: "Therefore the product of AB, BC together with the square on CE is not less than the square on BE."
+    hint: |
+      Not less.
+
+  - part: lemma
+    text: "And it was proved that neither is it equal to the square on BE."
+    hint: |
+      Not equal (shown above).
+
+  - part: lemma
+    text: "Therefore the product of AB, BC together with the square on CE is not square."
+    hint: |
+      So not a square.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6]
+      text: |
+        $D = \sqrt{AB}$, $E = D\,C/B$; $D^2 = AB$ medial.
+    - steps: [7, 8, 9, 10, 11]
+      text: |
+        $DE = D^2C/B = AC$, a medial area. $\blacksquare$
+  closing: |
+    Lemma 1 is the general solution of $x^2 + y^2 = z^2$: with $m = p^2 s$, $n = q^2 s$,
+    $(pqs)^2 + \left(\tfrac{(p^2 - q^2)s}{2}\right)^2 = \left(\tfrac{(p^2+q^2)s}{2}\right)^2$.
+
+commentary: |
+  Lemma 1 is the first general method for Pythagorean triples in Greek mathematics (Diophantus has others).
+  [[X.29]] uses it to construct lines whose squares differ by a square commensurable with the greater.
+
+gaps: |
+  - Lemma 2's second case ("nor less") is weak: the contradiction is asserted rather than derived.

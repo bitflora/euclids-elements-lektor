@@ -1,0 +1,208 @@
+# Book XI, Definitions 1–28. Euclid's words come from Heath via the extracted
+# JSON; everything here is this edition's commentary.
+
+items:
+  - id: XI.Def.1
+    title: Solid
+    paraphrase: |
+      A *solid* has length, breadth and depth — three dimensions.
+    meaning: |
+      The three-dimensional counterpart of [[I.Def.1]] (point), [[I.Def.2]] (line) and [[I.Def.5]] (surface).
+      Like them it describes rather than defines.
+
+  - id: XI.Def.2
+    title: Extremity of a solid
+    paraphrase: |
+      The boundary of a solid is a surface.
+    meaning: |
+      Compare [[I.Def.3]] (the ends of a line are points) and [[I.Def.6]] (the edges of a surface are lines).
+
+  - id: XI.Def.3
+    title: Line at right angles to a plane
+    paraphrase: |
+      A line is *perpendicular to a plane* when it is perpendicular to every line in the plane that meets it.
+    meaning: |
+      The definition demands infinitely many right angles. [[XI.4]] shows that two suffice: a line
+      perpendicular to two intersecting lines of a plane at their meeting point is perpendicular to the plane.
+    modern: |
+      $\ell \perp \Pi$ iff $\ell \perp m$ for every line $m \subset \Pi$ through the foot of $\ell$.
+    figure: |
+      <svg viewBox="0 0 300 140"><polygon class="fill" points="40,110 200,110 260,70 100,70"/><line class="l2" x1="150" y1="90" x2="150" y2="15"/><line class="thin" x1="90" y1="100" x2="210" y2="80"/><line class="thin" x1="120" y1="75" x2="180" y2="105"/><text class="fig-label" x="156" y="22">ℓ</text></svg>
+    figureCaption: |
+      Perpendicular to every line of the plane through its foot.
+
+  - id: XI.Def.4
+    title: Plane at right angles to a plane
+    paraphrase: |
+      Two planes are *perpendicular* when any line in one of them drawn perpendicular to their common line is
+      perpendicular to the other plane.
+    modern: |
+      $\Pi_1 \perp \Pi_2$ when the normal vectors are orthogonal; equivalently, $\Pi_1$ contains a line
+      perpendicular to $\Pi_2$ ([[XI.18]]).
+
+  - id: XI.Def.5
+    title: Inclination of a line to a plane
+    paraphrase: |
+      Drop a perpendicular from the raised end of the line to the plane; the angle between the line and the line
+      joining its foot in the plane to the foot of the perpendicular is the line's *inclination* to the plane.
+    modern: |
+      The angle between a line and its orthogonal projection on the plane.
+
+  - id: XI.Def.6
+    title: Inclination of a plane to a plane
+    paraphrase: |
+      The inclination of two planes is the acute angle between lines drawn in each, perpendicular to their
+      common line at the same point.
+    modern: |
+      The dihedral angle (taken acute).
+
+  - id: XI.Def.7
+    title: Similarly inclined planes
+    paraphrase: |
+      Two pairs of planes are *similarly inclined* when their inclinations are equal.
+
+  - id: XI.Def.8
+    title: Parallel planes
+    paraphrase: |
+      Planes that do not meet are *parallel*.
+    meaning: |
+      As [[I.Def.23]] for lines, though for planes no "produced indefinitely" is needed: planes are already
+      unbounded in Euclid's usage.
+
+  - id: XI.Def.9
+    title: Similar solid figures
+    paraphrase: |
+      Solid figures are *similar* when they are bounded by the same number of similar plane faces.
+    meaning: |
+      Too weak as stated: two solids with similar faces in the same number need not be similar (the faces
+      must also be arranged alike). Euclid uses it only for parallelepipeds and prisms, where it works.
+    interpretations: |
+      Heath and others (Simson first) criticise Defs 9 and 10. Def. 10 in particular makes "equal and
+      similar" a definition, though it ought to be a theorem; and as stated it is false for non-convex solids.
+
+  - id: XI.Def.10
+    title: Equal and similar solid figures
+    paraphrase: |
+      Solid figures are *equal and similar* when they are bounded by similar and equal faces, the same in
+      number.
+    meaning: |
+      Intended to mean congruent. Simson observed that a solid and its mirror image, or two solids made by
+      pushing a face in or out, can satisfy the definition without being congruent.
+
+  - id: XI.Def.11
+    title: Solid angle
+    paraphrase: |
+      A *solid angle* is the corner formed by three or more plane angles meeting at a point, not all in one
+      plane.
+    meaning: |
+      The vertex of a pyramid or the corner of a cube. Euclid gives two versions; the second ("contained by
+      more than two plane angles") is the one he uses ([[XI.20]], [[XI.21]], [[XI.23]]).
+    examples:
+      - 'the corner of a cube (three right angles)'
+      - 'the apex of a square pyramid'
+
+  - id: XI.Def.12
+    title: Pyramid
+    paraphrase: |
+      A *pyramid* is a solid bounded by planes, made by joining a plane figure (the base) to a point.
+
+  - id: XI.Def.13
+    title: Prism
+    paraphrase: |
+      A *prism* is a solid bounded by planes, two opposite faces of which are equal, similar and parallel,
+      and the rest parallelograms.
+
+  - id: XI.Def.14
+    title: Sphere
+    paraphrase: |
+      A *sphere* is the figure swept out when a semicircle turns about its diameter.
+    meaning: |
+      A *kinematic* definition, unlike the circle's ([[I.Def.15]]). The equal-distance property is not stated
+      but is used.
+
+  - id: XI.Def.15
+    title: Axis of a sphere
+    paraphrase: |
+      The fixed diameter about which the semicircle turns.
+
+  - id: XI.Def.16
+    title: Centre of a sphere
+    paraphrase: |
+      The centre of the semicircle.
+
+  - id: XI.Def.17
+    title: Diameter of a sphere
+    paraphrase: |
+      Any line through the centre with both ends on the surface.
+
+  - id: XI.Def.18
+    title: Cone
+    paraphrase: |
+      A *cone* is swept out by a right triangle turning about one of its legs. It is right-angled, obtuse-angled
+      or acute-angled according as the fixed leg equals, is less than, or is greater than the moving leg.
+    meaning: |
+      Only right circular cones. The classification by apex angle (90°, obtuse, acute) is the one Apollonius
+      later replaced; in the older theory of conics, the three conic sections came from cutting these three
+      kinds of cone.
+
+  - id: XI.Def.19
+    title: Axis of a cone
+    paraphrase: |
+      The fixed leg about which the triangle turns.
+
+  - id: XI.Def.20
+    title: Base of a cone
+    paraphrase: |
+      The circle described by the moving leg.
+
+  - id: XI.Def.21
+    title: Cylinder
+    paraphrase: |
+      A *cylinder* is swept out by a rectangle turning about one of its sides.
+
+  - id: XI.Def.22
+    title: Axis of a cylinder
+    paraphrase: |
+      The fixed side.
+
+  - id: XI.Def.23
+    title: Bases of a cylinder
+    paraphrase: |
+      The two circles described by the sides opposite each other that move.
+
+  - id: XI.Def.24
+    title: Similar cones and cylinders
+    paraphrase: |
+      Cones or cylinders are *similar* when their axes are proportional to the diameters of their bases.
+    meaning: |
+      Used in [[XII.12]]: similar cones and cylinders are in the triplicate ratio of their base diameters.
+
+  - id: XI.Def.25
+    title: Cube
+    paraphrase: |
+      A *cube* is a solid bounded by six equal squares.
+
+  - id: XI.Def.26
+    title: Octahedron
+    paraphrase: |
+      An *octahedron* is a solid bounded by eight equal equilateral triangles.
+    meaning: |
+      Like Defs 27 and 28, the definition says nothing about how the faces meet; Euclid relies on the
+      constructions of Book XIII ([[XIII.14]]) to say which solid is meant.
+
+  - id: XI.Def.27
+    title: Icosahedron
+    paraphrase: |
+      An *icosahedron* is a solid bounded by twenty equal equilateral triangles.
+    meaning: |
+      Constructed in [[XIII.16]].
+
+  - id: XI.Def.28
+    title: Dodecahedron
+    paraphrase: |
+      A *dodecahedron* is a solid bounded by twelve equal, equilateral and equiangular pentagons.
+    meaning: |
+      Constructed in [[XIII.17]]. The regular tetrahedron ("pyramid", [[XIII.13]]) has no definition of its own.
+    notes: |
+      Book XIII ends ([[XIII.18]], addendum) by proving that these five, with the pyramid, are the only regular
+      solids.

@@ -1,0 +1,97 @@
+id: VI.11
+kind: problem
+title: Finding a third proportional
+
+paraphrase: |
+  Given two lines {BA}, {AC}, find a third line {CE} with {BA} : {AC} = {AC} : {CE}.
+
+diagram:
+  width: 250
+  height: 220
+  elements:
+    - "A;point;free;80,30"
+    - "B;point;free;60,90"
+    - "C;point;free;135,100"
+    - "D;point;extend;A,B,A,C"
+    - "E;point;similar;A,D,A,B,C"
+    - "ADE;polygon;triangle;A,D,E;0;0;black;#dfe7ea"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "CE;line;connect;C,E;0;0;0"
+  aliases:
+    BA: AB
+  given: [A, B, C, AB, AC]
+  caption: |
+    Drag {A}, {B}, {C}. {BD} is made equal to {AC}, and {DE} is parallel to {BC}; then $AB : AC = AC : CE$.
+
+steps:
+  - part: enunciation
+    text: "To two given straight lines to find a third proportional."
+    highlight: [AB, AC]
+    hint: |
+      A problem: given $a, b$, find $c$ with $a : b = b : c$.
+    explain:
+      fact: |
+        Heath's note: "to find" is προσευρεῖν, "to find *in addition*". Joyce notes that the third proportional
+        is what one needs to produce the *duplicate* ratio ([[V.Def.9]]): $a : c$ is the duplicate of $a : b$.
+    modern: |
+      $$c = \frac{b^2}{a}$$
+
+  - part: setting-out
+    text: "Let BA, AC be the two given straight lines, and let them be placed so as to contain any angle;"
+    highlight: [BA, AC]
+    hint: |
+      Put the two lines at an angle at {A}.
+
+  - part: specification
+    text: "thus it is required to find a third proportional to BA, AC."
+    highlight: [BA, AC]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let them be produced to the points D, E, and let BD be made equal to AC; let BC be joined, and through D let DE be drawn parallel to it."
+    highlight: [BD, BC, DE]
+    adds: [D, E, ADE, BD, BC, DE, CE]
+    hint: |
+      Extend {AB} by {BD} = {AC} ([[I.3]]); join {BC}; the parallel through {D} meets {AC} produced at {E} ([[I.31]]).
+
+  - part: proof
+    text: "Since, then, BC has been drawn parallel to DE, one of the sides of the triangle ADE, proportionally, as AB is to BD, so is AC to CE."
+    highlight: [BC, DE, ADE, AB, BD, AC, CE]
+    hint: |
+      [[VI.2]] in triangle {ADE}.
+
+  - part: proof
+    text: "But BD is equal to AC; therefore, as AB is to AC, so is AC to CE."
+    highlight: [BD, AC, AB, CE]
+    hint: |
+      Replace {BD} by {AC} ([[V.7]], [[V.11]]).
+    cites: [V.7, V.11]
+
+  - part: conclusion
+    text: "Therefore to two given straight lines AB, AC a third proportional to them, CE, has been found."
+    highlight: [AB, AC, CE]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: |
+        With $AB = a$, $AC = BD = b$: the parallel gives $a : b = b : CE$, so $CE = b^2/a$. $\blacksquare$
+
+commentary: |
+  A special case of [[VI.12]] (the fourth proportional to $a, b, b$), placed first. It is used in
+  [[VI.19]] and [[VI.20]], where duplicate ratios appear.

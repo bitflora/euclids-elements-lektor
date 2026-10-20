@@ -1,0 +1,129 @@
+id: XI.22
+kind: theorem
+title: Three angles satisfying the triangle inequality give a triangle
+
+paraphrase: |
+  If three plane angles ∠{ABC}, ∠{DEF}, ∠{GHK}, any two greater than the third, are contained by equal lines, then
+  the three chords {AC}, {DF}, {GK} can form a triangle.
+
+diagram:
+  width: 550
+  height: 200
+  elements:
+    - "A;point;free;40,160"
+    - "B;point;free;80,55"
+    - "Bcirc;circle;radius;B,A;0;0;0;0"
+    - "C;point;circleSlider;Bcirc,120,160"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;random"
+    - "E;point;free;260,61"
+    - "Ecirc;circle;radius;E,A,B;0;0;0;0"
+    - "D;point;circleSlider;Ecirc,210,160"
+    - "F;point;circleSlider;Ecirc,310,160"
+    - "DEF;polygon;triangle;D,E,F;0;0;black;random"
+    - "H;point;free;400,50"
+    - "Hcirc;circle;radius;H,A,B;0;0;0;0"
+    - "G;point;circleSlider;Hcirc,380,160"
+    - "K;point;circleSlider;Hcirc,420,160"
+    - "GHK;polygon;triangle;G,H,K;0;0;black;random"
+    - "L';point;similar;K,H,A,B,C;0;0"
+    - "L;point;cutoff;H,L',A,B"
+    - "HKL;polygon;triangle;H,K,L;0;0;black;random"
+    - "GL;line;connect;G,L"
+    - "KHL;polygon;triangle;K,H,L;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "KL;line;connect;K,L;0;0;0"
+    - "GHL;polygon;triangle;G,H,L;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "GK;line;connect;G,K;0;0;0"
+    - "HL;line;connect;H,L;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+  aliases: { LG: GL, CA: AC, LK: KL, FD: DF, KG: GK, LH: HL, BA: AB }
+  caption: |
+    Three isosceles triangles with equal legs; {KHL} copies ∠{ABC} next to ∠{GHK}.
+
+steps:
+  - part: enunciation
+    text: "If there be three plane angles of which two, taken together in any manner, are greater than the remaining one, and they are contained by equal straight lines, it is possible to construct a triangle out of the straight lines joining the extremities of the equal straight lines."
+    highlight: [ABC, DEF, GHK]
+    hint: |
+      The chords of angles satisfying the angle-triangle inequality satisfy the side-triangle inequality.
+
+  - part: setting-out
+    text: "Let there be three plane angles ABC, DEF, GHK, of which two, taken together in any manner, are greater than the remaining one, namely the angles ABC, DEF greater than the angle GHK, the angles DEF, GHK greater than the angle ABC, and, further, the angles GHK, ABC greater than the angle DEF; let the straight lines AB, BC, DE, EF, GH, HK be equal, and let AC, DF, GK be joined; I say that it is possible to construct a triangle out of straight lines equal to AC, DF, GK, that is, that any two of the straight lines AC, DF, GK are greater than the remaining one."
+    highlight: [ABC, DEF, GHK]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "Now, if the angles ABC, DEF, GHK are equal to one another, it is manifest that, AC, DF, GK being equal also, it is possible to construct a triangle out of straight lines equal to AC, DF, GK."
+    highlight: [ABC, DEF, GHK]
+    hint: |
+      If equal, clear.
+
+  - part: construction
+    text: "But, if not, let them be unequal, and on the straight line HK, and at the point H on it, let the angle KHL be constructed equal to the angle ABC; let HL be made equal to one of the straight lines AB, BC, DE, EF, GH, HK, and let KL, GL be joined."
+    highlight: [KHL]
+    hint: |
+      Otherwise copy ∠{ABC} as ∠{KHL}, {HL} = {AB}; join {KL}, {GL}.
+
+  - part: proof
+    text: "Now, since the two sides AB, BC are equal to the two sides KH, HL, and the angle at B is equal to the angle KHL, therefore the base AC is equal to the base KL."
+    highlight: [AC, KL]
+    hint: |
+      {AC} = {KL} ([[I.4]]).
+
+  - part: proof
+    text: "And, since the angles ABC, GHK are greater than the angle DEF, while the angle ABC is equal to the angle KHL, therefore the angle GHL is greater than the angle DEF."
+    highlight: [GHL, DEF]
+    hint: |
+      ∠{GHL} > ∠{DEF}.
+
+  - part: proof
+    text: "And, since the two sides GH, HL are equal to the two sides DE, EF, and the angle GHL is greater than the angle DEF, therefore the base GL is greater than the base DF."
+    highlight: [GL, DF]
+    hint: |
+      So {GL} > {DF} ([[I.24]]).
+
+  - part: proof
+    text: "But GK, KL are greater than GL."
+    highlight: [GK, KL, GL]
+    hint: |
+      {GK} + {KL} > {GL} …
+
+  - part: proof
+    text: "Therefore GK, KL are much greater than DF."
+    highlight: [GK, KL, DF]
+    hint: |
+      … > {DF}.
+
+  - part: proof
+    text: "But KL is equal to AC; therefore AC, GK are greater than the remaining straight line DF."
+    highlight: [AC, GK, DF]
+    hint: |
+      So {AC} + {GK} > {DF}.
+
+  - part: proof
+    text: "Similarly we can prove that AC, DF are greater than GK, and further DF, GK are greater than AC."
+    highlight: [AC, DF, GK]
+    hint: |
+      Likewise for the other pairs.
+
+  - part: proof
+    text: "Therefore it is possible to construct a triangle out of straight lines equal to AC, DF, GK."
+    highlight: [AC, DF, GK]
+    hint: |
+      So a triangle can be made ([[I.22]]).
+    cites: [I.22]
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Chord length $2r\sin(\theta/2)$ is increasing and subadditive enough in $\theta$. $\blacksquare$
+
+commentary: |
+  A lemma for [[XI.23]].

@@ -1,0 +1,120 @@
+id: XIII.8
+kind: theorem
+title: The diagonals of a regular pentagon cut each other in golden section
+
+paraphrase: |
+  In a regular pentagon, two diagonals {AC}, {BE} from adjacent vertices cut each other in extreme and mean ratio at
+  {H}, and the greater segments equal the side.
+
+diagram:
+  width: 260
+  height: 240
+  elements:
+    - "A;point;free;130,40"
+    - "B;point;free;217,103"
+    - "BAEDC;polygon;regularPolygon;B,A,5;0;0;black;random"
+    - "C;point;vertex;BAEDC,5"
+    - "D;point;vertex;BAEDC,4"
+    - "E;point;vertex;BAEDC,3"
+    - "circ;circle;circumcircle;A,B,D;0;0;black;0"
+    - "AC;line;connect;A,C"
+    - "BE;line;connect;B,E"
+    - "H;point;intersection;AC,BE"
+  aliases: { CA: AC, EB: BE }
+  caption: |
+    The regular pentagon with its circumcircle; diagonals {AC}, {BE} meet at {H}.
+
+steps:
+  - part: enunciation
+    text: "If in an equilateral and equiangular pentagon straight lines subtend two angles taken in order, they cut one another in extreme and mean ratio, and their greater segments are equal to the side of the pentagon."
+    highlight: [AC, BE]
+    hint: |
+      Diagonal : side = $\varphi$.
+    modern: |
+      $BE : EH = EH : HB$, $EH = $ side; so diagonal/side $= \varphi = \tfrac{1 + \sqrt5}{2}$.
+
+  - part: setting-out
+    text: "For in the equilateral and equiangular pentagon ABCDE let the straight lines AC, BE, cutting one another at the point H, subtend two angles taken in order, the angles at A, B; I say that each of them has been cut in extreme and mean ratio at the point H, and their greater segments are equal to the side of the pentagon."
+    highlight: [AC, BE, H]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let the circle ABCDE be circumscribed about the pentagon ABCDE."
+    highlight: [circ]
+    hint: |
+      Circumscribe the circle ([[IV.14]]).
+
+  - part: proof
+    text: "Then, since the two straight lines EA, AB are equal to the two AB, BC, and they contain equal angles, therefore the base BE is equal to the base AC, the triangle ABE is equal to the triangle ABC, and the remaining angles will be equal to the remaining angles respectively, namely those which the equal sides subtend."
+    highlight: [BE, AC]
+    hint: |
+      {BE} = {AC} ([[I.4]]).
+
+  - part: proof
+    text: "Therefore the angle BAC is equal to the angle ABE; therefore the angle AHE is double of the angle BAH."
+    highlight: [H]
+    hint: |
+      ∠*BAC* = ∠*ABE*, so ∠*AHE* = 2∠*BAH* ([[I.32]]).
+
+  - part: proof
+    text: "But the angle EAC is also double of the angle BAC, inasmuch as the circumference EDC is also double of the circumference CB; therefore the angle HAE is equal to the angle AHE; hence the straight line HE is also equal to EA, that is, to AB."
+    highlight: [AC]
+    hint: |
+      ∠*EAC* = 2∠*BAC* (arc *EDC* is twice arc *CB*, [[III.28]], [[VI.33]]); so ∠*HAE* = ∠*AHE*, and *HE* = *EA* ([[I.6]]).
+
+  - part: proof
+    text: "And, since the straight line BA is equal to AE, the angle ABE is also equal to the angle AEB."
+    highlight: [BE]
+    hint: |
+      ∠*ABE* = ∠*AEB* ([[I.5]]).
+
+  - part: proof
+    text: "But the angle ABE was proved equal to the angle BAH; therefore the angle BEA is also equal to the angle BAH."
+    highlight: [BE]
+    hint: |
+      So ∠*BEA* = ∠*BAH*.
+
+  - part: proof
+    text: "And the angle ABE is common to the two triangles ABE and ABH; therefore the remaining angle BAE is equal to the remaining angle AHB; therefore the triangle ABE is equiangular with the triangle ABH; therefore, proportionally, as EB is to BA, so is AB to BH."
+    highlight: [BE, H]
+    hint: |
+      Triangles *ABE*, *ABH* are equiangular ([[I.32]]); *EB* : *BA* = *AB* : *BH* ([[VI.4]]).
+
+  - part: proof
+    text: "But BA is equal to EH; therefore, as BE is to EH, so is EH to HB."
+    highlight: [BE, H]
+    hint: |
+      *BA* = *EH*: *BE* : *EH* = *EH* : *HB*.
+
+  - part: proof
+    text: "And BE is greater than EH; therefore EH is also greater than HB."
+    highlight: [BE, H]
+    hint: |
+      *BE* > *EH* > *HB* ([[V.14]]).
+
+  - part: proof
+    text: "Therefore BE has been cut in extreme and mean ratio at H, and the greater segment HE is equal to the side of the pentagon."
+    highlight: [BE, H]
+    hint: |
+      So {BE} is cut in extreme and mean ratio at {H}, the greater part equal to the side.
+
+  - part: proof
+    text: "Similarly we can prove that AC has also been cut in extreme and mean ratio at H, and its greater segment CH is equal to the side of the pentagon."
+    highlight: [AC, H]
+    hint: |
+      Likewise {AC}.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Similar triangles in the pentagon give $d : s = s : (d - s)$, i.e. $d/s = \varphi$. $\blacksquare$
+
+commentary: |
+  The golden ratio of the pentagon — the link between [[IV.11]], [[VI.30]] and the dodecahedron and icosahedron
+  of [[XIII.16]], [[XIII.17]].

@@ -1,0 +1,116 @@
+id: III.19
+kind: theorem
+title: The perpendicular to a tangent at the point of contact passes through the centre
+
+paraphrase: |
+  The line perpendicular to a tangent at the point of contact passes through the centre.
+
+diagram:
+  width: 270
+  height: 250
+  elements:
+    - "D;point;free;40,220"
+    - "E;point;free;230,220"
+    - "DE;line;connect;D,E"
+    - "C;point;lineSlider;DE,125,220"
+    - "CAp;line;perpendicular;C,E;0;0;0"
+    - "A;point;lineSlider;CAp,125,30"
+    - "O;point;midpoint;A,C;0;0"
+    - "ABC;circle;radius;O,C;0;0;black;0"
+    - "AC;line;connect;A,C"
+    - "B;point;circleSlider;ABC,180,80;0,0,0;0"
+    - "F;point;free;150,120"
+    - "CF;line;connect;C,F"
+    - "CE;line;connect;C,E;0;0;0"
+    - "angFCE;sector;angleMarker;C,F,E"
+    - "angACE;sector;angleMarker;C,A,E"
+  aliases:
+    CA: AC
+    FC: CF
+    FCE: angFCE
+    ACE: angACE
+  given: [D, E, DE, C, A, ABC, AC]
+  caption: |
+    {F} is the supposed centre off the line {AC}. Drag it: ∠{FCE} is never right.
+
+steps:
+  - part: enunciation
+    text: "If a straight line touch a circle, and from the point of contact a straight line be drawn at right angles to the tangent, the centre of the circle will be on the straight line so drawn."
+    highlight: [DE, AC]
+    hint: |
+      The normal at the point of contact goes through the centre.
+
+  - part: setting-out
+    text: "For let a straight line DE touch the circle ABC at the point C, and from C let CA be drawn at right angles to DE;"
+    highlight: [DE, C, AC]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the centre of the circle is on AC."
+    highlight: [AC]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For suppose it is not, but, if possible, let F be the centre, and let CF be joined."
+    highlight: [F, CF]
+    adds: [F, CF]
+    hint: |
+      Suppose a centre {F} off {AC}.
+
+  - part: proof
+    text: "Since a straight line DE touches the circle ABC, and FC has been joined from the centre to the point of contact, FC is perpendicular to DE;"
+    highlight: [CF, DE]
+    hint: |
+      [[III.18]].
+
+  - part: proof
+    text: "therefore the angle FCE is right."
+    highlight: [angFCE]
+    hint: |
+      So ∠{FCE} is right.
+
+  - part: proof
+    text: "But the angle ACE is also right; therefore the angle FCE is equal to the angle ACE, the less to the greater: which is impossible."
+    highlight: [angFCE, angACE]
+    hint: |
+      Two right angles, one inside the other ([[I.CN.5]]).
+    cites: [I.CN.5]
+
+  - part: proof
+    text: "Therefore F is not the centre of the circle ABC."
+    highlight: [F]
+    hint: |
+      So not {F}.
+
+  - part: proof
+    text: "Similarly we can prove that neither is any other point except a point on AC."
+    highlight: [AC]
+    hint: |
+      The centre is on {AC}.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: The radius to $C$ is perpendicular to the tangent (III.18), and the perpendicular at $C$ is unique, so it is that radius. $\blacksquare$
+
+commentary: |
+  [[III.16]] (porism), [[III.18]] and III.19 are three faces of one fact: tangent, radius to the point of
+  contact, and right angle — any two give the third.
+
+gaps: |
+  - **{F} on the same side**: Euclid's figure puts {F} on the side of {CA} toward {E}; for {F} on the other
+    side the argument uses the angle *FCD* instead.

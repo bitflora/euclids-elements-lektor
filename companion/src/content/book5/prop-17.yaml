@@ -1,0 +1,227 @@
+id: V.17
+kind: theorem
+title: Separation (separando)
+
+paraphrase: |
+  If {AB} : {BE} = {CD} : {DF}, then {AE} : {EB} = {CF} : {FD}. In fractions: if $\frac{a + b}{b} = \frac{c + d}{d}$ then
+  $\frac{a}{b} = \frac{c}{d}$.
+
+diagram:
+  width: 470
+  height: 120
+  elements:
+    - "U0;point;free;-1000,30;0;0"
+    - "U1;point;free;1000,30;0;0"
+    - "V0;point;free;-1000,70;0;0"
+    - "V1;point;free;1000,70;0;0"
+    - "W0;point;free;-1000,100;0;0"
+    - "W1;point;free;1000,100;0;0"
+    - "A;point;lineSlider;U0,U1,100,30"
+    - "B;point;lineSlider;U0,U1,220,30"
+    - "AB;line;connect;A,B;0;0;red"
+    - "C;point;lineSlider;U0,U1,280,30"
+    - "D;point;lineSlider;U0,U1,370,30"
+    - "CD;line;connect;C,D;0;0;green"
+    - "E;point;lineSlider;A,B,180,30"
+    - "F;point;proportion;A,B,C,D,A,E,C,D"
+    - "G;point;lineSlider;V0,V1,50,70"
+    - "G1;point;cutoff;G,V1,A,E;0;lightGray"
+    - "H;point;cutoff;G1,V1,A,E"
+    - "H1;point;cutoff;H,V1,E,B;0;lightGray"
+    - "K;point;cutoff;H1,V1,E,B"
+    - "K1;point;cutoff;K,V1,E,B;0;lightGray"
+    - "K2;point;cutoff;K1,V1,E,B;0;lightGray"
+    - "O;point;cutoff;K2,V1,E,B"
+    - "GO;line;connect;G,O;0;0;red"
+    - "L;point;lineSlider;W0,W1,100,100"
+    - "L1;point;cutoff;L,W1,C,F;0;lightGray"
+    - "M;point;cutoff;L1,W1,C,F"
+    - "M1;point;cutoff;M,W1,F,D;0;lightGray"
+    - "N;point;cutoff;M1,W1,F,D"
+    - "N1;point;cutoff;N,W1,F,D;0;lightGray"
+    - "N2;point;cutoff;N1,W1,F,D;0;lightGray"
+    - "P;point;cutoff;N2,W1,F,D"
+    - "LP;line;connect;L,P;0;0;green"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "CF;line;connect;C,F;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+    - "GH;line;connect;G,H;0;0;0"
+    - "HK;line;connect;H,K;0;0;0"
+    - "GK;line;connect;G,K;0;0;0"
+    - "KO;line;connect;K,O;0;0;0"
+    - "HO;line;connect;H,O;0;0;0"
+    - "LM;line;connect;L,M;0;0;0"
+    - "MN;line;connect;M,N;0;0;0"
+    - "LN;line;connect;L,N;0;0;0"
+    - "NP;line;connect;N,P;0;0;0"
+    - "MP;line;connect;M,P;0;0;0"
+  aliases:
+    BE: EB
+    DF: FD
+  caption: |
+    {F} is placed so that $AB : BE = CD : DF$. On the lower lines, {GH}, {HK} are twice {AE}, {EB} and {LM}, {MN} twice
+    {CF}, {FD}; {KO}, {NP} are three times {EB}, {FD}.
+
+steps:
+  - part: enunciation
+    text: "If magnitudes be proportional componendo, they will also be proportional separando."
+    highlight: [AB, EB, CD, FD]
+    hint: |
+      $(A + B) : B = (C + D) : D \Rightarrow A : B = C : D$ ([[V.Def.15]]).
+    explain:
+      implicit: |
+        "Proportional *componendo*" describes the hypothesis: the antecedents {AB}, {CD} are wholes made of
+        the consequents and something more. Each pair may be of its own kind.
+    modern: |
+      $$\frac{AB}{BE} = \frac{CD}{DF} \ \Rightarrow\ \frac{AB - BE}{BE} = \frac{CD - DF}{DF}$$
+    cites: [V.Def.15]
+
+  - part: setting-out
+    text: "Let AB, BE, CD, DF be magnitudes proportional componendo, so that, as AB is to BE, so is CD to DF;"
+    highlight: [AB, BE, CD, DF]
+    hint: |
+      The hypothesis.
+
+  - part: specification
+    text: "I say that they will also be proportional separando, that is, as AE is to EB, so is CF to DF."
+    highlight: [AE, EB, CF, DF]
+    hint: |
+      The goal: the excesses {AE}, {CF} are to {EB}, {FD} in the same ratio.
+
+  - part: construction
+    text: "For of AE, EB, CF, FD let equimultiples GH, HK, LM, MN be taken, and of EB, FD other, chance, equimultiples, KO, NP."
+    highlight: [GH, HK, LM, MN, KO, NP]
+    hint: |
+      {GH}, {HK}, {LM}, {MN} = $m$ × {AE}, {EB}, {CF}, {FD}; {KO}, {NP} = $n$ × {EB}, {FD}.
+    explain:
+      did: |
+        {GH}, {LM} and {KO}, {NP} are the multiples needed to test the goal by [[V.Def.5]]. The extra {HK}, {MN}
+        (more copies of {EB}, {FD}) are there so that {GK} = $m${AB} and {LN} = $m${CD} appear, to bring in
+        the hypothesis.
+
+  - part: proof
+    text: "Then, since GH is the same multiple of AE that HK is of EB, therefore GH is the same multiple of AE that GK is of AB."
+    highlight: [GH, AE, HK, GK, AB]
+    hint: |
+      {GK} = {GH} + {HK} = $m${AE} + $m${EB} = $m${AB} ([[V.1]]).
+
+  - part: proof
+    text: "But GH is the same multiple of AE that LM is of CF;"
+    highlight: [GH, AE, LM, CF]
+    hint: |
+      Both are $m$ times.
+
+  - part: proof
+    text: "therefore GK is the same multiple of AB that LM is of CF."
+    highlight: [GK, AB, LM, CF]
+    hint: |
+      $m$ times.
+
+  - part: proof
+    text: "Again, since LM is the same multiple of CF that MN is of FD, therefore LM is the same multiple of CF that LN is of CD."
+    highlight: [LM, MN, LN, CD]
+    hint: |
+      {LN} = $m${CD} ([[V.1]]).
+
+  - part: proof
+    text: "But LM was the same multiple of CF that GK is of AB; therefore GK is the same multiple of AB that LN is of CD."
+    highlight: [GK, AB, LN, CD]
+    hint: |
+      $m$ times.
+
+  - part: proof
+    text: "Therefore GK, LN are equimultiples of AB, CD."
+    highlight: [GK, LN]
+    hint: |
+      {GK} = $m${AB}, {LN} = $m${CD}.
+
+  - part: proof
+    text: "Again, since HK is the same multiple of EB that MN is of FD, and KO is also the same multiple of EB that NP is of FD, therefore the sum HO is also the same multiple of EB that MP is of FD."
+    highlight: [HK, KO, HO, MN, NP, MP]
+    hint: |
+      {HO} = $(m + n)${EB} and {MP} = $(m + n)${FD} ([[V.2]]).
+
+  - part: proof
+    text: "And, since, as AB is to BE, so is CD to DF, and of AB, CD equimultiples GK, LN have been taken, and of EB, FD equimultiples HO, MP, therefore, if GK is in excess of HO, LN is also in excess of MP, if equal, equal, and if less, less."
+    highlight: [GK, HO, LN, MP]
+    hint: |
+      The hypothesis, tested with the numbers $m$ and $m + n$ ([[V.Def.5]]).
+    cites: [V.Def.5]
+
+  - part: proof
+    text: "Let GK be in excess of HO; then, if HK be subtracted from each, GH is also in excess of KO."
+    highlight: [GK, HO, HK, GH, KO]
+    hint: |
+      Remove the common piece {HK}: {GK} > {HO} ⇔ {GH} > {KO}.
+    explain:
+      fact: |
+        {GK} = {GH} + {HK} and {HO} = {HK} + {KO}. Taking the same piece from two magnitudes keeps their order.
+
+  - part: proof
+    text: "But we saw that, if GK was in excess of HO, LN was also in excess of MP; therefore LN is also in excess of MP, and, if MN be subtracted from each, LM is also in excess of NP;"
+    highlight: [LN, MP, MN, LM, NP]
+    hint: |
+      The same on the lower line: {LM} > {NP}.
+
+  - part: proof
+    text: "so that, if GH is in excess of KO, LM is also in excess of NP."
+    highlight: [GH, KO, LM, NP]
+    hint: |
+      $m${AE} > $n${EB} ⇒ $m${CF} > $n${FD}.
+    explain:
+      implicit: |
+        Euclid argued from "{GK} > {HO}"; to get "if {GH} > {KO}" he needs the step back: {GH} > {KO} gives
+        {GK} > {HO} by adding {HK}.
+
+  - part: proof
+    text: "Similarly we can prove that, if GH be equal to KO, LM will also be equal to NP, and if less, less."
+    highlight: [GH, KO, LM, NP]
+    hint: |
+      The equal and less cases go the same way.
+
+  - part: proof
+    text: "And GH, LM are equimultiples of AE, CF, while KO, NP are other, chance, equimultiples of EB, FD;"
+    highlight: [GH, LM, KO, NP]
+    hint: |
+      The multiples [[V.Def.5]] asks for.
+
+  - part: proof
+    text: "therefore, as AE is to EB, so is CF to FD."
+    highlight: [AE, EB, CF, FD]
+    hint: |
+      [[V.Def.5]], backwards.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Write $a = AE$, $b = EB$, $c = CF$, $d = FD$; the
+    hypothesis is $(a + b) : b = (c + d) : d$.
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: |
+        Fix $m, n$. Then $m(a + b) = ma + mb$ and $(m + n)b = mb + nb$, and likewise for $c, d$.
+    - steps: [9]
+      text: |
+        By hypothesis, $m(a + b) \gtreqless (m + n)b \Rightarrow m(c + d) \gtreqless (m + n)d$.
+    - steps: [10, 11, 12, 13]
+      text: |
+        Cancelling $mb$ and $md$: $ma \gtreqless nb \Rightarrow mc \gtreqless nd$.
+    - steps: [14, 15]
+      text: |
+        So $a : b = c : d$ by [[V.Def.5]]. $\blacksquare$
+
+commentary: |
+  The trick of the proof is to choose the second multiplier as $m + n$, so that the multiples of the
+  wholes and of the parts differ by the same piece ({HK}, {MN}), which can then be cancelled.
+
+  Its converse, *componendo*, is [[V.18]], and Euclid proves it from this one.

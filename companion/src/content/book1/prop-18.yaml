@@ -1,0 +1,170 @@
+id: I.18
+kind: theorem
+title: The greater side faces the greater angle
+
+paraphrase: |
+  In a triangle, a longer side lies opposite a larger angle: if {AC} > {AB}, then the angle at {B}
+  is greater than the angle at {C}.
+
+diagram:
+  width: 280
+  height: 210
+  elements:
+    - "A;point;free;45,30"
+    - "B;point;free;85,180"
+    - "C;point;free;250,180"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "D;point;cutoff;A,C,A,B"
+    - "BD;line;connect;B,D"
+    - "BCD;polygon;triangle;B,C,D;0;0;0;0"
+    - "ABD;polygon;triangle;A,B,D;0;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "angABC;sector;angleMarker;B,C,A"
+    - "angBCA;sector;angleMarker;C,B,A"
+    - "angADB;sector;angleMarker;D,A,B"
+    - "angABD;sector;angleMarker;B,A,D"
+  aliases:
+    BA: AB
+    CA: AC
+    DA: AD
+    DB: BD
+    CBA: angABC
+    BCA: angBCA
+    ACB: angBCA
+    DCB: angBCA
+    ADB: angADB
+  given: [A, B, C, ABC]
+  caption: |
+    Drag the vertices, keeping {AC} the longer side. {D} is always placed so that {AD} = {AB}.
+
+steps:
+  - part: enunciation
+    text: "In any triangle the greater side subtends the greater angle."
+    highlight: [AC, AB, angABC, angBCA]
+    hint: |
+      The longer of two sides is opposite the larger of the two angles.
+
+  - part: setting-out
+    text: "For let ABC be a triangle having the side AC greater than AB;"
+    highlight: [AC, AB]
+    hint: |
+      The data: {AC} > {AB}.
+    modern: |
+      $$AC > AB$$
+
+  - part: specification
+    text: "I say that the angle ABC is also greater than the angle BCA."
+    highlight: [angABC, angBCA]
+    hint: |
+      The goal: the angle at {B} (opposite {AC}) exceeds the angle at {C} (opposite {AB}).
+    modern: |
+      $$\text{To prove: } \angle ABC > \angle BCA$$
+
+  - part: construction
+    text: "For, since AC is greater than AB, let AD be made equal to AB,"
+    highlight: [AD, AB, D]
+    adds: [D]
+    hint: |
+      Mark {D} on {AC} with {AD} = {AB} ([[I.3]]). It falls short of {C}, since {AC} is longer.
+
+  - part: construction
+    text: "and let BD be joined."
+    highlight: [BD]
+    adds: [BD]
+    hint: |
+      Join {BD} ([[I.Post.1]]). Triangle {ABD} is isosceles.
+    cites: [I.Post.1]
+
+  - part: proof
+    text: "Then, since the angle ADB is an exterior angle of the triangle BCD,"
+    highlight: [angADB, BCD]
+    adds: [angADB]
+    hint: |
+      At {D}, the angle ∠{ADB} lies outside the small triangle {BCD}.
+    explain:
+      fact: |
+        {A}, {D}, {C} are on one line, so ∠{ADB} is the exterior angle of {BCD} at {D}.
+
+  - part: proof
+    text: "it is greater than the interior and opposite angle DCB."
+    highlight: [angADB, angBCA]
+    adds: [angBCA]
+    hint: |
+      By [[I.16]] it exceeds ∠{DCB}, the angle at {C}.
+    modern: |
+      $$\angle ADB > \angle DCB$$
+
+  - part: proof
+    text: "But the angle ADB is equal to the angle ABD, since the side AB is equal to AD;"
+    highlight: [angADB, angABD, AB, AD]
+    adds: [angABD]
+    hint: |
+      Triangle {ABD} is isosceles, so its base angles are equal ([[I.5]]).
+    cites: [I.5]
+    modern: |
+      $$\angle ADB = \angle ABD$$
+
+  - part: proof
+    text: "therefore the angle ABD is also greater than the angle ACB;"
+    highlight: [angABD, angBCA]
+    hint: |
+      So ∠{ABD} > ∠{ACB}.
+    explain:
+      implicit: |
+        ∠{DCB} is ∠{ACB}, since {D} is on {CA}.
+    modern: |
+      $$\angle ABD = \angle ADB > \angle DCB = \angle ACB$$
+
+  - part: proof
+    text: "therefore the angle ABC is much greater than the angle ACB."
+    highlight: [angABC, angBCA]
+    adds: [angABC]
+    hint: |
+      ∠{ABC|angABC} contains ∠{ABD}, so it is greater still ([[I.CN.5]]).
+    explain:
+      implicit: |
+        That {BD} lies inside ∠{ABC|angABC}: true because {D} is between {A} and {C}.
+    cites: [I.CN.5]
+    modern: |
+      $$\angle ABC > \angle ABD > \angle ACB$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: Let $AC > AB$.
+    - steps: [3, 4]
+      text: Let $D$ on segment $AC$ with $AD = AB$; $D$ lies strictly between $A$ and $C$.
+    - steps: [5, 6, 7, 8, 9]
+      text: |
+        $\angle ABC > \angle ABD = \angle ADB > \angle DCB = \angle ACB$, by betweenness,
+        the isosceles theorem, and the exterior angle theorem. $\blacksquare$
+
+commentary: |
+  The first of a pair: I.18 (greater side ⇒ greater angle) and its converse [[I.19]] (greater
+  angle ⇒ greater side). Together with [[I.5]] and [[I.6]] they say: in a triangle, the order of
+  the sides matches the order of the opposite angles.
+
+  Note how [[I.16]] is used: the exterior angle at {D} of the small triangle {BCD} becomes a base
+  angle of the isosceles triangle {ABD}.
+
+gaps: |
+  - **{D} between {A} and {C}** (step 3), and **{BD} inside ∠{ABC|angABC}** (step 8): read
+    off the figure, though both follow from {AC} > {AB}.
+
+historical: |
+  Proclus gives an alternative proof by cutting off from the other side — producing {AB} instead —
+  and remarks on the pattern of converse theorems that runs from I.5 to I.19.

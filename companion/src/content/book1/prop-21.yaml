@@ -1,0 +1,196 @@
+id: I.21
+kind: theorem
+title: Lines drawn inside a triangle
+
+paraphrase: |
+  From the ends of one side {BC} of a triangle, draw two lines meeting at a point {D} inside it.
+  Then {BD} + {DC} is *less* than {BA} + {AC}, but the angle ∠{BDC} is *greater* than ∠{BAC}.
+
+diagram:
+  width: 260
+  height: 230
+  elements:
+    - "A;point;free;85,30"
+    - "B;point;free;35,195"
+    - "C;point;free;225,195"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "D;point;free;110,125"
+    - "BD;line;connect;B,D"
+    - "CD;line;connect;C,D"
+    - "E;point;intersection;B,D,A,C"
+    - "DE;line;connect;D,E"
+    - "BCD;polygon;triangle;B,C,D;0;0;0;#dfe7ea"
+    - "ABE;polygon;triangle;A,B,E;0;0;0;0"
+    - "CDE;polygon;triangle;C,D,E;0;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EC;line;connect;E,C;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angBDC;sector;angleMarker;D,B,C"
+    - "angCEB;sector;angleMarker;E,C,B"
+  aliases:
+    BA: AB
+    CA: AC
+    DC: CD
+    CE: EC
+    ED: DE
+    DB: BD
+    EB: BE
+    BAC: angBAC
+    BDC: angBDC
+    CEB: angCEB
+    CED: angCEB
+  given: [A, B, C, ABC, D, BD, CD, BCD]
+  caption: |
+    Drag {D} around inside the triangle (and the vertices). {E} is where {BD} produced meets {AC}.
+
+steps:
+  - part: enunciation
+    text: "If on one of the sides of a triangle, from its extremities, there be constructed two straight lines meeting within the triangle, the straight lines so constructed will be less than the remaining two sides of the triangle, but will contain a greater angle."
+    highlight: [BD, CD, AB, AC, angBDC, angBAC]
+    hint: |
+      An inner "tent" on the same base is shorter in total, but opens wider.
+    explain:
+      implicit: |
+        "Meeting" is not in the Greek; Heath adds it because the Greek verb for "constructed"
+        (as in [[I.7]]) already implies that the lines meet (his note on line 2).
+
+  - part: setting-out
+    text: "On BC, one of the sides of the triangle ABC, from its extremities B, C, let the two straight lines BD, DC be constructed meeting within the triangle;"
+    highlight: [BD, CD, D]
+    hint: |
+      The data: {D} inside {ABC}, joined to {B} and {C}.
+
+  - part: specification
+    text: "I say that BD, DC are less than the remaining two sides of the triangle BA, AC, but contain an angle BDC greater than the angle BAC."
+    highlight: [BD, CD, AB, AC, angBDC, angBAC]
+    adds: [angBDC, angBAC]
+    hint: |
+      Two claims: a sum of sides is smaller, an angle is larger.
+    modern: |
+      $$BD + DC < BA + AC,\qquad \angle BDC > \angle BAC$$
+
+  - part: construction
+    text: "For let BD be drawn through to E."
+    highlight: [DE, E]
+    adds: [DE, E]
+    hint: |
+      Extend {BD} until it meets {AC} at {E} ([[I.Post.2]]).
+    explain:
+      implicit: |
+        That the extension meets {AC} at all — another case of the crossbar theorem.
+    cites: [I.Post.2]
+
+  - part: proof
+    text: "Then, since in any triangle two sides are greater than the remaining one,"
+    highlight: [ABE]
+    hint: |
+      Euclid quotes [[I.20]], the triangle inequality.
+
+  - part: proof
+    text: "therefore, in the triangle ABE, the two sides AB, AE are greater than BE."
+    highlight: [ABE, AB, AE, BE]
+    hint: |
+      In {ABE}: {AB} + {AE} > {BE}.
+    modern: |
+      $$AB + AE > BE$$
+
+  - part: proof
+    text: "Let EC be added to each; therefore BA, AC are greater than BE, EC."
+    highlight: [AB, AC, BE, EC]
+    hint: |
+      Add {EC}: {AE} + {EC} is {AC}.
+    modern: |
+      $$BA + AC > BE + EC$$
+
+  - part: proof
+    text: "Again, since, in the triangle CED, the two sides CE, ED are greater than CD, let DB be added to each;"
+    highlight: [CDE, EC, DE, CD]
+    hint: |
+      In the small triangle {CED|CDE}: {CE} + {ED} > {CD} ([[I.20]]). Add {DB}.
+
+  - part: proof
+    text: "therefore CE, EB are greater than CD, DB."
+    highlight: [EC, BE, CD, BD]
+    hint: |
+      {ED} + {DB} is {EB}.
+    modern: |
+      $$CE + EB > CD + DB$$
+
+  - part: proof
+    text: "But BA, AC were proved greater than BE, EC; therefore BA, AC are much greater than BD, DC."
+    highlight: [AB, AC, BD, CD]
+    hint: |
+      Chain the two: {BA} + {AC} > {BE} + {EC} > {BD} + {DC}. First claim proved.
+    modern: |
+      $$BA + AC > BE + EC > BD + DC$$
+
+  - part: proof
+    text: "Again, since in any triangle the exterior angle is greater than the interior and opposite angle,"
+    highlight: [angBDC]
+    hint: |
+      Now the angles, using [[I.16]].
+
+  - part: proof
+    text: "therefore, in the triangle CDE, the exterior angle BDC is greater than the angle CED."
+    adds: [angCEB]
+    highlight: [CDE, angBDC, angCEB]
+    hint: |
+      ∠{BDC} is exterior to triangle {CDE} at {D}, so it beats ∠{CED}.
+    modern: |
+      $$\angle BDC > \angle CED$$
+
+  - part: proof
+    text: "For the same reason, moreover, in the triangle ABE also, the exterior angle CEB is greater than the angle BAC."
+    highlight: [ABE, angCEB, angBAC]
+    hint: |
+      And ∠{CEB} (the same angle as ∠{CED}) is exterior to triangle {ABE} at {E}, so it beats ∠{BAC}.
+    explain:
+      implicit: |
+        ∠{CED} and ∠{CEB} are one angle, because {D} lies on {EB}.
+    modern: |
+      $$\angle CEB > \angle BAC$$
+
+  - part: proof
+    text: "But the angle BDC was proved greater than the angle CEB; therefore the angle BDC is much greater than the angle BAC."
+    highlight: [angBDC, angBAC]
+    hint: |
+      Chain: ∠{BDC} > ∠{CEB} > ∠{BAC}. Second claim proved.
+    modern: |
+      $$\angle BDC > \angle CEB > \angle BAC$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3]
+      text: Let $D$ be interior to $\triangle ABC$; ray $BD$ meets segment $AC$ at $E$ (crossbar).
+    - steps: [4, 5, 6, 7, 8, 9]
+      text: $BA + AC = BA + AE + EC > BE + EC = BD + DE + EC > BD + DC$.
+    - steps: [10, 11, 12, 13]
+      text: $\angle BDC > \angle DEC = \angle BEC > \angle BAE = \angle BAC$ (exterior angles twice). $\blacksquare$
+
+commentary: |
+  Two applications of [[I.20]] give the sides, two of [[I.16]] the angles; the auxiliary point
+  {E} serves both. The result is used in Book III, and in optics.
+
+gaps: |
+  - **{E} exists** (step 1): that {BD} produced meets {AC}.
+
+historical: |
+  The words "from its extremities" matter. Proclus, and Pappus in his *Collection*, point out
+  that two lines drawn from *other* points of the base to a point inside the triangle can be
+  longer, together, than the two sides.

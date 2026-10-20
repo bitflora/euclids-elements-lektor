@@ -1,0 +1,259 @@
+id: VII.3
+kind: problem
+title: The greatest common measure of three numbers
+
+paraphrase: |
+  To find the greatest common divisor of three numbers: take the greatest common divisor {D} of the first
+  two, then the greatest common divisor of {D} and the third.
+
+diagram:
+  width: 210
+  height: 250
+  elements:
+    - "A0;point;free;30,-1000;0;0"
+    - "A3;point;free;30,1000;0;0"
+    - "A1;point;lineSlider;A0,A3,30,30;0"
+    - "B0;point;free;60,-1000;0;0"
+    - "B3;point;free;60,1000;0;0"
+    - "B1;point;lineSlider;B0,B3,60,30;0"
+    - "C0;point;free;90,-1000;0;0"
+    - "C3;point;free;90,1000;0;0"
+    - "C1;point;lineSlider;C0,C3,90,30;0"
+    - "D0;point;free;120,-1000;0;0"
+    - "D3;point;free;120,1000;0;0"
+    - "D1;point;lineSlider;D0,D3,120,30;0"
+    - "E0;point;free;150,-1000;0;0"
+    - "E3;point;free;150,1000;0;0"
+    - "E1;point;lineSlider;E0,E3,150,30;0"
+    - "F0;point;free;180,-1000;0;0"
+    - "F3;point;free;180,1000;0;0"
+    - "F1;point;lineSlider;F0,F3,180,30;0"
+    - "E2;point;lineSlider;E0,E3,150,60;0"
+    - "E;line;connect;E1,E2;black"
+    - "D';point;cutoff;D1,D3,E1,E2;0;0"
+    - "D2;point;cutoff;D',D3,E1,E2;0"
+    - "D;line;connect;D1,D2;black"
+    - "B';point;cutoff;B1,B3,D1,D2;0;0"
+    - "B2;point;cutoff;B',B3,D1,D2;0"
+    - "B;line;connect;B1,B2;black"
+    - "C';point;cutoff;C1,C3,D1,D2;0;0"
+    - "C2;point;cutoff;C',C3,E1,E2;0"
+    - "C;line;connect;C1,C2;black"
+    - "A';point;cutoff;A1,A3,B1,B2;0;0"
+    - "A2;point;cutoff;A',A3,D1,D2;0"
+    - "A;line;connect;A1,A2;black"
+    - "F2;point;cutoff;F1,F3,E1,E2;0"
+    - "F;line;connect;F1,F2;black"
+  caption: |
+    {D} is the greatest common measure of {A}, {B}; {E} that of {D}, {C}. {F} is the supposed greater common
+    measure of the proof.
+
+steps:
+  - part: enunciation
+    text: "Given three numbers not prime to one another, to find their greatest common measure."
+    highlight: [A, B, C]
+    hint: |
+      The greatest common divisor of three numbers.
+    modern: |
+      $\gcd(a, b, c) = \gcd(\gcd(a, b), c)$.
+
+  - part: setting-out
+    text: "Let A, B, C be the three given numbers not prime to one another;"
+    highlight: [A, B, C]
+    hint: |
+      Three numbers {A}, {B}, {C} with some common measure.
+
+  - part: specification
+    text: "thus it is required to find the greatest common measure of A, B, C."
+    highlight: [A, B, C]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let the greatest common measure, D, of the two numbers A, B be taken;"
+    highlight: [D, A, B]
+    hint: |
+      First {D} = gcd({A}, {B}), by [[VII.2]].
+    explain:
+      implicit: |
+        [[VII.2]] needs {A}, {B} not prime to one another. That holds: a common measure of all three is a
+        common measure of {A}, {B}.
+
+  - part: proof
+    text: "then D either measures, or does not measure, C."
+    highlight: [D, C]
+    hint: |
+      Two cases.
+
+  - part: proof
+    text: "First, let it measure it."
+    highlight: [D, C]
+    hint: |
+      Case 1: {D} measures {C}.
+
+  - part: proof
+    text: "But it measures A, B also; therefore D measures A, B, C; therefore D is a common measure of A, B, C."
+    highlight: [D, A, B, C]
+    hint: |
+      Then {D} is a common measure of all three.
+
+  - part: specification
+    text: "I say that it is also the greatest."
+    highlight: [D]
+    hint: |
+      And the greatest.
+
+  - part: proof
+    text: "For, if D is not the greatest common measure of A, B, C, some number which is greater than D will measure the numbers A, B, C."
+    highlight: [A, B, C]
+    hint: |
+      Suppose a greater one exists.
+
+  - part: construction
+    text: "Let such a number measure them, and let it be E."
+    highlight: [E]
+    hint: |
+      Call it {E} (in this case only; below {E} is used again for a different number).
+
+  - part: proof
+    text: "Since then E measures A, B, C, it will also measure A, B; therefore it will also measure the greatest common measure of A, B."
+    highlight: [E, A, B]
+    hint: |
+      By the porism to [[VII.2]], a common measure of {A}, {B} measures their gcd.
+
+  - part: proof
+    text: "But the greatest common measure of A, B is D; therefore E measures D, the greater the less: which is impossible."
+    highlight: [E, D]
+    hint: |
+      So {E} measures the smaller {D}: impossible.
+
+  - part: proof
+    text: "Therefore no number which is greater than D will measure the numbers A, B, C; therefore D is the greatest common measure of A, B, C."
+    highlight: [D]
+    hint: |
+      Case 1 done: {D} is the answer.
+
+  - part: proof
+    text: "Next, let D not measure C; I say first that C, D are not prime to one another."
+    highlight: [D, C]
+    hint: |
+      Case 2: {D} does not measure {C}. First check {C}, {D} have a common measure, so that [[VII.2]] applies.
+
+  - part: proof
+    text: "For, since A, B, C are not prime to one another, some number will measure them."
+    highlight: [A, B, C]
+    hint: |
+      By hypothesis, some number measures all three.
+
+  - part: proof
+    text: "Now that which measures A, B, C will also measure A, B, and will measure D, the greatest common measure of A, B."
+    highlight: [A, B, D]
+    hint: |
+      It measures {D} (porism to [[VII.2]]) …
+
+  - part: proof
+    text: "But it measures C also; therefore some number will measure the numbers D, C; therefore D, C are not prime to one another."
+    highlight: [D, C]
+    hint: |
+      … and {C}; so {D}, {C} are not coprime.
+
+  - part: construction
+    text: "Let then their greatest common measure E be taken."
+    highlight: [E, D, C]
+    hint: |
+      Let {E} = gcd({D}, {C}).
+
+  - part: proof
+    text: "Then, since E measures D, and D measures A, B, therefore E also measures A, B."
+    highlight: [E, D, A, B]
+    hint: |
+      {E} measures {D}, hence {A} and {B}.
+
+  - part: proof
+    text: "But it measures C also; therefore E measures A, B, C; therefore E is a common measure of A, B, C."
+    highlight: [E, A, B, C]
+    hint: |
+      So {E} is a common measure of all three.
+
+  - part: specification
+    text: "I say next that it is also the greatest."
+    highlight: [E]
+    hint: |
+      And the greatest.
+
+  - part: proof
+    text: "For, if E is not the greatest common measure of A, B, C, some number which is greater than E will measure the numbers A, B, C."
+    highlight: [A, B, C]
+    hint: |
+      Suppose not.
+
+  - part: construction
+    text: "Let such a number measure them, and let it be F."
+    highlight: [F]
+    hint: |
+      Call the greater common measure {F}.
+
+  - part: proof
+    text: "Now, since F measures A, B, C, it also measures A, B; therefore it will also measure the greatest common measure of A, B."
+    highlight: [F, A, B]
+    hint: |
+      {F} measures gcd({A}, {B}) …
+
+  - part: proof
+    text: "But the greatest common measure of A, B is D; therefore F measures D."
+    highlight: [F, D]
+    hint: |
+      … which is {D}.
+
+  - part: proof
+    text: "And it measures C also; therefore F measures D, C; therefore it will also measure the greatest common measure of D, C."
+    highlight: [F, D, C]
+    hint: |
+      So {F} measures gcd({D}, {C}) …
+
+  - part: proof
+    text: "But the greatest common measure of D, C is E; therefore F measures E, the greater the less: which is impossible."
+    highlight: [F, E]
+    hint: |
+      … which is {E}, smaller than {F}: impossible.
+
+  - part: proof
+    text: "Therefore no number which is greater than E will measure the numbers A, B, C; therefore E is the greatest common measure of A, B, C."
+    highlight: [E]
+    hint: |
+      {E} is the greatest common measure of {A}, {B}, {C}.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Use the porism of [[VII.2]]: every common divisor of
+    two numbers divides their gcd.
+  lines:
+    - steps: [3, 17]
+      text: |
+        Let $d = \gcd(a, b)$ and $e = \gcd(d, c)$ (when $d \mid c$, $e = d$).
+    - steps: [18, 19]
+      text: |
+        $e \mid d$ and $d \mid a, b$, so $e$ divides $a, b, c$.
+    - steps: [21, 22, 23, 24, 25, 26, 27]
+      text: |
+        If $f$ divides $a, b, c$, then $f \mid d$ (porism), so $f \mid \gcd(d, c) = e$, so $f \le e$.
+        $\blacksquare$
+  closing: |
+    With 1 counted as a number the two cases merge: $e = \gcd(\gcd(a,b), c)$ always.
+
+commentary: |
+  Euclid splits into cases only because the unit is not a number for him (so "{D} measures {C}" must be
+  handled apart from "{E} = gcd({D}, {C})"). The method extends to any number of numbers, and Heath notes
+  that Euclid implicitly assumes this in [[VII.33]].
+
+  The same construction for magnitudes is [[X.4]].
+
+gaps: |
+  - **Applicability of [[VII.2]]** to {A}, {B}: Euclid does not say why {A}, {B} are not prime to one
+    another, though it is immediate.
+  - **The letter {E}** is used for two different numbers, in the two cases.

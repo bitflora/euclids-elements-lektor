@@ -1,0 +1,191 @@
+id: X.81
+kind: theorem
+title: Only one medial line can be annexed to a second apotome of a medial
+
+paraphrase: |
+  A second apotome of a medial {AB} has only one annex. The subtractive counterpart of [[X.44]].
+
+diagram:
+  width: 200
+  height: 280
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "F0;point;free;-1000,75;0;0"
+    - "F3;point;free;1000,75;0;0"
+    - "A;point;lineSlider;A0,A3,40,0"
+    - "B;point;lineSlider;A0,A3,105,0"
+    - "C;point;lineSlider;A0,A3,135,0"
+    - "D;point;lineSlider;A0,A3,160,0"
+    - "AD;line;connect;A,D"
+    - "F;point;lineSlider;F0,F3,40,0"
+    - "E;point;lineSlider;F0,F3,160,0"
+    - "G''';point;perpendicular;F,E;0;0"
+    - "G'';point;extend;G''',F,A0,A3;0;0"
+    - "G';point;proportion;F,E,A,C,A,C,F,G'';0;0"
+    - "G;point;proportion;F,E,B,C,B,C,G',G''"
+    - "M;point;parallelogram;E,F,G"
+    - "EFGM;polygon;quadrilateral;E,F,G,M;0;0;black;random"
+    - "L';point;proportion;F,E,A,C,C,B,G,F;0;0"
+    - "L;point;extend;G,L',G,L'"
+    - "H;point;parallelogram;M,G,L"
+    - "MGLH;polygon;quadrilateral;M,G,L,H;0;0;black;random"
+    - "I';point;proportion;F,E,A,D,A,D,F,G'';0;0"
+    - "I;point;proportion;F,E,B,D,B,D,I',G''"
+    - "N;point;parallelogram;E,F,I"
+    - "MGIN;polygon;quadrilateral;M,G,I,N;0;0;black;random"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "EM;line;connect;E,M;0;0;0"
+    - "HM;line;connect;H,M;0;0;0"
+    - "EN;line;connect;E,N;0;0;0"
+    - "HN;line;connect;H,N;0;0;0"
+    - "EH;line;connect;E,H;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+    - "MH;line;connect;M,H;0;0;0"
+  aliases: { DA: AD, BA: AB, CA: AC, ME: EM, NE: EN, NH: HN, HE: EH, FE: EF }
+  caption: |
+    The two annexes give, after application to the rational line {EF}, two annexes {HM}, {HN} to the
+    apotome {EH}.
+
+steps:
+  - part: enunciation
+    text: "To a second apotome of a medial straight line only one medial straight line can be annexed which is commensurable with the whole in square only and which contains with the whole a medial rectangle."
+    highlight: [AB]
+    hint: |
+      Uniqueness, reduced to [[X.79]].
+
+  - part: setting-out
+    text: "Let AB be a second apotome of a medial straight line and BC an annex to AB; therefore AC, CB are medial straight lines commensurable in square only and such that the rectangle AC, CB which they contain is medial."
+    highlight: [AB, BC, AC]
+    hint: |
+      {AB}, annex {BC}.
+
+  - part: specification
+    text: "I say that no other medial straight line can be annexed to AB which is commensurable with the whole in square only and which contains with the whole a medial rectangle."
+    highlight: [AB]
+    hint: |
+      To prove: unique.
+
+  - part: proof
+    text: "For, if possible, let BD also be so annexed; therefore AD, DB are also medial straight lines commensurable in square only and such that the rectangle AD, DB which they contain is medial."
+    highlight: [BD, AD]
+    hint: |
+      Suppose another annex {BD}.
+
+  - part: construction
+    text: "Let a rational straight line EF be set out, let EG equal to the squares on AC, CB be applied to EF, producing EM as breadth, and let HG equal to twice the rectangle AC, CB be subtracted, producing HM as breadth; therefore the remainder EL is equal to the square on AB, so that AB is the “side” of EL."
+    highlight: [EM, HM]
+    hint: |
+      Apply the squares on {AC}, {CB} to the rational line {EF} (breadth {EM}), and 2·rect (breadth {HM}); the
+      rest is sq({AB}).
+
+  - part: construction
+    text: "Again, let EI equal to the squares on AD, DB be applied to EF, producing EN as breadth."
+    highlight: [EN]
+    hint: |
+      Likewise the squares on {AD}, {DB} (breadth {EN}).
+
+  - part: proof
+    text: "But EL is also equal to the square on AB; therefore the remainder HI is equal to twice the rectangle AD, DB."
+    highlight: [HN]
+    hint: |
+      The rest is 2·rect({AD},{DB}).
+
+  - part: proof
+    text: "Now, since AC, CB are medial straight lines, therefore the squares on AC, CB are also medial."
+    highlight: [AC, BC]
+    hint: |
+      The squares are medial …
+
+  - part: proof
+    text: "And they are equal to EG; therefore EG is also medial."
+    highlight: [EM]
+    hint: |
+      … so *EG* is medial …
+
+  - part: proof
+    text: "And it is applied to the rational straight line EF, producing EM as breadth; therefore EM is rational and incommensurable in length with EF."
+    highlight: [EM]
+    hint: |
+      … and {EM} rational, incommensurable with {EF}.
+
+  - part: proof
+    text: "Again, since the rectangle AC, CB is medial, twice the rectangle AC, CB is also medial."
+    highlight: [HM]
+    hint: |
+      2·rect medial …
+
+  - part: proof
+    text: "And it is equal to HG; therefore HG is also medial."
+    highlight: [HM]
+    hint: |
+      … = *HG* …
+
+  - part: proof
+    text: "And it is applied to the rational straight line EF, producing HM as breadth; therefore HM is also rational and incommensurable in length with EF."
+    highlight: [HM]
+    hint: |
+      … so {HM} rational, incommensurable with {EF}.
+
+  - part: proof
+    text: "And, since AC, CB are commensurable in square only, therefore AC is incommensurable in length with CB."
+    highlight: [AC, BC]
+    hint: |
+      {AC}, {CB} incommensurable in length …
+
+  - part: proof
+    text: "But, as AC is to CB, so is the square on AC to the rectangle AC, CB; therefore the square on AC is incommensurable with the rectangle AC, CB."
+    highlight: [AC, BC]
+    hint: |
+      … so sq({AC}) with rect …
+
+  - part: proof
+    text: "But the squares on AC, CB are commensurable with the square on AC, while twice the rectangle AC, CB is commensurable with the rectangle AC, CB; therefore the squares on AC, CB are incommensurable with twice the rectangle AC, CB."
+    highlight: [AC, BC]
+    hint: |
+      … so the squares with 2·rect.
+
+  - part: proof
+    text: "And EG is equal to the squares on AC, CB, while GH is equal to twice the rectangle AC, CB; therefore EG is incommensurable with HG."
+    highlight: [EM, HM]
+    hint: |
+      Transfer.
+
+  - part: proof
+    text: "But, as EG is to HG, so is EM to HM; therefore EM is incommensurable in length with MH."
+    highlight: [EM, HM]
+    hint: |
+      So {EM}, {MH} incommensurable.
+
+  - part: proof
+    text: "And both are rational; therefore EM, MH are rational straight lines commensurable in square only; therefore EH is an apotome, and HM an annex to it."
+    highlight: [EH, HM]
+    hint: |
+      {EH} is an apotome with annex {HM}.
+
+  - part: proof
+    text: "Similarly we can prove that HN is also an annex to it; therefore to an apotome different straight lines are annexed which are commensurable with the wholes in square only: which is impossible."
+    highlight: [HN]
+    hint: |
+      Likewise {HN} is an annex: contradiction with [[X.79]].
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Applying to $\rho$ turns the two annexes into two annexes of one apotome, contradicting [[X.79]].
+        $\blacksquare$

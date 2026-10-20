@@ -1,0 +1,178 @@
+id: I.32
+kind: theorem
+title: The angles of a triangle sum to two right angles
+
+paraphrase: |
+  Extend a side of a triangle: the exterior angle *equals* the sum of the two remote interior
+  angles. Consequently the three angles of a triangle add up to two right angles (180°).
+
+diagram:
+  width: 260
+  height: 210
+  elements:
+    - "A;point;free;80,40"
+    - "B;point;free;35,170"
+    - "C;point;free;145,170"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "D;point;lineSlider;B,C,235,170"
+    - "CD;line;connect;C,D"
+    - "Ep;point;parallelogram;A,B,C;0;0"
+    - "E;point;lineSlider;C,Ep,195,40"
+    - "CE;line;connect;C,E"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "angCAB;sector;angleMarker;A,C,B,22;0;0;red;red"
+    - "angABC;sector;angleMarker;B,C,A,22;0;0;blue;blue"
+    - "angBCA;sector;angleMarker;C,B,A,22;0;0;green;green"
+    - "angACE;sector;angleMarker;C,A,E,22;0;0;red;red"
+    - "angECD;sector;angleMarker;C,E,D,22;0;0;blue;blue"
+    - "angACD;sector;angleMarker;C,A,D,30;0;0;orange;0"
+  aliases:
+    BA: AB
+    CAB: angCAB
+    BAC: angCAB
+    CBA: angABC
+    BCA: angBCA
+    ACB: angBCA
+    ACE: angACE
+    ECD: angECD
+    ACD: angACD
+  given: [A, B, C, ABC, angCAB, angABC, angBCA]
+  caption: |
+    Drag the vertices. {CE} stays parallel to {AB}; the red angles are equal (alternate), the blue
+    angles are equal (corresponding), and together with the green angle they fill the straight
+    line at {C}.
+
+steps:
+  - part: enunciation
+    text: "In any triangle, if one of the sides be produced, the exterior angle is equal to the two interior and opposite angles, and the three interior angles of the triangle are equal to two right angles."
+    highlight: [angACD, angCAB, angABC, angBCA]
+    hint: |
+      Exterior angle = sum of the two remote interior angles; and the angle sum of a triangle is two
+      right angles.
+    explain:
+      implicit: |
+        Compare [[I.16]] (exterior angle *greater than* each remote angle) and [[I.17]] (any two
+        angles *less than* two right angles): with the parallel postulate those inequalities become
+        exact equations.
+
+  - part: setting-out
+    text: "Let ABC be a triangle, and let one side of it BC be produced to D;"
+    highlight: [ABC, CD]
+    adds: [D, CD, angACD]
+    hint: |
+      Triangle {ABC} with {BC} produced to {D}.
+
+  - part: specification
+    text: "I say that the exterior angle ACD is equal to the two interior and opposite angles CAB, ABC, and the three interior angles of the triangle ABC, BCA, CAB are equal to two right angles."
+    highlight: [angACD, angCAB, angABC, angBCA]
+    hint: |
+      Two claims.
+    modern: |
+      $$\angle ACD = \angle CAB + \angle ABC,\qquad \angle ABC + \angle BCA + \angle CAB = 2R$$
+
+  - part: construction
+    text: "For let CE be drawn through the point C parallel to the straight line AB."
+    highlight: [CE, AB]
+    adds: [CE, E]
+    hint: |
+      Draw {CE} through {C} parallel to {AB} ([[I.31]]).
+
+  - part: proof
+    text: "Then, since AB is parallel to CE, and AC has fallen upon them, the alternate angles BAC, ACE are equal to one another."
+    highlight: [AB, CE, AC, angCAB, angACE]
+    adds: [angACE]
+    hint: |
+      {AC} is a transversal of the parallels: alternate angles ∠{BAC} = ∠{ACE} ([[I.29]]).
+    modern: |
+      $$\angle BAC = \angle ACE$$
+
+  - part: proof
+    text: "Again, since AB is parallel to CE, and the straight line BD has fallen upon them, the exterior angle ECD is equal to the interior and opposite angle ABC."
+    highlight: [AB, CE, BD, angECD, angABC]
+    adds: [angECD]
+    hint: |
+      {BD} is another transversal: corresponding angles ∠{ECD} = ∠{ABC|angABC} ([[I.29]]).
+    modern: |
+      $$\angle ECD = \angle ABC$$
+
+  - part: proof
+    text: "But the angle ACE was also proved equal to the angle BAC; therefore the whole angle ACD is equal to the two interior and opposite angles BAC, ABC."
+    highlight: [angACD, angACE, angECD, angCAB, angABC]
+    hint: |
+      ∠{ACD} = ∠{ACE} + ∠{ECD} = ∠{BAC} + ∠{ABC|angABC}. First claim proved.
+    explain:
+      implicit: |
+        That {CE} lies inside ∠{ACD}, so that ∠{ACD} is the sum of its two parts.
+    cites: [I.CN.2]
+    modern: |
+      $$\angle ACD = \angle ACE + \angle ECD = \angle BAC + \angle ABC$$
+
+  - part: proof
+    text: "Let the angle ACB be added to each; therefore the angles ACD, ACB are equal to the three angles ABC, BCA, CAB."
+    highlight: [angACD, angBCA, angABC, angCAB]
+    hint: |
+      Add the angle at {C} ([[I.CN.2]]).
+    modern: |
+      $$\angle ACD + \angle ACB = \angle ABC + \angle BCA + \angle CAB$$
+
+  - part: proof
+    text: "But the angles ACD, ACB are equal to two right angles;"
+    highlight: [angACD, angBCA]
+    hint: |
+      Adjacent angles on the line {BD} ([[I.13]]).
+
+  - part: proof
+    text: "therefore the angles ABC, BCA, CAB are also equal to two right angles."
+    highlight: [angABC, angBCA, angCAB]
+    hint: |
+      The angle sum is two right angles. Second claim proved.
+    modern: |
+      $$\angle ABC + \angle BCA + \angle CAB = 2R = 180^\circ$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* The standard proof is Euclid's, with
+    Playfair's axiom behind I.29:
+  lines:
+    - steps: [1, 2, 3]
+      text: Let $\ell$ be the line through $C$ parallel to $AB$.
+    - steps: [4, 5]
+      text: |
+        Alternate angles with transversal $AC$: $\angle(\ell, CA) = \angle BAC$; corresponding angles with $BD$: $\angle(\ell, CD) = \angle ABC$.
+    - steps: [6]
+      text: Hence $\angle ACD = \angle A + \angle B$.
+    - steps: [7, 8, 9]
+      text: $\angle A + \angle B + \angle C = \angle ACD + \angle ACB = 180^\circ$. $\blacksquare$
+  closing: |
+    In neutral geometry "every triangle has angle sum 180°" is *equivalent* to the parallel
+    postulate. In hyperbolic geometry every triangle's angle sum is less than 180°, and the
+    deficit is proportional to its area.
+
+commentary: |
+  The most famous theorem about triangles before [[I.47]]. It completes the angle results of Book
+  I: [[I.16]] and [[I.17]] gave inequalities that hold without Postulate 5; I.32 gives the exact
+  value that needs it.
+
+  **Corollaries** (in Proclus, and in many editions since): the interior angles of a convex
+  polygon with $n$ sides sum to $2n - 4$ right angles; its exterior angles sum to four right angles.
+
+gaps: |
+  - **{CE} inside ∠{ACD}** (step 5): read off the figure.
+
+historical: |
+  Proclus, citing Eudemus, attributes the discovery of the angle-sum theorem to the Pythagoreans,
+  and gives their proof: draw through the apex a parallel to the base, and use the alternate
+  angles. Aristotle mentions the theorem repeatedly as a standard example of a demonstrated truth.

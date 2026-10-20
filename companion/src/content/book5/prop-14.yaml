@@ -1,0 +1,108 @@
+id: V.14
+kind: theorem
+title: In a proportion, first and third compare as second and fourth
+
+paraphrase: |
+  If {A} : {B} = {C} : {D}, then {A} greater than, equal to or less than {C} makes {B} greater than, equal to or less than
+  {D}. All four magnitudes are of one kind.
+
+diagram:
+  width: 300
+  height: 120
+  elements:
+    - "U0;point;free;-1000,40;0;0"
+    - "U1;point;free;1000,40;0;0"
+    - "V0;point;free;-1000,80;0;0"
+    - "V1;point;free;1000,80;0;0"
+    - "A0;point;lineSlider;U0,U1,30,40;0"
+    - "A1;point;lineSlider;U0,U1,120,40;0"
+    - "A;line;connect;A0,A1;black;0;red"
+    - "C0;point;lineSlider;V0,V1,30,80;0"
+    - "C1;point;lineSlider;V0,V1,100,80;0"
+    - "C;line;connect;C0,C1;black;0;red"
+    - "B0;point;lineSlider;U0,U1,150,40;0"
+    - "B1;point;lineSlider;U0,U1,220,40;0"
+    - "B;line;connect;B0,B1;black;0;red"
+    - "D0;point;lineSlider;V0,V1,150,80;0"
+    - "D1;point;proportion;A0,A1,B0,B1,C0,C1,D0,V1;0"
+    - "D;line;connect;D0,D1;black;0;red"
+  caption: |
+    {D} is constructed so that $A : B = C : D$. Drag the ends of {A}, {B}, {C}: whenever {A} is longer than {C}, {B} is
+    longer than {D}.
+
+steps:
+  - part: enunciation
+    text: "If a first magnitude have to a second the same ratio as a third has to a fourth, and the first be greater than the third, the second will also be greater than the fourth; if equal, equal; and if less, less."
+    highlight: [A, B, C, D]
+    hint: |
+      $A : B = C : D$ and $A \gtreqless C$ give $B \gtreqless D$.
+    explain:
+      implicit: |
+        {A} is compared with {C}, so all four magnitudes must be of the same kind. This is the lemma for
+        alternation ([[V.16]]).
+    modern: |
+      $$A : B = C : D \ \Rightarrow\ (A > C \Rightarrow B > D,\ A = C \Rightarrow B = D,\ A < C \Rightarrow B < D)$$
+
+  - part: setting-out
+    text: "For let a first magnitude A have the same ratio to a second B as a third C has to a fourth D; and let A be greater than C;"
+    highlight: [A, B, C, D]
+    hint: |
+      Take the case {A} > {C}.
+
+  - part: specification
+    text: "I say that B is also greater than D."
+    highlight: [B, D]
+    hint: |
+      The goal in this case.
+
+  - part: proof
+    text: "For, since A is greater than C, and B is another, chance, magnitude, therefore A has to B a greater ratio than C has to B."
+    highlight: [A, C, B]
+    hint: |
+      The greater has the greater ratio to the same ([[V.8]]).
+
+  - part: proof
+    text: "But, as A is to B, so is C to D; therefore C has also to D a greater ratio than C has to B."
+    highlight: [C, D, B]
+    hint: |
+      Replace $A : B$ by the same ratio $C : D$ ([[V.13]]).
+
+  - part: proof
+    text: "But that to which the same has a greater ratio is less; therefore D is less than B; so that B is greater than D."
+    highlight: [D, B]
+    hint: |
+      {C} has a greater ratio to {D} than to {B}, so {D} < {B} ([[V.10]]).
+
+  - part: proof
+    text: "Similarly we can prove that, if A be equal to C, B will also be equal to D; and, if A be less than C, B will also be less than D."
+    highlight: [A, C, B, D]
+    hint: |
+      Equal case: [[V.7]] and [[V.9]]; less case: as above with the roles swapped.
+    cites: [V.7, V.9]
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: |
+        Think of ratios as positive reals: $A/B = C/D = r$. Then $B = A/r$ and $D = C/r$, so $B - D = (A - C)/r$
+        has the sign of $A - C$. $\blacksquare$
+  closing: |
+    The reconstruction uses division of magnitudes, which Book V does not have; Euclid's route through
+    [[V.8]], [[V.13]] and [[V.10]] stays within the theory of ratio.
+
+commentary: |
+  Joyce points out a second form that later books often use without citing anything: if $a : b = c : d$
+  and $a \gtreqless b$, then $c \gtreqless d$. That form is just [[V.Def.5]] with both multiples equal to
+  one, and does not require the two pairs to be of the same kind (e.g. [[VI.25]], after alternating).

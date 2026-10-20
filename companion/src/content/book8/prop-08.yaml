@@ -1,0 +1,180 @@
+id: VIII.8
+kind: theorem
+title: Means between numbers carry over to numbers in the same ratio
+
+paraphrase: |
+  If {C}, {D} are mean proportionals between {A} and {B}, and {E} : {F} = {A} : {B}, then as many mean
+  proportionals fall between {E} and {F}.
+
+diagram:
+  width: 290
+  height: 310
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "C0;point;free;-1000,75;0;0"
+    - "C3;point;free;1000,75;0;0"
+    - "D0;point;free;-1000,110;0;0"
+    - "D3;point;free;1000,110;0;0"
+    - "B0;point;free;-1000,145;0;0"
+    - "B3;point;free;1000,145;0;0"
+    - "G0;point;free;-1000,180;0;0"
+    - "G3;point;free;1000,180;0;0"
+    - "H0;point;free;-1000,215;0;0"
+    - "H3;point;free;1000,215;0;0"
+    - "K0;point;free;-1000,250;0;0"
+    - "K3;point;free;1000,250;0;0"
+    - "L0;point;free;-1000,285;0;0"
+    - "L3;point;free;1000,285;0;0"
+    - "U0;point;free;1000,0;0;0"
+    - "U1;point;free;1000,20;0;0"
+    - "U2;point;free;1000,50;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,100,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,110,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;proportion;A1,A2,C1,C2,C1,C2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;proportion;A1,A2,C1,C2,D1,D2,B1,B3;0"
+    - "B;line;connect;B1,B2;black"
+    - "E1;point;lineSlider;A0,A3,180,0;0"
+    - "E2;point;lineSlider;A0,A3,230,0;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;B0,B3,180,0;0"
+    - "F2;point;proportion;A1,A2,B1,B2,E1,E2,F1,B3;0"
+    - "F;line;connect;F1,F2;black"
+    - "G1;point;lineSlider;G0,G3,30,0;0"
+    - "G2;point;proportion;U0,U2,U1,U2,A1,A2,G1,G3;0"
+    - "G;line;connect;G1,G2;black"
+    - "H1;point;lineSlider;H0,H3,30,0;0"
+    - "H2;point;proportion;U0,U2,U1,U2,C1,C2,H1,H3;0"
+    - "H;line;connect;H1,H2;black"
+    - "K1;point;lineSlider;K0,K3,30,0;0"
+    - "K2;point;proportion;U0,U2,U1,U2,D1,D2,K1,K3;0"
+    - "K;line;connect;K1,K2;black"
+    - "L1;point;lineSlider;L0,L3,30,0;0"
+    - "L2;point;proportion;U0,U2,U1,U2,B1,B2,L1,L3;0"
+    - "L;line;connect;L1,L2;black"
+    - "M1;point;lineSlider;C0,C3,180,0;0"
+    - "M2;point;proportion;G1,G2,E1,E2,H1,H2,M1,C3;0"
+    - "M;line;connect;M1,M2;black"
+    - "N1;point;lineSlider;D0,D3,180,0;0"
+    - "N2;point;proportion;G1,G2,E1,E2,K1,K2,N1,D3;0"
+    - "N;line;connect;N1,N2;black"
+  caption: |
+    {A}, {C}, {D}, {B} in continued proportion; {E} : {F} = {A} : {B}. {G}, {H}, {K}, {L} are least in the
+    ratio of {A}, {C}, {D}, {B}; {M}, {N} are the means found between {E} and {F}.
+
+steps:
+  - part: enunciation
+    text: "If between two numbers there fall numbers in continued proportion with them, then, however many numbers fall between them in continued proportion, so many will also fall in continued proportion between the numbers which have the same ratio with the original numbers."
+    highlight: [A, B, E, F]
+    hint: |
+      The number of geometric means between two numbers depends only on their ratio.
+    modern: |
+      If $a : b = e : f$ and $a, c_1, \dots, c_k, b$ is a geometric progression, so is some $e, m_1, \dots,
+      m_k, f$.
+
+  - part: setting-out
+    text: "Let the numbers C, D fall between the two numbers A, B in continued proportion with them, and let E be made in the same ratio to F as A is to B;"
+    highlight: [A, C, D, B, E, F]
+    hint: |
+      {A}, {C}, {D}, {B} in continued proportion; {E} : {F} = {A} : {B}.
+
+  - part: specification
+    text: "I say that, as many numbers as have fallen between A, B in continued proportion, so many will also fall between E, F in continued proportion."
+    highlight: [E, F]
+    hint: |
+      To prove: two means fall between {E} and {F}.
+
+  - part: construction
+    text: "For, as many as A, B, C, D are in multitude, let so many numbers G, H, K, L, the least of those which have the same ratio with A, C, D, B, be taken;"
+    highlight: [G, H, K, L]
+    hint: |
+      Reduce to the least progression {G}, {H}, {K}, {L} ([[VII.33]]).
+
+  - part: proof
+    text: "therefore the extremes of them G, L are prime to one another."
+    highlight: [G, L]
+    hint: |
+      Its extremes are coprime ([[VIII.3]]).
+
+  - part: proof
+    text: "Now, since A, C, D, B are in the same ratio with G, H, K, L, and the multitude of the numbers A, C, D, B is equal to the multitude of the numbers G, H, K, L, therefore, ex aequali, as A is to B, so is G to L."
+    highlight: [A, B, G, L]
+    hint: |
+      Ex aequali ([[VII.14]]): {A} : {B} = {G} : {L}.
+
+  - part: proof
+    text: "But, as A is to B, so is E to F; therefore also, as G is to L, so is E to F."
+    highlight: [G, L, E, F]
+    hint: |
+      So {G} : {L} = {E} : {F}.
+
+  - part: proof
+    text: "But G, L are prime, primes are also least, and the least numbers measure those which have the same ratio the same number of times, the greater the greater and the less the less, that is, the antecedent the antecedent and the consequent the consequent."
+    highlight: [G, L]
+    hint: |
+      {G} : {L} is in lowest terms ([[VII.21]]), so [[VII.20]] applies.
+
+  - part: proof
+    text: "Therefore G measures E the same number of times as L measures F."
+    highlight: [G, E, L, F]
+    hint: |
+      {E} and {F} are the same multiple of {G} and {L}.
+
+  - part: construction
+    text: "Next, as many times as G measures E, so many times let H, K also measure M, N respectively; therefore G, H, K, L measure E, M, N, F the same number of times."
+    highlight: [M, N]
+    hint: |
+      Scale {H}, {K} by the same factor to get {M}, {N}.
+
+  - part: proof
+    text: "Therefore G, H, K, L are in the same ratio with E, M, N, F."
+    highlight: [G, H, K, L, E, M, N, F]
+    hint: |
+      Equal multiples are in the same ratio ([[VII.Def.20]]).
+
+  - part: proof
+    text: "But G, H, K, L are in the same ratio with A, C, D, B; therefore A, C, D, B are also in the same ratio with E, M, N, F."
+    highlight: [A, C, D, B, E, M, N, F]
+    hint: |
+      So {E}, {M}, {N}, {F} have the ratios of {A}, {C}, {D}, {B}.
+
+  - part: proof
+    text: "But A, C, D, B are in continued proportion; therefore E, M, N, F are also in continued proportion."
+    highlight: [E, M, N, F]
+    hint: |
+      {E}, {M}, {N}, {F} are in continued proportion.
+
+  - part: proof
+    text: "Therefore, as many numbers as have fallen between A, B in continued proportion with them, so many numbers have also fallen between E, F in continued proportion."
+    highlight: [E, F]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [4, 5, 6, 7, 8, 9]
+      text: |
+        The least progression with the ratios of $a, c, d, b$ is $g, h, k, l$ with $\gcd(g, l) = 1$, and $g :
+        l = e : f$, so $e = ng$, $f = nl$.
+    - steps: [10, 11, 12, 13]
+      text: |
+        Then $ng, nh, nk, nl$ is a progression from $e$ to $f$. $\blacksquare$
+
+commentary: |
+  Joyce's example: 18 : 50 = 63 : 175, and 18, 30, 50 is a continued proportion; so one mean falls between 63
+  and 175 (it is 105). [[VIII.8]]–[[VIII.10]] prepare [[VIII.11]]–[[VIII.21]], on how many means fall
+  between squares, cubes, and similar numbers.

@@ -1,0 +1,167 @@
+id: VI.8
+kind: theorem
+title: The altitude of a right triangle
+
+paraphrase: |
+  In a right-angled triangle {ABC} with the right angle at {A}, the perpendicular {AD} to the hypotenuse divides it into
+  two triangles {ABD}, {ADC}, each similar to {ABC} and to each other.
+
+diagram:
+  width: 330
+  height: 200
+  elements:
+    - "B;point;free;40,170"
+    - "C;point;free;290,170"
+    - "M;point;midpoint;B,C;0;0"
+    - "circ;circle;radius;M,B;0;0;0;0"
+    - "A;point;circleSlider;circ,200,40"
+    - "D;point;foot;A,B,C"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;0"
+    - "ABD;polygon;triangle;A,B,D;0;0;black;#efe4d2"
+    - "ACD;polygon;triangle;A,C,D;0;0;black;#dfe7ea"
+    - "AD;line;connect;A,D"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "DC;line;connect;D,C;0;0;0"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angADB;sector;angleMarker;D,A,B"
+    - "angADC;sector;angleMarker;D,A,C"
+    - "angABC;sector;angleMarker;B,A,C"
+    - "angACB;sector;angleMarker;C,A,B"
+    - "angBAD;sector;angleMarker;A,B,D"
+    - "angDAC;sector;angleMarker;A,D,C"
+  aliases:
+    BA: AB
+    DA: AD
+    ADC: ACD
+    angBDA: angADB
+    BAD: angBAD
+  caption: |
+    Slide {A} around the semicircle on {BC} (so the angle at {A} stays right), or drag {B}, {C}.
+
+steps:
+  - part: enunciation
+    text: "If in a right-angled triangle a perpendicular be drawn from the right angle to the base, the triangles adjoining the perpendicular are similar both to the whole and to one another."
+    highlight: [ABC, ABD, ADC, AD]
+    hint: |
+      The altitude to the hypotenuse makes two smaller copies of the triangle.
+    modern: |
+      $$\triangle ABC \sim \triangle DBA \sim \triangle DAC$$
+
+  - part: setting-out
+    text: "Let ABC be a right-angled triangle having the angle BAC right, and let AD be drawn from A perpendicular to BC;"
+    highlight: [ABC, angBAC, AD]
+    hint: |
+      The data ([[I.12]] for the perpendicular).
+
+  - part: specification
+    text: "I say that each of the triangles ABD, ADC is similar to the whole ABC and, further, they are similar to one another."
+    highlight: [ABD, ADC, ABC]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, since the angle BAC is equal to the angle ADB, for each is right, and the angle at B is common to the two triangles ABC and ABD, therefore the remaining angle ACB is equal to the remaining angle BAD;"
+    highlight: [angBAC, angADB, angABC, angACB, angBAD]
+    hint: |
+      Right angle and a common angle; the third angles are equal by [[I.32]].
+
+  - part: proof
+    text: "therefore the triangle ABC is equiangular with the triangle ABD."
+    highlight: [ABC, ABD]
+    hint: |
+      All three angles match.
+
+  - part: proof
+    text: "Therefore, as BC which subtends the right angle in the triangle ABC is to BA which subtends the right angle in the triangle ABD, so is AB itself which subtends the angle at C in the triangle ABC to BD which subtends the equal angle BAD in the triangle ABD, and so also is AC to AD which subtends the angle at B common to the two triangles."
+    highlight: [BC, BA, BD, AC, AD]
+    hint: |
+      [[VI.4]]: $BC : BA = AB : BD = AC : AD$, pairing sides opposite equal angles.
+
+  - part: proof
+    text: "Therefore the triangle ABC is both equiangular to the triangle ABD and has the sides about the equal angles proportional."
+    highlight: [ABC, ABD]
+    hint: |
+      Both conditions of [[VI.Def.1]].
+
+  - part: proof
+    text: "Therefore the triangle ABC is similar to the triangle ABD."
+    highlight: [ABC, ABD]
+    hint: |
+      [[VI.Def.1]].
+
+  - part: proof
+    text: "Similarly we can prove that the triangle ABC is also similar to the triangle ADC;"
+    highlight: [ABC, ADC]
+    hint: |
+      Same argument with the angle at {C} common.
+
+  - part: proof
+    text: "therefore each of the triangles ABD, ADC is similar to the whole ABC."
+    highlight: [ABD, ADC, ABC]
+    hint: |
+      First claim.
+
+  - part: specification
+    text: "I say next that the triangles ABD, ADC are also similar to one another."
+    highlight: [ABD, ADC]
+    hint: |
+      Second claim.
+
+  - part: proof
+    text: "For, since the right angle BDA is equal to the right angle ADC, and moreover the angle BAD was also proved equal to the angle at C, therefore the remaining angle at B is also equal to the remaining angle DAC;"
+    highlight: [angBDA, angADC, angBAD, angACB, angABC, angDAC]
+    hint: |
+      Right angles at {D}; the angle {BAD} equals the angle at {C}; so the third angles match ([[I.32]]).
+
+  - part: proof
+    text: "therefore the triangle ABD is equiangular with the triangle ADC."
+    highlight: [ABD, ADC]
+    hint: |
+      Equiangular.
+
+  - part: proof
+    text: "Therefore, as BD which subtends the angle BAD in the triangle ABD is to DA which subtends the angle at C in the triangle ADC equal to the angle BAD, so is AD itself which subtends the angle at B in the triangle ABD to DC which subtends the angle DAC in the triangle ADC equal to the angle at B, and so also is BA to AC, these sides subtending the right angles;"
+    highlight: [BD, DA, DC, BA, AC]
+    hint: |
+      $BD : DA = AD : DC = BA : AC$ ([[VI.4]]).
+
+  - part: proof
+    text: "therefore the triangle ABD is similar to the triangle ADC."
+    highlight: [ABD, ADC]
+    hint: |
+      [[VI.Def.1]].
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved. A porism follows.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      text: |
+        $\angle ABD = \angle ABC$ and both have a right angle, so $\triangle DBA \sim \triangle ABC$ (AA);
+        likewise $\triangle DAC \sim \triangle ABC$.
+    - steps: [10, 11, 12, 13, 14]
+      text: |
+        Similar to the same triangle, so similar to each other. $\blacksquare$
+  closing: |
+    The porism: $BD : DA = DA : DC$, i.e. $AD^2 = BD \cdot DC$. Also $BC : BA = BA : BD$ gives
+    $AB^2 = BC \cdot BD$, and likewise $AC^2 = BC \cdot DC$; adding, $AB^2 + AC^2 = BC^2$ — a proof of
+    [[I.47]] by similar triangles.
+
+commentary: |
+  The porism — the altitude is a *mean proportional* between the segments of the hypotenuse — is used in
+  [[VI.13]] to construct mean proportionals. Joyce notes that Euclid verbosely re-derives here that
+  equiangular triangles are similar and that triangles similar to the same triangle are similar to each
+  other; the general version of the latter is [[VI.21]].
+
+historical: |
+  The proof of the Pythagorean theorem by similar triangles sketched above appears in the *Elements* as a
+  lemma in Book X (before X.33). Joyce suggests it is probably older than the proof of [[I.47]], which
+  Euclid may have devised precisely so as not to depend on the theory of proportion.

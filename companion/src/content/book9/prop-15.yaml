@@ -1,0 +1,185 @@
+id: IX.15
+kind: theorem
+title: In a least progression of three, any two together are coprime to the third
+
+paraphrase: |
+  If {A}, {B}, {C} are the least numbers in continued proportion in their ratio, then {A} + {B} is prime to
+  {C}, {B} + {C} to {A}, and {A} + {C} to {B}.
+
+diagram:
+  width: 260
+  height: 130
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "C0;point;free;-1000,65;0;0"
+    - "C3;point;free;1000,65;0;0"
+    - "D0;point;free;-1000,100;0;0"
+    - "D3;point;free;1000,100;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,35;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,90,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;A0,A3,130,0;0"
+    - "B2;point;lineSlider;A0,A3,230,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;proportion;A1,A2,B1,B2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "E;point;lineSlider;D0,D3,110,0"
+    - "D;point;lineSlider;D0,D3,75,0"
+    - "F;point;proportion;A1,A2,B1,B2,D,E,E,D3"
+    - "DF;line;connect;D,F"
+    - "DE;line;connect;D,E;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+  aliases: { FD: DF }
+  caption: |
+    {DE} : {EF} is the ratio in lowest terms; {A} = {DE}², {B} = {DE}·{EF}, {C} = {EF}²; {DF} = {DE} + {EF}.
+
+steps:
+  - part: enunciation
+    text: "If three numbers in continued proportion be the least of those which have the same ratio with them, any two whatever added together will be prime to the remaining number."
+    highlight: [A, B, C]
+    hint: |
+      With $a = d^2$, $b = de$, $c = e^2$ and $\gcd(d, e) = 1$: $d^2 + de$, $de + e^2$, $d^2 + e^2$ are
+      coprime to $e^2$, $d^2$, $de$ respectively.
+    modern: |
+      $\gcd(d, e) = 1 \Rightarrow \gcd(d^2 + de, e^2) = \gcd(de + e^2, d^2) = \gcd(d^2 + e^2, de) = 1$.
+
+  - part: setting-out
+    text: "Let A, B, C, three numbers in continued proportion, be the least of those which have the same ratio with them;"
+    highlight: [A, B, C]
+    hint: |
+      A least progression of three.
+
+  - part: specification
+    text: "I say that any two of the numbers A, B, C whatever added together are prime to the remaining number, namely A, B to C; B, C to A; and further A, C to B."
+    highlight: [A, B, C]
+    hint: |
+      Three claims.
+
+  - part: construction
+    text: "For let two numbers DE, EF, the least of those which have the same ratio with A, B, C, be taken."
+    highlight: [DE, EF]
+    hint: |
+      The ratio in lowest terms {DE} : {EF} ([[VIII.2]]).
+
+  - part: proof
+    text: "It is then manifest that DE by multiplying itself has made A, and by multiplying EF has made B, and, further, EF by multiplying itself has made C."
+    highlight: [DE, EF, A, B, C]
+    hint: |
+      {A} = $d^2$, {B} = $de$, {C} = $e^2$ ([[VIII.2]]).
+
+  - part: proof
+    text: "Now, since DE, EF are least, they are prime to one another."
+    highlight: [DE, EF]
+    hint: |
+      [[VII.22]].
+
+  - part: proof
+    text: "But, if two numbers be prime to one another, their sum is also prime to each; therefore DF is also prime to each of the numbers DE, EF."
+    highlight: [DF, DE, EF]
+    hint: |
+      [[VII.28]]: $d + e$ is coprime to $d$ and to $e$.
+
+  - part: proof
+    text: "But further DE is also prime to EF; therefore DF, DE are prime to EF."
+    highlight: [DF, DE, EF]
+    hint: |
+      Both $d + e$ and $d$ are coprime to $e$.
+
+  - part: proof
+    text: "But, if two numbers be prime to any number, their product is also prime to the other; so that the product of FD, DE is prime to EF; hence the product of FD, DE is also prime to the square on EF."
+    highlight: [DF, DE, EF]
+    hint: |
+      [[VII.24]], [[VII.25]]: $(d + e)d$ is coprime to $e^2$.
+
+  - part: proof
+    text: "But the product of FD, DE is the square on DE together with the product of DE, EF; therefore the square on DE together with the product of DE, EF is prime to the square on EF."
+    highlight: [DF, DE, EF]
+    hint: |
+      $(d + e)d = d^2 + de$ — [[II.3]], used for numbers.
+    explain:
+      implicit: |
+        [[II.3]] is a theorem about lines and rectangles. Euclid applies it to numbers without comment.
+
+  - part: proof
+    text: "And the square on DE is A, the product of DE, EF is B, and the square on EF is C; therefore A, B added together are prime to C."
+    highlight: [A, B, C]
+    hint: |
+      {A} + {B} coprime to {C}.
+
+  - part: proof
+    text: "Similarly we can prove that B, C added together are prime to A."
+    highlight: [B, C, A]
+    hint: |
+      By symmetry.
+
+  - part: specification
+    text: "I say next that A, C added together are also prime to B."
+    highlight: [A, C, B]
+    hint: |
+      Third claim.
+
+  - part: proof
+    text: "For, since DF is prime to each of the numbers DE, EF, the square on DF is also prime to the product of DE, EF."
+    highlight: [DF, DE, EF]
+    hint: |
+      $(d + e)^2$ coprime to $de$ ([[VII.24]], [[VII.25]]).
+
+  - part: proof
+    text: "But the squares on DE, EF together with twice the product of DE, EF are equal to the square on DF; therefore the squares on DE, EF together with twice the product of DE, EF are prime to the product of DE, EF."
+    highlight: [DF]
+    hint: |
+      $(d + e)^2 = d^2 + e^2 + 2de$ ([[II.4]]).
+
+  - part: proof
+    text: "Separando, the squares on DE, EF together with once the product of DE, EF are prime to the product of DE, EF."
+    highlight: [DE, EF]
+    hint: |
+      Subtracting $de$ keeps coprimality ([[VII.28]]).
+    cites: [VII.28]
+
+  - part: proof
+    text: "Therefore, separando again, the squares on DE, EF are prime to the product of DE, EF."
+    highlight: [DE, EF]
+    hint: |
+      $d^2 + e^2$ coprime to $de$.
+
+  - part: proof
+    text: "And the square on DE is A, the product of DE, EF is B, and the square on EF is C."
+    highlight: [A, B, C]
+    hint: |
+      Translate back.
+
+  - part: proof
+    text: "Therefore A, C added together are prime to B."
+    highlight: [A, C, B]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* $a = d^2$, $b = de$, $c = e^2$, $\gcd(d, e) = 1$.
+  lines:
+    - steps: [4, 5, 6, 7, 8, 9, 10, 11]
+      text: |
+        $a + b = d(d + e)$; both factors are coprime to $e$, hence to $e^2$.
+    - steps: [12, 13, 14, 15, 16, 17, 18]
+      text: |
+        $a + c = (d + e)^2 - 2de$; $(d + e)^2$ is coprime to $de$, and subtracting multiples of $de$ keeps that.
+        $\blacksquare$
+
+commentary: |
+  "Separando" is borrowed from Book V ([[V.Def.15]]), here meaning "subtracting": [[VII.28]] says that $x$
+  coprime to $y$ implies $x - y$ coprime to $y$. The proposition is used in [[IX.16]]-style arguments about
+  which proportions can be continued.
+
+gaps: |
+  - [[II.3]] and [[II.4]] (geometric identities about rectangles) are applied to numbers.

@@ -1,0 +1,198 @@
+id: X.17
+kind: theorem
+title: When the roots of the quadratic are commensurable
+
+paraphrase: |
+  Apply to the greater line {BC} a rectangle {BD}·{DC} equal to a quarter of the square on the less line {A},
+  deficient by a square. Then {BD}, {DC} are commensurable in length exactly when $\sqrt{BC^2 - A^2}$ is
+  commensurable with {BC}.
+
+diagram:
+  width: 260
+  height: 170
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "B0;point;free;-1000,140;0;0"
+    - "B3;point;free;1000,140;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,200,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B;point;lineSlider;B0,B3,30,0"
+    - "C;point;lineSlider;B0,B3,220,0"
+    - "BC;line;connect;B,C"
+    - "E;point;midpoint;B,C"
+    - "a;point;midpoint;A1,A2;0;0"
+    - "b;point;midpoint;B,E;0;0"
+    - "bcirc;circle;radius;b,B;0;0;0;0"
+    - "Bcirc;circle;radius;B,A1,a;0;0;0;0"
+    - "cc';line;bichord;bcirc,Bcirc;0;0;0"
+    - "c;point;first;cc';0;0"
+    - "D;point;cutoff;E,C,E,c"
+    - "F;point;cutoff;E,B,D,E"
+    - "d;point;perpendicular;D,C;0;0"
+    - "rect;polygon;parallelogram;B,D,d;0;0;black;random"
+    - "BD;line;connect;B,D;0;0;0"
+    - "DC;line;connect;D,C;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "BF;line;connect;B,F;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "EC;line;connect;E,C;0;0;0"
+  aliases: { CD: DC, ED: DE, FD: DF, CE: EC }
+  caption: |
+    {BD}·{DC} = ¼ sq({A}); {E} bisects {BC}; {EF} = {DE}, so sq({BC}) − sq({A}) = sq({DF}).
+
+steps:
+  - part: enunciation
+    text: "If there be two unequal straight lines, and to the greater there be applied a parallelogram equal to the fourth part of the square on the less and deficient by a square figure, and if it divide it into parts which are commensurable in length, then the square on the greater will be greater than the square on the less by the square on a straight line commensurable with the greater."
+    highlight: [A, BC]
+    hint: |
+      The roots $x$, $b - x$ of $x(b - x) = a^2/4$ are commensurable iff $\sqrt{b^2 - a^2}$ is commensurable
+      with $b$.
+    modern: |
+      $x(b - x) = a^2/4$ $\Rightarrow$ $(b - 2x)^2 = b^2 - a^2$; so $x/(b - x) \in \mathbb{Q} \iff
+      \sqrt{b^2 - a^2}/b \in \mathbb{Q}$.
+
+  - part: enunciation
+    text: "And, if the square on the greater be greater than the square on the less by the square on a straight line commensurable with the greater, and if there be applied to the greater a parallelogram equal to the fourth part of the square on the less and deficient by a square figure, it will divide it into parts which are commensurable in length."
+    hint: |
+      And conversely.
+
+  - part: setting-out
+    text: "Let A, BC be two unequal straight lines, of which BC is the greater, and let there be applied to BC a parallelogram equal to the fourth part of the square on the less, A, that is, equal to the square on the half of A, and deficient by a square figure. Let this be the rectangle BD, DC, [cf. Lemma]"
+    highlight: [A, BC, BD, DC]
+    hint: |
+      The setup: {BD}·{DC} = (½{A})².
+
+  - part: specification
+    text: "and let BD be commensurable in length with DC; I say that the square on BC is greater than the square on A by the square on a straight line commensurable with BC."
+    highlight: [BD, DC, BC]
+    hint: |
+      Suppose {BD}, {DC} commensurable; to prove the claim.
+
+  - part: construction
+    text: "For let BC be bisected at the point E, and let EF be made equal to DE."
+    highlight: [E, EF]
+    hint: |
+      Bisect {BC} at {E}; make {EF} = {DE}.
+
+  - part: proof
+    text: "Therefore the remainder DC is equal to BF."
+    highlight: [DC, BF]
+    hint: |
+      Then {DC} = {BF}.
+
+  - part: proof
+    text: "And, since the straight line BC has been cut into equal parts at E, and into unequal parts at D, therefore the rectangle contained by BD, DC, together with the square on ED, is equal to the square on EC;"
+    highlight: [BD, DC, DE, EC]
+    hint: |
+      [[II.5]]: {BD}·{DC} + sq({ED}) = sq({EC}).
+
+  - part: proof
+    text: "And the same is true of their quadruples; therefore four times the rectangle BD, DC, together with four times the square on DE, is equal to four times the square on EC."
+    highlight: [BD, DC]
+    hint: |
+      Times four.
+
+  - part: proof
+    text: "But the square on A is equal to four times the rectangle BD, DC; and the square on DF is equal to four times the square on DE, for DF is double of DE."
+    highlight: [A, DF]
+    hint: |
+      sq({A}) = 4{BD}·{DC} and sq({DF}) = 4 sq({DE}).
+
+  - part: proof
+    text: "And the square on BC is equal to four times the square on EC, for again BC is double of CE."
+    highlight: [BC, EC]
+    hint: |
+      sq({BC}) = 4 sq({EC}).
+
+  - part: proof
+    text: "Therefore the squares on A, DF are equal to the square on BC, so that the square on BC is greater than the square on A by the square on DF."
+    highlight: [A, DF, BC]
+    hint: |
+      So sq({BC}) = sq({A}) + sq({DF}).
+
+  - part: specification
+    text: "It is to be proved that BC is also commensurable with DF."
+    highlight: [BC, DF]
+    hint: |
+      Remains: {DF} commensurable with {BC}.
+
+  - part: proof
+    text: "Since BD is commensurable in length with DC, therefore BC is also commensurable in length with CD."
+    highlight: [BC, DC]
+    hint: |
+      [[X.15]].
+
+  - part: proof
+    text: "But CD is commensurable in length with CD, BF, for CD is equal to BF."
+    highlight: [DC, BF]
+    hint: |
+      {BF} + {CD} = 2{CD} is commensurable with {CD} ([[X.6]]).
+
+  - part: proof
+    text: "Therefore BC is also commensurable in length with BF, CD, so that BC is also commensurable in length with the remainder FD; therefore the square on BC is greater than the square on A by the square on a straight line commensurable with BC."
+    highlight: [BC, DF]
+    hint: |
+      [[X.12]], [[X.15]]: {BC} commensurable with {FD}. Done.
+
+  - part: specification
+    text: "Next, let the square on BC be greater than the square on A by the square on a straight line commensurable with BC, let a parallelogram be applied to BC equal to the fourth part of the square on A and deficient by a square figure, and let it be the rectangle BD, DC."
+    highlight: [BC, A, BD, DC]
+    hint: |
+      Converse.
+
+  - part: specification
+    text: "It is to be proved that BD is commensurable in length with DC."
+    highlight: [BD, DC]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "With the same construction, we can prove similarly that the square on BC is greater than the square on A by the square on FD."
+    highlight: [BC, A, DF]
+    hint: |
+      As before, sq({BC}) − sq({A}) = sq({FD}).
+
+  - part: proof
+    text: "But the square on BC is greater than the square on A by the square on a straight line commensurable with BC."
+    highlight: [BC]
+    hint: |
+      By hypothesis that line is commensurable with {BC}.
+
+  - part: proof
+    text: "Therefore BC is commensurable in length with FD, so that BC is also commensurable in length with the remainder, the sum of BF, DC."
+    highlight: [BC, DF, BF, DC]
+    hint: |
+      So {BC} is commensurable with {FD}, hence with {BF} + {DC} ([[X.15]]) …
+
+  - part: proof
+    text: "But the sum of BF, DC is commensurable with DC, so that BC is also commensurable in length with CD; and therefore, separando, BD is commensurable in length with DC."
+    highlight: [BC, DC, BD]
+    hint: |
+      … hence with {CD} ([[X.12]]), and so {BD} with {DC} ([[X.15]]).
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* $x = DC$, $b = BC$.
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9]
+      text: |
+        $x(b - x) = a^2/4 \Rightarrow (b - 2x)^2 = b^2 - a^2$, and $DF = b - 2x$.
+    - steps: [10, 11, 12, 13]
+      text: |
+        $x/(b - x) \in \mathbb{Q} \iff x/b \in \mathbb{Q} \iff (b - 2x)/b \in \mathbb{Q}$.
+    - steps: [14, 15, 16, 17, 18, 19]
+      text: |
+        The same chain read backwards. $\blacksquare$
+
+commentary: |
+  In algebra this is the quadratic $x^2 - bx + a^2/4 = 0$ with roots $\tfrac12(b \pm \sqrt{b^2 - a^2})$: the
+  roots are commensurable exactly when the discriminant's root is commensurable with $b$. [[X.18]] is the
+  incommensurable counterpart. Both are used to build and classify binomials and apotomes.

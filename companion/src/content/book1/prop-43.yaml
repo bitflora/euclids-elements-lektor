@@ -1,0 +1,161 @@
+id: I.43
+kind: theorem
+title: The complements in a parallelogram are equal
+
+paraphrase: |
+  Pick any point {K} on the diagonal {AC} of a parallelogram and draw lines through it parallel to
+  the sides. Of the four small parallelograms, the two that the diagonal does *not* cross — the
+  *complements* {BK} and {KD} — have equal areas.
+
+diagram:
+  width: 300
+  height: 240
+  elements:
+    - "A;point;free;80,35"
+    - "B;point;free;40,210"
+    - "C;point;free;215,210"
+    - "ABCD;polygon;parallelogram;A,B,C;0;0;black;0"
+    - "D;point;vertex;ABCD,4"
+    - "AC;line;connect;A,C"
+    - "K;point;lineSlider;AC,120,100"
+    - "Ep;point;parallelogram;K,A,D;0;0"
+    - "E;point;intersection;A,B,K,Ep"
+    - "H;point;parallelogram;A,E,K"
+    - "G;point;parallelogram;B,E,K"
+    - "F;point;parallelogram;C,G,K"
+    - "EF;line;connect;E,F"
+    - "GH;line;connect;G,H"
+    - "AK;line;connect;A,K;0;0;0"
+    - "KC;line;connect;K,C;0;0;0"
+    - "EH;polygon;quadrilateral;A,E,K,H;0;0;0;0"
+    - "FG;polygon;quadrilateral;K,G,C,F;0;0;0;0"
+    - "EBGK;polygon;quadrilateral;E,B,G,K;0;0;0;#efe4d2"
+    - "HDFK;polygon;quadrilateral;H,D,F,K;0;0;0;#efe4d2"
+    - "ABC;polygon;triangle;A,B,C;0;0;0;0"
+    - "ACD;polygon;triangle;A,C,D;0;0;0;0"
+    - "AEK;polygon;triangle;A,E,K;0;0;0;0"
+    - "AHK;polygon;triangle;A,H,K;0;0;0;0"
+    - "KFC;polygon;triangle;K,F,C;0;0;0;0"
+    - "KGC;polygon;triangle;K,G,C;0;0;0;0"
+  aliases:
+    BK: EBGK
+    KD: HDFK
+    ADC: ACD
+    CA: AC
+    KA: AK
+    CK: KC
+    FE: EF
+    HG: GH
+  given: [A, B, C, D, ABCD, AC, K, E, F, G, H, EF, GH, EBGK, HDFK]
+  caption: |
+    Drag {A}, {B} or {C}, and slide {K} along the diagonal. The two shaded complements change shape
+    but always have equal areas.
+
+steps:
+  - part: enunciation
+    text: "In any parallelogram the complements of the parallelograms about the diameter are equal to one another."
+    highlight: [BK, KD]
+    hint: |
+      The two off-diagonal pieces always have equal area.
+    explain:
+      fact: |
+        "Complements" (παραπληρώματα) are "the figures put in to fill up" the space left by the
+        parallelograms along the diagonal (Heath's note on line 1).
+
+  - part: setting-out
+    text: "Let ABCD be a parallelogram, and AC its diameter;"
+    highlight: [ABCD, AC]
+    hint: |
+      A parallelogram and its diagonal.
+
+  - part: setting-out
+    text: "and about AC let EH, FG be parallelograms, and BK, KD the so-called complements;"
+    highlight: [EH, FG, BK, KD]
+    hint: |
+      {EH} and {FG} sit "about" the diagonal (it is their diagonal too); {BK} and {KD} fill the rest.
+    explain:
+      implicit: |
+        Each parallelogram is named by two opposite corners: {EH} is {AEKH|EH}, {BK} is {EBGK}. Heath
+        notes that Euclid's wording makes the complements "about" the diagonal as well (his note on line 4).
+
+  - part: specification
+    text: "I say that the complement BK is equal to the complement KD."
+    highlight: [BK, KD]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, since ABCD is a parallelogram, and AC its diameter, the triangle ABC is equal to the triangle ACD."
+    highlight: [ABC, ACD]
+    hint: |
+      The big diagonal halves the whole ([[I.34]]).
+
+  - part: proof
+    text: "Again, since EH is a parallelogram, and AK is its diameter, the triangle AEK is equal to the triangle AHK."
+    highlight: [AEK, AHK]
+    hint: |
+      The diagonal {AK} halves the small parallelogram {EH} ([[I.34]]).
+    cites: [I.34]
+
+  - part: proof
+    text: "For the same reason the triangle KFC is also equal to KGC."
+    highlight: [KFC, KGC]
+    hint: |
+      And {KC} halves {FG}.
+
+  - part: proof
+    text: "Now, since the triangle AEK is equal to the triangle AHK, and KFC to KGC, the triangle AEK together with KGC is equal to the triangle AHK together with KFC."
+    highlight: [AEK, KGC, AHK, KFC]
+    hint: |
+      Add the equal pieces on each side of the diagonal ([[I.CN.2]]).
+
+  - part: proof
+    text: "And the whole triangle ABC is also equal to the whole ADC;"
+    highlight: [ABC, ACD]
+    hint: |
+      The two big halves are equal.
+
+  - part: proof
+    text: "therefore the complement BK which remains is equal to the complement KD which remains."
+    highlight: [BK, KD]
+    hint: |
+      Subtract the equal pieces from the equal halves ([[I.CN.3]]). What is left on each side is a complement.
+    modern: |
+      $$[EBGK] = [ABC] - [AEK] - [KGC] = [ACD] - [AHK] - [KFC] = [HDFK]$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* In coordinates along the sides: put $A$ at
+    the origin, $AB$ along $\mathbf u$, $AD$ along $\mathbf v$, so $C = \mathbf u + \mathbf v$ and
+    $K = t(\mathbf u + \mathbf v)$.
+  lines:
+    - steps: [1, 2, 3]
+      text: Complement $BK$ has sides $(1-t)\mathbf u$ and $t\mathbf v$; complement $KD$ has sides $t\mathbf u$ and $(1-t)\mathbf v$.
+    - steps: [4, 5, 6, 7, 8, 9]
+      text: Both have area $t(1-t)\,|\mathbf u \times \mathbf v|$. $\blacksquare$
+  closing: |
+    In the special case of a rectangle with sides $a$, $b$: the complements are $xy'$ and $x'y$ where
+    $x/a = y/b$ — the cross-multiplication of proportions in geometric dress.
+
+commentary: |
+  A lemma for [[I.44]], where it turns a parallelogram on one line into an equal parallelogram on
+  another. In Book VI it underlies the theory of proportion for areas: the complements' equality is
+  equivalent to $a : b = c : d \Rightarrow ad = bc$.
+
+gaps: |
+  - **{K} on the diagonal**: the parallels through {K} must cut the sides; Euclid assumes the
+    figure as drawn.
+
+historical: |
+  The "gnomon" of [[II.Def.2]] is made of one diagonal parallelogram with its two complements; I.43
+  is the first step into the geometric algebra of Book II.

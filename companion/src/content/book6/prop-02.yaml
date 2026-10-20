@@ -1,0 +1,185 @@
+id: VI.2
+kind: theorem
+title: A parallel to a side cuts the other sides proportionally
+
+paraphrase: |
+  In triangle {ABC}, a line {DE} parallel to {BC} cuts the other two sides proportionally: {BD} : {DA} = {CE} : {EA}.
+  Conversely, if {D}, {E} cut the sides proportionally, then {DE} is parallel to {BC}.
+
+diagram:
+  width: 290
+  height: 300
+  elements:
+    - "A;point;free;100,40"
+    - "B;point;free;30,270"
+    - "C;point;free;250,270"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;0"
+    - "D;point;lineSlider;A,B,60,190"
+    - "Ep;point;parallelogram;C,B,D;0;0"
+    - "E;point;intersection;D,Ep,A,C"
+    - "ADE;polygon;triangle;A,D,E;0;0;0;#efe4d2"
+    - "BDE;polygon;triangle;B,D,E;0;0;0;0"
+    - "CDE;polygon;triangle;C,D,E;0;0;0;0"
+    - "DC;line;connect;D,C"
+    - "DE;line;connect;D,E"
+    - "BE;line;connect;B,E"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "DA;line;connect;D,A;0;0;0"
+    - "CE;line;connect;C,E;0;0;0"
+    - "EA;line;connect;E,A;0;0;0"
+  aliases:
+    CD: DC
+  given: [A, B, C, ABC, D, E, DE, ADE, BC, AB, AC, BD, DA, CE, EA]
+  caption: |
+    Drag {A}, {B}, {C}, or slide {D} along {AB}; {DE} stays parallel to {BC}. The shaded triangle {ADE} is the "other
+    area" the proof compares with.
+
+steps:
+  - part: enunciation
+    text: "If a straight line be drawn parallel to one of the sides of a triangle, it will cut the sides of the triangle proportionally; and, if the sides of the triangle be cut proportionally, the line joining the points of section will be parallel to the remaining side of the triangle."
+    highlight: [ABC, DE, BC]
+    hint: |
+      $DE \parallel BC \iff BD : DA = CE : EA$.
+    explain:
+      implicit: |
+        "Proportionally" in a fixed correspondence: the piece next to {B} is to the piece next to {A} as the piece
+        next to {C} is to the piece next to {A}. Joyce notes that $BD : DA = AE : EC$ is *not* what is meant.
+    modern: |
+      $$DE \parallel BC \iff \frac{BD}{DA} = \frac{CE}{EA}$$
+
+  - part: setting-out
+    text: "For let DE be drawn parallel to BC, one of the sides of the triangle ABC;"
+    highlight: [DE, BC, ABC]
+    hint: |
+      First part: {DE} ∥ {BC}.
+
+  - part: specification
+    text: "I say that, as BD is to DA, so is CE to EA."
+    highlight: [BD, DA, CE, EA]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let BE, CD be joined."
+    highlight: [BE, CD]
+    adds: [BE, DC, BDE, CDE]
+    hint: |
+      Two diagonals, making triangles {BDE} and {CDE} on the common base {DE}.
+
+  - part: proof
+    text: "Therefore the triangle BDE is equal to the triangle CDE; for they are on the same base DE and in the same parallels DE, BC."
+    highlight: [BDE, CDE, DE, BC]
+    hint: |
+      Same base, same parallels: equal ([[I.38]] — strictly [[I.37]], same base).
+
+  - part: proof
+    text: "And the triangle ADE is another area."
+    highlight: [ADE]
+    hint: |
+      A third triangle to compare both with.
+
+  - part: proof
+    text: "But equals have the same ratio to the same; therefore, as the triangle BDE is to the triangle ADE, so is the triangle CDE to the triangle ADE."
+    highlight: [BDE, CDE, ADE]
+    hint: |
+      [[V.7]].
+
+  - part: proof
+    text: "But, as the triangle BDE is to ADE, so is BD to DA; for, being under the same height, the perpendicular drawn from E to AB, they are to one another as their bases."
+    highlight: [BDE, ADE, BD, DA]
+    hint: |
+      {BDE} and {ADE} have bases {BD}, {DA} on one line and the common vertex {E}: [[VI.1]].
+
+  - part: proof
+    text: "For the same reason also, as the triangle CDE is to ADE, so is CE to EA."
+    highlight: [CDE, ADE, CE, EA]
+    hint: |
+      Bases {CE}, {EA}, common vertex {D}.
+    cites: [VI.1]
+
+  - part: proof
+    text: "Therefore also, as BD is to DA, so is CE to EA."
+    highlight: [BD, DA, CE, EA]
+    hint: |
+      Chain the equal ratios ([[V.11]]).
+
+  - part: setting-out
+    text: "Again, let the sides AB, AC of the triangle ABC be cut proportionally, so that, as BD is to DA, so is CE to EA; and let DE be joined."
+    highlight: [BD, DA, CE, EA, DE]
+    hint: |
+      Converse: now the proportion is given.
+
+  - part: specification
+    text: "I say that DE is parallel to BC."
+    highlight: [DE, BC]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, with the same construction, since, as BD is to DA, so is CE to EA, but, as BD is to DA, so is the triangle BDE to the triangle ADE, and, as CE is to EA, so is the triangle CDE to the triangle ADE, therefore also, as the triangle BDE is to the triangle ADE, so is the triangle CDE to the triangle ADE."
+    highlight: [BDE, CDE, ADE]
+    hint: |
+      The same ratios as before, read in the other direction ([[VI.1]], [[V.11]]).
+
+  - part: proof
+    text: "Therefore each of the triangles BDE, CDE has the same ratio to ADE."
+    highlight: [BDE, CDE, ADE]
+    hint: |
+      Same ratio to the same.
+
+  - part: proof
+    text: "Therefore the triangle BDE is equal to the triangle CDE; and they are on the same base DE."
+    highlight: [BDE, CDE, DE]
+    hint: |
+      [[V.9]].
+
+  - part: proof
+    text: "But equal triangles which are on the same base are also in the same parallels."
+    highlight: [BDE, CDE]
+    hint: |
+      [[I.39]].
+
+  - part: proof
+    text: "Therefore DE is parallel to BC."
+    highlight: [DE, BC]
+    hint: |
+      Converse proved.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: |
+        $[BDE] : [ADE] = BD : DA$ and $[CDE] : [ADE] = CE : EA$ (common heights). Triangles {BDE}, {CDE}
+        share the base {DE}, so $[BDE] = [CDE]$ exactly when {B} and {C} are equally far from the line {DE},
+        i.e. when $DE \parallel BC$.
+    - steps: [9, 10, 11, 12, 13, 14, 15]
+      text: |
+        So $BD : DA = CE : EA \iff [BDE] = [CDE] \iff DE \parallel BC$. $\blacksquare$
+  closing: |
+    In coordinates: with $A$ at the origin, $D = sB$ and $E = tC$, and $DE \parallel BC \iff s = t$.
+
+commentary: |
+  The basic theorem of similar triangles (sometimes called the side-splitter theorem). Joyce notes that
+  the two halves are almost the same argument run backwards: both reduce to "{BDE} = {CDE}", which is
+  equivalent to the parallelism by [[I.37]] and [[I.39]].
+
+  VI.2 is used in [[VI.3]], [[VI.4]] and throughout the rest of Book VI.
+
+gaps: |
+  - **Sides produced**: the figure has {D}, {E} between the vertices. The same argument works when the
+    parallel meets the sides produced, a case Euclid does not mention.

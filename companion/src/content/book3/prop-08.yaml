@@ -1,0 +1,251 @@
+id: III.8
+kind: theorem
+title: Lines from a point outside the circle
+
+paraphrase: |
+  From a point {D} outside a circle draw lines through the circle. Of those reaching the far
+  (concave) side, the one through the centre ({DA}) is longest and the lengths decrease as they swing
+  away from it; of those stopping at the near (convex) side, the one along the diameter ({DG}) is
+  shortest and the lengths increase away from it. Equal lines come only in mirror pairs.
+
+diagram:
+  width: 270
+  height: 300
+  elements:
+    - "A;point;free;100,270"
+    - "D;point;free;210,30"
+    - "AD;line;connect;A,D"
+    - "M;point;lineSlider;A,D,140,200"
+    - "ABC;circle;radius;M,A;0;0;black;0"
+    - "G;point;extend;A,M,A,M"
+    - "E;point;circleSlider;ABC,70,230"
+    - "F;point;circleSlider;ABC,50,200"
+    - "C;point;circleSlider;ABC,30,150"
+    - "DE;line;connect;D,E"
+    - "DF;line;connect;D,F"
+    - "DC;line;connect;D,C"
+    - "ME;line;connect;M,E"
+    - "MF;line;connect;M,F"
+    - "MC;line;connect;M,C"
+    - "CH;line;chord;DC,ABC;0;0;0"
+    - "FL;line;chord;DF,ABC;0;0;0"
+    - "EK;line;chord;DE,ABC;0;0;0"
+    - "H;point;first;CH"
+    - "L;point;first;FL"
+    - "K;point;first;EK"
+    - "MH;line;connect;M,H"
+    - "MK;line;connect;M,K"
+    - "ML;line;connect;M,L"
+    - "Mk;point;foot;K,A,D;0;0"
+    - "B;point;extend;K,Mk,K,Mk"
+    - "DB;line;connect;D,B"
+    - "MB;line;connect;M,B"
+    - "DG;line;connect;D,G;0;0;0"
+    - "DK;line;connect;D,K;0;0;0"
+    - "DL;line;connect;D,L;0;0;0"
+    - "DH;line;connect;D,H;0;0;0"
+    - "MD;line;connect;M,D;0;0;0"
+    - "AM;line;connect;A,M;0;0;0"
+    - "MG;line;connect;M,G;0;0;0"
+    - "AG;line;connect;A,G;0;0;0"
+    - "MLD;polygon;triangle;M,L,D;0;0;0;0"
+    - "angEMD;sector;angleMarker;M,E,D"
+    - "angFMD;sector;angleMarker;M,F,D"
+    - "angKMD;sector;angleMarker;M,K,D"
+    - "angDMB;sector;angleMarker;M,D,B"
+  aliases:
+    DA: AD
+    ED: DE
+    FD: DF
+    CD: DC
+    EM: ME
+    FM: MF
+    KM: MK
+    BM: MB
+    GD: DG
+    KD: DK
+    LD: DL
+    EMD: angEMD
+    FMD: angFMD
+    KMD: angKMD
+    DMB: angDMB
+    BMD: angDMB
+  given: [A, D, AD, M, ABC, G, E, F, C, DE, DF, DC, H, L, K]
+  caption: |
+    Drag {A} and {D}, slide {M} and the points {E}, {F}, {C} on the circle. {B} is the mirror image of
+    {K} in the diameter, so {DB} = {DK}.
+
+steps:
+  - part: enunciation
+    text: "If a point be taken outside a circle and from the point straight lines be drawn through to the circle, one of which is through the centre and the others are drawn at random, then, of the straight lines which fall on the concave circumference, that through the centre is greatest, while of the rest the nearer to that through the centre is always greater than the more remote, but, of the straight lines falling on the convex circumference, that between the point and the diameter is least, while of the rest the nearer to the least is always less than the more remote, and only two equal straight lines will fall on the circle from the point, one on each side of the least."
+    highlight: [AD, DE, DF, DC, DG, DK, DL, DH]
+    hint: |
+      The companion of [[III.7]] for a point *outside* the circle.
+
+  - part: setting-out
+    text: "Let ABC be a circle, and let a point D be taken outside ABC; let there be drawn through from it straight lines DA, DE, DF, DC, and let DA be through the centre;"
+    highlight: [ABC, D, AD, DE, DF, DC]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that, of the straight lines falling on the concave circumference AEFC, the straight line DA through the centre is greatest, while DE is greater than DF and DF than DC; but, of the straight lines falling on the convex circumference HLKG, the straight line DG between the point and the diameter AG is least; and the nearer to the least DG is always less than the more remote, namely DK than DL, and DL than DH."
+    highlight: [AD, DE, DF, DC, DG, DK, DL, DH]
+    hint: |
+      Two chains of inequalities: far side decreasing away from {DA}, near side increasing away from {DG}.
+    explain:
+      implicit: |
+        "Concave" and "convex" circumference: the far and near arcs as seen from {D}.
+
+  - part: construction
+    text: "For let the centre of the circle ABC be taken, and let it be M;"
+    highlight: [M]
+    hint: |
+      The centre {M} ([[III.1]]).
+
+  - part: construction
+    text: "let ME, MF, MC, MK, ML, MH be joined."
+    highlight: [ME, MF, MC, MK, ML, MH]
+    hint: |
+      All the radii.
+
+  - part: proof
+    text: "Then, since AM is equal to EM, let MD be added to each; therefore AD is equal to EM, MD."
+    highlight: [AM, ME, MD, AD]
+    hint: |
+      {AD} = {AM} + {MD} = {EM} + {MD}.
+
+  - part: proof
+    text: "But EM, MD are greater than ED; therefore AD is also greater than ED."
+    highlight: [ME, MD, DE, AD]
+    hint: |
+      Triangle inequality ([[I.20]]). So {DA} is greatest.
+
+  - part: proof
+    text: "Again, since ME is equal to MF, and MD is common, therefore EM, MD are equal to FM, MD;"
+    highlight: [ME, MF, MD]
+    hint: |
+      Two pairs of equal sides.
+
+  - part: proof
+    text: "and the angle EMD is greater than the angle FMD; therefore the base ED is greater than the base FD."
+    highlight: [angEMD, angFMD, DE, DF]
+    hint: |
+      Hinge theorem ([[I.24]]).
+
+  - part: proof
+    text: "Similarly we can prove that FD is greater than CD;"
+    highlight: [DF, DC]
+    hint: |
+      Same.
+
+  - part: proof
+    text: "therefore DA is greatest, while DE is greater than DF, and DF than DC."
+    highlight: [AD, DE, DF, DC]
+    hint: |
+      The far-side chain proved.
+
+  - part: proof
+    text: "Next, since MK, KD are greater than MD, and MG is equal to MK, therefore the remainder KD is greater than the remainder GD, so that GD is less than KD."
+    highlight: [MK, DK, MD, MG, DG]
+    hint: |
+      Triangle inequality in {MKD|DK}, minus equal radii: {DG} is least.
+
+  - part: proof
+    text: "And, since on MD, one of the sides of the triangle MLD, two straight lines MK, KD were constructed meeting within the triangle, therefore MK, KD are less than ML, LD;"
+    highlight: [MLD, MK, DK, ML, DL]
+    hint: |
+      [[I.21]]: lines meeting inside a triangle are shorter in sum.
+
+  - part: proof
+    text: "and MK is equal to ML; therefore the remainder DK is less than the remainder DL."
+    highlight: [DK, DL]
+    hint: |
+      Subtract equal radii.
+
+  - part: proof
+    text: "Similarly we can prove that DL is also less than DH;"
+    highlight: [DL, DH]
+    hint: |
+      Same.
+
+  - part: proof
+    text: "therefore DG is least, while DK is less than DL, and DL than DH."
+    highlight: [DG, DK, DL, DH]
+    hint: |
+      The near-side chain proved.
+
+  - part: specification
+    text: "I say also that only two equal straight lines will fall from the point D on the circle, one on each side of the least DG."
+    highlight: [DK, DB]
+    hint: |
+      Equal lines in mirror pairs.
+
+  - part: construction
+    text: "On the straight line MD, and at the point M on it, let the angle DMB be constructed equal to the angle KMD, and let DB be joined."
+    highlight: [angDMB, angKMD, DB]
+    adds: [B, DB, MB]
+    hint: |
+      Copy ∠{KMD} to the other side of {MD} ([[I.23]]).
+    cites: [I.23]
+
+  - part: proof
+    text: "Then, since MK is equal to MB, and MD is common, the two sides KM, MD are equal to the two sides BM, MD respectively; and the angle KMD is equal to the angle BMD; therefore the base DK is equal to the base DB."
+    highlight: [DK, DB]
+    hint: |
+      SAS ([[I.4]]).
+
+  - part: proof
+    text: "I say that no other straight line equal to the straight line DK will fall on the circle from the point D."
+    highlight: [DK]
+    hint: |
+      Uniqueness of the pair.
+
+  - part: proof
+    text: "For, if possible, let a straight line so fall, and let it be DN."
+    hint: |
+      Suppose some other line *DN*.
+
+  - part: proof
+    text: "Then, since DK is equal to DN,"
+    highlight: [DK]
+    hint: |
+      …
+
+  - part: proof
+    text: "while DK is equal to DB, DB is also equal to DN, that is, the nearer to the least DG equal to the more remote: which was proved impossible."
+    highlight: [DB]
+    hint: |
+      Contradicts the ordering already proved.
+
+  - part: proof
+    text: "Therefore no more than two equal straight lines will fall on the circle ABC from the point D, one on each side of DG the least."
+    highlight: [DK, DB, DG]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved. (Heath's text has no Q.E.D. here.)
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: Let $MD = d > r$ and $P$ on the circle with $\theta = \angle PMD$.
+    - steps: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+      text: |
+        $DP^2 = r^2 + d^2 - 2rd\cos\theta$ increases with $\theta \in [0, \pi]$: least at $G$ ($\theta = 0$),
+        greatest at $A$ ($\theta = \pi$). Near-side and far-side points are ordered by $\theta$.
+    - steps: [16, 17, 18, 19, 20, 21, 22, 23]
+      text: Equal distances only for $\pm\theta$. $\blacksquare$
+
+commentary: |
+  With [[III.7]], the distance from a point to the points of a circle is fully described. The near-side
+  argument uses [[I.21]], one of its few uses in the *Elements*.
+
+gaps: |
+  - **Ordering by angle** is taken from the figure, as in [[III.7]].
+  - **{K} inside triangle {MLD}** is needed for [[I.21]]; it is taken from the figure.

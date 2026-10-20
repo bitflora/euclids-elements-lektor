@@ -1,0 +1,182 @@
+id: VII.8
+kind: theorem
+title: The same parts of two numbers are those parts of their difference
+
+paraphrase: |
+  If {AB} is the same parts of {CD} as {AE} is of {CF}, the remainder {EB} is those same parts of the
+  remainder {FD}: $\tfrac{m}{n} b - \tfrac{m}{n} e = \tfrac{m}{n}(b - e)$.
+
+diagram:
+  width: 280
+  height: 150
+  elements:
+    - "C0;point;free;-1000,40;0;0"
+    - "C3;point;free;1000,40;0;0"
+    - "G0;point;free;-1000,75;0;0"
+    - "G3;point;free;1000,75;0;0"
+    - "A0;point;free;-1000,110;0;0"
+    - "A3;point;free;1000,110;0;0"
+    - "A;point;lineSlider;A0,A3,40,110"
+    - "B;point;lineSlider;A0,A3,200,110"
+    - "AB;line;connect;A,B"
+    - "C;point;lineSlider;C0,C3,40,40"
+    - "D;point;lineSlider;C0,C3,240,110"
+    - "CD;line;connect;C,D"
+    - "P0;point;free;1000,1000;0;0"
+    - "P1;point;free;1000,1100;0;0"
+    - "P2;point;extend;P0,P1,P0,P1;0;0"
+    - "P3;point;extend;P1,P2,P0,P1;0;0"
+    - "E;point;proportion;P0,P3,P0,P2,A,B,A,B"
+    - "F;point;proportion;P0,P3,P0,P2,C,D,C,D"
+    - "G;point;lineSlider;G0,G3,40,75"
+    - "H;point;cutoff;G,G3,A,B"
+    - "GH;line;connect;G,H"
+    - "K;point;midpoint;G,H"
+    - "L;point;midpoint;A,E"
+    - "M;point;cutoff;G,H,A,L"
+    - "N;point;cutoff;K,H,E,B"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "CF;line;connect;C,F;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+    - "GK;line;connect;G,K;0;0;0"
+    - "KH;line;connect;K,H;0;0;0"
+    - "AL;line;connect;A,L;0;0;0"
+    - "LE;line;connect;L,E;0;0;0"
+    - "GM;line;connect;G,M;0;0;0"
+    - "MK;line;connect;M,K;0;0;0"
+    - "KN;line;connect;K,N;0;0;0"
+    - "NH;line;connect;N,H;0;0;0"
+  aliases: { BA: AB, HG: GH, DF: FD, HK: KH, EL: LE }
+  caption: |
+    {AB} is two thirds of {CD}; {GH} is a copy of {AB}, cut into thirds {GK}, {KH} of {CD}, while {AL},
+    {LE} are thirds of {CF}.
+
+steps:
+  - part: enunciation
+    text: "If a number be the same parts of a number that a number subtracted is of a number subtracted, the remainder will also be the same parts of the remainder that the whole is of the whole."
+    highlight: [AB, CD, AE, CF]
+    hint: |
+      [[VII.7]] for "parts" ($m/n$).
+    modern: |
+      $\tfrac{m}{n} b - \tfrac{m}{n} e = \tfrac{m}{n}(b - e)$.
+
+  - part: setting-out
+    text: "For let the number AB be the same parts of the number CD that AE subtracted is of CF subtracted;"
+    highlight: [AB, CD, AE, CF]
+    hint: |
+      {AB} is $m/n$ of {CD}; {AE} is $m/n$ of {CF}.
+
+  - part: specification
+    text: "I say that the remainder EB is also the same parts of the remainder FD that the whole AB is of the whole CD."
+    highlight: [EB, FD]
+    hint: |
+      To prove: {EB} is $m/n$ of {FD}.
+
+  - part: construction
+    text: "For let GH be made equal to AB."
+    highlight: [GH]
+    hint: |
+      A copy {GH} of {AB}, to work on.
+
+  - part: proof
+    text: "Therefore, whatever parts GH is of CD, the same parts also is AE of CF."
+    highlight: [GH, CD, AE, CF]
+    hint: |
+      {GH} is $m/n$ of {CD}, like {AE} of {CF}.
+
+  - part: construction
+    text: "Let GH be divided into the parts of CD, namely GK, KH, and AE into the parts of CF, namely AL, LE;"
+    highlight: [GK, KH, AL, LE]
+    hint: |
+      Split into the $n$th parts: {GK}, {KH} of {CD}; {AL}, {LE} of {CF}.
+
+  - part: proof
+    text: "thus the multitude of GK, KH will be equal to the multitude of AL, LE."
+    highlight: [GK, KH, AL, LE]
+    hint: |
+      $m$ pieces each.
+
+  - part: proof
+    text: "Now since, whatever part GK is of CD, the same part also is AL of CF, while. CD is greater than CF, therefore GK is also greater than AL."
+    highlight: [GK, AL, CD, CF]
+    hint: |
+      The same part of a greater number is greater.
+    explain:
+      implicit: |
+        That the same part of a greater number is greater is assumed (for magnitudes it follows from
+        [[V.Def.5]]-style arguments; here it is treated as evident).
+
+  - part: construction
+    text: "Let GM be made equal to AL."
+    highlight: [GM, AL]
+    hint: |
+      Mark {GM} = {AL} inside {GK}.
+
+  - part: proof
+    text: "Therefore, whatever part GK is of CD, the same part also is GM of CF; therefore also the remainder MK is the same part of the remainder FD that the whole GK is of the whole CD."
+    highlight: [GK, GM, MK, FD]
+    hint: |
+      By [[VII.7]], the remainder {MK} is the same part of {FD}.
+
+  - part: proof
+    text: "Again, since, whatever part KH is of CD, the same part also is EL of CF, while CD is greater than CF, therefore HK is also greater than EL."
+    highlight: [KH, LE]
+    hint: |
+      The same for the second pieces: {HK} > {EL}.
+
+  - part: construction
+    text: "Let KN be made equal to EL."
+    highlight: [KN, LE]
+    hint: |
+      Mark {KN} = {EL}.
+
+  - part: proof
+    text: "Therefore, whatever part KH is of CD, the same part also is KN of CF; therefore also the remainder NH is the same part of the remainder FD that the whole KH is of the whole CD."
+    highlight: [KH, KN, NH, FD]
+    hint: |
+      By [[VII.7]] again, {NH} is the same part of {FD}.
+
+  - part: proof
+    text: "But the remainder MK was also proved to be the same part of the remainder FD that the whole GK is of the whole CD; therefore also the sum of MK, NH is the same parts of DF that the whole HG is of the whole CD."
+    highlight: [MK, NH, FD, GH, CD]
+    hint: |
+      Together {MK} + {NH} is $m/n$ of {DF}.
+    explain:
+      implicit: |
+        The step from "each is the same part" to "the sum is the same parts" is just the meaning of
+        "parts" ([[VII.Def.4]]).
+
+  - part: proof
+    text: "But the sum of MK, NH is equal to EB, and HG is equal to BA; therefore the remainder EB is the same parts of the remainder FD that the whole AB is of the whole CD."
+    highlight: [MK, NH, EB, FD]
+    hint: |
+      {MK} + {NH} = {GH} − {AE} = {AB} − {AE} = {EB}. Done.
+    cites: [I.CN.3]
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6]
+      text: |
+        $AB = m \cdot \tfrac1n CD$, $AE = m \cdot \tfrac1n CF$.
+    - steps: [7, 8, 9, 10, 11, 12]
+      text: |
+        Piece by piece, $\tfrac1n CD - \tfrac1n CF = \tfrac1n (CD - CF) = \tfrac1n FD$ ([[VII.7]]).
+    - steps: [13, 14]
+      text: |
+        Summing $m$ pieces: $EB = AB - AE = m \cdot \tfrac1n FD$. $\blacksquare$
+
+commentary: |
+  Euclid's figure takes two thirds. With [[VII.5]]–[[VII.7]] this completes the distributive laws for
+  fractions; they are combined in [[VII.11]].
+
+gaps: |
+  - "The same part of the greater is greater" (steps 7 and 10) is assumed.
+  - Typical case (two pieces).

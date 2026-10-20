@@ -1,0 +1,178 @@
+id: VIII.18
+kind: theorem
+title: One mean between similar plane numbers
+
+paraphrase: |
+  Between two similar plane numbers {A} = {C}{D} and {B} = {E}{F} (with {C} : {D} = {E} : {F}) there is one
+  mean proportional, and {A} : {B} is the duplicate of {C} : {E}.
+
+diagram:
+  width: 250
+  height: 200
+  elements:
+    - "A0;point;free;-1000,35;0;0"
+    - "A3;point;free;1000,35;0;0"
+    - "B0;point;free;-1000,70;0;0"
+    - "B3;point;free;1000,70;0;0"
+    - "C0;point;free;-1000,105;0;0"
+    - "C3;point;free;1000,105;0;0"
+    - "D0;point;free;-1000,140;0;0"
+    - "D3;point;free;1000,140;0;0"
+    - "G0;point;free;-1000,175;0;0"
+    - "G3;point;free;1000,175;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,25;0;0"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,70,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;lineSlider;D0,D3,85,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;C0,C3,130,0;0"
+    - "E2;point;lineSlider;C0,C3,200,0;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;D0,D3,130,0;0"
+    - "F2;point;lineSlider;D0,D3,190,0;0"
+    - "F;line;connect;F1,F2;black"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;proportion;U1,U2,C1,C2,D1,D2,A1,A3;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;proportion;U1,U2,E1,E2,F1,F2,B1,B3;0"
+    - "B;line;connect;B1,B2;black"
+    - "G1;point;lineSlider;G0,G3,30,0;0"
+    - "G2;point;proportion;U1,U2,D1,D2,E1,E2,G1,G3;0"
+    - "G;line;connect;G1,G2;black"
+  caption: |
+    {A} = {C}{D}, {B} = {E}{F} with {C} : {D} = {E} : {F}; the mean is {G} = {D}{E}.
+
+steps:
+  - part: enunciation
+    text: "Between two similar plane numbers there is one mean proportional number; and the plane number has to the plane number the ratio duplicate of that which the corresponding side has to the corresponding side."
+    highlight: [A, B]
+    hint: |
+      Generalises [[VIII.11]] from squares to similar rectangles of numbers.
+    modern: |
+      $c : d = e : f \Rightarrow cd : de = de : ef$, and $cd : ef = (c : e)^2$.
+
+  - part: setting-out
+    text: "Let A, B be two similar plane numbers, and let the numbers C, D be the sides of A, and E, F of B."
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      {A} = {C}{D}, {B} = {E}{F}.
+
+  - part: proof
+    text: "Now, since similar plane numbers are those which have their sides proportional, therefore, as C is to D, so is E to F."
+    highlight: [C, D, E, F]
+    hint: |
+      [[VII.Def.21]].
+
+  - part: specification
+    text: "I say then that between A, B there is one mean proportional number, and A has to B the ratio duplicate of that which C has to E, or D to F, that is, of that which the corresponding side has to the corresponding side."
+    highlight: [A, B]
+    hint: |
+      Two claims.
+
+  - part: proof
+    text: "Now since, as C is to D, so is E to F, therefore, alternately, as C is to E, so is D to F."
+    highlight: [C, E, D, F]
+    hint: |
+      Alternate ([[VII.13]]).
+
+  - part: proof
+    text: "And, since A is plane, and C, D are its sides, therefore D by multiplying C has made A."
+    highlight: [D, C, A]
+    hint: |
+      {A} = {D}{C}.
+
+  - part: proof
+    text: "For the same reason also E by multiplying F has made B."
+    highlight: [E, F, B]
+    hint: |
+      {B} = {E}{F}.
+
+  - part: construction
+    text: "Now let D by multiplying E make G."
+    highlight: [G]
+    hint: |
+      The mean: {G} = {D}{E}.
+
+  - part: proof
+    text: "Then, since D by multiplying C has made A, and by multiplying E has made G, therefore, as C is to E, so is A to G."
+    highlight: [C, E, A, G]
+    hint: |
+      [[VII.17]].
+
+  - part: proof
+    text: "But, as C is to E, so is D to F; therefore also, as D is to F, so is A to G."
+    highlight: [D, F, A, G]
+    hint: |
+      {A} : {G} = {D} : {F}.
+
+  - part: proof
+    text: "Again, since E by multiplying D has made G, and by multiplying F has made B, therefore, as D is to F, so is G to B."
+    highlight: [D, F, G, B]
+    hint: |
+      [[VII.17]].
+
+  - part: proof
+    text: "But it was also proved that, as D is to F, so is A to G; therefore also, as A is to G, so is G to B."
+    highlight: [A, G, B]
+    hint: |
+      {A} : {G} = {G} : {B}.
+
+  - part: proof
+    text: "Therefore A, G, B are in continued proportion."
+    highlight: [A, G, B]
+    hint: |
+      In continued proportion.
+
+  - part: proof
+    text: "Therefore between A, B there is one mean proportional number."
+    highlight: [G]
+    hint: |
+      First claim.
+
+  - part: specification
+    text: "I say next that A also has to B the ratio duplicate of that which the corresponding side has to the corresponding side, that is, of that which C has to E or D to F."
+    highlight: [A, B]
+    hint: |
+      Second claim.
+
+  - part: proof
+    text: "For, since A, G, B are in continued proportion, A has to B the ratio duplicate of that which it has to G."
+    highlight: [A, G, B]
+    hint: |
+      [[V.Def.9]].
+
+  - part: proof
+    text: "And, as A is to G, so is C to E, and so is D to F."
+    highlight: [A, G]
+    hint: |
+      Shown above.
+
+  - part: proof
+    text: "Therefore A also has to B the ratio duplicate of that which C has to E or D to F."
+    highlight: [A, B]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Let $c : e = d : f = r$.
+  lines:
+    - steps: [5, 6, 7, 8, 9, 10, 11, 12, 13]
+      text: |
+        $cd : de = c : e = r$ and $de : ef = d : f = r$.
+    - steps: [14, 15, 16, 17]
+      text: |
+        So $cd : ef = r^2$. $\blacksquare$
+
+commentary: |
+  The converse is [[VIII.20]]. Joyce's second figure (not used here) draws the numbers as rectangles, which
+  is the picture behind the word "plane".

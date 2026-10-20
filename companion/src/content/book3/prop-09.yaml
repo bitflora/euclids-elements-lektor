@@ -1,0 +1,146 @@
+id: III.9
+kind: theorem
+title: A point with three equal distances to the circle is the centre
+
+paraphrase: |
+  If more than two equal lines can be drawn from a point inside a circle to the circle, the point is
+  the centre.
+
+diagram:
+  width: 250
+  height: 240
+  elements:
+    - "A;point;free;70,190"
+    - "B;point;free;70,50"
+    - "C;point;free;210,90"
+    - "ABC;circle;circumcircle;A,B,C;0;0;black;0"
+    - "D;point;center;ABC"
+    - "DA;line;connect;D,A"
+    - "DB;line;connect;D,B"
+    - "DC;line;connect;D,C"
+    - "AB;line;connect;A,B"
+    - "BC;line;connect;B,C"
+    - "E;point;midpoint;A,B"
+    - "F;point;midpoint;B,C"
+    - "GK;line;chord;D,E,ABC"
+    - "G;point;first;GK"
+    - "K;point;last;GK"
+    - "HL;line;chord;D,F,ABC"
+    - "H;point;first;HL"
+    - "L;point;last;HL"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+    - "angAED;sector;angleMarker;E,A,D"
+    - "angBED;sector;angleMarker;E,D,B"
+  aliases:
+    AD: DA
+    BD: DB
+    CD: DC
+    BE: EB
+    DE: ED
+    DF: FD
+    AED: angAED
+    BED: angBED
+  given: [A, B, C, ABC, D, DA, DB, DC]
+  caption: |
+    Drag {A}, {B}, {C}. The perpendicular bisectors of {AB} and {BC} always meet at the centre {D}.
+
+steps:
+  - part: enunciation
+    text: "If a point be taken within a circle, and more than two equal straight lines fall from the point on the circle, the point taken is the centre of the circle."
+    highlight: [D, DA, DB, DC]
+    hint: |
+      Three equal distances to the circle pin down the centre.
+    explain:
+      implicit: |
+        Compare [[III.7]]: from any other point inside, at most *two* equal lines reach the circle.
+
+  - part: setting-out
+    text: "Let ABC be a circle and D a point within it, and from D let more than two equal straight lines, namely DA, DB, DC, fall on the circle ABC;"
+    highlight: [DA, DB, DC]
+    hint: |
+      {DA} = {DB} = {DC}.
+
+  - part: specification
+    text: "I say that the point D is the centre of the circle ABC."
+    highlight: [D]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let AB, BC be joined and bisected at the points E, F, and let ED, FD be joined and drawn through to the points G, K, H, L."
+    highlight: [AB, BC, E, F, GK, HL]
+    adds: [AB, BC, E, F, GK, HL, G, K, H, L]
+    hint: |
+      Join chords {AB}, {BC}, bisect them at {E}, {F} ([[I.10]]), and draw {ED}, {FD} across the circle.
+    cites: [I.10]
+
+  - part: proof
+    text: "Then, since AE is equal to EB, and ED is common, the two sides AE, ED are equal to the two sides BE, ED; and the base DA is equal to the base DB; therefore the angle AED is equal to the angle BED."
+    highlight: [AE, EB, ED, DA, DB, angAED, angBED]
+    hint: |
+      SSS ([[I.8]]).
+
+  - part: proof
+    text: "Therefore each of the angles AED, BED is right;"
+    highlight: [angAED, angBED]
+    hint: |
+      [[I.Def.10]].
+
+  - part: proof
+    text: "therefore GK cuts AB into two equal parts and at right angles."
+    highlight: [GK, AB]
+    hint: |
+      {GK} is the perpendicular bisector of {AB}.
+
+  - part: proof
+    text: "And since, if in a circle a straight line cut a straight line into two equal parts and at right angles, the centre of the circle is on the cutting straight line, the centre of the circle is on GK."
+    highlight: [GK]
+    hint: |
+      The porism of [[III.1]]: the centre is on {GK}.
+
+  - part: proof
+    text: "For the same reason the centre of the circle ABC is also on HL."
+    highlight: [HL]
+    hint: |
+      Likewise on {HL}.
+
+  - part: proof
+    text: "And the straight lines GK, HL have no other point common but the point D; therefore the point D is the centre of the circle ABC."
+    highlight: [GK, HL, D]
+    hint: |
+      Two lines meet in at most one point. So {D} is the centre.
+    explain:
+      implicit: |
+        That two distinct straight lines have at most one common point — used constantly, never stated.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      text: |
+        $D$ is equidistant from $A, B, C$, so it lies on the perpendicular bisectors of $AB$ and $BC$, as
+        does the centre. These lines are distinct ($A, B, C$ not collinear), so they meet in one point:
+        $D$ is the centre. $\blacksquare$
+
+commentary: |
+  III.9 turns [[III.7]] around: an interior point other than the centre has at most two equal distances
+  to the circle, so a point with three is the centre. Euclid's proof, though, does not use III.7: it
+  locates the centre with two perpendicular bisectors.
+
+gaps: |
+  - **{GK} and {HL} are distinct lines**: they would coincide only if {A}, {B}, {C} were collinear,
+    which three points on a circle cannot be ([[III.2]]).

@@ -1,0 +1,144 @@
+id: IV.2
+kind: problem
+title: Inscribing a triangle of given shape
+
+paraphrase: |
+  In a given circle, inscribe a triangle with the same angles as a given triangle {DEF}.
+
+diagram:
+  width: 350
+  height: 290
+  elements:
+    - "D;point;free;250,180"
+    - "E;point;free;230,50"
+    - "F;point;free;320,130"
+    - "DEF;polygon;triangle;D,E,F;0;0;black;#dfe7ea"
+    - "A;point;free;100,220"
+    - "B;point;free;110,40"
+    - "C;point;similar;A,B,D,E,F"
+    - "ABC;circle;circumcircle;A,B,C;0;0;black;0"
+    - "triABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "O;point;center;ABC;0;0"
+    - "AGp;line;perpendicular;A,O;0;0;0"
+    - "G;point;lineSlider;AGp,35,190"
+    - "H;point;lineSlider;AGp,200,250"
+    - "GH;line;connect;G,H"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "angHAC;sector;angleMarker;A,H,C"
+    - "angGAB;sector;angleMarker;A,G,B"
+    - "angABC;sector;angleMarker;B,A,C"
+    - "angACB;sector;angleMarker;C,A,B"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angDEF;sector;angleMarker;E,D,F"
+    - "angDFE;sector;angleMarker;F,D,E"
+    - "angEDF;sector;angleMarker;D,E,F"
+  aliases:
+    AH: GH
+    AG: GH
+    HAC: angHAC
+    GAB: angGAB
+    ACB: angACB
+    BAC: angBAC
+    EDF: angEDF
+    DFE: angDFE
+  given: [ABC, A, DEF, D, E, F]
+  caption: |
+    Drag the corners of {DEF}, or {A} and {B}. The triangle in the circle always has the angles of {DEF}.
+
+steps:
+  - part: enunciation
+    text: "In a given circle to inscribe a triangle equiangular with a given triangle."
+    highlight: [ABC, triABC, DEF]
+    hint: |
+      A problem: a triangle of given shape inside a circle.
+    explain:
+      fact: |
+        "Inscribed in a circle": every vertex on the circle ([[IV.Def.3]]).
+    cites: [IV.Def.3]
+
+  - part: setting-out
+    text: "Let ABC be the given circle, and DEF the given triangle;"
+    highlight: [ABC, DEF]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to inscribe in the circle ABC a triangle equiangular with the triangle DEF."
+    highlight: [ABC, DEF]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let GH be drawn touching the circle ABC at A;"
+    highlight: [GH, A]
+    adds: [G, H, GH]
+    hint: |
+      A tangent at any point {A} (porism to [[III.16]]).
+
+  - part: construction
+    text: "on the straight line AH, and at the point A on it, let the angle HAC be constructed equal to the angle DEF, and on the straight line AG, and at the point A on it, let the angle GAB be constructed equal to the angle DFE;"
+    highlight: [angHAC, angDEF, angGAB, angDFE]
+    adds: [B, C, AB, AC, angHAC, angGAB]
+    hint: |
+      Copy two angles of {DEF} against the tangent ([[I.23]]).
+
+  - part: construction
+    text: "let BC be joined."
+    highlight: [BC]
+    adds: [BC, triABC]
+    hint: |
+      The triangle {ABC|triABC}.
+
+  - part: proof
+    text: "Then, since a straight line AH touches the circle ABC, and from the point of contact at A the straight line AC is drawn across in the circle, therefore the angle HAC is equal to the angle ABC in the alternate segment of the circle."
+    highlight: [angHAC, angABC]
+    hint: |
+      [[III.32]].
+
+  - part: proof
+    text: "But the angle HAC is equal to the angle DEF; therefore the angle ABC is also equal to the angle DEF."
+    highlight: [angABC, angDEF]
+    hint: |
+      ∠{ABC|angABC} = ∠{DEF|angDEF}.
+
+  - part: proof
+    text: "For the same reason the angle ACB is also equal to the angle DFE;"
+    highlight: [angACB, angDFE]
+    hint: |
+      Likewise on the other side.
+
+  - part: proof
+    text: "therefore the remaining angle BAC is also equal to the remaining angle EDF."
+    highlight: [angBAC, angEDF]
+    hint: |
+      Angle sum ([[I.32]]).
+
+  - part: conclusion
+    text: "Therefore in the given circle there has been inscribed a triangle equiangular with the given triangle."
+    highlight: [triABC]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6]
+      text: Choose chords subtending central angles $2\angle E$, $2\angle F$, $2\angle D$ (summing to $360^\circ$).
+    - steps: [7, 8, 9, 10]
+      text: Their inscribed angles are $\angle E$, $\angle F$, $\angle D$ (III.20). $\blacksquare$
+
+commentary: |
+  IV.2 and [[IV.3]] are the triangle cases of Book IV's two questions: polygons *in* a circle and polygons
+  *about* a circle. The tangent–chord angle ([[III.32]]) does the work.
+
+gaps: |
+  - **{AB}, {AC} meet the circle again**: the copied lines are chords, which needs the angles to be less
+    than two right angles together — true for a triangle's angles.

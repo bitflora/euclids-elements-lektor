@@ -1,0 +1,64 @@
+id: XI.12
+kind: problem
+title: To erect a perpendicular to a plane at a point
+
+paraphrase: |
+  At a point {A} of a plane, set up a line {AD} perpendicular to the plane.
+
+diagram:
+  width: 240
+  height: 200
+  elements:
+    - "X;point;free;100000,100"
+    - "Y;point;free;100,-100000"
+    - "Z;point;free;50000,-100000"
+    - "P0;point;free;30,170;0;0,75,100"
+    - "P1;point;lineSlider;P0,X,160,170;0;30,75,100"
+    - "P3;point;lineSlider;P0,Z,90,90;0;30,75,100"
+    - "P2;point;parallelogram;P3,P0,P1;0;0"
+    - "P;polygon;quadrilateral;P0,P1,P2,P3;0;0;lightGray;brighter"
+    - "A;point;free;80,140"
+    - "B;point;free;150,40"
+    - "C;point;lineSlider;B,Y,150,120"
+    - "BC;line;connect;B,C"
+    - "D;point;parallelogram;A,C,B"
+    - "AD;line;connect;A,D"
+  aliases: { CB: BC, DA: AD }
+  caption: |
+    {BC} is the perpendicular dropped from some point {B} ([[XI.11]]); {AD} ∥ {BC}.
+
+steps:
+  - part: enunciation
+    text: "To set up a straight line at right angles to a given plane from a given point in it."
+    highlight: [AD]
+    hint: |
+      Erect a perpendicular at a point.
+
+  - part: setting-out
+    text: "Let the plane of reference be the given plane, and A the point in it; thus it is required to set up from the point A a straight line at right angles to the plane of reference."
+    highlight: [AD]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "Let any elevated point B be conceived, from B let BC be drawn perpendicular to the plane of reference, and through the point A let AD be drawn parallel to BC."
+    highlight: [BC, AD]
+    hint: |
+      Drop a perpendicular {BC} from any point {B} above ([[XI.11]]); draw {AD} ∥ {BC} ([[I.31]]).
+
+  - part: proof
+    text: "Then, since AD, CB are two parallel straight lines, while one of them, BC, is at right angles to the plane of reference, therefore the remaining one, AD, is also at right angles to the plane of reference."
+    highlight: [AD]
+    hint: |
+      {AD} ⊥ the plane ([[XI.8]]).
+
+  - part: proof
+    text: "Therefore AD has been set up at right angles to the given plane from the point A in it."
+    highlight: [AD]
+    hint: |
+      Done.
+
+reconstruction:
+  lines:
+    - text: |
+        Translate a perpendicular. $\blacksquare$

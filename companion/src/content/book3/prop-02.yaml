@@ -1,0 +1,162 @@
+id: III.2
+kind: theorem
+title: A chord lies inside the circle
+
+paraphrase: |
+  The segment joining two points of a circle lies inside the circle: a circle is *convex*.
+
+diagram:
+  width: 260
+  height: 260
+  elements:
+    - "A;point;free;50,130"
+    - "B;point;free;120,205"
+    - "Cp;point;free;200,50;0"
+    - "ABC;circle;circumcircle;A,B,Cp;0;0;black;0"
+    - "D;point;center;ABC"
+    - "E;point;free;65,215"
+    - "AEB;sector;arc;A,E,B;0;0;black;0"
+    - "DE;line;connect;D,E"
+    - "F;point;cutoff;D,E,D,A"
+    - "DA;line;connect;D,A"
+    - "DB;line;connect;D,B"
+    - "AB;line;connect;A,B;0;0;0"
+    - "DAE;polygon;triangle;D,A,E;0;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "angDAE;sector;angleMarker;A,D,E"
+    - "angDBE;sector;angleMarker;B,E,D"
+    - "angDEB;sector;angleMarker;E,D,B"
+  aliases:
+    AD: DA
+    BD: DB
+    DFE: DE
+    DF: DE
+  given: [A, B, ABC]
+  caption: |
+    {AEB} pictures the "line" the proof supposes to fall outside the circle. Drag {E}: as long as it is
+    outside the circle, {DE} is longer than the radius — which is the contradiction.
+
+steps:
+  - part: enunciation
+    text: "If on the circumference of a circle two points be taken at random, the straight line joining the points will fall within the circle."
+    highlight: [ABC, AB]
+    hint: |
+      A chord lies inside the circle.
+
+  - part: setting-out
+    text: "Let ABC be a circle, and let two points A, B be taken at random on its circumference;"
+    highlight: [ABC, A, B]
+    hint: |
+      Two points on a circle.
+
+  - part: specification
+    text: "I say that the straight line joined from A to B will fall within the circle."
+    highlight: [AB]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For suppose it does not, but, if possible, let it fall outside, as AEB;"
+    highlight: [AEB]
+    adds: [E, AEB]
+    hint: |
+      Reductio: suppose the line from {A} to {B} goes outside, as {AEB}.
+    explain:
+      implicit: |
+        The figure has to draw a *straight* line as a curve outside the circle — the impossible
+        figure that every reductio needs.
+
+  - part: construction
+    text: "let the centre of the circle ABC be taken, and let it be D;"
+    highlight: [D]
+    adds: [D]
+    hint: |
+      Find the centre {D} ([[III.1]]).
+
+  - part: construction
+    text: "let DA, DB be joined, and let DFE be drawn through."
+    highlight: [DA, DB, DE]
+    adds: [DA, DB, DE, F]
+    hint: |
+      Join the radii {DA}, {DB}; draw {DE} to a point {E} of the supposed line, cutting the circle at {F}.
+
+  - part: proof
+    text: "Then, since DA is equal to DB, the angle DAE is also equal to the angle DBE."
+    highlight: [DA, DB, angDAE, angDBE]
+    hint: |
+      Triangle {DAB|AB} is isosceles: equal base angles ([[I.5]]).
+
+  - part: proof
+    text: "And, since one side AEB of the triangle DAE is produced, the angle DEB is greater than the angle DAE."
+    highlight: [DAE, angDEB, angDAE]
+    hint: |
+      Exterior angle of triangle {DAE} ([[I.16]]).
+
+  - part: proof
+    text: "But the angle DAE is equal to the angle DBE; therefore the angle DEB is greater than the angle DBE."
+    highlight: [angDEB, angDBE]
+    hint: |
+      So in triangle {DEB|DB}, the angle at {E} beats the angle at {B}.
+
+  - part: proof
+    text: "And the greater angle is subtended by the greater side; therefore DB is greater than DE."
+    highlight: [DB, DE]
+    hint: |
+      [[I.19]].
+
+  - part: proof
+    text: "But DB is equal to DF; therefore DF is greater than DE, the less than the greater: which is impossible."
+    highlight: [DE]
+    hint: |
+      {DF} is a radius, but it is only part of {DE}. Contradiction.
+    cites: [I.Def.15, I.CN.5]
+
+  - part: proof
+    text: "Therefore the straight line joined from A to B will not fall outside the circle."
+    highlight: [AB]
+    hint: |
+      So the line does not go outside.
+
+  - part: proof
+    text: "Similarly we can prove that neither will it fall on the circumference itself; therefore it will fall within."
+    highlight: [AB]
+    hint: |
+      Nor along the circumference: so inside.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3]
+      text: Let $|A - O| = |B - O| = r$ and $P = (1 - t)A + tB$, $0 < t < 1$.
+    - steps: [4, 5, 6, 7, 8, 9, 10, 11, 12]
+      text: |
+        By the triangle inequality (strict, since $A \ne B$), $|P - O| < (1 - t)r + tr = r$. So every
+        interior point of the chord is inside the circle. $\blacksquare$
+  closing: |
+    In modern terms III.2 says the disc is a strictly convex set.
+
+commentary: |
+  A basic fact about the circle — convexity — proved by contradiction. The figure must show a
+  "straight line" {AEB} bending outside the circle: the impossible case the reductio refutes.
+
+gaps: |
+  - **"Similarly" for the circumference** (step 9): the case where the line runs along the
+    circumference needs a different picture.
+  - **The supposed line meets {DE} at {E} outside the circle**, an impossible configuration drawn as
+    if it were possible.
+
+historical: |
+  Proclus's surviving commentary covers only Book I, so for Books II–XIII the ancient discussion comes
+  mainly from the scholia and later commentators. Modern axiomatic treatments derive III.2 from the
+  triangle inequality, as in the reconstruction.

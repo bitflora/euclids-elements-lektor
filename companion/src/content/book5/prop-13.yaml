@@ -1,0 +1,164 @@
+id: V.13
+kind: theorem
+title: Same ratio and greater ratio
+
+paraphrase: |
+  If {A} : {B} = {C} : {D}, and {C} : {D} is greater than {E} : {F}, then {A} : {B} is greater than {E} : {F}.
+
+diagram:
+  width: 500
+  height: 150
+  elements:
+    - "U0;point;free;-1000,30;0;0"
+    - "U1;point;free;1000,30;0;0"
+    - "V0;point;free;-1000,60;0;0"
+    - "V1;point;free;1000,60;0;0"
+    - "W0;point;free;-1000,100;0;0"
+    - "W1;point;free;1000,100;0;0"
+    - "X0;point;free;-1000,130;0;0"
+    - "X1;point;free;1000,130;0;0"
+    - "A0;point;lineSlider;U0,U1,30,30;0"
+    - "A1;point;lineSlider;U0,U1,90,30;0"
+    - "A;line;connect;A0,A1;black;0;magenta"
+    - "B0;point;lineSlider;V0,V1,30,60;0"
+    - "B1;point;lineSlider;V0,V1,65,60;0"
+    - "B;line;connect;B0,B1;black;0;magenta"
+    - "C0;point;lineSlider;U0,U1,200,30;0"
+    - "C1;point;lineSlider;U0,U1,260,30;0"
+    - "C;line;connect;C0,C1;black;0;blue"
+    - "D0;point;lineSlider;V0,V1,200,60;0"
+    - "D1;point;proportion;A0,A1,B0,B1,C0,C1,D0,V1;0"
+    - "D;line;connect;D0,D1;black;0;blue"
+    - "E0;point;lineSlider;U0,U1,370,30;0"
+    - "E1;point;lineSlider;U0,U1,405,30;0"
+    - "E;line;connect;E0,E1;black;0;green"
+    - "F0;point;lineSlider;V0,V1,370,60;0"
+    - "F1;point;lineSlider;V0,V1,380,60;0;0"
+    - "F2;point;proportion;A0,A1,B0,B1,E0,E1,F1,V1;0"
+    - "F;line;connect;F0,F2;black;0;green"
+    - "G0;point;lineSlider;W0,W1,200,30;0"
+    - "G1;point;cutoff;G0,W1,C0,C1;0;lightGray"
+    - "G2;point;cutoff;G1,W1,C0,C1;0"
+    - "G;line;connect;G0,G2;black;0;blue"
+    - "L0;point;lineSlider;X0,X1,370,60;0"
+    - "L1;point;cutoff;L0,X1,F0,F2;0;lightGray"
+    - "L2;point;cutoff;L1,X1,F0,F2;0;lightGray"
+    - "L3;point;cutoff;L2,X1,F0,F2;0"
+    - "L;line;connect;L0,L3;black;0;green"
+    - "H0;point;lineSlider;W0,W1,370,30;0"
+    - "H1;point;cutoff;H0,W1,E0,E1;0;lightGray"
+    - "H2;point;cutoff;H1,W1,E0,E1;0"
+    - "H;line;connect;H0,H2;black;0;green"
+    - "M0;point;lineSlider;W0,W1,30,60;0"
+    - "M1;point;cutoff;M0,W1,A0,A1;0;lightGray"
+    - "M2;point;cutoff;M1,W1,A0,A1;0"
+    - "M;line;connect;M0,M2;black;0;magenta"
+    - "K0;point;lineSlider;X0,X1,200,30;0"
+    - "K1;point;cutoff;K0,X1,D0,D1;0;lightGray"
+    - "K2;point;cutoff;K1,X1,D0,D1;0;lightGray"
+    - "K3;point;cutoff;K2,X1,D0,D1;0"
+    - "K;line;connect;K0,K3;black;0;blue"
+    - "N0;point;lineSlider;X0,X1,30,60;0"
+    - "N1;point;cutoff;N0,X1,B0,B1;0;lightGray"
+    - "N2;point;cutoff;N1,X1,B0,B1;0"
+    - "N;line;connect;N0,N2;black;0;magenta"
+  caption: |
+    {D} is constructed so that $A : B = C : D$, and {F} a little longer than would make $E : F$ the same, so
+    that $E : F$ is less. {G}, {H} are twice {C}, {E}; {K}, {L} three times {D}, {F}; {M} is twice {A} and {N} three
+    times {B}.
+
+steps:
+  - part: enunciation
+    text: "If a first magnitude have to a second the same ratio as a third to a fourth, and the third have to the fourth a greater ratio than a fifth has to a sixth, the first will also have to the second a greater ratio than the fifth to the sixth."
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      $A : B = C : D > E : F \Rightarrow A : B > E : F$.
+    modern: |
+      $$A : B = C : D,\ C : D > E : F \ \Rightarrow\ A : B > E : F$$
+
+  - part: setting-out
+    text: "For let a first magnitude A have to a second B the same ratio as a third C has to a fourth D, and let the third C have to the fourth D a greater ratio than a fifth E has to a sixth F;"
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the first A will also have to the second B a greater ratio than the fifth E to the sixth F."
+    highlight: [A, B, E, F]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For, since there are some equimultiples of C, E, and of D, F other, chance, equimultiples, such that the multiple of C is in excess of the multiple of D, while the multiple of E is not in excess of the multiple of F, let them be taken, and let G, H be equimultiples of C, E, and K, L other, chance, equimultiples of D, F, so that G is in excess of K, but H is not in excess of L;"
+    highlight: [G, H, K, L]
+    hint: |
+      $C : D > E : F$ supplies a witness pair ([[V.Def.7]]): {G} = $m${C} > {K} = $n${D}, but {H} = $m${E} ≤ {L} = $n${F}.
+    explain:
+      fact: |
+        [[V.Def.7]] read forwards: a greater ratio comes with at least one pair $m, n$ that separates the two
+        ratios.
+
+  - part: construction
+    text: "and, whatever multiple G is of C, let M be also that multiple of A, and, whatever multiple K is of D, let N be also that multiple of B."
+    highlight: [M, N]
+    hint: |
+      Use the same $m, n$ on {A}, {B}: {M} = $m${A}, {N} = $n${B}.
+
+  - part: proof
+    text: "Now, since, as A is to B, so is C to D, and of A, C equimultiples M, G have been taken, and of B, D other, chance, equimultiples N, K, therefore, if M is in excess of N, G is also in excess of K, if equal, equal, and if less, less."
+    highlight: [M, N, G, K]
+    hint: |
+      $A : B = C : D$ forwards: {M} vs {N} goes like {G} vs {K}.
+
+  - part: proof
+    text: "But G is in excess of K; therefore M is also in excess of N."
+    highlight: [G, K, M, N]
+    hint: |
+      So {M} > {N}.
+    explain:
+      implicit: |
+        Again the converse direction: since {G} > {K}, {M} cannot be equal to or less than {N} (those would force
+        {G} = {K} or {G} < {K}).
+
+  - part: proof
+    text: "But H is not in excess of L;"
+    highlight: [H, L]
+    hint: |
+      By the choice of the witness pair.
+
+  - part: proof
+    text: "and M, H are equimultiples of A, E, and N, L other, chance, equimultiples of B, F; therefore A has to B a greater ratio than E has to F."
+    highlight: [M, H, N, L, A, B, E, F]
+    hint: |
+      {M} > {N} but {H} ≤ {L}: the same pair $m, n$ separates $A : B$ from $E : F$ ([[V.Def.7]]).
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4]
+      text: |
+        Since $C : D > E : F$, take $m, n$ with $mC > nD$ and $mE \le nF$ ([[V.Def.7]]).
+    - steps: [5, 6]
+      text: |
+        Since $A : B = C : D$ and $mC > nD$, also $mA > nB$ ([[V.Def.5]]).
+    - steps: [7, 8]
+      text: |
+        So $mA > nB$ and $mE \le nF$: $A : B > E : F$ ([[V.Def.7]]). $\blacksquare$
+
+commentary: |
+  Joyce notes that the companion statement for *less* ratios (if $A : B = C : D < E : F$ then
+  $A : B < E : F$) is not stated but is used in [[V.20]], and that transitivity of "greater ratio" itself
+  (if $a : b > c : d > e : f$ then $a : b > e : f$) is never proved in Book V.
+
+  V.13 is used in [[V.14]], [[V.20]] and [[V.21]].

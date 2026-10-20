@@ -1,0 +1,104 @@
+id: X.105
+kind: theorem
+title: A line commensurable with a minor line is minor
+
+paraphrase: |
+  A line {CD} commensurable in length with a minor line {AB} is itself a minor line (of the same order). The
+  subtractive counterpart of [[X.68]].
+
+diagram:
+  width: 250
+  height: 100
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "C0;point;free;-1000,65;0;0"
+    - "C3;point;free;1000,65;0;0"
+    - "A;point;lineSlider;A0,A3,60,0"
+    - "B;point;lineSlider;A0,A3,130,0"
+    - "C;point;lineSlider;C0,C3,30,0"
+    - "D;point;lineSlider;C0,C3,150,0"
+    - "E;point;lineSlider;A0,A3,170,0"
+    - "AE;line;connect;A,E"
+    - "F;point;proportion;A,B,C,D,B,E,D,C3"
+    - "CF;line;connect;C,F"
+    - "AB;line;connect;A,B;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+  aliases: { EA: AE, FC: CF, BA: AB, DC: CD }
+  caption: |
+    {AB} with annex {BE} (whole {AE}); {CD} commensurable with {AB}, with annex {DF} in the same ratio.
+
+steps:
+  - part: enunciation
+    text: "A straight line commensurable with a minor straight line is minor."
+    highlight: [AB, CD]
+    hint: |
+      The kinds are closed under rational scaling.
+
+  - part: setting-out
+    text: "Let AB be a minor straight line, and CD commensurable with AB; I say that CD is also minor."
+    highlight: [AB, CD]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "Let the same construction be made as before; then, since AE, EB are incommensurable in square, therefore CF, FD are also incommensurable in square."
+    highlight: [AE, BE, CF, DF]
+    hint: |
+      Same construction; {CF}, {FD} incommensurable in square.
+
+  - part: proof
+    text: "Now since, as AE is to EB, so is CF to FD, therefore also, as the square on AE is to the square on EB, so is the square on CF to the square on FD."
+    highlight: [AE, BE, CF, DF]
+    hint: |
+      sq({AE}) : sq({EB}) = sq({CF}) : sq({FD}).
+
+  - part: proof
+    text: "Therefore, componendo, as the squares on AE, EB are to the square on EB, so are the squares on CF, FD to the square on FD."
+    highlight: [AE, BE, CF, DF]
+    hint: |
+      Componendo …
+
+  - part: proof
+    text: "But the square on BE is commensurable with the square on DF; therefore the sum of the squares on AE, EB is also commensurable with the sum of the squares on CF, FD."
+    highlight: [AE, BE, CF, DF]
+    hint: |
+      … the sums of squares are commensurable …
+
+  - part: proof
+    text: "But the sum of the squares on AE, EB is rational; therefore the sum of the squares on CF, FD is also rational."
+    highlight: [CF, DF]
+    hint: |
+      … so the sum on {CF}, {FD} is rational.
+
+  - part: proof
+    text: "Again, since, as the square on AE is to the rectangle AE, EB, so is the square on CF to the rectangle CF, FD, while the square on AE is commensurable with the square on CF, therefore the rectangle AE, EB is also commensurable with the rectangle CF, FD."
+    highlight: [AE, BE, CF, DF]
+    hint: |
+      Likewise the rectangles are commensurable …
+
+  - part: proof
+    text: "But the rectangle AE, EB is medial; therefore the rectangle CF, FD is also medial; therefore CF, FD are straight lines incommensurable in square which make the sum of the squares on them rational, but the rectangle contained by them medial."
+    highlight: [CF, DF]
+    hint: |
+      … so rect({CF},{FD}) is medial.
+
+  - part: proof
+    text: "Therefore CD is minor."
+    highlight: [CD]
+    hint: |
+      {CD} minor ([[X.76]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        As [[X.68]]: scaling by a rational preserves every defining property. $\blacksquare$

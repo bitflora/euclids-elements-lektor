@@ -1,0 +1,165 @@
+id: XI.8
+kind: theorem
+title: A parallel to a perpendicular is perpendicular
+
+paraphrase: |
+  If {AB} ∥ {CD} and {AB} is perpendicular to a plane, so is {CD}.
+
+diagram:
+  width: 270
+  height: 270
+  elements:
+    - "X;point;free;100000,100"
+    - "Y;point;free;100,-100000"
+    - "Z;point;free;50000,-100000"
+    - "P0;point;free;20,240;0;0,75,100"
+    - "P1;point;lineSlider;P0,X,190,240;0;30,75,100"
+    - "P2;point;lineSlider;P0,Z,50,110;0;30,75,100"
+    - "P3;point;intersection;P1,Z,P2,X;0;0"
+    - "P;polygon;quadrilateral;P0,P1,P3,P2;0;0;lightGray;brighter"
+    - "A;point;free;80,40"
+    - "B;point;lineSlider;A,Y,40,160"
+    - "AB;line;connect;A,B"
+    - "C;point;free;200,40"
+    - "D;point;intersection;B,X,C,Y"
+    - "CD;line;connect;C,D"
+    - "AD;line;connect;A,D"
+    - "M;point;midpoint;A,B;0;0"
+    - "E;point;extend;Z,D,A,M"
+    - "BDE;polygon;triangle;B,D,E;0;0;black;random"
+    - "AE;line;connect;A,E"
+    - "BD;line;connect;B,D;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+    - "ABD;polygon;triangle;A,B,D;0;0;0"
+    - "ABE;polygon;triangle;A,B,E;0;0;0"
+    - "CDB;polygon;triangle;C,D,B;0;0;0"
+    - "EDA;polygon;triangle;E,D,A;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+    - "BDA;polygon;triangle;B,D,A;0;0;0"
+    - "DC;line;connect;D,C;0;0;0"
+  aliases: { BA: AB, DA: AD, EA: AE, EB: BE }
+  caption: |
+    As in [[XI.6]]: {DE} in the plane, perpendicular to {BD} and equal to {AB}.
+
+steps:
+  - part: enunciation
+    text: "If two straight lines be parallel, and one of them be at right angles to any plane, the remaining one will also be at right angles to the same plane."
+    highlight: [AB, CD]
+    hint: |
+      The converse of [[XI.6]].
+
+  - part: setting-out
+    text: "Let AB, CD be two parallel straight lines, and let one of them, AB, be at right angles to the plane of reference; I say that the remaining one, CD, will also be at right angles to the same plane."
+    highlight: [AB, CD]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For let AB, CD meet the plane of reference at the points B, D, and let BD be joined; therefore AB, CD, BD are in one plane."
+    highlight: [BD]
+    hint: |
+      Join {BD}; {AB}, {CD}, {BD} lie in one plane ([[XI.7]]).
+
+  - part: construction
+    text: "Let DE be drawn, in the plane of reference, at right angles to BD, let DE be made equal to AB, and let BE, AE, AD be joined."
+    highlight: [DE, BE, AE, AD]
+    hint: |
+      {DE} ⊥ {BD}, {DE} = {AB}; join {BE}, {AE}, {AD}.
+
+  - part: proof
+    text: "Now, since AB is at right angles to the plane of reference, therefore AB is also at right angles to all the straight lines which meet it and are in the plane of reference; therefore each of the angles ABD, ABE is right."
+    highlight: [AB, BD, BE]
+    hint: |
+      ∠{ABD}, ∠{ABE} right.
+
+  - part: proof
+    text: "And, since the straight line BD has fallen on the parallels AB, CD, therefore the angles ABD, CDB are equal to two right angles."
+    highlight: [AB, CD, BD]
+    hint: |
+      Parallels: ∠{ABD} + ∠{CDB} = two right angles ([[I.29]]) …
+
+  - part: proof
+    text: "But the angle ABD is right; therefore the angle CDB is also right; therefore CD is at right angles to BD."
+    highlight: [CD, BD]
+    hint: |
+      … so ∠{CDB} is right.
+
+  - part: proof
+    text: "And, since AB is equal to DE, and BD is common, the two sides AB, BD are equal to the two sides ED, DB; and the angle ABD is equal to the angle EDB, for each is right; therefore the base AD is equal to the base BE."
+    highlight: [AD, BE]
+    hint: |
+      {AD} = {BE} ([[I.4]]).
+    cites: [I.4]
+
+  - part: proof
+    text: "And, since AB is equal to DE, and BE to AD, the two sides AB, BE are equal to the two sides ED, DA respectively, and AE is their common base; therefore the angle ABE is equal to the angle EDA."
+    highlight: [AE]
+    hint: |
+      ∠{ABE} = ∠{EDA} ([[I.8]]).
+    cites: [I.8]
+
+  - part: proof
+    text: "But the angle ABE is right; therefore the angle EDA is also right; therefore ED is at right angles to AD."
+    highlight: [DE, AD]
+    hint: |
+      So {ED} ⊥ {AD}.
+
+  - part: proof
+    text: "But it is also at right angles to DB; therefore ED is also at right angles to the plane through BD, DA."
+    highlight: [DE]
+    hint: |
+      {ED} ⊥ {DB} too: {ED} ⊥ plane {BDA} ([[XI.4]]).
+
+  - part: proof
+    text: "Therefore ED will also make right angles with all the straight lines which meet it and are in the plane through BD, DA."
+    highlight: [DE]
+    hint: |
+      So {ED} ⊥ every line in that plane through {D} …
+
+  - part: proof
+    text: "But DC is in the plane through BD, DA, inasmuch as AB, BD are in the plane through BD, DA, and DC is also in the plane in which AB, BD are."
+    highlight: [CD]
+    hint: |
+      … and {DC} is in that plane ([[XI.2]]).
+
+  - part: proof
+    text: "Therefore ED is at right angles to DC, so that CD is also at right angles to DE."
+    highlight: [CD, DE]
+    hint: |
+      So {CD} ⊥ {DE}.
+
+  - part: proof
+    text: "But CD is also at right angles to BD."
+    highlight: [CD, BD]
+    hint: |
+      And {CD} ⊥ {BD}.
+
+  - part: proof
+    text: "Therefore CD is set up at right angles to the two straight lines DE, DB which cut one another, from the point of section at D; so that CD is also at right angles to the plane through DE, DB."
+    highlight: [CD]
+    hint: |
+      So {CD} ⊥ the plane of {DE}, {DB} ([[XI.4]]) …
+
+  - part: proof
+    text: "But the plane through DE, DB is the plane of reference; therefore CD is at right angles to the plane of reference."
+    highlight: [CD]
+    hint: |
+      … the given plane.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [CD]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Parallel lines share their direction vector. $\blacksquare$

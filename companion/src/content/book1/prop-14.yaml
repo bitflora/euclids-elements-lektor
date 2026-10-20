@@ -1,0 +1,199 @@
+id: I.14
+kind: theorem
+title: Converse of I.13 — when two lines make a straight line
+
+paraphrase: |
+  If two lines {BC} and {BD} meet a third line {AB} at the same point {B}, on opposite sides of
+  it, and the two angles they make with {AB} add up to two right angles, then {CB} and {BD}
+  form a single straight line.
+
+diagram:
+  width: 280
+  height: 250
+  elements:
+    - "A;point;free;105,45"
+    - "B;point;free;140,180"
+    - "C;point;free;30,180"
+    - "AB;line;connect;A,B"
+    - "BC;line;connect;B,C"
+    - "E;point;extend;C,B,C,B"
+    - "BE;line;connect;B,E"
+    - "D;point;free;245,225"
+    - "BD;line;connect;B,D"
+    - "CE;line;connect;C,E;0;0;0"
+    - "angABC;sector;angleMarker;B,A,C"
+    - "angABD;sector;angleMarker;B,A,D"
+    - "angABE;sector;angleMarker;B,A,E"
+  aliases:
+    BA: AB
+    CB: BC
+    DB: BD
+    CBE: CE
+    ABC: angABC
+    CBA: angABC
+    ABD: angABD
+    ABE: angABE
+  given: [A, B, C, D, AB, BC, BD]
+  caption: |
+    {E} is on {CB} produced. {D} is drawn off that line, to picture the supposition the proof
+    refutes; drag it onto the line {CBE} to see the theorem's situation.
+
+steps:
+  - part: enunciation
+    text: "If with any straight line, and at a point on it, two straight lines not lying on the same side make the adjacent angles equal to two right angles, the two straight lines will be in a straight line with one another."
+    highlight: [AB, BC, BD, angABC, angABD]
+    hint: |
+      The converse of [[I.13]]: if the two angles add to two right angles, the two lines form one
+      straight line.
+    explain:
+      did: |
+        States the converse of I.13.
+      implicit: |
+        "Not lying on the same side" is essential. On the same side of {AB}, two lines can make
+        angles summing to two right angles without being in line.
+    dispute: |
+      Heath remarks that the prepositions here (πρός) are hard to render: "with any straight line,
+      and at a point on it" translates a compressed Greek phrase (his note on line 1).
+
+  - part: setting-out
+    text: "For with any straight line AB, and at the point B on it, let the two straight lines BC, BD not lying on the same side make the adjacent angles ABC, ABD equal to two right angles;"
+    highlight: [AB, BC, BD, angABC, angABD]
+    adds: [angABC, angABD]
+    hint: |
+      The data: ∠{ABC} + ∠{ABD} = two right angles, with {C} and {D} on opposite sides of {AB}.
+    modern: |
+      $$\angle ABC + \angle ABD = 2\,\text{right angles}$$
+
+  - part: specification
+    text: "I say that BD is in a straight line with CB."
+    highlight: [BC, BD]
+    hint: |
+      The goal: {C}, {B}, {D} are collinear.
+
+  - part: proof
+    text: "For, if BD is not in a straight line with BC, let BE be in a straight line with CB."
+    highlight: [BE, E]
+    adds: [E, BE]
+    hint: |
+      Suppose not. Produce {CB} to {E} ([[I.Post.2]]), so that {CBE|CE} is straight.
+    explain:
+      did: |
+        Starts a reductio, as in [[I.6]].
+      justification: "[[I.Post.2]] for producing {CB}."
+    cites: [I.Post.2]
+
+  - part: proof
+    text: "Then, since the straight line AB stands on the straight line CBE, the angles ABC, ABE are equal to two right angles."
+    highlight: [AB, CE, angABC, angABE]
+    adds: [angABE]
+    hint: |
+      {AB} stands on the straight line {CBE|CE}, so by [[I.13]] ∠{ABC} + ∠{ABE} = two right angles.
+    modern: |
+      $$\angle ABC + \angle ABE = 2\,\text{right angles}$$
+
+  - part: proof
+    text: "But the angles ABC, ABD are also equal to two right angles;"
+    highlight: [angABC, angABD]
+    hint: |
+      That is the hypothesis.
+
+  - part: proof
+    text: "therefore the angles CBA, ABE are equal to the angles CBA, ABD."
+    highlight: [angABC, angABE, angABD]
+    hint: |
+      Two sums each equal to two right angles are equal to each other.
+    explain:
+      justification: |
+        Heath brackets [[I.Post.4]] and [[I.CN.1]]. Todhunter points out that both are needed: "two
+        right angles" in one place must equal "two right angles" in another, which is Postulate 4
+        (Heath's note on line 17).
+    modern: |
+      $$\angle CBA + \angle ABE = \angle CBA + \angle ABD$$
+
+  - part: proof
+    text: "Let the angle CBA be subtracted from each; therefore the remaining angle ABE is equal to the remaining angle ABD,"
+    highlight: [angABE, angABD]
+    hint: |
+      Take away the common ∠{CBA}: ∠{ABE} = ∠{ABD} ([[I.CN.3]]).
+    modern: |
+      $$\angle ABE = \angle ABD$$
+
+  - part: proof
+    text: "the less to the greater: which is impossible."
+    highlight: [angABE, angABD]
+    hint: |
+      But ∠{ABE} is a part of ∠{ABD} (as drawn), so it is less ([[I.CN.5]]). Contradiction.
+    explain:
+      implicit: |
+        That {BE} falls inside ∠{ABD}. If {D} were on the other side of line {CE}, ∠{ABD} would be
+        the less and ∠{ABE} the greater: the same contradiction with the roles reversed.
+    cites: [I.CN.5]
+
+  - part: proof
+    text: "Therefore BE is not in a straight line with CB."
+    highlight: [BE]
+    hint: |
+      So the supposition is refuted — but notice what has been refuted: {BE} is not the
+      continuation of {CB}, which contradicts how {BE} was drawn.
+    explain:
+      did: |
+        Words the conclusion as Euclid usually does.
+      implicit: |
+        Heath's text concludes about {BE} rather than {BD}. The logic is: the assumption "{BD} not in
+        line with {CB}" led to an impossibility, so it is false.
+
+  - part: proof
+    text: "Similarly we can prove that neither is any other straight line except BD."
+    highlight: [BD]
+    hint: |
+      The same argument rules out every line other than {BD} as the continuation of {CB}.
+    explain:
+      implicit: |
+        "We can prove" is a future in the Greek, δείξομεν, "we shall prove" (Heath's note on line 24).
+
+  - part: proof
+    text: "Therefore CB is in a straight line with BD."
+    highlight: [BC, BD]
+    hint: |
+      So {C}, {B}, {D} lie on one straight line.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: Let $C$, $D$ be on opposite sides of line $AB$ with $\angle ABC + \angle ABD = 180^\circ$.
+    - steps: [3, 4]
+      text: Let $E$ be on ray opposite to $BC$. By I.13, $\angle ABC + \angle ABE = 180^\circ$.
+    - steps: [5, 6, 7]
+      text: Hence $\angle ABE = \angle ABD$.
+    - steps: [8, 9, 10, 11]
+      text: |
+        $E$ and $D$ lie on the same side of $AB$ (both opposite $C$), so by uniqueness of angle
+        transfer rays $BE$ and $BD$ coincide; $C$, $B$, $D$ are collinear. $\blacksquare$
+  closing: |
+    The modern version replaces "the less equals the greater" with the uniqueness of the
+    angle on a given side of a ray — which is what Euclid's appeal to [[I.CN.5]] amounts to.
+
+commentary: |
+  The converse of [[I.13]]. It is used in [[I.45]] and [[I.47]] to show that lines meant to be
+  straight really are — in I.47, that the square on one side is in line with a side of the
+  triangle.
+
+gaps: |
+  - **Position of {D}** (step 8): Euclid's figure shows only one side of {CBE|CE}; the other is similar.
+  - **Ray uniqueness** is what [[I.CN.5]] is doing in step 8.
+
+historical: |
+  Proclus discusses why the condition "not on the same side" is needed, showing two lines on the
+  same side of {AB} whose angles sum to two right angles but which do not form one line.

@@ -1,0 +1,120 @@
+id: XI.37
+kind: theorem
+title: Lines proportional iff similar solids on them are proportional
+
+paraphrase: |
+  Four lines are proportional exactly when similar, similarly described parallelepipeds on them are proportional.
+  The solid version of [[VI.22]].
+
+diagram:
+  width: 550
+  height: 290
+  elements:
+    - "B;point;fixed;100,250,0;black;green"
+    - "1X;point;fixed;412,250,-91;0;0"
+    - "1Y;point;fixed;65,550,-120;0;0"
+    - "1Z;point;fixed;184,375,288;0;0"
+    - "floor;plane;3points;B,1X,1Y;0;0;0;0"
+    - "A;point;lineSlider;B,1X,40,280,0"
+    - "b;point;planeSlider;floor,120,200,0;0"
+    - "c;point;lineSlider;B,1Y,150,210,160;0"
+    - "K;point;parallelogram;b,B,c"
+    - "AK;polyhedron;parallelepiped;B,A,b,c;0;0;black;random"
+    - "C;point;lineSlider;B,1X,150,250,0"
+    - "D;point;lineSlider;B,1X,240,250,0"
+    - "E;point;lineSlider;B,1X,290,250,0"
+    - "F;point;lineSlider;B,1X,350,250,0"
+    - "G;point;lineSlider;B,1X,400,250,0"
+    - "H';point;extend;A,G,A,G;0;0"
+    - "H;point;proportion;A,B,C,D,E,F,G,H'"
+    - "d;point;similar;C,D,floor,A,B,b,floor;0;0"
+    - "f;point;similar;E,F,floor,A,B,b,floor;0;0"
+    - "h;point;similar;G,H,floor,A,B,b,floor;0;0"
+    - "e';point;parallelogram;c,B,D;0;0"
+    - "e;point;proportion;A,B,C,D,B,c,D,e';0;0"
+    - "g';point;parallelogram;c,B,F;0;0"
+    - "g;point;proportion;A,B,E,F,B,c,F,g';0;0"
+    - "i';point;parallelogram;c,B,H;0;0"
+    - "i;point;proportion;A,B,G,H,B,c,H,i';0;0"
+    - "CL;polyhedron;parallelepiped;D,C,d,e;0;0;black;random"
+    - "EM;polyhedron;parallelepiped;F,E,f,g;0;0;black;random"
+    - "GN;polyhedron;parallelepiped;H,G,h,i;0;0;black;random"
+    - "L;point;parallelogram;d,D,e"
+    - "M;point;parallelogram;f,F,g"
+    - "N;point;parallelogram;h,H,i"
+    - "AB;line;connect;A,B;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "GH;line;connect;G,H;0;0;0"
+  aliases: { BA: AB, DC: CD, FE: EF, HG: GH }
+  caption: |
+    Similar solids *AK*, *LC* on {AB}, {CD} and *ME*, *NG* on {EF}, {GH}.
+
+steps:
+  - part: enunciation
+    text: "If four straight lines be proportional, the parallelepipedal solids on them which are similar and similarly described will also be proportional; and, if the parallelepipedal solids on them which are similar and similarly described be proportional, the straight lines will themselves also be proportional."
+    highlight: [AB, CD, EF, GH]
+    hint: |
+      $a : b = c : d \iff a^3 : b^3 = c^3 : d^3$.
+
+  - part: setting-out
+    text: "Let AB, CD, EF, GH be four straight lines in proportion, so that, as AB is to CD, so is EF to GH; and let there be described on AB, CD, EF, GH the similar and similarly situated parallelepipedal solids KA, LC, ME, NG; I say that, as KA is to LC, so is ME to NG."
+    highlight: [AB, CD, EF, GH]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For, since the parallelepipedal solid KA is similar to LC, therefore KA has to LC the ratio triplicate of that which AB has to CD."
+    highlight: [AB, CD]
+    hint: |
+      *KA* : *LC* is the triplicate of {AB} : {CD} ([[XI.33]]).
+
+  - part: proof
+    text: "For the same reason ME also has to NG the ratio triplicate of that which EF has to GH. [id.]"
+    highlight: [EF, GH]
+    hint: |
+      Likewise.
+
+  - part: proof
+    text: "And, as AB is to CD, so is EF to GH."
+    highlight: [AB, CD, EF, GH]
+    hint: |
+      The line ratios are equal …
+
+  - part: proof
+    text: "Therefore also, as AK is to LC, so is ME to NG."
+    highlight: [AB, CD, EF, GH]
+    hint: |
+      … so the solid ratios are.
+
+  - part: specification
+    text: "Next, as the solid AK is to the solid LC, so let the solid ME be to the solid NG; I say that, as the straight line AB is to CD, so is EF to GH."
+    highlight: [AB, CD, EF, GH]
+    hint: |
+      Conversely …
+
+  - part: proof
+    text: "For since, again, KA has to LC the ratio triplicate of that which AB has to CD, and ME also has to NG the ratio triplicate of that which EF has to GH, [id.] and, as KA is to LC, so is ME to NG, therefore also, as AB is to CD, so is EF to GH."
+    highlight: [AB, CD, EF, GH]
+    hint: |
+      … equal triplicate ratios give equal ratios.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [AB, CD, EF, GH]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Cube roots preserve equality of ratios. $\blacksquare$
+
+commentary: |
+  "Equal triplicate ratios give equal ratios" is assumed, as the corresponding fact for duplicate ratios is in
+  [[VI.22]].

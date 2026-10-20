@@ -1,0 +1,222 @@
+id: IV.15
+kind: problem
+title: Inscribing a regular hexagon in a circle
+
+paraphrase: |
+  In a given circle, inscribe a regular hexagon. (Its side equals the radius.)
+
+diagram:
+  width: 300
+  height: 380
+  elements:
+    - "A;point;free;150,340"
+    - "D;point;free;150,140"
+    - "AD;line;connect;A,D"
+    - "G;point;midpoint;A,D"
+    - "ABCDEF;circle;radius;G,A;0;0;black;0"
+    - "EGCH;circle;radius;D,G;0;0;black;0"
+    - "CE;line;bichord;ABCDEF,EGCH;0;0;0"
+    - "C;point;first;CE"
+    - "E;point;last;CE"
+    - "B;point;extend;E,G,E,G"
+    - "F;point;extend;C,G,C,G"
+    - "H;point;extend;G,D,G,D;black;0"
+    - "BE;line;connect;B,E"
+    - "CF;line;connect;C,F"
+    - "hexagon;polygon;hexagon;A,B,C,D,E,F;0;0;black;#efe4d2"
+    - "EGD;polygon;triangle;E,G,D;0;0;0;0"
+    - "GE;line;connect;G,E;0;0;0"
+    - "GD;line;connect;G,D;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "angEGD;sector;angleMarker;G,E,D"
+    - "angDGC;sector;angleMarker;G,D,C"
+    - "angCGB;sector;angleMarker;G,C,B"
+    - "angAFE;sector;angleMarker;F,A,E"
+    - "angDEF;sector;angleMarker;E,D,F"
+  aliases:
+    ED: DE
+    EB: BE
+    GCH: EGCH
+    DEF: angDEF
+    FED: angDEF
+    AFE: angAFE
+    DGC: angDGC
+    CGB: angCGB
+  given: [A, D, AD, G, ABCDEF]
+  caption: |
+    Drag {A} or {D}. The circle about {D} through the centre {G} cuts off the hexagon's vertices {C} and {E};
+    each side equals the radius.
+
+steps:
+  - part: enunciation
+    text: "In a given circle to inscribe an equilateral and equiangular hexagon."
+    highlight: [ABCDEF, hexagon]
+    hint: |
+      A problem: the regular hexagon.
+
+  - part: setting-out
+    text: "Let ABCDEF be the given circle;"
+    highlight: [ABCDEF]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to inscribe an equilateral and equiangular hexagon in the circle ABCDEF."
+    highlight: [ABCDEF]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let the diameter AD of the circle ABCDEF be drawn;"
+    highlight: [AD]
+    hint: |
+      A diameter.
+
+  - part: construction
+    text: "let the centre G of the circle be taken, and with centre D and distance DG let the circle EGCH be described;"
+    highlight: [G, EGCH]
+    adds: [EGCH, C, E, H]
+    hint: |
+      The circle about {D} through the centre {G}; it meets the given circle at {C} and {E}.
+
+  - part: construction
+    text: "let EG, CG be joined and carried through to the points B, F, and let AB, BC, CD, DE, EF, FA be joined."
+    highlight: [BE, CF, hexagon]
+    adds: [B, F, BE, CF, hexagon]
+    hint: |
+      Diameters through {E} and {C}; join the six points.
+
+  - part: specification
+    text: "I say that the hexagon ABCDEF is equilateral and equiangular."
+    highlight: [hexagon]
+    hint: |
+      The claim.
+
+  - part: proof
+    text: "For, since the point G is the centre of the circle ABCDEF, GE is equal to GD."
+    highlight: [GE, GD]
+    hint: |
+      Radii.
+
+  - part: proof
+    text: "Again, since the point D is the centre of the circle GCH, DE is equal to DG."
+    highlight: [DE, GD]
+    hint: |
+      Radii of the small circle.
+
+  - part: proof
+    text: "But GE was proved equal to GD; therefore GE is also equal to ED; therefore the triangle EGD is equilateral;"
+    highlight: [EGD]
+    hint: |
+      Equilateral triangle {EGD}.
+
+  - part: proof
+    text: "and therefore its three angles EGD, GDE, DEG are equal to one another, inasmuch as, in isosceles triangles, the angles at the base are equal to one another."
+    highlight: [EGD]
+    hint: |
+      [[I.5]].
+
+  - part: proof
+    text: "And the three angles of the triangle are equal to two right angles; therefore the angle EGD is one-third of two right angles."
+    highlight: [angEGD]
+    hint: |
+      60° ([[I.32]]).
+
+  - part: proof
+    text: "Similarly, the angle DGC can also be proved to be one-third of two right angles."
+    highlight: [angDGC]
+    hint: |
+      Same for {DGC}.
+
+  - part: proof
+    text: "And, since the straight line CG standing on EB makes the adjacent angles EGC, CGB equal to two right angles, therefore the remaining angle CGB is also one-third of two right angles."
+    highlight: [angCGB]
+    hint: |
+      [[I.13]]: 180° − 120° = 60°.
+    cites: [I.13]
+
+  - part: proof
+    text: "Therefore the angles EGD, DGC, CGB are equal to one another; so that the angles vertical to them, the angles BGA, AGF, FGE are equal."
+    highlight: [angEGD, angDGC, angCGB]
+    hint: |
+      Vertical angles ([[I.15]]).
+
+  - part: proof
+    text: "Therefore the six angles EGD, DGC, CGB, BGA, AGF, FGE are equal to one another."
+    hint: |
+      Six 60° angles at the centre.
+
+  - part: proof
+    text: "But equal angles stand on equal circumferences; therefore the six circumferences AB, BC, CD, DE, EF, FA are equal to one another."
+    hint: |
+      [[III.26]].
+
+  - part: proof
+    text: "And equal circumferences are subtended by equal straight lines; therefore the six straight lines are equal to one another; therefore the hexagon ABCDEF is equilateral."
+    highlight: [hexagon]
+    hint: |
+      [[III.29]].
+
+  - part: specification
+    text: "I say next that it is also equiangular."
+    highlight: [hexagon]
+    hint: |
+      Now the angles.
+
+  - part: proof
+    text: "For, since the circumference FA is equal to the circumference ED, let the circumference ABCD be added to each; therefore the whole FABCD is equal to the whole EDCBA; and the angle FED stands on the circumference FABCD, and the angle AFE on the circumference EDCBA; therefore the angle AFE is equal to the angle DEF."
+    highlight: [angAFE, angDEF]
+    hint: |
+      [[III.27]].
+
+  - part: proof
+    text: "Similarly it can be proved that the remaining angles of the hexagon ABCDEF are also severally equal to each of the angles AFE, FED; therefore the hexagon ABCDEF is equiangular."
+    highlight: [hexagon]
+    hint: |
+      All six equal.
+
+  - part: proof
+    text: "But it was also proved equilateral; and it has been inscribed in the circle ABCDEF."
+    highlight: [hexagon]
+    hint: |
+      Regular.
+
+  - part: conclusion
+    text: "Therefore in the given circle an equilateral and equiangular hexagon has been inscribed. Q. E. F."
+    highlight: [hexagon]
+    hint: |
+      Done. Heath prints a porism and two remarks next.
+
+  - part: proof
+    text: "Porism. From this it is manifest that the side of the hexagon is equal to the radius of the circle."
+    highlight: [DE, GD]
+    hint: |
+      **Porism**: hexagon side = radius.
+
+  - part: proof
+    text: "And, in like manner as in the case of the pentagon, if through the points of division on the circle we draw tangents to the circle, there will be circumscribed about the circle an equilateral and equiangular hexagon in conformity with what was explained in the case of the pentagon."
+    hint: |
+      The circumscribed hexagon, as in [[IV.12]].
+
+  - part: proof
+    text: "And further by means similar to those explained in the case of the pentagon we can both inscribe a circle in a given hexagon and circumscribe one about it."
+    hint: |
+      And the circles, as in [[IV.13]], [[IV.14]].
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+      text: Six chords of length $r$ subtend $60^\circ$ each (equilateral triangles with the centre), filling $360^\circ$. $\blacksquare$
+    - steps: [17, 18, 19, 20]
+      text: The hexagon is regular by symmetry.
+
+commentary: |
+  The hexagon is the easiest regular polygon after the triangle and square: six equilateral triangles meet
+  at the centre. Its porism (side = radius) is still the standard way to step a compass round a circle.

@@ -1,0 +1,172 @@
+id: I.39
+kind: theorem
+title: Equal triangles on the same base lie between the same parallels
+
+paraphrase: |
+  The converse of [[I.37]]: if two triangles on the same base {BC}, on the same side of it, have
+  equal areas, the line joining their apexes is parallel to {BC}.
+
+diagram:
+  width: 260
+  height: 210
+  elements:
+    - "B;point;free;40,170"
+    - "C;point;free;220,170"
+    - "A;point;free;80,40"
+    - "ADp;line;parallel;A,B,C;0;0;0"
+    - "D;point;lineSlider;ADp,210,40"
+    - "E;point;lineSlider;B,D,165,65"
+    - "BC;line;connect;B,C"
+    - "AD;line;connect;A,D"
+    - "AB;line;connect;A,B"
+    - "AC;line;connect;A,C"
+    - "BD;line;connect;B,D"
+    - "CD;line;connect;C,D"
+    - "AE;line;connect;A,E"
+    - "CE;line;connect;C,E"
+    - "EB;line;connect;E,B;0;0;0"
+    - "ABC;polygon;triangle;A,B,C;0;0;0;#efe4d2"
+    - "BCD;polygon;triangle;B,C,D;0;0;0;0"
+    - "EBC;polygon;triangle;E,B,C;0;0;0;0"
+  aliases:
+    DBC: BCD
+    EC: CE
+    BA: AB
+    CA: AC
+    DB: BD
+    DC: CD
+    EA: AE
+    BE: EB
+    DA: AD
+    CB: BC
+  given: [A, B, C, D, BC, AB, AC, BD, CD, ABC]
+  caption: |
+    The figure keeps {AD} ∥ {BC}, so the triangles {ABC} and {DBC} are equal. {E} is the point the
+    reductio supposes, on {BD}: slide it and see that {EBC} is always smaller than {DBC}.
+
+steps:
+  - part: enunciation
+    text: "Equal triangles which are on the same base and on the same side are also in the same parallels."
+    highlight: [ABC, BCD, AD, BC]
+    hint: |
+      Same base and same area ⇒ same height. Converse of [[I.37]].
+
+  - part: setting-out
+    text: "Let ABC, DBC be equal triangles which are on the same base BC and on the same side of it;"
+    highlight: [ABC, BCD, BC]
+    hint: |
+      The data: [{ABC}] = [{DBC}], same base, same side.
+
+  - part: specification
+    text: "[I say that they are also in the same parallels.]"
+    hint: |
+      Heath brackets this as an interpolation (see below).
+    dispute: |
+      Heiberg showed from a papyrus fragment (published 1900, discussed in *Hermes* 1903) that these
+      words are not Euclid's. An editor took the next sentence, "And let {AD} be joined", for the
+      start of the *construction*, thought a specification (διορισμός) was missing, wrote one in, and
+      changed "And" to "For" (Heath's note on line 5).
+
+  - part: setting-out
+    text: "And [For] let AD be joined;"
+    highlight: [AD]
+    adds: [AD]
+    hint: |
+      Join the apexes. In Euclid's text this is still the setting-out.
+
+  - part: specification
+    text: "I say that AD is parallel to BC."
+    highlight: [AD, BC]
+    hint: |
+      The real specification.
+
+  - part: construction
+    text: "For, if not, let AE be drawn through the point A parallel to the straight line BC,"
+    highlight: [AE, E]
+    adds: [E, AE]
+    hint: |
+      Suppose not. Draw the true parallel {AE} through {A} ([[I.31]]); it meets {BD} at a different
+      point {E}.
+
+  - part: construction
+    text: "and let EC be joined."
+    highlight: [CE]
+    adds: [CE]
+    hint: |
+      Join {EC}.
+
+  - part: proof
+    text: "Therefore the triangle ABC is equal to the triangle EBC; for it is on the same base BC with it and in the same parallels."
+    highlight: [ABC, EBC]
+    hint: |
+      [[I.37]]: same base, same parallels.
+
+  - part: proof
+    text: "But ABC is equal to DBC; therefore DBC is also equal to EBC,"
+    highlight: [BCD, EBC]
+    hint: |
+      Both equal {ABC} ([[I.CN.1]]).
+
+  - part: proof
+    text: "the greater to the less: which is impossible."
+    highlight: [BCD, EBC]
+    hint: |
+      But {EBC} is part of {DBC} — the whole is greater than the part ([[I.CN.5]]).
+    explain:
+      implicit: |
+        This assumes {E} lies between {B} and {D}, i.e. that {AD} is tilted upward from the parallel.
+        If it tilts the other way, {E} is beyond {D} and {DBC} is the less; the same contradiction.
+    cites: [I.CN.5]
+
+  - part: proof
+    text: "Therefore AE is not parallel to BC."
+    highlight: [AE]
+    hint: |
+      As in [[I.14]], the conclusion is worded about the auxiliary line.
+
+  - part: proof
+    text: "Similarly we can prove that neither is any other straight line except AD;"
+    highlight: [AD]
+    hint: |
+      No line through {A} other than {AD} is the parallel.
+
+  - part: proof
+    text: "therefore AD is parallel to BC."
+    highlight: [AD, BC]
+    hint: |
+      Done.
+    explain:
+      implicit: |
+        That there *is* a parallel through {A} ([[I.31]]), and so it must be {AD}.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4]
+      text: Equal areas on the same base mean equal heights $h_A = h_D$.
+    - steps: [5, 6, 7, 8, 9, 10, 11, 12]
+      text: |
+        $A$ and $D$ are on the same side of $BC$ at the same distance from it, so line $AD$ is parallel
+        to $BC$. $\blacksquare$
+
+commentary: |
+  I.39 and its companion [[I.40]] reverse [[I.37]] and [[I.38]]. Proclus groups I.35–I.40 as theorems
+  about *loci*: the apexes of all triangles of given area on a given base lie on a line parallel to it.
+
+gaps: |
+  - **Position of {E}** on {BD}: between {B} and {D} in the figure; the other case is similar.
+
+historical: |
+  The papyrus fragment from the Fayum is among the oldest witnesses to the
+  text of the *Elements*; Heath uses it here to correct the medieval manuscripts.

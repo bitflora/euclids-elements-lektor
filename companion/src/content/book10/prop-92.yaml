@@ -1,0 +1,232 @@
+id: X.92
+kind: theorem
+title: The side of a rational line times a second apotome is a first apotome of a medial
+
+paraphrase: |
+  If an area {AB} is contained by a rational line {AC} and a second apotome {AD}, its side {LN} is a first apotome of
+  a medial.
+
+diagram:
+  width: 410
+  height: 190
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "D;point;lineSlider;A0,A3,80,0"
+    - "C';point;perpendicular;A,D;0;0"
+    - "C;point;lineSlider;A,C',0,140"
+    - "B;point;parallelogram;C,A,D"
+    - "ACBD;polygon;quadrilateral;A,C,B,D;0;0;black;random"
+    - "G;point;lineSlider;A0,A3,200,0"
+    - "E;point;midpoint;G,D"
+    - "AGmid;point;midpoint;A,G;0;0"
+    - "AGquar;point;midpoint;G,AGmid;0;0"
+    - "GEcirc;circle;radius;G,E;0;0;0;0"
+    - "GAcirc;circle;radius;AGquar,G;0;0;0;0"
+    - "bich;line;bichord;GEcirc,GAcirc;0;0;0"
+    - "F';point;first;bich;0;0"
+    - "F;point;cutoff;AGmid,G,AGmid,F'"
+    - "H;point;parallelogram;C,A,E"
+    - "I;point;parallelogram;C,A,F"
+    - "K;point;parallelogram;C,A,G"
+    - "DFIB;polygon;quadrilateral;D,F,I,B;0;0;black;random"
+    - "EH;line;connect;E,H"
+    - "IFGK;polygon;quadrilateral;I,F,G,K;0;0;black;240,80,100"
+    - "R0;point;free;-1000,160;0;0"
+    - "R3;point;free;1000,160;0;0"
+    - "R;point;lineSlider;R0,R3,240,0"
+    - "M;point;meanProportional;A,F,F,I,R,R3"
+    - "RMPL;polygon;square;R,M;0;0;black;random"
+    - "P;point;vertex;RMPL,3"
+    - "L;point;vertex;RMPL,4"
+    - "N;point;meanProportional;F,I,I,K,P,L"
+    - "PNQO;polygon;square;P,N;0;0;black;240,80,100"
+    - "O;point;vertex;PNQO,4"
+    - "Q;point;vertex;PNQO,3"
+    - "S;point;intersection;L,R,Q,O"
+    - "T;point;intersection;R,M,Q,N"
+    - "SQ;line;connect;S,Q"
+    - "TQ;line;connect;T,Q"
+    - "RP;line;connect;R,P"
+    - "Z;point;midpoint;Q,O;0;0"
+    - "U;point;cutoff;Q,S,Q,Z"
+    - "V;point;cutoff;Q,P,Q,Z"
+    - "W;point;cutoff;Q,T,Q,Z"
+    - "UVW;sector;arc;W,V,U;0;0;gray;0"
+    - "LN;line;connect;L,N;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "AG;line;connect;A,G;0;0;0"
+    - "DG;line;connect;D,G;0;0;0"
+    - "AF;line;connect;A,F;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+    - "EG;line;connect;E,G;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "LP;line;connect;L,P;0;0;0"
+    - "PN;line;connect;P,N;0;0;0"
+  aliases: { AB: ACBD, LM: RMPL, NO: PNQO, HE: EH, QS: SQ, QT: TQ, PR: RP, NL: LN, CA: AC, DA: AD, GA: AG, GD: DG, FA: AF, GF: FG, GE: EG, ED: DE, PL: LP, NP: PN }
+  caption: |
+    The area {AB} on the rational line {AC} and the apotome {AD} (annex {DG}). Squares {LM} = *AI* and {NO} =
+    *FK* share an angle; {LN} is the side of {AB}.
+
+steps:
+  - part: enunciation
+    text: "If an area be contained by a rational straight line and a second apotome, the “side” of the area is a first apotome of a medial straight line."
+    highlight: [AB, LN]
+    hint: |
+      √(rational × second apotome).
+
+  - part: setting-out
+    text: "For let the area AB be contained by the rational straight line AC and the second apotome AD; I say that the “side” of the area AB is a first apotome of a medial straight line."
+    highlight: [AB, AC, AD]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For let DG be the annex to AD; therefore AG, GD are rational straight lines commensurable in square only, and the annex DG is commensurable with the rational straight line AC set out, while the square on the whole AG is greater than the square on the annex GD by the square on a straight line commensurable in length with AG."
+    highlight: [AG, DG]
+    hint: |
+      Annex {DG}; now the annex is commensurable with {AC} ([[X.Def.III.2]]).
+
+  - part: proof
+    text: "Since then the square on AG is greater than the square on GD by the square on a straight line commensurable with AG, therefore, if there be applied to AG a parallelogram equal to the fourth part of the square on GD and deficient by a square figure, it divides it into commensurable parts."
+    highlight: [AG]
+    hint: |
+      Excess commensurable with {AG}: [[X.17]] applies.
+
+  - part: construction
+    text: "Let then DG be bisected at E, let there be applied to AG a parallelogram equal to the square on EG and deficient by a square figure, and let it be the rectangle AF, FG; therefore AF is commensurable in length with FG."
+    highlight: [AF, FG, EG]
+    hint: |
+      Bisect, apply, draw parallels as in [[X.91]].
+
+  - part: proof
+    text: "Therefore AG is also commensurable in length with each of the straight lines AF, FG."
+    highlight: [AG, AF, FG]
+    hint: |
+      {AG} commensurable with {AF}, {FG} …
+
+  - part: proof
+    text: "But AG is rational and incommensurable in length with AC; therefore each of the straight lines AF, FG is also rational and incommensurable in length with AC; therefore each of the rectangles AI, FK is medial."
+    highlight: [AF, FG]
+    hint: |
+      … which are rational, incommensurable with {AC}: *AI*, *FK* medial.
+
+  - part: proof
+    text: "Again, since DE is commensurable with EG, therefore DG is also commensurable with each of the straight lines DE, EG."
+    highlight: [DE, EG]
+    hint: |
+      {DE}, {EG} commensurable with {DG} …
+
+  - part: proof
+    text: "But DG is commensurable in length with AC."
+    highlight: [DG, AC]
+    hint: |
+      … which is commensurable with {AC} …
+
+  - part: proof
+    text: "Therefore each of the rectangles DH, EK is rational."
+    highlight: [DE, EG]
+    hint: |
+      … so *DH*, *EK* rational.
+
+  - part: construction
+    text: "Let then the square LM be constructed equal to AI, and let there be subtracted NO equal to FK and being about the same angle with LM, namely the angle LPM; therefore the squares LM, NO are about the same diameter."
+    highlight: [LM, NO]
+    hint: |
+      Squares {LM} = *AI*, {NO} = *FK*.
+
+  - part: construction
+    text: "Let PR be their diameter, and let the figure be drawn."
+    highlight: [LM, NO]
+    hint: |
+      Diameter *PR*.
+
+  - part: proof
+    text: "Since then AI, FK are medial and are equal to the squares on LP, PN, the squares on LP, PN are also medial; therefore LP, PN are also medial straight lines commensurable in square only."
+    highlight: [LP, PN]
+    hint: |
+      sq({LP}), sq({PN}) medial.
+
+  - part: proof
+    text: "And, since the rectangle AF, FG is equal to the square on EG, therefore, as AF is to EG, so is EG to FG, while, as AF is to EG, so is AI to EK, and, as EG is to FG, so is EK to FK; therefore EK is a mean proportional between AI, FK."
+    highlight: [LM, NO]
+    hint: |
+      *EK* the mean of *AI*, *FK* …
+
+  - part: proof
+    text: "But MN is also a mean proportional between the squares LM, NO, and AI is equal to LM, and FK to NO; therefore MN is also equal to EK."
+    highlight: [LM, NO]
+    hint: |
+      … = *MN* = *LO*.
+
+  - part: proof
+    text: "But DH is equal to EK, and LO equal to MN; therefore the whole DK is equal to the gnomon UVW and NO."
+    highlight: [LM, NO]
+    hint: |
+      *DK* = gnomon + {NO}.
+
+  - part: proof
+    text: "Since then the whole AK is equal to LM, NO, and, in these, DK is equal to the gnomon UVW and NO, therefore the remainder AB is equal to TS."
+    highlight: [AB]
+    hint: |
+      So {AB} = *TS*.
+
+  - part: proof
+    text: "But TS is the square on LN; therefore the square on LN is equal to the area AB; therefore LN is the “side” of the area AB."
+    highlight: [LN]
+    hint: |
+      {LN} is the side.
+
+  - part: specification
+    text: "I say that LN is a first apotome of a medial straight line."
+    highlight: [LN]
+    hint: |
+      {LN} is a first apotome of a medial:
+
+  - part: proof
+    text: "For, since EK is rational and is equal to LO, therefore LO, that is, the rectangle LP, PN, is rational."
+    highlight: [LP, PN]
+    hint: |
+      *LO* = rect({LP},{PN}) rational.
+
+  - part: proof
+    text: "But NO was proved medial; therefore LO is incommensurable with NO."
+    highlight: [LM, NO]
+    hint: |
+      {NO} medial, so incommensurable with *LO*.
+
+  - part: proof
+    text: "But, as LO is to NO, so is LP to PN; therefore LP, PN are incommensurable in length."
+    highlight: [LP, PN]
+    hint: |
+      So {LP}, {PN} incommensurable in length.
+
+  - part: proof
+    text: "Therefore LP, PN are medial straight lines commensurable in square only which contain a rational rectangle; therefore LN is a first apotome of a medial straight line."
+    highlight: [LP, PN, LN]
+    hint: |
+      Medial, commensurable in square only, rational rectangle: [[X.74]].
+
+  - part: proof
+    text: "And it is the “side” of the area AB."
+    highlight: [LN, AB]
+    hint: |
+      And {LN} is the side of {AB}.
+
+  - part: proof
+    text: "Therefore the “side” of the area AB is a first apotome of a medial straight line."
+    highlight: [LN]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Mirror of [[X.55]]. $\blacksquare$

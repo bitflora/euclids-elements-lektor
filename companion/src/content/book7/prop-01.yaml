@@ -1,0 +1,214 @@
+id: VII.1
+kind: theorem
+title: If the Euclidean algorithm ends in a unit, the numbers are coprime
+
+paraphrase: |
+  Run the Euclidean algorithm on two numbers: subtract the smaller from the larger over and over, then the
+  remainder from the smaller, and so on. If the process ends at the unit, the two numbers have no common
+  measure but the unit: they are *prime to one another* ([[VII.Def.12]]).
+
+diagram:
+  width: 140
+  height: 270
+  elements:
+    - "A0;point;free;30,-1000;0;0"
+    - "A3;point;free;30,1000;0;0"
+    - "C0;point;free;65,-1000;0;0"
+    - "C3;point;free;65,1000;0;0"
+    - "E0;point;free;100,-1000;0;0"
+    - "E3;point;free;100,1000;0;0"
+    - "A;point;lineSlider;A0,A3,30,30"
+    - "C;point;lineSlider;C0,C3,60,30"
+    - "E1;point;lineSlider;E0,E3,30,30;0"
+    - "H;point;lineSlider;A0,A3,30,50"
+    - "C1;point;cutoff;C,C3,A,H;0;0"
+    - "G;point;cutoff;C1,C3,A,H"
+    - "F;point;cutoff;H,A3,C,G"
+    - "G1;point;cutoff;G,C3,A,F;0;0"
+    - "D;point;cutoff;G1,C3,A,F"
+    - "B;point;cutoff;F,A3,C,D"
+    - "AB;line;connect;A,B"
+    - "CD;line;connect;C,D"
+    - "E2;point;cutoff;E1,E3,A,H;0"
+    - "E;line;connect;E1,E2;black"
+    - "BF;line;connect;B,F;0;0;0"
+    - "FA;line;connect;F,A;0;0;0"
+    - "DG;line;connect;D,G;0;0;0"
+    - "GC;line;connect;G,C;0;0;0"
+    - "FH;line;connect;F,H;0;0;0"
+    - "HA;line;connect;H,A;0;0;0"
+  aliases: { BA: AB, DC: CD, AF: FA, CG: GC, AH: HA }
+  caption: |
+    Numbers are drawn as lines. {CD} fits once into {AB} with {FA} left over, {FA} once into {CD} leaving
+    {GC}, {GC} once into {FA} leaving the unit {HA}. Drag {A}, {C} or {H} to change the numbers.
+
+steps:
+  - part: enunciation
+    text: "Two unequal numbers being set out, and the less being continually subtracted in turn from the greater, if the number which is left never measures the one before it until an unit is left, the original numbers will be prime to one another."
+    highlight: [AB, CD]
+    hint: |
+      If the Euclidean algorithm reaches the unit, the two numbers are coprime.
+    explain:
+      fact: |
+        "Continually subtracted in turn" is *antenaresis* (ἀνθυφαίρεσις), the Euclidean algorithm done by
+        repeated subtraction: subtract the smaller from the larger as often as possible, then the remainder
+        from the smaller, and so on.
+      implicit: |
+        The algorithm always ends, since the remainders keep getting smaller and there are only finitely
+        many numbers below the first. Euclid does not say so.
+    modern: |
+      If the remainders of the Euclidean algorithm on $a > b$ reach $1$, then $\gcd(a, b) = 1$.
+
+  - part: setting-out
+    text: "For, the less of two unequal numbers AB, CD being continually subtracted from the greater, let the number which is left never measure the one before it until an unit is left;"
+    highlight: [AB, CD]
+    hint: |
+      Two numbers {AB} > {CD}, on which the algorithm ends in the unit.
+
+  - part: specification
+    text: "I say that AB, CD are prime to one another, that is, that an unit alone measures AB, CD."
+    highlight: [AB, CD]
+    hint: |
+      To prove: no number but the unit measures both {AB} and {CD}.
+    explain:
+      fact: |
+        That is the definition of numbers prime to one another, [[VII.Def.12]].
+    cites: [VII.Def.12]
+
+  - part: proof
+    text: "For, if AB, CD are not prime to one another, some number will measure them."
+    highlight: [AB, CD]
+    hint: |
+      Suppose not: then some number measures both. The proof is by contradiction.
+
+  - part: construction
+    text: "Let a number measure them, and let it be E;"
+    highlight: [E]
+    hint: |
+      Call the common measure {E}.
+
+  - part: construction
+    text: "let CD, measuring BF, leave FA less than itself, let AF, measuring DG, leave GC less than itself, and let GC, measuring FH, leave an unit HA."
+    highlight: [BF, FA, DG, GC, FH, HA]
+    hint: |
+      Write out the algorithm: {CD} goes into {BF} leaving {FA}; {FA} into {DG} leaving {GC}; {GC} into
+      {FH} leaving the unit {HA}.
+    explain:
+      did: |
+        Names the stages of the subtraction in the figure. In the figure each quotient is 1; Euclid's words
+        ("measuring {BF}") allow any number of subtractions at each stage.
+      implicit: |
+        The figure shows three stages. The argument for any number of stages is the same step repeated:
+        Euclid proves the case drawn and leaves the general case to the reader.
+    modern: |
+      $a = q_1 b + r_1,\quad b = q_2 r_1 + r_2,\quad r_1 = q_3 r_2 + 1.$
+
+  - part: proof
+    text: "Since, then, E measures CD, and CD measures BF, therefore E also measures BF."
+    highlight: [E, CD, BF]
+    hint: |
+      What measures a number measures every multiple of it.
+    explain:
+      fact: |
+        If $e \mid b$ and $b \mid q b$, then $e \mid q b$: measuring is transitive.
+      implicit: |
+        Euclid never states this as a proposition or an axiom; it is treated as evident from what "measures"
+        means.
+
+  - part: proof
+    text: "But it also measures the whole BA; therefore it will also measure the remainder AF."
+    highlight: [E, AB, FA]
+    hint: |
+      {E} measures {AB} and {BF}, so it measures the difference {AF}.
+    explain:
+      fact: |
+        If $e$ measures two numbers, it measures their difference.
+      implicit: |
+        Also unproved as a separate result: $a = m e$ and $b = n e$ give $a - b = (m - n) e$. Compare
+        [[VII.5]]–[[VII.8]], where Euclid does prove facts of this kind about parts.
+    modern: |
+      $e \mid a,\ e \mid q_1 b \Rightarrow e \mid a - q_1 b = r_1$.
+
+  - part: proof
+    text: "But AF measures DG; therefore E also measures DG."
+    highlight: [E, FA, DG]
+    hint: |
+      Same move one stage down: {E} measures {AF}, which measures {DG}.
+
+  - part: proof
+    text: "But it also measures the whole DC therefore it will also measure the remainder CG."
+    highlight: [E, CD, GC]
+    hint: |
+      And so {E} measures the remainder {CG}.
+    modern: |
+      $e \mid r_2$.
+
+  - part: proof
+    text: "But CG measures FH; therefore E also measures FH."
+    highlight: [E, GC, FH]
+    hint: |
+      Again: {CG} measures {FH}, so {E} does.
+
+  - part: proof
+    text: "But it also measures the whole FA; therefore it will also measure the remainder, the unit AH, though it is a number: which is impossible."
+    highlight: [E, FA, HA]
+    hint: |
+      So {E} would measure the unit {AH} — but a number cannot measure the unit.
+    explain:
+      follows: |
+        A number is a multitude of units ([[VII.Def.2]]), so it is greater than one unit, and the greater
+        cannot measure the less.
+    modern: |
+      $e \mid 1$ with $e \ge 2$: impossible.
+    cites: [VII.Def.2]
+
+  - part: proof
+    text: "Therefore no number will measure the numbers AB, CD; therefore AB, CD are prime to one another."
+    highlight: [AB, CD]
+    hint: |
+      No common measure but the unit: {AB}, {CD} are prime to one another.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Write $a = AB$, $b = CD$ and run the algorithm
+    $r_{-1} = a$, $r_0 = b$, $r_{k-1} = q_{k+1} r_k + r_{k+1}$, ending with $r_n = 1$.
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: |
+        Suppose $e \ge 2$ divides both $a$ and $b$.
+    - steps: [6, 7, 8, 9, 10]
+      text: |
+        If $e$ divides $r_{k-1}$ and $r_k$, it divides $r_{k+1} = r_{k-1} - q_{k+1} r_k$. By induction $e$
+        divides every remainder, in particular $r_n = 1$.
+    - steps: [10, 11]
+      text: |
+        But no $e \ge 2$ divides $1$. So $\gcd(a, b) = 1$. $\blacksquare$
+  closing: |
+    The converse also holds (if $\gcd(a, b) = 1$, the algorithm ends at 1), and together with [[VII.2]] this
+    shows that the last nonzero remainder is always $\gcd(a, b)$.
+
+commentary: |
+  Book VII begins the arithmetic books (VII–IX), and it begins with the algorithm that still carries
+  Euclid's name. Numbers are drawn as lines, but nothing here is geometry: the figure is a picture of the
+  bookkeeping, and the argument uses only "measures" and subtraction.
+
+  [[VII.1]] is the test for coprimality and [[VII.2]] the construction of the greatest common measure. The
+  same procedure applied to *magnitudes* reappears in [[X.2]] and [[X.3]]: there, if it never ends, the
+  magnitudes are incommensurable.
+
+gaps: |
+  - **Two facts about "measures"** are used without proof: that a measure of a number measures its
+    multiples, and that a common measure of two numbers measures their difference.
+  - **Proof by a typical case**: three stages of the algorithm are shown; the general case needs
+    induction.
+  - **Termination** of the process is assumed (it holds because the remainders strictly decrease).
+
+historical: |
+  The algorithm is much older than Euclid. Aristotle (*Topics* 158b) mentions a definition of "same ratio"
+  as "having the same *antanairesis*", which suggests the procedure was the basis of a pre-Eudoxan theory of
+  proportion; D. H. Fowler's *The Mathematics of Plato's Academy* reconstructs that theory.

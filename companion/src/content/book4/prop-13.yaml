@@ -1,0 +1,185 @@
+id: IV.13
+kind: problem
+title: Inscribing a circle in a regular pentagon
+
+paraphrase: |
+  In a given regular pentagon, inscribe a circle: its centre is where the angle bisectors meet.
+
+diagram:
+  width: 320
+  height: 310
+  elements:
+    - "C;point;free;80,270"
+    - "D;point;free;240,270"
+    - "ABCDE;polygon;regularPolygon;C,D,5;0;0;black;#efe4d2"
+    - "E;point;vertex;ABCDE,3"
+    - "A;point;vertex;ABCDE,4"
+    - "B;point;vertex;ABCDE,5"
+    - "CFx;line;angleBisector;B,C,D;0;0;0"
+    - "DFx;line;angleBisector;C,D,E;0;0;0"
+    - "F;point;intersection;CFx,DFx"
+    - "M;point;intersection;A,E,C,F;black;0"
+    - "G;point;intersection;B,A,D,F;black;0"
+    - "H;point;intersection;C,B,E,F;black;0"
+    - "K;point;intersection;D,C,A,F;black;0"
+    - "L;point;intersection;E,D,B,F;black;0"
+    - "CF;line;connect;C,F"
+    - "DF;line;connect;D,F"
+    - "FB;line;connect;F,B"
+    - "FA;line;connect;F,A"
+    - "FE;line;connect;F,E"
+    - "FG;line;connect;F,G;0;0;0"
+    - "FH;line;connect;F,H;0;0;0"
+    - "FK;line;connect;F,K;0;0;0"
+    - "FL;line;connect;F,L;0;0;0"
+    - "FM;line;connect;F,M;0;0;0"
+    - "GHKLM;circle;radius;F,K;0;0;black;0"
+    - "BCF;polygon;triangle;B,C,F;0;0;0;0"
+    - "DCF;polygon;triangle;D,C,F;0;0;0;0"
+    - "FHC;polygon;triangle;F,H,C;0;0;0;0"
+    - "FKC;polygon;triangle;F,K,C;0;0;0;0"
+    - "angBCF;sector;angleMarker;C,B,F"
+    - "angDCF;sector;angleMarker;C,F,D"
+    - "angCBF;sector;angleMarker;B,C,F"
+    - "angCDF;sector;angleMarker;D,F,C"
+  aliases:
+    BF: FB
+    AF: FA
+    EF: FE
+  given: [A, B, C, D, E, ABCDE]
+  caption: |
+    Drag {C} or {D}. The bisectors of the angles at {C} and {D} meet at the centre {F} of the circle touching
+    all five sides.
+
+steps:
+  - part: enunciation
+    text: "In a given pentagon, which is equilateral and equiangular, to inscribe a circle."
+    highlight: [ABCDE, GHKLM]
+    hint: |
+      A problem: the incircle of a regular pentagon.
+
+  - part: setting-out
+    text: "Let ABCDE be the given equilateral and equiangular pentagon;"
+    highlight: [ABCDE]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to inscribe a circle in the pentagon ABCDE."
+    highlight: [ABCDE]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let the angles BCD, CDE be bisected by the straight lines CF, DF respectively;"
+    highlight: [CF, DF]
+    adds: [CF, DF, F]
+    hint: |
+      Bisect two adjacent angles ([[I.9]]); they meet at {F}.
+    cites: [I.9]
+
+  - part: construction
+    text: "and from the point F, at which the straight lines CF, DF meet one another, let the straight lines FB, FA, FE be joined."
+    highlight: [FB, FA, FE]
+    adds: [FB, FA, FE]
+    hint: |
+      Join {F} to the other vertices.
+
+  - part: proof
+    text: "Then, since BC is equal to CD, and CF common, the two sides BC, CF are equal to the two sides DC, CF; and the angle BCF is equal to the angle DCF; therefore the base BF is equal to the base DF, and the triangle BCF is equal to the triangle DCF, and the remaining angles will be equal to the remaining angles, namely those which the equal sides subtend."
+    highlight: [BCF, DCF]
+    hint: |
+      SAS ([[I.4]]).
+
+  - part: proof
+    text: "Therefore the angle CBF is equal to the angle CDF."
+    highlight: [angCBF, angCDF]
+    hint: |
+      Corresponding angles.
+
+  - part: proof
+    text: "And, since the angle CDE is double of the angle CDF, and the angle CDE is equal to the angle ABC, while the angle CDF is equal to the angle CBF; therefore the angle CBA is also double of the angle CBF; therefore the angle ABF is equal to the angle FBC; therefore the angle ABC has been bisected by the straight line BF."
+    highlight: [FB]
+    hint: |
+      So {FB} bisects the angle at {B} as well.
+
+  - part: proof
+    text: "Similarly it can be proved that the angles BAE, AED have also been bisected by the straight lines FA, FE respectively."
+    highlight: [FA, FE]
+    hint: |
+      All five angles are bisected by lines through {F}.
+
+  - part: construction
+    text: "Now let FG, FH, FK, FL, FM be drawn from the point F perpendicular to the straight lines AB, BC, CD, DE, EA."
+    highlight: [FG, FH, FK, FL, FM]
+    adds: [G, H, K, L, M]
+    hint: |
+      Perpendiculars to the five sides ([[I.12]]).
+    cites: [I.12]
+
+  - part: proof
+    text: "Then, since the angle HCF is equal to the angle KCF, and the right angle FHC is also equal to the angle FKC, FHC, FKC are two triangles having two angles equal to two angles and one side equal to one side, namely FC which is common to them and subtends one of the equal angles; therefore they will also have the remaining sides equal to the remaining sides;"
+    highlight: [FHC, FKC]
+    hint: |
+      AAS ([[I.26]]), as in [[IV.4]].
+
+  - part: proof
+    text: "therefore the perpendicular FH is equal to the perpendicular FK."
+    highlight: [FH, FK]
+    hint: |
+      Equal distances.
+
+  - part: proof
+    text: "Similarly it can be proved that each of the straight lines FL, FM, FG is also equal to each of the straight lines FH, FK; therefore the five straight lines FG, FH, FK, FL, FM are equal to one another."
+    highlight: [FG, FH, FK, FL, FM]
+    hint: |
+      All five.
+
+  - part: proof
+    text: "Therefore the circle described with centre F and distance one of the straight lines FG, FH, FK, FL, FM will pass also through the remaining points; and it will touch the straight lines AB, BC, CD, DE, EA, because the angles at the points G, H, K, L, M are right."
+    highlight: [GHKLM]
+    adds: [GHKLM]
+    hint: |
+      The circle.
+
+  - part: proof
+    text: "For, if it does not touch them, but cuts them, it will result that the straight line drawn at right angles to the diameter of the circle from its extremity falls within the circle: which was proved absurd."
+    hint: |
+      [[III.16]].
+
+  - part: proof
+    text: "Therefore the circle described with centre F and distance one of the straight lines FG, FH, FK, FL, FM will not cut the straight lines AB, BC, CD, DE, EA; therefore it will touch them."
+    highlight: [GHKLM]
+    hint: |
+      So it touches.
+
+  - part: proof
+    text: "Let it be described, as GHKLM."
+    highlight: [GHKLM]
+    hint: |
+      Name it.
+
+  - part: conclusion
+    text: "Therefore in the given pentagon, which is equilateral and equiangular, a circle has been inscribed."
+    highlight: [GHKLM]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+      text: The centre of a regular pentagon is equidistant from all sides (rotational symmetry); the circle of that radius touches each. $\blacksquare$
+
+commentary: |
+  Heath notes that here Euclid literally says "with distance one of the *points* {G}, {H}, {K}, {L}, {M}" —
+  careless language he fills out (see the note on [[IV.4]]).
+
+gaps: |
+  - **The bisectors meet** (step 3): assumed.

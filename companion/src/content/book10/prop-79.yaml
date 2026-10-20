@@ -1,0 +1,94 @@
+id: X.79
+kind: theorem
+title: Only one rational line can be annexed to an apotome
+
+paraphrase: |
+  A apotome {AB} has only one annex {BC} of the kind its definition ([[X.73]]) requires. The subtractive
+  counterpart of [[X.42]].
+
+diagram:
+  width: 250
+  height: 60
+  elements:
+    - "A0;point;free;-1000,35"
+    - "A3;point;free;1000,35"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "B;point;lineSlider;A0,A3,90,0"
+    - "C;point;lineSlider;A0,A3,180,0"
+    - "D;point;lineSlider;A0,A3,210,0"
+    - "AD;line;connect;A,D"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+  aliases: { DA: AD, BA: AB, CA: AC, DB: BD }
+  caption: |
+    {AB} with the annex {BC} (whole {AC}) and, supposedly, a second annex {BD} (whole {AD}).
+
+steps:
+  - part: enunciation
+    text: "To an apotome only one rational straight line can be annexed which is commensurable with the whole in square only."
+    highlight: [AB, BC]
+    hint: |
+      The annex is unique.
+
+  - part: setting-out
+    text: "Let AB be an apotome, and BC an annex to it; therefore AC, CB are rational straight lines commensurable in square only."
+    highlight: [AB, BC, AC]
+    hint: |
+      {AB} an apotome with annex {BC}: {AC}, {CB} rational, commensurable in square only.
+
+  - part: specification
+    text: "I say that no other rational straight line can be annexed to AB which is commensurable with the whole in square only."
+    highlight: [AB]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, if possible, let BD be so annexed; therefore AD, DB are also rational straight lines commensurable in square only."
+    highlight: [BD, AD]
+    hint: |
+      Suppose another annex {BD}.
+
+  - part: proof
+    text: "Now, since the excess of the squares on AD, DB over twice the rectangle AD, DB is also the excess of the squares on AC, CB over twice the rectangle AC, CB, for both exceed by the same, the square on AB, therefore, alternately, the excess of the squares on AD, DB over the squares on AC, CB is the excess of twice the rectangle AD, DB over twice the rectangle AC, CB."
+    highlight: [AD, BD, AC, BC]
+    hint: |
+      Both pairs exceed sq({AB}) by the same rule ([[II.7]]): squares − 2·rect = sq({AB}). So the sums of
+      squares and the doubled rectangles differ by the same amount.
+
+  - part: proof
+    text: "But the squares on AD, DB exceed the squares on AC, CB by a rational area, for both are rational; therefore twice the rectangle AD, DB also exceeds twice the rectangle AC, CB by a rational area: which is impossible, for both are medial, and a medial area does not exceed a medial by a rational area."
+    highlight: [AD, BD, AC, BC]
+    hint: |
+      The sums of squares are rational, so two medial areas would differ by a rational one — impossible
+      ([[X.26]]).
+
+  - part: proof
+    text: "Therefore no other rational straight line can be annexed to AB which is commensurable with the whole in square only."
+    highlight: [AB]
+    hint: |
+      No other annex.
+
+  - part: proof
+    text: "Therefore only one rational straight line can be annexed to an apotome which is commensurable with the whole in square only."
+    highlight: [AB]
+    hint: |
+      Only one.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        As [[X.42]]: two annexes would make two medial areas differ by a rational area, contradicting [[X.26]].
+        $\blacksquare$
+
+commentary: |
+  The "annex" (προσαρμόζουσα) of an apotome $a - b$ is $b$. [[X.79]]–[[X.84]] show that the six subtractive
+  irrationals each have a unique annex — so their kinds are well defined, as [[X.42]]–[[X.47]] showed for the
+  additive ones.

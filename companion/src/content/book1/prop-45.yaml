@@ -1,0 +1,263 @@
+id: I.45
+kind: problem
+title: A parallelogram equal to any rectilinear figure
+
+paraphrase: |
+  Given a rectilinear figure {ABCD} and an angle {E|angE}, construct a parallelogram with that
+  angle and the same area as the figure.
+
+diagram:
+  width: 400
+  height: 240
+  elements:
+    - "A;point;free;40,60"
+    - "B;point;free;100,200"
+    - "C;point;free;150,80"
+    - "D;point;free;100,40"
+    - "BD;line;connect;B,D"
+    - "ABCD;polygon;quadrilateral;A,B,C,D;0;0;0,0,0;0"
+    - "ABD;polygon;triangle;A,B,D;0;0;0;#efe4d2"
+    - "DBC;polygon;triangle;D,B,C;0;0;0;#dfe7ea"
+    - "E1;point;free;180,120;0"
+    - "E2;point;free;170,150;0"
+    - "E3;point;free;200,150;0"
+    - "E1E2;line;connect;E1,E2"
+    - "E2E3;line;connect;E2,E3"
+    - "E;polygon;triangle;E1,E2,E3;0,0,0;0;0;0"
+    - "K;point;free;230,190"
+    - "F;point;free;270,70"
+    - "Hp;point;similar;F,K,E1,E2,E3;0;0"
+    - "KFGH;polygon;application;ABD,K,F,Hp;0;0;0;#efe4d2"
+    - "H;point;vertex;KFGH,4"
+    - "G;point;vertex;KFGH,3"
+    - "Mp;point;similar;G,H,E1,E2,E3;0;0"
+    - "HGLM;polygon;application;DBC,H,G,Mp;0;0;0;#dfe7ea"
+    - "M;point;vertex;HGLM,4"
+    - "L;point;vertex;HGLM,3"
+    - "KFLM;polygon;quadrilateral;K,F,L,M;0;0;0;0"
+    - "KF;line;connect;K,F"
+    - "FG;line;connect;F,G"
+    - "GH;line;connect;G,H"
+    - "HK;line;connect;H,K"
+    - "GL;line;connect;G,L"
+    - "LM;line;connect;L,M"
+    - "MH;line;connect;M,H"
+    - "KM;line;connect;K,M;0;0;0"
+    - "FL;line;connect;F,L;0;0;0"
+    - "angE;sector;angleMarker;E2,E1,E3;0;0;magenta;magenta"
+    - "angFKH;sector;angleMarker;K,F,H,22;0;0;magenta;magenta"
+    - "angGHM;sector;angleMarker;H,G,M,22;0;0;magenta;magenta"
+    - "angHGF;sector;angleMarker;G,H,F,22"
+    - "angKHG;sector;angleMarker;H,K,G,22"
+    - "angHGL;sector;angleMarker;G,H,L,22"
+  aliases:
+    FH: KFGH
+    GM: HGLM
+    DB: BD
+    HKF: angFKH
+    FKH: angFKH
+    FKM: angFKH
+    GHM: angGHM
+    MHG: angGHM
+    KHG: angKHG
+    HGF: angHGF
+    HGL: angHGL
+    FK: KF
+    HG: GH
+    KH: HK
+    HM: MH
+    ML: LM
+    MK: KM
+    LF: FL
+    GF: FG
+    LG: GL
+  given: [A, B, C, D, ABCD, ABD, DBC, E1E2, E2E3, E, angE]
+  caption: |
+    Drag the corners of {ABCD} or of the angle {E|angE}, or move {K} and {F}. The two parallelograms
+    always join into one, {KFLM}, equal in area to {ABCD}.
+
+steps:
+  - part: enunciation
+    text: "To construct, in a given rectilineal angle, a parallelogram equal to a given rectilineal figure."
+    highlight: [ABCD, KFLM, angE]
+    hint: |
+      Turn any polygon into a parallelogram of the same area, with a prescribed angle.
+    explain:
+      implicit: |
+        "Rectilineal figure" is in the Greek simply "rectilineal", used as a noun like "parallelogram"
+        (Heath's note on lines 2–3).
+
+  - part: setting-out
+    text: "Let ABCD be the given rectilineal figure and E the given rectilineal angle;"
+    highlight: [ABCD, angE]
+    hint: |
+      The data. Euclid takes a four-sided figure; the method works for any number of sides.
+
+  - part: specification
+    text: "thus it is required to construct, in the given angle E, a parallelogram equal to the rectilineal figure ABCD."
+    highlight: [ABCD, angE]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let DB be joined,"
+    highlight: [BD]
+    hint: |
+      Cut the figure into triangles {ABD} and {DBC}.
+
+  - part: construction
+    text: "and let the parallelogram FH be constructed equal to the triangle ABD, in the angle HKF which is equal to E;"
+    highlight: [FH, ABD, angFKH]
+    adds: [K, F, G, H, KFGH, KF, FG, GH, HK, angFKH]
+    hint: |
+      Turn the first triangle into a parallelogram {FH} with angle {E|angE} ([[I.42]]).
+
+  - part: construction
+    text: "let the parallelogram GM equal to the triangle DBC be applied to the straight line GH, in the angle GHM which is equal to E."
+    highlight: [GM, DBC, angGHM]
+    adds: [M, L, HGLM, GL, LM, MH, angGHM]
+    hint: |
+      Apply the second triangle to the side {GH}, as a parallelogram {GM} with the same angle ([[I.44]]).
+
+  - part: proof
+    text: "Then, since the angle E is equal to each of the angles HKF, GHM, the angle HKF is also equal to the angle GHM."
+    highlight: [angFKH, angGHM, angE]
+    hint: |
+      Both equal {E|angE}.
+    explain:
+      did: |
+        Now Euclid must check that the two parallelograms fit together into one: that {KH}, {HM} form a
+        straight line, and so do {FG}, {GL}.
+
+  - part: proof
+    text: "Let the angle KHG be added to each; therefore the angles FKH, KHG are equal to the angles KHG, GHM."
+    highlight: [angFKH, angKHG, angGHM]
+    adds: [angKHG]
+    hint: |
+      Add ∠{KHG} to both.
+
+  - part: proof
+    text: "But the angles FKH, KHG are equal to two right angles;"
+    highlight: [angFKH, angKHG]
+    hint: |
+      Interior angles of the parallelogram {FH} on one side ([[I.29]]).
+
+  - part: proof
+    text: "therefore the angles KHG, GHM are also equal to two right angles."
+    highlight: [angKHG, angGHM]
+    hint: |
+      So the angles at {H} on either side of {GH} sum to two right angles.
+
+  - part: proof
+    text: "Thus, with a straight line GH, and at the point H on it, two straight lines KH, HM not lying on the same side make the adjacent angles equal to two right angles;"
+    highlight: [GH, HK, MH]
+    hint: |
+      The hypothesis of [[I.14]], quoted.
+
+  - part: proof
+    text: "therefore KH is in a straight line with HM."
+    highlight: [HK, MH]
+    hint: |
+      {KHM|KM} is one straight line ([[I.14]]).
+
+  - part: proof
+    text: "And, since the straight line HG falls upon the parallels KM, FG, the alternate angles MHG, HGF are equal to one another."
+    highlight: [angGHM, angHGF]
+    adds: [angHGF]
+    hint: |
+      Same check on the other side: alternate angles ([[I.29]]).
+
+  - part: proof
+    text: "Let the angle HGL be added to each; therefore the angles MHG, HGL are equal to the angles HGF, HGL."
+    highlight: [angGHM, angHGL, angHGF]
+    adds: [angHGL]
+    hint: |
+      Add ∠{HGL}.
+
+  - part: proof
+    text: "But the angles MHG, HGL are equal to two right angles;"
+    highlight: [angGHM, angHGL]
+    hint: |
+      Interior angles of {GM} ([[I.29]]).
+
+  - part: proof
+    text: "therefore the angles HGF, HGL are also equal to two right angles."
+    highlight: [angHGF, angHGL]
+    hint: |
+      So the angles at {G} sum to two right angles.
+
+  - part: proof
+    text: "Therefore FG is in a straight line with GL."
+    highlight: [FG, GL]
+    hint: |
+      {FGL|FL} is one straight line ([[I.14]]).
+
+  - part: proof
+    text: "And, since FK is equal and parallel to HG, and HG to ML also, KF is also equal and parallel to ML;"
+    highlight: [KF, GH, LM]
+    hint: |
+      Opposite sides of the parallelograms ([[I.34]]); parallels to the same line are parallel ([[I.30]]).
+
+  - part: proof
+    text: "and the straight lines KM, FL join them (at their extremities); therefore KM, FL are also equal and parallel."
+    highlight: [KM, FL]
+    hint: |
+      [[I.33]].
+
+  - part: proof
+    text: "Therefore KFLM is a parallelogram."
+    highlight: [KFLM]
+    adds: [KFLM]
+    hint: |
+      The two pieces form a single parallelogram.
+
+  - part: proof
+    text: "And, since the triangle ABD is equal to the parallelogram FH, and DBC to GM, the whole rectilineal figure ABCD is equal to the whole parallelogram KFLM."
+    highlight: [ABD, FH, DBC, GM, ABCD, KFLM]
+    hint: |
+      Add the pieces ([[I.CN.2]]).
+    cites: [I.CN.2]
+    modern: |
+      $$[KFLM] = [FH] + [GM] = [ABD] + [DBC] = [ABCD]$$
+
+  - part: conclusion
+    text: "Therefore the parallelogram KFLM has been constructed equal to the given rectilineal figure ABCD, in the angle FKM which is equal to the given angle E."
+    highlight: [KFLM, angFKH]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: |
+        Triangulate the polygon: $[ABCD] = [ABD] + [DBC]$. Choose a base length $b$ and angle
+        $\varepsilon$; I.42 and I.44 give parallelograms on the same side $b$ with heights $h_1$, $h_2$.
+    - steps: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+      text: Stacked, they form a parallelogram with side $b$ and height $h_1 + h_2$.
+    - steps: [19]
+      text: Its area is $b(h_1 + h_2) = [ABD] + [DBC]$. $\blacksquare$
+  closing: |
+    For an $n$-sided figure, triangulate into $n - 2$ triangles and apply each in turn to the free
+    side of the parallelogram built so far.
+
+commentary: |
+  The climax of the "application" constructions: every rectilinear area can be turned into a
+  parallelogram — in particular a rectangle — of prescribed angle. Book II finishes the job: [[II.14]]
+  turns any rectilinear figure into a square.
+
+  Most of the proof checks something a modern reader might take for granted: that the two
+  parallelograms really fit together into one, which needs [[I.14]] twice.
+
+gaps: |
+  - **Only four sides** are treated; the general case is "similarly".
+
+historical: |
+  Proclus suggests that this problem — turning any rectilinear figure into a parallelogram, and so
+  (with Book II) into a square — is what led geometers to seek the *quadrature of the circle*.

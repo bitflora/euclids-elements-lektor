@@ -1,0 +1,175 @@
+id: I.3
+kind: problem
+title: Cutting off a shorter length from a longer
+
+paraphrase: |
+  Given two segments of different lengths, mark off on the longer one, from one of its ends, a
+  segment equal to the shorter.
+
+diagram:
+  width: 340
+  height: 280
+  elements:
+    - "C0;point;free;-1000,60;0"
+    - "C3;point;free;1000,60;0"
+    - "C1;point;lineSlider;C0,C3,235,60;0"
+    - "C2;point;lineSlider;C0,C3,310,60;0"
+    - "C;line;connect;C1,C2;black"
+    - "A;point;free;120,190"
+    - "B;point;free;290,190"
+    - "AB;line;connect;A,B"
+    - "E;point;cutoff;AB,C"
+    - "ACcirc;circle;radius;A,C1;0;0;0;0"
+    - "CAcirc;circle;radius;C1,A;0;0;0;0"
+    - "DxLine;line;bichord;ACcirc,CAcirc;0;0;0"
+    - "Dx;point;last;DxLine;0;0"
+    - "AD;line;extend;Dx,A,C1,C2"
+    - "D;point;last;AD"
+    - "DEF;circle;radius;A,E"
+    - "F;point;extend;D,A,D,A;black;0"
+    - "AE;line;connect;A,E;0;0;0"
+  aliases:
+    DA: AD
+    EA: AE
+  given: [A, B, AB, C, C1, C2]
+  caption: |
+    Drag {A} or {B}, or the ends of {C}. Keep {AB} longer than {C}: the problem assumes it.
+    Where {AD} points depends on how I.2 is carried out; any direction will do.
+
+steps:
+  - part: enunciation
+    text: "Given two unequal straight lines, to cut off from the greater a straight line equal to the less."
+    highlight: [AB, C]
+    hint: |
+      Mark off on the longer segment a piece as long as the shorter one.
+    explain:
+      did: |
+        States the third problem.
+      implicit: |
+        "Cut off" means: find a point on the greater line so that the piece from one end to
+        that point equals the less. Euclid cuts from the end {A}.
+
+  - part: setting-out
+    text: "Let AB, C be the two given unequal straight lines, and let AB be the greater of them."
+    highlight: [AB, C]
+    hint: |
+      The data: a longer line {AB} and a shorter line {C}, named by a single letter.
+    explain:
+      did: |
+        Names the two lines.
+      implicit: |
+        Euclid can name a line by one letter when nothing else about it matters. {C} is
+        anywhere in the plane; it need not touch {AB}.
+
+  - part: specification
+    text: "Thus it is required to cut off from AB the greater a straight line equal to C the less."
+    highlight: [AB, C]
+    hint: |
+      The task, restated for {AB} and {C}.
+
+  - part: construction
+    text: "At the point A let AD be placed equal to the straight line C;"
+    highlight: [A, AD, C]
+    adds: [AD, D]
+    hint: |
+      Use [[I.2]] to put a copy of {C} at {A}. Call it {AD}.
+    explain:
+      did: |
+        Invokes the whole of I.2 in one clause.
+      fact: |
+        After this step, {AD} = {C}, and {A} is one end of {AD}.
+      justification: "[[I.2]]"
+      implicit: |
+        Where {AD} points is decided by the construction of I.2 (which triangle, which end of
+        {C}). It does not matter: step 4 swings {AD} round onto {AB} with a circle.
+
+  - part: construction
+    text: "and with centre A and distance AD let the circle DEF be described."
+    highlight: [A, AD, DEF]
+    adds: [DEF, E, F]
+    hint: |
+      Draw the circle with centre {A} through {D}. It crosses {AB} at {E}.
+    explain:
+      did: |
+        Describes the circle {DEF} of radius {AD} about {A}. [[I.Post.3]]
+      fact: |
+        Every point of this circle is at distance {AD} from {A}.
+      implicit: |
+        As in I.2, the text never says that {E} is where the circle meets {AB}; the figure
+        says it. {F} is only there to give the circle a three-letter name.
+    gap: |
+      Why does the circle meet {AB}, and meet it *between* {A} and {B}? Because {A} is inside the
+      circle and {AB} is longer than the radius {AD} = {C}, so {B} is outside it. Both facts
+      are true, but the first needs a line–circle intersection principle and the second
+      needs {AB} > {C} — the one place the hypothesis "{AB} the greater" is used.
+
+  - part: proof
+    text: "Now, since the point A is the centre of the circle DEF, AE is equal to AD."
+    highlight: [A, DEF, AE, AD]
+    hint: "{AE} and {AD} are radii of the same circle."
+    explain:
+      justification: "[[I.Def.15]]"
+    modern: |
+      $$D, E \in \odot(A, AD) \;\Longrightarrow\; AE = AD$$
+
+  - part: proof
+    text: "But C is also equal to AD."
+    highlight: [C, AD]
+    hint: |
+      That is how {AD} was made, in step 3.
+    explain:
+      justification: |
+        The construction of step 3, by [[I.2]].
+
+  - part: proof
+    text: "Therefore each of the straight lines AE, C is equal to AD; so that AE is also equal to C."
+    highlight: [AE, C, AD]
+    hint: |
+      {AE} and {C} both equal {AD}, so they equal each other ([[I.CN.1]]).
+    explain:
+      follows: |
+        The pattern of I.1 and I.2 once more, with {AD} as the common term.
+    modern: |
+      $$AE = AD,\; C = AD \;\Longrightarrow\; AE = C$$
+
+  - part: conclusion
+    text: "Therefore, given the two straight lines AB, C, from AB the greater AE has been cut off equal to C the less."
+    highlight: [AB, AE, C]
+    hint: "{AE} lies along {AB}, starts at {A}, and equals {C}. Done."
+    explain:
+      implicit: "That {AE} lies *on* {AB}: that is how {E} was chosen (step 4)."
+
+  - part: conclusion
+    text: "(Being) what it was required to do."
+    hint: |
+      Q.E.F.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Assume segment transfer (I.2, proved
+    above) and the line–circle intersection property.
+  lines:
+    - steps: [1, 2]
+      text: Let $AB$ and $c$ be segments with $AB > c$.
+    - steps: [3]
+      text: By I.2 choose $D$ with $AD = c$.
+    - steps: [4]
+      text: |
+        Let $\Gamma = \odot(A, AD)$. $A$ is inside $\Gamma$; and $AB > c = AD$, so $B$ is outside
+        $\Gamma$. Hence segment $AB$ meets $\Gamma$ at a point $E$ with $A{-}E{-}B$.
+    - steps: [5, 6, 7]
+      text: $AE = AD = c$.
+    - steps: [8]
+      text: So $E$ lies on $AB$ with $AE = c$. $\blacksquare$
+  closing: |
+    In modern treatments I.2 and I.3 together are usually replaced by a single axiom (Hilbert's
+    III.1): on any ray from a point, a segment equal to a given segment can be laid off, uniquely.
+
+commentary: |
+  I.3 finishes the small toolkit that I.1–I.3 provide: I.1 builds an equilateral triangle, I.2
+  moves a length, I.3 lays it along a given line. From here on "cut off" and "place" are used
+  freely; the first use is in [[I.5]].
+
+gaps: |
+  - **The intersection {E}** and its position between {A} and {B} (step 4).
+  - The hypothesis that {AB} is the greater is used only there, silently.

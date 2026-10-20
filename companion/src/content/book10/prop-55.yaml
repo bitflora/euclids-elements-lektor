@@ -1,0 +1,211 @@
+id: X.55
+kind: theorem
+title: The side of a rational line times a second binomial is a first bimedial
+
+paraphrase: |
+  If an area {AC} is contained by a rational line {AB} and a second binomial {AD}, its side {MO} is a first
+  bimedial.
+
+diagram:
+  width: 400
+  height: 210
+  elements:
+    - "A0;point;free;-1000,60;0;0"
+    - "A3;point;free;1000,60;0;0"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "D;point;lineSlider;A0,A3,200,0"
+    - "B';point;perpendicular;A,D;0;0"
+    - "B;point;lineSlider;A,B',0,150"
+    - "C;point;parallelogram;B,A,D"
+    - "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;random"
+    - "E;point;lineSlider;A,D,120,0"
+    - "F;point;midpoint;E,D"
+    - "AEmid;point;midpoint;A,E;0;0"
+    - "AEquar;point;midpoint;E,AEmid;0;0"
+    - "EFcirc;circle;radius;E,F;0;0;0;0"
+    - "EAcirc;circle;radius;AEquar,E;0;0;0;0"
+    - "bich;line;bichord;EFcirc,EAcirc;0;0;0"
+    - "G';point;first;bich;0;0"
+    - "G;point;cutoff;AEmid,D,AEmid,G'"
+    - "H;point;parallelogram;B,A,G"
+    - "K;point;parallelogram;B,A,E"
+    - "L;point;parallelogram;B,A,F"
+    - "HGEK;polygon;quadrilateral;H,G,E,K;0;0;black;240,80,100"
+    - "FL;line;connect;F,L"
+    - "AH;polygon;quadrilateral;A,B,H,G;0;0;0;60,80,100"
+    - "S0;point;free;-1000,175;0;0"
+    - "S3;point;free;1000,175;0;0"
+    - "S;point;lineSlider;S0,S3,240,0"
+    - "P;point;meanProportional;A,G,G,H,S,S3"
+    - "SPNM;polygon;square;S,P;0;0;black;60,80,100"
+    - "M;point;vertex;SPNM,4"
+    - "N;point;vertex;SPNM,3"
+    - "T;point;meanProportional;G,E,E,K,P,S3;0"
+    - "O;point;parallelogram;M,S,T"
+    - "NOQR;polygon;square;N,O;0;0;black;240,80,100"
+    - "Q;point;vertex;NOQR,3"
+    - "R;point;vertex;NOQR,4"
+    - "SQ;polygon;parallelogram;S,T,Q;0;0;black;0"
+    - "MO;line;connect;M,O;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "ED;line;connect;E,D;0;0;0"
+    - "AG;line;connect;A,G;0;0;0"
+    - "GE;line;connect;G,E;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "MN;line;connect;M,N;0;0;0"
+    - "NO;line;connect;N,O;0;0;0"
+    - "EK;line;connect;E,K;0;0;0"
+  aliases: { AC: ABCD, SN: SPNM, NQ: NOQR, GK: HGEK, LF: FL, OM: MO, BA: AB, DA: AD, EA: AE, DE: ED, GA: AG, EG: GE, FE: EF, NM: MN, ON: NO, KE: EK }
+  caption: |
+    As in [[X.54]]: {AD} = {AE} + {ED} on the rational {AB}; squares {SN} = {AH}, {NQ} = {GK}; {MO} is the
+    side of {AC}.
+
+steps:
+  - part: enunciation
+    text: "If an area be contained by a rational straight line and the second binomial, the “side” of the area is the irrational straight line which is called a first bimedial."
+    highlight: [AC, MO]
+    hint: |
+      √(rational × second binomial) = first bimedial.
+    modern: |
+      $\sqrt{\rho(\sqrt a + b)}$ with $b$ rational: $\sqrt{u} + \sqrt{v}$ with $u, v$ medial-area
+      squares, $\sqrt{uv}$ rational.
+
+  - part: proof
+    text: "For let the area ABCD be contained by the rational straight line AB and the second binomial AD; I say that the “side” of the area AC is a first bimedial straight line."
+    highlight: [AC, AB, AD]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For, since AD is a second binomial straight line, let it be divided into its terms at E, so that AE is the greater term; therefore AE, ED are rational straight lines commensurable in square only, the square on AE is greater than the square on ED by the square on a straight line commensurable with AE, and the lesser term ED is commensurable in length with AB."
+    highlight: [AE, ED]
+    hint: |
+      The terms; now the *lesser* {ED} is commensurable with {AB} ([[X.Def.II.2]]).
+
+  - part: construction
+    text: "Let ED be bisected at F, and let there be applied to AE the rectangle AG, GE equal to the square on EF and deficient by a square figure; therefore AG is commensurable in length with GE."
+    highlight: [AG, GE, EF]
+    hint: |
+      As in [[X.54]]: rect({AG},{GE}) = sq({EF}), {AG}, {GE} commensurable ([[X.17]]).
+
+  - part: construction
+    text: "Through G, E, F let GH, EK, FL be drawn parallel to AB, CD, let the square SN be constructed equal to the parallelogram AH, and the square NQ equal to GK, and let them be placed so that MN is in a straight line with NO; therefore RN is also in a straight line with NP."
+    highlight: [SN, NQ]
+    hint: |
+      The two squares.
+
+  - part: construction
+    text: "Let the square SQ be completed."
+    highlight: [SQ]
+    hint: |
+      Complete {SQ}.
+
+  - part: proof
+    text: "It is then manifest from what was proved before that MR is a mean proportional between SN, NQ and is equal to EL, and that MO is the “side” of the area AC."
+    highlight: [MO]
+    hint: |
+      As before, {MO} is the side of {AC}.
+
+  - part: specification
+    text: "It is now to be proved that MO is a first bimedial straight line."
+    highlight: [MO]
+    hint: |
+      Now: {MO} is a first bimedial.
+
+  - part: proof
+    text: "Since AE is incommensurable in length with ED, while ED is commensurable with AB, therefore AE is incommensurable with AB."
+    highlight: [AE, AB]
+    hint: |
+      {AE} incommensurable with {AB} ([[X.13]]).
+
+  - part: proof
+    text: "And, since AG is commensurable with EG, AE is also commensurable with each of the straight lines AG, GE."
+    highlight: [AE, AG, GE]
+    hint: |
+      {AE} commensurable with {AG}, {GE} ([[X.15]]) …
+
+  - part: proof
+    text: "But AE is incommensurable in length with AB; therefore AG, GE are also incommensurable with AB."
+    highlight: [AG, GE, AB]
+    hint: |
+      … which are therefore incommensurable with {AB}.
+
+  - part: proof
+    text: "Therefore BA, AG and BA, GE are pairs of rational straight lines commensurable in square only; so that each of the rectangles AH, GK is medial."
+    highlight: [AH, GK]
+    hint: |
+      So {AH}, {GK} are medial ([[X.21]]) …
+
+  - part: proof
+    text: "Hence each of the squares SN, NQ is medial."
+    highlight: [SN, NQ]
+    hint: |
+      … and so are {SN}, {NQ} …
+
+  - part: proof
+    text: "Therefore MN, NO are also medial."
+    highlight: [MN, NO]
+    hint: |
+      … and {MN}, {NO} are medial lines.
+
+  - part: proof
+    text: "And, since AG is commensurable in length with GE, AH is also commensurable with GK, that is, SN is commensurable with NQ, that is, the square on MN with the square on NO."
+    highlight: [MN, NO]
+    hint: |
+      Their squares are commensurable.
+
+  - part: proof
+    text: "And, since AE is incommensurable in length with ED, while AE is commensurable with AG, and ED is commensurable with EF, therefore AG is incommensurable with EF; so that AH is also incommensurable with EL, that is, SN is incommensurable with MR, that is, PN with NR, that is, MN is incommensurable in length with NO."
+    highlight: [MN, NO]
+    hint: |
+      And {MN}, {NO} are incommensurable in length (as in [[X.54]]).
+
+  - part: proof
+    text: "But MN, NO were proved to be both medial and commensurable in square; therefore MN, NO are medial straight lines commensurable in square only."
+    highlight: [MN, NO]
+    hint: |
+      Medial, commensurable in square only.
+
+  - part: specification
+    text: "I say next that they also contain a rational rectangle."
+    highlight: [MN, NO]
+    hint: |
+      And their rectangle is rational:
+
+  - part: proof
+    text: "For, since DE is, by hypothesis, commensurable with each of the straight lines AB, EF, therefore EF is also commensurable with EK."
+    highlight: [EF, EK]
+    hint: |
+      {EF} is commensurable with {EK} ([[X.12]]) …
+
+  - part: proof
+    text: "And each of them is rational; therefore EL, that is, MR is rational, and MR is the rectangle MN, NO."
+    highlight: [MN, NO]
+    hint: |
+      … so *EL* = *MR* = rect({MN},{NO}) is rational ([[X.19]]).
+
+  - part: proof
+    text: "But, if two medial straight lines commensurable in square only and containing a rational rectangle be added together, the whole is irrational and is called a first bimedial straight line."
+    highlight: [MO]
+    hint: |
+      [[X.37]].
+
+  - part: proof
+    text: "Therefore MO is a first bimedial straight line."
+    highlight: [MO]
+    hint: |
+      First bimedial.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+      text: |
+        $\rho\,AD = \rho(AE + ED)$ with $ED$ rational: the parts $\rho\,AG$, $\rho\,GE$ are medial areas whose
+        mean $\rho\,EF$ is rational. $\blacksquare$

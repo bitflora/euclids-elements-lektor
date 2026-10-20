@@ -1,0 +1,86 @@
+id: X.20
+kind: theorem
+title: A rational area applied to a rational line has rational breadth
+
+paraphrase: |
+  If a rational area {AC} is applied to a rational line {AB}, the breadth {BC} is rational and commensurable in
+  length with {AB}.
+
+diagram:
+  width: 160
+  height: 220
+  elements:
+    - "A0;point;free;-1000,130;0;0"
+    - "A3;point;free;1000,130;0;0"
+    - "A;point;lineSlider;A0,A3,130,0"
+    - "B;point;lineSlider;A0,A3,30,0"
+    - "AD;polygon;square;B,A;0;0;black;random"
+    - "D;point;vertex;AD,4"
+    - "C;point;lineSlider;B,D,0,190"
+    - "AC;polygon;parallelogram;A,B,C"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+  aliases: { DA: AD, BA: AB, DB: BD }
+  caption: |
+    The rational area {AC} on {AB}; {AD} the square on {AB}.
+
+steps:
+  - part: enunciation
+    text: "If a rational area be applied to a rational straight line, it produces as breadth a straight line rational and commensurable in length with the straight line to which it is applied."
+    highlight: [AC, AB, BC]
+    hint: |
+      Rational area ÷ rational line = rational line, commensurable in length.
+    modern: |
+      $A/a$ with $A = q\rho^2$, $a = \rho\sqrt{s}$: $A/a = (q/\sqrt s)\rho$, commensurable in length with $a$.
+
+  - part: setting-out
+    text: "For let the rational area AC be applied to AB, a straight line once more rational in any of the aforesaid ways, producing BC as breadth; I say that BC is rational and commensurable in length with BA."
+    highlight: [AC, AB, BC]
+    hint: |
+      Setup and claim.
+
+  - part: construction
+    text: "For on AB let the square AD be described; therefore AD is rational."
+    highlight: [AD]
+    hint: |
+      The square {AD} on {AB}, rational ([[X.Def.4]]).
+
+  - part: proof
+    text: "But AC is also rational; therefore DA is commensurable with AC."
+    highlight: [AD, AC]
+    hint: |
+      Both rational, so commensurable.
+
+  - part: proof
+    text: "And, as DA is to AC, so is DB to BC."
+    highlight: [AD, AC, BD, BC]
+    hint: |
+      [[VI.1]].
+
+  - part: proof
+    text: "Therefore DB is also commensurable with BC; and DB is equal to BA; therefore AB is also commensurable with BC."
+    highlight: [BD, BC, AB]
+    hint: |
+      [[X.11]]: {DB}, hence {AB}, is commensurable with {BC}.
+
+  - part: proof
+    text: "But AB is rational; therefore BC is also rational and commensurable in length with AB."
+    highlight: [BC]
+    hint: |
+      So {BC} is rational and commensurable in length with {AB}.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+reconstruction:
+  lines:
+    - steps: [2, 3, 4, 5, 6]
+      text: |
+        $BC/AB = AC/AD \in \mathbb{Q}$. $\blacksquare$
+
+commentary: |
+  The converse of [[X.19]]. "Applying an area to a line" — dividing it by the line — is the tool behind
+  [[X.60]]–[[X.65]] and [[X.97]]–[[X.102]].

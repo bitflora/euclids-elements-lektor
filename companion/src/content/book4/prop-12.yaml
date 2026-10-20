@@ -1,0 +1,284 @@
+id: IV.12
+kind: problem
+title: Circumscribing a regular pentagon about a circle
+
+paraphrase: |
+  About a given circle, draw a regular pentagon whose sides touch it: tangents at the vertices of an
+  inscribed regular pentagon.
+
+diagram:
+  width: 300
+  height: 300
+  elements:
+    - "A;point;free;89,68"
+    - "B;point;free;56,169"
+    - "ABCDEp;polygon;regularPolygon;A,B,5;0;0;0;0"
+    - "C;point;vertex;ABCDEp,3"
+    - "D;point;vertex;ABCDEp,4"
+    - "E;point;vertex;ABCDEp,5"
+    - "ABCDE;circle;circumcircle;A,B,C;0;0;black;0"
+    - "F;point;center;ABCDE"
+    - "BF;line;connect;B,F"
+    - "CF;line;connect;C,F"
+    - "DF;line;connect;D,F"
+    - "Atan;line;perpendicular;A,F;0;0;0"
+    - "Btan;line;perpendicular;B,F;0;0;0"
+    - "Ctan;line;perpendicular;C,F;0;0;0"
+    - "Dtan;line;perpendicular;D,F;0;0;0"
+    - "Etan;line;perpendicular;E,F;0;0;0"
+    - "G;point;intersection;Etan,Atan"
+    - "H;point;intersection;Atan,Btan"
+    - "K;point;intersection;Btan,Ctan"
+    - "L;point;intersection;Ctan,Dtan"
+    - "M;point;intersection;Dtan,Etan"
+    - "GHKLM;polygon;pentagon;G,H,K,L,M;0;0;black;#efe4d2"
+    - "GH;line;connect;G,H;0;0;0"
+    - "HK;line;connect;H,K;0;0;0"
+    - "KL;line;connect;K,L;0;0;0"
+    - "LM;line;connect;L,M;0;0;0"
+    - "MG;line;connect;M,G;0;0;0"
+    - "KF;line;connect;K,F"
+    - "LF;line;connect;L,F"
+    - "BK;line;connect;B,K;0;0;0"
+    - "CK;line;connect;C,K;0;0;0"
+    - "CL;line;connect;C,L;0;0;0"
+    - "FKC;polygon;triangle;F,K,C;0;0;0;0"
+    - "FLC;polygon;triangle;F,L,C;0;0;0;0"
+    - "angBFK;sector;angleMarker;F,B,K"
+    - "angKFC;sector;angleMarker;F,K,C"
+    - "angLFC;sector;angleMarker;F,L,C"
+    - "angFKC;sector;angleMarker;K,F,C"
+    - "angFLC;sector;angleMarker;L,F,C"
+    - "angFCK;sector;angleMarker;C,F,K"
+  aliases:
+    FB: BF
+    FC: CF
+    FD: DF
+    FK: KF
+    FL: LF
+    KC: CK
+    HG: GH
+    GM: MG
+    ML: LM
+    BFK: angBFK
+    KFC: angKFC
+    LFC: angLFC
+    CFL: angLFC
+    FCK: angFCK
+  given: [ABCDE, A, B, C, D, E, F]
+  caption: |
+    Drag {A} or {B}. Tangents at the five vertices of an inscribed regular pentagon make a regular
+    pentagon about the circle.
+
+steps:
+  - part: enunciation
+    text: "About a given circle to circumscribe an equilateral and equiangular pentagon."
+    highlight: [ABCDE, GHKLM]
+    hint: |
+      A problem: the circumscribed regular pentagon.
+
+  - part: setting-out
+    text: "Let ABCDE be the given circle;"
+    highlight: [ABCDE]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to circumscribe an equilateral and equiangular pentagon about the circle ABCDE."
+    highlight: [ABCDE]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let A, B, C, D, E be conceived to be the angular points of the inscribed pentagon, so that the circumferences AB, BC, CD, DE, EA are equal;"
+    highlight: [A, B, C, D, E]
+    hint: |
+      Take the vertices of an inscribed regular pentagon ([[IV.11]]).
+    explain:
+      implicit: |
+        "Conceived" (νενοήσθω) — the pentagon need not be drawn; only its vertices are used.
+
+  - part: construction
+    text: "through A, B, C, D, E let GH, HK, KL, LM, MG be drawn touching the circle;"
+    highlight: [GHKLM]
+    adds: [G, H, K, L, M, GHKLM]
+    hint: |
+      Tangents at the five points (porism to [[III.16]]).
+
+  - part: construction
+    text: "let the centre F of the circle ABCDE be taken, and let FB, FK, FC, FL, FD be joined."
+    highlight: [F, BF, KF, CF, LF, DF]
+    adds: [BF, KF, CF, LF, DF]
+    hint: |
+      Centre {F} ([[III.1]]) and joining lines.
+
+  - part: proof
+    text: "Then, since the straight line KL touches the circle ABCDE at C, and FC has been joined from the centre F to the point of contact at C, therefore FC is perpendicular to KL;"
+    highlight: [CF, KL]
+    hint: |
+      [[III.18]].
+
+  - part: proof
+    text: "therefore each of the angles at C is right."
+    highlight: [angFCK]
+    hint: |
+      Right angles at {C}.
+
+  - part: proof
+    text: "For the same reason the angles at the points B, D are also right."
+    hint: |
+      Same at {B}, {D}.
+
+  - part: proof
+    text: "And, since the angle FCK is right, therefore the square on FK is equal to the squares on FC, CK."
+    highlight: [KF, CF, CK]
+    hint: |
+      Pythagoras.
+
+  - part: proof
+    text: "For the same reason the square on FK is also equal to the squares on FB, BK;"
+    highlight: [KF, BF, BK]
+    hint: |
+      Pythagoras again ([[I.47]]).
+
+  - part: proof
+    text: "so that the squares on FC, CK are equal to the squares on FB, BK, of which the square on FC is equal to the square on FB; therefore the square on CK which remains is equal to the square on BK."
+    highlight: [CK, BK]
+    hint: |
+      Subtract equal squares on radii.
+
+  - part: proof
+    text: "Therefore BK is equal to CK."
+    highlight: [BK, CK]
+    hint: |
+      Equal tangents from {K}.
+
+  - part: proof
+    text: "And, since FB is equal to FC, and FK common, the two sides BF, FK are equal to the two sides CF, FK; and the base BK equal to the base CK; therefore the angle BFK is equal to the angle KFC,"
+    highlight: [angBFK, angKFC]
+    hint: |
+      SSS ([[I.8]]).
+
+  - part: proof
+    text: "and the angle BKF to the angle FKC."
+    highlight: [angFKC]
+    hint: |
+      And at {K}.
+
+  - part: proof
+    text: "Therefore the angle BFC is double of the angle KFC, and the angle BKC of the angle FKC."
+    highlight: [angKFC, angFKC]
+    hint: |
+      {FK} bisects the angles at {F} and {K}.
+
+  - part: proof
+    text: "For the same reason the angle CFD is also double of the angle CFL, and the angle DLC of the angle FLC."
+    highlight: [angLFC, angFLC]
+    hint: |
+      Same at {L}.
+
+  - part: proof
+    text: "Now, since the circumference BC is equal to CD, the angle BFC is also equal to the angle CFD."
+    hint: |
+      [[III.27]].
+
+  - part: proof
+    text: "And the angle BFC is double of the angle KFC, and the angle DFC of the angle LFC; therefore the angle KFC is also equal to the angle LFC."
+    highlight: [angKFC, angLFC]
+    hint: |
+      Halves of equal angles.
+
+  - part: proof
+    text: "But the angle FCK is also equal to the angle FCL; therefore FKC, FLC are two triangles having two angles equal to two angles and one side equal to one side, namely FC which is common to them;"
+    highlight: [FKC, FLC]
+    hint: |
+      ASA ([[I.26]]).
+
+  - part: proof
+    text: "therefore they will also have the remaining sides equal to the remaining sides, and the remaining angle to the remaining angle;"
+    highlight: [FKC, FLC]
+    hint: |
+      Congruent.
+
+  - part: proof
+    text: "therefore the straight line KC is equal to CL, and the angle FKC to the angle FLC."
+    highlight: [CK, CL, angFKC, angFLC]
+    hint: |
+      {C} is the midpoint of {KL}.
+
+  - part: proof
+    text: "And, since KC is equal to CL, therefore KL is double of KC."
+    highlight: [KL, CK]
+    hint: |
+      $KL = 2KC$.
+
+  - part: proof
+    text: "For the same reason it can be proved that HK is also double of BK."
+    highlight: [HK, BK]
+    hint: |
+      $HK = 2BK$.
+
+  - part: proof
+    text: "And BK is equal to KC; therefore HK is also equal to KL."
+    highlight: [HK, KL]
+    hint: |
+      Adjacent sides equal.
+
+  - part: proof
+    text: "Similarly each of the straight lines HG, GM, ML can also be proved equal to each of the straight lines HK, KL; therefore the pentagon GHKLM is equilateral."
+    highlight: [GHKLM]
+    hint: |
+      All five sides.
+
+  - part: specification
+    text: "I say next that it is also equiangular."
+    highlight: [GHKLM]
+    hint: |
+      Now the angles.
+
+  - part: proof
+    text: "For, since the angle FKC is equal to the angle FLC, and the angle HKL was proved double of the angle FKC, and the angle KLM double of the angle FLC, therefore the angle HKL is also equal to the angle KLM."
+    highlight: [angFKC, angFLC]
+    hint: |
+      Doubles of equal angles.
+
+  - part: proof
+    text: "Similarly each of the angles KHG, HGM, GML can also be proved equal to each of the angles HKL, KLM; therefore the five angles GHK, HKL, KLM, LMG, MGH are equal to one another."
+    highlight: [GHKLM]
+    hint: |
+      All five.
+
+  - part: proof
+    text: "Therefore the pentagon GHKLM is equiangular."
+    highlight: [GHKLM]
+    hint: |
+      Equiangular.
+
+  - part: conclusion
+    text: "And it was also proved equilateral; and it has been circumscribed about the circle ABCDE."
+    highlight: [GHKLM, ABCDE]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. F."
+    hint: |
+      What it was required to do.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6]
+      text: The tangents at five equally spaced points are images of one another under rotation by $72^\circ$ about $F$.
+    - steps: [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
+      text: So their pairwise intersections form a polygon invariant under that rotation — a regular pentagon. $\blacksquare$
+  closing: |
+    The rotation argument is short but uses rigid motions; Euclid works through congruent triangles instead.
+
+commentary: |
+  Note step 12: the two tangents from {K} are equal ({BK} = {CK}) — a fact Euclid proves here in passing and
+  never states as a theorem.
+
+gaps: |
+  - **The tangents meet** in the order {G}, {H}, {K}, {L}, {M}: taken from the figure.

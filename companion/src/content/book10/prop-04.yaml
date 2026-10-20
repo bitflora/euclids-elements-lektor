@@ -1,0 +1,209 @@
+id: X.4
+kind: problem
+title: The greatest common measure of three commensurable magnitudes
+
+paraphrase: |
+  Given three commensurable magnitudes {A}, {B}, {C}, find their greatest common measure: first that of {A},
+  {B}, then that of the result and {C}. As [[VII.3]] for numbers.
+
+diagram:
+  width: 280
+  height: 165
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "B0;point;free;-1000,65;0;0"
+    - "B3;point;free;1000,65;0;0"
+    - "C0;point;free;-1000,100;0;0"
+    - "C3;point;free;1000,100;0;0"
+    - "D0;point;free;-1000,135;0;0"
+    - "D3;point;free;1000,135;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,255,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,180,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,120,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;lineSlider;D0,D3,105,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;D0,D3,135,0;0"
+    - "E2;point;lineSlider;D0,D3,150,0;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;D0,D3,180,0;0"
+    - "F2;point;lineSlider;D0,D3,195,0;0"
+    - "F;line;connect;F1,F2;black"
+  caption: |
+    {D} is the greatest common measure of {A}, {B}; {E} that of {D}, {C}; {F} the supposed greater one.
+
+steps:
+  - part: enunciation
+    text: "Given three commensurable magnitudes, to find their greatest common measure."
+    highlight: [A, B, C]
+    hint: |
+      $\gcd(a, b, c) = \gcd(\gcd(a, b), c)$, for magnitudes.
+
+  - part: setting-out
+    text: "Let A, B, C be the three given commensurable magnitudes;"
+    highlight: [A, B, C]
+    hint: |
+      The three magnitudes.
+
+  - part: specification
+    text: "thus it is required to find the greatest common measure of A, B, C."
+    highlight: [A, B, C]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let the greatest common measure of the two magnitudes A, B be taken, and let it be D;"
+    highlight: [D]
+    hint: |
+      {D} = gcm({A}, {B}) ([[X.3]]).
+
+  - part: proof
+    text: "then D either measures C, or does not measure it."
+    highlight: [D, C]
+    hint: |
+      Two cases.
+
+  - part: proof
+    text: "First, let it measure it."
+    highlight: [D, C]
+    hint: |
+      Case 1.
+
+  - part: proof
+    text: "Since then D measures C, while it also measures A, B, therefore D is a common measure of A, B, C."
+    highlight: [D, A, B, C]
+    hint: |
+      {D} measures all three.
+
+  - part: proof
+    text: "And it is manifest that it is also the greatest; for a greater magnitude than the magnitude D does not measure A, B."
+    highlight: [D]
+    hint: |
+      And no greater magnitude measures even {A}, {B}.
+
+  - part: proof
+    text: "Next, let D not measure C."
+    highlight: [D, C]
+    hint: |
+      Case 2.
+
+  - part: specification
+    text: "I say first that C, D are commensurable."
+    highlight: [C, D]
+    hint: |
+      First: {C}, {D} are commensurable.
+
+  - part: proof
+    text: "For, since A, B, C are commensurable, some magnitude will measure them, and this will of course measure A, B also; so that it will also measure the greatest common measure of A, B, namely D."
+    highlight: [A, B, D]
+    hint: |
+      A common measure of all three measures {D} (porism of [[X.3]]) …
+
+  - part: proof
+    text: "But it also measures C; so that the said magnitude will measure C, D; therefore C, D are commensurable."
+    highlight: [C, D]
+    hint: |
+      … and {C}; so {C}, {D} are commensurable.
+
+  - part: construction
+    text: "Now let their greatest common measure be taken, and let it be E."
+    highlight: [E]
+    hint: |
+      {E} = gcm({C}, {D}).
+
+  - part: proof
+    text: "Since then E measures D, while D measures A, B, therefore E will also measure A, B."
+    highlight: [E, D, A, B]
+    hint: |
+      {E} measures {A}, {B} …
+
+  - part: proof
+    text: "But it measures C also; therefore E measures A, B, C; therefore E is a common measure of A, B, C."
+    highlight: [E, C]
+    hint: |
+      … and {C}.
+
+  - part: specification
+    text: "I say next that it is also the greatest."
+    highlight: [E]
+    hint: |
+      And it is greatest.
+
+  - part: proof
+    text: "For, if possible, let there be some magnitude F greater than E, and let it measure A, B, C."
+    highlight: [F]
+    hint: |
+      Suppose a greater {F}.
+
+  - part: proof
+    text: "Now, since F measures A, B, C, it will also measure A, B, and will measure the greatest common measure of A, B."
+    highlight: [F, D]
+    hint: |
+      {F} measures gcm({A}, {B}) …
+
+  - part: proof
+    text: "But the greatest common measure of A, B is D; therefore F measures D."
+    highlight: [F, D]
+    hint: |
+      … which is {D}.
+
+  - part: proof
+    text: "But it measures C also; therefore F measures C, D; therefore F will also measure the greatest common measure of C, D."
+    highlight: [F, E]
+    hint: |
+      So {F} measures gcm({C}, {D}) …
+
+  - part: proof
+    text: "But that is E; therefore F will measure E, the greater the less: which is impossible."
+    highlight: [F, E]
+    hint: |
+      … which is {E}: impossible, {F} > {E}.
+
+  - part: proof
+    text: "Therefore no magnitude greater than the magnitude E will measure A, B, C; therefore E is the greatest common measure of A, B, C if D do not measure C, and, if it measure it, D is itself the greatest common measure."
+    highlight: [E, D]
+    hint: |
+      Conclusion for both cases.
+
+  - part: proof
+    text: "Therefore the greatest common measure of the three given commensurable magnitudes has been found."
+    highlight: [A, B, C]
+    hint: |
+      Found.
+
+  - part: porism
+    text: "Porism. From this it is manifest that, if a magnitude measure three magnitudes, it will also measure their greatest common measure."
+    hint: |
+      Porism: a common measure of three magnitudes measures their greatest common measure.
+
+  - part: conclusion
+    text: "Similarly too, with more magnitudes, the greatest common measure can be found, and the porism can be extended."
+    hint: |
+      And the same for more magnitudes.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 12]
+      text: |
+        $d = \gcd(a, b)$, $e = \gcd(d, c)$.
+    - steps: [13, 14, 16, 17, 18, 19, 20]
+      text: |
+        $e$ divides $a, b, c$; any common divisor divides $d$, then $e$. $\blacksquare$
+
+commentary: |
+  The same as [[VII.3]]. Unusually the porism is part of the text before the "Q. E. D.", and Euclid adds
+  that the construction extends to any number of magnitudes.

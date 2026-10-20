@@ -1,0 +1,119 @@
+id: IV.1
+kind: problem
+title: Fitting a chord of given length into a circle
+
+paraphrase: |
+  Into a given circle, fit a chord equal to a given line {D} (not longer than the diameter).
+
+diagram:
+  width: 300
+  height: 240
+  elements:
+    - "B;point;free;30,120"
+    - "C;point;free;170,120"
+    - "BC;line;connect;B,C"
+    - "O;point;midpoint;BC;0;0"
+    - "ABC;circle;radius;O,B;0;0;black;0"
+    - "D0;point;free;-1000,50;0"
+    - "D3;point;free;1000,50;0"
+    - "D1;point;lineSlider;D0,D3,210,30;0"
+    - "D2;point;lineSlider;D0,D3,270,30;0"
+    - "D;line;connect;D1,D2;black"
+    - "E;point;cutoff;C,B,D1,D2"
+    - "EAF;circle;radius;C,E;0;0;black;0"
+    - "AAx;line;bichord;ABC,EAF;0;0;0"
+    - "A;point;last;AAx"
+    - "AC;line;connect;A,C"
+    - "F;point;perpendicular;C,E;black;0"
+    - "CE;line;connect;C,E;0;0;0"
+  aliases:
+    CA: AC
+    EC: CE
+    CB: BC
+  given: [ABC, B, C, D, D1, D2]
+  caption: |
+    Drag the ends of {D} to change its length (keep it shorter than the diameter {BC}). The chord {CA}
+    always equals {D}.
+
+steps:
+  - part: enunciation
+    text: "Into a given circle to fit a straight line equal to a given straight line which is not greater than the diameter of the circle."
+    highlight: [ABC, D, AC]
+    hint: |
+      A problem: a chord of given length.
+    explain:
+      fact: |
+        To "fit" a line into a circle means to place it with both ends on the circumference ([[IV.Def.7]]).
+      implicit: |
+        The condition "not greater than the diameter" is a *diorismos*: the diameter is the longest chord
+        ([[III.15]]).
+    cites: [IV.Def.7]
+
+  - part: setting-out
+    text: "Let ABC be the given circle, and D the given straight line not greater than the diameter of the circle;"
+    highlight: [ABC, D]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "thus it is required to fit into the circle ABC a straight line equal to the straight line D."
+    highlight: [ABC, D]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let a diameter BC of the circle ABC be drawn."
+    highlight: [BC]
+    hint: |
+      Any diameter (through the centre, [[III.1]]).
+
+  - part: proof
+    text: "Then, if BC is equal to D, that which was enjoined will have been done; for BC has been fitted into the circle ABC equal to the straight line D."
+    highlight: [BC, D]
+    hint: |
+      Trivial case.
+
+  - part: construction
+    text: "But, if BC is greater than D, let CE be made equal to D, and with centre C and distance CE let the circle EAF be described; let CA be joined."
+    highlight: [CE, EAF, AC]
+    adds: [E, EAF, A, F, AC]
+    hint: |
+      Mark off {CE} = {D} on the diameter ([[I.3]]), draw the circle about {C} through {E}; it meets the given
+      circle at {A}.
+    cites: [I.3, I.Post.3]
+
+  - part: proof
+    text: "Then, since the point C is the centre of the circle EAF, CA is equal to CE."
+    highlight: [AC, CE]
+    hint: |
+      Radii.
+    cites: [I.Def.15]
+
+  - part: proof
+    text: "But CE is equal to D; therefore D is also equal to CA."
+    highlight: [AC, D]
+    hint: |
+      [[I.CN.1]].
+
+  - part: conclusion
+    text: "Therefore into the given circle ABC there has been fitted CA equal to the given straight line D."
+    highlight: [AC]
+    hint: |
+      Done.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8]
+      text: |
+        If $0 < d \le 2r$, the circle of radius $d$ about a point $C$ of the given circle meets it (the distance
+        between centres, $r$, satisfies $|r - d| \le r \le r + d$). $\blacksquare$
+
+commentary: |
+  Book IV is about fitting polygons into and around circles. IV.1 is its basic tool: placing a chord of
+  given length.
+
+gaps: |
+  - **The circles meet**: that circle {EAF} cuts circle {ABC} is taken from the figure; it holds because
+    {CE} ≤ {CB}.

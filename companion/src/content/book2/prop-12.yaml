@@ -1,0 +1,138 @@
+id: II.12
+kind: theorem
+title: Pythagoras extended to an obtuse angle
+
+paraphrase: |
+  In a triangle with an obtuse angle at {A}, the square on the opposite side {BC} exceeds the squares
+  on {BA} and {AC} by twice the rectangle on {CA} and {AD}, where {D} is the foot of the
+  perpendicular from {B} to {CA} produced. In trigonometry: the law of cosines for an obtuse angle.
+
+diagram:
+  width: 250
+  height: 230
+  elements:
+    - "A;point;free;100,200"
+    - "B;point;free;30,30"
+    - "C;point;free;220,200"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "BD;line;foot;B,A,C"
+    - "D;point;last;BD"
+    - "DA;line;connect;A,D"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "DC;line;connect;D,C;0;0;0"
+    - "BDC;polygon;triangle;B,D,C;0;0;0;0"
+    - "BDA;polygon;triangle;B,D,A;0;0;0;0"
+    - "angBAC;sector;angleMarker;A,B,C"
+    - "angD;sector;angleMarker;D,B,C"
+  aliases:
+    BAC: angBAC
+    CA: AC
+    BA: AB
+    CB: BC
+    DB: BD
+    AD: DA
+    CD: DC
+  given: [A, B, C, ABC, angBAC]
+  caption: |
+    Drag the vertices, keeping the angle at {A} obtuse. The perpendicular from {B} meets {CA} produced
+    at {D}, outside the triangle.
+
+steps:
+  - part: enunciation
+    text: "In obtuse-angled triangles the square on the side subtending the obtuse angle is greater than the squares on the sides containing the obtuse angle by twice the rectangle contained by one of the sides about the obtuse angle, namely that on which the perpendicular falls, and the straight line cut off outside by the perpendicular towards the obtuse angle."
+    highlight: [BC, AB, AC, DA, angBAC]
+    hint: |
+      Obtuse angle: the opposite square is *more* than the other two by $2\cdot CA\cdot AD$.
+
+  - part: setting-out
+    text: "Let ABC be an obtuse-angled triangle having the angle BAC obtuse, and let BD be drawn from the point B perpendicular to CA produced;"
+    highlight: [ABC, angBAC, BD, D]
+    adds: [BD, D, DA, angD]
+    hint: |
+      Drop the perpendicular from {B} to {CA} extended past {A} ([[I.12]]).
+    cites: [I.12]
+
+  - part: specification
+    text: "I say that the square on BC is greater than the squares on BA, AC by twice the rectangle contained by CA, AD."
+    highlight: [BC, AB, AC, DA]
+    hint: |
+      The goal.
+    modern: |
+      $$BC^2 = BA^2 + AC^2 + 2\,CA\cdot AD$$
+
+  - part: proof
+    text: "For, since the straight line CD has been cut at random at the point A, the square on DC is equal to the squares on CA, AD and twice the rectangle contained by CA, AD."
+    highlight: [DC, AC, DA]
+    hint: |
+      [[II.4]] applied to {CD} cut at {A}.
+    modern: |
+      $$DC^2 = CA^2 + AD^2 + 2\,CA\cdot AD$$
+
+  - part: proof
+    text: "Let the square on DB be added to each; therefore the squares on CD, DB are equal to the squares on CA, AD, DB and twice the rectangle CA, AD."
+    highlight: [DC, BD, AC, DA]
+    hint: |
+      Add {DB}² to both sides.
+
+  - part: proof
+    text: "But the square on CB is equal to the squares on CD, DB, for the angle at D is right;"
+    highlight: [BDC, BC]
+    hint: |
+      Pythagoras in the big right triangle {BDC} ([[I.47]]).
+
+  - part: proof
+    text: "and the square on AB is equal to the squares on AD, DB;"
+    highlight: [BDA, AB]
+    hint: |
+      And in the small one, {BDA} ([[I.47]]).
+
+  - part: proof
+    text: "therefore the square on CB is equal to the squares on CA, AB and twice the rectangle contained by CA, AD;"
+    highlight: [BC, AC, AB]
+    hint: |
+      Substitute both.
+
+  - part: conclusion
+    text: "so that the square on CB is greater than the squares on CA, AB by twice the rectangle contained by CA, AD."
+    highlight: [BC, AC, AB]
+    hint: |
+      Done.
+    modern: |
+      $$a^2 = b^2 + c^2 + 2\,b\cdot AD,\qquad AD = -c\cos A$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: Let $b = CA$, $c = AB$, $h = BD$, $p = AD$, with $D$ on $CA$ beyond $A$.
+    - steps: [3, 4, 5, 6, 7, 8]
+      text: $BC^2 = (b + p)^2 + h^2 = b^2 + 2bp + (p^2 + h^2) = b^2 + c^2 + 2bp$. $\blacksquare$
+  closing: |
+    Since $p = -c\cos A$ for an obtuse angle $A$, this is the law of cosines
+    $a^2 = b^2 + c^2 - 2bc\cos A$. [[II.13]] gives the acute case.
+
+commentary: |
+  II.12 and [[II.13]] extend [[I.47]] to all triangles: together they are the law of cosines, without
+  trigonometry. The "correction term" $2\cdot CA\cdot AD$ is twice the rectangle on one side and the
+  projection of the other onto it.
+
+gaps: |
+  - **{D} falls outside**: that the foot of the perpendicular lies on {CA} *produced* beyond {A} follows
+    from the obtuse angle at {A} ([[I.17]]), but is not argued.
+
+historical: |
+  Heron's *Metrica* uses the relation of [[II.13]] to find the height of a triangle from its three
+  sides, and from the height its area.

@@ -1,0 +1,208 @@
+id: I.29
+kind: theorem
+title: Parallels make equal alternate angles
+
+paraphrase: |
+  The converse of [[I.27]] and [[I.28]]: a transversal crossing two *parallel* lines makes equal
+  alternate angles, equal corresponding angles, and interior angles on one side summing to two
+  right angles. The first use of the parallel postulate.
+
+diagram:
+  width: 250
+  height: 210
+  elements:
+    - "A;point;free;30,85"
+    - "B;point;free;220,85"
+    - "AB;line;connect;A,B"
+    - "C;point;free;30,135"
+    - "Dp;point;parallelogram;C,A,B;0;0"
+    - "D;point;lineSlider;C,Dp,220,135"
+    - "CD;line;connect;C,D"
+    - "E;point;free;80,35"
+    - "F;point;free;150,190"
+    - "EF;line;connect;E,F"
+    - "G;point;intersection;A,B,E,F"
+    - "H;point;intersection;C,D,E,F"
+    - "GH;line;connect;G,H;0;0;0"
+    - "angEGB;sector;angleMarker;G,E,B,22"
+    - "angAGH;sector;angleMarker;G,A,H,22"
+    - "angBGH;sector;angleMarker;G,B,H,14"
+    - "angGHD;sector;angleMarker;H,G,D,22"
+  aliases:
+    EGB: angEGB
+    AGH: angAGH
+    BGH: angBGH
+    GHD: angGHD
+  given: [A, B, C, D, E, F, G, H, AB, CD, EF]
+  caption: |
+    {CD} is kept parallel to {AB}. Tilt the transversal by dragging {E} or {F}: the alternate angles
+    ∠{AGH} and ∠{GHD} stay equal.
+
+steps:
+  - part: enunciation
+    text: "A straight line falling on parallel straight lines makes the alternate angles equal to one another, the exterior angle equal to the interior and opposite angle, and the interior angles on the same side equal to two right angles."
+    highlight: [angAGH, angGHD, angEGB, angBGH]
+    hint: |
+      Parallel lines ⇒ equal alternate angles, equal corresponding angles, and interior angles summing
+      to two right angles.
+
+  - part: setting-out
+    text: "For let the straight line EF fall on the parallel straight lines AB, CD;"
+    highlight: [EF, AB, CD]
+    hint: |
+      {AB} ∥ {CD}, crossed by {EF}.
+
+  - part: specification
+    text: "I say that it makes the alternate angles AGH, GHD equal, the exterior angle EGB equal to the interior and opposite angle GHD, and the interior angles on the same side, namely BGH, GHD, equal to two right angles."
+    highlight: [angAGH, angGHD, angEGB, angBGH]
+    hint: |
+      Three claims.
+    modern: |
+      $$\angle AGH = \angle GHD,\quad \angle EGB = \angle GHD,\quad \angle BGH + \angle GHD = 2R$$
+
+  - part: proof
+    text: "For, if the angle AGH is unequal to the angle GHD, one of them is greater."
+    highlight: [angAGH, angGHD]
+    hint: |
+      Reductio, for the alternate angles first.
+
+  - part: proof
+    text: "Let the angle AGH be greater."
+    highlight: [angAGH]
+    hint: |
+      Suppose ∠{AGH} is the larger. (The other case is symmetric.)
+
+  - part: proof
+    text: "Let the angle BGH be added to each; therefore the angles AGH, BGH are greater than the angles BGH, GHD."
+    highlight: [angAGH, angBGH, angGHD]
+    hint: |
+      Add ∠{BGH} to both.
+    modern: |
+      $$\angle AGH + \angle BGH > \angle BGH + \angle GHD$$
+
+  - part: proof
+    text: "But the angles AGH, BGH are equal to two right angles;"
+    highlight: [angAGH, angBGH]
+    hint: |
+      Adjacent angles on the line {AB} ([[I.13]]).
+
+  - part: proof
+    text: "therefore the angles BGH, GHD are less than two right angles."
+    highlight: [angBGH, angGHD]
+    hint: |
+      So the interior angles on the {B}, {D} side fall short of two right angles.
+    modern: |
+      $$\angle BGH + \angle GHD < 2R$$
+
+  - part: proof
+    text: "But straight lines produced indefinitely from angles less than two right angles meet;"
+    highlight: [angBGH, angGHD]
+    hint: |
+      **The parallel postulate** ([[I.Post.5]]): then the lines meet on that side.
+    explain:
+      did: |
+        Uses Postulate 5 for the first time in the *Elements* — 28 propositions in.
+      fact: |
+        Heath notes that Euclid quotes the postulate in a shortened form, leaving the reader to
+        supply that the lines start from the transversal and make the angles with it (his note on line 23).
+      justification: "[[I.Post.5]]"
+
+  - part: proof
+    text: "therefore AB, CD, if produced indefinitely, will meet;"
+    highlight: [AB, CD]
+    hint: |
+      So {AB} and {CD} would meet.
+
+  - part: proof
+    text: "but they do not meet, because they are by hypothesis parallel."
+    highlight: [AB, CD]
+    hint: |
+      Contradiction: they are parallel ([[I.Def.23]]).
+    cites: [I.Def.23]
+
+  - part: proof
+    text: "Therefore the angle AGH is not unequal to the angle GHD, and is therefore equal to it."
+    highlight: [angAGH, angGHD]
+    hint: |
+      So the alternate angles are equal. First claim proved.
+    modern: |
+      $$\angle AGH = \angle GHD$$
+
+  - part: proof
+    text: "Again, the angle AGH is equal to the angle EGB;"
+    highlight: [angAGH, angEGB]
+    hint: |
+      Vertical angles ([[I.15]]).
+
+  - part: proof
+    text: "therefore the angle EGB is also equal to the angle GHD."
+    highlight: [angEGB, angGHD]
+    hint: |
+      Second claim: exterior equals interior opposite.
+    modern: |
+      $$\angle EGB = \angle AGH = \angle GHD$$
+
+  - part: proof
+    text: "Let the angle BGH be added to each; therefore the angles EGB, BGH are equal to the angles BGH, GHD."
+    highlight: [angEGB, angBGH, angGHD]
+    hint: |
+      Add ∠{BGH} ([[I.CN.2]]).
+
+  - part: proof
+    text: "But the angles EGB, BGH are equal to two right angles;"
+    highlight: [angEGB, angBGH]
+    hint: |
+      Adjacent angles on {EF} ([[I.13]]).
+
+  - part: proof
+    text: "therefore the angles BGH, GHD are also equal to two right angles."
+    highlight: [angBGH, angGHD]
+    hint: |
+      Third claim.
+    modern: |
+      $$\angle BGH + \angle GHD = 2R$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* In Hilbert's system the parallel axiom is
+    **Playfair's**: through a point not on a line there is *at most one* parallel.
+  lines:
+    - steps: [1, 2]
+      text: Let $AB \parallel CD$, transversal meeting them at $G$, $H$.
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10]
+      text: |
+        Through $G$ draw the line $\ell$ making $\angle(\ell, GH) = \angle GHD$ alternately (angle
+        transfer). By I.27, $\ell \parallel CD$. By Playfair, $\ell = AB$, so $\angle AGH = \angle GHD$.
+    - steps: [11, 12, 13, 14, 15]
+      text: The other two claims follow by vertical angles and I.13. $\blacksquare$
+  closing: |
+    Playfair's axiom and Euclid's Postulate 5 are equivalent given the other axioms; the modern
+    proof just uses the more convenient form.
+
+commentary: |
+  The watershed of Book I. Everything before uses only Postulates 1–4; from here on much depends on
+  Postulate 5: [[I.30]], [[I.32]] (angle sum), the theory of parallelograms ([[I.34]] onward), and
+  [[I.47]] (Pythagoras).
+
+  I.29 is the converse of [[I.27]] and [[I.28]] together. Those say "equal angles ⇒ parallel"; I.29
+  says "parallel ⇒ equal angles". Only the second needs the postulate.
+
+gaps: |
+  - **The other case** (step 2): Euclid supposes ∠{AGH} greater; if ∠{GHD} is greater the
+    lines meet on the {A}, {C} side.
+
+historical: |
+  Proclus devotes a long passage to this proposition and to the postulate it relies on, giving
+  Ptolemy's attempted proof of the postulate and his own. Both fail — they assume something
+  equivalent to it. The search ended only with the hyperbolic geometry of Lobachevsky and Bolyai
+  (around 1830), in which I.29 is false.

@@ -1,0 +1,173 @@
+id: V.11
+kind: theorem
+title: Ratios the same as the same ratio are the same
+
+paraphrase: |
+  If {A} : {B} = {C} : {D} and {C} : {D} = {E} : {F}, then {A} : {B} = {E} : {F}. "Sameness of ratio" is transitive.
+
+diagram:
+  width: 500
+  height: 150
+  elements:
+    - "U0;point;free;-1000,30;0;0"
+    - "U1;point;free;1000,30;0;0"
+    - "V0;point;free;-1000,60;0;0"
+    - "V1;point;free;1000,60;0;0"
+    - "W0;point;free;-1000,100;0;0"
+    - "W1;point;free;1000,100;0;0"
+    - "X0;point;free;-1000,130;0;0"
+    - "X1;point;free;1000,130;0;0"
+    - "A0;point;lineSlider;U0,U1,30,30;0"
+    - "A1;point;lineSlider;U0,U1,80,30;0"
+    - "A;line;connect;A0,A1;black;0;blue"
+    - "B0;point;lineSlider;V0,V1,30,60;0"
+    - "B1;point;lineSlider;V0,V1,70,60;0"
+    - "B;line;connect;B0,B1;black;0;blue"
+    - "C0;point;lineSlider;U0,U1,200,30;0"
+    - "C1;point;lineSlider;U0,U1,260,30;0"
+    - "C;line;connect;C0,C1;black;0;red"
+    - "D0;point;lineSlider;V0,V1,200,60;0"
+    - "D1;point;proportion;A0,A1,B0,B1,C0,C1,D0,V1;0"
+    - "D;line;connect;D0,D1;black;0;red"
+    - "E0;point;lineSlider;U0,U1,370,30;0"
+    - "E1;point;lineSlider;U0,U1,410,30;0"
+    - "E;line;connect;E0,E1;black;0;green"
+    - "F0;point;lineSlider;V0,V1,370,60;0"
+    - "F1;point;proportion;A0,A1,B0,B1,E0,E1,F0,V1;0"
+    - "F;line;connect;F0,F1;black;0;green"
+    - "G0;point;lineSlider;W0,W1,30,30;0"
+    - "G1;point;cutoff;G0,W1,A0,A1;0;lightGray"
+    - "G2;point;cutoff;G1,W1,A0,A1;0"
+    - "G;line;connect;G0,G2;black;0;blue"
+    - "L0;point;lineSlider;X0,X1,30,60;0"
+    - "L1;point;cutoff;L0,X1,B0,B1;0;lightGray"
+    - "L2;point;cutoff;L1,X1,B0,B1;0;lightGray"
+    - "L3;point;cutoff;L2,X1,B0,B1;0"
+    - "L;line;connect;L0,L3;black;0;blue"
+    - "H0;point;lineSlider;W0,W1,200,30;0"
+    - "H1;point;cutoff;H0,W1,C0,C1;0;lightGray"
+    - "H2;point;cutoff;H1,W1,C0,C1;0"
+    - "H;line;connect;H0,H2;black;0;red"
+    - "M0;point;lineSlider;X0,X1,200,60;0"
+    - "M1;point;cutoff;M0,X1,D0,D1;0;lightGray"
+    - "M2;point;cutoff;M1,X1,D0,D1;0;lightGray"
+    - "M3;point;cutoff;M2,X1,D0,D1;0"
+    - "M;line;connect;M0,M3;black;0;red"
+    - "K0;point;lineSlider;W0,W1,370,30;0"
+    - "K1;point;cutoff;K0,W1,E0,E1;0;lightGray"
+    - "K2;point;cutoff;K1,W1,E0,E1;0"
+    - "K;line;connect;K0,K2;black;0;green"
+    - "N0;point;lineSlider;X0,X1,370,60;0"
+    - "N1;point;cutoff;N0,X1,F0,F1;0;lightGray"
+    - "N2;point;cutoff;N1,X1,F0,F1;0;lightGray"
+    - "N3;point;cutoff;N2,X1,F0,F1;0"
+    - "N;line;connect;N0,N3;black;0;green"
+  caption: |
+    {D} and {F} are constructed so that all three ratios agree. {G}, {H}, {K} are twice {A}, {C}, {E}; {L}, {M}, {N}
+    three times {B}, {D}, {F}. Drag the ends of {A}, {B}, {C}, {E}: the three comparisons — {G} with {L}, {H} with
+    {M}, {K} with {N} — always come out alike.
+
+steps:
+  - part: enunciation
+    text: "Ratios which are the same with the same ratio are also the same with one another."
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      Transitivity: $A : B = C : D$ and $C : D = E : F$ give $A : B = E : F$.
+    explain:
+      implicit: |
+        Because a ratio is not an object but a relation defined by [[V.Def.5]], even this has to be proved.
+        With V.11, "the same ratio" behaves like an equality: reflexive and symmetric by the form of the
+        definition, transitive by this proposition.
+    modern: |
+      $$A : B = C : D,\ C : D = E : F \ \Rightarrow\ A : B = E : F$$
+
+  - part: setting-out
+    text: "For, as A is to B, so let C be to D, and, as C is to D, so let E be to F;"
+    highlight: [A, B, C, D, E, F]
+    hint: |
+      The two given proportions. The three pairs may be of three different kinds.
+
+  - part: specification
+    text: "I say that, as A is to B, so is E to F."
+    highlight: [A, B, E, F]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For of A, C, E let equimultiples G, H, K be taken, and of B, D, F other, chance, equimultiples L, M, N."
+    highlight: [G, H, K, L, M, N]
+    hint: |
+      The test of [[V.Def.5]], set up for all three ratios at once: $m$ times the antecedents, $n$ times the
+      consequents.
+    cites: [V.Def.5]
+
+  - part: proof
+    text: "Then since, as A is to B, so is C to D, and of A, C equimultiples G, H have been taken, and of B, D other, chance, equimultiples L, M, therefore, if G is in excess of L, H is also in excess of M, if equal, equal, and if less, less."
+    highlight: [G, L, H, M]
+    hint: |
+      $A : B = C : D$ forwards: {G} vs {L} goes like {H} vs {M}.
+    cites: [V.Def.5]
+
+  - part: proof
+    text: "Again, since, as C is to D, so is E to F, and of C, E equimultiples H, K have been taken, and of D, F other, chance, equimultiples M, N, therefore, if H is in excess of M, K is also in excess of N, if equal, equal, and if less, less."
+    highlight: [H, M, K, N]
+    hint: |
+      $C : D = E : F$ forwards: {H} vs {M} goes like {K} vs {N}.
+    cites: [V.Def.5]
+
+  - part: proof
+    text: "But we saw that, if H was in excess of M, G was also in excess of L; if equal, equal; and if less, less; so that, in addition, if G is in excess of L, K is also in excess of N, if equal, equal, and if less, less."
+    highlight: [G, L, K, N]
+    hint: |
+      Chain the two: {G} vs {L} goes like {K} vs {N}.
+    explain:
+      follows: |
+        Whichever of >, =, < holds between {G} and {L}, the same holds between {H} and {M} (previous step
+        but one), and hence between {K} and {N}.
+      implicit: |
+        Euclid writes "if {H} was in excess of {M}, {G} was also in excess of {L}" — the converse of what was
+        shown. It is valid because the three cases are exhaustive and exclusive: the implication in each
+        direction follows from the implications for all three cases.
+
+  - part: proof
+    text: "And G, K are equimultiples of A, E, while L, N are other, chance, equimultiples of B, F;"
+    highlight: [G, K, L, N]
+    hint: |
+      These are exactly the multiples [[V.Def.5]] needs for $A : B = E : F$.
+
+  - part: proof
+    text: "therefore, as A is to B, so is E to F."
+    highlight: [A, B, E, F]
+    hint: |
+      [[V.Def.5]], backwards.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3]
+      text: |
+        For each $m, n$, the hypotheses say that $mA$ vs $nB$, $mC$ vs $nD$ and $mE$ vs $nF$ have pairwise the
+        same outcome (>, = or <).
+    - steps: [4, 5, 6, 7, 8]
+      text: |
+        "Same outcome" is transitive, so $mA$ vs $nB$ has the same outcome as $mE$ vs $nF$ for every $m, n$:
+        $A : B = E : F$. $\blacksquare$
+  closing: |
+    In terms of cuts: $A : B$ and $C : D$ determine the same set of fractions $n/m$, as do $C : D$ and
+    $E : F$; so $A : B$ and $E : F$ do too.
+
+commentary: |
+  Joyce remarks that what is notable is not the proof, which follows straight from the definition, but that
+  Eudoxus (or Euclid) saw that it needed proving. V.11 is cited constantly from here on, often silently:
+  every chain "as {A} is to {B}, so is {C} to {D}, and so is {E} to {F}" relies on it.

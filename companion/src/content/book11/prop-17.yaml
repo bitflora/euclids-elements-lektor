@@ -1,0 +1,121 @@
+id: XI.17
+kind: theorem
+title: Parallel planes cut lines proportionally
+
+paraphrase: |
+  If two lines {AB}, {CD} are cut by three parallel planes at {A}, {E}, {B} and {C}, {F}, {D}, then {AE} : {EB} =
+  {CF} : {FD}.
+
+diagram:
+  width: 310
+  height: 320
+  elements:
+    - "X;point;free;100000,200"
+    - "Y;point;free;200,-100000"
+    - "Z;point;free;30000,-100000"
+    - "G;point;free;30,100"
+    - "H;point;free;180,30"
+    - "G';point;intersection;G,X,H,Z;0;0"
+    - "H';point;intersection;H,X,G,Z;0;0"
+    - "GH;polygon;quadrilateral;G,G',H,H';0;0;lightGray;brighter"
+    - "K;point;free;75,190"
+    - "L;point;free;225,120"
+    - "K';point;intersection;K,X,L,Z;0;0"
+    - "L';point;intersection;L,X,K,Z;0;0"
+    - "KL;polygon;quadrilateral;K,K',L,L';0;0;lightGray;brighter"
+    - "M;point;free;120,290"
+    - "N;point;free;270,220"
+    - "M';point;intersection;M,X,N,Z;0;0"
+    - "N';point;intersection;N,X,M,Z;0;0"
+    - "MN;polygon;quadrilateral;M,M',N,N';0;0;lightGray;brighter"
+    - "A;point;free;130,40"
+    - "B;point;free;240,260"
+    - "C;point;free;60,70"
+    - "D;point;free;160,245"
+    - "AB;line;connect;A,B"
+    - "CD;line;connect;C,D"
+    - "E;point;lineSlider;AB,190,150"
+    - "O';point;parallelogram;D,B,E;0;0"
+    - "O;point;intersection;E,O',A,D"
+    - "F';point;parallelogram;C,A,O;0;0"
+    - "F;point;intersection;O,F',C,D"
+    - "AC;line;connect;A,C"
+    - "BD;line;connect;B,D"
+    - "AD;line;connect;A,D"
+    - "EO;line;connect;E,O"
+    - "FO;line;connect;F,O"
+    - "OF;line;connect;O,F;0;0;0"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "CF;line;connect;C,F;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+    - "AO;line;connect;A,O;0;0;0"
+    - "OD;line;connect;O,D;0;0;0"
+  aliases: { BA: AB, DC: CD, CA: AC, DB: BD, DA: AD, OE: EO, EA: AE, BE: EB, FC: CF, DF: FD, OA: AO, DO: OD }
+  caption: |
+    Three parallel planes; {AD} meets the middle plane at {O}.
+
+steps:
+  - part: enunciation
+    text: "If two straight lines be cut by parallel planes, they will be cut in the same ratios."
+    highlight: [AB, CD]
+    hint: |
+      The spatial version of [[VI.2]].
+
+  - part: setting-out
+    text: "For let the two straight lines AB, CD be cut by the parallel planes GH, KL, MN at the points A, E, B and C, F, D; I say that, as the straight line AE is to EB, so is CF to FD."
+    highlight: [AB, CD]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let AC, BD, AD be joined, let AD meet the plane KL at the point O, and let EO, OF be joined."
+    highlight: [AC, BD, AD, EO, OF]
+    hint: |
+      Join {AC}, {BD}, {AD}; {AD} meets the middle plane at {O}; join {EO}, {OF}.
+
+  - part: proof
+    text: "Now, since the two parallel planes KL, MN are cut by the plane EBDO, their common sections EO, BD are parallel."
+    highlight: [EO, BD]
+    hint: |
+      {EO} ∥ {BD} ([[XI.16]]).
+
+  - part: proof
+    text: "For the same reason, since the two parallel planes GH, KL are cut by the plane AOFC, their common sections AC, OF are parallel. [id.]"
+    highlight: [AC, OF]
+    hint: |
+      {AC} ∥ {OF}.
+
+  - part: proof
+    text: "And, since the straight line EO has been drawn parallel to BD, one of the sides of the triangle ABD, therefore, proportionally, as AE is to EB, so is AO to OD."
+    highlight: [AE, EB]
+    hint: |
+      {AE} : {EB} = {AO} : {OD} ([[VI.2]]).
+
+  - part: proof
+    text: "Again, since the straight line OF has been drawn parallel to AC, one of the sides of the triangle ADC, proportionally, as AO is to OD, so is CF to FD. [id.]"
+    highlight: [CF, FD]
+    hint: |
+      {AO} : {OD} = {CF} : {FD}.
+
+  - part: proof
+    text: "But it was also proved that, as AO is to OD, so is AE to EB; therefore also, as AE is to EB, so is CF to FD."
+    highlight: [AE, EB, CF, FD]
+    hint: |
+      So {AE} : {EB} = {CF} : {FD}.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [AE, EB, CF, FD]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Two applications of [[VI.2]] through the diagonal {AD}. $\blacksquare$

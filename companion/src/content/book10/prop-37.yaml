@@ -1,0 +1,78 @@
+id: X.37
+kind: theorem
+title: The first bimedial line
+
+paraphrase: |
+  The sum of two medial lines commensurable in square only that contain a rational rectangle is irrational:
+  the *first bimedial*. Example: $\sqrt[4]{3} + \sqrt[4]{27}$ (product 3).
+
+diagram:
+  width: 230
+  height: 80
+  elements:
+    - "X0;point;free;-1000,50"
+    - "X1;point;free;1000,50"
+    - "A;point;lineSlider;X0,X1,30,0"
+    - "B;point;lineSlider;X0,X1,100,0"
+    - "C;point;lineSlider;X0,X1,200,0"
+    - "AC;line;connect;A,C"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+  aliases: { CA: AC, BA: AB, CB: BC }
+  caption: |
+    {AC} = {AB} + {BC}, medial, commensurable in square only, rect({AB},{BC}) rational.
+
+steps:
+  - part: enunciation
+    text: "If two medial straight lines commensurable in square only and containing a rational rectangle be added together, the whole is irrational; and let it be called a first bimedial straight line."
+    highlight: [AC]
+    hint: |
+      Medial + medial with rational product: the first bimedial.
+    modern: |
+      $\sqrt[4]{k} + \sqrt[4]{k^3}$; e.g. $k = 3$.
+
+  - part: setting-out
+    text: "For let two medial straight lines AB, BC commensurable in square only and containing a rational rectangle be added together;"
+    highlight: [AB, BC]
+    hint: |
+      The parts.
+
+  - part: specification
+    text: "I say that the whole AC is irrational."
+    highlight: [AC]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since AB is incommensurable in length with BC, therefore the squares on AB, BC are also incommensurable with twice the rectangle AB, BC; and, componendo, the squares on AB, BC together with twice the rectangle AB, BC, that is, the square on AC, is incommensurable with the rectangle AB, BC."
+    highlight: [AB, BC, AC]
+    hint: |
+      As in [[X.36]]: the squares are incommensurable with 2·rect, and so sq({AC}) is incommensurable with rect
+      ({AB},{BC}) ([[X.16]]).
+
+  - part: proof
+    text: "But the rectangle AB, BC is rational, for, by hypothesis, AB, BC are straight lines containing a rational rectangle; therefore the square on AC is irrational; therefore AC is irrational."
+    highlight: [AC]
+    hint: |
+      rect({AB},{BC}) is rational, so sq({AC}) and {AC} are irrational.
+
+  - part: proof
+    text: "And let it be called a first bimedial straight line."
+    hint: |
+      The name.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [3, 4]
+      text: |
+        $AC^2 = (AB^2 + BC^2) + 2AB\cdot BC$: a medial area plus a rational one, irrational ([[X.26]] in effect).
+        $\blacksquare$
+
+commentary: |
+  Heath's reference "cf. X. 36, ll. 9–20" points to the lines of the Greek text of [[X.36]] that make the
+  same argument.

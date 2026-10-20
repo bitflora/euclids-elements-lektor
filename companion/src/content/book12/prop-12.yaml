@@ -1,0 +1,363 @@
+id: XII.12
+kind: theorem
+title: Similar cones and cylinders are in the triplicate ratio of their base diameters
+
+paraphrase: |
+  Similar cones (and similar cylinders) are to one another in the triplicate ratio of the diameters of their
+  bases — their volumes scale as the cube of the diameter.
+
+diagram:
+  width: 560
+  height: 280
+  elements:
+    - "A0;point;free;-1000,160;0;0"
+    - "A3;point;free;1000,160;0;0"
+    - "B;point;lineSlider;A0,A3,40,0"
+    - "D;point;lineSlider;A0,A3,180,0"
+    - "K;point;midpoint;B,D"
+    - "Kcirc;circle;radius;K,B;0;0;black;random"
+    - "C;point;perpendicular;K,B"
+    - "A;point;extend;C,K,K,B"
+    - "T';point;midpoint;A,B;0;0"
+    - "T;point;cutoff;K,T',K,B"
+    - "U';point;midpoint;B,C;0;0"
+    - "U;point;cutoff;K,U',K,B"
+    - "V';point;midpoint;C,D;0;0"
+    - "V;point;cutoff;K,V',K,B"
+    - "W';point;midpoint;D,A;0;0"
+    - "W;point;cutoff;K,W',K,B"
+    - "BUCVDWAT;polygon;octagon;B,U,C,V,D,W,A,T;0;0;black;random"
+    - "ABCD;polygon;quadrilateral;A,B,C,D;0;0;black;random"
+    - "BD;line;connect;B,D"
+    - "H;point;lineSlider;A0,A3,220,0"
+    - "F;point;lineSlider;A0,A3,390,0"
+    - "M;point;midpoint;H,F"
+    - "Mcirc;circle;radius;M,H;0;0;black;random"
+    - "G;point;perpendicular;M,H"
+    - "E;point;extend;G,M,M,H"
+    - "P';point;midpoint;E,F;0;0"
+    - "P;point;cutoff;M,P',M,H"
+    - "Q';point;midpoint;F,G;0;0"
+    - "Q;point;cutoff;M,Q',M,H"
+    - "R';point;midpoint;G,H;0;0"
+    - "R;point;cutoff;M,R',M,H"
+    - "S';point;midpoint;H,E;0;0"
+    - "S;point;cutoff;M,S',M,H"
+    - "HRGQFPES;polygon;octagon;H,R,G,Q,F,P,E,S;0;0;black;random"
+    - "EFGH;polygon;quadrilateral;E,F,G,H;0;0;black;random"
+    - "EG;line;connect;E,G"
+    - "L3;point;free;-12000,-20000;0;0"
+    - "L;point;lineSlider;K,L3,50,60"
+    - "KL;line;connect;K,L;0;0;darkGray"
+    - "N3;point;free;12000,-20000;0;0"
+    - "N;point;proportion;K,B,H,M,K,L,M,N3"
+    - "MN;line;connect;M,N;0;0;darkGray"
+    - "O0;point;free;440,220;0;0"
+    - "O1;point;free;440,140;0;0"
+    - "O2;point;free;480,190;0;0"
+    - "O3;point;free;510,220;0;0"
+    - "O;polyhedron;parallelepiped;O0,O1,O2,O3;black;0;black;random"
+    - "BL;line;connect;B,L;0;0;darkGray"
+    - "TL;line;connect;T,L;0;0;darkGray"
+    - "FN;line;connect;F,N;0;0;darkGray"
+    - "PN;line;connect;P,N;0;0;darkGray"
+    - "FH;line;connect;F,H;0;0;0"
+    - "EP;line;connect;E,P;0;0;0"
+    - "PF;line;connect;P,F;0;0;0"
+    - "FQ;line;connect;F,Q;0;0;0"
+    - "QG;line;connect;Q,G;0;0;0"
+    - "GR;line;connect;G,R;0;0;0"
+    - "RH;line;connect;R,H;0;0;0"
+    - "HS;line;connect;H,S;0;0;0"
+    - "SE;line;connect;S,E;0;0;0"
+  aliases: { ATBUCVDW: BUCVDWAT, EPFQGRHS: HRGQFPES, DB: BD, GE: EG, LK: KL, NM: MN, LB: BL, LT: TL, NF: FN, NP: PN, HF: FH, PE: EP, FP: PF, QF: FQ, GQ: QG, RG: GR, HR: RH, SH: HS, ES: SE }
+  caption: |
+    Similar cones on circles {ABCD}, {EFGH} with diameters {BD}, {FH} and axes {KL}, {MN}; inscribed similar polygons
+    {ATBUCVDW}, {EPFQGRHS}.
+
+steps:
+  - part: enunciation
+    text: "Similar cones and cylinders are to one another in the triplicate ratio of the diameters in their bases."
+    highlight: [BD, FH]
+    hint: |
+      Similar cones (and cylinders) are as the cubes of their base diameters.
+    modern: |
+      $V_1 : V_2 = d_1^3 : d_2^3$.
+
+  - part: setting-out
+    text: "Let there be similar cones and cylinders, let the circles ABCD, EFGH be their bases, BD, FH the diameters of the bases, and KL, MN the axes of the cones and cylinders; I say that the cone of which the circle ABCD is the base and the point L the vertex has to the cone of which the circle EFGH is the base and the point N the vertex the ratio triplicate of that which BD has to FH."
+    highlight: [ABCD, EFGH, BD, FH]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For, if the cone ABCDL has not to the cone EFGHN the ratio triplicate of that which BD has to FH, the cone ABCDL will have that triplicate ratio either to some solid less than the cone EFGHN or to a greater."
+    highlight: [O]
+    hint: |
+      If not, the triplicate ratio is cone *ABCDL* : some solid {O}, smaller or larger.
+
+  - part: specification
+    text: "First, let it have that triplicate ratio to a less solid O."
+    highlight: [O]
+    hint: |
+      Case 1: {O} smaller.
+
+  - part: construction
+    text: "Let the square EFGH be inscribed in the circle EFGH; therefore the square EFGH is greater than the half of the circle EFGH."
+    highlight: [EFGH]
+    hint: |
+      Inscribe the square *EFGH* ([[IV.6]]): more than half the circle.
+
+  - part: construction
+    text: "Now let there be set up on the square EFGH a pyramid having the same vertex with the cone; therefore the pyramid so set up is greater than the half part of the cone."
+    highlight: [EFGH]
+    hint: |
+      Its pyramid exceeds half the cone.
+
+  - part: construction
+    text: "Let the circumferences EF, FG, GH, HE be bisected at the points P, Q, R, S, and let EP, PF, FQ, QG, GR, RH, HS, SE be joined."
+    highlight: [EP, PF, FQ, QG, GR, RH, HS, SE]
+    hint: |
+      Bisect the arcs; join.
+
+  - part: proof
+    text: "Therefore each of the triangles EPF, FQG, GRH, HSE is also greater than the half part of that segment of the circle EFGH which is about it."
+    highlight: [EP, PF, FQ, QG, GR, RH, HS, SE]
+    hint: |
+      Each triangle exceeds half its segment …
+
+  - part: construction
+    text: "Now on each of the triangles EPF, FQG, GRH, HSE let a pyramid be set up having the same vertex with the cone; therefore each of the pyramids so set up is also greater than the half part of that segment of the cone which is about it."
+    highlight: [EP, PF, FQ, QG, GR, RH, HS, SE]
+    hint: |
+      … and so do the pyramids.
+
+  - part: proof
+    text: "Thus, bisecting the circumferences so left, joining straight lines, setting up on each of the triangles pyramids having the same vertex with the cone, and doing this continually, we shall leave some segments of the cone which will be less than the excess by which the cone EFGHN exceeds the solid O."
+    highlight: [EP, PF, FQ, QG, GR, RH, HS, SE]
+    hint: |
+      Repeat ([[X.1]]).
+    cites: [X.1]
+
+  - part: proof
+    text: "Let such be left, and let them be the segments on EP, PF, FQ, QG, GR, RH, HS, SE; therefore the remainder, the pyramid of which the polygon EPFQGRHS is the base and the point N the vertex, is greater than the solid O."
+    highlight: [EPFQGRHS, O]
+    hint: |
+      The pyramid on {EPFQGRHS} exceeds {O}.
+
+  - part: construction
+    text: "Let there be also inscribed in the circle ABCD the polygon ATBUCVDW similar and similarly situated to the polygon EPFQGRHS, and let there be set up on the polygon ATBUCVDW a pyramid having the same vertex with the cone; of the triangles containing the pyramid of which the polygon ATBUCVDW is the base and the point L the vertex let LBT be one, and of the triangles containing the pyramid of which the polygon EPFQGRHS is the base and the point N the vertex let NFP be one; and let KT, MP be joined."
+    highlight: [ATBUCVDW]
+    hint: |
+      Inscribe the similar polygon {ATBUCVDW} in circle {ABCD}.
+
+  - part: proof
+    text: "Now, since the cone ABCDL is similar to the cone EFGHN, therefore, as BD is to FH, so is the axis KL to the axis MN."
+    highlight: [BD, FH, KL, MN]
+    hint: |
+      Similar cones: {BD} : {FH} = {KL} : {MN} ([[XI.Def.24]]).
+    cites: [XI.Def.24]
+
+  - part: proof
+    text: "But, as BD is to FH, so is BK to FM; therefore also, as BK is to FM, so is KL to MN."
+    highlight: [KL, MN]
+    hint: |
+      Halving the diameters: *BK* : *FM* = {KL} : {MN} …
+
+  - part: proof
+    text: "And, alternately, as BK is to KL, so is FM to MN."
+    highlight: [KL, MN]
+    hint: |
+      … alternately ([[V.16]]).
+
+  - part: proof
+    text: "And the sides are proportional about equal angles, namely the angles BKL, FMN; therefore the triangle BKL is similar to the triangle FMN."
+    highlight: [BL, FN]
+    hint: |
+      Triangles *BKL*, *FMN* similar ([[VI.6]]).
+
+  - part: proof
+    text: "Again, since, as BK is to KT, so is FM to MP, and they are about equal angles, namely the angles BKT, FMP, inasmuch as, whatever part the angle BKT is of the four right angles at the centre K, the same part also is the angle FMP of the four right angles at the centre M; since then the sides are proportional about equal angles, therefore the triangle BKT is similar to the triangle FMP."
+    highlight: [TL, PN]
+    hint: |
+      Likewise *BKT* ~ *FMP* and *TKL* ~ *PMN*.
+
+  - part: proof
+    text: "Again, since it was proved that, as BK is to KL, so is FM to MN, while BK is equal to KT, and FM to PM, therefore, as TK is to KL, so is PM to MN; and the sides are proportional about equal angles, namely the angles TKL, PMN, for they are right; therefore the triangle LKT is similar to the triangle NMP."
+    highlight: [TL, PN]
+    hint: |
+      Ratios of the edges match …
+
+  - part: proof
+    text: "And since, owing to the similarity of the triangles LKB, NMF, as LB is to BK, so is NF to FM, and, owing to the similarity of the triangles BKT, FMP, as KB is to BT, so is MF to FP, therefore, ex aequali, as LB is to BT, so is NF to FP."
+    highlight: [BL, FN]
+    hint: |
+      … *LB* : *BT* = *NF* : *FP* …
+
+  - part: proof
+    text: "Again since, owing to the similarity of the triangles LTK, NPM, as LT is to TK, so is NP to PM, and, owing to the similarity of the triangles TKB, PMF, as KT is to TB, so is MP to PF; therefore, ex aequali, as LT is to TB, so is NP to PF."
+    highlight: [TL, PN]
+    hint: |
+      … and *LT* : *TB* = *NP* : *PF* …
+
+  - part: proof
+    text: "But it was also proved that, as TB is to BL, so is PF to FN."
+    highlight: [BL, FN]
+    hint: |
+      … recalled …
+
+  - part: proof
+    text: "Therefore, ex aequali, as TL is to LB, so is PN to NF."
+    highlight: [TL, PN]
+    hint: |
+      … ex aequali ([[V.22]]).
+
+  - part: proof
+    text: "Therefore in the triangles LTB, NPF the sides are proportional; therefore the triangles LTB, NPF are equiangular; hence they are also similar."
+    highlight: [TL, PN, BL, FN]
+    hint: |
+      So triangles *LTB*, *NPF* are similar ([[VI.5]]).
+
+  - part: proof
+    text: "Therefore the pyramid of which the triangle BKT is the base and the point L the vertex is also similar to the pyramid of which the triangle FMP is the base and the point N the vertex, for they are contained by similar planes equal in multitude."
+    highlight: [TL, PN]
+    hint: |
+      So the pyramids *BKTL*, *FMPN* are similar ([[XI.Def.9]]) …
+
+  - part: proof
+    text: "But similar pyramids which have triangular bases are to one another in the triplicate ratio of their corresponding sides."
+    highlight: [TL, PN]
+    hint: |
+      … and in the triplicate ratio of the sides ([[XII.8]]) …
+
+  - part: proof
+    text: "Therefore the pyramid BKTL has to the pyramid FMPN the ratio triplicate of that which BK has to FM."
+    highlight: [TL, PN]
+    hint: |
+      … that of *BK* : *FM*.
+
+  - part: proof
+    text: "Similarly, by joining straight lines from A, W, D, V, C, U to K, and from E, S, H, R, G, Q to M, and setting up on each of the triangles pyramids which have the same vertex with the cones, we can prove that each of the similarly arranged pyramids will also have to each similarly arranged pyramid the ratio triplicate of that which the corresponding side BK has to the corresponding side FM, that is, which BD has to FH."
+    highlight: [ATBUCVDW, EPFQGRHS]
+    hint: |
+      Likewise for all the small pyramids …
+
+  - part: proof
+    text: "And, as one of the antecedents is to one of the consequents, so are all the antecedents to all the consequents; therefore also, as the pyramid BKTL is to the pyramid FMPN, so is the whole pyramid of which the polygon ATBUCVDW is the base and the point L the vertex to the whole pyramid of which the polygon EPFQGRHS is the base and the point N the vertex; hence also the pyramid of which ATBUCVDW is the base and the point L the vertex has to the pyramid of which the polygon EPFQGRHS is the base and the point N the vertex the ratio triplicate of that which BD has to FH."
+    highlight: [ATBUCVDW, EPFQGRHS]
+    hint: |
+      … and adding ([[V.12]]): pyramid on {ATBUCVDW} : pyramid on {EPFQGRHS} = triplicate of {BD} : {FH}.
+
+  - part: proof
+    text: "But, by hypothesis, the cone of which the circle ABCD is the base and the point L the vertex has also to the solid O the ratio triplicate of that which BD has to FH; therefore, as the cone of which the circle ABCD is the base and the point L the vertex is to the solid O, so is the pyramid of which the polygon ATBUCVDW is the base and L the vertex to the pyramid of which the polygon EPFQGRHS is the base and the point N the vertex; therefore, alternately, as the cone of which the circle ABCD is the base and L the vertex is to the pyramid contained in it of which the polygon ATBUCVDW is the base and L the vertex, so is the solid O to the pyramid of which the polygon EPFQGRHS is the base and N the vertex."
+    highlight: [O]
+    hint: |
+      But cone *ABCDL* : {O} is that ratio too.
+
+  - part: proof
+    text: "But the said cone is greater than the pyramid in it; for it encloses it."
+    highlight: [ATBUCVDW]
+    hint: |
+      The cone exceeds its pyramid …
+
+  - part: proof
+    text: "Therefore the solid O is also greater than the pyramid of which the polygon EPFQGRHS is the base and N the vertex."
+    highlight: [O, EPFQGRHS]
+    hint: |
+      … so {O} exceeds the pyramid in the other cone …
+
+  - part: proof
+    text: "But it is also less: which is impossible."
+    highlight: [O]
+    hint: |
+      … but it is less: impossible.
+
+  - part: proof
+    text: "Therefore the cone of which the circle ABCD is the base and L the vertex has not to any solid less than the cone of which the circle EFGH is the base and the point N the vertex the ratio triplicate of that which BD has to FH:"
+    highlight: [O]
+    hint: |
+      So not a smaller solid.
+
+  - part: proof
+    text: "Similarly we can prove that neither has the cone EFGHN to any solid less than the cone ABCDL the ratio triplicate of that which FH has to BD."
+    highlight: [O]
+    hint: |
+      Likewise exchanged.
+
+  - part: specification
+    text: "I say next that neither has the cone ABCDL to any solid greater than the cone EFGHN the ratio triplicate of that which BD has to FH."
+    highlight: [O]
+    hint: |
+      Case 2: {O} larger.
+
+  - part: proof
+    text: "For, if possible, let it have that ratio to a greater solid O."
+    highlight: [O]
+    hint: |
+      Suppose so.
+
+  - part: proof
+    text: "Therefore, inversely, the solid O has to the cone ABCDL the ratio triplicate of that which FH has to BD."
+    highlight: [O]
+    hint: |
+      Inversely …
+
+  - part: proof
+    text: "But, as the solid O is to the cone ABCDL, so is the cone EFGHN to some solid less than the cone ABCDL."
+    highlight: [O]
+    hint: |
+      … = cone *EFGHN* : a solid less than cone *ABCDL* (lemma of [[XII.2]]) …
+
+  - part: proof
+    text: "Therefore the cone EFGHN also has to some solid less than the cone ABCDL the ratio triplicate of that which FH has to BD: which was proved impossible."
+    highlight: [O]
+    hint: |
+      … which is case 1 exchanged: impossible.
+
+  - part: proof
+    text: "Therefore the cone ABCDL has not to any solid greater than the cone EFGHN the ratio triplicate of that which BD has to FH."
+    highlight: [O]
+    hint: |
+      So not a larger solid.
+
+  - part: proof
+    text: "But it was proved that neither has it this ratio to a less solid than the cone EFGHN."
+    highlight: [O]
+    hint: |
+      Recalled.
+
+  - part: proof
+    text: "Therefore the cone ABCDL has to the cone EFGHN the ratio triplicate of that which BD has to FH."
+    highlight: [BD, FH]
+    hint: |
+      Hence the triplicate ratio holds.
+
+  - part: proof
+    text: "But, as the cone is to the cone, so is the cylinder to the cylinder, for the cylinder which is on the same base as the cone and of equal height with it is triple of the cone; therefore the cylinder also has to the cylinder the ratio triplicate of that which BD has to FH."
+    highlight: [BD, FH]
+    hint: |
+      And for cylinders, three times the cones ([[XII.10]]).
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [BD, FH]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11]
+      text: |
+        Inscribe pyramids exhausting the second cone.
+    - steps: [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
+      text: |
+        Corresponding small pyramids are similar, so their volumes are in the cube ratio of the diameters ([[XII.8]]),
+        and so are the sums.
+    - steps: [28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41]
+      text: |
+        Double reductio as in [[XII.2]]. $\blacksquare$

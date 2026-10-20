@@ -1,0 +1,137 @@
+id: V.2
+kind: theorem
+title: Adding equimultiples
+
+paraphrase: |
+  If {AB} is the same multiple of {C} that {DE} is of {F}, and {BG} is the same multiple of {C} that {EH} is
+  of {F}, then {AG} is the same multiple of {C} that {DH} is of {F}. In algebra: $m c + n c = (m + n) c$.
+
+diagram:
+  width: 310
+  height: 130
+  elements:
+    - "U1;point;free;0,0;0;0"
+    - "U2;point;free;25,0;0;0"
+    - "U;line;connect;U1,U2;0;0;0"
+    - "C1;point;free;30,90;0"
+    - "C3;point;parallelogram;C1,U;0;0"
+    - "C2;point;lineSlider;C1,C3,65,0;0"
+    - "C;line;connect;C1,C2;black;0;magenta"
+    - "F1;point;free;30,120;0"
+    - "F3;point;parallelogram;F1,U;0;0"
+    - "F2;point;lineSlider;F1,F3,78,0;0"
+    - "F;line;connect;F1,F2;black;0;green"
+    - "A;point;free;30,30"
+    - "A3;point;parallelogram;A,U;0;0"
+    - "A1;point;cutoff;A,A3,C;0;lightGray"
+    - "A2;point;extend;A,A1,C;0;lightGray"
+    - "B;point;extend;A,A2,C"
+    - "B1;point;extend;A,B,C;0;lightGray"
+    - "G;point;extend;A,B1,C"
+    - "AG;line;connect;A,G;0;0;magenta"
+    - "D;point;free;30,60"
+    - "D3;point;parallelogram;D,U;0;0"
+    - "D1;point;cutoff;D,D3,F;0;lightGray"
+    - "D2;point;extend;D,D1,F;0;lightGray"
+    - "E;point;extend;D,D2,F"
+    - "E1;point;extend;D,E,F;0;lightGray"
+    - "H;point;extend;D,E1,F"
+    - "DH;line;connect;D,H;0;0;green"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BG;line;connect;B,G;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "EH;line;connect;E,H;0;0;0"
+  caption: |
+    {AB} is three times {C} and {BG} twice; {DE} is three times {F} and {EH} twice. The colours mark two
+    *kinds* of magnitude: the theorem never compares the first pair with the second.
+
+steps:
+  - part: enunciation
+    text: "If a first magnitude be the same multiple of a second that a third is of a fourth, and a fifth also be the same multiple of the second that a sixth is of the fourth, the sum of the first and fifth will also be the same multiple of the second that the sum of the third and sixth is of the fourth."
+    highlight: [AG, DH, C, F]
+    hint: |
+      Adding equimultiples gives equimultiples.
+    explain:
+      implicit: |
+        The first, second and fifth magnitudes are of one kind, the third, fourth and sixth of another
+        (possibly different) kind. Nothing is ever compared across the two kinds.
+    modern: |
+      $$a = mc,\ b = md;\ a' = nc,\ b' = nd \ \Rightarrow\ a + a' = (m + n)c,\ b + b' = (m + n)d$$
+
+  - part: setting-out
+    text: "Let a first magnitude, AB, be the same multiple of a second, C, that a third, DE, is of a fourth, F, and let a fifth, BG, also be the same multiple of the second, C, that a sixth, EH, is of the fourth F;"
+    highlight: [AB, C, DE, F, BG, EH]
+    hint: |
+      {AB} = $m${C}, {DE} = $m${F}; {BG} = $n${C}, {EH} = $n${F}. In the figure $m = 3$, $n = 2$.
+
+  - part: specification
+    text: "I say that the sum of the first and fifth, AG, will be the same multiple of the second, C, that the sum of the third and sixth, DH, is of the fourth, F."
+    highlight: [AG, C, DH, F]
+    hint: |
+      The goal: {AG} and {DH} are equimultiples of {C} and {F}.
+
+  - part: proof
+    text: "For, since AB is the same multiple of C that DE is of F, therefore, as many magnitudes as there are in AB equal to C, so many also are there in DE equal to F."
+    highlight: [AB, C, DE, F]
+    hint: |
+      As many copies of {C} in {AB} as of {F} in {DE} ([[V.Def.2]]).
+    cites: [V.Def.2]
+
+  - part: proof
+    text: "For the same reason also, as many as there are in BG equal to C, so many are there also in EH equal to F;"
+    highlight: [BG, C, EH, F]
+    hint: |
+      Likewise for {BG} and {EH}.
+
+  - part: proof
+    text: "therefore, as many as there are in the whole AG equal to C, so many also are there in the whole DH equal to F."
+    highlight: [AG, DH]
+    hint: |
+      Add the counts: $m + n$ copies in each.
+    explain:
+      follows: |
+        The copies of {C} in {AG} are those in {AB} followed by those in {BG}; the same for {F} in {DH}.
+        Equal counts plus equal counts are equal counts.
+
+  - part: proof
+    text: "Therefore, whatever multiple AG is of C, that multiple also is DH of F."
+    highlight: [AG, C, DH, F]
+    hint: |
+      Equal counts mean the same multiple.
+
+  - part: conclusion
+    text: "Therefore the sum of the first and fifth, AG, is the same multiple of the second, C, that the sum of the third and sixth, DH, is of the fourth, F."
+    highlight: [AG, DH]
+    hint: |
+      The claim, in the words of the enunciation.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q.E.D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: |
+        Let $AB = mC$, $DE = mF$, $BG = nC$, $EH = nF$.
+    - steps: [3, 4, 5, 6]
+      text: |
+        $AG = AB + BG = mC + nC = (m + n)C$ and likewise $DH = (m + n)F$: the same multiple, $m + n$.
+        $\blacksquare$
+
+commentary: |
+  [[V.1]] distributes a number over a sum of magnitudes; V.2 distributes a magnitude over a sum of numbers.
+  Together with [[V.3]] (multiples of multiples) they are the arithmetic of "how many times" on which
+  the theory of ratio is built.
+
+gaps: |
+  - **Adding counts**: that $m$ copies followed by $n$ copies make $m + n$ copies is the arithmetic of
+    whole numbers, which Euclid takes as known (it is not developed until Book VII, and never axiomatised).

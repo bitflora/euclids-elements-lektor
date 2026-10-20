@@ -1,0 +1,265 @@
+id: II.4
+kind: theorem
+title: The square of a sum
+
+paraphrase: |
+  Cut {AB} at {C}. The square on the whole equals the squares on the two pieces plus twice the
+  rectangle on the pieces. In algebra: $(a + b)^2 = a^2 + b^2 + 2ab$.
+
+diagram:
+  width: 230
+  height: 220
+  elements:
+    - "A0;point;free;-1000,40;0"
+    - "A3;point;free;1000,40;0"
+    - "A;point;lineSlider;A0,A3,40,0"
+    - "B;point;lineSlider;A0,A3,190,0"
+    - "C;point;lineSlider;A0,A3,130,0"
+    - "BADE;polygon;square;B,A;0;0;black;0"
+    - "E;point;vertex;BADE,4"
+    - "D;point;vertex;BADE,3"
+    - "BD;line;connect;B,D"
+    - "F;point;parallelogram;D,A,C"
+    - "CF;line;connect;C,F"
+    - "G;point;intersection;C,F,B,D"
+    - "DFGH;polygon;parallelogram;D,F,G;0;0;0;#dfe7ea"
+    - "H;point;vertex;DFGH,4"
+    - "K;point;intersection;G,H,B,E"
+    - "HK;line;connect;H,K"
+    - "CBKG;polygon;quadrilateral;C,B,K,G;0;0;0;#dfe7ea"
+    - "AB;line;connect;A,B"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+    - "DE;line;connect;D,E;0;0;0"
+    - "CG;line;connect;C,G;0;0;0"
+    - "GK;line;connect;G,K;0;0;0"
+    - "KB;line;connect;K,B;0;0;0"
+    - "HG;line;connect;H,G;0;0;0"
+    - "ACGH;polygon;quadrilateral;A,C,G,H;0;0;0;#efe4d2"
+    - "GKEF;polygon;quadrilateral;G,K,E,F;0;0;0;#efe4d2"
+    - "ADEB;polygon;quadrilateral;A,D,E,B;0;0;0;0"
+    - "angCGB;sector;angleMarker;G,C,B"
+    - "angADB;sector;angleMarker;D,A,B"
+    - "angABD;sector;angleMarker;B,A,D"
+    - "angKBC;sector;angleMarker;B,K,C"
+    - "angGCB;sector;angleMarker;C,G,B"
+    - "angCGK;sector;angleMarker;G,C,K"
+    - "angGKB;sector;angleMarker;K,G,B"
+  aliases:
+    HF: DFGH
+    CK: CBKG
+    KC: CBKG
+    CGKB: CBKG
+    AG: ACGH
+    GE: GKEF
+    BA: AB
+    BC: CB
+    GC: CG
+    BK: KB
+    EB: BE
+    CGB: angCGB
+    ADB: angADB
+    ABD: angABD
+    GBC: angABD
+    KBC: angKBC
+    GCB: angGCB
+    BCG: angGCB
+    CGK: angCGK
+    GKB: angGKB
+  given: [A, B, C, AB]
+  caption: |
+    Slide {A}, {B} and the cut {C}. The two squares on the diagonal and the two equal rectangles
+    always fill the big square.
+
+steps:
+  - part: enunciation
+    text: "If a straight line be cut at random, the square on the whole is equal to the squares on the segments and twice the rectangle contained by the segments."
+    highlight: [ADEB, HF, CK, AG, GE]
+    hint: |
+      $(a + b)^2 = a^2 + b^2 + 2ab$, as a picture: the big square splits into two squares and two
+      equal rectangles.
+    explain:
+      implicit: |
+        "Twice the rectangle contained by" is in Greek, by a curious idiom, "the rectangle *twice*
+        contained by" (Heath's note on line 2).
+
+  - part: setting-out
+    text: "For let the straight line AB be cut at random at C;"
+    highlight: [AB, C]
+    hint: |
+      {AB} cut at {C}.
+
+  - part: specification
+    text: "I say that the square on AB is equal to the squares on AC, CB and twice the rectangle contained by AC, CB."
+    highlight: [AB, AC, CB]
+    hint: |
+      The goal.
+    modern: |
+      $$AB^2 = AC^2 + CB^2 + 2\,AC\cdot CB$$
+
+  - part: construction
+    text: "For let the square ADEB be described on AB,"
+    highlight: [ADEB]
+    adds: [BADE, D, E]
+    hint: |
+      The square on the whole ([[I.46]]).
+
+  - part: construction
+    text: "let BD be joined;"
+    highlight: [BD]
+    adds: [BD]
+    hint: |
+      Its diagonal.
+
+  - part: construction
+    text: "through C let CF be drawn parallel to either AD or EB, and through G let HK be drawn parallel to either AB or DE."
+    highlight: [CF, HK, G]
+    adds: [F, G, H, K, CF, HK, DFGH, CBKG, ACGH, GKEF]
+    hint: |
+      A vertical through {C}, meeting the diagonal at {G}; a horizontal through {G} ([[I.31]]).
+
+  - part: proof
+    text: "Then, since CF is parallel to AD, and BD has fallen on them, the exterior angle CGB is equal to the interior and opposite angle ADB."
+    highlight: [angCGB, angADB]
+    hint: |
+      Now Euclid proves that {CGKB|CK} is a square. First: corresponding angles ([[I.29]]).
+
+  - part: proof
+    text: "But the angle ADB is equal to the angle ABD, since the side BA is also equal to AD;"
+    highlight: [angADB, angABD]
+    hint: |
+      Triangle {ABD|AD} is isosceles (sides of a square), so its base angles are equal ([[I.5]]).
+
+  - part: proof
+    text: "therefore the angle CGB is also equal to the angle GBC, so that the side BC is also equal to the side CG."
+    highlight: [angCGB, angABD, CB, CG]
+    hint: |
+      So triangle {CGB|CG} has equal angles at {G} and {B}, hence equal sides {BC} = {CG} ([[I.6]]).
+
+  - part: proof
+    text: "But CB is equal to GK, and CG to KB;"
+    highlight: [CB, GK, CG, KB]
+    hint: |
+      Opposite sides of a parallelogram ([[I.34]]).
+
+  - part: proof
+    text: "therefore GK is also equal to KB; therefore CGKB is equilateral."
+    highlight: [CGKB]
+    hint: |
+      All four sides of {CGKB} are equal.
+
+  - part: specification
+    text: "I say next that it is also right-angled."
+    highlight: [CGKB]
+    hint: |
+      Now the angles.
+
+  - part: proof
+    text: "For, since CG is parallel to BK, the angles KBC, GCB are equal to two right angles."
+    highlight: [angKBC, angGCB]
+    hint: |
+      Co-interior angles ([[I.29]]).
+
+  - part: proof
+    text: "But the angle KBC is right; therefore the angle BCG is also right, so that the opposite angles CGK, GKB are also right."
+    highlight: [angKBC, angGCB, angCGK, angGKB]
+    hint: |
+      ∠{KBC} is a corner of the big square; so all four angles of {CGKB} are right ([[I.34]]).
+
+  - part: proof
+    text: "Therefore CGKB is right-angled; and it was also proved equilateral; therefore it is a square; and it is described on CB."
+    highlight: [CGKB]
+    hint: |
+      {CGKB} is the square on {CB} ([[I.Def.22]]).
+    cites: [I.Def.22]
+
+  - part: proof
+    text: "For the same reason HF is also a square; and it is described on HG, that is AC."
+    highlight: [HF, HG, AC]
+    hint: |
+      Likewise {HF} is a square, on {HG} = {AC} ([[I.34]]).
+
+  - part: proof
+    text: "Therefore the squares HF, KC are the squares on AC, CB."
+    highlight: [HF, KC]
+    hint: |
+      The two diagonal pieces are the squares on the two segments.
+    explain:
+      implicit: |
+        Heath notes that "described" and "the squares" here are not in the Greek, which simply says
+        the squares "are on" their sides (his notes on lines 35–45).
+
+  - part: proof
+    text: "Now, since AG is equal to GE, and AG is the rectangle AC, CB, for GC is equal to CB, therefore GE is also equal to the rectangle AC, CB."
+    highlight: [AG, GE]
+    hint: |
+      The two complements are equal ([[I.43]]), and {AG} has sides {AC} and {CG} (= {CB}).
+    cites: [I.43]
+
+  - part: proof
+    text: "Therefore AG, GE are equal to twice the rectangle AC, CB."
+    highlight: [AG, GE]
+    hint: |
+      Two equal rectangles: twice the rectangle on the segments.
+
+  - part: proof
+    text: "But the squares HF, CK are also the squares on AC, CB; therefore the four areas HF, CK, AG, GE are equal to the squares on AC, CB and twice the rectangle contained by AC, CB."
+    highlight: [HF, CK, AG, GE]
+    hint: |
+      Collect the four pieces.
+    explain:
+      implicit: |
+        "Areas" is Heath's word; the Greek leaves the noun to be understood (his note on line 46).
+
+  - part: proof
+    text: "But HF, CK, AG, GE are the whole ADEB, which is the square on AB."
+    highlight: [ADEB]
+    hint: |
+      And the four pieces make up the whole square.
+
+  - part: conclusion
+    text: "Therefore the square on AB is equal to the squares on AC, CB and twice the rectangle contained by AC, CB."
+    highlight: [ADEB, HF, CK, AG, GE]
+    hint: |
+      Done.
+    modern: |
+      $$(a + b)^2 = a^2 + b^2 + 2ab$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: Let $AC = a$, $CB = b$.
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+      text: $(a + b)^2 = (a + b)a + (a + b)b = a^2 + ab + ab + b^2 = a^2 + b^2 + 2ab$. $\blacksquare$
+  closing: |
+    Most of Euclid's proof (steps 4–13) shows that the pieces along the diagonal are squares — a fact
+    the algebraic version takes for granted. Many editions add it as a porism: in a square, the
+    parallelograms about the diagonal are squares.
+
+commentary: |
+  The most familiar identity in Book II, and the first in which the *figure* does real work: the
+  diagonal {BD} is drawn so that the parallelograms along it come out as squares.
+
+  II.4 is used in [[II.12]] (the obtuse-angle extension of Pythagoras) and, through its figure,
+  in [[II.5]]–[[II.8]].
+
+gaps: |
+  - **Whole equals sum of parts** (step 17).
+
+historical: |
+  The same diagram — a square divided into two squares and two rectangles — appears in Old
+  Babylonian mathematics, where it is used to explain the procedure for completing the square.

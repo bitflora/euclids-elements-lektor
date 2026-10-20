@@ -1,0 +1,154 @@
+id: VII.21
+kind: theorem
+title: Coprime numbers are the least in their ratio
+
+paraphrase: |
+  If {A} and {B} are prime to one another, no smaller pair of numbers has the ratio {A} : {B}: the ratio is
+  in lowest terms.
+
+diagram:
+  width: 200
+  height: 250
+  elements:
+    - "A0;point;free;30,-1000;0;0"
+    - "A3;point;free;30,1000;0;0"
+    - "A1;point;lineSlider;A0,A3,30,30;0"
+    - "A2;point;lineSlider;A0,A3,30,230;0"
+    - "A;line;connect;A1,A2;black"
+    - "B0;point;free;60,-1000;0;0"
+    - "B3;point;free;60,1000;0;0"
+    - "B1;point;lineSlider;B0,B3,60,30;0"
+    - "B2;point;lineSlider;B0,B3,60,180;0"
+    - "B;line;connect;B1,B2;black"
+    - "C0;point;free;100,-1000;0;0"
+    - "C3;point;free;100,1000;0;0"
+    - "C1;point;lineSlider;C0,C3,100,30;0"
+    - "M;point;midpoint;A1,A2;0;0"
+    - "C2;point;cutoff;C1,C3,A1,M;0"
+    - "C;line;connect;C1,C2;black"
+    - "D0;point;free;130,-1000;0;0"
+    - "D3;point;free;130,1000;0;0"
+    - "D1;point;lineSlider;D0,D3,130,30;0"
+    - "D2;point;proportion;A1,A2,B1,B2,C1,C2,D1,D3;0"
+    - "D;line;connect;D1,D2;black"
+    - "E0;point;free;170,-1000;0;0"
+    - "E3;point;free;170,1000;0;0"
+    - "E1;point;lineSlider;E0,E3,130,30;0;black"
+    - "E2;point;lineSlider;E0,E3,130,50;0;black"
+    - "E;line;connect;E1,E2;black"
+  caption: |
+    {C}, {D} are the supposed smaller numbers in the ratio {A} : {B}; {E} counts how often {C} goes into {A}.
+
+steps:
+  - part: enunciation
+    text: "Numbers prime to one another are the least of those which have the same ratio with them."
+    highlight: [A, B]
+    hint: |
+      A ratio of coprime numbers is in lowest terms.
+    modern: |
+      $\gcd(a, b) = 1 \Rightarrow$ $a : b$ is in lowest terms.
+
+  - part: setting-out
+    text: "Let A, B be numbers prime to one another;"
+    highlight: [A, B]
+    hint: |
+      {A}, {B} coprime.
+
+  - part: specification
+    text: "I say that A, B are the least of those which have the same ratio with them."
+    highlight: [A, B]
+    hint: |
+      To prove: no smaller pair has the same ratio.
+
+  - part: proof
+    text: "For, if not, there will be some numbers less than A, B which are in the same ratio with A, B."
+    highlight: [A, B]
+    hint: |
+      Suppose a smaller pair exists.
+
+  - part: construction
+    text: "Let them be C, D."
+    highlight: [C, D]
+    hint: |
+      Call the least such pair {C}, {D}.
+    explain:
+      implicit: |
+        Euclid needs {C}, {D} to be the *least* numbers in the ratio in order to apply [[VII.20]]; his words
+        only say "less than {A}, {B}".
+    gap: |
+      [[VII.20]] requires the least pair; Euclid should take {C}, {D} to be the least numbers in the ratio,
+      which exist by well-ordering.
+
+  - part: proof
+    text: "Since, then, the least numbers of those which have the same ratio measure those which have the same ratio the same number of times, the greater the greater and the less the less, that is, the antecedent the antecedent and the consequent the consequent, therefore C measures A the same number of times that D measures B."
+    highlight: [C, A, D, B]
+    hint: |
+      By [[VII.20]], {C} goes into {A} as often as {D} into {B}.
+
+  - part: construction
+    text: "Now, as many times as C measures A, so many units let there be in E."
+    highlight: [E]
+    hint: |
+      Let {E} be that number of times.
+
+  - part: proof
+    text: "Therefore D also measures B according to the units in E."
+    highlight: [D, B, E]
+    hint: |
+      {B} = {E}·{D}.
+
+  - part: proof
+    text: "And, since C measures A according to the units in E, therefore E also measures A according to the units in C."
+    highlight: [E, A, C]
+    hint: |
+      {A} = {E}·{C} = {C}·{E} ([[VII.16]]): {E} measures {A}.
+
+  - part: proof
+    text: "For the same reason E also measures B according to the units in D."
+    highlight: [E, B, D]
+    hint: |
+      Likewise {E} measures {B}.
+
+  - part: proof
+    text: "Therefore E measures A, B which are prime to one another: which is impossible."
+    highlight: [E, A, B]
+    hint: |
+      {E} is a common measure of coprime numbers: impossible.
+    explain:
+      implicit: |
+        {E} is a *number* (at least 2) because {C} < {A}. Euclid does not say so.
+
+  - part: proof
+    text: "Therefore there will be no numbers less than A, B which are in the same ratio with A, B."
+    highlight: [A, B]
+    hint: |
+      No smaller pair.
+
+  - part: proof
+    text: "Therefore A, B are the least of those which have the same ratio with them."
+    highlight: [A, B]
+    hint: |
+      {A} : {B} is in lowest terms.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5]
+      text: |
+        Let $c : d$ be $a : b$ in lowest terms, with $c < a$.
+    - steps: [6, 7, 8, 9]
+      text: |
+        By [[VII.20]], $a = ec$ and $b = ed$ with $e \ge 2$.
+    - steps: [10, 11, 12]
+      text: |
+        Then $e$ divides both $a$ and $b$, contradicting $\gcd(a, b) = 1$. $\blacksquare$
+
+commentary: |
+  With its converse [[VII.22]]: a ratio is in lowest terms exactly when its terms are coprime. [[VII.33]]
+  uses this for any number of terms.

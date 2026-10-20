@@ -1,0 +1,98 @@
+id: XI.30
+kind: theorem
+title: Parallelepipeds on the same base and height are equal
+
+paraphrase: |
+  Parallelepipeds on the same base and of the same height are equal even if their upper edges do not lie on the
+  same lines. The solid version of [[I.35]], general case.
+
+diagram:
+  width: 320
+  height: 310
+  elements:
+    - "G;point;fixed;60,120,0;black;green"
+    - "1X;point;fixed;260,93,36;0;0"
+    - "1Y;point;fixed;15,0,160;0;0"
+    - "1Z;point;fixed;60,264,123;0;0"
+    - "E;point;lineSlider;G,1X,200,50,0"
+    - "N;point;lineSlider;G,1Y,50,50,100"
+    - "A;point;lineSlider;G,1Z,200,220,200"
+    - "ceiling;plane;3points;G,E,N;0;0;black;150,50,100"
+    - "C;point;parallelogram;A,G,E"
+    - "L;point;parallelogram;A,G,N"
+    - "B;point;parallelogram;C,A,L"
+    - "K;point;parallelogram;E,G,N"
+    - "floor;plane;3points;A,C,L;0;0;black;0"
+    - "AGNL;polygon;quadrilateral;A,G,N,L;0;0;black;150,75,100"
+    - "ACEG;polygon;quadrilateral;A,C,E,G;0;0;black;150,100,100"
+    - "KB;line;connect;K,B"
+    - "D;point;planeSlider;ceiling,280,190,10"
+    - "F;point;parallelogram;D,C,A"
+    - "H;point;parallelogram;D,C,B"
+    - "M;point;parallelogram;D,C,L"
+    - "ACDF;polygon;quadrilateral;A,C,D,F;0;0;black;0"
+    - "LBHM;polygon;quadrilateral;L,B,H,M;0;0;black;0"
+    - "O;point;intersection;G,E,F,M,ceiling"
+    - "P;point;intersection;N,K,F,M,ceiling"
+    - "Q;point;intersection;D,H,G,E,ceiling"
+    - "R;point;intersection;N,K,D,H,ceiling"
+    - "FP;line;connect;F,P"
+    - "DR;line;connect;D,R"
+    - "BRPL;polygon;quadrilateral;B,R,P,L;0;0;black;0"
+    - "CQOA;polygon;quadrilateral;C,Q,O,A;0;0;black;0"
+  aliases: { BK: KB, PF: FP, RD: DR }
+  caption: |
+    Two parallelepipeds *CM*, *CN* on the base *AB*; a third, *CP*, in between.
+
+steps:
+  - part: enunciation
+    text: "Parallelepipedal solids which are on the same base and of the same height, and in which the extremities of the sides which stand up are not on the same straight lines, are equal to one another."
+    highlight: [A]
+    hint: |
+      Shearing preserves volume (general case).
+
+  - part: setting-out
+    text: "Let CM, CN be parallelepipedal solids on the same base AB and of the same height, and let the extremities of their sides which stand up, namely AF, AG, LM, LN, CD, CE, BH, BK, not be on the same straight lines; I say that the solid CM is equal to the solid CN."
+    highlight: [A]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let NK, DH be produced and meet one another at R, and further let FM, GE be produced to P, Q; let AO, LP, CQ, BR be joined."
+    highlight: [A]
+    hint: |
+      Extend the upper edges to meet, forming a third solid *CP*.
+
+  - part: proof
+    text: "Then the solid CM, of which the parallelogram ACBL is the base, and FDHM its opposite, is equal to the solid CP, of which the parallelogram ACBL is the base, and OQRP its opposite; for they are on the same base ACBL and of the same height, and the extremities of their sides which stand up, namely AF, AO, LM, LP, CD, CQ, BH, BR, are on the same straight lines FP, DR."
+    highlight: [A]
+    hint: |
+      *CM* = *CP* ([[XI.29]]) …
+
+  - part: proof
+    text: "But the solid CP, of which the parallelogram ACBL is the base, and OQRP its opposite, is equal to the solid CN, of which the parallelogram ACBL is the base and GEKN its opposite; for they are again on the same base ACBL and of the same height, and the extremities of their sides which stand up, namely AG, AO, CE, CQ, LN, LP, BK, BR, are on the same straight lines GQ, NR."
+    highlight: [A]
+    hint: |
+      … and *CP* = *CN* ([[XI.29]]) …
+
+  - part: proof
+    text: "Hence the solid CM is also equal to the solid CN."
+    highlight: [A]
+    hint: |
+      … so *CM* = *CN*.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [A]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Two shears in different directions. $\blacksquare$

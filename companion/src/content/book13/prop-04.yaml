@@ -1,0 +1,109 @@
+id: XIII.4
+kind: theorem
+title: "Golden section: whole² + lesser² = 3 × greater²"
+
+paraphrase: |
+  If {AB} is cut in extreme and mean ratio at {C} ({AC} greater), then sq({AB}) + sq({BC}) = 3 sq({AC}).
+
+diagram:
+  width: 260
+  height: 250
+  elements:
+    - "A;point;free;30,30"
+    - "B;point;free;220,30"
+    - "BADE;polygon;square;B,A;0;0;black;random"
+    - "D;point;vertex;BADE,3"
+    - "E;point;vertex;BADE,4"
+    - "X;point;midpoint;A,B;0;0"
+    - "Y;point;extend;A,X,X,E;0;0"
+    - "C;point;cutoff;A,B,B,Y"
+    - "BD;line;connect;B,D"
+    - "G;point;parallelogram;C,B,E"
+    - "CG;line;connect;C,G"
+    - "F;point;intersection;BD,CG"
+    - "H;point;parallelogram;A,C,F"
+    - "K;point;parallelogram;H,A,B"
+    - "HK;line;connect;H,K"
+    - "F';point;midpoint;F,K;0;0"
+    - "L;point;cutoff;F,H,F,F'"
+    - "M;point;cutoff;F,B,F,F'"
+    - "N;point;cutoff;F,G,F,F'"
+    - "NML;sector;arc;N,M,L;0;0;gray"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+  aliases: { DB: BD, GC: CG, KH: HK, BA: AB, CB: BC, CA: AC }
+  caption: |
+    The square *ADEB* on {AB}, with the squares on {AC} and {BC}.
+
+steps:
+  - part: enunciation
+    text: "If a straight line be cut in extreme and mean ratio, the square on the whole and the square on the lesser segment together are triple of the square on the greater segment."
+    highlight: [AB, BC, AC]
+    hint: |
+      $1 + (1-x)^2 = 3x^2$ for the golden section $x$.
+
+  - part: setting-out
+    text: "Let AB be a straight line, let it be cut in extreme and mean ratio at C, and let AC be the greater segment; I say that the squares on AB, BC are triple of the square on CA."
+    highlight: [AB, C]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let the square ADEB be described on AB, and let the figure be drawn."
+    highlight: [AB]
+    hint: |
+      Square on {AB}; draw the figure.
+
+  - part: proof
+    text: "Since then AB has been cut in extreme and mean ratio at C, and AC is the greater segment, therefore the rectangle AB, BC is equal to the square on AC."
+    highlight: [AB, BC, AC]
+    hint: |
+      rect({AB},{BC}) = sq({AC}) ([[VI.Def.3]], [[VI.17]]).
+    cites: [VI.17]
+
+  - part: proof
+    text: "And AK is the rectangle AB, BC, and HG the square on AC; therefore AK is equal to HG."
+    highlight: [AB, BC]
+    hint: |
+      So *AK* = *HG*.
+
+  - part: proof
+    text: "And, since AF is equal to FE, let CK be added to each; therefore the whole AK is equal to the whole CE; therefore AK, CE are double of AK."
+    highlight: [AB]
+    hint: |
+      *AK* = *CE*, so *AK* + *CE* = 2 *AK*.
+
+  - part: proof
+    text: "But AK, CE are the gnomon LMN and the square CK; therefore the gnomon LMN and the square CK are double of AK."
+    highlight: [AB]
+    hint: |
+      = gnomon *LMN* + square *CK*.
+
+  - part: proof
+    text: "But, further, AK was also proved equal to HG; therefore the gnomon LMN and the squares CK, HG are triple of the square HG."
+    highlight: [AB]
+    hint: |
+      So gnomon + *CK* + *HG* = 3 *HG*.
+
+  - part: proof
+    text: "And the gnomon LMN and the squares CK, HG are the whole square AE and CK, which are the squares on AB, BC, while HG is the square on AC."
+    highlight: [AB, BC, AC]
+    hint: |
+      That sum is sq({AB}) + sq({BC}); *HG* is sq({AC}).
+
+  - part: proof
+    text: "Therefore the squares on AB, BC are triple of the square on AC."
+    highlight: [AB, BC, AC]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $1 + (1 - x)^2 = 2 - 2x + x^2 = 2x^2 + x^2 = 3x^2$, using $1 - x = x^2$. $\blacksquare$

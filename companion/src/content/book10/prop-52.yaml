@@ -1,0 +1,130 @@
+id: X.52
+kind: problem
+title: To find the fifth binomial
+
+paraphrase: |
+  Construct a fifth binomial {EG} ([[X.Def.II.5]]): the lesser term {EF} commensurable with the rational line
+  {D}, and $\sqrt{FG^2 - EF^2}$ incommensurable with {FG}.
+
+diagram:
+  width: 130
+  height: 250
+  elements:
+    - "A0;point;free;40,-1000;0;0"
+    - "A3;point;free;40,1000;0;0"
+    - "D0;point;free;70,-1000;0;0"
+    - "D3;point;free;70,1000;0;0"
+    - "E0;point;free;100,-1000;0;0"
+    - "E3;point;free;100,1000;0;0"
+    - "A;point;lineSlider;A0,A3,0,30"
+    - "B;point;lineSlider;A0,A3,0,220"
+    - "C;point;lineSlider;A0,A3,0,140"
+    - "AB;line;connect;A,B;0;0;blue"
+    - "D1;point;lineSlider;D0,D3,0,30;0"
+    - "D2;point;lineSlider;D0,D3,0,100;0"
+    - "D;line;connect;D1,D2;black"
+    - "E;point;lineSlider;E0,E3,0,30"
+    - "F;point;lineSlider;E0,E3,0,110"
+    - "G';point;proportion;C,A,A,B,E,F,F,E3;0;0"
+    - "G;point;meanProportional;E,F,F,G',F,E3"
+    - "EG;line;connect;E,G"
+    - "M;point;midpoint;F,G;0;0"
+    - "FGcirc;circle;radius;M,F;0;0;0;0"
+    - "EFcirc;circle;radius;F,E;0;0;0;0"
+    - "bich;line;bichord;FGcirc,EFcirc;0;0;0"
+    - "H';point;first;bich;0;0"
+    - "H1;point;lineSlider;D0,D3,0,150;0"
+    - "H2;point;cutoff;H1,D3,G,H';0"
+    - "H;line;connect;H1,H2;black"
+    - "EF;line;connect;E,F;0;0;0"
+    - "FG;line;connect;F,G;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+  aliases: { BA: AB, GE: EG, FE: EF, GF: FG, CA: AC, BC: CB }
+  caption: |
+    {AB} in no square ratio to {AC} or {CB}; sq({EF}) : sq({FG}) = {CA} : {AB}.
+
+steps:
+  - part: enunciation
+    text: "To find the fifth binomial straight line."
+    highlight: [EG]
+    hint: |
+      E.g. $\sqrt6 + 2$.
+
+  - part: construction
+    text: "Let two numbers AC, CB be set out such that AB has not to either of them the ratio which a square number has to a square number; let any rational straight line D be set out, and let EF be commensurable with D; therefore EF is rational."
+    highlight: [AC, CB, D, EF]
+    hint: |
+      Numbers as in [[X.51]]; {EF} commensurable with {D}.
+
+  - part: construction
+    text: "Let it be contrived that, as CA is to AB, so is the square on EF to the square on FG."
+    highlight: [EF, FG]
+    hint: |
+      sq({EF}) : sq({FG}) = {CA} : {AB}.
+
+  - part: proof
+    text: "But CA has not to AB the ratio which a square number has to a square number; therefore neither has the square on EF to the square on FG the ratio which a square number has to a square number."
+    highlight: [EF, FG]
+    hint: |
+      Not square to square …
+
+  - part: proof
+    text: "Therefore EF, FG are rational straight lines commensurable in square only; therefore EG is binomial."
+    highlight: [EG]
+    hint: |
+      … so {EG} is a binomial.
+
+  - part: specification
+    text: "I say next that it is also a fifth binomial straight line."
+    highlight: [EG]
+    hint: |
+      A fifth binomial.
+
+  - part: proof
+    text: "For since, as CA is to AB, so is the square on EF to the square on FG, inversely, as BA is to AC, so is the square on FG to the square on FE; therefore the square on GF is greater than the square on FE."
+    highlight: [FG, EF]
+    hint: |
+      {GF} is the greater term.
+
+  - part: proof
+    text: "Let then the squares on EF, H be equal to the square on GF; therefore, convertendo, as the number AB is to BC, so is the square on GF to the square on H."
+    highlight: [FG, H]
+    hint: |
+      sq({GF}) = sq({EF}) + sq({H}); sq({GF}) : sq({H}) = {AB} : {BC}.
+
+  - part: proof
+    text: "But AB has not to BC the ratio which a square number has to a square number; therefore neither has the square on FG to the square on H the ratio which a square number has to a square number."
+    highlight: [FG, H]
+    hint: |
+      Not square to square …
+
+  - part: proof
+    text: "Therefore FG is incommensurable in length with H; so that the square on FG is greater than the square on FE by the square on a straight line incommensurable with FG."
+    highlight: [FG, H]
+    hint: |
+      … so the excess is incommensurable with {FG}.
+
+  - part: proof
+    text: "And GF, FE are rational straight lines commensurable in square only, and the lesser term EF is commensurable in length with the rational straight line D set out."
+    highlight: [EF, D]
+    hint: |
+      The lesser term {EF} is commensurable with {D}.
+
+  - part: proof
+    text: "Therefore EG is a fifth binomial straight line."
+    highlight: [EG]
+    hint: |
+      Fifth binomial.
+    cites: [X.Def.II.5]
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+      text: |
+        As [[X.51]] with the terms' roles exchanged. $\blacksquare$

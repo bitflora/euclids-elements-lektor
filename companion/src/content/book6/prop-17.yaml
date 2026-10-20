@@ -1,0 +1,145 @@
+id: VI.17
+kind: theorem
+title: Rectangle of the extremes equals square on the mean
+
+paraphrase: |
+  Three lines are in continued proportion, {A} : {B} = {B} : {C}, exactly when the rectangle on {A}, {C} equals the
+  square on {B}.
+
+diagram:
+  width: 160
+  height: 220
+  elements:
+    - "A0;point;free;30,-1000;0;0"
+    - "A3;point;free;30,1000;0;0"
+    - "A1;point;lineSlider;A0,A3,0,30;0"
+    - "A2;point;lineSlider;A0,A3,0,190;0"
+    - "A;line;connect;A1,A2;black"
+    - "B0;point;free;65,-1000;0;0"
+    - "B3;point;free;65,1000;0;0"
+    - "B1;point;lineSlider;B0,B3,0,30;0"
+    - "B2;point;lineSlider;B0,B3,0,160;0"
+    - "B;line;connect;B1,B2;black"
+    - "C0;point;free;100,-1000;0;0"
+    - "C3;point;free;100,1000;0;0"
+    - "C1;point;lineSlider;C0,C3,0,30;0"
+    - "C2;point;proportion;A1,A2,B1,B2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D0;point;free;130,-1000;0;0"
+    - "D3;point;free;130,1000;0;0"
+    - "D1;point;lineSlider;D0,D3,0,30;0"
+    - "D2;point;cutoff;D1,D3,B1,B2;0"
+    - "D;line;connect;D1,D2;black"
+  caption: |
+    {C} is constructed as the third proportional to {A}, {B}; {D} is a copy of {B}. Drag the lower ends of {A} and {B}.
+
+steps:
+  - part: enunciation
+    text: "If three straight lines be proportional, the rectangle contained by the extremes is equal to the square on the mean; and, if the rectangle contained by the extremes be equal to the square on the mean, the three straight lines will be proportional."
+    highlight: [A, B, C]
+    hint: |
+      $a : b = b : c \iff ac = b^2$.
+    modern: |
+      $$A : B = B : C \iff A\cdot C = B^2$$
+
+  - part: setting-out
+    text: "Let the three straight lines A, B, C be proportional, so that, as A is to B, so is B to C;"
+    highlight: [A, B, C]
+    hint: |
+      The data.
+
+  - part: specification
+    text: "I say that the rectangle contained by A, C is equal to the square on B."
+    highlight: [A, C, B]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "Let D be made equal to B."
+    highlight: [D, B]
+    hint: |
+      A second copy of the mean, to make four lines out of three.
+
+  - part: proof
+    text: "Then, since, as A is to B, so is B to C, and B is equal to D, therefore, as A is to B, so is D to C."
+    highlight: [A, B, D, C]
+    hint: |
+      Substitute ([[V.7]], [[V.11]]).
+    cites: [V.7, V.11]
+
+  - part: proof
+    text: "But, if four straight lines be proportional, the rectangle contained by the extremes is equal to the rectangle contained by the means."
+    highlight: [A, B, C, D]
+    hint: |
+      [[VI.16]].
+
+  - part: proof
+    text: "Therefore the rectangle A, C is equal to the rectangle B, D."
+    highlight: [A, C, B, D]
+    hint: |
+      Extremes {A}, {C}; means {B}, {D}.
+
+  - part: proof
+    text: "But the rectangle B, D is the square on B, for B is equal to D; therefore the rectangle contained by A, C is equal to the square on B."
+    highlight: [B, D]
+    hint: |
+      First part done.
+
+  - part: setting-out
+    text: "Next, let the rectangle A, C be equal to the square on B;"
+    highlight: [A, C, B]
+    hint: |
+      Converse.
+
+  - part: specification
+    text: "I say that, as A is to B, so is B to C."
+    highlight: [A, B, C]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, with the same construction, since the rectangle A, C is equal to the square on B, while the square on B is the rectangle B, D, for B is equal to D, therefore the rectangle A, C is equal to the rectangle B, D."
+    highlight: [A, C, B, D]
+    hint: |
+      Rewrite the square as a rectangle.
+
+  - part: proof
+    text: "But, if the rectangle contained by the extremes be equal to that contained by the means, the four straight lines are proportional."
+    highlight: [A, B, C, D]
+    hint: |
+      [[VI.16]], converse part.
+
+  - part: proof
+    text: "Therefore, as A is to B, so is D to C."
+    highlight: [A, B, D, C]
+    hint: |
+      The proportion.
+
+  - part: proof
+    text: "But B is equal to D; therefore, as A is to B, so is B to C."
+    highlight: [B, D]
+    hint: |
+      Substitute back.
+    cites: [V.7, V.11]
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7]
+      text: |
+        $a : b = b : c \iff ac = b\cdot b$ ([[VI.16]] with the means both equal to $b$). $\blacksquare$
+
+commentary: |
+  The special case of [[VI.16]] with equal means. It is the bridge between mean proportionals ([[VI.13]])
+  and squaring rectangles ([[II.14]]), and Joyce notes it is used constantly in Books X and XIII.

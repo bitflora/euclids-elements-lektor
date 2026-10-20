@@ -1,0 +1,111 @@
+id: XI.32
+kind: theorem
+title: Parallelepipeds of the same height are as their bases
+
+paraphrase: |
+  Parallelepipeds of the same height are to one another as their bases.
+
+diagram:
+  width: 440
+  height: 240
+  elements:
+    - "B;point;fixed;160,30,0;black;green"
+    - "1X;point;fixed;360,57,36;0;0"
+    - "1Y;point;fixed;115,150,160;0;0"
+    - "1Z;point;fixed;160,-114,123;0;0"
+    - "ceiling;plane;3points;B,1X,1Y;0;0;0;0"
+    - "E;point;lineSlider;B,1Z,220,230,100"
+    - "xf;point;parallelogram;1X,B,E;0;0"
+    - "yf;point;parallelogram;1Y,B,E;0;0"
+    - "floor;plane;3points;E,xf,yf;0;0;0;0"
+    - "A;point;planeSlider;floor,40,240,20"
+    - "M;point;planeSlider;ceiling,100,30,0;0"
+    - "N;point;parallelogram;M,B,E;0;0"
+    - "O;point;parallelogram;M,N,A;0;0"
+    - "P;point;parallelogram;E,N,A;0;0"
+    - "Q;point;parallelogram;B,M,O;0;0"
+    - "AOMN;polygon;quadrilateral;A,O,M,N;0;0;black;220,75,100"
+    - "ANEP;polygon;quadrilateral;A,N,E,P;0;0;black;220,100,90"
+    - "EBMN;polygon;quadrilateral;E,B,M,N;0;0;black;220,50,100"
+    - "BQ;line;connect;B,Q"
+    - "OQ;line;connect;O,Q"
+    - "PQ;line;connect;P,Q"
+    - "C;point;planeSlider;floor,200,150,100"
+    - "G;point;planeSlider;floor,270,150,100"
+    - "F;point;planeSlider;floor,240,30,100"
+    - "D;point;planeSlider;ceiling,300,30,0"
+    - "L;point;parallelogram;C,G,F;0;0"
+    - "R;point;parallelogram;D,F,L;0;0"
+    - "S;point;parallelogram;D,F,C;0;0"
+    - "T;point;parallelogram;D,F,G;0;0"
+    - "CSTG;polygon;quadrilateral;C,S,T,G;0;0;black;330,75,90"
+    - "RSTD;polygon;quadrilateral;R,S,T,D;0;0;black;330,40,100"
+    - "RSCL;polygon;quadrilateral;R,S,C,L;0;0;black;330,70,100"
+    - "FD;line;connect;F,D"
+    - "FL;line;connect;F,L"
+    - "FG;line;connect;F,G"
+    - "H';point;extend;C,G,C,G;0;0"
+    - "FGUH;polygon;application;EBMN,G,F,H';0;0;black;0"
+    - "H;point;vertex;FGUH,4"
+    - "U;point;vertex;FGUH,3;0;0"
+    - "K;point;parallelogram;D,F,U"
+    - "V;point;parallelogram;H,G,T;0;0"
+    - "DTVK;polygon;quadrilateral;D,T,V,K;0;0;black;130,40,100"
+    - "TGHV;polygon;quadrilateral;T,G,H,V;0;0;black;130,75,90"
+    - "UK;line;connect;U,K"
+  aliases: { QB: BQ, QO: OQ, QP: PQ, DF: FD, LF: FL, GF: FG, KU: UK }
+  caption: |
+    *AB*, *CD* of the same height; *GK* is built on *FH* = *AE* next to *CD*.
+
+steps:
+  - part: enunciation
+    text: "Parallelepipedal solids which are of the same height are to one another as their bases."
+    highlight: [A]
+    hint: |
+      Same height: volume ∝ base.
+
+  - part: setting-out
+    text: "Let AB, CD be parallelepipedal solids of the same height; I say that the parallelepipedal solids AB, CD are to one another as their bases, that is, that, as the base AE is to the base CF, so is the solid AB to the solid CD."
+    highlight: [A]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let FH equal to AE be applied to FG, and on FH as base, and with the same height as that of CD, let the parallelepipedal solid GK be completed."
+    highlight: [A]
+    hint: |
+      Apply *FH* = *AE* to *FG* ([[I.45]]) and complete *GK* with the same height.
+
+  - part: proof
+    text: "Then the solid AB is equal to the solid GK; for they are on equal bases AE, FH and of the same height."
+    highlight: [A]
+    hint: |
+      *AB* = *GK* ([[XI.31]]).
+
+  - part: proof
+    text: "And, since the parallelepipedal solid CK is cut by the plane DG which is parallel to opposite planes, therefore, as the base CF is to the base FH, so is the solid CD to the solid DH."
+    highlight: [A]
+    hint: |
+      *CD* : *GK* = *CF* : *FH* ([[XI.25]]).
+
+  - part: proof
+    text: "But the base FH is equal to the base AE, and the solid GK to the solid AB; therefore also, as the base AE is to the base CF, so is the solid AB to the solid CD."
+    highlight: [A]
+    hint: |
+      Substitute: *AB* : *CD* = *AE* : *CF*.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [A]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $V = Bh$ with common $h$. $\blacksquare$

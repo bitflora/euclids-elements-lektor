@@ -1,0 +1,75 @@
+id: X.39
+kind: theorem
+title: The major line
+
+paraphrase: |
+  The sum of two lines incommensurable in square whose squares add to a rational area and whose rectangle is
+  medial is irrational: the *major* line.
+
+diagram:
+  width: 230
+  height: 80
+  elements:
+    - "X0;point;free;-1000,50"
+    - "X1;point;free;1000,50"
+    - "A;point;lineSlider;X0,X1,30,0"
+    - "B;point;lineSlider;X0,X1,100,0"
+    - "C;point;lineSlider;X0,X1,200,0"
+    - "AC;line;connect;A,C"
+    - "AB;line;connect;A,B;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+  aliases: { CA: AC, BA: AB, CB: BC }
+  caption: |
+    {AC} = {AB} + {BC}, the lines of [[X.33]].
+
+steps:
+  - part: enunciation
+    text: "If two straight lines incommensurable in square which make the sum of the squares on them rational, but the rectangle contained by them medial, be added together, the whole straight line is irrational: and let it be called major."
+    highlight: [AC]
+    hint: |
+      Rational sum of squares, medial rectangle: the major.
+    modern: |
+      $x + y$ with $x^2 + y^2$ rational, $xy$ medial; e.g. $x, y = \sqrt{\tfrac12(1 \pm 1/\sqrt2)}$.
+
+  - part: setting-out
+    text: "For let two straight lines AB, BC incommensurable in square, and fulfilling the given conditions, be added together;"
+    highlight: [AB, BC]
+    hint: |
+      The parts, from [[X.33]].
+
+  - part: specification
+    text: "I say that AC is irrational."
+    highlight: [AC]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since the rectangle AB, BC is medial, twice the rectangle AB, BC is also medial."
+    highlight: [AB, BC]
+    hint: |
+      2·rect is medial ([[X.6]], [[X.23]] porism).
+
+  - part: proof
+    text: "But the sum of the squares on AB, BC is rational; therefore twice the rectangle AB, BC is incommensurable with the sum of the squares on AB, BC, so that the squares on AB, BC together with twice the rectangle AB, BC that is, the square on AC, is also incommensurable with the sum of the squares on AB, BC; therefore the square on AC is irrational, so that AC is also irrational."
+    highlight: [AC]
+    hint: |
+      Rational + medial: sq({AC}) is incommensurable with the rational part, hence irrational.
+
+  - part: proof
+    text: "And let it be called major."
+    hint: |
+      The name: "major" (μείζων), because its square is a rational area *plus* a medial one.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - steps: [3, 4]
+      text: |
+        $AC^2 = (x^2 + y^2) + 2xy$, rational + medial, irrational. $\blacksquare$
+
+commentary: |
+  The "minor" ([[X.76]]) is its subtractive counterpart.

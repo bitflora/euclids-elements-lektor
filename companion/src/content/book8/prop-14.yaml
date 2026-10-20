@@ -1,0 +1,131 @@
+id: VIII.14
+kind: theorem
+title: A square measures a square exactly when side measures side
+
+paraphrase: |
+  For squares {A} = {C}² and {B} = {D}²: {A} measures {B} if and only if {C} measures {D}.
+
+diagram:
+  width: 270
+  height: 170
+  elements:
+    - "A0;point;free;-1000,35;0;0"
+    - "A3;point;free;1000,35;0;0"
+    - "B0;point;free;-1000,70;0;0"
+    - "B3;point;free;1000,70;0;0"
+    - "C0;point;free;-1000,105;0;0"
+    - "C3;point;free;1000,105;0;0"
+    - "E0;point;free;-1000,140;0;0"
+    - "E3;point;free;1000,140;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,25;0;0"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;lineSlider;C0,C3,80,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;C0,C3,120,0;0"
+    - "D2;point;lineSlider;C0,C3,190,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;proportion;U1,U2,C1,C2,C1,C2,A1,A3;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;proportion;U1,U2,D1,D2,D1,D2,B1,B3;0"
+    - "B;line;connect;B1,B2;black"
+    - "E1;point;lineSlider;E0,E3,30,0;0"
+    - "E2;point;proportion;U1,U2,C1,C2,D1,D2,E1,E3;0"
+    - "E;line;connect;E1,E2;black"
+  caption: |
+    {A} = {C}², {B} = {D}², {E} = {C}{D}.
+
+steps:
+  - part: enunciation
+    text: "If a square measure a square, the side will also measure the side; and, if the side measure the side, the square will also measure the square."
+    highlight: [A, B, C, D]
+    hint: |
+      $c^2 \mid d^2 \iff c \mid d$.
+    modern: |
+      $c^2 \mid d^2 \iff c \mid d$.
+
+  - part: setting-out
+    text: "Let A, B be square numbers, let C, D be their sides, and let A measure B;"
+    highlight: [A, B, C, D]
+    hint: |
+      {A} measures {B}.
+
+  - part: specification
+    text: "I say that C also measures D."
+    highlight: [C, D]
+    hint: |
+      To prove: {C} measures {D}.
+
+  - part: construction
+    text: "For let C by multiplying D make E;"
+    highlight: [E]
+    hint: |
+      {E} = {C}{D}.
+
+  - part: proof
+    text: "therefore A, E, B are continuously proportional in the ratio of C to D."
+    highlight: [A, E, B]
+    hint: |
+      By [[VIII.11]].
+
+  - part: proof
+    text: "And, since A, E, B are continuously proportional, and A measures B, therefore A also measures E."
+    highlight: [A, E]
+    hint: |
+      First measures last, so first measures second ([[VIII.7]]).
+
+  - part: proof
+    text: "And, as A is to E, so is C to D; therefore also C measures D."
+    highlight: [C, D]
+    hint: |
+      Same ratio, so {C} measures {D} ([[VII.Def.20]]).
+
+  - part: specification
+    text: "Again, let C measure D; I say that A also measures B."
+    highlight: [C, D, A, B]
+    hint: |
+      The converse.
+
+  - part: proof
+    text: "For, with the same construction, we can in a similar manner prove that A, E, B are continuously proportional in the ratio of C to D."
+    highlight: [A, E, B]
+    hint: |
+      As before.
+
+  - part: proof
+    text: "And since, as C is to D, so is A to E, and C measures D, therefore A also measures E."
+    highlight: [A, E]
+    hint: |
+      {A} measures {E}.
+
+  - part: proof
+    text: "And A, E, B are continuously proportional; therefore A also measures B."
+    highlight: [A, B]
+    hint: |
+      And {E} : {B} is the same ratio, so {A} measures {E} which measures {B}.
+    explain:
+      implicit: |
+        {E} measures {B} because {E} : {B} = {A} : {E}; then {A} measures {B} by transitivity.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6]
+      text: |
+        $c^2, cd, d^2$ has ratio $c : d$; if $c^2 \mid d^2$ then $c^2 \mid cd$ ([[VIII.7]]), i.e. $c \mid d$.
+    - steps: [7, 8, 9, 10]
+      text: |
+        Conversely $d = kc$ gives $d^2 = k^2 c^2$. $\blacksquare$

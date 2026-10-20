@@ -1,0 +1,174 @@
+id: X.66
+kind: theorem
+title: A line commensurable with a binomial is a binomial of the same order
+
+paraphrase: |
+  A line {CD} commensurable (in length) with a binomial {AB} is itself a binomial and the same order.
+
+diagram:
+  width: 250
+  height: 95
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "C0;point;free;-1000,65;0;0"
+    - "C3;point;free;1000,65;0;0"
+    - "A;point;lineSlider;A0,A3,60,0"
+    - "B;point;lineSlider;A0,A3,180,0"
+    - "AB;line;connect;A,B"
+    - "C;point;lineSlider;C0,C3,30,0"
+    - "D;point;lineSlider;C0,C3,210,0"
+    - "CD;line;connect;C,D"
+    - "E;point;lineSlider;A0,A3,130,0"
+    - "F;point;proportion;A,B,C,D,A,E,C,C3"
+    - "AE;line;connect;A,E;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "CF;line;connect;C,F;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+  aliases: { BA: AB, DC: CD, EA: AE, BE: EB, FC: CF, DF: FD }
+  caption: |
+    {AB} divided at {E}; {CD} commensurable with {AB}, divided at {F} in the same ratio.
+
+steps:
+  - part: enunciation
+    text: "A straight line commensurable in length with a binomial straight line is itself also binomial and the same in order."
+    highlight: [AB, CD]
+    hint: |
+      The kinds of irrational are closed under rational scaling.
+    modern: |
+      $CD = r\,AB$ with $r \in \mathbb Q$ $\Rightarrow$ $CD$ is of the same kind.
+
+  - part: setting-out
+    text: "Let AB be binomial, and let CD be commensurable in length with AB; I say that CD is binomial and the same in order with AB."
+    highlight: [AB, CD]
+    hint: |
+      {CD} commensurable in length with {AB}.
+
+  - part: proof
+    text: "For, since AB is binomial, let it be divided into its terms at E, and let AE be the greater term; therefore AE, EB are rational straight lines commensurable in square only."
+    highlight: [AE, EB]
+    hint: |
+      The terms of {AB}.
+
+  - part: construction
+    text: "Let it be contrived that, as AB is to CD, so is AE to CF; therefore also the remainder EB is to the remainder FD as AB is to CD."
+    highlight: [CF, FD]
+    hint: |
+      Divide {CD} at {F} in the same ratio ([[VI.12]], [[V.19]]).
+
+  - part: proof
+    text: "But AB is commensurable in length with CD; therefore AE is also commensurable with CF, and EB with FD."
+    highlight: [AE, CF, EB, FD]
+    hint: |
+      Corresponding parts commensurable ([[X.11]]) …
+
+  - part: proof
+    text: "And AE, EB are rational; therefore CF, FD are also rational."
+    highlight: [CF, FD]
+    hint: |
+      … so rational.
+
+  - part: proof
+    text: "And, as AE is to CF, so is EB to FD."
+    highlight: [AE, CF, EB, FD]
+    hint: |
+      {AE} : {CF} = {EB} : {FD} …
+
+  - part: proof
+    text: "Therefore, alternately, as AE is to EB, so is CF to FD."
+    highlight: [CF, FD]
+    hint: |
+      … alternately {AE} : {EB} = {CF} : {FD} …
+
+  - part: proof
+    text: "But AE, EB are commensurable in square only; therefore CF, FD are also commensurable in square only."
+    highlight: [CF, FD]
+    hint: |
+      … so {CF}, {FD} commensurable in square only …
+
+  - part: proof
+    text: "And they are rational; therefore CD is binomial."
+    highlight: [CD]
+    hint: |
+      … and {CD} is a binomial.
+
+  - part: specification
+    text: "I say next that it is the same in order with AB."
+    highlight: [CD]
+    hint: |
+      Of the same order:
+
+  - part: proof
+    text: "For the square on AE is greater than the square on EB either by the square on a straight line commensurable with AE or by the square on a straight line incommensurable with it."
+    highlight: [AE, EB]
+    hint: |
+      Two cases for the excess.
+
+  - part: proof
+    text: "If then the square on AE is greater than the square on EB by the square on a straight line commensurable with AE, the square on CF will also be greater than the square on FD by the square on a straight line commensurable with CF."
+    highlight: [CF, FD]
+    hint: |
+      Commensurable excess carries over ([[X.14]]) …
+
+  - part: proof
+    text: "And, if AE is commensurable with the rational straight line set out, CF will also be commensurable with it, and for this reason each of the straight lines AB, CD is a first binomial, that is, the same in order."
+    highlight: [CF]
+    hint: |
+      … first binomial if {AE} is commensurable with the rational line …
+
+  - part: proof
+    text: "But, if EB is commensurable with the rational straight line set out, FD is also commensurable with it, and for this reason again CD will be the same in order with AB, for each of them will be a second binomial."
+    highlight: [FD]
+    hint: |
+      … second if {EB} is …
+
+  - part: proof
+    text: "But, if neither of the straight lines AE, EB is commensurable with the rational straight line set out, neither of the straight lines CF, FD will be commensurable with it, and each of the straight lines AB, CD is a third binomial."
+    highlight: [CF, FD]
+    hint: |
+      … third if neither.
+
+  - part: proof
+    text: "But, if the square on AE is greater than the square on EB by the square on a straight line incommensurable with AE, the square on CF is also greater than the square on FD by the square on a straight line incommensurable with CF."
+    highlight: [CF, FD]
+    hint: |
+      Incommensurable excess carries over too …
+
+  - part: proof
+    text: "And, if AE is commensurable with the rational straight line set out, CF is also commensurable with it, and each of the straight lines AB, CD is a fourth binomial."
+    highlight: [CF]
+    hint: |
+      … fourth …
+
+  - part: proof
+    text: "But, if EB is so commensurable, so is FD also, and each of the straight lines AB, CD will be a fifth binomial."
+    highlight: [FD]
+    hint: |
+      … fifth …
+
+  - part: proof
+    text: "But, if neither of the straight lines AE, EB is so commensurable, neither of the straight lines CF, FD is commensurable with the rational straight line set out, and each of the straight lines AB, CD will be a sixth binomial."
+    highlight: [CF, FD]
+    hint: |
+      … sixth.
+
+  - part: proof
+    text: "Hence a straight line commensurable in length with a binomial straight line is binomial and the same in order."
+    highlight: [CD]
+    hint: |
+      Same order.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        Scaling by a rational $r$ multiplies the terms by $r$ and their squares and rectangle by $r^2$, preserving
+        every property in the definition. $\blacksquare$
+
+commentary: |
+  [[X.66]]–[[X.70]] show each kind is preserved by commensurability; [[X.71]]–[[X.72]] show which kinds
+  arise as sides of a rational plus a medial area or of two medial areas.

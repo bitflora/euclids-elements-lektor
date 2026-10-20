@@ -1,0 +1,195 @@
+id: VI.3
+kind: theorem
+title: The angle bisector divides the base in the ratio of the sides
+
+paraphrase: |
+  In triangle {ABC}, the bisector {AD} of the angle at {A} cuts the base so that {BD} : {DC} = {BA} : {AC}. Conversely, a
+  point {D} cutting the base in that ratio lies on the bisector.
+
+diagram:
+  width: 300
+  height: 290
+  elements:
+    - "A;point;free;160,130"
+    - "B;point;free;40,250"
+    - "C;point;free;220,250"
+    - "ABC;polygon;triangle;A,B,C;0;0;black;#efe4d2"
+    - "AD;line;angleBisector;B,A,C"
+    - "D;point;last;AD"
+    - "Ep;point;parallelogram;A,D,C;0;0"
+    - "E;point;intersection;B,A,C,Ep"
+    - "AE;line;connect;A,E"
+    - "CE;line;connect;C,E"
+    - "BE;line;connect;B,E;0;0;0"
+    - "BCE;polygon;triangle;B,C,E;0;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "BD;line;connect;B,D;0;0;0"
+    - "DC;line;connect;D,C;0;0;0"
+    - "BC;line;connect;B,C;0;0;0"
+    - "ABD;polygon;triangle;A,B,D;0;0;0;0"
+    - "ACD;polygon;triangle;A,C,D;0;0;0;0"
+    - "angBAD;sector;angleMarker;A,B,D"
+    - "angCAD;sector;angleMarker;A,D,C"
+    - "angBAC;sector;angleMarker;A,B,C;0;0;0;0"
+    - "angACE;sector;angleMarker;C,A,E"
+    - "angAEC;sector;angleMarker;E,A,C"
+  aliases:
+    BA: AB
+    CD: DC
+    DA: AD
+    EC: CE
+    BAE: BE
+    BAC: angBAC
+    ACE: angACE
+    CAD: angCAD
+    BAD: angBAD
+    AEC: angAEC
+  given: [A, B, C, ABC, AD, D, AB, AC, BD, DC, BC, ABD, ACD, angBAD, angCAD, angBAC]
+  caption: |
+    Drag {A}, {B}, {C}: {AD} stays the bisector. {CE} is drawn parallel to {DA}, meeting {BA} produced at {E}; the
+    triangle {ACE} is isosceles.
+
+steps:
+  - part: enunciation
+    text: "If an angle of a triangle be bisected and the straight line cutting the angle cut the base also, the segments of the base will have the same ratio as the remaining sides of the triangle; and, if the segments of the base have the same ratio as the remaining sides of the triangle, the straight line joined from the vertex to the point of section will bisect the angle of the triangle."
+    highlight: [ABC, AD]
+    hint: |
+      The angle-bisector theorem and its converse.
+    modern: |
+      $$\angle BAD = \angle DAC \iff \frac{BD}{DC} = \frac{BA}{AC}$$
+
+  - part: setting-out
+    text: "Let ABC be a triangle, and let the angle BAC be bisected by the straight line AD;"
+    highlight: [ABC, AD, angBAD, angCAD]
+    hint: |
+      {AD} bisects the angle at {A} ([[I.9]]).
+
+  - part: specification
+    text: "I say that, as BD is to CD, so is BA to AC."
+    highlight: [BD, CD, BA, AC]
+    hint: |
+      The goal.
+
+  - part: construction
+    text: "For let CE be drawn through C parallel to DA, and let BA be carried through and meet it at E."
+    highlight: [CE, AE]
+    adds: [Ep, E, CE, AE, BE, BCE, angACE, angAEC]
+    hint: |
+      Parallel to {DA} through {C} ([[I.31]]); extend {BA} to meet it at {E}.
+    explain:
+      implicit: |
+        That {BA} produced does meet the parallel. It does, because the parallel through {C} is not parallel
+        to {BA} (it is parallel to {AD}, which crosses {BA}) — but Euclid does not argue it.
+    cites: [I.31]
+
+  - part: proof
+    text: "Then, since the straight line AC falls upon the parallels AD, EC, the angle ACE is equal to the angle CAD."
+    highlight: [AC, AD, EC, angACE, angCAD]
+    hint: |
+      Alternate angles ([[I.29]]).
+
+  - part: proof
+    text: "But the angle CAD is by hypothesis equal to the angle BAD; therefore the angle BAD is also equal to the angle ACE."
+    highlight: [angCAD, angBAD, angACE]
+    hint: |
+      The bisection.
+
+  - part: proof
+    text: "Again, since the straight line BAE falls upon the parallels AD, EC, the exterior angle BAD is equal to the interior angle AEC."
+    highlight: [BAE, AD, EC, angBAD, angAEC]
+    hint: |
+      Corresponding angles ([[I.29]]).
+
+  - part: proof
+    text: "But the angle ACE was also proved equal to the angle BAD; therefore the angle ACE is also equal to the angle AEC,"
+    highlight: [angACE, angAEC]
+    hint: |
+      Both equal the angle {BAD}.
+
+  - part: proof
+    text: "so that the side AE is also equal to the side AC."
+    highlight: [AE, AC]
+    hint: |
+      Equal base angles, equal sides ([[I.6]]).
+
+  - part: proof
+    text: "And, since AD has been drawn parallel to EC, one of the sides of the triangle BCE, therefore, proportionally, as BD is to DC, so is BA to AE."
+    highlight: [AD, EC, BCE, BD, DC, BA, AE]
+    hint: |
+      In triangle {BCE}, {AD} ∥ {EC} cuts the sides proportionally ([[VI.2]]).
+    cites: [VI.2]
+
+  - part: proof
+    text: "But AE is equal to AC; therefore, as BD is to DC, so is BA to AC."
+    highlight: [BD, DC, BA, AC]
+    hint: |
+      Replace {AE} by the equal {AC} ([[V.7]]).
+    cites: [V.7, V.11]
+
+  - part: setting-out
+    text: "Again, let BA be to AC as BD to DC, and let AD be joined;"
+    highlight: [BA, AC, BD, DC, AD]
+    hint: |
+      The converse: the proportion is given.
+
+  - part: specification
+    text: "I say that the angle BAC has been bisected by the straight line AD."
+    highlight: [angBAC, AD]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, with the same construction, since, as BD is to DC, so is BA to AC, and also, as BD is to DC, so is BA to AE: for AD has been drawn parallel to EC, one of the sides of the triangle BCE: therefore also, as BA is to AC, so is BA to AE."
+    highlight: [BA, AC, AE]
+    hint: |
+      Both $BA : AC$ and $BA : AE$ equal $BD : DC$ ([[VI.2]], [[V.11]]).
+
+  - part: proof
+    text: "Therefore AC is equal to AE, so that the angle AEC is also equal to the angle ACE."
+    highlight: [AC, AE, angAEC, angACE]
+    hint: |
+      [[V.9]], then the isosceles triangle ([[I.5]]).
+
+  - part: proof
+    text: "But the angle AEC is equal to the exterior angle BAD, and the angle ACE is equal to the alternate angle CAD; [id.] therefore the angle BAD is also equal to the angle CAD."
+    highlight: [angAEC, angBAD, angACE, angCAD]
+    hint: |
+      The parallel angles again ([[I.29]], "[id.]" = the same reference).
+
+  - part: proof
+    text: "Therefore the angle BAC has been bisected by the straight line AD."
+    highlight: [angBAC, AD]
+    hint: |
+      Converse proved.
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      text: |
+        Triangles {ABD} and {ACD} have the same height from {A}, so $[ABD] : [ACD] = BD : DC$. Also
+        $[ABD] = \tfrac12 AB\cdot AD \sin\theta$ and $[ACD] = \tfrac12 AC\cdot AD\sin\theta$ with $\theta$ the
+        half-angle, so the ratio is $AB : AC$.
+    - steps: [11, 12, 13, 14, 15, 16]
+      text: |
+        Conversely, the point dividing {BC} in the ratio $AB : AC$ is unique, and the bisector's foot is such a
+        point. $\blacksquare$
+
+commentary: |
+  A clever construction turns an angle condition into a length condition: the parallel {CE} makes the
+  triangle {ACE} isosceles, so the side {AC} can be "moved" onto the line {BA}, where [[VI.2]] applies.
+
+  The external-bisector version (the bisector of the exterior angle cuts {BC} produced in the same ratio) is
+  not in Euclid; Heath gives it in his note, attributing it to Simson ("VI. A").

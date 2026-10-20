@@ -1,0 +1,80 @@
+id: XI.9
+kind: theorem
+title: Lines parallel to the same line are parallel, even in space
+
+paraphrase: |
+  If {AB} and {CD} are each parallel to {EF} (not in one plane with it), they are parallel to each other. The
+  spatial version of [[I.30]].
+
+diagram:
+  width: 270
+  height: 200
+  elements:
+    - "A;point;free;220,40"
+    - "B;point;free;90,40"
+    - "AB;line;connect;A,B"
+    - "C;point;free;210,160"
+    - "D';point;parallelogram;B,A,C;0;0"
+    - "D;point;lineSlider;C,D',80,160"
+    - "CD;line;connect;C,D"
+    - "E;point;free;160,120"
+    - "F';point;parallelogram;B,A,E;0;0"
+    - "F;point;lineSlider;E,F',30,120"
+    - "EF;line;connect;E,F"
+    - "G;point;lineSlider;EF,100,160"
+    - "H;point;parallelogram;A,E,G"
+    - "K;point;parallelogram;C,E,G"
+    - "GH;line;connect;G,H"
+    - "GK;line;connect;G,K"
+    - "HGK;polygon;triangle;H,G,K;0;0;0"
+  aliases: { BA: AB, DC: CD, FE: EF, HG: GH, KG: GK }
+  caption: |
+    {GH} and {GK} are perpendicular to {EF} at {G}, in the planes of {EF} with {AB} and with {CD}.
+
+steps:
+  - part: enunciation
+    text: "Straight lines which are parallel to the same straight line and are not in the same plane with it are also parallel to one another."
+    highlight: [AB, CD, EF]
+    hint: |
+      Parallelism is transitive in space.
+
+  - part: setting-out
+    text: "For let each of the straight lines AB, CD be parallel to EF, not being in the same plane with it; I say that AB is parallel to CD."
+    highlight: [AB, CD, EF]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For let a point G be taken at random on EF, and from it let there be drawn GH, in the plane through EF, AB, at right angles to EF, and GK in the plane through FE, CD again at right angles to EF."
+    highlight: [GH, GK]
+    hint: |
+      Perpendiculars {GH}, {GK} to {EF} at {G}, one in each plane.
+
+  - part: proof
+    text: "Now, since EF is at right angles to each of the straight lines GH, GK, therefore EF is also at right angles to the plane through GH, GK."
+    highlight: [EF]
+    hint: |
+      {EF} ⊥ plane {HGK} ([[XI.4]]).
+
+  - part: proof
+    text: "And EF is parallel to AB; therefore AB is also at right angles to the plane through HG, GK."
+    highlight: [AB]
+    hint: |
+      {AB} ∥ {EF}, so {AB} ⊥ that plane ([[XI.8]]).
+
+  - part: proof
+    text: "For the same reason CD is also at right angles to the plane through HG, GK; therefore each of the straight lines AB, CD is at right angles to the plane through HG, GK."
+    highlight: [CD]
+    hint: |
+      Likewise {CD}.
+
+  - part: proof
+    text: "But if two straight lines be at right angles to the same plane, the straight lines are parallel; therefore AB is parallel to CD."
+    highlight: [AB, CD]
+    hint: |
+      Both perpendicular to one plane: parallel ([[XI.6]]).
+
+reconstruction:
+  lines:
+    - text: |
+        Common direction vector. $\blacksquare$

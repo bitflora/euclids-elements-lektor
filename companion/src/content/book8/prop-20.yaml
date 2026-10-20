@@ -1,0 +1,170 @@
+id: VIII.20
+kind: theorem
+title: Numbers with one mean between them are similar plane numbers
+
+paraphrase: |
+  If {C} is a mean proportional between {A} and {B}, then {A} and {B} are similar plane numbers. A converse of
+  [[VIII.18]].
+
+diagram:
+  width: 290
+  height: 200
+  elements:
+    - "A0;point;free;-1000,35;0;0"
+    - "A3;point;free;1000,35;0;0"
+    - "B0;point;free;-1000,70;0;0"
+    - "B3;point;free;1000,70;0;0"
+    - "C0;point;free;-1000,105;0;0"
+    - "C3;point;free;1000,105;0;0"
+    - "D0;point;free;-1000,140;0;0"
+    - "D3;point;free;1000,140;0;0"
+    - "E0;point;free;-1000,175;0;0"
+    - "E3;point;free;1000,175;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,25;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,170,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;B0,B3,30,0;0"
+    - "B2;point;lineSlider;B0,B3,260,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;C0,C3,30,0;0"
+    - "C2;point;meanProportional;A1,A2,B1,B2,C1,C3;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;lineSlider;D0,D3,85,0;0"
+    - "D;line;connect;D1,D2;black"
+    - "E1;point;lineSlider;E0,E3,30,0;0"
+    - "E2;point;proportion;A1,A2,B1,B2,D1,D2,E1,E3;0"
+    - "E;line;connect;E1,E2;black"
+    - "F1;point;lineSlider;D0,D3,150,0;0"
+    - "F2;point;proportion;D1,D2,A1,A2,U1,U2,F1,D3;0"
+    - "F;line;connect;F1,F2;black"
+    - "G1;point;lineSlider;E0,E3,150,0;0"
+    - "G2;point;proportion;D1,D2,E1,E2,F1,F2,G1,E3;0"
+    - "G;line;connect;G1,G2;black"
+  caption: |
+    {C} is the mean between {A} and {B}; {D} : {E} is {A} : {C} in lowest terms; {A} = {D}{F}, {B} = {E}{G}.
+
+steps:
+  - part: enunciation
+    text: "If one mean proportional number fall between two numbers, the numbers will be similar plane numbers."
+    highlight: [A, B, C]
+    hint: |
+      $a : c = c : b \Rightarrow a, b$ are similar plane numbers.
+    modern: |
+      If $c^2 = ab$, then $a = dm$, $b = en$ with $d : m = e : n$.
+
+  - part: setting-out
+    text: "For let one mean proportional number C fall between the two numbers A, B;"
+    highlight: [A, C, B]
+    hint: |
+      {A} : {C} = {C} : {B}.
+
+  - part: specification
+    text: "I say that A, B are similar plane numbers."
+    highlight: [A, B]
+    hint: |
+      To prove.
+
+  - part: construction
+    text: "Let D, E, the least numbers of those which have the same ratio with A, C, be taken;"
+    highlight: [D, E]
+    hint: |
+      {D} : {E} = {A} : {C} in lowest terms ([[VII.33]]).
+
+  - part: proof
+    text: "therefore D measures A the same number of times that E measures C."
+    highlight: [D, A, E, C]
+    hint: |
+      [[VII.20]].
+
+  - part: construction
+    text: "Now, as many times as D measures A, so many units let there be in F; therefore F by multiplying D has made A, so that A is plane, and D, F are its sides."
+    highlight: [F, D, A]
+    hint: |
+      {A} = {D}{F}: plane.
+
+  - part: proof
+    text: "Again, since D, E are the least of the numbers which have the same ratio with C, B, therefore D measures C the same number of times that E measures B."
+    highlight: [D, C, E, B]
+    hint: |
+      {C} : {B} = {A} : {C} = {D} : {E}, so [[VII.20]] again.
+
+  - part: construction
+    text: "As many times, then, as E measures B, so many units let there be in G; therefore E measures B according to the units in G; therefore G by multiplying E has made B."
+    highlight: [G, E, B]
+    hint: |
+      {B} = {E}{G}.
+
+  - part: proof
+    text: "Therefore B is plane, and E, G are its sides."
+    highlight: [B]
+    hint: |
+      Plane.
+
+  - part: proof
+    text: "Therefore A, B are plane numbers."
+    highlight: [A, B]
+    hint: |
+      Both plane.
+
+  - part: specification
+    text: "I say next that they are also similar."
+    highlight: [A, B]
+    hint: |
+      Now similar.
+
+  - part: proof
+    text: "For, † since F by multiplying D has made A, and by multiplying E has made C, therefore, as D is to E, so is A to C, that is, C to B."
+    highlight: [F, D, E, A, C, B]
+    hint: |
+      {C} = {F}{E}, and [[VII.17]].
+    dispute: |
+      Heath prints a dagger (†) before this clause and the next, marking the text as doubtful. The reasoning
+      itself is sound: {F} is the number of times {D} measures {A}, which is also the number of times {E}
+      measures {C} (step 2), so {C} is {E} taken {F} times; the doubt concerns how the manuscripts phrase it.
+
+  - part: proof
+    text: "Again, † since E by multiplying F, G has made C, B respectively, therefore, as F is to G, so is C to B."
+    highlight: [E, F, G, C, B]
+    hint: |
+      [[VII.17]]: {F} : {G} = {C} : {B}.
+
+  - part: proof
+    text: "But, as C is to B, so is D to E; therefore also, as D is to E, so is F to G."
+    highlight: [D, E, F, G]
+    hint: |
+      {D} : {E} = {F} : {G}.
+
+  - part: proof
+    text: "And alternately, as D is to F, so is E to G."
+    highlight: [D, F, E, G]
+    hint: |
+      [[VII.13]].
+
+  - part: proof
+    text: "Therefore A, B are similar plane numbers; for their sides are proportional."
+    highlight: [A, B]
+    hint: |
+      Done ([[VII.Def.21]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [4, 5, 6, 7, 8, 9, 10]
+      text: |
+        Let $d : e$ be $a : c$ in lowest terms; then $a = fd$, $c = fe$; and since $c : b = d : e$ too, $c = gd$,
+        $b = ge$ ([[VII.20]]).
+    - steps: [11, 12, 13, 14, 15]
+      text: |
+        So $a = df$, $b = eg$ with $d : f = e : g$ (from $fe = gd$). $\blacksquare$
+
+commentary: |
+  Example: 12 and 27 have the mean 18; 12 = 2·6 and 27 = 3·9, with 2 : 6 = 3 : 9.

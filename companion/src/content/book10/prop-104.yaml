@@ -1,0 +1,110 @@
+id: X.104
+kind: theorem
+title: A line commensurable with an apotome of a medial is such an apotome of the same order
+
+paraphrase: |
+  A line {CD} commensurable in length with an apotome of a medial {AB} is itself an apotome of a medial (of the same order). The
+  subtractive counterpart of [[X.67]].
+
+diagram:
+  width: 260
+  height: 100
+  elements:
+    - "A0;point;free;-1000,35;0;0"
+    - "A3;point;free;1000,35;0;0"
+    - "C0;point;free;-1000,70;0;0"
+    - "C3;point;free;1000,70;0;0"
+    - "A;point;lineSlider;A0,A3,60,0"
+    - "B;point;lineSlider;A0,A3,130,0"
+    - "C;point;lineSlider;C0,C3,30,0"
+    - "D;point;lineSlider;C0,C3,150,0"
+    - "E;point;lineSlider;A0,A3,170,0"
+    - "AE;line;connect;A,E"
+    - "F;point;proportion;A,B,C,D,B,E,D,C3"
+    - "CF;line;connect;C,F"
+    - "AB;line;connect;A,B;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "BE;line;connect;B,E;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "EB;line;connect;E,B;0;0;0"
+    - "FD;line;connect;F,D;0;0;0"
+  aliases: { EA: AE, FC: CF, BA: AB, DC: CD }
+  caption: |
+    {AB} with annex {BE} (whole {AE}); {CD} commensurable with {AB}, with annex {DF} in the same ratio.
+
+steps:
+  - part: enunciation
+    text: "A straight line commensurable with an apotome of a medial straight line is an apotome of a medial straight line and the same in order."
+    highlight: [AB, CD]
+    hint: |
+      The kinds are closed under rational scaling.
+
+  - part: setting-out
+    text: "Let AB be an apotome of a medial straight line, and let CD be commensurable in length with AB; I say that CD is also an apotome of a medial straight line and the same in order with AB."
+    highlight: [AB, CD]
+    hint: |
+      Setup.
+
+  - part: proof
+    text: "For, since AB is an apotome of a medial straight line, let EB be the annex to it."
+    highlight: [BE]
+    hint: |
+      The annex {EB}.
+
+  - part: proof
+    text: "Therefore AE, EB are medial straight lines commensurable in square only."
+    highlight: [AE, BE]
+    hint: |
+      {AE}, {EB} medial, commensurable in square only.
+
+  - part: construction
+    text: "Let it be contrived that, as AB is to CD, so is BE to DF; therefore AE is also commensurable with CF, and BE with DF."
+    highlight: [DF, CF]
+    hint: |
+      Proportional division of {CD}; corresponding parts commensurable.
+
+  - part: proof
+    text: "But AE, EB are medial straight lines commensurable in square only; therefore CF, FD are also medial straight lines commensurable in square only; therefore CD is an apotome of a medial straight line."
+    highlight: [CF, DF]
+    hint: |
+      {CF}, {FD} medial, commensurable in square only ([[X.23]], [[X.13]]).
+
+  - part: specification
+    text: "I say next that it is also the same in order with AB."
+    highlight: [CD]
+    hint: |
+      Same order:
+
+  - part: proof
+    text: "Since, as AE is to EB, so is CF to FD, therefore also, as the square on AE is to the rectangle AE, EB, so is the square on CF to the rectangle CF, FD."
+    highlight: [AE, BE, CF, DF]
+    hint: |
+      sq({AE}) : rect({AE},{EB}) = sq({CF}) : rect({CF},{FD}); alternately …
+
+  - part: proof
+    text: "But the square on AE is commensurable with the square on CF; therefore the rectangle AE, EB is also commensurable with the rectangle CF, FD."
+    highlight: [AE, BE, CF, DF]
+    hint: |
+      … the rectangles are commensurable.
+
+  - part: proof
+    text: "Therefore, if the rectangle AE, EB is rational, the rectangle CF, FD will also be rational, and if the rectangle AE, EB is medial, the rectangle CF, FD is also medial."
+    highlight: [CD]
+    hint: |
+      Rational rectangle → first apotome of a medial; medial → second.
+
+  - part: proof
+    text: "Therefore CD is an apotome of a medial straight line and the same in order with AB."
+    highlight: [CD]
+    hint: |
+      Same order ([[X.74]], [[X.75]]).
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        As [[X.67]]: scaling by a rational preserves every defining property. $\blacksquare$

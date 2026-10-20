@@ -1,0 +1,146 @@
+id: VII.15
+kind: theorem
+title: Alternation with the unit
+
+paraphrase: |
+  If the unit {A} measures {BC} as many times as {D} measures {EF}, then the unit measures {D} as many times
+  as {BC} measures {EF}. In modern terms: if $EF = n \cdot D$ and $D = m \cdot 1$, then $EF = m \cdot n$,
+  the same as $n$ taken $m$ times.
+
+diagram:
+  width: 280
+  height: 140
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "D0;point;free;-1000,75;0;0"
+    - "D3;point;free;1000,75;0;0"
+    - "E0;point;free;-1000,110;0;0"
+    - "E3;point;free;1000,110;0;0"
+    - "A1;point;lineSlider;A0,A3,30,40;0"
+    - "A2;point;lineSlider;A0,A3,65,40;0"
+    - "A;line;connect;A1,A2;black"
+    - "B;point;lineSlider;A0,A3,110,40"
+    - "G;point;cutoff;B,A3,A1,A2"
+    - "H;point;cutoff;G,A3,A1,A2"
+    - "C;point;cutoff;H,A3,A1,A2"
+    - "BC;line;connect;B,C"
+    - "D1;point;lineSlider;D0,D3,100,40;0"
+    - "D2;point;cutoff;D1,D3,B,H;0"
+    - "D;line;connect;D1,D2;black"
+    - "E;point;lineSlider;E0,E3,30,40"
+    - "K;point;cutoff;E,E3,D1,D2"
+    - "L;point;cutoff;K,E3,D1,D2"
+    - "F;point;cutoff;L,E3,D1,D2"
+    - "EF;line;connect;E,F"
+    - "BG;line;connect;B,G;0;0;0"
+    - "GH;line;connect;G,H;0;0;0"
+    - "HC;line;connect;H,C;0;0;0"
+    - "EK;line;connect;E,K;0;0;0"
+    - "KL;line;connect;K,L;0;0;0"
+    - "LF;line;connect;L,F;0;0;0"
+  caption: |
+    {BC} is three units; {EF} is three copies of {D}.
+
+steps:
+  - part: enunciation
+    text: "If an unit measure any number, and another number measure any other number the same number of times, alternately also, the unit will measure the third number the same number of times that the second measures the fourth."
+    highlight: [A, BC, D, EF]
+    hint: |
+      Alternation, with the unit as the first term.
+    modern: |
+      $1 : n = d : nd \ \Rightarrow\ 1 : d = n : nd$; that is, $n$ copies of $d$ equal $d$ copies of $n$.
+
+  - part: setting-out
+    text: "For let the unit A measure any number BC, and let another number D measure any other number EF the same number of times;"
+    highlight: [A, BC, D, EF]
+    hint: |
+      {BC} = $n$ units; {EF} = $n$ copies of {D}.
+
+  - part: specification
+    text: "I say that, alternately also, the unit A measures the number D the same number of times that BC measures EF."
+    highlight: [A, D, BC, EF]
+    hint: |
+      To prove: {D} has as many units as {EF} has copies of {BC}.
+
+  - part: proof
+    text: "For, since the unit A measures the number BC the same number of times that D measures EF, therefore, as many units as there are in BC, so many numbers equal to D are there in EF also."
+    highlight: [BC, EF, D]
+    hint: |
+      The number of units in {BC} is the number of copies of {D} in {EF}.
+
+  - part: construction
+    text: "Let BC be divided into the units in it, BG, GH, HC, and EF into the numbers EK, KL, LF equal to D."
+    highlight: [BG, GH, HC, EK, KL, LF]
+    hint: |
+      Units {BG}, {GH}, {HC}; copies {EK}, {KL}, {LF} of {D}.
+
+  - part: proof
+    text: "Thus the multitude of BG, GH, HC will be equal to the multitude of EK, KL, LF."
+    highlight: [BG, GH, HC, EK, KL, LF]
+    hint: |
+      Three of each in the figure.
+
+  - part: proof
+    text: "And, since the units BG, GH, HC are equal to one another, and the numbers EK, KL, LF are also equal to one another, while the multitude of the units BG, GH, HC is equal to the multitude of the numbers EK, KL, LF, therefore, as the unit BG is to the number EK, so will the unit GH be to the number KL, and the unit HC to the number LF."
+    highlight: [BG, EK, GH, KL, HC, LF]
+    hint: |
+      Each unit is to its partner as each other unit is to its partner.
+
+  - part: proof
+    text: "Therefore also, as one of the antecedents is to one of the consequents, so will all the antecedents be to all the consequents;"
+    highlight: [BC, EF]
+    hint: |
+      Sum them, by [[VII.12]].
+
+  - part: proof
+    text: "therefore, as the unit BG is to the number EK, so is BC to EF."
+    highlight: [BG, EK, BC, EF]
+    hint: |
+      {BG} : {EK} = {BC} : {EF}.
+
+  - part: proof
+    text: "But the unit BG is equal to the unit A, and the number EK to the number D."
+    highlight: [BG, A, EK, D]
+    hint: |
+      Replace by the originals.
+
+  - part: proof
+    text: "Therefore, as the unit A is to the number D, so is BC to EF."
+    highlight: [A, D, BC, EF]
+    hint: |
+      {A} : {D} = {BC} : {EF}.
+
+  - part: proof
+    text: "Therefore the unit A measures the number D the same number of times that BC measures EF."
+    highlight: [A, D, BC, EF]
+    hint: |
+      Read as "measures the same number of times" ([[VII.Def.20]]).
+    cites: [VII.Def.20]
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2, 3, 4, 5]
+      text: |
+        $BC = n$ and $EF = n \cdot D$ (as $n$ copies of $D$).
+    - steps: [6, 7, 8, 9, 10]
+      text: |
+        $1 : D = n : nD$, i.e. $D$ contains as many units as $nD$ contains copies of $n$. $\blacksquare$
+  closing: |
+    The content is $n \cdot (m \cdot 1) = m \cdot (n \cdot 1)$: a first form of commutativity, proved next
+    in general ([[VII.16]]).
+
+commentary: |
+  [[VII.9]] would give this at once if the unit were a number; Euclid reproves it because the unit is
+  not. Joyce reads it as commutativity of multiplication for multiples of the unit; [[VII.16]] uses it to
+  prove $ab = ba$.
+
+gaps: |
+  - [[VII.12]] is applied with the unit among the antecedents, outside its stated hypothesis ("numbers").

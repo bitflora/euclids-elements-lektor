@@ -1,0 +1,181 @@
+id: X.112
+kind: theorem
+title: "Rationalising: a rational square divided by a binomial is an apotome"
+
+paraphrase: |
+  The square on a rational line {A}, applied to a binomial {BC}, gives as breadth an apotome *EF* whose terms are
+  commensurable with the binomial's terms, in the same ratio and of the same order. In algebra:
+  $\dfrac{\rho^2}{\sqrt a + \sqrt b} = \rho^2\dfrac{\sqrt a - \sqrt b}{a - b}$.
+
+diagram:
+  width: 360
+  height: 125
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "B0;point;free;-1000,65;0;0"
+    - "B3;point;free;1000,65;0;0"
+    - "K0;point;free;-1000,100;0;0"
+    - "K3;point;free;1000,100;0;0"
+    - "A1;point;lineSlider;A0,A3,40,0;0"
+    - "A2;point;lineSlider;A0,A3,120,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B;point;lineSlider;B0,B3,30,0"
+    - "C;point;lineSlider;B0,B3,180,0"
+    - "D;point;lineSlider;B0,B3,90,0"
+    - "BC;line;connect;B,C"
+    - "E;point;lineSlider;K0,K3,130,0"
+    - "F;point;proportion;B,C,A1,A2,A1,A2,E,K3"
+    - "G1;point;lineSlider;B0,B3,220,0;0"
+    - "G2;point;proportion;B,D,A1,A2,A1,A2,G1,B3;0"
+    - "G;line;connect;G1,G2;black"
+    - "H;point;cutoff;E,K3,G1,G2"
+    - "Q;point;cutoff;H,F,F,E;0;0"
+    - "K;point;proportion;F,Q,E,F,E,F,E,K0"
+    - "KH;line;connect;K,H"
+    - "CB;line;connect;C,B;0;0;0"
+  aliases: { HK: KH }
+  caption: |
+    {BC} a binomial with greater term *DC*; rect({BC}, *EF*) = sq({A}).
+
+steps:
+  - part: enunciation
+    text: "The square on a rational straight line applied to the binomial straight line produces as breadth an apotome the terms of which are commensurable with the terms of the binomial and moreover in the same ratio; and further the apotome so arising will have the same order as the binomial straight line."
+    highlight: [A, BC]
+    hint: |
+      Dividing by a binomial gives an apotome — rationalising the denominator.
+
+  - part: setting-out
+    text: "Let A be a rational straight line, let BC be a binomial, and let DC be its greater term; let the rectangle BC, EF be equal to the square on A; I say that EF is an apotome the terms of which are commensurable with CD, DB, and in the same ratio, and further EF will have the same order as BC."
+    highlight: [A, BC]
+    hint: |
+      Setup: rect({BC}, *EF*) = sq({A}).
+
+  - part: construction
+    text: "For again let the rectangle BD, G be equal to the square on A."
+    highlight: [A]
+    hint: |
+      Also rect(*BD*, {G}) = sq({A}).
+
+  - part: proof
+    text: "Since then the rectangle BC, EF is equal to the rectangle BD, G, therefore, as CB is to BD, so is G to EF."
+    highlight: [BC, G]
+    hint: |
+      So {CB} : *BD* = {G} : *EF* ([[VI.16]]).
+
+  - part: proof
+    text: "But CB is greater than BD; therefore G is also greater than EF."
+    highlight: [G]
+    hint: |
+      {G} > *EF*.
+
+  - part: construction
+    text: "Let EH be equal to G; therefore, as CB is to BD, so is HE to EF; therefore, separando, as CD is to BD, so is HF to FE."
+    highlight: [G]
+    hint: |
+      *EH* = {G}; separando, *CD* : *BD* = *HF* : *FE*.
+
+  - part: construction
+    text: "Let it be contrived that, as HF is to FE, so is FK to KE; therefore also the whole HK is to the whole KF as FK is to KE; for, as one of the antecedents is to one of the consequents, so are all the antecedents to all the consequents."
+    highlight: [K]
+    hint: |
+      Choose {K} with *HF* : *FE* = *FK* : *KE*; then *HK* : *KF* = *FK* : *KE*.
+
+  - part: proof
+    text: "But, as FK is to KE, so is CD to DB; therefore also, as HK is to KF, so is CD to DB. [id.]"
+    highlight: [KH]
+    hint: |
+      = *CD* : *DB*.
+
+  - part: proof
+    text: "But the square on CD is commensurable with the square on DB; therefore the square on HK is also commensurable with the square on KF."
+    highlight: [KH]
+    hint: |
+      sq(*CD*), sq(*DB*) commensurable, so sq(*HK*), sq(*KF*) are.
+
+  - part: proof
+    text: "And, as the square on HK is to the square on KF, so is HK to KE, since the three straight lines HK, KF, KE are proportional."
+    highlight: [KH]
+    hint: |
+      And sq(*HK*) : sq(*KF*) = *HK* : *KE*.
+
+  - part: proof
+    text: "Therefore HK is commensurable in length with KE, so that HE is also commensurable in length with EK."
+    highlight: [KH]
+    hint: |
+      So *HK*, *KE* commensurable, and *HE* with *EK*.
+
+  - part: proof
+    text: "Now, since the square on A is equal to the rectangle EH, BD, while the square on A is rational, therefore the rectangle EH, BD is also rational."
+    highlight: [A]
+    hint: |
+      rect(*EH*, *BD*) = sq({A}) is rational …
+
+  - part: proof
+    text: "And it is applied to the rational straight line BD; therefore EH is rational and commensurable in length with BD; so that EK, being commensurable with it, is also rational and commensurable in length with BD."
+    highlight: [A]
+    hint: |
+      … so *EH* is commensurable with *BD*, and so is *EK*.
+
+  - part: proof
+    text: "Since, then, as CD is to DB, so is FK to KE, while CD, DB are straight lines commensurable in square only, therefore FK, KE are also commensurable in square only."
+    highlight: [K]
+    hint: |
+      *FK*, *KE* commensurable in square only …
+
+  - part: proof
+    text: "But KE is rational; therefore FK is also rational."
+    highlight: [K]
+    hint: |
+      … *FK* rational …
+
+  - part: proof
+    text: "Therefore FK, KE are rational straight lines commensurable in square only; therefore EF is an apotome."
+    highlight: [K]
+    hint: |
+      … so *EF* is an apotome.
+
+  - part: proof
+    text: "Now the square on CD is greater than the square on DB either by the square on a straight line commensurable with CD or by the square on a straight line incommensurable with it."
+    highlight: [K]
+    hint: |
+      Same order: two cases for the excess.
+
+  - part: proof
+    text: "If then the square on CD is greater than the square on DB by the square on a straight line commensurable with CD, the square on FK is also greater than the square on KE by the square on a straight line commensurable with FK."
+    highlight: [K]
+    hint: |
+      Commensurable excess carries over …
+
+  - part: proof
+    text: "And, if CD is commensurable in length with the rational straight line set out, so also is FK; if BD is so commensurable, so also is KE; but, if neither of the straight lines CD, DB is so commensurable, neither of the straight lines FK, KE is so."
+    highlight: [K]
+    hint: |
+      … and the term commensurable with the rational line corresponds.
+
+  - part: proof
+    text: "But, if the square on CD is greater than the square on DB by the square on a straight line incommensurable with CD, the square on FK is also greater than the square on KE by the square on a straight line incommensurable with FK."
+    highlight: [K]
+    hint: |
+      Incommensurable excess carries over …
+
+  - part: proof
+    text: "And, if CD is commensurable with the rational straight line set out, so also is FK; if BD is so commensurable, so also is KE; but, if neither of the straight lines CD, DB is so commensurable, neither of the straight lines FK, KE is so; so that FE is an apotome, the terms of which FK, KE are commensurable with the terms CD, DB of the binomial straight line and in the same ratio, and it has the same order as BC."
+    highlight: [K]
+    hint: |
+      … likewise.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        $\rho^2/(\sqrt a + \sqrt b) = \rho^2(\sqrt a - \sqrt b)/(a - b)$, an apotome whose terms are proportional to
+        $\sqrt a, \sqrt b$. $\blacksquare$
+
+commentary: |
+  [[X.112]]–[[X.114]] are Euclid's version of "rationalising the denominator": binomials and apotomes are
+  reciprocal up to a rational factor. Some scholars regard [[X.112]]–[[X.115]] as later additions.

@@ -1,0 +1,133 @@
+id: X.5
+kind: theorem
+title: Commensurable magnitudes are as a number to a number
+
+paraphrase: |
+  If {A} and {B} are commensurable, their ratio is a ratio of two numbers.
+
+diagram:
+  width: 280
+  height: 90
+  elements:
+    - "A0;point;free;-1000,30;0;0"
+    - "A3;point;free;1000,30;0;0"
+    - "D0;point;free;-1000,65;0;0"
+    - "D3;point;free;1000,65;0;0"
+    - "U1;point;free;1000,0;0;0"
+    - "U2;point;free;1000,10;0;0"
+    - "A1;point;lineSlider;A0,A3,30,0;0"
+    - "A2;point;lineSlider;A0,A3,120,0;0"
+    - "A;line;connect;A1,A2;black"
+    - "B1;point;lineSlider;A0,A3,150,0;0"
+    - "B2;point;lineSlider;A0,A3,200,0;0"
+    - "B;line;connect;B1,B2;black"
+    - "C1;point;lineSlider;A0,A3,230,0;0"
+    - "C2;point;lineSlider;A0,A3,245,0;0"
+    - "C;line;connect;C1,C2;black"
+    - "D1;point;lineSlider;D0,D3,30,0;0"
+    - "D2;point;proportion;C1,C2,A1,A2,U1,U2,D1,D3;0"
+    - "D;line;connect;D1,D2;black;0;blue"
+    - "E1;point;lineSlider;D0,D3,150,0;0"
+    - "E2;point;proportion;C1,C2,B1,B2,U1,U2,E1,D3;0"
+    - "E;line;connect;E1,E2;black;0;blue"
+  caption: |
+    {C} measures {A} {D} times and {B} {E} times; {D} and {E} are numbers.
+
+steps:
+  - part: enunciation
+    text: "Commensurable magnitudes have to one another the ratio which a number has to a number."
+    highlight: [A, B]
+    hint: |
+      Commensurable ⇒ rational ratio.
+    modern: |
+      $a = m c$, $b = n c$ $\Rightarrow$ $a : b = m : n$.
+
+  - part: setting-out
+    text: "Let A, B be commensurable magnitudes;"
+    highlight: [A, B]
+    hint: |
+      {A}, {B} commensurable.
+
+  - part: specification
+    text: "I say that A has to B the ratio which a number has to a number."
+    highlight: [A, B]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, since A, B are commensurable, some magnitude will measure them."
+    highlight: [A, B]
+    hint: |
+      A common measure exists ([[X.Def.1]]).
+    cites: [X.Def.1]
+
+  - part: construction
+    text: "Let it measure them, and let it be C."
+    highlight: [C]
+    hint: |
+      Call it {C}.
+
+  - part: construction
+    text: "And, as many times as C measures A, so many units let there be in D; and, as many times as C measures B, so many units let there be in E."
+    highlight: [D, E]
+    hint: |
+      {D}, {E}: how many times {C} goes into {A}, {B}.
+
+  - part: proof
+    text: "Since then C measures A according to the units in D, while the unit also measures D according to the units in it, therefore the unit measures the number D the same number of times as the magnitude C measures A; therefore, as C is to A, so is the unit to D;"
+    highlight: [C, A, D]
+    hint: |
+      {C} : {A} = 1 : {D} — a ratio of magnitudes equated with a ratio of numbers.
+    explain:
+      implicit: |
+        [[VII.Def.20]] defines proportion for *numbers*; here it is applied to a mixed proportion, two
+        magnitudes and two numbers. Nothing in the *Elements* says what such a proportion means.
+    gap: |
+      The proposition mixes Book V ratios (of magnitudes) and Book VII ratios (of numbers) without a
+      definition covering both.
+
+  - part: proof
+    text: "therefore, inversely, as A is to C, so is D to the unit."
+    highlight: [A, C, D]
+    hint: |
+      Inverting: {A} : {C} = {D} : 1 (cf. [[V.7]], porism).
+
+  - part: proof
+    text: "Again, since C measures B according to the units in E, while the unit also measures E according to the units in it, therefore the unit measures E the same number of times as C measures B; therefore, as C is to B, so is the unit to E."
+    highlight: [C, B, E]
+    hint: |
+      Likewise {C} : {B} = 1 : {E}.
+
+  - part: proof
+    text: "But it was also proved that, as A is to C, so is D to the unit; therefore, ex aequali, as A is to B, so is the number D to E."
+    highlight: [A, B, D, E]
+    hint: |
+      Ex aequali ([[V.22]]): {A} : {B} = {D} : {E}.
+
+  - part: proof
+    text: "Therefore the commensurable magnitudes A, B have to one another the ratio which the number D has to the number E."
+    highlight: [A, B, D, E]
+    hint: |
+      Done.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [3, 4, 5, 6, 7, 8, 9]
+      text: |
+        $a = mc$, $b = nc$, so $a/b = m/n$. $\blacksquare$
+
+commentary: |
+  [[X.5]]–[[X.8]] tie commensurability to rational ratios: commensurable iff the ratio is that of numbers.
+  Joyce draws numbers in blue to tell them apart from magnitudes.
+
+interpretations: |
+  How Euclid justifies proportions between a magnitude pair and a number pair is a long-standing puzzle.
+  Some (Heath among them) suppose numbers are being treated as magnitudes, so that Book V applies; others
+  see a genuine gap between the two theories of proportion.

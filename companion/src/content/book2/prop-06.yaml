@@ -1,0 +1,225 @@
+id: II.6
+kind: theorem
+title: A line bisected and produced
+
+paraphrase: |
+  Bisect {AB} at {C} and extend it by {BD}. The rectangle on {AD} and {DB}, plus the square on the
+  half {CB}, equals the square on {CD}. In algebra, with half $a$ and extension $b$:
+  $(2a + b)b + a^2 = (a + b)^2$.
+
+diagram:
+  width: 370
+  height: 240
+  elements:
+    - "A0;point;free;-1000,40;0"
+    - "A3;point;free;1000,40;0"
+    - "A;point;lineSlider;A0,A3,40,0"
+    - "B;point;lineSlider;A0,A3,240,0"
+    - "C;point;midpoint;A,B"
+    - "D;point;lineSlider;A0,A3,330,0"
+    - "DCEF;polygon;square;D,C;0;0;black;0"
+    - "E;point;vertex;DCEF,3"
+    - "F;point;vertex;DCEF,4"
+    - "DE;line;connect;D,E"
+    - "G;point;parallelogram;B,D,F"
+    - "H;point;intersection;B,G,D,E"
+    - "M;point;parallelogram;H,B,D"
+    - "K;point;parallelogram;H,B,A"
+    - "L;point;intersection;K,M,C,E"
+    - "ACLK;polygon;quadrilateral;A,C,L,K;0;0;0;#efe4d2"
+    - "LHGE;polygon;quadrilateral;L,H,G,E;0;0;0;#dfe7ea"
+    - "BDMH;polygon;quadrilateral;B,D,M,H;0;0;0;0"
+    - "Op;point;midpoint;H,M;0;0"
+    - "N;point;cutoff;H,K,H,Op;black;lightGray"
+    - "O;point;cutoff;H,D,H,Op;black;lightGray"
+    - "P;point;cutoff;H,G,H,Op;black;lightGray"
+    - "NOParc;sector;arc;P,O,N;0;0;lightGray;0"
+    - "AC;line;connect;A,C;0;0"
+    - "CB;line;connect;C,B;0;0"
+    - "BD;line;connect;B,D;0;0"
+    - "BG;line;connect;B,G;0;0"
+    - "KM;line;connect;K,M;0;0"
+    - "AK;line;connect;A,K;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "CD;line;connect;C,D;0;0;0"
+    - "CE;line;connect;C,E;0;0;0"
+    - "DF;line;connect;D,F;0;0;0"
+    - "EF;line;connect;E,F;0;0;0"
+    - "CL;line;connect;C,L;0;0;0"
+    - "LH;line;connect;L,H;0;0;0"
+    - "DM;line;connect;D,M;0;0;0"
+    - "CBHL;polygon;quadrilateral;C,B,H,L;0;0;0;0"
+    - "HMFG;polygon;quadrilateral;H,M,F,G;0;0;0;0"
+    - "CDML;polygon;quadrilateral;C,D,M,L;0;0;0;0"
+    - "ADMK;polygon;quadrilateral;A,D,M,K;0;0;0;0"
+    - "CEFD;polygon;quadrilateral;C,E,F,D;0;0;0;0"
+    - "NOP;polygon;hexagon;C,D,F,G,H,L;0;0;0;0"
+  aliases:
+    AL: ACLK
+    CH: CBHL
+    HF: HMFG
+    CM: CDML
+    AM: ADMK
+    LG: LHGE
+    BM: BDMH
+    BA: AB
+    CA: AC
+    BC: CB
+    DB: BD
+    DA: AD
+    DC: CD
+    EC: CE
+    FD: DF
+    FE: EF
+    LC: CL
+    MD: DM
+    MK: KM
+    KA: AK
+    GB: BG
+    ED: DE
+  given: [A, B, C, D, AC, CB, BD]
+  caption: |
+    Slide {A}, {B} and {D}; {C} stays the midpoint of {AB}. The gnomon {NOP} always equals the
+    rectangle {AM}.
+
+steps:
+  - part: enunciation
+    text: "If a straight line be bisected and a straight line be added to it in a straight line, the rectangle contained by the whole with the added straight line and the added straight line together with the square on the half is equal to the square on the straight line made up of the half and the added straight line."
+    highlight: [AM, LG, CEFD]
+    hint: |
+      The companion of [[II.5]], with the extra point *outside* the line: (whole-plus-extension) ×
+      (extension) + (half)² = (half-plus-extension)².
+
+  - part: setting-out
+    text: "For let a straight line AB be bisected at the point C, and let a straight line BD be added to it in a straight line;"
+    highlight: [AB, C, BD]
+    hint: |
+      {C} is the midpoint of {AB}; {BD} extends it.
+
+  - part: specification
+    text: "I say that the rectangle contained by AD, DB together with the square on CB is equal to the square on CD."
+    highlight: [AD, DB, CB, CD]
+    hint: |
+      The goal.
+    modern: |
+      $$AD\cdot DB + CB^2 = CD^2$$
+
+  - part: construction
+    text: "For let the square CEFD be described on CD,"
+    highlight: [CEFD]
+    adds: [DCEF, E, F]
+    hint: |
+      The square on {CD} ([[I.46]]).
+
+  - part: construction
+    text: "and let DE be joined;"
+    highlight: [DE]
+    adds: [DE]
+    hint: |
+      Its diagonal.
+
+  - part: construction
+    text: "through the point B let BG be drawn parallel to either EC or DF, through the point H let KM be drawn parallel to either AB or EF, and further through A let AK be drawn parallel to either CL or DM."
+    highlight: [BG, KM, AK]
+    adds: [G, H, K, L, M, BG, KM, AK, ACLK, LHGE, N, O, P, NOParc]
+    hint: |
+      As in [[II.5]]: vertical through {B} (meeting the diagonal at {H}), horizontal through {H}, and
+      a vertical at {A} ([[I.31]]).
+
+  - part: proof
+    text: "Then, since AC is equal to CB, AL is also equal to CH."
+    highlight: [AL, CH]
+    hint: |
+      Equal bases, same parallels ([[I.36]]).
+
+  - part: proof
+    text: "But CH is equal to HF."
+    highlight: [CH, HF]
+    hint: |
+      Complements ([[I.43]]).
+
+  - part: proof
+    text: "Therefore AL is also equal to HF."
+    highlight: [AL, HF]
+    hint: |
+      [[I.CN.1]].
+    cites: [I.CN.1]
+
+  - part: proof
+    text: "Let CM be added to each; therefore the whole AM is equal to the gnomon NOP."
+    highlight: [AM, NOP]
+    hint: |
+      {AL} + {CM} is the rectangle {AM}; {HF} + {CM} is the gnomon {NOP}.
+    cites: [II.Def.2]
+
+  - part: proof
+    text: "But AM is the rectangle AD, DB, for DM is equal to DB;"
+    highlight: [AM, AD, DM]
+    hint: |
+      {AM} has sides {AD} and {DM} (= {DB}, sides of the square {BM} about the diagonal).
+
+  - part: proof
+    text: "therefore the gnomon NOP is also equal to the rectangle AD, DB."
+    highlight: [NOP, AM]
+    hint: |
+      So the gnomon is the rectangle {AD}, {DB}.
+
+  - part: proof
+    text: "Let LG, which is equal to the square on BC, be added to each;"
+    highlight: [LG]
+    hint: |
+      Add the small square {LG} (side {LH} = {CB}).
+
+  - part: proof
+    text: "therefore the rectangle contained by AD, DB together with the square on CB is equal to the gnomon NOP and LG."
+    highlight: [NOP, LG]
+    hint: |
+      [[I.CN.2]].
+
+  - part: proof
+    text: "But the gnomon NOP and LG are the whole square CEFD, which is described on CD;"
+    highlight: [NOP, LG, CEFD]
+    hint: |
+      Together they fill the square on {CD}.
+
+  - part: conclusion
+    text: "therefore the rectangle contained by AD, DB together with the square on CB is equal to the square on CD."
+    highlight: [AM, LG, CEFD]
+    hint: |
+      Done.
+    modern: |
+      $$(2a + b)\,b + a^2 = (a + b)^2$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.*
+  lines:
+    - steps: [1, 2]
+      text: Let $AC = CB = a$, $BD = b$; then $AD = 2a + b$, $CD = a + b$.
+    - steps: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+      text: $AD\cdot DB + CB^2 = (2a + b)b + a^2 = a^2 + 2ab + b^2 = (a + b)^2 = CD^2$. $\blacksquare$
+  closing: |
+    As a problem: given the difference $2a$ of two lines and their rectangle $p$, the square on the
+    larger-minus-half is $p + a^2$. This solves $x(x + 2a) = p$ — and [[II.11]] uses it that way.
+
+commentary: |
+  II.6 is to [[II.5]] what $x(x + 2a)$ is to $x(2a - x)$: the same completion of the square, with
+  the cut point outside rather than inside the line. Its first use is in [[II.11]].
+
+gaps: |
+  - **Squares about the diagonal** ({BM}, {LG}), as in [[II.5]].
+
+historical: |
+  Together, II.5 and II.6 contain the geometric solution of the two basic quadratic problems, and
+  Book VI (VI.28–29) extends them to parallelograms of any shape.

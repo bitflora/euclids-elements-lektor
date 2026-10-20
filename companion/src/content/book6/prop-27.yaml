@@ -1,0 +1,176 @@
+id: VI.27
+kind: theorem
+title: The greatest parallelogram applied with a similar defect
+
+paraphrase: |
+  Of all parallelograms applied to a line {AB} and falling short of it by a parallelogram of a fixed shape (similar to
+  {DB}), the greatest is the one applied to the half {AC}. In the square case: $x(a - x)$ is greatest when $x = a/2$.
+
+diagram:
+  width: 350
+  height: 250
+  elements:
+    - "A;point;free;70,210"
+    - "B;point;free;310,210"
+    - "C;point;midpoint;A,B"
+    - "D;point;free;150,50"
+    - "E;point;parallelogram;B,C,D"
+    - "AE;polygon;parallelogram;A,B,E;0;0;black;0"
+    - "BD;line;connect;B,D"
+    - "F;point;lineSlider;BD,190,100"
+    - "Kp;point;parallelogram;B,E,F;0;0"
+    - "K;point;intersection;F,Kp,A,B"
+    - "AKFG;polygon;parallelogram;A,K,F;0;0;black;#efe4d2"
+    - "G;point;vertex;AKFG,4"
+    - "DC;line;connect;D,C"
+    - "H;point;parallelogram;B,K,F"
+    - "FH;line;connect;F,H"
+    - "X;point;intersection;D,E,F,K;0;0"
+    - "FX;line;connect;F,X"
+    - "N;point;midpoint;X,F;black;0"
+    - "M;point;cutoff;F,H,F,N;black;0"
+    - "L;point;cutoff;F,G,F,N;black;0"
+    - "LMN;sector;arc;L,M,N;0;0;darkGray;0"
+    - "Z;point;parallelogram;A,C,D;0;0"
+    - "Y;point;intersection;D,C,G,H;0;0"
+    - "ACDZ;polygon;quadrilateral;A,C,D,Z;0;0;0;0"
+    - "CBED;polygon;quadrilateral;C,B,E,D;0;0;0;0"
+    - "KBHF;polygon;quadrilateral;K,B,H,F;0;0;0;0"
+    - "CKFY;polygon;quadrilateral;C,K,F,Y;0;0;0;0"
+    - "FHEX;polygon;quadrilateral;F,H,E,X;0;0;0;0"
+    - "CBHY;polygon;quadrilateral;C,B,H,Y;0;0;0;0"
+    - "KBEX;polygon;quadrilateral;K,B,E,X;0;0;0;0"
+    - "ACYG;polygon;quadrilateral;A,C,Y,G;0;0;0;0"
+    - "AB;line;connect;A,B;0;0;0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+  aliases:
+    AD: ACDZ
+    DB: CBED
+    AF: AKFG
+    FB: KBHF
+    CF: CKFY
+    FE: FHEX
+    CH: CBHY
+    KE: KBEX
+    EK: KBEX
+    CG: ACYG
+    GC: ACYG
+  given: [A, B, C, D, E, AE, Z, ACDZ, CBED, DC, AB, AC, CB]
+  caption: |
+    {AD} is applied to the half {AC}, with defect {DB}. Slide {F} along the diagonal {BD}: {AF} is another parallelogram with a defect
+    {FB} of the same shape, and it is always smaller than {AD} — by the small parallelogram at {D} that the gnomon {LMN}
+    leaves out.
+
+steps:
+  - part: enunciation
+    text: "Of all the parallelograms applied to the same straight line and deficient by parallelogrammic figures similar and similarly situated to that described on the half of the straight line, that parallelogram is greatest which is applied to the half of the straight line and is similar to the defect."
+    highlight: [AB, AD, DB]
+    hint: |
+      A maximum theorem — the *diorismos* (limit of possibility) for [[VI.28]].
+    explain:
+      did: |
+        "Applied to {AB} and deficient by {FB}": the parallelogram {AF} stands on part of {AB}, and together with {FB}
+        it would fill a parallelogram on the whole of {AB}.
+      implicit: |
+        Joyce: when the defect is a square, this says the rectangle $x(a - x)$ on a line $a$ cut at distance
+        $x$ is greatest when the cut is at the midpoint — the largest area that [[VI.28]] can achieve.
+    modern: |
+      $$x(a - x) \le \left(\tfrac a2\right)^2, \text{ with equality iff } x = \tfrac a2$$
+
+  - part: setting-out
+    text: "Let AB be a straight line and let it be bisected at C; let there be applied to the straight line AB the parallelogram AD deficient by the parallelogrammic figure DB described on the half of AB, that is, CB;"
+    highlight: [AB, C, AD, DB]
+    hint: |
+      {AD} on {AC}, with defect {DB} on {CB}.
+
+  - part: specification
+    text: "I say that, of all the parallelograms applied to AB and deficient by parallelogrammic figures similar and similarly situated to DB, AD is greatest."
+    highlight: [AD, DB]
+    hint: |
+      The goal.
+
+  - part: setting-out
+    text: "For let there be applied to the straight line AB the parallelogram AF deficient by the parallelogrammic figure FB similar and similarly situated to DB;"
+    highlight: [AF, FB]
+    hint: |
+      Any other such parallelogram.
+
+  - part: specification
+    text: "I say that AD is greater than AF."
+    highlight: [AD, AF]
+    hint: |
+      The goal.
+
+  - part: proof
+    text: "For, since the parallelogram DB is similar to the parallelogram FB, they are about the same diameter."
+    highlight: [DB, FB, BD]
+    hint: |
+      [[VI.26]]: {F} lies on the diagonal {BD}.
+
+  - part: construction
+    text: "Let their diameter DB be drawn, and let the figure be described."
+    highlight: [BD]
+    adds: [BD, F, Kp, K, AKFG, G, H, FH, X, FX, N, M, L, LMN, Y, KBHF, CKFY, FHEX, CBHY, KBEX, ACYG]
+    hint: |
+      Draw the parallels through {F}.
+
+  - part: proof
+    text: "Then, since CF is equal to FE, and FB is common, therefore the whole CH is equal to the whole KE."
+    highlight: [CF, FE, FB, CH, KE]
+    hint: |
+      {CF}, {FE} are complements about the diagonal ([[I.43]]); add {FB}.
+
+  - part: proof
+    text: "But CH is equal to CG, since AC is also equal to CB."
+    highlight: [CH, CG]
+    hint: |
+      Equal bases {AC}, {CB}, same parallels ([[I.36]]).
+
+  - part: proof
+    text: "Therefore GC is also equal to EK."
+    highlight: [GC, EK]
+    hint: |
+      Both equal {CH}.
+
+  - part: proof
+    text: "Let CF be added to each; therefore the whole AF is equal to the gnomon LMN;"
+    highlight: [AF, LMN, CF]
+    hint: |
+      {AF} = {CG} + {CF}; the gnomon = {EK} + {CF}.
+    explain:
+      fact: |
+        A *gnomon* ([[II.Def.2]]) is the L-shape left when a parallelogram about the diagonal is removed from a
+        corner of a larger one; here, {DB} minus the small parallelogram at {D}.
+
+  - part: proof
+    text: "so that the parallelogram DB, that is, AD, is greater than the parallelogram AF."
+    highlight: [DB, AD, AF]
+    hint: |
+      The gnomon is part of {DB}, and {DB} = {AD} ([[I.36]]).
+    cites: [I.CN.5]
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Square case: $AB = a$, defect side $x$.
+  lines:
+    - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+      text: |
+        $x(a - x) = \left(\tfrac a2\right)^2 - \left(x - \tfrac a2\right)^2 \le \left(\tfrac a2\right)^2$. $\blacksquare$
+  closing: |
+    The gnomon argument is a geometric "completing the square": the missing piece at {D} is the square on
+    $x - \tfrac a2$, as in [[II.5]].
+
+commentary: |
+  The earliest extant maximum theorem. It is the condition under which [[VI.28]] is solvable: the given area
+  cannot exceed the parallelogram on half the line. Joyce notes that, when [[VI.28]] is used, the defect is
+  usually a square, and both propositions are much easier to follow in that case.
+
+gaps: |
+  - **One case**: Euclid's {F} lies between {B} and {D}, so {AF} stands on more than half the line. The case of {F} on
+    {BD} produced beyond {D} (less than half) is not treated; a similar gnomon argument handles it.

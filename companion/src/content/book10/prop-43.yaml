@@ -1,0 +1,73 @@
+id: X.43
+kind: theorem
+title: A first bimedial divides at only one point
+
+paraphrase: |
+  A first bimedial line splits into its two medial terms in only one way.
+
+diagram:
+  width: 270
+  height: 70
+  elements:
+    - "A0;point;free;-1000,40;0;0"
+    - "A3;point;free;1000,40;0;0"
+    - "A;point;lineSlider;A0,A3,30,0"
+    - "B;point;lineSlider;A0,A3,220,0"
+    - "AB;line;connect;A,B;0;0"
+    - "C;point;lineSlider;A0,A3,170,0"
+    - "D;point;lineSlider;A0,A3,130,0"
+    - "AC;line;connect;A,C;0;0;0"
+    - "CB;line;connect;C,B;0;0;0"
+    - "AD;line;connect;A,D;0;0;0"
+    - "DB;line;connect;D,B;0;0;0"
+  aliases: { BA: AB, CA: AC, BC: CB, DA: AD, BD: DB }
+  caption: |
+    {AB} divided at {C} and, supposedly, at {D}.
+
+steps:
+  - part: enunciation
+    text: "A first bimedial straight line is divided at one point only."
+    highlight: [AB]
+    hint: |
+      Uniqueness, as in [[X.42]].
+
+  - part: setting-out
+    text: "Let AB be a first bimedial straight line divided at C, so that AC, CB are medial straight lines commensurable in square only and containing a rational rectangle;"
+    highlight: [AC, CB]
+    hint: |
+      The division at {C}.
+
+  - part: specification
+    text: "I say that AB is not so divided at another point."
+    highlight: [AB]
+    hint: |
+      To prove.
+
+  - part: proof
+    text: "For, if possible, let it be divided at D also, so that AD, DB are also medial straight lines commensurable in square only and containing a rational rectangle."
+    highlight: [AD, DB]
+    hint: |
+      Suppose another at {D}.
+
+  - part: proof
+    text: "Since, then, that by which twice the rectangle AD, DB differs from twice the rectangle AC, CB is that by which the squares on AC, CB differ from the squares on AD, DB, while twice the rectangle AD, DB differs from twice the rectangle AC, CB by a rational area—for both are rational— therefore the squares on AC, CB also differ from the squares on AD, DB by a rational area, though they are medial: which is absurd."
+    highlight: [AC, CB, AD, DB]
+    hint: |
+      The doubled rectangles are rational, so the sums of squares (medial) differ by a rational area —
+      impossible ([[X.26]]).
+    cites: [X.26]
+
+  - part: proof
+    text: "Therefore a first bimedial straight line is not divided into its terms at different points; therefore it is so divided at one point only."
+    highlight: [AB]
+    hint: |
+      Only one division.
+
+reconstruction:
+  lines:
+    - steps: [3, 4, 5]
+      text: |
+        As [[X.42]] with the roles of rational and medial exchanged. $\blacksquare$
+
+commentary: |
+  Joyce notes that [[X.43]]–[[X.47]] are not used later in the *Elements*; they justify the classification.

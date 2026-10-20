@@ -1,0 +1,249 @@
+id: I.7
+kind: theorem
+title: Only one triangle with given sides on a given base and side
+
+paraphrase: |
+  On a given base {AB}, and on one side of it, there cannot be two different points {C} and
+  {D} with {AC} = {AD} and {BC} = {BD}. Given the base and the other two sides, the apex is
+  fixed. (Used in [[I.8]] to prove SSS congruence.)
+
+diagram:
+  width: 310
+  height: 250
+  elements:
+    - "A;point;free;60,215"
+    - "B;point;free;250,215"
+    - "C;point;free;110,60"
+    - "ACcirc;circle;radius;A,C;0;0;0;0"
+    - "D;point;circleSlider;ACcirc,193,122"
+    - "AB;line;connect;A,B"
+    - "AC;line;connect;A,C"
+    - "CB;line;connect;C,B"
+    - "AD;line;connect;A,D"
+    - "DB;line;connect;D,B"
+    - "CD;line;connect;C,D"
+    - "ACB;polygon;triangle;A,C,B;0;0;0;0"
+    - "triACD;polygon;triangle;A,C,D;0;0;0;0"
+    - "triBCD;polygon;triangle;B,C,D;0;0;0;0"
+    - "angACD;sector;angleMarker;C,A,D"
+    - "angADC;sector;angleMarker;D,A,C"
+    - "angDCB;sector;angleMarker;C,D,B"
+    - "angCDB;sector;angleMarker;D,C,B"
+  aliases:
+    BA: AB
+    CA: AC
+    BC: CB
+    DA: AD
+    BD: DB
+    DC: CD
+    ACD: angACD
+    ADC: angADC
+    DCB: angDCB
+    BCD: angDCB
+    CDB: angCDB
+    BDC: angCDB
+  given: [A, B, AB, C, AC, CB]
+  caption: |
+    Drag {A}, {B} or {C}, and slide {D}: it stays on the circle about {A} through {C}, so
+    {AD} = {AC} always. Try to make {DB} equal to {CB} as well — only {D} = {C} will do.
+
+steps:
+  - part: enunciation
+    text: "Given two straight lines constructed on a straight line (from its extremities) and meeting in a point, there cannot be constructed on the same straight line (from its extremities), and on the same side of it, two other straight lines meeting in another point and equal to the former two respectively, namely each to that which has the same extremity with it."
+    highlight: [AB, AC, CB, AD, DB]
+    hint: |
+      Two triangles on the same base, on the same side, with matching sides at each end of the
+      base, must have the same apex. In other words: the base and the two sides fix the triangle.
+    explain:
+      did: |
+        States a uniqueness theorem — something *cannot* be done.
+      fact: |
+        "Equal … each to that which has the same extremity with it": the side from {A} equals
+        the side from {A}, and the side from {B} the side from {B}. If the equal pairs were
+        crossed ({AD} = {CB}, {DB} = {AC}) a second point would exist: the reflection across the
+        perpendicular bisector of {AB}.
+      implicit: |
+        "On the same side" matters too: on the other side of {AB} the mirror image of {C}
+        satisfies both conditions.
+    dispute: |
+      The Greek enunciation is so compressed that Heath had to add words to make it intelligible
+      — "(from its extremities)" is his insertion, borrowed from [[I.21]]. To a Greek reader
+      the verb for "constructed on" (συνίστασθαι) already meant building a *triangle* on a
+      base (Heath's note on lines 1–6).
+
+  - part: setting-out
+    text: "For, if possible, given two straight lines AC, CB constructed on the straight line AB and meeting at the point C, let two other straight lines AD, DB be constructed on the same straight line AB, on the same side of it, meeting in another point D and equal to the former two respectively, namely each to that which has the same extremity with it,"
+    highlight: [AC, CB, AD, DB, C, D]
+    adds: [D, AD, DB]
+    hint: |
+      "If possible": Euclid assumes the impossible configuration exists, intending to refute it.
+      {AC}, {CB} meet at {C}; {AD}, {DB} meet at a different point {D} on the same side.
+    explain:
+      did: |
+        Sets out a proof by contradiction directly. Unlike [[I.6]], the setting-out *is* the
+        false supposition.
+      implicit: |
+        Where {D} lies relative to triangle {ACB}. Euclid treats only the case in which
+        neither apex lies inside the other triangle (as in the figure). See the gaps below.
+
+  - part: setting-out
+    text: "so that CA is equal to DA which has the same extremity A with it, and CB to DB which has the same extremity B with it;"
+    highlight: [AC, AD, CB, DB]
+    hint: |
+      Spelled out: {CA} = {DA} (both from {A}) and {CB} = {DB} (both from {B}).
+    modern: |
+      $$C \ne D,\quad C, D \text{ on the same side of } AB,\quad AC = AD,\quad BC = BD$$
+
+  - part: construction
+    text: "and let CD be joined."
+    highlight: [CD]
+    adds: [CD]
+    hint: |
+      Join the two apexes ([[I.Post.1]]). Two triangles appear: {ACD|triACD}, isosceles because
+      {AC} = {AD}, and {BCD|triBCD}, isosceles because {BC} = {BD}.
+    explain:
+      did: |
+        Adds the line that makes [[I.5]] usable twice.
+      justification: "[[I.Post.1]]"
+    cites: [I.Post.1]
+
+  - part: proof
+    text: "Then, since AC is equal to AD, the angle ACD is also equal to the angle ADC;"
+    highlight: [AC, AD, angACD, angADC]
+    adds: [angACD, angADC]
+    hint: |
+      Triangle {ACD|triACD} has {AC} = {AD}, so its base angles at {C} and {D} are equal ([[I.5]]).
+    explain:
+      did: |
+        Applies the first half of I.5 to the isosceles triangle with apex {A}.
+      justification: "[[I.5]]"
+    modern: |
+      $$AC = AD \;\Longrightarrow\; \angle ACD = \angle ADC$$
+
+  - part: proof
+    text: "therefore the angle ADC is greater than the angle DCB;"
+    highlight: [angADC, angDCB, angACD]
+    adds: [angDCB]
+    hint: |
+      ∠{DCB} is part of ∠{ACD}, so it is smaller; and ∠{ACD} equals ∠{ADC}. Hence
+      ∠{ADC} > ∠{DCB}.
+    explain:
+      did: |
+        Compares two angles at different vertices through a third.
+      fact: |
+        At {C}, the line {CB} lies inside the angle {ACD}, so ∠{DCB} is a part of ∠{ACD}.
+      justification: |
+        [[I.CN.5]] (the whole is greater than the part), then the equality of the previous step.
+      follows: |
+        ∠{ADC} = ∠{ACD} > ∠{DCB}.
+      implicit: |
+        Heath notes that it would be natural to state the middle step, "but the angle {ACD} is
+        greater than the angle {BCD}", which Euclid omits.
+    gap: |
+      **{CB} inside ∠{ACD}.** That the line {CB} falls between {CA} and {CD} is read off the
+      figure. It holds when the four points form a convex quadrilateral, as drawn; in other
+      positions of {D} it fails (see the gaps below).
+    modern: |
+      $$\angle ADC = \angle ACD > \angle DCB$$
+    cites: [I.CN.5]
+
+  - part: proof
+    text: "therefore the angle CDB is much greater than the angle DCB."
+    highlight: [angCDB, angADC, angDCB]
+    adds: [angCDB]
+    hint: |
+      ∠{CDB} contains ∠{ADC}, which already exceeds ∠{DCB}. So ∠{CDB} exceeds it by even more.
+    explain:
+      did: |
+        Enlarges the left side of the inequality.
+      fact: |
+        At {D}, the line {DA} lies inside ∠{CDB}, so ∠{ADC} is part of ∠{CDB}.
+      justification: "[[I.CN.5]] again."
+      implicit: |
+        "Much greater" is Heath's literal rendering of πολλῷ μείζων, "greater by much"
+        (his note on line 21). It is a rhetorical intensifier, not a quantitative claim.
+    modern: |
+      $$\angle CDB > \angle ADC > \angle DCB$$
+    cites: [I.CN.5]
+
+  - part: proof
+    text: "Again, since CB is equal to DB, the angle CDB is also equal to the angle DCB."
+    highlight: [CB, DB, angCDB, angDCB]
+    hint: |
+      But triangle {BCD|triBCD} is isosceles too, with {CB} = {DB}; so its base angles are equal
+      ([[I.5]]): ∠{CDB} = ∠{DCB}.
+    explain:
+      did: |
+        Applies I.5 to the second isosceles triangle, with apex {B}.
+      justification: "[[I.5]] (not bracketed by Heath here)."
+    modern: |
+      $$CB = DB \;\Longrightarrow\; \angle CDB = \angle DCB$$
+    cites: [I.5]
+
+  - part: proof
+    text: "But it was also proved much greater than it: which is impossible."
+    highlight: [angCDB, angDCB]
+    hint: |
+      ∠{CDB} cannot be both equal to and greater than ∠{DCB}. The supposition fails: there is
+      no second point {D}.
+    explain:
+      did: |
+        Draws the contradiction.
+      follows: |
+        Steps 6 and 7 give ∠{CDB} > ∠{DCB} and ∠{CDB} = ∠{DCB}. Of two magnitudes, only one
+        of "equal" and "greater" can hold.
+    modern: |
+      $$\angle CDB > \angle DCB \;\wedge\; \angle CDB = \angle DCB \;\Longrightarrow\; \bot$$
+
+  - part: conclusion
+    text: "Therefore etc."
+    hint: |
+      The enunciation, now proved.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  preamble: |
+    *A modern reconstruction — not Euclid's argument.* Using the perpendicular bisector
+    (which in a Hilbert-style development follows from SAS and I.5):
+  lines:
+    - steps: [1, 2]
+      text: |
+        Suppose $C \ne D$ lie on the same side of line $AB$ with $AC = AD$ and $BC = BD$.
+    - steps: [3, 4, 5, 6, 7, 8]
+      text: |
+        $A$ is equidistant from $C$ and $D$, so $A$ lies on the perpendicular bisector $m$ of
+        $CD$; so does $B$. Since $A \ne B$, line $AB = m$.
+    - steps: [8]
+      text: |
+        But $m \perp CD$ at the midpoint of $CD$, so $C$ and $D$ are mirror images in $m = AB$
+        and lie on *opposite* sides of it — a contradiction. $\blacksquare$
+  closing: |
+    The modern proof handles every position of $D$ at once. Euclid's angle argument needs
+    the case split that he leaves to the reader.
+
+commentary: |
+  I.7 is a lemma: its only purpose in Book I is to prove [[I.8]] (side–side–side). Like
+  [[I.6]], it is a reductio, but here the false supposition is built into the setting-out
+  itself ("For, if possible …").
+
+  The proof turns on two isosceles triangles sharing the base {CD}: the one with apex {A}
+  gives ∠{ACD} = ∠{ADC}, the one with apex {B} gives ∠{BCD} = ∠{BDC}, and the way the angles
+  nest at {C} and {D} makes these two equalities incompatible.
+
+gaps: |
+  - **Only one case.** Euclid treats the case where each apex lies outside the other triangle.
+    If {D} lies *inside* triangle {ACB}, the angles no longer nest as in steps 5–6;
+    Proclus supplies this case, extending {AC} and {AD} beyond {C} and {D} and using the
+    *second* half of [[I.5]] (the angles under the base). That, Proclus says, is why I.5 has a
+    second half. The case where {D} lies on {CB} is degenerate and also omitted.
+  - **Betweenness of rays** (steps 5–6): that {CB} lies inside ∠{ACD} and {DA} inside ∠{CDB}.
+
+historical: |
+  Heath calls I.7 the hardest enunciation in Book I to translate, and prints a literal rendering
+  to show why ("On the same straight line there shall not be constructed two other straight lines
+  equal, each to each, to the same two straight lines, (terminating) at different points on the
+  same side …"). Hilbert-style developments prove SSS directly and do without I.7.

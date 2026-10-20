@@ -1,0 +1,103 @@
+id: XI.19
+kind: theorem
+title: The intersection of two perpendicular planes is perpendicular
+
+paraphrase: |
+  If two planes *AB*, *BC* are both perpendicular to a plane, their common line *BD* is perpendicular to it too.
+
+diagram:
+  width: 290
+  height: 270
+  elements:
+    - "X;point;free;100000,200"
+    - "Y;point;free;200,-100000"
+    - "Z;point;free;30000,-100000"
+    - "P0;point;free;20,240;0;0,75,100"
+    - "P2;point;free;270,120;0;0,75,100"
+    - "P1;point;intersection;P0,X,P2,Z;0;0"
+    - "P3;point;intersection;P2,X,P0,Z;0;0"
+    - "P;polygon;quadrilateral;P0,P1,P2,P3;0;0;lightGray;brighter"
+    - "A;point;lineSlider;P0,P1,60,240"
+    - "B;point;free;140,70"
+    - "C;point;lineSlider;P0,P1,190,240"
+    - "D;point;lineSlider;B,Y,140,180"
+    - "A1;point;intersection;A,D,P2,P3;0;0"
+    - "Aback;polygon;parallelogram;B,D,A1;0;0;lightGray;pink"
+    - "C1;point;intersection;C,D,P2,P3;0;0"
+    - "Cback;polygon;parallelogram;B,D,C1;0;0;lightGray;yellow"
+    - "Afront;polygon;parallelogram;B,D,A;0;0;lightGray;pink"
+    - "Cfront;polygon;parallelogram;B,D,C;0;0;lightGray;yellow"
+    - "A3;point;vertex;Afront,4;0;0"
+    - "E;point;lineSlider;B,A3,120,80"
+    - "DE;line;connect;D,E"
+    - "C3;point;vertex;Cfront,4;0;0"
+    - "F;point;lineSlider;B,C3,160,80"
+    - "DF;line;connect;D,F"
+    - "DB;line;connect;D,B"
+  aliases: { ED: DE, FD: DF, BD: DB }
+  caption: |
+    Two planes perpendicular to the base plane, meeting in *BD*.
+
+steps:
+  - part: enunciation
+    text: "If two planes which cut one another be at right angles to any plane, their common section will also be at right angles to the same plane."
+    highlight: [D]
+    hint: |
+      The common line of two perpendicular planes is a normal.
+
+  - part: setting-out
+    text: "For let the two planes AB, BC be at right angles to the plane of reference, and let BD be their common section; I say that BD is at right angles to the plane of reference."
+    highlight: [D]
+    hint: |
+      Setup.
+
+  - part: construction
+    text: "For suppose it is not, and from the point D let DE be drawn in the plane AB at right angles to the straight line AD, and DF in the plane BC at right angles to CD."
+    highlight: [D]
+    hint: |
+      If not, draw *DE* ⊥ *AD* in plane *AB*, and *DF* ⊥ *CD* in plane *BC*.
+
+  - part: proof
+    text: "Now, since the plane AB is at right angles to the plane of reference, and DE has been drawn in the plane AB at right angles to AD, their common section, therefore DE is at right angles to the plane of reference."
+    highlight: [D]
+    hint: |
+      *DE* ⊥ the base plane ([[XI.Def.4]]).
+
+  - part: proof
+    text: "Similarly we can prove that DF is also at right angles to the plane of reference."
+    highlight: [D]
+    hint: |
+      Likewise *DF*.
+
+  - part: proof
+    text: "Therefore from the same point D two straight lines have been set up at right angles to the plane of reference on the same side: which is impossible."
+    highlight: [D]
+    hint: |
+      Two perpendiculars at *D* on one side: impossible ([[XI.13]]).
+
+  - part: proof
+    text: "Therefore no straight line except the common section DB of the planes AB, BC can be set up from the point D at right angles to the plane of reference."
+    highlight: [D]
+    hint: |
+      So *DB* is the perpendicular.
+
+  - part: conclusion
+    text: "Therefore etc."
+    highlight: [D]
+    hint: |
+      The enunciation.
+
+  - part: conclusion
+    text: "Q. E. D."
+    hint: |
+      What it was required to prove.
+
+reconstruction:
+  lines:
+    - text: |
+        The normal at *D* lies in both planes, so it is their intersection. $\blacksquare$
+
+commentary: |
+  The proof is weak as written: the lines *DE*, *DF* constructed under "suppose not" might simply
+  coincide with *DB*; the argument should start from the perpendicular at *D* ([[XI.12]]) and show it lies in
+  both planes.
