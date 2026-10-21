@@ -1,171 +1,11 @@
-import { ROMAN, availableBooks } from "../content/books";
-import { Fragment, useEffect, useMemo, useRef, useState } from "react";
-import { hrefFor, navigate } from "../lib/router";
-import { peek, usePeek } from "../lib/peek";
-import { useSettings } from "../lib/store";
+import { Fragment } from "react";
 import { refLabel } from "../lib/rich";
 import type { Item, Step } from "../types";
-import { Diagram } from "../components/Diagram";
-import { Heath, Joyce, Rich } from "../components/Rich";
-import { PeekCard, RefGroups } from "../components/Refs";
-import { LevelSwitch, StepNotes, partLabel } from "../components/StepNotes";
-import { Tutor } from "../components/Tutor";
-import { ItemNav, PanelShell } from "../components/Layout";
+import { Heath, Joyce, Rich } from "./Rich";
+import { RefGroups } from "./Refs";
+import { partLabel } from "./StepNotes";
 
-export function PropositionPage({ item, stepIndex }: { item: Item; stepIndex?: number }) {
-  const prop = item.prop!;
-  const ann = prop.annotation;
-  const steps = prop.steps;
-  const settings = useSettings();
-  const selected = stepIndex != null && stepIndex >= 0 && stepIndex < steps.length ? stepIndex : null;
-  const step = selected != null ? steps[selected] : null;
-  const [tab, setTab] = useState<"notes" | "tutor">("notes");
-  const [seed, setSeed] = useState<{ text: string; nonce: number } | null>(null);
-  const stack = usePeek();
-  const textRef = useRef<HTMLDivElement>(null);
-
-  const select = (i: number | null, replace = true) => {
-    peek.clear();
-    navigate(hrefFor(item.id, i), replace);
-  };
-
-  // Keyboard: j / k (or ↓ / ↑ with Alt) to walk the steps, Esc to close.
-  useEffect(() => {
-    const on = (e: KeyboardEvent) => {
-      const t = e.target as HTMLElement;
-      if (t.closest("input, textarea, select, [contenteditable]") || e.metaKey || e.ctrlKey) return;
-      if (e.key === "j" || (e.altKey && e.key === "ArrowDown")) {
-        e.preventDefault();
-        select(selected == null ? 0 : Math.min(steps.length - 1, selected + 1));
-      } else if (e.key === "k" || (e.altKey && e.key === "ArrowUp")) {
-        e.preventDefault();
-        select(selected == null ? 0 : Math.max(0, selected - 1));
-      } else if (e.key === "Escape") {
-        if (stack.length) peek.back();
-        else if (selected != null) select(null);
-      }
-    };
-    window.addEventListener("keydown", on);
-    return () => window.removeEventListener("keydown", on);
-  });
-
-  // Keep the selected step in view.
-  useEffect(() => {
-    if (selected == null) return;
-    const el = textRef.current?.querySelector(`[data-step="${selected}"]`);
-    if (el) {
-      const r = el.getBoundingClientRect();
-      if (r.top < 80 || r.bottom > window.innerHeight - 40) el.scrollIntoView({ block: "center", behavior: "smooth" });
-    }
-  }, [selected]);
-
-  // The figure as it stands at the selected step.
-  const visible = useMemo(() => {
-    if (!ann || !settings.buildFigure || selected == null) return null;
-    const names = new Set(ann.diagram.given ?? []);
-    for (const s of steps.slice(0, selected + 1)) for (const n of s.adds ?? []) names.add(n);
-    // Nothing added yet (enunciation): show the finished figure.
-    if (!steps.slice(0, selected + 1).some((s) => s.adds?.length)) return null;
-    return [...names];
-  }, [ann, steps, selected, settings.buildFigure]);
-
-  const joyceFig = !ann ? item.joyce?.figures[0] : undefined;
-
-  const onStepClick = (i: number) => (e: React.MouseEvent) => {
-    if ((e.target as HTMLElement).closest(".xref")) return;
-    if (window.getSelection()?.toString()) return; // reader is selecting text
-    setTab("notes");
-    select(selected === i ? null : i);
-  };
-
-  return (
-    <div className="reading">
-      <main className="text-col" ref={textRef}>
-        <ItemNav item={item} />
-        <header className="item-head">
-          <p className="kicker">
-            Book {ROMAN[item.book]} · Proposition {item.n} · {prop.kind === "problem" ? "Problem" : "Theorem"}
-          </p>
-          {ann && <p className="editor-title" title="An editorial label: Euclid's propositions have no titles">{ann.title}</p>}
-        </header>
-
-        <section className="euclid" aria-label="Euclid's text, in Heath's translation">
-          <p className="voice-tag">
-            Euclid <span>· translated by T. L. Heath, 1908</span>
-          </p>
-
-          {settings.view === "steps" ? (
-            <StepsView steps={steps} selected={selected} onClick={onStepClick} heathRefs={settings.heathRefs} annotated={!!ann} />
-          ) : (
-            <ProseView steps={steps} selected={selected} onClick={onStepClick} heathRefs={settings.heathRefs} />
-          )}
-          {prop.heath.porism && (
-            <div className="porism">
-              <Heath src={prop.heath.porism} as="p" />
-            </div>
-          )}
-        </section>
-
-        {!ann && (
-          <p className="notice">
-            Heath's text and Joyce's guide are here, but this edition's step-by-step notes for {item.short} have not been
-            written yet. Annotated so far: all of {availableBooks()}.
-          </p>
-        )}
-
-        <Apparatus item={item} />
-        <ItemNav item={item} bottom />
-      </main>
-
-      <PanelShell
-        figure={
-          ann ? (
-            <Diagram spec={ann.diagram} highlight={step?.highlight} visible={visible} label={`Figure for ${item.short}`} />
-          ) : joyceFig ? (
-            <Diagram joyceConfig={joyceFig.config} width={joyceFig.width} height={joyceFig.height} label={`Joyce's figure for ${item.short}`} />
-          ) : null
-        }
-        caption={ann?.diagram.caption}
-        tabs={
-          <div className="tabs" role="tablist">
-            <button role="tab" aria-selected={tab === "notes"} className={tab === "notes" ? "on" : ""} onClick={() => setTab("notes")}>
-              Notes
-            </button>
-            <button role="tab" aria-selected={tab === "tutor"} className={tab === "tutor" ? "on" : ""} onClick={() => setTab("tutor")}>
-              Tutor
-            </button>
-            <span className="tabs-spacer" />
-            <LevelSwitch />
-          </div>
-        }
-        open={selected != null || stack.length > 0 || tab === "tutor"}
-        onCloseSheet={() => select(null)}
-      >
-        {stack.length > 0 ? (
-          <PeekCard id={stack[stack.length - 1]} depth={stack.length} onBack={() => peek.back()} />
-        ) : tab === "tutor" ? (
-          <Tutor item={item} seed={seed} onFocusStep={(i) => i != null && navigate(hrefFor(item.id, i), true)} />
-        ) : step ? (
-          <StepNotes
-            item={item}
-            step={step}
-            onPrev={selected! > 0 ? () => select(selected! - 1) : undefined}
-            onNext={selected! < steps.length - 1 ? () => select(selected! + 1) : undefined}
-            onClose={() => select(null)}
-            onAskTutor={() => {
-              setSeed({ text: step.number != null ? `I don't understand step ${step.number}` : "overview", nonce: Date.now() });
-              setTab("tutor");
-            }}
-          />
-        ) : (
-          <Overview item={item} onStart={() => select(0)} />
-        )}
-      </PanelShell>
-    </div>
-  );
-}
-
-function StepsView({
+export function StepsView({
   steps,
   selected,
   onClick,
@@ -213,7 +53,7 @@ function StepsView({
   );
 }
 
-function ProseView({
+export function ProseView({
   steps,
   selected,
   onClick,
@@ -255,10 +95,16 @@ const PART_TITLES: Record<Step["part"], string> = {
   lemma: "λῆμμα — an auxiliary result proved on the spot",
 };
 
-function Overview({ item, onStart }: { item: Item; onStart: () => void }) {
+/** A proposition's summary, in the panel while no step is chosen. */
+export function Overview({ item, onStart }: { item: Item; onStart: () => void }) {
   const ann = item.prop?.annotation;
   return (
     <div className="overview">
+      <div className="panel-head">
+        <span className="kicker">
+          {item.label} · {item.prop!.kind === "problem" ? "Problem" : "Theorem"}
+        </span>
+      </div>
       {ann ? (
         <>
           <section className="voice-note">
@@ -289,11 +135,12 @@ function Overview({ item, onStart }: { item: Item; onStart: () => void }) {
           <a href={`#/graph?focus=${encodeURIComponent(item.id)}`}>See {refLabel(item.id)} in the dependency graph →</a>
         </p>
       </section>
+      <Apparatus item={item} />
     </div>
   );
 }
 
-function Apparatus({ item }: { item: Item }) {
+export function Apparatus({ item }: { item: Item }) {
   const ann = item.prop?.annotation;
   const j = item.joyce;
   return (

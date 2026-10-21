@@ -167,14 +167,6 @@ export function getItem(id: ItemId | undefined | null): Item | undefined {
   return id ? items.get(id) : undefined;
 }
 
-export function neighbours(id: ItemId): { prev?: ItemId; next?: ItemId } {
-  const it = items.get(id);
-  if (!it) return {};
-  const seq = sequence.get(it.book)!;
-  const i = seq.indexOf(id);
-  return { prev: seq[i - 1], next: seq[i + 1] };
-}
-
 export function isAnnotated(id: ItemId) {
   const it = items.get(id);
   return !!(it?.prop?.annotation || it?.principle);

@@ -1,10 +1,8 @@
 import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
-import { BOOKS, ROMAN } from "../content/books";
-import { getItem, isAnnotated, items, neighbours, resolveQuery, sequence } from "../lib/corpus";
-import { refLabel } from "../lib/rich";
+import { BOOKS } from "../content/books";
+import { getItem, isAnnotated, items, resolveQuery, sequence } from "../lib/corpus";
 import { hrefFor, navigate, type Route } from "../lib/router";
 import { setSettings, useSettings } from "../lib/store";
-import type { Item } from "../types";
 import { Rich } from "./Rich";
 
 // ─── Side panel ───────────────────────────────────────────────────────────
@@ -56,43 +54,6 @@ export function PanelShell({
       {tabs}
       <div className="panel-body">{children}</div>
     </aside>
-  );
-}
-
-// ─── Previous / next ──────────────────────────────────────────────────────
-export function ItemNav({ item, bottom }: { item: Item; bottom?: boolean }) {
-  const { prev, next } = neighbours(item.id);
-  const p = getItem(prev);
-  const n = getItem(next);
-  return (
-    <nav className={`item-nav${bottom ? " bottom" : ""}`} aria-label="Previous and next">
-      {!bottom && (
-        <span className="crumbs">
-          <a href="#/">Contents</a> › <a href={`#/${ROMAN[item.book]}/definitions`}>Book {ROMAN[item.book]}</a> ›{" "}
-          {item.kind === "proposition" ? (
-            <a href={`#/${ROMAN[item.book]}/propositions?select=${encodeURIComponent(item.id)}`}>Propositions</a>
-          ) : (
-            <span>{item.label}</span>
-          )}
-        </span>
-      )}
-      <span className="item-nav-links">
-        {p ? (
-          <a href={hrefFor(p.id)} rel="prev" title={p.label}>
-            ← {refLabel(p.id)}
-          </a>
-        ) : (
-          <span />
-        )}
-        {n ? (
-          <a href={hrefFor(n.id)} rel="next" title={n.label}>
-            {refLabel(n.id)} →
-          </a>
-        ) : (
-          <span />
-        )}
-      </span>
-    </nav>
   );
 }
 

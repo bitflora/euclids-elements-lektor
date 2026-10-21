@@ -5,13 +5,17 @@ import { peek } from "./lib/peek";
 import { navigate, useRoute, type Route } from "./lib/router";
 import { lastPosition, loadScroll, savePosition, saveScroll, useSettings } from "./lib/store";
 import { TopBar, Toc } from "./components/Layout";
-import { PropositionPage } from "./pages/PropositionPage";
 import { PrinciplesPage } from "./pages/PrinciplesPage";
+import { PropositionsPage } from "./pages/PropositionsPage";
+import { ROMAN } from "./content/books";
 import { GraphPage } from "./pages/GraphPage";
 import { AboutPage, HomePage, NotFound, SearchPage } from "./pages/Pages";
 
-const pageKey = (r: Route) =>
-  r.page === "item" ? r.id : r.page === "principles" ? `${r.book}/${r.kind}` : r.page;
+// A proposition is read in its book's propositions, so it shares that page's scroll.
+const pageKey = (r: Route) => {
+  const prop = r.page === "item" ? getItem(r.id)?.prop && getItem(r.id) : undefined;
+  return prop ? `${ROMAN[prop.book]}/propositions` : r.page === "item" ? r.id : r.page === "principles" ? `${r.book}/${r.kind}` : r.page;
+};
 
 export default function App() {
   const route = useRoute();
@@ -94,11 +98,16 @@ export default function App() {
       page = <HomePage />;
       break;
     case "principles":
-      page = <PrinciplesPage book={route.book} kind={route.kind} select={route.select} />;
+      page =
+        route.kind === "propositions" ? (
+          <PropositionsPage book={route.book} select={route.select} />
+        ) : (
+          <PrinciplesPage book={route.book} kind={route.kind} select={route.select} />
+        );
       break;
     case "item": {
       const it = getItem(route.id);
-      page = it?.prop ? <PropositionPage key={it.id} item={it} stepIndex={route.step} /> : <NotFound what={route.id} />;
+      page = it?.prop ? <PropositionsPage book={ROMAN[it.book]} select={it.id} step={route.step} /> : <NotFound what={route.id} />;
       break;
     }
     case "graph":

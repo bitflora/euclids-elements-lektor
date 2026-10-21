@@ -42,8 +42,9 @@ follow Heath's lettering. All thirteen books are annotated.
 ## Reading
 
 - **Read a whole book**: each book's *Propositions* page gives Euclid's complete text, every proposition
-  in full, to read straight through. The figure and notes on the right follow the proposition you are
-  reading; click one to keep it there, or open it to read step by step with notes.
+  in full and laid out step by step, to read straight through. The figure and notes on the right follow
+  the proposition you are reading. A proposition's own address (`#/I.47`, `#/I.47/10`) opens this page
+  at that proposition or step.
 - **Click a sentence** to open its notes. <kbd>j</kbd>/<kbd>k</kbd> step through,
   <kbd>Esc</kbd> closes.
 - **Point at a lettered name** — *AB*, *ABC*, "the angle *BAC*" — anywhere, in Euclid or in a note,

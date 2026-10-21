@@ -348,10 +348,8 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.2; }
 
 /* ─── Headers and nav ────────────────────────────────────────────────────── */
 .item-nav { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; font-size: 0.86rem; color: var(--muted); margin-bottom: 1.25rem; }
-.item-nav.bottom { margin-top: 3rem; border-top: 1px solid var(--rule); padding-top: 0.75rem; }
 .item-nav a { color: var(--ink-2); text-decoration: none; }
 .item-nav a:hover { color: var(--euclid); }
-.item-nav-links { display: flex; gap: 1.25rem; white-space: nowrap; }
 .item-head { margin-bottom: 0.5rem; }
 .kicker { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); font-weight: 600; margin: 0 0 0.25rem; }
 .kicker a { color: inherit; }
@@ -663,13 +661,11 @@ blockquote.quote { margin: 0 0 0.8rem; }
 .step-notes > .btn { margin: 0.25rem 0 0.5rem; }
 
 /* The propositions of a book in full, read straight through. */
-.book-text .prop-full { margin: 0 -0.9rem 2.4rem; padding: 0.3rem 0.9rem 0.2rem; border-left: 3px solid transparent; scroll-margin-top: calc(var(--top) + 12px); cursor: pointer; }
-.book-text .prop-full:hover { background: var(--hover); }
-.book-text .prop-full.selected { border-left-color: var(--select-rule); }
-.book-text .prop-full-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin: 0 0 0.5rem; font: 600 0.78rem var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--euclid); }
-.book-text .prop-full-head a { text-transform: none; letter-spacing: 0; font-weight: 500; }
-.book-text p.qed { text-indent: 0; font-size: 1.05rem; color: var(--ink-2); }
-.book-text p.porism { text-indent: 0; }
+.book-text .prop-full { margin: 0 0 3rem; scroll-margin-top: calc(var(--top) + 12px); }
+.book-text .prop-full-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin: 0 0 0.15rem; font: 600 0.78rem var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--euclid); cursor: pointer; }
+.book-text .prop-full.selected .prop-full-head { text-decoration: underline; text-decoration-color: var(--select-rule); text-underline-offset: 0.3em; }
+.book-text .prop-kind { color: var(--muted); font-weight: 500; }
+.book-text .editor-title { margin-bottom: 0.75rem; }
 
 /* Book X's three sets of definitions */
 .principle-set { font-size: 1rem; font-weight: 600; margin: 1.6rem 0 0.4rem; letter-spacing: 0.02em; }
