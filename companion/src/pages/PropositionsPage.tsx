@@ -48,8 +48,12 @@ export function PropositionsPage({ book, select, step }: { book: string; select?
   // Bring the chosen proposition (or step) into view. Scroll the window only
   // (scrollIntoView would also shift the app's other containers). On arrival
   // jump at once, once fonts have settled the layout; afterwards glide.
+  const prevSelect = useRef<string | undefined>(undefined);
   useEffect(() => {
-    if (!select) return;
+    const changed = prevSelect.current !== select;
+    prevSelect.current = select;
+    // Closing a step's notes keeps the proposition selected: stay where we are.
+    if (!select || (stepIdx == null && !changed)) return;
     const prop = mainRef.current?.querySelector(`article[data-id="${select}"]`);
     const el = (stepIdx != null && prop?.querySelector(`[data-step="${stepIdx}"]`)) || prop;
     if (!el) return;
