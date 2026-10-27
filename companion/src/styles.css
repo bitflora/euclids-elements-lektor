@@ -622,8 +622,8 @@ blockquote.quote { margin: 0 0 0.8rem; }
     right: 0;
     bottom: 0;
     top: auto;
-    height: auto;
-    max-height: 78vh;
+    height: var(--sheet-h, auto);
+    max-height: var(--sheet-max, 78vh);
     z-index: 25;
     border-left: 0;
     border-top: 1px solid var(--rule-2);
@@ -645,6 +645,7 @@ blockquote.quote { margin: 0 0 0.8rem; }
     flex: none;
     color: var(--muted);
     font-size: 0.82rem;
+    touch-action: none;
   }
   .sheet-handle .grip { width: 36px; height: 4px; border-radius: 2px; background: var(--rule-2); }
   .panel.sheet-open { overflow-y: auto; }

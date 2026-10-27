@@ -93,7 +93,7 @@ export function PropositionsPage({ book, select, step }: { book: string; select?
     if ((e.target as HTMLElement).closest(".xref")) return;
     if (window.getSelection()?.toString()) return; // reader is selecting text
     setTab("notes");
-    go(id, select === id && stepIdx === i ? null : i);
+    go(id, i);
   };
 
   // The figure as it stands at the selected step.

@@ -69,7 +69,7 @@ export function PrinciplesPage({ book, kind, select }: { book: string; kind: Exc
     if ((e.target as HTMLElement).closest(".xref, a")) return;
     if (window.getSelection()?.toString()) return; // reader is selecting text
     peek.clear();
-    navigate(id === select ? `#/${book}/${kind}` : hrefFor(id), true);
+    navigate(hrefFor(id), true);
   };
 
   const fig = selected?.principle?.figure;

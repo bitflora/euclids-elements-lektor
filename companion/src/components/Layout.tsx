@@ -26,12 +26,39 @@ export function PanelShell({
   // On phones the panel is a bottom sheet; the reader can also raise it by hand.
   const [manual, setManual] = useState(false);
   const isOpen = open || manual;
+  // Dragging the handle resizes the sheet; null means the default height.
+  const [sheetH, setSheetH] = useState<number | null>(null);
+  const drag = useRef<{ y: number; h: number; moved: boolean } | null>(null);
+  const asideRef = useRef<HTMLElement>(null);
   return (
-    <aside className={`panel${isOpen ? " sheet-open" : ""}`} aria-label="Figure and explanations">
+    <aside
+      ref={asideRef}
+      className={`panel${isOpen ? " sheet-open" : ""}`}
+      style={sheetH != null ? ({ "--sheet-h": `${sheetH}px`, "--sheet-max": "92vh" } as React.CSSProperties) : undefined}
+      aria-label="Figure and explanations"
+    >
       <button
         type="button"
         className="sheet-handle"
+        onPointerDown={(e) => {
+          if (!isOpen) return;
+          e.currentTarget.setPointerCapture(e.pointerId);
+          drag.current = { y: e.clientY, h: asideRef.current!.offsetHeight, moved: false };
+        }}
+        onPointerMove={(e) => {
+          const d = drag.current;
+          if (!d) return;
+          if (Math.abs(e.clientY - d.y) > 4) d.moved = true;
+          if (d.moved) setSheetH(Math.round(Math.min(window.innerHeight * 0.92, Math.max(120, d.h + d.y - e.clientY))));
+        }}
+        onPointerUp={() => {
+          // Keep the click that ends a drag from closing the sheet.
+          if (drag.current?.moved) setTimeout(() => (drag.current = null), 0);
+          else drag.current = null;
+        }}
+        onPointerCancel={() => (drag.current = null)}
         onClick={() => {
+          if (drag.current?.moved) return;
           if (isOpen) {
             setManual(false);
             onCloseSheet();
