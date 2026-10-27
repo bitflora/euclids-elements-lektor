@@ -54,14 +54,6 @@ export function PrinciplesPage({ book, kind, select }: { book: string; kind: Exc
   const mainRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (!select) return;
-    const el = mainRef.current?.querySelector(`[data-id="${select}"]`);
-    if (!el) return;
-    const r = el.getBoundingClientRect();
-    if (r.top < 80 || r.bottom > window.innerHeight - 40) el.scrollIntoView({ block: "center", behavior: "smooth" });
-  }, [select]);
-
-  useEffect(() => {
     const on = (e: KeyboardEvent) => {
       if ((e.target as HTMLElement).closest("input, textarea, select")) return;
       const i = select ? ids.indexOf(select) : -1;

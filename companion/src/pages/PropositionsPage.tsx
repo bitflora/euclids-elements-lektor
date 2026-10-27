@@ -39,33 +39,6 @@ export function PropositionsPage({ book, select, step }: { book: string; select?
     navigate(id ? hrefFor(id, i) : `#/${book}/propositions`, true);
   };
 
-  const arrived = useRef(false);
-  useEffect(() => {
-    const t = setTimeout(() => (arrived.current = true), 600);
-    return () => clearTimeout(t);
-  }, [book]);
-
-  // Bring the chosen proposition (or step) into view. Scroll the window only
-  // (scrollIntoView would also shift the app's other containers). On arrival
-  // jump at once, once fonts have settled the layout; afterwards glide.
-  const prevSelect = useRef<string | undefined>(undefined);
-  useEffect(() => {
-    const changed = prevSelect.current !== select;
-    prevSelect.current = select;
-    // Closing a step's notes keeps the proposition selected: stay where we are.
-    if (!select || (stepIdx == null && !changed)) return;
-    const prop = mainRef.current?.querySelector(`article[data-id="${select}"]`);
-    const el = (stepIdx != null && prop?.querySelector(`[data-step="${stepIdx}"]`)) || prop;
-    if (!el) return;
-    const scroll = (behavior: ScrollBehavior) => {
-      const r = el.getBoundingClientRect();
-      if (el === prop ? r.top < 60 || r.top > window.innerHeight * 0.6 : r.top < 80 || r.bottom > window.innerHeight - 40)
-        window.scrollTo({ top: window.scrollY + r.top - (el === prop ? 64 : window.innerHeight / 3), behavior });
-    };
-    if (arrived.current) scroll("smooth");
-    else document.fonts.ready.then(() => requestAnimationFrame(() => scroll("auto")));
-  }, [select, stepIdx]);
-
   // Keyboard: j / k (or ↓ / ↑ with Alt) walk the steps, running on into the next
   // proposition; Esc closes a reference, then the step, then the proposition.
   useEffect(() => {
