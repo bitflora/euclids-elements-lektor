@@ -41,6 +41,10 @@ diagram:
     Drag the vertices. {D} is on {BA} produced with {AD} = {AC}, so {BD} = {BA} + {AC}; and {BD}
     is always longer than {BC}.
 
+  equal:
+    - [AD, AC]
+    - [angADC, angACD]
+
 steps:
   - part: enunciation
     text: "In any triangle two sides taken together in any manner are greater than the remaining one."

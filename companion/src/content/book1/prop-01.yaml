@@ -42,6 +42,9 @@ diagram:
     Drag {A} or {B}: the construction re-runs, and {ABC} stays equilateral. The circles
     are named, as Euclid names them, by three points on their circumference.
 
+  equal:
+    - [AB, AC, BC]
+
 steps:
   - part: enunciation
     text: "On a given finite straight line to construct an equilateral triangle."

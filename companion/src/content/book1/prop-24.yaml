@@ -57,6 +57,13 @@ diagram:
     Drag {D}, {E}, {F}, {A}, and slide {B} and {C}: {AB} = {DE} and {AC} = {DF} always. Keep the
     angle at {A} the larger and {BC} stays longer than {EF}.
 
+  equal:
+    - [AB, DE]
+    - [AC, DF, DG]
+    - [BC, EG]
+    - [angBAC, angEDG]
+    - [angDGF, angDFG]
+
 steps:
   - part: enunciation
     text: "If two triangles have the two sides equal to two sides respectively, but have the one of the angles contained by the equal straight lines greater than the other, they will also have the base greater than the base."

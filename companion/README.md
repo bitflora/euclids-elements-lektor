@@ -92,6 +92,7 @@ diagram:
   elements: ["A;point;free;100,200", …]   # geomlib element strings
   aliases: { BA: AB }
   given: [A, B, C]            # drawn before any construction step
+  equal: [[AB, AC], [angABC, angACB]]   # classes of equal lines/angles, each drawn in its own colour (max 6)
 steps:
   - part: setting-out         # enunciation | setting-out | specification | construction | proof | conclusion
     text: "Let ABC be a triangle …"   # Heath's words, plain

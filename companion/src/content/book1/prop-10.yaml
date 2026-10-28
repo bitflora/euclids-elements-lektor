@@ -38,6 +38,11 @@ diagram:
     Drag {A} or {B}. {C} is the apex of the equilateral triangle on {AB}, and the bisector of
     the angle at {C} meets {AB} at its midpoint {D}.
 
+  equal:
+    - [AB, AC, CB]
+    - [AD, BD]
+    - [angACD, angBCD]
+
 steps:
   - part: enunciation
     text: "To bisect a given finite straight line."

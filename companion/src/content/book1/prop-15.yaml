@@ -39,6 +39,10 @@ diagram:
   caption: |
     Drag any of {A}, {B}, {C}, {D}: {E} is wherever the lines cross, and the opposite angles stay equal.
 
+  equal:
+    - [angCEA, angDEB]
+    - [angBEC, angAED]
+
 steps:
   - part: enunciation
     text: "If two straight lines cut one another, they make the vertical angles equal to one another."

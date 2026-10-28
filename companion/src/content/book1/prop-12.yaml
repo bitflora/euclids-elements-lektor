@@ -46,6 +46,11 @@ diagram:
     Drag {A}, {B}, {C} or {D}. {D} must stay on the far side of {AB} from {C}; then the circle
     about {C} through {D} always cuts {AB}, at {E} and {G}.
 
+  equal:
+    - [CD, CE, CG]
+    - [GH, HE]
+    - [angCHG, angEHC]
+
 steps:
   - part: enunciation
     text: "To a given infinite straight line, from a given point which is not on it, to draw a perpendicular straight line."

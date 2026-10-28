@@ -37,6 +37,9 @@ diagram:
   caption: |
     {AB} and {CD} are both kept parallel to {EF}. Slide {G} and {K} to tilt the transversal.
 
+  equal:
+    - [angAGK, angGHF, angGKD]
+
 steps:
   - part: enunciation
     text: "Straight lines parallel to the same straight line are also parallel to one another."

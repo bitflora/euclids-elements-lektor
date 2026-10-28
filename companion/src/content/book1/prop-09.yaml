@@ -46,6 +46,11 @@ diagram:
     Drag {A}, {B} or {C}, and slide {D} along {AB}: {E} keeps {AE} = {AD}, the triangle on {DE}
     stays equilateral, and {AF} keeps halving the angle.
 
+  equal:
+    - [AD, AE]
+    - [DE, DF, EF]
+    - [angDAF, angEAF]
+
 steps:
   - part: enunciation
     text: "To bisect a given rectilineal angle."

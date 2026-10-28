@@ -114,6 +114,8 @@ export interface DiagramSpec {
   aliases?: Record<string, string>;
   /** Elements drawn before any construction step (the givens). */
   given?: string[];
+  /** Classes of parts the proposition declares equal; each class is drawn in its own colour. */
+  equal?: string[][];
   caption?: Rich;
 }
 

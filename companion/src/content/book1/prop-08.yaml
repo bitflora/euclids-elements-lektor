@@ -51,6 +51,12 @@ diagram:
     always equal those of {DEF}. {G} is the imagined apex that "falls beside" — drag it anywhere;
     by [[I.7]] it can never have {EG} = {BA} and {GF} = {AC}.
 
+  equal:
+    - [AB, DE]
+    - [AC, DF]
+    - [BC, EF]
+    - [angBAC, angEDF]
+
 steps:
   - part: enunciation
     text: "If two triangles have the two sides equal to two sides respectively, and have also the base equal to the base, they will also have the angles equal which are contained by the equal straight lines."

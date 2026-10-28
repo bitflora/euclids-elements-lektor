@@ -39,6 +39,10 @@ diagram:
   caption: |
     Drag the vertices, keeping {AC} the longer side. {D} is always placed so that {AD} = {AB}.
 
+  equal:
+    - [AB, AD]
+    - [angADB, angABD]
+
 steps:
   - part: enunciation
     text: "In any triangle the greater side subtends the greater angle."

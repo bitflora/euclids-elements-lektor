@@ -49,6 +49,9 @@ diagram:
     {CE} is kept equal to {BC} and {AD} parallel to {BE}. {F}, on {CD}, is the point the reductio
     supposes.
 
+  equal:
+    - [BC, CE]
+
 steps:
   - part: enunciation
     text: "Equal triangles which are on equal bases and on the same side are also in the same parallels."

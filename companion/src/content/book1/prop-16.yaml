@@ -61,6 +61,13 @@ diagram:
     Drag {A}, {B} or {C}, and slide {D} and {G}. {E} stays the midpoint of {AC} and {EF} = {BE},
     so ∠{ECF} always equals ∠{BAE} — and always sits inside the exterior angle at {C}.
 
+  equal:
+    - [AE, EC]
+    - [BE, EF]
+    - [AB, FC]
+    - [angAEB, angFEC]
+    - [angBAC, angECF]
+
 steps:
   - part: enunciation
     text: "In any triangle, if one of the sides be produced, the exterior angle is greater than either of the interior and opposite angles."

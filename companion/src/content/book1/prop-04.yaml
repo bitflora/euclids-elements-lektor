@@ -53,6 +53,14 @@ diagram:
     Drag {D}, {E}, {F} or {A}, and slide {B}: the figure keeps {AB} = {DE}, {AC} = {DF} and
     ∠{BAC} = ∠{EDF}, so it always satisfies the hypothesis.
 
+  equal:
+    - [AB, DE]
+    - [AC, DF]
+    - [BC, EF]
+    - [angBAC, angEDF]
+    - [angABC, angDEF]
+    - [angACB, angDFE]
+
 steps:
   - part: enunciation
     text: "If two triangles have the two sides equal to two sides respectively, and have the angles contained by the equal straight lines equal,"

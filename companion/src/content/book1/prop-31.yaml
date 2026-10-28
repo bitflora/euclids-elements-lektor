@@ -33,6 +33,9 @@ diagram:
   caption: |
     Drag {A}, {B} or {C}, and slide {D}. The line through {A} stays parallel to {BC}.
 
+  equal:
+    - [angEAD, angADC]
+
 steps:
   - part: enunciation
     text: "Through a given point to draw a straight line parallel to a given straight line."

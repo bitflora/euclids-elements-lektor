@@ -87,6 +87,12 @@ diagram:
     is always right. The two shaded pairs — square {GB} and rectangle {BL}, square {HC} and
     rectangle {CL} — keep equal areas.
 
+  equal:
+    - [BD, BC]
+    - [FB, AB]
+    - [AD, CF]
+    - [angBAC, angBAG, angDBC, angFBA]
+
 steps:
   - part: enunciation
     text: "In right-angled triangles the square on the side subtending the right angle is equal to the squares on the sides containing the right angle."

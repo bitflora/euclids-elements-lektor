@@ -36,6 +36,9 @@ diagram:
     Drag {A} or {B}, or the ends of {C}. Keep {AB} longer than {C}: the problem assumes it.
     Where {AD} points depends on how I.2 is carried out; any direction will do.
 
+  equal:
+    - [C, AD, AE]
+
 steps:
   - part: enunciation
     text: "Given two unequal straight lines, to cut off from the greater a straight line equal to the less."

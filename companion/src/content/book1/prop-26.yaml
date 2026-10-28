@@ -62,6 +62,14 @@ diagram:
     and {H} (second case) are the points the two reductios *suppose*; slide them to see how the
     supposed figure contradicts itself.
 
+  equal:
+    - [angABC, angDEF]
+    - [angBCA, angEFD]
+    - [angBAC, angEDF]
+    - [AB, DE]
+    - [BC, EF]
+    - [AC, DF]
+
 steps:
   - part: enunciation
     text: "If two triangles have the two angles equal to two angles respectively, and one side equal to one side, namely, either the side adjoining the equal angles, or that subtending one of the equal angles, they will also have the remaining sides equal to the remaining sides and the remaining angle to the remaining angle."

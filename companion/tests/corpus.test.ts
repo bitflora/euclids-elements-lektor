@@ -108,6 +108,22 @@ describe.each(annotated.map((i) => [i.id, i] as const))("%s", (id, item) => {
     for (const n of used) expect(names.has(n), `${id}: no diagram element "${n}"`).toBe(true);
   });
 
+  it("colours only elements that exist, each in at most one equality class", () => {
+    const names = new Set(ann.diagram.elements.map((e) => e.split(";")[0]));
+    for (const a of Object.keys(ann.diagram.aliases ?? {})) names.add(a);
+    expect((ann.diagram.equal ?? []).length, `${id}: more equality classes than colours`).toBeLessThanOrEqual(6);
+    const seen = new Map<string, number>();
+    (ann.diagram.equal ?? []).forEach((group, i) => {
+      expect(group.length, `${id}: equality class ${i} has one member`).toBeGreaterThan(1);
+      for (const n of group) {
+        expect(names.has(n), `${id}: no diagram element "${n}"`).toBe(true);
+        const target = ann.diagram.aliases?.[n] ?? n;
+        expect(seen.has(target), `${id}: "${n}" is in two equality classes`).toBe(false);
+        seen.set(target, i);
+      }
+    });
+  });
+
   it("has aliases that point at real elements and shadow none", () => {
     const names = new Set(ann.diagram.elements.map((e) => e.split(";")[0]));
     for (const [alias, target] of Object.entries(ann.diagram.aliases ?? {})) {

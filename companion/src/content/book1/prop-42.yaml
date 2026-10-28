@@ -61,6 +61,10 @@ diagram:
     Drag {A}, slide {B} and {C}, or move the corners of the angle {D|angD}. The parallelogram {FECG}
     keeps the triangle's area and the angle at {E} equal to {D|angD}.
 
+  equal:
+    - [BE, EC]
+    - [angD, angCEF]
+
 steps:
   - part: enunciation
     text: "To construct, in a given rectilineal angle, a parallelogram equal to a given triangle."

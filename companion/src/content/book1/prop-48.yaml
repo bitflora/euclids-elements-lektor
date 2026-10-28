@@ -36,6 +36,11 @@ diagram:
     Drag {A} or {B}, and slide {C}. The figure keeps the hypothesis ({BC}² = {BA}² + {AC}², i.e. the
     angle at {A} right); {D} is the mirror image of {B} in {AC}.
 
+  equal:
+    - [AD, AB]
+    - [DC, BC]
+    - [angBAC, angDAC]
+
 steps:
   - part: enunciation
     text: "If in a triangle the square on one of the sides be equal to the squares on the remaining two sides of the triangle, the angle contained by the remaining two sides of the triangle is right."

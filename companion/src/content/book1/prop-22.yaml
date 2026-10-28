@@ -56,6 +56,11 @@ diagram:
     other two together, the circles stop meeting and {K} disappears — the condition in the
     enunciation is exactly what makes the construction work.
 
+  equal:
+    - [A, DF, KF]
+    - [B, FG]
+    - [C, GH, KG]
+
 steps:
   - part: enunciation
     text: "Out of three straight lines, which are equal to three given straight lines, to construct a triangle:"

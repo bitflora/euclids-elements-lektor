@@ -54,6 +54,11 @@ diagram:
   caption: |
     Drag {A}, {B} or {C}. Whatever the positions, {AL} comes out equal to {BC}.
 
+  equal:
+    - [BC, BG, AL]
+    - [DA, DB]
+    - [DL, DG]
+
 steps:
   - part: enunciation
     text: "To place at a given point (as an extremity) a straight line equal to a given straight line."

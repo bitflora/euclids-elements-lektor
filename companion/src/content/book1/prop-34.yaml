@@ -48,6 +48,14 @@ diagram:
   caption: |
     Drag {A}, {B} or {C}: {D} completes the parallelogram. Matching colours mark the equal angles.
 
+  equal:
+    - [AB, CD]
+    - [AC, BD]
+    - [angABC, angBCD]
+    - [angACB, angCBD]
+    - [angBAC, angCDB]
+    - [angABD, angACD]
+
 steps:
   - part: enunciation
     text: "In parallelogrammic areas the opposite sides and angles are equal to one another, and the diameter bisects the areas."

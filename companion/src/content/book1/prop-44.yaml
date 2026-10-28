@@ -89,6 +89,9 @@ diagram:
     Slide {A}, {B}, {E} along the base line, and move the corners of the triangle {C} and the angle
     {D|angD}. The parallelogram {LB} on {AB} keeps the area of {C} and the angle {D|angD}.
 
+  equal:
+    - [angD, angGBE, angABM]
+
 steps:
   - part: enunciation
     text: "To a given straight line to apply, in a given rectilineal angle, a parallelogram equal to a given triangle."

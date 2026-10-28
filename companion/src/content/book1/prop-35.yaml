@@ -51,6 +51,13 @@ diagram:
     Drag {A}, {B} or {C}, and slide {E} along the top line. The two parallelograms change shape but
     keep the same area.
 
+  equal:
+    - [AD, EF, BC]
+    - [AB, CD]
+    - [AE, DF]
+    - [BE, CF]
+    - [angEAB, angFDC]
+
 steps:
   - part: enunciation
     text: "Parallelograms which are on the same base and in the same parallels are equal to one another."

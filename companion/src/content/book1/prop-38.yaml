@@ -52,6 +52,9 @@ diagram:
     Drag {A}, {B}, {C}; slide {D} along the upper parallel and {E} along the base line. {EF} stays
     equal to {BC}.
 
+  equal:
+    - [BC, EF]
+
 steps:
   - part: enunciation
     text: "Triangles which are on equal bases and in the same parallels are equal to one another."

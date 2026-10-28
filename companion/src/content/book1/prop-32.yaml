@@ -45,6 +45,10 @@ diagram:
     angles are equal (corresponding), and together with the green angle they fill the straight
     line at {C}.
 
+  equal:
+    - [angCAB, angACE]
+    - [angABC, angECD]
+
 steps:
   - part: enunciation
     text: "In any triangle, if one of the sides be produced, the exterior angle is equal to the two interior and opposite angles, and the three interior angles of the triangle are equal to two right angles."

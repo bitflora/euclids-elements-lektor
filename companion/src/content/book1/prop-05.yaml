@@ -81,6 +81,14 @@ diagram:
     Drag {B} or {C}; slide {A} (it stays on the line that keeps {AB} = {AC}) and slide {F}
     along {BD} — "a point taken at random".
 
+  equal:
+    - [AB, AC]
+    - [AF, AG]
+    - [BF, CG]
+    - [FC, BG]
+    - [angABC, angACB]
+    - [angCBD, angBCE]
+
 steps:
   - part: enunciation
     text: "In isosceles triangles the angles at the base are equal to one another,"

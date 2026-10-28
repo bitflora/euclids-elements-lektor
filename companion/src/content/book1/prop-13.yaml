@@ -40,6 +40,9 @@ diagram:
     Drag {A}, {C} or {D}, and slide {B} along {CD}. However {AB} leans, ∠{CBA} + ∠{ABD} stays
     equal to the two right angles ∠{CBE} + ∠{EBD}.
 
+  equal:
+    - [angCBE, angEBD]
+
 steps:
   - part: enunciation
     text: "If a straight line set up on a straight line make angles, it will make either two right angles or angles equal to two right angles."

@@ -42,6 +42,12 @@ diagram:
     Drag {C}, {D}, {E} to change the given angle, or {A}, {B} to move the line. Triangle {AFG} is
     rebuilt with sides equal to those of {CDE}, so ∠{FAG} always matches ∠{DCE}.
 
+  equal:
+    - [CD, AF]
+    - [CE, AG]
+    - [DE, FG]
+    - [angDCE, angFAG]
+
 steps:
   - part: enunciation
     text: "On a given straight line and at a point on it to construct a rectilineal angle equal to a given rectilineal angle."

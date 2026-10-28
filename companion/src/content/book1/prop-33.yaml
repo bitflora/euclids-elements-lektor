@@ -38,6 +38,12 @@ diagram:
   caption: |
     Drag {A}, {B} or {C}; {D} is placed so that {CD} is equal and parallel to {AB}.
 
+  equal:
+    - [AB, CD]
+    - [AC, BD]
+    - [angABC, angBCD]
+    - [angACB, angCBD]
+
 steps:
   - part: enunciation
     text: "The straight lines joining equal and parallel straight lines (at the extremities which are) in the same directions (respectively) are themselves also equal and parallel."

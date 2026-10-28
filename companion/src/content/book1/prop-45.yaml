@@ -76,6 +76,9 @@ diagram:
     Drag the corners of {ABCD} or of the angle {E|angE}, or move {K} and {F}. The two parallelograms
     always join into one, {KFLM}, equal in area to {ABCD}.
 
+  equal:
+    - [angE, angFKH, angGHM, angHGF]
+
 steps:
   - part: enunciation
     text: "To construct, in a given rectilineal angle, a parallelogram equal to a given rectilineal figure."

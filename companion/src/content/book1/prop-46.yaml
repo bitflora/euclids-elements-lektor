@@ -41,6 +41,10 @@ diagram:
   caption: |
     Drag {A} or {B}.
 
+  equal:
+    - [AB, AD, DE, BE]
+    - [angBAD, angADE, angABE, angBED]
+
 steps:
   - part: enunciation
     text: "On a given straight line to describe a square."

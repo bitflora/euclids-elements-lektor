@@ -43,6 +43,10 @@ diagram:
     Drag {A}, {B}, {C}, and slide {E} and {F}: {FG} stays equal to {BC}, and the two parallelograms
     keep equal areas.
 
+  equal:
+    - [BC, FG, EH]
+    - [BE, CH]
+
 steps:
   - part: enunciation
     text: "Parallelograms which are on equal bases and in the same parallels are equal to one another."

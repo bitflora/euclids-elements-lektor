@@ -41,6 +41,9 @@ diagram:
     The figure keeps ∠{AEF} = ∠{EFD} (so {CD} is in fact parallel to {AB}). {G} is the meeting point
     the proof imagines; however you slide it, the "triangle" {GEF} can't be closed.
 
+  equal:
+    - [angAEF, angEFD]
+
 steps:
   - part: enunciation
     text: "If a straight line falling on two straight lines make the alternate angles equal to one another, the straight lines will be parallel to one another."

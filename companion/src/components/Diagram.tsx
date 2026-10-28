@@ -9,7 +9,7 @@
 //   hover        — whatever lettered name the reader is pointing at, in any
 //                  text on the page (geomlib's bold `emphasized`)
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import type { DiagramSpec } from "../types";
 import { diagramBus } from "../lib/diagramBus";
 
@@ -26,12 +26,17 @@ interface Props {
   compact?: boolean;
 }
 
+// Colours for classes of equal parts. Distinguishable from each other and from
+// the gold highlight, and dark enough to read on both the light and dark paper.
+export const EQUAL_COLORS = ["#c2410c", "#0e7490", "#7e22ce", "#15803d", "#be185d", "#1d4ed8"];
+
 type Slate = {
   canvas: HTMLCanvasElement;
-  elements: { name: string | null; shouldHighlight: boolean; emphasized: boolean; visible: boolean }[];
+  elements: { name: string | null; edgeColor: string | null; faceColor: string | null; faceAlpha?: number; shouldHighlight: boolean; emphasized: boolean; visible: boolean }[];
   lookupElement(n: string): Slate["elements"][number] | null;
   setVisibleNames(n: string[]): void;
   clearVisibility(): void;
+  initiallyHidden: Set<string>;
   reset(): void;
   update(): void;
 };
@@ -60,6 +65,20 @@ export function Diagram({ spec, joyceConfig, width, height, highlight, visible, 
 
   const w = spec?.width ?? width ?? 340;
   const h = spec?.height ?? height ?? 260;
+
+  // Each part named in an equality class, with its colour; an angle marker also
+  // lists the points that define it, so it can wait until they are drawn.
+  const equalParts = useMemo(() => {
+    const points = new Map<string, string[]>();
+    for (const el of spec?.elements ?? []) {
+      const [name, type, construction, params] = el.split(";");
+      if (type === "sector" && construction.startsWith("angleMarker")) points.set(name, params.split(",").slice(0, 3));
+    }
+    const target = (n: string) => spec?.aliases?.[n] ?? n;
+    return (spec?.equal ?? []).flatMap((group, i) =>
+      group.map((name) => ({ name, color: EQUAL_COLORS[i % EQUAL_COLORS.length], points: points.get(target(name)) })),
+    );
+  }, [spec]);
 
   // Build the slate.
   useEffect(() => {
@@ -98,7 +117,18 @@ export function Diagram({ spec, joyceConfig, width, height, highlight, visible, 
     try {
       g.init(config);
       slate.current = g.slates[g.slates.length - 1] as Slate;
-      setFailed(false);
+      // Parts declared equal share a colour; the highlight still overrides it.
+      equalParts.forEach((m) => {
+        const e = slate.current!.lookupElement(m.name);
+        if (!e) return;
+        e.edgeColor = m.color;
+        if (m.points) {
+          e.faceColor = m.color;
+          e.faceAlpha = 0.3;
+          slate.current!.initiallyHidden.delete(e.name!); // angle markers start hidden
+        }
+      });
+      slate.current.clearVisibility();
     } catch (e) {
       console.warn("geomlib.init failed", e);
       setFailed(true);
@@ -118,10 +148,16 @@ export function Diagram({ spec, joyceConfig, width, height, highlight, visible, 
     if (!s) return;
     if (visible) s.setVisibleNames(visible);
     else s.clearVisibility();
+    // A marker for equal angles shows once its three points have been drawn.
+    for (const m of equalParts) {
+      if (!m.points) continue;
+      const e = s.lookupElement(m.name);
+      if (e) e.visible = !visible || m.points.every((p) => visible.includes(p));
+    }
     const lit = new Set((highlight ?? []).map((n) => s.lookupElement(n)).filter(Boolean));
     for (const e of s.elements) if (e.name != null) e.shouldHighlight = lit.has(e);
     s.update();
-  }, [highlight, visible, generation, spec, joyceConfig]);
+  }, [highlight, visible, generation, spec, joyceConfig, equalParts]);
 
   // Hover highlighting from any text on the page.
   useEffect(

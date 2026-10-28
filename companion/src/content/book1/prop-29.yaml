@@ -38,6 +38,9 @@ diagram:
     {CD} is kept parallel to {AB}. Tilt the transversal by dragging {E} or {F}: the alternate angles
     ∠{AGH} and ∠{GHD} stay equal.
 
+  equal:
+    - [angAGH, angGHD, angEGB]
+
 steps:
   - part: enunciation
     text: "A straight line falling on parallel straight lines makes the alternate angles equal to one another, the exterior angle equal to the interior and opposite angle, and the interior angles on the same side equal to two right angles."

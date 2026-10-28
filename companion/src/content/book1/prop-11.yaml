@@ -43,6 +43,11 @@ diagram:
     Drag {A} or {B}, slide {C} along {AB}, and slide {D} — "a point taken at random". {E} keeps
     {CE} = {CD}, and {CF} stays perpendicular.
 
+  equal:
+    - [CD, CE]
+    - [DE, DF, EF]
+    - [angDCF, angECF]
+
 steps:
   - part: enunciation
     text: "To draw a straight line at right angles to a given straight line from a given point on it."
