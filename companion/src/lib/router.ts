@@ -42,6 +42,16 @@ export function navigate(href: string, replace = false) {
   if (replace) window.dispatchEvent(new HashChangeEvent("hashchange"));
 }
 
+/** Set by links that should bring their target into view on arrival (the table of contents). */
+export const jump = { pending: false };
+
+/** True once per jump or page arrival: the cue to scroll the chosen item into view. */
+export function shouldReveal(first: boolean): boolean {
+  const j = jump.pending;
+  jump.pending = false;
+  return first || j;
+}
+
 export function useRoute(): Route {
   const [route, setRoute] = useState(() => parseHash(location.hash));
   useEffect(() => {

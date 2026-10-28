@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
 import { BOOKS } from "../content/books";
 import { getItem, isAnnotated, items, resolveQuery, sequence } from "../lib/corpus";
-import { hrefFor, navigate, type Route } from "../lib/router";
+import { hrefFor, jump, navigate, type Route } from "../lib/router";
 import { setSettings, useSettings } from "../lib/store";
 import { Rich } from "./Rich";
 
@@ -201,7 +201,11 @@ export function Toc({ open, onClose, current }: { open: boolean; onClose: () => 
   return (
     <>
       <div className={`scrim${open ? " on" : ""}`} onClick={onClose} />
-      <nav className={`toc${open ? " open" : ""}`} aria-label="Table of contents" ref={ref} onClick={(e) => (e.target as HTMLElement).closest("a") && onClose()}>
+      <nav className={`toc${open ? " open" : ""}`} aria-label="Table of contents" ref={ref} onClick={(e) => {
+        if (!(e.target as HTMLElement).closest("a")) return;
+        jump.pending = true;
+        onClose();
+      }}>
         <div className="toc-head">
           <strong>Contents</strong>
           <button type="button" className="btn-icon" onClick={onClose} aria-label="Close contents">

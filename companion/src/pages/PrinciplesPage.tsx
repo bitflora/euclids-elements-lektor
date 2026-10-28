@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useRef } from "react";
 import { getItem, sequence } from "../lib/corpus";
-import { navigate, hrefFor, type SectionKind } from "../lib/router";
+import { navigate, hrefFor, shouldReveal, type SectionKind } from "../lib/router";
 import { peek, usePeek } from "../lib/peek";
 import { bookOf } from "../content/books";
 import type { Item } from "../types";
@@ -52,6 +52,19 @@ export function PrinciplesPage({ book, kind, select }: { book: string; kind: Exc
   const selected = getItem(select);
   const stack = usePeek();
   const mainRef = useRef<HTMLElement>(null);
+
+  // Bring the chosen item into view on arrival or from the table of contents, not on every click.
+  const first = useRef(true);
+  useEffect(() => {
+    const reveal = shouldReveal(first.current);
+    first.current = false;
+    if (!select || !reveal) return;
+    const el = mainRef.current?.querySelector(`[data-id="${select}"]`);
+    if (!el) return;
+    document.fonts.ready.then(() =>
+      requestAnimationFrame(() => window.scrollTo({ top: window.scrollY + el.getBoundingClientRect().top - window.innerHeight / 3 })),
+    );
+  }, [select]);
 
   useEffect(() => {
     const on = (e: KeyboardEvent) => {

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { getItem, sequence } from "../lib/corpus";
 import { useSettings } from "../lib/store";
-import { navigate, hrefFor } from "../lib/router";
+import { navigate, hrefFor, shouldReveal } from "../lib/router";
 import { peek, usePeek } from "../lib/peek";
 import { bookOf } from "../content/books";
 import type { Item } from "../types";
@@ -38,6 +38,23 @@ export function PropositionsPage({ book, select, step }: { book: string; select?
     peek.clear();
     navigate(id ? hrefFor(id, i) : `#/${book}/propositions`, true);
   };
+
+  // Bring the chosen proposition (or step) into view on arrival or from the table
+  // of contents, not on every click. Scroll the window only.
+  const first = useRef(true);
+  useEffect(() => {
+    const reveal = shouldReveal(first.current);
+    first.current = false;
+    if (!select || !reveal) return;
+    const prop = mainRef.current?.querySelector(`article[data-id="${select}"]`);
+    const el = (stepIdx != null && prop?.querySelector(`[data-step="${stepIdx}"]`)) || prop;
+    if (!el) return;
+    document.fonts.ready.then(() =>
+      requestAnimationFrame(() =>
+        window.scrollTo({ top: window.scrollY + el.getBoundingClientRect().top - (el === prop ? 64 : window.innerHeight / 3) }),
+      ),
+    );
+  }, [select, stepIdx]);
 
   // Keyboard: j / k (or ↓ / ↑ with Alt) walk the steps, running on into the next
   // proposition; Esc closes a reference, then the step, then the proposition.
