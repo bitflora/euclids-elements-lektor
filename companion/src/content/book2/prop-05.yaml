@@ -72,6 +72,10 @@ diagram:
     Slide {A}, {B} and the cut {D}; {C} stays the midpoint. The gnomon {NOP} (marked by the grey
     arc) always equals the rectangle {AH}.
 
+  equal:
+    - [AC, CB]
+    - [DB, DH]
+
 steps:
   - part: enunciation
     text: "If a straight line be cut into equal and unequal segments, the rectangle contained by the unequal segments of the whole together with the square on the straight line between the points of section is equal to the square on the half."

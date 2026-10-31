@@ -52,6 +52,10 @@ diagram:
     The acute case. Move {A}, {B}, or the corners of the given angle {C|angC}: the circle {ABE} always
     carries an arc on {AB} in which the inscribed angle equals {C|angC}.
 
+  equal:
+    - [BG, AG]
+    - [AF, FB]
+
 steps:
   - part: enunciation
     text: "On a given straight line to describe a segment of a circle admitting an angle equal to a given rectilineal angle."

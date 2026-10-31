@@ -51,6 +51,11 @@ diagram:
     {AB} is four times {E} and {AG} three times; {CD} is four times {F} and {CH} three times. {CK} is the extra
     copy of {F} that the proof lays off before {C}.
 
+  equal:
+    - [F, HD, CK]
+    - [E, GB]
+    - [CD, KH]
+
 steps:
   - part: enunciation
     text: "If two magnitudes be equimultiples of two magnitudes, and any magnitudes subtracted from them be equimultiples of the same, the remainders also are either equal to the same or equimultiples of them."

@@ -95,6 +95,11 @@ diagram:
     Drag the corners of {C} and {D}, or slide {A}, {B}. {AO} is applied to {AB}, equal to {C}, and overshoots by {QP}, which has the shape
     of {D}.
 
+  equal:
+    - [AE, EB]
+    - [FL, FE]
+    - [FLM, KH]
+
 steps:
   - part: enunciation
     text: "To a given straight line to apply a parallelogram equal to a given rectilineal figure and exceeding by a parallelogrammic figure similar to a given one."

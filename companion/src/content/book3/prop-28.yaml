@@ -39,6 +39,10 @@ diagram:
   caption: |
     Two equal circles with equal chords {AB}, {DE}. Slide {A}, {B}, {D}: the arcs stay equal.
 
+  equal:
+    - [AB, DE]
+    - [angAKB, angDLE]
+
 steps:
   - part: enunciation
     text: "In equal circles equal straight lines cut off equal circumferences, the greater equal to the greater and the less to the less."

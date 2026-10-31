@@ -25,6 +25,9 @@ diagram:
   caption: |
     {AC} = {AB}·{BC}; {AD} the square on {AB}.
 
+  equal:
+    - [AB, BD]
+
 steps:
   - part: enunciation
     text: "The rectangle contained by medial straight lines commensurable in length is medial."

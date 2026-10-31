@@ -80,6 +80,13 @@ diagram:
     Drag {A} or {B} and slide {D}. Triangle {ACE} is right-isosceles; so are the small triangles at
     {G} and {D}, which is what turns the squares into one another.
 
+  equal:
+    - [FG, CD, EG]
+    - [DF, DB]
+    - [AC, CB]
+    - [angEAC, angAEC]
+    - [angCEB, angEFG]
+
 steps:
   - part: enunciation
     text: "If a straight line be cut into equal and unequal segments, the squares on the unequal segments of the whole are double of the square on the half and of the square on the straight line between the points of section."

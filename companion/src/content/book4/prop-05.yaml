@@ -39,6 +39,10 @@ diagram:
     Drag the vertices. The centre {F} is inside the triangle when the angle at {A} is acute, on {BC} when
     it is right, and outside when it is obtuse — Euclid's three cases.
 
+  equal:
+    - [AF, BF, CF]
+    - [AD, DB]
+
 steps:
   - part: enunciation
     text: "About a given triangle to circumscribe a circle."

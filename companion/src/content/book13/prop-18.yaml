@@ -61,6 +61,9 @@ diagram:
     The diameter {AB} with the edges {AF} (tetrahedron), {BF} (cube), {BE} (octahedron), {MB} (icosahedron) and {NB}
     (dodecahedron).
 
+  equal:
+    - [AB, AG]
+
 steps:
   - part: enunciation
     text: "To set out the sides of the five figures and to compare them with one another."

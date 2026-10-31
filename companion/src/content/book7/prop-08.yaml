@@ -52,6 +52,11 @@ diagram:
     {AB} is two thirds of {CD}; {GH} is a copy of {AB}, cut into thirds {GK}, {KH} of {CD}, while {AL},
     {LE} are thirds of {CF}.
 
+  equal:
+    - [AL, LE, GM, KN]
+    - [AB, GH]
+    - [GK, KH]
+
 steps:
   - part: enunciation
     text: "If a number be the same parts of a number that a number subtracted is of a number subtracted, the remainder will also be the same parts of the remainder that the whole is of the whole."

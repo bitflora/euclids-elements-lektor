@@ -69,6 +69,9 @@ diagram:
     {A}, {B}, {C}, {D} = 2, 4, 8, 16 doubled from the unit; {E} = 1 + 2 + … + 16 = 31 is prime; {FG} = {E}·{D}.
     {HK}, {L}, {M} continue the doubling from {E}.
 
+  equal:
+    - [E, FO]
+
 steps:
   - part: enunciation
     text: "If as many numbers as we please beginning from an unit be set out continuously in double proportion, until the sum of all becomes prime, and if the sum multiplied into the last make some number, the product will be perfect."

@@ -66,6 +66,9 @@ diagram:
     {D} and {F} are constructed so that the three ratios agree. {G}, {H}, {K} are twice {A}, {C}, {E}; {L}, {M}, {N}
     three times {B}, {D}, {F}.
 
+  equal:
+    - [L, H]
+
 steps:
   - part: enunciation
     text: "If any number of magnitudes be proportional, as one of the antecedents is to one of the consequents, so will all the antecedents be to all the consequents."

@@ -38,6 +38,10 @@ diagram:
   caption: |
     Drag {A} or {C}: the perpendicular diameters always cut the circle at the corners of a square.
 
+  equal:
+    - [AB, AD]
+    - [BE, ED]
+
 steps:
   - part: enunciation
     text: "In a given circle to inscribe a square."

@@ -42,6 +42,9 @@ diagram:
     {DEF} is drawn similar to {ABC}. {G} on {AC} stands for the point the proof supposes (with the angle {ABG|angABG} equal to
     the angle {DEF|angDEF}) and then shows cannot exist apart from {C}: slide it along {AC}.
 
+  equal:
+    - [angABC, angDEF]
+
 steps:
   - part: enunciation
     text: "If two triangles have one angle equal to one angle, the sides about other angles proportional, and the remaining angles either both less or both not less than a right angle, the triangles will be equiangular and will have those angles equal, the sides about which are proportional."

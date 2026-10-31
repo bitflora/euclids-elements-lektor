@@ -43,6 +43,11 @@ diagram:
     Slide {B} along the perpendicular bisector to change the segment. {E} lands outside the segment when
     it is less than a semicircle, on {AC} for a semicircle, inside when it is greater.
 
+  equal:
+    - [BE, AE, CE]
+    - [AD, DC]
+    - [angABD, angBAE]
+
 steps:
   - part: enunciation
     text: "Given a segment of a circle, to describe the complete circle of which it is a segment."

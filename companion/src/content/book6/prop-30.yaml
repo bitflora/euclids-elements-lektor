@@ -42,6 +42,9 @@ diagram:
     Drag {A} or {B}. On {AB} the square {BC}; to {AC} is applied {CD}, equal to {BC} and exceeding by the square {AD}. Then {E} cuts {AB}
     in extreme and mean ratio.
 
+  equal:
+    - [EF, AB]
+
 steps:
   - part: enunciation
     text: "To cut a given finite straight line in extreme and mean ratio."

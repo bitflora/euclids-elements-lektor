@@ -43,6 +43,10 @@ diagram:
   caption: |
     {BD}·{DC} = ¼ sq({A}); {E} bisects {BC}; {EF} = {DE}, so sq({BC}) − sq({A}) = sq({DF}).
 
+  equal:
+    - [DC, BF]
+    - [DE, EF]
+
 steps:
   - part: enunciation
     text: "If there be two unequal straight lines, and to the greater there be applied a parallelogram equal to the fourth part of the square on the less and deficient by a square figure, and if it divide it into parts which are commensurable in length, then the square on the greater will be greater than the square on the less by the square on a straight line commensurable with the greater."

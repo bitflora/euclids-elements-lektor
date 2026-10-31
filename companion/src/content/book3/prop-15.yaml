@@ -47,6 +47,11 @@ diagram:
   caption: |
     Slide {B}, {C}, {F}, {G}. {MN} is a copy of {BC} placed on the same perpendicular as {FG}.
 
+  equal:
+    - [EF, EG, EM, EN, AE, ED]
+    - [BC, MN]
+    - [EH, EL]
+
 steps:
   - part: enunciation
     text: "Of straight lines in a circle the diameter is greatest, and of the rest the nearer to the centre is always greater than the more remote."

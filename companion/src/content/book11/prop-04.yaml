@@ -69,6 +69,13 @@ diagram:
     {EF} is perpendicular to {AB} and {CD} at {E}; {GH} is any other line through {E} in their plane. Drag the
     points to tilt the view.
 
+  equal:
+    - [EF, GE, EH]
+    - [AD, CB]
+    - [AE, EB]
+    - [CE, ED]
+    - [AG, BH]
+
 steps:
   - part: enunciation
     text: "If a straight line be set up at right angles to two straight lines which cut one another, at their common point of section, it will also be at right angles to the plane through them."

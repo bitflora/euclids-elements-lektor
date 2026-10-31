@@ -36,6 +36,9 @@ diagram:
   caption: |
     Slide {A} and {E} along the upper arc: the two angles stay equal.
 
+  equal:
+    - [angBAD, angBED]
+
 steps:
   - part: enunciation
     text: "In a circle the angles in the same segment are equal to one another."

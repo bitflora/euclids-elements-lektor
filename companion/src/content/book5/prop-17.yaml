@@ -63,6 +63,9 @@ diagram:
     {F} is placed so that $AB : BE = CD : DF$. On the lower lines, {GH}, {HK} are twice {AE}, {EB} and {LM}, {MN} twice
     {CF}, {FD}; {KO}, {NP} are three times {EB}, {FD}.
 
+  equal:
+    - [KO, LM]
+
 steps:
   - part: enunciation
     text: "If magnitudes be proportional componendo, they will also be proportional separando."

@@ -61,6 +61,10 @@ diagram:
   caption: |
     Slide {D}, {E} along {AC} or drag {A}, {B}, {C}: {F} and {G} cut {AB} in the same ratios.
 
+  equal:
+    - [DH, FG]
+    - [HK, GB]
+
 steps:
   - part: enunciation
     text: "To cut a given uncut straight line similarly to a given cut straight line."

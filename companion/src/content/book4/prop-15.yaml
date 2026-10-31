@@ -47,6 +47,11 @@ diagram:
     Drag {A} or {D}. The circle about {D} through the centre {G} cuts off the hexagon's vertices {C} and {E};
     each side equals the radius.
 
+  equal:
+    - [GE, GD, DE]
+    - [angEGD, angDGC, angCGB]
+    - [angAFE, angDEF]
+
 steps:
   - part: enunciation
     text: "In a given circle to inscribe an equilateral and equiangular hexagon."

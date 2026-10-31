@@ -61,6 +61,9 @@ diagram:
     proportionals, and {SR} on the arbitrary {QR} is the figure of the converse's reductio. Slide the points along the
     lines.
 
+  equal:
+    - [EF, QR]
+
 steps:
   - part: enunciation
     text: "If four straight lines be proportional, the rectilineal figures similar and similarly described upon them will also be proportional; and, if the rectilineal figures similar and similarly described upon them be proportional, the straight lines will themselves also be proportional."

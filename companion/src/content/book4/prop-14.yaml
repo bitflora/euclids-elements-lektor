@@ -33,6 +33,10 @@ diagram:
   caption: |
     Drag {C} or {D}. The bisectors meet at {F}, equidistant from all five vertices.
 
+  equal:
+    - [FA, FB, FC, FD, FE]
+    - [angFCD, angCDF]
+
 steps:
   - part: enunciation
     text: "About a given pentagon, which is equilateral and equiangular, to circumscribe a circle."

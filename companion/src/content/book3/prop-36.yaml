@@ -48,6 +48,10 @@ diagram:
   caption: |
     Drag {A}, {D}, or the centre {E}. The rectangle {AD}·{DC} always equals the square on the tangent {DB}.
 
+  equal:
+    - [EC, BE]
+    - [AF, FC]
+
 steps:
   - part: enunciation
     text: "If a point be taken outside a circle and from it there fall on the circle two straight lines, and if one of them cut the circle and the other touch it, the rectangle contained by the whole of the straight line which cuts the circle and the straight line intercepted on it outside between the point and the convex circumference will be equal to the square on the tangent."

@@ -62,6 +62,9 @@ diagram:
     {FB} of the same shape, and it is always smaller than {AD} — by the small parallelogram at {D} that the gnomon {LMN}
     leaves out.
 
+  equal:
+    - [AC, CB]
+
 steps:
   - part: enunciation
     text: "Of all the parallelograms applied to the same straight line and deficient by parallelogrammic figures similar and similarly situated to that described on the half of the straight line, that parallelogram is greatest which is applied to the half of the straight line and is similar to the defect."

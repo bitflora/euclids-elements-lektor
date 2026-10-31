@@ -41,6 +41,10 @@ diagram:
   caption: |
     {AB} is two thirds of {C}: {AG}, {GB} are each a third of {C}. Likewise {DE} of {F}.
 
+  equal:
+    - [AG, GB]
+    - [DH, HE]
+
 steps:
   - part: enunciation
     text: "If a number be parts of a number, and another be the same parts of another, the sum will also be the same parts of the sum that the one is of the one."

@@ -25,6 +25,9 @@ diagram:
   caption: |
     The rational area {AC} on {AB}; {AD} the square on {AB}.
 
+  equal:
+    - [AB, BD]
+
 steps:
   - part: enunciation
     text: "If a rational area be applied to a rational straight line, it produces as breadth a straight line rational and commensurable in length with the straight line to which it is applied."

@@ -49,6 +49,11 @@ diagram:
     Change {A}, {B}, {C} by dragging their right ends; move {D} or the far ends of the two rays. {HF} is always the
     fourth proportional.
 
+  equal:
+    - [A, DG]
+    - [B, GE]
+    - [C, DH]
+
 steps:
   - part: enunciation
     text: "To three given straight lines to find a fourth proportional."

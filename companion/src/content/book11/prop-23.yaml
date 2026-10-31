@@ -61,6 +61,10 @@ diagram:
     The three given angles {ABC}, {DEF}, {GHK} with equal arms; the triangle *LMN* with sides equal to their chords,
     inscribed in a circle with centre *O*; *R* above *O*.
 
+  equal:
+    - [OL, OM]
+    - [AB, BC]
+
 steps:
   - part: enunciation
     text: "To construct a solid angle out of three plane angles two of which, taken together in any manner, are greater than the remaining one: thus the three angles must be less than four right angles."

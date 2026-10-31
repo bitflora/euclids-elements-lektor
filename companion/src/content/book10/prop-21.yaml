@@ -26,6 +26,9 @@ diagram:
   caption: |
     {AC} = {AB}·{BC} with {AB}, {BC} commensurable in square only; {AD} the square on {AB}.
 
+  equal:
+    - [AB, BD]
+
 steps:
   - part: enunciation
     text: "The rectangle contained by rational straight lines commensurable in square only is irrational, and the side of the square equal to it is irrational. Let the latter be called medial."

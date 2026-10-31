@@ -41,6 +41,10 @@ diagram:
     {CD} : {EF} is {A} : {B} in lowest terms. The pieces {CG}, {GD}, {EH}, {HF} belong to the impossible case
     of the proof.
 
+  equal:
+    - [CG, GD]
+    - [EH, HF]
+
 steps:
   - part: enunciation
     text: "The least numbers of those which have the same ratio with them measure those which have the same ratio the same number of times, the greater the greater and the less the less."

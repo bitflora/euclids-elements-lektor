@@ -47,6 +47,9 @@ diagram:
     Drag {A} or {B} (the circle passes through them and a fixed third point). {G} is the "if possible"
     centre of the proof: drag it off the line {CE} and the angles at {D} come apart.
 
+  equal:
+    - [AD, DB]
+
 steps:
   - part: enunciation
     text: "To find the centre of a given circle."

@@ -35,6 +35,9 @@ diagram:
   caption: |
     {AB} is a third of {CD}, {AE} a third of {CF}. The auxiliary {CG} is made three times {EB}.
 
+  equal:
+    - [CD, GF]
+
 steps:
   - part: enunciation
     text: "If a number be that part of a number, which a number subtracted is of a number subtracted, the remainder will also be the same part of the remainder that the whole is of the whole."

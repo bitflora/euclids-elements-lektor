@@ -43,6 +43,12 @@ diagram:
   caption: |
     Drag {A} or {E} and slide {D} (which sets the circle's size). {AB} always touches the circle at {B}.
 
+  equal:
+    - [AE, FE]
+    - [FD, BA]
+    - [EB, ED]
+    - [angEDF, angEBA]
+
 steps:
   - part: enunciation
     text: "From a given point to draw a straight line touching a given circle."

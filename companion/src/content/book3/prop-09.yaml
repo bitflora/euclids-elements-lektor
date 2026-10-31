@@ -47,6 +47,11 @@ diagram:
   caption: |
     Drag {A}, {B}, {C}. The perpendicular bisectors of {AB} and {BC} always meet at the centre {D}.
 
+  equal:
+    - [DA, DB]
+    - [AE, EB]
+    - [angAED, angBED]
+
 steps:
   - part: enunciation
     text: "If a point be taken within a circle, and more than two equal straight lines fall from the point on the circle, the point taken is the centre of the circle."

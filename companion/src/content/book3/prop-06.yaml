@@ -32,6 +32,9 @@ diagram:
     Two circles touching at {C}. {F} is the centre of the outer one; the proof shows it cannot also be the
     centre of the inner one.
 
+  equal:
+    - [FB, FC]
+
 steps:
   - part: enunciation
     text: "If two circles touch one another, they will not have the same centre."

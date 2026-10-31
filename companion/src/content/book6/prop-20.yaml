@@ -97,6 +97,12 @@ diagram:
     {FGHKL} is constructed similar to {ABCDE}. Drag the vertices of {ABCDE}, or {H}, {K}. The diagonals cut both pentagons
     into three pairs of similar triangles.
 
+  equal:
+    - [angABE, angFGL]
+    - [angEBC, angLGH]
+    - [angBAC, angGFH]
+    - [angAMB, angFNG]
+
 steps:
   - part: enunciation
     text: "Similar polygons are divided into similar triangles, and into triangles equal in multitude and in the same ratio as the wholes, and the polygon has to the polygon a ratio duplicate of that which the corresponding side has to the corresponding side."

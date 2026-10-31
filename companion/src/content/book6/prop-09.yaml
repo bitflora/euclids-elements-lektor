@@ -40,6 +40,9 @@ diagram:
     Drag {A}, {B}, or {D} (which fixes the direction of {AC} and the size of the equal steps {AD}, {DE}, {EC}). {AF} is
     always a third of {AB}.
 
+  equal:
+    - [AD, DE, EC]
+
 steps:
   - part: enunciation
     text: "From a given straight line to cut off a prescribed part."

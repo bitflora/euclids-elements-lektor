@@ -42,6 +42,10 @@ diagram:
   caption: |
     {BC} is three units; {EF} is three copies of {D}.
 
+  equal:
+    - [A, BG, GH, HC]
+    - [EK, KL, LF]
+
 steps:
   - part: enunciation
     text: "If an unit measure any number, and another number measure any other number the same number of times, alternately also, the unit will measure the third number the same number of times that the second measures the fourth."

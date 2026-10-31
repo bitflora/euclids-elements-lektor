@@ -64,6 +64,9 @@ diagram:
     Slide {A}, {B} and the cut {C}. The gnomon {KLM} plus the small square {CF} is always twice the
     rectangle {AF}.
 
+  equal:
+    - [CB, BF]
+
 steps:
   - part: enunciation
     text: "If a straight line be cut at random, the square on the whole and that on one of the segments both together are equal to twice the rectangle contained by the whole and the said segment and the square on the remaining segment."

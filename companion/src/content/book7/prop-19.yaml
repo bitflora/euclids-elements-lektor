@@ -46,6 +46,9 @@ diagram:
     {E} = {A}·{D}, {F} = {B}·{C}, and the auxiliary {G} = {A}·{C}. {D} is computed so that the four are
     proportional.
 
+  equal:
+    - [E, F]
+
 steps:
   - part: enunciation
     text: "If four numbers be proportional, the number produced from the first and fourth will be equal to the number produced from the second and third; and, if the number produced from the first and fourth be equal to that produced from the second and third, the four numbers will be proportional."

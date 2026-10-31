@@ -38,6 +38,9 @@ diagram:
   caption: |
     {AB} cut at {C}; {AD} = {AC} added beyond {A}.
 
+  equal:
+    - [AD, AC]
+
 steps:
   - part: enunciation
     text: "If a straight line be cut in extreme and mean ratio, and there be added to it a straight line equal to the greater segment, the whole straight line has been cut in extreme and mean ratio, and the original straight line is the greater segment."

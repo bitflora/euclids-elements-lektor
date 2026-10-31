@@ -46,6 +46,11 @@ diagram:
     Two equal circles with equal central angles at {G} and {H}. Slide the points: the arcs {BKC} and {ELF}
     stay equal.
 
+  equal:
+    - [GB, GC, HF, HE]
+    - [BC, EF]
+    - [angBGC, angEHF]
+
 steps:
   - part: enunciation
     text: "In equal circles equal angles stand on equal circumferences, whether they stand at the centres or at the circumferences."

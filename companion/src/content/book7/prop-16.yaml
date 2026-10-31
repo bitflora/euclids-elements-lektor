@@ -37,6 +37,9 @@ diagram:
   caption: |
     {C} is {A} multiplied by {B}; {D} is {B} multiplied by {A}. {E} is the unit.
 
+  equal:
+    - [C, D]
+
 steps:
   - part: enunciation
     text: "If two numbers by multiplying one another make certain numbers, the numbers so produced will be equal to one another."

@@ -75,6 +75,10 @@ diagram:
     Slide {A}, {B} and the cut {C}. The eight rectangles (four of each colour) make up the gnomon
     {STU}; with the small square {OH} they fill the square on {AD}.
 
+  equal:
+    - [BD, CB, GK, KN, BK, CG, GQ]
+    - [QR, RP]
+
 steps:
   - part: enunciation
     text: "If a straight line be cut at random, four times the rectangle contained by the whole and one of the segments together with the square on the remaining segment is equal to the square described on the whole and the aforesaid segment as on one straight line."

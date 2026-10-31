@@ -82,6 +82,10 @@ diagram:
     The great circle {BCDE} of the outer sphere and {FGH} of the inner; quadrilateral faces like *KBPS*; {AX} the
     distance from the centre to a face. Drag to rotate.
 
+  equal:
+    - [PV, SW]
+    - [WV, SP]
+
 steps:
   - part: enunciation
     text: "Given two spheres about the same centre, to inscribe in the greater sphere a polyhedral solid which does not touch the lesser sphere at its surface."

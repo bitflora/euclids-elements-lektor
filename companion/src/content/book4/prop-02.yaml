@@ -47,6 +47,11 @@ diagram:
   caption: |
     Drag the corners of {DEF}, or {A} and {B}. The triangle in the circle always has the angles of {DEF}.
 
+  equal:
+    - [angHAC, angABC, angDEF]
+    - [angGAB, angDFE]
+    - [angBAC, angEDF]
+
 steps:
   - part: enunciation
     text: "In a given circle to inscribe a triangle equiangular with a given triangle."

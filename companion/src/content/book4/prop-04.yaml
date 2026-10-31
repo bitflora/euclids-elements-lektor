@@ -50,6 +50,10 @@ diagram:
     Drag the vertices. The bisectors of the angles at {B} and {C} meet at {D}, the centre of the circle
     touching all three sides.
 
+  equal:
+    - [ED, FD, GD]
+    - [angABD, angCBD]
+
 steps:
   - part: enunciation
     text: "In a given triangle to inscribe a circle."

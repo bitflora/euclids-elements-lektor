@@ -51,6 +51,10 @@ diagram:
     Drag {A}, {B}, {C} or {D} round the circle: the angle at the centre stays twice the angle at {A}
     (and at {D}), as long as they stand on the same arc {BC}.
 
+  equal:
+    - [EB, EA]
+    - [angEAB, angEBA]
+
 steps:
   - part: enunciation
     text: "In a circle the angle at the centre is double of the angle at the circumference, when the angles have the same circumference as base."

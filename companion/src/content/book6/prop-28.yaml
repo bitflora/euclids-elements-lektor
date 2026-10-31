@@ -99,6 +99,11 @@ diagram:
     Drag the corners of {C} and {D}, or slide {A}, {B}. {ST} is the parallelogram applied to {AB}, equal to {C}, falling short by {QB},
     which has the shape of {D}. If {C} is made too large (larger than {AG}), the construction fails — that is [[VI.27]].
 
+  equal:
+    - [AE, EB]
+    - [GO, KL]
+    - [GP, LM]
+
 steps:
   - part: enunciation
     text: "To a given straight line to apply a parallelogram equal to a given rectilineal figure and deficient by a parallelogrammic figure similar to a given one: thus the given rectilineal figure must not be greater than the parallelogram described on the half of the straight line and similar to the defect."

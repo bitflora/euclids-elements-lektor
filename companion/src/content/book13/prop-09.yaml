@@ -38,6 +38,9 @@ diagram:
   caption: |
     The circle with centre {E}; {BC} the decagon side, {CD} = radius (hexagon side) in line with it.
 
+  equal:
+    - [CD, EB, EC]
+
 steps:
   - part: enunciation
     text: "If the side of the hexagon and that of the decagon inscribed in the same circle be added together, the whole straight line has been cut in extreme and mean ratio, and its greater segment is the side of the hexagon."

@@ -37,6 +37,9 @@ diagram:
   caption: |
     Concentric circles {ABCD}, {EFGH}; the tangent {AC} to the inner circle at {G}; the side {LD} of the polygon.
 
+  equal:
+    - [LD, DN]
+
 steps:
   - part: enunciation
     text: "Given two circles about the same centre, to inscribe in the greater circle an equilateral polygon with an even number of sides which does not touch the lesser circle."

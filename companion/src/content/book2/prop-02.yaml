@@ -42,6 +42,9 @@ diagram:
   caption: |
     Slide {A}, {B}, and the cut {C}. The two rectangles always make up the square.
 
+  equal:
+    - [AB, AD, BE]
+
 steps:
   - part: enunciation
     text: "If a straight line be cut at random, the rectangle contained by the whole and both of the segments is equal to the square on the whole."

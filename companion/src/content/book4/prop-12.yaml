@@ -70,6 +70,13 @@ diagram:
     Drag {A} or {B}. Tangents at the five vertices of an inscribed regular pentagon make a regular
     pentagon about the circle.
 
+  equal:
+    - [GH, HK, KL, LM, MG]
+    - [BK, CK, CL]
+    - [angBFK, angKFC, angLFC]
+    - [BF, CF]
+    - [angFKC, angFLC]
+
 steps:
   - part: enunciation
     text: "About a given circle to circumscribe an equilateral and equiangular pentagon."

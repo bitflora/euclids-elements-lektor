@@ -30,6 +30,11 @@ diagram:
   caption: |
     The equilateral pentagon {ABCDE}.
 
+  equal:
+    - [FE, CD, DE]
+    - [BE, BD]
+    - [FA, FB]
+
 steps:
   - part: enunciation
     text: "If three angles of an equilateral pentagon, taken either in order or not in order, be equal, the pentagon will be equiangular."

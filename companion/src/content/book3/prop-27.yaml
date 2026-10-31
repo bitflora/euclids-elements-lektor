@@ -48,6 +48,10 @@ diagram:
   caption: |
     Two equal circles, arcs {BC} and {EF} equal. {K} is the supposed point with ∠{BGK|angBGK} = ∠{EHF|angEHF}.
 
+  equal:
+    - [angBGC, angEHF]
+    - [angBAC, angEDF]
+
 steps:
   - part: enunciation
     text: "In equal circles angles standing on equal circumferences are equal to one another, whether they stand at the centres or at the circumferences."

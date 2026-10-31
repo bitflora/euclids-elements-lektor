@@ -58,6 +58,9 @@ diagram:
     Drag the ends of {A} to change its length, slide {D}, {E} and {C} along {BC}. The three
     rectangles always fill the big one.
 
+  equal:
+    - [A, BG, DK]
+
 steps:
   - part: enunciation
     text: "If there be two straight lines, and one of them be cut into any number of segments whatever, the rectangle contained by the two straight lines is equal to the rectangles contained by the uncut straight line and each of the segments."

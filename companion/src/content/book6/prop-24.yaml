@@ -63,6 +63,9 @@ diagram:
   caption: |
     Slide {F} along the diagonal {AC}, or drag {A}, {B}, {C}. The shaded parallelograms always have the shape of {ABCD}.
 
+  equal:
+    - [angAFG, angDCA]
+
 steps:
   - part: enunciation
     text: "In any parallelogram the parallelograms about the diameter are similar both to the whole and to one another."

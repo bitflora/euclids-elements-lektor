@@ -48,6 +48,9 @@ diagram:
   caption: |
     {AB} cut at {C}; {D} the midpoint of {AC}; the square on {AB} with its subdivisions.
 
+  equal:
+    - [DC, AD]
+
 steps:
   - part: enunciation
     text: "If a straight line be cut in extreme and mean ratio, the square on the lesser segment added to the half of the greater segment is five times the square on the half of the greater segment."

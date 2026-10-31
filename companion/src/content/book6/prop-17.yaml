@@ -33,6 +33,9 @@ diagram:
   caption: |
     {C} is constructed as the third proportional to {A}, {B}; {D} is a copy of {B}. Drag the lower ends of {A} and {B}.
 
+  equal:
+    - [B, D]
+
 steps:
   - part: enunciation
     text: "If three straight lines be proportional, the rectangle contained by the extremes is equal to the square on the mean; and, if the rectangle contained by the extremes be equal to the square on the mean, the three straight lines will be proportional."

@@ -25,6 +25,9 @@ diagram:
   caption: |
     The conclusion drawn in: {B} equal to {A}.
 
+  equal:
+    - [A, B]
+
 steps:
   - part: enunciation
     text: "Magnitudes which have the same ratio to the same are equal to one another; and magnitudes to which the same has the same ratio are equal."

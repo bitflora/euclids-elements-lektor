@@ -37,6 +37,10 @@ diagram:
     Drag the ends of {AB}, {CD}, {E}, {F}. {AG} is made equal to {F} and {CH} to {E}. The rectangles {BG}, {DH} are equal exactly
     when $AB : CD = E : F$.
 
+  equal:
+    - [E, CH]
+    - [F, AG]
+
 steps:
   - part: enunciation
     text: "If four straight lines be proportional, the rectangle contained by the extremes is equal to the rectangle contained by the means; and, if the rectangle contained by the extremes be equal to the rectangle contained by the means, the four straight lines will be proportional."

@@ -41,6 +41,11 @@ diagram:
   caption: |
     Drag {A} or {C} and slide {B}. {CD} is kept equal to {AB}; the perpendiculars {EF} and {EG} stay equal.
 
+  equal:
+    - [AF, FB, CG]
+    - [AB, CD]
+    - [EF, EG]
+
 steps:
   - part: enunciation
     text: "In a circle equal straight lines are equally distant from the centre, and those which are equally distant from the centre are equal to one another."

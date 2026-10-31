@@ -43,6 +43,9 @@ diagram:
     {DE} is a multiple of {C} exceeding {AB}. From {AB} remove {BH} (more than half), then {HK} (more than
     half of {AH}); what remains, {AK}, is less than {C}.
 
+  equal:
+    - [C, DF, FG, GE]
+
 steps:
   - part: enunciation
     text: "Two unequal magnitudes being set out, if from the greater there be subtracted a magnitude greater than its half, and from that which is left a magnitude greater than its half, and if this process be repeated continually, there will be left some magnitude which will be less than the lesser magnitude set out."

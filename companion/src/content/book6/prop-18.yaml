@@ -63,6 +63,12 @@ diagram:
     Drag {E}, {F} or slide {A}, {B}, {C}, {D} along the base line. The diagonal {DF} splits {CE} into triangles; on {AB} Euclid
     builds triangles {GAB}, {GBH} equiangular with them.
 
+  equal:
+    - [angABG, angCDF]
+    - [angCFD, angAGB]
+    - [angBGH, angDFE]
+    - [angGBH, angFDE]
+
 steps:
   - part: enunciation
     text: "On a given straight line to describe a rectilineal figure similar and similarly situated to a given rectilineal figure."

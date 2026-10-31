@@ -70,6 +70,12 @@ diagram:
   caption: |
     Drag {B}, {K}, or the corners of {DEF}. The tangent triangle {LMN} always has the angles of {DEF}.
 
+  equal:
+    - [angBKA, angDEG]
+    - [angBKC, angDFH]
+    - [angAMB, angDEF]
+    - [angLNB, angDFE]
+
 steps:
   - part: enunciation
     text: "About a given circle to circumscribe a triangle equiangular with a given triangle."

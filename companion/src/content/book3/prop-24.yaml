@@ -37,6 +37,9 @@ diagram:
     {CGD} pictures the segment that "falls awry" — impossible, since it would cut the circle {CFD} too
     often. Drag {G}.
 
+  equal:
+    - [AB, CD]
+
 steps:
   - part: enunciation
     text: "Similar segments of circles on equal straight lines are equal to one another."

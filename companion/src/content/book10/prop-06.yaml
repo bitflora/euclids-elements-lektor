@@ -41,6 +41,9 @@ diagram:
   caption: |
     {A} is cut into {D} equal parts, one of which is {C}; {F} is {E} copies of {C}.
 
+  equal:
+    - [B, D, F]
+
 steps:
   - part: enunciation
     text: "If two magnitudes have to one another the ratio which a number has to a number, the magnitudes will be commensurable."

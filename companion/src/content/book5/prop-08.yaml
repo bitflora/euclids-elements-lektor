@@ -72,6 +72,10 @@ diagram:
     three and four times {D}. Drag {A}, {B} or the ends of {C} and {D} — but the multiples are fixed at Euclid's
     numbers, so the inequalities hold only near the starting figure.
 
+  equal:
+    - [C, EB]
+    - [K, GH]
+
 steps:
   - part: enunciation
     text: "Of unequal magnitudes, the greater has to the same a greater ratio than the less has; and the same has to the less a greater ratio than it has to the greater."

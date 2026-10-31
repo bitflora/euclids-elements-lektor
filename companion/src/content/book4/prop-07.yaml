@@ -42,6 +42,9 @@ diagram:
   caption: |
     Drag {A} or {C}. The tangents at the ends of two perpendicular diameters form a square.
 
+  equal:
+    - [AC, BD, FG, GH, HK, KF]
+
 steps:
   - part: enunciation
     text: "About a given circle to circumscribe a square."

@@ -41,6 +41,10 @@ diagram:
   caption: |
     Slide {A} around the semicircle on {BC} (so the angle at {A} stays right), or drag {B}, {C}.
 
+  equal:
+    - [angBAC, angADB, angADC]
+    - [angACB, angBAD]
+
 steps:
   - part: enunciation
     text: "If in a right-angled triangle a perpendicular be drawn from the right angle to the base, the triangles adjoining the perpendicular are similar both to the whole and to one another."

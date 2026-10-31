@@ -35,6 +35,9 @@ diagram:
     Drag the ends of {D} to change its length (keep it shorter than the diameter {BC}). The chord {CA}
     always equals {D}.
 
+  equal:
+    - [D, AC, CE]
+
 steps:
   - part: enunciation
     text: "Into a given circle to fit a straight line equal to a given straight line which is not greater than the diameter of the circle."

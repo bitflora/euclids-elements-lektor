@@ -42,6 +42,10 @@ diagram:
   caption: |
     {AB} is three times {C}, {DE} three times {F}. Drag the ends of {C} and {F}.
 
+  equal:
+    - [C, AG, GH, HB]
+    - [F, DK, KL, LE]
+
 steps:
   - part: enunciation
     text: "Parts have the same ratio as the same multiples of them taken in corresponding order."

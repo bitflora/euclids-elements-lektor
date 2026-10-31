@@ -60,6 +60,12 @@ diagram:
     Slide {F} along the diameter and {B}, {C}, {G} round the circle. Lines from {F} grow as they swing
     toward {A}. {H} is the mirror image of {G} in the diameter, so {FH} = {FG}.
 
+  equal:
+    - [BE, CE, AE]
+    - [GE, EH]
+    - [GF, FH]
+    - [angGEF, angFEH]
+
 steps:
   - part: enunciation
     text: "If on the diameter of a circle a point be taken which is not the centre of the circle, and from the point straight lines fall upon the circle, that will be greatest on which the centre is, the remainder of the same diameter will be least, and of the rest the nearer to the straight line through the centre is always greater than the more remote, and only two equal straight lines will fall from the point on the circle, one on each side of the least straight line."

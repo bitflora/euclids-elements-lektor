@@ -30,6 +30,9 @@ diagram:
     {D} is constructed so that $A : B = C : D$. Drag the ends of {A}, {B}, {C}: whenever {A} is longer than {C}, {B} is
     longer than {D}.
 
+  equal:
+    - [C, B]
+
 steps:
   - part: enunciation
     text: "If a first magnitude have to a second the same ratio as a third has to a fourth, and the first be greater than the third, the second will also be greater than the fourth; if equal, equal; and if less, less."

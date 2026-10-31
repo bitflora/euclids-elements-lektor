@@ -51,6 +51,9 @@ diagram:
     {A} is three times {B} and {C} three times {D}; {EF} and {GH} are twice {A} and {C}. Drag the left ends of
     {B} and {D} to change them.
 
+  equal:
+    - [A, EK]
+
 steps:
   - part: enunciation
     text: "If a first magnitude be the same multiple of a second that a third is of a fourth, and if equimultiples be taken of the first and third, then also ex aequali the magnitudes taken will be equimultiples respectively, the one of the second and the other of the fourth."

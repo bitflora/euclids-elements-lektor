@@ -32,6 +32,9 @@ diagram:
   caption: |
     {DE} touches the circle at {C}. Slide {G} along the tangent: {FG} is never perpendicular unless {G} = {C}.
 
+  equal:
+    - [CF, FB]
+
 steps:
   - part: enunciation
     text: "If a straight line touch a circle, and a straight line be joined from the centre to the point of contact, the straight line so joined will be perpendicular to the tangent."

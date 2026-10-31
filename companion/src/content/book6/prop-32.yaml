@@ -43,6 +43,10 @@ diagram:
     {DC} is kept parallel to {AB} and {DCE} constructed with $AB : AC = DC : DE$ and {DE} parallel to {AC}. Drag {A}, {B}, {C} or slide {D}:
     {B}, {C}, {E} stay in line.
 
+  equal:
+    - [angBAC, angACD, angCDE]
+    - [angABC, angDCE]
+
 steps:
   - part: enunciation
     text: "If two triangles having two sides proportional to two sides be placed together at one angle so that their corresponding sides are also parallel, the remaining sides of the triangles will be in a straight line."

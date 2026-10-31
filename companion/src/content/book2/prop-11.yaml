@@ -63,6 +63,10 @@ diagram:
     Slide {A} and {B}. The square {FH} on {AH} and the rectangle {HD} on {AB}, {BH} always have the
     same area; {H} divides {AB} in the golden ratio.
 
+  equal:
+    - [BE, EF]
+    - [AF, FG]
+
 steps:
   - part: enunciation
     text: "To cut a given straight line so that the rectangle contained by the whole and one of the segments is equal to the square on the remaining segment."

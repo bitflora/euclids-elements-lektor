@@ -38,6 +38,10 @@ diagram:
   caption: |
     {F} is constructed so that $AB : CD = E : F$. {AG} is cut equal to {E} and {CH} equal to {F}.
 
+  equal:
+    - [E, AG]
+    - [F, CH]
+
 steps:
   - part: enunciation
     text: "If four magnitudes be proportional, the greatest and the least are greater than the remaining two."

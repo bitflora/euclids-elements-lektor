@@ -42,6 +42,12 @@ diagram:
     Drag {A}, {B} or {C}. The line {CD} through the centre {E} meets the chord {AB} at its midpoint {F},
     at right angles.
 
+  equal:
+    - [AE, BE]
+    - [AF, FB]
+    - [angAFE, angBFE]
+    - [angEAF, angEBF]
+
 steps:
   - part: enunciation
     text: "If in a circle a straight line through the centre bisect a straight line not through the centre, it also cuts it at right angles; and if it cut it at right angles, it also bisects it."

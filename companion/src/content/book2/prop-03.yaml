@@ -42,6 +42,9 @@ diagram:
   caption: |
     Slide {A}, {B}, and the cut {C}.
 
+  equal:
+    - [BC, CD, BE]
+
 steps:
   - part: enunciation
     text: "If a straight line be cut at random, the rectangle contained by the whole and one of the segments is equal to the rectangle contained by the segments and the square on the aforesaid segment."

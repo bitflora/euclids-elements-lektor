@@ -91,6 +91,13 @@ diagram:
     Drag {A} or {B} and slide {D}. Three right-isosceles triangles — at {C}, {D} and {F} — carry the
     proof, as in [[II.9]].
 
+  equal:
+    - [CD, EF, FG]
+    - [angFEB, angDBG, angDGB]
+    - [DG, DB]
+    - [AC, CB]
+    - [angEAC, angAEC]
+
 steps:
   - part: enunciation
     text: "If a straight line be bisected, and a straight line be added to it in a straight line, the square on the whole with the added straight line and the square on the added straight line both together are double of the square on the half and of the square described on the straight line made up of the half and the added straight line as on one straight line."

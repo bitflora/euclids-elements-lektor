@@ -53,6 +53,10 @@ diagram:
     Drag the corners of {A}, or {B} and {C}. {BD} is a rectangle equal to {A}; the semicircle on
     {BF} gives {EH}, the side of a square equal to both.
 
+  equal:
+    - [EF, ED]
+    - [GH, GF]
+
 steps:
   - part: enunciation
     text: "To construct a square equal to a given rectilineal figure."

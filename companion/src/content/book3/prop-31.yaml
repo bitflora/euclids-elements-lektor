@@ -50,6 +50,11 @@ diagram:
   caption: |
     Slide {A} round the circle: the angle at {A}, standing on the diameter {BC}, is always right.
 
+  equal:
+    - [angBAC, angFAC]
+    - [angABC, angBAE]
+    - [angACB, angCAE]
+
 steps:
   - part: enunciation
     text: "In a circle the angle in the semicircle is right, that in a greater segment less than a right angle, and that in a less segment greater than a right angle; and further the angle of the greater segment is greater than a right angle, and the angle of the less segment less than a right angle."

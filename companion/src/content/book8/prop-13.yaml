@@ -75,6 +75,9 @@ diagram:
     {D}, {E}, {F} are the squares and {G}, {H}, {K} the cubes of {A}, {B}, {C}; {L}, {M}, {N}, {O}, {P}, {Q}
     are the intermediate products.
 
+  equal:
+    - [F, G]
+
 steps:
   - part: enunciation
     text: "If there be as many numbers as we please in continued proportion, and each by multiplying itself make some number, the products will be proportional; and, if the original numbers by multiplying the products make certain numbers, the latter will also be proportional."

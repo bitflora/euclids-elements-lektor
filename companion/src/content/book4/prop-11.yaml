@@ -52,6 +52,11 @@ diagram:
   caption: |
     Drag {A} or {B} (the pentagon and its circle), or {G}, {H} (the golden triangle {FGH} of [[IV.10]]).
 
+  equal:
+    - [AB, BC, CD, DE, EA]
+    - [angCAD, angACE, angECD, angCDB, angBDA]
+    - [angBAE, angAED]
+
 steps:
   - part: enunciation
     text: "In a given circle to inscribe an equilateral and equiangular pentagon."

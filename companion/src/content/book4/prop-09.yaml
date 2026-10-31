@@ -42,6 +42,13 @@ diagram:
   caption: |
     Drag {A} or {C}. The diagonals cross at the centre {E} of the circle through all four corners.
 
+  equal:
+    - [EA, EB, EC, ED]
+    - [DA, AB]
+    - [DC, BC]
+    - [angDAC, angBAC]
+    - [angEAB, angEBA]
+
 steps:
   - part: enunciation
     text: "About a given square to circumscribe a circle."

@@ -52,6 +52,10 @@ diagram:
     Slide {D} round the circle: the angle between the tangent {EF} and the chord {BD} keeps matching the
     angle at {A} (and the angle at {C} on the other side).
 
+  equal:
+    - [angFBD, angBAD]
+    - [angEBD, angDCB]
+
 steps:
   - part: enunciation
     text: "If a straight line touch a circle, and from the point of contact there be drawn across, in the circle, a straight line cutting the circle, the angles which it makes with the tangent will be equal to the angles in the alternate segments of the circle."

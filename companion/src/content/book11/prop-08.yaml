@@ -43,6 +43,9 @@ diagram:
   caption: |
     As in [[XI.6]]: {DE} in the plane, perpendicular to {BD} and equal to {AB}.
 
+  equal:
+    - [AB, BD]
+
 steps:
   - part: enunciation
     text: "If two straight lines be parallel, and one of them be at right angles to any plane, the remaining one will also be at right angles to the same plane."

@@ -62,6 +62,10 @@ diagram:
     {A} = {C}{D}, {B} = {E}{F}. {G}, {H}, {K} are least with {G} : {H} = {C} : {E} and {H} : {K} = {D} :
     {F}; {L} = {D}{E}.
 
+  equal:
+    - [A, G]
+    - [B, K]
+
 steps:
   - part: enunciation
     text: "Plane numbers have to one another the ratio compounded of the ratios of their sides."

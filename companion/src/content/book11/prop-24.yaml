@@ -29,6 +29,9 @@ diagram:
   caption: |
     The parallelepiped with faces *AC*, *GF*, *AH*, *DF*, *BF*, *AE*.
 
+  equal:
+    - [AH, DF]
+
 steps:
   - part: enunciation
     text: "If a solid be contained by parallel planes, the opposite planes in it are equal and parallelogrammic."

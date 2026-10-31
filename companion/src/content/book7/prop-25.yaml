@@ -32,6 +32,9 @@ diagram:
   caption: |
     {C} = {A}·{A}; {D} is a copy of {A}.
 
+  equal:
+    - [A, D]
+
 steps:
   - part: enunciation
     text: "If two numbers be prime to one another, the product of one of them into itself will be prime to the remaining one."

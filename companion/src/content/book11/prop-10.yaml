@@ -45,6 +45,11 @@ diagram:
   caption: |
     {BA} = {BC} = {ED} = {EF}; {AD}, {BE}, {CF} are equal and parallel.
 
+  equal:
+    - [AB, BC, DE, EF]
+    - [AD, BE, CF]
+    - [AC, DF]
+
 steps:
   - part: enunciation
     text: "If two straight lines meeting one another be parallel to two straight lines meeting one another not in the same plane, they will contain equal angles."

@@ -36,6 +36,9 @@ diagram:
   caption: |
     Equal arcs {BGC}, {EHF} in equal circles; their chords stay equal.
 
+  equal:
+    - [BC, EF]
+
 steps:
   - part: enunciation
     text: "In equal circles equal circumferences are subtended by equal straight lines."

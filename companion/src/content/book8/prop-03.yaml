@@ -69,6 +69,9 @@ diagram:
     {E} : {F} is the ratio in lowest terms; {G}, {H}, {K} and {L}, {M}, {N}, {O} are the least progressions
     of three and four terms built from it by [[VIII.2]].
 
+  equal:
+    - [L, A]
+
 steps:
   - part: enunciation
     text: "If as many numbers as we please in continued proportion be the least of those which have the same ratio with them, the extremes of them are prime to one another."

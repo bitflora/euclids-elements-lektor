@@ -51,6 +51,12 @@ diagram:
     Drag {C} or {D}. The bisectors of the angles at {C} and {D} meet at the centre {F} of the circle touching
     all five sides.
 
+  equal:
+    - [FG, FH, FK, FL, FM]
+    - [DF, FB]
+    - [angBCF, angDCF]
+    - [angCBF, angCDF]
+
 steps:
   - part: enunciation
     text: "In a given pentagon, which is equilateral and equiangular, to inscribe a circle."

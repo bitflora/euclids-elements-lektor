@@ -41,6 +41,10 @@ diagram:
   caption: |
     Three isosceles triangles with equal legs; {KHL} copies ∠{ABC} next to ∠{GHK}.
 
+  equal:
+    - [AC, KL]
+    - [HL, AB]
+
 steps:
   - part: enunciation
     text: "If there be three plane angles of which two, taken together in any manner, are greater than the remaining one, and they are contained by equal straight lines, it is possible to construct a triangle out of the straight lines joining the extremities of the equal straight lines."

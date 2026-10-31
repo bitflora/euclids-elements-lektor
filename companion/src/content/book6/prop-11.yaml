@@ -28,6 +28,9 @@ diagram:
   caption: |
     Drag {A}, {B}, {C}. {BD} is made equal to {AC}, and {DE} is parallel to {BC}; then $AB : AC = AC : CE$.
 
+  equal:
+    - [AC, BD]
+
 steps:
   - part: enunciation
     text: "To two given straight lines to find a third proportional."

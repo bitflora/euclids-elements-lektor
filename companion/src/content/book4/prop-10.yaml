@@ -55,6 +55,12 @@ diagram:
     Drag {A} or {B}. {C} cuts {AB} in extreme and mean ratio ([[II.11]]); {BD} = {AC}. The triangle {ABD}
     always has base angles twice the apex angle.
 
+  equal:
+    - [BD, CD, AC]
+    - [angBDC, angDAC, angCDA]
+    - [angBCD, angBDA, angDBA]
+    - [AB, AD]
+
 steps:
   - part: enunciation
     text: "To construct an isosceles triangle having each of the angles at the base double of the remaining one."

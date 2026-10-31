@@ -35,6 +35,10 @@ diagram:
   caption: |
     Drag {A} or {B}. The circle about {G} touches all four sides at their midpoints.
 
+  equal:
+    - [GE, GF, GH, GK]
+    - [AE, AF]
+
 steps:
   - part: enunciation
     text: "In a given square to inscribe a circle."

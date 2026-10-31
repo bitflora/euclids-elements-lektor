@@ -55,6 +55,12 @@ diagram:
     {DCE} is built with its angles equal to those of {ABC}, set on the same line {BCE}. Drag {A}, {B}, {C}, or slide {E}.
     {BA} and {ED} produced meet at {F}, and {FACD} is a parallelogram.
 
+  equal:
+    - [AF, CD]
+    - [DF, AC]
+    - [angABC, angDCE]
+    - [angACB, angCED]
+
 steps:
   - part: enunciation
     text: "In equiangular triangles the sides about the equal angles are proportional, and those are corresponding sides which subtend the equal angles."

@@ -107,6 +107,9 @@ diagram:
     Two pentagons (*EFGHK* in the circle, *LMNOP* raised above it) and the apexes {X}, {Z} on the axis through the
     centre {V}. Drag to rotate.
 
+  equal:
+    - [QW, EV]
+
 steps:
   - part: enunciation
     text: "To construct an icosahedron and comprehend it in a sphere, like the aforesaid figures; and to prove that the side of the icosahedron is the irrational straight line called minor."

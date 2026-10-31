@@ -74,6 +74,12 @@ diagram:
   caption: |
     Pyramid *ABCD*; the midpoints of the edges are {E}, {F}, {G}, {H}, {K}, {L}. Drag to rotate.
 
+  equal:
+    - [EB, HK, AE]
+    - [EH, KD]
+    - [EG, KL]
+    - [HG, DL]
+
 steps:
   - part: enunciation
     text: "Any pyramid which has a triangular base is divided into two pyramids equal and similar to one another, similar to the whole and having triangular bases, and into two equal prisms; and the two prisms are greater than the half of the whole pyramid."

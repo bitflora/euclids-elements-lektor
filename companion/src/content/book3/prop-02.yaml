@@ -36,6 +36,9 @@ diagram:
     {AEB} pictures the "line" the proof supposes to fall outside the circle. Drag {E}: as long as it is
     outside the circle, {DE} is longer than the radius — which is the contradiction.
 
+  equal:
+    - [DA, DB]
+
 steps:
   - part: enunciation
     text: "If on the circumference of a circle two points be taken at random, the straight line joining the points will fall within the circle."

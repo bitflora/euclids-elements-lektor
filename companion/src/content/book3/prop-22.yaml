@@ -41,6 +41,10 @@ diagram:
     Drag {A}, {B}, {C} and slide {D} round the circle: the angles at {B} and {D} always sum to two right
     angles.
 
+  equal:
+    - [angCAB, angBDC]
+    - [angBCA, angADB]
+
 steps:
   - part: enunciation
     text: "The opposite angles of quadrilaterals in circles are equal to two right angles."

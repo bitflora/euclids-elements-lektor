@@ -43,6 +43,10 @@ diagram:
   caption: |
     {AB} is two thirds of {C}; {DE} two thirds of {F}.
 
+  equal:
+    - [AG, GB]
+    - [DH, HE]
+
 steps:
   - part: enunciation
     text: "If a number be parts of a number, and another be the same parts of another, alternately also, whatever parts or part the first is of the third, the same parts or the same part will the second also be of the fourth."

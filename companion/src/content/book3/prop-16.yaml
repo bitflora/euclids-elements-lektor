@@ -47,6 +47,10 @@ diagram:
     {AE} is the tangent at {A}. {C} and {F} picture the impossible cases: a perpendicular falling inside
     the circle, and a line squeezed between the tangent and the circle.
 
+  equal:
+    - [CD, DH, DA]
+    - [angDAC, angACD]
+
 steps:
   - part: enunciation
     text: "The straight line drawn at right angles to the diameter of a circle from its extremity will fall outside the circle, and into the space between the straight line and the circumference another straight line cannot be interposed; further the angle of the semicircle is greater, and the remaining angle less, than any acute rectilineal angle."

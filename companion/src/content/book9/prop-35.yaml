@@ -49,6 +49,12 @@ diagram:
   caption: |
     {A}, {BC}, {D}, {EF} in continued proportion; {BG} and {FH} are equal to {A}; {FK} = {BC}, {FL} = {D}.
 
+  equal:
+    - [A, BG, FH]
+    - [BC, FK]
+    - [D, FL]
+    - [GC, HK]
+
 steps:
   - part: enunciation
     text: "If as many numbers as we please be in continued proportion, and there be subtracted from the second and the last numbers equal to the first, then, as the excess of the second is to the first, so will the excess of the last be to all those before it."

@@ -39,6 +39,10 @@ diagram:
     Drag the right ends of {E} and {F} to change them; {AB} stays twice {E} and {CD} twice {F}. Euclid draws
     magnitudes as lines, but the argument is about any magnitudes.
 
+  equal:
+    - [E, AG, GB]
+    - [F, CH, HD]
+
 steps:
   - part: enunciation
     text: "If there be any number of magnitudes whatever which are, respectively, equimultiples of any magnitudes equal in multitude, then, whatever multiple one of the magnitudes is of one, that multiple also will all be of all."

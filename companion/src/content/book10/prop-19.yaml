@@ -24,6 +24,9 @@ diagram:
   caption: |
     {AD} is the square on {AB}; {AC} the rectangle {AB}·{BC}.
 
+  equal:
+    - [AB, BD]
+
 steps:
   - part: enunciation
     text: "The rectangle contained by rational straight lines commensurable in length is rational."

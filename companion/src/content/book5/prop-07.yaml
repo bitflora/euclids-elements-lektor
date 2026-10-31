@@ -43,6 +43,10 @@ diagram:
     {B} is made equal to {A}; {D}, {E}, {F} are three times {A}, {B}, {C}. Drag the ends of {A} and {C}:
     {D} and {E} always compare with {F} in the same way.
 
+  equal:
+    - [A, B]
+    - [D, E]
+
 steps:
   - part: enunciation
     text: "Equal magnitudes have to the same the same ratio, as also has the same to equal magnitudes."

@@ -57,6 +57,12 @@ diagram:
     {DEF} is constructed with sides proportional to those of {ABC}. Drag {A}, {B}, {C}, {D}, {E}. {GEF} is the auxiliary
     triangle on {EF} with the angles of {ABC}: it turns out to be {DEF} reflected in {EF}.
 
+  equal:
+    - [angABC, angDEF, angFEG]
+    - [angBCA, angEFD, angEFG]
+    - [DE, EG]
+    - [FD, FG]
+
 steps:
   - part: enunciation
     text: "If two triangles have their sides proportional, the triangles will be equiangular and will have those angles equal which the corresponding sides subtend."

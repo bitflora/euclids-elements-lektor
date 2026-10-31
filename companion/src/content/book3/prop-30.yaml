@@ -33,6 +33,11 @@ diagram:
   caption: |
     Drag {A}, {B}, or slide {D} to change the arc. {D}, on the perpendicular bisector of {AB}, halves it.
 
+  equal:
+    - [AD, DB]
+    - [AC, CB]
+    - [angACD, angBCD]
+
 steps:
   - part: enunciation
     text: "To bisect a given circumference."

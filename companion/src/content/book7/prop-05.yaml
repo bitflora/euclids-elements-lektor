@@ -39,6 +39,10 @@ diagram:
   caption: |
     {A} is half of {BC} and {D} half of {EF}. Drag the ends to change the numbers.
 
+  equal:
+    - [A, BG, GC]
+    - [D, EH, HF]
+
 steps:
   - part: enunciation
     text: "If a number be a part of a number, and another be the same part of another, the sum will also be the same part of the sum that the one is of the one."

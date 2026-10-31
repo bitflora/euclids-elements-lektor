@@ -45,6 +45,11 @@ diagram:
     {DB} is placed so that $AD \cdot DC = DB^2$; {DE} is the true tangent. The two triangles {DEF} and
     {DBF} are congruent, so {DB} is a tangent too.
 
+  equal:
+    - [ED, BD]
+    - [EF, BF]
+    - [angFED, angDBF]
+
 steps:
   - part: enunciation
     text: "If a point be taken outside a circle and from the point there fall on the circle two straight lines, if one of them cut the circle, and the other fall on it, and if further the rectangle contained by the whole of the straight line which cuts the circle and the straight line intercepted on it outside between the point and the convex circumference be equal to the square on the straight line which falls on the circle, the straight line which falls on it will touch the circle."

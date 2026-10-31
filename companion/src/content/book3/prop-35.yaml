@@ -49,6 +49,10 @@ diagram:
     Slide the four points round the circle: the product of the pieces of one chord always equals that
     of the other.
 
+  equal:
+    - [BF, CF]
+    - [GC, AG]
+
 steps:
   - part: enunciation
     text: "If in a circle two straight lines cut one another, the rectangle contained by the segments of the one is equal to the rectangle contained by the segments of the other."

@@ -83,6 +83,10 @@ diagram:
     Slide {A}, {B} and {D}; {C} stays the midpoint of {AB}. The gnomon {NOP} always equals the
     rectangle {AM}.
 
+  equal:
+    - [AC, CB]
+    - [BD, DM]
+
 steps:
   - part: enunciation
     text: "If a straight line be bisected and a straight line be added to it in a straight line, the rectangle contained by the whole with the added straight line and the added straight line together with the square on the half is equal to the square on the straight line made up of the half and the added straight line."

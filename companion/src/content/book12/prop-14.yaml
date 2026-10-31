@@ -55,6 +55,9 @@ diagram:
   caption: |
     Cylinders *EB*, *FD* on equal bases; *CM* is a cylinder on the base of *FD* with axis {LN} equal to {GH}.
 
+  equal:
+    - [GH, LN]
+
 steps:
   - part: enunciation
     text: "Cones and cylinders which are on equal bases are to one another as their heights."

@@ -40,6 +40,10 @@ diagram:
   caption: |
     Slide {C}, {F}, {D}. {AE} is three times {CF}, {EB} three times {CG}; the proof shows {CG} must equal {FD}.
 
+  equal:
+    - [CD, GF]
+    - [FD, CG]
+
 steps:
   - part: enunciation
     text: "If a magnitude be the same multiple of a magnitude that a part subtracted is of a part subtracted, the remainder will also be the same multiple of the remainder that the whole is of the whole."

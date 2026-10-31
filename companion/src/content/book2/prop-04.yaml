@@ -73,6 +73,11 @@ diagram:
     Slide {A}, {B} and the cut {C}. The two squares on the diagonal and the two equal rectangles
     always fill the big square.
 
+  equal:
+    - [CB, CG, GK, KB]
+    - [angCGB, angADB, angABD]
+    - [AB, AD]
+
 steps:
   - part: enunciation
     text: "If a straight line be cut at random, the square on the whole is equal to the squares on the segments and twice the rectangle contained by the segments."

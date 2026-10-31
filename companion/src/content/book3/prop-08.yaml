@@ -75,6 +75,12 @@ diagram:
     Drag {A} and {D}, slide {M} and the points {E}, {F}, {C} on the circle. {B} is the mirror image of
     {K} in the diameter, so {DB} = {DK}.
 
+  equal:
+    - [MK, ML, MB, MG]
+    - [ME, MF, AM]
+    - [DB, DK]
+    - [angKMD, angDMB]
+
 steps:
   - part: enunciation
     text: "If a point be taken outside a circle and from the point straight lines be drawn through to the circle, one of which is through the centre and the others are drawn at random, then, of the straight lines which fall on the concave circumference, that through the centre is greatest, while of the rest the nearer to that through the centre is always greater than the more remote, but, of the straight lines falling on the convex circumference, that between the point and the diameter is least, while of the rest the nearer to the least is always less than the more remote, and only two equal straight lines will fall on the circle from the point, one on each side of the least."
