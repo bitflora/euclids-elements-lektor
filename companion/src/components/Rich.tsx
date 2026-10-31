@@ -1,7 +1,6 @@
-import { Fragment, useMemo } from "react";
-import { heathHtml, joyceHtml, richHtml } from "../lib/rich";
-import type { JoyceFigure } from "../types";
-import { Diagram } from "./Diagram";
+import { useMemo } from "react";
+import { heathHtml, richHtml } from "../lib/rich";
+import type { Item } from "../types";
 
 /** This edition's annotation prose. */
 export function Rich({ md, inline, className }: { md?: string | null; inline?: boolean; className?: string }) {
@@ -18,28 +17,15 @@ export function Heath({ src, refs = "inline", as = "span" }: { src: string; refs
   return <Tag className="heath" dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
-/** Joyce's guide, with his interactive figures mounted in place. */
-export function Joyce({ md, figures }: { md?: string; figures: JoyceFigure[] }) {
-  const parts = useMemo(() => {
-    const html = joyceHtml(md);
-    return html.split(/<div class="joyce-fig" data-fig="(\d+)"><\/div>/);
-  }, [md]);
-  if (!md) return null;
+/** Joyce's guide and translation live on his site, published there by his permission; link out. */
+export function JoyceLink({ item }: { item: Item }) {
+  if (!item.joyce?.url) return null;
   return (
-    <div className="rich joyce">
-      {parts.map((p, i) =>
-        i % 2 === 0 ? (
-          <div key={i} dangerouslySetInnerHTML={{ __html: p }} />
-        ) : (
-          <Fragment key={i}>
-            {figures[Number(p)] && (
-              <div className="joyce-figure">
-                <Diagram joyceConfig={figures[Number(p)].config} width={figures[Number(p)].width} height={figures[Number(p)].height} label="Joyce's figure" compact />
-              </div>
-            )}
-          </Fragment>
-        ),
-      )}
-    </div>
+    <p className="joyce-link small">
+      <a href={item.joyce.url} target="_blank" rel="noopener">
+        D. E. Joyce's guide to {item.short} ↗
+      </a>
+      <span className="muted"> · euclids-elements.org</span>
+    </p>
   );
 }

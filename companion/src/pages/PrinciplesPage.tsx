@@ -5,7 +5,7 @@ import { peek, usePeek } from "../lib/peek";
 import { bookOf } from "../content/books";
 import type { Item } from "../types";
 import { Diagram } from "../components/Diagram";
-import { Heath, Joyce, Rich } from "../components/Rich";
+import { Heath, JoyceLink, Rich } from "../components/Rich";
 import { PeekCard, RefGroups } from "../components/Refs";
 import { PanelShell } from "../components/Layout";
 
@@ -183,7 +183,6 @@ function principleSets(list: Item[]): [string, Item[]][] {
 
 function PrincipleNotes({ item }: { item: Item }) {
   const p = item.principle;
-  const j = item.joyce;
   return (
     <div className="step-notes">
       <div className="panel-head">
@@ -253,17 +252,10 @@ function PrincipleNotes({ item }: { item: Item }) {
             </details>
           )}
         </>
-      ) : j?.guide || j?.groupGuide ? null : (
+      ) : (
         <p className="muted">Notes for this item have not been written yet.</p>
       )}
-      {(j?.guide || j?.groupGuide) && (
-        <details className="app-sec small-sec" open>
-          <summary>
-            Joyce's guide <span className="tag">D. E. Joyce</span>
-          </summary>
-          <Joyce md={j.guide || j.groupGuide} figures={j.figures} />
-        </details>
-      )}
+      <JoyceLink item={item} />
       <section className="deps">
         <h4>Used in</h4>
         <RefGroups ids={item.usedBy} />

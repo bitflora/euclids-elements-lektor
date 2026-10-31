@@ -159,14 +159,6 @@ export function TopBar({ route, onToc }: { route: Route; onToc: () => void }) {
                   <option value="prose">Continuous prose</option>
                 </select>
               </label>
-              <label>
-                <span>Explanations open at</span>
-                <select value={settings.level} onChange={(e) => setSettings({ level: Number(e.target.value) as 1 })}>
-                  <option value={1}>Level 1 — hint</option>
-                  <option value={2}>Level 2 — explanation</option>
-                  <option value={3}>Level 3 — modern reconstruction</option>
-                </select>
-              </label>
               <label className="check">
                 <input type="checkbox" checked={settings.buildFigure} onChange={(e) => setSettings({ buildFigure: e.target.checked })} />
                 <span>Build the figure step by step</span>
@@ -262,7 +254,7 @@ function BookToc({ book, current }: { book: number; current?: string }) {
           </Fragment>
         ))}
       <p className="small muted toc-legend">
-        <span className="dot" /> annotated · others have Heath's text and Joyce's guide
+        <span className="dot" /> annotated · others have Heath's text
       </p>
     </div>
   );

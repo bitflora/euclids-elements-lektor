@@ -35,11 +35,12 @@ export function HomePage() {
           </li>
           <li>
             <strong>Click what confuses you.</strong> Each sentence of a proof is a step. Clicking it lights the objects it
-            is about in the figure and opens a one-line hint on the right.
+            is about in the figure and opens its notes on the right.
           </li>
           <li>
-            <strong>Go deeper only if you need to.</strong> <em>Explain more</em> gives the full reasoning;{" "}
-            <em>In modern notation</em> and <em>Modern reconstruction</em> translate it into today's mathematics, and say so.
+            <strong>Read as deep as you like.</strong> Each step's notes start with a one-line hint, then the full
+            reasoning; <em>In modern notation</em> and <em>Modern reconstruction</em> translate it into today's
+            mathematics, and say so.
           </li>
           <li>
             <strong>Follow references without losing your place.</strong> Clicking <span className="chip">Post. 3</span>{" "}
@@ -90,7 +91,7 @@ export function HomePage() {
 // ─── Search ───────────────────────────────────────────────────────────────
 interface Doc {
   id: string;
-  field: "Euclid" | "Notes" | "Joyce" | "Heath's notes";
+  field: "Euclid" | "Notes" | "Heath's notes";
   text: string;
   step?: number;
 }
@@ -116,13 +117,11 @@ function buildIndex(): Doc[] {
     ].filter(Boolean) as string[];
     for (const n of notes) docs.push({ id: it.id, field: "Notes", text: plainText(n) });
     for (const n of it.heathNotes) docs.push({ id: it.id, field: "Heath's notes", text: plainText(n.text) });
-    const g = it.joyce?.guide ?? it.joyce?.groupGuide;
-    if (g) for (const para of g.split(/\n\n+/)) if (!para.startsWith("<")) docs.push({ id: it.id, field: "Joyce", text: plainText(para.replace(/@/g, "")) });
   }
   return docs;
 }
 
-const WEIGHT = { Euclid: 3, Notes: 2, "Heath's notes": 1, Joyce: 1 };
+const WEIGHT = { Euclid: 3, Notes: 2, "Heath's notes": 1 };
 
 export function SearchPage({ q }: { q: string }) {
   const [query, setQuery] = useState(q);
@@ -233,9 +232,12 @@ export function AboutPage() {
         </div>
       </div>
       <p>
-        Two further voices appear under <em>Notes and commentary</em>: Heath's own textual notes (1908) and Dr. David
-        E. Joyce's guide from his online edition, read directly from this repository's Lektor content, where it is
-        republished by his permission (© D. E. Joyce; see the repository's COPYRIGHT.md).
+        A fourth voice appears under <em>Notes and commentary</em>: Heath's own textual notes (1908). Dr. David E.
+        Joyce's guide and translation are not reproduced here; every panel links to the item's page on{" "}
+        <a href="https://www.euclids-elements.org/elements/" target="_blank" rel="noopener">
+          euclids-elements.org
+        </a>
+        , where they are published by his permission.
       </p>
 
       <h2>Conventions in the modern notation</h2>

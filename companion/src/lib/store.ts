@@ -2,11 +2,7 @@
 // convenience, kept in localStorage; the app works identically without it.
 import { useSyncExternalStore } from "react";
 
-export type Level = 1 | 2 | 3;
-
 export interface Settings {
-  /** Default depth when a step is opened: 1 hint, 2 explanation, 3 + modern reconstruction. */
-  level: Level;
   /** Show the figure as it stands at the selected step. */
   buildFigure: boolean;
   /** "steps": one block per step with Proclus's part labels; "prose": Heath's paragraphs. */
@@ -16,7 +12,7 @@ export interface Settings {
   theme: "auto" | "light" | "dark";
 }
 
-const DEFAULTS: Settings = { level: 1, buildFigure: true, view: "steps", heathRefs: true, theme: "auto" };
+const DEFAULTS: Settings = { buildFigure: true, view: "steps", heathRefs: true, theme: "auto" };
 const KEY = "euclid-companion:settings";
 
 function read<T>(key: string, fallback: T): T {

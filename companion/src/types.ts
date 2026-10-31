@@ -38,17 +38,15 @@ export interface HeathBook {
   corrections: { id: ItemId; from: string; to: string; reason: string }[];
 }
 
-// ─── Joyce's commentary, from the Lektor tree (virtual:joyce) ────────────
+// ─── Joyce's figures and site links, from the Lektor tree (virtual:joyce) ─
 export interface JoyceFigure {
   width: number;
   height: number;
   config: string;
 }
 export interface JoyceEntry {
-  statement?: string;
-  proof?: string;
-  guide?: string;
-  groupGuide?: string;
+  /** The item's page on euclids-elements.org (Joyce's guide and translation). */
+  url: string;
   group?: string;
   figures: JoyceFigure[];
 }

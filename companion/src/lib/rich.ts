@@ -1,8 +1,7 @@
-// Three small renderers, one per voice:
+// Two small renderers, one per voice:
 //   heathHtml  — Euclid (Heath). Only structural markup; no Markdown.
 //   richHtml   — this edition's annotations: Markdown + $KaTeX$ + tokens.
-//   joyceHtml  — Joyce's guides from the Lektor tree.
-// All three emit the same two interactive hooks, handled by event delegation:
+// Both emit the same two interactive hooks, handled by event delegation:
 //   <span class="el" data-el="AB">  — lights element AB in the diagram
 //   <a class="xref" data-ref="I.4"> — opens a peek at I.4 without navigating
 
@@ -96,27 +95,6 @@ export function richHtml(src: string | undefined | null, inline = false): string
   s = tokens(s, stash);
   const html = inline ? (md.parseInline(s) as string) : (md.parse(s) as string);
   return restore(html, stash);
-}
-
-// ─── Joyce ────────────────────────────────────────────────────────────────
-const CITE = /@((?:[IVX]+)\.(?:Def\.(?:[IVX]+\.)?|Post\.)?\d+|C\.N\.\d+)/g;
-
-export function joyceHtml(src: string | undefined): string {
-  if (!src) return "";
-  const stash: string[] = [];
-  const put = (html: string) => `\uE000${stash.push(html) - 1}\uE001`;
-  let s = src
-    .replace(/\[!just [^\]]*\]/g, "")
-    .replace(/\[!(qef|qed)\]/g, "")
-    .replace(/<div class="joyce-fig"[^>]*><\/div>/g, (m) => put(m))
-    .replace(CITE, (_, tok: string) => {
-      const id = /^C\.N\.(\d+)$/.test(tok) ? `I.CN.${tok.slice(4)}` : tok.replace(/^X\.Def\.I\./, "X.Def.");
-      return put(xref(id, tok));
-    })
-    .replace(/\{([^{}|]+)\|([A-Za-z0-9_']+)\}/g, (_, disp, name) => put(el(disp, name)))
-    .replace(/\{([A-Za-z][A-Za-z0-9']*)\}/g, (_, n) => put(el(n, n)));
-  s = protectMath(s, stash);
-  return restore(md.parse(s) as string, stash);
 }
 
 /** Plain text for search indexing. */

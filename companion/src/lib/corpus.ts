@@ -1,5 +1,5 @@
 // Assembles the reading corpus: Heath's text + this edition's annotations +
-// Joyce's guides, with dependencies and backlinks computed once.
+// Joyce's figures, with dependencies and backlinks computed once.
 
 import { parse } from "yaml";
 import joyce from "virtual:joyce";
@@ -192,13 +192,6 @@ export function resolveQuery(q: string, book = 1): ItemId | undefined {
   else if (kind.startsWith("c") && !kind.startsWith("prop")) id = `${R}.CN.${n}`;
   else id = `${R}.${n}`;
   return items.has(id) ? id : undefined;
-}
-
-/** Map Joyce's citation spellings (@I.Def.15, @C.N.1) to item ids. */
-export function joyceRef(tok: string): ItemId {
-  const cn = /^C\.N\.(\d+)$/.exec(tok);
-  if (cn) return `I.CN.${cn[1]}`;
-  return tok;
 }
 
 if (errors.length && typeof console !== "undefined") {

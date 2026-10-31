@@ -149,18 +149,6 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.2; }
 }
 .btn-icon:hover:not(:disabled) { background: var(--hover); color: var(--ink); }
 .btn-icon:disabled { opacity: 0.3; cursor: default; }
-.btn-more {
-  border: 1px dashed var(--rule-2);
-  background: none;
-  border-radius: 6px;
-  padding: 0.3rem 0.7rem;
-  margin: 0.25rem 0 0.75rem;
-  color: var(--note);
-  cursor: pointer;
-  font-size: 0.88rem;
-  font-weight: 600;
-}
-.btn-more:hover { border-style: solid; background: var(--note-tint); }
 
 /* ─── Top bar ────────────────────────────────────────────────────────────── */
 .topbar {
@@ -313,10 +301,6 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.2; }
 }
 .tabs > button.on { color: var(--ink); border-bottom-color: var(--ink); }
 .tabs-spacer { flex: 1; }
-.seg { display: inline-flex; border: 1px solid var(--rule-2); border-radius: 6px; overflow: hidden; margin-bottom: 4px; }
-.seg button { border: 0; background: none; padding: 0.15rem 0.5rem; font-size: 0.76rem; cursor: pointer; color: var(--muted); }
-.seg button + button { border-left: 1px solid var(--rule-2); }
-.seg button.on { background: var(--ink); color: var(--paper); }
 
 /* ─── Diagram ────────────────────────────────────────────────────────────── */
 .diagram { margin: 0; }
@@ -526,8 +510,7 @@ blockquote.quote { margin: 0 0 0.8rem; }
 .heath-note { margin-bottom: 0.6rem; }
 .heath-note .lemma { font-weight: 600; font-size: 0.85rem; margin: 0; color: var(--ink-2); }
 .heath-note p.heath { margin: 0.15rem 0 0; font-size: 1.02rem; line-height: 1.5; }
-.joyce h4 { font-size: 0.98rem; margin: 1rem 0 0.4rem; }
-.joyce-figure { max-width: 340px; margin: 0.5rem 0 0.75rem; }
+.joyce-link { margin: 0.9rem 0 0; }
 
 /* ─── Pages ──────────────────────────────────────────────────────────────── */
 .page { max-width: 52rem; margin: 0 auto; padding: 2rem clamp(1rem, 4vw, 2.5rem) 5rem; outline: none; }
@@ -636,8 +619,7 @@ blockquote.quote { margin: 0 0 0.8rem; }
   .panel.sheet-open { overflow-y: auto; }
   .panel-figure { max-width: 320px; margin: 0 auto; width: 100%; padding-top: 0; border-bottom: 0; }
   .panel-body { padding-bottom: 1.5rem; overflow: visible; flex: none; }
-  .tabs .seg { display: none; }
-}
+  .tabs }
 
 /* ─── Section tabs: Definitions · Postulates · Common Notions · Propositions ─ */
 .section-tabs { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; border-bottom: 1px solid var(--rule); margin: 0 auto 1.25rem; }

@@ -9,7 +9,7 @@ import { Diagram } from "../components/Diagram";
 import { Heath } from "../components/Rich";
 import { PeekCard } from "../components/Refs";
 import { PanelShell } from "../components/Layout";
-import { LevelSwitch, StepNotes } from "../components/StepNotes";
+import { StepNotes } from "../components/StepNotes";
 import { Overview, ProseView, StepsView } from "../components/Proposition";
 import { KINDS, SectionHead } from "./PrinciplesPage";
 
@@ -167,8 +167,6 @@ export function PropositionsPage({ book, select, step }: { book: string; select?
               <button role="tab" aria-selected className="on">
                 Notes
               </button>
-              <span className="tabs-spacer" />
-              <LevelSwitch />
             </div>
           )
         }

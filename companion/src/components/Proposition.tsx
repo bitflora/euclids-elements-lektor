@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { refLabel } from "../lib/rich";
 import type { Item, Step } from "../types";
-import { Heath, Joyce, Rich } from "./Rich";
+import { Heath, JoyceLink, Rich } from "./Rich";
 import { RefGroups } from "./Refs";
 import { partLabel } from "./StepNotes";
 
@@ -98,7 +98,6 @@ const PART_TITLES: Record<Step["part"], string> = {
 /** A proposition's summary, in the panel while no step is chosen. */
 export function Overview({ item, onStart }: { item: Item; onStart: () => void }) {
   const ann = item.prop?.annotation;
-  const j = item.joyce;
   return (
     <div className="overview">
       <div className="panel-head">
@@ -122,16 +121,9 @@ export function Overview({ item, onStart }: { item: Item; onStart: () => void })
           </button>
         </>
       ) : (
-        <p className="muted small">Point at a lettered name in the text to find it in Joyce's figure.</p>
+        <p className="muted small">Point at a lettered name in the text to find it in the figure.</p>
       )}
-      {(j?.guide || j?.groupGuide) && (
-        <details className="app-sec small-sec" open>
-          <summary>
-            Joyce's guide <span className="tag">D. E. Joyce</span>
-          </summary>
-          <Joyce md={j.guide ?? j.groupGuide} figures={j.figures} />
-        </details>
-      )}
+      <JoyceLink item={item} />
       <section className="deps">
         <h4>Uses</h4>
         <RefGroups ids={item.uses} heath={item.usesHeath} />
@@ -151,14 +143,13 @@ export function Overview({ item, onStart }: { item: Item; onStart: () => void })
 
 export function Apparatus({ item }: { item: Item }) {
   const ann = item.prop?.annotation;
-  const j = item.joyce;
   return (
     <div className="apparatus">
       <h2 className="apparatus-title">Notes and commentary</h2>
       {ann && (
         <details className="app-sec">
           <summary>
-            Modern reconstruction <span className="tag tag-modern">Level 3 · not Euclid</span>
+            Modern reconstruction <span className="tag tag-modern">not Euclid</span>
           </summary>
           <Rich md={ann.reconstruction.preamble} />
           <ol className="recon">
@@ -210,15 +201,6 @@ export function Apparatus({ item }: { item: Item }) {
               <Heath src={n.text} as="p" />
             </div>
           ))}
-        </details>
-      )}
-      {j?.statement && (
-        <details className="app-sec">
-          <summary>
-            Another translation <span className="tag">D. E. Joyce</span>
-          </summary>
-          <p className="small muted">Joyce's own translation, for comparison with Heath's.</p>
-          <Joyce md={`**${j.statement}**\n\n${(j.proof ?? "").replace(/<div class="joyce-fig"[^>]*><\/div>/g, "")}`} figures={[]} />
         </details>
       )}
     </div>

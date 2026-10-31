@@ -1,11 +1,10 @@
-// Reads Dr. Joyce's commentary straight out of the Lektor content tree
-// (../content/elements/books/bookN/…/contents.lr) at build time and exposes it
-// as the virtual module `virtual:joyce`. Nothing is copied into this app's
-// source: the Lektor tree stays the single home of Joyce's text.
+// Reads the Lektor content tree (../content/elements/books/bookN/…/contents.lr)
+// at build time and exposes, per item, Joyce's interactive figures and the
+// address of the item's page on euclids-elements.org, as `virtual:joyce`.
 //
-// Joyce's text is © David E. Joyce, republished in the parent repository by
-// his permission (see ../COPYRIGHT.md). This companion is a local reading
-// tool over that checkout; it does not redistribute the text on its own.
+// Joyce's text (guides and translation) is © David E. Joyce and is published
+// by his permission only on that site (see ../COPYRIGHT.md). None of it is put
+// into this app's bundle: the companion links to the site instead.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -19,13 +18,13 @@ export interface JoyceFigure {
 }
 
 export interface JoyceEntry {
-  statement?: string;
-  proof?: string;
-  guide?: string;
-  groupGuide?: string;
+  /** The item's page on euclids-elements.org. */
+  url: string;
   group?: string;
   figures: JoyceFigure[];
 }
+
+const SITE = "https://www.euclids-elements.org";
 
 const ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII"];
 
@@ -109,7 +108,6 @@ function readBook(contentRoot: string, book: number): Record<string, JoyceEntry>
   for (const [sec, idOf] of sections) {
     const sdir = path.join(dir, sec);
     if (!fs.existsSync(sdir)) continue;
-    const groups: Record<string, string> = {};
     const groupFigs: Record<string, JoyceFigure[]> = {};
     for (const slug of fs.readdirSync(sdir)) {
       const file = path.join(sdir, slug, "contents.lr");
@@ -117,30 +115,24 @@ function readBook(contentRoot: string, book: number): Record<string, JoyceEntry>
       const f = parseLr(fs.readFileSync(file, "utf8"));
       if (f._model?.endsWith("_group")) {
         const figs: JoyceFigure[] = [];
-        groups[slug] = extractFigures(f.guide ?? f.body ?? "", figs);
+        extractFigures(f.guide ?? f.body ?? "", figs);
         groupFigs[slug] = figs;
         continue;
       }
       const id = idOf(slug);
       if (!id) continue;
       const figures: JoyceFigure[] = [];
-      const e: JoyceEntry = { figures };
-      if (f.statement) e.statement = f.statement;
-      if (f.proof) e.proof = extractFigures(f.proof, figures);
+      // Lektor serves a dotted slug (defX.II.1) as a file, others as a directory.
+      const url = `${SITE}/elements/books/book${R}/${sec}/${slug}${slug.includes(".") ? "" : "/"}`;
+      const e: JoyceEntry = { url, figures };
+      if (f.proof) extractFigures(f.proof, figures);
       const g = f.guide ?? f.body;
-      if (g) e.guide = extractFigures(g, figures);
+      if (g) extractFigures(g, figures);
       if (f.group) e.group = f.group;
       out[id] = e;
     }
-    // Bundled definitions / common notions share one guide.
-    for (const e of Object.values(out)) {
-      if (e.group && groups[e.group] !== undefined && e.groupGuide === undefined) {
-        // Figures of the group guide are appended after the entry's own.
-        const offset = e.figures.length;
-        e.groupGuide = groups[e.group].replace(/data-fig="(\d+)"/g, (_, n) => `data-fig="${Number(n) + offset}"`);
-        e.figures.push(...groupFigs[e.group]);
-      }
-    }
+    // Bundled definitions / common notions share one guide; its figures follow the entry's own.
+    for (const e of Object.values(out)) if (e.group && groupFigs[e.group]) e.figures.push(...groupFigs[e.group]);
   }
   return out;
 }
