@@ -98,6 +98,7 @@ const PART_TITLES: Record<Step["part"], string> = {
 /** A proposition's summary, in the panel while no step is chosen. */
 export function Overview({ item, onStart }: { item: Item; onStart: () => void }) {
   const ann = item.prop?.annotation;
+  const j = item.joyce;
   return (
     <div className="overview">
       <div className="panel-head">
@@ -122,6 +123,14 @@ export function Overview({ item, onStart }: { item: Item; onStart: () => void })
         </>
       ) : (
         <p className="muted small">Point at a lettered name in the text to find it in Joyce's figure.</p>
+      )}
+      {(j?.guide || j?.groupGuide) && (
+        <details className="app-sec small-sec" open>
+          <summary>
+            Joyce's guide <span className="tag">D. E. Joyce</span>
+          </summary>
+          <Joyce md={j.guide ?? j.groupGuide} figures={j.figures} />
+        </details>
       )}
       <section className="deps">
         <h4>Uses</h4>
@@ -201,14 +210,6 @@ export function Apparatus({ item }: { item: Item }) {
               <Heath src={n.text} as="p" />
             </div>
           ))}
-        </details>
-      )}
-      {(j?.guide || j?.groupGuide) && (
-        <details className="app-sec">
-          <summary>
-            Joyce's guide <span className="tag">D. E. Joyce</span>
-          </summary>
-          <Joyce md={j.guide ?? j.groupGuide} figures={j.figures} />
         </details>
       )}
       {j?.statement && (

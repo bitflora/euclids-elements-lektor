@@ -179,7 +179,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.2; }
 .brand { font: 500 1.2rem var(--serif); color: var(--ink); text-decoration: none; white-space: nowrap; }
 .brand-sub { font: 400 0.85rem var(--sans); color: var(--muted); }
 .jump { flex: 1; display: flex; justify-content: center; }
-.jump input, .search-box, .tutor-input input {
+.jump input, .search-box {
   width: 100%;
   max-width: 340px;
   border: 1px solid var(--rule-2);
@@ -409,7 +409,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.2; }
 /* Lettered objects: AB, ABC … in italics, as Heath prints them */
 .el { font-family: var(--serif); font-style: italic; cursor: default; border-radius: 2px; padding: 0 1px; }
 .el:hover, .el:focus { background: #ffe38a66; outline: none; }
-.rich .el, .tutor .el { font-size: 1.08em; }
+.rich .el { font-size: 1.08em; }
 
 /* Heath's bracketed references */
 .heath-ref { font: 400 0.7em var(--sans); color: var(--muted); white-space: nowrap; margin: 0 0.1em; }
@@ -493,7 +493,6 @@ blockquote.quote { margin: 0 0 0.8rem; }
 .chip-heath { background: var(--note); color: var(--panel); }
 .chip-heath:hover { background: var(--ink); border-color: var(--ink); color: var(--panel); }
 .chip-missing { border-style: dashed; opacity: 0.7; }
-.ask { margin-top: 0.5rem; display: block; }
 .how { color: var(--ink-2); }
 .overview .btn { margin: 0.25rem 0 1rem; }
 .deps h4 { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 1rem 0 0.35rem; }
@@ -529,20 +528,6 @@ blockquote.quote { margin: 0 0 0.8rem; }
 .heath-note p.heath { margin: 0.15rem 0 0; font-size: 1.02rem; line-height: 1.5; }
 .joyce h4 { font-size: 0.98rem; margin: 1rem 0 0.4rem; }
 .joyce-figure { max-width: 340px; margin: 0.5rem 0 0.75rem; }
-
-/* ─── Tutor ──────────────────────────────────────────────────────────────── */
-.tutor { display: flex; flex-direction: column; gap: 0.5rem; height: 100%; }
-.tutor-disclaimer { margin: 0; }
-.tutor-log { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 0.5rem; min-height: 120px; }
-.tutor-msg { padding: 0.5rem 0.7rem; border-radius: 8px; font-size: 0.93rem; max-width: 95%; }
-.tutor-msg.tutor { background: var(--note-tint); align-self: flex-start; }
-.tutor-msg.reader { background: var(--paper-2); align-self: flex-end; }
-.tutor-msg.reader p { margin: 0; }
-.tutor-chips { display: flex; flex-wrap: wrap; gap: 0.3rem; }
-.chip-btn { border: 1px solid var(--rule-2); background: var(--panel); border-radius: 999px; padding: 0.1rem 0.6rem; font-size: 0.8rem; cursor: pointer; }
-.chip-btn:hover { border-color: var(--note); color: var(--note); }
-.tutor-input { display: flex; gap: 0.4rem; }
-.tutor-input input { max-width: none; flex: 1; }
 
 /* ─── Pages ──────────────────────────────────────────────────────────────── */
 .page { max-width: 52rem; margin: 0 auto; padding: 2rem clamp(1rem, 4vw, 2.5rem) 5rem; outline: none; }

@@ -253,8 +253,16 @@ function PrincipleNotes({ item }: { item: Item }) {
             </details>
           )}
         </>
-      ) : (
+      ) : j?.guide || j?.groupGuide ? null : (
         <p className="muted">Notes for this item have not been written yet.</p>
+      )}
+      {(j?.guide || j?.groupGuide) && (
+        <details className="app-sec small-sec" open>
+          <summary>
+            Joyce's guide <span className="tag">D. E. Joyce</span>
+          </summary>
+          <Joyce md={j.guide || j.groupGuide} figures={j.figures} />
+        </details>
       )}
       <section className="deps">
         <h4>Used in</h4>
@@ -263,14 +271,6 @@ function PrincipleNotes({ item }: { item: Item }) {
           Propositions whose text Heath annotates with this reference, or whose steps this edition's notes say rely on it.
         </p>
       </section>
-      {(j?.guide || j?.groupGuide) && (
-        <details className="app-sec small-sec">
-          <summary>
-            Joyce's guide <span className="tag">D. E. Joyce</span>
-          </summary>
-          <Joyce md={j.guide || j.groupGuide} figures={j.figures} />
-        </details>
-      )}
     </div>
   );
 }

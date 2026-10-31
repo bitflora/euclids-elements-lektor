@@ -119,7 +119,7 @@ export function joyceHtml(src: string | undefined): string {
   return restore(md.parse(s) as string, stash);
 }
 
-/** Plain text for search indexing and tutor quoting. */
+/** Plain text for search indexing. */
 export function plainText(src: string | undefined): string {
   if (!src) return "";
   return src

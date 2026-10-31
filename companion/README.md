@@ -54,8 +54,8 @@ follow Heath's lettering. All thirteen books are annotated.
 - **Depth**: *Hint* (level 1, the default), *Explain* (level 2: what Euclid does, the fact used,
   its justification, why it follows, what is left implicit), *Modern* (level 3: the relevant lines
   of a modern reconstruction). Set the default with the switch in the panel or the **Aa** menu.
-- **Tutor** tab: a scripted tutor (not an AI model). "I don't understand step 5" explains that
-  step only; each "why?" goes one rung deeper; "show the whole proof" gives the reconstruction.
+- **Joyce's guide**: D. E. Joyce's commentary from the original site, open in the panel beside
+  each proposition and principle, and a click away in every step's notes.
 - **Aa** menu: numbered steps or Heath's continuous prose; build the figure step by step; hide
   Heath's bracketed references; light/dark theme.
 - Your place (page, step, scroll position) is remembered in the browser.
@@ -139,7 +139,6 @@ companion/
   src/lib/align.ts            quotation check and step alignment
   src/lib/corpus.ts           Heath + annotations + Joyce, dependencies, backlinks
   src/lib/rich.ts             renderers for the three voices
-  src/lib/tutor.ts            the scripted tutor
   src/components/, src/pages/ React UI
   src/content/                this edition's annotations (YAML)
   tests/corpus.test.ts        integrity checks

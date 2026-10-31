@@ -10,7 +10,6 @@ import { Heath } from "../components/Rich";
 import { PeekCard } from "../components/Refs";
 import { PanelShell } from "../components/Layout";
 import { LevelSwitch, StepNotes } from "../components/StepNotes";
-import { Tutor } from "../components/Tutor";
 import { Overview, ProseView, StepsView } from "../components/Proposition";
 import { KINDS, SectionHead } from "./PrinciplesPage";
 
@@ -29,8 +28,6 @@ export function PropositionsPage({ book, select, step }: { book: string; select?
   const shown = selected ?? getItem(reading);
   const ann = shown?.prop?.annotation;
   const settings = useSettings();
-  const [tab, setTab] = useState<"notes" | "tutor">("notes");
-  const [seed, setSeed] = useState<{ text: string; nonce: number } | null>(null);
   const stack = usePeek();
   const mainRef = useRef<HTMLElement>(null);
 
@@ -109,7 +106,6 @@ export function PropositionsPage({ book, select, step }: { book: string; select?
   const onStepClick = (id: string) => (i: number) => (e: React.MouseEvent) => {
     if ((e.target as HTMLElement).closest(".xref")) return;
     if (window.getSelection()?.toString()) return; // reader is selecting text
-    setTab("notes");
     go(id, i);
   };
 
@@ -168,24 +164,19 @@ export function PropositionsPage({ book, select, step }: { book: string; select?
         tabs={
           shown && (
             <div className="tabs" role="tablist">
-              <button role="tab" aria-selected={tab === "notes"} className={tab === "notes" ? "on" : ""} onClick={() => setTab("notes")}>
+              <button role="tab" aria-selected className="on">
                 Notes
-              </button>
-              <button role="tab" aria-selected={tab === "tutor"} className={tab === "tutor" ? "on" : ""} onClick={() => setTab("tutor")}>
-                Tutor
               </button>
               <span className="tabs-spacer" />
               <LevelSwitch />
             </div>
           )
         }
-        open={stepIdx != null || stack.length > 0 || tab === "tutor"}
+        open={stepIdx != null || stack.length > 0}
         onCloseSheet={() => (select ? go(select) : undefined)}
       >
         {stack.length > 0 ? (
           <PeekCard id={stack[stack.length - 1]} depth={stack.length} onBack={() => peek.back()} />
-        ) : shown && tab === "tutor" ? (
-          <Tutor key={shown.id} item={shown} seed={seed} onFocusStep={(i) => i != null && go(shown.id, i)} />
         ) : cur ? (
           <StepNotes
             item={selected!}
@@ -193,10 +184,6 @@ export function PropositionsPage({ book, select, step }: { book: string; select?
             onPrev={stepIdx! > 0 ? () => go(select!, stepIdx! - 1) : undefined}
             onNext={stepIdx! < steps.length - 1 ? () => go(select!, stepIdx! + 1) : undefined}
             onClose={() => go(select!)}
-            onAskTutor={() => {
-              setSeed({ text: cur.number != null ? `I don't understand step ${cur.number}` : "overview", nonce: Date.now() });
-              setTab("tutor");
-            }}
           />
         ) : shown ? (
           <Overview item={shown} onStart={() => go(shown.id, 0)} />

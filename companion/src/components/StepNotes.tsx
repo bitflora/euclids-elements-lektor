@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { setSettings, useSettings, type Level } from "../lib/store";
 import type { Item, Step } from "../types";
-import { Rich } from "./Rich";
+import { Joyce, Rich } from "./Rich";
 import { RefChip } from "./Refs";
 
 const PART_LABEL: Record<Step["part"], string> = {
@@ -41,20 +41,19 @@ export function StepNotes({
   onPrev,
   onNext,
   onClose,
-  onAskTutor,
 }: {
   item: Item;
   step: Step;
   onPrev?: () => void;
   onNext?: () => void;
   onClose: () => void;
-  onAskTutor: () => void;
 }) {
   const settings = useSettings();
   const [level, setLevel] = useState<Level>(settings.level);
   useEffect(() => setLevel(settings.level), [step, settings.level]);
 
   const ann = item.prop?.annotation;
+  const j = item.joyce;
   const e = step.explain ?? {};
   const refs = [...new Set([...step.heathRefs, ...(step.cites ?? [])])];
   const recon = ann?.reconstruction.lines.filter((l) => step.number != null && l.steps?.includes(step.number)) ?? [];
@@ -84,7 +83,7 @@ export function StepNotes({
         <div className="voice-note">
           <p className="muted">
             Step-by-step notes for {item.short} have not been written yet. Hover the lettered names to find them in the
-            figure; Joyce's guide below the text discusses the proposition.
+            figure; Joyce's guide, below, discusses the proposition.
           </p>
         </div>
       ) : (
@@ -183,10 +182,16 @@ export function StepNotes({
             </section>
           )}
 
-          <button type="button" className="btn-quiet ask" onClick={onAskTutor}>
-            Still confused? Ask the tutor about {step.number != null ? `step ${step.number}` : "this"} →
-          </button>
         </>
+      )}
+
+      {(j?.guide || j?.groupGuide) && (
+        <details className="app-sec small-sec" key={`j-${item.id}`}>
+          <summary>
+            Joyce's guide to {item.short} <span className="tag">D. E. Joyce</span>
+          </summary>
+          <Joyce md={j.guide ?? j.groupGuide} figures={j.figures} />
+        </details>
       )}
     </div>
   );
