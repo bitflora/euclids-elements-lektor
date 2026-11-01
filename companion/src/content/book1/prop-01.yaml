@@ -290,7 +290,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* It uses Hilbert-style axioms plus
+    It uses Hilbert-style axioms plus
     the **circle–circle intersection property** (Hartshorne, *Geometry: Euclid and Beyond*,
     2000): if circle $\Gamma$ contains a point inside and a point outside circle $\Delta$,
     then $\Gamma$ and $\Delta$ meet.

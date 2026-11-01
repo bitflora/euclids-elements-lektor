@@ -117,7 +117,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Euclid's proof is already the standard one:
+    Euclid's proof is already the standard one:
   lines:
     - steps: [1, 2, 3]
       text: Let $AB = DE$, $AC = DF$, $BC > EF$.

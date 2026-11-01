@@ -132,7 +132,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Let $k = BC : EF$.
+    Let $k = BC : EF$.
   lines:
     - steps: [1, 2, 3]
       text: |

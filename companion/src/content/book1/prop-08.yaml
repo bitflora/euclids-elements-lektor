@@ -198,7 +198,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* It avoids superposition and [[I.7]],
+    It avoids superposition and [[I.7]],
     using only SAS ([[I.4]]) and the isosceles theorem ([[I.5]]). The idea is reported by
     Proclus, who credits it to Philo.
   lines:

@@ -175,7 +175,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Write $a = AB$, $b = CD$ and run the algorithm
+    Write $a = AB$, $b = CD$ and run the algorithm
     $r_{-1} = a$, $r_0 = b$, $r_{k-1} = q_{k+1} r_k + r_{k+1}$, ending with $r_n = 1$.
   lines:
     - steps: [1, 2, 3, 4, 5]

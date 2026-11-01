@@ -148,7 +148,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* The standard proof is Euclid's, with
+    The standard proof is Euclid's, with
     Playfair's axiom behind I.29:
   lines:
     - steps: [1, 2, 3]

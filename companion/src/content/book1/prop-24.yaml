@@ -197,7 +197,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* A clean modern proof uses the angle
+    A clean modern proof uses the angle
     bisector instead of Euclid's case-dependent angles:
   lines:
     - steps: [1, 2, 3]

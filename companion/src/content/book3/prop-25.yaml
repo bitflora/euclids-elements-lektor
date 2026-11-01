@@ -167,8 +167,6 @@ steps:
       What it was required to do.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3, 4]
       text: The centre lies on the perpendicular bisector of $AC$ (porism to III.1).

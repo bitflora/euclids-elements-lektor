@@ -131,7 +131,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Terms $a, ar, ar^2, ar^3$.
+    Terms $a, ar, ar^2, ar^3$.
   lines:
     - steps: [3, 4, 5, 6]
       text: |

@@ -131,8 +131,6 @@ steps:
       The enunciation, now proved.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3, 4]
       text: |

@@ -96,8 +96,6 @@ steps:
       What it was required to prove.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3, 4, 5]
       text: $[ABCD] = BC\cdot h$ and $[EBC] = \tfrac12 BC \cdot h$. $\blacksquare$

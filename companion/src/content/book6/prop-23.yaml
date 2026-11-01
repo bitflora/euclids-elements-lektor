@@ -172,7 +172,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Let $\theta$ be the common angle.
+    Let $\theta$ be the common angle.
   lines:
     - steps: [1, 2, 3, 4, 5, 6, 7, 8]
       text: |

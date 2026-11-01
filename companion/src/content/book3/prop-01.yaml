@@ -176,8 +176,6 @@ steps:
       Done. Heath prints a porism next (see the commentary).
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3, 4, 5]
       text: The centre $O$ is equidistant from $A$ and $B$, so lies on the perpendicular bisector of $AB$ — the line $CE$.

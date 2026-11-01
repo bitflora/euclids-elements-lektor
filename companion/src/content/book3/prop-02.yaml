@@ -137,8 +137,6 @@ steps:
       What it was required to prove.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3]
       text: Let $|A - O| = |B - O| = r$ and $P = (1 - t)A + tB$, $0 < t < 1$.

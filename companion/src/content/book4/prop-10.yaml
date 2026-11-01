@@ -185,8 +185,6 @@ steps:
       What it was required to do.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3]
       text: The angles $x, 2x, 2x$ sum to $180^\circ$, so $x = 36^\circ$.

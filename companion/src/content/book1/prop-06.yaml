@@ -227,7 +227,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* With ASA congruence (proved later as
+    With ASA congruence (proved later as
     [[I.26]], an axiom or early theorem in modern systems) the converse is immediate, by the
     same trick Pappus used for I.5:
   lines:

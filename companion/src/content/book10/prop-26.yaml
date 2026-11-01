@@ -125,7 +125,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* With $\rho = 1$, medial areas are $\sqrt a$, $\sqrt b$
+    With $\rho = 1$, medial areas are $\sqrt a$, $\sqrt b$
     ($a, b$ rational, not squares).
   lines:
     - steps: [1, 2, 3, 4, 5, 6]

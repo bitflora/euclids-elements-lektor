@@ -132,7 +132,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Let $AB = a$, $AE = x$.
+    Let $AB = a$, $AE = x$.
   lines:
     - steps: [1, 2, 3]
       text: |

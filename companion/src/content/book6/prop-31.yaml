@@ -131,7 +131,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Let the figure on a side $s$ have area $k s^2$ (same $k$
+    Let the figure on a side $s$ have area $k s^2$ (same $k$
     for similar figures).
   lines:
     - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9]

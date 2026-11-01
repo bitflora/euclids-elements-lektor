@@ -325,7 +325,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Let $x = AB > y = C$, $z = D$, and $e = x - y$.
+    Let $x = AB > y = C$, $z = D$, and $e = x - y$.
   lines:
     - steps: [3, 4]
       text: |

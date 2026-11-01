@@ -168,8 +168,6 @@ steps:
       What it was required to prove.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2]
       text: Let $C$, $D$ be on opposite sides of line $AB$ with $\angle ABC + \angle ABD = 180^\circ$.

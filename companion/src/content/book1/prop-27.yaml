@@ -138,7 +138,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* This is the *alternate interior angle
+    This is the *alternate interior angle
     theorem* of neutral geometry.
   lines:
     - steps: [1, 2]

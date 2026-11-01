@@ -145,8 +145,6 @@ steps:
       What it was required to prove.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
       text: Chord length $2\sqrt{r^2 - d^2}$ decreases as the distance $d$ grows; at $d = 0$ it is the diameter $2r$. $\blacksquare$

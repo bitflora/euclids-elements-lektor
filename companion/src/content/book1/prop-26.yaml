@@ -278,7 +278,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* With the angle sum theorem (I.32), AAS
+    With the angle sum theorem (I.32), AAS
     reduces to ASA; but in neutral geometry, as here, both need their own argument. Euclid's
     arguments are essentially the modern ones.
   lines:

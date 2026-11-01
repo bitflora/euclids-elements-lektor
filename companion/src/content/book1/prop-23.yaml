@@ -125,7 +125,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* In Hilbert's system angle transfer is an
+    In Hilbert's system angle transfer is an
     *axiom* (III.4): on a given side of a given ray there is exactly one ray making a given angle
     with it. In ruler-and-compass terms, Euclid's construction proves the existence half.
   lines:

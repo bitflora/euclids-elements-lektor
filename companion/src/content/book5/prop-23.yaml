@@ -180,7 +180,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Joyce's streamlined version, using [[V.4]].
+    Joyce's streamlined version, using [[V.4]].
   lines:
     - steps: [1, 2, 3, 4, 5, 6]
       text: |

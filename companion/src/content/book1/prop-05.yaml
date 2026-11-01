@@ -327,7 +327,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* With SAS (I.4) available there is a
+    With SAS (I.4) available there is a
     much shorter proof, reported by Proclus and usually credited to Pappus:
   lines:
     - steps: [1, 3]

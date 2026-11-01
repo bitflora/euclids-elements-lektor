@@ -115,7 +115,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* With Playfair's axiom it is one line:
+    With Playfair's axiom it is one line:
   lines:
     - steps: [1, 2]
       text: Let $AB \parallel EF$ and $CD \parallel EF$, and suppose $AB$ and $CD$ meet at a point $P$.

@@ -119,7 +119,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Let $a : b = c : d$ with $a$ greatest, $d$ least.
+    Let $a : b = c : d$ with $a$ greatest, $d$ least.
   lines:
     - steps: [1, 2, 3, 4, 5]
       text: |

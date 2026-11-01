@@ -269,7 +269,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Assume Hilbert's axioms of incidence,
+    Assume Hilbert's axioms of incidence,
     order and congruence, and the **line–circle intersection property**: a line through a point
     inside a circle meets the circle in exactly two points. (Hilbert's segment-transfer axiom
     III.1 would make I.2 an axiom; the point of this reconstruction is to follow Euclid's route.)

@@ -180,7 +180,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* With angle measure (the protractor
+    With angle measure (the protractor
     postulate of the SMSG axioms, or Hilbert's angle congruence plus a theory of angle sums):
   lines:
     - steps: [1, 2]

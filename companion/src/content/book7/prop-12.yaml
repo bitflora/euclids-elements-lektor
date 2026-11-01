@@ -73,8 +73,6 @@ steps:
       Back into a proportion.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [3, 4, 5]
       text: |

@@ -163,8 +163,6 @@ steps:
         This remark has the form of a porism, appended after the Q.E.F.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3, 4, 5]
       text: Points on the perpendicular bisector of $AB$ are equidistant from $A$ and $B$; likewise for $AC$.

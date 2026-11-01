@@ -92,8 +92,6 @@ steps:
     cites: [VII.13]
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [3, 4, 5, 6]
       text: |

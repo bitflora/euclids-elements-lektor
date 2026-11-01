@@ -130,8 +130,6 @@ steps:
       What it was required to prove. Heath prints a porism after it, in brackets (see below).
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2]
       text: Lines $AB$ and $CD$ meet at $E$, with $E$ between $A$ and $B$ and between $C$ and $D$.

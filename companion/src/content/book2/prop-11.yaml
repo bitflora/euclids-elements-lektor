@@ -202,7 +202,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Solve $x^2 + ax = a^2$ by completing the
+    Solve $x^2 + ax = a^2$ by completing the
     square:
   lines:
     - steps: [1, 2, 3]

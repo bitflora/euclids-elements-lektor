@@ -125,8 +125,6 @@ steps:
       What it was required to prove.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
       text: Central angle $= s/r$ for arc length $s$; equal $s$ and $r$ give equal angles; inscribed angles are half. $\blacksquare$

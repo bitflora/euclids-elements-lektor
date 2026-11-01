@@ -163,7 +163,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* With a measure of area (area = base ×
+    With a measure of area (area = base ×
     height) the theorem is a one-liner; Euclid has no such formula and argues by cut-and-paste.
   lines:
     - steps: [1, 2]

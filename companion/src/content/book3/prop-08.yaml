@@ -236,8 +236,6 @@ steps:
       The enunciation, now proved. (Heath's text has no Q.E.D. here.)
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3, 4, 5]
       text: Let $MD = d > r$ and $P$ on the circle with $\theta = \angle PMD$.

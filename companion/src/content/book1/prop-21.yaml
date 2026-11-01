@@ -173,8 +173,6 @@ steps:
       What it was required to prove.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3]
       text: Let $D$ be interior to $\triangle ABC$; ray $BD$ meets segment $AC$ at $E$ (crossbar).

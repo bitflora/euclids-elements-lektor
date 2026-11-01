@@ -147,7 +147,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument; it avoids fourth proportionals.* Write $a = AE$,
+    *It avoids fourth proportionals.* Write $a = AE$,
     $b = EB$, $c = CF$, $d = FD$, with $a : b = c : d$.
   lines:
     - steps: [1, 2, 3]

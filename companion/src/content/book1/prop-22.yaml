@@ -207,7 +207,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* With the circle–circle intersection
+    With the circle–circle intersection
     property (see [[I.1]]):
   lines:
     - steps: [1, 2]

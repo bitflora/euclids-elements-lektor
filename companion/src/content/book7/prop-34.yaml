@@ -276,7 +276,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Let $d = \gcd(a, b)$, $a = d f$, $b = d e$ with
+    Let $d = \gcd(a, b)$, $a = d f$, $b = d e$ with
     $\gcd(f, e) = 1$ (case 1 is $d = 1$).
   lines:
     - steps: [18, 19, 20, 21]

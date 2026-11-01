@@ -230,7 +230,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Use the porism of [[VII.2]]: every common divisor of
+    Use the porism of [[VII.2]]: every common divisor of
     two numbers divides their gcd.
   lines:
     - steps: [3, 17]

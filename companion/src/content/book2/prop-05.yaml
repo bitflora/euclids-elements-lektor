@@ -215,8 +215,6 @@ steps:
       What it was required to prove.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2]
       text: Let $CB = AC = a$ and $CD = b$, so $AD = a + b$, $DB = a - b$.

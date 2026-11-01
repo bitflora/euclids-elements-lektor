@@ -155,8 +155,6 @@ steps:
       The enunciation, now proved. (Heath's text has no Q.E.D. here.)
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
       text: |

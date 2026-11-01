@@ -96,8 +96,6 @@ steps:
       The enunciation, now proved. Heath prints a bracketed porism after it.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3, 4, 5, 6, 7]
       text: |

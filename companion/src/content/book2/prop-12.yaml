@@ -113,8 +113,6 @@ steps:
       What it was required to prove.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2]
       text: Let $b = CA$, $c = AB$, $h = BD$, $p = AD$, with $D$ on $CA$ beyond $A$.

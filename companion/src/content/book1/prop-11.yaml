@@ -185,8 +185,6 @@ steps:
       What it was required to do.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3]
       text: Choose $D \ne C$ on line $AB$ and $E$ on the opposite ray with $CE = CD$.

@@ -172,7 +172,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* With the law of cosines it is immediate:
+    With the law of cosines it is immediate:
   lines:
     - steps: [1, 2]
       text: Let $a^2 = b^2 + c^2$.

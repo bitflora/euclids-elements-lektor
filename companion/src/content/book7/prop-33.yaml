@@ -233,8 +233,6 @@ steps:
       What it was required to do.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [5, 6, 7]
       text: |

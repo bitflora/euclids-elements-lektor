@@ -177,7 +177,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* In Hilbert's system the parallel axiom is
+    In Hilbert's system the parallel axiom is
     **Playfair's**: through a point not on a line there is *at most one* parallel.
   lines:
     - steps: [1, 2]

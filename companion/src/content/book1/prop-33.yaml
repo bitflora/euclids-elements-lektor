@@ -142,7 +142,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* In vector terms the theorem is almost
+    In vector terms the theorem is almost
     immediate:
   lines:
     - steps: [1, 2]

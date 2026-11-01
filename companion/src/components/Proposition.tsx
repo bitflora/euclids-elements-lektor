@@ -149,7 +149,7 @@ export function Apparatus({ item }: { item: Item }) {
       {ann && (
         <details className="app-sec">
           <summary>
-            Modern reconstruction <span className="tag tag-modern">not Euclid</span>
+            Modern reconstruction
           </summary>
           <Rich md={ann.reconstruction.preamble} />
           <ol className="recon">

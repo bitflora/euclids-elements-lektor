@@ -216,7 +216,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* The key step is the geometric mean:
+    The key step is the geometric mean:
   lines:
     - steps: [1, 2, 3, 4]
       text: Turn the figure into a rectangle with sides $p = BE$, $q = ED$ and area $S = pq$.

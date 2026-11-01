@@ -135,7 +135,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* In coordinates along the sides: put $A$ at
+    In coordinates along the sides: put $A$ at
     the origin, $AB$ along $\mathbf u$, $AD$ along $\mathbf v$, so $C = \mathbf u + \mathbf v$ and
     $K = t(\mathbf u + \mathbf v)$.
   lines:

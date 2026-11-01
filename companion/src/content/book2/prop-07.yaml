@@ -184,8 +184,6 @@ steps:
       What it was required to prove.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2]
       text: Let $AB = a$, $BC = b$, so $CA = a - b$.

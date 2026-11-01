@@ -149,7 +149,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Assume segment transfer (I.2, proved
+    Assume segment transfer (I.2, proved
     above) and the line–circle intersection property.
   lines:
     - steps: [1, 2]

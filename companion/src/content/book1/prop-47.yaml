@@ -260,7 +260,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* The commonest modern proof uses similar
+    The commonest modern proof uses similar
     triangles (Euclid's own version of this is [[VI.31]]):
   lines:
     - steps: [1, 2]

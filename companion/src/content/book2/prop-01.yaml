@@ -177,7 +177,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* With lengths as real numbers and area as
+    With lengths as real numbers and area as
     their product, II.1 is the distributive law:
   lines:
     - steps: [1, 2]

@@ -117,7 +117,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Write $a = n \cdot 1$, $b = m \cdot 1$.
+    Write $a = n \cdot 1$, $b = m \cdot 1$.
   lines:
     - steps: [1, 2, 3, 4, 5]
       text: |

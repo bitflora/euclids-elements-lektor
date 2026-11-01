@@ -98,8 +98,6 @@ steps:
       What it was required to prove.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3, 4, 5, 6, 7]
       text: Chord $c = 2r\sin(\theta/2)$ determines $\theta \in (0, \pi]$ and hence both arcs. $\blacksquare$

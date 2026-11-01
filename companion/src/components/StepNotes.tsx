@@ -137,7 +137,7 @@ export function StepNotes({
 
           {recon.length > 0 && (
             <section className="voice-modern">
-              <span className="voice-label">Modern reconstruction — not Euclid's argument</span>
+              <span className="voice-label">Modern reconstruction</span>
               {recon.map((l, i) => (
                 <Rich key={i} md={l.text} />
               ))}

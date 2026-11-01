@@ -137,8 +137,6 @@ steps:
       What it was required to prove.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3, 4, 5]
       text: Both triangles have base $BC$ and the same height $h$.

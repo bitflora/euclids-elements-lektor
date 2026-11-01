@@ -200,7 +200,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Use the law of cosines.
+    Use the law of cosines.
   lines:
     - steps: [1, 2, 3]
       text: Let $EF = d > 0$, radius $r > d$, and $P$ on the circle with $\theta = \angle PEF$.

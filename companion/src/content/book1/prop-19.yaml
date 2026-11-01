@@ -101,7 +101,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Euclid's proof is already modern in form:
+    Euclid's proof is already modern in form:
   lines:
     - steps: [1, 2]
       text: Let $\angle B > \angle C$.

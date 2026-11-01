@@ -149,7 +149,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Magnitudes of one kind can be added (commutatively
+    Magnitudes of one kind can be added (commutatively
     and associatively); $m a$ means $a + a + \dots + a$ ($m$ times).
   lines:
     - steps: [1, 2, 3]

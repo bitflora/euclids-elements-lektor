@@ -279,7 +279,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* In Hilbert's *Foundations of Geometry*
+    In Hilbert's *Foundations of Geometry*
     (1899) superposition is replaced by an axiom. Hilbert's axiom **III.5** says: if
     $AB \cong DE$, $AC \cong DF$ and $\angle BAC \cong \angle EDF$, then
     $\angle ABC \cong \angle DEF$. The rest of I.4 is then proved:

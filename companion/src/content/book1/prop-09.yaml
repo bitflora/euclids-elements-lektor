@@ -193,8 +193,6 @@ steps:
       What it was required to do.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3]
       text: Let $D \in AB$ and $E \in AC$ with $AD = AE$.

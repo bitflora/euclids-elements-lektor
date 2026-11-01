@@ -159,7 +159,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* With fractions: $a : b = c : d$ means $a/b = c/d$.
+    With fractions: $a : b = c : d$ means $a/b = c/d$.
   lines:
     - steps: [3, 4, 5, 6]
       text: |

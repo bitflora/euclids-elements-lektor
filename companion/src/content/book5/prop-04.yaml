@@ -175,7 +175,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Write $x \gtreqless y \Rightarrow u \gtreqless v$
+    Write $x \gtreqless y \Rightarrow u \gtreqless v$
     for "$x > y \Rightarrow u > v$, $x = y \Rightarrow u = v$, $x < y \Rightarrow u < v$".
   lines:
     - steps: [1, 2, 3]

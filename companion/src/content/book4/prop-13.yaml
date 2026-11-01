@@ -177,8 +177,6 @@ steps:
       What it was required to do.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
       text: The centre of a regular pentagon is equidistant from all sides (rotational symmetry); the circle of that radius touches each. $\blacksquare$

@@ -211,7 +211,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Using the perpendicular bisector
+    Using the perpendicular bisector
     (which in a Hilbert-style development follows from SAS and I.5):
   lines:
     - steps: [1, 2]

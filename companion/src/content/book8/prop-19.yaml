@@ -259,7 +259,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Let $c : f = d : g = e : h = r$.
+    Let $c : f = d : g = e : h = r$.
   lines:
     - steps: [5, 6, 7, 8, 9, 10, 11, 12, 13]
       text: |

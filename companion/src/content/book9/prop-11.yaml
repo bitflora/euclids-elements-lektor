@@ -78,8 +78,6 @@ steps:
       {B} goes into {E} {D} times.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [3, 4, 5]
       text: |

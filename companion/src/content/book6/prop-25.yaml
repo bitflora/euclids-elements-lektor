@@ -153,8 +153,6 @@ steps:
       Heath prints Q. E. D. here, though this is a problem.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3, 4]
       text: |

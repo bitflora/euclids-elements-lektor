@@ -116,8 +116,6 @@ steps:
       What it was required to prove.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2]
       text: Let $a = BC$, $c = BA$, $h = AD$, $p = BD$, with $D$ between $B$ and $C$.

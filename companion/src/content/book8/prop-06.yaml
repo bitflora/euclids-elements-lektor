@@ -146,7 +146,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Let the ratio in lowest terms be $p : q$, so $a_k = c
+    Let the ratio in lowest terms be $p : q$, so $a_k = c
     p^{n-k} q^{k-1}$.
   lines:
     - steps: [1, 2, 3, 4]

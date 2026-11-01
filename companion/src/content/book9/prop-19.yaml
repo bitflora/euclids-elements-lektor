@@ -199,8 +199,6 @@ steps:
       What it was required to do.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
       text: |

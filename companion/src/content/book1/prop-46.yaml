@@ -186,8 +186,6 @@ steps:
       What it was required to do.
 
 reconstruction:
-  preamble: |
-    *A modern reconstruction — not Euclid's argument.*
   lines:
     - steps: [1, 2, 3, 4]
       text: Let $AD \perp AB$, $AD = AB$; let $E$ complete the parallelogram $ABED$.

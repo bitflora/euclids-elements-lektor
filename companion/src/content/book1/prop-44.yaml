@@ -240,7 +240,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Algebraically, the problem is a division:
+    Algebraically, the problem is a division:
     find the second side $x$ of a parallelogram with first side $a = AB$, angle $\delta$, and area
     $S$; i.e. $a\, x \sin\delta = S$.
   lines:

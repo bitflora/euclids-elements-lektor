@@ -232,7 +232,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* In Hilbert's axioms this is the
+    In Hilbert's axioms this is the
     *exterior angle theorem*, valid in neutral geometry (without the parallel postulate).
   lines:
     - steps: [1, 2]

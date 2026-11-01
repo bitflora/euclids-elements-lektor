@@ -222,7 +222,7 @@ steps:
 
 reconstruction:
   preamble: |
-    *A modern reconstruction — not Euclid's argument.* Square case: $AB = a$, unknown $x = BP$.
+    Square case: $AB = a$, unknown $x = BP$.
   lines:
     - steps: [1, 2, 3]
       text: |
