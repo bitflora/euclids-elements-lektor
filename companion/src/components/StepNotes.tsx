@@ -1,5 +1,6 @@
 import type { Item, Step } from "../types";
 import { JoyceLink, Rich } from "./Rich";
+import { EuclidParallels } from "./Parallels";
 import { RefChip } from "./Refs";
 
 const PART_LABEL: Record<Step["part"], string> = {
@@ -53,6 +54,8 @@ export function StepNotes({
           </button>
         </span>
       </div>
+
+      {step.part === "enunciation" && <EuclidParallels id={item.id} callout />}
 
       {!ann ? (
         <div className="voice-note">

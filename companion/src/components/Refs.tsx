@@ -3,11 +3,13 @@ import { getItem, isAnnotated } from "../lib/corpus";
 import { refLabel } from "../lib/rich";
 import { hrefFor } from "../lib/router";
 import type { ItemId } from "../types";
+import { getZb, isZbId } from "../lib/zhoubi";
+import { EuclidParallels, ZbPeek } from "./Parallels";
 import { Heath, Rich } from "./Rich";
 
 /** A reference that opens a peek (click) or navigates (⌘/Ctrl-click). */
 export function RefChip({ id, heath }: { id: ItemId; heath?: boolean }) {
-  const it = getItem(id);
+  const it = isZbId(id) ? getZb(id) : getItem(id);
   return (
     <a
       className={`xref chip${heath ? " chip-heath" : ""}${it ? "" : " chip-missing"}`}
@@ -51,6 +53,22 @@ export function RefGroups({ ids, heath = [] }: { ids: ItemId[]; heath?: ItemId[]
 
 /** What a reference says, shown in the panel without leaving the page. */
 export function PeekCard({ id, onBack, depth }: { id: ItemId; onBack: () => void; depth: number }) {
+  if (isZbId(id))
+    return (
+      <div className="peek">
+        <div className="panel-head">
+          <button type="button" className="btn-quiet" onClick={onBack}>
+            ← {depth > 1 ? "Back" : "Back to your place"}
+          </button>
+          {getZb(id) && (
+            <a className="btn-quiet" href={hrefFor(id)}>
+              Open {refLabel(id)} →
+            </a>
+          )}
+        </div>
+        <ZbPeek id={id} />
+      </div>
+    );
   const it = getItem(id);
   return (
     <div className="peek">
@@ -96,6 +114,7 @@ export function PeekCard({ id, onBack, depth }: { id: ItemId; onBack: () => void
             </div>
           )}
           {!isAnnotated(id) && <p className="muted small">Annotations for {refLabel(id)} have not been written yet.</p>}
+          <EuclidParallels id={id} />
         </>
       )}
     </div>

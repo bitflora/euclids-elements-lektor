@@ -6,6 +6,8 @@ export type Route =
   | { page: "home" }
   | { page: "principles"; book: string; kind: SectionKind; select?: string }
   | { page: "item"; id: string; step?: number }
+  /** A part of the Zhou bi, read straight through; `select` a section, `step` one of its steps. */
+  | { page: "zhoubi"; part: number; select?: string; step?: number }
   | { page: "graph"; focus?: string }
   | { page: "search"; q: string }
   | { page: "about" }
@@ -29,6 +31,10 @@ export function parseHash(hash: string): Route {
     return { page: "principles", book: m[1], kind: m[2] as SectionKind, select: params.get("select") ?? undefined };
   if ((m = PRINCIPLE.exec(path))) return { page: "principles", book: m[1], kind: KIND_PATH[m[2] as "Def"], select: path };
   if ((m = /^([IVX]+\.\d+)(?:\/(\d+))?$/.exec(path))) return { page: "item", id: m[1], step: m[2] ? Number(m[2]) : undefined };
+  // The Zhou bi: "#/zhoubi/1" (a part), "#/ZB.1.3" or "#/ZB.1.3/4" (a section, a step), "#/ZB.Pref".
+  if ((m = /^zhoubi\/([1-6])$/.exec(path))) return { page: "zhoubi", part: Number(m[1]) };
+  if ((m = /^ZB\.(?:Pref|([1-6])\.\d+)(?:\/(\d+))?$/.exec(path)))
+    return { page: "zhoubi", part: Number(m[1] ?? 1), select: path.split("/")[0], step: m[2] ? Number(m[2]) : undefined };
   return { page: "notfound", path };
 }
 

@@ -200,3 +200,118 @@ export interface BookInfo {
   subject: string;
   available: boolean;
 }
+
+// ─── The Zhou bi suan jing 周髀算經 ──────────────────────────────────────
+// Ids: "ZB.Pref" (Zhao Shuang's preface), "ZB.1.3" (part 1, section 3).
+
+/** The Chinese text, as extracted by scripts/extract-zhoubi.mjs. */
+export interface ZbPassage {
+  /** The classic, or Zhao Shuang's commentary (3rd c. CE). */
+  voice: "classic" | "zhao";
+  zh: string;
+  /** Gutenberg line number within the part (classic), or the lemma commented on. */
+  lemma?: number;
+  /** The Sibu Congkan reading, where it differs from Gutenberg's. */
+  sbck?: string;
+  /** In the Sibu Congkan only; Gutenberg lacks it. */
+  sbckOnly?: boolean;
+  /** A heading the commentary carries, such as 勾股方圓圖注. */
+  heading?: string;
+}
+export interface ZbSourceSection {
+  id: string;
+  n?: number;
+  passages: ZbPassage[];
+}
+export interface ZbSource {
+  source: {
+    title: string;
+    classic: { edition: string; url: string };
+    commentary: { edition: string; url: string };
+  };
+  preface: ZbSourceSection;
+  parts: { n: number; title: string; sections: ZbSourceSection[] }[];
+  gutenbergOnly: { part: number; line: number; text: string }[];
+  corrections: { id: string; from: string; to: string; reason: string }[];
+}
+
+/** One step: a classic passage or a piece of Zhao's commentary, in translation. */
+export interface ZbStepAnnotation {
+  /** This edition's translation of a classic passage … */
+  classic?: string;
+  /** … or of Zhao Shuang's commentary. Exactly one of the two. */
+  zhao?: string;
+  /**
+   * Only to split a long passage: the Chinese this step covers, which must be the
+   * next characters of the passage (punctuation ignored). Omitted, the step runs
+   * to the end of the passage.
+   */
+  zh?: string;
+  hint?: Rich;
+  explain?: Explanation;
+  modern?: Rich;
+  /** A doubt about the text or its reading. */
+  dispute?: Rich;
+  cites?: ItemId[];
+  highlight?: string[];
+  adds?: string[];
+  /** With several figures: which one (0-based) this step and the next ones show. */
+  figure?: number;
+}
+
+export interface ZbParallel {
+  /** A Euclid item, e.g. "I.47". */
+  id: ItemId;
+  /** "same": the same proposition is proved (or used) in both; "related": a close kin. */
+  relation: "same" | "related";
+  note: Rich;
+}
+
+export interface ZbAnnotation {
+  id: string;
+  title: string;
+  paraphrase: Rich;
+  diagram?: DiagramSpec;
+  /** Further figures, numbered from 1 after `diagram`; steps choose one with `figure`. */
+  figures?: DiagramSpec[];
+  steps: ZbStepAnnotation[];
+  commentary?: Rich;
+  historical?: Rich;
+  parallels?: ZbParallel[];
+}
+
+export interface ZbStep extends ZbStepAnnotation {
+  index: number;
+  voice: "classic" | "zhao";
+  /** The Chinese of this step, as printed in the source. */
+  source: string;
+  /** Index of the passage in the section. */
+  passage: number;
+  /** The passage's heading, on the step that begins it. */
+  heading?: string;
+  /** The SBCK variant of the passage, on the step that ends it. */
+  sbck?: string;
+  sbckOnly?: boolean;
+}
+
+export interface ZbSection {
+  id: string;
+  part: number;
+  n: number;
+  /** "Section 3", "Zhao Shuang's preface" */
+  label: string;
+  /** "ZB 1.3" */
+  short: string;
+  passages: ZbPassage[];
+  annotation?: ZbAnnotation;
+  steps: ZbStep[];
+}
+
+export interface ZbPartInfo {
+  n: number;
+  /** 卷上之一 */
+  zh: string;
+  /** "Volume 1, part 1" */
+  label: string;
+  subject: string;
+}

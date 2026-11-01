@@ -1,0 +1,94 @@
+id: ZB.4.7
+title: Measuring the width of a lunar lodge
+paraphrase: |
+  With a gnomon at the centre of the circle, sight the central star of the lodge Qianniu along the
+  meridian. Wait until the leading star of the next lodge, Xunü, crosses the meridian. Then move a
+  second, movable sighting rod round the rim until it lines up with Qianniu again. It stands 8
+  *chi*, i.e. 8 degrees, west of the meridian, so Qianniu is 8 degrees wide. Repeat for all 28
+  lodges.
+
+diagram:
+  width: 300
+  height: 330
+  elements:
+    - "O;point;fixed;150,150;black;black"
+    - "K;point;fixed;300,150;0;0"
+    - "rim;circle;radius;O,K;0;0;#8a6d12;0"
+    - "S;point;fixed;150,300;black;black"
+    - "Y;point;fixed;129.4,298.6;black;#d97706"
+    - "OS;line;connect;O,S;0;0;#33587a"
+    - "OY;line;connect;O,Y;0;0;#d97706"
+    - "angO;sector;angleMarker;O,Y,S,60;0;0;black;0"
+  given: [O, rim, S, Y, OS, OY, angO]
+  caption: |
+    Seen from above, south at the bottom. The central gnomon stands at {O}; {OS} is the meridian. When
+    the leading star of Xunü crosses the meridian, the movable rod {Y} is placed on the rim so that {O},
+    {Y} and the central star of Qianniu are in line. The arc from {S} to {Y} measures 8 *chi*: 8 degrees.
+
+steps:
+  - classic: |
+      Then set up a gnomon at the centre [where] true north–south [and east–west cross], tie a cord to its
+      top, and sight the middle of the central star of Qianniu.
+    highlight: [OS]
+  - zhao: |
+      Pull the cord to the crossing of the warp and weft and sight it: the star, the gnomon and the cord are
+      aligned.
+  - classic: |
+      Then wait again for the leading star of Xunü to arrive.
+    hint: |
+      Xunü 須女 ("the waiting maid") is the lodge that follows Qianniu. The sky turns westward, so
+      Qianniu moves off the meridian and Xunü's first star comes onto it.
+    dispute: Gutenberg reads 候 "wait for", the Sibu Congkan 望 "sight"; the sense is the same.
+  - zhao: |
+      Wait again for Xunü to be on the meridian; then sight it with the cord.
+  - classic: |
+      Again with the gnomon and cord, sight the leading star of Xunü, and fix [the moment it is] on the
+      meridian.
+  - zhao: |
+      The leading star of Xunü: again, as above, pull the cord to the crossing of warp and weft and sight it.
+  - classic: |
+      Then with a movable sighting rod sight the central star of Qianniu: how many degrees west of the
+      central gnomon does it lie?
+    highlight: [OY, Y]
+  - zhao: |
+      The movable rod is also a gnomon. It is moved to sight the star accurately, to learn how many degrees
+      west of the central gnomon the star lies; so it is called "movable".
+  - classic: |
+      In each case, the *chi* reached by the movable rod give the number of degrees.
+  - zhao: |
+      The circumference traversed is divided so that one *chi* corresponds to one degree of heaven; so the
+      number of *chi* reached by the movable rod gives the degrees.
+  - classic: |
+      The rod is at 8 *chi*; so we know that Qianniu is 8 degrees.
+    highlight: [angO]
+    explain:
+      fact: |
+        Between the two sightings the sky has turned by the distance from Qianniu's star to Xunü's leading
+        star, which is the width of Qianniu. The angle at {O} between the meridian and the rod measures it,
+        read off as arc length on the rim.
+  - zhao: |
+      When Xunü is on the meridian and Qianniu is sighted, the rod is at 8 *chi*; so Qianniu has 8 degrees.
+  - classic: |
+      The other stars are done the same way, through all the twenty-eight lodges; then [their widths] are
+      fixed.
+    dispute: Gutenberg reads 則定矣, "are fixed"; the Sibu Congkan 則之矣.
+  - zhao: |
+      All are fixed by the method above.
+  - classic: |
+      In setting up the degrees of the circle,
+  - zhao: |
+      The degrees of the circuit of heaven.
+  - classic: |
+      each takes [as its start] the degree mark of the movable rod for its leading star.
+  - zhao: |
+      The twenty-eight lodges do not each consist of one star; each is measured from its leading star.
+    hint: |
+      Each lodge is a constellation; its width is reckoned from its "determinative" first star to the next
+      lodge's.
+  - classic: |
+      Pull cords from the centre, like the spokes of a wheel to the hub: then it is true.
+  - zhao: |
+      The crossing of warp and weft is the hub; the degrees of the circle are the spokes. Knowing how many
+      degrees one lodge has, pull the cords like spokes converging on the hub to make it true. Sighting stars
+      and fixing degrees all take the [meridian] square as true south. When it is known how many degrees each
+      of the twenty-eight lodges has, they are laid out round the circle.

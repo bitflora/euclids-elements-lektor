@@ -1,0 +1,228 @@
+id: ZB.1.3
+title: Bend the trysquare — gou 3, gu 4, hypotenuse 5
+paraphrase: |
+  Shang Gao's famous answer. Take a right angle (the trysquare) with legs 3 and 4; the diagonal
+  joining their ends is 5. Squaring the sides, $9 + 16 = 25$: "the two trysquares together make 25".
+  The classic gives this one case and a figure. It does not state the general theorem or prove it;
+  Zhao Shuang's commentary does both ([[ZB.1.4]]). Zhao already reads the general rule into
+  this passage, as a method for finding any one side from the other two.
+
+parallels:
+  - id: I.47
+    relation: related
+    note: |
+      The classic states one case of Euclid's theorem, $3^2 + 4^2 = 5^2$, and shows it with a figure.
+      The general theorem and its proof are in Zhao Shuang's commentary, [[ZB.1.4]].
+  - id: I.48
+    relation: related
+    note: |
+      Read the other way: a triangle with sides 3, 4, 5 has a right angle. Builders used the
+      3-4-5 rope to set out right angles. Euclid proves the general converse.
+
+diagram:
+  width: 340
+  height: 360
+  elements:
+    - "C;point;fixed;110,250;black;black"
+    - "A;point;fixed;194,250;black;black"
+    - "B;point;fixed;110,138;black;black"
+    - "a1;point;fixed;194,334;0;0"
+    - "c1;point;fixed;110,334;0;0"
+    - "b1;point;fixed;26,138;0;0"
+    - "c2;point;fixed;26,250;0;0"
+    - "b2;point;fixed;222,54;0;0"
+    - "a2;point;fixed;306,166;0;0"
+    - "Sa;polygon;quadrilateral;C,A,a1,c1;0;0;#9a3b2b;#f3d6cd"
+    - "Sb;polygon;quadrilateral;C,B,b1,c2;0;0;#33587a;#dde8f1"
+    - "Sc;polygon;quadrilateral;A,B,b2,a2;0;0;#8a6d12;#f5e7b5"
+    - "p1;point;fixed;138,250;0;0"
+    - "p2;point;fixed;138,334;0;0"
+    - "p3;point;fixed;166,250;0;0"
+    - "p4;point;fixed;166,334;0;0"
+    - "p5;point;fixed;110,278;0;0"
+    - "p6;point;fixed;194,278;0;0"
+    - "p7;point;fixed;110,306;0;0"
+    - "p8;point;fixed;194,306;0;0"
+    - "ga1;line;connect;p1,p2;0;0;#c99a8e"
+    - "ga2;line;connect;p3,p4;0;0;#c99a8e"
+    - "ga3;line;connect;p5,p6;0;0;#c99a8e"
+    - "ga4;line;connect;p7,p8;0;0;#c99a8e"
+    - "q1;point;fixed;54,138;0;0"
+    - "q2;point;fixed;54,250;0;0"
+    - "q3;point;fixed;82,138;0;0"
+    - "q4;point;fixed;82,250;0;0"
+    - "q5;point;fixed;26,166;0;0"
+    - "q6;point;fixed;110,166;0;0"
+    - "q7;point;fixed;26,194;0;0"
+    - "q8;point;fixed;110,194;0;0"
+    - "q9;point;fixed;26,222;0;0"
+    - "q10;point;fixed;110,222;0;0"
+    - "gb1;line;connect;q1,q2;0;0;#93aec4"
+    - "gb2;line;connect;q3,q4;0;0;#93aec4"
+    - "gb3;line;connect;q5,q6;0;0;#93aec4"
+    - "gb4;line;connect;q7,q8;0;0;#93aec4"
+    - "gb5;line;connect;q9,q10;0;0;#93aec4"
+    - "r1;point;fixed;216.4,233.2;0;0"
+    - "r2;point;fixed;132.4,121.2;0;0"
+    - "r3;point;fixed;238.8,216.4;0;0"
+    - "r4;point;fixed;154.8,104.4;0;0"
+    - "r5;point;fixed;261.2,199.6;0;0"
+    - "r6;point;fixed;177.2,87.6;0;0"
+    - "r7;point;fixed;283.6,182.8;0;0"
+    - "r8;point;fixed;199.6,70.8;0;0"
+    - "r9;point;fixed;177.2,227.6;0;0"
+    - "r10;point;fixed;289.2,143.6;0;0"
+    - "r11;point;fixed;160.4,205.2;0;0"
+    - "r12;point;fixed;272.4,121.2;0;0"
+    - "r13;point;fixed;143.6,182.8;0;0"
+    - "r14;point;fixed;255.6,98.8;0;0"
+    - "r15;point;fixed;126.8,160.4;0;0"
+    - "r16;point;fixed;238.8,76.4;0;0"
+    - "gc1;line;connect;r1,r2;0;0;#d3be7c"
+    - "gc2;line;connect;r3,r4;0;0;#d3be7c"
+    - "gc3;line;connect;r5,r6;0;0;#d3be7c"
+    - "gc4;line;connect;r7,r8;0;0;#d3be7c"
+    - "gc5;line;connect;r9,r10;0;0;#d3be7c"
+    - "gc6;line;connect;r11,r12;0;0;#d3be7c"
+    - "gc7;line;connect;r13,r14;0;0;#d3be7c"
+    - "gc8;line;connect;r15,r16;0;0;#d3be7c"
+    - "CA;line;connect;C,A;0;0;black"
+    - "CB;line;connect;C,B;0;0;black"
+    - "AB;line;connect;A,B;0;0;black"
+    - "angC;sector;angleMarker;C,A,B,14;0;0;black;0"
+  given: [C, A, B, CA, CB, angC]
+  caption: |
+    The trysquare {CA}, {CB} with *gou* {CA} = 3 and *gu* {CB} = 4. The slant {AB} is 5. On each side
+    stands its square, ruled into unit squares: 9 on the *gou*, 16 on the *gu*, 25 on the hypotenuse.
+
+steps:
+  - classic: |
+      Thus, bend a trysquare,
+    hint: |
+      Take a right angle. The "trysquare" (*ju* 矩) is the carpenter's L-square; "bending" it gives two
+      legs at right angles.
+    highlight: [CA, CB, angC]
+  - zhao: |
+      "Thus" introduces an application. Since he is about to give the ratios of *gou* and *gu*, he says
+      "bend a trysquare".
+  - classic: |
+      and make the *gou* 3 in breadth,
+    hint: The short leg, *gou* {CA}, is 3.
+    highlight: [CA]
+  - zhao: |
+      The circumference of the circle, laid out horizontally, is called the "breadth"; the *gou* is also
+      a breadth. A breadth is the short side.
+    hint: Zhao links back to [[ZB.1.2]], where the circumference 3 of a unit circle became the *gou*.
+  - classic: |
+      the *gu* 4 in length;
+    hint: The long leg, *gu* {CB}, is 4.
+    highlight: [CB]
+  - zhao: |
+      Corresponding to the perimeter of the square, laid out vertically, is called the "length"; the
+      *gu* is also a length. "Length" means long.
+  - classic: |
+      then the diagonal is 5.
+    hint: |
+      The line {AB} joining the ends of the legs is 5. The classic calls it *jing yu* 徑隅,
+      "the straight line to the corner"; later texts call it *xian* 弦, "the bowstring".
+    highlight: [AB]
+    adds: [AB]
+  - zhao: |
+      This is the ratio that answers of itself. *Jing* means straight, *yu* means corner. It is also called
+      the *xian* (hypotenuse).
+    hint: |
+      "Of itself" (*ziran* 自然): the 5 is not chosen. It follows once 3 and 4 are set at right angles.
+  - classic: |
+      Having squared its outside, halve it — one trysquare.
+    hint: |
+      The most disputed sentence in the book. Most readers take it to mean: build the square on the
+      outside (on the hypotenuse), then take away halves of rectangles (the triangles), which leaves
+      the trysquare shapes that the next sentences count.
+    adds: [Sa, Sb, Sc]
+    highlight: [Sc]
+    dispute: |
+      Gutenberg reads 既方其外．半之一矩, the Sibu Congkan 旣方之外半其一矩. Neither parses easily. Three
+      readings are current:
+
+      1. **Zhao's** (next step): first square each side ("square the outside"), then work out one
+         area from the others by addition and subtraction ("halve one trysquare").
+      2. **Dissection**: draw the square on the hypotenuse, and cut it into four half-rectangles
+         ($\tfrac12 \cdot 3 \cdot 4 = 6$ each) and a central unit square: $4 \cdot 6 + 1 = 25$. This is
+         the figure Zhao draws in [[ZB.1.4]].
+      3. **Cullen's**: the "one trysquare" is the L-shaped region left when the square on the *gu* is
+         taken from the square on the hypotenuse; its area is the square on the *gou*.
+
+      The translation here follows the words as closely as possible and leaves the choice open.
+  - zhao: |
+      In the method of *gou* and *gu*, one first knows two numbers and then works out the third. When the
+      *gou* and *gu* are seen, then one seeks the hypotenuse. First multiply each by itself to form its area.
+      Once the areas are formed, the configuration changes and can then be manipulated; so it says
+      "having squared its outside". Or one adds the areas of *gou* and *gu* to get the area of the
+      hypotenuse, and within that then seeks the parts belonging to *gou* and *gu*. The added areas are
+      not equal; they take from and give to one another, and each yields something; so it says "halve
+      one trysquare". The method: *gou* and *gu* each multiplied by itself, three threes are nine, four
+      fours are sixteen; added, these make the area of the hypotenuse multiplied by itself, twenty-five.
+      Subtract the *gou* [area] from the hypotenuse [area] to get the area of the *gu*, sixteen; subtract the
+      *gu* [area] from the hypotenuse [area] to get the area of the *gou*, nine.
+    hint: |
+      Zhao reads the sentence as the general method. Square the known sides; add the squares to get
+      the square on the hypotenuse, or subtract to get the square on a leg.
+    highlight: [Sa, Sb, Sc]
+    modern: |
+      $c^2 = a^2 + b^2,\qquad b^2 = c^2 - a^2,\qquad a^2 = c^2 - b^2.$
+      With $a = 3$, $b = 4$: $9 + 16 = 25$, $25 - 9 = 16$, $25 - 16 = 9$.
+    cites: [I.47]
+  - classic: |
+      Ring them round and join them together, and you get 3, 4, 5.
+    hint: |
+      Putting the squares together (as areas) and taking the side of the result gives back the
+      numbers 3, 4, 5.
+  - zhao: |
+      *Pan* 盤 is read as in *panhuan*, "to circle round". It means that the accumulated areas, added and
+      subtracted, are bent round and joined together; that is, one extracts the square root to get one of
+      its sides. So it says "you get 3, 4, 5".
+    explain:
+      fact: |
+        "Extract the square root" (*kaifang chu zhi* 開方除之, literally "open the square and divide") is
+        the standard Chinese algorithm for $\sqrt{N}$, set out in full in the *Nine Chapters*
+        (九章算術).
+  - classic: |
+      The two trysquares together have a length of 25. This is called "accumulating the trysquares".
+    hint: |
+      The squares on the two legs, 9 and 16, together make 25, the square on the hypotenuse.
+    adds: [ga1, ga2, ga3, ga4, gb1, gb2, gb3, gb4, gb5, gc1, gc2, gc3, gc4, gc5, gc6, gc7, gc8]
+    highlight: [Sa, Sb]
+    explain:
+      did: |
+        "Trysquare" here means the area belonging to each leg. Count the unit squares: 9 on {CA}, 16 on
+        {CB}, 25 on {AB}.
+      implicit: |
+        That the count comes out right for 3, 4, 5 does not show that it does so for every right
+        triangle. The classic does not say whether it means more.
+    modern: $3^2 + 4^2 = 9 + 16 = 25 = 5^2$.
+  - zhao: |
+      The two trysquares are the areas of the *gou* and *gu*, each multiplied by itself. "Together have a
+      length" is the number of the added areas. He is going to apply it to the myriad affairs, and here
+      first sets out the ratio.
+  - classic: |
+      Thus, the means by which Yu brought order to the world came from these numbers."
+    hint: |
+      The legendary Yu 禹 tamed the great flood; surveying rivers and slopes needs right triangles.
+  - zhao: |
+      When Yu controlled the flood waters, he cleared the courses of the Yangzi and the Yellow River,
+      surveyed the shapes of mountains and rivers, determined the lie of high and low, removed the disaster
+      of the sky-high waters and freed the people from drowning, making the waters flow east into the sea
+      without flooding. This is where *gou* and *gu* came from.
+
+commentary: |
+  This passage is the reason the Zhou bi is famous outside China. It is the oldest surviving Chinese
+  statement of what the West calls the Pythagorean theorem, which Chinese mathematics calls the *gougu*
+  theorem (勾股定理). It states only the 3-4-5 case, and as a numerical rule, not as a theorem about
+  all right triangles. Zhao Shuang's commentary in the next section supplies both the generality and
+  a proof.
+
+historical: |
+  The Duke of Zhou lived about 1000 BCE, but the text is much later. Its astronomy and language place
+  its compilation around the first century BCE. Shang Gao is otherwise unknown. Attributing a method
+  to a sage of antiquity was a common way of giving it authority, as with the Greek stories about
+  Pythagoras.

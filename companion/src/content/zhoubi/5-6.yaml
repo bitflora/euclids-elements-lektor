@@ -1,0 +1,75 @@
+id: ZB.5.6
+title: The moon over a "great year" and an ordinary year
+paraphrase: |
+  The same computation for a great year of thirteen months ($383\tfrac{847}{940}$ days) and for the
+  ordinary solar year ($365\tfrac14$ days, i.e. $12\tfrac{7}{19}$ months). After a great year the moon
+  is 18 degrees $\tfrac{11628}{17860}$ into its fifteenth circuit; after an ordinary year, 134 degrees
+  $\tfrac{10105}{17860}$ into its fourteenth.
+
+steps:
+  - classic: |
+      Great year: the moon falls short of its former lodge by 18 degrees and 11628/17860 of a degree.
+  - zhao: |
+      A great year is thirteen months making a year.
+  - classic: |
+      The method: set out the great year, $383\tfrac{847}{940}$ days.
+    modern: $13 \times 29\tfrac{499}{940} = 383\tfrac{847}{940}$ days.
+  - zhao: |
+      For the great year, add 12/19 of a month to the ordinary year: multiply 12 by the 1461 parts of the
+      circuit of heaven, giving 17,532; add to the ordinary year's accumulated parts, giving 360,867: this is
+      the great year's accumulated parts. Divide by 740 to get it.
+    modern: $343{,}335 + 12 \times 1461 = 360{,}867$ (940ths of a day).
+    dispute: '"Divide by 740" must be "by 940", as for the other periods.'
+  - classic: |
+      Multiply by the moon's falling behind heaven, $13\tfrac{7}{19}$ degrees, as the dividend; then multiply
+      the denominator of the degrees by the denominator of the days as the divisor. Dividing, the accumulated
+      falling-behind is 5,132 degrees and 2698/17860 of a degree.
+    modern: $\dfrac{360{,}867 \times 254}{17{,}860} = \dfrac{91{,}660{,}218}{17{,}860} = 5132\tfrac{2698}{17860}$.
+  - zhao: |
+      Multiply the great year's accumulated parts by the moon's falling-behind parts, giving 91,660,218: this
+      is the accumulated falling-behind in parts.
+  - classic: |
+      Divide by the circuit of heaven.
+  - zhao: |
+      Dividing the accumulated falling-behind parts gives fourteen circuits of heaven, which are discarded.
+  - classic: |
+      What is not enough to be divided
+  - zhao: |
+      What is not enough to be divided is 333,108.
+    modern: $91{,}660{,}218 - 14 \times 6{,}523{,}365 = 333{,}108 = 18 \times 17{,}860 + 11{,}628$.
+  - classic: |
+      is the number of degrees and parts by which the moon falls short of its former lodge.
+  - classic: |
+      Ordinary year: the moon falls short of its former lodge by 134 degrees and 10105/17860 of a degree.
+    dispute: |
+      Gutenberg breaks off at 萬一百, the Sibu Congkan reads 萬一百里; the calculation gives 萬一百五,
+      10,105.
+  - zhao: |
+      *Jing* means "ordinary", i.e. $12\tfrac{7}{19}$ months.
+  - classic: |
+      The method: set out the ordinary year, $365\tfrac{235}{940}$ days.
+    modern: $365\tfrac{235}{940} = 365\tfrac14$.
+  - zhao: |
+      For the ordinary year, convert $12\tfrac{7}{19}$ months into 235 [nineteenths], multiply by the
+      circuit of heaven 1461, giving 343,335: this is the ordinary year's accumulated parts. Also multiply 235
+      by the circuit-of-heaven denominator 4, giving 940, as the divisor. Divide to get it.
+    modern: $235 \times 1461 = 343{,}335$; $\dfrac{343{,}335}{940} = 365\tfrac{235}{940}$.
+  - classic: |
+      Multiply by the moon's falling behind heaven, $13\tfrac{7}{19}$ degrees, as the dividend; then multiply
+      the denominator of the degrees by the denominator of the days as the divisor. Dividing, the accumulated
+      falling-behind is 4,882 degrees and 14570/17860 of a degree.
+    modern: $\dfrac{343{,}335 \times 254}{17{,}860} = \dfrac{87{,}207{,}090}{17{,}860} = 4882\tfrac{14570}{17860}$.
+  - zhao: |
+      Multiply the ordinary year's accumulated parts by the moon's falling-behind parts, giving 87,207,090:
+      this is the accumulated falling-behind in parts.
+  - classic: |
+      Divide by the circuit of heaven.
+  - zhao: |
+      Dividing the accumulated falling-behind parts gives thirteen circuits of heaven, which are discarded.
+  - classic: |
+      What is not enough to be divided
+  - zhao: |
+      What is not enough to be divided is 2,403,345.
+    modern: $87{,}207{,}090 - 13 \times 6{,}523{,}365 = 2{,}403{,}345 = 134 \times 17{,}860 + 10{,}105$.
+  - classic: |
+      is the number of degrees and parts by which the moon falls short of its former lodge.

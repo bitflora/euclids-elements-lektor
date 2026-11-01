@@ -1,0 +1,101 @@
+id: ZB.2.15
+title: Zhao Shuang's notes on the chart of the seven orbits
+paraphrase: |
+  Zhao explains how to read the great chart (drawn in [[ZB.3.1]]). It is in two layers. The blue
+  layer is a circle around the observer: the limit of sight, where heaven and earth seem to meet.
+  The yellow layer carries the ecliptic and the lunar lodges and turns about the pole. Sunrise is
+  the sun entering the blue circle, sunset its leaving. The directions east, west, south and north
+  are relative to the observer, not absolute. At the pole a year is one day and one night.
+
+diagram:
+  width: 400
+  height: 400
+  elements:
+    - "P;point;fixed;200,200;black;black"
+    - "Z;point;fixed;200,249;black;black"
+    - "k1;point;fixed;256.7,200;0;0"
+    - "k2;point;fixed;266.1,200;0;0"
+    - "k3;point;fixed;275.6,200;0;0"
+    - "k4;point;fixed;285,200;0;0"
+    - "k5;point;fixed;294.4,200;0;0"
+    - "k6;point;fixed;303.9,200;0;0"
+    - "k7;point;fixed;313.3,200;0;0"
+    - "h1;circle;radius;P,k1;0;0;#b45309;0"
+    - "h2;circle;radius;P,k2;0;0;#9a9078;0"
+    - "h3;circle;radius;P,k3;0;0;#9a9078;0"
+    - "h4;circle;radius;P,k4;0;0;#5b6b2f;0"
+    - "h5;circle;radius;P,k5;0;0;#9a9078;0"
+    - "h6;circle;radius;P,k6;0;0;#9a9078;0"
+    - "h7;circle;radius;P,k7;0;0;#33587a;0"
+    - "Y0;point;fixed;200,171.7;0;0"
+    - "Yk;point;fixed;285,171.7;0;0"
+    - "yellow;circle;radius;Y0,Yk;0;0;#c2410c;0"
+    - "Zk;point;fixed;279.5,249;0;0"
+    - "blue;circle;radius;Z,Zk;0;0;#1d4ed8;0"
+  given: [P, Z, h1, h2, h3, h4, h5, h6, h7, yellow, blue]
+  caption: |
+    The chart of the seven orbits. The seven concentric circles about the pole {P} are the sun's daily
+    paths, from the summer solstice (innermost) to the winter solstice (outermost). The blue circle
+    about Zhou {Z} is the limit of sight. The red circle is the ecliptic (the "yellow road"), drawn on a
+    separate sheet that turns about the pole.
+
+steps:
+  - zhao: |
+      Zhao Junqing says: the blue painted [circle] is where heaven and earth meet, the limit of human sight.
+      Heaven is supremely high and earth supremely low; they do not really meet. But the human eye, looking
+      as far as it can, sees heaven and earth meet.
+    zh: 趙君卿曰靑圖畫者天地合際人目所遠者也天至高地至卑非合也人目極觀而天地合也
+    hint: |
+      The horizon is not where heaven touches earth; it is the limit of sight, 167,000 *li* away
+      ([[ZB.2.11]]).
+    highlight: [blue]
+  - zhao: |
+      When the sun enters within the blue painted [circle], it is called sunrise; when it goes outside the
+      blue painted [circle], it is called sunset. Both inside and outside the blue painted [circle] is
+      heaven.
+    zh: 日入青圖畫内謂之日出出青圖畫外謂之日入青圖畫之内外皆天也
+    highlight: [blue, h1, h7]
+  - zhao: |
+      The north pole sits exactly in the centre of heaven. What people call east, west, south and north
+      have no fixed places: each takes the place where the sun rises as east, the place of the sun at noon
+      as south, where it sets as west, and where it is hidden as north.
+    zh: 北辰正居天中之央人所謂東西南北者非有常處各以日出之處爲東日中爲南日入爲西日没爲北
+    hint: |
+      A striking point. On a flat earth with the pole at the centre, "south" means "towards the
+      noon sun". Directions are local.
+  - zhao: |
+      Beneath the north pole, for six months the sun is seen and for six months it is not. From the spring
+      equinox to the autumn equinox the sun is always seen for six months; from the autumn equinox to the
+      spring equinox it is never seen for six months. Seeing the sun is day, not seeing it is night: what is
+      called a year is, beneath the north pole, one day and one night.
+    zh: 北辰之下六月見日六月不見日從春分至秋分六月常見日從秋分至春分六月常不見日見日爲晝不見日爲夜所謂一歳者卽北辰之下一晝一夜
+    hint: Compare [[ZB.2.10]].
+  - zhao: |
+      The yellow painted [circle] is the yellow road, along which the twenty-eight lodges are arrayed and
+      on which the sun, moon and stars travel. Keep the blue chart on top, fixed; pierce it at the pole and
+      turn [the yellow chart] underneath, and they will meet.
+    zh: 黃圖畫者黃道也二十八宿列焉日月星辰躔焉使青圖在上不動貫其極而轉之卽交矣
+    hint: |
+      The chart is a working model: two sheets pinned together at the pole. Turning the lower sheet
+      shows which lodges rise and set and when.
+    highlight: [yellow]
+  - zhao: |
+      Where I am is south of the north pole; it is not the centre of heaven and earth. My *mao* and *you*
+      [east and west] are not the *mao* and *you* of heaven and earth.
+    zh: 我之所在北辰之南非天地之中也我之卯酉非天地之卯酉
+    highlight: [Z]
+  - zhao: |
+      The innermost, the first, is the summer-solstice path; the middle, the fourth, is the equinox path;
+      the outermost, the seventh, is the winter-solstice path. All follow the yellow road. At the winter
+      solstice the sun is in [the lodge] Qianniu, at the spring equinox in Lou, at the summer solstice in
+      Dongjing, at the autumn equinox in Jiao. From the winter solstice it moves from south to north, from
+      the summer solstice from north to south: it ends and begins again.
+    highlight: [h1, h4, h7]
+    hint: |
+      Qianniu 牽牛, Lou 婁, Dongjing 東井 and Jiao 角 are four of the 28 lunar lodges, roughly a
+      quarter of the sky apart. Their distances from the pole are computed in [[ZB.5.1]].
+
+historical: |
+  Zhao's chart has not survived, though the text of Part 3 gives its scale. This description is
+  the earliest account of a two-layered planisphere in China. The figure here draws the classic's
+  numbers to scale: the observer's circle of sight overlaps the pole and passes beyond it.

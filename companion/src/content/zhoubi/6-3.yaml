@@ -1,0 +1,129 @@
+id: ZB.6.3
+title: The calendar cycles — zhang, bu, sui, shou, ji
+paraphrase: |
+  The great cycles of the calendar, each a whole multiple of the last:
+
+  | cycle | years | why |
+  |---|---|---|
+  | *zhang* 章 | 19 | 235 months = 19 years: the leap months come out even |
+  | *bu* 蔀 | 76 = 4 × 19 | also a whole number of days (27,759): the quarter-days come out even |
+  | *sui* 遂 | 1,520 = 20 × 76 | the day-names of the 60-day cycle come out even |
+  | *shou* 首 | 4,560 = 3 × 1,520 | the year-names of the 60-year cycle come out even |
+  | *ji* 極 | 31,920 = 7 × 4,560 | "all the numbers of generation end" |
+
+  Zhao explains the *bu* by cross-multiplying the fractions of the year and the month, and gives
+  rules for naming each cycle by the 60-day cycle.
+
+steps:
+  - classic: |
+      The numbers of yin and yang, the rules of the sun and moon:
+  - zhao: |
+      That is, the degrees and numbers of yin and yang, and the rules of the sun and moon.
+  - classic: |
+      nineteen years make one *zhang*.
+    modern: $19 \times 12\tfrac{7}{19} = 235$ months.
+    explain:
+      fact: |
+        A year of $365\tfrac14$ days holds $12\tfrac{7}{19}$ months, so seven leap months must be added
+        every nineteen years. After 19 years the new moon and the solstice fall on the same day again.
+  - zhao: |
+      *Zhang* means a section: when the leap remainders are used up, that is the rule of a section. The
+      *Qianxiang* says: "The *chen* is the middle of the year, by which one governs the months of new moons and
+      takes them in; the new moons are the middle of the *zhang*; subtracting the new moons gives the
+      months of the *zhang*; the difference of months is the leap [month]."
+    dispute: |
+      The quotation from the *Qianxiang* calendar (乾象曆, about 206 CE) is compressed, and the reading here is
+      tentative.
+  - classic: |
+      Four *zhang* make one *bu*: seventy-six years.
+  - zhao: |
+      *Bu* means making the fractions of the sun and moon equal and the same; that makes one *bu*. The months
+      of one year are $12\tfrac{7}{19}$; converting and adding the numerator gives 235. The days of one year are
+      $365\tfrac14$; converting gives 1461. Since the denominators are not the same, the numerators are not
+      commensurable; one must cross-multiply to make them commensurable. Multiply the month parts by the day
+      denominator 4, giving 940: the months of one *bu*. Multiply the day parts by the month denominator 19,
+      giving 27,759: the days of one *bu*. Multiply the day and month denominators together, giving 76: the
+      years of one *bu*. Dividing the months of a *bu* by the months of a year gives 76 years; dividing the
+      days of a *bu* by the days of a year also gives 76. The remainders of the years and months have come to
+      an end, the fractions of the days are used up; all the remnants coincide and all the numbers are
+      complete. So it is called a *bu*.
+    hint: |
+      The *bu* is the least common period: whole numbers of years, months and days together.
+    modern: |
+      Year $= \tfrac{1461}{4}$ days, month $= \tfrac{235}{19}$ per year. Over $4 \times 19 = 76$ years:
+      $76 \times \tfrac{235}{19} = 940$ months and $76 \times \tfrac{1461}{4} = 27{,}759$ days.
+    explain:
+      fact: |
+        This is the method of the *Nine Chapters* for adding fractions: bring them to a common denominator by
+        cross-multiplication (齊同). Its modern name is the least common multiple, here of 4 and 19.
+  - classic: |
+      Twenty *bu* make one *sui*: a *sui* is 1,520 years.
+  - zhao: |
+      *Sui* means "completed". That is, the virtues of the five phases have completed one round, and the sun,
+      moon and the *chen* have come to an end.
+    zh: 遂者竟也言五行之德一終竟極日月辰終也
+  - zhao: |
+      The *Qianzaodu* says: "For the numbers of the highest virtue, first establish the five, metal, wood, water,
+      fire and earth, each of 304 years. As the five virtues revolve and the sun and moon open [the cycle],
+      *jiazi* is the head of a *bu*, 76 years; next comes the *guimao* *bu*, 76 years; next the *renwu* *bu*, 76
+      years; next the *xinyou* *bu*, 76 years: in all 304 years, the virtue of wood, governing spring's birth.
+      Next the *gengzi* *bu*, 76 years; next *jimao*; next *wuwu*; next *dingyou*, 76 years each: in all 304
+      years, the virtue of metal, governing autumn's completion. Next *bingzi*, *yimao*, *jiawu*, *guiyou*, 76 years
+      each: in all 304 years, the virtue of fire, governing summer's growth. Next *renzi*, *xinmao*, *gengwu*,
+      *jiyou*, 76 years each: in all 304 years, the virtue of water, governing winter's storing. Next *wuzi*,
+      *dingmao*, *bingwu*, *yiyou*, 76 years each: in all 304 years, the virtue of earth, governing nourishment.
+      Their virtues [rest on] the four cardinal [branches] *zi*, *wu*, *mao*, *you*, and they pay court to the four
+      seasons. In all, 1,520 years end one era and return to *jiazi*; so it is called a *sui*."
+    zh: 乾鑿度曰至德之數先立金木水火土五凡各三百四歲五德運行日月開闢甲子爲蔀首七十六歲次得癸卯蔀七十六歲次壬午蔀七十六歲次辛酉蔀七十六歲凡三百四歲木德也主春生次庚子蔀七十六歲次已卯蔀七十六歲次戊午蔀七十六歲次丁酉蔀七十六歲凡三百四歲金德也主秋成次丙子蔀七十六歲次乙卯蔀七十六歲次甲午蔀七十六歲次癸酉蔀七十六歲凡三百四歲火德也主夏長次壬子蔀七十六歲次辛卯蔀七十六歲次庚午蔀七十六歲次巳酉蔀七十六歲凡三百四歲水德也主冬藏次戊子蔀七十六歲次丁卯蔀七十六歲次丙午蔀七十六歲次乙酉蔀七十六歲凡二百四歲土德也主致養其德四正子午卯酉而朝四時焉凡一千五百二十歲終一紀復甲子故謂之遂也
+    hint: |
+      Each *bu* is named by the day of the 60-day cycle on which it begins (*jiazi*, *guimao*, …). Four
+      *bu* make a "virtue" of 304 years; five virtues make the *sui*, after which the names repeat.
+    dispute: |
+      The last group is said to be "204 years" (二百四歲); it must be 304, as $5 \times 304 = 1520$. The
+      characters 已 and 巳 in *jimao* and *jiyou* stand for 己.
+  - zhao: |
+      The method for finding the day-names of the five virtues: set out one *bu*, 76 years; a virtue is four
+      *bu*, so multiply by four: 304 years. Multiply by the days of a year, $365\tfrac14$, giving 111,036. Cast out
+      sixties, leaving 36. Counting from *jiazi*, outside the count, gives *gengzi*: the virtue of metal. To find
+      the next virtue, add 36, cast out [sixties], and name it as before: that is the day of the next virtue.
+    zh: 求五德日名之法置一蔀者七十六歲德四蔀因而四之爲三百四歲以一歲三百六十五日四分日之一乘之爲十一萬一千三十六以六十去之餘三十六命甲子算外得庚子金德也求次德加三十六去之命如前則次德日也
+    modern: |
+      $304 \times 365\tfrac14 = 111{,}036 \equiv 36 \pmod{60}$; day 36 of the cycle, counting *jiazi* as 0,
+      is *gengzi*.
+    explain:
+      fact: |
+        The 60-day cycle pairs 10 "stems" with 12 "branches". Day number $n$ has stem $n \bmod 10$ and
+        branch $n \bmod 12$; 36 gives stem 6 (*geng*) and branch 0 (*zi*).
+  - zhao: |
+      To find the names of the *bu*: set out the years of one *zhang* [19] and multiply by the parts of the
+      circuit of heaven [1461], giving 27,759. Cast out sixties, leaving 39. Counting from *jiazi*, outside
+      the count, gives the *guimao* *bu*. To find [the next] *bu*, add 39, cast out when it reaches sixty, and
+      name it as before: that is the next *bu*.
+    zh: 求算蔀名置一章歲數以周天分乘之得二萬七千七百五十九以六十去之餘三十九命以甲子算外得癸卯蔀求蔀加三十九滿六十去之命如前得次蔀
+    modern: $19 \times 1461 = 27{,}759$ days per *bu*; $27{,}759 \equiv 39 \pmod{60}$, and day 39 is *guimao*.
+  - classic: |
+      Three *sui* make one *shou*: a *shou* is 4,560 years.
+  - zhao: |
+      *Shou* means "beginning". That is, the sun, moon and five planets end and begin again. The *Kaolingyao*
+      says: "The sun and moon begin at a *jiazi* winter solstice; the sun, moon and five planets all start
+      together at the beginning of Qianniu; the sun and moon conjoined like a jade disc, the five planets like a
+      string of pearls; the Green Dragon at *jiayin*, *Sheti ge*: together, after 4,560 years have accumulated,
+      [they return] to the beginning." So it is called a *shou*.
+    hint: |
+      A grand conjunction of all seven bodies at the start of the calendar: a common motif of Han
+      "Grand Origin" (上元) calendar theory.
+  - classic: |
+      Seven *shou* make one *ji*: a *ji* is 31,920 years. The numbers of generation all end, and the myriad
+      things begin again.
+    modern: $7 \times 4560 = 31{,}920$.
+  - zhao: |
+      *Ji* means "end". That is, the sun, moon, stars and planets, the quarters, the full and last and new
+      moons, the alternation of cold and heat, and the birth and nurture of the myriad things all begin again;
+      so it is called *ji*.
+  - classic: |
+      Heaven makes a new beginning to start the record.
+    dispute: |
+      The Sibu Congkan adds 曆, "calendar": "to start the record of the calendar".
+  - zhao: |
+      *Yuan* means beginning. Making the seven [*shou*] the rule of a *ji*, the numbers of heaven start again and
+      once more become the rule; [the text] relates this.

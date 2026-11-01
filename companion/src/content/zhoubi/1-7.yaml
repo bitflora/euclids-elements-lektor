@@ -1,0 +1,44 @@
+id: ZB.1.7
+title: Wisdom comes from the gou
+paraphrase: |
+  Shang Gao's conclusion. To know earth is wisdom and to know heaven is sagehood; both come from the
+  *gou*, the shadow, and so from the trysquare that casts it. The Duke of Zhou is satisfied.
+
+steps:
+  - classic: |
+      Therefore one who knows earth is wise, and one who knows heaven is a sage.
+  - zhao: |
+      That is, as for the height of heaven and the breadth of earth, who but a sage or a wise man could
+      attain to them?
+  - classic: |
+      Wisdom comes from the *gou*.
+    hint: |
+      The *gou*, the base of the right triangle, is also the shadow cast by an upright pole. Its
+      length gives distances (Part 2).
+  - zhao: |
+      The *gou* is also the shadow. By examining how the *gou* lengthens and shortens, one learns the height
+      and distance of things; so it says "wisdom comes from the *gou*".
+  - classic: |
+      The *gou* comes from the trysquare.
+  - zhao: |
+      The trysquare here means the gnomon. The gnomon does not move, yet its shadow becomes the *gou*; for
+      the *gou* to be true, [the gnomon must be upright]. So it says "the *gou* comes from the trysquare".
+    hint: |
+      The gnomon and its shadow form the two legs of a trysquare; the shadow is only a true *gou* if
+      the gnomon stands at right angles to level ground.
+    dispute: |
+      The Chinese (表不移亦為勾為勾將正) is compressed and perhaps corrupt; the bracketed words are
+      supplied from the sense.
+  - classic: |
+      The trysquare, in its relation to number, regulates the myriad things as one wills."
+    hint: Zhao quotes this sentence at the end of his hypotenuse essay ([[ZB.1.4]]).
+  - zhao: |
+      That is, it encompasses the most minute things, and turns and connects in every direction.
+  - classic: |
+      The Duke of Zhou said: "Excellent!"
+  - zhao: |
+      "Excellent" expresses his clear understanding: this is what is meant by "ask about one thing and
+      comprehend ten thousand".
+    hint: |
+      "Ask about one thing and comprehend ten thousand" anticipates the theme of the next dialogue
+      ([[ZB.2.2]]): understanding by analogy.

@@ -1,0 +1,40 @@
+id: ZB.2.13
+title: The sun's going out and coming in
+paraphrase: |
+  A short summary. All these numbers come from the sun's path moving outward toward winter and back
+  inward toward summer. The solstices can also be recognised by the pitch-pipes and bells, and the
+  limits of the world are found from these differences and the reach of the sun's light.
+
+steps:
+  - classic: |
+      All these numbers are [the results of] the going out and coming in of the sun's path.
+  - zhao: |
+      All the above numbers of circumferences and diameters are where the sun's path reaches in going and
+      returning, the extremes of the length of day and night.
+  - classic: |
+      At the winter and summer solstices, observe the numbers of the pitch-pipes and listen to the sounds of
+      the bells.
+    hint: |
+      The twelve pitch-pipes (*lü* 律) were associated with the months. Han theory held that the
+      solstices could be detected by the sounds of pipes and bells, as by the shadow.
+  - zhao: |
+      Observing the generation of the pitch-pipe numbers and listening to the changes in the sound of the
+      bells, one knows the extremes of cold and heat and understands the transformations of the succession
+      of seasons.
+  - classic: |
+      Winter-solstice day, summer-solstice night.
+    hint: |
+      The winter sun's noon position and the summer sun's midnight position: the first is 238,000 *li*
+      south of the pole, the second 119,000 *li* north of it.
+  - zhao: |
+      Halve the [diameter of the] winter-solstice day-and-night path and you get the [diameter of the]
+      summer-solstice day-and-night path. The method: take the winter-solstice path diameter, 476,000,
+      halve it, and you get 238,000 *li* from the summer-solstice noon to the summer-solstice midnight,
+      using the four-extremes *li*.
+    modern: $\tfrac12 \cdot 476{,}000 = 238{,}000$ *li*.
+  - classic: |
+      Observe it by the differences and the [distance] the sun's light reaches.
+  - zhao: |
+      By the reach of the differences and where the sun's light reaches: observing by these one finds the
+      bounds of the four extremes.
+    hint: The next section computes those bounds.

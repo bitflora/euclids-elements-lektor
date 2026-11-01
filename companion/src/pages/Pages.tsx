@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
-import { BOOKS, availableBooks } from "../content/books";
+import { BOOKS, ZB_PARTS, availableBooks } from "../content/books";
 import { getItem, heathCorrections, heathSource, items } from "../lib/corpus";
+import { allParallels, getZb, isZbId, zbSections, zbSource } from "../lib/zhoubi";
 import { plainText, refLabel } from "../lib/rich";
 import { hrefFor } from "../lib/router";
 import { lastPosition } from "../lib/store";
@@ -84,6 +85,30 @@ export function HomePage() {
           ))}
         </ul>
       </section>
+
+      <section>
+        <h2>
+          Also: the <i>Zhou bi suan jing</i> <span lang="zh-Hant">周髀算經</span>
+        </h2>
+        <p>
+          <i>The Gnomon of the Zhou</i>, a Chinese classic of astronomy and mathematics compiled around the first century
+          BCE, with the commentary of Zhao Shuang (3rd century CE). It opens with the right-triangle theorem, which
+          Euclid proves as I.47, and Zhao's commentary proves it with a dissection. The Chinese is shown beside this edition's
+          translation. Where the two books prove the same proposition, each links to the other.
+        </p>
+        <ul className="books">
+          {ZB_PARTS.map((p) => (
+            <li key={p.n}>
+              <a href={`#/zhoubi/${p.n}`}>
+                <span className="roman" lang="zh-Hant">
+                  {p.zh}
+                </span>
+                <span className="subject">{p.subject}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
     </main>
   );
 }
@@ -91,7 +116,7 @@ export function HomePage() {
 // ─── Search ───────────────────────────────────────────────────────────────
 interface Doc {
   id: string;
-  field: "Euclid" | "Notes" | "Heath's notes";
+  field: "Euclid" | "Notes" | "Heath's notes" | "Zhou bi";
   text: string;
   step?: number;
 }
@@ -118,10 +143,18 @@ function buildIndex(): Doc[] {
     for (const n of notes) docs.push({ id: it.id, field: "Notes", text: plainText(n) });
     for (const n of it.heathNotes) docs.push({ id: it.id, field: "Heath's notes", text: plainText(n.text) });
   }
+  for (const s of zbSections.values()) {
+    for (const st of s.steps) {
+      const en = st.classic ?? st.zhao;
+      docs.push({ id: s.id, field: "Zhou bi", text: (en ? plainText(en) + " " : "") + st.source, step: st.index });
+      for (const n of [st.hint, st.explain?.did, st.explain?.fact, st.explain?.follows]) if (n) docs.push({ id: s.id, field: "Notes", text: plainText(n), step: st.index });
+    }
+    for (const n of [s.annotation?.title, s.annotation?.paraphrase, s.annotation?.commentary, s.annotation?.historical]) if (n) docs.push({ id: s.id, field: "Notes", text: plainText(n) });
+  }
   return docs;
 }
 
-const WEIGHT = { Euclid: 3, Notes: 2, "Heath's notes": 1 };
+const WEIGHT = { Euclid: 3, "Zhou bi": 3, Notes: 2, "Heath's notes": 1 };
 
 export function SearchPage({ q }: { q: string }) {
   const [query, setQuery] = useState(q);
@@ -159,19 +192,19 @@ export function SearchPage({ q }: { q: string }) {
           history.replaceState(null, "", `#/search?q=${encodeURIComponent(query)}`);
         }}
       >
-        <input className="search-box" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="isosceles, gnomon, parallel…" autoFocus />
+        <input className="search-box" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="isosceles, gnomon, parallel, 句股…" autoFocus />
       </form>
       {query && <p className="small muted">{results.length ? `${results.length} items` : "Nothing found."}</p>}
       <ul className="results">
         {results.map(([id, r]) => {
-          const it = getItem(id)!;
+          const it = isZbId(id) ? { label: getZb(id)!.annotation?.title ?? getZb(id)!.label } : getItem(id)!;
           const best = [...r.hits].sort((a, b) => WEIGHT[b.field] - WEIGHT[a.field])[0];
           return (
             <li key={id}>
               <a href={hrefFor(id, best.step)}>
                 <span className="res-id">{refLabel(id)}</span> <span className="res-label">{it.label}</span>
               </a>
-              <p className={best.field === "Euclid" ? "heath" : ""}>
+              <p className={best.field === "Euclid" || best.field === "Zhou bi" ? "heath" : ""}>
                 <span className="res-field">{best.field}</span> {snippet(best.text)}
               </p>
             </li>
@@ -272,12 +305,77 @@ export function AboutPage() {
         follow Heath's lettering; those for I.1–I.5 are this edition's, the rest are adapted from Joyce's figures.
       </p>
 
+      <h2>
+        The <i>Zhou bi suan jing</i> <span lang="zh-Hant">周髀算經</span>
+      </h2>
+      <p>
+        The Chinese text of the classic is{" "}
+        <a href={zbSource.source.classic.url} target="_blank" rel="noreferrer">
+          {zbSource.source.classic.edition}
+        </a>
+        , which is in the public domain. Gutenberg prints the classic alone, so Zhao Shuang's commentary is taken from the{" "}
+        <a href={zbSource.source.commentary.url} target="_blank" rel="noreferrer">
+          {zbSource.source.commentary.edition}
+        </a>
+        . That edition also carries the sub-commentaries of Zhen Luan (6th century) and Li Chunfeng and his colleagues
+        (7th century), which are not reproduced here; nor are the Ming editors' marginal notes. Both texts are extracted
+        mechanically by <code>scripts/extract-zhoubi.mjs</code>. A line of the Sibu Congkan counts as the classic only
+        if it matches the Gutenberg text; where the two editions differ, the Gutenberg reading is printed and the other is
+        given in the passage's notes. The Sibu Congkan transcription on Wikisource has not been proofread, so its readings
+        should be treated with some caution.
+      </p>
+      <p>
+        The English translation, the section titles, and the notes are this edition's own. The translation is new, made from
+        the Chinese and checked against the received readings. It tries to keep the text's technical vocabulary visible,
+        e.g. <i>gou</i> 句 and <i>gu</i> 股 for the two legs of a right triangle, <i>xian</i> 弦 for the hypotenuse, and{" "}
+        <i>li</i> 里 for the unit of distance (about 400–500 m). Every step of the translation is tied to the Chinese it
+        renders, and the app checks the tie.
+      </p>
+      <p>Where the editions differ in ways the reader should know:</p>
+      <ul>
+        {zbSource.corrections.map((c, i) => (
+          <li key={i}>
+            Gutenberg “<span lang="zh-Hant">{c.from}</span>” → “<span lang="zh-Hant">{c.to}</span>” ({c.reason}).
+          </li>
+        ))}
+        {zbSource.gutenbergOnly.map((g, i) => (
+          <li key={`g${i}`}>
+            Gutenberg prints “<span lang="zh-Hant">{g.text}</span>” (part {g.part}, line {g.line}) as the classic; the Sibu
+            Congkan gives these words in the sub-commentary, and they are omitted here.
+          </li>
+        ))}
+      </ul>
+      <p>The cross-references between the two books, where both prove (or use) the same proposition:</p>
+      <ul>
+        {allParallels().map(([eid, list]) => (
+          <li key={eid}>
+            <a className="xref" data-ref={eid} href={hrefFor(eid)}>
+              {refLabel(eid)}
+            </a>{" "}
+            ↔{" "}
+            {list.map((p, k) => (
+              <span key={p.zb}>
+                {k > 0 && ", "}
+                <a className="xref" data-ref={p.zb} href={hrefFor(p.zb)}>
+                  {refLabel(p.zb)}
+                </a>{" "}
+                <span className="small muted">({p.relation === "same" ? "same proposition" : "related"})</span>
+              </span>
+            ))}
+          </li>
+        ))}
+      </ul>
+
       <h2>What is annotated</h2>
       <p>
         All thirteen books: every definition, postulate, common notion and proposition (I: 23 definitions, 5
         postulates, 5 common notions, 48 propositions; II: 2 and 14; III: 11 and 37; IV: 7 and 16; V: 18 and 25;
         VI: 5 and 33; VII: 22 and 39; VIII: 27; IX: 36; X: 16 in three sets and 115; XI: 28 and 39; XII: 18; XIII:
         18). The notes for Books X–XIII are briefer than those for Books I–IX.
+      </p>
+      <p>
+        The <i>Zhou bi suan jing</i>: all of it, Zhao Shuang's preface and the 48 sections of the six parts,
+        every passage of the classic and of Zhao's commentary translated and annotated.
       </p>
     </main>
   );

@@ -1,0 +1,102 @@
+id: ZB.3.2
+title: Seven orbits, six intervals, six months
+paraphrase: |
+  The sun's daily circle changes through the year between the inner orbit (summer solstice) and the
+  outer orbit (winter solstice). The Zhou bi draws seven orbits (*heng* 衡) with six equal intervals,
+  one for each month of the half-year of $182\tfrac58$ days. In a year the sun goes once out and
+  once in; in each month of $30\tfrac7{16}$ days it crosses one interval.
+
+diagram:
+  width: 400
+  height: 400
+  elements:
+    - "P;point;fixed;200,200;black;black"
+    - "Z;point;fixed;200,249;black;black"
+    - "k1;point;fixed;256.7,200;0;0"
+    - "k2;point;fixed;266.1,200;0;0"
+    - "k3;point;fixed;275.6,200;0;0"
+    - "k4;point;fixed;285,200;0;0"
+    - "k5;point;fixed;294.4,200;0;0"
+    - "k6;point;fixed;303.9,200;0;0"
+    - "k7;point;fixed;313.3,200;0;0"
+    - "k8;point;fixed;392.9,200;0;0"
+    - "h1;circle;radius;P,k1;0;0;#b45309;0"
+    - "h2;circle;radius;P,k2;0;0;#9a9078;0"
+    - "h3;circle;radius;P,k3;0;0;#9a9078;0"
+    - "h4;circle;radius;P,k4;0;0;#5b6b2f;0"
+    - "h5;circle;radius;P,k5;0;0;#9a9078;0"
+    - "h6;circle;radius;P,k6;0;0;#9a9078;0"
+    - "h7;circle;radius;P,k7;0;0;#33587a;0"
+    - "extreme;circle;radius;P,k8;0;0;#6b6253;0"
+    - "R1;point;fixed;256.7,200;0;0"
+    - "R7;point;fixed;313.3,200;0;0"
+    - "band;line;connect;R1,R7;0;0;#c2410c"
+    - "PR1;line;connect;P,R1;0;0;#b45309"
+  given: [P, h1, h2, h3, h4, h5, h6, h7]
+  caption: |
+    The seven orbits about the pole {P}: the inner (orange) is the summer solstice, the middle (green)
+    the equinoxes, the outer (blue) the winter solstice. Between them lie six equal intervals, one for
+    each month of the half-year.
+
+steps:
+  - classic: |
+      In general, for the circles on which the sun and moon travel:
+  - zhao: |
+      [The circles] of the equinoxes and the winter and summer solstices are the movements of the
+      *xuanji*.
+    hint: |
+      *Xuanji* 璇璣 here seems to mean the whole turning mechanism of heaven, not just the polar region of
+      [[ZB.4.3]].
+  - classic: |
+      seven orbits make six intervals, corresponding to six months.
+    highlight: [h1, h2, h3, h4, h5, h6, h7]
+  - classic: |
+      The six months of the [solar] terms make $182\tfrac58$ days.
+    modern: $\tfrac12 \cdot 365\tfrac14 = 182\tfrac58$ days.
+  - zhao: |
+      The "six months of the terms" are the $182\tfrac58$ days from winter solstice to summer solstice, half a
+      year. "Months of the terms" means the medial qi; they do not exhaust the days. The number: take the
+      circuit of heaven, $365\tfrac14$, expressed in quarters, double the divisor 4, and divide; that gives it.
+    hint: |
+      The "medial qi" (*zhongqi* 中氣) are the twelve solar terms that divide the year evenly, as distinct
+      from the lunar months.
+    modern: $365\tfrac14 = \tfrac{1461}{4}$; halved, $\tfrac{1461}{8} = 182\tfrac58$.
+  - classic: |
+      So at the summer solstice the sun is in Dongjing, at the inner orbit; at the winter solstice it is in
+      Qianniu, at the outer orbit.
+    highlight: [h1, h7]
+  - zhao: |
+      Dongjing and Qianniu are the limits of long and short, the extremes of inner and outer.
+  - classic: |
+      The orbits change in turn, and it ends at the winter solstice [again].
+  - zhao: |
+      At the winter solstice the sun goes back from the outer orbit; it goes once round the yellow road,
+      and after a year returns to the same orbit, ending at the winter solstice.
+  - classic: |
+      So it says: one year is $365\tfrac14$ days; in a year, once at the inner extreme and once at the outer
+      extreme.
+  - zhao: |
+      From the winter solstice, once to the inner extreme and once to the outer: the degrees end at
+      the [same] star, the months end at the [same] station. This makes one year.
+  - classic: |
+      $30\tfrac{7}{16}$ days: in [each such] month, once at an outer extreme and once at an inner extreme.
+    hint: |
+      $182\tfrac58 \div 6 = 30\tfrac7{16}$ days per interval. The second clause probably refers to the
+      moon, which goes in and out once a month as the sun does once a year.
+    modern: $\tfrac{1461}{8} \div 6 = \tfrac{1461}{48} = 30\tfrac{7}{16}$.
+  - zhao: |
+      Wishing to divide one year into twelve months, one interval between orbits corresponds to one month;
+      this gives the number of days between the middles. On this basis: the moon travels for $29\tfrac{499}{940}$
+      days, passes a full circuit of heaven [and a bit], and joins the sun in the same lodge. As for its
+      going in to the inner and out to the outer extreme, dividing by six [only] roughly works; it is not
+      fully understood. "The sun's light" refers to the inner extreme, "the moon's light" to the outer
+      extreme: the sun, yang, starts from the winter solstice; the moon, yin, starts from the summer
+      solstice: these are the beginnings of their comings and goings. The *Changes* says, "when the sun
+      goes the moon comes, when the moon goes the sun comes." This is what is meant. For this number:
+      set out $182\tfrac58$ days, convert to eighths and add the numerator 5, multiply the denominator by
+      the six intervals and divide: you get 30. Reduce the divisor by 3 to get 16, and the remainder by 3
+      to get 7.
+    modern: $\dfrac{182 \cdot 8 + 5}{8 \cdot 6} = \dfrac{1461}{48} = 30\tfrac{21}{48} = 30\tfrac{7}{16}$.
+    explain:
+      did: |
+        Zhao admits that matching the moon's monthly in-and-out to the six intervals is only rough. The month is $29\tfrac{499}{940}$ days, not $30\tfrac7{16}$.

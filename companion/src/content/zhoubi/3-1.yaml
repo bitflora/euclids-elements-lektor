@@ -1,0 +1,81 @@
+id: ZB.3.1
+title: Drawing the chart — its scale; the world within the four seas
+paraphrase: |
+  How to draw the chart of the seven orbits. At a scale of 1 *fen* (a tenth of a *cun*) to 1,000
+  *li*, the circle of the four extremes (810,000 *li*) needs a square of silk 8 *chi* 1 *cun* on a
+  side. At half that scale, 1 *fen* to 2,000 *li*, a square 4 *chi* 5 *fen* will do. The classic then
+  quotes the *Lüshi chunqiu*: the inhabited world "within the four seas" is only 28,000 by 26,000
+  *li*.
+
+diagram:
+  width: 400
+  height: 400
+  elements:
+    - "P;point;fixed;200,200;black;black"
+    - "Z;point;fixed;200,249;black;black"
+    - "k1;point;fixed;256.7,200;0;0"
+    - "k2;point;fixed;266.1,200;0;0"
+    - "k3;point;fixed;275.6,200;0;0"
+    - "k4;point;fixed;285,200;0;0"
+    - "k5;point;fixed;294.4,200;0;0"
+    - "k6;point;fixed;303.9,200;0;0"
+    - "k7;point;fixed;313.3,200;0;0"
+    - "k8;point;fixed;392.9,200;0;0"
+    - "h1;circle;radius;P,k1;0;0;#b45309;0"
+    - "h2;circle;radius;P,k2;0;0;#9a9078;0"
+    - "h3;circle;radius;P,k3;0;0;#9a9078;0"
+    - "h4;circle;radius;P,k4;0;0;#5b6b2f;0"
+    - "h5;circle;radius;P,k5;0;0;#9a9078;0"
+    - "h6;circle;radius;P,k6;0;0;#9a9078;0"
+    - "h7;circle;radius;P,k7;0;0;#33587a;0"
+    - "extreme;circle;radius;P,k8;0;0;#6b6253;0"
+    - "R1;point;fixed;256.7,200;0;0"
+    - "R7;point;fixed;313.3,200;0;0"
+    - "band;line;connect;R1,R7;0;0;#c2410c"
+    - "PR1;line;connect;P,R1;0;0;#b45309"
+    - "f1;point;fixed;7.1,7.1;0;0"
+    - "f2;point;fixed;392.9,7.1;0;0"
+    - "f3;point;fixed;392.9,392.9;0;0"
+    - "f4;point;fixed;7.1,392.9;0;0"
+    - "silk;polygon;quadrilateral;f1,f2,f3,f4;0;0;#6b6253;0"
+  given: [P, Z, h1, h2, h3, h4, h5, h6, h7, extreme, silk]
+  caption: |
+    The chart on its square of silk: 810,000 *li* on a side, just holding the circle of the four
+    extremes. At 1 *fen* per 1,000 *li* that is 810 *fen*, i.e. 8 *chi* 1 *cun*.
+
+steps:
+  - classic: |
+      In drawing this chart, take a *zhang* as a *chi*, a *chi* as a *cun*, a *cun* as a *fen*: one *fen* is
+      a thousand *li*. In all, use a square of silk 8 *chi* 1 *cun* [on a side]. Now we use a square of silk
+      4 *chi* 5 *fen*, one *fen* being two thousand *li*.
+    hint: |
+      The units go down by tens: 1 *zhang* = 10 *chi* = 100 *cun* = 1,000 *fen*. "Take a *zhang* as a
+      *chi*" etc. means shrinking everything tenfold, repeatedly, until 1 *fen* stands for 1,000 *li*.
+    highlight: [silk, extreme]
+    modern: |
+      $810{,}000 \text{ li} \div 1{,}000 = 810$ *fen* = 8 *chi* 1 *cun*; at half scale, $405$ *fen* =
+      4 *chi* 5 *fen* (about 93 cm).
+  - zhao: |
+      The square is the chart of the four extremes, which fully [shows] the meaning of the seven orbits.
+  - classic: |
+      Mr Lü says: "Within the four seas, east to west is 28,000 *li*, north to south 26,000 *li*."
+    hint: |
+      A quotation from the *Lüshi chunqiu* (呂氏春秋, about 239 BCE). The habitable world is tiny
+      compared with the 810,000-*li* disc lit by the sun.
+  - zhao: |
+      Mr Lü is Lü Buwei, chancellor of Qin, who compiled the *Lüshi chunqiu*. This meaning is in its first
+      chapter, "Youshi". It is not the original text of the *Zhou bi*. The *Erya* says: "The Nine Yi, Eight
+      Di, Seven Rong and Six Man are called the Four Seas." Giving the numbers east to west and north to
+      south is meant to show where carts and horses reach. The *Hetu kuodixiang* says that there are nine
+      provinces with rulers, cut off from the civilising virtue of the Middle Kingdom and not governed by
+      it; it also says that the extent of the eight extremes is 223,500 [myriad?] *li* east to west and
+      233,500 north to south. The "Dixing" chapter of the *Huainanzi* says that Yu sent Dazhang to pace
+      from the eastern extreme to the western, and Shuhai to pace from the northern extreme to the
+      southern, and the numbers were all the same. But how could such vastness be paced? Later students
+      do not know. A *yi* means ten myriads.
+    hint: |
+      Zhao collects other ancient figures for the size of the world, and doubts them. The "four seas" are
+      the barbarian peoples round China.
+    dispute: |
+      The figures quoted from the *Hetu kuodixiang* (二億二萬三千五百里) are hard to construe with the
+      *yi* of 100,000 that Zhao defines; the text may be corrupt.

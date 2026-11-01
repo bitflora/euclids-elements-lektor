@@ -1,0 +1,39 @@
+id: ZB.2.6
+title: The diameter of the sun
+paraphrase: |
+  Combine the tube ratio (1 : 80, [[ZB.2.4]]) with the slant distance (100,000 *li*,
+  [[ZB.2.5]]): the sun's diameter is $100{,}000 / 80 = 1{,}250$ *li*.
+
+parallels:
+  - id: VI.4
+    relation: same
+    note: |
+      The bore and the tube length, the sun's diameter and its distance: two similar triangles, whose
+      sides are in proportion (VI.4). Zhao calls the tube's triangle the small *gou-gu* and the sun's
+      triangle the large one.
+
+steps:
+  - classic: |
+      Using the ratio to compute it: for 80 *li*, a diameter of 1 *li*; for 100,000 *li*, a diameter of
+      1,250 *li*.
+    hint: |
+      The "rule of three" (*lü* 率): scale the tube's 80 : 1 up to the sun's distance.
+    modern: $d = 100{,}000 \times \dfrac{1}{80} = 1{,}250$ *li*.
+    cites: [VI.4]
+  - zhao: |
+      The rule should be: take the bore's diameter as the *gou* ratio and the tube's length as the *gu*
+      ratio; the sun's distance from the observer is the large *gu*, and the large *gu*'s *gou* is the sun's
+      diameter. The method: multiply the large *gu* by the *gou* ratio and divide by the *gu* ratio. Here
+      80 *li* is the divisor and 100,000 *li* the dividend; dividing dividend by divisor gives the sun's
+      diameter.
+    hint: |
+      Zhao writes the proportion as a "small" and a "large" *gou-gu*: $1 : 80 = d : 100{,}000$.
+    explain:
+      fact: |
+        This is the Chinese "rule of three" (今有術, the "suppose" method of the *Nine Chapters*):
+        the unknown is the known term times the ratio of the two given terms.
+  - classic: |
+      So it says: the sun's diameter is 1,250 *li*.
+    hint: |
+      The real sun is about 1.4 million km across. The Zhou bi's sun, 1,250 *li* (about 550 km), is
+      tiny and near, as a flat earth requires.

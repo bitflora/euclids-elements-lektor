@@ -1,0 +1,118 @@
+id: ZB.3.4
+title: The seven orbits — diameters, circumferences, li per degree
+paraphrase: |
+  A table. For each orbit the classic gives its diameter, its circumference (three times the
+  diameter), and the length of one degree on it: the circumference divided by $365\tfrac14$. The
+  quotient is expressed in *li*, *bu* (300 to the *li*) and 1461sts of a *bu*. Every value in the
+  text checks.
+
+  | orbit | diameter (*li*) | circumference (*li*) | one degree |
+  |---|---|---|---|
+  | 1 (summer) | 238,000 | 714,000 | 1,954 *li* 247 *bu* 933/1461 |
+  | 2 | 277,666⅔ | 833,000 | 2,280 *li* 188 *bu* 1332/1461 |
+  | 3 | 317,333⅓ | 952,000 | 2,606 *li* 130 *bu* 270/1461 |
+  | 4 (equinox) | 357,000 | 1,071,000 | 2,932 *li* 71 *bu* 669/1461 |
+  | 5 | 396,666⅔ | 1,190,000 | 3,258 *li* 12 *bu* 1068/1461 |
+  | 6 | 436,333⅓ | 1,309,000 | 3,583 *li* 254 *bu* 6/1461 |
+  | 7 (winter) | 476,000 | 1,428,000 | 3,909 *li* 195 *bu* 405/1461 |
+
+diagram:
+  width: 400
+  height: 400
+  elements:
+    - "P;point;fixed;200,200;black;black"
+    - "Z;point;fixed;200,249;black;black"
+    - "k1;point;fixed;256.7,200;0;0"
+    - "k2;point;fixed;266.1,200;0;0"
+    - "k3;point;fixed;275.6,200;0;0"
+    - "k4;point;fixed;285,200;0;0"
+    - "k5;point;fixed;294.4,200;0;0"
+    - "k6;point;fixed;303.9,200;0;0"
+    - "k7;point;fixed;313.3,200;0;0"
+    - "k8;point;fixed;392.9,200;0;0"
+    - "h1;circle;radius;P,k1;0;0;#b45309;0"
+    - "h2;circle;radius;P,k2;0;0;#9a9078;0"
+    - "h3;circle;radius;P,k3;0;0;#9a9078;0"
+    - "h4;circle;radius;P,k4;0;0;#5b6b2f;0"
+    - "h5;circle;radius;P,k5;0;0;#9a9078;0"
+    - "h6;circle;radius;P,k6;0;0;#9a9078;0"
+    - "h7;circle;radius;P,k7;0;0;#33587a;0"
+    - "extreme;circle;radius;P,k8;0;0;#6b6253;0"
+    - "R1;point;fixed;256.7,200;0;0"
+    - "R7;point;fixed;313.3,200;0;0"
+    - "band;line;connect;R1,R7;0;0;#c2410c"
+    - "PR1;line;connect;P,R1;0;0;#b45309"
+  given: [P, h1, h2, h3, h4, h5, h6, h7]
+  caption: The seven orbits. Each is divided into $365\tfrac14$ degrees, so a degree is longer on the outer orbits.
+
+steps:
+  - classic: |
+      The first, inner orbit has diameter 238,000 *li*, circumference 714,000 *li*. Divided into $365\tfrac14$
+      degrees, each degree is 1,954 *li* 247 *bu* and 933/1461 of a *bu*.
+    highlight: [h1]
+    modern: $\dfrac{714{,}000}{365\frac14} = \dfrac{4 \cdot 714{,}000}{1461} = 1954$ *li* $247\tfrac{933}{1461}$ *bu*.
+  - zhao: |
+      Express the circuit of heaven in quarters to make the divisor [1461]; multiply the orbit's
+      circumference by four to make the dividend. Divide: [the quotient is *li*]; [multiply what is] not
+      used up [by 3] and divide to get hundreds of *bu*; [multiply what is] not used up by ten and divide to
+      get tens of *bu*; [multiply what is] not used up by ten and divide to get single *bu*; what is not used
+      up is named as a fraction with the divisor [as denominator]. All the way to the seventh orbit it is
+      done like this.
+    hint: |
+      Long division carried into the smaller unit digit by digit: hundreds of *bu* first (since 1 *li*
+      = 300 *bu*, multiply by 3), then tens, then units, and the remainder left as a fraction.
+    explain:
+      fact: |
+        This is how the Chinese counting-rod algorithm handles mixed units. The same steps are spelled out
+        in [[ZB.3.6]].
+  - classic: |
+      The next, second orbit has diameter 277,666 *li* 200 *bu*, circumference 833,000 *li*. Divided into
+      degrees, each degree is 2,280 *li* 188 *bu* and 1332/1461 of a *bu*.
+    highlight: [h2]
+  - zhao: |
+      Express the circuit of heaven in quarters as divisor, multiply the orbit's circumference by four as
+      dividend; divide to get the number of *li*; from what is not used up find the *bu*; what is not used
+      up, name as a fraction.
+  - classic: |
+      The next, third orbit has diameter 317,333 *li* 100 *bu*, circumference 952,000 *li*. Divided into
+      degrees, each degree is 2,606 *li* 130 *bu* and 270/1461 of a *bu*.
+    highlight: [h3]
+  - zhao: |
+      Express the circuit of heaven in quarters as divisor, multiply the orbit's circumference by four as
+      dividend; divide to get the *li*; from what is not used up, find the *bu*; what is not used up, name as
+      a fraction.
+  - classic: |
+      The next, fourth orbit has diameter 357,000 *li*, circumference 1,071,000 *li*. Divided into degrees,
+      each degree is 2,932 *li* 71 *bu* and 669/1461 of a *bu*.
+    highlight: [h4]
+    dispute: |
+      Gutenberg misprints the denominator as 四千百六十一 ("4161"), the Sibu Congkan as 千四百一十
+      ("1410"). It must be 1461, as for the other orbits; the computation confirms it.
+  - zhao: |
+      Express the circuit of heaven in quarters as divisor, multiply the orbit's circumference by four as
+      dividend; divide to get the *li*; from what is not used up, find the *bu*; what is not used up, name as
+      a fraction.
+  - classic: |
+      The next, fifth orbit has diameter 396,666 *li* 200 *bu*, circumference 1,190,000 *li*. Divided into
+      degrees, each degree is 3,258 *li* 12 *bu* and 1068/1461 of a *bu*.
+    highlight: [h5]
+  - zhao: |
+      Express the circuit of heaven in quarters as divisor, multiply the orbit's circumference by four as
+      dividend; divide to get the *li*; from what is not used up, find the *bu*; what is not used up, name as
+      a fraction.
+  - classic: |
+      The next, sixth orbit has diameter 436,333 *li* 100 *bu*, circumference 1,309,000 *li*. Divided into
+      degrees, each degree is 3,583 *li* 254 *bu* and 6/1461 of a *bu*.
+    highlight: [h6]
+  - zhao: |
+      Express the circuit of heaven in quarters as divisor, multiply the orbit's circumference by four as
+      dividend; divide to get one *li*; from what is not used up, find the *bu*; what is not used up, name as
+      a fraction.
+  - classic: |
+      The next, seventh orbit has diameter 476,000 *li*, circumference 1,428,000 *li*. Divided into degrees,
+      each degree is 3,909 *li* 195 *bu* and 405/1461 of a *bu*.
+    highlight: [h7]
+  - zhao: |
+      Express the circuit of heaven in quarters as divisor, multiply the orbit's circumference by four as
+      dividend; divide to get the *li*; from what is not used up, find the *bu*; what is not used up, name as
+      a fraction.

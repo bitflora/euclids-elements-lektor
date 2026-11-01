@@ -1,0 +1,91 @@
+id: ZB.2.10
+title: Day and night at the pole — the sun's light reaches 167,000 li
+paraphrase: |
+  From spring to autumn equinox the region beneath the pole always has sunlight; from autumn to
+  spring it never does. At the equinoxes the sun's light just reaches the pole. Since the equinox
+  sun is 178,500 *li* from the pole, and its light stops at the edge of the polar region 11,500
+  *li* short of the pole, the sun's light reaches 167,000 *li* in every direction.
+
+diagram:
+  width: 400
+  height: 400
+  elements:
+    - "P;point;fixed;200,200;black;black"
+    - "Z;point;fixed;200,249;black;black"
+    - "k1;point;fixed;256.7,200;0;0"
+    - "k4;point;fixed;285,200;0;0"
+    - "k7;point;fixed;313.3,200;0;0"
+    - "summer;circle;radius;P,k1;0;0;#b45309;0"
+    - "equinox;circle;radius;P,k4;0;0;#5b6b2f;0"
+    - "winter;circle;radius;P,k7;0;0;#33587a;0"
+    - "Xk;point;fixed;205.5,200;0;0"
+    - "xuanji;circle;radius;P,Xk;0;0;black;#d6d3cc"
+    - "C;point;fixed;200,285;black;black"
+    - "Lk;point;fixed;279.5,285;0;0"
+    - "light;circle;radius;C,Lk;0;0;#d97706;0"
+    - "R;point;fixed;200,205.5;black;0"
+    - "CR;line;connect;C,R;0;0;#d97706"
+  given: [P, Z, summer, equinox, winter, xuanji, C, light, R, CR]
+  caption: |
+    At noon on an equinox the sun is at {C}, on the middle circle, 178,500 *li* from the pole {P}. Its
+    light (orange circle) reaches 167,000 *li* to {R}, just short of the grey polar region (*xuanji*,
+    11,500 *li* across in radius). In summer the sun's circle is smaller and its light covers the pole;
+    in winter it is larger and the pole is in darkness.
+
+steps:
+  - classic: |
+      From the spring equinox, [when] day and night are equal, to the autumn equinox, [when] day and night
+      are equal, there is always sunlight beneath the pole.
+    hint: The "polar day" of six months, which the Zhou bi deduces rather than observes.
+    highlight: [summer]
+  - zhao: |
+      At the equinoxes day and night are equal. From spring to autumn equinox the sun is inside, near the
+      pole, so its light reaches there.
+  - classic: |
+      From the autumn equinox to the spring equinox there is never sunlight beneath the pole.
+    highlight: [winter]
+  - zhao: |
+      From autumn to spring equinox the sun is outside, far from the pole, so its light does not reach.
+  - classic: |
+      So at the equinoxes the sun's light reaches just to the pole: yin and yang are equally divided. The
+      winter and summer solstices are produced by the sun's path going out and coming in; [they are] the
+      extremes of the length of day and night.
+    highlight: [CR]
+  - zhao: |
+      *Fa* means "going out", *lian* means "coming back", *ji* means "end".
+  - classic: |
+      The equinoxes are the equal measure of yin and yang, the image of day and night.
+  - zhao: |
+      *Xiu* means "long": that is, yin and yang are equal in length.
+  - classic: |
+      Day is yang, night is yin.
+  - zhao: |
+      The difference of light and dark is taken as the image of yin and yang.
+  - classic: |
+      From spring equinox to autumn equinox is the image of day;
+  - zhao: |
+      Beneath the north pole the sunlight is seen. The long sun governs the birth of things, so it images
+      day.
+  - classic: |
+      from autumn equinox to spring equinox is the image of night.
+  - zhao: |
+      Beneath the north pole the sunlight is not seen. The short sun governs the death of things, so it
+      images night.
+  - classic: |
+      So at noon on the equinoxes the light reaches to beneath the north pole, and at midnight the sun's
+      light also reaches [past] the pole from the south. This is the time when day and night are divided.
+      So it says: the sun illuminates to the four sides 167,000 *li* each.
+    hint: |
+      The sun's light has a fixed range. At the equinox it just reaches the pole region, so the range is
+      the equinox radius less the polar region: $178{,}500 - 11{,}500 = 167{,}000$ *li*.
+    highlight: [light, CR]
+    modern: $178{,}500 - 11{,}500 = 167{,}000$ *li*.
+    explain:
+      implicit: |
+        The 11,500 *li* radius of the polar region (*xuanji* 璇璣) is measured later ([[ZB.4.4]]). The
+        text uses it here without saying so; Zhao fills in the step.
+  - zhao: |
+      "Reaching the pole" means [reaching] the edge of the *xuanji*, where yang is cut off and yin
+      obstructs. At that time the sun's light does not reach [the centre], so we know that the sun shines
+      to the side 167,000 *li*, falling short of the centre of heaven by 11,500 *li*.
+    highlight: [xuanji]

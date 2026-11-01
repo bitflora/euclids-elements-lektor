@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { refLabel } from "../lib/rich";
 import type { Item, Step } from "../types";
 import { Heath, JoyceLink, Rich } from "./Rich";
+import { EuclidParallels } from "./Parallels";
 import { RefGroups } from "./Refs";
 import { partLabel } from "./StepNotes";
 
@@ -105,6 +106,7 @@ export function Overview({ item, onStart }: { item: Item; onStart: () => void })
           {item.label} · {item.prop!.kind === "problem" ? "Problem" : "Theorem"}
         </span>
       </div>
+      <EuclidParallels id={item.id} callout />
       {ann ? (
         <>
           <section className="voice-note">

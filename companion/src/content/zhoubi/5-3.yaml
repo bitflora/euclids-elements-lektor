@@ -1,0 +1,78 @@
+id: ZB.5.3
+title: The method for the shadow table — and Zhao's objection
+paraphrase: |
+  The method behind the table: subtract the summer-solstice shadow from the winter-solstice shadow
+  and divide by 12. The result, $9\tfrac{11}{12}$ *cun*, is the step from term to term. Zhao Shuang
+  adds a long note criticising the "old method". The equinox shadows are not in fact equal, the steps
+  near the solstices do not match the days, and the arithmetic uses the wrong length of a term. He
+  says he has made a new method.
+
+steps:
+  - classic: |
+      In all there are eight nodes and twenty-four *qi*.
+    dispute: |
+      Gutenberg prints the table of [[ZB.5.2]] and this method as separate passages; in the Sibu Congkan
+      the table runs straight on into this sentence, and Zhao's note follows it.
+  - zhao: |
+      The two solstices are the extremes of cold and heat; the two equinoxes are the balance of yin and yang;
+      the four "beginnings" are the starts of birth, growth, harvest and storage. These are the eight nodes.
+      Each node has three *qi*; three times eight makes twenty-four.
+  - classic: |
+      For each *qi* [the shadow] decreases or increases by 9 *cun* 9 *fen* and 1/6 *fen*.
+  - zhao: |
+      *Sun* means to reduce: break one *fen* into six parts, and then reduce. *Yi* means to add: when the small
+      parts reach six, carry one to the *fen*.
+  - classic: |
+      The winter and summer solstices are the starts of the decrease and the increase.
+  - zhao: |
+      At the winter solstice the shadow is at its longest and must turn shorter, so it is the start of the
+      decrease; at the summer solstice the shadow is at its shortest and must turn longer, so it is the start
+      of the increase. This is my, Shuang's, new method.
+  - classic: |
+      The method: set out the winter-solstice shadow, subtract the summer-solstice shadow, and take the
+      remainder as the dividend; take 12 as the divisor.
+    modern: $135 - 16 = 119$; divisor 12.
+  - zhao: |
+      Twelve is the twelve *qi* of half a year. As the divisor, it is the rule for the increase of one node.
+  - classic: |
+      Each time the dividend contains the divisor, one *cun*. What does not fill the divisor, multiply by ten
+      and divide by the divisor, getting one *fen*.
+    modern: $119 = 9 \times 12 + 11$ (9 *cun*); $110 = 9 \times 12 + 2$ (9 *fen*).
+  - zhao: |
+      To find *fen*, therefore multiply by ten.
+  - classic: |
+      What does not fill the divisor, name it with the divisor.
+    modern: |
+      $\tfrac{2}{12} = \tfrac16$ *fen*: in all, 9 *cun* 9 *fen* $\tfrac16$ *fen*.
+  - zhao: |
+      Halve both the divisor and the remaining fraction. The old method for the shadows is not sound in
+      principle. It says that at the spring and autumn equinoxes the shadows of yin and yang are equal, each
+      7 *chi* 5 *cun* 5 *fen*, and so that the middle orbit is 75,500 *li* from Zhou. But the spring-equinox
+      shadow is 7 *chi* 5 *cun* and 723 parts, and the autumn-equinox shadow 7 *chi* 4 *cun* and 262 parts:
+      they differ by 1 *cun* and 461 parts. Reasoning from this, they are not equal. From the winter
+      solstice to Lesser cold [the shadow changes by] more than half a day's [worth]; from the summer solstice
+      to Lesser heat by less than half a day's; from Grain in ear to the summer solstice by two days' more;
+      from Greater snow to the winter solstice by three days' more. Again, half a year is $182\tfrac58$ days,
+      yet here a rate based on $\tfrac24$ of a day is used, so one day gets $\tfrac{476}{730}$ of a *cun*,
+      which is wrong. The nodes do not fit the seasons: [a term is] 15 days and 7/22 of a day, but taking
+      the rate per day with 15 days as a node makes the errors and confusions worse still. The *Changes*
+      says, "At an old well there are no birds; the time has abandoned it." That is, when a method has
+      [failed] for thirty days it should truly be changed and abandoned. So I, Shuang, have made a new method
+      instead, taking one *qi* as the rate, so that the statement is brief and the method easy, the upper and
+      lower [halves of the year] connect, and it goes round and begins again, removing the errors.
+    hint: |
+      Zhao attacks the classic. Observed shadows do not change evenly, and the equinox shadows are not
+      equal. His remedy is to compute per solar term rather than per day.
+    explain:
+      did: |
+        "Halve both" reduces $\tfrac{2}{12}$ to $\tfrac{1}{6}$. The rest is a separate critique. Zhao cites
+        measured equinox shadows that differ by more than a *cun* (the units of the "parts" are not
+        stated), and complains that the table's rate per day is computed from the wrong length of a
+        term.
+      fact: |
+        A solar term is $365\tfrac14 \div 24 = 15\tfrac{7}{32}$ days. The step per day, $9\tfrac{11}{12}$ *cun*
+        over $15\tfrac{7}{32}$ days, is about 0.652 *cun*; $\tfrac{476}{730} = 0.652$.
+    dispute: |
+      The text has "15 days and 7/22 of a day"; the length of a term is $15\tfrac{7}{32}$ days, and 二十二
+      may be a corruption of 三十二. The meaning of several phrases of the critique ("half a day's shadow",
+      "parts") is uncertain, and some modern scholars doubt that all of it is Zhao's.

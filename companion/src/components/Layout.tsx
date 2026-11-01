@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
-import { BOOKS } from "../content/books";
+import { BOOKS, ZB_PARTS } from "../content/books";
 import { getItem, isAnnotated, items, resolveQuery, sequence } from "../lib/corpus";
+import { getZb, zbSections, zbSequence } from "../lib/zhoubi";
 import { hrefFor, jump, navigate, type Route } from "../lib/router";
 import { setSettings, useSettings } from "../lib/store";
 import { Rich } from "./Rich";
@@ -113,13 +114,25 @@ export function TopBar({ route, onToc }: { route: Route; onToc: () => void }) {
     input.current?.blur();
   };
 
+  const zb = route.page === "zhoubi";
   return (
     <header className="topbar">
       <button type="button" className="btn-quiet toc-btn" onClick={onToc} aria-label="Table of contents">
         ☰ <span className="hide-sm">Contents</span>
       </button>
       <a className="brand" href="#/">
-        Euclid's <i>Elements</i>
+        {zb ? (
+          <>
+            <i>Zhou bi suan jing</i>{" "}
+            <span lang="zh-Hant" className="hide-sm">
+              周髀算經
+            </span>
+          </>
+        ) : (
+          <>
+            Euclid's <i>Elements</i>
+          </>
+        )}
         <span className="brand-sub hide-sm"> · a reading companion</span>
       </a>
       <form className="jump" onSubmit={go} role="search">
@@ -135,6 +148,11 @@ export function TopBar({ route, onToc }: { route: Route; onToc: () => void }) {
           {[...items.values()].map((i) => (
             <option key={i.id} value={i.id}>
               {i.label}
+            </option>
+          ))}
+          {[...zbSections.values()].map((s) => (
+            <option key={s.id} value={s.id}>
+              {s.annotation?.title ?? s.label}
             </option>
           ))}
         </datalist>
@@ -167,6 +185,14 @@ export function TopBar({ route, onToc }: { route: Route; onToc: () => void }) {
                 <input type="checkbox" checked={settings.heathRefs} onChange={(e) => setSettings({ heathRefs: e.target.checked })} />
                 <span>Show Heath's bracketed references</span>
               </label>
+              <label className="check">
+                <input type="checkbox" checked={settings.zhao} onChange={(e) => setSettings({ zhao: e.target.checked })} />
+                <span>Zhou bi: show Zhao Shuang's commentary</span>
+              </label>
+              <label className="check">
+                <input type="checkbox" checked={settings.chinese} onChange={(e) => setSettings({ chinese: e.target.checked })} />
+                <span>Zhou bi: show the Chinese</span>
+              </label>
               <label>
                 <span>Theme</span>
                 <select value={settings.theme} onChange={(e) => setSettings({ theme: e.target.value as "auto" })}>
@@ -185,7 +211,7 @@ export function TopBar({ route, onToc }: { route: Route; onToc: () => void }) {
 
 // ─── Table of contents drawer ─────────────────────────────────────────────
 export function Toc({ open, onClose, current }: { open: boolean; onClose: () => void; current?: string }) {
-  const [openBook, setOpenBook] = useState(1);
+  const [openBook, setOpenBook] = useState(() => (current && getZb(current) ? 100 + getZb(current)!.part : 1));
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (open) ref.current?.querySelector<HTMLElement>(".current")?.scrollIntoView({ block: "center" });
@@ -204,6 +230,7 @@ export function Toc({ open, onClose, current }: { open: boolean; onClose: () => 
             ×
           </button>
         </div>
+        <p className="toc-work">Euclid's <i>Elements</i></p>
         <ul className="toc-books">
           {BOOKS.map((b) => (
             <li key={b.n} className={b.available ? "" : "unavailable"}>
@@ -216,8 +243,45 @@ export function Toc({ open, onClose, current }: { open: boolean; onClose: () => 
             </li>
           ))}
         </ul>
+        <p className="toc-work">
+          <i>Zhou bi suan jing</i> <span lang="zh-Hant">周髀算經</span>
+        </p>
+        <ul className="toc-books">
+          {ZB_PARTS.map((p) => (
+            <li key={p.n}>
+              <button type="button" className="toc-book" onClick={() => setOpenBook(openBook === 100 + p.n ? 0 : 100 + p.n)}>
+                <span className="roman" lang="zh-Hant">{p.zh}</span>
+                <span className="subject">{p.subject}</span>
+              </button>
+              {openBook === 100 + p.n && <ZbPartToc part={p.n} current={current} />}
+            </li>
+          ))}
+        </ul>
       </nav>
     </>
+  );
+}
+
+function ZbPartToc({ part, current }: { part: number; current?: string }) {
+  const ids = zbSequence.get(part) ?? [];
+  return (
+    <div className="toc-book-body">
+      <p className="toc-sec">
+        <a href={`#/zhoubi/${part}`}>Read the whole part</a>
+      </p>
+      <ol className="toc-list">
+        {ids.map((id) => {
+          const s = getZb(id)!;
+          return (
+            <li key={id}>
+              <a href={`#/${id}`} className={`${id === current ? "current" : ""}${s.annotation ? " annotated" : ""}`}>
+                <span className="toc-n">{s.n || "·"}</span> {s.annotation?.title ?? s.label}
+              </a>
+            </li>
+          );
+        })}
+      </ol>
+    </div>
   );
 }
 

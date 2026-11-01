@@ -130,20 +130,48 @@ notes' `cites`.
 Nothing in the interface is specific to Book I; unannotated propositions show Heath's text,
 Joyce's figure and a link to Joyce's guide.
 
+## The Zhou bi suan jing 周髀算經
+
+A second work, read the same way: `#/zhoubi/1` … `#/zhoubi/6` (the six parts), `#/ZB.1.4` (a
+section), `#/ZB.1.4/2` (a step). References in any annotation use `[[ZB.1.4]]`.
+
+- **Text.** `npm run fetch:zhoubi` caches the sources in `sources/` (git-ignored);
+  `npm run extract:zhoubi` builds `src/data/zhoubi/zhoubi.json` and prints an alignment report. The
+  classic is Project Gutenberg #12408, line for line. Zhao Shuang's commentary comes from the
+  Wikisource transcription of the Sibu Congkan edition. A Sibu Congkan line counts as the classic
+  only if it matches Gutenberg; the rest is commentary. Zhen Luan's and Li Chunfeng's
+  sub-commentaries are dropped. The section divisions (`SECTIONS`), and the few lines the automatic
+  alignment cannot settle (`FORCE_CLASSIC`, `FORCE_COMMENTARY`), are listed in the script.
+- **Annotations.** `src/content/zhoubi/N-M.yaml`, one per section. Each step is either
+  `classic:` or `zhao:` (this edition's translation of the next passage). It may give `zh:` to split
+  a long passage. `src/lib/zhoubi.ts` checks every step against the Chinese, as `align.ts` does for
+  Heath. Steps also take `hint`, `explain`, `modern`, `dispute`, `cites`, `highlight`, `adds` and
+  `figure` (which of `diagram` + `figures` to show).
+- **Cross-references.** A section's `parallels` (`id`, `relation: same|related`, `note`) name the
+  Euclid propositions it proves or uses. They are shown on both sides: under "In Euclid's
+  Elements" on the section, and "In the Zhou bi suan jing" on the proposition. They never enter
+  Euclid's dependency graph.
+- `tests/zhoubi.test.ts` requires every passage to be translated exactly once, every figure name to
+  exist, and every reference to resolve.
+
 ## Layout
 
 ```
 companion/
   scripts/extract-heath.mjs   Heath (Perseus TEI) → src/data/heath/bookN.json
+  scripts/fetch-zhoubi.mjs    Gutenberg + Wikisource Zhou bi sources → sources/zhoubi-*
+  scripts/extract-zhoubi.mjs  Zhou bi sources → src/data/zhoubi/zhoubi.json
   scripts/blockify-yaml.py    prose fields → YAML block scalars
   scripts/screenshot.mjs      Playwright screenshots / console-error smoke test
   plugins/lektor.ts           Vite plugin: Joyce's figures + site links (.lr) → virtual:joyce
   src/lib/align.ts            quotation check and step alignment
   src/lib/corpus.ts           Heath + annotations + Joyce's figures, dependencies, backlinks
+  src/lib/zhoubi.ts           the Zhou bi: Chinese text + translation, alignment, parallels
   src/lib/rich.ts             renderers for the three voices
   src/components/, src/pages/ React UI
   src/content/                this edition's annotations (YAML)
-  tests/corpus.test.ts        integrity checks
+  tests/corpus.test.ts        integrity checks (Euclid)
+  tests/zhoubi.test.ts        integrity checks (Zhou bi)
 ```
 
 ## Sources and licences
@@ -156,6 +184,10 @@ companion/
   them on euclids-elements.org. Fallback figures are read from `../content/` at build time. The `diagram` blocks of `src/content/book1/prop-06.yaml` … `prop-48.yaml`
   and of every `src/content/book2/` … `book13/` `prop-*.yaml` are adapted from his figures there (the geomlib element lists, relettered and extended); they stay
   under his terms, not the MIT licence below.
+- **Zhou bi suan jing**: the classic, Project Gutenberg eBook #12408 (public domain in the US). Zhao
+  Shuang's commentary: the Sibu Congkan photo-reprint (a Ming copy of the 1213 edition), as
+  transcribed on Chinese Wikisource. The text is ancient and in the public domain; the
+  transcription is a faithful copy. The translation, notes and figures are this edition's own.
 - **geomlib** (MIT), Nelson Brown's TypeScript port of Joyce's Geometry Applet, draws the figures.
 - This edition's annotations (apart from the adapted figures above) and code: MIT, like the rest of
   the repository's own code.

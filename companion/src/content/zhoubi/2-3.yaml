@@ -1,0 +1,108 @@
+id: ZB.2.3
+title: The gnomon and its shadow — one cun for a thousand li
+paraphrase: |
+  Chenzi gives the data. A gnomon (*bi* 髀, an upright pole) 8 *chi* high, set up at Zhou at noon on
+  the summer solstice, casts a shadow of 1 *chi* 6 *cun*. A thousand *li* further south the shadow
+  is 1.5 *chi*, a thousand *li* further north 1.7 *chi*. The shadow changes by 1 *cun* for every
+  thousand *li*. The gnomon is the *gu* of a right triangle and its shadow the *gou*. Chenzi then
+  waits for the day when the shadow is 6 *chi*, so that the triangle is 6-8-10.
+
+diagram:
+  width: 260
+  height: 270
+  elements:
+    - "Z;point;fixed;40,240;black;black"
+    - "T;point;fixed;40,40;black;black"
+    - "S;point;fixed;80,240;black;black"
+    - "U;point;fixed;190,240;black;black"
+    - "ZT;line;connect;Z,T;0;0;black"
+    - "ZS;line;connect;Z,S;0;0;#9a3b2b"
+    - "TS;line;connect;T,S;0;0;#8a6d12"
+    - "ZU;line;connect;Z,U;0;0;#9a3b2b"
+    - "TU;line;connect;T,U;0;0;#8a6d12"
+    - "angZ;sector;angleMarker;Z,S,T,12;0;0;black;0"
+  given: [Z, T, S, ZT, ZS, TS, angZ]
+  caption: |
+    The gnomon {ZT} (8 *chi*, the *gu*) and its noon shadow {ZS} (the *gou*): 1.6 *chi* at the summer
+    solstice. The sun's ray {TS} is the hypotenuse. Later in the year the sun is lower and the shadow
+    {ZU} reaches 6 *chi*: then *gou* 6, *gu* 8, hypotenuse 10. The sun is to the south (left), so the
+    shadow points north.
+
+steps:
+  - classic: |
+      Chenzi said: "Sit down again, and I will tell you." So Rong Fang sat down again and asked for
+      Chenzi's explanation. [Chenzi] said: "At the summer solstice [the sun is] 16,000 *li* to the south;
+      at the winter solstice, 135,000 *li* to the south,
+    hint: |
+      The distances, at noon, from Zhou to the point on the earth directly beneath the sun. They are
+      derived below from the shadow lengths.
+  - classic: |
+      when at noon one sets up a pole and measures the shadow.
+    dispute: |
+      Gutenberg divides the sentence into two lines here; the Sibu Congkan prints it as one. The
+      translation is not affected.
+  - classic: |
+      This one [rule] is the number of the way of heaven."
+  - zhao: |
+      That is, the numbers of the way of heaven are all of this kind.
+  - classic: |
+      "The gnomon of Zhou is 8 *chi* long. On the day of the summer solstice its shadow is 1 *chi* 6 *cun*.
+    hint: |
+      1 *chi* 尺 = 10 *cun* 寸, about 23 cm in the Han. The *bi* (髀, literally "thigh-bone") is the
+      gnomon; the book's title, *Zhou bi*, means "the gnomon of Zhou".
+    highlight: [ZT, ZS]
+    modern: Gnomon $h = 80$ *cun*; summer-solstice noon shadow $s = 16$ *cun*.
+  - zhao: |
+      *Gui* means shadow. This number is observed from 1,000 *li* south of the city of Zhou. And the *Rites
+      of Zhou* measures the shadow as 1 *chi* 6 *cun*; that too probably comes from 1,000 *li* south of
+      the city. A record says: "The land of the Divine Region is 5,000 *li* square." So although [the
+      shadow] differs by one *cun*, it does not leave the bounds of the royal domain. The former kings
+      knew this to be true, and so they established the royal state [there].
+    hint: |
+      Zhao is reconciling the classic with the *Rites of Zhou* (周禮), which ties the founding of the
+      capital to a measured shadow.
+    dispute: |
+      The received *Rites of Zhou* gives 1 *chi* 5 *cun*, not 1 *chi* 6 *cun*. Zhao's quotation may be
+      from a different text, or garbled.
+  - classic: |
+      The gnomon is the *gu*; the true shadow is the *gou*.
+    hint: The gnomon and its shadow are the two legs of a right triangle; the sun's ray is its hypotenuse.
+    highlight: [ZT, ZS, TS]
+  - zhao: |
+      Take the gnomon as *gu* and the shadow as *gou*. Once *gou* and *gu* are fixed, one can measure the
+      height and distance of the sun. The "true shadow" is the shadow at the moment of noon.
+  - classic: |
+      1,000 *li* due south, the *gou* is 1 *chi* 5 *cun*; 1,000 *li* due north, the *gou* is 1 *chi* 7
+      *cun*.
+    hint: |
+      The key empirical rule of the book: a thousand *li* nearer the sun, the shadow is one *cun* shorter.
+      "One *cun*, a thousand *li*" (寸千里).
+    explain:
+      fact: |
+        On a flat earth with the sun at finite height, the shadow does change in proportion to the
+        distance from the point beneath the sun: by similar triangles, shadow $=$ gnomon $\times$
+        distance $/$ height. A change of 1 *cun* in 80 for 1,000 *li* puts the sun at $80 \times 1000 =
+        80{,}000$ *li* high.
+      implicit: |
+        The rule is not true. The earth is round and the sun is effectively infinitely far away, so the
+        shadow depends on latitude in a different way, and the real change is roughly one *cun* for every
+        250 *li* or so. Later Chinese astronomers tested it. In 724 CE the monk Yixing measured shadows
+        along a north–south line of over 2,500 km, and the rule was abandoned.
+    modern: $s(x) = \dfrac{h}{H}\,x$, so $\Delta s = \dfrac{h}{H}\,\Delta x$; with $h = 80$ *cun*, $\Delta s = 1$ *cun* per $\Delta x = 1000$ *li* gives $H = 80{,}000$ *li*.
+  - zhao: |
+      Observe the shadows with gnomons set 2,000 *li* apart: the shadows differ by 2 *cun*. Wishing to find
+      the height and distance of the sun, one first sees the ratio of gnomon and shadow.
+  - classic: |
+      As the sun goes daily further south of the gnomon, the shadow grows daily longer. Wait until the
+      *gou* is 6 *chi*.
+    hint: |
+      After the summer solstice the sun moves south and the noon shadow lengthens. A 6-*chi* shadow on an
+      8-*chi* gnomon makes a 6-8-10 right triangle.
+    adds: [U, ZU, TU]
+    highlight: [ZU, TU]
+  - zhao: |
+      Watch for the shadow to be 6 *chi* long: he wants *gou* and *gu* to correspond. *Gou* 3, *gu* 4,
+      hypotenuse 5; *gou* 6, *gu* 8, hypotenuse 10.
+    hint: |
+      At that moment the triangle of gnomon and shadow is the 3-4-5 triangle of [[ZB.1.3]], doubled.
+    cites: [I.47]

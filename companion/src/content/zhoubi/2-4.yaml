@@ -1,0 +1,72 @@
+id: ZB.2.4
+title: Sighting the sun through a tube — 80 to 1
+paraphrase: |
+  Look at the sun through a bamboo tube 8 *chi* long with a bore 1 *cun* across. The sun exactly
+  fills the bore. So the sun's diameter is $\tfrac{1}{80}$ of its distance from the eye. This ratio,
+  with the distance found in [[ZB.2.5]], gives the sun's size in [[ZB.2.6]].
+
+parallels:
+  - id: VI.4
+    relation: same
+    note: |
+      The tube and the sun subtend the same angle at the eye, so the bore is to the tube's length as the
+      sun's diameter is to its distance: the sides of equiangular triangles are proportional (VI.4).
+
+diagram:
+  width: 380
+  height: 160
+  elements:
+    - "E;point;fixed;20,80;black;black"
+    - "w1;point;fixed;20,70;0;0"
+    - "w2;point;fixed;20,90;0;0"
+    - "P;point;fixed;180,70;black;black"
+    - "Q;point;fixed;180,90;black;black"
+    - "tube;polygon;quadrilateral;w1,P,Q,w2;0;0;#5b6b2f;#e6ecd0"
+    - "O;point;fixed;340,80;0;0"
+    - "Or;point;fixed;360,80;0;0"
+    - "sun;circle;radius;O,Or;0;0;#b45309;#fde9b8"
+    - "M;point;fixed;340,60;black;black"
+    - "N;point;fixed;340,100;black;black"
+    - "EM;line;connect;E,M;0;0;#8a6d12"
+    - "EN;line;connect;E,N;0;0;#8a6d12"
+    - "PQ;line;connect;P,Q;0;0;black"
+    - "MN;line;connect;M,N;0;0;black"
+  equal: []
+  given: [E, w1, w2, P, Q, tube, sun, M, N, EM, EN, PQ, MN]
+  caption: |
+    Not to scale. The eye at {E} looks through a tube 8 *chi* = 80 *cun* long; its far opening {PQ} is
+    1 *cun* across. The sun's disc {MN} just fills it. The triangles {E}{P}{Q} and {E}{M}{N} are similar.
+
+steps:
+  - classic: |
+      Then take a bamboo tube with a bore 1 *cun* across and 8 *chi* long. Catch the sun in it and look:
+      the bore exactly covers the sun,
+    hint: The tube is aimed at the sun until the sun's disc exactly fills the opening.
+    highlight: [EM, EN]
+  - zhao: |
+      Looking at the sun's image through a bore of one *cun*: if the tube is longer, [the sun] is larger
+      [than the bore]; if shorter, it is smaller; at exactly 8 *chi* it just fills it. "Catch" means
+      "seek", "cover" means "overlay".
+    explain:
+      did: |
+        "Larger" and "smaller" compare the sun with the bore. With a longer tube the bore subtends a
+        smaller angle, which the sun more than fills.
+  - classic: |
+      and the sun fits the opening of the bore.
+  - zhao: |
+      "Covers" is as when two circles coincide. He says "8 *chi*" again to state the fixed value. It also
+      means: near, it is large; far, it is small. The 6-*chi* shadow is taken as the standard.
+    hint: |
+      The sighting is made when the shadow is 6 *chi* ([[ZB.2.3]]). The sun is then at the slant
+      distance of 100,000 *li* that is computed in the next section.
+  - classic: |
+      From this one sees that the ratio is: for 80 *cun*, a diameter of 1 *cun*."
+    highlight: [PQ, MN]
+    modern: $\dfrac{\text{sun's diameter}}{\text{sun's distance}} = \dfrac{PQ}{EP} = \dfrac{1}{80}.$
+    explain:
+      fact: |
+        The real apparent diameter of the sun is about half a degree, a ratio of about 1 : 107, so the
+        Zhou bi's 1 : 80 is about a third too large. The bore would have to be read very precisely.
+    cites: [VI.4]
+  - zhao: |
+      This is taken as the ratio of the sun's diameter.

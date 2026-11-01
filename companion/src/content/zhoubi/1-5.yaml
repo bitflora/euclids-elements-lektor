@@ -1,0 +1,108 @@
+id: ZB.1.5
+title: The uses of the trysquare
+paraphrase: |
+  The Duke of Zhou asks how the trysquare is used, and Shang Gao lists six uses in six short phrases.
+  Laid flat, it levels a line; held up, it sights a height; turned down, it measures a depth; laid on
+  its side, it finds a distance. Swung round, it makes a circle; two together make a square. The
+  sighting uses all rest on similar right triangles: the small triangle of the trysquare and the
+  large triangle out to the object have proportional sides.
+
+parallels:
+  - id: VI.4
+    relation: related
+    note: |
+      Sighting a height with the trysquare relies on similar triangles: in equiangular triangles the
+      sides about the equal angles are proportional. Euclid proves this as VI.4. Shang Gao only names
+      the methods; they are worked out in [[ZB.2.5]] and in the Nine Chapters.
+
+diagram:
+  width: 340
+  height: 260
+  elements:
+    - "E;point;fixed;40,220;black;black"
+    - "F;point;fixed;100,220;black;black"
+    - "Fu;point;fixed;100,40;0;0"
+    - "FF;line;connect;F,Fu;0;0;0"
+    - "G;point;lineSlider;F,Fu,100,180;black;#d97706"
+    - "B;point;fixed;300,220;black;black"
+    - "Bu;point;fixed;300,20;0;0"
+    - "T;point;intersection;E,G,B,Bu;black;black"
+    - "EF;line;connect;E,F;0;0;black"
+    - "FG;line;connect;F,G;0;0;black"
+    - "EG;line;connect;E,G;0;0;#8a6d12"
+    - "GT;line;connect;G,T;0;0;#8a6d12"
+    - "FB;line;connect;F,B;0;0;#6b6253"
+    - "BT;line;connect;B,T;0;0;black"
+    - "angF;sector;angleMarker;F,E,G,12;0;0;black;0"
+    - "angB;sector;angleMarker;B,E,T,12;0;0;black;0"
+    - "angE;sector;angleMarker;E,F,G,30;0;0;black;0"
+  equal:
+    - [angF, angB]
+  given: [E, F, G, B, T, EF, FG, EG, GT, FB, BT, angF, angB, angE]
+  caption: |
+    "Lay the trysquare on its back to sight a height." The eye is at {E}; the trysquare's legs are
+    {EF} (flat) and {FG} (upright). Sighting along {E}{G} to the top {T} of a tower {BT} gives two
+    right triangles with the same angle at {E}, so ${BT} : {EB} = {FG} : {EF}$. Drag {G} to aim at a
+    taller or shorter tower.
+
+steps:
+  - classic: |
+      The Duke of Zhou said: "Great indeed is this account of number!
+  - zhao: |
+      His mind grasped the meaning of the art of number, so he exclaimed "great indeed".
+  - classic: |
+      May I ask the way of using the trysquare?"
+  - zhao: |
+      That is, how to use the gnomon properly, and the methods of sighting and measuring.
+    hint: |
+      The "gnomon" (*biao* 表) is a vertical pole whose shadow is measured. Zhao treats it as one leg
+      of a trysquare, with the shadow as the other.
+  - classic: |
+      Shang Gao said: "Lay the trysquare flat to make the cord true.
+    hint: |
+      With one leg of the trysquare along a plumb line, the other leg is level. It sets out
+      horizontal and vertical lines.
+    dispute: The Sibu Congkan has 商高日, a misprint of 曰, "said".
+  - zhao: |
+      This is to find the trueness of the cord and fix the body of level and plumb. He wishes to guard
+      against an error of a hair's breadth, which leads to a loss of a thousand *li*.
+    hint: A small error in levelling becomes a large one over a long sightline.
+  - classic: |
+      Lay the trysquare on its back to sight a height; turn it over to measure a depth; lay it on its
+      side to know a distance.
+    hint: |
+      Three sighting methods, all by similar triangles. Held upright (on its back), it measures
+      heights; turned downward, depths, as of a valley or well; lying horizontal, distances across.
+    highlight: [EG, GT, FG, BT]
+    explain:
+      did: |
+        In the figure, the observer at {E} holds the trysquare with leg {EF} level and leg {FG} upright,
+        and sights past the end {G} to the top {T} of the object.
+      fact: |
+        The small triangle {E}{F}{G} and the large triangle {E}{B}{T} both have a right angle and share
+        the angle at {E}. So they are similar, and their sides are proportional:
+        $BT = EB \cdot \dfrac{FG}{EF}$.
+      implicit: |
+        The distance {E}{B} must be known; if it is not, the Chinese surveyors' "double difference" method
+        uses two sightings ([[ZB.2.5]]).
+    modern: $\dfrac{BT}{EB} = \dfrac{FG}{EF}.$
+    cites: [VI.4]
+  - zhao: |
+      This means that its uses have no fixed form, but bend to follow the matter at hand. The methods
+      are in the *Nine Chapters*.
+    hint: |
+      The *Nine Chapters on the Mathematical Art* (九章算術) has a whole chapter of right-triangle
+      problems (chapter 9, "Gou-gu").
+  - classic: |
+      Swing the trysquare round to make a circle; put trysquares together to make a square.
+    hint: |
+      Turned about one end, a leg of the trysquare sweeps out a circle. Two trysquares fitted
+      together make a rectangle, or a square if the legs are equal.
+    dispute: |
+      Some modern readers see "swinging the trysquare" as the property that every right angle whose arms
+      pass through two fixed points has its vertex on the circle with those points as diameter (the
+      converse of Euclid III.31). The text gives no detail; Zhao's comment speaks only of making
+      circles and squares.
+  - zhao: |
+      Having traced out the principles, one can also construct circles and squares. That is, there is
+      nothing the trysquare cannot reach.

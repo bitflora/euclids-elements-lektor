@@ -1,0 +1,75 @@
+id: ZB.5.5
+title: The moon over a "small year" of twelve months
+paraphrase: |
+  Where is the moon after a year of twelve lunar months ($354\tfrac{348}{940}$ days)? Multiply the
+  days by the moon's daily motion, $13\tfrac{7}{19}$ degrees: it travels 4,737 degrees and a fraction.
+  Throw away whole circuits of $365\tfrac14$ degrees (12 of them). The remainder, 354 degrees
+  $\tfrac{6612}{17860}$, is how far round its 13th circuit the moon has got: the amount by which it
+  "falls short of its old lodge". Fractions of a degree are in 17,860ths ($19 \times 940$).
+
+steps:
+  - classic: |
+      Small year: the moon falls short of its former lodge by 354 degrees and 6612/17860 of a degree.
+    hint: |
+      "Falling short of its former lodge" (不及故舍) is the part of a circuit the moon has completed after
+      its last full circuit. Equivalently, it still has $365\tfrac14 - 354.37 = 10.88$ degrees to go
+      before it is back at the star it started from.
+  - zhao: |
+      A small year is twelve months making a year. A year's months: twelve months leave something over,
+      thirteen are too many; so one speaks of great and small years, and through the intercalary month
+      they are reconciled. "Falling short of the former lodge" is like "falling behind heaven". Suppose that
+      on the first day of the eleventh month, at dawn, at the winter solstice, the sun and moon start together
+      at the beginning of Qianniu; the moon meets the sun twelve times. This number is the degrees the moon
+      has travelled from Qianniu.
+    hint: |
+      A calendar year has either 12 or 13 lunar months (a "small" or "great" year); intercalary
+      months keep the calendar in step with the sun.
+  - classic: |
+      The method: set out the small year, $354\tfrac{348}{940}$ days.
+    modern: $12 \times 29\tfrac{499}{940} = 354\tfrac{348}{940}$ days.
+  - zhao: |
+      For the small year, take away the 7/19 of a month [from] the ordinary year: multiply 7 by the 1461
+      parts of the circuit of heaven, giving 10,227; subtract from the ordinary year's accumulated parts; the
+      remainder, 333,108, is the small year's accumulated parts. Divide by 940 to get the small year's days and
+      fraction.
+    modern: $343{,}335 - 7 \times 1461 = 333{,}108$ (in 940ths of a day) $= 354\tfrac{348}{940}$ days.
+  - classic: |
+      Multiply by the moon's falling behind heaven, $13\tfrac{7}{19}$ degrees, as the dividend.
+  - zhao: |
+      Convert to nineteenths and add the numerator, making 254; multiply the small year's accumulated parts
+      by it.
+    modern: $13\tfrac{7}{19} = \tfrac{254}{19}$.
+  - classic: |
+      Then multiply the denominator of the degrees by the denominator of the days as the divisor. Dividing,
+      the accumulated falling-behind is 4,737 degrees and 6612/17860 of a degree.
+    modern: $\dfrac{333{,}108 \times 254}{940 \times 19} = \dfrac{84{,}609{,}432}{17{,}860} = 4737\tfrac{6612}{17860}$ degrees.
+    dispute: |
+      Gutenberg breaks off at 六千六百一十; the Sibu Congkan reads 六千六百一十三, "6613". The calculation
+      gives 6612.
+  - zhao: |
+      Multiply the small year's accumulated parts by the moon's falling-behind parts, giving 84,609,432: this
+      is the accumulated falling-behind in parts. Multiply the degree denominator 19 by the day denominator
+      940, giving 17,860; divide by it and you have it.
+  - classic: |
+      Divide by the circuit of heaven, 365 degrees and 4465/17860 of a degree.
+    modern: $365\tfrac14 = 365\tfrac{4465}{17860} = \tfrac{6{,}523{,}365}{17{,}860}$.
+  - zhao: |
+      This is the same as a quarter; reduced, you get that. Since it must be made commensurable, it is stated
+      in detail. Converting and adding the numerator gives 6,523,365; divide the accumulated falling-behind
+      parts by it, getting twelve circuits of heaven, which are discarded.
+  - classic: |
+      What is not enough to be divided
+  - zhao: |
+      What is not enough to be divided, the 6,329,052 [parts] by which it falls short of the former lodge.
+    modern: $84{,}609{,}432 - 12 \times 6{,}523{,}365 = 6{,}329{,}052 = 354 \times 17{,}860 + 6612$.
+  - classic: |
+      is the number of degrees and parts by which the moon falls short of its former lodge. The others all
+      follow this.
+    modern: 354 degrees $\tfrac{6612}{17860}$.
+  - zhao: |
+      The following ones, down to the ordinary month, are all like this.
+
+commentary: |
+  Every number in this and the next two sections has been checked. Apart from copyists' slips, which
+  are noted where they occur, the Zhou bi's arithmetic with fractions of 940ths and 17,860ths is
+  correct throughout.

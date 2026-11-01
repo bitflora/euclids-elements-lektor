@@ -1,0 +1,82 @@
+id: ZB.Pref
+title: Zhao Shuang's preface
+paraphrase: |
+  Zhao Shuang (趙爽, courtesy name Junqing 君卿, probably 3rd century CE) explains why he wrote his
+  commentary. Heaven and earth are too vast to measure directly, so rival theories of their shape
+  arose: the *huntian* 渾天 ("enveloping heaven", a celestial sphere) and the *gaitian* 蓋天
+  ("covering heaven", a canopy over a flat earth). The Zhou bi is the classic of the second. He
+  fears it will be lost, so he has drawn diagrams to go with the text.
+
+steps:
+  - zhao: |
+      Of things high and great, none is greater than heaven; of things thick and broad, none is broader
+      than earth. Their bodies are vast and open; their forms are long and wide, dark and clear.
+    zh: 夫高而大者莫大於天厚而廣者莫廣於地體恢洪而廓落形修廣而幽清
+    hint: The two objects of the book, heaven and earth, and their size.
+
+  - zhao: |
+      Their advances and retreats can be checked against the signs in the sky, yet their vast extent
+      cannot be pointed out on the palm of the hand; their lengths can be tested with the gnomon and
+      the shadow, yet their immensity cannot be measured.
+    zh: 可以玄象課其進退然而宏逹不可指掌也可以晷儀驗其長短然其巨闊不可度量也
+    hint: |
+      Observation gives the motions of the sun and stars, and the shadow of an upright pole (the
+      gnomon, 晷儀) gives lengths; but nobody can lay a rule on the heavens.
+
+  - zhao: |
+      Even one who exhausts the spirit and understands all change cannot reach the end of their
+      mystery; one who probes the abstruse and searches out the hidden cannot exhaust their subtlety.
+    zh: 雖窮神知化不能極其妙探賾索隱不能盡其微
+    hint: |
+      The phrases echo the *Book of Changes* (易經), a text Zhao expects his readers to know.
+
+  - zhao: |
+      So strange theories appeared, and doctrines at two extremes arose: there came to be the
+      "enveloping heaven" and the "covering heaven", which each tried to embrace everything. Thus they
+      could fully comprehend the way of heaven and earth and see its depths. The enveloping heaven has
+      the text of the *Ling xian*; the covering heaven has the method of the *Zhou bi*.
+    zh: 是以詭異之說出則兩端之理生遂有渾天葢天兼而並之故能彌綸天地之道有以見天地之賾則渾天有靈憲之文葢天有周髀之法
+    hint: |
+      The two cosmologies of early imperial China. The *Ling xian* 靈憲 is Zhang Heng's treatise of
+      about 120 CE on the enveloping heaven; the Zhou bi is the classic of the covering heaven.
+    explain:
+      fact: |
+        In the *huntian* the heavens are a sphere turning round the earth, like the yolk in an egg.
+        In the *gaitian* of the Zhou bi, heaven is a canopy held parallel above a flat earth, and the
+        sun is carried round on circles of different sizes at different seasons. Day and night
+        follow because the sun's light reaches only so far (Part 2).
+
+  - zhao: |
+      Generation after generation has preserved them, and officials have kept them, so as reverently
+      to follow great heaven and respectfully deliver the seasons to the people.
+    zh: 累代存之官司是掌所以欽若昊天恭授民時
+    hint: |
+      Astronomy was a state office: the calendar was issued by the court. The last phrase quotes the
+      *Book of Documents* (書經).
+
+  - zhao: |
+      I, Shuang, am dull and ill-informed, shallow in talent and learning. I gaze up at the high
+      mountain and admire the tracks of those who walked the great road. In the days I have to spare
+      from gathering firewood, I have studied the *Zhou bi*.
+    zh: 爽以暗蔽才學淺昧鄰高山之仰止慕景行之軌轍負薪餘日聊觀周髀
+    hint: |
+      A conventional show of modesty. "The high mountain I gaze up at, the great road I walk" is a line
+      from the *Book of Odes* (詩經).
+
+  - zhao: |
+      Its meaning is terse but reaches far; its words are indirect but hit the mark. I fear that it
+      will fall out of use, become blocked and obscure, and that those who discuss heaven will have
+      nothing to take as their model. So I have drawn diagrams following the classic, in the earnest
+      hope of breaking down the many-fathomed wall and laying open the inner rooms. May learned
+      gentlemen sometimes turn their thoughts to it.
+    hint: |
+      Zhao says that he drew diagrams (依經為圖). Some survive, redrawn, in the 1213 printing: the
+      hypotenuse diagram (ZB 1.4) and the chart of the seven orbits (ZB 3.1–3.4). The figures in this
+      edition are redrawn from those.
+
+historical: |
+  Nothing is known of Zhao Shuang beyond this preface and his commentary. His mention of the *Ling xian*
+  (about 120 CE) dates him after Zhang Heng; a Song editor, Bao Hanzhi, placed him "between the Wei and
+  the Jin", i.e. in the 3rd century. His commentary was itself annotated by Zhen Luan (甄鸞, 6th century)
+  and by a team under Li Chunfeng (李淳風, 7th century), when the Zhou bi became the first of the *Ten
+  Mathematical Classics* (算經十書) set for the state examinations.

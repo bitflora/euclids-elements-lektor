@@ -1,0 +1,65 @@
+id: ZB.3.3
+title: The spacing of the orbits
+paraphrase: |
+  The summer and winter orbits are 119,000 *li* apart in radius; six intervals make each
+  $19{,}833\tfrac13$ *li*, i.e. 19,833 *li* and 100 *bu* (300 *bu* = 1 *li*). Each next orbit's
+  diameter is the previous one's plus twice the interval.
+
+diagram:
+  width: 400
+  height: 400
+  elements:
+    - "P;point;fixed;200,200;black;black"
+    - "Z;point;fixed;200,249;black;black"
+    - "k1;point;fixed;256.7,200;0;0"
+    - "k2;point;fixed;266.1,200;0;0"
+    - "k3;point;fixed;275.6,200;0;0"
+    - "k4;point;fixed;285,200;0;0"
+    - "k5;point;fixed;294.4,200;0;0"
+    - "k6;point;fixed;303.9,200;0;0"
+    - "k7;point;fixed;313.3,200;0;0"
+    - "k8;point;fixed;392.9,200;0;0"
+    - "h1;circle;radius;P,k1;0;0;#b45309;0"
+    - "h2;circle;radius;P,k2;0;0;#9a9078;0"
+    - "h3;circle;radius;P,k3;0;0;#9a9078;0"
+    - "h4;circle;radius;P,k4;0;0;#5b6b2f;0"
+    - "h5;circle;radius;P,k5;0;0;#9a9078;0"
+    - "h6;circle;radius;P,k6;0;0;#9a9078;0"
+    - "h7;circle;radius;P,k7;0;0;#33587a;0"
+    - "extreme;circle;radius;P,k8;0;0;#6b6253;0"
+    - "R1;point;fixed;256.7,200;0;0"
+    - "R7;point;fixed;313.3,200;0;0"
+    - "band;line;connect;R1,R7;0;0;#c2410c"
+    - "PR1;line;connect;P,R1;0;0;#b45309"
+  given: [P, h1, h2, h3, h4, h5, h6, h7, R1, R7, band]
+  caption: |
+    The band between the inner and outer orbits (red line) is 119,000 *li* wide, cut into six equal
+    intervals of $19{,}833\tfrac13$ *li*.
+
+steps:
+  - classic: |
+      So the interval between orbits is $19{,}833\tfrac13$ *li*, that is, [the third being] 100 *bu*.
+    highlight: [band]
+    modern: $119{,}000 \div 6 = 19{,}833\tfrac13$ *li*; $\tfrac13$ *li* $= 100$ *bu*.
+  - zhao: |
+      This number: the summer and winter solstices are 119,000 *li* apart; divide by the six intervals and
+      you get it. Halve both the divisor and the remainder.
+    hint: $119{,}000 / 6 = 19{,}833$ remainder 2, i.e. $\tfrac26 = \tfrac13$.
+  - classic: |
+      To find the diameter of the next orbit, double [the interval] and add it to the diameter of the inner
+      orbit.
+    hint: The diameter grows by twice the interval, once on each side.
+    modern: $d_2 = d_1 + 2 \cdot 19{,}833\tfrac13 = 238{,}000 + 39{,}666\tfrac23 = 277{,}666\tfrac23$.
+  - zhao: |
+      Double the interval of one orbit and add it to the inner orbit.
+  - classic: |
+      Multiply it by two, and add it to the diameter of the inner orbit.
+    modern: $d_3 = d_1 + 2 \cdot (2 \cdot 19{,}833\tfrac13)$.
+  - zhao: |
+      Multiply the doubled interval by two and add it to the inner orbit's diameter: this gives the
+      diameter of the third orbit.
+  - classic: |
+      The following orbits are like this.
+    modern: $d_n = 238{,}000 + (n-1)\cdot 39{,}666\tfrac23$ *li*.
+  - zhao: |
+      Each following one is according to the number.

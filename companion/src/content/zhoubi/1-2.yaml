@@ -1,0 +1,100 @@
+id: ZB.1.2
+title: Numbers come from the circle and the square
+paraphrase: |
+  Shang Gao answers that numbers come from the circle and the square, the square from the trysquare
+  (ju 矩, the carpenter's L-square, i.e. a right angle), and the trysquare from multiplication.
+  Zhao Shuang makes this concrete. With $\pi$ taken as 3, a circle of diameter 1 has
+  circumference 3 and a square of side 1 has perimeter 4. Straighten the two perimeters out, set
+  them at right angles, and the slant line joining their ends is 5.
+
+diagram:
+  width: 320
+  height: 270
+  elements:
+    - "O;point;fixed;62,74;0;0"
+    - "Op;point;fixed;82,74;0;0"
+    - "circ;circle;radius;O,Op;0;0;#5b6b2f;#eef1dc"
+    - "s1;point;fixed;42,150;0;0"
+    - "s2;point;fixed;82,150;0;0"
+    - "s3;point;fixed;82,190;0;0"
+    - "s4;point;fixed;42,190;0;0"
+    - "sq;polygon;quadrilateral;s1,s2,s3,s4;0;0;#33587a;#e3ecf3"
+    - "C;point;fixed;140,236;black;black"
+    - "A;point;fixed;260,236;black;black"
+    - "B;point;fixed;140,76;black;black"
+    - "CA;line;connect;C,A;0;0;#5b6b2f"
+    - "CB;line;connect;C,B;0;0;#33587a"
+    - "AB;line;connect;A,B;0;0;black"
+    - "angC;sector;angleMarker;C,A,B,14;0;0;black;0"
+  given: [O, Op, circ, s1, s2, s3, s4, sq, C, A, B, CA, CB, AB, angC]
+  caption: |
+    A circle of diameter 1 (green) has circumference 3, taking $\pi = 3$; a square of side 1 (blue)
+    has perimeter 4. Straightened out, they become the *gou* {CA} = 3 and the *gu* {CB} = 4 of a right
+    triangle, whose slant side {AB} is 5.
+
+steps:
+  - classic: |
+      Shang Gao said: "The art of numbers comes from the circle and the square.
+    hint: |
+      The circle stands for heaven and the square for earth (see [[ZB.1.6]]). Every number in the book
+      measures one or the other.
+  - zhao: |
+      A circle of diameter 1 has circumference 3; a square of side 1 has perimeter 4. Stretch out the
+      circumference of the circle to make the *gou*, unfold the perimeter of the square to make the
+      *gu*; join them at one corner, and the slant comes exactly to a hypotenuse of 5. This is
+      precisely the ratio by which circle, square, slant and diameter are connected; so it says "the art
+      of numbers comes from the circle and the square". The circle and the square are the shapes of
+      heaven and earth, the numbers of yin and yang. What the Duke of Zhou asks about, then, is heaven
+      and earth. So Shang Gao sets out the shapes of circle and square to show their images, and uses
+      odd and even numbers to fix their methods. This is what is called "words concise, meaning
+      far-reaching; subtle, and reaching the obscure".
+    hint: Zhao's gloss turns the perimeters of the unit circle and the unit square into the 3-4-5 right triangle.
+    highlight: [CA, CB, AB]
+    explain:
+      did: |
+        *Gou* 句 and *gu* 股 are the two legs of a right triangle. *Gou* is the shorter, base leg; *gu*
+        literally means "thigh", the upright leg. *Xian* 弦, the "bowstring", is the hypotenuse.
+        These three words are the vocabulary of the next sections.
+      fact: |
+        Throughout the Zhou bi a circle's circumference is three times its diameter: $\pi = 3$. The
+        value is used as exact.
+      implicit: |
+        That 3, 4 and 5 make a right triangle, i.e. that $3^2 + 4^2 = 5^2$, is taken from the next
+        section. Zhao's point is numerological: circle (heaven, odd) and square (earth, even) combine
+        in the right triangle.
+    modern: |
+      $\pi d = 3 \cdot 1 = 3,\quad 4s = 4 \cdot 1 = 4,\quad \sqrt{3^2 + 4^2} = 5.$
+  - classic: |
+      The circle comes from the square; the square comes from the trysquare.
+    hint: |
+      The trysquare (*ju* 矩) is the L-shaped carpenter's square. It embodies the right angle, as the
+      compass (*gui* 規) embodies the circle.
+  - zhao: |
+      The numbers of a circle drawn with the compass are regulated by the square: "square" here means its
+      perimeter. Things that are square and true are produced with the trysquare: the trysquare gives
+      breadth and length.
+    explain:
+      did: |
+        The circle "comes from" the square because its measures are got from those of the circumscribed
+        square (see Zhao's area rules in [[ZB.1.6]]); the square "comes from" the trysquare because a
+        rectangle is laid out with a right angle.
+  - classic: |
+      The trysquare comes from nine nines are eighty-one.
+    hint: |
+      "Nine nines are eighty-one" (九九八十一) is the first line of the Chinese multiplication table, and
+      stands for the whole of it, i.e. calculation.
+  - zhao: |
+      To work out the ratios of circle and square and to connect the numbers of breadth and length, one
+      must calculate by multiplication and division. Nine nines is the origin of multiplication and
+      division.
+    explain:
+      fact: |
+        Everything that follows is computation with given numbers: squares, square roots, proportions.
+        No proposition in the Zhou bi is proved in the Greek manner; what Zhao calls a proof is a
+        figure in which the computation can be seen to be right.
+
+commentary: |
+  Shang Gao's chain (number from circle and square, circle from square, square from trysquare,
+  trysquare from multiplication) says that geometry is grounded in calculation. Euclid's order is the
+  reverse: his arithmetic books (VII–IX) represent numbers by lines, and his geometry uses no
+  numbers at all.

@@ -1,0 +1,94 @@
+id: ZB.2.1
+title: Rong Fang asks Chenzi about the sun
+paraphrase: |
+  A second dialogue, between Rong Fang 榮方 and Chenzi 陳子 ("Master Chen"). Rong Fang asks whether
+  it is true that Chenzi's method can find the sun's height and size, how far its light reaches,
+  how far it travels each day, its distances at the solstices, how far the eye can see, the limits
+  of the world, the lunar lodges, and the extent of heaven and earth. Chenzi says yes: all of it is
+  within the reach of calculation, if Rong Fang will think hard enough.
+
+steps:
+  - classic: |
+      Long ago Rong Fang asked Chenzi,
+  - zhao: |
+      Rong Fang and Chenzi were men of a later time than the Duke of Zhou; [this passage] is not part of the
+      original *Zhou bi*. But these two explained it together, and later scholars called their explanations
+      "sections and sentences"; so they were placed under the matter according to its kind. Wishing also
+      to honour them and keep them at a distance, it says "long ago". Their era and official titles have
+      not been heard of before.
+    hint: |
+      Zhao recognises that this dialogue is a later layer of the book, added as explanation
+      (*zhangju* 章句, the name of a genre of Han commentary).
+  - classic: |
+      saying: "I have recently heard, Master, of your way:
+  - zhao: |
+      Rong Fang asks whether Chenzi can expound the meaning of Shang Gao and make clear the way of the Duke
+      of Zhou.
+  - classic: |
+      that you know the height and size of the sun,
+  - zhao: |
+      [That is,] the method for the sun's distance from the earth and its diameter.
+    hint: Answered in [[ZB.2.5]] (height and slant distance) and [[ZB.2.6]] (diameter).
+  - classic: |
+      what its light illuminates,
+  - zhao: |
+      How far the sun's light reaches to the side.
+    hint: |
+      Answered in [[ZB.2.10]]: 167,000 *li* in every direction.
+  - classic: |
+      how far it travels in one day,
+  - zhao: |
+      The degrees the sun travels through the heavens.
+  - classic: |
+      the numbers for its distance and nearness,
+  - zhao: |
+      The distances from people [here] at the winter and summer solstices.
+  - classic: |
+      how far human sight reaches,
+  - zhao: |
+      The limit of the human eye.
+  - classic: |
+      the bounds of the four extremes,
+  - zhao: |
+      How far the sun's light reaches.
+  - classic: |
+      the lodges of the arrayed stars,
+  - zhao: |
+      The degrees of the twenty-eight lodges.
+    hint: |
+      The 28 lunar lodges (*xiu* 宿) are the unequal divisions of the sky, named after their stars,
+      along which the sun and moon are located. Their widths in degrees are measured in [[ZB.4.7]].
+  - classic: |
+      and the breadth and length of heaven and earth.
+  - zhao: |
+      *Mao* means length; east–west and north–south are called breadth and length.
+  - classic: |
+      Your way can know all these. Is this really so?"
+  - zhao: |
+      [He wants] to examine it clearly, so as to be neither in the dark nor in doubt.
+  - classic: |
+      Chenzi said: "It is."
+  - zhao: |
+      That is, it can be known.
+  - classic: |
+      Rong Fang said: "Though I am not intelligent, I hope you will be so kind as to explain it to me.
+  - zhao: |
+      He wishes, with his unintelligent mind, to observe a method of great refinement.
+  - classic: |
+      Can someone like me be taught this way?"
+  - zhao: |
+      Unable to judge himself, he consults the wise man.
+  - classic: |
+      Chenzi said: "Yes.
+  - zhao: |
+      That is, he can be taught.
+  - classic: |
+      All of this is within the reach of calculation.
+    hint: The thesis of the whole book. Astronomy is not mysterious; it is arithmetic and geometry.
+  - zhao: |
+      That is, the methods of the *Zhou bi* come from the subtleties of calculation.
+  - classic: |
+      Your [skill] in calculation is enough to know this, if you will truly think it over and over."
+  - zhao: |
+      *Lei* means "repeatedly". That is, if he can truly think it over repeatedly, he will reach the most
+      subtle principles.

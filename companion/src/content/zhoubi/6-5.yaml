@@ -1,0 +1,57 @@
+id: ZB.6.5
+title: The 76-year cycle settles the moon and the month
+paraphrase: |
+  In 76 years the sun goes round the sky 76 times and the moon 1,016 times, and they meet again at
+  the starting star. Dividing, the moon goes $1016 \div 76 = 13\tfrac{7}{19}$ degrees a day. There are
+  940 months in 76 years, so a year has $12\tfrac{7}{19}$ months, and a month has
+  $365\tfrac14 \div 12\tfrac{7}{19} = 29\tfrac{499}{940}$ days. With this the book ends.
+
+steps:
+  - classic: |
+      Then the sun goes round heaven 76 times and the moon goes round heaven 1,016 times, and they come
+      together at Jianxing.
+    modern: In 76 years there are 940 months; the moon makes one circuit more than the sun each month, so $76 + 940 = 1016$ circuits.
+  - zhao: |
+      In one month the moon goes once round [heaven] and more, and joins the sun. In 76 years it passes [the sun]
+      940 times round heaven; add the sun's 76 circuits, giving 1,016 together, the rate of the moon's falling
+      behind heaven. The fractions are used up, the degrees come to an end, and it returns to the beginning.
+  - classic: |
+      Set out the number of the moon's [circuits] behind heaven and divide by the number of the sun's: you get
+      $13\tfrac{7}{19}$ degrees. This is the moon's daily travel in degrees.
+    modern: $\dfrac{1016}{76} = 13\tfrac{28}{76} = 13\tfrac{7}{19}$.
+  - zhao: |
+      Divide the moon's rate by the sun's rate of one degree a day to get how many degrees the moon travels in
+      a day. Set out the moon's rate, 1,016, as dividend and the sun's rate, 76, as divisor; divide; reduce both
+      the divisor and the remainder by 4. It reaches the same end as the *Qianxiang* [calendar] by a different
+      road: the meaning is the same though the method differs.
+    hint: Same answer as [[ZB.5.4]] ($235 \div 19 + 1$), by a different route.
+  - classic: |
+      Again set out the accumulated months of 76 years
+  - zhao: |
+      Set out the months of a *zhang*, 235, and multiply by 4, giving 940: the accumulated months of a *bu*.
+  - classic: |
+      and divide by 76 years: you get $12\tfrac{7}{19}$ months, the months of one year.
+    modern: $\dfrac{940}{76} = 12\tfrac{28}{76} = 12\tfrac{7}{19}$.
+  - zhao: |
+      Again reduce the divisor and the fraction by 4. Dividing the months of a *bu* by the years of a *bu* is
+      the same as dividing the months of a *zhang* by the years of a *zhang*.
+  - classic: |
+      Set out the number of degrees of the circuit of heaven and divide by $12\tfrac{7}{19}$ months: you get
+      $29\tfrac{499}{940}$ days, the number of days in one month.
+    modern: $\dfrac{365\frac14}{12\frac{7}{19}} = \dfrac{1461/4}{235/19} = \dfrac{1461 \times 19}{4 \times 235} = \dfrac{27{,}759}{940} = 29\tfrac{499}{940}$.
+  - zhao: |
+      Convert the circuit of heaven, $365\tfrac14$, into 1461 [quarters], and $12\tfrac{7}{19}$ months into 235
+      [nineteenths]. The denominators are not the same, so the numerators are not commensurable; one must
+      cross-multiply to make them so. Multiply 1461 by 19, giving 27,759; multiply 235 by 4, giving 940. Then
+      divide: this is the number [of days] for the moon to join the sun.
+    explain:
+      fact: |
+        The same cross-multiplication as in Zhao's account of the *bu* ([[ZB.6.3]]): the division of
+        fractions $\tfrac{a}{b} \div \tfrac{c}{d} = \tfrac{ad}{bc}$, set out as the *Nine Chapters* teach it.
+
+commentary: |
+  The Zhou bi ends with arithmetic, not cosmology. The constants of the calendar are tied together by
+  one cycle: 76 years, 940 months, 27,759 days. This is the "quarter-remainder" (四分) calendar,
+  official in China from 85 CE. Its year of $365\tfrac14$ days is the same as Julius Caesar's,
+  adopted in Rome in 46 BCE. Its 76-year cycle is the same as that of Callippus in Athens (about 330
+  BCE), a generation before Euclid.

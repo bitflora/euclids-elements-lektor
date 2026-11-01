@@ -1,0 +1,35 @@
+id: ZB.5.4
+title: The moon's daily motion — 13 7/19 degrees
+paraphrase: |
+  The whole sky turns west once a day. The sun lags behind it by 1 degree a day (so it goes round
+  the sky in $365\tfrac14$ days), and the moon by $13\tfrac{7}{19}$ degrees. The number comes from the
+  19-year cycle: in 19 years there are 235 months, so the moon gains $\tfrac{235}{19} = 12\tfrac7{19}$
+  degrees a day on the sun, and $13\tfrac7{19}$ on the stars.
+
+steps:
+  - classic: |
+      The moon falls behind heaven by $13\tfrac{7}{19}$ degrees [a day].
+  - zhao: |
+      "Falling behind heaven" means that the moon moves east. Here we see the sun and moon travel west and
+      south together with heaven. In one day and night heaven makes one revolution, and the moon is east of
+      the lodge it was in the day before; so it says "falls behind heaven". Again: divide the months of a
+      *zhang* by the years of a *zhang*, and add the sun's one degree a day, to make the rate. The distance
+      [the sun] travels in a day is one degree; the days of the circuit of heaven are the degrees of heaven.
+    explain:
+      fact: |
+        Degrees are defined by the sun: it moves one degree a day against the stars, so the circle has
+        as many degrees as the year has days, $365\tfrac14$.
+  - classic: |
+      The method: set out the months of a *zhang*, 235, and divide by the years of a *zhang*, 19; add the sun's
+      motion of one degree a day, giving $13\tfrac{7}{19}$ degrees. This is the moon's motion in one day: the
+      degrees and fraction by which it falls behind heaven.
+    modern: |
+      In 19 years the moon goes round the sky 235 more times than the sun. So per day it gains
+      $\dfrac{235 \times 365\frac14}{19 \times 365\frac14} = \dfrac{235}{19} = 12\tfrac{7}{19}$ degrees on the
+      sun, which itself moves 1 degree: $13\tfrac{7}{19}$ degrees a day in all.
+    dispute: The Sibu Congkan's 十分九度之七 is a slip for Gutenberg's 十九分度之七, "7/19 of a degree".
+    explain:
+      fact: |
+        The *zhang* 章 is the 19-year cycle in which 235 lunar months almost exactly equal 19 solar years
+        (the Metonic cycle of Greek astronomy). The value is good: the moon's true mean motion is 13.18° of
+        360 a day, i.e. 13.37 Chinese degrees, and $13\tfrac7{19} = 13.37$.

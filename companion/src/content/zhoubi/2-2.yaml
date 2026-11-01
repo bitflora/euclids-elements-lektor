@@ -1,0 +1,126 @@
+id: ZB.2.2
+title: Learning by analogy
+paraphrase: |
+  Rong Fang goes home and fails to work the problem out. Chenzi tells him that it is the same as the
+  methods for heights and distances he already knows. His trouble is that he cannot extend what he
+  knows "by analogy" (通類). A good method is concise in statement and wide in use; one who asks
+  about one kind of thing and understands ten thousand has grasped the way. After a second failure,
+  Chenzi agrees to explain.
+
+steps:
+  - classic: |
+      So Rong Fang went home and thought about it, but after several days he could not get it.
+  - zhao: |
+      Though he concentrated his mind and let his thoughts run, his talent was meagre and his wits were
+      exhausted.
+  - classic: |
+      He went to see Chenzi again and said: "I have thought about it but cannot get it. May I ask you about
+      it?" Chenzi said: "You have not thought it through.
+  - zhao: |
+      "Through" means "well".
+  - classic: |
+      This is just the method of sighting distances and raising heights, and yet you cannot get it. So in
+      numbers you cannot yet extend by analogy.
+    hint: |
+      The sun's height is found by the same similar-triangle methods that surveyors use for trees
+      and towers. Rong Fang has not seen that the new problem is of the same kind as the old.
+  - zhao: |
+      To fix heights and distances one sets up two gnomons; to sight things far away one uses repeated
+      trysquares. That is, he cannot extend by analogy to seek the meaning of *gou* and *gu*.
+    hint: |
+      "Two gnomons" is the double-gnomon method of [[ZB.2.5]]; "repeated trysquares" are repeated
+      sightings, as in Liu Hui's *Sea Island Mathematical Manual* (263 CE).
+  - classic: |
+      This means that your understanding has something it does not reach, and your mind has something on
+      which it is stuck.
+  - zhao: |
+      That is, not being able to extend by analogy, his understanding has something it does not reach, and
+      his thought something on which it is stuck.
+  - classic: |
+      Now, of methods, those which are concise in statement but wide in application are the fruit of
+      understanding by analogy.
+  - zhao: |
+      Methods are the means by which the sages plumbed the depths and studied the first signs. Only by
+      depth can one penetrate the purposes of the world; only by [grasping] the first signs can one
+      complete the affairs of the world. So their words are concise and their meaning far-reaching; so it
+      says "the fruit of understanding by analogy".
+    hint: Zhao quotes the "Great Commentary" to the *Book of Changes*.
+  - classic: |
+      One who asks about one kind of thing and comprehends ten thousand affairs is said to know the way.
+    dispute: |
+      Gutenberg has 問一類而以萬事達者, the Sibu Congkan 問一類而萬事達者; the sense is the same.
+  - zhao: |
+      "Draw it out and extend it, touch on kinds and enlarge it, and all the affairs of the world are
+      complete." So it is called knowing the way.
+  - classic: |
+      What you are studying now
+  - zhao: |
+      He wishes to know the numbers of heaven and earth.
+  - classic: |
+      is the art of calculation, and this uses the understanding. Yet you still find it hard. So your
+      understanding of analogy is meagre.
+  - zhao: |
+      What calculation covers he still finds hard; so his understanding of analogy is meagre and exhausted.
+  - classic: |
+      What makes methods hard to master is this: once one has studied, the trouble is not studying widely;
+  - zhao: |
+      Not studying widely.
+  - classic: |
+      once one has studied widely, the trouble is not practising;
+  - zhao: |
+      Not practising thoroughly.
+  - classic: |
+      once one has practised, the trouble is not understanding.
+  - zhao: |
+      Not understanding [by] analogy.
+  - classic: |
+      So one studies by comparing similar methods,
+  - zhao: |
+      Where the methods taught are the same, one should study them so as to grasp the analogy between them.
+  - classic: |
+      and examines by comparing similar matters.
+  - zhao: |
+      Where matters are of the same kind, one examines the kinds of their purport.
+  - classic: |
+      This is what distinguishes the stupid and the intelligent among scholars,
+  - zhao: |
+      *Lie* means "to distinguish". That is, examine their methods and look at their learning, and the
+      stupid and the intelligent are distinguished.
+  - classic: |
+      and what separates the worthy from the unworthy.
+  - zhao: |
+      The worthy understand the principles of things; the unworthy are in the dark about seeing and
+      examining. When it comes to exerting the spirit and letting the thoughts run, the clever and the
+      dull are clearly distinguished.
+  - classic: |
+      So to be able to unite kinds by kinds is the mark of the worthy, whose work is refined and whose
+      understanding is practised.
+  - zhao: |
+      To learn their categories and see what they point to: only the worthy, intelligent and well
+      practised can do it.
+  - classic: |
+      To study the same work and yet be unable to enter into its spirit is the mark of the unworthy, who
+      lack understanding and cannot refine their work.
+  - zhao: |
+      They study the same methods, but their perception does not examine; they cannot unite kinds by kinds
+      and enlarge them. Their minds wander and their eyes roam; the meaning does not enter into their
+      spirit.
+  - classic: |
+      So if you cannot practise calculation thoroughly, do you think I would hide the way from you? You must
+      think it over thoroughly again."
+  - zhao: |
+      In all teaching, "if he is not eager, do not open the way; if he is not struggling to speak, do not
+      prompt him." Only when he is eager and struggling does one open the way and prompt him. Since he has
+      neither thought carefully nor practised, Chenzi says "I am hiding nothing"; you must think it over
+      thoroughly again. "Show one corner, and let him get the other three."
+    hint: |
+      Zhao quotes Confucius (*Analects* 7.8): a teacher should only help a student who is already
+      struggling with the problem.
+  - classic: |
+      Rong Fang went home again and thought about it, but after several days he could not get it. He went
+      to see Chenzi again and said: "I have thought about it thoroughly, but my understanding has something
+      it does not reach and my mind something on which it is stuck. I know I cannot get it. I beg you to
+      explain it to me after all."
+  - zhao: |
+      Knowing himself to be slow, he left his seat and begged for the explanation.
+    hint: Leaving one's mat was a gesture of respect to a teacher.

@@ -1,4 +1,4 @@
-import type { BookInfo } from "../types";
+import type { BookInfo, ZbPartInfo } from "../types";
 
 // Adding a book: extract Heath's text (`node scripts/extract-heath.mjs N`),
 // register its JSON in corpus.ts, add N to the lektor plugin's `books` in
@@ -29,3 +29,13 @@ export function availableBooks(): string {
 export const ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII"];
 
 export const bookOf = (roman: string) => ROMAN.indexOf(roman);
+
+// The Zhou bi suan jing 周髀算經, in the six parts of the received text.
+export const ZB_PARTS: ZbPartInfo[] = [
+  { n: 1, zh: "卷上之一", label: "Volume 1, part 1", subject: "Shang Gao: the right triangle and the uses of the trysquare" },
+  { n: 2, zh: "卷上之二", label: "Volume 1, part 2", subject: "Chenzi: the gnomon, the height of the sun, the sun's paths" },
+  { n: 3, zh: "卷上之三", label: "Volume 1, part 3", subject: "The chart of the seven orbits" },
+  { n: 4, zh: "卷下之一", label: "Volume 2, part 1", subject: "The shape of heaven; the pole; laying out the lunar lodges" },
+  { n: 5, zh: "卷下之二", label: "Volume 2, part 2", subject: "Distances from the pole; the 24 solar terms; the moon's motion" },
+  { n: 6, zh: "卷下之三", label: "Volume 2, part 3", subject: "Sunrise and sunset; the calendar cycles" },
+];

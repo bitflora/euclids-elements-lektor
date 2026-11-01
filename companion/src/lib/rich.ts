@@ -16,6 +16,8 @@ export function refLabel(id: string): string {
   if ((m = /^([IVX]+)\.Def\.((?:[IVX]+\.)?\d+)$/.exec(id))) return m[1] === "I" ? `Def. ${m[2]}` : `${m[1]}.Def.${m[2]}`;
   if ((m = /^([IVX]+)\.Post\.(\d+)$/.exec(id))) return `Post. ${m[2]}`;
   if ((m = /^([IVX]+)\.CN\.(\d+)$/.exec(id))) return `C.N. ${m[2]}`;
+  if (id === "ZB.Pref") return "Zhou bi, preface";
+  if ((m = /^ZB\.(\d)\.(\d+)$/.exec(id))) return `Zhou bi ${m[1]}.${m[2]}`;
   return id;
 }
 

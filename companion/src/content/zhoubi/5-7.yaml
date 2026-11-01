@@ -1,0 +1,108 @@
+id: ZB.5.7
+title: The moon over a small, great and ordinary month
+paraphrase: |
+  The same computation for a "small month" (29 days), a "great month" (30 days) and the ordinary
+  (mean) month of $29\tfrac{499}{940}$ days. In each the moon goes once round the sky and then some
+  way further: 22, 35 and 29 degrees and fractions.
+
+steps:
+  - classic: |
+      Small month: [the moon] falls short of its former lodge by 22 degrees and 7755/17860 of a degree.
+    dispute: The Sibu Congkan reads 七千七百三十五, "7735"; Gutenberg's 7755 agrees with the calculation.
+  - zhao: |
+      A small month is twenty-nine days making a month. A month of twenty-nine days leaves something over,
+      thirty is too many; so one speaks of great and small [months], reconciling the remainders.
+    hint: |
+      Calendar months have 29 or 30 days, alternating so as to average $29\tfrac{499}{940}$.
+  - classic: |
+      The method: set out the small month, 29 days.
+  - zhao: |
+      For the small month, subtract 499 from the ordinary month's accumulated parts, leaving 27,260: this is the
+      small month's accumulated [parts]. Divide by 940 to get it.
+    modern: $27{,}759 - 499 = 27{,}260 = 29 \times 940$.
+  - classic: |
+      Multiply by the moon's falling behind heaven, $13\tfrac{7}{19}$ degrees, as the dividend; then multiply the
+      denominator of the degrees by the denominator of the days as the divisor. Dividing, the accumulated
+      falling-behind is 387 degrees and 12220/17860 of a degree.
+    modern: $\dfrac{27{,}260 \times 254}{17{,}860} = \dfrac{6{,}924{,}040}{17{,}860} = 387\tfrac{12220}{17860}$.
+  - zhao: |
+      Multiply the small month's accumulated parts by the moon's falling-behind, giving 6,924,040: this is the
+      accumulated falling-behind in parts.
+  - classic: |
+      Divide by the parts of the circuit of heaven.
+  - zhao: |
+      Dividing the accumulated falling-behind parts gives one circuit of heaven, which is discarded.
+  - classic: |
+      What is not enough to be divided
+  - zhao: |
+      What is not enough to be divided is 400,675.
+    modern: $6{,}924{,}040 - 6{,}523{,}365 = 400{,}675 = 22 \times 17{,}860 + 7755$.
+  - classic: |
+      is the number of degrees and parts by which the moon falls short of its former lodge.
+  - classic: |
+      Great month: [the moon] falls short of its former lodge by 35 degrees and 14335/17860 of a degree.
+  - zhao: |
+      A great month is thirty days making a month.
+  - classic: |
+      The method: set out the great month, 30 days.
+  - zhao: |
+      For the great month, add 441 to the ordinary [month's] accumulated parts, giving 28,200: this is the great
+      month's accumulated parts. Divide by 940 to get it.
+    modern: $27{,}759 + 441 = 28{,}200 = 30 \times 940$.
+  - classic: |
+      Multiply by the moon's falling behind heaven, $13\tfrac{7}{19}$ degrees, as the dividend; then multiply the
+      denominator of the degrees by the denominator of the days as the divisor. Dividing, the accumulated
+      falling-behind is 401 degrees and 940/17860 of a degree.
+    modern: $\dfrac{28{,}200 \times 254}{17{,}860} = \dfrac{7{,}162{,}800}{17{,}860} = 401\tfrac{940}{17860}$.
+  - zhao: |
+      Multiply the moon's falling-behind parts by the great month's accumulated parts: 7,162,800. This is the
+      accumulated falling-behind in parts.
+  - classic: |
+      Divide by the circuit of heaven.
+  - zhao: |
+      Dividing the accumulated falling-behind parts gives one circuit of heaven, which is discarded.
+  - classic: |
+      What is not enough to be divided
+  - zhao: |
+      What is not enough to be divided is 639,435.
+    modern: $7{,}162{,}800 - 6{,}523{,}365 = 639{,}435 = 35 \times 17{,}860 + 14{,}335$.
+  - classic: |
+      is the number of degrees and parts by which the moon falls short of its former lodge.
+  - classic: |
+      Ordinary month: [the moon] falls short of its former lodge by 29 degrees and 9481/17860 of a degree.
+  - zhao: |
+      *Jing* means "ordinary". The ordinary month is the number for one meeting of the moon with the sun.
+    hint: The synodic month, new moon to new moon.
+  - classic: |
+      The method: set out the ordinary month, $29\tfrac{499}{940}$ days.
+  - zhao: |
+      For the ordinary month, multiply the 1461 parts of the circuit of heaven by 19, giving 27,759: this is the
+      ordinary month's accumulated [parts]. Divide by 940 to get it.
+    modern: $19 \times 1461 = 27{,}759$; $\dfrac{27{,}759}{940} = 29\tfrac{499}{940} = 29.5309$ days.
+    explain:
+      fact: |
+        Why $19 \times 1461$? In 19 years there are 235 months and $19 \times 365\tfrac14$ days, so a month is
+        $\dfrac{19 \times 1461}{4 \times 235} = \dfrac{27{,}759}{940}$ days. The true mean synodic month is
+        29.5306 days.
+  - classic: |
+      Multiply by the moon's falling behind heaven, $13\tfrac{7}{19}$ degrees, as the dividend; then multiply
+      the denominator of the degrees by the denominator of the days as the divisor. Dividing, the accumulated
+      falling-behind is 394 degrees and 13946/17860 of a degree.
+    modern: $\dfrac{27{,}759 \times 254}{17{,}860} = \dfrac{7{,}050{,}786}{17{,}860} = 394\tfrac{13946}{17860}$.
+  - zhao: |
+      Multiply the ordinary month's accumulated parts by the moon's falling-behind parts, giving 7,050,786: this
+      is the accumulated falling-behind in parts.
+  - classic: |
+      Divide by the circuit of heaven.
+  - zhao: |
+      Dividing the accumulated falling-behind parts gives one circuit of heaven, which is discarded.
+  - classic: |
+      What is not enough to be divided
+  - zhao: |
+      What is not enough to be divided is 527,421.
+    modern: $7{,}050{,}786 - 6{,}523{,}365 = 527{,}421 = 29 \times 17{,}860 + 9481$.
+    hint: |
+      In one month the moon goes round once and then 29 degrees more: just as far as the sun has moved in
+      those $29\tfrac{499}{940}$ days, which is why they meet again.
+  - classic: |
+      is the number of degrees and parts by which the moon falls short of its former lodge.

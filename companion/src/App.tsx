@@ -7,12 +7,15 @@ import { lastPosition, loadScroll, savePosition, saveScroll, useSettings } from 
 import { TopBar, Toc } from "./components/Layout";
 import { PrinciplesPage } from "./pages/PrinciplesPage";
 import { PropositionsPage } from "./pages/PropositionsPage";
+import { ZhouBiPage } from "./pages/ZhouBiPage";
+import { getZb } from "./lib/zhoubi";
 import { ROMAN } from "./content/books";
 import { GraphPage } from "./pages/GraphPage";
 import { AboutPage, HomePage, NotFound, SearchPage } from "./pages/Pages";
 
 // A proposition is read in its book's propositions, so it shares that page's scroll.
 const pageKey = (r: Route) => {
+  if (r.page === "zhoubi") return `zhoubi/${r.part}`;
   const prop = r.page === "item" ? getItem(r.id)?.prop && getItem(r.id) : undefined;
   return prop ? `${ROMAN[prop.book]}/propositions` : r.page === "item" ? r.id : r.page === "principles" ? `${r.book}/${r.kind}` : r.page;
 };
@@ -41,7 +44,12 @@ export default function App() {
   }, [settings.theme]);
 
   // Reading pages open references in the side panel; other pages navigate.
-  const reading = route.page === "item" || route.page === "principles";
+  const isZb = route.page === "zhoubi";
+  useEffect(() => {
+    document.title = isZb ? "Zhou bi suan jing 周髀算經 — A Reading Companion" : "Euclid's Elements — A Reading Companion";
+  }, [isZb]);
+
+  const reading = route.page === "item"|| route.page === "principles" || route.page === "zhoubi";
   useEffect(() => {
     peek.setEnabled(reading);
     peek.clear();
@@ -50,7 +58,10 @@ export default function App() {
   // Remember the reading position, and the scroll offset of each page.
   const key = pageKey(route);
   useEffect(() => {
-    if (route.page === "item" || route.page === "principles") {
+    if (route.page === "zhoubi") {
+      const s = getZb(route.select);
+      savePosition(location.hash, s ? `${s.short}${route.step != null ? `, step ${route.step + 1}` : ""}` : `Zhou bi, part ${route.part}`);
+    } else if (route.page === "item" || route.page === "principles") {
       const id = route.page === "item" ? route.id : route.select;
       const it = getItem(id);
       const stepNo = route.page === "item" && route.step != null ? it?.prop?.steps[route.step]?.number : null;
@@ -110,6 +121,9 @@ export default function App() {
       page = it?.prop ? <PropositionsPage book={ROMAN[it.book]} select={it.id} step={route.step} /> : <NotFound what={route.id} />;
       break;
     }
+    case "zhoubi":
+      page = route.select && !getZb(route.select) ? <NotFound what={route.select} /> : <ZhouBiPage part={route.part} select={route.select} step={route.step} />;
+      break;
     case "graph":
       page = <GraphPage focus={route.focus} />;
       break;
@@ -123,7 +137,7 @@ export default function App() {
       page = <NotFound what={route.path} />;
   }
 
-  const current = route.page === "item" ? route.id : route.page === "principles" ? route.select : undefined;
+  const current = route.page === "item" ? route.id : route.page === "principles" || route.page === "zhoubi" ? route.select : undefined;
 
   return (
     <div className="app" onMouseOver={onOver} onMouseOut={onOut} onFocus={onOver} onBlur={onOut} onClickCapture={onClick}>

@@ -1,5 +1,6 @@
 node_modules/
 dist/
 sources/*.xml
+sources/zhoubi-*
 test-results/
 screenshots/

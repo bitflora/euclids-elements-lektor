@@ -1,0 +1,81 @@
+id: ZB.4.3
+title: The pole star's four excursions
+paraphrase: |
+  The "great star" near the north pole is not exactly at the pole. It circles it once a day on a small
+  circle, the *xuanji* 璇璣. To find this circle, observe the star at four moments: at midnight at
+  the summer solstice (its southernmost point), at midnight at the winter solstice (northernmost),
+  and at the winter solstice at 6 p.m. and 6 a.m. (westernmost and easternmost). The true pole is the
+  centre.
+
+diagram:
+  width: 300
+  height: 300
+  elements:
+    - "O;point;fixed;150,150;black;black"
+    - "Ok;point;fixed;240,150;0;0"
+    - "xuanji;circle;radius;O,Ok;0;0;#6b6253;#efece4"
+    - "N;point;fixed;150,60;black;#1d4ed8"
+    - "S;point;fixed;150,240;black;#1d4ed8"
+    - "E;point;fixed;240,150;black;#1d4ed8"
+    - "W;point;fixed;60,150;black;#1d4ed8"
+    - "NS;line;connect;N,S;0;0;#9a9078"
+    - "WE;line;connect;W,E;0;0;#9a9078"
+  given: [O, xuanji, N, S, E, W, NS, WE]
+  caption: |
+    Not to scale. The pole star (blue) circles the true pole {O} once a day on the *xuanji* circle. It
+    is observed at its southern {S}, northern {N}, western {W} and eastern {E} extremes. ({E} and {W}
+    are as seen from Zhou, looking north.)
+
+steps:
+  - classic: |
+      If you wish to know the pivot of the north pole and [its star's] circling to the four extremes,
+    dispute: Gutenberg writes 旋 "circling", the Sibu Congkan 璿, the first character of *xuanji*.
+  - zhao: |
+      The unmoving centre of the pole is the *xuanji*. That is, the north pole [star] circles the *xuanji*,
+      going round to its four extremes; *ji* means "reaching".
+  - classic: |
+      then at midnight at the summer solstice [observe] the extreme of the north pole [star]'s southern
+      excursion;
+    highlight: [S]
+  - zhao: |
+      The furthest it goes south of the pivot.
+  - classic: |
+      at midnight at the winter solstice, the extreme of its northern excursion;
+    highlight: [N]
+  - zhao: |
+      The furthest it goes north of the pivot.
+  - classic: |
+      at the winter solstice, when the sun is at *you* [6 p.m.], the extreme of its western excursion;
+    highlight: [W]
+  - zhao: |
+      The furthest it goes west of the pivot.
+  - classic: |
+      when the sun is at *mao* [6 a.m.], the extreme of its eastern excursion.
+    highlight: [E]
+  - zhao: |
+      The furthest it goes east of the pivot.
+  - classic: |
+      These are the four excursions of the north pole [star] about the *xuanji*.
+    explain:
+      fact: |
+        The pole star turns with the sky once a sidereal day, i.e. about four minutes less than a solar
+        day. So the same clock hour finds it at a different point of its circle on different dates.
+        Choosing the solstice midnights and the winter-solstice 6 a.m. and 6 p.m. puts it at the four
+        cardinal points.
+  - zhao: |
+      The pole's excursions are always [observed] near the winter solstice; it speaks of midnight at the
+      summer solstice because the pole [star] is seen [then]; at midnight at the winter solstice the pole
+      [star] is not seen.
+    dispute: |
+      As it stands, Zhao's remark is hard to square with the classic, which observes the northern
+      extreme at winter midnight. The text may be corrupt.
+  - classic: |
+      The true north-pole pivot is the centre of the *xuanji*; true north is the centre of heaven,
+    highlight: [O]
+  - classic: |
+      the true pole, about which [the star] travels.
+    dispute: |
+      Gutenberg divides this sentence into two lines; the Sibu Congkan prints it as one, followed by Zhao's
+      note.
+  - zhao: |
+      The pole is in the middle of the *xuanji*, at the true centre of heaven; so it is called *xuanji*.

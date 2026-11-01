@@ -1,0 +1,139 @@
+id: ZB.2.9
+title: The sun's paths at the solstices and equinoxes
+paraphrase: |
+  The sun is carried round the pole once a day on a circle. At the summer solstice its noon
+  position is 16,000 *li* south of Zhou, so 119,000 *li* from the pole; at the winter solstice
+  135,000 *li* south of Zhou, so 238,000 *li* from the pole; at the equinoxes 178,500 *li*. So the
+  sun's daily path has diameter 238,000 *li* in summer, 357,000 at the equinoxes and 476,000 in
+  winter. Each circumference is three times its diameter.
+
+diagram:
+  width: 400
+  height: 400
+  elements:
+    - "P;point;fixed;200,200;black;black"
+    - "Z;point;fixed;200,249;black;black"
+    - "k1;point;fixed;256.7,200;0;0"
+    - "k4;point;fixed;285,200;0;0"
+    - "k7;point;fixed;313.3,200;0;0"
+    - "summer;circle;radius;P,k1;0;0;#b45309;0"
+    - "equinox;circle;radius;P,k4;0;0;#5b6b2f;0"
+    - "winter;circle;radius;P,k7;0;0;#33587a;0"
+    - "A;point;fixed;200,256.7;black;black"
+    - "C;point;fixed;200,285;black;black"
+    - "B;point;fixed;200,313.3;black;black"
+    - "D;point;fixed;200,143.3;black;black"
+    - "F;point;fixed;200,115;black;black"
+    - "E;point;fixed;200,86.7;black;black"
+    - "EB;line;connect;E,B;0;0;#9a9078"
+    - "PZ;line;connect;P,Z;0;0;black"
+    - "DA;line;connect;D,A;0;0;#b45309"
+    - "EBd;line;connect;E,B;0;0;#33587a"
+    - "FC;line;connect;F,C;0;0;#5b6b2f"
+    - "Y0;point;fixed;200,171.7;0;0"
+    - "Yk;point;fixed;285,171.7;0;0"
+    - "ecl;circle;radius;Y0,Yk;0;0;#c2410c;0"
+  given: [P, Z, summer, equinox, winter, A, C, B, D, F, E, EB, PZ]
+  caption: |
+    The view from above: north is up. {P} is the pole, {Z} is Zhou, 103,000 *li* south of it. The sun's
+    noon positions are {A} (summer solstice), {C} (equinoxes), {B} (winter solstice); its midnight
+    positions are {D}, {F}, {E}. Its daily circle is smallest in summer (orange) and largest in winter
+    (blue). The red circle is the "yellow road" (ecliptic) at one moment of the day.
+
+steps:
+  - classic: |
+      At the summer solstice the sun is 16,000 *li* south [of Zhou], at the winter solstice 135,000 *li*
+      south, at noon, [where a gnomon] has no shadow. From this one sees that from [the pole] south to the
+      summer-solstice noon [position] is 119,000 *li*.
+    hint: |
+      Add Zhou's distance from the pole (103,000 *li*) to the sun's distance south of Zhou (16,000):
+      the summer sun is 119,000 *li* from the pole.
+    adds: [P]
+    highlight: [PZ, A]
+    modern: $103{,}000 + 16{,}000 = 119{,}000$ *li*.
+    dispute: |
+      Gutenberg reads 十三萬五十里, "130,050 *li*". The Sibu Congkan's 十三萬五千里, "135,000 *li*", agrees
+      with the winter-solstice shadow of 1 *zhang* 3 *chi* 5 *cun* (135 *cun*) and is followed here.
+  - zhao: |
+      Wherever "the pole" is mentioned, it refers to the centre of heaven. The pole is 103,000 *li* from
+      Zhou, that is, at the times when the pole [star] is level with the centre of heaven; add the
+      16,000 *li* to the south, and that is it.
+  - classic: |
+      It is the same north to its midnight [position].
+    hint: At midnight the sun is on the far side of the pole, 119,000 *li* north of it, at {D}.
+    highlight: [D]
+  - zhao: |
+      The sun's extreme [position] north of the pole is exactly equal.
+  - classic: |
+      In all, a diameter of 238,000 *li*.
+    highlight: [DA]
+    adds: [DA]
+  - zhao: |
+      Adding the northern and southern numbers.
+  - classic: |
+      This is the diameter of the sun's path at the summer solstice.
+    highlight: [summer]
+  - zhao: |
+      A diameter is the straight line through the middle of a circle.
+  - classic: |
+      Its circumference is 714,000 *li*.
+    modern: $3 \times 238{,}000 = 714{,}000$ *li* (with $\pi = 3$).
+  - zhao: |
+      *Zhou* [circumference] means going all the way round. It is the sun's course, carried by heaven;
+      its number is the diameter multiplied by three.
+  - classic: |
+      From the summer-solstice noon [position] to the winter-solstice noon is 119,000 *li*.
+    highlight: [A, B]
+    modern: $135{,}000 - 16{,}000 = 119{,}000$ *li*.
+  - zhao: |
+      Subtract the 16,000 *li* from Zhou to the summer noon sun from the 135,000 *li* from Zhou to the
+      winter noon sun.
+  - classic: |
+      It is the same north to beneath the pole. So from the pole south to the winter-solstice noon is
+      238,000 *li*; it is the same north to its midnight [position]. In all, a diameter of 476,000 *li*:
+      this is the diameter of the sun's path at the winter solstice. Its circumference is 1,428,000 *li*.
+      From the equinox noon [position] north to beneath the pole is 178,500 *li*.
+    hint: |
+      The winter circle has twice the radius of the summer circle: 238,000 *li*. The equinox circle is
+      midway, at 178,500 *li*.
+    adds: [EBd]
+    highlight: [winter, C]
+    modern: |
+      $119{,}000 + 119{,}000 = 238{,}000$; diameter $476{,}000$, circumference $1{,}428{,}000$ *li*.
+  - zhao: |
+      The equinox shadow is 7 *chi* 5 *cun* 5 *fen*; add the *gou* for sighting the pole, 1 *zhang* 3 *cun*.
+    hint: |
+      $75.5 + 103 = 178.5$ *cun*, i.e. 178,500 *li*. The equinox noon shadow (75.5 *cun*) gives the sun's
+      distance south of Zhou, and the pole sighting gives Zhou's distance from the pole.
+  - classic: |
+      It is the same from beneath the pole north to its midnight [position]. In all, a diameter of
+      357,000 *li*, a circumference of 1,071,000 *li*. So it says: the paths of the sun and moon always
+      follow the lodges, and the sun's path is aligned with the lodges.
+    adds: [FC]
+    highlight: [equinox]
+    dispute: |
+      Gutenberg reads 故曰月之道, "so it says: the moon's path"; the Sibu Congkan's 故日月之道, "so the
+      paths of the sun and moon", is followed here.
+  - zhao: |
+      South of the inner orbit and north of the outer orbit, round as if drawn with the compass, is the
+      yellow road, along which the twenty-eight lodges are arrayed. The sun's motion goes now out, now in,
+      now outside, now inside [of the moon's]; in 5 21/23 months [their] paths cross once; this is called
+      "conjunction", [and gives] the interval between crossings and eclipses of the moon. So it says
+      "follow the lodges". The sun travels on the yellow road, taking the lodges as its standard; so it
+      says "aligned with the lodges". Its number is equal to that of the middle orbit.
+    hint: |
+      The "yellow road" (黃道) is the ecliptic, the sun's yearly path among the stars, along which the
+      28 lodges lie. In the Zhou bi it is a circle as large as the equinox circle but off-centre.
+    adds: [ecl]
+    highlight: [ecl]
+    dispute: |
+      The eclipse interval is usually given as $5\tfrac{20}{23}$ months; the text here has $\tfrac{21}{23}$.
+  - classic: |
+      South to the summer noon, north to the winter midnight; south to the winter noon, north to the summer
+      midnight: also a diameter of 357,000 *li* and a circumference of 1,071,000 *li*.
+    hint: |
+      The ecliptic circle touches the summer circle on one side and the winter circle on the other:
+      $119{,}000 + 238{,}000 = 357{,}000$ *li*, the same diameter as the equinox circle.
+    highlight: [ecl, A, E]
+  - zhao: |
+      These are all numbers of the yellow road, equal to [those of] the middle orbit.

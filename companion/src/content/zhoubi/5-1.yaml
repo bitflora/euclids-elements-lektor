@@ -1,0 +1,161 @@
+id: ZB.5.1
+title: How far the solstice and equinox lodges are from the pole
+paraphrase: |
+  The sun is in the lodge Qianniu at the winter solstice (on the outer orbit), in Dongjing at the summer
+  solstice (inner orbit), and in Lou and Jiao at the equinoxes (middle orbit). Their distances from the
+  pole star, in *li*, are converted into degrees: each is divided by the length of a degree on the inner
+  orbit, 1,954 *li* 247 *bu* $\tfrac{933}{1461}$. The worked division gives Qianniu 115 degrees and
+  some, Lou and Jiao 91, Dongjing 66. Every figure in the text checks.
+
+diagram:
+  width: 400
+  height: 400
+  elements:
+    - "P;point;fixed;200,200;black;black"
+    - "k1;point;fixed;256.7,200;0;0"
+    - "k4;point;fixed;285,200;0;0"
+    - "k7;point;fixed;313.3,200;0;0"
+    - "h1;circle;radius;P,k1;0;0;#b45309;0"
+    - "h4;circle;radius;P,k4;0;0;#5b6b2f;0"
+    - "h7;circle;radius;P,k7;0;0;#33587a;0"
+    - "Q;point;fixed;200,313.3;black;#33587a"
+    - "D;point;fixed;200,143.3;black;#b45309"
+    - "L;point;fixed;285,200;black;#5b6b2f"
+    - "J;point;fixed;115,200;black;#5b6b2f"
+    - "PQ;line;connect;P,Q;0;0;#33587a"
+    - "PD;line;connect;P,D;0;0;#b45309"
+    - "PL;line;connect;P,L;0;0;#5b6b2f"
+    - "PJ;line;connect;P,J;0;0;#5b6b2f"
+  given: [P, h1, h4, h7, Q, D, L, J, PQ, PD, PL, PJ]
+  caption: |
+    Qianniu {Q} on the outer orbit (winter solstice), Dongjing {D} on the inner (summer solstice),
+    Lou {L} and Jiao {J} on the middle orbit (equinoxes). Their distances from the pole {P} are
+    measured in *li* and converted to degrees.
+
+steps:
+  - classic: |
+      Qianniu is 115 degrees 1,695 *li* 21 *bu* and 819/1461 of a *bu* from the north pole.
+    highlight: [PQ]
+  - zhao: |
+      Qianniu is the lodge in which the sun is at the winter solstice, on the outer orbit: [this is] the
+      number of degrees it is from the pole.
+  - classic: |
+      The method: set out [the distance] from the outer orbit to the pivot of the north pole, 238,000 *li*,
+      and subtract the *xuanji*, 11,500 *li*.
+    modern: $238{,}000 - 11{,}500 = 226{,}500$ *li*.
+  - zhao: |
+      The north pole [star] is always near Qianniu [when it] passes the pivot by 11,500 *li*; here we seek the
+      distance from the pole [star], so subtract it.
+    hint: |
+      The distance is measured to the pole star, not to the true pole; at the relevant moment the star is
+      11,500 *li* (the radius of the *xuanji*) nearer Qianniu.
+  - classic: |
+      What remains, 226,500 *li*, is the dividend.
+  - zhao: |
+      Multiply by 300 to turn *li* into *bu*, and by the 1461 parts of the circuit of heaven to turn *bu* into
+      parts. A degree of the inner orbit has the circuit of heaven [1461] as denominator; since the divisor
+      has parts, the dividend too is multiplied by the circuit of heaven to make them commensurable:
+      99,274,950,000.
+    modern: $226{,}500 \times 300 \times 1461 = 99{,}274{,}950{,}000$.
+  - classic: |
+      Take one degree of the inner orbit, 1,954 *li* 247 *bu* and 933/1461 of a *bu*, as the divisor.
+    hint: A degree on the inner orbit, from [[ZB.3.4]].
+  - zhao: |
+      As above, multiply [*li*] into *bu* and *bu* into parts, adding the numerator: 856,800,000.
+    modern: $(1954 \times 300 + 247) \times 1461 + 933 = 856{,}800{,}000$.
+  - classic: |
+      Each time the dividend contains the divisor, [one gets] one degree.
+    modern: $99{,}274{,}950{,}000 = 115 \times 856{,}800{,}000 + 742{,}950{,}000$.
+  - zhao: |
+      856,800,000 is the divisor for one degree.
+  - classic: |
+      What does not fill the divisor, find [as] *li* and *bu*.
+  - zhao: |
+      Above we found the degrees; so next find the *li*, then the *bu*.
+  - classic: |
+      Reduce it: 300 make one; this is the dividend.
+    modern: $742{,}950{,}000 \div 300 = 2{,}476{,}500$.
+  - zhao: |
+      Above, *li* were multiplied by 300 into *bu* to find [degrees]; so to find *li*, the remaining parts are
+      reduced by 300 to make the dividend for *li*.
+  - classic: |
+      With 1461 parts as the divisor, get one *li*.
+    modern: $2{,}476{,}500 = 1695 \times 1461 + 105$.
+  - zhao: |
+      *Li* and *bu* both have the parts of the circuit of heaven as denominator. To find degrees, divisor and
+      dividend had to be commensurable, so [the dividend] was multiplied to spread it out. Once the degrees
+      are fixed and the next [unit] is sought, [1461] goes back to being the divisor.
+  - classic: |
+      What does not fill the divisor, triple; each time it contains the divisor, a hundred *bu*.
+    modern: |
+      $105 \times 3 = 315 < 1461$: no hundreds.
+  - zhao: |
+      Above, [the remainder] was reduced by 300 for the *li* dividend; here it should be multiplied by 3 for
+      the *bu* dividend. It is put this way because, not wishing to change the divisor, one takes one place as
+      hundreds; so that place is named as hundreds.
+  - classic: |
+      What does not fill the divisor, multiply up by ten again; each time it contains the divisor, one *bu*.
+    modern: |
+      $315 \times 10 = 3150 = 2 \times 1461 + 228$ (2 tens); $2280 = 1 \times 1461 + 819$ (1 unit): 21 *bu*.
+    explain:
+      implicit: |
+        The text names only one "multiply by ten"; the tens and units steps are both needed, as in
+        [[ZB.3.6]].
+  - zhao: |
+      Multiplying up again takes one place as units; so from that place it is named as units.
+  - classic: |
+      What does not fill the divisor, name it with the divisor.
+    modern: 115 degrees 1,695 *li* $21\tfrac{819}{1461}$ *bu*.
+  - zhao: |
+      The places end at single *bu*, so the remainder is named with the divisor as a leftover fraction.
+  - classic: |
+      The next ones are like this.
+  - zhao: |
+      The next, Lou and Jiao, and Dongjing, are all like this.
+  - classic: |
+      Lou and Jiao are 91 degrees 610 *li* 264 *bu* and 1296/1461 of a *bu* from the north pole.
+    highlight: [PL, PJ]
+  - zhao: |
+      Lou is the lodge in which the sun is at the spring equinox, Jiao that at the autumn equinox; they are
+      on the middle orbit.
+  - classic: |
+      The method: set out [the distance] from the middle orbit to the pivot of the north pole, 178,500 *li*,
+      as the dividend.
+  - zhao: |
+      It does not speak of adding or subtracting because for Lou and Jiao the north pole [star] is to one
+      side of the pivot, exactly level with it; as there is no difference for Lou and Jiao, the distance
+      from the pivot is used as the dividend. As above, multiply *li* into *bu* and *bu* into parts:
+      78,236,550,000.
+    modern: $178{,}500 \times 300 \times 1461 = 78{,}236{,}550{,}000$.
+  - classic: |
+      Take one degree of the inner orbit as the divisor. Each time the dividend contains the divisor, one
+      degree. What does not fill the divisor, find [as] *li* and *bu*. What does not fill the divisor, name
+      it with the divisor.
+    modern: 91 degrees, remainder $892{,}500 = 610 \times 1461 + 1290$ (610 *li*), then $264\tfrac{1296}{1461}$ *bu*.
+  - classic: |
+      Dongjing is 66 degrees 1,481 *li* 155 *bu* and 1245/1461 of a *bu* from the north pole.
+    highlight: [PD]
+  - zhao: |
+      Dongjing is the lodge in which the sun is at the summer solstice, on the inner orbit.
+  - classic: |
+      The method: set out [the distance] from the inner orbit to the pivot of the north pole, 119,000 *li*,
+      and add the *xuanji*, 11,500 *li*,
+  - zhao: |
+      [When] the north pole [star] moves round near Dongjing's [opposite side], it falls short of the pivot
+      by 11,500 *li*; here we seek the distance from the pole [star], so add it.
+  - classic: |
+      giving 130,500 *li*, as the dividend.
+  - zhao: |
+      As above, multiply *li* into *bu* and *bu* into parts: 57,198,150,000 parts.
+    modern: $130{,}500 \times 300 \times 1461 = 57{,}198{,}150{,}000$.
+  - classic: |
+      Take one degree of the inner orbit as the divisor. Each time the dividend contains the divisor, one
+      degree. What does not fill the divisor, find [as] *li* and *bu*. What does not fill the divisor, name
+      it with the divisor.
+    modern: 66 degrees, remainder $2{,}164{,}500 = 1481 \times 1461 + 759$ (1,481 *li*), then $155\tfrac{1245}{1461}$ *bu*.
+
+commentary: |
+  Dividing a distance in *li* by the length of a degree on the inner orbit treats the pole distance
+  as an arc of the inner orbit. In the *gaitian* model this is a convention, not a measured angle. The
+  real distances of these lodges from the pole are about 113°, 91° and 67°, close to the text's. The
+  Zhou bi's model was built to reproduce known numbers.

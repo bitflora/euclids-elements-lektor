@@ -1,0 +1,114 @@
+id: ZB.6.1
+title: Where the sun rises and sets at the solstices
+paraphrase: |
+  Divide the horizon into the twelve branches. At the winter solstice the sun rises in *chen*
+  (east-south-east) and sets in *shen* (west-south-west), lighting only three branches; at the summer
+  solstice it rises in *yin* (east-north-east) and sets in *xu* (west-north-west), lighting nine.
+  So winter is cold, because little sunlight is seen, and summer is hot.
+
+diagram:
+  width: 320
+  height: 320
+  elements:
+    - "O;point;fixed;160,160;black;black"
+    - "K;point;fixed;300,160;0;0"
+    - "rim;circle;radius;O,K;0;0;#8a6d12;0"
+    - "b0;point;fixed;160,20;0;0"
+    - "b6;point;fixed;160,300;0;0"
+    - "b1;point;fixed;230,38.8;0;0"
+    - "b7;point;fixed;90,281.2;0;0"
+    - "b3;point;fixed;300,160;0;0"
+    - "b9;point;fixed;20,160;0;0"
+    - "b5;point;fixed;230,281.2;0;0"
+    - "b11;point;fixed;90,38.8;0;0"
+    - "s0;line;connect;b0,b6;0;0;#cbc3b2"
+    - "s1;line;connect;b1,b7;0;0;#cbc3b2"
+    - "s3;line;connect;b3,b9;0;0;#cbc3b2"
+    - "s5;line;connect;b5,b11;0;0;#cbc3b2"
+    - "C;point;fixed;281.2,230;black;#33587a"
+    - "S;point;fixed;38.8,230;black;#33587a"
+    - "Y;point;fixed;281.2,90;black;#b45309"
+    - "X;point;fixed;38.8,90;black;#b45309"
+    - "OC;line;connect;O,C;0;0;#33587a"
+    - "OS;line;connect;O,S;0;0;#33587a"
+    - "OY;line;connect;O,Y;0;0;#b45309"
+    - "OX;line;connect;O,X;0;0;#b45309"
+  given: [O, rim, s0, s1, s3, s5, C, S, Y, X, OC, OS, OY, OX]
+  caption: |
+    The horizon divided into twelve branches, north at the top, the observer at {O}. In winter the sun
+    rises at {C} (*chen*) and sets at {S} (*shen*), and the arc it lights, through the south, spans
+    three branches (*si*, *wu*, *wei*). In summer it rises at {Y} (*yin*) and sets at {X} (*xu*), and the
+    lit arc spans nine.
+
+steps:
+  - classic: |
+      At the winter solstice the day is shortest: the sun rises at *chen* and sets at *shen*.
+    highlight: [OC, OS]
+  - zhao: |
+      As above, the method for [finding] in which lodge the sun is: divide the twelve branches round the
+      circle on the ground, the stations being $30\tfrac{7}{16}$ degrees apart, with *zi* and *wu* at north and
+      south and *mao* and *you* at east and west. When the sun rises or sets, set up a movable rod and sight the
+      shadow of the central gnomon; beneath the movable rod is [the place of] sunrise or sunset.
+    hint: The instrument of [[ZB.4.8]].
+  - classic: |
+      Yang shines on three and does not cover nine.
+    hint: |
+      The sun ("yang") is seen over three of the twelve branches: the day is a quarter of the circle.
+  - zhao: |
+      Yang is the sun; "cover" means to cover all over. "Shines on three" means the three southern branches,
+      *si*, *wu* and *wei*.
+  - classic: |
+      East and west are symmetrical about due south.
+  - zhao: |
+      Sunrise and sunset are symmetrical; the three branches [lit, as against those] not covered, are due
+      south.
+  - classic: |
+      At the summer solstice the day is longest: the sun rises at *yin* and sets at *xu*. Yang shines on nine
+      and does not cover three.
+    highlight: [OY, OX]
+    dispute: The Sibu Congkan's 戍 is a misprint for 戌 *xu*.
+  - zhao: |
+      "Does not cover three" means the three northern branches *hai*, *zi* and *chou*. The three branches of
+      sunrise and sunset at the winter solstice belong to the day; day and night [then] each have their
+      share, so the three branches of sunrise and sunset are clearly divided half to day and half to night.
+      The *Kaolingyao* says: "Divide the circuit of heaven into 36 *tou*; each *tou* has $10\tfrac{14}{96}$
+      degrees. On the long day, [the sun] parts [from the horizon] at *yin*, travels 24 *tou*, and enters at
+      *xu*, [the night] travelling 12 *tou*; on the short day it parts at *chen*, travels 12 *tou*, and enters
+      at *shen*, [the night] travelling 24 *tou*." This is what is meant.
+    modern: $365\tfrac14 \div 36 = 10\tfrac{14}{96}$ degrees per *tou*.
+    hint: |
+      The *Kaolingyao* splits the day more finely: the longest day is 24 of 36 parts (two thirds), the
+      shortest 12 (one third).
+  - classic: |
+      East and west are symmetrical about due north.
+  - zhao: |
+      Rising and setting are symmetrical; the three branches not covered are the north.
+  - classic: |
+      The sun rises on the left and sets on the right, travelling south and north.
+  - zhao: |
+      The sage faces south to rule the world, so east is left and west is right. From the winter solstice the
+      sun goes from south to north, from the summer solstice from north to south; so it says "travelling south
+      and north".
+  - classic: |
+      So at the winter solstice, from *kan*, yang is at *zi*; the sun rises at *xun* and sets at *kun*; little
+      sunlight is seen; so it is called cold.
+    hint: |
+      *Kan* 坎, *xun* 巽, *kun* 坤 (and below *li* 離, *gen* 艮, *qian* 乾) are trigrams of the *Book of
+      Changes*, used here as compass directions: north, south-east, south-west; south, north-east,
+      north-west.
+  - zhao: |
+      At the winter solstice, in the eleventh month, the Dipper points to *zi*, the position in the north; so it
+      says "from *kan*", *kan* also being north. It is where the yang qi begins, so it says "at *zi*". *Xun* is
+      south-east, *kun* south-west. Little sun is seen: "yang shines on three and does not cover nine".
+  - classic: |
+      At the summer solstice, from *li*, yin is at *wu*; the sun rises at *gen* and sets at *qian*; much
+      sunlight is seen; so it is called hot.
+  - zhao: |
+      At the summer solstice, in the fifth month, the Dipper points to *wu*, the position in the south; so it says
+      "at *wu*". *Gen* is north-east, *qian* north-west. Much sun is seen: "yang shines on nine and does not cover
+      three".
+
+commentary: |
+  The two sets of directions do not quite agree: *chen* and *shen* are 30° either side of east and
+  west, while *xun* and *kun* are 45°. Both are rough. At Luoyang the real winter-solstice sunrise is
+  about 29° south of east, close to *chen*.

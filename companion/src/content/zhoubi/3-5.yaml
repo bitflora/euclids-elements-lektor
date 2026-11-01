@@ -1,0 +1,71 @@
+id: ZB.3.5
+title: Beyond the outer orbit — what is not known
+paraphrase: |
+  At the winter solstice the sun's light reaches 167,000 *li* beyond the outer orbit, which gives
+  the circle of the four extremes: diameter 810,000 *li*, circumference 2,430,000 *li*, a degree
+  6,652 *li* 293 *bu* 327/1461. What lies beyond is not known. The classic adds that some think it
+  knowable and some not, and only the highest sages know without study.
+
+diagram:
+  width: 400
+  height: 400
+  elements:
+    - "P;point;fixed;200,200;black;black"
+    - "Z;point;fixed;200,249;black;black"
+    - "k1;point;fixed;256.7,200;0;0"
+    - "k2;point;fixed;266.1,200;0;0"
+    - "k3;point;fixed;275.6,200;0;0"
+    - "k4;point;fixed;285,200;0;0"
+    - "k5;point;fixed;294.4,200;0;0"
+    - "k6;point;fixed;303.9,200;0;0"
+    - "k7;point;fixed;313.3,200;0;0"
+    - "k8;point;fixed;392.9,200;0;0"
+    - "h1;circle;radius;P,k1;0;0;#b45309;0"
+    - "h2;circle;radius;P,k2;0;0;#9a9078;0"
+    - "h3;circle;radius;P,k3;0;0;#9a9078;0"
+    - "h4;circle;radius;P,k4;0;0;#5b6b2f;0"
+    - "h5;circle;radius;P,k5;0;0;#9a9078;0"
+    - "h6;circle;radius;P,k6;0;0;#9a9078;0"
+    - "h7;circle;radius;P,k7;0;0;#33587a;0"
+    - "extreme;circle;radius;P,k8;0;0;#6b6253;0"
+    - "R1;point;fixed;256.7,200;0;0"
+    - "R7;point;fixed;313.3,200;0;0"
+    - "band;line;connect;R1,R7;0;0;#c2410c"
+    - "PR1;line;connect;P,R1;0;0;#b45309"
+  given: [P, h1, h7, extreme]
+  caption: The outer orbit (blue) and the circle of the four extremes, 167,000 *li* beyond it.
+
+steps:
+  - classic: |
+      Next it says: at the winter solstice [the sun's light] shines 167,000 *li* to the north beyond the
+      northern orbit,
+    highlight: [extreme, h7]
+  - zhao: |
+      In the eleventh month, at the winter solstice, the sun is in Qianniu, on the diameter in the north
+      [at midnight]. Because it is in the north, it says "shines beyond the northern orbit".
+  - classic: |
+      making a diameter of 810,000 *li*
+    modern: $476{,}000 + 2 \cdot 167{,}000 = 810{,}000$ *li*.
+  - zhao: |
+      Double the illumination and add it to the seventh orbit's diameter.
+  - classic: |
+      and a circumference of 2,430,000 *li*.
+  - zhao: |
+      Three times [the diameter]: the circumference of the seventh orbit increased by twice [the
+      illumination, times three].
+  - classic: |
+      Divided into $365\tfrac14$ degrees, each degree is 6,652 *li* 293 *bu* and 327/1461 of a *bu*.
+      Beyond, to the north, no one knows.
+    modern: $\dfrac{4 \cdot 2{,}430{,}000}{1461} = 6652$ *li* $293\tfrac{327}{1461}$ *bu*.
+  - zhao: |
+      Beyond the 810,000 *li*.
+  - classic: |
+      As for "knowing": some suppose it can be known, some suppose it is hard to know. This says that the
+      highest sages know it without study.
+    hint: |
+      An admission of the limits of the method: measurement reaches only as far as the sun's light.
+  - zhao: |
+      The highest sage's understanding reaches everything, his clarity sees everything. The *Kaolingyao*
+      says, "The subtle and the patterned come out of darkness; only he examines their forms." This is what
+      is meant.
+    hint: The *Kaolingyao* (考靈曜) is a Han apocryphal text on astronomy.

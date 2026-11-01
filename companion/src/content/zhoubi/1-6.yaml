@@ -1,0 +1,115 @@
+id: ZB.1.6
+title: Round heaven, square earth — the circle from the square
+paraphrase: |
+  Heaven is round and earth is square. Zhao Shuang warns that this is symbolic, not the real shape
+  of the world, and he gives the Zhou bi's actual cosmology: heaven and earth are parallel, each
+  bulging up in the middle. He then shows how the "circle comes from the square" by four rules for
+  the area of a circle, all with $\pi = 3$. A circle inscribed in a square covers three quarters of
+  it.
+
+parallels:
+  - id: XII.2
+    relation: related
+    note: |
+      Zhao's rule "diameter times itself, times 3, divided by 4" says a circle's area is a fixed
+      fraction of the square on its diameter. Euclid proves that circles are to one another as the
+      squares on their diameters (XII.2), without giving the fraction. Zhao's fraction, $\tfrac34$,
+      is $\pi/4$ with $\pi = 3$.
+
+diagram:
+  width: 300
+  height: 300
+  elements:
+    - "O;point;fixed;150,150;black;black"
+    - "K;point;fixed;250,150;0;0"
+    - "s1;point;fixed;50,50;0;0"
+    - "s2;point;fixed;250,50;0;0"
+    - "s3;point;fixed;250,250;0;0"
+    - "s4;point;fixed;50,250;0;0"
+    - "sq;polygon;quadrilateral;s1,s2,s3,s4;0;0;#33587a;#e3ecf3"
+    - "circ;circle;radius;O,K;0;0;#5b6b2f;#eef1dc"
+    - "h1;point;fixed;250,150;0;0"
+    - "h2;point;fixed;200,236.6;0;0"
+    - "h3;point;fixed;100,236.6;0;0"
+    - "h4;point;fixed;50,150;0;0"
+    - "h5;point;fixed;100,63.4;0;0"
+    - "h6;point;fixed;200,63.4;0;0"
+    - "hex;polygon;hexagon;h1,h2,h3,h4,h5,h6;0;0;#9a3b2b;0"
+    - "D1;point;fixed;50,150;0;0"
+    - "D2;point;fixed;250,150;0;0"
+    - "diam;line;connect;D1,D2;0;0;black"
+  given: [O, sq, circ, D1, D2, diam]
+  caption: |
+    A circle inscribed in a square. With $\pi = 3$ the circle is $\tfrac34$ of the square. The
+    value 3 is exactly right for the inscribed hexagon (red), whose perimeter is three diameters.
+
+steps:
+  - classic: |
+      The square belongs to earth, the circle belongs to heaven: heaven is round, earth is square.
+    hint: |
+      A cosmic symbolism common to early Chinese thought: heaven round and moving, earth square and
+      still.
+  - zhao: |
+      Among things there are the round and the square; among numbers there are the odd and the even.
+      Heaven moves and is round, its number odd; earth is still and square, its number even. This
+      matches the meaning of yin and yang; it is not the real shape of heaven and earth. Heaven cannot
+      be seen to its end, nor earth surveyed to its limit; how could one fix them as round or square?
+      It is also said that beneath the north pole [the earth] is higher than where people live by 60,000
+      *li*, and slopes away down on all four sides; the centre of heaven is likewise higher than its
+      four sides by 60,000 *li*. They are of one form, not different paths; their bulges are equal in
+      height, and so they are easy to set out. Hence it says, "heaven is like a covering hat, earth is
+      like an upturned bowl."
+    hint: |
+      Zhao rejects the literal reading and gives the Zhou bi's model, from [[ZB.4.1]]: heaven and earth
+      are parallel domes, 80,000 *li* apart.
+    explain:
+      fact: |
+        In the *gaitian* cosmology, the earth under the pole rises 60,000 *li* above the surrounding
+        land, and heaven is shaped the same way. The sky is everywhere the same height above the ground,
+        which is what the shadow measurements of Part 2 assume.
+  - classic: |
+      The numbers of the square are the standard; from the square one produces the circle.
+    hint: |
+      The circle is measured by way of the square, e.g. its area as a fraction of the square
+      round it.
+    highlight: [sq, circ]
+  - zhao: |
+      When the body is square, measuring its shadow is straightforward; when the form is round, finding its
+      true measure is difficult. For the square is constant, while the circle is changeable; so one must
+      establish methods to regulate it. The methods: multiply half the circumference by half the diameter
+      and you get the area; or multiply circumference by diameter and divide by four; or multiply the
+      diameter by itself, take three times this, and divide by four; or multiply the circumference by
+      itself and divide by twelve. So the circle comes from the square.
+    hint: |
+      Four rules for the area of a circle. The first is exact; the other three take the circumference
+      to be three times the diameter.
+    adds: [hex]
+    highlight: [circ, diam, hex]
+    explain:
+      fact: |
+        Half the circumference times half the diameter is the exact area of a circle,
+        $A = \tfrac12 C \cdot \tfrac12 d = \pi r^2$. It is the rule of the *Nine Chapters*. With $C = 3d$
+        it becomes $\tfrac34 d^2$ or $\tfrac1{12} C^2$.
+      implicit: |
+        Three diameters is the perimeter of the inscribed regular hexagon, not of the circle. The error,
+        about 4.5%, is the same in every rule except the first. Liu Hui (263 CE) used this hexagon as the
+        starting point for his much better approximation of $\pi$.
+    modern: |
+      $$A = \frac C2 \cdot \frac d2 = \frac{Cd}{4} = \frac{3d^2}{4} = \frac{C^2}{12}\quad (C = 3d).$$
+    cites: [XII.2]
+  - classic: |
+      The hat represents heaven.
+    hint: The conical rain-hat (*li* 笠), round and high in the middle, is the model of the sky.
+  - zhao: |
+      The hat is like a canopy; its shape is exactly round. It is worn [on the head] to represent heaven.
+      "Represent" means to imitate. That is, the body of the hat imitates the form of heaven. The *Odes*
+      say, "with straw cape and with hat": this is the meaning.
+  - classic: |
+      Heaven is blue-black, earth is yellow-red. The numbers of heaven make the hat: blue-black is its
+      outside, cinnabar-yellow its inside, to represent the positions of heaven and earth.
+    hint: |
+      The colours of a model of the sky. Heaven's dark colours are outside (above), earth's warm
+      colours inside (below).
+  - zhao: |
+      Having represented their form, it also models their positions; that is, they correspond in kind.
+      Is it not a good likeness?

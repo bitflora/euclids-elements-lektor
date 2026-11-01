@@ -38,3 +38,4 @@ __pycache__/
 # Regenerated audit reports (scripts/audit-content.py, scripts/audit-review.py).
 # Derived from content/ + Joyce's source HTML — regenerate rather than commit.
 doc/journal/
+.vscode/settings.json

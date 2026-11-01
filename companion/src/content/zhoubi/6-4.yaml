@@ -1,0 +1,89 @@
+id: ZB.6.4
+title: How the ancients found the length of the year
+paraphrase: |
+  A question: how do we know the year is $365\tfrac14$ days, the moon's daily motion $13\tfrac{7}{19}$
+  degrees, the month $29\tfrac{499}{940}$ days? The answer is a story of discovery. The first
+  calendar makers saw that the month was between 29 and 30 days but did not know the fraction. By
+  watching the noon shadow turn from lengthening to shortening, they found that three years had 365
+  days and one had 366, so the year is $365\tfrac14$ days.
+
+steps:
+  - classic: |
+      How does one know that heaven has $365\tfrac14$ degrees, that the sun travels one degree [a day], that
+      the moon falls behind heaven by $13\tfrac{7}{19}$ degrees, that $29\tfrac{499}{940}$ days
+  - classic: |
+      make one month, and $12\tfrac{7}{19}$ months make one year?
+    dispute: Gutenberg breaks this question across two lines; the Sibu Congkan prints it as one.
+  - zhao: |
+      This is not the original text of the *Zhou bi*; it is probably a disciple's question to the teacher,
+      wishing to know how the degrees were divided and where the methods came from.
+  - classic: |
+      Divide by the circuit of heaven.
+    dispute: |
+      This phrase and the next ("what is not enough to be divided, as for conjunction") look like fragments
+      of the computations of [[ZB.5.5]] that have strayed into this place; Zhao comments on them as if they
+      belonged to those methods.
+  - zhao: |
+      Dividing the accumulated falling-behind parts gives one circuit, which is discarded.
+  - classic: |
+      What is not enough to be divided, as for conjunction. In ancient times Bao Xi and Shen Nong created the
+      calendar. At the beginning of measuring the origin, they saw that the three luminaries did not yet
+      conform to rule.
+    hint: |
+      The story begins: the first calendar makers, the mythical Bao Xi and Shen Nong.
+  - zhao: |
+      The three luminaries are the sun, moon and stars; *ze* means rule.
+  - classic: |
+      The sun, moon and arrayed stars did not yet have degrees assigned.
+  - zhao: |
+      The "arrayed stars" are the twenty-eight lodges.
+  - classic: |
+      The sun governs the day and the moon the night; a daytime and a night make one day. The sun and moon
+      started together at Jianxing.
+  - zhao: |
+      Jian consists of six stars above the Dipper. "The sun and moon start at Jianxing" means the day of the
+      new moon at dawn of the eleventh month, at the winter solstice. Those who make calendars start the
+      degrees five degrees before Qianniu; Jianxing is near it.
+    hint: |
+      The "Dipper" here is the Southern Dipper (斗) in Sagittarius, next to Qianniu, not the Big Dipper.
+  - classic: |
+      The moon's degrees are fast, the sun's slow.
+  - zhao: |
+      "Degrees" means the degrees that the sun and moon travel.
+  - classic: |
+      The sun and moon chase each other for between twenty-nine and thirty days,
+  - zhao: |
+      That is, at twenty-nine days the sun and moon have not yet met; at thirty days they have passed each
+      other again.
+  - classic: |
+      and the sun travels a little over twenty-nine degrees in the heavens;
+  - zhao: |
+      As $\tfrac{499}{940}$ of a day.
+  - classic: |
+      [but] there was not yet a fixed fraction.
+  - zhao: |
+      They did not know exactly what the remaining fraction was.
+  - classic: |
+      Then, after 365 days, the shadow at the southern extreme was long, and the next day it turned shorter.
+      Taking the year's end as [the day] the shadow turns from lengthening, they knew that three [years] had
+      365 days and one had 366.
+    hint: |
+      The winter solstice is the day of the longest noon shadow. Counting the days between solstices over
+      several years gives 365, 365, 365, 366.
+    modern: $\dfrac{3 \times 365 + 366}{4} = 365\tfrac14$ days.
+  - zhao: |
+      [Watching] the shadow, after four years they knew it differed by one day. This is four years together
+      [gaining] one day, so each year gets a quarter of a day.
+  - classic: |
+      So they knew that one year is $365\tfrac14$ days: the end of the year. [In that time] the moon
+      accumulates thirteen circuits behind heaven, and 134 degrees and more.
+    hint: Compare the computation for the ordinary year in [[ZB.5.6]].
+  - zhao: |
+      Counting the circuits the moon falls behind heaven over an ordinary [year], they sought it by degrees;
+      the remainder was not known; that is, they wished to find it.
+  - classic: |
+      Roughly, it falls behind heaven $13\tfrac{7}{19}$ degrees [a day], but [this] was not yet settled.
+  - zhao: |
+      *Wulü* means "a rough reckoning". They had already obtained the number of the moon's falling behind; it
+      says "not yet settled" because the method for finding it had not yet appeared.
+    hint: The method is given in the next section.

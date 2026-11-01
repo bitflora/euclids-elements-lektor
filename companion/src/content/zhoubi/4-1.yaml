@@ -1,0 +1,94 @@
+id: ZB.4.1
+title: Noon in one quarter, midnight in the opposite one
+paraphrase: |
+  The second volume restates the shape of the world: the region under the pole is 60,000 *li*
+  higher than where people live, and heaven is shaped the same way. The sun's light reaches 810,000
+  *li* across. Because the sun circles the pole, it is noon in the quarter it is over and midnight in
+  the opposite quarter. Day and night trade places, but every quarter has the same seasons. In
+  effect the Zhou bi describes time zones.
+
+diagram:
+  width: 400
+  height: 400
+  elements:
+    - "P;point;fixed;200,200;black;black"
+    - "k4;point;fixed;285,200;0;0"
+    - "path;circle;radius;P,k4;0;0;#5b6b2f;0"
+    - "N;point;fixed;200,115;black;#d97706"
+    - "E;point;fixed;285,200;black;#d97706"
+    - "S;point;fixed;200,285;black;#d97706"
+    - "W;point;fixed;115,200;black;#d97706"
+    - "Sk;point;fixed;279.5,285;0;0"
+    - "light;circle;radius;S,Sk;0;0;#d97706;#fdf3d6"
+    - "NS;line;connect;N,S;0;0;#9a9078"
+    - "WE;line;connect;W,E;0;0;#9a9078"
+  given: [P, path, N, E, S, W, light, NS, WE]
+  caption: |
+    The sun on its daily circle about the pole {P}, shown at four times of day: {N}, {E}, {S}, {W}.
+    Wherever it is, the region it lights (orange, for the sun at {S}) has noon, and the region on the
+    opposite side of the pole has midnight.
+
+steps:
+  - classic: |
+      In general, the sun and moon in their movements [are bounded by] the paths of the four extremes.
+  - zhao: |
+      *Yun* means to go round; *ji* means to reach, i.e. the outer orbit. The sun and moon go round in all
+      four directions, reach the outer orbit and return; so it says "the four extremes".
+  - classic: |
+      Beneath the pole the land is higher than where people live by 60,000 *li*; it slopes away downward on
+      all four sides like running water.
+    hint: The earth is a low dome with the pole at its top. Compare Zhao's gloss on round heaven, [[ZB.1.6]].
+  - zhao: |
+      Going toward the north pole, from the outer orbit to beneath the pole, it rises by 60,000 *li*.
+      Speaking of where people live, [the slope] extends all the way to the outer orbit, falling away on four
+      sides like an upturned bowl.
+  - classic: |
+      The centre of heaven is likewise higher than its four sides by 60,000 *li*.
+  - zhao: |
+      The "four sides" are the four extremes. [Heaven] follows the earth, vaulting up high like a hat.
+  - classic: |
+      So the sun's light shines out to a diameter of 810,000 *li* and a circumference of 2,430,000 *li*.
+    dispute: Gutenberg has 經 for 徑, "diameter"; the Sibu Congkan's 徑 is followed.
+    hint: The circle of the four extremes, [[ZB.2.14]].
+  - zhao: |
+      The sun reaches the outer orbit and returns, sending out its light 167,000 *li*; so the sun illuminates
+      [that far].
+  - classic: |
+      So when the sun in its course is north of the pole, it is noon in the north and midnight in the south;
+      when the sun is east of the pole, it is noon in the east and midnight in the west; when the sun is south
+      of the pole, it is noon in the south and midnight in the north; when the sun is west of the pole, it is
+      noon in the west and midnight in the east. These four quarters are the four extremes and the four
+      harmonies of heaven and earth.
+    hint: |
+      As the sun circles the pole, noon moves round the world. A place has noon when the sun is due
+      "south" of it, i.e. on the far side from the pole.
+    highlight: [N, E, S, W, light]
+    explain:
+      fact: |
+        This is the idea of local time: different places have noon at different moments. A spherical-earth
+        astronomer would say the same about places of different longitude. In the Zhou bi it follows
+        directly from the geometry of a flat earth under a sun that circles the pole.
+  - zhao: |
+      The "four harmonies": the pole's *zi*, *wu*, *mao* and *you* [north, south, east and west] give the
+      centres of east, west, south and north, where heaven and earth come together, where the four seasons
+      cross, where wind and rain meet, where yin and yang are in harmony. So the hundred things flourish and
+      plants and trees grow abundantly; so it says "four harmonies".
+  - classic: |
+      Day and night exchange places,
+  - zhao: |
+      When the south has day, the north has night.
+  - classic: |
+      in step with the four seasons.
+  - zhao: |
+      [When it is] noon in the south, it is midnight in the north.
+    dispute: |
+      Gutenberg prints these words (南方日中北方夜半) as a line of the classic. In the Sibu Congkan they
+      are set in as Zhao's commentary, which suits the sense.
+  - classic: |
+      Yet the limits of yin and yang and the extremes of winter and summer are everywhere the same.
+    dispute: Gutenberg reads 冬夏所極, "the extremes of winter and summer"; the Sibu Congkan 冬至所極, "the extreme of the winter solstice".
+  - zhao: |
+      The numbers of yin and yang are equal, the seasons of winter and summer the same, the qi of cold and
+      heat even, the shadows long and short equal; the circling is without difference, the movement and
+      change do not vary.
+    hint: Every quarter of the world has the same seasons, only at different hours of the day.

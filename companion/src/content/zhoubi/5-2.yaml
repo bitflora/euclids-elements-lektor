@@ -1,0 +1,98 @@
+id: ZB.5.2
+title: The noon shadow through the 24 solar terms
+paraphrase: |
+  The year is divided into 24 solar terms (*qi* 氣), with the "eight nodes" (*jie* 節: the solstices,
+  equinoxes and the four "beginnings" of the seasons) among them. The classic tabulates the noon
+  shadow of the 8-*chi* gnomon at each. It assumes the shadow changes by the same amount, $9\tfrac{11}{12}$
+  *cun*, from each term to the next: from 135 *cun* at the winter solstice to 16 *cun* at the summer
+  solstice and back. Lengths are in *zhang* 丈, *chi* 尺, *cun* 寸, *fen* 分 (each a tenth of the
+  last) and "small parts" (*xiaofen* 小分), sixths of a *fen*.
+
+  | term | shadow (*cun*) | | term | shadow (*cun*) |
+  |---|---|---|---|---|
+  | winter solstice | 135 | | summer solstice | 16 |
+  | lesser cold | 125.08⅓ | | lesser heat | 25.91⅔ |
+  | greater cold | 115.16⅔ | | greater heat | 35.83⅓ |
+  | spring begins | 105.25 | | autumn begins | 45.75 |
+  | rain water | 95.33⅓ | | heat ends | 55.66⅔ |
+  | insects awaken | 85.41⅔ | | white dew | 65.58⅓ |
+  | spring equinox | 75.5 | | autumn equinox | 75.5 |
+  | clear and bright | 65.58⅓ | | cold dew | 85.41⅔ |
+  | grain rain | 55.66⅔ | | frost descends | 95.33⅓ |
+  | summer begins | 45.75 | | winter begins | 105.25 |
+  | lesser fullness | 35.83⅓ | | lesser snow | 115.16⅔ |
+  | grain in ear | 25.91⅔ | | greater snow | 125.08⅓ |
+
+steps:
+  - classic: |
+      In all there are eight nodes and twenty-four *qi*. For each *qi* [the shadow] decreases or increases
+      by 9 *cun* 9 *fen* and 1/6 *fen*. At the winter solstice the shadow is 1 *zhang* 3 *chi* 5 *cun*; at the
+      summer solstice 1 *chi* 6 *cun*. Question: how many *cun* does each successive node decrease or
+      increase, and how long or short is each?
+    hint: |
+      The problem is set like one from a textbook, with its answer (the table) following and the method
+      in the next section.
+    modern: $\dfrac{135 - 16}{12} = 9\tfrac{11}{12}$ *cun* $= 9$ *cun* $9\tfrac16$ *fen*.
+  - classic: |
+      Winter solstice: shadow 1 *zhang* 3 *chi* 5 *cun*.
+    modern: 135 *cun*.
+  - classic: |
+      Lesser cold: 1 *zhang* 2 *chi* 5 *cun*, small parts 5.
+    modern: $135 - 9\tfrac{11}{12} = 125\tfrac{1}{12}$ *cun* = 125 *cun* 0 *fen* $\tfrac56$ *fen*.
+    dispute: The Sibu Congkan omits all the "small parts" in this table, and has several other slips (e.g. 2 for 3 at Rain water, 二 for 三 at Greater heat).
+  - classic: |
+      Greater cold: 1 *zhang* 1 *chi* 5 *cun* 1 *fen*, small parts 4.
+  - classic: |
+      Spring begins: 1 *zhang* 5 *cun* 2 *fen*, small parts 3.
+  - classic: |
+      Rain water: 9 *chi* 5 *cun* 3 *fen*, small parts 2.
+  - classic: |
+      Insects awaken: 8 *chi* 5 *cun* 4 *fen*, small parts 1.
+  - classic: |
+      Spring equinox: 7 *chi* 5 *cun* 5 *fen*.
+    hint: Exactly midway, $(135 + 16)/2 = 75.5$ *cun*; it gave the middle orbit's 75,500 *li* from Zhou ([[ZB.4.5]]).
+  - classic: |
+      Clear and bright: 6 *chi* 5 *cun* 5 *fen*, small parts 5.
+  - classic: |
+      Grain rain: 5 *chi* 5 *cun* 6 *fen*, small parts 4.
+  - classic: |
+      Summer begins: 4 *chi* 5 *cun* 7 *fen*, small parts 3.
+  - classic: |
+      Lesser fullness: 3 *chi* 5 *cun* 8 *fen*, small parts 2.
+  - classic: |
+      Grain in ear: 2 *chi* 5 *cun* 9 *fen*, small parts 1.
+  - classic: |
+      Summer solstice: 1 *chi* 6 *cun*.
+  - classic: |
+      Lesser heat: 2 *chi* 5 *cun* 9 *fen*, small parts [1].
+    dispute: Gutenberg omits the digit after "small parts"; it must be 1, as at the corresponding term Grain in ear.
+  - classic: |
+      Greater heat: 3 *chi* 5 *cun* 8 *fen*, small parts 2.
+  - classic: |
+      Autumn begins: 4 *chi* 5 *cun* 7 *fen*, small parts 3.
+  - classic: |
+      Heat ends: 5 *chi* 5 *cun* 6 *fen*, small parts 4.
+  - classic: |
+      White dew: 6 *chi* 5 *cun* 5 *fen*, small parts 5.
+  - classic: |
+      Autumn equinox: 7 *chi* 5 *cun* 5 *fen*, small parts 1.
+    dispute: |
+      By the symmetry of the table the autumn equinox should be exactly 7 *chi* 5 *cun* 5 *fen*, like the
+      spring equinox; the "small parts 1" in Gutenberg is presumably a slip (the Sibu Congkan, which omits all
+      small parts, cannot decide it).
+  - classic: |
+      Cold dew: 8 *chi* 5 *cun* 4 *fen*, small parts 1.
+  - classic: |
+      Frost descends: 9 *chi* 5 *cun* 3 *fen*, small parts 2.
+  - classic: |
+      Winter begins: 1 *zhang* 5 *cun* 2 *fen*, small parts 3.
+  - classic: |
+      Lesser snow: 1 *zhang* 1 *chi* 5 *cun* 1 *fen*, small parts 4.
+  - classic: |
+      Greater snow: 1 *zhang* 2 *chi* 5 *cun*, small parts 5.
+
+commentary: |
+  The table is a linear interpolation. The real noon shadow does not change by equal steps: it changes
+  slowly near the solstices and fast near the equinoxes, following the sun's declination. At Luoyang
+  the true equinox shadow of an 8-*chi* gnomon is about 5.5 *chi*, not 7.55: the shadow halfway between
+  the solstices in time is not halfway between them in length. Zhao, in the next section, says the old table is not right.

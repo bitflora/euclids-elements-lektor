@@ -1,0 +1,79 @@
+id: ZB.6.2
+title: Cold and heat; the definitions of day, month and year
+paraphrase: |
+  If the sun and moon left their regular courses, the seasons would be disordered. The sun swings
+  north and south in turn, "contracting" and "extending". The units of time are defined by
+  returns. A day is the sun's return to the same place in the sky relative to us, a month is the
+  moon's return to the sun, and a year is the sun's return to the same star. The twelve "medial
+  *qi*", six going out and six coming back, mark the middles of the months.
+
+steps:
+  - classic: |
+      If the sun and moon lose their degrees, cold and heat will be disordered.
+  - zhao: |
+      The *Kaolingyao* says: "It lies in the *xuanji* and the jade balance to regulate the seven governors.
+      If the *xuanji* is not yet at the meridian when the star is at the meridian, it is fast; when it is
+      fast, the sun passes its degree and [the moon] falls short of its lodge. If the *xuanji* and jade
+      balance are at the meridian when the star is not yet at the meridian, it is slow; when it is slow, the
+      sun falls short of its degree and the moon passes its lodge. If the *xuanji* is at the meridian and the
+      star is at the meridian, it is regular; when it is regular, wind and rain come in season; when wind and
+      rain come in season, plants and trees flourish and the hundred grains ripen." So the *Documents* say:
+      "When fast, it is always cold; when slow, it is always warm." Fast and slow out of tune is "losing
+      degrees"; cold and heat out of season is "disorder".
+    hint: |
+      The "seven governors" (七政) are the sun, moon and five planets; the *xuanji* and jade balance here
+      are an astronomical instrument (or the Dipper) by which their regularity was checked.
+  - classic: |
+      What goes, contracts; what comes, extends. So contraction and extension respond to each other.
+    dispute: Gutenberg reads 詘信, the Sibu Congkan 屈信; the words are variants.
+  - zhao: |
+      From the summer solstice, going south, the day grows shorter daily, so it says "contracts"; from the
+      winter solstice, coming north, the day grows longer daily, so it says "extends". That is, coming and
+      going push each other on, contraction and extension respond to each other, decline and flourishing
+      alternate: |
+        this is the constant way of heaven. The *Changes* says: "When the sun goes the moon comes;
+      when the moon goes the sun comes; sun and moon push each other on and light is produced. When cold goes
+      heat comes; when heat goes cold comes; cold and heat push each other on and the year is completed. What
+      goes contracts; what comes extends; contraction and extension respond to each other and benefit is
+      produced." This is what is meant.
+  - classic: |
+      So after the winter solstice the sun moves to the right; after the summer solstice it moves to the
+      left. Left is going, right is coming.
+  - zhao: |
+      At the winter solstice the sun rises at *chen* and comes north, so it says "moves to the right"; at the
+      summer solstice the sun rises at *yin* and goes south, so it says "moves to the left".
+  - classic: |
+      So the moon's joining the sun makes one month.
+    hint: The synodic month, from new moon to new moon.
+  - zhao: |
+      From conjunction to conjunction is one month.
+  - classic: |
+      The sun's return to the sun makes one day.
+  - zhao: |
+      From dawn to dawn is one day.
+  - classic: |
+      The sun's return to [the same] star makes one year.
+    hint: |
+      The year is defined by the sun's position among the stars, i.e. the sidereal year. The Zhou bi does
+      not distinguish it from the tropical year of the seasons. The difference (precession) was
+      discovered in China by Yu Xi in the 4th century CE.
+  - zhao: |
+      At the winter solstice the sun rises in Qianniu; from Qianniu round to Qianniu is one year.
+  - classic: |
+      The outer orbit is the winter solstice;
+  - zhao: |
+      The sun is in Qianniu.
+  - classic: |
+      the inner orbit is the summer solstice.
+  - zhao: |
+      The sun is in Dongjing.
+  - classic: |
+      Six *qi* go out and come back: all are called medial *qi*.
+  - zhao: |
+      The medial *qi* are the middles of the months. That is, as the sun goes and comes, there are six medial
+      *qi* each way. The *Zuo Commentary* says: "The former kings, in setting the seasons right, set the
+      beginning at the start, placed the norm in the middle, and put the remainder at the end." This refers to
+      the medial *qi*.
+    hint: |
+      "Putting the remainder at the end" is the intercalary month, inserted when a month would contain no
+      medial *qi*.

@@ -25,8 +25,8 @@
   --select-rule: #c9912e;
   --hover: #f2ede2;
 
-  --serif: "EB Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --sans: "Source Sans 3", "Source Sans Pro", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --serif: "EB Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Noto Serif TC", "Songti TC", serif;
+  --sans: "Source Sans 3", "Source Sans Pro", -apple-system, "Segoe UI", system-ui, "Noto Sans TC", "PingFang TC", sans-serif;
 
   --top: 52px;
   color-scheme: light;
@@ -638,3 +638,52 @@ blockquote.quote { margin: 0 0 0.8rem; }
 /* Book X's three sets of definitions */
 .principle-set { font-size: 1rem; font-weight: 600; margin: 1.6rem 0 0.4rem; letter-spacing: 0.02em; }
 .principle-set:first-child, .voice-tag + .principle-set { margin-top: 0.4rem; }
+
+/* ─── The Zhou bi ─────────────────────────────────────────────────────── */
+:root { --cjk: "Noto Serif CJK TC", "Noto Serif TC", "Source Han Serif TC", "Songti TC", "Songti SC", "PMingLiU", "MingLiU", "SimSun", serif; --zhao: #5b6b2f; --zhao-tint: #f1f3e6; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --zhao: #b9c98a; --zhao-tint: #22251b; } }
+[data-theme="dark"] { --zhao: #b9c98a; --zhao-tint: #22251b; }
+[lang="zh-Hant"] { font-family: var(--cjk); font-style: normal; }
+
+.zb-step { align-items: start; }
+.zb-body { min-width: 0; }
+.zb-en, .zb-en p { margin: 0; }
+.zb-zh { margin: 0.15rem 0 0; font: 400 0.98rem/1.7 var(--cjk); color: var(--ink-2); letter-spacing: 0.04em; }
+.zb-step.classic .zb-en { font-size: 1.24rem; }
+.zb-step.zhao { margin-left: -1rem; border-left: 3px solid var(--zhao-tint); font-size: 1.04rem; color: var(--ink-2); }
+.zb-step.zhao .zb-en { font-size: 1.06rem; line-height: 1.55; }
+.zb-step.zhao .zb-zh { font-size: 0.9rem; }
+.zb-step.zhao.selected { border-left-color: var(--select-rule); }
+.zb-step.zhao .step-num { color: var(--zhao); }
+.zhao-label { margin: 0.5rem 0 0.1rem 1.6rem; padding-left: 0.6rem; font: 600 0.72rem var(--sans); letter-spacing: 0.06em; text-transform: uppercase; color: var(--zhao); }
+.zhao-label [lang] { text-transform: none; letter-spacing: 0.08em; font-weight: 600; }
+.section-tabs a [lang] { letter-spacing: 0.05em; }
+.part-nav { display: flex; justify-content: space-between; margin: 2.5rem 0 1rem; font: 0.9rem var(--sans); }
+.text-note { margin-top: 1rem; }
+
+.toc-work { margin: 0.9rem 0 0.3rem; font: 600 0.8rem var(--sans); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.toc-work [lang] { text-transform: none; }
+.toc-list { list-style: none; margin: 0; padding: 0; }
+.toc-list a { display: block; padding: 0.12rem 0.3rem; border-radius: 3px; color: var(--muted); text-decoration: none; }
+.toc-list a:hover { background: var(--hover); }
+.toc-list a.annotated { color: var(--ink); }
+.toc-list a.current { background: var(--select); }
+.toc-n { display: inline-block; min-width: 1.4rem; font-variant-numeric: tabular-nums; color: var(--muted); }
+
+.parallels { margin: 1rem 0; }
+.parallels h4 { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 0.35rem; }
+.parallels ul { list-style: none; padding: 0; margin: 0; }
+.parallels li { margin: 0 0 0.7rem; }
+.parallels .rich p { margin: 0.25rem 0 0; }
+.par-title { font-style: italic; }
+.par-badge { display: inline-block; font: 600 0.66rem var(--sans); text-transform: uppercase; letter-spacing: 0.05em; padding: 0.05rem 0.35rem; border-radius: 3px; vertical-align: 0.1em; }
+.par-same { background: var(--modern-tint); color: var(--modern); }
+.par-related { background: var(--note-tint); color: var(--note); }
+.home .works { display: grid; gap: 1.2rem; }
+/* Zhou bi part labels (卷上之一) are wider than Roman numerals. */
+.toc-book:has(.roman[lang]) { grid-template-columns: 4.6rem 1fr auto; }
+.books li > a:has(.roman[lang]) { grid-template-columns: 4.6rem 1fr; }
+.roman[lang] { white-space: nowrap; font-size: 0.95rem; letter-spacing: 0.02em; }
+/* A Euclid proposition that the Zhou bi also proves: shown first, so it is not missed. */
+.parallels-callout { margin: 0 0 1rem; padding: 0.7rem 0.85rem 0.2rem; border: 1px solid var(--zhao); border-left-width: 4px; border-radius: 6px; background: var(--zhao-tint); }
+.parallels-callout h4 { color: var(--zhao); }

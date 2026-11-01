@@ -1,0 +1,113 @@
+id: ZB.2.14
+title: The four extremes — the edge of the illuminated world
+paraphrase: |
+  The farthest the sun's light ever reaches is 167,000 *li* beyond the winter-solstice path. That is
+  a circle of radius $238{,}000 + 167{,}000 = 405{,}000$ *li* around the pole: diameter 810,000 *li*,
+  circumference 2,430,000 *li*. Its north–south and east–west extents from Zhou follow by addition,
+  subtraction and the *gou-gu* rule. Chenzi ends: "this is the method of the square and the circle."
+
+parallels:
+  - id: I.47
+    relation: same
+    note: |
+      The east–west half-width of the illuminated world at Zhou is found as a leg of a right triangle,
+      $\sqrt{405{,}000^2 - 103{,}000^2}$.
+  - id: III.3
+    relation: related
+    note: |
+      The east–west line through Zhou is a chord of the outer circle; the north–south diameter bisects it
+      (III.3), so "halving gives each" side.
+
+diagram:
+  width: 400
+  height: 400
+  elements:
+    - "P;point;fixed;200,200;black;black"
+    - "Z;point;fixed;200,249;black;black"
+    - "k7;point;fixed;313.3,200;0;0"
+    - "winter;circle;radius;P,k7;0;0;#33587a;0"
+    - "k8;point;fixed;392.9,200;0;0"
+    - "extreme;circle;radius;P,k8;0;0;#6b6253;#f6f1e3"
+    - "Ns;point;fixed;200,7.1;black;black"
+    - "Ss;point;fixed;200,392.9;black;black"
+    - "Wx;point;fixed;13.5,249;black;black"
+    - "Ex;point;fixed;386.5,249;black;black"
+    - "NsSs;line;connect;Ns,Ss;0;0;#9a9078"
+    - "WxEx;line;connect;Wx,Ex;0;0;#6b6253"
+    - "PEx;line;connect;P,Ex;0;0;#6b6253"
+    - "PZ;line;connect;P,Z;0;0;black"
+    - "angZ;sector;angleMarker;Z,Ex,P,8;0;0;black;0"
+  given: [P, Z, winter, extreme, Ns, Ss, Wx, Ex, NsSs, WxEx, PEx, PZ, angZ]
+  caption: |
+    The circle of the four extremes, radius 405,000 *li* around the pole {P}: the winter-solstice
+    path (blue) plus the 167,000 *li* reach of the sun's light. From Zhou {Z} it extends 302,000 *li*
+    south to {Ss} and 508,000 *li* north to {Ns}. Due east and west it reaches {Ex} and {Wx},
+    391,683½ *li* each way. The right triangle {P}{Z}{Ex} has hypotenuse 405,000.
+
+steps:
+  - classic: |
+      The diameter of the four extremes is 810,000 *li*.
+    highlight: [NsSs]
+    modern: $2(238{,}000 + 167{,}000) = 810{,}000$ *li*.
+  - zhao: |
+      From the pole south to the winter-solstice noon is 238,000 *li*; add the 167,000 *li* of the sun's
+      light, and the radius is 405,000 *li*; it is the same north to its midnight. So the diameter is
+      810,000 *li*. Eighty-one is the end of the yang numbers, the limit of the sun.
+    hint: $81 = 9 \times 9$, the number of Shang Gao's "nine nines" ([[ZB.1.2]]).
+  - classic: |
+      The circumference is 2,430,000 *li*.
+  - zhao: |
+      Three times the diameter is the circumference.
+  - classic: |
+      From Zhou south to the illuminated region is 302,000 *li*.
+    highlight: [Ss]
+    modern: $405{,}000 - 103{,}000 = 302{,}000$ *li*.
+  - zhao: |
+      Subtract the 103,000 *li* from Zhou to the pole from the radius.
+  - classic: |
+      From Zhou north to the illuminated region is 508,000 *li*.
+    highlight: [Ns]
+    modern: $405{,}000 + 103{,}000 = 508{,}000$ *li*.
+  - zhao: |
+      Add the 103,000 *li* from Zhou to the pole to the radius.
+  - classic: |
+      East and west, 391,683½ *li* each.
+    highlight: [WxEx, PEx]
+    modern: $\sqrt{405{,}000^2 - 103{,}000^2} = 391{,}683.5$ *li*.
+    cites: [I.47, III.3]
+  - zhao: |
+      The method: take the diameter, 810,000 *li*, as the hypotenuse, double the distance from Zhou
+      [to the pole], 206,000 *li*, as the *gou*, and find the *gu*: 783,367 *li* and a fraction. Halve it:
+      the east and west numbers.
+    modern: $\sqrt{810{,}000^2 - 206{,}000^2} = 783{,}367.0$; half is $391{,}683.5$ *li*.
+  - classic: |
+      Zhou is 103,000 *li* south of the centre of heaven, so its east–west [line] is shorter than the
+      central diameter by 26,632 *li* and a fraction.
+    hint: |
+      The chord through Zhou is shorter than the diameter through the pole: $810{,}000 - 783{,}367 =
+      26{,}633$ *li*.
+    dispute: |
+      Gutenberg reads 東西短中徑, "east–west shorter than the central diameter"; the Sibu Congkan has
+      東西矩中徑, apparently a misprint.
+  - zhao: |
+      To find the 26,632 *li* and a fraction by which [it falls short of] the central diameter: set out
+      810,000 *li*, subtract Zhou's east–west [extent] of 783,367 *li* and a fraction, and the remainder is
+      the number.
+  - classic: |
+      North of Zhou, 508,000 *li*; [the sun] at the winter solstice, 135,000 *li*; the winter-solstice path
+      diameter, 476,000 *li*, circumference 1,428,000 *li*. The sun's light at the four extremes, due east and
+      west of Zhou, [reaches] 391,683 *li* and a fraction each.
+    hint: A recapitulation of the main numbers.
+  - classic: |
+      This is the method of the square and the circle.
+    hint: |
+      All the numbers come from circles (the sun's paths) and right-angled triangles (the "square"),
+      as Shang Gao promised in [[ZB.1.2]].
+  - zhao: |
+      This [is how] the myriad things go round and the circle and square are used; the master craftsman
+      sets up the compass and the trysquare for his work. Sometimes one cuts down the square to make a
+      circle, sometimes breaks up a circle to make a square. A circle within a square is called a
+      "circle-square"; a square within a circle is called a "square-circle".
+    hint: |
+      The first characters of this note are illegible in the scan. The terms "circle-square" (圓方) and
+      "square-circle" (方圓) recur in later Chinese geometry for inscribed and circumscribed figures.

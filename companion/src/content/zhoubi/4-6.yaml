@@ -1,0 +1,96 @@
+id: ZB.4.6
+title: A circle of 365¼ degrees laid out on the ground
+paraphrase: |
+  To measure the lunar lodges, lay out on level ground a circle 121 *chi* 7 *cun* 5 *fen* across.
+  With $\pi = 3$ its circumference is $365\tfrac14$ *chi*, so that one *chi* of the rim is one degree
+  of heaven. Fix the north–south and east–west diameters; they quarter the circle into arcs of
+  $91\tfrac{5}{16}$ degrees.
+
+diagram:
+  width: 300
+  height: 300
+  elements:
+    - "O;point;fixed;150,150;black;black"
+    - "K;point;fixed;270,150;0;0"
+    - "rim;circle;radius;O,K;0;0;#8a6d12;#f8f2e1"
+    - "N;point;fixed;150,30;black;black"
+    - "S;point;fixed;150,270;black;black"
+    - "E;point;fixed;270,150;black;black"
+    - "W;point;fixed;30,150;black;black"
+    - "NS;line;connect;N,S;0;0;#33587a"
+    - "WE;line;connect;W,E;0;0;#9a3b2b"
+    - "angO;sector;angleMarker;O,E,N,14;0;0;black;0"
+  aliases:
+    jing: NS
+    wei: WE
+  given: [O, rim, N, S, E, W, NS, WE, angO]
+  caption: |
+    The circle on level ground, seen from above: diameter 121.75 *chi*, circumference 365.25 *chi*, one
+    *chi* to a degree. The north–south "warp" {NS} and east–west "weft" {WE} cross at the centre {O},
+    where the central gnomon stands, and cut the rim into four arcs of $91\tfrac5{16}$ degrees.
+
+steps:
+  - classic: |
+      To set up the twenty-eight lodges, use the method of the degrees of the circuit of heaven.
+  - zhao: |
+      *Yi* means "use". To lay out the degrees of the twenty-eight lodges, use the circuit of heaven.
+  - classic: |
+      The method: face away from true south,
+  - zhao: |
+      *Bei* means "back". True south is the true north–south [line] of the two poles.
+    dispute: |
+      倍正南方 is obscure; Zhao reads 倍 as 背, "turn the back to". Others take it as "double", i.e. extend
+      the meridian line in both directions.
+  - classic: |
+      and fix it with the true *gou*.
+    hint: The sunrise–sunset shadow method of [[ZB.4.5]].
+  - zhao: |
+      The method of the true *gou*: when the sun rises and sets, mark its shadows; the line joining the two
+      ends of the shadow is true east–west; fold it in the middle and point to the gnomon: true north–south.
+    highlight: [NS, WE]
+    cites: [I.10]
+  - classic: |
+      Then [take] level ground 21 *bu* in diameter and 63 *bu* in circumference; make it level with the
+      trysquare and water.
+    hint: |
+      A *bu* 步 is 6 *chi*, so the levelled ground is 126 *chi* across, a little larger than the circle to
+      be drawn on it. "Level with water" means levelling by a water surface.
+  - zhao: |
+      As in fixing the level of water; so it says "make it level with the trysquare and water".
+  - classic: |
+      Then the [circle] laid out is 121 *chi* 7 *cun* 5 *fen* in diameter; tripling it gives $365\tfrac14$
+      *chi*,
+    highlight: [rim]
+    modern: $3 \times 121.75 = 365.25$ *chi*.
+    explain:
+      did: |
+        The diameter is chosen backwards from the circumference: to get 365¼ *chi* round with $\pi = 3$,
+        the diameter must be $365\tfrac14 \div 3 = 121\tfrac{3}{4}$ *chi*.
+      implicit: |
+        With the true $\pi$ the circumference would be about 382.5 *chi*, so each "degree" on the rim would
+        really be about 1.05 *chi*. Since every degree is equally long, the error does not affect the
+        measurements.
+  - zhao: |
+      Diameter 121 *chi* 7 *cun* 5 *fen*, circumference 365 *chi* 2 *cun* 5 *fen*, i.e. the quarter. Some
+      say 120 *chi*, giving the round number.
+  - classic: |
+      to correspond to the circuit of heaven of $365\tfrac14$ degrees. Divide it carefully, without the
+      slightest error.
+    dispute: Gutenberg 纖微 and the Sibu Congkan 纎㣲 are variant forms of the same words.
+  - zhao: |
+      The circumference on the level ground is divided so that one *chi* is one degree and 2 *cun* 5 *fen* is a
+      quarter-degree. "Divide carefully" means not allowing even the smallest error. *Xianwei* means fine
+      divisions.
+  - classic: |
+      Once the degrees are fixed, align the warp and weft, and [divide into] quarters, each of
+      $91\tfrac{5}{16}$ degrees.
+    highlight: [NS, WE, angO]
+    modern: $365\tfrac14 \div 4 = 91\tfrac{5}{16}$.
+  - zhao: |
+      North–south is the warp, east–west the weft. *Du* also means to line up. Take a quarter of the
+      circuit of heaven: multiply the denominator by four and divide by it.
+    modern: $\dfrac{1461/4}{4} = \dfrac{1461}{16} = 91\tfrac{5}{16}$.
+  - classic: |
+      Then the circle is fixed and true.
+  - zhao: |
+      The circle made is divided into the degrees of heaven, and also into quarters; all are fixed and true.

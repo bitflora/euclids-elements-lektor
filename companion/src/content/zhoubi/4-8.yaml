@@ -1,0 +1,119 @@
+id: ZB.4.8
+title: Where the sun rises and sets among the lodges
+paraphrase: |
+  Lay the 28 lodges round the circle by their measured widths, oriented with the sky: when Dongjing is
+  on the meridian at midnight, Qianniu is due north. The circle is also divided into the twelve
+  "branches" (directions) of $30\tfrac{7}{16}$ degrees. At a solstice sunrise, place a movable rod on
+  the rim so that it, the central gnomon and the gnomon's shadow are in line. The rod's position
+  shows the lodge and degree in which the sun rises. Sunset is found the same way.
+
+diagram:
+  width: 320
+  height: 320
+  elements:
+    - "O;point;fixed;160,160;black;black"
+    - "K;point;fixed;300,160;0;0"
+    - "rim;circle;radius;O,K;0;0;#8a6d12;0"
+    - "b0;point;fixed;160,20;0;0"
+    - "b6;point;fixed;160,300;0;0"
+    - "b1;point;fixed;230,38.8;0;0"
+    - "b7;point;fixed;90,281.2;0;0"
+    - "b2;point;fixed;281.2,90;0;0"
+    - "b8;point;fixed;38.8,230;0;0"
+    - "b3;point;fixed;300,160;0;0"
+    - "b9;point;fixed;20,160;0;0"
+    - "b4;point;fixed;281.2,230;0;0"
+    - "b10;point;fixed;38.8,90;0;0"
+    - "b5;point;fixed;230,281.2;0;0"
+    - "b11;point;fixed;90,38.8;0;0"
+    - "s0;line;connect;b0,b6;0;0;#33587a"
+    - "s1;line;connect;b1,b7;0;0;#cbc3b2"
+    - "s2;line;connect;b2,b8;0;0;#cbc3b2"
+    - "s3;line;connect;b3,b9;0;0;#9a3b2b"
+    - "s4;line;connect;b4,b10;0;0;#cbc3b2"
+    - "s5;line;connect;b5,b11;0;0;#cbc3b2"
+    - "R;point;fixed;281.2,90;black;#d97706"
+    - "T;point;fixed;108,190;black;black"
+    - "RT;line;connect;R,T;0;0;#d97706"
+  aliases:
+    OR: RT
+  given: [O, rim, s0, s1, s2, s3, s4, s5, R, T, RT]
+  caption: |
+    Seen from above, north at the top. The rim is divided into twelve branches of $30\tfrac7{16}$ degrees
+    (thin spokes): *zi* at the north, *wu* at the south, *mao* at the east, *you* at the west. At
+    sunrise a movable rod {R} is set on the rim in line with the central gnomon {O} and the tip {T} of its
+    shadow. The lodge marked on the rim at {R} is where the sun rises.
+
+steps:
+  - classic: |
+      Where the sun sets is also fixed with this circle.
+  - zhao: |
+      The same as the circle for sighting the stars.
+  - classic: |
+      To know [where] the sun rises and sets,
+  - zhao: |
+      Lay out the lodges of the east, west, south and north faces of the twenty-eight lodges, each
+      corresponding to its direction; set up a gnomon and sight, to know in which lodge the sun rises and
+      sets, and how many degrees there are from rising to setting.
+  - classic: |
+      lay out the twenty-eight lodges according to the $365\tfrac14$ degrees.
+    dispute: This sentence is in the Sibu Congkan but not in the Gutenberg text.
+  - zhao: |
+      Lay out the twenty-eight lodges by the degrees of the circle on the ground, so that the lodges of the
+      four faces each correspond to their direction.
+  - classic: |
+      When Dongjing is on the meridian at midnight, the beginning of Qianniu faces the middle of *zi* [north].
+    highlight: [s0]
+  - zhao: |
+      Dongjing and Qianniu are opposite lodges: when Dongjing faces *wu* [south], Qianniu faces *zi*.
+  - classic: |
+      Dongjing [then] lies $30\tfrac{7}{16}$ degrees west of the central gnomon, facing the middle of *wei*;
+      and the beginning of Qianniu should face the middle of *chou*.
+    highlight: [s1]
+    modern: $365\tfrac14 \div 12 = 30\tfrac{7}{16}$ degrees per branch.
+  - zhao: |
+      The degrees of the circuit of heaven are divided into twelve positions, each of the twelve branches
+      occupying one, corresponding to the twelve months: from *wu* to *wei* is $30\tfrac{7}{16}$ degrees. *Wei*
+      and *chou* are opposite, and the method of dividing where Dongjing and Qianniu lie has been set out
+      above.
+  - classic: |
+      Then heaven and earth agree.
+  - zhao: |
+      *Xie* means to agree. Place Dongjing and Qianniu opposite each other at *chou* and *wei*; then the lodges
+      of heaven agree with the circle drawn on the ground.
+  - classic: |
+      Then lay out the twenty-eight lodges round the circle.
+  - zhao: |
+      From where Dongjing and Qianniu lie, lay out the twelve positions.
+  - classic: |
+      When they are laid out and fixed, set up a true gnomon again at the centre of the circle of degrees.
+    highlight: [O]
+  - zhao: |
+      The centre of the circle of degrees is the crossing of the warp and weft.
+  - classic: |
+      At the winter and summer solstices, watch for the sun as it first rises; set up a movable rod on the
+      degree [marks] and sight the shadow of the central gnomon.
+    highlight: [R, RT]
+  - zhao: |
+      On the degree where the sun rises, set up a movable rod; in each case sight the shadow of the central
+      gnomon. The reason for this: facing the glare, one cannot look at the sun again, but this way one can
+      observe it.
+    hint: |
+      One cannot sight the sun directly. Instead the rod is placed so that it lines up with the central
+      gnomon's shadow, which points directly away from the sun.
+  - classic: |
+      When the shadow is aligned, [the rod marks] the lodge and degree where the sun rises.
+    highlight: [RT]
+  - zhao: |
+      The movable rod, the central gnomon and the shadow are aligned; beneath the movable rod is the lodge
+      and degree where the sun rises.
+  - classic: |
+      Sunset is done the same way.
+  - zhao: |
+      This is found by the method for sunrise.
+
+commentary: |
+  The method treats a direction on the horizon as if it were a position among the stars. For the
+  equinoxes and solstices, where the sun rises along the horizon differs from where it lies among
+  the lodges; the Zhou bi does not distinguish the two. The procedure measures directions on a
+  flat ground circle, and fits the classic's flat-earth astronomy.

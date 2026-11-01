@@ -10,9 +10,13 @@ export interface Settings {
   /** Show Heath's bracketed marginal references in Euclid's text. */
   heathRefs: boolean;
   theme: "auto" | "light" | "dark";
+  /** Zhou bi: show Zhao Shuang's commentary between the passages of the classic. */
+  zhao: boolean;
+  /** Zhou bi: show the Chinese beside the translation. */
+  chinese: boolean;
 }
 
-const DEFAULTS: Settings = { buildFigure: true, view: "steps", heathRefs: true, theme: "auto" };
+const DEFAULTS: Settings = { buildFigure: true, view: "steps", heathRefs: true, theme: "auto", zhao: true, chinese: true };
 const KEY = "euclid-companion:settings";
 
 function read<T>(key: string, fallback: T): T {

@@ -1,0 +1,416 @@
+id: ZB.1.4
+title: Zhao Shuang's hypotenuse diagram — a proof of the gou-gu theorem
+paraphrase: |
+  Zhao Shuang's short essay on the "gou-gu, circle and square diagrams" (勾股圓方圖). It states the
+  theorem in general, $a^2 + b^2 = c^2$, and proves it by a figure. In the *hypotenuse diagram*
+  (弦圖), the square on the hypotenuse is cut into four red right triangles, each half of the
+  rectangle $a \times b$, and a yellow central square on the difference $b - a$. So
+  $c^2 = 2ab + (b-a)^2$, and since $2ab + (b-a)^2 = a^2 + b^2$, the theorem follows. Zhao then
+  lists, with figures, rules for finding the sides of a right triangle from other data: sums,
+  differences, and the "trysquare" (gnomon) left when one square is cut from another.
+
+parallels:
+  - id: I.47
+    relation: same
+    note: |
+      The same theorem, proved differently. Euclid divides the square on the hypotenuse into two
+      rectangles and shows each equal to a square on a leg, by congruent triangles (I.4) and
+      parallelograms on the same base (I.41). Zhao cuts the hypotenuse square into four triangles
+      and a square, and rearranges them.
+  - id: II.7
+    relation: same
+    note: |
+      Zhao's step from $2ab + (b-a)^2$ to $a^2 + b^2$ is II.7: the square on a whole line and the
+      square on one part together equal twice the rectangle of the whole and that part, plus the
+      square on the remainder.
+  - id: II.6
+    relation: same
+    note: |
+      The "trysquare of the gou area": the square on the hypotenuse less the square on the *gu*
+      is a gnomon equal to a rectangle of breadth $c - b$ and length $c + b$. In Euclid's terms,
+      $(c+b)(c-b) + b^2 = c^2$, which is II.6 (II.5 in another arrangement).
+  - id: II.9
+    relation: same
+    note: |
+      "Twice the hypotenuse area fills the large outer square with a yellow square to spare":
+      $2(a^2 + b^2) = (a+b)^2 + (b-a)^2$. Euclid's II.9 and II.10 prove exactly this.
+  - id: II.8
+    relation: related
+    note: |
+      Zhao's last rule finds two lines from their sum and their product, using $(x+y)^2 - 4xy = (x-y)^2$.
+      II.8 is this identity: four times the rectangle plus the square on the difference equals the
+      square on the sum.
+
+diagram:
+  width: 300
+  height: 300
+  elements:
+    - "E;point;fixed;30,30;black;0"
+    - "F;point;fixed;268,30;black;0"
+    - "G;point;fixed;268,268;black;0"
+    - "H;point;fixed;30,268;black;0"
+    - "A;point;fixed;166,30;black;black"
+    - "B;point;fixed;268,166;black;black"
+    - "C;point;fixed;132,268;black;black"
+    - "D;point;fixed;30,132;black;black"
+    - "P;point;fixed;132,132;black;0"
+    - "Q;point;fixed;166,132;black;0"
+    - "R;point;fixed;166,166;black;0"
+    - "S;point;fixed;132,166;black;0"
+    - "big;polygon;quadrilateral;E,F,G,H;0;0;#6b6253;0"
+    - "out1;polygon;triangle;E,A,D;0;0;#3e6b5a;#cfe3d8"
+    - "out2;polygon;triangle;F,B,A;0;0;#3e6b5a;#cfe3d8"
+    - "out3;polygon;triangle;G,C,B;0;0;#3e6b5a;#cfe3d8"
+    - "out4;polygon;triangle;H,D,C;0;0;#3e6b5a;#cfe3d8"
+    - "red1;polygon;triangle;D,A,Q;0;0;#9a3b2b;#f0c1b4"
+    - "red2;polygon;triangle;A,B,R;0;0;#9a3b2b;#f0c1b4"
+    - "red3;polygon;triangle;B,C,S;0;0;#9a3b2b;#f0c1b4"
+    - "red4;polygon;triangle;C,D,P;0;0;#9a3b2b;#f0c1b4"
+    - "yellow;polygon;quadrilateral;P,Q,R,S;0;0;#8a6d12;#f5df8a"
+    - "hyp;polygon;quadrilateral;A,B,C,D;0;0;0;0"
+    - "DA;line;connect;D,A;0;0;black"
+    - "AB;line;connect;A,B;0;0;black"
+    - "BC;line;connect;B,C;0;0;black"
+    - "CD;line;connect;C,D;0;0;black"
+    - "QA;line;connect;Q,A;0;0;black"
+    - "RB;line;connect;R,B;0;0;black"
+    - "SC;line;connect;S,C;0;0;black"
+    - "PD;line;connect;P,D;0;0;black"
+    - "DQ;line;connect;D,Q;0;0;black"
+    - "AR;line;connect;A,R;0;0;black"
+    - "BS;line;connect;B,S;0;0;black"
+    - "CP;line;connect;C,P;0;0;black"
+    - "PQ;line;connect;P,Q;0;0;#8a6d12"
+  aliases:
+    DP: PD
+    ABCD: hyp
+    PQRS: yellow
+    EFGH: big
+  equal:
+    - [DA, AB, BC, CD]
+    - [QA, RB, SC, PD]
+    - [DQ, AR, BS, CP]
+  given: [A, B, C, D, P, Q, R, S, red1, red2, red3, red4, yellow, DA, AB, BC, CD, QA, RB, SC, PD, DQ, AR, BS, CP]
+  caption: |
+    The hypotenuse diagram, redrawn after the 1213 edition, with *gou* 3, *gu* 4, hypotenuse 5. The
+    square {ABCD} on the hypotenuse holds four red triangles (朱實, "red areas") and the yellow square
+    {PQRS} (中黃實, "central yellow area") on the difference of the legs. Outside it, four green
+    triangles complete the large square {EFGH} on the sum of the legs. Equal lines share a colour:
+    the hypotenuses, the *gou*s, the *gu*s.
+
+figures:
+  - width: 400
+    height: 210
+    elements:
+      - "LA;point;fixed;30,30;0;0"
+      - "LB;point;fixed;180,30;0;0"
+      - "LC;point;fixed;180,180;0;0"
+      - "LD;point;fixed;30,180;0;0"
+      - "K1;point;fixed;30,60;0;0"
+      - "K2;point;fixed;150,60;0;0"
+      - "K3;point;fixed;150,180;0;0"
+      - "N1;point;fixed;150,30;0;0"
+      - "N2;point;fixed;180,60;0;0"
+      - "gnomonA;polygon;hexagon;LA,LB,LC,K3,K2,K1;0;0;#3e6b5a;#cfe3d8"
+      - "squareB;polygon;quadrilateral;K1,K2,K3,LD;0;0;#8a6d12;#f5df8a"
+      - "cornerA;polygon;quadrilateral;N1,LB,N2,K2;0;0;#3e6b5a;#9cc5b0"
+      - "RA;point;fixed;220,30;0;0"
+      - "RB;point;fixed;370,30;0;0"
+      - "RC;point;fixed;370,180;0;0"
+      - "RD;point;fixed;220,180;0;0"
+      - "M1;point;fixed;220,90;0;0"
+      - "M2;point;fixed;310,90;0;0"
+      - "M3;point;fixed;310,180;0;0"
+      - "M4;point;fixed;310,30;0;0"
+      - "M5;point;fixed;370,90;0;0"
+      - "gnomonB;polygon;hexagon;RA,RB,RC,M3,M2,M1;0;0;#3e6b5a;#cfe3d8"
+      - "squareA;polygon;quadrilateral;M1,M2,M3,RD;0;0;#8a6d12;#f5df8a"
+      - "cornerB;polygon;quadrilateral;M4,RB,M5,M2;0;0;#3e6b5a;#9cc5b0"
+    given: [gnomonA, squareB, cornerA, gnomonB, squareA, cornerB]
+    caption: |
+      The two trysquares (gnomons), after Zhao's left and right figures, each in a square on the
+      hypotenuse (5 × 5). Left: the square on the *gu* (4 × 4, yellow) sits in the corner; the green
+      gnomon around it is the area of the *gou*, $9 = 1 \times 9$, of breadth $c - b = 1$. Right: the
+      square on the *gou* (3 × 3) in the corner; the gnomon is the area of the *gu*,
+      $16 = 2 \times 8$, of breadth $c - a = 2$. The darker squares are the gnomons' corners.
+
+steps:
+  - zhao: |
+      Zhao Junqing says: multiply the *gou* and the *gu* each by itself, and add them: this makes the
+      area of the hypotenuse. Extract its square root, and that is the hypotenuse.
+    zh: 趙君卿曰勾股各自乘併之爲弦實開方除之即弦也
+    hint: |
+      The general theorem: the squares on the two legs together make the square on the hypotenuse.
+    modern: $a^2 + b^2 = c^2,\qquad c = \sqrt{a^2 + b^2}.$
+    explain:
+      did: |
+        Zhao states the rule generally, not only for 3, 4, 5. "Area" (*shi* 實, literally "the
+        filling") is the area of a square or rectangle. "The hypotenuse area" is the square on the
+        hypotenuse.
+      follows: The proof is the next sentence, read with the figure.
+    adds: [A, B, C, D]
+    highlight: [DA, AB, BC, CD]
+
+  - zhao: |
+      According to the hypotenuse diagram, one may also multiply the *gou* by the *gu* to make two red
+      areas; doubling this makes four red areas. Multiply the difference of *gou* and *gu* by itself to
+      make the central yellow area. Adding the difference area, one again forms the area of the
+      hypotenuse.
+    zh: 案弦圖又可以勾股相乘爲朱實二倍之爲朱實四以勾股之差自相乘爲中黃實加差實亦成弦實
+    hint: |
+      The proof. The square {ABCD} on the hypotenuse consists of four red right triangles and the
+      yellow square {PQRS}: $c^2 = 2ab + (b - a)^2$.
+    highlight: [PQ]
+    explain:
+      did: |
+        The product $ab$ is a rectangle with sides *gou* and *gu*; each red triangle is half of one, so
+        $ab$ is "two red areas" and $2ab$ "four red areas". The yellow square has side
+        $b - a$, e.g. {PQ} $= {DQ} - {DP}$ $= 4 - 3 = 1$.
+      fact: |
+        The four triangles, each with legs *gou* and *gu*, are set round the square so that their
+        hypotenuses form its sides and the space left in the middle is a square of side $b - a$.
+      follows: |
+        The pieces fill the hypotenuse square exactly, so its area is the sum of theirs. For a
+        reader who rearranges the pieces, the same four triangles and the yellow square also make the
+        squares on the *gou* and the *gu*, set side by side. So $c^2 = a^2 + b^2$.
+      implicit: |
+        Zhao gives the dissection of $c^2$, but he does not say in words that the pieces also make
+        $a^2 + b^2$. That is left to the figure (or to the reader's arithmetic:
+        $2ab + (b-a)^2 = a^2 + b^2$). Nor does he show that the figure fits together: that the four
+        triangles meet at the corners of a true square and leave a true square in the middle.
+        Euclid's proof has none of these gaps.
+    modern: |
+      $$c^2 = 4\cdot\tfrac12 ab + (b-a)^2 = 2ab + b^2 - 2ab + a^2 = a^2 + b^2.$$
+      With 3, 4, 5: $4 \cdot 6 + 1 = 25$.
+    cites: [I.47, II.7]
+
+  - zhao: |
+      Subtract the difference area from the hypotenuse area and halve the remainder; taking the difference
+      as the "joined divisor", extract the square root, and you get back the *gou*. Add the difference to
+      the *gou*, and that is the *gu*.
+    zh: 以差實減弦實半其餘以差爲從法開方除之復得勾矣加差於勾即股
+    hint: |
+      Given the hypotenuse and the difference of the legs, find the legs. This is a quadratic equation,
+      solved by the square-root algorithm with a "joined divisor".
+    explain:
+      fact: |
+        Take away the yellow square: the four red triangles, $c^2 - (b-a)^2 = 2ab$, remain. Half of that
+        is $ab = a(a + d)$, where $d = b - a$. "Extracting the root with the difference as joined
+        divisor" (帶從開方) is the Chinese algorithm for $x^2 + dx = N$, a square root with a linear term.
+      follows: |
+        With $c = 5$, $d = 1$: $(25 - 1)/2 = 12 = a(a+1)$, so $a = 3$ and $b = 3 + 1 = 4$.
+    modern: $a^2 + d\,a = \dfrac{c^2 - d^2}{2},\qquad b = a + d.$
+    cites: [II.6]
+    dispute: |
+      Zhen Luan (6th century) misread the difference area as 9 here. Li Chunfeng (7th century)
+      corrected him: "the difference area is 1".
+
+  - zhao: |
+      In general, the areas of the *gou* and *gu* added together form the area of the hypotenuse.
+    zh: 凡并勾股之實即成弦實
+    hint: The theorem again, as the starting point for the rules that follow.
+    modern: $a^2 + b^2 = c^2$.
+
+  - zhao: |
+      Whether as a trysquare on the outside or a square on the inside, the shapes differ but the
+      quantities are equal; the bodies are unlike but the numbers agree.
+    zh: 或矩於内或方於外形詭而量均體殊而數齊
+    hint: |
+      A principle: an L-shaped region (a "trysquare", i.e. a gnomon) can have the same area as a
+      square. The next rules use this.
+    figure: 1
+    highlight: [gnomonA, gnomonB]
+    dispute: |
+      The Sibu Congkan reads 或矩於内或方於外, "trysquare inside, square outside". The Siku Quanshu
+      editors swapped the two (矩於外…方於内), noting that "all editions have *outside* and
+      *inside* interchanged". The swapped reading fits the figures: the gnomon wraps round the outside
+      of the smaller square.
+
+  - zhao: |
+      The trysquare of the *gou* area has the difference of *gu* and hypotenuse as its breadth and the
+      sum of *gu* and hypotenuse as its length, and the area of the *gu* is the square inside it.
+    zh: 勾實之矩以股弦差爲廣股弦并爲袤而股實方其裏
+    hint: |
+      Cut the square on the *gu* from the square on the hypotenuse. The L-shaped remainder equals the
+      square on the *gou*, and unfolds into a rectangle $(c - b) \times (c + b)$.
+    figure: 1
+    highlight: [gnomonA, squareB]
+    explain:
+      did: |
+        In the left figure the yellow 4 × 4 square on the *gu* sits in the corner of the 5 × 5 square on
+        the hypotenuse. The green gnomon round it has width $c - b = 1$; straightened out, it is a strip
+        1 wide and $c + b = 9$ long. Its area, 9, is the square on the *gou*.
+      fact: $c^2 - b^2 = (c - b)(c + b)$.
+    modern: $a^2 = c^2 - b^2 = (c-b)(c+b),\qquad 9 = 1 \times 9.$
+    cites: [II.6]
+
+  - zhao: |
+      Subtract the area of the trysquare, the *gou* area, from the hypotenuse area, and extract the root
+      of the remainder: that is the *gu*.
+    zh: 減矩勾之實於弦實開其餘即股
+    figure: 1
+    highlight: [squareB]
+    modern: $b = \sqrt{c^2 - a^2}$.
+
+  - zhao: |
+      Place twice the *gu* along the two sides as the joined divisor, and extract the root of the
+      trysquare's *gou* area together with its corner: that is the difference of *gu* and hypotenuse. Add
+      the *gu*, and that is the hypotenuse.
+    zh: 倍股在兩邊爲從法開矩勾之角即股弦差加股爲弦
+    hint: |
+      Given *gou* and *gu*, find the width of the gnomon directly. Its two arms are each *gu* long,
+      and there is a small square at the corner, so $a^2 = 2b\,d + d^2$ with $d = c - b$.
+    figure: 1
+    highlight: [gnomonA, cornerA]
+    modern: $d^2 + 2b\,d = a^2,\quad c = b + d.\qquad (d^2 + 8d = 9 \Rightarrow d = 1,\ c = 5.)$
+
+  - zhao: |
+      Divide the *gou* area by the difference and you get the sum of *gu* and hypotenuse; divide the
+      *gou* area by the sum and you also get the difference of *gu* and hypotenuse.
+    zh: 以差除勾實得股弦并以并除勾實亦得股弦差
+    figure: 1
+    highlight: [gnomonA]
+    modern: $\dfrac{a^2}{c - b} = c + b,\qquad \dfrac{a^2}{c + b} = c - b.$
+
+  - zhao: |
+      Let the sum be multiplied by itself, add the *gou* area, and make this the dividend; double the sum
+      as the divisor; the result is again the hypotenuse. Subtract the *gou* area from the sum multiplied
+      by itself and divide as before: that is the *gu*.
+    zh: 令并自乘與勾實爲實倍并爲法所得亦弦勾實減并自乘如法爲股
+    hint: Given the *gou* and the sum of *gu* and hypotenuse, find each of them.
+    figure: 1
+    modern: |
+      With $s = c + b$:
+      $$c = \frac{s^2 + a^2}{2s},\qquad b = \frac{s^2 - a^2}{2s}.$$
+      ($s = 9$: $c = 90/18 = 5$, $b = 72/18 = 4$.)
+
+  - zhao: |
+      The trysquare of the *gu* area has the difference of *gou* and hypotenuse as its breadth and the sum
+      of *gou* and hypotenuse as its length, and the *gou* area is the square inside it. Subtract the area
+      of the trysquare, the *gu* area, from the hypotenuse area, and extract the root of the remainder:
+      that is the *gou*. Place twice the *gou* along the two sides as joined divisor, extract the root of
+      the trysquare's *gu* area together with its corner: that is the difference of *gou* and hypotenuse;
+      add the *gou* and that is the hypotenuse. Divide the *gu* area by the difference and you get the sum
+      of *gou* and hypotenuse; divide the *gu* area by the sum and you get the difference of *gou* and
+      hypotenuse. Let the sum be multiplied by itself, add the *gu* area, and make this the dividend;
+      double the sum as divisor; the result is again the hypotenuse. Subtract the *gu* area from the sum
+      multiplied by itself and divide as before: that is the *gou*.
+    zh: 股實之矩以勾股差爲廣勾弦并爲袤而勾實方其裏減矩股之實於弦實開其餘即勾倍勾在兩邊爲從法開矩股之角即勾弦差加勾爲弦以差除股實得勾弦并以并除股實得勾弦差令并自乘與股實爲實倍并爲法所得亦弦股實減并自乘如法爲勾
+    hint: The same five rules with *gou* and *gu* exchanged, read from the right-hand figure.
+    figure: 1
+    highlight: [gnomonB, squareA, cornerB]
+    modern: |
+      $b^2 = (c-a)(c+a)$; $16 = 2 \times 8$. With $d = c - a$: $d^2 + 2a\,d = b^2$, and with
+      $s = c + a$: $c = (s^2 + b^2)/2s$, $a = (s^2 - b^2)/2s$.
+    dispute: |
+      The text says the breadth is "the difference of *gou* and *gu*" (勾股差). It must be "the
+      difference of *gou* and hypotenuse" (勾弦差), as in the parallel sentence before and in the
+      figure. The translation corrects it.
+
+  - zhao: |
+      Multiply the two differences together, double, and extract the root. Increase the result by the
+      difference of *gu* and hypotenuse to get the *gou*; increase it by the difference of *gou* and
+      hypotenuse to get the *gu*; increase it by both differences to get the hypotenuse.
+    zh: 兩差相乘倍而開之所得以股弦差增之爲勾以勾弦差增之爲股兩差増之爲弦
+    hint: |
+      Given only the two differences $c - a$ and $c - b$, all three sides can be found.
+    modern: |
+      $$\sqrt{2(c-a)(c-b)} = a + b - c.$$
+      So $a = (a+b-c) + (c-b)$, $b = (a+b-c) + (c-a)$, $c = (a+b-c) + (c-a) + (c-b)$.
+      With 3, 4, 5: $\sqrt{2 \cdot 2 \cdot 1} = 2$; $2 + 1 = 3$, $2 + 2 = 4$, $2 + 2 + 1 = 5$.
+    explain:
+      fact: |
+        $(a + b - c)^2 = a^2 + b^2 + c^2 + 2ab - 2ac - 2bc$, and with $a^2 + b^2 = c^2$ this is
+        $2c^2 + 2ab - 2ac - 2bc = 2(c-a)(c-b)$.
+
+  - zhao: |
+      Double the hypotenuse area and set out the area of the difference of *gou* and *gu*, to display the
+      hypotenuse area. Examining it in the diagram: twice the hypotenuse area fills the large outer
+      square with a yellow area to spare. The excess yellow area is the area of the difference of *gou*
+      and *gu*. Subtract the difference area and extract the root of the remainder: you get the large
+      outer square. The side of the large square is the sum of *gou* and *gu*.
+    zh: 倍弦實列勾股差實見弦實者以圖考之倍弦實滿外大方而多黃實黃實之多即勾股差實以差實減之開其餘得外大方大方之面即勾股并也
+    hint: |
+      Back to the hypotenuse diagram. Two copies of the hypotenuse square (eight triangles and two
+      yellow squares) fill the large square {EFGH} on $a + b$ (eight triangles and one yellow
+      square), with one yellow square over.
+    figure: 0
+    adds: [E, F, G, H, big, out1, out2, out3, out4]
+    highlight: [big]
+    explain:
+      did: |
+        The large square {EFGH} has side $a + b = 7$. It consists of the hypotenuse square plus four
+        green triangles, each equal to a red one. So it holds eight triangles and one yellow square,
+        while twice the hypotenuse square holds eight triangles and two yellow squares.
+    modern: $2c^2 = (a+b)^2 + (b-a)^2,\qquad 50 = 49 + 1.$
+    cites: [II.9, II.10]
+
+  - zhao: |
+      Let the sum be multiplied by itself, subtract it from twice the hypotenuse area, and extract the
+      root of the remainder: you get the central yellow square. The side of the yellow square is the
+      difference of *gou* and *gu*. Subtract the difference from the sum and halve: that is the *gou*.
+      Add the difference to the sum and halve: that is the *gu*.
+    zh: 令并自乘倍弦實乃減之開其餘得中黃方黃方之面即勾股差以差減并而半之爲勾加差於并而半之爲股
+    hint: Given the hypotenuse and the sum of the legs, find the legs.
+    highlight: [PQ]
+    modern: |
+      $b - a = \sqrt{2c^2 - (a+b)^2}$, then $a = \tfrac12\big((a+b) - (b-a)\big)$,
+      $b = \tfrac12\big((a+b) + (b-a)\big)$.
+    cites: [II.9]
+
+  - zhao: |
+      Take twice the hypotenuse as the sum of breadth and length. Let whichever of *gou* or *gu* is known be
+      multiplied by itself to make the area. Subtract four of these areas, and extract the root of the
+      remainder: the result is the difference. Subtract the difference from the sum and halve the
+      remainder: |
+        that is the breadth. Subtract the breadth from the hypotenuse: that is what was sought.
+    zh: 其倍弦爲廣袤合令勾股見者自乘爲其實四實以減之開其餘所得爲差以差減合半其餘爲廣減廣於弦即所求也
+    hint: |
+      Given the hypotenuse and one leg, find the other. The gnomon's rectangle, breadth $c - b$ and
+      length $c + b$, has a known sum, $2c$, and a known area, $a^2$.
+    figure: 1
+    highlight: [gnomonA]
+    explain:
+      fact: |
+        A rectangle's sides can be found from their sum and their product: the square on the sum, less
+        four times the product, is the square on the difference.
+      follows: |
+        With breadth $c - b$, length $c + b$: sum $2c$, product $a^2$. So
+        $(c+b) - (c-b) = \sqrt{4c^2 - 4a^2} = 2b$, breadth $= \tfrac12(2c - 2b) = c - b$, and the sought
+        leg is $c - (c - b) = b$.
+    modern: $(x + y)^2 - 4xy = (x - y)^2$, with $x + y = 2c$, $xy = a^2$.
+    cites: [II.8]
+
+  - zhao: |
+      Observe how they alternate as compass and trysquare, together turn over and back, share their parts
+      with one another, and each yields its result. Thus it marshals every kind and records the many
+      principles, threads the hidden and enters the minute, hooks up the deep and reaches the far. So [the
+      classic] says, "it regulates the myriad things as one wills."
+    hint: |
+      Zhao's conclusion, quoting the classic ([[ZB.1.7]]). One figure, read in different ways, gives
+      all the rules.
+
+commentary: |
+  **The proof.** The heart of the essay is the second sentence. Read with the hypotenuse diagram, it
+  is a dissection proof. The square on the hypotenuse is made of four right triangles and a square on the
+  difference of the legs, and the same pieces, rearranged, make the squares on the two legs. Chinese
+  historians call this the "out-in complementary principle" (出入相補): a figure cut up and reassembled
+  keeps its area. Liu Hui uses it explicitly in his commentary on the *Nine Chapters* (263 CE).
+
+  **Compared with Euclid.** Euclid's proof of I.47 never cuts or moves a figure. It compares areas
+  through congruent triangles and the theorem that a triangle is half the parallelogram on the same base
+  and between the same parallels (I.41). Rearranging pieces ("equidecomposition") is something Euclid
+  avoids. Zhao's proof is shorter and can be seen at a glance, but as written it relies on the figure.
+  Euclid states and proves everything the figure is trusted to show.
+
+  **The rest of the essay** is a catalogue of what Euclid's Book II proves in general: identities among
+  the squares and rectangles on sums and differences of lines. Each rule solves a practical
+  problem, finding the sides of a right triangle from other data. Euclid states the identities without
+  any problem attached.
+
+historical: |
+  The figures Zhao drew are lost. The 1213 printing of the Zhou bi has a hypotenuse diagram and two
+  figures labelled "left" and "right", but they are corrupt, and their reconstruction is disputed. The
+  figures here follow the usual modern reconstruction, which matches every sentence of the text. The
+  same configuration, four right triangles around a central square, is the logo of the 2002 International
+  Congress of Mathematicians in Beijing.

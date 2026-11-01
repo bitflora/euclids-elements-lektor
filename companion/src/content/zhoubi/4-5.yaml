@@ -1,0 +1,136 @@
+id: ZB.4.5
+title: Finding true north; no life beneath the pole
+paraphrase: |
+  A summary of the distances, then the polar region. The pole star's circle, the *xuanji*, is 23,000
+  *li* across, and nothing grows there. Because the summer sun is as far from the pole as the winter
+  sun is from Zhou, it is always winter at the pole, and there is ice in summer. Near the middle orbit
+  it is always summer, and grain ripens twice a year. Along the way the classic gives the standard
+  way to find north: mark the tips of the shadow at sunrise and sunset, join them, and bisect.
+
+parallels:
+  - id: I.10
+    relation: related
+    note: |
+      "Fold it in the middle": the midpoint of the line joining the sunrise and sunset shadow tips, which
+      Euclid constructs in I.10. Joined to the gnomon it is the north–south line, at right angles to the
+      east–west one.
+
+diagram:
+  width: 300
+  height: 260
+  elements:
+    - "O;point;fixed;150,220;black;black"
+    - "A;point;fixed;60,100;black;black"
+    - "B;point;fixed;240,100;black;black"
+    - "M;point;fixed;150,100;black;black"
+    - "OA;line;connect;O,A;0;0;#9a3b2b"
+    - "OB;line;connect;O,B;0;0;#9a3b2b"
+    - "AB;line;connect;A,B;0;0;#33587a"
+    - "OM;line;connect;O,M;0;0;#5b6b2f"
+    - "angM;sector;angleMarker;M,B,O,10;0;0;black;0"
+  equal:
+    - [OA, OB]
+  given: [O, A, B, M, OA, OB, AB, OM, angM]
+  caption: |
+    Seen from above. The gnomon stands at {O}. The tip of its shadow is marked at sunrise {A} and at
+    sunset {B}. {AB} runs east–west; its midpoint {M} joined to {O} runs north–south. (On the same day
+    the two shadows are equal, so {OM} is at right angles to {AB}.)
+
+steps:
+  - classic: |
+      Zhou is 103,000 *li* from the pole. The sun['s light reaches] 167,000 *li* from a person. At the summer
+      solstice [the sun] is 16,000 *li* from Zhou. The summer-solstice path is 238,000 *li* in diameter and
+      714,000 *li* in circumference. The equinox path is 357,000 *li* in diameter and 1,071,000 *li* in
+      circumference. The winter-solstice path is 476,000 *li* in diameter and 1,428,000 *li* in circumference.
+      The sun's light at the four extremes is 810,000 *li* [across], 2,430,000 *li* round. From Zhou south [to
+      its edge] is 302,000 *li*.
+    hint: A summary of the numbers of Part 2.
+    dispute: |
+      Gutenberg gives the winter-solstice diameter as 四十三萬六千里, "436,000"; the Sibu Congkan's
+      476,000 agrees with [[ZB.2.9]] and with the circumference given, and is followed.
+  - zhao: |
+      Calling the shadows "true *gou*" means that the shadows in the four directions are all true and fixed.
+  - classic: |
+      The *xuanji* is 23,000 *li* in diameter and 69,000 *li* in circumference. Here yang is cut off and yin
+      is manifest, so the myriad things do not grow.
+    hint: The polar region whose size was measured in [[ZB.4.4]].
+  - zhao: |
+      The equinoxes are called the middle of yin and yang, and [then] the sun's light reaches just to the
+      edge of the *xuanji*. This is "yang cut off and yin manifest", so the myriad things do not grow again.
+  - classic: |
+      The method: set up the true *gou* to fix it.
+  - zhao: |
+      The method of fixing the four directions.
+  - classic: |
+      When the sun first rises, set up a gnomon and mark its shadow; when the sun sets, mark its shadow
+      again. The line joining the two ends of the shadow is true east–west. Fold it in the middle and point
+      to the gnomon: that is true north–south. How do we know that the myriad things do not grow beneath
+      the pole?
+    hint: |
+      The sun rises and sets symmetrically about the meridian, so the shadows at sunrise and sunset are
+      mirror images; the bisector of the line joining their tips points north.
+    highlight: [AB, OM]
+    explain:
+      fact: |
+        $OA = OB$, so $O$ is on the perpendicular bisector of $AB$; that bisector passes through the
+        midpoint $M$. Hence $OM \perp AB$.
+      implicit: |
+        That the sunrise and sunset shadows are equal: true on any one day (ignoring the sun's slight
+        change of position during the day).
+    cites: [I.10]
+  - zhao: |
+      By what method do we know it?
+  - classic: |
+      At the winter solstice [the sun] is 119,000 *li* from [its] summer-solstice [position], and the myriad
+      things all die. At the summer solstice it is 119,000 *li* from the north pole. Hence we know that the
+      myriad things do not grow beneath the pole. To the left and right of the north pole, in summer there
+      is ice that does not melt.
+    hint: |
+      An argument by analogy. At Zhou it is winter when the sun is 119,000 *li* further off than in
+      summer. The pole is 119,000 *li* from even the summer sun, so it is always in winter.
+    dispute: |
+      Gutenberg breaks off at 不釋之, lacking the last character 冰 (氷), "ice", which the Sibu Congkan has.
+  - zhao: |
+      [Ice] that is frozen and does not thaw. Inferring from this: at the summer solstice, beneath the outer
+      orbit it is winter, and things should die. This makes winter and summer depend on distance from the
+      sun, not on the qi of yin and yang. I, Shuang, have my doubts about it.
+    hint: |
+      Zhao questions the classic. On the Zhou bi's own geometry, places beneath the outer orbit would
+      have winter at the summer solstice, which contradicts experience.
+  - classic: |
+      At the spring and autumn equinoxes the sun is on the middle orbit. From the spring equinox on, the sun
+      goes daily further north, 59,500 *li*, to the summer solstice; from the autumn equinox on, daily
+      further south, 59,500 *li*, to the winter solstice.
+    modern: $59{,}500 = \tfrac12 \cdot 119{,}000$ *li*.
+  - zhao: |
+      Together, the winter and summer solstices are 119,000 *li* apart. Going on, the sun daily goes north,
+      nearer [inside] the middle orbit; going on, daily south, farther from the middle orbit.
+  - classic: |
+      The middle orbit is 75,500 *li* from Zhou.
+    modern: $178{,}500 - 103{,}000 = 75{,}500$ *li*.
+  - zhao: |
+      The shadow is 7 *chi* 5 *cun* 5 *fen*.
+  - classic: |
+      To the left and right of the middle orbit, in winter there are plants that do not die, of the kinds
+      that grow in summer.
+  - zhao: |
+      This means that between the inner orbit and the outer orbit it is always summer. But as to how far that
+      extends, I, Shuang, have not heard of it before.
+  - classic: |
+      Here yang is manifest and yin faint, so the myriad things do not die, and the five grains ripen twice a
+      year.
+    hint: |
+      The tropics, described from theory: lands beneath the sun's orbits are always warm.
+  - zhao: |
+      Near the sun, yang is abundant, so the crops ripen twice.
+  - classic: |
+      In general, to the left and right of the north pole, things are born in the morning and harvested in
+      the evening.
+    hint: At the pole a "day" is six months, so plants sown in its "morning" ripen by its "evening".
+  - zhao: |
+      *Huo* 獲 should probably be 穫 "to harvest". It refers to winter-growing kinds such as whitlow-grass,
+      shepherd's purse and wheat. Beneath the north pole, from spring to autumn equinox is day, from autumn
+      to spring equinox is night; "things born in the morning and harvested in the evening" means sown in
+      spring and ripe in autumn. But what grows there is all of the kinds that grow in winter at Zhou, such as
+      shepherd's purse and wheat. "Left and right" means outside the 23,000 *li* of the *xuanji*. Here yang
+      is faint and yin manifest, so there are none of the summer-growing kinds.

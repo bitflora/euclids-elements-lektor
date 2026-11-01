@@ -1,0 +1,98 @@
+id: ZB.2.5
+title: The height of the sun and its slant distance
+paraphrase: |
+  With the shadow at 6 *chi*, the gnomon is 60,000 *li* from the point beneath the sun (one *cun*
+  per thousand *li*). The sun is then 80,000 *li* high, by the proportion gnomon : shadow = 8 : 6.
+  The slant distance to the sun is the hypotenuse of a right triangle with legs 60,000 and 80,000:
+  $\sqrt{60000^2 + 80000^2} = 100{,}000$ *li*.
+
+parallels:
+  - id: VI.4
+    relation: same
+    note: |
+      The small triangle of gnomon and shadow and the large triangle of the sun's height and its
+      distance have equal angles, so their sides are proportional (VI.4). The Zhou bi uses this
+      throughout without stating it; Zhao proves the two-gnomon version with areas in [[ZB.2.7]].
+  - id: I.47
+    relation: same
+    note: |
+      The slant distance is found by the *gou-gu* rule, $c = \sqrt{a^2 + b^2}$: Euclid's theorem
+      applied to the triangle of sun, the point beneath it, and the observer.
+
+diagram:
+  width: 300
+  height: 270
+  elements:
+    - "S;point;fixed;40,30;black;black"
+    - "X;point;fixed;40,230;black;black"
+    - "Z;point;fixed;160,230;black;black"
+    - "G;point;fixed;160,190;black;black"
+    - "W;point;fixed;190,230;black;black"
+    - "SX;line;connect;S,X;0;0;#33587a"
+    - "XW;line;connect;X,W;0;0;#9a3b2b"
+    - "SW;line;connect;S,W;0;0;#8a6d12"
+    - "ZG;line;connect;Z,G;0;0;black"
+    - "ZW;line;connect;Z,W;0;0;black"
+    - "angX;sector;angleMarker;X,W,S,12;0;0;black;0"
+    - "angZ;sector;angleMarker;Z,W,G,10;0;0;black;0"
+    - "angW;sector;angleMarker;W,S,X,22;0;0;black;0"
+  equal:
+    - [angX, angZ]
+  given: [S, X, Z, G, W, SX, XW, SW, ZG, ZW, angX, angZ, angW]
+  caption: |
+    Not to scale: the gnomon {ZG} and its shadow {ZW} are drawn enormous. The sun {S} stands
+    above the point {X}. The small triangle {G}{Z}{W} and the large triangle {S}{X}{W} share the
+    angle at {W} and both have a right angle, so ${SX} : {XW} = {ZG} : {ZW} = 8 : 6$. With {XW} =
+    60,000 *li*, the height {SX} is 80,000 *li* and the slant {SW} is 100,000 *li*.
+
+steps:
+  - classic: |
+      So take the *gou* as the head and the gnomon as the *gu*.
+    hint: |
+      The shadow comes first because it is what one measures; the gnomon's height is fixed.
+  - zhao: |
+      "Head" means beginning; *gu* [here] means end. The *gou* can regulate the ratio of things; the *gu*
+      can regulate the correctness of the *gou*. He wishes to make it the number for an overall view, and
+      to set up the foundation of refined principles. Clarity can reach all affairs, understanding can
+      reach the boundless. This is what is meant by "wisdom comes from the *gou*, and the *gou* comes from
+      the trysquare".
+    hint: Zhao quotes Shang Gao ([[ZB.1.7]]).
+  - classic: |
+      From the gnomon to [the point] beneath the sun is 60,000 *li*, and [there] the gnomon has no shadow.
+      From there up to the sun is 80,000 *li*.
+    hint: |
+      A 6-*chi* shadow is 60 *cun*, and at a thousand *li* per *cun* that is 60,000 *li* from the point
+      beneath the sun, where a gnomon casts no shadow. By similar triangles, the sun's height is
+      $60{,}000 \times \tfrac{8}{6} = 80{,}000$ *li*.
+    highlight: [XW, SX]
+    explain:
+      fact: |
+        The triangles {G}{Z}{W} (gnomon, shadow) and {S}{X}{W} (sun's height, ground distance) are
+        similar, so ${SX} = {XW} \cdot \dfrac{ZG}{ZW}$.
+      implicit: |
+        Strictly, the 60,000 *li* is from the point beneath the sun to the *tip of the shadow* {W}, not
+        to the gnomon; the difference (6 *chi*) is negligible. The text also takes for granted that
+        the "one *cun* per thousand *li*" rule holds all the way to the point beneath the sun.
+    modern: $H = 60{,}000 \times \dfrac{80}{60} = 80{,}000$ *li*.
+    cites: [VI.4]
+  - classic: |
+      If one seeks the slant [distance] to the sun, take [the distance to the point] beneath the sun as the
+      *gou* and the sun's height as the *gu*. Multiply *gou* and *gu* each by itself, add them, and extract
+      the square root: this gives the slant [distance] to the sun. From the gnomon slantwise to the sun's
+      position is 100,000 *li*.
+    hint: The *gou-gu* rule of [[ZB.1.3]] applied to the sun. It is the 6-8-10 triangle, magnified 10,000 times.
+    highlight: [SW]
+    modern: $\sqrt{60{,}000^2 + 80{,}000^2} = \sqrt{10^{10}} = 100{,}000$ *li*.
+    cites: [I.47]
+  - zhao: |
+      *Pang* is the ancient form of the character *xie*, "slant". The method to find the number: take the
+      60,000 *li* from the gnomon south to the point beneath the sun as *gou*, and the sun's height of
+      80,000 *li* as *gu*, and find the hypotenuse. Multiply *gou* and *gu* each by itself, add them, and
+      extract the square root: that is the slant [distance] to the sun's position.
+
+commentary: |
+  Chenzi's procedure is a piece of real mathematics built on a false premise. Given a flat earth, the
+  "one *cun* per thousand *li*" rule, and a measured shadow, the sun's height and distance follow by
+  similar triangles and the *gou-gu* rule. The data imply a sun 80,000 *li* (about 35,000 km) above a flat
+  earth. Greek astronomers, with a spherical earth, used the same kind of reasoning on
+  shadows to measure the size of the earth instead (Eratosthenes, about 240 BCE).

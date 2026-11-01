@@ -1,0 +1,97 @@
+id: ZB.2.12
+title: Due east and west of Zhou — a chord of the sun's circle
+paraphrase: |
+  How far east and west of Zhou does the sun pass? The line through Zhou running east–west is a
+  chord of the sun's daily circle. Its half is a leg of a right triangle whose hypotenuse is the
+  circle's radius and whose other leg is Zhou's distance from the pole. At the summer solstice the
+  sun passes 59,598½ *li* due east and west of Zhou. At the winter solstice it would be 214,557½
+  *li*, beyond the range of sight, so the sun is never seen due east or west.
+
+parallels:
+  - id: I.47
+    relation: same
+    note: |
+      Zhao finds the chord by the *gou-gu* rule: half the chord is $\sqrt{R^2 - d^2}$, where $R$ is the
+      circle's radius and $d$ the distance of the chord from the centre.
+  - id: III.3
+    relation: related
+    note: |
+      That the east–west line through Zhou is cut in half by the north–south diameter, so that "halving
+      gives each" side, is III.3: a diameter perpendicular to a chord bisects it.
+
+diagram:
+  width: 400
+  height: 400
+  elements:
+    - "P;point;fixed;200,200;black;black"
+    - "Z;point;fixed;200,249;black;black"
+    - "k1;point;fixed;256.7,200;0;0"
+    - "k7;point;fixed;313.3,200;0;0"
+    - "summer;circle;radius;P,k1;0;0;#b45309;0"
+    - "winter;circle;radius;P,k7;0;0;#33587a;0"
+    - "Zk;point;fixed;279.5,249;0;0"
+    - "sight;circle;radius;Z,Zk;0;0;#7e22ce;0"
+    - "U;point;fixed;171.6,249;black;black"
+    - "V;point;fixed;228.4,249;black;black"
+    - "W;point;fixed;97.8,249;black;black"
+    - "Y;point;fixed;302.2,249;black;black"
+    - "UV;line;connect;U,V;0;0;#b45309"
+    - "WY;line;connect;W,Y;0;0;#33587a"
+    - "PZ;line;connect;P,Z;0;0;black"
+    - "PV;line;connect;P,V;0;0;#b45309"
+    - "PY;line;connect;P,Y;0;0;#33587a"
+    - "angZ;sector;angleMarker;Z,V,P,8;0;0;black;0"
+  aliases:
+    ZV: UV
+  equal:
+    - [UV, WY]
+  given: [P, Z, summer, winter, U, V, PZ, UV, PV, angZ]
+  caption: |
+    The east–west line through Zhou {Z} meets the summer circle at {U} and {V}. In the right triangle
+    {P}{Z}{V}, the hypotenuse {PV} is the summer radius (119,000 *li*) and {PZ} is 103,000 *li*, so
+    {ZV} = 59,598½ *li*. On the winter circle the same line reaches {W} and {Y}, 214,557½ *li* away,
+    outside the circle of sight (purple).
+
+steps:
+  - classic: |
+      On the day of the summer solstice, looking due east and west, the sun, directly east and west of
+      Zhou, is 59,598½ *li* from Zhou.
+    highlight: [UV, PV, PZ]
+    modern: $\sqrt{119{,}000^2 - 103{,}000^2} = 59{,}598.7$ *li*.
+    cites: [I.47, III.3]
+  - zhao: |
+      The method: take the summer-solstice path diameter, 238,000 *li*, as the hypotenuse, and twice the
+      pole's distance from Zhou, 206,000 *li*, as the *gu*, and find the *gou*. Subtract the *gu* multiplied
+      by itself from the hypotenuse multiplied by itself, extract the square root of the remainder, and you
+      get a *gou* of 119,197 *li* and a fraction. Halve it: that is each half, [east and west] of Zhou.
+    hint: |
+      Zhao works with the whole diameter and twice the distance, then halves the result. It is the same
+      right triangle, doubled.
+    highlight: [UV]
+    modern: |
+      $$\sqrt{238{,}000^2 - 206{,}000^2} = 119{,}197.3,\qquad \tfrac12 \cdot 119{,}197.3 = 59{,}598.7.$$
+    cites: [I.47]
+    explain:
+      did: |
+        "*Gou* multiplied by itself, subtracted from hypotenuse multiplied by itself, root extracted" is the
+        rule $b = \sqrt{c^2 - a^2}$ from [[ZB.1.4]].
+  - classic: |
+      On the day of the winter solstice the sun is not seen due east and west.
+    adds: [sight, W, Y, WY, PY]
+    highlight: [WY, sight]
+  - zhao: |
+      Due east and west means Zhou's *mao* and *you* [directions]. The sun is beyond 167,000 *li*, so it
+      is not seen.
+  - classic: |
+      By calculation, [the point] beneath the sun is 214,557½ *li* from Zhou.
+    highlight: [WY, PY]
+    modern: $\sqrt{238{,}000^2 - 103{,}000^2} = 214{,}557.7$ *li*, more than 167,000.
+    cites: [I.47]
+  - zhao: |
+      The method: take the winter-solstice path diameter, 476,000 *li*, as the hypotenuse, twice the pole's
+      distance from Zhou, 206,000 *li*, as the *gou*, and find the *gu*. Subtract the *gou* multiplied by itself
+      from the hypotenuse multiplied by itself, extract the root of the remainder: 429,115 *li* and a
+      fraction. Halve it: the east and west numbers.
+    dispute: |
+      The Sibu Congkan writes 二十萬六十里, "200,060"; the context (twice 103,000) requires 二十萬六千里,
+      206,000.

@@ -1,0 +1,106 @@
+id: ZB.4.2
+title: Heaven like a hat, earth like a bowl; how the moon shines
+paraphrase: |
+  Heaven is like a conical hat and earth like an upturned bowl, 80,000 *li* apart everywhere. Even
+  on the outer orbit the winter sun is 20,000 *li* above the ground beneath the pole. The moon has no
+  light of its own: it shines by the sun's light, full when it faces the sun and dark when near it.
+  From autumn to winter the sun, moon and stars are dimmer because they are farther away.
+
+diagram:
+  width: 400
+  height: 280
+  elements:
+    - "a1;point;fixed;20,250;0;0"
+    - "a2;point;fixed;87,250;0;0"
+    - "a3;point;fixed;200,175;black;black"
+    - "a4;point;fixed;313,250;0;0"
+    - "a5;point;fixed;380,250;0;0"
+    - "b1;point;fixed;20,150;0;0"
+    - "b2;point;fixed;87,150;0;0"
+    - "b3;point;fixed;200,75;black;black"
+    - "b4;point;fixed;313,150;0;0"
+    - "b5;point;fixed;380,150;0;0"
+    - "e1;line;connect;a1,a2;0;0;#8a6d12"
+    - "e2;line;connect;a2,a3;0;0;#8a6d12"
+    - "e3;line;connect;a3,a4;0;0;#8a6d12"
+    - "e4;line;connect;a4,a5;0;0;#8a6d12"
+    - "t1;line;connect;b1,b2;0;0;#33587a"
+    - "t2;line;connect;b2,b3;0;0;#33587a"
+    - "t3;line;connect;b3,b4;0;0;#33587a"
+    - "t4;line;connect;b4,b5;0;0;#33587a"
+    - "U;point;fixed;87,150;black;#d97706"
+    - "lv1;point;fixed;20,175;0;0"
+    - "lv2;point;fixed;380,175;0;0"
+    - "level;line;connect;lv1,lv2;0;0;#c7bfae"
+    - "a3b3;line;connect;a3,b3;0;0;#6b6253"
+  aliases:
+    Q: a3
+    H: b3
+  given: [a3, b3, e1, e2, e3, e4, t1, t2, t3, t4, U, level, a3b3]
+  caption: |
+    A side view, not to scale horizontally. The earth (brown) rises 60,000 *li* to a peak {Q} beneath
+    the pole; heaven (blue) is the same shape, 80,000 *li* higher, with its peak at {H}. The winter
+    sun {U} on the outer orbit is on heaven's lower slope, yet still 20,000 *li* above the level of
+    {Q} (grey line).
+
+steps:
+  - classic: |
+      Heaven is like a covering hat; earth is modelled on an upturned bowl.
+    hint: |
+      The *gaitian* picture: two parallel domes, heaven above, earth below.
+    highlight: [t2, t3, e2, e3]
+  - zhao: |
+      What is seen is called an image; what has form is called a model. Being above, [heaven] is compared to
+      a hat; being below, [earth] is likened to a bowl. "Image" and "model" mean the same, and the hat and the
+      bowl are alike in shape. The words vary and different vessels are used to distinguish the honoured
+      from the lowly: one looks up to the image and down to the model. The names differ.
+  - classic: |
+      Heaven is 80,000 *li* from earth.
+    highlight: [a3b3]
+  - zhao: |
+      Their vaulted heights follow one another; they are 80,000 *li* apart.
+  - classic: |
+      On the day of the winter solstice, although [the sun] is on the outer orbit, it is still 20,000 *li*
+      above the ground beneath the pole.
+    highlight: [U, level]
+    modern: $80{,}000 - 60{,}000 = 20{,}000$ *li*.
+  - zhao: |
+      Heaven and earth vault up; the height falls away by 60,000 *li* to the outer orbit. On the day of the
+      winter solstice, though [the sun] is on the outer orbit, looking across, it is in line with the level
+      ground; it is always 20,000 *li* above the ground beneath the north pole. That is, the sun and moon
+      do not block each other, so [the sun] can spread its light by day and let in the [moon's] brightness by
+      night.
+  - classic: |
+      So the sun gives rise to the moon.
+    hint: The moon's light is the sun's.
+  - zhao: |
+      The sun is the essence of yang, like the light of fire; the moon is the essence of yin, like the light
+      of water. The moon holds the image, so the moon's light arises where the sun shines on it, and its
+      dark part arises where it is screened from the sun. Facing the sun, it is full of light; approaching the
+      sun, its brightness is all gone. The moon receives the sun's light and takes its form from it; so it
+      says "the sun gives rise to the moon".
+    hint: |
+      A correct account of the moon's phases: full moon opposite the sun, new moon beside it. Zhang Heng
+      gives the same explanation in the *Ling xian*.
+  - classic: |
+      The moon's light then comes out, so there is a bright moon.
+  - zhao: |
+      Only after receiving the sun can it spread its light and complete its brightness.
+  - classic: |
+      The stars and planets can then [shine] in their ranks.
+  - zhao: |
+      The *Ling xian* says: "The many stars □ shine; through water and fire they pass on light, so they can
+      form their ranks."
+    dispute: One character of the quotation is illegible in the scan (□).
+  - classic: |
+      So from the autumn equinox to the winter solstice the essences of the three lights are faint, because
+      their paths are far.
+    hint: The "three lights" are the sun, moon and stars.
+  - zhao: |
+      The sun goes from the middle orbit to the outer orbit; its distance grows by the day, and because of the
+      distance its light is faint. It does not speak of the period from the winter solstice to the spring
+      equinox, [because then too] everything is outside the middle orbit; that it is the same can be known.
+  - classic: |
+      This is the nature of heaven and earth, of yin and yang: it is so of itself.
+  - zhao: |
+      It is so of itself; so it is called "nature".

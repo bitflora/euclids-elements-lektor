@@ -1,0 +1,45 @@
+id: ZB.1.1
+title: The Duke of Zhou asks where numbers come from
+paraphrase: |
+  The book opens with a dialogue set a thousand years before it was written. The Duke of Zhou, regent
+  of the early Zhou dynasty (11th century BCE), asks the official Shang Gao 商高 how the legendary
+  Bao Xi could have measured heaven, which cannot be climbed, and earth, which cannot be measured
+  with a rule. Where do the numbers come from?
+
+steps:
+  - classic: |
+      Long ago the Duke of Zhou asked Shang Gao: "I have heard, sir, that you are skilled in numbers.
+    hint: The setting. Zhou 周 is the dynasty; the *Zhou bi* is "the gnomon of Zhou".
+  - zhao: |
+      The Duke of Zhou was surnamed Ji and named Dan; he was the younger brother of King Wu. Shang Gao was
+      a worthy official of the Zhou, skilled in calculation. The Duke held the office of chief minister
+      and was perfect in virtue, yet he still humbled himself to cultivate himself, learning from below
+      to reach above. How much more should ordinary people!
+    hint: Zhao identifies the speakers and draws a moral about learning.
+  - classic: |
+      May I ask how, in ancient times, Bao Xi established the degrees for the circuit of heaven?
+    hint: |
+      Bao Xi 包犧 (also Fu Xi 伏羲) is a mythical first ruler. The "circuit of heaven" (周天) is the
+      sun's circle round the sky, divided into $365\tfrac14$ degrees (du 度), one for each day.
+  - zhao: |
+      Bao Xi was one of the Three Sovereigns; he first drew the eight trigrams. Because Shang Gao was
+      skilled in numbers, able to penetrate the subtle and reach the boundless, leaving nothing great
+      unencompassed and nothing obscure unexplained, [the Duke] asked about what he had heard: that Bao
+      Xi established the degrees of the circuit of heaven and the method of the *zhang* and *bu* cycles.
+      The *Changes* says: "In ancient times, when Bao Xi ruled the world, he looked up and observed the
+      images in heaven, looked down and observed the patterns on earth." This is what is meant.
+    hint: |
+      The *zhang* 章 (19 years) and *bu* 蔀 (76 years) are calendar cycles, explained at the end of the
+      book ([[ZB.6.3]]).
+  - classic: |
+      But heaven cannot be climbed by steps, and earth cannot be measured with a foot-rule.
+    hint: |
+      The problem the whole book answers: how to measure what cannot be reached.
+  - zhao: |
+      Remote is heaven's hanging expanse: there are no steps by which to climb it. Vast is earth's far
+      distance: there is no rule by which to measure it.
+  - classic: |
+      May I ask where the numbers come from?"
+    hint: The answer, in the next section, is the circle, the square and the right triangle.
+  - zhao: |
+      His mind was dark about the key to it, so he asked for the particulars.
