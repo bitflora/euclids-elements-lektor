@@ -12,7 +12,7 @@ diagram:
     - "A;point;free;45,185"
     - "B;point;free;215,185"
     - "AB;line;connect;A,B"
-    - "ABC;polygon;equilateralTriangle;A,B;0;0;black;#efe4d2"
+    - "ABC;polygon;equilateralTriangle;A,B;0;0;0;#efe4d2"
     - "C;point;vertex;ABC,3"
     - "D;point;midpoint;A,B"
     - "CD;line;connect;C,D"

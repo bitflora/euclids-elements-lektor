@@ -41,7 +41,7 @@ diagram:
     - "KL;line;bichord;DKL,KLH;0;0;0"
     - "K;point;last;KL"
     - "L;point;first;KL"
-    - "FGK;polygon;triangle;F,G,K;0;0;black;#efe4d2"
+    - "FGK;polygon;triangle;F,G,K;0;0;0;#efe4d2"
     - "KF;line;connect;K,F;black"
     - "KG;line;connect;K,G;black"
   aliases:

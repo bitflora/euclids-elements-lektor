@@ -18,7 +18,7 @@ diagram:
     - "AD;line;extend;B,A,B,A"
     - "D;point;last;AD"
     - "CD;line;connect;C,D"
-    - "DAC;polygon;triangle;D,A,C;0;0;black;#dfe7ea"
+    - "DAC;polygon;triangle;D,A,C;0;0;0;#dfe7ea"
     - "AB;line;connect;A,B;0;0;0"
     - "AC;line;connect;A,C;0;0;0"
     - "BC;line;connect;B,C;0;0;0"

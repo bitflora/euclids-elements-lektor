@@ -17,7 +17,7 @@ diagram:
     - "D;point;lineSlider;A,B,85,122"
     - "E;point;cutoff;A,C,A,D"
     - "DE;line;connect;D,E"
-    - "DEF;polygon;equilateralTriangle;E,D;0;0;black;#efe4d2"
+    - "DEF;polygon;equilateralTriangle;E,D;0;0;0;#efe4d2"
     - "F;point;vertex;DEF,3"
     - "AF;line;connect;A,F"
     - "AD;line;connect;A,D;0;0;0"
