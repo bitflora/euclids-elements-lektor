@@ -17,7 +17,7 @@ describe("zhou bi", () => {
   it("has Zhao's preface and all six parts", () => {
     expect(zbSections.has("ZB.Pref")).toBe(true);
     expect(zbSource.parts.map((p) => p.n)).toEqual([1, 2, 3, 4, 5, 6]);
-    expect(sections.length).toBe(49);
+    expect(sections.length).toBe(46);
   });
 
   it("translates and annotates every section", () => {

@@ -1,129 +1,98 @@
 id: ZB.2.7
-title: Zhao Shuang's sun-height diagram — two gnomons, equal rectangles
+title: Sighting the pole — Zhou is 103,000 li from the pole
 paraphrase: |
-  Zhao's second diagram essay proves the "double difference" rule for the sun's height. Set up
-  two gnomons of height $h$ a distance $d$ apart, and let their shadows differ by $\Delta$. Then
-  the sun is $\dfrac{h\,d}{\Delta}$ above the gnomon tops. The proof uses rectangles of equal area,
-  the "complements" about the diagonal of a rectangle. This is Euclid's I.43.
+  The same rule, one *cun* of shadow for a thousand *li*, applied to the north pole. Sighting the
+  pole star past the top of an 8-*chi* gnomon, the line of sight meets the ground 1 *zhang* 3 *cun*
+  (103 *cun*) behind the gnomon. So Zhou is 103,000 *li* south of the point beneath the pole. Chenzi
+  then explains the name: the gnomon (*bi*) of Zhou, because these measurements were made at Zhou.
 
 parallels:
-  - id: I.43
+  - id: VI.4
     relation: same
     note: |
-      Zhao's "yellow *jia* and yellow *yi* are exactly equal in area" rests on the fact that in a rectangle
-      cut by lines through a point of its diagonal, the two pieces off the diagonal (the complements)
-      are equal. This is I.43. Zhao uses it for both gnomons and subtracts.
-  - id: VI.4
-    relation: related
-    note: |
-      The same rule follows from similar triangles (VI.4). Zhao instead proves it with areas, the
-      way Book I would.
+      As for the sun, the gnomon and its "*gou*" (here the distance back to the eye) form a small
+      triangle similar to the large one with the pole's height and distance; so their sides are
+      proportional (VI.4).
 
 diagram:
-  width: 300
-  height: 280
+  width: 330
+  height: 260
   elements:
-    - "S;point;fixed;40,30;black;black"
-    - "X;point;fixed;40,250;black;black"
-    - "G;point;fixed;140,200;black;black"
-    - "Z;point;fixed;140,250;black;black"
-    - "W;point;fixed;169.4,250;black;black"
-    - "N;point;fixed;220,200;black;black"
-    - "M;point;fixed;220,250;black;black"
-    - "V;point;fixed;272.9,250;black;black"
-    - "h0;point;fixed;40,200;0;0"
-    - "t1;point;fixed;220,30;0;0"
-    - "t2;point;fixed;249.4,30;0;0"
-    - "t3;point;fixed;272.9,30;0;0"
-    - "m1;point;fixed;249.4,200;0;0"
-    - "m2;point;fixed;272.9,200;0;0"
-    - "ji;polygon;quadrilateral;h0,G,Z,X;0;0;#3e6b5a;#cfe3d8"
-    - "yi;polygon;quadrilateral;G,N,M,Z;0;0;#8a6d12;#f5df8a"
-    - "bing;polygon;quadrilateral;t1,t2,m1,N;0;0;#3e6b5a;#cfe3d8"
-    - "jia;polygon;quadrilateral;t2,t3,m2,m1;0;0;#8a6d12;#f5df8a"
-    - "SX;line;connect;S,X;0;0;black"
-    - "XV;line;connect;X,V;0;0;black"
-    - "St3;line;connect;S,t3;0;0;#9a9078"
-    - "t3V;line;connect;t3,V;0;0;#9a9078"
-    - "h0m2;line;connect;h0,m2;0;0;#9a9078"
+    - "P;point;fixed;40,30;black;black"
+    - "X;point;fixed;40,230;black;black"
+    - "Z;point;fixed;246,230;black;black"
+    - "G;point;fixed;246,190;black;black"
+    - "E;point;fixed;297.5,230;black;black"
+    - "PX;line;connect;P,X;0;0;#33587a"
+    - "XE;line;connect;X,E;0;0;#9a3b2b"
+    - "PE;line;connect;P,E;0;0;#8a6d12"
     - "ZG;line;connect;Z,G;0;0;black"
-    - "MN;line;connect;M,N;0;0;black"
-    - "ZW;line;connect;Z,W;0;0;black"
-    - "MV;line;connect;M,V;0;0;black"
-    - "SW;line;connect;S,W;0;0;#9a3b2b"
-    - "SV;line;connect;S,V;0;0;#9a3b2b"
-  aliases:
-    WV: XV
+    - "ZE;line;connect;Z,E;0;0;black"
+    - "angX;sector;angleMarker;X,E,P,12;0;0;black;0"
+    - "angZ;sector;angleMarker;Z,E,G,10;0;0;black;0"
   equal:
-    - [ji, bing]
-    - [yi, jia]
-  given: [S, X, G, Z, W, N, M, V, h0, t1, t2, t3, m1, m2, ji, yi, bing, jia, SX, XV, St3, t3V, h0m2, ZG, MN, ZW, MV, SW, SV]
+    - [angX, angZ]
+  given: [P, X, Z, G, E, PX, XE, PE, ZG, ZE, angX, angZ]
   caption: |
-    Not to scale. Two gnomons {ZG} and {MN} of height $h$, a distance $d$ = {Z}{M} apart, with shadows
-    {ZW} and {MV}. The sun is at {S}. Green {丙|bing} equals green {己|ji}; yellow {甲|jia} equals
-    yellow {乙|yi}. The sun's height above the gnomon tops is the length of {甲|jia}.
+    Not to scale. From the eye at {E} on the ground, the pole {P} is sighted past the top {G} of the
+    gnomon {ZG} (8 *chi*). {ZE} is 1 *zhang* 3 *cun* = 103 *cun*. With the pole as high as the sun
+    (80,000 *li*), the distance {XE} to the point beneath the pole is 103,000 *li*.
 
 steps:
+  - classic: |
+      The rule says: the gnomon of Zhou is 8 *chi* long; the *gou* increases or decreases by one *cun* for
+      a thousand *li*.
+    hint: The rule of [[ZB.2.3]], stated generally.
+    modern: $\Delta s = 1$ *cun* per $1{,}000$ *li* of distance, for a gnomon of 80 *cun*.
   - zhao: |
-      Zhao Junqing says: the yellow *jia* and the yellow *yi* are exactly equal in area.
-    zh: 趙君卿曰黃甲與黃乙其實正等
-    hint: The claim on which everything rests. The two yellow rectangles have the same area.
-    highlight: [jia, yi]
-    explain:
-      did: |
-        {乙|yi} lies between the two gnomons, below their tops: $h \times d$. {甲|jia} lies above the
-        gnomon tops, with width the difference of the shadows, $\Delta = MV - ZW$, and height
-        $H - h$ up to the sun: $\Delta \times (H - h)$.
-      follows: |
-        By I.43 applied to the rectangle with diagonal {S}{V}, the piece above and right of {N} equals the
-        piece below and left of it: {丙|bing} + {甲|jia} = {己|ji} + {乙|yi}. Applied to the rectangle
-        with diagonal {S}{W}, the same for the first gnomon gives {丙|bing} = {己|ji} (the green piece
-        above {G} has width {ZW} and is drawn here moved over beside {甲|jia}). Subtracting, {甲|jia} =
-        {乙|yi}.
-    modern: $\Delta\,(H - h) = h\,d$.
-    cites: [I.43]
+      The *gou* means the shadow. That is, the shadow cast on instruments on the earth from heaven
+      hanging above differs everywhere by one *cun* per thousand *li*.
+  - classic: |
+      So it says: the pole is [what measures] the breadth and length of heaven.
   - zhao: |
-      Multiply the gnomon's height by the distance between the two gnomons to make the area of yellow
-      *jia*. Divide by the difference of the shadows, which is the breadth of yellow *jia*: the result
-      turns out to be the length of yellow *jia*, reaching up to the sun.
-    zh: 以表高乘兩表相去爲黃甲之實以影差爲黃甲之廣而一所得則變得黃甲之袤上與日齊
+      That is, once the distance of the pole is fixed, the breadth and length of heaven can be known.
+  - classic: |
+      Now set up a gnomon 8 *chi* high and sight the pole: its *gou* is 1 *zhang* 3 *cun*. From this one sees
+      that from Zhou north to beneath the pole is 103,000 *li*.
     hint: |
-      The rule: the sun's height above the gnomon tops is gnomon height × separation ÷ shadow
-      difference.
-    highlight: [jia]
-    modern: $H - h = \dfrac{h\,d}{\Delta}.$
+      Sighting from the ground past the gnomon's top to the pole star, the eye is 103 *cun* behind the
+      gnomon; at a thousand *li* per *cun* that is 103,000 *li*.
+    highlight: [ZE, XE]
     explain:
       fact: |
-        With the classic's numbers, $h = 8$ *chi*, $d = 2{,}000$ *li*, $\Delta = 2$ *cun*:
-        $H - h = 80 \times 2000 / 2 = 80{,}000$ *li* (working in *cun* for $h$ and $\Delta$).
+        The triangles {G}{Z}{E} and {P}{X}{E} are similar. With $ZG = 80$ *cun* and $PX$ assumed equal to
+        the sun's height, 80,000 *li*, the scale is 1,000 *li* per *cun*, so $XE = 103 \times 1{,}000$.
+      implicit: |
+        That the pole star is as high as the sun: in the *gaitian* model heaven is a canopy at a constant
+        height above the earth, and the stars, sun and pole are all on it. 1 *zhang* 丈 = 10 *chi*.
+    modern: $XE = ZE \cdot \dfrac{PX}{ZG} = 103 \cdot \dfrac{80{,}000}{80} = 103{,}000$ *li*.
+    cites: [VI.4]
   - zhao: |
-      According to the diagram one should add the gnomon's height; when it says 80,000 *li*, that is from
-      the gnomon [top] upward, and one adds it again.
-    zh: 按圖當加表高今言八萬里者從表以上復加之
+      This refers to the moments, at the winter solstice, when the sun is at *mao* or *you* [6 a.m. or 6
+      p.m.], or to midnight at the equinoxes: then the pole [star], to the side of the pole, is level with
+      the centre of heaven. So it is taken as the distance from Zhou to the centre of heaven.
     hint: |
-      The full height of the sun is $H = \dfrac{hd}{\Delta} + h$. The 8 *chi* is negligible beside
-      80,000 *li*, so the classic omits it.
-    highlight: [ZG]
+      The pole star is not exactly at the pole; it circles it daily ([[ZB.4.3]]). It is due east or
+      west of the true pole at certain hours, and then its north–south distance equals the pole's.
+  - classic: |
+      Rong Fang said: "What is [meant by] the 'gnomon of Zhou'?" Chenzi said: "In ancient times the Son of
+      Heaven governed [from] Zhou.
   - zhao: |
-      The green *bing* and the green *ji* are also equal in area. Yellow *jia* joined to green *bing*, and
-      yellow *yi* joined to green *ji*, are also equal in area. In each case the difference of the shadows
-      is taken as breadth.
+      "The Son of Heaven in ancient times" means King Cheng of Zhou. He governed Zhou and resided at the
+      royal city, so it says: "Of old the former kings laid out the capital: they surveyed the nine regions,
+      leaving no land unplanned; with the jade tablet they measured the shadow, neither too short nor too
+      long, at the place where wind and rain meet; only then could they found the royal city." This is
+      what is meant.
     hint: |
-      The two applications of I.43, for the first gnomon and for the second, which together give
-      "*jia* equals *yi*".
-    highlight: [bing, ji]
-    explain:
-      did: |
-        First gnomon: {丙|bing} $= ZW \times (H - h)$ and {己|ji} $= XZ \times h$ are the complements
-        about the diagonal {S}{W}. Second gnomon: {丙|bing} + {甲|jia} $= MV \times (H-h)$ and {己|ji} +
-        {乙|yi} $= XM \times h$ are the complements about the diagonal {S}{V}.
-      follows: |
-        Subtract the first equality from the second. What is left is {甲|jia} = {乙|yi}.
-    cites: [I.43]
-
-commentary: |
-  This is the method later called *chongcha* 重差, "double difference". Liu Hui's *Sea Island
-  Mathematical Manual* (海島算經, 263 CE) extends it to the height and distance of an island. The proof
-  never uses similar triangles or ratios. It uses only the equality of complements in a rectangle and
-  subtraction of equal areas. Euclid uses I.43 the same way in I.44, to "apply" an area to a given
-  line. Zhao's proof is close to Euclid's Book I in spirit, though not in form.
+      The jade tablet (*tugui* 土圭) of the *Rites of Zhou* measured the noon shadow at the solstice; the
+      capital was placed where it had the prescribed length.
+  - classic: |
+      These numbers are sighted from Zhou; so it is called the gnomon of Zhou.
+  - zhao: |
+      That is, the Zhou capital, south of the [Yellow] River, was the centre of the four quarters, so it was
+      made the station for sighting.
+  - classic: |
+      The *bi* is the gnomon."
+  - zhao: |
+      It is used to do the work, so it is called *bi* [thigh-bone]; by it one catches the sighting, so it is
+      called *biao* [marker]. The shadow is the *gou*; so they are called *gou* and *gu*.

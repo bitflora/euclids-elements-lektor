@@ -282,6 +282,12 @@ export interface ZbAnnotation {
 
 export interface ZbStep extends ZbStepAnnotation {
   index: number;
+  /**
+   * The step's number as shown: classic steps count 1, 2, 3…; Zhao's commentary is
+   * numbered under the classic step it follows (3.1, 3.2…). In a section that is all
+   * commentary (the preface), Zhao's steps count 1, 2, 3….
+   */
+  num: string;
   voice: "classic" | "zhao";
   /** The Chinese of this step, as printed in the source. */
   source: string;

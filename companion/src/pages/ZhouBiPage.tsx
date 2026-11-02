@@ -275,7 +275,7 @@ function SectionText({
                 }}
               >
                 <span className="step-num" aria-hidden>
-                  {i + 1}
+                  {s.num}
                 </span>
                 <div className="zb-body">
                   {(s.classic ?? s.zhao) && <Rich md={s.classic ?? s.zhao} className="zb-en" />}
@@ -315,7 +315,7 @@ export function ZbStepNotes({
     <div className="step-notes">
       <div className="panel-head">
         <span className="kicker">
-          Step {step.index + 1} · {VOICE_LABEL[step.voice]}
+          Step {step.num} · {VOICE_LABEL[step.voice]}
         </span>
         <span className="panel-head-actions">
           <button type="button" className="btn-icon" onClick={onPrev} disabled={!onPrev} aria-label="Previous step" title="Previous step (k)">

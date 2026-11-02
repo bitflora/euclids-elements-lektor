@@ -266,9 +266,6 @@ function ZbPartToc({ part, current }: { part: number; current?: string }) {
   const ids = zbSequence.get(part) ?? [];
   return (
     <div className="toc-book-body">
-      <p className="toc-sec">
-        <a href={`#/zhoubi/${part}`}>Read the whole part</a>
-      </p>
       <ol className="toc-list">
         {ids.map((id) => {
           const s = getZb(id)!;

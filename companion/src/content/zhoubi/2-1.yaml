@@ -34,7 +34,7 @@ steps:
   - zhao: |
       How far the sun's light reaches to the side.
     hint: |
-      Answered in [[ZB.2.10]]: 167,000 *li* in every direction.
+      Answered in [[ZB.2.9]]: 167,000 *li* in every direction.
   - classic: |
       how far it travels in one day,
   - zhao: |

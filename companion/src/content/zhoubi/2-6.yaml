@@ -1,8 +1,13 @@
 id: ZB.2.6
-title: The diameter of the sun
+title: The diameter of the sun; Zhao Shuang's sun-height diagram
 paraphrase: |
   Combine the tube ratio (1 : 80, [[ZB.2.4]]) with the slant distance (100,000 *li*,
   [[ZB.2.5]]): the sun's diameter is $100{,}000 / 80 = 1{,}250$ *li*.
+
+  Zhao's second diagram essay proves the "double difference" rule for the sun's height. Set up
+  two gnomons of height $h$ a distance $d$ apart, and let their shadows differ by $\Delta$. Then
+  the sun is $\dfrac{h\,d}{\Delta}$ above the gnomon tops. The proof uses rectangles of equal area,
+  the "complements" about the diagonal of a rectangle. This is Euclid's I.43.
 
 parallels:
   - id: VI.4
@@ -10,7 +15,58 @@ parallels:
     note: |
       The bore and the tube length, the sun's diameter and its distance: two similar triangles, whose
       sides are in proportion (VI.4). Zhao calls the tube's triangle the small *gou-gu* and the sun's
-      triangle the large one.
+      triangle the large one. The same proportion gives the double-difference rule for the sun's
+      height, which Zhao instead proves with areas, the way Book I would.
+  - id: I.43
+    relation: same
+    note: |
+      Zhao's "yellow *jia* and yellow *yi* are exactly equal in area" rests on the fact that in a rectangle
+      cut by lines through a point of its diagonal, the two pieces off the diagonal (the complements)
+      are equal. This is I.43. Zhao uses it for both gnomons and subtracts.
+
+diagram:
+  width: 300
+  height: 280
+  elements:
+    - "S;point;fixed;40,30;black;black"
+    - "X;point;fixed;40,250;black;black"
+    - "G;point;fixed;140,200;black;black"
+    - "Z;point;fixed;140,250;black;black"
+    - "W;point;fixed;169.4,250;black;black"
+    - "N;point;fixed;220,200;black;black"
+    - "M;point;fixed;220,250;black;black"
+    - "V;point;fixed;272.9,250;black;black"
+    - "h0;point;fixed;40,200;0;0"
+    - "t1;point;fixed;220,30;0;0"
+    - "t2;point;fixed;249.4,30;0;0"
+    - "t3;point;fixed;272.9,30;0;0"
+    - "m1;point;fixed;249.4,200;0;0"
+    - "m2;point;fixed;272.9,200;0;0"
+    - "ji;polygon;quadrilateral;h0,G,Z,X;0;0;#3e6b5a;#cfe3d8"
+    - "yi;polygon;quadrilateral;G,N,M,Z;0;0;#8a6d12;#f5df8a"
+    - "bing;polygon;quadrilateral;t1,t2,m1,N;0;0;#3e6b5a;#cfe3d8"
+    - "jia;polygon;quadrilateral;t2,t3,m2,m1;0;0;#8a6d12;#f5df8a"
+    - "SX;line;connect;S,X;0;0;black"
+    - "XV;line;connect;X,V;0;0;black"
+    - "St3;line;connect;S,t3;0;0;#9a9078"
+    - "t3V;line;connect;t3,V;0;0;#9a9078"
+    - "h0m2;line;connect;h0,m2;0;0;#9a9078"
+    - "ZG;line;connect;Z,G;0;0;black"
+    - "MN;line;connect;M,N;0;0;black"
+    - "ZW;line;connect;Z,W;0;0;black"
+    - "MV;line;connect;M,V;0;0;black"
+    - "SW;line;connect;S,W;0;0;#9a3b2b"
+    - "SV;line;connect;S,V;0;0;#9a3b2b"
+  aliases:
+    WV: XV
+  equal:
+    - [ji, bing]
+    - [yi, jia]
+  given: [S, X, G, Z, W, N, M, V, h0, t1, t2, t3, m1, m2, ji, yi, bing, jia, SX, XV, St3, t3V, h0m2, ZG, MN, ZW, MV, SW, SV]
+  caption: |
+    Not to scale. Two gnomons {ZG} and {MN} of height $h$, a distance $d$ = {Z}{M} apart, with shadows
+    {ZW} and {MV}. The sun is at {S}. Green {丙|bing} equals green {己|ji}; yellow {甲|jia} equals
+    yellow {乙|yi}. The sun's height above the gnomon tops is the length of {甲|jia}.
 
 steps:
   - classic: |
@@ -37,3 +93,67 @@ steps:
     hint: |
       The real sun is about 1.4 million km across. The Zhou bi's sun, 1,250 *li* (about 550 km), is
       tiny and near, as a flat earth requires.
+  - zhao: |
+      Zhao Junqing says: the yellow *jia* and the yellow *yi* are exactly equal in area.
+    zh: 趙君卿曰黃甲與黃乙其實正等
+    hint: The claim on which everything rests. The two yellow rectangles have the same area.
+    highlight: [jia, yi]
+    explain:
+      did: |
+        {乙|yi} lies between the two gnomons, below their tops: $h \times d$. {甲|jia} lies above the
+        gnomon tops, with width the difference of the shadows, $\Delta = MV - ZW$, and height
+        $H - h$ up to the sun: $\Delta \times (H - h)$.
+      follows: |
+        By I.43 applied to the rectangle with diagonal {S}{V}, the piece above and right of {N} equals the
+        piece below and left of it: {丙|bing} + {甲|jia} = {己|ji} + {乙|yi}. Applied to the rectangle
+        with diagonal {S}{W}, the same for the first gnomon gives {丙|bing} = {己|ji} (the green piece
+        above {G} has width {ZW} and is drawn here moved over beside {甲|jia}). Subtracting, {甲|jia} =
+        {乙|yi}.
+    modern: $\Delta\,(H - h) = h\,d$.
+    cites: [I.43]
+    figure: 0
+  - zhao: |
+      Multiply the gnomon's height by the distance between the two gnomons to make the area of yellow
+      *jia*. Divide by the difference of the shadows, which is the breadth of yellow *jia*: the result
+      turns out to be the length of yellow *jia*, reaching up to the sun.
+    zh: 以表高乘兩表相去爲黃甲之實以影差爲黃甲之廣而一所得則變得黃甲之袤上與日齊
+    hint: |
+      The rule: the sun's height above the gnomon tops is gnomon height × separation ÷ shadow
+      difference.
+    highlight: [jia]
+    modern: $H - h = \dfrac{h\,d}{\Delta}.$
+    explain:
+      fact: |
+        With the classic's numbers, $h = 8$ *chi*, $d = 2{,}000$ *li*, $\Delta = 2$ *cun*:
+        $H - h = 80 \times 2000 / 2 = 80{,}000$ *li* (working in *cun* for $h$ and $\Delta$).
+  - zhao: |
+      According to the diagram one should add the gnomon's height; when it says 80,000 *li*, that is from
+      the gnomon [top] upward, and one adds it again.
+    zh: 按圖當加表高今言八萬里者從表以上復加之
+    hint: |
+      The full height of the sun is $H = \dfrac{hd}{\Delta} + h$. The 8 *chi* is negligible beside
+      80,000 *li*, so the classic omits it.
+    highlight: [ZG]
+  - zhao: |
+      The green *bing* and the green *ji* are also equal in area. Yellow *jia* joined to green *bing*, and
+      yellow *yi* joined to green *ji*, are also equal in area. In each case the difference of the shadows
+      is taken as breadth.
+    hint: |
+      The two applications of I.43, for the first gnomon and for the second, which together give
+      "*jia* equals *yi*".
+    highlight: [bing, ji]
+    explain:
+      did: |
+        First gnomon: {丙|bing} $= ZW \times (H - h)$ and {己|ji} $= XZ \times h$ are the complements
+        about the diagonal {S}{W}. Second gnomon: {丙|bing} + {甲|jia} $= MV \times (H-h)$ and {己|ji} +
+        {乙|yi} $= XM \times h$ are the complements about the diagonal {S}{V}.
+      follows: |
+        Subtract the first equality from the second. What is left is {甲|jia} = {乙|yi}.
+    cites: [I.43]
+
+commentary: |
+  This is the method later called *chongcha* 重差, "double difference". Liu Hui's *Sea Island
+  Mathematical Manual* (海島算經, 263 CE) extends it to the height and distance of an island. The proof
+  never uses similar triangles or ratios. It uses only the equality of complements in a rectangle and
+  subtraction of equal areas. Euclid uses I.43 the same way in I.44, to "apply" an area to a given
+  line. Zhao's proof is close to Euclid's Book I in spirit, though not in form.

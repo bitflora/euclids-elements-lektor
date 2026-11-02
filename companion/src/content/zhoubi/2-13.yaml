@@ -1,40 +1,211 @@
 id: ZB.2.13
-title: The sun's going out and coming in
+title: The four extremes; Zhao Shuang's notes on the chart of the seven orbits
 paraphrase: |
-  A short summary. All these numbers come from the sun's path moving outward toward winter and back
-  inward toward summer. The solstices can also be recognised by the pitch-pipes and bells, and the
-  limits of the world are found from these differences and the reach of the sun's light.
+  The farthest the sun's light ever reaches is 167,000 *li* beyond the winter-solstice path. That is
+  a circle of radius $238{,}000 + 167{,}000 = 405{,}000$ *li* around the pole: diameter 810,000 *li*,
+  circumference 2,430,000 *li*. Its north–south and east–west extents from Zhou follow by addition,
+  subtraction and the *gou-gu* rule. Chenzi ends: "this is the method of the square and the circle."
+
+  Zhao explains how to read the great chart (drawn in [[ZB.3.1]]). It is in two layers. The blue
+  layer is a circle around the observer: the limit of sight, where heaven and earth seem to meet.
+  The yellow layer carries the ecliptic and the lunar lodges and turns about the pole. Sunrise is
+  the sun entering the blue circle, sunset its leaving. The directions east, west, south and north
+  are relative to the observer, not absolute. At the pole a year is one day and one night.
+
+parallels:
+  - id: I.47
+    relation: same
+    note: |
+      The east–west half-width of the illuminated world at Zhou is found as a leg of a right triangle,
+      $\sqrt{405{,}000^2 - 103{,}000^2}$.
+  - id: III.3
+    relation: related
+    note: |
+      The east–west line through Zhou is a chord of the outer circle; the north–south diameter bisects it
+      (III.3), so "halving gives each" side.
+
+diagram:
+  width: 400
+  height: 400
+  elements:
+    - "P;point;fixed;200,200;black;black"
+    - "Z;point;fixed;200,249;black;black"
+    - "k7;point;fixed;313.3,200;0;0"
+    - "winter;circle;radius;P,k7;0;0;#33587a;0"
+    - "k8;point;fixed;392.9,200;0;0"
+    - "extreme;circle;radius;P,k8;0;0;#6b6253;#f6f1e3"
+    - "Ns;point;fixed;200,7.1;black;black"
+    - "Ss;point;fixed;200,392.9;black;black"
+    - "Wx;point;fixed;13.5,249;black;black"
+    - "Ex;point;fixed;386.5,249;black;black"
+    - "NsSs;line;connect;Ns,Ss;0;0;#9a9078"
+    - "WxEx;line;connect;Wx,Ex;0;0;#6b6253"
+    - "PEx;line;connect;P,Ex;0;0;#6b6253"
+    - "PZ;line;connect;P,Z;0;0;black"
+    - "angZ;sector;angleMarker;Z,Ex,P,8;0;0;black;0"
+  given: [P, Z, winter, extreme, Ns, Ss, Wx, Ex, NsSs, WxEx, PEx, PZ, angZ]
+  caption: |
+    The circle of the four extremes, radius 405,000 *li* around the pole {P}: the winter-solstice
+    path (blue) plus the 167,000 *li* reach of the sun's light. From Zhou {Z} it extends 302,000 *li*
+    south to {Ss} and 508,000 *li* north to {Ns}. Due east and west it reaches {Ex} and {Wx},
+    391,683½ *li* each way. The right triangle {P}{Z}{Ex} has hypotenuse 405,000.
+
+figures:
+  - width: 400
+    height: 400
+    elements:
+      - "P;point;fixed;200,200;black;black"
+      - "Z;point;fixed;200,249;black;black"
+      - "k1;point;fixed;256.7,200;0;0"
+      - "k2;point;fixed;266.1,200;0;0"
+      - "k3;point;fixed;275.6,200;0;0"
+      - "k4;point;fixed;285,200;0;0"
+      - "k5;point;fixed;294.4,200;0;0"
+      - "k6;point;fixed;303.9,200;0;0"
+      - "k7;point;fixed;313.3,200;0;0"
+      - "h1;circle;radius;P,k1;0;0;#b45309;0"
+      - "h2;circle;radius;P,k2;0;0;#9a9078;0"
+      - "h3;circle;radius;P,k3;0;0;#9a9078;0"
+      - "h4;circle;radius;P,k4;0;0;#5b6b2f;0"
+      - "h5;circle;radius;P,k5;0;0;#9a9078;0"
+      - "h6;circle;radius;P,k6;0;0;#9a9078;0"
+      - "h7;circle;radius;P,k7;0;0;#33587a;0"
+      - "Y0;point;fixed;200,171.7;0;0"
+      - "Yk;point;fixed;285,171.7;0;0"
+      - "yellow;circle;radius;Y0,Yk;0;0;#c2410c;0"
+      - "Zk;point;fixed;279.5,249;0;0"
+      - "blue;circle;radius;Z,Zk;0;0;#1d4ed8;0"
+    given: [P, Z, h1, h2, h3, h4, h5, h6, h7, yellow, blue]
+    caption: |
+      The chart of the seven orbits. The seven concentric circles about the pole {P} are the sun's daily
+      paths, from the summer solstice (innermost) to the winter solstice (outermost). The blue circle
+      about Zhou {Z} is the limit of sight. The red circle is the ecliptic (the "yellow road"), drawn on a
+      separate sheet that turns about the pole.
 
 steps:
   - classic: |
-      All these numbers are [the results of] the going out and coming in of the sun's path.
+      The diameter of the four extremes is 810,000 *li*.
+    highlight: [NsSs]
+    modern: $2(238{,}000 + 167{,}000) = 810{,}000$ *li*.
   - zhao: |
-      All the above numbers of circumferences and diameters are where the sun's path reaches in going and
-      returning, the extremes of the length of day and night.
+      From the pole south to the winter-solstice noon is 238,000 *li*; add the 167,000 *li* of the sun's
+      light, and the radius is 405,000 *li*; it is the same north to its midnight. So the diameter is
+      810,000 *li*. Eighty-one is the end of the yang numbers, the limit of the sun.
+    hint: $81 = 9 \times 9$, the number of Shang Gao's "nine nines" ([[ZB.1.2]]).
   - classic: |
-      At the winter and summer solstices, observe the numbers of the pitch-pipes and listen to the sounds of
-      the bells.
+      The circumference is 2,430,000 *li*.
+  - zhao: |
+      Three times the diameter is the circumference.
+  - classic: |
+      From Zhou south to the illuminated region is 302,000 *li*.
+    highlight: [Ss]
+    modern: $405{,}000 - 103{,}000 = 302{,}000$ *li*.
+  - zhao: |
+      Subtract the 103,000 *li* from Zhou to the pole from the radius.
+  - classic: |
+      From Zhou north to the illuminated region is 508,000 *li*.
+    highlight: [Ns]
+    modern: $405{,}000 + 103{,}000 = 508{,}000$ *li*.
+  - zhao: |
+      Add the 103,000 *li* from Zhou to the pole to the radius.
+  - classic: |
+      East and west, 391,683½ *li* each.
+    highlight: [WxEx, PEx]
+    modern: $\sqrt{405{,}000^2 - 103{,}000^2} = 391{,}683.5$ *li*.
+    cites: [I.47, III.3]
+  - zhao: |
+      The method: take the diameter, 810,000 *li*, as the hypotenuse, double the distance from Zhou
+      [to the pole], 206,000 *li*, as the *gou*, and find the *gu*: 783,367 *li* and a fraction. Halve it:
+      the east and west numbers.
+    modern: $\sqrt{810{,}000^2 - 206{,}000^2} = 783{,}367.0$; half is $391{,}683.5$ *li*.
+  - classic: |
+      Zhou is 103,000 *li* south of the centre of heaven, so its east–west [line] is shorter than the
+      central diameter by 26,632 *li* and a fraction.
     hint: |
-      The twelve pitch-pipes (*lü* 律) were associated with the months. Han theory held that the
-      solstices could be detected by the sounds of pipes and bells, as by the shadow.
+      The chord through Zhou is shorter than the diameter through the pole: $810{,}000 - 783{,}367 =
+      26{,}633$ *li*.
+    dispute: |
+      Gutenberg reads 東西短中徑, "east–west shorter than the central diameter"; the Sibu Congkan has
+      東西矩中徑, apparently a misprint.
   - zhao: |
-      Observing the generation of the pitch-pipe numbers and listening to the changes in the sound of the
-      bells, one knows the extremes of cold and heat and understands the transformations of the succession
-      of seasons.
+      To find the 26,632 *li* and a fraction by which [it falls short of] the central diameter: set out
+      810,000 *li*, subtract Zhou's east–west [extent] of 783,367 *li* and a fraction, and the remainder is
+      the number.
   - classic: |
-      Winter-solstice day, summer-solstice night.
+      North of Zhou, 508,000 *li*; [the sun] at the winter solstice, 135,000 *li*; the winter-solstice path
+      diameter, 476,000 *li*, circumference 1,428,000 *li*. The sun's light at the four extremes, due east and
+      west of Zhou, [reaches] 391,683 *li* and a fraction each.
+    hint: A recapitulation of the main numbers.
+  - classic: |
+      This is the method of the square and the circle.
     hint: |
-      The winter sun's noon position and the summer sun's midnight position: the first is 238,000 *li*
-      south of the pole, the second 119,000 *li* north of it.
+      All the numbers come from circles (the sun's paths) and right-angled triangles (the "square"),
+      as Shang Gao promised in [[ZB.1.2]].
   - zhao: |
-      Halve the [diameter of the] winter-solstice day-and-night path and you get the [diameter of the]
-      summer-solstice day-and-night path. The method: take the winter-solstice path diameter, 476,000,
-      halve it, and you get 238,000 *li* from the summer-solstice noon to the summer-solstice midnight,
-      using the four-extremes *li*.
-    modern: $\tfrac12 \cdot 476{,}000 = 238{,}000$ *li*.
-  - classic: |
-      Observe it by the differences and the [distance] the sun's light reaches.
+      This [is how] the myriad things go round and the circle and square are used; the master craftsman
+      sets up the compass and the trysquare for his work. Sometimes one cuts down the square to make a
+      circle, sometimes breaks up a circle to make a square. A circle within a square is called a
+      "circle-square"; a square within a circle is called a "square-circle".
+    hint: |
+      The first characters of this note are illegible in the scan. The terms "circle-square" (圓方) and
+      "square-circle" (方圓) recur in later Chinese geometry for inscribed and circumscribed figures.
   - zhao: |
-      By the reach of the differences and where the sun's light reaches: observing by these one finds the
-      bounds of the four extremes.
-    hint: The next section computes those bounds.
+      Zhao Junqing says: the blue painted [circle] is where heaven and earth meet, the limit of human sight.
+      Heaven is supremely high and earth supremely low; they do not really meet. But the human eye, looking
+      as far as it can, sees heaven and earth meet.
+    zh: 趙君卿曰靑圖畫者天地合際人目所遠者也天至高地至卑非合也人目極觀而天地合也
+    hint: |
+      The horizon is not where heaven touches earth; it is the limit of sight, 167,000 *li* away
+      ([[ZB.2.10]]).
+    highlight: [blue]
+    figure: 1
+  - zhao: |
+      When the sun enters within the blue painted [circle], it is called sunrise; when it goes outside the
+      blue painted [circle], it is called sunset. Both inside and outside the blue painted [circle] is
+      heaven.
+    zh: 日入青圖畫内謂之日出出青圖畫外謂之日入青圖畫之内外皆天也
+    highlight: [blue, h1, h7]
+  - zhao: |
+      The north pole sits exactly in the centre of heaven. What people call east, west, south and north
+      have no fixed places: each takes the place where the sun rises as east, the place of the sun at noon
+      as south, where it sets as west, and where it is hidden as north.
+    zh: 北辰正居天中之央人所謂東西南北者非有常處各以日出之處爲東日中爲南日入爲西日没爲北
+    hint: |
+      A striking point. On a flat earth with the pole at the centre, "south" means "towards the
+      noon sun". Directions are local.
+  - zhao: |
+      Beneath the north pole, for six months the sun is seen and for six months it is not. From the spring
+      equinox to the autumn equinox the sun is always seen for six months; from the autumn equinox to the
+      spring equinox it is never seen for six months. Seeing the sun is day, not seeing it is night: what is
+      called a year is, beneath the north pole, one day and one night.
+    zh: 北辰之下六月見日六月不見日從春分至秋分六月常見日從秋分至春分六月常不見日見日爲晝不見日爲夜所謂一歳者卽北辰之下一晝一夜
+    hint: Compare [[ZB.2.9]].
+  - zhao: |
+      The yellow painted [circle] is the yellow road, along which the twenty-eight lodges are arrayed and
+      on which the sun, moon and stars travel. Keep the blue chart on top, fixed; pierce it at the pole and
+      turn [the yellow chart] underneath, and they will meet.
+    zh: 黃圖畫者黃道也二十八宿列焉日月星辰躔焉使青圖在上不動貫其極而轉之卽交矣
+    hint: |
+      The chart is a working model: two sheets pinned together at the pole. Turning the lower sheet
+      shows which lodges rise and set and when.
+    highlight: [yellow]
+  - zhao: |
+      Where I am is south of the north pole; it is not the centre of heaven and earth. My *mao* and *you*
+      [east and west] are not the *mao* and *you* of heaven and earth.
+    zh: 我之所在北辰之南非天地之中也我之卯酉非天地之卯酉
+    highlight: [Z]
+  - zhao: |
+      The innermost, the first, is the summer-solstice path; the middle, the fourth, is the equinox path;
+      the outermost, the seventh, is the winter-solstice path. All follow the yellow road. At the winter
+      solstice the sun is in [the lodge] Qianniu, at the spring equinox in Lou, at the summer solstice in
+      Dongjing, at the autumn equinox in Jiao. From the winter solstice it moves from south to north, from
+      the summer solstice from north to south: it ends and begins again.
+    highlight: [h1, h4, h7]
+    hint: |
+      Qianniu 牽牛, Lou 婁, Dongjing 東井 and Jiao 角 are four of the 28 lunar lodges, roughly a
+      quarter of the sky apart. Their distances from the pole are computed in [[ZB.5.1]].
+
+historical: |
+  Zhao's chart has not survived, though the text of Part 3 gives its scale. This description is
+  the earliest account of a two-layered planisphere in China. The figure here draws the classic's
+  numbers to scale: the observer's circle of sight overlaps the pole and passes beyond it.

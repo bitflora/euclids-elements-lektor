@@ -12,7 +12,7 @@ parallels:
     note: |
       The small triangle of gnomon and shadow and the large triangle of the sun's height and its
       distance have equal angles, so their sides are proportional (VI.4). The Zhou bi uses this
-      throughout without stating it; Zhao proves the two-gnomon version with areas in [[ZB.2.7]].
+      throughout without stating it; Zhao proves the two-gnomon version with areas in [[ZB.2.6]].
   - id: I.47
     relation: same
     note: |
@@ -56,7 +56,7 @@ steps:
       to set up the foundation of refined principles. Clarity can reach all affairs, understanding can
       reach the boundless. This is what is meant by "wisdom comes from the *gou*, and the *gou* comes from
       the trysquare".
-    hint: Zhao quotes Shang Gao ([[ZB.1.7]]).
+    hint: Zhao quotes Shang Gao ([[ZB.1.6]]).
   - classic: |
       From the gnomon to [the point] beneath the sun is 60,000 *li*, and [there] the gnomon has no shadow.
       From there up to the sun is 80,000 *li*.

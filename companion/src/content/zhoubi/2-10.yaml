@@ -1,10 +1,10 @@
 id: ZB.2.10
-title: Day and night at the pole — the sun's light reaches 167,000 li
+title: How far one can see; where the sun's light reaches
 paraphrase: |
-  From spring to autumn equinox the region beneath the pole always has sunlight; from autumn to
-  spring it never does. At the equinoxes the sun's light just reaches the pole. Since the equinox
-  sun is 178,500 *li* from the pole, and its light stops at the edge of the polar region 11,500
-  *li* short of the pole, the sun's light reaches 167,000 *li* in every direction.
+  Human sight reaches as far as the sun's light, 167,000 *li*. That is why the sun rises and sets.
+  It is visible while within 167,000 *li* of the observer and invisible beyond. A series of
+  subtractions then locates the edges of sight and of sunlight relative to Zhou, the pole and
+  the sun's circles.
 
 diagram:
   width: 400
@@ -13,79 +13,103 @@ diagram:
     - "P;point;fixed;200,200;black;black"
     - "Z;point;fixed;200,249;black;black"
     - "k1;point;fixed;256.7,200;0;0"
-    - "k4;point;fixed;285,200;0;0"
     - "k7;point;fixed;313.3,200;0;0"
     - "summer;circle;radius;P,k1;0;0;#b45309;0"
-    - "equinox;circle;radius;P,k4;0;0;#5b6b2f;0"
     - "winter;circle;radius;P,k7;0;0;#33587a;0"
-    - "Xk;point;fixed;205.5,200;0;0"
-    - "xuanji;circle;radius;P,Xk;0;0;black;#d6d3cc"
-    - "C;point;fixed;200,285;black;black"
-    - "Lk;point;fixed;279.5,285;0;0"
-    - "light;circle;radius;C,Lk;0;0;#d97706;0"
-    - "R;point;fixed;200,205.5;black;0"
-    - "CR;line;connect;C,R;0;0;#d97706"
-  given: [P, Z, summer, equinox, winter, xuanji, C, light, R, CR]
+    - "Zk;point;fixed;279.5,249;0;0"
+    - "sight;circle;radius;Z,Zk;0;0;#7e22ce;0"
+    - "A;point;fixed;200,256.7;black;black"
+    - "B;point;fixed;200,313.3;black;black"
+    - "N;point;fixed;200,169.5;black;black"
+    - "S;point;fixed;200,328.5;black;black"
+    - "NS;line;connect;N,S;0;0;#7e22ce"
+  given: [P, Z, summer, winter, sight, A, B, N, S, NS]
   caption: |
-    At noon on an equinox the sun is at {C}, on the middle circle, 178,500 *li* from the pole {P}. Its
-    light (orange circle) reaches 167,000 *li* to {R}, just short of the grey polar region (*xuanji*,
-    11,500 *li* across in radius). In summer the sun's circle is smaller and its light covers the pole;
-    in winter it is larger and the pole is in darkness.
+    The circle of sight around Zhou {Z} (purple, radius 167,000 *li*). Its northern edge {N} lies
+    64,000 *li* beyond the pole {P}; its southern edge {S} lies 32,000 *li* beyond the winter-solstice
+    noon sun {B}. The sun is visible whenever it is inside this circle.
 
 steps:
   - classic: |
-      From the spring equinox, [when] day and night are equal, to the autumn equinox, [when] day and night
-      are equal, there is always sunlight beneath the pole.
-    hint: The "polar day" of six months, which the Zhou bi deduces rather than observes.
-    highlight: [summer]
-  - zhao: |
-      At the equinoxes day and night are equal. From spring to autumn equinox the sun is inside, near the
-      pole, so its light reaches there.
-  - classic: |
-      From the autumn equinox to the spring equinox there is never sunlight beneath the pole.
-    highlight: [winter]
-  - zhao: |
-      From autumn to spring equinox the sun is outside, far from the pole, so its light does not reach.
-  - classic: |
-      So at the equinoxes the sun's light reaches just to the pole: yin and yang are equally divided. The
-      winter and summer solstices are produced by the sun's path going out and coming in; [they are] the
-      extremes of the length of day and night.
-    highlight: [CR]
-  - zhao: |
-      *Fa* means "going out", *lian* means "coming back", *ji* means "end".
-  - classic: |
-      The equinoxes are the equal measure of yin and yang, the image of day and night.
-  - zhao: |
-      *Xiu* means "long": that is, yin and yang are equal in length.
-  - classic: |
-      Day is yang, night is yin.
-  - zhao: |
-      The difference of light and dark is taken as the image of yin and yang.
-  - classic: |
-      From spring equinox to autumn equinox is the image of day;
-  - zhao: |
-      Beneath the north pole the sunlight is seen. The long sun governs the birth of things, so it images
-      day.
-  - classic: |
-      from autumn equinox to spring equinox is the image of night.
-  - zhao: |
-      Beneath the north pole the sunlight is not seen. The short sun governs the death of things, so it
-      images night.
-  - classic: |
-      So at noon on the equinoxes the light reaches to beneath the north pole, and at midnight the sun's
-      light also reaches [past] the pole from the south. This is the time when day and night are divided.
-      So it says: the sun illuminates to the four sides 167,000 *li* each.
+      The distance that people can see should be the same as the reach of the sun's light.
     hint: |
-      The sun's light has a fixed range. At the equinox it just reaches the pole region, so the range is
-      the equinox radius less the polar region: $178{,}500 - 11{,}500 = 167{,}000$ *li*.
-    highlight: [light, CR]
-    modern: $178{,}500 - 11{,}500 = 167{,}000$ *li*.
-    explain:
-      implicit: |
-        The 11,500 *li* radius of the polar region (*xuanji* 璇璣) is measured later ([[ZB.4.4]]). The
-        text uses it here without saying so; Zhao fills in the step.
+      A symmetry: if the sun's light reaches the observer, the observer can see the sun. Sunrise and
+      sunset are the moments the sun's circle crosses the edge of this region.
+    highlight: [sight]
   - zhao: |
-      "Reaching the pole" means [reaching] the edge of the *xuanji*, where yang is cut off and yin
-      obstructs. At that time the sun's light does not reach [the centre], so we know that the sun shines
-      to the side 167,000 *li*, falling short of the centre of heaven by 11,500 *li*.
-    highlight: [xuanji]
+      When the sun is within 167,000 *li* of me, [its light] reaches me and I see the sun: so it is sunrise.
+      When the sun is more than 167,000 *li* from me, the sun does not see me and I do not see the sun: so
+      it is sunset. That is, the sun and the eye see each other within 167,000 *li*. So it says, "the
+      distance seen should be as the reach of the sun's light".
+    explain:
+      fact: |
+        In the *gaitian*, the sun never goes below the horizon. It "sets" by going too far away to be
+        seen. Day length then depends on how much of the sun's daily circle lies within 167,000 *li*
+        of the observer.
+  - classic: |
+      From Zhou one can see 64,000 *li* north beyond the pole.
+    highlight: [N, P]
+    modern: $167{,}000 - 103{,}000 = 64{,}000$ *li*.
+  - zhao: |
+      From here on, all the cases of subtracting take the 167,000 *li* of the sun's light, or of human
+      sight, and subtract from it. Here one subtracts the 103,000 *li* from the pole to Zhou.
+  - classic: |
+      South, it is 32,000 *li* beyond the winter-solstice sun.
+    highlight: [S, B]
+    modern: $167{,}000 - 135{,}000 = 32{,}000$ *li*.
+  - zhao: |
+      Subtract the 135,000 *li* from Zhou to the winter-solstice noon sun.
+  - classic: |
+      The summer-solstice noon light reaches 48,000 *li* south beyond the winter-solstice noon light.
+    modern: $167{,}000 - 119{,}000 = 48{,}000$ *li*.
+    hint: |
+      The light of the summer sun at {A} reaches 167,000 *li*; the winter sun {B} is 119,000 *li*
+      beyond {A}.
+  - zhao: |
+      Subtract the 119,000 *li* between the [summer and] winter noon [positions].
+  - classic: |
+      [It reaches] 16,000 *li* south beyond what people can see.
+    modern: $(16{,}000 + 167{,}000) - 167{,}000 = 16{,}000$ *li*.
+  - zhao: |
+      The summer-solstice noon sun is 16,000 *li* from Zhou.
+  - classic: |
+      North, it reaches 151,000 *li* beyond Zhou,
+    modern: $167{,}000 - 16{,}000 = 151{,}000$ *li*.
+  - zhao: |
+      Subtract the 16,000 *li* from Zhou to the summer-solstice noon [sun].
+  - classic: |
+      and 48,000 *li* beyond the pole.
+    modern: $167{,}000 - 119{,}000 = 48{,}000$ *li*.
+  - zhao: |
+      Subtract the 119,000 *li* from the pole to the summer-solstice sun.
+  - classic: |
+      The sun's light at midnight at the winter solstice falls 7,000 *li* short, to the south, of what
+      people can see,
+    hint: |
+      At winter midnight the sun is 238,000 *li* north of the pole. Its light reaches 71,000 *li* short
+      of the pole, while sight from Zhou reaches 64,000 *li* beyond it. The gap is 7,000 *li*.
+  - zhao: |
+      Double the distance reached by the sun's light, subtract it from the winter-solstice path diameter
+      of 476,000 *li*, and also subtract the 135,000 *li* from Zhou to the winter noon sun.
+    modern: $476{,}000 - 2 \cdot 167{,}000 - 135{,}000 = 7{,}000$ *li*.
+  - classic: |
+      and falls 71,000 *li* short of beneath the pole.
+    modern: $238{,}000 - 167{,}000 = 71{,}000$ *li*.
+  - zhao: |
+      From the pole to the midnight [sun], subtract the 167,000 *li* illuminated.
+  - classic: |
+      At the summer solstice the noon and midnight light overlap by 96,000 *li* across the pole.
+    modern: $2 \cdot 167{,}000 - 238{,}000 = 96{,}000$ *li*.
+    hint: |
+      The summer circle is small enough that the sun's light at noon and at midnight overlaps: the pole
+      has continuous daylight.
+  - zhao: |
+      Double the sun's illumination and subtract the summer-solstice path diameter: the remainder is the
+      overlap.
+  - classic: |
+      At the winter solstice the noon and midnight light fail to meet by 142,000 *li*, each falling 71,000
+      *li* short of beneath the pole.
+    modern: $476{,}000 - 2 \cdot 167{,}000 = 142{,}000$; half is $71{,}000$ *li*.
+  - zhao: |
+      Double the sun's illumination and subtract it from the winter-solstice path diameter: the remainder
+      is the gap. Halve it: [the amount] each falls short of beneath the pole.

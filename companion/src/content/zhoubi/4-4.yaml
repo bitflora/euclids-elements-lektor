@@ -101,7 +101,7 @@ steps:
       The mark where the cord reaches the ground is 1 *zhang* 3 *cun* from the gnomon; so the centre of
       heaven is 103,000 *li* from Zhou.
     highlight: [OV, V]
-    hint: The same sighting as in [[ZB.2.8]], now explained.
+    hint: The same sighting as in [[ZB.2.7]], now explained.
     cites: [VI.4]
   - zhao: |
       When the north pole [star] is east and west, it is level with the centre of heaven; so the *gou* sighted
@@ -132,6 +132,6 @@ steps:
       diameter [falls short by] 26,632 and 1,423,424/1,566,735 *li*.
     dispute: |
       Only the first sentence concerns this passage. The rest is the calculation for the east–west
-      shortfall of [[ZB.2.14]]: $810{,}000 - \sqrt{810{,}000^2 - 206{,}000^2} = 26{,}632.909$, with the
+      shortfall of [[ZB.2.13]]: $810{,}000 - \sqrt{810{,}000^2 - 206{,}000^2} = 26{,}632.909$, with the
       root's fractional part expressed in the old style over $2 \times 783{,}367 + 1$. It seems to have
       been misplaced, and may be Zhen Luan's work rather than Zhao's.

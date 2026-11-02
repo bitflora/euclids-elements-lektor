@@ -366,8 +366,8 @@ function joinZhao(lines) {
 // This edition's division of each part into sections, by Gutenberg line number of
 // the first lemma. [n, k] starts at the k-th commentary block on lemma n.
 const SECTIONS = {
-  1: [1, 5, 8, [15, 1], 16, 21, 25],
-  2: [1, 18, 37, 44, 47, 50, [51, 0], 52, 58, 67, 75, 86, 89, 93, [100, 1]],
+  1: [1, 5, 8, 16, 21, 25],
+  2: [1, 18, 37, 44, 47, 50, 52, 58, 67, 75, 86, 89, 93],
   3: [1, 3, 10, 14, 21, 26],
   4: [1, 9, 17, 25, 34, 44, 52, 62],
   5: [1, 20, 45, 51, 53, 60, 72],

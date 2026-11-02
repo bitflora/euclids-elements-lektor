@@ -73,6 +73,7 @@ export function alignPassages(id: string, passages: ZbPassage[], ann: ZbAnnotati
     const from = off === 0 ? 0 : P.at[off];
     const to = last ? P.chars.length : P.at[end];
     steps.push({
+      num: "",
       ...a,
       index,
       voice,
@@ -94,6 +95,7 @@ export function alignPassages(id: string, passages: ZbPassage[], ann: ZbAnnotati
 /** Steps for a section not yet translated: one per passage. */
 const passageSteps = (passages: ZbPassage[]): ZbStep[] =>
   passages.map((pass, i) => ({
+    num: "",
     index: i,
     voice: pass.voice,
     source: pass.zh,
@@ -102,6 +104,22 @@ const passageSteps = (passages: ZbPassage[]): ZbStep[] =>
     sbck: pass.sbck,
     sbckOnly: pass.sbckOnly,
   }));
+
+/** Number the steps: the classic counts 1, 2, 3…; Zhao's commentary is a sub-number of the classic step before it. */
+function numberSteps(steps: ZbStep[]) {
+  let classic = 0;
+  let sub = 0;
+  for (const s of steps) {
+    if (s.voice === "classic") {
+      classic++;
+      sub = 0;
+      s.num = `${classic}`;
+    } else {
+      sub++;
+      s.num = classic ? `${classic}.${sub}` : `${sub}`;
+    }
+  }
+}
 
 // ─── Sections ─────────────────────────────────────────────────────────────
 export const zbSections = new Map<string, ZbSection>();
@@ -118,6 +136,7 @@ function add(part: number, n: number, src: { id: string; passages: ZbPassage[] }
     zbErrors.push(e.message);
     steps = passageSteps(src.passages);
   }
+  numberSteps(steps);
   const pref = src.id === "ZB.Pref";
   zbSections.set(src.id, {
     id: src.id,

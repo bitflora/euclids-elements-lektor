@@ -1,10 +1,23 @@
 id: ZB.2.11
-title: How far one can see; where the sun's light reaches
+title: Due east and west of Zhou — a chord of the sun's circle
 paraphrase: |
-  Human sight reaches as far as the sun's light, 167,000 *li*. That is why the sun rises and sets.
-  It is visible while within 167,000 *li* of the observer and invisible beyond. A series of
-  subtractions then locates the edges of sight and of sunlight relative to Zhou, the pole and
-  the sun's circles.
+  How far east and west of Zhou does the sun pass? The line through Zhou running east–west is a
+  chord of the sun's daily circle. Its half is a leg of a right triangle whose hypotenuse is the
+  circle's radius and whose other leg is Zhou's distance from the pole. At the summer solstice the
+  sun passes 59,598½ *li* due east and west of Zhou. At the winter solstice it would be 214,557½
+  *li*, beyond the range of sight, so the sun is never seen due east or west.
+
+parallels:
+  - id: I.47
+    relation: same
+    note: |
+      Zhao finds the chord by the *gou-gu* rule: half the chord is $\sqrt{R^2 - d^2}$, where $R$ is the
+      circle's radius and $d$ the distance of the chord from the centre.
+  - id: III.3
+    relation: related
+    note: |
+      That the east–west line through Zhou is cut in half by the north–south diameter, so that "halving
+      gives each" side, is III.3: a diameter perpendicular to a chord bisects it.
 
 diagram:
   width: 400
@@ -18,98 +31,67 @@ diagram:
     - "winter;circle;radius;P,k7;0;0;#33587a;0"
     - "Zk;point;fixed;279.5,249;0;0"
     - "sight;circle;radius;Z,Zk;0;0;#7e22ce;0"
-    - "A;point;fixed;200,256.7;black;black"
-    - "B;point;fixed;200,313.3;black;black"
-    - "N;point;fixed;200,169.5;black;black"
-    - "S;point;fixed;200,328.5;black;black"
-    - "NS;line;connect;N,S;0;0;#7e22ce"
-  given: [P, Z, summer, winter, sight, A, B, N, S, NS]
+    - "U;point;fixed;171.6,249;black;black"
+    - "V;point;fixed;228.4,249;black;black"
+    - "W;point;fixed;97.8,249;black;black"
+    - "Y;point;fixed;302.2,249;black;black"
+    - "UV;line;connect;U,V;0;0;#b45309"
+    - "WY;line;connect;W,Y;0;0;#33587a"
+    - "PZ;line;connect;P,Z;0;0;black"
+    - "PV;line;connect;P,V;0;0;#b45309"
+    - "PY;line;connect;P,Y;0;0;#33587a"
+    - "angZ;sector;angleMarker;Z,V,P,8;0;0;black;0"
+  aliases:
+    ZV: UV
+  equal:
+    - [UV, WY]
+  given: [P, Z, summer, winter, U, V, PZ, UV, PV, angZ]
   caption: |
-    The circle of sight around Zhou {Z} (purple, radius 167,000 *li*). Its northern edge {N} lies
-    64,000 *li* beyond the pole {P}; its southern edge {S} lies 32,000 *li* beyond the winter-solstice
-    noon sun {B}. The sun is visible whenever it is inside this circle.
+    The east–west line through Zhou {Z} meets the summer circle at {U} and {V}. In the right triangle
+    {P}{Z}{V}, the hypotenuse {PV} is the summer radius (119,000 *li*) and {PZ} is 103,000 *li*, so
+    {ZV} = 59,598½ *li*. On the winter circle the same line reaches {W} and {Y}, 214,557½ *li* away,
+    outside the circle of sight (purple).
 
 steps:
   - classic: |
-      The distance that people can see should be the same as the reach of the sun's light.
-    hint: |
-      A symmetry: if the sun's light reaches the observer, the observer can see the sun. Sunrise and
-      sunset are the moments the sun's circle crosses the edge of this region.
-    highlight: [sight]
+      On the day of the summer solstice, looking due east and west, the sun, directly east and west of
+      Zhou, is 59,598½ *li* from Zhou.
+    highlight: [UV, PV, PZ]
+    modern: $\sqrt{119{,}000^2 - 103{,}000^2} = 59{,}598.7$ *li*.
+    cites: [I.47, III.3]
   - zhao: |
-      When the sun is within 167,000 *li* of me, [its light] reaches me and I see the sun: so it is sunrise.
-      When the sun is more than 167,000 *li* from me, the sun does not see me and I do not see the sun: so
-      it is sunset. That is, the sun and the eye see each other within 167,000 *li*. So it says, "the
-      distance seen should be as the reach of the sun's light".
+      The method: take the summer-solstice path diameter, 238,000 *li*, as the hypotenuse, and twice the
+      pole's distance from Zhou, 206,000 *li*, as the *gu*, and find the *gou*. Subtract the *gu* multiplied
+      by itself from the hypotenuse multiplied by itself, extract the square root of the remainder, and you
+      get a *gou* of 119,197 *li* and a fraction. Halve it: that is each half, [east and west] of Zhou.
+    hint: |
+      Zhao works with the whole diameter and twice the distance, then halves the result. It is the same
+      right triangle, doubled.
+    highlight: [UV]
+    modern: |
+      $$\sqrt{238{,}000^2 - 206{,}000^2} = 119{,}197.3,\qquad \tfrac12 \cdot 119{,}197.3 = 59{,}598.7.$$
+    cites: [I.47]
     explain:
-      fact: |
-        In the *gaitian*, the sun never goes below the horizon. It "sets" by going too far away to be
-        seen. Day length then depends on how much of the sun's daily circle lies within 167,000 *li*
-        of the observer.
+      did: |
+        "*Gou* multiplied by itself, subtracted from hypotenuse multiplied by itself, root extracted" is the
+        rule $b = \sqrt{c^2 - a^2}$ from [[ZB.1.3]].
   - classic: |
-      From Zhou one can see 64,000 *li* north beyond the pole.
-    highlight: [N, P]
-    modern: $167{,}000 - 103{,}000 = 64{,}000$ *li*.
+      On the day of the winter solstice the sun is not seen due east and west.
+    adds: [sight, W, Y, WY, PY]
+    highlight: [WY, sight]
   - zhao: |
-      From here on, all the cases of subtracting take the 167,000 *li* of the sun's light, or of human
-      sight, and subtract from it. Here one subtracts the 103,000 *li* from the pole to Zhou.
+      Due east and west means Zhou's *mao* and *you* [directions]. The sun is beyond 167,000 *li*, so it
+      is not seen.
   - classic: |
-      South, it is 32,000 *li* beyond the winter-solstice sun.
-    highlight: [S, B]
-    modern: $167{,}000 - 135{,}000 = 32{,}000$ *li*.
+      By calculation, [the point] beneath the sun is 214,557½ *li* from Zhou.
+    highlight: [WY, PY]
+    modern: $\sqrt{238{,}000^2 - 103{,}000^2} = 214{,}557.7$ *li*, more than 167,000.
+    cites: [I.47]
   - zhao: |
-      Subtract the 135,000 *li* from Zhou to the winter-solstice noon sun.
-  - classic: |
-      The summer-solstice noon light reaches 48,000 *li* south beyond the winter-solstice noon light.
-    modern: $167{,}000 - 119{,}000 = 48{,}000$ *li*.
-    hint: |
-      The light of the summer sun at {A} reaches 167,000 *li*; the winter sun {B} is 119,000 *li*
-      beyond {A}.
-  - zhao: |
-      Subtract the 119,000 *li* between the [summer and] winter noon [positions].
-  - classic: |
-      [It reaches] 16,000 *li* south beyond what people can see.
-    modern: $(16{,}000 + 167{,}000) - 167{,}000 = 16{,}000$ *li*.
-  - zhao: |
-      The summer-solstice noon sun is 16,000 *li* from Zhou.
-  - classic: |
-      North, it reaches 151,000 *li* beyond Zhou,
-    modern: $167{,}000 - 16{,}000 = 151{,}000$ *li*.
-  - zhao: |
-      Subtract the 16,000 *li* from Zhou to the summer-solstice noon [sun].
-  - classic: |
-      and 48,000 *li* beyond the pole.
-    modern: $167{,}000 - 119{,}000 = 48{,}000$ *li*.
-  - zhao: |
-      Subtract the 119,000 *li* from the pole to the summer-solstice sun.
-  - classic: |
-      The sun's light at midnight at the winter solstice falls 7,000 *li* short, to the south, of what
-      people can see,
-    hint: |
-      At winter midnight the sun is 238,000 *li* north of the pole. Its light reaches 71,000 *li* short
-      of the pole, while sight from Zhou reaches 64,000 *li* beyond it. The gap is 7,000 *li*.
-  - zhao: |
-      Double the distance reached by the sun's light, subtract it from the winter-solstice path diameter
-      of 476,000 *li*, and also subtract the 135,000 *li* from Zhou to the winter noon sun.
-    modern: $476{,}000 - 2 \cdot 167{,}000 - 135{,}000 = 7{,}000$ *li*.
-  - classic: |
-      and falls 71,000 *li* short of beneath the pole.
-    modern: $238{,}000 - 167{,}000 = 71{,}000$ *li*.
-  - zhao: |
-      From the pole to the midnight [sun], subtract the 167,000 *li* illuminated.
-  - classic: |
-      At the summer solstice the noon and midnight light overlap by 96,000 *li* across the pole.
-    modern: $2 \cdot 167{,}000 - 238{,}000 = 96{,}000$ *li*.
-    hint: |
-      The summer circle is small enough that the sun's light at noon and at midnight overlaps: the pole
-      has continuous daylight.
-  - zhao: |
-      Double the sun's illumination and subtract the summer-solstice path diameter: the remainder is the
-      overlap.
-  - classic: |
-      At the winter solstice the noon and midnight light fail to meet by 142,000 *li*, each falling 71,000
-      *li* short of beneath the pole.
-    modern: $476{,}000 - 2 \cdot 167{,}000 = 142{,}000$; half is $71{,}000$ *li*.
-  - zhao: |
-      Double the sun's illumination and subtract it from the winter-solstice path diameter: the remainder
-      is the gap. Halve it: [the amount] each falls short of beneath the pole.
+      The method: take the winter-solstice path diameter, 476,000 *li*, as the hypotenuse, twice the pole's
+      distance from Zhou, 206,000 *li*, as the *gou*, and find the *gu*. Subtract the *gou* multiplied by itself
+      from the hypotenuse multiplied by itself, extract the root of the remainder: 429,115 *li* and a
+      fraction. Halve it: the east and west numbers.
+    dispute: |
+      The Sibu Congkan writes 二十萬六十里, "200,060"; the context (twice 103,000) requires 二十萬六千里,
+      206,000.

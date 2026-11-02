@@ -36,7 +36,7 @@ steps:
   - classic: |
       Shang Gao said: "The art of numbers comes from the circle and the square.
     hint: |
-      The circle stands for heaven and the square for earth (see [[ZB.1.6]]). Every number in the book
+      The circle stands for heaven and the square for earth (see [[ZB.1.5]]). Every number in the book
       measures one or the other.
   - zhao: |
       A circle of diameter 1 has circumference 3; a square of side 1 has perimeter 4. Stretch out the
@@ -76,7 +76,7 @@ steps:
     explain:
       did: |
         The circle "comes from" the square because its measures are got from those of the circumscribed
-        square (see Zhao's area rules in [[ZB.1.6]]); the square "comes from" the trysquare because a
+        square (see Zhao's area rules in [[ZB.1.5]]); the square "comes from" the trysquare because a
         rectangle is laid out with a right angle.
   - classic: |
       The trysquare comes from nine nines are eighty-one.

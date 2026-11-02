@@ -37,7 +37,7 @@ steps:
   - classic: |
       Beneath the pole the land is higher than where people live by 60,000 *li*; it slopes away downward on
       all four sides like running water.
-    hint: The earth is a low dome with the pole at its top. Compare Zhao's gloss on round heaven, [[ZB.1.6]].
+    hint: The earth is a low dome with the pole at its top. Compare Zhao's gloss on round heaven, [[ZB.1.5]].
   - zhao: |
       Going toward the north pole, from the outer orbit to beneath the pole, it rises by 60,000 *li*.
       Speaking of where people live, [the slope] extends all the way to the outer orbit, falling away on four
@@ -49,7 +49,7 @@ steps:
   - classic: |
       So the sun's light shines out to a diameter of 810,000 *li* and a circumference of 2,430,000 *li*.
     dispute: Gutenberg has 經 for 徑, "diameter"; the Sibu Congkan's 徑 is followed.
-    hint: The circle of the four extremes, [[ZB.2.14]].
+    hint: The circle of the four extremes, [[ZB.2.13]].
   - zhao: |
       The sun reaches the outer orbit and returns, sending out its light 167,000 *li*; so the sun illuminates
       [that far].
