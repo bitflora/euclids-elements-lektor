@@ -53,7 +53,8 @@ steps:
   - classic: |
       Yang shines on three and does not cover nine.
     hint: |
-      The sun ("yang") is seen over three of the twelve branches: the day is a quarter of the circle.
+      The sun ("yang") is seen over the three southern branches. With the halves of the rising and setting
+      branches that Zhao adds below, the winter day is a third of the circle.
   - zhao: |
       Yang is the sun; "cover" means to cover all over. "Shines on three" means the three southern branches,
       *si*, *wu* and *wei*.

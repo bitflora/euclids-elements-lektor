@@ -4,7 +4,7 @@ paraphrase: |
   Zhao Shuang (趙爽, courtesy name Junqing 君卿, probably 3rd century CE) explains why he wrote his
   commentary. Heaven and earth are too vast to measure directly, so rival theories of their shape
   arose: the *huntian* 渾天 ("enveloping heaven", a celestial sphere) and the *gaitian* 蓋天
-  ("covering heaven", a canopy over a flat earth). The Zhou bi is the classic of the second. He
+  ("covering heaven", a canopy over the earth). The Zhou bi is the classic of the second. He
   fears it will be lost, so he has drawn diagrams to go with the text.
 
 steps:
@@ -32,7 +32,7 @@ steps:
 
   - zhao: |
       So strange theories appeared, and doctrines at two extremes arose: there came to be the
-      "enveloping heaven" and the "covering heaven", which each tried to embrace everything. Thus they
+      "enveloping heaven" and the "covering heaven", which between them took in everything. Thus they
       could fully comprehend the way of heaven and earth and see its depths. The enveloping heaven has
       the text of the *Ling xian*; the covering heaven has the method of the *Zhou bi*.
     zh: 是以詭異之說出則兩端之理生遂有渾天葢天兼而並之故能彌綸天地之道有以見天地之賾則渾天有靈憲之文葢天有周髀之法
@@ -42,9 +42,12 @@ steps:
     explain:
       fact: |
         In the *huntian* the heavens are a sphere turning round the earth, like the yolk in an egg.
-        In the *gaitian* of the Zhou bi, heaven is a canopy held parallel above a flat earth, and the
+        In the *gaitian* of the Zhou bi, heaven is a canopy held parallel above the earth, and the
         sun is carried round on circles of different sizes at different seasons. Day and night
-        follow because the sun's light reaches only so far (Part 2).
+        follow because the sun's light reaches only so far (Part 2). The shadow calculations treat
+        heaven and earth as parallel planes, but the cosmology of Part 4 vaults both: the land
+        beneath the pole stands 60,000 *li* higher than the rim, and heaven arches above it in the
+        same shape.
 
   - zhao: |
       Generation after generation has preserved them, and officials have kept them, so as reverently

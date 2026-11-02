@@ -223,8 +223,8 @@ steps:
     dispute: |
       The Sibu Congkan reads 或矩於内或方於外, "trysquare inside, square outside". The Siku Quanshu
       editors swapped the two (矩於外…方於内), noting that "all editions have *outside* and
-      *inside* interchanged". The swapped reading fits the figures: the gnomon wraps round the outside
-      of the smaller square.
+      *inside* interchanged". The translation follows the swapped Siku reading, which fits the figures:
+      the gnomon wraps round the outside of the smaller square.
 
   - zhao: |
       The trysquare of the *gou* area has the difference of *gu* and hypotenuse as its breadth and the
@@ -360,10 +360,9 @@ steps:
 
   - zhao: |
       Take twice the hypotenuse as the sum of breadth and length. Let whichever of *gou* or *gu* is known be
-      multiplied by itself to make the area. Subtract four of these areas, and extract the root of the
-      remainder: the result is the difference. Subtract the difference from the sum and halve the
-      remainder: |
-        that is the breadth. Subtract the breadth from the hypotenuse: that is what was sought.
+      multiplied by itself to make the area. Subtract four of these areas [from the square of the sum], and
+      extract the root of the remainder: the result is the difference. Subtract the difference from the sum
+      and halve the remainder: that is the breadth. Subtract the breadth from the hypotenuse: that is what was sought.
     zh: 其倍弦爲廣袤合令勾股見者自乘爲其實四實以減之開其餘所得爲差以差減合半其餘爲廣減廣於弦即所求也
     hint: |
       Given the hypotenuse and one leg, find the other. The gnomon's rectangle, breadth $c - b$ and

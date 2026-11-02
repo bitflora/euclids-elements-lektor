@@ -64,7 +64,8 @@ steps:
   - zhao: |
       They did not know exactly what the remaining fraction was.
   - classic: |
-      Then, after 365 days, the shadow at the southern extreme was long, and the next day it turned shorter.
+      Then, after 365 days, the sun was at its southern extreme and the shadow longest, and the next day it
+      turned shorter.
       Taking the year's end as [the day] the shadow turns from lengthening, they knew that three [years] had
       365 days and one had 366.
     hint: |

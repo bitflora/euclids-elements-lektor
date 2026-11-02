@@ -67,7 +67,7 @@ steps:
       fact: |
         This is the idea of local time: different places have noon at different moments. A spherical-earth
         astronomer would say the same about places of different longitude. In the Zhou bi it follows
-        directly from the geometry of a flat earth under a sun that circles the pole.
+        directly from a non-spherical earth under a sun that circles the pole.
   - zhao: |
       The "four harmonies": the pole's *zi*, *wu*, *mao* and *you* [north, south, east and west] give the
       centres of east, west, south and north, where heaven and earth come together, where the four seasons
