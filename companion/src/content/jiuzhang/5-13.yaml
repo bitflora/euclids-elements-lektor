@@ -49,9 +49,11 @@ steps:
   - classic: |
       making 144 8/243 *hu* of beans.
   - liu: |
-      By Hui's method the beans should be 137 10,771/12,717 *hu*.
+      By Hui's method the beans should be 137 7,771/12,717 *hu*.
     dispute: |
-      The text writes the numerator as 十千七百七十一, "ten thousand seven hundred and seventy-one".
+      The text writes the numerator as 十千七百七十一, "ten thousand seven hundred and seventy-one", but the
+      calculation requires 7,771: $334\tfrac{186}{471} \div 2.43 = 137\tfrac{7\,771}{12\,717}$. The transmitted
+      "十千" is evidently a slip for "七千".
   - li: |
       We respectfully note: by the precise rate, the beans are 137 433/891 *hu*.
   - classic: |
@@ -60,7 +62,11 @@ steps:
     modern: |
       $\dfrac{8^2 \cdot 5}{9} = 35\tfrac59$.
   - liu: |
-      By Hui's method the volume should be 32 457/471 *chi*.
+      By Hui's method the volume should be 33 457/471 *chi*.
+    dispute: |
+      The text reads 三十二, "thirty-two", but the corner-heap rule gives
+      $\tfrac{50 \cdot 8^2 \cdot 5}{471} = 33\tfrac{457}{471}$; the precise rate in the next note
+      ($33\tfrac{31}{33}$) and the rice conversion below ($20\tfrac{36\,980}{38\,151}$) both confirm 33.
   - li: |
       We respectfully note: by the precise rate, the volume is 33 31/33 *chi*.
   - classic: |

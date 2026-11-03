@@ -88,5 +88,9 @@ steps:
       So even without the figure to show it, the divisor and dividend have that from which the rule arises. The
       rates for the inscribed circle can be seen by speaking in terms of the rule of three and of distribution
       in proportion.
+    dispute: |
+      The text reads 不容圓率, "does not admit the circle rate", but the argument requires a positive
+      statement; read 不獨容圓率, "not only does it accommodate the circle rate". The translation follows
+      the emended sense.
     hint: |
       The inscribed circle is the next problem ([[JZ.9.14]]).

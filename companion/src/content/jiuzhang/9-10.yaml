@@ -52,7 +52,7 @@ steps:
       reconstruction above is the standard one.
     cites: [I.47]
   - classic: |
-      Add the amount it fails across: that is the door's height. Add both amounts: that gives the door's
+      Add the amount it fails across: that is the door's height. Add both amounts to the root: that gives the door's
       diagonal.
     modern: |
       $b = 4 + 4 = 8$, $\;c = 4 + 4 + 2 = 10$.

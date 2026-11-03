@@ -127,6 +127,10 @@ steps:
       three edges should join the areas of its two faces to the faces of the two squares, and the corner
       joins the ends of the three edges, to await the next subtraction. Words do not exhaust the meaning;
       to understand this, one must use blocks to make it clear.
+    dispute: |
+      The text reads 凡再以中三以下加定法者, which taken literally suggests "three times the lower". The
+      operative rule is 倍下, "double the lower", and the algebra
+      $3a^2 + 3ab + b^2 + 3ab + 2b^2 = 3(a+b)^2$ requires doubling; 三 is presumably a slip for 二.
     hint: |
       The new divisor is the three faces of the enlarged cube. They are made of the old faces, the edge rods
       laid against them, and the corner. Liu's blocks (*qi* 棊) are the wooden models he uses throughout

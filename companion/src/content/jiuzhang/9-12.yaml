@@ -38,15 +38,20 @@ steps:
     cites: [X.29]
   - liu: |
       Here the southward walk is the *gou*, the eastward walk the *gu*, and the slanting walk the hypotenuse; the
-      sum of *gou* and hypotenuse is 7. To know the hypotenuse, multiply the *gu* by itself for an area and divide
-      by the sum: the result is the difference of *gou* and hypotenuse. Add the difference to the sum and halve:
-      the hypotenuse. Subtract the difference from the hypotenuse: the remainder is the *gou*.
+      sum of *gou* and hypotenuse is 49 (seven squared). To know the hypotenuse, multiply the *gu* by itself
+      for an area and divide by the sum: the result is the difference of *gou* and hypotenuse. Add the difference
+      to the sum and halve: the hypotenuse. Subtract the difference from the hypotenuse: the remainder is the
+      *gou*.
     zh: 此以南行爲句東行爲股邪行爲弦句弦并七欲知弦者當以股自乘爲幂如并而一所得爲句弦差加差於并而半之爲弦以弦減差餘爲句
     explain:
       fact: |
         With $c + a = m$ and $b = n$: $c - a = \dfrac{n^2}{m}$, so $c = \dfrac{m^2 + n^2}{2m}$ and
         $a = \dfrac{m^2 - n^2}{2m}$. Multiplying through by $m$ clears the fractions: rates $\tfrac12(m^2 + n^2)$,
         $\tfrac12(m^2 - n^2)$, $mn$.
+    dispute: |
+      The text reads 句弦并七, literally "the sum of *gou* and hypotenuse is seven". The rates (29 + 20 = 49)
+      and the continuation (七自乘者，句弦并之率, "seven squared is the rate of *gou* plus hypotenuse") show
+      that 49 is meant; 七 stands for $7^2$, or the text has lost 四十九.
     cites: [II.6]
   - liu: |
       Done this way there may be fractions, which must be connected and reduced before the rule is settled; so
