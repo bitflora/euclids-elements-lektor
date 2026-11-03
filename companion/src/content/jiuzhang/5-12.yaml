@@ -1,0 +1,158 @@
+id: JZ.5.12
+title: Hay mounds, curved pools and pits — the rectangular frustum; carrying the earth
+paraphrase: |
+  A *chutong* 芻童 ("hay mound") is a frustum with rectangular top and bottom of different proportions. With
+  top $a' \times b'$ (width × length), bottom $a \times b$, and height $h$:
+  $$V = \tfrac16\left[(2b' + b)\,a' + (2b + b')\,a\right] h.$$
+  Pools and pits dug in the same shape follow the same rule. A curved pool, a ring that does not close, is
+  straightened out first, using the mean of its inner and outer circumferences as its length. Liu Hui
+  proves the rule with blocks again: two cubes, six *qiandu* and four *yangma*.
+
+  Two labour problems follow, with a model of carrying earth. Ramps count extra; time for hesitation and for
+  loading is added. Liu Hui reads both through the rule of three.
+
+parallels:
+  - id: XII.7
+    relation: related
+    note: |
+      As with the other solids of the chapter, the proof decomposes the frustum into boxes, half-boxes
+      (*qiandu*, XI.28) and pyramids (*yangma*, a third of a box: XII.7 and [[JZ.5.8]]).
+
+steps:
+  - classic: |
+      Hay mounds, curved pools, plate-shaped pools and dark valleys all follow the same rule.
+    hint: |
+      A "dark valley" (*ming gu* 冥谷) is the pit dug for a tomb.
+  - classic: |
+      The rule says: double the upper length and add the lower length; also double the lower length and add
+      the upper length; multiply each by its width; add them, multiply by the height or depth, and in every
+      case divide by 6.
+    modern: |
+      $V = \tfrac16 \left[(2b' + b)\, a' + (2b + b')\, a\right] h$.
+  - liu: |
+      In this rule, suppose a hay mound 1 *chi* wide and 2 *chi* long at the top, 3 *chi* wide and 4 *chi* long at
+      the bottom, and 1 *chi* high. The blocks used: two cubes in the centre, six *qiandu* on the four sides,
+      four *yangma* at the four corners.
+    zh: 按此術假令芻童上廣一尺袤二尺下廣三尺袤四尺高一尺其用棊也中央立方二四面壍堵六四角陽馬四
+    explain:
+      fact: |
+        The top $1 \times 2$ sits over two cubes. Along the long sides lie four *qiandu*, along the short sides
+        two more; four *yangma* fill the corners. Volume $2 + 6 \cdot \tfrac12 + 4 \cdot \tfrac13 = \tfrac{19}{3}$;
+        the rule gives $\tfrac16[(4 + 4) \cdot 1 + (8 + 2) \cdot 3] = \tfrac{38}{6}$.
+  - liu: |
+      Double the lower length, 8, and add the upper length, making 10; multiplying by the lower width gives a
+      volume of 30 *chi*. That gives the central cubes three each, the two end *qiandu* four each, the two
+      side *qiandu* six each, and the four corner *yangma* also six each. Again double the upper length and
+      add the lower length, making 8; multiplying by the height and the width gives a volume of 8 *chi*. That
+      gives the central cubes three each more, and the two end *qiandu* two each. Combining them, the three
+      kinds of blocks are each one made into six; so dividing by 6 gives it.
+    zh: 倍下袤爲八上袤從之爲十以下廣乘之得積三十尺是爲得中央立方各三兩邊壍堵各四兩旁壍堵各六四角陽馬亦各六復倍上袤下袤從之爲八以高廣乘之得積八尺是爲得中央立方亦各三兩端壍堵各二并兩旁三品棊皆一而爲六故六而一卽得
+    hint: |
+      Counted in sixths: each block appears six times in the total of 38.
+  - liu: |
+      For the rule, one can also multiply the differences of the upper and lower widths and lengths, multiply
+      by the height, and divide by 3: again the four *yangma*. Multiply the upper and lower widths and
+      lengths crosswise, add, halve, and multiply by the height: that is the six *qiandu* on the four sides
+      and the two cubes. Add them for the volume of the hay mound.
+    zh: 爲術又可令上下廣袤差相乘以高乘之三而一亦四陽馬上下廣袤互相乘并而半之以高乘之卽四面六壍堵與二立方并之爲芻童積
+    modern: |
+      $V = \tfrac13 (a - a')(b - b')\, h + \tfrac12 (a b' + a' b)\, h$.
+  - liu: |
+      Or one can multiply the upper and lower widths and lengths crosswise and halve; multiply the upper and
+      lower widths and lengths each together; add, multiply by the height, and divide by 3: that gives it.
+    modern: |
+      $V = \tfrac13 \left[\tfrac12 (a b' + a' b) + a b + a' b'\right] h$.
+  - classic: |
+      For the curved pool, add the inner and outer circumferences at the top and halve, for the upper length;
+      likewise add the inner and outer circumferences at the bottom and halve, for the lower length.
+  - liu: |
+      This pool is a ring that does not close, shaped like a coiled snake, curved. It too speaks of
+      "circumferences", like the circumference of grain heaped against a wall. Drawn out straight, the
+      circumference becomes the length. The idea of finding the length is that of the ring field.
+    hint: |
+      As in [[JZ.1.17]]: the mean of the two circumferences is the length of the straightened ring.
+  - classic: |
+      Now there is a hay mound 2 *zhang* wide and 3 *zhang* long at the bottom, 3 *zhang* wide and 4 *zhang* long
+      at the top, and 3 *zhang* high. Question: what is its volume? Answer: 26,500 *chi*.
+    hint: |
+      Wider at the top than at the bottom, like a stack of hay. The rule does not care which way up.
+  - classic: |
+      Now there is a curved pool with an upper inner circumference of 2 *zhang*, an outer circumference of 4
+      *zhang*, and a width of 1 *zhang*; a lower inner circumference of 1 *zhang* 4 *chi*, an outer circumference
+      of 2 *zhang* 4 *chi*, and a width of 5 *chi*; and a depth of 1 *zhang*. Question: what is its volume?
+      Answer: 1883 *chi* 3 1/3 *cun*.
+    modern: |
+      Upper length 30, lower length 19; $\tfrac16[(60 + 19) \cdot 10 + (38 + 30) \cdot 5] \cdot 10 = 1883\tfrac13$.
+  - classic: |
+      Now there is a plate-shaped pool 6 *zhang* wide and 8 *zhang* long at the top, 4 *zhang* wide and 6 *zhang*
+      long at the bottom, and 2 *zhang* deep. Question: what is its volume? Answer: 70,666 2/3 *chi*.
+  - classic: |
+      Earth is carried back and forth 70 *bu*, of which 20 *bu* are up and down a ramp. 2 of ramp count as 5 of
+      level road; for hesitation, add 1 in 10; loading and unloading take 30 *bu*; the fixed round trip is 140
+      *bu*. A basket holds 1 *chi* 6 *cun* of earth; the autumn quota of work is walking 59 1/2 *li*. Question:
+      how much does each person deliver, and how many workers are used?
+    modern: |
+      Round trip: $50 + 20 \cdot \tfrac52 = 100$; plus a tenth, 110; plus 30, 140 *bu*. The quota, $59\tfrac12$
+      *li* = 17,850 *bu*, is $127\tfrac12$ trips.
+  - classic: |
+      Answer: each delivers 204 *chi*; 346 62/153 workers are used.
+  - classic: |
+      The rule says: multiply the volume of one basket by the quota in *bu*, for the dividend. Back and forth,
+      up and down: 2 of ramp count as 5 of level road.
+  - liu: |
+      The sloping path of the ramp is hard going, up and down, so 2 count as 5.
+  - classic: |
+      Set out the fixed round trip, adding 1 in 10, and the 30 *bu* for loading and unloading, for the divisor.
+      Divide: the result is what one person delivers.
+    modern: |
+      $\dfrac{1.6 \cdot 17{,}850}{140} = 204$ *chi*.
+  - liu: |
+      In this rule the ramp's sloping path is hard going, up and down, so 2 count as 5. Setting out the fixed
+      round trip, adding 1 in 10 and the 30 *bu* for loading and unloading, is finding one round trip: 140 *bu*
+      in all. In the rule of three, this is the given rate of walking; the basket's 1 *chi* 6 *cun* is the sought
+      rate of earth delivered; the quota of 59 1/2 *li* is the given number; apply the rule of three, and that is
+      the earth each person delivers. "Divide the total volume by what each delivers: that is the number of
+      workers": this divides the total volume by one person's volume, so it gives the number of workers.
+    zh: 按此術棚閣除邪道有上下之難故使二當五置定往來步數十加一及載輸之間三十步是爲往來求一返凡用一百四十步於今有術爲所有行率籠積一尺六寸爲所求到土率程行五十九里半爲所有數而今有之卽人到尺數以所到約積尺卽用徒人數者此一人之積除其衆積尺故得用徒人數
+  - liu: |
+      Alternatively, divide the quota by the *bu* of one round trip for the number of trips, and multiply by the
+      basket's volume for what one person delivers. This rule and the rule of three are converses of each
+      other: the multiplication and the division come first or last, each with its own point, but they arrive
+      at the same place.
+  - classic: |
+      Divide the total volume by what each delivers: that is the number of workers.
+  - classic: |
+      Now there is a dark valley 2 *zhang* wide and 7 *zhang* long at the top, 8 *chi* wide and 4 *zhang* long at
+      the bottom, and 6 *zhang* 5 *chi* deep. Question: what is its volume? Answer: 52,000 *chi*.
+  - classic: |
+      Earth is carted back and forth 200 *bu*; loading and unloading take 1 *li*; the quota is 58 *li*; 6
+      persons share a cart; a cart carries 34 *chi* 7 *cun*. Question: how much does each person deliver, and
+      how many workers are used?
+  - classic: |
+      Answer: each delivers 201 13/50 *chi*; 258 3746/10063 workers are used.
+    modern: |
+      Round trip 200 + 300 = 500 *bu*; quota $58 \cdot 300 = 17{,}400$ *bu*, or $34.8$ trips;
+      $34.8 \cdot 34.7 / 6 = 201.26$ *chi* each.
+  - classic: |
+      The rule says: multiply the volume of one cart by the quota in *bu*, for the dividend. Set out the round
+      trip in *bu*, add the 1 *li* for loading and unloading, and multiply by the 6 persons per cart, for the
+      divisor. Divide: the result is what one person delivers.
+  - liu: |
+      In this rule, the meaning is that of the rule of three. Loading and unloading together with the round
+      trip make 500 *bu*, the given rate of walking; the cart's load, 34 *chi* 7 *cun*, is the sought rate of
+      earth delivered; the quota, 58 *li*, converted to *bu*, is the given number; apply the rule of three, and
+      the result is what one cart delivers. To get what one person delivers, divide by 6. The rule may have
+      fractions, so it multiplies the divisor instead and divides all at once.
+    zh: 按此術今有之義以載輸及往來并得五百步爲所有行率車載三十四尺七寸爲所求到土率程行五十八里通之爲步爲所有數而今有之所得則一車所到欲得人到者當以六人除之卽得術有分故亦更令乘法而并除者
+  - liu: |
+      One may also take a sixth of the volume as one person's rate of earth delivered, with 6 persons times
+      500 *bu* as the walking rate. Or take 500 *bu* as the walking rate, let 6 persons reduce the volume to one
+      person's rate of earth delivered, and treat it by the rule for carrying earth; treated so, one can also
+      find the number of trips. The point is only to grasp how they connect. The rule fears fractions, so it
+      multiplies the divisor and divides all at once. "Divide the total volume by what each delivers: that is
+      the number of workers": dividing the total volume by one person's, one finds the number of workers.
+    dispute: |
+      亦用以半尺數 ("also use half the number of *chi*") is corrupt; the sense requires "a sixth". Several words of
+      this note are uncertain.
+  - classic: |
+      Divide the total volume by what each delivers: that is the number of workers.

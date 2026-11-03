@@ -1,0 +1,79 @@
+id: JZ.9.16
+title: A town of unknown size — a quadratic equation
+paraphrase: |
+  Two problems that find the town's side from sightings. In the first, a tree 30 *bu* north of the north gate is
+  seen from 750 *bu* west of the west gate. The similar triangles give $(\tfrac{x}{2})^2 = 30 \cdot 750$, so
+  $x = \sqrt{4 \cdot 30 \cdot 750} = 300$ *bu*.
+
+  In the second, a tree is 20 *bu* north of the north gate, and an observer goes 14 *bu* out of the south gate
+  and then 1775 *bu* west before seeing it. The proportion gives $x(x + 34) = 2 \cdot 20 \cdot 1775$, a quadratic
+  equation with a linear term. The rule solves it by root extraction with a "following divisor" (*cong fa* 從法),
+  the coefficient 34. The town is 250 *bu*.
+
+parallels:
+  - id: VI.4
+    relation: same
+    note: |
+      Both problems rest on similar right triangles along the sight-line, as in [[JZ.9.15]].
+  - id: VI.29
+    relation: related
+    note: |
+      $x(x + 34) = 71{,}000$: find a rectangle of given area whose length exceeds its width by a given amount.
+      Euclid's "application of an area with excess" (VI.29, and II.6 for the square case) constructs exactly
+      this; the *Nine Chapters* computes it, digit by digit, with the root-extraction algorithm.
+  - id: II.6
+    relation: related
+    note: |
+      Liu's description, an area "with the difference of length and width as following divisor", is the
+      rectangle $x(x + d)$ of II.6, which with the square on $d/2$ makes a square.
+
+steps:
+  - classic: |
+      Now there is a town of unknown size, square, with a gate opened in the middle of each side. 30 *bu* out of
+      the north gate there is a tree; 750 *bu* out of the west gate it is seen. Question: what is the side of the
+      town? Answer: 1 *li*.
+  - classic: |
+      The rule says: multiply the two distances out of the gates together, multiply by 4, for the dividend.
+      Extract the square root: that gives the side of the town.
+    modern: |
+      $x = \sqrt{4 \cdot 30 \cdot 750} = 300$ *bu* $= 1$ *li*.
+    cites: [VI.4]
+  - liu: |
+      By the previous rule, half the town's side multiplied by itself and divided by the distance out of the east
+      gate is the distance out of the south gate. Now the two distances out of the gates multiplied together are
+      half the side multiplied by itself: the accumulated area of one corner. Multiplied by 4, it gives the area of
+      the four corners; so it is taken as the dividend, and extracting the root gives the side of the town.
+    modern: |
+      $30 \cdot 750 = \left(\tfrac{x}{2}\right)^2$.
+  - classic: |
+      Now there is a town of unknown size, square, with a gate opened in the middle of each side. 20 *bu* out of the
+      north gate there is a tree. Going 14 *bu* out of the south gate and turning to walk west 1775 *bu*, the tree is
+      seen. Question: what is the side of the town? Answer: 250 *bu*.
+  - classic: |
+      The rule says: multiply the *bu* out of the north gate by the *bu* walked west, and double it for the
+      dividend.
+  - liu: |
+      Here the walk west after the turn is the *gu*, and [the line] from the tree to 14 *bu* south of the town is the
+      *gou*. The 20 *bu* out of the north gate is the *gou* rate, and [the distance] from the north gate to the west
+      corner is the *gu* rate, which is half the width. So multiplying the *gou* rate, 20 *bu* out of the north gate,
+      by the *gu* of the walk west gives the area of the *gu* rate (half the width) times the *gou*. But this area
+      lies only to the west of the half, so it is doubled to include the east half.
+    explain:
+      fact: |
+        Similar triangles: $\dfrac{x/2}{20} = \dfrac{1775}{20 + x + 14}$. So $\tfrac{x}{2}(x + 34) = 20 \cdot 1775$,
+        and doubling, $x(x + 34) = 71{,}000$.
+    cites: [VI.4]
+  - classic: |
+      Add the *bu* out of the [two] gates for the following divisor, and extract the square root: that is the side
+      of the town.
+    modern: |
+      $x^2 + 34x = 71{,}000$, so $x = 250$.
+    cites: [VI.29]
+  - liu: |
+      In this rule the area is as wide east to west as the town, and as long north to south as from the tree to 14
+      *bu* south of the town. The *bu* north and south combined are the difference of length and width; so the two
+      numbers of *bu* are joined as the following divisor, being the area outside the corner.
+    hint: |
+      The "following divisor" is the extra strip, $34 \times x$, alongside the square $x^2$. The root-extraction
+      algorithm of [[JZ.4.3]] adapts by adding it to the divisor at each step.
+    cites: [II.6]

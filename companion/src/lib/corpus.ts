@@ -179,9 +179,11 @@ export function isAnnotated(id: ItemId) {
 export function resolveQuery(q: string, book = 1): ItemId | undefined {
   const s = q.trim().replace(/\s+/g, " ");
   if (items.has(s)) return s;
-  // The Zhou bi: "ZB.1.3", "zb 1.3", "zhou bi 1.3".
+  // The Zhou bi: "ZB.1.3", "zb 1.3", "zhou bi 1.3"; the Nine Chapters: "JZ.9.1", "jz 9.1", "nine chapters 9.1".
   const z = /^(?:zb|zhou ?bi)[. ]?\s*([1-6])\.(\d+)$/i.exec(s);
   if (z) return `ZB.${z[1]}.${z[2]}`;
+  const j = /^(?:jz|jiuzhang|nine chapters)[. ]?\s*(\d)\.(\d+)$/i.exec(s);
+  if (j) return `JZ.${j[1]}.${j[2]}`;
   const m = /^(?:book )?([IVX]+|\d+)?[. ]?\s*(def(?:inition)?|post(?:ulate)?|c\.? ?n\.?|common notion|prop(?:osition)?)?\.?\s*(\d+)$/i.exec(s);
   if (!m) return undefined;
   let b = book;

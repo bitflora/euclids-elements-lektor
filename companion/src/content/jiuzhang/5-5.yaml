@@ -1,0 +1,137 @@
+id: JZ.5.5
+title: Square and round frustums — Liu Hui's three kinds of blocks
+paraphrase: |
+  A *fang ting* 方亭, "square pavilion", is a frustum of a square pyramid, with lower side $b$, upper side
+  $a$, height $h$. The classic's rule is exact: $V = \tfrac13 (ab + a^2 + b^2)\, h$.
+
+  Liu Hui proves it with three kinds of standard blocks (*qi* 棊). There is the cube, the *qiandu* 塹堵
+  (half a cube, cut along a diagonal plane), and the *yangma* 陽馬 (a third of a cube: a pyramid with
+  its apex over one corner of its square base). A frustum with top 1, bottom 3 and height 1 is one
+  central cube, four *qiandu* along the sides, and four *yangma* at the corners. The three products
+  $ab\,h$, $a^2 h$ and $b^2 h$ together need three cubes, twelve *qiandu* and twelve *yangma*: exactly
+  three frustums. Hence the division by 3.
+
+  The round frustum is the square one with its corners shaved off, in the ratio of circle to square.
+
+parallels:
+  - id: XII.7
+    relation: related
+    note: |
+      The proof assumes that a *yangma* is a third of its cube and a *qiandu* half of it. The first is the
+      porism to XII.7, which Liu proves for himself in [[JZ.5.8]]; the second is XI.28 ([[JZ.5.7]]). Euclid
+      has no proposition on the frustum; its volume is in Heron of Alexandria.
+  - id: XII.2
+    relation: related
+    note: |
+      Round frustum to square frustum is as circle to square, at every level. That is Zu Geng's style of
+      argument by sections ([[JZ.4.6]]), with the ratio of XII.2.
+
+steps:
+  - classic: |
+      Now there is a square frustum, 5 *zhang* square at the bottom, 4 *zhang* square at the top, and 5 *zhang*
+      high. Question: what is its volume? Answer: 101,666 2/3 *chi*.
+    modern: |
+      $\tfrac13 (40 \cdot 50 + 40^2 + 50^2) \cdot 50 = \tfrac13 \cdot 6100 \cdot 50 = 101{,}666\tfrac23$.
+  - classic: |
+      The rule says: multiply the upper and lower sides together, and each by itself; add them, multiply by
+      the height, and divide by 3.
+    modern: |
+      $V = \tfrac13 (ab + a^2 + b^2)\, h$.
+  - liu: |
+      In this chapter there are *qiandu* and *yangma*, which all fit together to make cubes. Presumably those
+      who explained calculation set up blocks of three kinds to model the volumes of heights and depths.
+    zh: 此章有壍堵陽馬皆合而成立方蓋說算者乃立棊三品以效高深之積
+    hint: |
+      Liu's standard blocks, each in a unit cube: the cube itself; the *qiandu* (half the cube, a triangular
+      prism); the *yangma* (a third of the cube, a pyramid). Together they model every solid of this chapter.
+  - liu: |
+      Suppose a square frustum 1 *chi* square at the top, 3 *chi* square at the bottom, and 1 *chi* high. The
+      blocks used: one cube in the centre, four *qiandu* on the four sides, four *yangma* at the four corners.
+    zh: 假令方亭上方一尺下方三尺高一尺其用棊也中央立方一四面壍堵四四角陽馬四
+    explain:
+      fact: |
+        The frustum's top is the central cube's top. On each side a *qiandu* leans against the cube, and at
+        each corner a *yangma* fills the gap between two *qiandu*. Volume $1 + 4 \cdot \tfrac12 + 4 \cdot
+        \tfrac13 = \tfrac{13}{3}$.
+  - liu: |
+      The upper and lower sides multiplied make 3 *chi*; multiplied by the height, the volume is 3 *chi*: that
+      is one central cube and one each of the four side *qiandu*. The upper side squared also gives one
+      central cube. The lower side squared is 9; multiplied by the height, the volume is 9 *chi*: that is one
+      central cube, two each of the four side *qiandu*, and three each of the four corner *yangma*. The upper
+      side squared, multiplied by the height, gives a volume of 1 *chi*: again one central cube.
+    zh: 上下方相乘爲三尺以高乘之約積三尺是爲得中央立方一四面壍堵各一上方自乘亦得中央立方一下方自乘爲九以高乘之得積九尺是爲中央立方一四面壍堵各二四角陽馬各三也上方自乘以高乘之得積一尺又爲中央立方一
+    explain:
+      fact: |
+        $ab\,h = 3 = 1 + 4 \cdot \tfrac12$; $\;a^2 h = 1$; $\;b^2 h = 9 = 1 + 4 \cdot (2 \cdot \tfrac12) + 4 \cdot (3
+        \cdot \tfrac13)$. In blocks: three cubes, $4 + 8 = 12$ *qiandu*, and 12 *yangma*.
+  - liu: |
+      So each of the three kinds of blocks, one in the frustum, is made three; hence dividing by 3 gives the
+      volume. The blocks used number 3 cubes, and 12 each of *qiandu* and *yangma*, 27 blocks in all; the
+      twelves and threes, arranged in turn, form three frustums. This is verified.
+    zh: 凡三品棊皆一而爲三故三而一得積尺用棊之數立方三壍堵陽馬各十二凡二十七棊十二與三更差次之而成方亭者三驗矣
+    hint: |
+      The proof is complete for this one frustum. Liu's blocks scale in each direction (as in [[JZ.5.8]]), so
+      it extends to any frustum.
+  - liu: |
+      For the rule, one can also multiply the difference of the sides by itself, multiply by the height, and
+      divide by 3: that is the four *yangma*. The upper and lower sides multiplied, times the height, is the
+      central cube and the four side *qiandu*. Add them for the volume of the frustum.
+    modern: |
+      $V = a b\, h + \tfrac13 (b - a)^2 h$, which equals $\tfrac13 (ab + a^2 + b^2)\, h$.
+    cites: [XII.7]
+  - classic: |
+      Now there is a round frustum with a lower circumference of 3 *zhang*, an upper circumference of 2 *zhang*,
+      and a height of 1 *zhang*. Question: what is its volume? Answer: 527 7/9 *chi*.
+  - liu: |
+      By Hui's method the volume should be 504 116/471 *chi*. By the precise rate, the volume is 503 26/33 *chi*.
+    dispute: |
+      The second sentence uses Zu Chongzhi's precise rate and is presumably Li Chunfeng's.
+  - classic: |
+      The rule says: multiply the upper and lower circumferences together, and each by itself; add them,
+      multiply by the height, and divide by 36.
+    modern: |
+      $V = \dfrac{(C_1 C_2 + C_1^2 + C_2^2)\, h}{36}$, the square-frustum rule with π = 3.
+  - liu: |
+      In this rule, by the meaning of "circumference 3, diameter 1", one should divide the upper and lower
+      circumferences by 3 to make the upper and lower diameters; multiply these together, and each by itself,
+      add, multiply by the height, and divide by 3: that is the volume of the square frustum.
+    zh: 此術周三徑一之義合以三除上下周各爲上下徑以相乘又各自乘并以高乘之三而一爲方亭之積
+    hint: |
+      The square frustum circumscribed about the round one, with sides equal to its diameters.
+  - liu: |
+      Suppose the circumferences divided by 3 do not come out exactly; connect them back, making the upper and
+      lower diameters [in thirds]. Multiply the diameters with their denominators together, and each by
+      itself, add, and multiply by the height: that is three square frustums. Here the denominators, 3 times
+      3, make 9, and each squared also makes 9; divide by that, and again by 3, to get the volume of the square
+      frustum.
+    zh: 假令三約上下周俱不盡還通之卽各爲上下徑令上下徑分母相乘又各自乘并以高乘之爲三方亭之積此合分母三相乘得九分母各自乘亦得九爲法除之又三而一得方亭之積
+  - liu: |
+      Finding the round frustum's volume from the square frustum is just like finding the circle's area within
+      the square's area: multiply by the circle rate 3 and divide by the square rate 4 to get the round
+      frustum.
+    zh: 從方亭求圓亭之積亦猶方冪中求圓冪乃令圓率三乘之方率四而一得圓亭之積
+    cites: [XII.2]
+  - liu: |
+      Before, to find the square frustum, one divided by 3; now, to find the round frustum, one multiplies by
+      3. The two denominators being the same, they cancel each other; only the square-area rate 4, multiplied
+      by the denominator 9, gives 36, which divides all at once.
+    zh: 前求方亭之積乃以三而一今求圓亭之積亦各三乘之二母旣同故相凖折惟以方冪四乘分母九得三十六而連除之
+    modern: |
+      $\dfrac{1}{9} \cdot \dfrac13 \cdot \dfrac34 = \dfrac{1}{36}$.
+  - liu: |
+      By Hui's method, one should multiply the upper and lower circumferences together, and each by itself,
+      add, multiply by the height, again by 25, and divide by 942.
+    zh: 於徽術當上下周相乘又各自乘并以高乘之又二十五乘之九百四十二而一
+  - liu: |
+      Here the four corners of the square frustum are rounded off; [the round frustum] compared with the
+      square frustum is 157/200.
+    zh: 此方亭四角圓殺比於方亭二百分之一百五十七
+  - liu: |
+      The idea of the rule is first to make the square frustum and divide by 3. So working from the upper and
+      lower diameters, one should further multiply by 157 and divide by 600. Now, working from the
+      circumferences, as for the round fort one multiplies by 25 and divides by 314, which first gives three
+      round frustums; so 314 becomes 942, dividing all at once.
+    modern: |
+      $V = \dfrac{25\,(C_1C_2 + C_1^2 + C_2^2)\, h}{942}$, $\;942 = 3 \cdot 314$.
+  - li: |
+      We respectfully note: by the precise rate, multiply by 7 and divide by 264.

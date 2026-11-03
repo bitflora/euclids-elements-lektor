@@ -1,0 +1,134 @@
+id: JZ.1.16
+title: Segment-shaped fields — chord and arrow
+paraphrase: |
+  A "bow field" (*hu tian* 弧田) is a segment of a circle, given by its chord (*xian* 弦, the
+  bowstring) and its sagitta (*shi* 矢, the "arrow", the height of the arc above the chord). The
+  classic's rule: area $= \tfrac12(cs + s^2)$.
+
+  Liu Hui shows where it comes from. For a semicircle, chord $2r$ and arrow $r$, the rule gives
+  $\tfrac32 r^2$, which is half the area of the inscribed 12-gon. It is the circle rule with π = 3
+  again ([[JZ.1.14]]), and too small. For smaller segments it is worse. He proposes an exact method in
+  the spirit of the circle: find the diameter from chord and arrow, then cut the segment into ever
+  smaller segments and add up the triangles, "chord times arrow", until the sum is as close as one
+  likes.
+
+parallels:
+  - id: III.35
+    relation: related
+    note: |
+      To find the circle's diameter from chord and arrow, Liu cites the problem of the log in the wall
+      ([[JZ.9.7]]): $(\tfrac{c}{2})^2 = s(d - s)$. That is III.35, the rectangles on the segments of
+      intersecting chords, applied to the chord and the diameter perpendicular to it.
+  - id: III.30
+    relation: related
+    note: |
+      "Cutting the arc" halves it at its midpoint, where the perpendicular from the centre meets it.
+      Euclid bisects a given arc in III.30.
+  - id: I.47
+    relation: same
+    note: |
+      Each halving finds the new chord as the hypotenuse of half the old chord and the arrow, and the
+      new arrow from the radius and the half-chord, as in Liu's circle computation.
+  - id: X.1
+    relation: related
+    note: |
+      "Cut and cut again until extremely fine, and it will come close to the precise value": the
+      exhaustion of the segment by triangles, as in [[JZ.1.14]].
+
+diagram:
+  width: 320
+  height: 215
+  elements:
+    - "O;point;fixed;160,200;black;black"
+    - "A;point;fixed;40,200;black;black"
+    - "B;point;fixed;280,200;black;black"
+    - "T;point;fixed;160,80;black;black"
+    - "circ;circle;radius;O,T;0;0;black;0"
+    - "V1;point;fixed;263.92,140;0;0"
+    - "V2;point;fixed;220,96.08;0;0"
+    - "V4;point;fixed;100,96.08;0;0"
+    - "V5;point;fixed;56.08,140;0;0"
+    - "yellow;polygon;triangle;A,B,T;0;0;#8a6d12;#f5e7b5"
+    - "blueR;polygon;quadrilateral;B,V1,V2,T;0;0;#33587a;#cfdde9"
+    - "blueL;polygon;quadrilateral;T,V4,V5,A;0;0;#33587a;#cfdde9"
+    - "AB;line;connect;A,B;0;0;black"
+    - "OT;line;connect;O,T;0;0;#9a3b2b"
+  given: [O, A, B, T, circ, AB, OT]
+  caption: |
+    A semicircular bow field: chord {AB} $= 2r$, arrow {OT} $= r$. "Chord times arrow, halved" is the
+    yellow triangle {ABT|yellow}; "arrow squared, halved" is the two blue pieces, {left|blueL} and {right|blueR}.
+    Together they are half the inscribed 12-gon. The slivers between the 12-gon and the arc are lost, so
+    the rule gives too little.
+
+steps:
+  - classic: |
+      Now there is a bow field with a chord of 30 *bu* and an arrow of 15 *bu*. Question: how much field
+      does it make? Answer: 1 *mu* 97 1/2 *bu*.
+    hint: |
+      A semicircle of diameter 30. The rule gives $\tfrac12(450 + 225) = 337\tfrac12$; the true area is $\tfrac{\pi}{2} \cdot 15^2 \approx 353.4$.
+    highlight: [AB, OT]
+  - classic: |
+      Again there is a bow field with a chord of 78 1/2 *bu* and an arrow of 13 7/9 *bu*. Question: how much
+      field does it make? Answer: 2 *mu* 155 56/81 *bu*.
+  - classic: |
+      The rule says: multiply the chord by the arrow, and the arrow by itself; add them, and divide by 2.
+    modern: |
+      $A = \tfrac12 (c\,s + s^2)$.
+    adds: [yellow, blueR, blueL]
+  - liu: |
+      The circle inside a square, or rather the 12-gon inside the circle, has an area of three quarters
+      of the outer square. The square inside [the circle] is half the outer square, so the red parts make
+      a quarter of the outer square. A bow field [here] is the area of a semicircle, so the rule is
+      made from the body of a semicircle.
+    zh: 方中之圓圓裏十二觚之冪合外方之冪四分之三也方中合外方之半則朱實合外方四分之一也弧田半圓之冪也故依半圓之體而爲之術
+    hint: |
+      Liu's "figure of the bow field": a square, its inscribed circle, the 12-gon, and the inner square
+      on the diameter as diagonal. The "red parts" are the four pieces of the 12-gon outside the inner
+      square. The figure is lost; its use in [[JZ.1.14]] ("a circle of 157 contains a square of 100")
+      shows its layout.
+  - liu: |
+      Multiplying the chord by the arrow and halving gives the yellow area; multiplying the arrow by
+      itself and halving gives the two blue areas. The blue and yellow joined make the body of the bow.
+      The body of the bow ought properly to follow the compass; but the sides of the polygon do not reach
+      the outer edge, so it errs on the small side.
+    zh: 以弦乘矢而半之則爲黄冪矢自乘而半之爲二青冪青黃相連爲弧體弧體法當應規令觚面不至外畔失之於少矣
+    highlight: [yellow, blueR, blueL]
+    explain:
+      fact: |
+        With $c = 2r$, $s = r$: $\tfrac12 cs = r^2$ (yellow) and $\tfrac12 s^2 = \tfrac12 r^2$ (blue), total
+        $\tfrac32 r^2$: half of the 12-gon's $3r^2$. The true semicircle is $\tfrac{\pi}{2} r^2$.
+  - liu: |
+      The old rule for circular fields takes circumference 3 to diameter 1 as the rates, and so also gives
+      the area of the 12-gon, also erring on the small side. This is like it, verified only for a
+      semicircular arc. If [the segment] is less than a semicircle, it is cruder still.
+    zh: 圓田舊術以周三徑一爲率俱得十二觚之冪亦失之於少也與此相似指驗半圓之弧耳若不滿半圓者益復疎闊
+  - liu: |
+      One should follow the *gou-gu* rule for sawing a round log: take the chord of the bow as the length
+      of the saw cut and the arrow as the depth, and find the diameter. Once the diameter of the circle
+      is known, the arc can be cut and divided.
+    zh: 宜依句股鋸圓材之術以弧弦爲鋸道長以矢爲句深而求其徑旣知圓徑則弧可割分也
+    hint: |
+      The rule of the log in the wall ([[JZ.9.7]]): $d = \dfrac{(c/2)^2}{s} + s$.
+    cites: [III.35]
+  - liu: |
+      To cut it: take half the chord of the bow field as the *gu* and its arrow as the *gou*, and find the
+      hypotenuse: that is the chord of the small arc. Take half the chord of the small arc as the *gou*
+      and the radius of the circle as the hypotenuse, and find the *gu*; subtract it from the radius, and
+      the remainder is the arrow of the small chord.
+    zh: 割之者半弧田之弦以爲股其矢爲句爲之求弦卽小弧之弦也以半小弧之弦爲句半圓徑爲弧爲之求股以減半徑其餘卽小弦之矢也
+    dispute: |
+      The text says "the radius as the arc" (半圓徑爲弧); read 弦, "hypotenuse".
+    modern: |
+      $c' = \sqrt{(c/2)^2 + s^2}$, $\;s' = r - \sqrt{r^2 - (c'/2)^2}$.
+    cites: [I.47, III.30]
+  - liu: |
+      Cut it and cut it again until it is extremely fine; just add up the products of chord and arrow,
+      and the result is bound to come near the precise value. But the calculation is rather laborious,
+      and one must want to investigate it thoroughly. If one only measures fields to get their rough
+      size, the old rule serves as an approximation.
+    explain:
+      fact: |
+        The segment is the triangle on its chord with apex at the arc's midpoint ($\tfrac12 cs$), plus two
+        smaller segments; each of those is a triangle plus two smaller segments, and so on. The sum of
+        the triangles converges to the segment.
+    cites: [X.1]

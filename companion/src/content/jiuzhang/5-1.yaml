@@ -1,0 +1,65 @@
+id: JZ.5.1
+title: Excavated, loose and rammed earth — the rule of three
+paraphrase: |
+  Chapter 5, *Shang gong* 商功, "assessing works", is about earthworks: walls, dikes, ditches, canals,
+  granaries. It is the book's chapter on volumes. It opens with the rates for earth. Ground dug out (*chuan
+  di* 穿地) swells when loosened (*rang* 壤) and shrinks when rammed (*jian* 堅), in the proportions 4 : 5 : 3.
+  10,000 cubic *chi* of excavation give 12,500 of loose earth, or 7500 of rammed earth.
+
+  Liu Hui identifies the computation as an instance of the "rule of three" (*jin you shu* 今有術, "the
+  rule of 'now there is'"): multiply the given quantity by the rate of what is sought, and divide by the
+  rate of what is given.
+
+parallels:
+  - id: VI.12
+    relation: related
+    note: |
+      The rule of three finds a fourth proportional: given $a : b$ and $c$, find $d$ with $a : b = c : d$.
+      Euclid constructs a fourth proportional to three straight lines in VI.12; for numbers the
+      corresponding fact is VII.19 ($a : b = c : d$ exactly when $ad = bc$, so $d = bc/a$).
+  - id: VII.19
+    relation: related
+    note: |
+      $d = \dfrac{c \cdot b}{a}$ is the number that makes $ad = bc$, the criterion of VII.19.
+
+steps:
+  - classic: |
+      Now there is an excavation of 10,000 [cubic] *chi*. Question: how much rammed earth and how much loose
+      earth does it make? Answer: 7500 *chi* of rammed earth, 12,500 *chi* of loose earth.
+    modern: |
+      $10{,}000 \cdot \tfrac34 = 7500$, $\;10{,}000 \cdot \tfrac54 = 12{,}500$.
+  - classic: |
+      The rule says: excavated earth 4 makes loose earth 5,
+  - liu: |
+      Loose earth means earth that has swelled.
+  - classic: |
+      rammed earth 3,
+  - liu: |
+      Rammed earth means earth beaten firm.
+  - classic: |
+      or a pit of 4.
+  - liu: |
+      A pit means the hole dug. These are all its standard rates.
+    hint: |
+      The excavation and the hole it leaves have the same volume, 4.
+  - classic: |
+      To find the loose earth from the excavation, multiply by 5; to find the rammed earth, multiply by 3;
+      in both cases divide by 4.
+  - liu: |
+      This is the rule of three.
+    hint: |
+      The rule of three, *jin you shu* 今有術, is the subject of chapter 2. Liu sees most of the book's rules
+      as applications of it.
+    modern: |
+      $\text{sought} = \dfrac{\text{given} \cdot \text{rate of sought}}{\text{rate of given}}$.
+    cites: [VII.19]
+  - classic: |
+      To find the excavation from the loose earth, multiply by 4; to find the rammed earth, multiply by 3; in
+      both cases divide by 5. To find the excavation from the rammed earth, multiply by 4; to find the loose
+      earth, multiply by 5; in both cases divide by 3.
+  - li: |
+      We respectfully note: this rule is in every case the meaning of the rule of three. Set out the
+      excavation, 10,000 *chi*, as the given number; the rammed-earth rate 3 and the loose-earth rate 5 are
+      each the sought rate; the pit rate 4 is the given rate; apply the rule of three, and that gives it.
+  - classic: |
+      City walls, walls, dikes, ditches, moats and canals all follow the same rule.

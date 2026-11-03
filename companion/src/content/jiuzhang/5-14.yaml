@@ -1,0 +1,124 @@
+id: JZ.5.14
+title: Working backwards — a ditch's width, a granary's height, a bin's circumference
+paraphrase: |
+  Three inverse problems. Each undoes a volume rule. From the earth of a wall, find the bottom width of the
+  ditch it came from. From the capacity of a rectangular granary, its height. From the capacity of a round
+  bin, its circumference, by a square root. Liu Hui explains each by "returning to the origin": the rule
+  multiplied, so the inverse divides; the rule squared, so the inverse extracts the root.
+
+  At the end Liu describes, from his own inspection, the inscriptions on Wang Mang's bronze *hu*.
+
+parallels:
+  - id: XII.11
+    relation: related
+    note: |
+      A round bin is a cylinder, and its circumference is found from its volume and height, by the
+      proportionality of cylinders of the same height to their bases (XII.11) and the circle rule.
+
+steps:
+  - classic: |
+      Now there is an excavation 1 *zhang* 6 *chi* long, 1 *zhang* deep and 6 *chi* wide at the top, which makes
+      576 *chi* of wall. Question: what is the bottom width of the excavation? Answer: 3 3/5 *chi*.
+  - classic: |
+      The rule says: set out the volume of the wall in *chi*, and multiply by 4 for the dividend.
+  - liu: |
+      The dividend: excavated earth 4 makes rammed earth 3, and a wall is rammed earth. To find the excavation
+      from rammed earth one should multiply by 4 and divide by 3.
+    hint: |
+      The rates of [[JZ.5.1]].
+  - classic: |
+      Multiply the depth by the length,
+  - liu: |
+      This is the standing area of depth and length.
+  - classic: |
+      and again by 3, for the divisor.
+  - liu: |
+      Dividing the wall's volume by the standing area of depth and length gives the pit's width. Multiplying
+      again by 3 divides by it together with the rate for rammed earth.
+  - classic: |
+      Double the result,
+  - liu: |
+      The pit has two widths. Adding them first and halving gives the middle, level width between the wide and
+      the narrow. Here we first get the middle level, so we double it to know the two widths in full.
+  - classic: |
+      and subtract the upper width; the remainder is the lower width.
+    modern: |
+      $\dfrac{4 \cdot 576}{3 \cdot 10 \cdot 16} = 4.8$ = the mean width; $2 \cdot 4.8 - 6 = 3.6$.
+  - liu: |
+      In this rule: excavated earth 4 makes rammed earth 3, and the wall is rammed earth. Now, to find the
+      excavation from rammed earth, one should multiply by 4 and divide by 3. Multiplying depth and length makes
+      the standing area of depth and length; dividing the volume by it gives the pit's width; multiplying again
+      by 3 for the divisor divides it together with the rate of rammed earth. "Double the result": the pit has
+      two widths; adding them first and halving gives the middle level width; here we have got the middle
+      level width, so we double it to return to the two widths added; so subtracting the upper width leaves
+      the lower width.
+  - classic: |
+      Now there is a granary 3 *zhang* wide and 4 *zhang* 5 *chi* long, holding 10,000 *hu* of millet. Question:
+      what is its height? Answer: 2 *zhang*.
+  - classic: |
+      The rule says: set out the volume in *chi* of 10,000 *hu* of millet, for the dividend. Multiply the width
+      by the length, for the divisor. Divide: that gives the height in *chi*.
+    modern: |
+      $\dfrac{10{,}000 \cdot 2.7}{30 \cdot 45} = 20$.
+  - liu: |
+      Dividing the volume by the area of width and length gives the height. In this rule, originally width and
+      length were multiplied together and by the height to give this volume. Now, to return to the origin,
+      multiply width and length for the divisor and divide by it; so one gets the height.
+  - classic: |
+      Now there is a round bin,
+  - liu: |
+      A round bin is a granary; it is also called a round store.
+  - classic: |
+      1 *zhang* 3 *chi* 3 1/3 *cun* high, holding 2000 *hu* of rice. Question: what is its circumference? Answer:
+      5 *zhang* 4 *chi*.
+  - liu: |
+      By Hui's method the circumference should be 5 *zhang* 5 *chi* 2 9/20 *cun*.
+  - li: |
+      We respectfully, by the precise rate: the circumference is 5 *zhang* 5 *chi* 27/100 *chi*.
+  - classic: |
+      The rule says: set out the volume of the rice in *chi*,
+  - liu: |
+      This is just like the volume of the round fort.
+    hint: |
+      The cylinder of [[JZ.5.4]].
+  - classic: |
+      multiply by 12, and divide by the height; extract the square root of the result: that is the
+      circumference.
+    modern: |
+      $C = \sqrt{\dfrac{12\, V}{h}} = \sqrt{\dfrac{12 \cdot 3240}{13\tfrac13}} = \sqrt{2916} = 54$.
+    cites: [XII.11]
+  - liu: |
+      By Hui's method one should set out the volume of the rice in *chi* and multiply by 314 for the dividend,
+      and multiply the bin's height by 25 for the divisor; extract the square root of the result: that is the
+      circumference. This too finds the circumference from a given area, and errs slightly small.
+    zh: 於徽術當置米積尺以三百一十四乘之爲實二十五乘囷高爲法所得開方除之卽周也此亦據見冪以求周失之於微少也
+  - liu: |
+      In the arsenal of the Jin there is a bronze *hu* made by Wang Mang in the Han. On the side of the *hu*, in
+      seal script, it is inscribed: "The standard measure, the *hu*: a square of 1 *chi*, rounded on the
+      outside, with a margin of 9 *li* 5 *hao*; area 162 *cun*; depth 1 *chi*; volume 1620 *cun*; holds 10 *dou*."
+      And on the bottom of the *hu*: "The standard measure, the *dou*: a square of 1 *chi*, rounded on the
+      outside, with a margin of 9 *li* 5 *hao*; area 1 *chi* 6 *cun* 2 *fen*; depth 1 *cun*; volume 162 *cun*;
+      holds 1 *dou*."
+    zh: 晉武庫中有漢時王莽所作銅斛其篆書字題斛旁云律嘉量斛方一尺而圓其外庣旁九釐五毫冪一百六十二寸深一尺積一千六百二十寸容十斗及斛底云律嘉量斗方尺而圜其外庣旁九釐五毫冪一尺六寸二分深一寸積一百六十二寸容一斗
+    hint: |
+      The measure combines several in one bronze: the large cylinder is the *hu*, its base turned up is the
+      *dou*, and the small cups on the side and ears are the *sheng*, *ge* and *yue*.
+  - liu: |
+      The *ge* and *yue* all have inscriptions. The *sheng* is on the side of the *hu*, and the *ge* and *yue*
+      on its ears. After them is an inscription of praise, the same as in the present Treatise on Pitch-pipes
+      and the Calendar. It was also in regular use under the Wei and Jin. Now I have recorded the inscriptions
+      of Wang Mang's bronze *hu* with their dimensions, but have not got all the inscriptions of the *sheng*,
+      *ge* and *shao*.
+    zh: 合龠皆有文字升居斛旁合龠在斛耳上後有讃文與今律歷志同亦魏晉所常用今祖疏王莽銅斛文字尺寸分數然不盡得升合勺之文字
+    dispute: |
+      "Now I have recorded" (今祖疏) is odd; some editors read 祖 as a corruption, others take this note as Zu
+      Chongzhi's.
+  - liu: |
+      In this rule, originally the circumference was multiplied by itself and by the height and divided by 12,
+      giving this volume. Now, to return to the origin, set out this volume, multiply by 12 and divide by the
+      height, which restores the number of the circumference multiplied by itself. Whenever something
+      multiplied by itself has its square root extracted, it returns to its original number; so extracting the
+      square root gives it.
+  - li: |
+      We respectfully, by the precise rate: multiply by 88 for the dividend, and multiply the bin's height by 7
+      for the divisor; divide, and extract the square root: that is the circumference.

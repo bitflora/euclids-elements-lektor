@@ -201,46 +201,62 @@ export interface BookInfo {
   available: boolean;
 }
 
-// ─── The Zhou bi suan jing 周髀算經 ──────────────────────────────────────
-// Ids: "ZB.Pref" (Zhao Shuang's preface), "ZB.1.3" (part 1, section 3).
+// ─── The Chinese works: the Zhou bi suan jing 周髀算經 and the Jiuzhang suanshu 九章算術 ─
+// Ids: "ZB.Pref" (Zhao Shuang's preface), "ZB.1.3" (Zhou bi part 1, section 3);
+// "JZ.Pref" (Liu Hui's preface), "JZ.9.1" (Nine Chapters, chapter 9, section 1).
 
-/** The Chinese text, as extracted by scripts/extract-zhoubi.mjs. */
-export interface ZbPassage {
-  /** The classic, or Zhao Shuang's commentary (3rd c. CE). */
-  voice: "classic" | "zhao";
+export type WorkKey = "zhoubi" | "jiuzhang";
+
+/**
+ * Who is speaking: the classic, or a commentator. Zhao Shuang (3rd c. CE) on the Zhou bi; Liu Hui
+ * (263 CE) on the Nine Chapters, and Li Chunfeng and his colleagues (656 CE) after him.
+ */
+export type Voice = "classic" | "zhao" | "liu" | "li";
+export const VOICES: Voice[] = ["classic", "zhao", "liu", "li"];
+
+/** The Chinese text, as extracted by scripts/extract-zhoubi.mjs and scripts/extract-jiuzhang.mjs. */
+export interface WorkPassage {
+  voice: Voice;
   zh: string;
-  /** Gutenberg line number within the part (classic), or the lemma commented on. */
+  /** Zhou bi: Gutenberg line number within the part (classic), or the lemma commented on. */
   lemma?: number;
-  /** The Sibu Congkan reading, where it differs from Gutenberg's. */
+  /** Nine Chapters: the number of the problem this classic passage begins. */
+  problem?: number;
+  /** The Sibu Congkan reading, where it differs from the base text's. */
   sbck?: string;
-  /** In the Sibu Congkan only; Gutenberg lacks it. */
+  /** In the Sibu Congkan only; the base text lacks it. */
   sbckOnly?: boolean;
   /** A heading the commentary carries, such as 勾股方圓圖注. */
   heading?: string;
 }
-export interface ZbSourceSection {
+export interface WorkSourceSection {
   id: string;
   n?: number;
-  passages: ZbPassage[];
+  passages: WorkPassage[];
 }
-export interface ZbSource {
+export interface WorkSource {
   source: {
     title: string;
     classic: { edition: string; url: string };
     commentary: { edition: string; url: string };
   };
-  preface: ZbSourceSection;
-  parts: { n: number; title: string; sections: ZbSourceSection[] }[];
-  gutenbergOnly: { part: number; line: number; text: string }[];
+  preface: WorkSourceSection;
+  parts: { n: number; title: string; name?: string; subtitle?: string; sections: WorkSourceSection[] }[];
+  /** Zhou bi: lines Gutenberg prints as the classic that the Sibu Congkan does not. */
+  gutenbergOnly?: { part: number; line: number; text: string }[];
   corrections: { id: string; from: string; to: string; reason: string }[];
 }
 
-/** One step: a classic passage or a piece of Zhao's commentary, in translation. */
-export interface ZbStepAnnotation {
+/** One step: a passage of the classic or of a commentary, in translation. */
+export interface WorkStepAnnotation {
   /** This edition's translation of a classic passage … */
   classic?: string;
-  /** … or of Zhao Shuang's commentary. Exactly one of the two. */
+  /** … or of Zhao Shuang's commentary (Zhou bi) … */
   zhao?: string;
+  /** … or of Liu Hui's commentary (Nine Chapters) … */
+  liu?: string;
+  /** … or of Li Chunfeng's sub-commentary (Nine Chapters). Exactly one of the four. */
+  li?: string;
   /**
    * Only to split a long passage: the Chinese this step covers, which must be the
    * next characters of the passage (punctuation ignored). Omitted, the step runs
@@ -259,7 +275,7 @@ export interface ZbStepAnnotation {
   figure?: number;
 }
 
-export interface ZbParallel {
+export interface WorkParallel {
   /** A Euclid item, e.g. "I.47". */
   id: ItemId;
   /** "same": the same proposition is proved (or used) in both; "related": a close kin. */
@@ -267,32 +283,36 @@ export interface ZbParallel {
   note: Rich;
 }
 
-export interface ZbAnnotation {
+export interface WorkAnnotation {
   id: string;
   title: string;
   paraphrase: Rich;
   diagram?: DiagramSpec;
   /** Further figures, numbered from 1 after `diagram`; steps choose one with `figure`. */
   figures?: DiagramSpec[];
-  steps: ZbStepAnnotation[];
+  steps: WorkStepAnnotation[];
   commentary?: Rich;
   historical?: Rich;
-  parallels?: ZbParallel[];
+  parallels?: WorkParallel[];
 }
 
-export interface ZbStep extends ZbStepAnnotation {
+export interface WorkStep extends WorkStepAnnotation {
   index: number;
   /**
-   * The step's number as shown: classic steps count 1, 2, 3…; Zhao's commentary is
-   * numbered under the classic step it follows (3.1, 3.2…). In a section that is all
-   * commentary (the preface), Zhao's steps count 1, 2, 3….
+   * The step's number as shown: classic steps count 1, 2, 3…; commentary is numbered
+   * under the classic step it follows (3.1, 3.2…). In a section that is all commentary
+   * (a preface), the steps count 1, 2, 3….
    */
   num: string;
-  voice: "classic" | "zhao";
+  voice: Voice;
+  /** The translation, whichever voice it is in. */
+  en?: string;
   /** The Chinese of this step, as printed in the source. */
   source: string;
   /** Index of the passage in the section. */
   passage: number;
+  /** Nine Chapters: the problem this step begins. */
+  problem?: number;
   /** The passage's heading, on the step that begins it. */
   heading?: string;
   /** The SBCK variant of the passage, on the step that ends it. */
@@ -300,24 +320,27 @@ export interface ZbStep extends ZbStepAnnotation {
   sbckOnly?: boolean;
 }
 
-export interface ZbSection {
+export interface WorkSection {
   id: string;
+  work: WorkKey;
   part: number;
   n: number;
   /** "Section 3", "Zhao Shuang's preface" */
   label: string;
   /** "ZB 1.3" */
   short: string;
-  passages: ZbPassage[];
-  annotation?: ZbAnnotation;
-  steps: ZbStep[];
+  passages: WorkPassage[];
+  annotation?: WorkAnnotation;
+  steps: WorkStep[];
 }
 
-export interface ZbPartInfo {
+export interface WorkPartInfo {
   n: number;
-  /** 卷上之一 */
+  /** 卷上之一, 卷第九 */
   zh: string;
-  /** "Volume 1, part 1" */
+  /** Nine Chapters: the chapter's name, 句股 */
+  name?: string;
+  /** "Volume 1, part 1", "Chapter 9" */
   label: string;
   subject: string;
 }

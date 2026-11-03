@@ -1,0 +1,96 @@
+id: JZ.1.11
+title: Triangular fields — half the width times the height
+paraphrase: |
+  A *gui* 圭 field is a triangle; the name comes from the jade tablet with a pointed top. Its area is
+  half the width (the base) times the "true length" (*zheng zong* 正從, the height):
+  $\tfrac12 \cdot 12 \cdot 21 = 126$ square *bu*.
+
+  Liu Hui's proof is a dissection, "using the excess to fill the deficit" (*yi ying bu xu* 以盈補虛).
+  Cut off the two corners at the base with vertical cuts through the midpoints of the sides, and turn
+  each over into the gap beside the apex. The triangle becomes a rectangle half as wide and just as
+  high.
+
+parallels:
+  - id: I.41
+    relation: same
+    note: |
+      A parallelogram on the same base and between the same parallels as a triangle is double the
+      triangle. So the triangle equals the rectangle on half the base with the same height, which is the
+      rule here. Euclid proves it by the diagonal cutting the parallelogram in half (I.34) and by
+      comparing figures on equal bases (I.35–I.38). Liu cuts the triangle itself into pieces and moves
+      them.
+  - id: I.42
+    relation: related
+    note: |
+      Euclid's construction of a parallelogram equal to a given triangle uses the same half-base
+      rectangle: the triangle is turned into a parallelogram on half the base.
+
+diagram:
+  width: 320
+  height: 260
+  elements:
+    - "A;point;fixed;30,230;black;black"
+    - "B;point;fixed;290,230;black;black"
+    - "C;point;fixed;160,30;black;black"
+    - "M;point;fixed;95,130;black;black"
+    - "N;point;fixed;225,130;black;black"
+    - "P;point;fixed;95,230;black;black"
+    - "Q;point;fixed;225,230;black;black"
+    - "R;point;fixed;225,30;black;black"
+    - "S;point;fixed;95,30;black;black"
+    - "rect;polygon;quadrilateral;P,Q,R,S;0;0;#6b6253;#f3ecd8"
+    - "cutA;polygon;triangle;A,P,M;0;0;#9a3b2b;#e8b9a9"
+    - "cutB;polygon;triangle;B,Q,N;0;0;#9a3b2b;#e8b9a9"
+    - "fillS;polygon;triangle;S,C,M;0;0;#33587a;#cfdde9"
+    - "fillR;polygon;triangle;R,C,N;0;0;#33587a;#cfdde9"
+    - "AB;line;connect;A,B;0;0;black"
+    - "AC;line;connect;A,C;0;0;black"
+    - "BC;line;connect;B,C;0;0;black"
+    - "MP;line;connect;M,P;0;0;#9a3b2b"
+    - "NQ;line;connect;N,Q;0;0;#9a3b2b"
+  given: [A, B, C, AB, AC, BC]
+  caption: |
+    The triangle {A}{B}{C} with base {AB} = 12 and height 21. Vertical cuts {MP} and {NQ} through the
+    midpoints {M}, {N} of the sides cut off the red corners {APM|cutA} and {BQN|cutB}. Each, turned half round
+    about {M} or {N}, exactly fills a blue gap ({SCM|fillS}, {RCN|fillR}) beside the apex. The result is the
+    rectangle {P}{Q}{R}{S}: half the base wide, the full height high.
+
+steps:
+  - classic: |
+      Now there is a pointed field, 12 *bu* wide, with a true length of 21 *bu*. Question: how much field
+      does it make? Answer: 126 *bu*.
+    hint: |
+      The "true length" is the height, measured straight (perpendicular to the base), not along a
+      slanting side.
+    highlight: [AB]
+  - classic: |
+      Again there is a pointed field 5 1/2 *bu* wide and 8 2/3 *bu* long. Question: how much field does it
+      make? Answer: 23 5/6 *bu*.
+    modern: $\tfrac12 \cdot \tfrac{11}{2} \cdot \tfrac{26}{3} = \tfrac{143}{6} = 23\tfrac56$.
+  - classic: |
+      The rule says: half the width, multiplied by the true length.
+    modern: $A = \tfrac12\, b\, h$.
+    adds: [rect]
+    highlight: [rect]
+    cites: [I.41]
+  - liu: |
+      "Half the width": using the excess to fill the deficit, it becomes a rectangular field. One may
+      also halve the true length and multiply by the width. On halving the width and multiplying by the
+      length: this takes the middle, level value. So the width and length are multiplied for the
+      accumulated *bu*, and dividing by the *mu* divisor gives it.
+    hint: |
+      The first statement of Liu's out-in principle: the pieces that stick out (the "excess") are moved
+      into the gaps (the "deficit"). Cut and moved, the area does not change.
+    adds: [M, N, P, Q, R, S, MP, NQ, cutA, cutB, fillS, fillR]
+    highlight: [cutA, cutB, fillS, fillR]
+    explain:
+      did: |
+        Liu turns the triangle into a rectangle of equal area: half the base wide, the full height high
+        (as in the figure). Halving the height instead, he gets a rectangle the full base wide and half
+        as high.
+      fact: |
+        The corner {APM|cutA} and the gap {SCM|fillS} are congruent: half a turn about the midpoint {M} carries
+        one onto the other.
+      implicit: |
+        That the pieces are congruent and fit exactly. Liu's figure would make it visible; Euclid would
+        prove it with I.26 (a side and two angles) and I.15 (vertical angles).

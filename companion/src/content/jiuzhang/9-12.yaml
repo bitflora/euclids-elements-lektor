@@ -1,0 +1,77 @@
+id: JZ.9.12
+title: Two walkers — generating right triangles from rates
+paraphrase: |
+  Two people start together. A walks at rate 7, B at rate 3. B goes east; A goes south 10 *bu*, then turns
+  north-east and meets B. How far does each walk? A's path, south and then slanting, is *gou* plus
+  hypotenuse; B's east walk is the *gu*. With $m = 7$, $n = 3$, the triangle has sides in the rates
+  $$\text{hypotenuse} : \text{gou} : \text{gu} = \tfrac12(m^2 + n^2) : \tfrac12(m^2 - n^2) : mn = 29 : 20 : 21.$$
+  Scaled to a *gou* of 10: A's slant walk is $14\tfrac12$, B's walk $10\tfrac12$.
+
+  This is a general recipe for right triangles with rational sides, the same as Euclid's lemma for finding two
+  square numbers whose sum is square.
+
+parallels:
+  - id: X.29
+    relation: related
+    note: |
+      In the first lemma before X.29, Euclid finds two square numbers whose sum is a square. Take two numbers
+      both even or both odd; their product, and the square on half their difference, together make the square
+      on half their sum. With $m$, $n$ in place of his numbers: $(mn)^2 + \left(\tfrac{m^2 - n^2}{2}\right)^2 =
+      \left(\tfrac{m^2 + n^2}{2}\right)^2$, the rates of this rule.
+  - id: VI.4
+    relation: related
+    note: |
+      Once the rates are known, the actual distances follow by proportion: equiangular triangles have
+      proportional sides (VI.4).
+
+steps:
+  - classic: |
+      Now two people stand at the same place. A's walking rate is 7, B's is 3. B walks east. A walks south 10 *bu*
+      and then slants north-east and meets B. Question: how far does each walk? Answer: B walks 10 1/2 *bu* east;
+      A walks 14 1/2 *bu* slanting to reach him.
+  - classic: |
+      The rule says: multiply 7 by itself and 3 by itself, add and halve, for A's slanting rate. Subtract the
+      slanting rate from 7 multiplied by itself; the remainder is the southward rate. Multiply 7 by 3 for B's
+      eastward rate.
+    modern: |
+      Slant $\tfrac12(49 + 9) = 29$, south $49 - 29 = 20$, east $21$; and $20^2 + 21^2 = 29^2$.
+    cites: [X.29]
+  - liu: |
+      Here the southward walk is the *gou*, the eastward walk the *gu*, and the slanting walk the hypotenuse; the
+      sum of *gou* and hypotenuse is 7. To know the hypotenuse, multiply the *gu* by itself for an area and divide
+      by the sum: the result is the difference of *gou* and hypotenuse. Add the difference to the sum and halve:
+      the hypotenuse. Subtract the difference from the hypotenuse: the remainder is the *gou*.
+    zh: 此以南行爲句東行爲股邪行爲弦句弦并七欲知弦者當以股自乘爲幂如并而一所得爲句弦差加差於并而半之爲弦以弦減差餘爲句
+    explain:
+      fact: |
+        With $c + a = m$ and $b = n$: $c - a = \dfrac{n^2}{m}$, so $c = \dfrac{m^2 + n^2}{2m}$ and
+        $a = \dfrac{m^2 - n^2}{2m}$. Multiplying through by $m$ clears the fractions: rates $\tfrac12(m^2 + n^2)$,
+        $\tfrac12(m^2 - n^2)$, $mn$.
+    cites: [II.6]
+  - liu: |
+      Done this way there may be fractions, which must be connected and reduced before the rule is settled; so
+      take the sum of *gou* and hypotenuse as the denominator and the difference as the numerator. So the sum of
+      *gou* and hypotenuse multiplied by itself makes the square of red and yellow joined, and the *gu*
+      multiplied by itself makes the trysquare of the blue area. Draw out the trysquare straight, adding and
+      subtracting to equalise it, with the sum of *gou* and hypotenuse as the length and the difference as the
+      width.
+    zh: 如是或有分當通而約之乃定術以句弦并爲分母差爲分子故令句弦并自乘爲朱黄相連之方股自乘爲靑幂之矩令其矩引之直加損同之以句弦并爲袤差爲廣
+  - liu: |
+      The figure as a whole has twice the hypotenuse as its length and the sum of *gou* and hypotenuse as its
+      width; draw out the yellow and cut its half for the rate of the hypotenuse. 7 multiplied by itself is the
+      rate of the sum of *gou* and hypotenuse, so subtracting the hypotenuse leaves the rate of the *gou*.
+      Standing at the same place is the middle stop. In all the rates set out, the sum of *gou* and hypotenuse
+      is the length, and the hypotenuse and the *gou* each a width; so the *gu* rate too is made to share that
+      length.
+    dispute: |
+      Liu's description of the figure is compressed and partly corrupt ("standing at the same place is the
+      middle stop" is especially obscure). The result is clear: all three rates are scaled by the sum $m$.
+  - classic: |
+      Set out the 10 *bu* walked south and multiply by A's slanting rate; set out the 10 *bu* again and multiply by
+      B's eastward rate; each is a dividend. Divide each by the southward rate: each gives the distance walked.
+    modern: |
+      $10 \cdot \tfrac{29}{20} = 14\tfrac12$, $\;10 \cdot \tfrac{21}{20} = 10\tfrac12$.
+    cites: [VI.4]
+  - liu: |
+      The 10 *bu* south is the given *gou*, from which the hypotenuse and *gu* are sought; so multiply by the rate
+      of the hypotenuse or the *gu*, and divide by the rate of the *gou*.

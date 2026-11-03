@@ -1,0 +1,81 @@
+id: JZ.1.8
+title: Dividing with fractions — and Liu Hui's definition of "rates"
+paraphrase: |
+  Division where the dividend, or both terms, have fractions: 7 people share $8\tfrac13$ cash.
+  Convert the mixed number to an improper fraction ("connect" it, *tong* 通), then divide.
+
+  Liu Hui's note contains his definition of *lü* 率, "rates", the concept behind most of the book. Numbers
+  that are associated with one another are rates. They may all be multiplied, or all divided by a
+  common number, without changing the relation between them. A divisor and a dividend form a pair of
+  rates; so to clear fractions one multiplies both by the denominators.
+
+parallels:
+  - id: VII.Def.20
+    relation: related
+    note: |
+      Liu's "rates" are numbers taken in a fixed relation, which may be scaled up or down together. That
+      is Euclid's definition of proportional numbers (VII.Def.20), seen as a working rule rather than
+      a definition of equality between ratios.
+  - id: VII.17
+    relation: related
+    note: |
+      "Divisor and dividend, divided by an equal number, are still rates to one another": multiplying
+      or dividing both terms by the same number keeps the ratio (VII.17, VII.18).
+
+steps:
+  - classic: |
+      Now 7 people share 8 1/3 cash. Question: how much does each get? Answer: each gets 1 cash and 4/21.
+    modern: $8\tfrac13 \div 7 = \tfrac{25}{3} \div 7 = \tfrac{25}{21} = 1\tfrac{4}{21}$.
+  - classic: |
+      Again 3 1/3 people share 6 1/3 and 3/4 cash. Question: how much does each get? Answer: each gets 2
+      cash and 1/8.
+    hint: |
+      A third of a person: a problem made for its numbers. $6\tfrac13 + \tfrac34 = \tfrac{85}{12}$ and
+      $3\tfrac13 = \tfrac{10}{3}$, so each gets $\tfrac{85}{12} \cdot \tfrac{3}{10} = \tfrac{17}{8}$.
+  - classic: |
+      Division of fractions —
+  - li: |
+      We respectfully note: in "division of fractions", from adding fractions onward [the rules] all
+      make the fractions uniform with one another. This one directly seeks one person's share, dividing
+      what is shared by the number of people; hence "division of fractions".
+    dispute: |
+      The name *jing fen* 經分 is obscure. Li's explanation ("directly seeks one person's share") reads 經
+      as 徑, "directly"; others take it as "apportioning" or "dividing". Either way, the rule is division.
+  - classic: |
+      the rule says: take the number of people as the divisor and the cash as the dividend, and divide
+      the dividend by the divisor. If there are fractions, connect them;
+    modern: '$\dfrac{q + \frac{r}{m}}{p} = \dfrac{qm + r}{pm}$.'
+  - liu: |
+      The denominators multiplying the numerators crosswise make the numerators uniform; the
+      denominators multiplied together make the denominators the same. "Connecting by the
+      denominator" is: multiply the whole by the denominator and add in the numerator. Multiplying
+      spreads out the whole into accumulated parts, and accumulated parts connect with the numerator,
+      so they can be added together.
+    zh: 母互乘子者齊其子母相乘者同其母以母通之者分母乘全內子乘散全則爲積分積分則與分子相通故可令相從
+    modern: $8\tfrac13 = \tfrac{8 \cdot 3 + 1}{3} = \tfrac{25}{3}$.
+  - liu: |
+      Whenever numbers are associated with one another, they are called rates. Rates connect with one
+      another as they are: if there are fractions, they can be spread out; if the parts are repeated,
+      they can be reduced. A divisor and a dividend, divided by an equal number, are still rates to one
+      another. So in spreading out fractions, the two denominators must multiply the divisor and the
+      dividend.
+    zh: 凡數相與者謂之率率者自相與通有分則可散分重疊則約也等除法實相與率也故散分者必令兩分母相乘法實也
+    hint: |
+      Liu Hui's definition of *lü* 率, "rates". Numbers in a fixed relation may be multiplied or divided
+      together. A division is such a relation, so its divisor and dividend may both be scaled to clear
+      fractions.
+    explain:
+      fact: |
+        $\dfrac{a}{b} = \dfrac{ka}{kb}$ for any $k$. Multiply both terms of $\tfrac{25/3}{7}$ by 3 and
+        the division becomes $\tfrac{25}{21}$, with no fraction left inside.
+      justification: |
+        In Euclid's terms, $a : b = ka : kb$ (VII.17). Liu takes it as the defining property of rates.
+    cites: [VII.17]
+  - classic: |
+      if both have fractions, make them the same and connect them.
+  - liu: |
+      Further, multiply the dividend by the divisor's denominator, and the divisor by the dividend's
+      denominator. This is said when both divisor and dividend have fractions. So each denominator
+      multiplies its own whole and adds in its numerator, and the denominators also multiply crosswise,
+      above and below.
+    modern: '$\dfrac{a/b}{c/d} = \dfrac{ad}{bc}$.'

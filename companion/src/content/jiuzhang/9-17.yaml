@@ -1,0 +1,60 @@
+id: JZ.9.17
+title: Walkers round the town — rates and similar triangles together
+paraphrase: |
+  A town 10 *li* square. A and B start from its centre; B goes east, A goes south out of the south gate some
+  unknown distance, then slants north-east, grazing the town's south-east corner, and meets B. A's rate is 5, B's
+  3. The rule of [[JZ.9.12]] gives the triangle's rates: slant 17, south 8, east 15. The half-side, 5 *li*, as a
+  small *gu*, gives the distance south of the gate by similar triangles: $1500 \cdot 8/15 = 800$ *bu*. Then the
+  rest follows.
+
+parallels:
+  - id: X.29
+    relation: related
+    note: |
+      The rates 17, 8, 15 come from $m = 5$, $n = 3$ by the rule of [[JZ.9.12]], Euclid's lemma before X.29.
+  - id: VI.4
+    relation: same
+    note: |
+      The small triangle (south gate, corner, turning point) is similar to the large one (centre, meeting point,
+      turning point), so their sides are in the same rates.
+
+steps:
+  - classic: |
+      Now there is a town 10 *li* square, with a gate opened in the middle of each side. A and B both set out from
+      the centre of the town. B goes out east; A goes out south, an unknown number of *bu* beyond the gate, then
+      slants north-east, grazing the town, and just meets B. A's rate of walking is 5, B's 3. Question: how far
+      does each walk? Answer: A goes 800 *bu* out of the south gate and walks 4887 1/2 *bu* north-east to reach B.
+      B walks 4312 1/2 *bu* east.
+  - classic: |
+      The rule says: multiply 5 by itself and 3 by itself, add and halve, for the slanting rate. Subtract the
+      slanting rate from 5 multiplied by itself; the remainder is the southward rate. Multiply 5 by 3 for B's
+      eastward rate.
+    modern: |
+      Slant 17, south 8, east 15.
+    cites: [X.29]
+  - liu: |
+      The idea of finding the three rates is the same as for A and B above.
+  - classic: |
+      Set out half the town's side, multiply by the southward rate, and divide by the eastward rate: that gives the
+      *bu* out of the south gate.
+    modern: |
+      $1500 \cdot \tfrac{8}{15} = 800$ *bu*.
+  - liu: |
+      Half the town's side, the 5 *li* from the south gate to the east corner, is the small *gu*; the *bu* out of the
+      south gate sought is the *gou* of the small *gu*. The eastward walk is the *gu* rate and the southward the
+      *gou* rate; so set out half the town's side, multiply by the southward *gou* rate, and divide by the *gu*
+      rate.
+    cites: [VI.4]
+  - classic: |
+      Add half the town's side: that is the southward walk.
+    modern: |
+      $800 + 1500 = 2300$ *bu*.
+  - liu: |
+      "Half the town" means from the town's centre, its middle point.
+  - classic: |
+      Set out the *bu* of the southward walk; to find the hypotenuse multiply by the slanting rate, to find the east
+      multiply by the eastward rate, each as a dividend. Divide by the southward rate, getting *bu*.
+    modern: |
+      $2300 \cdot \tfrac{17}{8} = 4887\tfrac12$, $\;2300 \cdot \tfrac{15}{8} = 4312\tfrac12$.
+  - liu: |
+      This rule is the same as for A and B above.

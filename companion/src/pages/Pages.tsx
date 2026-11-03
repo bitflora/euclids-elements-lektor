@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
-import { BOOKS, ZB_PARTS, availableBooks } from "../content/books";
+import { BOOKS, JZ_PARTS, ZB_PARTS, availableBooks } from "../content/books";
 import { getItem, heathCorrections, heathSource, items } from "../lib/corpus";
-import { allParallels, getZb, isZbId, zbSections, zbSource } from "../lib/zhoubi";
+import { WORKS, allParallels, getSection, isWorkId, jiuzhang, zhoubi, type Work } from "../lib/works";
 import { plainText, refLabel } from "../lib/rich";
 import { hrefFor } from "../lib/router";
 import { lastPosition } from "../lib/store";
@@ -109,6 +109,32 @@ export function HomePage() {
           ))}
         </ul>
       </section>
+
+      <section>
+        <h2>
+          And the <i>Jiuzhang suanshu</i> <span lang="zh-Hant">九章算術</span>
+        </h2>
+        <p>
+          <i>The Nine Chapters on the Mathematical Art</i>, the foundational Chinese handbook of mathematics, compiled
+          by the first century CE: 246 problems, each with its answer and a rule for solving it. Liu Hui's commentary
+          (263 CE) proves the rules, often by cutting figures and solids into pieces and reassembling them; Li
+          Chunfeng's (656 CE) adds Zu Geng's proof of the volume of the sphere. Here are the four geometrical chapters,
+          with both commentaries: areas, square and cube roots, volumes, and the right triangle. Sections that cover the
+          same ground as Euclid link to him, and he links back.
+        </p>
+        <ul className="books">
+          {JZ_PARTS.map((p) => (
+            <li key={p.n}>
+              <a href={`#/jiuzhang/${p.n}`}>
+                <span className="roman" lang="zh-Hant">
+                  {p.name}
+                </span>
+                <span className="subject">{p.subject}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
     </main>
   );
 }
@@ -116,7 +142,7 @@ export function HomePage() {
 // ─── Search ───────────────────────────────────────────────────────────────
 interface Doc {
   id: string;
-  field: "Euclid" | "Notes" | "Heath's notes" | "Zhou bi";
+  field: "Euclid" | "Notes" | "Heath's notes" | "Zhou bi" | "Nine Chapters";
   text: string;
   step?: number;
 }
@@ -143,10 +169,11 @@ function buildIndex(): Doc[] {
     for (const n of notes) docs.push({ id: it.id, field: "Notes", text: plainText(n) });
     for (const n of it.heathNotes) docs.push({ id: it.id, field: "Heath's notes", text: plainText(n.text) });
   }
-  for (const s of zbSections.values()) {
+  for (const w of WORKS)
+  for (const s of w.sections.values()) {
     for (const st of s.steps) {
-      const en = st.classic ?? st.zhao;
-      docs.push({ id: s.id, field: "Zhou bi", text: (en ? plainText(en) + " " : "") + st.source, step: st.index });
+      const en = st.en;
+      docs.push({ id: s.id, field: w.short as "Zhou bi", text: (en ? plainText(en) + " " : "") + st.source, step: st.index });
       for (const n of [st.hint, st.explain?.did, st.explain?.fact, st.explain?.follows]) if (n) docs.push({ id: s.id, field: "Notes", text: plainText(n), step: st.index });
     }
     for (const n of [s.annotation?.title, s.annotation?.paraphrase, s.annotation?.commentary, s.annotation?.historical]) if (n) docs.push({ id: s.id, field: "Notes", text: plainText(n) });
@@ -154,7 +181,8 @@ function buildIndex(): Doc[] {
   return docs;
 }
 
-const WEIGHT = { Euclid: 3, "Zhou bi": 3, Notes: 2, "Heath's notes": 1 };
+const WEIGHT = { Euclid: 3, "Zhou bi": 3, "Nine Chapters": 3, Notes: 2, "Heath's notes": 1 };
+const TEXT_FIELDS = new Set(["Euclid", "Zhou bi", "Nine Chapters"]);
 
 export function SearchPage({ q }: { q: string }) {
   const [query, setQuery] = useState(q);
@@ -197,14 +225,14 @@ export function SearchPage({ q }: { q: string }) {
       {query && <p className="small muted">{results.length ? `${results.length} items` : "Nothing found."}</p>}
       <ul className="results">
         {results.map(([id, r]) => {
-          const it = isZbId(id) ? { label: getZb(id)!.annotation?.title ?? getZb(id)!.label } : getItem(id)!;
+          const it = isWorkId(id) ? { label: getSection(id)!.annotation?.title ?? getSection(id)!.label } : getItem(id)!;
           const best = [...r.hits].sort((a, b) => WEIGHT[b.field] - WEIGHT[a.field])[0];
           return (
             <li key={id}>
               <a href={hrefFor(id, best.step)}>
                 <span className="res-id">{refLabel(id)}</span> <span className="res-label">{it.label}</span>
               </a>
-              <p className={best.field === "Euclid" || best.field === "Zhou bi" ? "heath" : ""}>
+              <p className={TEXT_FIELDS.has(best.field) ? "heath" : ""}>
                 <span className="res-field">{best.field}</span> {snippet(best.text)}
               </p>
             </li>
@@ -310,12 +338,12 @@ export function AboutPage() {
       </h2>
       <p>
         The Chinese text of the classic is{" "}
-        <a href={zbSource.source.classic.url} target="_blank" rel="noreferrer">
-          {zbSource.source.classic.edition}
+        <a href={zhoubi.source.source.classic.url} target="_blank" rel="noreferrer">
+          {zhoubi.source.source.classic.edition}
         </a>
         , which is in the public domain. Gutenberg prints the classic alone, so Zhao Shuang's commentary is taken from the{" "}
-        <a href={zbSource.source.commentary.url} target="_blank" rel="noreferrer">
-          {zbSource.source.commentary.edition}
+        <a href={zhoubi.source.source.commentary.url} target="_blank" rel="noreferrer">
+          {zhoubi.source.source.commentary.edition}
         </a>
         . That edition also carries the sub-commentaries of Zhen Luan (6th century) and Li Chunfeng and his colleagues
         (7th century), which are not reproduced here; nor are the Ming editors' marginal notes. Both texts are extracted
@@ -333,12 +361,12 @@ export function AboutPage() {
       </p>
       <p>Where the editions differ in ways the reader should know:</p>
       <ul>
-        {zbSource.corrections.map((c, i) => (
+        {zhoubi.source.corrections.map((c, i) => (
           <li key={i}>
             Gutenberg “<span lang="zh-Hant">{c.from}</span>” → “<span lang="zh-Hant">{c.to}</span>” ({c.reason}).
           </li>
         ))}
-        {zbSource.gutenbergOnly.map((g, i) => (
+        {(zhoubi.source.gutenbergOnly ?? []).map((g, i) => (
           <li key={`g${i}`}>
             Gutenberg prints “<span lang="zh-Hant">{g.text}</span>” (part {g.part}, line {g.line}) as the classic; the Sibu
             Congkan gives these words in the sub-commentary, and they are omitted here.
@@ -346,25 +374,47 @@ export function AboutPage() {
         ))}
       </ul>
       <p>The cross-references between the two books, where both prove (or use) the same proposition:</p>
+      <ParallelList work={zhoubi} />
+
+      <h2>
+        The <i>Jiuzhang suanshu</i> <span lang="zh-Hant">九章算術</span>
+      </h2>
+      <p>
+        This edition gives the four geometrical chapters of the nine (1, <i>Fang tian</i>; 4, <i>Shao guang</i>; 5,{" "}
+        <i>Shang gong</i>; 9, <i>Gou gu</i>) and Liu Hui's preface. The classic is the punctuated text of{" "}
+        <a href={jiuzhang.source.source.classic.url} target="_blank" rel="noreferrer">
+          {jiuzhang.source.source.classic.edition}
+        </a>
+        , whose problem numbers are kept. The commentary is taken from the{" "}
+        <a href={jiuzhang.source.source.commentary.url} target="_blank" rel="noreferrer">
+          {jiuzhang.source.source.commentary.edition}
+        </a>
+        , where it is printed in small characters between the passages of the classic.{" "}
+        <code>scripts/extract-jiuzhang.mjs</code> aligns that edition's large characters with the punctuated classic,
+        character by character, to find where each note falls. A note is Liu Hui's unless it opens{" "}
+        <span lang="zh-Hant">臣淳風等謹按</span> ("we, Li Chunfeng and colleagues, respectfully note"), which marks the
+        sub-commentary Li Chunfeng's team wrote in 656. Dai Zhen's errata and supplementary figures at the end of each
+        chapter are not reproduced. The commentary's transcription on Wikisource is an unproofread OCR and carries no
+        punctuation, so it is printed as transcribed, apart from the corrections below.
+      </p>
       <ul>
-        {allParallels().map(([eid, list]) => (
-          <li key={eid}>
-            <a className="xref" data-ref={eid} href={hrefFor(eid)}>
-              {refLabel(eid)}
-            </a>{" "}
-            ↔{" "}
-            {list.map((p, k) => (
-              <span key={p.zb}>
-                {k > 0 && ", "}
-                <a className="xref" data-ref={p.zb} href={hrefFor(p.zb)}>
-                  {refLabel(p.zb)}
-                </a>{" "}
-                <span className="small muted">({p.relation === "same" ? "same proposition" : "related"})</span>
-              </span>
-            ))}
+        {jiuzhang.source.corrections.map((c, i) => (
+          <li key={i}>
+            <span lang="zh-Hant">{c.from}</span> → <span lang="zh-Hant">{c.to}</span> ({c.reason}).
           </li>
         ))}
       </ul>
+      <p>
+        No English translation of the <i>Nine Chapters</i> with its commentary is in the public domain, so the
+        translation here is this edition's own, made from the Chinese. Like the <i>Zhou bi</i>'s, it keeps the
+        technical vocabulary visible: <i>shi</i> 實 "dividend" and <i>fa</i> 法 "divisor", <i>lü</i> 率 "rate"
+        (a set of numbers in proportion), <i>mi</i> 冪 "area", and the names of the standard solids, such as{" "}
+        <i>qiandu</i> 塹堵, <i>yangma</i> 陽馬 and <i>bienao</i> 鱉臑. Lengths are in <i>bu</i> 步 (paces, about 1.4 m),{" "}
+        <i>chi</i> 尺 (feet, about 23 cm; 10 <i>cun</i> 寸 to the <i>chi</i>, 10 <i>chi</i> to the <i>zhang</i> 丈) and{" "}
+        <i>li</i> 里 (300 <i>bu</i>); areas in <i>mu</i> 畝 (240 square <i>bu</i>).
+      </p>
+      <p>The cross-references to Euclid:</p>
+      <ParallelList work={jiuzhang} />
 
       <h2>What is annotated</h2>
       <p>
@@ -377,7 +427,36 @@ export function AboutPage() {
         The <i>Zhou bi suan jing</i>: all of it, Zhao Shuang's preface and the 48 sections of the six parts,
         every passage of the classic and of Zhao's commentary translated and annotated.
       </p>
+      <p>
+        The <i>Jiuzhang suanshu</i>: Liu Hui's preface and chapters 1, 4, 5 and 9 (114 of the 246 problems), every
+        passage of the classic and of Liu Hui's and Li Chunfeng's commentaries translated and annotated. Chapters 2, 3,
+        and 6–8 (proportion, distribution, fair taxation, excess and deficit, and linear systems) are not included.
+      </p>
     </main>
+  );
+}
+
+function ParallelList({ work }: { work: Work }) {
+  return (
+    <ul>
+      {allParallels(work.key).map(([eid, list]) => (
+        <li key={eid}>
+          <a className="xref" data-ref={eid} href={hrefFor(eid)}>
+            {refLabel(eid)}
+          </a>{" "}
+          ↔{" "}
+          {list.map((p, k) => (
+            <span key={p.section}>
+              {k > 0 && ", "}
+              <a className="xref" data-ref={p.section} href={hrefFor(p.section)}>
+                {refLabel(p.section)}
+              </a>{" "}
+              <span className="small muted">({p.relation === "same" ? "same proposition" : "related"})</span>
+            </span>
+          ))}
+        </li>
+      ))}
+    </ul>
   );
 }
 

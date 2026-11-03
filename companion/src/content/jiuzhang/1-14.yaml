@@ -1,0 +1,605 @@
+id: JZ.1.14
+title: Circular fields — Liu Hui cuts the circle; π = 3.14
+paraphrase: |
+  The classic gives four rules for the area of a circle: half the circumference times half the diameter;
+  circumference times diameter over 4; three quarters of the square on the diameter; the square of the
+  circumference over 12. The first is exact. The others take the circumference as three times the
+  diameter ("circumference 3, diameter 1"), so with them the problems' answers come out too large.
+
+  Liu Hui's commentary on the first rule is the most famous passage in the book. He proves the rule by
+  inscribing regular polygons in the circle, doubling the sides again and again: "the finer one
+  cuts, the less is lost; cut and cut again until it cannot be cut, and it coincides with the circle,
+  and nothing is lost". Then he computes. Starting from the hexagon in a circle of radius 1 *chi*, he
+  finds the sides of the 12-, 24-, 48- and 96-gons by the *gou-gu* rule, and the areas of the 96- and
+  192-gons: $313\tfrac{584}{625}$ and $314\tfrac{64}{625}$ square *cun* (313.9344 and 314.1024). Since the circle lies between the 192-gon and the 192-gon
+  plus the difference of the last two areas, he takes 314. That is $\pi \approx 3.14$, or $\tfrac{157}{50}$,
+  and a later refinement gives $\tfrac{3927}{1250} = 3.1416$.
+
+  Li Chunfeng's team explains why "circumference 3" fits the hexagon, not the circle, and reports Zu
+  Chongzhi's more precise $\tfrac{22}{7}$, used in their own notes on each problem.
+
+parallels:
+  - id: XII.2
+    relation: related
+    note: |
+      Euclid proves that circles are to one another as the squares on their diameters, by inscribing
+      polygons whose sides double until the leftover is less than any given area: the "method of
+      exhaustion". Liu's argument has the same core: each doubling cuts away more than half of what
+      is left, and the leftover tends to nothing. But Liu goes to the limit ("until it cannot be cut")
+      where Euclid argues by double contradiction, and Liu computes a number where Euclid proves only a
+      ratio. The ratio Euclid proves constant is the 3/4 (Liu: 157/200) of the third rule here.
+  - id: X.1
+    relation: related
+    note: |
+      The principle behind "the finer one cuts, the less is lost": if from a magnitude more than half is
+      taken away, and from the remainder more than half, and so on, there will be left a magnitude less
+      than any given one. Euclid proves it, and uses it in XII.2; Liu takes it as evident.
+  - id: IV.15
+    relation: same
+    note: |
+      "The side of the hexagon inscribed in a circle is equal to the radius." Liu starts from it, and
+      Li Chunfeng's six triangles make it visible. Euclid states it in the porism to IV.15.
+  - id: I.47
+    relation: same
+    note: |
+      Each doubling of the sides is two applications of the *gou-gu* rule ([[JZ.9.1]]): radius and
+      half-side give the distance from the centre to the side; the leftover of the radius and the
+      half-side give the side of the polygon with twice as many sides.
+  - id: III.3
+    relation: related
+    note: |
+      Liu takes for granted that the radius through the midpoint of an arc is perpendicular to the chord
+      and bisects it, so that the half-side is a leg of a right triangle with the radius as hypotenuse.
+      Euclid proves it in III.3.
+
+diagram:
+  width: 320
+  height: 320
+  elements:
+    - "O;point;fixed;160,160;black;black"
+    - "A;point;fixed;220,56.08;black;black"
+    - "B;point;fixed;100,56.08;black;black"
+    - "M;point;fixed;160,56.08;black;black"
+    - "P;point;fixed;160,40;black;black"
+    - "circ;circle;radius;O,P;0;0;black;0"
+    - "h3;point;fixed;280,160;0;0"
+    - "h4;point;fixed;220,263.92;0;0"
+    - "h5;point;fixed;100,263.92;0;0"
+    - "h6;point;fixed;40,160;0;0"
+    - "hex;polygon;hexagon;A,B,h6,h5,h4,h3;0;0;#33587a;#e3ecf3"
+    - "d1;point;fixed;263.92,100;0;0"
+    - "d2;point;fixed;56.08,100;0;0"
+    - "d3;point;fixed;56.08,220;0;0"
+    - "d4;point;fixed;160,280;0;0"
+    - "d5;point;fixed;263.92,220;0;0"
+    - "e1;line;connect;h3,d1;0;0;#9a3b2b"
+    - "e2;line;connect;d1,A;0;0;#9a3b2b"
+    - "e3;line;connect;A,P;0;0;#9a3b2b"
+    - "e4;line;connect;P,B;0;0;#9a3b2b"
+    - "e5;line;connect;B,d2;0;0;#9a3b2b"
+    - "e6;line;connect;d2,h6;0;0;#9a3b2b"
+    - "e7;line;connect;h6,d3;0;0;#9a3b2b"
+    - "e8;line;connect;d3,h5;0;0;#9a3b2b"
+    - "e9;line;connect;h5,d4;0;0;#9a3b2b"
+    - "e10;line;connect;d4,h4;0;0;#9a3b2b"
+    - "e11;line;connect;h4,d5;0;0;#9a3b2b"
+    - "e12;line;connect;d5,h3;0;0;#9a3b2b"
+    - "OA;line;connect;O,A;0;0;black"
+    - "AM;line;connect;A,M;0;0;#8a6d12"
+    - "OM;line;connect;O,M;0;0;#33587a"
+    - "MP;line;connect;M,P;0;0;#3e6b5a"
+    - "AP;line;connect;A,P;0;0;#9a3b2b"
+  given: [O, A, B, circ, hex, OA]
+  caption: |
+    The circle of radius {OA} = 1 *chi* with its inscribed {hexagon|hex}, whose side {A}{B} equals the
+    radius. With {OA} as hypotenuse and the half-side {AM} as *gou*, the *gu* {OM} follows. The leftover
+    {MP} of the radius (the "small *gou*") and the half-side {AM} (the "small *gu*") give the hypotenuse
+    {AP}: the side of the 12-gon (red). The same two steps double the sides again and again.
+
+steps:
+  - classic: |
+      Now there is a circular field with a circumference of 30 *bu* and a diameter of 10 *bu*.
+    hint: |
+      Circumference 30, diameter 10: the ancient ratio of 3 to 1.
+  - li: |
+      We respectfully note: the rule's intention takes "circumference 3, diameter 1" as the rates, so a
+      circumference of 30 *bu* goes with a diameter of 10 *bu*. Now by the precise rate, the diameter
+      would be 9 6/11 *bu*.
+    hint: |
+      The "precise rate" (*mi lü* 密率) is Zu Chongzhi's circumference 22 to diameter 7:
+      $30 \cdot \tfrac{7}{22} = 9\tfrac{6}{11}$.
+  - classic: |
+      Question: how much field does it make? Answer: 75 *bu*.
+    modern: |
+      $\tfrac{30}{2} \cdot \tfrac{10}{2} = 75$.
+  - liu: |
+      By Hui's method this field should be 71 103/157 *bu*.
+    modern: |
+      With $\pi = \tfrac{157}{50}$: $A = \dfrac{C^2}{4\pi} = \dfrac{900 \cdot 50}{628} = 71\tfrac{103}{157}$.
+    dispute: |
+      A note that speaks of "Hui's method" in the third person may not be Liu Hui's own. Some editors
+      ascribe these recalculations to Li Chunfeng's team or to a later hand; the Sibu Congkan text prints
+      them as Liu's.
+  - li: |
+      We respectfully, by the precise rate, make the field 71 13/22 *bu*.
+    modern: |
+      $\dfrac{900 \cdot 7}{88} = 71\tfrac{13}{22}$.
+  - classic: |
+      Again there is a circular field with a circumference of 181 *bu* and a diameter of 60 1/3 *bu*.
+  - li: |
+      We respectfully note: with circumference 3 and diameter 1, a circumference of 181 *bu* gives a
+      diameter of 60 1/3 *bu*. By the precise rate, the diameter is 57 13/22 *bu*.
+  - classic: |
+      Question: how much field does it make? Answer: 11 *mu* 90 1/12 *bu*.
+    modern: |
+      $\tfrac{181}{2} \cdot \tfrac{181}{6} = 2730\tfrac{1}{12}$ square *bu* $= 11$ *mu* $90\tfrac{1}{12}$ *bu*.
+  - liu: |
+      By Hui's method this field should be 10 *mu* 208 113/314 *bu*.
+  - li: |
+      We respectfully, by the precise rate, make the field 10 *mu* 205 87/88 *bu*.
+  - classic: |
+      The rule says: multiply half the circumference by half the diameter to get the accumulated *bu*.
+    hint: |
+      The exact rule. It depends only on the circumference and diameter, not on any value of π.
+    modern: |
+      $A = \tfrac{C}{2} \cdot \tfrac{d}{2} = \tfrac12 C r$.
+    highlight: [circ]
+  - liu: |
+      Half the circumference is the length and half the diameter the width; so multiplying width by
+      length gives the accumulated *bu*.
+    zh: 按半周爲從半徑爲廣故廣從相乘爲積步也
+    hint: |
+      Liu reads the rule as a rectangle: a circle "unrolled" into a rectangle half its circumference
+      long and its radius wide. What follows proves it.
+  - liu: |
+      Suppose the diameter of the circle is 2 *chi*. One side of the hexagon inscribed in the circle is
+      equal to half the diameter of the circle, which fits the rates "diameter 1, outer perimeter 3".
+    zh: 假令圓徑二尺圓中容六觚之一面與圓徑之半其數均等合徑率一而外周率三也
+    highlight: [hex, OA]
+    hint: |
+      The hexagon's perimeter is six radii, three diameters. So "circumference 3, diameter 1" is
+      true of the hexagon, not of the circle.
+    cites: [IV.15]
+  - liu: |
+      Further, make a figure: multiply one side of the hexagon by the radius, and multiply by three; that
+      gives the area of the 12-gon. If one cuts again, next multiply one side of the 12-gon by the
+      radius, and multiply by six; that gives the area of the 24-gon.
+    zh: 又按爲圖以六觚之一面乘半徑二因而六之得十二觚之冪若又割之次以十二觚之一面乘一觚之半徑四因而六之則得二十四觚之冪
+    adds: [d1, d2, d3, d4, d5, e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, e12]
+    highlight: [e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, e12]
+    explain:
+      fact: |
+        The 12-gon is made of six kites like {O}{A}{P}{B}, each with diagonals {O}{P} (a radius) and
+        {A}{B} (a side of the hexagon). A kite's area is half the product of its diagonals, so the
+        12-gon is $6 \cdot \tfrac12 r s_6 = 3 r s_6$. In general, the $2n$-gon has area
+        $\tfrac{n}{2}\, r\, s_n$.
+    dispute: |
+      The text reads 二因而六之 and 四因而六之, "two, multiply by six" and "four, multiply by six".
+      Editors since Dai Zhen have emended to "multiply by three" and "multiply by six", which the
+      geometry requires; the stray 二 and 四 may be misplaced counting marks.
+  - liu: |
+      The finer one cuts, the less is lost. Cut it and cut it again, until it cannot be cut, and then it
+      coincides with the circumference of the circle and nothing is lost.
+    zh: 割之彌細所失彌少割之又割以至於不可割則與圓周合體而無所失矣
+    hint: |
+      The most quoted sentence of Chinese mathematics. The difference between circle and polygon shrinks
+      with each doubling, and in the limit vanishes.
+    explain:
+      fact: |
+        Each doubling removes more than half of the area between the polygon and the circle: the
+        triangle added on each side is more than half the segment it sits in. So the leftover can be
+        made smaller than any given area. This is Euclid's X.1, the basis of XII.2.
+      implicit: |
+        Liu does not prove that more than half is removed each time, nor say what "cannot be cut"
+        means. He passes to the limit directly, where Euclid avoids it by a double contradiction.
+    cites: [X.1, XII.2]
+  - liu: |
+      Outside the side of the polygon there is still a remaining part of the radius; multiplying the side
+      by that remainder, the area goes outside the polygon. But when the polygon is so fine that it
+      coincides with the circle, there is no remainder of the radius outside; and when there is no
+      remainder outside, the area does not go outside.
+    zh: 觚面之外又有餘徑以面乘徑則冪出觚表若夫觚之細者與圓合體則表無餘徑表無餘徑則冪不外出矣
+    highlight: [MP]
+    hint: |
+      The "remaining part of the radius" (*yu jing* 餘徑) is {MP}, the gap between the side and the
+      circle. The rectangles of side × gap, put on all sides, cover the circle. They give an upper
+      bound, and they too vanish in the limit.
+    explain:
+      fact: |
+        For the $n$-gon with sides $s_n$ and gaps $g_n$: $S_{2n} < S < S_{2n} + (S_{2n} - S_n)$, since
+        the rectangles $s_n \cdot g_n$ are twice the triangles that the $2n$-gon adds to the $n$-gon.
+        Liu uses this inequality below with the 96- and 192-gons.
+  - liu: |
+      Multiplying one side by the radius, for each piece the polygon is cut into, gives double [its
+      area]. Therefore half the circumference times the radius makes the area of the circle.
+    zh: 以一面乘半徑觚而裁之每輒自倍故以半周乘半徑而爲圓冪
+    explain:
+      fact: |
+        The $2n$-gon is $n$ kites, each of area $\tfrac12 r s_n$; so its area is half of
+        $r \cdot n s_n$, half the radius times the perimeter of the $n$-gon. When the polygon coincides
+        with the circle, the perimeter is the circumference: $S = \tfrac12 r C$.
+      implicit: |
+        That the perimeters, too, tend to the circumference. Archimedes proves the same rule
+        (*Measurement of a Circle*, Prop. 1) by double contradiction; Euclid does not state it.
+  - liu: |
+      Here "circumference" and "diameter" mean the true values, not the rates "circumference 3, diameter 1".
+      "Circumference 3" follows the ring of the hexagon. The difference between it and the circle is like
+      that between a bow and its string.
+    zh: 此以周徑謂至然之數非周三徑一之率也周三者從其六觚之環耳以推圓規多少之較乃弓之與弦也
+  - liu: |
+      Yet this method has been handed down, and nobody has been willing to examine it closely; students
+      follow the ancients and repeat their error. Without clear evidence it is hard to argue the point.
+      All things in their forms are, if not round, then square. If the rates of the square and the
+      circle are truly made clear for what is near, then even what is far can be known. Seen this way,
+      its uses are wide.
+    zh: 然世傳此法莫肯精覈學者踵古習其謬失不有明據辯之斯難凡物類形象不圓則方方圓之率誠著於近則雖遠可知也由此言之其用博矣
+  - liu: |
+      I have respectfully tested the circle and made a precise rate. Fearing that numbers set out
+      without explanation would be obscure and hard to follow, I have set them out in order, and
+      respectfully recorded them in detail in my notes.
+    zh: 謹按圓驗更造密率恐空設法數昧而難譬故置諸撿括謹詳其記注焉
+  - liu: |
+      Cutting the hexagon into a 12-gon. The rule says: set out the diameter of the circle, 2 *chi*;
+      halve it, 1 *chi*: this is the side of the hexagon inside the circle.
+    zh: 割六觚以爲十二觚術曰置圓徑二尺半之爲一尺卽圓裏六觚之面也
+    highlight: [A, B]
+    hint: |
+      From here the units are *cun* 寸 (tenths of a *chi*) and their decimal subdivisions *fen* 分, *li*
+      釐, *hao* 毫, *miao* 秒, *hu* 忽, each a tenth of the one before.
+  - liu: |
+      Take the radius, 1 *chi*, as the hypotenuse and half the side, 5 *cun*, as the *gou*, and find the
+      *gu*. Subtract the *gou*-area, 25 [square] *cun*, from the hypotenuse-area; the remainder is 75
+      *cun*. Extract its square root down to *miao* and *hu*; then shift the divisor once more to find
+      the minute digit. The minute digit, which has no name, is made the numerator and the next unit
+      down the denominator; reduced, it makes 2/5 *hu*.
+    zh: 令半徑一尺爲弦半面五寸爲句爲之求股以句冪二十五寸減弦冪餘七十五寸開方除之下至秒忽又一退法求其微數微數無名者以爲分子以下爲分母約作五分忽之二
+    highlight: [OA, AM, OM]
+    hint: |
+      The square root is taken digit by digit ([[JZ.4.3]]); the first digit beyond the last named unit
+      is kept as a fraction of that unit.
+    cites: [I.47]
+  - liu: |
+      So the *gu* is 8 *cun* 6 *fen* 6 *li* 2 *miao* 5 2/5 *hu*.
+    zh: 故得股八寸六分六釐二秒五忽五分忽之二
+    modern: |
+      $OM = \sqrt{100 - 25} = \sqrt{75} \approx 8.660254$ *cun*.
+    highlight: [OM]
+  - liu: |
+      Subtract it from the radius; the remainder, 1 *cun* 3 *fen* 3 *li* 9 *hao* 9 *miao* 4 3/5 *hu*, is
+      called the small *gou*. Half the side of the polygon is also called the small *gu*.
+    zh: 以減半徑餘一寸三分三釐九毫九秒四忽五分忽之三謂之小句觚之半面又謂之小股
+    adds: [M, P]
+    highlight: [MP, AM]
+    modern: |
+      $MP = 10 - 8.660254 = 1.339746$ *cun*.
+  - liu: |
+      Find the hypotenuse for them. Its area is 267,949,193,445 [square] *hu*, the remaining fraction
+      discarded. Extracting the square root gives one side of the 12-gon.
+    zh: 爲之求弦其冪二千六百七十九億四千九百一十九萬三千四百四十五忽餘分弃之開方除之卽十二觚之一面也
+    highlight: [AP]
+    modern: |
+      $s_{12}^2 = MP^2 + AM^2 \approx 26.7949$ square *cun*, so $s_{12} \approx 5.176$ *cun*.
+    cites: [I.47]
+  - liu: |
+      Cutting the 12-gon into a 24-gon. The rule says: again take the radius as the hypotenuse and half
+      the side as the *gou*, and find the *gu*.
+    zh: 割十二觚以爲二十四觚術曰亦令半徑爲弦半面爲句爲之求股
+  - liu: |
+      Set out the area of the small hypotenuse above and divide by 4, getting 66,987,298,361 *hu*, the
+      remaining fraction discarded: that is the *gou*-area.
+    zh: 置上小弦冪四而一得六百六十九億八千七百二十九萬八千三百六十一忽餘分棄之卽句冪也
+    hint: |
+      The new half-side squared is a quarter of the old side squared.
+  - liu: |
+      Subtract it from the hypotenuse-area, and extract the square root of the remainder, getting the
+      *gu*: 9 *cun* 6 *fen* 5 *li* 9 *hao* 2 *miao* 5 4/5 *hu*.
+    zh: 以減弦冪其餘開方除之得股九寸六分五釐九毫二秒五忽五分忽之四
+  - liu: |
+      Subtract it from the radius; the remainder, 3 *fen* 4 *li* 7 *miao* 4 1/5 *hu*, is called the small
+      *gou*. Half the side of the polygon is also called the small *gu*.
+    zh: 以減半徑餘三分四釐七秒四忽五分忽之一謂之小句觚之半面又謂之小股
+  - liu: |
+      Find the small hypotenuse for them. Its area is 68,148,349,466 *hu*, the remaining fraction
+      discarded. Extracting the square root gives one side of the 24-gon.
+    zh: 爲之求小弦其冪六百八十一億四千八百三十四萬九千四百六十六忽餘分棄之開方除之卽二十四觚之一面也
+    modern: |
+      $s_{24} \approx 2.6105$ *cun*.
+  - liu: |
+      Cutting the 24-gon into a 48-gon. The rule says: again take the radius as the hypotenuse and half
+      the side as the *gou*, and find the *gu*.
+    zh: 割二十四觚以爲四十八觚術曰亦令半徑爲弦半面爲句爲之求股
+  - liu: |
+      Set out the area of the small hypotenuse above and divide by 4, getting 17,037,087,366 *hu*, the
+      remaining fraction discarded: that is the *gou*-area.
+    zh: 置上小弦冪四而一得一百七十億三千七百八萬七千三百六十六忽餘分棄之卽句冪也
+  - liu: |
+      Subtract it from the hypotenuse-area, and extract the square root of the remainder, getting the
+      *gu*: 9 *cun* 9 *fen* 1 *li* 4 *hao* 4 *miao* 4 4/5 *hu*.
+    zh: 以減弦冪其餘開方除之得股九寸九分一釐四毫四秒四忽五分忽之四
+  - liu: |
+      Subtract it from the radius; the remainder, 8 *li* 5 *hao* 5 *miao* 5 1/5 *hu*, is called the small
+      *gou*. Half the side of the polygon is also called the small *gu*.
+    zh: 以減半徑餘八釐五毫五秒五忽五分忽之一謂之小句觚之半面又謂之小股
+  - liu: |
+      Find the small hypotenuse for them. Its area is 17,110,278,813 *hu*, the remaining fraction
+      discarded. Extracting the square root gives the small hypotenuse, 1 *cun* 3 *fen* 8 *hao* 6 *hu*,
+      the remaining fraction discarded: one side of the 48-gon.
+    zh: 爲之求小弦其冪一百七十一億一十二十七萬八千八百一十三忽餘分棄之開方除之得小弦一寸三分八毫六忽餘分棄之卽四十八觚之一面
+    modern: |
+      $s_{48} \approx 1.30806$ *cun*.
+    dispute: |
+      The text's figure for the area, 一百七十一億一十二十七萬…, is garbled; 17,110,278,813 is the
+      reading of Qian Baocong and Guo Shuchun, which the next step's result confirms.
+  - liu: |
+      Multiply it by the radius, 1 *chi*, and again by 24, getting an area of 3,139,344,000,000 *hu*.
+      Divide by 10,000,000,000 to get an area of 313 584/625 [square] *cun*: that is the area of the
+      96-gon.
+    zh: 以半徑一尺乘之又以二十四乘之得冪三萬一千三百九十三億四千四百萬忽以百億除之得冪三百一十三寸六百二十五分寸之五百八十四卽九十六觚之冪也
+    modern: |
+      $S_{96} = 24\, r\, s_{48} = 24 \cdot 10 \cdot 1.30806 = 313.9344$, which Liu writes $313\tfrac{584}{625}$.
+  - liu: |
+      Cutting the 48-gon into a 96-gon. The rule says: again take the radius as the hypotenuse and half
+      the side as the *gou*, and find the *gu*.
+    zh: 割四十八觚以爲九十六觚術曰亦令半徑爲弦半面爲句爲之求股
+  - liu: |
+      Set out the area of the hypotenuse next above and divide by 4, getting 4,277,569,703 *hu*, the
+      remaining fraction discarded: that is the *gou*-area.
+    zh: 置次上弦冪四而一得四十二億七千七百五十六萬九千七百三忽餘分棄之則句冪也
+  - liu: |
+      Subtract it from the hypotenuse-area, and extract the square root of the remainder, getting the
+      *gu*: 9 *cun* 9 *fen* 7 *li* 8 *hao* 5 *miao* 8 9/10 *hu*.
+    zh: 以減弦冪其餘開方除之得股九寸九分七釐八毫五秒八忽十分忽之九
+  - liu: |
+      Subtract it from the radius; the remainder, 2 *li* 1 *hao* 4 *miao* 1 1/10 *hu*, is called the small
+      *gou*. Half the side of the polygon is also called the small *gu*.
+    zh: 以減半徑餘二釐一毫四秒一忽十分忽之一謂之小句觚之半面又謂之小股
+  - liu: |
+      Find the small hypotenuse for them. Its area is 4,282,154,012 *hu*, the remaining fraction
+      discarded. Extracting the square root gives the small hypotenuse, 6 *fen* 5 *li* 4 *hao* 3 *miao*
+      8 *hu*, the remaining fraction discarded: one side of the 96-gon.
+    zh: 爲之求小弦其冪四十二億八千二百一十五萬四千一十二忽餘分棄之開方除之得小弦六分五釐四毫三秒八忽餘分棄之卽九十六觚之一面
+    modern: |
+      $s_{96} \approx 0.65438$ *cun*.
+  - liu: |
+      Multiply it by the radius, 1 *chi*, and again by 48, getting an area of 3,141,024,000,000 *hu*.
+      Divide by 10,000,000,000 to get an area of 314 64/625 *cun*: that is the area of the 192-gon.
+    zh: 以半徑一尺乘之又以四十八乗之得冪三萬一千四百一十億二千四百萬忽以百億除之得冪三百一十四寸六百二十五分寸之六十四卽一百九十二觚之冪也
+    modern: |
+      $S_{192} = 48 \cdot 10 \cdot 0.65438 = 314.1024 = 314\tfrac{64}{625}$.
+  - liu: |
+      Subtract the area of the 96-gon from it; the remainder, 105/625 *cun*, is called the difference
+      area. Doubled, it is 210/625 *cun*. This is the 96 bow-fields outside the 96-gon, what is called
+      "the total area of chord times arrow".
+    zh: 以九十六觚之冪減之餘六百二十五分寸之一百五謂之差冪倍之爲分寸之二百一十卽九十六觚之外弧田九十六所謂以弦乘矢之凡冪也
+    hint: |
+      The difference $S_{192} - S_{96}$ is the 96 triangles added on the sides of the 96-gon. Doubled,
+      it is the 96 rectangles "chord × arrow" (side × gap) that cover the segments outside the 96-gon.
+  - liu: |
+      Adding this area to the area of the 96-gon gives 314 169/625 *cun*, which goes outside the circle.
+    zh: 加此冪於九十六觚之冪得三百一十四寸六百二十五分寸之一百六十九則出於圓之表矣
+    modern: |
+      $313\tfrac{584}{625} + \tfrac{210}{625} = 314\tfrac{169}{625}$, so
+      $$314\tfrac{64}{625} = S_{192} < S < S_{96} + 2(S_{192} - S_{96}) = 314\tfrac{169}{625}.$$
+    explain:
+      fact: |
+        Liu's two-sided bound for the area of the circle, in square *cun* for a radius of 10 *cun*:
+        $314.1024 < 100\pi < 314.2704$.
+  - liu: |
+      So we go back to the whole area of the 192-gon, 314 *cun*, as the fixed rate for the area of the
+      circle, discarding the remaining fraction.
+    zh: 故還就一百九十二觚之全冪三百一十四寸以爲圓冪之定率而棄其餘分
+    hint: |
+      Liu keeps only the whole part, 314, which lies just below both bounds.
+  - liu: |
+      Divide the area of the circle by the radius, 1 *chi*, and double it: 6 *chi* 2 *cun* 8 *fen*, which
+      is the circumference.
+    zh: 以半徑一尺除圓冪倍之得六尺二寸八分卽周數
+    modern: |
+      $C = \dfrac{2S}{r} = \dfrac{2 \cdot 314}{10} = 62.8$ *cun*.
+  - liu: |
+      Square the diameter to make the area of the square, 400 *cun*, and compare it with the area of the
+      circle: the circle's area gives 157 as its rate and the square's 200 as its rate. A square of 200
+      contains a circle of 157.
+    zh: 令徑自乘爲方冪四百寸與圓冪相折圓冪得一百五十七爲率方冪得二百爲率方冪二百其中容圓冪一百五十七也
+    modern: |
+      $\dfrac{S}{d^2} = \dfrac{314}{400} = \dfrac{157}{200}$, the constant that replaces the classic's $\tfrac34$.
+    cites: [XII.2]
+  - liu: |
+      The circle's rate is still slightly small. By the figure of the bow field, let a square contain a
+      circle, and the circle contain a square; the inner square is half the outer one. So a circle of 157
+      contains a square of 100.
+    zh: 圓率猶爲微少按弧田圖令方中容圓圓中容方内方合外方之半然則圓冪一百五十七其中容方冪一百也
+    hint: |
+      The inner square, on the diameter as diagonal, is half the outer square on the diameter as side.
+  - liu: |
+      Further, reduce the diameter, 2 *chi*, together with the circumference, 6 *chi* 2 *cun* 8 *fen*: the
+      circumference gets 157 and the diameter 50. These are their rates to each other. The circumference
+      rate is still slightly small.
+    zh: 又令徑二尺與周六尺二寸八分相約周得一百五十七徑得五十則其相與之率也周率猶爲微少也
+    modern: |
+      $\pi \approx \dfrac{157}{50} = 3.14$.
+  - liu: |
+      In the arsenal of the Jin there is a bronze *hu*-measure made by Wang Mang in the Han. Its
+      inscription says: "The standard measure, the *hu*: inside, a square of 1 *chi*, rounded on the
+      outside, with a margin of 9 *li* 5 *hao* at the sides; area 162 *cun*; depth 1 *chi*; volume 1620
+      *cun*; holds 10 *dou*." Calculated by this method, the area comes out 161 *cun* and something. The
+      numbers are close.
+    zh: 晉武庫中漢時王莽作銅斛其銘曰律嘉量斛內方尺而圓其外庣旁九釐五毫冪一百六十二寸深一尺積一千六百二十寸容十斗以此術求之得冪一百六十一寸有奇其數相近矣
+    hint: |
+      Wang Mang's standard measures of 9 CE survive in museum collections. The cylinder's
+      cross-section is the circle around a 1-*chi* square, enlarged by a margin of 0.095 *cun* at each
+      corner. With π = 3.14 its area comes to about 161¼ square *cun*, against the inscription's 162.
+  - liu: |
+      This method is slightly small, and the difference area is 105/625 *cun*. Taking the area of the
+      12-gon as the rate and adjusting, one should take 36/625 *cun* of it and add it to the area of the
+      192-gon, making the area of the circle 314 4/25 *cun*.
+    zh: 此術微少而斛差冪六百二十五分寸之一百五以十二觚之冪爲率消息當取此分寸之三十六以增於一百九十二觚之冪以爲圓冪三百一十四寸二十五分寸之四
+    dispute: |
+      The passage 而斛差冪 ("and the *hu*'s difference area") is corrupt; read 而差冪. How Liu (or a
+      later hand) arrived at the 36/625 is not explained. One reconstruction: the successive differences
+      of the polygon areas shrink by about a quarter each time, and their sum beyond the 192-gon is
+      roughly a third of the last difference, $\tfrac13 \cdot \tfrac{105}{625} = \tfrac{35}{625}$, close to
+      $\tfrac{36}{625}$. Some historians attribute this whole refinement, and the value 3927/1250, to
+      Zu Chongzhi.
+  - liu: |
+      Set out the square of the diameter, 400 *cun*, and reduce it together with the circle's area: the
+      circle's area 3927 and the square 5000 are the rates. A square of 5000 contains a circle of 3927; a
+      circle of 3927 contains a square of 2500.
+    zh: 置徑自乘之方冪四百寸令與圓冪通相約圓冪三千九百二十七方冪得五千是爲率方冪五千中容圓冪三千九百二十七圓冪三千九百二十七中容方冪二千五百也
+  - liu: |
+      Divide the area of the circle, 314 4/25 *cun*, by the radius, 1 *chi*, and double it: 6 *chi* 2
+      *cun* 8 8/25 *fen*, which is the circumference.
+    zh: 以半徑一尺除圓冪三百一十四寸二十五分寸之四倍之得六尺二寸八分二十五分寸之八卽周數也
+  - liu: |
+      Reduce the whole diameter, 2 *chi*, together with the circumference: the diameter gets 1250 and the
+      circumference 3927. These are their rates to each other.
+    zh: 全徑二尺與周數通相約徑得一千二百五十周得三千九百二十七卽其相與之率
+    modern: |
+      $\pi \approx \dfrac{3927}{1250} = 3.1416$.
+  - liu: |
+      Done this way, it reaches the finest detail.
+    zh: 若此者蓋盡其纖微矣
+  - liu: |
+      For practical use, the method above is still the reduced one. One should find a side of the
+      1536-gon to get the area of the 3072-gon, and cut off the minute fractions; the number should
+      come out the same, to confirm it again.
+    hint: |
+      Continuing the doublings five more times confirms 3.1416. For practical use, 157/50 serves.
+  - li: |
+      We respectfully note: the old rules for circles all take "circumference 3, diameter 1" as the rates.
+      Used to find the circumference, it makes the circumference too small and the diameter too large.
+      Used for the area of a hexagonal field, it agrees with this rate. Why? Suppose a hexagonal field
+      with each side, from corner to corner, 1 *chi*; it is plain that from corner to opposite corner its
+      diameter is 2 *chi*. So perimeter 6, diameter 2 agrees with "circumference 3, diameter 1".
+    zh: 臣淳風等謹按舊術求圓皆以周三徑一爲率若用之求圓周之數則周少徑多用之求其六觚之田乃與此率合會耳何則假令六觚之田觚閒各一尺爲面自然從角至角其徑二尺可知此則周六徑二與周三徑一已合
+    highlight: [hex]
+  - li: |
+      Fearing this may still be hard to understand, we now give an illustration with things. Suppose six
+      pieces are carved in the shape of a pointed tablet, each with three faces 1 *chi* long. Gather the
+      six with their sharp heads all pointing inward: they make the perimeter of a hexagon, with each
+      corner-to-centre distance also 1 *chi*. Then draw a circle round the outer corners of the hexagon:
+      the hexagon's corner diameter reaches the circle exactly, but the diameter measured across the
+      faces is short and does not reach the outer circle.
+    zh: 恐此猶以難曉今更引物爲喻設令刻物作圭形者六枚枚别三面皆長一尺攢此六物悉使鋭頭向裏則成六觚之周角徑亦皆一尺更從觚角外畔圍繞爲規則六觚之徑盡達規矣當面徑短不至外規
+    hint: |
+      Six equilateral triangles meeting at the centre: the regular hexagon. Its corners lie on the circle
+      but its sides fall inside it.
+    cites: [IV.15]
+  - li: |
+      As a hexagon, the perimeter is 6 *chi*, the diameter 2 *chi*, and each side 1 *chi*; the
+      face-diameter does not reach the outer edge, so it is certainly not 2 *chi*. So for the
+      circumference of a circle, the rate "circumference 3, diameter 1" makes the diameter too large and
+      the circumference too small; "diameter 1, circumference 3" is not exact in principle. The rule
+      aimed at simplicity and gave the general outline, roughly speaking.
+    zh: 若以六觚言之則爲周六尺徑二尺面皆一尺面徑股不至外畔定無二尺可知故周三徑一之率於圓周乃是徑多周少徑一周三理非精密蓋術從簡要舉大綱略而言之
+  - li: |
+      Liu Hui thought it particularly crude and changed the rate. But his circumference and diameter,
+      multiplied together, do not easily fit; though Hui produced this method, he could not in the end
+      reach its finest detail. Zu Chongzhi, finding it imprecise, calculated the numbers further. Now,
+      in compiling, we have gathered all the schools and examined what is right and wrong in them.
+      Chongzhi's is the more precise, so we display it below Hui's method, hoping that students will
+      judge between them.
+    hint: |
+      Zu Chongzhi 祖沖之 (429–500) gave $3.1415926 < \pi < 3.1415927$, with the "approximate rate"
+      $\tfrac{22}{7}$ and the "precise rate" $\tfrac{355}{113}$. His book, the *Zhui shu* 綴術, is lost.
+      Li's notes here use 22/7, which they call the precise rate.
+  - classic: |
+      Another rule: multiply the circumference by the diameter, and divide by 4.
+    modern: |
+      $A = \dfrac{C d}{4}$.
+  - liu: |
+      This circumference is the same as the polygon's above. Circumference and diameter, multiplied,
+      should each be halved; but here both are whole, so the two denominators multiplied make 4, which
+      repays by division.
+    zh: 此周與上觚同耳周徑相乘各當以半而今周徑兩全故兩母相乘爲四以報除之
+  - liu: |
+      By Hui's method: multiply the circumference by 50 and divide by 157 to get the diameter; multiply
+      the diameter by 157 and divide by 50 to get the circumference. The new method's diameter rate is
+      still slightly small. Finding the diameter from the circumference errs on the long side; finding
+      the circumference from the diameter errs on the short side. All [calculations] finding the area from
+      a given diameter err slightly small; those finding it from the circumference err slightly large.
+    hint: |
+      Since 157/50 is a little less than π: from a given diameter, the computed circumference and area
+      come out small; from a given circumference, the diameter and area come out large.
+  - li: |
+      We respectfully, by the precise rate: multiply the circumference by 7 and divide by 22 to get the
+      diameter; multiply the diameter by 22 and divide by 7 to get the circumference. Following the rule
+      then gives it.
+  - classic: |
+      Another rule: multiply the diameter by itself, multiply by 3, and divide by 4.
+    modern: |
+      $A = \tfrac34 d^2$ (that is, π = 3).
+  - liu: |
+      The diameter multiplied by itself is the outer square. "Multiply by 3, divide by 4" says that the
+      circle occupies three quarters of the outer square. If one side of the hexagon is multiplied by
+      the radius, its area is one quarter of the outer square; multiplied by 3, it too is three quarters
+      of the outer square. This is the area of the 12-gon inside the circle. Taken as the circle, it
+      errs slightly small. By Hui's new method, the diameter should be multiplied by itself, then by 157,
+      and divided by 200.
+    explain:
+      fact: |
+        $s_6 \cdot r = r^2 = \tfrac14 d^2$, and the 12-gon is $3 r s_6 = \tfrac34 d^2$. The classic's
+        third rule gives the area of the inscribed 12-gon, not of the circle.
+    cites: [XII.2]
+  - li: |
+      We respectfully note: by the precise rate, multiply the diameter by itself, multiply by 11, and
+      divide by 14: that is the area of the circle.
+    modern: |
+      $\tfrac{11}{14} = \tfrac{22/7}{4}$.
+  - classic: |
+      Another rule: multiply the circumference by itself, and divide by 12.
+    modern: |
+      $A = \dfrac{C^2}{12}$ (again π = 3).
+  - liu: |
+      The perimeter of the hexagon is to the diameter of the circle as 3 to 1. So the perimeter of the
+      hexagon, multiplied by itself, makes an area of nine squares on the diameter. Nine such squares
+      make twelve 12-gons in all; hence "divide by 12" gives the area of the 12-gon.
+    zh: 六觚之周其於圓徑三與一也故六觚之周自相乘爲冪若圓徑自乘者九方九方凡爲十二觚者十有二故曰十二而一卽十二觚之冪也
+    modern: |
+      $(3d)^2 = 9 d^2 = 12 \cdot \tfrac34 d^2$.
+  - liu: |
+      Now here the circumference is multiplied by itself, which is more than the nine squares on the
+      diameter; so dividing by 12 does not give the 12-gon either. Taken as the area of the circle, it
+      errs on the large side. With the perimeter of the hexagon, dividing by 12 is right. By Hui's new
+      method, multiply the circumference by itself, multiply by 25, and divide by 314 to get the area of
+      the circle.
+    zh: 今此令周自乘非但若爲圓徑自乘者九方而已然則十二而一所得又非十二觚之類也若欲以爲圓冪失之於多矣以六觚之周十二而一可也於徽新術直令圓周自乘又以二十五乘之三百一十四而一得圓冪
+  - liu: |
+      The rate 314 is the area of the circumference multiplied by itself. Set out the circumference, 6
+      *chi* 2 *cun* 8 *fen*, and multiply it by itself, getting an area of 394,384 [square] *fen*. Set out
+      the area of the circle, 31,400 *fen*. Reduce both by 1256 to get these rates.
+    modern: |
+      $\dfrac{394384}{1256} = 314$, $\;\dfrac{31400}{1256} = 25$, so $S = \dfrac{25\, C^2}{314} = \dfrac{C^2}{4\pi}$ with $\pi = 3.14$.
+  - li: |
+      We respectfully note: a square's side multiplied by itself gives its area at once; but to find the
+      area of a circle from its circumference, the rates must be brought in. This rule takes 3 to 1 as
+      the rate. The proper rule for circular fields multiplies half the circumference by half the
+      diameter. Here the whole circumference is multiplied by itself, so 12 must be the denominator. Why?
+      To get half the circumference from the whole, one divides by 2; to get half the diameter from the
+      whole circumference, one divides by 6. So 2 and 6 multiplied divide the circumference multiplied by
+      itself. By the precise rate, multiply by 7 and divide by 88.
+    modern: |
+      $\tfrac{C}{2} \cdot \tfrac{C}{6} = \tfrac{C^2}{12}$ with $d = \tfrac{C}{3}$; with $\pi = \tfrac{22}{7}$, $A = \tfrac{7 C^2}{88}$.
+    dispute: |
+      The phrase 圓周求其冪股率乃通 is obscure; 股 may be an error. The sense is that the circumference
+      must be converted by the rates of circumference to diameter.
+
+commentary: |
+  Liu Hui's procedure needs only square roots. If $s_n$ is the side of the regular $n$-gon in a circle of
+  radius $r$, then
+  $$s_{2n}^2 = \left(r - \sqrt{r^2 - (s_n/2)^2}\right)^2 + \left(\tfrac{s_n}{2}\right)^2,$$
+  two applications of the *gou-gu* rule. The area of the $2n$-gon is $\tfrac{n}{2} r s_n$. He works in a
+  circle of radius 10 *cun*, so that areas in square *cun* are 100π, and carries the square roots to
+  six or seven figures, discarding fractions at each step.
+
+  His bound $S_{2n} < S < S_{2n} + (S_{2n} - S_n)$ uses only areas, never perimeters, and so avoids the
+  question that troubles Archimedes' approach: why the polygon's perimeter should be less than the
+  circle's. Archimedes, about 250 BCE, used inscribed and circumscribed 96-gons to show
+  $3\tfrac{10}{71} < \pi < 3\tfrac17$. Euclid gives no value at all: XII.2 shows only that the ratio of
+  a circle to the square on its diameter is the same for all circles.
+
+historical: |
+  "Circumference 3, diameter 1" was standard in China, as in Babylon and in the Hebrew Bible (1 Kings 7:23).
+  Liu Hui's 3.14 was the first value derived by proof in China. Zu Chongzhi's 355/113, correct to seven
+  places, was not equalled in Europe until the sixteenth century. Li Chunfeng's team chose to print Zu's
+  simpler 22/7 in their notes.

@@ -1,0 +1,95 @@
+id: JZ.4.2
+title: Short width, continued — widths up to 1/12
+paraphrase: |
+  The same problem for widths $1 + \tfrac12 + \cdots + \tfrac1n$, $n = 6, \dots, 12$. The common multiples
+  the rule produces are 120, 420, 840, 2520, 2520, 27,720 and 83,160. For $n = 6$ and $n = 12$ they
+  are twice and three times the least common multiple. Li Chunfeng's team points out the simpler
+  27,720 for the last problem.
+
+  The answers are exact. For $n = 12$, the length is $77\tfrac{29183}{86021}$ *bu*, against a width of
+  just over 3.1 *bu*.
+
+parallels:
+  - id: VII.36
+    relation: related
+    note: |
+      Li Chunfeng's correction, 27,720 rather than 83,160, is the least number measured by all of
+      $1, \dots, 12$, the number Euclid's VII.36, extended, would produce.
+
+steps:
+  - classic: |
+      Now there is a field 1 1/2 1/3 1/4 1/5 1/6 *bu* wide. To make a field of 1 *mu*, question: what is the
+      length? Answer: 97 47/49 *bu*.
+  - classic: |
+      The rule says: below there are sixths. Take 1 as 120, the half as 60, the third as 40, the quarter as
+      30, the fifth as 24, the sixth as 20; adding them gives 294, for the divisor. Set out the field, 240
+      *bu*, and also multiply it by 120, for the dividend. Divide the dividend by the divisor to get the
+      length in *bu*.
+    hint: |
+      The rule's procedure, multiplying successively by 6 and then by 5, gives 120 rather than the least
+      common multiple 60. The answer reduces to the same fraction.
+    modern: |
+      $\dfrac{240 \cdot 120}{294} = 97\tfrac{47}{49}$.
+  - classic: |
+      Now there is a field 1 1/2 1/3 1/4 1/5 1/6 1/7 *bu* wide. To make a field of 1 *mu*, question: what is
+      the length? Answer: 92 68/121 *bu*.
+  - classic: |
+      The rule says: below there are sevenths. Take 1 as 420, the half as 210, the third as 140, the quarter
+      as 105, the fifth as 84, the sixth as 70, the seventh as 60; adding them gives 1089, for the divisor.
+      Set out the field, 240 *bu*, and also multiply it by 420, for the dividend. Divide the dividend by the
+      divisor to get the length in *bu*.
+  - classic: |
+      Now there is a field 1 1/2 1/3 1/4 1/5 1/6 1/7 1/8 *bu* wide. To make a field of 1 *mu*, question: what
+      is the length? Answer: 88 232/761 *bu*.
+  - classic: |
+      The rule says: below there are eighths. Take 1 as 840, the half as 420, the third as 280, the quarter
+      as 210, the fifth as 168, the sixth as 140, the seventh as 120, the eighth as 105; adding them gives
+      2283, for the divisor. Set out the field, 240 *bu*, and also multiply it by 840, for the dividend.
+      Divide the dividend by the divisor to get the length in *bu*.
+  - classic: |
+      Now there is a field 1 1/2 1/3 1/4 1/5 1/6 1/7 1/8 1/9 *bu* wide. To make a field of 1 *mu*, question:
+      what is the length? Answer: 84 5964/7129 *bu*.
+  - classic: |
+      The rule says: below there are ninths. Take 1 as 2520, the half as 1260, the third as 840, the quarter
+      as 630, the fifth as 504, the sixth as 420, the seventh as 360, the eighth as 315, the ninth as 280;
+      adding them gives 7129, for the divisor. Set out the field, 240 *bu*, and also multiply it by 2520,
+      for the dividend. Divide the dividend by the divisor to get the length in *bu*.
+  - classic: |
+      Now there is a field 1 1/2 1/3 1/4 1/5 1/6 1/7 1/8 1/9 1/10 *bu* wide. To make a field of 1 *mu*,
+      question: what is the length? Answer: 81 6939/7381 *bu*.
+  - classic: |
+      The rule says: below there are tenths. Take 1 as 2520, the half as 1260, the third as 840, the quarter
+      as 630, the fifth as 504, the sixth as 420, the seventh as 360, the eighth as 315, the ninth as 280, the
+      tenth as 252; adding them gives 7381, for the divisor. Set out the field, 240 *bu*, and also multiply
+      it by 2520, for the dividend. Divide the dividend by the divisor to get the length in *bu*.
+    hint: |
+      2520 is already divisible by 10, so no new factor is needed.
+  - classic: |
+      Now there is a field 1 1/2 1/3 1/4 1/5 1/6 1/7 1/8 1/9 1/10 1/11 *bu* wide. To make a field of 1 *mu*,
+      question: what is the length? Answer: 79 39631/83711 *bu*.
+  - classic: |
+      The rule says: below there are elevenths. Take 1 as 27,720, the half as 13,860, the third as 9240, the
+      quarter as 6930, the fifth as 5544, the sixth as 4620, the seventh as 3960, the eighth as 3465, the
+      ninth as 3080, the tenth as 2772, the eleventh as 2520; adding them gives 83,711, for the divisor. Set
+      out the field, 240 *bu*, and also multiply it by 27,720, for the dividend. Divide the dividend by the
+      divisor to get the length in *bu*.
+  - classic: |
+      Now there is a field 1 1/2 1/3 1/4 1/5 1/6 1/7 1/8 1/9 1/10 1/11 1/12 *bu* wide. To make a field of 1
+      *mu*, question: what is the length? Answer: 77 29183/86021 *bu*.
+  - classic: |
+      The rule says: below there are twelfths. Take 1 as 83,160, the half as 41,580, the third as 27,720,
+      the quarter as 20,790, the fifth as 16,632, the sixth as 13,860, the seventh as 11,880, the eighth as
+      10,395, the ninth as 9240, the tenth as 8316, the eleventh as 7560, the twelfth as 6930; adding them
+      gives 258,063, for the divisor. Set out the field, 240 *bu*, and also multiply it by 83,160, for the
+      dividend. Divide the dividend by the divisor to get the length in *bu*.
+    hint: |
+      Multiplying 27,720 by 12 and cancelling where possible gives 83,160, three times what is needed.
+      The answer's denominator, 86,021, is 258,063 divided by 3.
+  - li: |
+      We respectfully note: in general the intention of a rule is that economy is best. It should say:
+      below there are twelfths; take 1 as 27,720, the half as 13,860, the third as 9240, the quarter as
+      6930, the fifth as 5544, the sixth as 4620, the seventh as 3960, the eighth as 3465, the ninth as 3080,
+      the tenth as 2772, the eleventh as 2520, the twelfth as 2310; adding them gives 86,021, for the
+      divisor. Set out the field, 240 *bu*, and also multiply it by 27,720, for the dividend. Divide the
+      dividend by the divisor to get the length in *bu*. That rule also gets it, and is not cumbersome.
+    cites: [VII.36]

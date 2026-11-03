@@ -1,0 +1,40 @@
+id: JZ.1.10
+title: Fields with mixed-number sides
+paraphrase: |
+  When the sides are mixed numbers, such as $3\tfrac13$ by $5\tfrac25$, convert each to an improper
+  fraction ("each denominator multiplies its whole, and the numerator is added"), then multiply as
+  fractions: $\tfrac{10}{3} \cdot \tfrac{27}{5} = \tfrac{270}{15} = 18$.
+
+steps:
+  - classic: |
+      Now there is a field 3 1/3 *bu* wide and 5 2/5 *bu* long. Question: how much field does it make?
+      Answer: 18 *bu*.
+  - classic: |
+      Again there is a field 7 3/4 *bu* wide and 15 5/9 *bu* long. Question: how much field does it make?
+      Answer: 120 5/9 *bu*.
+  - classic: |
+      Again there is a field 18 5/7 *bu* wide and 23 6/11 *bu* long. Question: how much field does it make?
+      Answer: 1 *mu* 200 7/11 *bu*.
+    hint: $\tfrac{131}{7} \cdot \tfrac{259}{11} = \tfrac{33929}{77} = 440\tfrac{7}{11}$ square *bu*, which is 1 *mu* and $200\tfrac{7}{11}$ *bu*.
+  - classic: |
+      Large broad fields —
+  - li: |
+      We respectfully note: "large broad field": the first rule had only whole *bu* and no remaining
+      parts; the next had only parts and no whole *bu*. This rule has the whole *bu* first and then
+      remaining parts, and can cover all three rules. Hence "large broad".
+  - classic: |
+      the rule says: each denominator multiplies its whole, and the numerator is added in;
+  - liu: |
+      "Each denominator multiplies its whole, and the numerator is added in": connect the whole *bu* and
+      add in the numerator. In this way denominator and numerator both become dividends.
+  - classic: |
+      multiply them together for the dividend. The denominators multiplied together are the divisor.
+  - liu: |
+      This is just like multiplying fractions.
+  - classic: |
+      Divide the dividend by the divisor.
+    modern: $\left(p + \tfrac{a}{b}\right)\left(q + \tfrac{c}{d}\right) = \dfrac{(pb + a)(qd + c)}{bd}$.
+  - liu: |
+      Now in this rule the width and length both have fractions, and each must be connected by its own
+      denominator. The denominators that were brought in must be taken out again; so the denominators
+      are multiplied together as the divisor, and divide both at once.

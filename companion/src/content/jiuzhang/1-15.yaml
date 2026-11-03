@@ -1,0 +1,88 @@
+id: JZ.1.15
+title: Domed fields — a rule that fails, compared with the cone
+paraphrase: |
+  A *wan tian* 宛田 is a domed field, like an upturned bowl. The classic gives its area as the
+  circumference of its base times its "diameter" (measured over the dome) divided by 4.
+
+  Liu Hui says plainly that "this rule does not check out". To show why, he works out the lateral
+  surface of a cone, by way of a square pyramid around it. The pyramid's four faces are triangles
+  whose total area is half the base perimeter times the slant height. The cone's surface stands to the
+  pyramid's as the circle stands to the square, so it too is half the base circumference times the
+  slant height. The classic's rule treats the dome as such a cone, so it gives too little, since a dome
+  bulges beyond the cone on the same rim and apex. The correct rule is too hard, so the classic gives an
+  estimate.
+
+parallels:
+  - id: XII.2
+    relation: related
+    note: |
+      Liu's step from pyramid to cone ("their rate is like that of the square to the circle") applies the
+      fixed ratio of circle to circumscribed square, here to surfaces. Euclid proves that ratio
+      constant in XII.2, and uses the same comparison of pyramid and cone for volumes in XII.10.
+
+steps:
+  - classic: |
+      Now there is a domed field with a lower circumference of 30 *bu* and a diameter of 16 *bu*. Question:
+      how much field does it make? Answer: 120 *bu*.
+    hint: |
+      The "diameter" is measured over the top of the dome, from rim to rim, not straight across.
+  - classic: |
+      Again there is a domed field with a lower circumference of 99 *bu* and a diameter of 51 *bu*.
+      Question: how much field does it make? Answer: 5 *mu* 62 1/4 *bu*.
+    modern: |
+      $\tfrac{99 \cdot 51}{4} = 1262\tfrac14$ square *bu* $= 5$ *mu* $62\tfrac14$ *bu*.
+  - classic: |
+      The rule says: multiply the circumference by the diameter, and divide by 4.
+    modern: |
+      $A = \dfrac{C\, d}{4}$, the circle rule of [[JZ.1.14]] applied to the dome.
+  - liu: |
+      This rule does not check out. So I reason from a square pyramid to show its form. Suppose a square
+      pyramid with a base of 6 *chi* and a height of 4 *chi*. The 4 *chi* is the *gu*, half the base, 3 *chi*,
+      is the *gou*, and the slant of the face is the hypotenuse, 5 *chi*. Multiply the *gou* by the
+      hypotenuse and by 4, getting 60 *chi*: that is the visible area of the pyramid's four faces.
+    zh: 此術不驗故推方錐以見其形假令方錐下方六尺高四尺四尺爲股下方之半三尺爲句正面邪爲弦弦五尺也令句弦相乘四因之得六十尺卽方錐四面見者之冪
+    modern: |
+      Each face is a triangle of base 6 and height 5 (the slant), area 15; four faces make 60. Liu's
+      $4 \cdot 3 \cdot 5$ is the same: half the base times the slant, four times.
+    cites: [I.47]
+  - liu: |
+      If a round cone is placed inside it, the visible area of the round cone is to the visible area of
+      the square pyramid as the area of the circle is to the area of the square.
+    zh: 若令其中容圓錐圓錐見冪與方錐見冪其率猶方冪之與圓冪也
+    dispute: |
+      The text has the ratio reversed, "as the square's area to the circle's" (猶方冪之與圓冪); the sense
+      requires circle to square. Editors emend.
+    explain:
+      fact: |
+        A cone inscribed in a square pyramid, with the same apex and height, has its base circle
+        inscribed in the pyramid's square base. Cut both by horizontal planes and every section is a
+        circle inscribed in a square. The surfaces, like the bases, stand in the ratio of circle to square.
+      implicit: |
+        The ratio of the surfaces is asserted from the figure; Liu proves nothing about surfaces.
+        (It is true: both lateral surfaces are half the base perimeter times the slant height, and
+        the perimeters are in the ratio of circle to square.)
+  - liu: |
+      Now, the pyramid's base being 6 *chi*, the square's perimeter is 24 *chi*; multiply it by the 5 *chi*
+      and halve it, and that too is the visible area of the pyramid. So to find [the surface of] the round
+      cone, halve the diameter and multiply by half the lower circumference: that is the area of the round
+      cone.
+    zh: 按方錐下六尺則方周二十四尺以五尺乘而半之則亦方錐之見冪故求圓錐之數折徑以乘下周之半卽圓錐之冪也
+    modern: |
+      Pyramid: $\tfrac12 \cdot 24 \cdot 5 = 60$. Cone: $\tfrac12 C \ell$, where the slant $\ell$ is half the
+      "diameter" measured over the apex.
+  - liu: |
+      Now the domed field's upper diameter is a rounded vault, yet it uses the same rule as the round cone;
+      so its area errs on the small side. But the [correct] rule is hard to use, so the rough outline is
+      given, to be applied to large broad fields.
+    zh: 今宛田上徑圓穹而與圓錐同術則冪失之於少矣然其術難用故略舉大較施之大廣田也
+    hint: |
+      A dome over the same rim, with the same length over the top, has more surface than the cone. A
+      spherical cap of base radius $a$ and height $h$ has area $\pi(a^2 + h^2)$, a result of
+      Archimedes, which needs more than circles and squares.
+  - liu: |
+      Finding the area of the round cone is like finding the area of a circular field. Here two wholes
+      are multiplied, so 4 is the divisor, again as for the circular field. The explanation of the rule
+      for extracting the root of a sphere sets out the rates of circles and squares very fully, and can be
+      used to check this.
+    hint: |
+      The rule for the sphere, and Liu's comparison of the sphere with the cylinder, are in [[JZ.4.6]].

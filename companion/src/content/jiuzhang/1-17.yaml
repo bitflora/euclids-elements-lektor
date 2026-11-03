@@ -1,0 +1,103 @@
+id: JZ.1.17
+title: Ring-shaped fields — the annulus
+paraphrase: |
+  A "ring field" (*huan tian* 環田) is the region between two concentric circles, given by its inner and
+  outer circumferences and its width (*jing* 徑, the distance across the ring). Its area is the mean of
+  the two circumferences times the width. Liu Hui: cut the ring across and straighten it, and the
+  excess of the outer edge fills the deficit of the inner. Or subtract the inner circle from the outer.
+
+  The width in the problems is not independent of the circumferences: it should be their difference
+  over $2\pi$. The classic's widths assume π = 3, and the second problem's ring "does not close", so
+  its width is not even that. Liu and Li Chunfeng recompute with their own values of π.
+
+parallels:
+  - id: XII.2
+    relation: related
+    note: |
+      Liu's second method, outer circle less inner circle, uses the area of the circle from [[JZ.1.14]]
+      and its constant ratio to the square on the diameter (XII.2). The ring's area is $\pi(R^2 - r^2)
+      = \tfrac12 (C_1 + C_2)(R - r)$.
+
+steps:
+  - classic: |
+      Now there is a ring field with an inner circumference of 92 *bu*, an outer circumference of 122 *bu*,
+      and a width of 5 *bu*.
+  - liu: |
+      This wants to agree with the rates "circumference 3, diameter 1", so it says the width is 5 *bu*.
+      From the inner and outer circumferences, by Hui's method, the width should be 4 122/157 *bu*.
+    modern: |
+      $\dfrac{122 - 92}{2\pi}$ with $\pi = \tfrac{157}{50}$: $\dfrac{30 \cdot 50}{314} = 4\tfrac{122}{157}$.
+  - li: |
+      We respectfully note: by the precise rate, the width is 4 17/22 *bu*.
+  - classic: |
+      Question: how much field does it make? Answer: 2 *mu* 55 *bu*.
+    modern: |
+      $\tfrac12(92 + 122) \cdot 5 = 535$ square *bu* $= 2$ *mu* $55$ *bu*.
+  - liu: |
+      By Hui's method this field should be 2 *mu* 31 23/157 *bu*.
+  - li: |
+      We respectfully, by the precise rate, make the field 2 *mu* 30 15/22 *bu*.
+  - classic: |
+      Again there is a ring field with an inner circumference of 62 3/4 *bu*, an outer circumference of 113
+      1/2 *bu*, and a width of 12 2/3 *bu*.
+  - liu: |
+      This field is a ring that does not close, so the width is 12 2/3 *bu*. If one found the width from
+      the circumferences above, this width would be too large, beyond the rates "circumference 3, diameter
+      1"; it is crude. By Hui's method the width should be 8 51/628 *bu*.
+    hint: |
+      An open ring, like a horseshoe: its two circumferences are arcs, and its width is measured, not
+      computed. Liu notes that the width is inconsistent with a closed ring.
+  - li: |
+      We respectfully note: by "circumference 3, diameter 1", the width would be 8 11/24 *bu*; by the
+      precise rate, 8 13/176 *bu*.
+  - classic: |
+      Question: how much field does it make? Answer: 4 *mu* 156 1/4 *bu*.
+  - liu: |
+      By Hui's method this field should be 2 *mu* 232 787/5024 *bu*; by "circumference 3, diameter 1", 3 *mu*
+      25 25/64 *bu*.
+  - li: |
+      We respectfully note: by the precise rate, the field is 2 *mu* 231 717/1408 *bu*.
+  - classic: |
+      The rule says: add the inner and outer circumferences and halve them, and multiply by the width for
+      the accumulated *bu*.
+    modern: |
+      $A = \tfrac12 (C_{in} + C_{out})\, w$.
+  - liu: |
+      This field, cut straight across, makes the inner and outer circumferences into lengths. Adding and
+      halving is again using the excess to fill the deficit. Or one can make each of the inner and outer
+      circumferences a circular field, and subtract the inner circle from the outer; the remainder is the
+      area of the ring.
+    zh: 此田截齊中外之周周則爲長并而半之者亦以盈補虚也此可令中外周各自爲圓田以中圓減外圓餘則環實也
+    explain:
+      fact: |
+        Cut and straightened, the ring is a trapezoid with parallel sides $C_{in}$ and $C_{out}$ and height
+        $w$, and its area is that of [[JZ.1.12]].
+      implicit: |
+        That the straightened ring is a trapezoid. It is curved, and the "cut" must be imagined into
+        many thin sectors, each nearly a trapezoid, as in the circle proof.
+    cites: [XII.2]
+  - liu: |
+      In this rule: set out the numbers of *bu* of the inner and outer circumferences above, their
+      denominators and numerators below. The denominators multiply the numerators because both
+      circumferences have fractions; so multiplying crosswise makes their numerators uniform, and
+      multiplying the denominators together makes the denominators the same. With the numerators uniform
+      and the denominators the same, connect the whole *bu* and add in the numerators.
+    zh: 按此術置中外周步數於上分母子於下母乘子者爲中外周俱有餘分故以互乘齊其子母相乘同其母子齊母同故通全步內分子
+  - liu: |
+      Adding and halving uses the excess to fill the deficit, to get the middle, level circumference. The
+      circumference is the length and the width the breadth, so multiplying breadth and length gives the
+      area. The denominators have been brought in, so they must be taken out again: the denominators of
+      the circumference and the width are multiplied together and divide both at once, giving the
+      accumulated *bu*. If it does not divide exactly, divide by the equal number and name the fraction.
+      Divide the accumulated *bu* by the *mu* divisor to get the number of *mu*.
+  - classic: |
+      The precise rule says: set out the numbers of *bu* of the inner and outer circumferences, with each
+      denominator and numerator below. The denominators multiply the numerators crosswise; connect the
+      whole *bu* and add in the numerators. Subtract the inner circumference from the outer, halve the
+      remainder, and add it to the inner circumference. Also connect the width and add in its numerator,
+      and multiply it by the circumference for the dividend. The denominators multiplied together are the
+      divisor. Divide to get the accumulated *bu*, with the remainder as a fraction of a *bu*. Divide by
+      the *mu* divisor: that is the number of *mu*.
+    hint: |
+      "Precise" (*mi* 密) here means worked exactly with fractions, not the "precise rate" for π.
+      The mean circumference is computed as inner plus half the difference.

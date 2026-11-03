@@ -1,0 +1,44 @@
+id: JZ.1.6
+title: Comparing fractions — which is larger, and by how much
+paraphrase: |
+  To compare two fractions, bring them to a common denominator and compare the numerators. The
+  difference is the amount by which the larger exceeds the smaller: $\tfrac{16}{25} - \tfrac58 =
+  \tfrac{128 - 125}{200} = \tfrac{3}{200}$. The rule is the rule of subtraction, with a different
+  question.
+
+parallels:
+  - id: VII.19
+    relation: related
+    note: |
+      Euclid decides whether four numbers are proportional by cross-multiplying: $a : b = c : d$ exactly
+      when $ad = bc$ (VII.19). The comparison here is the same cross-multiplication, read as an
+      inequality: $\tfrac{a}{b} > \tfrac{c}{d}$ exactly when $ad > bc$.
+
+steps:
+  - classic: |
+      Now there are 5/8 and 16/25. Question: which is more, and by how much? Answer: 16/25 is more, by
+      3/200.
+  - classic: |
+      Again there are 8/9 and 6/7. Question: which is more, and by how much? Answer: 8/9 is more, by
+      2/63.
+  - classic: |
+      Again there are 8/21 and 17/50. Question: which is more, and by how much? Answer: 8/21 is more, by
+      43/1050.
+  - classic: |
+      Comparing fractions —
+  - li: |
+      We respectfully note: the fractions have different names, and in principle are not uniform with
+      one another. One examines the amount by which one exceeds the other; hence "comparing fractions".
+  - classic: |
+      the rule says: the denominators multiply the numerators crosswise; subtract the smaller from the
+      larger, and the remainder is the dividend. The denominators multiplied together are the divisor.
+      Divide the dividend by the divisor: that is how much the one exceeds the other.
+    modern: |
+      $\dfrac{a}{b} > \dfrac{c}{d} \iff ad > cb$, and the excess is $\dfrac{ad - cb}{bd}$.
+    cites: [VII.19]
+  - li: |
+      We respectfully note: in this rule the denominators multiply the numerators crosswise and the
+      smaller fraction is taken from the larger, the same as in subtracting fractions. Only the
+      intention, the amount by which one exceeds the other, differs from subtraction. Subtracting
+      fractions seeks how much is left; comparing fractions takes what is left as the excess of one
+      over the other.

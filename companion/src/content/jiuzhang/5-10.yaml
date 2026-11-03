@@ -1,0 +1,97 @@
+id: JZ.5.10
+title: The tomb passage — a wedge with three widths
+paraphrase: |
+  A *xianchu* 羨除 is the sloping passage dug down to a tomb: level on top, sloping at the bottom, ending in
+  an edge. It is a wedge bounded by three parallel horizontal edges, the "three widths". The classic: add
+  the three widths, multiply by the depth and the length, divide by 6. Here $(6 + 10 + 8) \cdot 3 \cdot 7 / 6 =
+  84$.
+
+  Liu Hui decomposes it into a *qiandu* in the middle flanked by two tetrahedra. Then he faces a new
+  difficulty: these tetrahedra are not the standard *bienao* but differently shaped ones. He argues
+  that any tetrahedron on the same "dimensions" is still a sixth of the box. The passage is one of the
+  most corrupt in the book, and its details are uncertain.
+
+parallels:
+  - id: XII.5
+    relation: related
+    note: |
+      Liu's claim that tetrahedra of different shapes but equal "dimensions" have equal volume is a case of
+      Euclid's XII.5: pyramids of the same height on triangular bases are to one another as their bases, so
+      equal bases and heights give equal pyramids, whatever their shape.
+  - id: XII.7
+    relation: related
+    note: |
+      Every piece of the decomposition is a sixth or a half of a box, by the results of [[JZ.5.7]] to
+      [[JZ.5.9]] (Euclid's XI.28 and XII.7).
+
+steps:
+  - classic: |
+      Now there is a tomb passage, 6 *chi* wide at the bottom, 1 *zhang* wide at the top, 3 *chi* deep, its end 8
+      *chi* wide with no depth, and 7 *chi* long. Question: what is its volume? Answer: 84 *chi*.
+    hint: |
+      At the entrance the cut is 3 *chi* deep, 10 wide at the surface and 6 wide at the floor; it rises over 7
+      *chi* to the far end, where it is an edge 8 *chi* wide at the surface.
+  - classic: |
+      The rule says: add the three widths, multiply by the depth, and again by the length, and divide by 6.
+    modern: |
+      $V = \tfrac16 (a + b + c)\, h\, \ell$.
+  - liu: |
+      In this rule, the tomb passage is in fact a tunnel. The ground dug out is level above and slanting below,
+      like two *bienao* flanking a *qiandu*: that is the shape of the tomb passage.
+    zh: 按此術羨除實隧道也其所穿地上平下邪似兩鼈臑夾一壍堵卽羨除之形
+  - liu: |
+      Suppose we use these blocks: the top 3 *chi* wide, 1 *chi* deep, the bottom 1 *chi* wide, the end 1 *chi*
+      wide with no depth, and 1 *chi* long. The bottom width is the width of the *qiandu*; the top width is the
+      width of the two *bienao* joined to the *qiandu*. Multiplying by the depth and length gives a volume of
+      5 *chi*: the *bienao* take 2 and the *qiandu* 3, counting each block as six; hence divide by 6.
+    zh: 假令用此棊上廣三尺深一尺下廣一尺末廣一尺無深袤一尺下廣皆壍堵之廣上廣者兩鼈臑與一壍堵相連之廣也以深袤乘得積五尺鼈臑居二壍堵居三其於本棊皆以爲六故六而一
+    explain:
+      fact: |
+        $(3 + 1 + 1) \cdot 1 \cdot 1 = 5 = 6 \cdot \left(\tfrac12 + 2 \cdot \tfrac16\right)$: one *qiandu* (half a
+        cube) and two *bienao* (a sixth each), counted in sixths.
+  - liu: |
+      Put four *yangma* together to make a square pyramid. Draw lines obliquely on the base of the pyramid,
+      making a middle square; cut upward from the middle square, and the whole is half of the middle square
+      pyramid. Then every *yangma* block is split in the middle. The middle pyramid separates into four
+      *bienao*, so half of the outer pyramid is also four *bienao*. Though back and front differ in shape, and
+      they are not at all like what are ordinarily called *bienao*, in substance they are the same.
+    zh: 合四陽馬以爲方錐邪畫方錐之底亦令爲中方就中方削而上合全爲中方錐之半於是陽馬之棊悉中解矣中錐離而爲四鼈臑焉故外錐之半亦爲四鼈臑雖背正異形與常所謂鼈臑參不相似實則同也
+    hint: |
+      Joining the midpoints of the base's sides gives a square half the size, turned 45°. The pyramid on it
+      is half the whole, and the four corner pieces make the other half. Each corner piece is a tetrahedron of
+      unusual shape with the same volume as a standard *bienao*.
+  - liu: |
+      The "flanking" pieces of the *qiandu* are the *bienao* of the middle pyramid. In general, when a
+      *qiandu*'s upper length is shorter, it is joined to *yangma*; when its lower length is shorter, it is
+      joined to *bienao*; when its two lower lengths are equal, it is also joined to *bienao*. Add the three
+      widths, multiply by the height and length, and divide by 6: in every case that is the volume.
+    zh: 所云夾壍堵者中錐之鼈臑也凡壍堵上袤短者連陽馬也下袤短者與鼈臑連也下兩袤相等者亦與鼈臑連也并三廣以高袤乘六而一皆其積也
+  - liu: |
+      Here the widths of the tomb passage are the lengths of the *qiandu*.
+    zh: 今此羨除之廣卽壍堵之袤也
+  - liu: |
+      In this case the three widths are unequal, so it is joined to *bienao*. Taken separately: the central
+      *qiandu* is 6 *chi* wide, 3 *chi* high and 7 *chi* long. At each side of the end width there is a small
+      *bienao*, both equal to the *qiandu* [in height and length]. Put the small *bienao* inside and the large
+      *bienao* outside; then the large *bienao*, jutting obliquely, together make a square pyramid 3 *chi* wide
+      at the base, 6 *chi* long and 7 *chi* high. Take half of it, making the length 3 *chi*; multiply by the
+      height and width and divide by 3: that is the volume of the half pyramid.
+    zh: 按此本是三廣不等卽與鼈臑連者别而言之中央壍堵廣六尺高三尺袤七尺末廣之兩旁各一小鼈臑皆與壍堵等令小鼈臑居裏大鼈臑居表則大鼈臑出橢皆方錐下廣三尺袤六尺高七尺分取其半則爲袤三尺以高廣乘之三而一卽半錐之積也
+  - liu: |
+      Cutting the half pyramid obliquely gives these two large *bienao*; finding their volume, one should also
+      divide by 6, which agrees with the ordinary rate.
+    zh: 邪解半錐得此兩大鼈臑求其積亦當六而一合與常率矣
+  - liu: |
+      Consider the *yangma* blocks: when the bases of two oblique blocks are square and match as squares,
+      cutting at a corner without regard to the side, it can be known that they are halves.
+    zh: 按陽馬之棊兩邪棊底方當其方也不問旁角而割之相半可知也
+  - liu: |
+      Inferring from this, joined above, none fails to make a box. So the square pyramid and the *yangma* are
+      the same in substance, and in cutting at a corner the disposition of halving holds. So the large and
+      small *bienao* can be known, being outside and inside one another; only their bodies are turned back to
+      front.
+    dispute: |
+      The last third of Liu's note (from "In this case the three widths are unequal") is badly corrupt. The
+      numbers do not all fit the problem, and editors' reconstructions differ widely. The translation follows
+      the words; the general sense is that the side pieces of this tomb passage are oblique tetrahedra whose
+      volumes still obey the rule of a sixth.

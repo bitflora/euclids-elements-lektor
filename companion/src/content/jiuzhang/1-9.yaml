@@ -1,0 +1,82 @@
+id: JZ.1.9
+title: Multiplying fractions — a field with fractional sides
+paraphrase: |
+  A field $\tfrac47$ *bu* wide and $\tfrac35$ *bu* long has area $\tfrac{12}{35}$ square *bu*: multiply the
+  numerators for the dividend and the denominators for the divisor.
+
+  Liu Hui explains why with a story rather than a figure, since "a field with width and length is hard
+  to explain by its width". 5 horses are worth 3 *jin* of gold; 7 people sell 4 horses and share the
+  money; each gets $\tfrac{12}{35}$ *jin*. Multiplying the numerators "makes the gold uniform", and
+  multiplying the denominators "makes the people uniform". The problem is then an ordinary division.
+
+parallels:
+  - id: VI.23
+    relation: related
+    note: |
+      A rectangle with sides $\tfrac47$ and $\tfrac35$ of a unit: Euclid would say that rectangles have
+      to one another the ratio compounded of the ratios of their sides (VI.23). Here the area is that
+      compound ratio, written as a number, $\tfrac47 \cdot \tfrac35$.
+
+steps:
+  - classic: |
+      Now there is a field 4/7 *bu* wide and 3/5 *bu* long. Question: how much field does it make? Answer:
+      12/35 [square] *bu*.
+  - classic: |
+      Again there is a field 7/9 *bu* wide and 9/11 *bu* long. Question: how much field does it make?
+      Answer: 7/11 *bu*.
+    hint: $\tfrac{63}{99}$, reduced by 9.
+  - classic: |
+      Again there is a field 4/5 *bu* wide and 5/9 *bu* long. Question: how much field does it make?
+      Answer: 4/9 *bu*.
+  - classic: |
+      Multiplying fractions —
+  - li: |
+      We respectfully note: "multiplying fractions": the denominators are multiplied together as the
+      divisor and the numerators together as the dividend; hence "multiplying fractions".
+  - classic: |
+      the rule says: the denominators multiplied together are the divisor, the numerators multiplied
+      together are the dividend; divide the dividend by the divisor.
+    modern: $\dfrac{a}{b} \cdot \dfrac{c}{d} = \dfrac{ac}{bd}$.
+  - liu: |
+      In general, it is when the dividend does not fill the divisor that we have the names "denominator"
+      and "numerator". If a fraction's dividend is multiplied and enlarged, it may fill the divisor and
+      become whole. Further, because the numerator has been multiplied, the denominator must "repay" it
+      by division; repaying by division is dividing the dividend by the divisor. Now the numerators are
+      multiplied together, so each denominator must repay it by division; therefore the denominators
+      are multiplied together and divide both at once.
+    zh: 凡實不滿法者乃有母子之名若有分以乘其實而長之則亦滿法乃爲全耳又以子有所乘故母當報除報除者實如法而一也今子相乘則母各當報除因令分母相乘而連除也
+    hint: |
+      $\tfrac47 \cdot \tfrac35$: multiplying by 3 makes it too large by a factor of 5, which must be
+      "repaid" by dividing by 5. Dividing by 7 and by 5 is dividing by 35 at once.
+  - liu: |
+      This field has a width and a length, which is hard to explain by its width. Suppose someone asks:
+      20 horses are worth 12 *jin* of gold; now 20 horses are sold and 35 people share the money; how much
+      does each get? Answer: 12/35 *jin*. To do it, follow the rule for division of fractions: take the
+      12 *jin* of gold as the dividend and the 35 people as the divisor.
+    zh: 此田有廣從難以廣諭設有問者曰馬二十匹直金十二斤今賣馬二十匹三十五人分之人得幾何荅曰三十五分斤之十二其爲之也當如經分術以十二斤金爲實三十五人爲法
+    hint: A *jin* 斤 was about 250 g.
+  - liu: |
+      Suppose instead it said: 5 horses are worth 3 *jin* of gold; now 4 are sold and 7 people share the
+      money; how much does each get? Answer: each gets 12/35 *jin*. To do it, the numbers of gold and of
+      people must be made uniform, all to match the first question, and it then comes under division of
+      fractions.
+    zh: 設更言馬五匹直金三斤今賣四匹七人分之人得幾何荅曰人得三十五分斤之十二其爲之也當齊其金人之數皆合初問入於經分矣
+    explain:
+      fact: |
+        4 horses at $\tfrac35$ *jin* each bring $\tfrac{12}{5}$ *jin*, shared by 7 people. Scaled so
+        that the horses number 20, as in the first question: the gold is 12 *jin* and the people 35.
+  - liu: |
+      So multiplying the numerators for the dividend is like making the gold uniform; multiplying the
+      denominators for the divisor is like making the people uniform. Making their denominator the same
+      at 20 horses is not needed; one only wants to make [them] uniform.
+    zh: 然則分子相乘爲實者猶齊其金也母相乘爲法者猶齊其人也同其母爲二十馬無事於同但欲求齊而已
+  - liu: |
+      Again, "5 horses are worth 3 *jin* of gold" is the rate in whole numbers; said in parts, 1 horse is
+      worth 3/5 *jin*. "7 people sell 4 horses": 1 person sells 4/7 of a horse. Numerators and people
+      generate one another crosswise. The ways of saying it differ, but in the calculation the three
+      methods come to the same thing.
+    zh: 又馬五匹直金三斤完全之率分而言之則爲一匹直金五分斤之三七人賣四馬一人賣七分馬之四分子與人交互相生所從言之異而計數則三術同歸也
+    hint: |
+      Each person's share is $\tfrac47$ of a horse at $\tfrac35$ *jin* a horse: $\tfrac47 \cdot \tfrac35
+      = \tfrac{12}{35}$. The multiplication of fractions, the division of fractions, and the rule of
+      three give the same answer.

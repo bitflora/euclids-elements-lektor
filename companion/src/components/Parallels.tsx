@@ -1,12 +1,12 @@
-// Cross-references between the Zhou bi and Euclid, where the two prove (or rely
-// on) the same proposition. Declared once, in a Zhou bi section's `parallels`;
-// shown on both sides.
+// Cross-references between the Chinese works and Euclid, where they prove (or rely
+// on) the same proposition. Declared once, in a section's `parallels`; shown on both
+// sides.
 
 import { getItem } from "../lib/corpus";
 import { refLabel } from "../lib/rich";
 import { hrefFor } from "../lib/router";
-import { getZb, parallelsOf, zbPartInfo } from "../lib/zhoubi";
-import type { ItemId, ZbSection } from "../types";
+import { WORKS, getSection, parallelsOf, partInfo, workOf } from "../lib/works";
+import type { ItemId, WorkSection } from "../types";
 import { Rich } from "./Rich";
 
 const RELATION = {
@@ -23,35 +23,41 @@ function Badge({ relation }: { relation: "same" | "related" }) {
   );
 }
 
-/** On a Euclid proposition: where the Zhou bi has it too. */
+/** On a Euclid proposition: where the Chinese works have it too, one list per work. */
 export function EuclidParallels({ id, callout }: { id: ItemId; callout?: boolean }) {
-  const list = parallelsOf(id);
-  if (!list.length) return null;
   return (
-    <section className={`parallels${callout ? " parallels-callout" : ""}`}>
-      <h4>
-        {callout ? "Also in " : "In "}the Zhou bi suan jing <span lang="zh-Hant">周髀算經</span>
-      </h4>
-      <ul>
-        {list.map((p) => {
-          const s = getZb(p.zb);
-          return (
-            <li key={p.zb}>
-              <a className="xref chip" data-ref={p.zb} href={hrefFor(p.zb)}>
-                {refLabel(p.zb)}
-              </a>{" "}
-              <Badge relation={p.relation} /> <span className="par-title">{s?.annotation?.title}</span>
-              <Rich md={p.note} className="small" />
-            </li>
-          );
-        })}
-      </ul>
-    </section>
+    <>
+      {WORKS.map((w) => {
+        const list = parallelsOf(id, w.key);
+        if (!list.length) return null;
+        return (
+          <section key={w.key} className={`parallels${callout ? " parallels-callout" : ""}`}>
+            <h4>
+              {callout ? "Also in " : "In "}the <i>{w.title}</i> <span lang="zh-Hant">{w.zh}</span>
+            </h4>
+            <ul>
+              {list.map((p) => {
+                const s = getSection(p.section);
+                return (
+                  <li key={p.section}>
+                    <a className="xref chip" data-ref={p.section} href={hrefFor(p.section)}>
+                      {refLabel(p.section)}
+                    </a>{" "}
+                    <Badge relation={p.relation} /> <span className="par-title">{s?.annotation?.title}</span>
+                    <Rich md={p.note} className="small" />
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        );
+      })}
+    </>
   );
 }
 
-/** On a Zhou bi section: the Euclid propositions it parallels. */
-export function ZbParallels({ section }: { section: ZbSection }) {
+/** On a section of a Chinese work: the Euclid propositions it parallels. */
+export function WorkParallels({ section }: { section: WorkSection }) {
   const list = section.annotation?.parallels ?? [];
   if (!list.length) return null;
   return (
@@ -72,24 +78,25 @@ export function ZbParallels({ section }: { section: ZbSection }) {
   );
 }
 
-/** A Zhou bi section, as shown in a peek. */
-export function ZbPeek({ id }: { id: string }) {
-  const s = getZb(id);
-  if (!s) return <p className="muted">There is no section {id} in the Zhou bi.</p>;
+/** A section of a Chinese work, as shown in a peek. */
+export function WorkPeek({ id }: { id: string }) {
+  const s = getSection(id);
+  const w = workOf(id);
+  if (!s || !w) return <p className="muted">There is no section {id}.</p>;
   const ann = s.annotation;
-  const firstClassic = s.steps.find((x) => x.voice === "classic");
+  const first = s.steps.find((x) => x.voice === "classic") ?? s.steps[0];
   return (
     <>
       <p className="kicker">
-        Zhou bi · {zbPartInfo(s.part)?.label} · {s.label}
+        {w.short} · {partInfo(w, s.part)?.label} · {s.label}
       </p>
       {ann && <p className="editor-title">{ann.title}</p>}
-      {firstClassic && (
+      {first && (
         <div className="voice-euclid">
-          <span className="voice-label">The Zhou bi</span>
-          {firstClassic.classic && <Rich md={firstClassic.classic} className="zb-en" />}
+          <span className="voice-label">The {w.short}</span>
+          {first.en && <Rich md={first.en} className="zb-en" />}
           <p className="zb-zh" lang="zh-Hant">
-            {firstClassic.source}
+            {first.source}
           </p>
         </div>
       )}
@@ -99,8 +106,7 @@ export function ZbPeek({ id }: { id: string }) {
           <Rich md={ann.paraphrase} />
         </div>
       )}
-      <ZbParallels section={s} />
+      <WorkParallels section={s} />
     </>
   );
 }
-

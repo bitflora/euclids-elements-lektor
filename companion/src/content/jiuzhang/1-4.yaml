@@ -1,0 +1,111 @@
+id: JZ.1.4
+title: Adding fractions — making uniform and making the same
+paraphrase: |
+  To add fractions: multiply each numerator by the other denominators ("the denominators multiply the
+  numerators crosswise", *mu hu cheng zi* 母互乘子) and add, for the dividend; multiply the denominators
+  together for the divisor; divide. So $\tfrac13 + \tfrac25 = \tfrac{5 + 6}{15} = \tfrac{11}{15}$.
+
+  Liu Hui names the two operations that run through his whole commentary. Multiplying a numerator by
+  the other denominators is *qi* 齊, "making uniform": the fraction keeps its value, only its terms
+  change. Multiplying the denominators together is *tong* 同, "making the same": all the fractions
+  now share one denominator. "Multiplying to spread out, reducing to gather, making uniform and the
+  same to connect: this is the guiding thread of calculation."
+
+parallels:
+  - id: VII.17
+    relation: related
+    note: |
+      Multiplying numerator and denominator by the same number leaves the ratio unchanged: $b : c =
+      ab : ac$, Euclid's VII.17. Liu's "making uniform" relies on it: "the numerator keeps pace with the
+      denominator, so the original quantity cannot be lost".
+  - id: VII.34
+    relation: related
+    note: |
+      Liu's alternative ("divide [the common denominator] by each denominator to get the rate") uses
+      any common multiple, and the least is best. Euclid finds the least number two given numbers
+      measure in VII.34, and three in VII.36.
+
+steps:
+  - classic: |
+      Now there are 1/3 and 2/5. Question: added together, what do they give? Answer: 11/15.
+  - classic: |
+      Again there are 2/3, 4/7 and 5/9. Question: added together, what do they give? Answer: 1 and 50/63.
+  - classic: |
+      Again there are 1/2, 2/3, 3/4 and 4/5. Question: added together, what do they give? Answer: 2 and
+      43/60.
+    hint: |
+      With the rule as stated, the common denominator is $2\cdot3\cdot4\cdot5 = 120$ and the sum
+      $\tfrac{326}{120}$, reduced by 2 to $2\tfrac{43}{60}$.
+  - classic: |
+      Adding fractions —
+  - li: |
+      We respectfully note: "adding fractions" is because the numbers are not of one kind and the parts
+      have no fixed standard. The numerators are mixed and the denominators uneven; since they differ
+      in coarseness and fineness, it is hard in principle to bring them to one. So one makes the many
+      parts uniform and makes the denominators the same, so that they can be added. Hence "adding
+      fractions".
+  - classic: |
+      the rule says: the denominators multiply the numerators crosswise; add them for the dividend. The
+      denominators multiplied together are the divisor.
+    modern: |
+      $\dfrac{a}{b} + \dfrac{c}{d} = \dfrac{ad + cb}{bd}$, and so for any number of fractions.
+  - liu: |
+      The denominators multiply the numerators crosswise: said reduced, the parts are coarse; said
+      cumbersomely, they are fine. Though coarse and fine differ, in substance they are one. Mixed
+      fractions cannot be brought together unless they are made fine. Multiplying to spread them out is
+      how they are connected, and once connected they can be added.
+    zh: 母互乘子約而言之者其分麄繁而言之者其分細雖則麄細有殊然其實一也衆分錯雜非細不㑹乗而散之所以通之通之則可并也
+    hint: |
+      $\tfrac13$ and $\tfrac5{15}$ are the same quantity in coarse and fine parts. Fractions in parts of
+      different sizes are added by cutting both into a common finer part.
+  - liu: |
+      In general, the denominators multiplying the numerators crosswise is called "making uniform"
+      (*qi*); the denominators multiplied together is called "making the same" (*tong*). "The same"
+      means they share one common denominator. "Uniform" means the numerator keeps pace with its
+      denominator, so that it cannot lose its original quantity.
+    zh: 凡母互乘子謂之齊羣母相乘謂之同同者相與通同共一母也齊者子與母齊勢不可失本數也
+    hint: |
+      The two key terms of Liu's commentary. They return in proportion, in the rule of three, and in
+      the elimination of chapter 8.
+    explain:
+      fact: |
+        For $\tfrac{a}{b}$ and $\tfrac{c}{d}$: making the same replaces both denominators by $bd$;
+        making uniform replaces $a$ by $ad$ and $c$ by $cb$. Each fraction is then $\tfrac{ad}{bd}$ or
+        $\tfrac{cb}{bd}$, equal to what it was.
+    cites: [VII.17]
+  - liu: |
+      "Things are gathered by kinds, and creatures divided by groups." Numbers of the same kind are
+      never far apart; numbers of different kinds are never near. Things far apart but of one body,
+      though in different places, go together; things near but of different shapes, though in the same
+      row, part company. So the art of making uniform and the same is essential. It arranges and
+      combines the measures, and moves them into harmony. It is like the bodkin that undoes a knot:
+      wherever it goes, it sets things in order.
+    zh: 方以類聚物以羣分數同類者無遠數異類者無近遠而通體者雖異位而相從也近而殊形者雖同列而相違也然則齊同之術要矣錯綜度數動之則諧其猶佩觽解結無往而不理焉
+    hint: |
+      The opening phrase quotes the *Book of Changes*. Fractions with the same denominator can be
+      added however different they look; fractions with different denominators cannot, however close.
+  - liu: |
+      Multiplying to spread them out, reducing to gather them, making uniform and the same to connect
+      them: is this not the guiding thread of calculation? Another method: one can divide [the product of
+      the denominators] by each denominator to get a rate, and multiply the numerator by the rate to
+      make it uniform.
+    zh: 乘以散之約以聚之齊同以通之此其算之綱紀乎其一術者可令母除爲率率乘子爲齊
+    hint: |
+      The second method is the one we use. Take a common denominator, divide it by each denominator,
+      and scale each numerator by the quotient. With the least common denominator, the numbers stay
+      small.
+    cites: [VII.34]
+  - classic: |
+      Divide the dividend by the divisor. What does not fill the divisor is named by the divisor.
+    hint: |
+      "Named by the divisor" (*yi fa ming zhi* 以法命之): a remainder $r$ on division by $m$ is
+      expressed as the fraction $\tfrac{r}{m}$.
+  - liu: |
+      Now we want the value of the dividend. So its numerators are made uniform and its denominators
+      the same, and it is divided by the denominator. The remainder is reduced by the equal number,
+      and that gives it. What we call "the common divisor becomes the denominator, the remaining
+      dividend becomes the numerator" follows this pattern throughout.
+    hint: The remainder fraction is reduced by the method of [[JZ.1.3]].
+  - classic: |
+      If the denominators are the same, simply add [the numerators].
+    modern: $\dfrac{a}{m} + \dfrac{c}{m} = \dfrac{a + c}{m}$.

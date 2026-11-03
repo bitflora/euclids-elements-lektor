@@ -639,7 +639,7 @@ blockquote.quote { margin: 0 0 0.8rem; }
 .principle-set { font-size: 1rem; font-weight: 600; margin: 1.6rem 0 0.4rem; letter-spacing: 0.02em; }
 .principle-set:first-child, .voice-tag + .principle-set { margin-top: 0.4rem; }
 
-/* ─── The Zhou bi ─────────────────────────────────────────────────────── */
+/* ─── The Chinese works: Zhou bi, Nine Chapters ─────────────────────────────────────────────────────── */
 :root { --cjk: "Noto Serif CJK TC", "Noto Serif TC", "Source Han Serif TC", "Songti TC", "Songti SC", "PMingLiU", "MingLiU", "SimSun", serif; --zhao: #5b6b2f; --zhao-tint: #f1f3e6; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --zhao: #b9c98a; --zhao-tint: #22251b; } }
 [data-theme="dark"] { --zhao: #b9c98a; --zhao-tint: #22251b; }
@@ -650,12 +650,20 @@ blockquote.quote { margin: 0 0 0.8rem; }
 .zb-en, .zb-en p { margin: 0; }
 .zb-zh { margin: 0.15rem 0 0; font: 400 0.98rem/1.7 var(--cjk); color: var(--ink-2); letter-spacing: 0.04em; }
 .zb-step.classic .zb-en { font-size: 1.24rem; }
-.zb-step.zhao { margin-left: -1rem; border-left: 3px solid var(--zhao-tint); font-size: 1.04rem; color: var(--ink-2); }
-.zb-step.zhao .zb-en { font-size: 1.06rem; line-height: 1.55; }
-.zb-step.zhao .zb-zh { font-size: 0.9rem; }
-.zb-step.zhao.selected { border-left-color: var(--select-rule); }
-.zb-step.zhao .step-num { color: var(--zhao); }
+.zb-step.commentary { margin-left: -1rem; border-left: 3px solid var(--zhao-tint); font-size: 1.04rem; color: var(--ink-2); }
+.zb-step.commentary .zb-en { font-size: 1.06rem; line-height: 1.55; }
+.zb-step.commentary .zb-zh { font-size: 0.9rem; }
+.zb-step.commentary.selected { border-left-color: var(--select-rule); }
+.zb-step.commentary .step-num { color: var(--zhao); }
 .zhao-label { margin: 0.5rem 0 0.1rem 1.6rem; padding-left: 0.6rem; font: 600 0.72rem var(--sans); letter-spacing: 0.06em; text-transform: uppercase; color: var(--zhao); }
+/* The Nine Chapters: Li Chunfeng's sub-commentary, set in further than Liu Hui's and in its own colour. */
+:root { --li: #7a4a6b; --li-tint: #f4e9f0; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --li: #d3a5c4; --li-tint: #2a1f27; } }
+[data-theme="dark"] { --li: #d3a5c4; --li-tint: #2a1f27; }
+.zb-step.li { margin-left: 0.4rem; border-left-color: var(--li-tint); }
+.zb-step.li .step-num { color: var(--li); }
+.zhao-label.voice-li { margin-left: 3rem; color: var(--li); }
+.jz-problem { display: block; margin: 0 0 0.1rem; font: 600 0.7rem var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .zhao-label [lang] { text-transform: none; letter-spacing: 0.08em; font-weight: 600; }
 .section-tabs a [lang] { letter-spacing: 0.05em; }
 .part-nav { display: flex; justify-content: space-between; margin: 2.5rem 0 1rem; font: 0.9rem var(--sans); }

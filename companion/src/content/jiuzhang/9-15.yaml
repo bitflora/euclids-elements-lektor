@@ -1,0 +1,82 @@
+id: JZ.9.15
+title: The tree outside the town — similar triangles
+paraphrase: |
+  A square walled town, 200 *bu* on a side, has a gate in the middle of each wall. A tree stands 15 *bu* outside
+  the east gate. How far out of the south gate must one walk to see the tree past the south-east corner? The
+  sight-line makes two similar right triangles: $x = \dfrac{100 \cdot 100}{15} = 666\tfrac23$ *bu*. The second
+  problem has an oblong town.
+
+  Liu Hui reads both as the rule of three on similar triangles: a "*gou* rate" and a "*gu* rate" from one
+  triangle, applied to a "given *gou*" in the other.
+
+parallels:
+  - id: VI.4
+    relation: same
+    note: |
+      The two triangles, tree–east gate–corner and corner–south gate–observer, are equiangular (their sides lie
+      along parallel walls and one sight-line), so their sides are proportional: Euclid's VI.4, used as the "rates"
+      of the *gou* and *gu*.
+
+diagram:
+  width: 260
+  height: 285
+  elements:
+    - "N;point;fixed;60,40;0;0"
+    - "F;point;fixed;180,40;0;0"
+    - "S;point;fixed;180,160;black;black"
+    - "W;point;fixed;60,160;0;0"
+    - "town;polygon;quadrilateral;N,F,S,W;0;0;#6b6253;#f3ecd8"
+    - "E;point;fixed;180,100;black;black"
+    - "G;point;fixed;120,160;black;black"
+    - "K;point;fixed;215,100;black;black"
+    - "X;point;fixed;120,262.86;black;black"
+    - "EK;line;connect;E,K;0;0;#9a3b2b"
+    - "ES;line;connect;E,S;0;0;#33587a"
+    - "GS;line;connect;G,S;0;0;#9a3b2b"
+    - "GX;line;connect;G,X;0;0;#33587a"
+    - "KX;line;connect;K,X;0;0;#8a6d12"
+  given: [N, F, S, W, town, E, G, K]
+  caption: |
+    Not to scale. The town (200 *bu* square) with its east gate {E} and south gate {G}; the tree {K} 15 *bu* out
+    of the east gate. The sight-line {KX} grazes the corner {S}. The triangles {K}{E}{S} and {S}{G}{X} are
+    similar: ${GX} : {GS} = {ES} : {EK}$, so ${GX} = 100 \cdot 100 / 15$.
+
+steps:
+  - classic: |
+      Now there is a town 200 *bu* square, with a gate opened in the middle of each side. 15 *bu* out of the east
+      gate there is a tree. Question: how many *bu* out of the south gate will one see the tree? Answer: 666 2/3
+      *bu*.
+    highlight: [EK]
+  - classic: |
+      The rule says: take the number of *bu* out of the east gate as the divisor;
+  - liu: |
+      The *gou* rate is taken as the divisor.
+  - classic: |
+      multiply half the town's side by itself for the dividend, and divide: that gives the *bu*.
+    modern: |
+      $x = \dfrac{100^2}{15} = 666\tfrac23$.
+    adds: [X, KX, GX, ES, GS]
+    highlight: [EK, ES, GS, GX]
+    cites: [VI.4]
+  - liu: |
+      Here the 15 *bu* out of the east gate is the *gou* rate, and the 100 *bu* from the east gate south to the corner
+      is the *gu* rate. The 100 *bu* from the south gate east to the corner is the given *gou*, from which we wish to
+      find the *gu*, the distance out of the south gate. "Multiply half the town's side by itself" is exactly
+      right: the *gu* rate should multiply the given *gou*, and the two numbers are the same.
+    explain:
+      fact: |
+        $\dfrac{GX}{GS} = \dfrac{ES}{EK}$, so $GX = \dfrac{ES \cdot GS}{EK} = \dfrac{100 \cdot 100}{15}$: the rule of
+        three with *gou* rate 15, *gu* rate 100, given *gou* 100.
+  - classic: |
+      Now there is a town 7 *li* east to west and 9 *li* north to south, with a gate opened in the middle of each
+      side. 15 *li* out of the east gate there is a tree. Question: how many *bu* out of the south gate will one see
+      the tree? Answer: 315 *bu*.
+  - classic: |
+      The rule says: multiply the *bu* from the east gate south to the corner by the *bu* from the south gate east
+      to the corner, for the dividend. Take the *bu* from the tree to the gate as the divisor. Divide.
+    modern: |
+      $\dfrac{4\tfrac12 \cdot 3\tfrac12}{15}$ *li* $= 1.05$ *li* $= 315$ *bu*.
+  - liu: |
+      Here the 4 1/2 *li* from the east gate south to the corner is the *gou* rate, the 15 *li* out of the east gate
+      the *gu* rate, and the 3 1/2 *li* from the south gate east to the corner the given *gu*; the distance asked,
+      out of the south gate, is the *gou* of the given *gu*. The idea of the rule is the same as above.

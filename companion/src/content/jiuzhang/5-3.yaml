@@ -1,0 +1,88 @@
+id: JZ.5.3
+title: Ditches, moats and canals — labour with deductions
+paraphrase: |
+  More trapezoidal prisms, now dug rather than built, with labour quotas that vary with the season and
+  are reduced for carrying the earth out and for gravel and water. The last problem turns the question
+  round: if 1000 workers arrive first, how long a stretch of canal should they be assigned?
+
+steps:
+  - classic: |
+      Now there is a ditch 1 *zhang* 5 *chi* wide at the top and 1 *zhang* at the bottom, 5 *chi* deep, and 7
+      *zhang* long. Question: what is its volume? Answer: 4375 *chi*.
+  - classic: |
+      The spring quota of work is 766 *chi* per person; deducting a fifth for carrying out the earth, the
+      fixed quota is 612 4/5 *chi*. Question: how many workers are used?
+  - classic: |
+      Answer: 7 427/3064 persons.
+  - classic: |
+      The rule says: set out the basic quota per person, take away a fifth of it, and the remainder is the
+      divisor.
+  - liu: |
+      "Take away a fifth" means multiply by 4 and divide by 5.
+  - classic: |
+      Take the volume of the ditch as the dividend; divide: that gives the number of workers.
+    modern: |
+      $4375 \div 612\tfrac45 = 7\tfrac{427}{3064}$.
+  - liu: |
+      In this rule, "set out the basic quota and take away a fifth" means multiply by 4 and divide by 5,
+      removing the work of carrying out the earth to get the fixed quota; then connect the fraction, adding in
+      the numerator, for the divisor. Multiplying the volume of the ditch by the denominator for the dividend:
+      the divisor has a fraction, so the dividend is connected too. Dividing gives the number of workers.
+      This divides the many *chi* by one person's *chi*; so if the number of workers does not come out exactly,
+      reduce by the equal number and name the fraction.
+  - classic: |
+      Now there is a moat 1 *zhang* 6 *chi* 3 *cun* wide at the top and 1 *zhang* at the bottom, 6 *chi* 3
+      *cun* deep, and 13 *zhang* 2 *chi* 1 *cun* long. Question: what is its volume? Answer: 10,943 *chi* 8
+      *cun*.
+  - liu: |
+      "8 *cun*" means a square *chi* of excavation 8 *cun* deep. The volume has a remainder beyond this of 2
+      *fen* 4 *li* 5 *hao*, [in units of] square *chi* by *cun*; it is dropped from the multiplication for
+      convenience, and is not the standard practice.
+    hint: |
+      The exact volume is $13.15 \cdot 6.3 \cdot 132.1 = 10{,}943.8245$ cubic *chi*. The answer keeps 10,943.8
+      and drops the 0.0245; Liu notes the rounding.
+  - classic: |
+      The summer quota of work is 871 *chi*; deducting a fifth for carrying out the earth, and two thirds of
+      the work for gravel, water and stones, the fixed quota is 232 4/15 *chi*. Question: how many workers are
+      used?
+  - classic: |
+      Answer: 47 409/3484 persons.
+  - classic: |
+      The rule says: set out the basic quota per person, take away a fifth for carrying out the earth, and
+      take away two thirds more for the gravel, water and stones; the remainder is the divisor. Take the
+      volume of the moat as the dividend; divide: that is the number of workers.
+    modern: |
+      $871 \cdot \tfrac45 \cdot \tfrac13 = 232\tfrac{4}{15}$.
+  - liu: |
+      In this rule, "set out the basic quota and take away a fifth for carrying out the earth" means
+      multiply by 4 and divide by 5; "take away two thirds more for the gravel, water and stones" means
+      multiply by 1 and divide by 3, keeping the third, to get the fixed quota. Then connect the fraction,
+      adding in the numerator, for the divisor; multiply the volume of the moat by the denominator for the
+      dividend. The divisor has a fraction, so the dividend is connected too. Divide: that is the number of
+      workers; if it does not come out exactly, reduce by the equal number and name the fraction.
+  - classic: |
+      Now there is a canal to be dug 1 *zhang* 8 *chi* wide at the top and 3 *chi* 6 *cun* at the bottom, 1
+      *zhang* 8 *chi* deep, and 51,824 *chi* long. Question: what is its volume? Answer: 10,074,585 *chi* 6
+      *cun*.
+    hint: |
+      About 16 km of canal.
+  - classic: |
+      The autumn quota of work is 300 *chi* per person. Question: how many workers are used?
+  - classic: |
+      Answer: 33,582 person-days, short by 14 *chi* 4 *cun*.
+  - classic: |
+      If 1000 persons arrive first, question: what length should they be assigned?
+  - classic: |
+      Answer: 154 *zhang* 3 *chi* 2 8/81 *cun*.
+  - classic: |
+      The rule says: multiply the work per person in *chi* by the number arriving first, for the dividend.
+  - liu: |
+      Take a day's work of 1000 persons as the dividend; the volume is the work.
+  - classic: |
+      Add the upper and lower widths of the canal, halve them, and multiply by the depth, for the divisor.
+  - liu: |
+      Take the standing area of the canal's width and depth as the divisor.
+  - classic: |
+      Divide the dividend by the divisor to get the length in *chi*.
+    modern: |
+      $\dfrac{1000 \cdot 300}{\tfrac12(18 + 3.6) \cdot 18} = \dfrac{300{,}000}{194.4} = 1543.2\tfrac{8}{81}\ldots$ *chi*.

@@ -1,0 +1,34 @@
+id: JZ.9.6
+title: The pole against the wall
+paraphrase: |
+  A pole leans against a wall 1 *zhang* high, its top level with the top of the wall. Drawn back 1 *chi* at the
+  foot, its top comes down to the ground. How long is the pole? The rule is that of the rope ([[JZ.9.5]]),
+  with the wall's height as the *gou* and the 1 *chi* as $c - b$: $c = \tfrac12\left(\tfrac{100}{1} + 1\right) =
+  50\tfrac12$ *chi*.
+
+parallels:
+  - id: II.6
+    relation: same
+    note: |
+      As in [[JZ.9.5]], $c + b = a^2 / (c - b)$.
+
+steps:
+  - classic: |
+      Now there is a wall 1 *zhang* high. A pole leans on the wall, its top level with the wall. Drawing the pole
+      back 1 *chi*, it reaches the ground. Question: how long is the pole? Answer: 5 *zhang* 5 *cun*.
+    hint: |
+      Read with Liu's note: the pole, lying flat, reaches 1 *chi* further than the distance from its leaning
+      foot to the wall.
+    dispute: |
+      The classic's wording is compressed, and the configuration is reconstructed from Liu's note. The wall
+      is the *gou*, the pole the hypotenuse, and the 1 *chi* the difference of *gu* and hypotenuse.
+  - classic: |
+      The rule says: multiply the wall's height, 10 *chi*, by itself, divide by the number of *chi* drawn back,
+      add the number of *chi* drawn back to the result, and halve: that is the length of the pole.
+    modern: |
+      $c = \tfrac12\left(\dfrac{a^2}{d} + d\right) = \tfrac12(100 + 1) = 50.5$ *chi*.
+    cites: [II.6]
+  - liu: |
+      Here the wall's height of 1 *zhang* is the *gou*, the leaning pole sought is the hypotenuse, and the 1 *chi*
+      drawn back is the difference of *gu* and hypotenuse. The idea of the rule is the same as in the problem of
+      the tied rope.

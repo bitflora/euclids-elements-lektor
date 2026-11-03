@@ -1,0 +1,24 @@
+id: JZ.1.2
+title: Fields measured in li
+paraphrase: |
+  The same rule with the larger unit, the *li* 里 of 300 *bu*. A square *li* is $300 \times 300 = 90{,}000$
+  square *bu*, which is 375 *mu* or 3 *qing* 75 *mu*. So a field measured in *li* is converted by
+  multiplying by 375.
+
+steps:
+  - classic: |
+      Now there is a field 1 *li* wide and 1 *li* long. Question: how much field does it make? Answer:
+      3 *qing* 75 *mu*.
+    modern: $300^2 = 90{,}000$ square *bu* $= 375$ *mu*.
+  - classic: |
+      Again there is a field 2 *li* wide and 3 *li* long. Question: how much field does it make? Answer:
+      22 *qing* 50 *mu*.
+    modern: $2 \times 3 \times 375 = 2250$ *mu* $= 22$ *qing* $50$ *mu*.
+  - classic: |
+      The rule for fields in *li*: multiply the numbers of *li* of the width and the length to get the
+      accumulated *li*. Multiply by 375: that is the number of *mu*.
+  - liu: |
+      This rule multiplies the numbers of *li* of the width and the length to get the accumulated *li*.
+      A square *li* contains 3 *qing* 75 *mu*, so multiplying by that gives the number of *mu*.
+    hint: |
+      One *li* = 300 *bu*, so one square *li* = 90,000 square *bu*; divided by 240, that is 375 *mu*.

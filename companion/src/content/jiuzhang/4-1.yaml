@@ -1,0 +1,109 @@
+id: JZ.4.1
+title: Short width — the length of a field of given area, when the width has fractions
+paraphrase: |
+  Chapter 4, *Shao guang* 少廣, "short width", opens with the inverse of the field rule. Given the area
+  (1 *mu*, 240 square *bu*) and a width made of a whole and fractions, find the length. That is a
+  division by a sum of fractions. The problems take widths $1 + \tfrac12 + \tfrac13 + \cdots + \tfrac1n$
+  for $n = 2, 3, \dots, 12$, so the divisor grows slowly and the field gets ever shorter.
+
+  The rule clears all the fractions at once. Multiply everything by the last denominator, cancel what can
+  be cancelled, then multiply by the next denominator still present, and so on. In effect this finds a
+  common multiple of $1, 2, \dots, n$, often the least.
+
+parallels:
+  - id: VII.36
+    relation: related
+    note: |
+      The rule finds a number measured by every denominator, and for most problems the least such number:
+      60 for 2–5, 420 for 2–7, 2520 for 2–9. Euclid finds the least number measured by three given
+      numbers in VII.36 (two in VII.34), and his construction can be repeated for more.
+
+steps:
+  - classic: |
+      Short width —
+  - li: |
+      We respectfully note: a field of 1 *mu* is 1 *bu* wide and 240 *bu* long. Now we wish to cut off a
+      little of its length to add to its width; hence "short width".
+  - classic: |
+      the rule says: set out the whole *bu* and the denominators and numerators. Multiply all the numerators
+      and the whole *bu* by the lowest denominator,
+    hint: |
+      On the counting board the width is laid out in a column: the whole *bu* at the top, then $\tfrac12$,
+      $\tfrac13$, … downward. The "lowest" denominator is the last one in the column.
+  - li: |
+      We respectfully note: multiplying the whole *bu* by the denominator connects its parts; multiplying
+      the numerators by the denominator makes them uniform.
+  - classic: |
+      and divide each numerator by its own denominator, setting it out on the left. For those named as
+      connected, again multiply all the numerators, and all those already connected, by the [next]
+      denominator, connecting and making them the same; add them for the divisor.
+    explain:
+      fact: |
+        For $1 + \tfrac12 + \tfrac13 + \tfrac14$: multiply by 4, giving $4 + 2 + \tfrac43 + 1$; the $\tfrac43$
+        still has a denominator, so multiply all by 3, giving $12 + 6 + 4 + 3 = 25$. The divisor is 25,
+        and the whole *bu* has become 12 parts.
+  - li: |
+      We respectfully note: all the numerators are connected, so they can be added for the divisor. Nor is
+      it suitable to use the rule for adding fractions: the terms are especially many, and if one
+      multiplied [crosswise], the numbers would be extremely cumbersome. So this rule was made specially,
+      for economy.
+    hint: |
+      Cross-multiplication ([[JZ.1.4]]) would use the product of all the denominators, 479,001,600 for
+      $2, \dots, 12$, where 27,720 suffices.
+  - classic: |
+      Set out the number of *bu* sought, and multiply it by the accumulated parts of the whole *bu* for the
+      dividend.
+    hint: |
+      The area, 240 square *bu*, is multiplied by the same factor as the width (12 in the example above).
+  - liu: |
+      Here the width of the field is the divisor and the accumulated *bu* of the *mu* the dividend. When the
+      divisor has fractions, one should make the denominators the same and the numerators uniform,
+      multiply the divisor and the dividend by the common denominator, and add the uniform numerators into
+      the divisor. Now the denominators multiply the whole *bu* and the numerators; a numerator equal to its
+      denominator becomes one, and all are added into the whole divisor. So divisor and dividend are both
+      enlarged, and the meaning is the same. Therefore dividing the dividend by the divisor gives the length
+      in *bu*.
+    hint: |
+      Divisor and dividend are a pair of rates, and may both be scaled ([[JZ.1.8]]).
+    cites: [VII.17]
+  - classic: |
+      Divide the dividend by the divisor to get the length in *bu*.
+    modern: |
+      $\ell = \dfrac{240 \cdot L}{L\,(1 + \frac12 + \cdots + \frac1n)}$, with $L$ the common multiple.
+  - classic: |
+      Now there is a field 1 1/2 *bu* wide. To make a field of 1 *mu*, question: what is the length? Answer:
+      160 *bu*.
+  - classic: |
+      The rule says: below there is a half, that is 1/2. Take 1 as 2 and the half as 1; adding them gives 3,
+      for the divisor. Set out the field, 240 *bu*, and also multiply it by 2 (taking 1 as 2), for the
+      dividend. Divide the dividend by the divisor to get the length in *bu*.
+    modern: |
+      $\dfrac{240 \cdot 2}{3} = 160$.
+  - classic: |
+      Now there is a field 1 1/2 1/3 *bu* wide. To make a field of 1 *mu*, question: what is the length?
+      Answer: 130 10/11 *bu*.
+  - classic: |
+      The rule says: below there are thirds. Take 1 as 6, the half as 3, the third as 2; adding them gives 11,
+      for the divisor. Set out the field, 240 *bu*, and also multiply it by 6, for the dividend. Divide the
+      dividend by the divisor to get the length in *bu*.
+    modern: |
+      $\dfrac{240 \cdot 6}{11} = 130\tfrac{10}{11}$.
+  - classic: |
+      Now there is a field 1 1/2 1/3 1/4 *bu* wide. To make a field of 1 *mu*, question: what is the length?
+      Answer: 115 1/5 *bu*.
+  - classic: |
+      The rule says: below there are quarters. Take 1 as 12, the half as 6, the third as 4, the quarter as 3;
+      adding them gives 25, for the divisor. Set out the field, 240 *bu*, and also multiply it by 12, for the
+      dividend. Divide the dividend by the divisor to get the length in *bu*.
+    modern: |
+      $\dfrac{240 \cdot 12}{25} = 115\tfrac15$.
+  - classic: |
+      Now there is a field 1 1/2 1/3 1/4 1/5 *bu* wide. To make a field of 1 *mu*, question: what is the
+      length? Answer: 105 15/137 *bu*.
+  - classic: |
+      The rule says: below there are fifths. Take 1 as 60, the half as 30, the third as 20, the quarter as
+      15, the fifth as 12; adding them gives 137, for the divisor. Set out the field, 240 *bu*, and also
+      multiply it by 60, for the dividend. Divide the dividend by the divisor to get the length in *bu*.
+    modern: |
+      $\dfrac{240 \cdot 60}{137} = 105\tfrac{15}{137}$.
+    cites: [VII.36]

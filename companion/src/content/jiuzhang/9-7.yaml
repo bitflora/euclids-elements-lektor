@@ -1,0 +1,82 @@
+id: JZ.9.7
+title: The log in the wall — chord and depth give the diameter
+paraphrase: |
+  A round log is buried in a wall, size unknown. Sawing into it, a cut 1 *cun* deep makes a saw-path 1 *chi*
+  long. What is the diameter? The rule: half the saw-path squared, divided by the depth, plus the depth:
+  $\tfrac{5^2}{1} + 1 = 26$ *cun*.
+
+  Liu Hui fits it to the *gou-gu* pattern. The chord (10) is a *gou*, the diameter through one end of the chord
+  is the hypotenuse, and twice the depth is the difference of *gu* and hypotenuse. So $c + b = 100/2 = 50$
+  and $c = 26$. The rule halves everything, which comes to the same.
+
+parallels:
+  - id: III.35
+    relation: same
+    note: |
+      "If in a circle two straight lines cut one another, the rectangle contained by the segments of the one is
+      equal to the rectangle contained by the segments of the other." For the chord and the diameter at right
+      angles to it: $(\tfrac{c}{2})^2 = s(d - s)$, so $d = \tfrac{(c/2)^2}{s} + s$, which is the rule.
+  - id: III.31
+    relation: related
+    note: |
+      Liu's right triangle has the diameter as hypotenuse and the chord as a leg; its right angle is the angle
+      in a semicircle (III.31).
+  - id: III.3
+    relation: related
+    note: |
+      That the saw-path is bisected by the diameter perpendicular to it (the rule uses half of it) is III.3.
+
+diagram:
+  width: 320
+  height: 320
+  elements:
+    - "O;point;fixed;160,170;0;0"
+    - "T;point;fixed;160,40;black;black"
+    - "circ;circle;radius;O,T;0;0;black;0"
+    - "A;point;fixed;110,50;black;black"
+    - "B;point;fixed;210,50;black;black"
+    - "M;point;fixed;160,50;black;black"
+    - "X;point;fixed;110,290;black;black"
+    - "AB;line;connect;A,B;0;0;#9a3b2b"
+    - "MT;line;connect;M,T;0;0;#8a6d12"
+    - "AX;line;connect;A,X;0;0;#33587a"
+    - "BX;line;connect;B,X;0;0;black"
+  given: [T, circ, A, B, M, AB, MT]
+  caption: |
+    The saw-path {AB} = 10 *cun*, its depth {MT} = 1 *cun*. Liu's triangle: the chord {AB} as *gou*, the diameter
+    {BX} as hypotenuse, {AX} as *gu*. The hypotenuse exceeds the *gu* by twice the depth.
+
+steps:
+  - classic: |
+      Now there is a round log buried in a wall, its size unknown. Sawing it, at a depth of 1 *cun* the saw-path is
+      1 *chi* long. Question: what is the diameter? Answer: the log is 2 *chi* 6 *cun* across.
+    highlight: [AB, MT]
+  - classic: |
+      The rule says: multiply half the saw-path by itself,
+  - liu: |
+      This rule takes the saw-path of 1 *chi* as the *gou* and the log's diameter as the hypotenuse; the depth of
+      the cut, 1 *cun*, is half the difference of *gu* and hypotenuse. So the saw-path is halved too.
+    adds: [X, AX, BX]
+    highlight: [AB, BX, AX]
+    explain:
+      fact: |
+        $BX - AX = 2 \cdot MT$, since {AX} and the diameter through {M} are parallel chords and {AX} falls
+        short of the diameter by the depth at each end. Then $BX + AX = \dfrac{AB^2}{BX - AX} = \dfrac{100}{2} =
+        50$, and $BX = 26$. Halving the chord and the difference together gives $\dfrac{25}{1} + 1 = 26$
+        directly.
+    cites: [III.31]
+  - li: |
+      We respectfully note: the cut's depth of 1 *cun* is half the difference of *gu* and hypotenuse; where the
+      commentary says "the difference of *gu* and hypotenuse", it means the saw-path.
+    dispute: |
+      Li's correction is itself obscure; the point is that the depth is half the difference.
+  - classic: |
+      divide by the depth in *cun*, and add the depth in *cun*: that is the diameter of the log.
+    modern: |
+      $d = \dfrac{(c/2)^2}{s} + s = \dfrac{25}{1} + 1 = 26$ *cun*.
+    cites: [III.35]
+  - liu: |
+      Here too one adds the half. In the rule above, the distance from the foot should be halved; here all are
+      halved differences alike, so there is no need to halve again.
+    hint: |
+      Compare the rope ([[JZ.9.5]]): $c = \tfrac12\left(\tfrac{a^2}{d} + d\right)$. Here $a$ and $d$ are both halved already.

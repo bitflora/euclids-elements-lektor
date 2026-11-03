@@ -1,0 +1,47 @@
+id: JZ.9.5
+title: The rope on the post
+paraphrase: |
+  A rope hangs from the top of a post with 3 *chi* lying on the ground. Pulled taut and walked out, it
+  reaches the ground 8 *chi* from the foot of the post. How long is the rope? The distance from the foot
+  (8) is the *gou*, the rope the hypotenuse, the post the *gu*, and the slack (3) is $c - b$. By the gnomon,
+  $c + b = 64/3$, so $c = \tfrac12\left(\tfrac{64}{3} + 3\right) = 12\tfrac16$.
+
+parallels:
+  - id: II.6
+    relation: same
+    note: |
+      "The slack is the difference of *gu* and hypotenuse; dividing the trysquare area by it gives their sum":
+      $a^2 = (c - b)(c + b)$, Euclid's II.6, used to find $c + b$ by division.
+
+steps:
+  - classic: |
+      Now there is a standing post with a rope tied to its top; 3 *chi* of the rope lie on the ground. Pulling the
+      rope and walking back, at 8 *chi* from the foot the rope runs out. Question: how long is the rope? Answer:
+      1 *zhang* 2 1/6 *chi*.
+  - classic: |
+      The rule says: multiply the distance from the foot by itself,
+  - liu: |
+      Here the distance from the foot, 8 *chi*, is the *gou*, and the rope sought is the hypotenuse. "Pulled until
+      the rope runs out" is the same rule as the door opened from the threshold: from the *gou* and the
+      difference of *gu* and hypotenuse, find *gu* and hypotenuse. Multiplying the distance from the foot by
+      itself first lays out the trysquare area.
+    hint: |
+      The door problem is [[JZ.9.8]].
+  - classic: |
+      divide by the length on the ground,
+  - liu: |
+      The length on the ground is the difference of *gu* and hypotenuse; dividing the trysquare area by it
+      gives the sum of *gu* and hypotenuse.
+    modern: |
+      $c + b = \dfrac{a^2}{c - b} = \dfrac{64}{3}$.
+    cites: [II.6]
+  - classic: |
+      add the length on the ground to the result, and halve: that is the length of the rope.
+    modern: |
+      $c = \tfrac12\left(\tfrac{64}{3} + 3\right) = 12\tfrac16$.
+  - liu: |
+      If the numerator cannot be halved, double the denominator. Adding the difference to the sum makes twice
+      the rope's length, so halve it. Subtracting the difference from the sum and halving gives the height of
+      the post.
+    modern: |
+      $b = \tfrac12\left(\tfrac{64}{3} - 3\right) = 9\tfrac16$.

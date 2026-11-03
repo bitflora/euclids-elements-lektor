@@ -1,0 +1,157 @@
+id: JZ.9.9
+title: A door from its diagonal and the difference of its sides
+paraphrase: |
+  A door is 6 *chi* 8 *cun* taller than it is wide, and its diagonal is exactly 1 *zhang*. How tall and wide is
+  it? From $c$ and $b - a$: $\left(\tfrac{a + b}{2}\right)^2 = \tfrac12\left[c^2 - 2\left(\tfrac{b - a}{2}\right)^2\right]$, so
+  half the sum is found by a square root, and the sides by adding and subtracting half the difference.
+  Width 2 *chi* 8 *cun*, height 9 *chi* 6 *cun*.
+
+  Liu Hui explains it with Zhao Shuang's figure. The square on the hypotenuse is four red triangles and a
+  yellow square on the difference. The square on the sum is eight red triangles and the yellow square. So
+  $(a + b)^2 + (b - a)^2 = 2c^2$. He then digresses to the isosceles case, where the root cannot be found
+  exactly: "square 5, diagonal 7" is only an approximation, like "circumference 3, diameter 1".
+
+parallels:
+  - id: II.9
+    relation: same
+    note: |
+      "If a straight line be cut into equal and unequal segments, the squares on the unequal segments are double
+      of the square on the half and of the square on the straight line between the points of section." With
+      the unequal segments $a$ and $b$: $a^2 + b^2 = 2\left(\tfrac{a+b}{2}\right)^2 + 2\left(\tfrac{b-a}{2}\right)^2$.
+      Liu's "half the excess squared and doubled, and half the sum squared also doubled, together make the
+      hypotenuse area" is exactly II.9. Zhao Shuang uses the same identity in the Zhou bi ([[ZB.1.3]]).
+  - id: II.10
+    relation: related
+    note: |
+      The same identity for a line bisected and extended; in Liu's form, $(a + b)^2 + (b - a)^2 = 2c^2$.
+  - id: X.9
+    relation: related
+    note: |
+      "Square 5, diagonal 7, though not exact": $5^2 + 5^2 = 50$ is not a square, so the diagonal is not a whole
+      number of *chi*. Euclid proves more: the side and diagonal of a square are incommensurable, because
+      their squares (1 : 2) are not as a square number to a square number (X.9). Liu only notes that the root
+      "cannot be extracted".
+
+diagram:
+  width: 290
+  height: 290
+  elements:
+    - "E;point;fixed;20,20;0;0"
+    - "F;point;fixed;268,20;0;0"
+    - "G;point;fixed;268,268;0;0"
+    - "H;point;fixed;20,268;0;0"
+    - "P1;point;fixed;212,20;0;0"
+    - "P2;point;fixed;268,212;0;0"
+    - "P3;point;fixed;76,268;0;0"
+    - "P4;point;fixed;20,76;0;0"
+    - "Q1;point;fixed;164.78,50.10;0;0"
+    - "Q2;point;fixed;237.90,164.78;0;0"
+    - "Q3;point;fixed;123.22,237.90;0;0"
+    - "Q4;point;fixed;50.10,123.22;0;0"
+    - "outer;polygon;quadrilateral;E,F,G,H;0;0;#6b6253;0"
+    - "hyp;polygon;quadrilateral;P1,P2,P3,P4;0;0;black;0"
+    - "red1;polygon;triangle;P1,P2,Q1;0;0;#9a3b2b;#e8b9a9"
+    - "red2;polygon;triangle;P2,P3,Q2;0;0;#9a3b2b;#e8b9a9"
+    - "red3;polygon;triangle;P3,P4,Q3;0;0;#9a3b2b;#e8b9a9"
+    - "red4;polygon;triangle;P4,P1,Q4;0;0;#9a3b2b;#e8b9a9"
+    - "yellow;polygon;quadrilateral;Q1,Q2,Q3,Q4;0;0;#8a6d12;#f5e7b5"
+  given: [E, F, G, H, P1, P2, P3, P4, outer, hyp, red1, red2, red3, red4, yellow, Q1, Q2, Q3, Q4]
+  caption: |
+    Zhao Shuang's hypotenuse figure, drawn for this door: width 2.8, height 9.6, diagonal 10. The {square on the
+    diagonal|hyp} is four red triangles (each half the door, $\tfrac12 ab$) and the {yellow square|yellow} on the
+    difference $b - a$. The {outer square|outer}, on $a + b$, holds four more red triangles. So the outer square
+    is $2c^2 - (b - a)^2$.
+
+steps:
+  - classic: |
+      Now there is a door whose height exceeds its width by 6 *chi* 8 *cun*, and whose two corners are exactly 1
+      *zhang* apart. Question: what are the door's height and width? Answer: width 2 *chi* 8 *cun*; height 9
+      *chi* 6 *cun*.
+  - classic: |
+      The rule says: multiply 1 *zhang* by itself for the dividend. Halve the excess, multiply it by itself, double
+      it, subtract it from the dividend, and halve the remainder. Extract the square root; subtract half the
+      excess from the result: that is the door's width. Add half the excess: that is the door's height.
+    modern: |
+      $\tfrac{a + b}{2} = \sqrt{\tfrac12\left[c^2 - 2\left(\tfrac{b-a}{2}\right)^2\right]} = \sqrt{\tfrac12(10{,}000 - 2 \cdot
+      34^2)} = 62$ *cun*; width $62 - 34 = 28$, height $62 + 34 = 96$.
+    cites: [II.9]
+  - liu: |
+      Let the door's width be the *gou*, its height the *gu*, and the 1 *zhang* between the corners the
+      hypotenuse; the excess of height over width, 6 *chi* 8 *cun*, is the difference of *gou* and *gu*. Set it
+      out by the figure: the hypotenuse area is exactly 10,000 *cun*. Double it, subtract the square of the
+      difference of *gou* and *gu*, and extract the square root: the result is the sum of height and width.
+      Subtract the difference from the sum and halve it: that is the door's width; add the excess: that is the
+      door's height.
+    zh: 令戸廣爲句高爲股兩隅相去一丈爲弦高多於廣六尺八寸爲句股差按圖爲位弦幂適滿萬寸倍之減句股差幂開方除之其所得卽高廣并數以差減并而半之卽戸廣加相多之數卽戸高也
+    modern: |
+      $a + b = \sqrt{2c^2 - (b - a)^2} = \sqrt{20{,}000 - 4624} = 124$.
+  - liu: |
+      Now this rule first finds the half. 1 *zhang* multiplied by itself is four red areas and one yellow area.
+      Half the difference, multiplied by itself and doubled, is two quarters of the yellow area. Subtract it from
+      the dividend and halve the remainder: there are two red areas and a quarter of the yellow area. Of the
+      large square, this leaves out three quarters and is exactly a quarter. So extracting the square root gives
+      half the sum of height and width; subtracting half the difference gives the width, and adding gives the
+      door's height.
+    zh: 今此術先求其半一丈自乘爲朱幂四黃幂一半差自乘又倍之爲黃幂四分之二減實半其餘有朱幂二黃幂四分之一其於大方棄四分之三適得四分之一故開方除之得高廣并數之半減差半得廣加得戸高
+    highlight: [red1, red2, red3, red4, yellow, outer]
+    explain:
+      fact: |
+        $c^2 = 4\,\triangle + Y$ and $(a + b)^2 = 8\,\triangle + Y$, where $\triangle = \tfrac12 ab$ and $Y = (b-a)^2$. So
+        $\tfrac12\left(c^2 - \tfrac12 Y\right) = 2\,\triangle + \tfrac14 Y = \tfrac14 (a + b)^2$.
+  - liu: |
+      Further, by the areas of this figure: the sum of *gou* and *gu* multiplied by itself, with the square of the
+      difference added, makes two hypotenuse areas; halve it and extract the root to get the hypotenuse. Now,
+      doubling the hypotenuse area and subtracting the square of the difference finds the sum of *gou* and *gu*:
+      one first sees the hypotenuse, and then knows the *gou* and the *gu*.
+    zh: 又按此圖幂句股并自乘加差幂爲兩弦幂半之開方得弦今倍弦幂減差幂求句股并葢先見其弦然後知其句與股也
+    modern: |
+      $(a + b)^2 + (b - a)^2 = 2c^2$.
+    cites: [II.9, II.10]
+  - liu: |
+      When the *gou* and *gu* are exactly equal, their sum multiplied by itself makes two hypotenuse areas, each
+      a square. "First seeing the hypotenuse, then knowing *gou* and *gu*": doubling the hypotenuse area gives
+      the square of the sum when *gou* and *gu* are equal. Half the excess multiplied by itself and doubled, and
+      half the sum multiplied by itself and also doubled, together make the hypotenuse area.
+    zh: 句股適等者并而自乘卽爲兩弦幂皆各爲方先見其弦然後知其句與股者倍弦幂卽爲句股適等者并而自乘之幂半相多自乘倍之又半股并自乘亦倍之合爲弦幂
+    modern: |
+      $c^2 = 2\left(\tfrac{b - a}{2}\right)^2 + 2\left(\tfrac{a + b}{2}\right)^2$, exactly II.9.
+    dispute: |
+      半股并 ("half the *gu* sum") should read 半并, "half the sum".
+  - liu: |
+      When there is no difference, multiply the *gou* and the *gu* each by itself and add, for the dividend; or
+      multiply *gou* by *gu* and double, for the dividend: extracting the root of either gives the hypotenuse.
+      Halve the hypotenuse area for the dividend, and extracting the root gives the *gou* and *gu*. [The case
+      where] the *gu* is long and the *gou* short comes from the same source and divides into another stream.
+    zh: 其無差數者句股各自乘并之爲實與句股相乘倍之爲實皆開方得弦弦幂半之爲實開方卽得句股及股長句短同源而分流焉
+  - liu: |
+      Suppose the *gou* and the *gu* are each 5: the hypotenuse area is 50, and extracting its root gives 7 *chi*
+      and more, with 1 not used up. Suppose the hypotenuse is 10: its area is 100; halved, the *gou* and *gu*
+      areas are each 50, which again cannot be extracted. So it is said, "circle 3, diameter 1; square 5,
+      diagonal 7": though not exactly right, one can say they come close.
+    zh: 假令句股各五弦幂五十開方除之得七尺有餘一不盡假令弦十其幂有百半之爲句股二幂各得五十當亦不可開故曰圓三徑一方五斜七雖不正得盡理亦可言相近耳
+    hint: |
+      $7^2 = 49$, one short of 50. The saying "square 5, diagonal 7" ($\sqrt2 \approx 1.4$) is the square's
+      counterpart of "circumference 3, diameter 1".
+    cites: [X.9]
+  - liu: |
+      From the area of *gou* and *gu* combined and multiplied by itself: take the hypotenuse multiplied by itself
+      and doubled, two hypotenuse areas, and subtract [the first] from it; extract the root of the remainder: that
+      is the difference of *gou* and *gu*. Add the difference to the sum and halve: the *gu*; subtract the
+      difference from the sum and halve: the *gou*. *Gou*, *gu* and hypotenuse are the height, width and
+      diagonal; they come from this figure.
+    zh: 其句股合而自乘之幂令弦自乘倍之爲兩弦幂以減之其餘開方除之爲句股差加差於合而半之爲股減差於合而半之爲句股弦卽高廣袤其出此圖也
+    modern: |
+      $(b - a)^2 = 2c^2 - (a + b)^2$.
+  - liu: |
+      Doubling the hypotenuse to combine the width and the diagonal [?], the trysquare *gou* becomes an area, and
+      its width is the difference of *gou* and *gu*. The area of the trysquare *gou*, doubled, as the "following
+      divisor", extracted, is again the difference of *gou* and *gu*. Of the rest: subtract [the square of the
+      difference] from the hypotenuse area and halve the remainder; with the difference as the following
+      divisor, extract the square root: that is the *gou*.
+    modern: |
+      $a^2 + (b - a)\,a = ab = \tfrac12\left[c^2 - (b - a)^2\right]$, a quadratic in $a$ with "following divisor"
+      (linear coefficient) $b - a$: $a^2 + 68a = 2704$, so $a = 28$.
+    dispute: |
+      The first two sentences are corrupt and the translation is a guess. The last sentence gives a second
+      method: solve a quadratic by the root-extraction with a "following divisor" (*cong fa* 從法), the earliest
+      use in the book of that technique for an equation with a linear term.

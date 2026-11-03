@@ -1,0 +1,61 @@
+id: JZ.4.4
+title: The circumference of a circle of given area
+paraphrase: |
+  The inverse of the circle rule. If the area is $A$, then with π = 3, $C^2 = 12 A$: multiply the area
+  by 12 and extract the square root. Liu Hui gives the versions for π = 3.14: $C = \sqrt{314 A / 25}$
+  and $d = \sqrt{200 A / 157}$. Li Chunfeng's team gives $C = \sqrt{88 A / 7}$ for π = 22/7, and
+  explains the 12.
+
+parallels:
+  - id: XII.2
+    relation: related
+    note: |
+      The rule depends on the area being a fixed multiple of the square on the circumference (or on the
+      diameter), the same for all circles. That fixed ratio is Euclid's XII.2.
+
+steps:
+  - classic: |
+      Now there is an area of 1518 3/4 *bu*. Question: what is the circumference of the circle? Answer: 135
+      *bu*.
+    modern: |
+      $\sqrt{12 \cdot 1518\tfrac34} = \sqrt{18{,}225} = 135$.
+  - liu: |
+      By Hui's method the circumference should be 138 1/10 *bu*.
+  - li: |
+      We respectfully note: by the precise rate, the circumference is 138 9/50 *bu*.
+  - classic: |
+      Now there is an area of 300 *bu*. Question: what is the circumference of the circle? Answer: 60 *bu*.
+  - liu: |
+      By Hui's method the circumference should be 61 19/50 *bu*.
+  - li: |
+      We respectfully note: by the precise rate, the circumference is 61 41/100 *bu*.
+  - classic: |
+      The rule for extracting a circle says: set out the area, multiply by 12, and extract the square root:
+      that gives the circumference.
+    modern: |
+      $C = \sqrt{12 A}$, from $A = \dfrac{C^2}{12}$ ([[JZ.1.14]]).
+  - liu: |
+      This rule takes circumference 3, diameter 1 as the rates; it is the converse of the old rule for
+      circular fields. By Hui's method: multiply the area by 314 and divide by 25; extract the square root of
+      the result: that is the circumference. [Extract the square root: that is the diameter.] This, finding
+      the circumference from a given area, still errs slightly small. Multiply the area by 200 and divide by
+      157; extract the square root: that is the diameter, which still errs slightly large.
+    dispute: |
+      Li Chunfeng's team, in the next note, calls the six characters 開方除之卽徑 ("extract the square root:
+      that is the diameter") an interpolation in the text they had. The translation brackets them.
+  - li: |
+      We respectfully note: in this note's method by Hui for finding the circumference, the six characters
+      "extract the square root: that is the diameter" are not used; their presence in the present text is
+      superfluous. By the precise rate, multiply by 88 and divide by 7.
+    zh: 臣淳風等謹按此注於徽術求周之法其中不用開方除之卽徑六字今本有者衍賸也依密率八十八乘之七而一
+  - li: |
+      On the rates "circumference 3, diameter 1": suppose the circumference is 6 and the diameter 2. Half the
+      circumference times half the diameter gives an area of 3. The circumference multiplied by itself gives
+      36. Dividing by the area as the equal number, one circumference [squared] contains the number 12. The
+      area was originally the circumference multiplied by itself, multiplied by 1 and divided by 12, giving
+      the area 3. Multiplying by one does not enlarge, so dividing by 12 gives this area. Now, to return to
+      the origin, set out this area 3 and multiply by 12, restoring the number of the circumference
+      multiplied by itself. Whenever something multiplied by itself has its square root extracted, its
+      original number is restored; so extracting the square root gives the circumference.
+    modern: |
+      $A = \dfrac{C^2}{12} \iff C = \sqrt{12A}$; with $C = 6$: $A = 3$, and $\sqrt{36} = 6$.

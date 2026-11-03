@@ -1,0 +1,127 @@
+id: JZ.9.1
+title: Gou, gu and hypotenuse — the theorem, and Liu Hui's out-in proof
+paraphrase: |
+  Chapter 9, *Gou gu* 句股, is on right triangles. *Gou* 句 is the shorter leg, *gu* 股 the longer, and *xian*
+  弦 (the bowstring) the hypotenuse. It opens with the 3-4-5 triangle three times, solved for each side in
+  turn, and the general rule. Hypotenuse $= \sqrt{\text{gou}^2 + \text{gu}^2}$; either leg $= \sqrt{\text{xian}^2 - \text{other}^2}$.
+
+  Liu Hui proves it with a dissection: "The *gou* squared is the red square, the *gu* squared the blue square.
+  Let them move out and in to fill each other, each according to its kind; the rest stays unmoved. They
+  combine to form the area of the square on the hypotenuse." His figure is lost, and several
+  reconstructions have been proposed; the principle is that the two squares are cut into pieces that
+  exactly fill the third.
+
+parallels:
+  - id: I.47
+    relation: same
+    note: |
+      Euclid's theorem: the square on the hypotenuse equals the squares on the two legs. Euclid proves it by
+      dividing the square on the hypotenuse into two rectangles and showing each equal to a square on a leg,
+      using congruent triangles (I.4) and parallelograms on the same base (I.41). Liu cuts the two smaller
+      squares into pieces and fits them into the larger, as Zhao Shuang does in the Zhou bi ([[ZB.1.3]]).
+      The *Nine Chapters* takes the rule as given; Liu supplies the proof.
+  - id: I.48
+    relation: related
+    note: |
+      The converse, that a triangle whose sides satisfy the relation is right-angled, is not stated; the
+      *gou-gu* chapter always begins from a right angle.
+
+diagram:
+  width: 390
+  height: 330
+  elements:
+    - "C;point;fixed;160,230;black;black"
+    - "A;point;fixed;250,230;black;black"
+    - "B;point;fixed;160,110;black;black"
+    - "a1;point;fixed;250,320;0;0"
+    - "c1;point;fixed;160,320;0;0"
+    - "b1;point;fixed;40,110;0;0"
+    - "c2;point;fixed;40,230;0;0"
+    - "h1;point;fixed;280,20;0;0"
+    - "h2;point;fixed;370,140;0;0"
+    - "red;polygon;quadrilateral;C,A,a1,c1;0;0;#9a3b2b;#e8b9a9"
+    - "blue;polygon;quadrilateral;C,B,b1,c2;0;0;#33587a;#cfdde9"
+    - "hyp;polygon;quadrilateral;A,B,h1,h2;0;0;#8a6d12;#f5e7b5"
+    - "CA;line;connect;C,A;0;0;black"
+    - "CB;line;connect;C,B;0;0;black"
+    - "AB;line;connect;A,B;0;0;black"
+    - "angC;sector;angleMarker;C,A,B,12;0;0;black;0"
+  given: [C, A, B, CA, CB, AB, angC]
+  caption: |
+    The *gou* {CA} = 3, the *gu* {CB} = 4, the hypotenuse {AB} = 5. On them stand the {red square|red} (9), the
+    {blue square|blue} (16), and the {square on the hypotenuse|hyp} (25). Liu Hui's lost figure cut the red and
+    blue squares into pieces and moved them "out and in" to fill the third.
+
+steps:
+  - classic: |
+      Now there is a *gou* of 3 *chi* and a *gu* of 4 *chi*. Question: what is the hypotenuse? Answer: 5 *chi*.
+    highlight: [CA, CB, AB]
+  - classic: |
+      Now there is a hypotenuse of 5 *chi* and a *gou* of 3 *chi*. Question: what is the *gu*? Answer: 4 *chi*.
+  - classic: |
+      Now there is a *gu* of 4 *chi* and a hypotenuse of 5 *chi*. Question: what is the *gou*? Answer: 3 *chi*.
+  - classic: |
+      *Gou-gu* —
+  - liu: |
+      The short side is called the *gou*, the long side the *gu*, and [the side] joining them at their angle the
+      hypotenuse. The *gou* is shorter than its *gu*, and the *gu* shorter than its hypotenuse. Since this is to
+      be applied to all the rates, this rule is set out first, to show their source.
+    hint: |
+      *Gou* 句 is "hook" (the short arm of a carpenter's square), *gu* 股 "thigh", *xian* 弦 "bowstring". For
+      Liu the right triangle is the source of rates: similar right triangles give the proportions used in
+      surveying ([[JZ.9.15]], [[JZ.9.18]]).
+  - classic: |
+      the rule says: multiply the *gou* and the *gu* each by itself, add them, and extract the square root: that
+      is the hypotenuse.
+    modern: |
+      $c = \sqrt{a^2 + b^2}$.
+    adds: [a1, c1, b1, c2, h1, h2, red, blue, hyp]
+    highlight: [red, blue, hyp]
+    cites: [I.47]
+  - liu: |
+      The *gou* multiplied by itself is the red square, and the *gu* multiplied by itself the blue square. Let them
+      move out and in to fill each other, each according to its kind; the rest stays where it is, unmoved.
+      Together they form the area of the square on the hypotenuse; extracting its square root gives the
+      hypotenuse.
+    highlight: [red, blue, hyp]
+    hint: |
+      The out-in principle (*chu ru xiang bu* 出入相補): pieces cut from one figure and moved into another
+      keep their area.
+    explain:
+      did: |
+        Liu places the red and blue squares so that they overlap the square on the hypotenuse. The parts
+        of them inside it stay; the parts outside are cut off and moved into the gaps.
+      fact: |
+        $a^2 + b^2 = c^2$, by dissection: the two smaller squares are cut into pieces that exactly tile the
+        larger.
+      implicit: |
+        Which pieces go where. The figure is lost; modern reconstructions (by Gu Guanguang, Li Huang, and
+        others) cut the squares in two to five pieces. Each depends on the congruence of triangles, which
+        Liu, like Zhao Shuang, leaves to the eye.
+    dispute: |
+      Because the figure is lost, how Liu cut the squares is unknown. The phrase "each according to its kind"
+      (各從其類) suggests that red pieces fill red gaps and blue fill blue, a colour-coded figure.
+  - classic: |
+      Again, multiply the *gu* by itself and subtract it from the hypotenuse multiplied by itself; extract the
+      square root of the remainder: that is the *gou*.
+    modern: |
+      $a = \sqrt{c^2 - b^2}$.
+  - li: |
+      We respectfully note: this rule makes the *gou* and *gu* areas into the hypotenuse area. The *gou* square
+      lies inside, so the *gou* is shorter than the *gu*. Subtract the *gu* multiplied by itself from the
+      hypotenuse multiplied by itself, and the remainder is the *gou* area; so extracting its root gives the
+      *gou*.
+  - classic: |
+      Again, multiply the *gou* by itself and subtract it from the hypotenuse multiplied by itself; extract the
+      square root of the remainder: that is the *gu*.
+    modern: |
+      $b = \sqrt{c^2 - a^2}$.
+  - liu: |
+      The *gou* and *gu* areas together make the hypotenuse area. Take one of them away, and what remains can
+      be known.
+
+historical: |
+  The theorem appears in the Zhou bi ([[ZB.1.3]]) as the 3-4-5 case and in Zhao Shuang's commentary in
+  general. Here it is a rule, applied to 24 problems. Liu Hui and Zhao Shuang, both of the third century,
+  prove it by dissection; Euclid's proof, six centuries earlier, is by congruence and parallelograms. In
+  China it is still called the *gou-gu* theorem (勾股定理).

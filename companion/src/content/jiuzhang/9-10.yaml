@@ -1,0 +1,58 @@
+id: JZ.9.10
+title: The pole and the door
+paraphrase: |
+  A pole of unknown length and a door of unknown size: held across, the pole is 4 *chi* too long; held upright,
+  2 *chi* too long; held diagonally, it just fits. Find the door. With $c - b = 2$ and $c - a = 4$: $a + b - c =
+  \sqrt{2 \cdot 4 \cdot 2} = 4$. Width $4 + 2 = 6$, height $4 + 4 = 8$, diagonal $4 + 4 + 2 = 10$.
+
+  Liu Hui's figure puts the *gou* and *gu* squares together inside the hypotenuse square. They overlap in a
+  small yellow square whose side is $a + b - c$. They leave uncovered two rectangles, each $(c - a)(c - b)$.
+  Since the two squares together equal the large one, the overlap equals the uncovered part:
+  $(a + b - c)^2 = 2(c - a)(c - b)$.
+
+parallels:
+  - id: I.47
+    relation: same
+    note: |
+      The figure depends on $a^2 + b^2 = c^2$; the overlap must balance the gap.
+  - id: II.7
+    relation: related
+    note: |
+      The rearrangement of squares and rectangles on the parts of a line is the method of Book II. The identity
+      $(a + b - c)^2 = 2(c - a)(c - b)$ follows from I.47 by the expansions of II.4 and II.7.
+
+steps:
+  - classic: |
+      Now there is a door, its height and width unknown, and a pole, its length unknown. Held across, it does
+      not go through by 4 *chi*; held upright, it does not go through by 2 *chi*; held slanting, it just goes
+      through. Question: what are the door's height, width and diagonal? Answer: width 6 *chi*, height 8 *chi*,
+      diagonal 1 *zhang*.
+  - classic: |
+      The rule says: multiply the two amounts by which it fails, upright and across, double, and extract the
+      square root. Add the amount it fails upright to the result: that is the door's width.
+    modern: |
+      $a = \sqrt{2(c - a)(c - b)} + (c - b) = \sqrt{16} + 2 = 6$.
+  - liu: |
+      Here the door's width is the *gou*, its height the *gu*, and its diagonal the hypotenuse. In general, the
+      *gou* and *gu* areas together make the hypotenuse area, [one] as a trysquare on the outside or as a square
+      inside. To join them, take the outer trysquare and make it a square; then, from the *gou* square inside,
+      let it be the outside of the blue trysquare. It does not fill it: the yellow square fills this square. So
+      the edges at the two ends overlap at the corner, each with the difference of *gu* and hypotenuse as width
+      and the difference of *gou* and hypotenuse as length. So the two differences multiplied together and
+      doubled make the area of the yellow square; extract its root for the side of the yellow square. The blue
+      outside it also has the difference of *gu* and hypotenuse as its width, so adding the difference of *gu*
+      and hypotenuse to it gives the *gou*.
+    explain:
+      fact: |
+        Place the *gu* square and the *gou* square in opposite corners of the hypotenuse square. They overlap
+        in a square of side $a + b - c$ and leave two rectangles $(c - a) \times (c - b)$ uncovered. Since
+        $a^2 + b^2 = c^2$, overlap = uncovered: $(a + b - c)^2 = 2(c - a)(c - b)$.
+    dispute: |
+      Liu's description of the figure is compressed, and its colours are hard to follow without it. The
+      reconstruction above is the standard one.
+    cites: [I.47]
+  - classic: |
+      Add the amount it fails across: that is the door's height. Add both amounts: that gives the door's
+      diagonal.
+    modern: |
+      $b = 4 + 4 = 8$, $\;c = 4 + 4 + 2 = 10$.

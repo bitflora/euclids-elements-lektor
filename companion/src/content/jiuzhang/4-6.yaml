@@ -1,0 +1,382 @@
+id: JZ.4.6
+title: The sphere — Liu Hui's double umbrella and Zu Geng's proof
+paraphrase: |
+  The classic gives the diameter of a sphere of volume $V$ as $d = \sqrt[3]{16V/9}$; that is,
+  $V = \tfrac{9}{16} d^3$. Liu Hui explains how this was reached. With π = 3, a circle is $\tfrac34$ of its
+  square, so a cylinder is $\tfrac34$ of its cube. Someone assumed the sphere is likewise $\tfrac34$ of its
+  cylinder, which gives $\tfrac{9}{16}$.
+
+  Liu shows the assumption is false. Cut a cube twice with cylinders at right angles, and what is left is
+  a solid he names the *mouhe fanggai* 牟合方蓋, the "double square umbrella" (now the Steinmetz solid).
+  Every horizontal section of the sphere is a circle inscribed in the square section of the umbrella. So
+  it is the umbrella, not the cylinder, that stands to the sphere as square to circle. But he could not find
+  the umbrella's volume, and left it, in one of the most famous passages of Chinese mathematics, "to wait
+  for one who can explain it".
+
+  Two centuries later Zu Geng 祖暅 (son of Zu Chongzhi) did. Li Chunfeng's note preserves his proof. One
+  eighth of the umbrella sits in a small cube; the rest of the cube has, at every height $h$, a section of
+  area $h^2$, the same as an upside-down pyramid (*yangma*). "If the areas at every height are the same,
+  the volumes cannot differ": the remainder equals the pyramid, a third of the cube. So the umbrella is
+  $\tfrac23$ of the cube on the diameter, and the sphere is $\tfrac{\pi}{4} \cdot \tfrac23 d^3 = \tfrac{\pi}{6}
+  d^3$.
+
+parallels:
+  - id: XII.18
+    relation: same
+    note: |
+      "Spheres are to one another in the triplicate ratio of their respective diameters." The rule
+      $V = k\, d^3$ presupposes this. Euclid proves the ratio by exhaustion but never finds $k$. Zu Geng
+      finds it: $k = \pi/6$, the result of Archimedes' *On the Sphere and Cylinder* (sphere = $\tfrac23$ of
+      its cylinder).
+  - id: XII.7
+    relation: same
+    note: |
+      Zu Geng's proof ends on "the *yangma* is a third of the cube": a pyramid is a third of the prism
+      with the same base and height (the porism to XII.7). Liu Hui proves it for the *yangma* in
+      [[JZ.5.8]].
+  - id: XII.2
+    relation: related
+    note: |
+      Each horizontal section of the sphere is a circle inscribed in the square section of the umbrella,
+      so their areas stand in the fixed ratio of circle to square (XII.2, with Liu's $\tfrac{\pi}{4}$). Zu
+      Geng's principle then carries the ratio of the sections over to the solids.
+  - id: XII.10
+    relation: related
+    note: |
+      Euclid compares cones and cylinders by exhaustion, never by sections. Zu Geng's principle (in
+      Europe, Cavalieri's, 1635) replaces his double contradiction by a direct comparison: solids whose
+      sections at every height are equal have equal volumes.
+
+diagram:
+  width: 300
+  height: 300
+  elements:
+    - "A;point;fixed;40,260;black;black"
+    - "B;point;fixed;260,260;black;black"
+    - "C;point;fixed;260,40;black;black"
+    - "D;point;fixed;40,40;black;black"
+    - "E;point;fixed;216,260;0;0"
+    - "F;point;fixed;216,84;0;0"
+    - "G;point;fixed;40,84;0;0"
+    - "sec;polygon;quadrilateral;A,B,C,D;0;0;#6b6253;#f3d6cd"
+    - "inner;polygon;quadrilateral;A,E,F,G;0;0;#33587a;#cfdde9"
+    - "AB;line;connect;A,B;0;0;black"
+  given: [A, B, C, D, sec, AB]
+  caption: |
+    A horizontal section, at height $h$ above the centre, through the small cube of side $r$ ({AB}) that
+    holds one eighth of the umbrella. The section of the cube is the square {ABCD|sec}, area $r^2$. The section of
+    the inner block is the blue square {AEFG|inner}. Its side is
+    $\sqrt{r^2 - h^2}$, by *gou-gu* with the radius $r$ as hypotenuse and $h$ as *gou*. What is left, the
+    pink gnomon, has area $h^2$: the section of an upside-down pyramid at the same height.
+
+steps:
+  - classic: |
+      Now there is a volume of 4500 *chi*.
+  - liu: |
+      These too are cubic *chi*.
+  - classic: |
+      Question: what is the diameter of the sphere? Answer: 20 *chi*.
+    modern: |
+      $\tfrac{9}{16} \cdot 20^3 = 4500$.
+  - liu: |
+      By the precise rate, a sphere of diameter 20 *chi* has a volume of 4190 10/21 *chi*.
+    modern: |
+      $\tfrac{11}{21} \cdot 20^3 = 4190\tfrac{10}{21}$, using Zu Geng's $V = \tfrac{11}{21} d^3$ (π = 22/7).
+    dispute: |
+      The text reads "diameter 28 *chi*" (二十八尺); the volume given fits 20, so 八 is an intrusion. Since the
+      note uses Zu Chongzhi's "precise rate", it cannot be Liu Hui's, and is usually ascribed to Li Chunfeng's
+      team.
+  - classic: |
+      Again there is a volume of 1,644,866,437,500 *chi*. Question: what is the diameter of the sphere? Answer:
+      14,300 *chi*.
+  - liu: |
+      By the precise rate, the diameter is 14,643 3/4 *chi*.
+  - classic: |
+      The rule for extracting a sphere says: set out the volume in *chi*, multiply by 16, and divide by 9;
+      extract the cube root of the result: that is the diameter of the ball.
+    modern: |
+      $d = \sqrt[3]{\tfrac{16}{9} V}$, from $V = \tfrac{9}{16} d^3$.
+    cites: [XII.18]
+  - liu: |
+      A "standing circle" is a ball. Those who made the rule presumably relied on the rates "circumference 3,
+      diameter 1": the circle's area is three quarters of the square's, and the cylinder likewise three
+      quarters of the cube. They further took the cylinder as the square rate, 12, and the ball as the round
+      rate, 9, so that the ball is three quarters of the cylinder. Squaring 4 gives 16, squaring 3 gives 9; so
+      the ball is 9/16 of the cube. So multiplying the volume by 16 and dividing by 9 gives the volume of the
+      cube; the ball's diameter equals the cube's side, so extracting the cube root gives the diameter.
+    zh: 立圓卽丸也爲術者蓋依周三徑一之率令圓冪居方冪四分之三圓囷居立方亦四分之三更令圓囷爲方率十二爲丸率九丸居圓囷又四分之三也置四分自乘得十六三分自乘得九故丸居立方十六分之九也故以十六乘積九而一得立方之積丸徑與立方等故開立方而除得徑也
+    modern: |
+      $\text{cylinder} = \tfrac34 d^3$, and (wrongly) $\text{sphere} = \tfrac34 \cdot \text{cylinder} = \tfrac{9}{16} d^3$.
+  - liu: |
+      But this idea is wrong. How can it be shown? Take eight cubic blocks, each a cube of 1 *cun*, and put
+      them together into a cube of 2 *cun*. Cut it round [with a compass] into a cylinder 2 *cun* across and
+      2 *cun* high; then cut it round again crosswise. Its shape then resembles a double square umbrella. The
+      eight blocks each look like a *yangma*, rounded.
+    zh: 然此意非也何以驗之取立方棊八枚皆令立方一寸積之爲立方二寸規之爲圓囷徑二寸高二寸又復橫規之則其形有似牟合方蓋矣八棊皆似陽馬圓然也
+    hint: |
+      Two cylinders inscribed in one cube with axes at right angles; their common part is the "double square
+      umbrella" (*mouhe fanggai* 牟合方蓋). It is as if two square umbrellas were joined rim to rim. Each
+      eighth, in one small cube, has a curved *yangma* shape: a square base, an apex over one corner.
+  - liu: |
+      Now, the joined umbrella is the square rate, and the ball inside it the round rate. Reasoning thus, is
+      it not wrong to call the cylinder the square rate? Taking "circumference 3, diameter 1" as the round
+      rate, the circle's area is too small; taking the cylinder as the square rate, the ball's volume is too
+      large. They compensate each other, so the ball's rate of 9 to 16 happens to come near the truth; but
+      the ball is still too large.
+    zh: 按合蓋者方率也丸居其中卽圓率也推此言之謂夫圓囷爲方率豈不闕哉以周三徑一爲圓率則圓冪傷少令圓囷爲方率則丸積傷多互相通補是以丸與十六之率偶與實相近而丸猶傷多耳
+    explain:
+      fact: |
+        Every horizontal section of the sphere is a circle; the same section of the umbrella is the square
+        circumscribing it. So sphere : umbrella = circle : square, at every height, and hence for the whole.
+        Cylinder sections are circles too, not squares, so the cylinder cannot play the square's part.
+      follows: |
+        With the true values, sphere $= \tfrac{\pi}{6} d^3 \approx 0.5236\, d^3$; the classic's $\tfrac{9}{16}
+        = 0.5625$ is too large, as Liu says. The two errors (π = 3, and the cylinder in place of the
+        umbrella) partly cancel.
+    cites: [XII.2]
+  - liu: |
+      Look at what is inside the cube and outside the joined umbrella: although it diminishes gradually, its
+      amount cannot be pinned down. Split and joined, all bound together, the square and the round
+      intertwine; thick and thin are strangely interlaced, and it cannot be made regular. I wanted to use my
+      rough ideas of the shapes to set out the meaning, but feared to lose the right principle. I dare not
+      do other than leave the doubt open, to wait for one who can explain it.
+    zh: 觀立方之內合蓋之外雖衰殺有漸而多少不掩判合總結方圓相纏濃纖詭互不可等正欲陋形措意懼失正理敢不闕疑以俟能言者
+    hint: |
+      Liu's admission. He knew that the sphere is $\tfrac{\pi}{4}$ of the umbrella but not the umbrella's
+      volume. The difficulty lay in the region between the umbrella and the cube; Zu Geng solved it two
+      centuries later by looking at exactly that region (below).
+  - liu: |
+      A cube of gold 1 *cun* on a side weighs 16 *liang*; a gold ball 1 *cun* across weighs 9 *liang*. The
+      rate comes from this, but it has never been verified. The *Kaogong ji* of the *Offices of Zhou* says:
+      "The Li clan made the measures: they refined the metal and tin until it lost no more weight; when it
+      lost no more, they weighed it; having weighed it, they levelled it; having levelled it, they measured
+      it." This says that only when the metal is refined to the utmost and then divided can it serve for a
+      rate.
+    zh: 黃金方寸重十六兩金丸徑寸重九兩率生於此未曾驗也周官考工記㮚氏爲量改煎金錫則不耗不耗然後權之權之然後凖之凖之然後量之言錬金使極精而後分之則可以爲率也
+    hint: |
+      The 9 : 16 was perhaps empirical, from weighing a ball and a cube of gold. Liu doubts the
+      experiment could be precise enough.
+  - liu: |
+      Multiply the ball's diameter by itself, divide by 3, and extract the square root: that is the cube inside
+      the ball.
+    zh: 令丸徑自乘三而一開方除之卽丸中之立方也
+    modern: |
+      $s = d/\sqrt3$ for the cube inscribed in a sphere of diameter $d$.
+  - liu: |
+      Suppose the cube inside the ball is 5 *chi*. Take 5 *chi* as the *gou*; the *gou* squared, 25 *chi*,
+      doubled gives 50 *chi* as the *gu*-area: this is the hypotenuse of a plane square of 5 *chi*. Take this
+      hypotenuse-area as the *gu*, and again 5 *chi* as the *gou*; adding the areas of *gou* and *gu* gives
+      75 *chi*: that is the area of the great hypotenuse. Extract its square root, and the great hypotenuse
+      is known. The great hypotenuse is the long diagonal of the middle cube, and that diagonal is the ball's
+      diameter.
+    zh: 假令丸中立方五尺五尺爲句句自乘冪二十五尺倍之得五十尺以爲股冪謂平面方五尺之弦也以此弦冪爲股亦以五尺爲句并句股冪得七十五尺是爲大弦冪開方除之則大弦可知也大弦則中立方之長邪邪卽丸徑也
+    explain:
+      fact: |
+        The face diagonal of a cube of side 5 is $\sqrt{50}$; the space diagonal, with the face diagonal
+        and an edge as legs, is $\sqrt{50 + 25} = \sqrt{75}$. A cube inscribed in a sphere has its space
+        diagonal as a diameter.
+    cites: [I.47]
+  - liu: |
+      So the square of the middle cube's side is a third of the square of the ball's diameter.
+    zh: 故中立方自乘之冪於丸徑自乘之冪三分之一也
+  - liu: |
+      Multiplying the great hypotenuse by its area is the volume of the cube outside the ball. The great
+      hypotenuse's area does not extract exactly, so cube its area, 75, and name it as a side: the outer
+      cube's volume is the side of 421,875 *chi*.
+    zh: 令大弦還乘其冪卽丸外立方之積也大弦冪開之不盡令其冪七十五再自乘之爲面命得外立方積四十二萬一千八百七十五尺之面
+    modern: |
+      $(\sqrt{75})^3 = \sqrt{75^3} = \sqrt{421{,}875}$.
+  - liu: |
+      Again, multiply the middle cube, 5 *chi*, by itself and by its side, getting a volume of 125 *chi*;
+      squaring 125 and naming it as a side, the volume is the side of 15,625 *chi*.
+    zh: 又令中立方五尺自乘又以方乘之得積一百二十五尺一百二十五尺自乘爲面命得積一萬五千六百二十五尺之面
+  - liu: |
+      Reduce both by 625: the outer cube's volume is the side of 675 *chi*, the middle cube's the side of 25
+      *chi*.
+    zh: 皆以六百二十五約之外立方積六百七十五尺之面中立方積二十五尺之面也
+    modern: |
+      Outer cube : inner cube $= \sqrt{675} : \sqrt{25} = \sqrt{27} : 1$.
+  - liu: |
+      Zhang Heng's calculations call the cube a "solid" (*zhi*) and the sphere a "round" (*hun*). Heng says
+      that, of the solids outside and inside the round, the side of 675 *chi*, its square root falling short
+      of one more, is called an outer solid of volume 26; the inner round, the side of 25, is called a volume
+      of 5.
+    zh: 張衡算又謂立方爲質立圓爲渾衡言質之與中外之渾六百七十五尺之面開方除之不足一謂外質積二十六也內渾二十五之面謂積五尺也
+    hint: |
+      Zhang Heng 張衡 (78–139), astronomer and poet, inventor of the seismoscope. His *Suan wang lun* 算罔論,
+      now lost, apparently gave rules for the sphere. $\sqrt{675} \approx 25.98$, rounded up to 26.
+    dispute: |
+      The passage is corrupt and its terms shift; editors disagree over which "solid" and which "round" are
+      meant at each point. The translation follows the general sense: Zhang Heng compared the sphere with the
+      cubes inscribed in it and circumscribed about it.
+  - liu: |
+      Now I, Hui, have the solid denote the middle round, and the round again denote the solid; so the rate of
+      the two solids is like Heng's rate of the two rounds. Heng presumably first had the rate of the two
+      solids, and inferred from it to state the rate of the rounds.
+    zh: 今徽令質言中渾渾又言質則二質相與之率猶衡二渾相與之率也衡蓋亦先二質之率推以言渾之率也
+  - liu: |
+      Heng further says: the solid is the side of 64, the round the side of 25; the solid again calls the
+      round 5/8 of the solid. He also says: the square is the side of 8, the circle the side of 5. Inferring
+      from circle to round, one knows that he too took the cylinder as the square rate and the sphere as the
+      round rate. He is far off.
+    zh: 衡又言質六十四之面渾二十五之面質復言渾謂居質八分之五也又云方八之面圓六之面圓渾相推知其復以圓囷爲方率渾爲圓率也失之遠矣
+    dispute: |
+      The text has "the circle the side of 6" (圓六之面); Liu's later restatement ("the circle's perimeter
+      rate the side of 5") shows 六 is an error for 五.
+    explain:
+      fact: |
+        Zhang Heng's circle : square $= \sqrt5 : \sqrt8$ makes $\pi = 4\sqrt{5/8} = \sqrt{10} \approx 3.162$;
+        his sphere : cube $= \sqrt{25} : \sqrt{64} = 5 : 8$ makes the sphere $\tfrac58 d^3 = 0.625\, d^3$, worse
+        than the classic's.
+  - liu: |
+      Heng's account aims, naturally enough, to harmonise with his doctrine of yin and yang, odd and even,
+      without regard to accuracy. Though it has fine words, it confuses the way and destroys the meaning; it is
+      faulty.
+    zh: 衡說之自然欲恊其陰陽奇耦之說而不顧疎密矣雖有文辭斯亂道破義病也
+  - liu: |
+      Set out the outer solid's volume, 26; multiply by 9 and divide by 16, getting a volume of 14 5/8 *chi*:
+      that is the round inside the solid. Multiply the whole by the denominator and add in the numerator,
+      getting 117. Set out the inner solid's volume, 5, and multiply by the denominator, getting 40. So the
+      solid is 40/117 of the round, and the round rate is still too large.
+    zh: 置外質積二十六以九乘之十六而一得積一十四尺八分之五卽質中之渾也以分母乘全內子得一百一十七又置內質積五以分母乘之得四十是爲質居渾一百一十七分之四十而渾率猶爲傷多也
+    explain:
+      fact: |
+        A test of the classic's rule. With the outer cube 26, the rule gives the sphere $\tfrac{9}{16} \cdot 26 =
+        14\tfrac58$; the inscribed cube is 5, so inscribed cube : sphere $= 40 : 117 \approx 0.342$. The true
+        ratio is $\tfrac{2}{\pi\sqrt3} \approx 0.368$: the rule's sphere is too large.
+  - liu: |
+      Suppose a square of 2 *chi*; its four sides together make 8 *chi*, called the square's perimeter. In it,
+      let the diameter of the circle equal the square, also 2 *chi*. Half the ball's diameter times half the
+      circle's circumference is the circle's area; half the square times half the square's perimeter is the
+      square's area. So the square's perimeter is the rate of the square's area, and the circle's
+      circumference is the rate of the circle's area.
+    zh: 假令方二尺方四面并得八尺也謂之方周其中令圓徑與方等亦二尺也丸半徑以乘圓周之半卽圓冪也半方以乘方周之半卽方冪也然則方周知方冪之率也圓周知圓冪之率也
+    hint: |
+      Circle and square on the same diameter have areas in the ratio of their perimeters.
+  - liu: |
+      By Heng's method, the square's perimeter rate is the side of 8 and the circle's circumference rate the
+      side of 5. Let the square's perimeter be the side of 64 *chi*; then the circle's circumference is the
+      side of 40 *chi*. Again, let the diameter be 1 *chi*; the square's perimeter, 4 *chi*, multiplied by
+      itself, gives the side of 16 *chi*; then the circle's circumference rate is the side of 10, and the
+      diameter rate the side of 1. Heng too thought the rates "circumference 3, diameter 1" wrong, and so
+      wrote this method; but he increases the circumference too much, beyond the truth.
+    dispute: |
+      The text has "the side of 12" (十二之面) for the circumference; $16 \cdot \tfrac58 = 10$ requires 十, and
+      most editors emend.
+    modern: |
+      $\pi = \sqrt{10} \approx 3.162$.
+  - li: |
+      We respectfully note: Zu Gengzhi said that Liu Hui and Zhang Heng both took the cylinder as the square
+      rate and the ball as the round rate, and so he set up a new method. Zu Gengzhi's rule for extracting a
+      sphere says: multiply the volume by 21 and divide by 11; extract the cube root: that is the diameter of
+      the sphere.
+    zh: 臣淳風等謹按祖暅之謂劉徽張衡二人皆以圓囷爲方率丸爲圓率乃設新法祖暅之開立圓術曰以二十一乘積十一而一開立方除之卽立圓徑
+    hint: |
+      Zu Geng 祖暅 (Zu Gengzhi 祖暅之), son of Zu Chongzhi, active about 500–525. His proof is known only
+      from this note.
+    modern: |
+      $V = \tfrac{11}{21} d^3 = \tfrac{\pi}{6} d^3$ with π = 22/7.
+  - li: |
+      What is its idea? Take one cubic block. Set a pivot upright at its lower left rear corner, and cut it
+      round with the compass, removing its upper right edge; then put it together again and cut it round
+      crosswise, removing its upper front edge and right front edge. So the cubic block is divided into four.
+      The one inside the compass cuts is called the inner block; the three outside are called the outer
+      blocks.
+    zh: 其意何也取立方棊一枚令立樞於左後之下隅從規去其右上之亷又合而横規之去其前上之亷右前之亷於是立方之棊分而爲四規內棊一謂之內棊規外棊三謂之外棊
+    hint: |
+      A cube of side $r$ (the radius) is cut by two quarter-cylinders of radius $r$, with axes along two
+      edges at right angles. The "inner block" inside both is one eighth of the double umbrella.
+  - li: |
+      Put the four blocks together again and cut them across horizontally. In *gou-gu* terms: let the
+      remaining height be the *gou*, the side of the inner block's section the *gu*, and the side of the
+      original square the hypotenuse. By the *gou-gu* rule, the *gou*-area subtracted from the
+      hypotenuse-area leaves the *gu*-area. So if the remaining height, multiplied by itself, is subtracted
+      from the area of the original square, the remainder is the area of the inner block's section. The area
+      of the original square is the section of all four blocks; so the remaining height, multiplied by itself,
+      is the section of the three outer blocks. Whatever the height, it is always so.
+    zh: 規更合四棊復橫斷之以句股言之令餘高爲句內棊斷上方爲股本方之數其弦也句股之法以句冪減弦冪則餘爲股冪若令餘高自乘減本方之冪餘卽內減棊斷上方之冪也本方之冪卽外四棊之斷上冪然則餘高自乘卽外三棊之斷上冪矣不問高卑勢皆然也
+    adds: [E, F, G, inner]
+    highlight: [inner, sec]
+    explain:
+      fact: |
+        At height $h$, the inner block's section is a square of side $\sqrt{r^2 - h^2}$ (*gou-gu* with
+        hypotenuse $r$), area $r^2 - h^2$. The cube's section is $r^2$; so the three outer blocks together
+        have section $h^2$, at every height.
+    cites: [I.47]
+  - li: |
+      Indeed there are things that reach the same end by different roads; so one reaches far to extend by
+      analogy, and borrows comparisons to analyse the subtle.
+    zh: 然固有所歸同而塗殊者爾而乃控遠以演類借况以析㣲
+  - li: |
+      Consider a *yangma* whose square side and height are equal. Set it upright and cut it across, removing
+      the top: then the height multiplied by itself equals the area of the section too.
+    zh: 按陽馬方高數參等者列而立之横截去上則高自乘與斷上冪數亦等焉
+    hint: |
+      A pyramid with a square base of side $r$, height $r$, apex over one corner, stood on its apex: at height
+      $h$ its section is a square of side $h$.
+  - li: |
+      Now, when blocks are stacked to make volumes, if the areas at every height are the same, the volumes
+      cannot differ.
+    zh: 夫疊棊成立積緣冪勢旣同則積不容異
+    hint: |
+      "緣冪勢既同，則積不容異": Zu Geng's principle, Cavalieri's in Europe (1635). Two solids whose sections at
+      every height have equal areas have equal volumes.
+    explain:
+      justification: |
+        Neither Zu nor Cavalieri proves it; it is taken as evident, as the image of stacked blocks (or sheets)
+        suggests. In modern terms it follows from writing the volume as the integral of the section area.
+  - li: |
+      Seen this way, the three outer blocks outside the compass cuts, squeezed together into one, are one
+      *yangma*. So when the cube is divided in three, the *yangma* is one part and the inner block two, as can
+      be known.
+    zh: 由此觀之規之外三棊旁蹙爲一卽一陽馬也三分立方則陽馬居一內棊居二可知矣
+    explain:
+      fact: |
+        Outer blocks = *yangma* = $\tfrac13 r^3$ ([[JZ.5.8]]); so the inner block is $\tfrac23 r^3$.
+    cites: [XII.7]
+  - li: |
+      Put eight small cubes together to make one large cube, and eight inner blocks to make one joined
+      umbrella. The inner block is two thirds of the small cube, so the joined umbrella is two thirds of the
+      large cube. This is clearly verified.
+    zh: 合八小方成一大方合八內棊成一合蓋內棊居小方三分之二則合蓋居立方亦三分之二較然驗矣
+    modern: |
+      $\text{umbrella} = \tfrac23 d^3$.
+  - li: |
+      Set out two thirds, multiply by the circle-area rate 3, and divide by the square-area rate 4; reduce and
+      fix it as the rate of the ball. So it is said that the ball is half of the cube.
+    zh: 置三分之二以圓冪率三乘之如方冪率四而一約而定之以爲丸率故曰丸居立方三分之一也
+    modern: |
+      $\text{sphere} = \tfrac{\pi}{4} \cdot \tfrac23 d^3 = \tfrac{\pi}{6} d^3$; with π = 3, $\tfrac12 d^3$.
+    dispute: |
+      The text reads "a third of the cube" (三分之一); the calculation, $\tfrac23 \cdot \tfrac34 = \tfrac12$, requires
+      "half" (二分之一), and editors emend.
+    cites: [XII.2]
+  - li: |
+      With the numbers precise, the mind is also enlightened. Zhang Heng imitated the old and left a
+      laughing-stock to later ages; Liu Hui followed the old and had no leisure to examine anew. Was it so
+      difficult? Or was it rather that they had not thought of it?
+    zh: 等數旣密心亦昭晰張衡放舊貽哂於後劉徽循故未暇校新夫豈難哉抑未之思也
+  - li: |
+      By the precise rate, the volume of this sphere is originally the diameter cubed, multiplied by 11 and
+      divided by 21; that reduces it to this volume. Now, to find the original, multiply by 21 and divide by
+      11. Whenever something is cubed, extracting the cube root restores the original number; so extracting
+      the cube root gives the diameter of the ball.
+    modern: |
+      $d = \sqrt[3]{\tfrac{21}{11} V}$.
+
+commentary: |
+  Zu Geng's argument, in modern terms. In the cube $0 \le x, y, z \le r$, the inner block is
+  $\{x^2 + z^2 \le r^2,\; y^2 + z^2 \le r^2\}$. At height $z$ its section is the square $[0, \sqrt{r^2 - z^2}]^2$,
+  of area $r^2 - z^2$, so the rest of the cube has section $z^2$, which is the section at height $z$ of a
+  pyramid of height $r$ on a square base of side $r$, standing on its apex. Equal sections, equal volumes:
+  rest $= \tfrac13 r^3$, inner block $= \tfrac23 r^3$, umbrella $= \tfrac{16}{3} r^3$. The sphere's sections
+  are the circles inscribed in the umbrella's squares, so sphere $= \tfrac{\pi}{4} \cdot \tfrac{16}{3} r^3 =
+  \tfrac43 \pi r^3$.
+
+  Archimedes found the same volume about 750 years earlier, also by comparing sections (in the *Method*,
+  balancing slices on a lever), then proved it by exhaustion. Euclid's Book XII stops at the ratio (XII.18).
+
+historical: |
+  Liu Hui's "leave the doubt open, to wait for one who can explain it" (闕疑以俟能言者) has become proverbial
+  for intellectual honesty. The *mouhe fanggai* was rediscovered in the West as the Steinmetz solid. Zu
+  Geng's principle (祖暅原理) is taught in Chinese schools under his name.

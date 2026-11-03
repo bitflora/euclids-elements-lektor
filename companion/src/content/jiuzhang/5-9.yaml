@@ -1,0 +1,36 @@
+id: JZ.5.9
+title: The bienao — a sixth of the box
+paraphrase: |
+  A *bienao* 鱉臑 is a tetrahedron with three right angles: its four faces are right triangles. The classic:
+  width × length × height ÷ 6. Liu Hui: it is half a *yangma*, so a sixth of its box.
+
+parallels:
+  - id: XII.7
+    relation: same
+    note: |
+      Euclid's XII.7 divides a triangular prism (a *qiandu*) into three pyramids equal to one another. Liu's
+      *qiandu* divides into a *yangma*, which is two tetrahedra, and a *bienao*; [[JZ.5.8]] shows all three
+      equal. Each is a sixth of the box.
+
+steps:
+  - classic: |
+      Now there is a *bienao* 5 *chi* wide at the base with no length, and 4 *chi* long at the top with no width,
+      7 *chi* high. Question: what is its volume? Answer: 23 1/3 *chi*.
+    hint: |
+      The description fixes the shape: the bottom edge (width 5) and the top edge (length 4) are at right
+      angles, one above the other, 7 apart.
+    modern: |
+      $\tfrac16 \cdot 5 \cdot 4 \cdot 7 = 23\tfrac13$.
+  - classic: |
+      The rule says: multiply the width by the length, multiply by the height, and divide by 6.
+    modern: |
+      $V = \tfrac16\, a\, b\, h$.
+    cites: [XII.7]
+  - liu: |
+      In this rule: *nao* is the bone of the upper arm. Some call it "half a *yangma*". Its shape resembles a
+      turtle's elbow, hence the name. Split a *yangma* in the middle, and it makes two *bienao*. The *bienao*'s
+      dimensions are those of the *yangma*, and its volume is half; the numbers are the same but the substance
+      is half. So it says "divide by 6".
+    hint: |
+      *Bienao* means "turtle's forelimb". The *yangma* is cut by the diagonal plane of its base through the
+      apex.

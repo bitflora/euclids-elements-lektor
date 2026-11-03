@@ -1,0 +1,92 @@
+id: JZ.9.13
+title: The square inscribed in a right triangle
+paraphrase: |
+  What is the largest square that fits in the right angle of a triangle with *gou* 5 and *gu* 12? Its side is
+  $\dfrac{ab}{a + b} = \dfrac{60}{17} = 3\tfrac{9}{17}$.
+
+  Liu Hui gives two proofs. The first is a dissection. Two copies of the triangle make the rectangle $ab$,
+  made of two squares (yellow) and two each of the small triangles (red, blue) left beside the square. These
+  rearrange into a long rectangle whose width is the square's side and whose length is $a + b$. The second
+  uses similar triangles. The small triangles beside the square "keep the original rates", so the square's
+  side follows by the rule of three.
+
+parallels:
+  - id: VI.4
+    relation: same
+    note: |
+      "The two edges of the square each form small *gou-gu* triangles, whose relation keeps the original rates."
+      The small triangles are equiangular with the whole, so their sides are proportional (VI.4). Liu's second
+      proof is a fourth proportional: $s : (a - s) = b : a$.
+  - id: I.43
+    relation: related
+    note: |
+      The dissection proof rests on the complements about the diagonal of a rectangle being equal. In the
+      rectangle $a \times b$ cut by its diagonal, the square at the corner and the rectangle opposite are such
+      complements, the figure of I.43.
+
+diagram:
+  width: 200
+  height: 300
+  elements:
+    - "C;point;fixed;40,280;black;black"
+    - "A;point;fixed;140,280;black;black"
+    - "B;point;fixed;40,40;black;black"
+    - "S1;point;fixed;110.59,280;0;0"
+    - "S2;point;fixed;110.59,209.41;0;0"
+    - "S3;point;fixed;40,209.41;0;0"
+    - "sq;polygon;quadrilateral;C,S1,S2,S3;0;0;#8a6d12;#f5e7b5"
+    - "red;polygon;triangle;S1,A,S2;0;0;#9a3b2b;#e8b9a9"
+    - "blue;polygon;triangle;S3,S2,B;0;0;#33587a;#cfdde9"
+    - "CA;line;connect;C,A;0;0;black"
+    - "CB;line;connect;C,B;0;0;black"
+    - "AB;line;connect;A,B;0;0;black"
+  given: [C, A, B, CA, CB, AB]
+  caption: |
+    The triangle with *gou* {CA} = 5 and *gu* {CB} = 12, and the {square|sq} in its right angle. The {red triangle|red}
+    on the *gou* side and the {blue triangle|blue} on the *gu* side are similar to the whole.
+
+steps:
+  - classic: |
+      Now there is a *gou* of 5 *bu* and a *gu* of 12 *bu*. Question: what square can the *gou* [triangle]
+      contain? Answer: a square of 3 9/17 *bu*.
+    highlight: [CA, CB]
+  - classic: |
+      The rule says: add the *gou* and the *gu* for the divisor, multiply *gou* by *gu* for the dividend, and divide:
+      that gives the side of the square in *bu*.
+    modern: |
+      $s = \dfrac{ab}{a + b} = \dfrac{60}{17}$.
+    adds: [S1, S2, S3, sq, red, blue]
+    highlight: [sq]
+  - liu: |
+      The *gou* multiplied by the *gu* makes red, blue and yellow areas, two of each. Let the yellow areas be joined
+      at the lower corner, and the red and blue each combine with their own kind; together they form a long
+      rectangle, with the side of the middle square as its width and the *gou* and *gu* together as its length.
+      So the sum of *gou* and *gu* is the divisor.
+    zh: 句股相乘爲朱靑黃幂各二令黃幂連於下隅朱靑各以類合共成修幂中方黃爲廣并句股爲袤故并句股爲法
+    explain:
+      fact: |
+        The rectangle $a \times b$ is two triangles, each made of the square, a red and a blue triangle. Lay the
+        two squares side by side, then a red pair (forming a rectangle $s \times (a - s)$) and a blue pair
+        ($s \times (b - s)$), all in a row: a strip $s$ wide and $s + s + (a - s) + (b - s) = a + b$ long. So
+        $ab = s\,(a + b)$.
+  - liu: |
+      In the figure, the square lies in the *gou-gu* [triangle]. The two edges of the square each form small
+      *gou-gu* triangles, and their relation does not lose the original rates. The small *gu* on the *gou* side and
+      the small *gou* on the *gu* side join, along and across, to form the middle square.
+    zh: 幂圖方在句中則方之兩亷各自成小句股而其相與之勢不失本率也句面之小股股面之小句從横相連合而成中方
+    highlight: [red, blue]
+    cites: [VI.4]
+  - liu: |
+      Take the *gu* as the rate of the middle square and the sum of *gou* and *gu* as the rate of the width; from
+      the given *gou* of 5 *bu*, by the rule of three, one gets the middle square. Again, take the *gou* as the
+      rate of the middle square and the sum of *gou* and *gu* as the rate of the length; from the *gu* of 12 *bu*,
+      by the rule of three, the middle square can again be known.
+    zh: 令股爲中方率并句股爲廣率據見句五步而今有之得中方也復令句爲中方率以并句股爲袤率據股十二步而今有之則中方又可知
+    modern: |
+      $s = a \cdot \dfrac{b}{a + b} = b \cdot \dfrac{a}{a + b}$.
+  - liu: |
+      So even without the figure to show it, the divisor and dividend have that from which the rule arises. The
+      rates for the inscribed circle can be seen by speaking in terms of the rule of three and of distribution
+      in proportion.
+    hint: |
+      The inscribed circle is the next problem ([[JZ.9.14]]).

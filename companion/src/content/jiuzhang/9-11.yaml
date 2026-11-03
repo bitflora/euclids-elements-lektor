@@ -1,0 +1,45 @@
+id: JZ.9.11
+title: The broken bamboo
+paraphrase: |
+  A bamboo 1 *zhang* tall is broken; its top touches the ground 3 *chi* from the root. How high is the break?
+  The distance (3) is the *gou*; the standing part is the *gu*; the broken part, the hypotenuse. Their sum is
+  the height, 10. So $c - b = 9/10$ and $b = \tfrac12(10 - 0.9) = 4\tfrac{11}{20}$.
+
+  The problem, like the reed, travelled widely: it is in Brahmagupta (7th century) and in European arithmetics
+  from the 15th century on.
+
+parallels:
+  - id: II.6
+    relation: same
+    note: |
+      $a^2 = (c - b)(c + b)$, used the other way round from [[JZ.9.5]]: here the sum is given and the difference found.
+
+steps:
+  - classic: |
+      Now there is a bamboo 1 *zhang* tall. Its top is broken and touches the ground 3 *chi* from the root.
+      Question: how high is the break? Answer: 4 11/20 *chi*.
+  - classic: |
+      The rule says: multiply the distance from the root by itself,
+  - liu: |
+      Here the 3 *chi* from the root is the *gou*, the remaining height after the break the *gu*, and the broken
+      top touching the ground the hypotenuse. From the *gou* and the sum of *gu* and hypotenuse, find the *gu*.
+      So first multiply the *gou* by itself, to show the trysquare area.
+  - classic: |
+      divide by the height,
+  - liu: |
+      The bamboo's height of 1 *zhang* is the sum of *gu* and hypotenuse; dividing this area by it gives the
+      difference.
+    modern: |
+      $c - b = \dfrac{a^2}{c + b} = \dfrac{9}{10}$.
+    cites: [II.6]
+  - classic: |
+      subtract the result from the bamboo's height and halve the remainder: that is the height of the break.
+    modern: |
+      $b = \tfrac12\left(10 - \tfrac{9}{10}\right) = 4\tfrac{11}{20}$.
+  - liu: |
+      This rule and the rope problem are converses of each other. One can also, as in the rule above, multiply the
+      height by itself for the area of the sum of *gu* and hypotenuse, multiply the distance from the root by
+      itself for the trysquare area, and subtract; the remainder is the dividend. Double the height for the
+      divisor, and that gives the height of the break.
+    modern: |
+      $b = \dfrac{(c + b)^2 - a^2}{2(c + b)} = \dfrac{100 - 9}{20}$.

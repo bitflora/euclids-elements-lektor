@@ -1,0 +1,34 @@
+id: JZ.9.8
+title: The half-open double door
+paraphrase: |
+  A double door is pushed open so that each leaf's edge stands 1 *chi* from the threshold, leaving a gap of 2
+  *cun* between the leaves. How wide is the doorway? Each leaf is a hypotenuse: the 1 *chi* is the *gou*, and
+  half the gap (1 *cun*) is the difference of *gu* and hypotenuse. The doorway is two leaves:
+  $\tfrac{100}{1} + 1 = 101$ *cun*.
+
+parallels:
+  - id: II.6
+    relation: same
+    note: |
+      As for the rope and the pole ([[JZ.9.5]], [[JZ.9.6]]): $c + b = a^2/(c - b)$.
+
+steps:
+  - classic: |
+      Now there is a door opened 1 *chi* from the threshold, not closing by 2 *cun*. Question: how wide is the
+      door? Answer: 1 *zhang* 1 *cun*.
+    hint: |
+      The two leaves swing inward. Each leaf's free edge is 1 *chi* from the threshold line, and the edges are 2
+      *cun* apart.
+  - classic: |
+      The rule says: multiply the 1 *chi* from the threshold by itself, divide the result by half the 2 *cun* not
+      closed, and add half the part not closed to the result: that gives the width of the door.
+    modern: |
+      $2c = \dfrac{a^2}{d} + d = \dfrac{10^2}{1} + 1 = 101$ *cun*, with $a = 10$, $d = c - b = 1$.
+    cites: [II.6]
+  - liu: |
+      Here the 1 *chi* from the threshold is the *gou*, and the [leaf's] width the hypotenuse. The 2 *cun* not
+      closed, halved, gives 1 *cun*, the difference of *gu* and hypotenuse. To find the hypotenuse one should
+      halve it; but here the width is the two hypotenuses, so there is no need to halve.
+    dispute: |
+      The text says "the door's width is the *gu*" (門廣爲股). The sense requires each leaf to be the
+      hypotenuse; editors emend.

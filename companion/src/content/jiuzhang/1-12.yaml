@@ -1,0 +1,65 @@
+id: JZ.1.12
+title: Slanted fields — the trapezoid
+paraphrase: |
+  A "slanted field" (*xie tian* 邪田) is a right trapezoid: one side slants, the two ends are parallel.
+  Its area is half the sum of the parallel sides times the distance between them:
+  $\tfrac12(30 + 42) \cdot 64 = 2304$ square *bu*, which is 9 *mu* 144 *bu*. Liu Hui: "adding and halving
+  is using the excess to fill the deficit".
+
+parallels:
+  - id: I.41
+    relation: related
+    note: |
+      Euclid has no rule for the trapezoid, but the out-in argument reduces it to his propositions on
+      triangles and parallelograms: cut off the triangle beyond the mean width and turn it into the gap.
+      The halves are congruent triangles (I.26), and the trapezoid equals the rectangle on the mean of
+      the parallel sides.
+
+diagram:
+  width: 320
+  height: 240
+  elements:
+    - "A;point;fixed;30,210;black;black"
+    - "B;point;fixed;290,210;black;black"
+    - "C;point;fixed;290,30;black;black"
+    - "D;point;fixed;30,80;black;black"
+    - "E;point;fixed;30,55;black;black"
+    - "F;point;fixed;290,55;black;black"
+    - "M;point;fixed;160,55;black;black"
+    - "field;polygon;quadrilateral;A,B,C,D;0;0;#6b6253;#f3ecd8"
+    - "cut;polygon;triangle;M,C,F;0;0;#9a3b2b;#e8b9a9"
+    - "fill;polygon;triangle;M,D,E;0;0;#33587a;#cfdde9"
+    - "EF;line;connect;E,F;0;0;#9a3b2b"
+    - "AD;line;connect;A,D;0;0;black"
+    - "BC;line;connect;B,C;0;0;black"
+    - "AB;line;connect;A,B;0;0;black"
+  given: [A, B, C, D, field, AD, BC, AB]
+  caption: |
+    The slanted field {A}{B}{C}{D}: the ends {AD} and {BC} are parallel and {AB} is the true length
+    between them. The line {EF} at the mean height cuts the slant at its midpoint {M}. The red triangle
+    {MCF|cut} above it is congruent to the blue gap {MDE|fill} below it. Moved across, it turns the field into the
+    rectangle {A}{B}{F}{E}, whose width is the mean of the two ends.
+
+steps:
+  - classic: |
+      Now there is a slanted field, one end 30 *bu* wide and the other 42 *bu*, with a true length of 64
+      *bu*. Question: how much field does it make? Answer: 9 *mu* 144 *bu*.
+    highlight: [AD, BC, AB]
+  - classic: |
+      Again there is a slanted field, its true width 65 *bu*, one side 100 *bu* long and the other 72 *bu*.
+      Question: how much field does it make? Answer: 23 *mu* 70 *bu*.
+    hint: The same field turned the other way; $\tfrac12(100 + 72) \cdot 65 = 5590$ square *bu*.
+  - classic: |
+      The rule says: add the two slanting [ends] and halve them, and multiply by the true length or width.
+      Or halve the true length or width, and multiply by the sum. Divide by the *mu* divisor.
+    hint: |
+      The "two slanting" are the two ends that the slant joins, the parallel sides.
+    modern: $A = \tfrac12 (a + b)\, h = (a + b) \cdot \tfrac{h}{2}$.
+  - liu: |
+      Adding and halving is using the excess to fill the deficit.
+    adds: [E, F, M, EF, cut, fill]
+    highlight: [cut, fill]
+    explain:
+      fact: |
+        The triangle {MCF|cut} cut off by the mean line exactly fills the gap {MDE|fill}. The field equals the
+        rectangle {A}{B}{F}{E} on the mean width $\tfrac12(a+b)$.

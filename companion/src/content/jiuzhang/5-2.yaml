@@ -1,0 +1,57 @@
+id: JZ.5.2
+title: Walls and dikes — prisms with a trapezoid section
+paraphrase: |
+  A wall or dike has a trapezoid cross-section, wider at the bottom than at the top. Its volume is the mean
+  width times the height times the length: $\tfrac12(a + b) \cdot h \cdot \ell$. Liu Hui: "reduce the wide
+  to fill the narrow". The out-in principle of [[JZ.1.12]] makes the section a rectangle, and the wall a
+  box. Then a labour problem: how many workers, at a winter quota of 444 cubic *chi* a day each?
+
+parallels:
+  - id: XI.31
+    relation: related
+    note: |
+      Liu turns the wall into a box of the same height and length on the mean width. Euclid's XI.31
+      ("parallelepipedal solids on equal bases and of the same height are equal") and XI.39 compare
+      such solids, without assigning numbers to their volumes.
+
+steps:
+  - classic: |
+      The rule says: add the upper and lower widths and halve them,
+  - liu: |
+      Reduce the wide to fill the narrow.
+  - classic: |
+      multiply by the height or depth, and again by the length: that is the volume in *chi*.
+    modern: |
+      $V = \tfrac12 (a + b)\, h\, \ell$.
+    cites: [XI.31]
+  - liu: |
+      In this rule, "add the upper and lower widths and halve them" uses the excess to fill the deficit, to
+      get the middle, level width. Multiplying by the height or depth gives the standing area of one end;
+      multiplying again by the length gives the volume of the solid; hence the volume in *chi*.
+    hint: |
+      The "standing area" (*li mi* 立冪) is the cross-section.
+    dispute: |
+      Between "multiplying by the height or depth" and "gives the standing area of one end", the transmitted
+      text has a phrase from the previous rule (堅率三壤率五各爲所求率墟率四爲所有率而今有之, "the rammed-earth
+      rate 3 and the loose-earth rate 5 are the sought rates…"), evidently copied here by mistake. The
+      translation omits it.
+  - classic: |
+      Now there is a city wall 4 *zhang* wide at the bottom and 2 *zhang* at the top, 5 *zhang* high, and 126
+      *zhang* 5 *chi* long. Question: what is its volume? Answer: 1,897,500 *chi*.
+    hint: |
+      One *zhang* 丈 = 10 *chi*. $\tfrac12(40 + 20) \cdot 50 \cdot 1265 = 1{,}897{,}500$.
+  - classic: |
+      Now there is a wall 3 *chi* wide at the bottom and 2 *chi* at the top, 1 *zhang* 2 *chi* high, and 22
+      *zhang* 5 *chi* 8 *cun* long. Question: what is its volume? Answer: 6774 *chi*.
+  - classic: |
+      Now there is a dike 2 *zhang* wide at the bottom and 8 *chi* at the top, 4 *chi* high, and 12 *zhang* 7
+      *chi* long. Question: what is its volume? Answer: 7112 *chi*.
+  - classic: |
+      The winter quota of work is 444 *chi* per person. Question: how many workers are used?
+  - classic: |
+      Answer: 16 2/111 persons.
+  - classic: |
+      The rule says: take the volume as the dividend and the quota in *chi* as the divisor; divide: that is
+      the number of workers.
+    modern: |
+      $7112 \div 444 = 16\tfrac{2}{111}$.

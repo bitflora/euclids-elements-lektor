@@ -1,0 +1,32 @@
+id: JZ.9.2
+title: A plank from a round log
+paraphrase: |
+  A log 25 *cun* across is to be cut into a plank 7 *cun* thick. How wide can the plank be? The plank's
+  cross-section is a rectangle inscribed in the circle, so its diagonal is a diameter: width
+  $= \sqrt{25^2 - 7^2} = 24$.
+
+parallels:
+  - id: III.31
+    relation: related
+    note: |
+      The diagonal of a rectangle inscribed in a circle is a diameter, because the angle in a semicircle is
+      right (III.31, read in reverse). Liu takes it for granted: "the log's diameter is the hypotenuse".
+  - id: I.47
+    relation: same
+    note: |
+      The width is the *gu* of a right triangle with hypotenuse 25 and *gou* 7.
+
+steps:
+  - classic: |
+      Now there is a round log 2 *chi* 5 *cun* across, from which a square-cut plank 7 *cun* thick is wanted.
+      Question: how wide is it? Answer: 2 *chi* 4 *cun*.
+  - classic: |
+      The rule says: multiply the diameter, 2 *chi* 5 *cun*, by itself, subtract 7 *cun* multiplied by itself,
+      and extract the square root of the remainder: that is the width.
+    modern: |
+      $\sqrt{625 - 49} = \sqrt{576} = 24$ *cun*.
+    cites: [I.47]
+  - liu: |
+      Here the log's diameter, 2 *chi* 5 *cun*, is the hypotenuse, the plank's thickness of 7 *cun* the *gou*, and
+      the width sought the *gu*.
+    cites: [III.31]

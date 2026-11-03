@@ -1,0 +1,186 @@
+id: JZ.5.13
+title: Heaps of grain — the cone, half and quarter; the standard measures
+paraphrase: |
+  Grain poured on the ground forms a cone; heaped against a wall, half a cone; in a corner, a quarter. The
+  classic measures the base circumference $c$ of the part that is there. With π = 3, the volume is $c^2 h / 36$
+  on open ground, $c^2 h / 18$ against a wall, $c^2 h / 9$ in a corner. Dividing by the volume of a
+  *hu* 斛 (the unit of capacity) gives the amount of grain. Liu Hui gives the corrections for π = 3.14 and
+  explains the 36: a third (for the pyramid) times a ninth (the diameter as a third of the circumference)
+  times 3/4 (circle to square).
+
+  The standard capacities follow: a *hu* of millet is 2.7 cubic *chi*, of hulled rice 1.62, of beans or
+  wheat 2.43. Liu Hui adds a survey of standard measures from the Zhou to his own day. It includes Wang
+  Mang's bronze *hu* of 9 CE, which he had examined in the Jin arsenal.
+
+parallels:
+  - id: XII.10
+    relation: same
+    note: |
+      A cone is a third of its cylinder: $\tfrac{C^2 h}{36} = \tfrac13 \cdot \tfrac{C^2 h}{12}$. The half and
+      quarter cones are half and a quarter of that, cut by vertical planes through the axis.
+
+steps:
+  - classic: |
+      Now there is millet heaped on level ground, with a base circumference of 12 *zhang* and a height of 2
+      *zhang*. Question: what is its volume, and how much millet is it? Answer: a volume of 8000 *chi*,
+    modern: |
+      $\dfrac{120^2 \cdot 20}{36} = 8000$.
+  - liu: |
+      By Hui's method the volume should be 7643 49/157 *chi*.
+  - li: |
+      We respectfully note: by the precise rate, the volume is 7636 4/11 *chi*.
+  - classic: |
+      making 2962 26/27 *hu* of millet.
+    modern: |
+      $8000 \div 2.7 = 2962\tfrac{26}{27}$.
+  - liu: |
+      By Hui's method the millet should be 2830 1210/1413 *hu*.
+  - li: |
+      We respectfully note: by the precise rate, the millet is 2828 28/99 *hu*.
+  - classic: |
+      Now there are beans heaped against a wall, with a base circumference of 3 *zhang* and a height of 7 *chi*.
+      Question: what is the volume, and how much is it in beans? Answer: a volume of 350 *chi*,
+    modern: |
+      $\dfrac{30^2 \cdot 7}{18} = 350$.
+  - liu: |
+      By Hui's method the volume should be 334 186/471 *chi*.
+  - li: |
+      We respectfully note: by the precise rate, the volume is 334 1/11 *chi*.
+  - classic: |
+      making 144 8/243 *hu* of beans.
+  - liu: |
+      By Hui's method the beans should be 137 10,771/12,717 *hu*.
+    dispute: |
+      The text writes the numerator as 十千七百七十一, "ten thousand seven hundred and seventy-one".
+  - li: |
+      We respectfully note: by the precise rate, the beans are 137 433/891 *hu*.
+  - classic: |
+      Now there is rice heaped in the inside corner of a wall, with a base circumference of 8 *chi* and a height
+      of 5 *chi*. Question: what is the volume, and how much rice is it? Answer: a volume of 35 5/9 *chi*,
+    modern: |
+      $\dfrac{8^2 \cdot 5}{9} = 35\tfrac59$.
+  - liu: |
+      By Hui's method the volume should be 32 457/471 *chi*.
+  - li: |
+      We respectfully note: by the precise rate, the volume is 33 31/33 *chi*.
+  - classic: |
+      making 21 691/729 *hu* of rice.
+  - liu: |
+      By Hui's method the rice should be 20 36,980/38,151 *hu*.
+  - li: |
+      We respectfully note: by the precise rate, the rice is 20 2540/2673 *hu*.
+  - classic: |
+      The rule for heaped millet says: multiply the base circumference by itself, multiply by the height, and
+      divide by 36.
+    modern: |
+      $V = \dfrac{C^2 h}{36}$.
+    cites: [XII.10]
+  - liu: |
+      This is just like the round cone. By Hui's method, too, one should multiply the base circumference by
+      itself, multiply by the height, again by 25, and divide by 942.
+  - classic: |
+      For a heap against a wall,
+  - liu: |
+      It is half of a round cone.
+  - classic: |
+      divide by 18.
+  - liu: |
+      By Hui's method, one should multiply this base circumference by itself, multiply by the height, again by
+      25, and divide by 471. The circumference against the wall is half the full circumference; its square is a
+      quarter of the full circumference squared; so half the divisor for the full circumference is taken as the
+      divisor.
+    modern: |
+      With $c = C/2$, $\;\tfrac12 \cdot \dfrac{C^2 h}{36} = \dfrac{4 c^2 h}{72} = \dfrac{c^2 h}{18}$.
+  - classic: |
+      For a heap in the inside corner of a wall,
+  - liu: |
+      The corner is the angle. It is a quarter of a round cone.
+  - classic: |
+      divide by 9.
+  - liu: |
+      By Hui's method, one should multiply this base circumference by itself and double it, multiply by the
+      height, again by 25, and divide by 471. The circumference in the corner is half that against the wall,
+      and its square is a quarter of the square of that against the wall. One should halve the divisor for
+      the wall; the divisor cannot be halved, so the dividend is doubled.
+    zh: 於徽術當令此下周自乘而倍之以高乘之又以二十五乘之四百七十一而一依隅之周半於依垣其自乘之冪居依垣自乘之冪四分之一當半依垣之法以爲法法不可半故倍其實
+  - liu: |
+      Again, this rule also uses the rates "circumference 3, diameter 1". Suppose the circumference is divided
+      by 3 to get the diameter; if it does not divide exactly, connect the fraction, adding in the numerator,
+      which gives the diameter in accumulated parts. Multiply it by itself and by the height: that is the
+      accumulated parts of three square pyramids. The denominator multiplied by itself gives 9 for the
+      divisor, and one must also divide by 3 to reduce to the square pyramid's volume.
+    zh: 又此術亦用周三徑一之率假令以三除周得徑若不盡通分内子卽爲徑之積分令自乘以高乘之爲三方錐之積分母自相乘得九爲法又當三而一約方錐之積
+  - liu: |
+      Finding the round cone's volume from the square pyramid is like finding the circle's area from the
+      square's: one should multiply by 3 and divide by 4 to get the circle's area. Before, to find the square
+      volume, one had to divide by 3; now, to find the round cone's volume, one must again multiply by 3. The
+      two denominators being the same, they cancel each other; only 4 times the denominator 9 gives 36, which
+      divides all at once for the round cone's volume. The round cone's volume is the same as grain heaped on
+      level ground; hence divide by 36.
+    modern: |
+      $\dfrac{1}{9} \cdot \dfrac13 \cdot \dfrac34 = \dfrac{1}{36}$.
+  - li: |
+      We respectfully, by the precise rate: multiply by 7; on level ground divide by 264, against a wall by
+      132, in a corner by 66.
+  - classic: |
+      Standard: 1 *hu* of millet is 2 *chi* 7 *cun* in volume.
+  - liu: |
+      2 *chi* 7 *cun* means 1 *chi* square and 2 *chi* 7 *cun* deep: 2700 [cubic] *cun* in all.
+  - classic: |
+      1 *hu* of hulled rice is 1 *chi* 6 1/5 *cun*.
+  - liu: |
+      That is, a volume of 1620 *cun*.
+  - classic: |
+      1 *hu* of soybeans, small beans, hemp or wheat is in each case 2 *chi* 4 3/10 *cun*.
+  - liu: |
+      That is, a volume of 2430 *cun*. These take the fine and the coarse as rates, and do not level them out
+      equally.
+    zh: 謂積二千四百三十寸此爲以精麤爲率而不等其槩也
+    hint: |
+      The *hu* here is not a fixed volume. A "*hu* of rice" is the rice got by husking a *hu* of millet, so its
+      volume follows the rates of chapter 2.
+  - liu: |
+      The rate for millet is 5 and for rice 3, so 1 *hu* of rice is 3/5 of 1 *hu* of millet. The soybeans, small
+      beans, hemp and wheat likewise follow their own rates. So these three are called levelled measures, and
+      none of them matches the present *hu*.
+    zh: 粟率五米率三故米一斛於粟一斛五分斛之三菽荅麻麥亦如本率云故謂此三量器爲槩而皆不合於今斛
+    modern: |
+      $1620 / 2700 = \tfrac35$; $\;2430 / 2700 = \tfrac{9}{10}$.
+  - liu: |
+      The present *hu* of the Grand Minister of Agriculture is round, 1 *chi* 3 *cun* 5 *fen* 5 *li* across and
+      exactly 1 *chi* deep; by Hui's method its volume is 1441 *cun*, with a further remainder of 3/10 *cun*.
+    zh: 當今大司農斛圓徑一尺三寸五分五釐正深一尺於徽術爲積一千四百四十一寸排成餘分又有十分寸之三
+    modern: |
+      $\tfrac{3.14}{4} \cdot 13.55^2 \cdot 10 \approx 1441.3$ cubic *cun*.
+  - liu: |
+      Wang Mang's bronze *hu*, in present-day *chi*, is 9 *cun* 5 *fen* 5 *li* deep and 1 *chi* 3 *cun* 6 *fen* 8
+      *li* 2 *hao* across; reckoned by Hui's method, it holds 9 *dou* 7 *sheng* 4 *ge* and a little in the
+      present *hu*.
+    zh: 王莽銅斛於今尺爲深九寸五分五釐徑一尺三寸六分八釐二毫以徽術計之於今斛爲容九斗七升四合有奇
+    hint: |
+      The Jin *chi* was longer than Wang Mang's, so his measure, re-measured, has smaller numbers. A *hu* is 10
+      *dou*, a *dou* 10 *sheng*, a *sheng* 10 *ge*.
+  - liu: |
+      The *Kaogong ji* of the *Offices of Zhou* says: "The Li clan made the measure: 1 *chi* deep, a square of 1
+      *chi* inside, rounded outside; its content is one *fu*." By Hui's method this circle's volume is 1576 *cun*.
+    zh: 周官考工記㮚氏爲量深一尺内方一尺而圓外其實一鬴於徽術此圓積一千五百七十六寸
+    hint: |
+      The circle circumscribing a 1-*chi* square, 1 *chi* deep, as in Wang Mang's *hu* ([[JZ.1.14]]).
+  - liu: |
+      The *Zuo zhuan* says: "Qi of old had four measures: the *dou*, the *ou*, the *fu* and the *zhong*. Four
+      *sheng* make a *dou*; each by fours up to the *fu*; ten *fu* make a *zhong*." A *zhong* is 6 *hu* 4 *dou*,
+      and a *fu* 6 *dou* 4 *sheng*.
+    zh: 左氏傳曰齊舊四量豆區釜鍾四升曰豆各自其四以登於釜釜十則鍾鍾六斛四斗釜六斗四升
+  - liu: |
+      A square of 1 *chi*, 1 *chi* deep, has a volume of 1000 *cun*. If this square volume holds 4 *dou* 2
+      *sheng*, then the whole outer circle, with its margins, holds 10 *dou* 4 *ge* 1 3/5 *yue*.
+    zh: 方一尺深一尺其積一千寸若此方積容四斗二升則通外圓積成旁容十斗四合一龠五分龠之三也
+    dispute: |
+      The numbers here do not agree with one another. If the square of 1000 *cun* held a *fu* of 6 *dou* 4
+      *sheng*, a circle of 1570 *cun* (not 1576) would hold 10 *dou* 4 *ge* 1 3/5 *yue*, the text's figure; the
+      transmitted "4 *dou* 2 *sheng*" and "1576" are probably corrupt.
+  - liu: |
+      Working it out by numbers, the *hu* is made as a square of 1 *chi*, rounded outside, with a margin of 1 *li*
+      7 *hao*; its area is 156 1/4 *cun*, its depth 1 *chi*, its volume 1562 1/2 *cun*, and it holds 10 *dou*.
+      Wang Mang's bronze *hu* is the same as the *hu* discussed in the Treatise on Pitch-pipes and the Calendar
+      of the *Han shu*.

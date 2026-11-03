@@ -1,0 +1,38 @@
+id: JZ.5.7
+title: The qiandu — half a box
+paraphrase: |
+  A *qiandu* 塹堵 is a right triangular prism. It is what one gets by cutting a box along the plane through
+  two opposite edges: "cut a cube obliquely, and it makes two *qiandu*". So its volume is half the
+  box: width × length × height ÷ 2.
+
+parallels:
+  - id: XI.28
+    relation: same
+    note: |
+      "If a parallelepipedal solid be cut by a plane through the diagonals of the opposite planes, the solid
+      will be bisected by the plane." That is the *qiandu*: Liu's "cutting a cube obliquely makes two
+      *qiandu*". Euclid proves the two halves equal; Liu, like the classic, takes it as evident from the
+      symmetry, "even if the box is oblong".
+
+steps:
+  - classic: |
+      Now there is a *qiandu* 2 *zhang* wide at the base, 18 *zhang* 6 *chi* long, and 2 *zhang* 5 *chi* high.
+      Question: what is its volume? Answer: 46,500 *chi*.
+    modern: |
+      $\tfrac12 \cdot 20 \cdot 186 \cdot 25 = 46{,}500$.
+  - classic: |
+      The rule says: multiply the width by the length, multiply by the height, and divide by 2.
+    modern: |
+      $V = \tfrac12\, a\, b\, h$.
+    cites: [XI.28]
+  - liu: |
+      Cutting a cube obliquely gives two *qiandu*; even if the box is oblong, it still makes *qiandu*; so one
+      divides by 2. Here, putting together the areas measured to infer the solid, it is perhaps like
+      something heaped up over a ditch. Its shape is like a city wall with no top width. Though it differs in
+      shape from the block measured, it is the same in substance. I have not heard why it is called a
+      *qiandu*.
+    hint: |
+      The name means something like "ditch-wall" (塹 "moat", 堵 "wall"). An embankment with a vertical face and
+      a sloping one has this shape.
+    dispute: |
+      The sentence 此則合所規冪推其物體蓋爲壍上疊也 is difficult, and the translation is tentative.

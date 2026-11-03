@@ -1,0 +1,112 @@
+id: JZ.9.14
+title: The circle inscribed in a right triangle
+paraphrase: |
+  The diameter of the circle inscribed in a right triangle with *gou* 8 and *gu* 15 (hypotenuse 17) is
+  $\dfrac{2ab}{a + b + c} = \dfrac{240}{40} = 6$.
+
+  Liu Hui's proof is a famous dissection: "draw it on a small piece of paper, cut it, and turn the pieces
+  round". Lines from the centre of the circle cut each triangle into three pairs of small right triangles
+  and a small square. Four copies of the triangle (area $2ab$) rearrange into a rectangle whose width is the
+  diameter and whose length is $a + b + c$. He adds other formulas for the diameter: $a + b - c$, and
+  $\sqrt{2(c - a)(c - b)}$, which ties back to [[JZ.9.10]].
+
+parallels:
+  - id: IV.4
+    relation: same
+    note: |
+      Euclid inscribes a circle in a given triangle (IV.4): bisect two angles, and the point where the bisectors
+      meet is equidistant from the three sides. Liu uses the same configuration ("the *gou*, *gu* and slant
+      are equally distant from the centre"), but to compute the diameter, which Euclid never does.
+  - id: I.47
+    relation: same
+    note: |
+      The hypotenuse 17 is found from 8 and 15 first.
+  - id: III.17
+    relation: related
+    note: |
+      The pairs of small triangles in Liu's figure are congruent because the two tangents from a point to a
+      circle are equal: Euclid's III.17 construction, and the equality Heath notes under III.36.
+
+diagram:
+  width: 200
+  height: 290
+  elements:
+    - "C;point;fixed;40,265;black;black"
+    - "A;point;fixed;160,265;black;black"
+    - "B;point;fixed;40,40;black;black"
+    - "I;point;fixed;85,220;black;0"
+    - "T;point;fixed;85,265;0;0"
+    - "inc;circle;radius;I,T;0;0;#33587a;#e3ecf3"
+    - "CA;line;connect;C,A;0;0;black"
+    - "CB;line;connect;C,B;0;0;black"
+    - "AB;line;connect;A,B;0;0;black"
+    - "IA;line;connect;I,A;0;0;#9a3b2b"
+    - "IB;line;connect;I,B;0;0;#9a3b2b"
+    - "IC;line;connect;I,C;0;0;#9a3b2b"
+  given: [C, A, B, CA, CB, AB, I, inc]
+  caption: |
+    The triangle with *gou* {CA} = 8, *gu* {CB} = 15, hypotenuse {AB} = 17, and its {inscribed circle|inc} of
+    diameter 6. Lines from the centre {I} to the vertices cut the triangle into three pieces, each of height
+    equal to the radius. The three pieces, with bases 8, 15 and 17, show $\tfrac12 ab = \tfrac12 r(a + b + c)$.
+
+steps:
+  - classic: |
+      Now there is a *gou* of 8 *bu* and a *gu* of 15 *bu*. Question: what circle can the *gou* [triangle] contain,
+      and what is its diameter? Answer: 6 *bu*.
+  - classic: |
+      The rule says: take 8 *bu* as the *gou* and 15 *bu* as the *gu*, and find the hypotenuse for them. Add the
+      three for the divisor; multiply the *gou* by the *gu* and double it for the dividend. Divide: that gives the
+      diameter in *bu*.
+    modern: |
+      $d = \dfrac{2ab}{a + b + c} = \dfrac{2 \cdot 8 \cdot 15}{8 + 15 + 17} = 6$.
+    cites: [I.47]
+  - liu: |
+      The *gou* multiplied by the *gu* is the basic body of the figure: two each of red, blue and yellow areas;
+      doubled, four of each. Draw it on a small piece of paper, cut it along the slanting and straight joins, turn
+      the pieces over to fill one another, each joining its kind, and form a long rectangle with the circle's
+      diameter as its width and the *gou*, *gu* and hypotenuse together as its length. So the sum of *gou*, *gu* and
+      hypotenuse is the divisor.
+    zh: 句股相乘爲圖之本體朱靑黃幂各二則倍之爲各四可用畫於小紙分裁邪正之會令顛倒相補各以類合成脩幂圓徑爲廣并句股弦爲袤故并句股弦以爲法
+    adds: [IA, IB, IC]
+    highlight: [IA, IB, IC, inc]
+    explain:
+      fact: |
+        The lines from the centre cut each triangle into a small square (yellow, at the right angle) and two
+        pairs of congruent right triangles (red at one acute angle, blue at the other), all of height $r$. Four
+        triangles, area $2ab$, laid out in a strip of height $2r = d$, have length $a + b + c$: so $2ab = d\,(a + b
+        + c)$.
+      implicit: |
+        That the pairs of small triangles are congruent (equal tangents from a vertex), and that they fit
+        edge to edge. Paper and scissors make it evident.
+  - liu: |
+      Speaking again of the figure as a whole: in the blue of the *gu* one must set the compass point at the
+      [centre]; the *gou*, the *gu* and the slant are three, equally distant from it, and joined by the compass.
+      Measuring along and across, the *gou* and the *gu* must combine to form a small square.
+    zh: 又以圖之大體言之股中靑必令立規於橫廣句股又邪三徑均而復連規從橫量度句股必合而成小方矣
+    highlight: [inc]
+    cites: [IV.4]
+  - liu: |
+      Draw also the middle hypotenuses to see where they meet. Then within the *gou-gu* there are formed four small
+      triangles of *gou*, *gu* and hypotenuse. The small *gu* on the *gou* side and the small *gou* on the *gu* side
+      are both sides of the small square, and both half the diameter of the circle.
+    zh: 又畫中弦以觀其會則句股之中成小句股弦者四句面之小股股面之小句皆小方之面皆圓徑之半
+  - liu: |
+      Their numbers can therefore be distributed in proportion. Take *gou*, *gu* and hypotenuse as the proportional
+      parts, and add them separately for the divisor; multiply each unadded part by the small *gou* for its
+      dividend; divide, and the small *gu* on the *gou* side can be known. Multiply the parts by the *gu* for the
+      dividends, and the small *gou* on the *gu* side can be known. Though the words differ, the substance from
+      which the rule is formed comes to the same.
+    zh: 其數故可衰以句股弦爲列衰副并爲法以小句乘未并者各自爲實實如法而一得句面之小股可知也以股乘列衰爲實則得股面之小句可知言雖異矣及其所以成法之實則同歸矣
+    dispute: |
+      Which quantities enter the proportional distribution is unclear in the transmitted text; the sense is that
+      the radius divides each side in a fixed proportion.
+  - liu: |
+      The circle's diameter can also be found [in other ways]: subtract the difference of *gou* and hypotenuse
+      from the *gu*, for the diameter; or subtract the hypotenuse from the sum of *gou* and *gu*, and the remainder
+      is the diameter; or multiply the difference of *gou* and hypotenuse by the difference of *gu* and
+      hypotenuse, double it, and extract the square root: that too is the diameter.
+    modern: |
+      $d = b - (c - a) = a + b - c = \sqrt{2(c - a)(c - b)}$; here $15 - 9 = 23 - 17 = \sqrt{2 \cdot 9 \cdot 2} = 6$.
+    dispute: |
+      The opening words 以句乘之差并 are corrupt. The three formulas that follow are clear; the last is the
+      yellow square of [[JZ.9.10]].

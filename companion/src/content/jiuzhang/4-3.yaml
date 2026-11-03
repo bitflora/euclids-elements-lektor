@@ -1,0 +1,227 @@
+id: JZ.4.3
+title: Extracting the square root — yellow, red and blue areas
+paraphrase: |
+  The square-root algorithm, done digit by digit on the counting board. For 55,225: the root has three
+  digits, and the first is 2 (hundreds); subtract $200^2$. Double 200 for the "fixed divisor", 400. The
+  next digit, 3, must satisfy $(400 + 30) \cdot 30 \le 15{,}225$; subtract 12,900. The divisor becomes 460;
+  the last digit, 5, gives $(460 + 5) \cdot 5 = 2325$, exactly the remainder. The root is 235.
+
+  Liu Hui explains each move with a coloured figure. The first digit's square is the "yellow area A";
+  the two rectangles along its sides are the "red areas", whose length is the fixed divisor; the small
+  corner square is the "yellow area B"; the next rectangles are "blue". This is the geometry of
+  $(a + b)^2 = a^2 + 2ab + b^2$. Where the root is not a whole number, Liu continues in decimal
+  fractions, "the further down, the finer the parts".
+
+parallels:
+  - id: II.4
+    relation: same
+    note: |
+      "If a straight line be cut at random, the square on the whole is equal to the squares on the
+      segments and twice the rectangle contained by the segments." Liu's figure is Euclid's: yellow A and
+      yellow B are the squares on the segments, the two red areas the two rectangles. The algorithm
+      subtracts them in turn.
+  - id: II.Def.2
+    relation: related
+    note: |
+      After the first digit, what remains to be subtracted is a gnomon, two red rectangles and a yellow
+      corner, around the yellow square A. Euclid names the gnomon in II.Def.2.
+
+diagram:
+  width: 300
+  height: 300
+  elements:
+    - "P;point;fixed;30,270;black;0"
+    - "Q;point;fixed;230,270;0;0"
+    - "R;point;fixed;230,70;0;0"
+    - "S;point;fixed;30,70;0;0"
+    - "T;point;fixed;270,270;0;0"
+    - "U;point;fixed;270,70;0;0"
+    - "V;point;fixed;270,30;black;0"
+    - "W;point;fixed;230,30;0;0"
+    - "X;point;fixed;30,30;0;0"
+    - "yellowA;polygon;quadrilateral;P,Q,R,S;0;0;#8a6d12;#f5e7b5"
+    - "redR;polygon;quadrilateral;Q,T,U,R;0;0;#9a3b2b;#e8b9a9"
+    - "redT;polygon;quadrilateral;S,R,W,X;0;0;#9a3b2b;#e8b9a9"
+    - "yellowB;polygon;quadrilateral;R,U,V,W;0;0;#8a6d12;#f5e7b5"
+  given: [P, Q, R, S, yellowA]
+  caption: |
+    Extracting the root of 55,225 (not to scale). {Yellow A|yellowA} is the first digit's square, $200^2$. The
+    two red areas, {one|redR} and {the other|redT}, are $2 \cdot 200 \cdot 30$; their combined length, 400, is the
+    "fixed divisor". {Yellow B|yellowB} is the corner, $30^2$. Together the red areas and the corner are the
+    gnomon subtracted for the second digit. The third digit repeats the step with "blue" areas around the
+    square of 230.
+
+steps:
+  - classic: |
+      Now there is an area of 55,225 [square] *bu*. Question: what is the side of the square? Answer: 235
+      *bu*.
+  - classic: |
+      Again there is an area of 25,281 *bu*. Question: what is the side of the square? Answer: 159 *bu*.
+  - classic: |
+      Again there is an area of 71,824 *bu*. Question: what is the side of the square? Answer: 268 *bu*.
+  - classic: |
+      Again there is an area of 564,752 1/4 *bu*. Question: what is the side of the square? Answer: 751 1/2
+      *bu*.
+  - classic: |
+      Again there is an area of 3,972,150,625 *bu*. Question: what is the side of the square? Answer: 63,025
+      *bu*.
+  - classic: |
+      Extracting the square root —
+  - liu: |
+      This seeks one side of a square area.
+  - classic: |
+      the rule says: set out the area as the dividend. Borrow one counting rod and step it along, jumping
+      one place at a time.
+    hint: |
+      On the counting board the area is laid out in a row. Below it, a single rod (the "borrowed rod") is
+      moved leftward two places at a time to find the highest place of the root: 55,225 has its first root
+      digit in the hundreds.
+  - liu: |
+      That is: the side of a hundred is ten; the side of ten thousand is a hundred.
+  - classic: |
+      Estimate the result, multiply the borrowed rod by it once for the divisor, and subtract.
+    hint: |
+      First digit 2, worth 200; subtract $200 \times 200 = 40{,}000$, leaving 15,225.
+    highlight: [yellowA]
+  - liu: |
+      First one gets the side of the yellow area A. Matching above and below: that is, it is multiplied by
+      itself and subtracted.
+    highlight: [yellowA]
+  - classic: |
+      When it has been subtracted, double the divisor for the fixed divisor.
+    adds: [T, U, redR, redT]
+    highlight: [redR, redT]
+  - liu: |
+      Doubling it lays out in advance the lengths of the two red areas, to await the next subtraction; hence
+      "fixed divisor".
+    highlight: [redR, redT]
+  - classic: |
+      To subtract again, move the divisor down one place.
+  - liu: |
+      To subtract the red areas, one should properly set out the result separately, form the square, double
+      it for the fixed divisor, and multiply it by the next estimated digit to subtract. Done that way, one
+      would have to step it along again to the stopping place before they matched. So instead one moves it
+      down from above.
+    hint: |
+      A shortcut on the counting board: rather than recompute the place value of the divisor, shift it one
+      place right, so that it lines up with the next digit.
+  - classic: |
+      Again set out the borrowed rod and step it along as at first; multiply it once by the second
+      estimated digit,
+  - liu: |
+      This is to subtract the area of yellow B, at the corner of the red areas. The idea is like that of the
+      first result.
+    adds: [V, W, X, yellowB]
+    highlight: [yellowB]
+  - classic: |
+      set the result aside, add it to the fixed divisor, and subtract. Add the result set aside to the fixed
+      divisor.
+    modern: |
+      Second digit 3 (worth 30): subtract $(400 + 30) \cdot 30 = 12{,}900$, leaving 2325. The new fixed
+      divisor is $400 + 2 \cdot 30 = 460$.
+    highlight: [redR, redT, yellowB]
+  - liu: |
+      Adding the side of yellow B again to the fixed divisor lays out the lengths of the two blue areas.
+    hint: |
+      The fixed divisor is now twice 230, the length of the next pair of rectangles (the blue ones) around
+      the square of 230.
+    cites: [II.4]
+  - classic: |
+      Subtract again, and move down as before. If the extraction does not come out exactly, it "cannot be
+      extracted", and one should name it by its side.
+    hint: |
+      "Name it by its side" (*yi mian ming zhi* 以面命之): leave the root as a root, $\sqrt{N}$, the "side" of
+      the area $N$, rather than approximate it.
+  - liu: |
+      Some rules add the borrowed rod to the fixed divisor and name a fraction. Although this is roughly
+      close, it cannot be used. Whenever one extracts the side of an area, the side multiplied by itself
+      should restore the area. If the fraction is named without adding the borrowed rod, it is always
+      slightly small; if the borrowed rod is added and the fraction named, it is slightly large. The number
+      cannot be fixed, so only naming it by its side loses nothing. It is like dividing 10 by 3: the
+      remainder is named as 1/3, and the number can be restored.
+    zh: 術或有以借算加定法而命分者雖麤相近不可用也凡開積爲方方之自乘當還復其積分令不加借算而命分則常微少其加借算而命分則又微多其數不可得而定故惟以面命之爲不失耳譬猶以三除十以其餘爲三分之一而復其數可舉
+    explain:
+      fact: |
+        With $N = a^2 + r$ ($r$ the remainder), the two approximations are $a + \dfrac{r}{2a}$ and
+        $a + \dfrac{r}{2a + 1}$. They bracket $\sqrt{N}$: the first is too large, the second too small.
+        Neither, squared, gives back $N$, while $\tfrac{10}{3} \cdot 3 = 10$ exactly.
+    dispute: |
+      As transmitted, the text calls the approximation without the borrowed rod ($\tfrac{r}{2a}$) too
+      small and the one with it ($\tfrac{r}{2a+1}$) too large, the reverse of the truth. Whether Liu
+      means the area restored by squaring, a slip of transmission, or a slip of Liu's, is debated.
+  - liu: |
+      If one does not name it by its side, add to the fixed divisor as before and find the minute digits.
+      The minute digits that have no name are made numerators: at the first shift, 10 is the denominator;
+      at the second, 100. The further down one shifts, the finer the parts; then, though the red areas
+      still have a number they multiply, it is not worth mentioning.
+    hint: |
+      Decimal fractions: continue the algorithm past the units, and the extra digits are tenths,
+      hundredths, and so on. Liu used exactly this for his circle computation ([[JZ.1.14]]).
+  - classic: |
+      If the dividend has a fraction, connect it, adding in the numerator, for the fixed dividend; then
+      extract it. When that is done, extract the root of the denominator and repay by division.
+    modern: |
+      $\sqrt{\dfrac{a}{b}} = \dfrac{\sqrt{a}}{\sqrt{b}}$ when $b$ is a perfect square.
+  - li: |
+      We respectfully note: when the denominator can be extracted, both are connected. The area first
+      combined two denominators; after extraction one denominator remains; so the denominator's root is
+      extracted to get one denominator as the divisor, to repay by division.
+    hint: |
+      $564{,}752\tfrac14 = \tfrac{2{,}259{,}009}{4}$; $\sqrt{2{,}259{,}009} = 1503$ and $\sqrt4 = 2$, giving $751\tfrac12$.
+  - classic: |
+      If the denominator cannot be extracted, multiply the fixed dividend again by the denominator, then
+      extract it; when that is done, divide by the denominator.
+    modern: |
+      $\sqrt{\dfrac{a}{b}} = \dfrac{\sqrt{ab}}{b}$.
+  - li: |
+      We respectfully note: if the denominator cannot be extracted, there was originally one denominator;
+      multiplying by it again combines two denominators; after extraction one denominator remains. So
+      divide by the denominator to get the whole side.
+    zh: 臣淳風等謹按分母不可開者本一母也又以母乘之乃合二母旣開之後亦一母存焉故令如母而一得全面也
+  - li: |
+      Further note: this rule of extracting the square root seeks one side of a square area. "Borrowing one
+      rod": one borrows a rod which has the name of a place in the array, but no reality of subtracting
+      from the area. The corner of the square gives the side; that is why the borrowed rod is placed below.
+    zh: 又按此術開方者求方冪之一面也借一算者假借一算空有列位之名而無除積之實方隅得面是故借算列之於下也
+  - li: |
+      "Step it along, jumping one place": a square of ten, multiplied by itself, has an area of a hundred;
+      a square of a hundred has ten thousand. So jumping places, at a hundred one says ten, at ten thousand
+      one says a hundred.
+    zh: 步之超一等者方十自乘其積有百方百自乘其積有萬故超位至百而言十至萬而言百也
+  - li: |
+      "Estimate the result, multiply the borrowed rod once for the divisor and subtract": first one gets
+      the side of yellow A. Taking a square as an area, two [sides] are multiplied; so in extracting the
+      root one again matches the two sides above and below. That is, it is multiplied by itself and
+      subtracted.
+    zh: 議所得以一乘所借一算爲法而以除者先得黃甲之面以方爲積者兩相乘故開方除之還令兩面上下相命是自乘而除之也
+    highlight: [yellowA]
+  - li: |
+      "When it has been subtracted, double the divisor for the fixed divisor": the dividend's area is not
+      exhausted and must be subtracted again; so the lengths of the two red areas are laid out in advance,
+      to await the next subtraction. Hence "fixed divisor".
+    zh: 除已倍法爲定法者實積未盡當復更除故豫張兩面朱冪定袤以待復除故曰定除也
+    highlight: [redR, redT]
+  - li: |
+      "To subtract again, move the divisor down": to subtract the red areas, one should properly set out the
+      result separately, form the square, double it for the fixed divisor, and multiply it by the next
+      estimated digit to subtract. Done that way, one would have to step it along again to the stopping
+      place before they matched. So instead one moves it down from above.
+    zh: 其復除折法而下者欲除朱冪本當副置所得成方倍之爲定法以折議乘之而以除如是當復步之而止乃得相命故使就上折之而下也
+  - li: |
+      "Again set out the borrowed rod and step it along as at first, multiply it once by the second estimated
+      digit, set the result aside, add it to the fixed divisor, and subtract": this is to subtract the area of
+      yellow B at the corner of the red areas. "Add the result set aside to the fixed divisor": adding the
+      area of yellow B again to the fixed divisor lays out the lengths of the two blue areas. So extracting as
+      before agrees with what was asked.
+    highlight: [yellowB]
+    dispute: |
+      Li's note repeats Liu Hui's notes on this rule almost word for word. It may preserve a fuller copy of
+      them, or be an earlier gloss absorbed into Li's; "fixed subtraction" (定除) for "fixed divisor" (定法)
+      is a slip.
+
+commentary: |
+  The algorithm, in modern terms: to find $\sqrt{N}$, choose the largest digit $a$ with $a^2 \le N$ in the
+  leading place, subtract $a^2$; then choose the largest $b$ with $(2a + b)\,b \le$ remainder, subtract,
+  and repeat with $a + b$ in place of $a$. It is the long-division method for square roots taught in
+  schools until recently, and it rests on $(a + b)^2 = a^2 + (2a + b)\,b$. Euclid's II.4 is that identity as
+  geometry. Liu's coloured figure shows why each step subtracts exactly the next gnomon.

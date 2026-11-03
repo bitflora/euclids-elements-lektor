@@ -7,15 +7,15 @@ import { lastPosition, loadScroll, savePosition, saveScroll, useSettings } from 
 import { TopBar, Toc } from "./components/Layout";
 import { PrinciplesPage } from "./pages/PrinciplesPage";
 import { PropositionsPage } from "./pages/PropositionsPage";
-import { ZhouBiPage } from "./pages/ZhouBiPage";
-import { getZb } from "./lib/zhoubi";
+import { WorkPage } from "./pages/WorkPage";
+import { getSection, workByKey } from "./lib/works";
 import { ROMAN } from "./content/books";
 import { GraphPage } from "./pages/GraphPage";
 import { AboutPage, HomePage, NotFound, SearchPage } from "./pages/Pages";
 
 // A proposition is read in its book's propositions, so it shares that page's scroll.
 const pageKey = (r: Route) => {
-  if (r.page === "zhoubi") return `zhoubi/${r.part}`;
+  if (r.page === "work") return `${r.work}/${r.part}`;
   const prop = r.page === "item" ? getItem(r.id)?.prop && getItem(r.id) : undefined;
   return prop ? `${ROMAN[prop.book]}/propositions` : r.page === "item" ? r.id : r.page === "principles" ? `${r.book}/${r.kind}` : r.page;
 };
@@ -44,12 +44,12 @@ export default function App() {
   }, [settings.theme]);
 
   // Reading pages open references in the side panel; other pages navigate.
-  const isZb = route.page === "zhoubi";
+  const work = route.page === "work" ? workByKey(route.work) : undefined;
   useEffect(() => {
-    document.title = isZb ? "Zhou bi suan jing 周髀算經 — A Reading Companion" : "Euclid's Elements — A Reading Companion";
-  }, [isZb]);
+    document.title = work ? `${work.title} ${work.zh} — A Reading Companion` : "Euclid's Elements — A Reading Companion";
+  }, [work]);
 
-  const reading = route.page === "item"|| route.page === "principles" || route.page === "zhoubi";
+  const reading = route.page === "item" || route.page === "principles" || route.page === "work";
   useEffect(() => {
     peek.setEnabled(reading);
     peek.clear();
@@ -58,9 +58,10 @@ export default function App() {
   // Remember the reading position, and the scroll offset of each page.
   const key = pageKey(route);
   useEffect(() => {
-    if (route.page === "zhoubi") {
-      const s = getZb(route.select);
-      savePosition(location.hash, s ? `${s.short}${route.step != null ? `, step ${route.step + 1}` : ""}` : `Zhou bi, part ${route.part}`);
+    if (route.page === "work") {
+      const s = getSection(route.select);
+      const w = workByKey(route.work);
+      savePosition(location.hash, s ? `${s.short}${route.step != null ? `, step ${route.step + 1}` : ""}` : `${w.short}, ${w.parts.find((p) => p.n === route.part)?.label ?? route.part}`);
     } else if (route.page === "item" || route.page === "principles") {
       const id = route.page === "item" ? route.id : route.select;
       const it = getItem(id);
@@ -121,9 +122,16 @@ export default function App() {
       page = it?.prop ? <PropositionsPage book={ROMAN[it.book]} select={it.id} step={route.step} /> : <NotFound what={route.id} />;
       break;
     }
-    case "zhoubi":
-      page = route.select && !getZb(route.select) ? <NotFound what={route.select} /> : <ZhouBiPage part={route.part} select={route.select} step={route.step} />;
+    case "work": {
+      const w = workByKey(route.work);
+      page =
+        (route.select && !getSection(route.select)) || !w.sequence.has(route.part) ? (
+          <NotFound what={route.select ?? `${w.short}, part ${route.part}`} />
+        ) : (
+          <WorkPage key={w.key} work={w} part={route.part} select={route.select} step={route.step} />
+        );
       break;
+    }
     case "graph":
       page = <GraphPage focus={route.focus} />;
       break;
@@ -137,7 +145,7 @@ export default function App() {
       page = <NotFound what={route.path} />;
   }
 
-  const current = route.page === "item" ? route.id : route.page === "principles" || route.page === "zhoubi" ? route.select : undefined;
+  const current = route.page === "item" ? route.id : route.page === "principles" || route.page === "work" ? route.select : undefined;
 
   return (
     <div className="app" onMouseOver={onOver} onMouseOut={onOut} onFocus={onOver} onBlur={onOut} onClickCapture={onClick}>

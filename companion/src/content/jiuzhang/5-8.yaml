@@ -1,0 +1,189 @@
+id: JZ.5.8
+title: The yangma — Liu Hui proves the pyramid is a third of its box
+paraphrase: |
+  A *yangma* 陽馬 is a pyramid on a rectangular base with its apex directly above one corner: "one corner of
+  a square pyramid". The classic: width × length × height ÷ 3.
+
+  For a cube the proof is easy: a cube cuts into three congruent *yangma*. But when the box is not a cube
+  the pieces are not congruent, and "it is hard to deal with". Liu Hui's proof for any box is the high point
+  of his commentary. Cut the box obliquely into two *qiandu*, and one *qiandu* obliquely into a *yangma*
+  and a *bienao* 鱉臑 (a tetrahedron). He must show that the *yangma* is twice the *bienao*. Halve
+  every dimension: three quarters of the solid falls into small boxes, in each of which the *yangma*
+  part is visibly twice the *bienao* part. The last quarter is two small *qiandu* made of the same kinds
+  of piece, and the halving repeats. "The smaller the halving, the finer the remainder; the finest is
+  called minute, and the minute has no form. How then could there be a remainder?"
+
+  The argument is the same in structure as Euclid's XII.3–5. A pyramid is halved into prisms (accounted
+  for) and smaller pyramids similar to the first (the remainder), and the remainder shrinks without
+  limit. Liu passes to the limit; Euclid argues by contradiction.
+
+parallels:
+  - id: XII.7
+    relation: same
+    note: |
+      The porism to XII.7: any pyramid is a third of the prism with the same base and height. Liu proves it for
+      the *yangma*; Euclid for the triangular pyramid, by cutting a triangular prism (a *qiandu*) into three
+      pyramids equal in volume (XII.7). That is just Liu's division of the *qiandu* into a *yangma* (two
+      tetrahedra) and a *bienao*.
+  - id: XII.3
+    relation: related
+    note: |
+      Euclid divides a triangular pyramid by halving its edges into two prisms and two pyramids similar to the
+      whole, the prisms being more than half of it. Liu halves the dimensions of his *qiandu* and finds three
+      quarters accounted for and one quarter left as two smaller *qiandu* of the same kinds. Both proofs
+      repeat the halving on the remainder.
+  - id: XII.5
+    relation: related
+    note: |
+      Euclid uses the halving of XII.3–4 to prove that pyramids of the same height are as their bases, by
+      showing that the remainders can be made smaller than any given solid. Liu's "the minute has no form;
+      how then could there be a remainder?" makes the same step by going to the limit.
+  - id: X.1
+    relation: related
+    note: |
+      The leftover is a quarter of the last one at every step, so it becomes less than any given volume: the
+      principle of X.1, which Euclid needs and Liu asserts.
+
+steps:
+  - classic: |
+      Now there is a *yangma* 5 *chi* wide, 7 *chi* long and 8 *chi* high. Question: what is its volume? Answer:
+      93 1/3 *chi*.
+    modern: |
+      $\tfrac13 \cdot 5 \cdot 7 \cdot 8 = 93\tfrac13$.
+  - classic: |
+      The rule says: multiply the width by the length, multiply by the height, and divide by 3.
+    modern: |
+      $V = \tfrac13\, a\, b\, h$.
+    cites: [XII.7]
+  - liu: |
+      In this rule, the shape of the *yangma* is one corner of a square pyramid. Nowadays the corner [beams] of
+      a four-pillared house are called *yangma*. Suppose the width and length are each 1 *chi* and the height 1
+      *chi*; multiplied together, they give a cube with a volume of 1 *chi*. Cutting a cube obliquely gives two
+      *qiandu*; cutting a *qiandu* obliquely, one part is a *yangma* and the other a *bienao*. The *yangma* 2,
+      the *bienao* 1: this is an unchanging rate.
+    zh: 按此術陽馬之形方錐一隅也今謂四柱屋隅爲陽馬假令廣袤各一尺高一尺相乘之得立方積一尺邪解立方得兩壍堵邪解壍堵其一爲陽馬一爲鼈臑陽馬居二鼈臑居一不易之率也
+    hint: |
+      The *qiandu* (a triangular prism, half the box) is cut by the plane through one top edge and the opposite
+      bottom corner, into a *yangma* (four-sided pyramid) and a *bienao* (tetrahedron). Liu's theorem: for a
+      box of any shape, *yangma* : *bienao* = 2 : 1.
+    explain:
+      fact: |
+        *Qiandu* $= \tfrac12$ box. If *yangma* = 2 *bienao*, then *yangma* $= \tfrac23 \cdot \tfrac12 = \tfrac13$
+        box and *bienao* $= \tfrac16$ box.
+  - liu: |
+      Two *bienao* together make one *yangma*, and three *yangma* make one cube; hence divide by 3. Checked with
+      blocks, the shape is plain. Cut all the *yangma*, and there are six *bienao* in all; seeing how they are
+      cut and divided, the bodies correspond to one another, and it is easy to understand.
+    zh: 合兩鼈臑成一陽馬合三陽馬而成一立方故三而一驗之以棊其形露矣悉割陽馬凡爲六鼈臑觀其割分則體勢互通蓋易了也
+    hint: |
+      For the cube, the six tetrahedra are congruent (or mirror images), so equality of volume is visible.
+  - liu: |
+      If the blocks are long or short, broad or narrow, a box that is not a cube is also cut into six *bienao*.
+      Their shapes are not all alike, but their dimensions are the same and their volumes equal.
+    zh: 其棊或脩短或廣狹立方不等者亦割分以爲六鼈臑其形不悉相似然見數同積實均也
+    explain:
+      fact: |
+        In an oblong box, the three *yangma* are not congruent, but the six *bienao* still pair off by
+        reflection into two of each shape, with the same three dimensions in different orders.
+      implicit: |
+        That *bienao* with the same dimensions in a different order have equal volume. That is just what is
+        to be proved, and why Liu goes on.
+  - liu: |
+      But the *bienao* have different shapes and the *yangma* a different body, so they do not fit together
+      exactly; and when they do not fit exactly, it is hard to deal with.
+    zh: 鼈臑殊形然陽馬異體則不純合不純合則難爲之矣
+    hint: |
+      The problem: in an oblong box, two *bienao* cannot be reassembled into a *yangma*. Dissection and
+      rearrangement fail, and something else is needed.
+  - liu: |
+      Why [does the rate hold]? Cutting a square block obliquely into *qiandu*, one must divide it in halves;
+      cutting a *qiandu* obliquely into a *yangma* [and a *bienao*], one must also divide it in halves, one
+      lengthwise and one crosswise. Take the *yangma* as the inner part and the *bienao* as the outer part.
+      Though the blocks vary in length and width, they still have this division with its constant rate; that
+      it is the same even for different shapes and bodies is because of this alone.
+    zh: 何則按邪解方棊以爲壍堵者必當以半爲分邪解壍堵以爲陽馬者亦必當以半爲分一從一横耳設陽馬爲分内鼈臑爲分外棊雖或隨脩短廣狹猶有此分常率如殊形異體亦同也者以此而已
+    dispute: |
+      This sentence is among the hardest in the book, and translations differ; the version here follows the
+      general reading that Liu is stating the claim to be proved.
+  - liu: |
+      Let there be a *bienao* 2 *chi* in width, length and height; use two each of *qiandu* and *bienao*
+      blocks, all red. Again let there be a *yangma* 2 *chi* in width, length and height; use one cube block
+      and two each of *qiandu* and *yangma* blocks, all black. The red and black blocks join to make a *qiandu*
+      2 *chi* in width, length and height.
+    zh: 其使鼈臑廣袤各高二尺用壍堵鼈臑之棊各二皆用赤棊又使陽馬之廣袤高各二尺
+    hint: |
+      Each large piece is built from half-size blocks. The large *bienao* is two small *qiandu* and two small
+      *bienao*. The large *yangma* is one small cube, two small *qiandu* and two small *yangma*. Red and
+      black together make the large *qiandu*.
+    explain:
+      fact: |
+        Halving every dimension cuts a solid into scaled copies of the standard blocks. Halving the
+        *yangma* gives a cube, two *qiandu* and two *yangma*. Halving the *bienao* gives two *qiandu* and two
+        *bienao*.
+  - liu: |
+      Then bisect its width, and bisect its height. The red and black *qiandu* each exactly fit into a box 2
+      *chi* high and 2 *chi* square; for every two parts of *bienao* there is one *yangma*. The two remaining
+      ends each gather their own bodies, and together form a box.
+    zh: 用立方之棊一壍堵陽馬之棊各二皆用黑棊棊之赤黑接爲壍堵廣袤高各二尺於是中效其廣又中分其高令赤黑壍堵各自適當一方高二尺方二尺每二分鼈臑則一陽馬也其餘兩端各積本體合成一方焉
+    explain:
+      fact: |
+        Cut at half width and half height, the large *qiandu* falls into quarters. In three of them, small
+        boxes (the black cube; a red and a black small *qiandu* together), the red and black volumes are
+        in the ratio 1 : 2 by plain counting of halves. The fourth quarter consists of a small red *bienao*
+        pair and a small black *yangma* pair: a small copy of the original configuration.
+  - liu: |
+      So the parts making boxes from different kinds amount to 3, and those making a box from bodies of their
+      own kind amount to 1. Although the boxes change with the blocks, there is a constant, necessary
+      disposition.
+    zh: 是爲别種而方者率居三通其體而方者率居一雖方隨棊改而固有常然之勢也
+    modern: |
+      Of the large *qiandu*, $\tfrac34$ is known to be divided red : black $= 1 : 2$; the remaining $\tfrac14$ is
+      a half-scale copy of the whole.
+  - liu: |
+      Now, since the remaining number is complete and can be known, with its distinction of one part and two
+      parts, the rate of one to two is fixed. How could it be empty in principle?
+    zh: 按餘數具而可知者有一二分之别卽一二之爲率定矣其於理也豈虛矣
+  - liu: |
+      If one would exhaust it by numbers, take the remaining width, length and height and halve each of them;
+      then three quarters of it can again be known. The smaller the halving, the finer the remainder. The
+      finest is called minute, and the minute has no form. Seen this way, how could there be a remainder?
+    zh: 若爲數而窮之置餘廣袤高之數各半之則四分之三又可知也半之彌少其餘彌細至細曰微微則無形由是言之安取餘哉
+    hint: |
+      The limit. After $n$ halvings the undecided part is $(\tfrac14)^n$ of the whole, and the rest is divided
+      exactly 1 : 2. In the limit nothing is undecided.
+    explain:
+      fact: |
+        Write $D = Y - 2B$. The three known quarters contribute nothing to $D$. The leftover quarter is two
+        half-scale copies of the original pair, each with difference $\tfrac18 D$ (volumes scale by $\tfrac18$).
+        So $D = \tfrac14 D$, and $D = 0$. Liu instead repeats the halving: after $n$ steps, $|D|$ is at most
+        the leftover volume, $4^{-n}$ of the whole.
+      justification: |
+        The remainder after $n$ steps is $4^{-n}$ of the *qiandu*, which becomes smaller than any given volume
+        (X.1).
+      implicit: |
+        That a quantity smaller than every given quantity is zero. Euclid turns this into a double
+        contradiction (XII.5); Liu states it as a limit ("the minute has no form").
+    cites: [X.1, XII.5]
+  - liu: |
+      "Exhausting it by numbers" means inferring by reasoning, not by computing with counting rods.
+    zh: 數而求窮之者謂以情推不用籌算
+  - liu: |
+      The *bienao* as a thing has no use as a vessel; the *yangma*'s shape may vary with length and width. But
+      without the *bienao* there is no way to determine the *yangma*'s number, and without the *yangma* there
+      is no way to know the numbers of pyramids and frustums. They are the masters of the volumes of works.
+    hint: |
+      Liu's reductionism: every solid of the chapter (frustum, pyramid, wedge, tomb passage) is
+      decomposed into cubes, *qiandu*, *yangma* and *bienao*, so the *yangma* theorem underwrites all of them.
+
+commentary: |
+  Liu Hui's proof, in modern form. Put the *qiandu* in the box $[0,a] \times [0,b] \times [0,h]$ and cut it into
+  the *yangma* $Y$ and the *bienao* $B$. Halve every dimension. Then $Y$ = one box $\tfrac{a}{2} \tfrac{b}{2}
+  \tfrac{h}{2}$ + two *qiandu* + two half-size *yangma*, and $B$ = two *qiandu* + two half-size *bienao*.
+  The cube and the four *qiandu* fill three of the four quarter-boxes, in the ratio 2 : 1. The leftover
+  quarter-box holds the two half-size *yangma* and two half-size *bienao*: two half-scale copies of the
+  original pair. Writing $D = Y - 2B$, each copy has difference $\tfrac18 D$, so $D = \tfrac14 D$ and $D = 0$.
+  (Liu reaches it by repeated halving and a limit.)
+
+  Max Dehn showed in 1900 (Hilbert's third problem) that the tetrahedron cannot be cut into finitely many
+  pieces and reassembled into a cube. Some infinite process, Euclid's or Liu's, is unavoidable for the
+  volume of a pyramid.

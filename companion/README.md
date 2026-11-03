@@ -144,15 +144,38 @@ section), `#/ZB.1.4/2` (a step). References in any annotation use `[[ZB.1.4]]`.
   alignment cannot settle (`FORCE_CLASSIC`, `FORCE_COMMENTARY`), are listed in the script.
 - **Annotations.** `src/content/zhoubi/N-M.yaml`, one per section. Each step is either
   `classic:` or `zhao:` (this edition's translation of the next passage). It may give `zh:` to split
-  a long passage. `src/lib/zhoubi.ts` checks every step against the Chinese, as `align.ts` does for
+  a long passage. `src/lib/works.ts` checks every step against the Chinese, as `align.ts` does for
   Heath. Steps also take `hint`, `explain`, `modern`, `dispute`, `cites`, `highlight`, `adds` and
   `figure` (which of `diagram` + `figures` to show).
 - **Cross-references.** A section's `parallels` (`id`, `relation: same|related`, `note`) name the
   Euclid propositions it proves or uses. They are shown on both sides: under "In Euclid's
   Elements" on the section, and "In the Zhou bi suan jing" on the proposition. They never enter
   Euclid's dependency graph.
-- `tests/zhoubi.test.ts` requires every passage to be translated exactly once, every figure name to
-  exist, and every reference to resolve.
+- `tests/works.test.ts` requires every passage to be translated exactly once, every figure name to
+  exist and to be one the renderer can link, and every reference to resolve.
+
+## The Jiuzhang suanshu 九章算術
+
+The *Nine Chapters on the Mathematical Art*, with Liu Hui's commentary (263 CE) and Li Chunfeng's
+(656 CE), read the same way as the Zhou bi: `#/jiuzhang/1`, `#/jiuzhang/4`, `#/jiuzhang/5`,
+`#/jiuzhang/9` (the four geometrical chapters; 2, 3 and 6–8 are not included), `#/JZ.1.14` (a
+section), `#/JZ.1.14/12` (a step), `#/JZ.Pref` (Liu Hui's preface). References use `[[JZ.9.1]]`.
+
+- **Text.** `npm run fetch:jiuzhang` caches the sources in `sources/` (git-ignored);
+  `npm run extract:jiuzhang` builds `src/data/jiuzhang/jiuzhang.json` and prints an alignment report.
+  The classic is the punctuated Wikisource text 九章算術, line for line, with its problem numbers.
+  The commentary is the Wikisource transcription of the Sibu Congkan reprint of the Weiboxie edition,
+  where the notes are set in double lines of small characters. The script aligns that edition's large
+  characters with the punctuated classic to place each note. A note is Liu Hui's unless it opens
+  臣淳風等謹按 (Li Chunfeng's team). Dai Zhen's errata pages are dropped. OCR slips corrected by hand,
+  and the section divisions (`SECTIONS`, by problem number), are listed in the script.
+- **Annotations.** `src/content/jiuzhang/N-M.yaml`. Steps are `classic:`, `liu:` or `li:`; otherwise as
+  for the Zhou bi. A section is a rule with the problems it serves.
+- **Cross-references.** `parallels`, as for the Zhou bi; a Euclid proposition lists the sections of
+  both works that parallel it.
+
+The two works share `src/lib/works.ts` (alignment, numbering, parallels), `src/pages/WorkPage.tsx`
+and `src/components/Parallels.tsx`; a third would be added there.
 
 ## Layout
 
@@ -161,17 +184,19 @@ companion/
   scripts/extract-heath.mjs   Heath (Perseus TEI) → src/data/heath/bookN.json
   scripts/fetch-zhoubi.mjs    Gutenberg + Wikisource Zhou bi sources → sources/zhoubi-*
   scripts/extract-zhoubi.mjs  Zhou bi sources → src/data/zhoubi/zhoubi.json
+  scripts/fetch-jiuzhang.mjs  Wikisource Nine Chapters sources → sources/jiuzhang-*
+  scripts/extract-jiuzhang.mjs Nine Chapters sources → src/data/jiuzhang/jiuzhang.json
   scripts/blockify-yaml.py    prose fields → YAML block scalars
   scripts/screenshot.mjs      Playwright screenshots / console-error smoke test
   plugins/lektor.ts           Vite plugin: Joyce's figures + site links (.lr) → virtual:joyce
   src/lib/align.ts            quotation check and step alignment
   src/lib/corpus.ts           Heath + annotations + Joyce's figures, dependencies, backlinks
-  src/lib/zhoubi.ts           the Zhou bi: Chinese text + translation, alignment, parallels
+  src/lib/works.ts            the Chinese works: Chinese text + translation, alignment, parallels
   src/lib/rich.ts             renderers for the three voices
   src/components/, src/pages/ React UI
   src/content/                this edition's annotations (YAML)
   tests/corpus.test.ts        integrity checks (Euclid)
-  tests/zhoubi.test.ts        integrity checks (Zhou bi)
+  tests/works.test.ts         integrity checks (Zhou bi, Nine Chapters)
 ```
 
 ## Sources and licences
@@ -188,6 +213,10 @@ companion/
   Shuang's commentary: the Sibu Congkan photo-reprint (a Ming copy of the 1213 edition), as
   transcribed on Chinese Wikisource. The text is ancient and in the public domain; the
   transcription is a faithful copy. The translation, notes and figures are this edition's own.
+- **Jiuzhang suanshu**: the classic, the punctuated text on Chinese Wikisource (public domain); Liu
+  Hui's and Li Chunfeng's commentary, the Sibu Congkan photo-reprint of the Weiboxie (微波榭) edition as
+  transcribed on Chinese Wikisource. The text is ancient and in the public domain. No public-domain
+  English translation exists; the translation, notes and figures are this edition's own.
 - **geomlib** (MIT), Nelson Brown's TypeScript port of Joyce's Geometry Applet, draws the figures.
 - This edition's annotations (apart from the adapted figures above) and code: MIT, like the rest of
   the repository's own code.

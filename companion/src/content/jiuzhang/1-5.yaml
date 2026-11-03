@@ -1,0 +1,31 @@
+id: JZ.1.5
+title: Subtracting fractions
+paraphrase: |
+  The same procedure as addition, with a subtraction: make the numerators uniform and the denominators
+  the same, then take the smaller from the larger. $\tfrac89 - \tfrac15 = \tfrac{40 - 9}{45} =
+  \tfrac{31}{45}$.
+
+steps:
+  - classic: |
+      Now there are 8/9, from which 1/5 is taken away. Question: how much is left? Answer: 31/45.
+  - classic: |
+      Again there are 3/4, from which 1/3 is taken away. Question: how much is left? Answer: 5/12.
+  - classic: |
+      Subtracting fractions —
+  - li: |
+      We respectfully note: the numbers of the numerators and denominators all differ. To take the
+      smaller from the larger and find how much is left, the remainder of the subtraction is made the
+      dividend. Hence "subtracting fractions".
+  - classic: |
+      the rule says: the denominators multiply the numerators crosswise; subtract the smaller from the
+      larger, and the remainder is the dividend. The denominators multiplied together are the divisor.
+      Divide the dividend by the divisor.
+    modern: $\dfrac{a}{b} - \dfrac{c}{d} = \dfrac{ad - cb}{bd}$.
+  - liu: |
+      "The denominators multiply the numerators crosswise": this is to make the numerators uniform.
+      "Subtract the smaller from the larger": once uniform, they can be subtracted. "The denominators
+      multiplied together are the divisor": this makes the denominators the same. With the
+      denominators the same and the numerators uniform, divide by the denominator, and that gives it.
+    dispute: |
+      The text reads 母互乘子者知以齊其子也, where 知 stands for nothing (or is a slip for 所); the sense is
+      not in doubt.

@@ -18,6 +18,8 @@ export function refLabel(id: string): string {
   if ((m = /^([IVX]+)\.CN\.(\d+)$/.exec(id))) return `C.N. ${m[2]}`;
   if (id === "ZB.Pref") return "Zhou bi, preface";
   if ((m = /^ZB\.(\d)\.(\d+)$/.exec(id))) return `Zhou bi ${m[1]}.${m[2]}`;
+  if (id === "JZ.Pref") return "Nine Chapters, preface";
+  if ((m = /^JZ\.(\d)\.(\d+)$/.exec(id))) return `Nine Chapters ${m[1]}.${m[2]}`;
   return id;
 }
 

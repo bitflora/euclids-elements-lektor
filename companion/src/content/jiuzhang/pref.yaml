@@ -1,0 +1,212 @@
+id: JZ.Pref
+title: Liu Hui's preface
+paraphrase: |
+  Liu Hui (劉徽), who finished his commentary in 263 CE in the kingdom of Wei, explains where the
+  *Nine Chapters* came from and why he annotated it. Mathematics began with the sages. The book descends
+  from the "nine computations" (*jiu shu* 九數) of the Zhou rites; it was scattered when the Qin burned
+  the books (213 BCE) and rebuilt by the Han officials Zhang Cang and Geng Shouchang. Liu promises
+  to explain the reasons in words and to dissect the bodies with figures (析理以辭，解體用圖). That is the
+  programme of his commentary, which proves the rules where the classic only states them.
+
+  He ends with an addition of his own: a method of "double differences" (*chong cha* 重差) for
+  measuring the height and distance of things one cannot reach. He illustrates it with the sun,
+  and appends it to chapter 9. That appendix later circulated on its own as the *Sea Island
+  Mathematical Manual* (*Haidao suanjing* 海島算經).
+
+parallels:
+  - id: VI.4
+    relation: related
+    note: |
+      The double-difference method rests on the proportionality of the sides of similar right
+      triangles: the gnomon and its shadow, and the sun's height and its distance. Euclid proves the
+      proportionality in VI.4. Liu, like the Zhou bi before him, uses it as a rule ("rates", *lü* 率).
+  - id: I.47
+    relation: related
+    note: |
+      The sun's slant distance is the hypotenuse of a right triangle whose legs are its height and the
+      distance to the point beneath it: "find the hypotenuse" by the *gou-gu* rule ([[JZ.9.1]]).
+
+steps:
+  - liu: |
+      Long ago Fu Xi first drew the eight trigrams, to communicate with the power of the spirits and
+      to classify the conditions of the ten thousand things. He made the art of the "nine nines" to
+      match the changes of the six lines.
+    zh: 昔在庖犧氏始畫八卦，以通神明之德，以類萬物之情，作九九之術，以合六爻之變。
+    hint: |
+      Fu Xi 庖犧 is the legendary first sage, inventor of the trigrams of the *Book of Changes*. The
+      "nine nines" (*jiujiu* 九九) is the multiplication table, which in China ran from 9 × 9
+      downwards. Mathematics is given the most ancient pedigree available.
+  - liu: |
+      Then the Yellow Emperor transformed it with divine insight, drew it out and extended it. He set up
+      the calendar and harmonised the pitch-pipes, and so traced the Way to its source. After that the
+      subtle and refined *qi* of the Two Modes and the Four Images could be grasped and imitated.
+    zh: 暨於黃帝神而化之，引而伸之，於是建曆紀，恊律呂，用稽道原，然後兩儀四象精微之氣可得而效焉。
+    hint: |
+      Calendar-making and the tuning of pitch-pipes were the two great applications of number in early
+      China. The "Two Modes" are yin and yang, and the "Four Images" are their combinations (*Book of
+      Changes*).
+  - liu: |
+      The records say that "Li Shou created numbers", but the details have not come down to us.
+    zh: 記稱「隸首作數」，其詳未之聞也。
+    hint: Li Shou 隸首 was the Yellow Emperor's legendary minister of reckoning.
+  - liu: |
+      When the Duke of Zhou established the rites, there were the "nine computations". The descendant of
+      the nine computations is the *Nine Chapters*.
+    zh: 按周公制禮而有九數，九數之流，則《九章》是矣。
+    hint: |
+      The *Zhou li* 周禮 lists the "nine computations" among the six arts taught to the sons of
+      nobles. Liu makes the *Nine Chapters* their heir; Zheng Xuan's Han commentary had already named
+      them after the chapter titles of this book.
+  - liu: |
+      In the past the tyrannical Qin burned the books, and the learning of the classics was scattered
+      and ruined. After that, Zhang Cang, Marquis of Beiping, and Geng Shouchang, Assistant to the Grand
+      Minister of Agriculture, both of the Han, were famous in their day for skill in calculation.
+    zh: 往者暴秦焚書，經術散壞。自時厥後，漢北平侯張蒼、大司農中丞耿壽昌皆以善筭命世。
+    hint: |
+      The burning of the books was in 213 BCE. Zhang Cang 張蒼 (died 152 BCE) was a chancellor of the
+      early Han; Geng Shouchang 耿壽昌 was active around 50 BCE.
+  - liu: |
+      Zhang Cang and the others, working from what was left of the old text, each made cuts and
+      additions, as they say. So when one checks its headings, they sometimes differ from the ancient
+      ones, and much of what it discusses is in recent language.
+    zh: 蒼等因舊文之遺殘，各稱刪補。故校其目則與古或異，而所論者多近語也。
+    hint: |
+      Liu already sees the book as layered: an old core, revised in the Han. Modern scholars agree. The
+      text was probably closed in the first century CE, and the bamboo *Suan shu shu* 算數書 of about
+      186 BCE shares much of its material.
+  - liu: |
+      I, Hui, studied the *Nine Chapters* as a boy, and when grown I read it through again in detail. I
+      observed the division of yin and yang and summed up the roots of the mathematical arts. In the
+      leisure from probing what is hidden, I came to understand its meaning.
+    zh: 徽幼習《九章》，長再詳覽。觀陰陽之割裂，總筭術之根源，探賾之暇，遂悟其意。
+  - liu: |
+      So I have dared to spend my dull wits, gathering what I have seen, to write a commentary on it.
+      Matters are inferred from one another by their kinds, and each has its place. So although the
+      branches and twigs divide, they share the same root and trunk, because they all come out of one
+      end.
+    zh: 是以敢竭頑魯，采其所見，為之作注。事類相推，各有攸歸，故枝條雖分而同本幹知，發其一端而已。
+    hint: |
+      Liu's view of mathematics as one tree: the many rules of the book grow from a few principles. His
+      commentary keeps returning to them: the rates (*lü* 率), "making uniform and making the same"
+      (*qi tong* 齊同), and "out-in complementarity" (*chu ru xiang bu* 出入相補).
+    dispute: |
+      知 at the end of the clause stands for 者, as often in this edition ([[JZ.1.6]] has the same);
+      some editors emend it.
+  - liu: |
+      Further, I have analysed the principles in words and dissected the bodies with figures, hoping to
+      be brief yet complete, clear and not tiresome, so that one who reads it will understand more
+      than half.
+    zh: 又所析理以辭，解體用圖，庶亦約而能周，通而不黷，覽之者思過半矣。
+    hint: |
+      "Dissecting bodies with figures" (*jie ti yong tu* 解體用圖) describes his method exactly. He
+      proves areas and volumes by cutting them into pieces that can be rearranged ([[JZ.9.1]],
+      [[JZ.5.8]]). The figures themselves are lost; only his descriptions survive.
+    explain:
+      fact: |
+        Liu's "figures" (*tu* 圖) were drawings with coloured regions: red, yellow, blue, named in the
+        text as "red area" (*zhu mi* 朱冪) and so on. His "bodies" were also physical blocks (*qi* 棊)
+        that could be taken apart and put together.
+  - liu: |
+      Moreover, calculation is one of the Six Arts. In ancient times it was used to recommend the
+      worthy and able, and was taught to the sons of the state. Although it is called "the nine
+      computations", it can reach the finest and enter the most minute, and its probing has no limit.
+    zh: 且筭在六藝，古者以賓興賢能，教習國子。雖曰九數，其能窮纖入微，探測無方。
+  - liu: |
+      As for handing it down by rules, it is like the compass and the trysquare, the measures of length
+      and capacity: it can be learned and shared by all, and is not especially hard. Today few love it,
+      so although our age has many men of wide talent and broad learning, they are not necessarily
+      versed in this.
+    zh: 至於以法相傳，亦猶規矩度量可得而共，非特難為也。當今好之者寡，故世雖多通才達學，而未必能綜於此耳。
+  - liu: |
+      Among the duties of the Grand Minister of Education in the *Offices of Zhou*: at noon on the summer
+      solstice, set up a gnomon of 8 *chi*; [the place where] its shadow is 1 *chi* 5 *cun* is called the
+      centre of the earth. The explanation says that the point directly beneath the sun is 15,000 *li*
+      to the south. Those who say so derive it by a method.
+    zh: 《周官‧大司徒》職，夏至日中立八尺之表，其景尺有五寸，謂之地中。說云，南戴日下萬五千里。夫云爾者，以術推之。
+    hint: |
+      The 1 *chi* 6 *cun* shadow of the Zhou bi ([[ZB.2.3]]) appears here as 1 *chi* 5 *cun*, and the
+      15,000 *li* follows from the Zhou bi's rule of one *cun* of shadow for each thousand *li*.
+  - liu: |
+      The methods in the *Nine Chapters* of sighting a distance with four posts, and of sighting a
+      mountain by means of a tree, all have the end and the side in view together. There is nothing
+      there so remote as this. So the methods of Zhang Cang and the others were not yet enough to cover
+      every computation.
+    zh: 按《九章》立四表望遠及因木望山之術，皆端旁互見，無有超邈若斯之類。然則蒼等為術猶未足以博盡羣數也。
+    hint: |
+      Problems 9.22 and 9.23 ([[JZ.9.18]]). In both, a base length near the observer is known. The sun
+      gives no such base: nobody can walk to the point beneath it.
+  - liu: |
+      I find that among the nine computations there is the name "double difference", and tracing its
+      purpose, it was for applying to this. Whenever one sights the extremely high or measures the
+      utterly deep, and wants to know the distance too, one must use double differences and *gou-gu*;
+      and since one must take the double differences as the rates, it is called "double difference".
+    zh: 徽尋九數有重差之名，原其指趣乃所以施於此也。凡望極高、測絕深而兼知其遠者必用重差、句股，則必以重差為率，故曰重差也。
+    hint: |
+      Two sightings from two stations give two differences: the difference of the shadows and the
+      distance between the posts. Their ratio replaces the unknown base.
+  - liu: |
+      Set up two gnomons at the city of Luoyang, each 8 *chi* high, north and south of each other, both
+      on level ground. On the same day measure [their shadows] at the moment of noon. Take the
+      difference of the shadows as the divisor; multiply the distance between the gnomons by the gnomon's
+      height as the dividend; divide the dividend by the divisor. Add the gnomon's height to the
+      result: that is the sun's distance from the earth.
+    zh: 立兩表於洛陽之城，令高八尺。南北各盡平地，同日度其正中之時，以景差為法，表高乘表間，實，實如法而一。所得加表高，即日去地也。
+    modern: |
+      With gnomon height $h$, distance between the gnomons $d$, and shadows $s_1 < s_2$:
+      $$H = \frac{h\,d}{s_2 - s_1} + h.$$
+      This is the same rule as the Zhou bi's, proved by Zhao Shuang with areas ([[ZB.2.6]]). (Measured
+      from the ground the sun's height is $h d/(s_2-s_1)$ above the top of the gnomon, so the gnomon is
+      added.)
+    explain:
+      fact: |
+        "Divisor" (*fa* 法) and "dividend" (*shi* 實) are the two technical terms for the numbers in a
+        division, laid out with counting rods on the counting board: *shi* above, *fa* below. "Divide
+        the dividend by the divisor" (*shi ru fa er yi* 實如法而一) is literally "the dividend, as many
+        times as the divisor, gives one".
+  - liu: |
+      Multiply the distance between the gnomons by the shadow of the southern gnomon as the dividend,
+      and divide by the divisor: that is the distance from the southern gnomon to the point directly
+      beneath the sun. Take the distance to the point beneath the sun and the sun's height as *gou* and
+      *gu*, and find the hypotenuse for them: that is the sun's distance from the observer.
+    zh: 以南表之景乘表間為實，實如法而一，即為從南表至南戴日下也。以南戴日下及日去地為句、股，為之求弦，即日去人也。
+    modern: |
+      $D = \dfrac{s_1\, d}{s_2 - s_1}$ to the point beneath the sun, and the slant distance is
+      $\sqrt{D^2 + H^2}$.
+  - liu: |
+      Sight the sun to the south through a tube 1 *cun* across, so that the sun just fills the hole of
+      the tube. Then take the tube's length as the rate of the *gu*, the tube's diameter as the rate of
+      the *gou*, and the sun's distance from the observer as the great *gu*. The *gou* of the great *gu*
+      is the sun's diameter.
+    zh: 以徑寸之筩南望日，日滿筩空，則定筩之長短以為股率，以筩徑為句率，日去人之數為大股，大股之句即日徑也。
+    hint: |
+      The Zhou bi's sighting tube again, 8 *chi* long with a 1 *cun* bore ([[ZB.2.4]]), and its use for
+      the sun's diameter ([[ZB.2.6]]).
+    modern: $\text{sun's diameter} = \text{distance} \times \dfrac{\text{tube diameter}}{\text{tube length}}$.
+  - liu: |
+      If even the form of the round vault [of heaven] can be measured, how much more the height of Mount
+      Tai and the breadth of the rivers and seas!
+    zh: 雖夫圓穹之象猶曰可度，又況泰山之高與江海之廣哉。
+  - liu: |
+      I hold that the histories of today give a rough account of the things of heaven and earth,
+      examine their numbers, and record them in their treatises, to show the beauty of the arts of our
+      age. So I have composed the *Double Differences*, with a commentary, to explore the intentions of
+      the ancients, and appended it after the *Gou gu* [chapter].
+    zh: 徽以為今之史籍且略舉天地之物，考論厥數，載之於志，以闡世術之美。輒造《重差》，并為注解，以究古人之意，綴於《句股》之下。
+    hint: |
+      The appendix survives separately as the *Sea Island Mathematical Manual*. Its first problem
+      measures an island's peak with two posts; it is not part of this edition.
+  - liu: |
+      For measuring heights, double gnomons; for measuring depths, stacked trysquares; for an isolated
+      [object], three sightings; for an isolated one that must also be sought from the side, four
+      sightings. Extend this by analogy, and there is nothing so dark, distant, strange or hidden that
+      it cannot reach. Gentlemen of wide learning, read it with care.
+    zh: 度高者重表，測深者累矩，孤離者三望，離而又旁求者四望。觸類而長之，則雖幽遐詭伏，靡所不入。博物君子，詳而覽焉。
+
+historical: |
+  Liu Hui is known only from this book, from the *Sea Island Mathematical Manual*, and from a line in
+  the *History of the Sui* dating his commentary to the fourth year of Jingyuan of the Wei, 263 CE. He
+  wrote in the same century as Zhao Shuang, the commentator of the Zhou bi; neither mentions the
+  other. His commentary was transmitted with the classic, and in 656 Li Chunfeng 李淳風 and his
+  colleagues added theirs, when the *Nine Chapters* became a textbook of the state school of
+  mathematics. This edition's text descends from a Southern Song printing (1213) through the
+  Qing editions of Dai Zhen (戴震).

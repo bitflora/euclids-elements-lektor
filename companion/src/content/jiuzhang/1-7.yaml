@@ -1,0 +1,74 @@
+id: JZ.1.7
+title: Levelling fractions — the average, and what to move
+paraphrase: |
+  Given several fractions, "reduce the large and increase the small" until all are equal: find the
+  average and the amount by which each differs from it. For $\tfrac13, \tfrac23, \tfrac34$ the average
+  is $\tfrac{7}{12}$; take $\tfrac{2}{12}$ from $\tfrac34$ and $\tfrac{1}{12}$ from $\tfrac23$, and give
+  the $\tfrac{3}{12}$ to $\tfrac13$.
+
+  The rule avoids fractions of fractions. Rather than divide the sum by the number of terms, it
+  multiplies everything else by the number of terms. Liu Hui calls this making uniform and the same
+  again.
+
+steps:
+  - classic: |
+      Now there are 1/3, 2/3 and 3/4. Question: reducing the large and increasing the small, how much of
+      each will make them level? Answer: reduce 3/4 by 2 and 2/3 by 1; add these and give them to 1/3;
+      then each is level at 7/12.
+    hint: The 2 and the 1 are twelfths, the common part of the answer.
+    modern: $\tfrac13 + \tfrac23 + \tfrac34 = \tfrac{21}{12}$, and $\tfrac{21}{12} \div 3 = \tfrac{7}{12}$.
+  - classic: |
+      Again there are 1/2, 2/3 and 3/4. Question: reducing the large and increasing the small, how much of
+      each will make them level? Answer: reduce 2/3 by 1 and 3/4 by 4; add these and give them to 1/2; then
+      each is level at 23/36.
+    hint: 'In 36ths: $\tfrac12 = \tfrac{18}{36}$, $\tfrac23 = \tfrac{24}{36}$, $\tfrac34 = \tfrac{27}{36}$; the average is $\tfrac{23}{36}$.'
+  - classic: |
+      Levelling fractions —
+  - li: |
+      We respectfully note: "levelling fractions" is because the fractions are uneven, and one wishes to
+      make them equal: one reduces the excess of these and increases the shortfall of those. Hence
+      "levelling fractions".
+  - classic: |
+      the rule says: the denominators multiply the numerators crosswise,
+  - liu: |
+      This makes the numerators uniform.
+  - classic: |
+      set them out separately and add them, as the level dividend.
+  - li: |
+      We respectfully note: "the denominators multiply the numerators crosswise, set them out separately
+      and add them, as the level dividend" fixes this level dividend as a limit. The amounts each
+      numerator must lose or gain to reach the limit are the levelling.
+  - classic: |
+      The denominators multiplied together are the divisor.
+  - liu: |
+      "The denominators multiplied together are the divisor" also makes the numerators uniform and the
+      denominators the same.
+  - classic: |
+      Multiply each of the unadded [numerators] by the number of terms, each as its term dividend. Also
+      multiply the divisor by the number of terms.
+    hint: |
+      With three terms, each numerator and the divisor are tripled. The sum, the "level dividend", is
+      then three times the average on the same denominator.
+  - liu: |
+      Here one should divide the sum by the number of terms to get the level dividend. But then there
+      would be fractions upon fractions; so instead the [others] are multiplied by the number of terms,
+      to make them uniform and the same.
+    hint: |
+      Scaling every other quantity by $n$ is the same as dividing the sum by $n$, without creating a
+      fraction inside a fraction.
+  - li: |
+      We respectfully note: the problems say that the number of fractions to be levelled is not fixed,
+      sometimes three, sometimes two; the number of places set out is not constant. To level three, set
+      out three places; to level two, set out two. All such cases follow the levelling of fractions, and
+      the number cannot be fixed in advance, so it simply says "the number of terms".
+    dispute: |
+      Both problems here have three terms; "sometimes two" is Li's generalisation. Here 知 again stands
+      for 者 (平三知 = 平三者).
+  - classic: |
+      Subtract the level dividend from each term dividend; reduce the remainders: they are what is to be
+      reduced. Add what is reduced and give it to the smallest. Name the level dividend by the divisor:
+      each gets its level.
+    modern: |
+      For $\tfrac{a_1}{b_1}, \dots, \tfrac{a_n}{b_n}$ with $B = \prod b_i$ and $c_i = a_i B / b_i$: the
+      level dividend is $S = \sum c_i$, the term dividends are $n c_i$, the divisor is $nB$. Each term
+      moves by $\tfrac{n c_i - S}{nB}$, and the common level is $\tfrac{S}{nB}$.

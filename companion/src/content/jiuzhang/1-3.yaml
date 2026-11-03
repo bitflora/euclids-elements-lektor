@@ -1,0 +1,82 @@
+id: JZ.1.3
+title: Reducing fractions — the "equal number" by mutual subtraction
+paraphrase: |
+  To reduce a fraction to lowest terms: halve numerator and denominator while both are even. Otherwise
+  set the two numbers side by side and repeatedly subtract the smaller from the larger
+  (*geng xiang jian sun* 更相減損) until the two are equal. That common value is the "equal number"
+  (*deng shu* 等數), our greatest common divisor; divide both by it. For $\tfrac{49}{91}$:
+  $91 - 49 = 42$, $49 - 42 = 7$, then 42 less 7 repeatedly down to 7, so the equal number is 7 and the
+  fraction is $\tfrac{7}{13}$.
+
+  Liu Hui's justification is short: everything subtracted is a stack of copies of the equal number.
+  This is Euclid's algorithm, and Liu's reason is the reason Euclid gives.
+
+parallels:
+  - id: VII.2
+    relation: same
+    note: |
+      Euclid finds the greatest common measure of two numbers by "continually subtracting the less in
+      turn from the greater", exactly the rule here. The classic stops when the two numbers become equal;
+      Euclid stops when one measures the other, a difference only of bookkeeping. Liu's justification
+      ("the subtracted amounts are all repetitions of the equal number") is the heart of Euclid's
+      proof: whatever measures both numbers measures their difference.
+  - id: VII.1
+    relation: related
+    note: |
+      If the subtraction ends in 1, the numbers are prime to one another (VII.1), and the fraction
+      cannot be reduced.
+  - id: VII.33
+    relation: related
+    note: |
+      Dividing both terms by their greatest common measure gives the least numbers in the same ratio,
+      which is Euclid's VII.33. A reduced fraction is the same ratio in least numbers.
+
+steps:
+  - classic: |
+      Now there are 12/18. Question: reduced, what does it give? Answer: 2/3.
+    hint: |
+      The text writes fractions in words: *shiba fen zhi shi'er* 十八分之十二, "of 18 parts, 12".
+      The denominator is the *mu* 母 ("mother"), the numerator the *zi* 子 ("son").
+  - classic: |
+      Again there are 49/91. Question: reduced, what does it give? Answer: 7/13.
+  - classic: |
+      Reducing fractions —
+  - liu: |
+      Reducing fractions: the quantities of things cannot all be whole, so they must be expressed by
+      parts. As numbers, parts are hard to use when they are cumbersome. Suppose there are 2/4: said
+      cumbersomely, it can also be 4/8; said reduced, it is 1/2. Though the words differ, as numbers
+      they come to the same. Divisors and dividends act on one another and often come out uneven, so
+      one who makes rules first puts the fractions in order.
+    hint: |
+      The note is inserted after the rule's name, before its text. Equivalent fractions name the same
+      number; the reduced name is the useful one.
+    explain:
+      fact: $\tfrac{2}{4} = \tfrac{4}{8} = \tfrac{1}{2}$.
+  - classic: |
+      the rule says: if it can be halved, halve it. If it cannot be halved, set out the numbers of the
+      denominator and the numerator separately and subtract the smaller from the larger, back and
+      forth, to find their equal [number]. Reduce by the equal number.
+    hint: |
+      "Set out separately" (*fu zhi* 副置): on the counting board, the two numbers are laid out apart
+      from the fraction itself, and worked on there.
+    modern: |
+      Replace the larger of $(m, n)$ by $|m-n|$ until $m = n = d$; then $d = \gcd(m, n)$ and
+      $\dfrac{n}{m} = \dfrac{n/d}{m/d}$. For $\tfrac{12}{18}$: halve to $\tfrac{6}{9}$; then $9-6 = 3$,
+      $6-3 = 3$; so $d = 3$ and the result is $\tfrac{2}{3}$.
+    cites: [VII.2]
+  - liu: |
+      Reducing by the equal number is dividing [by it]. The reason for subtracting from one another is
+      that [the amounts subtracted] are all repetitions of the equal number. So one reduces by the equal
+      number.
+    hint: |
+      Every number in the process is a multiple of the equal number, so the process can only stop at a
+      multiple of it. It stops at the equal number itself.
+    explain:
+      fact: |
+        If $d$ divides both $m$ and $n$, it divides $m - n$. So every common divisor of the
+        original pair divides every number the subtraction produces, including the final equal value.
+        That value divides both originals, so it is the greatest common divisor.
+      implicit: |
+        Liu states only the first half: the subtracted amounts are "repetitions of the equal number".
+        That the final number divides the originals (run the subtractions backwards) is left to the
+        reader. Euclid proves both halves in VII.2.

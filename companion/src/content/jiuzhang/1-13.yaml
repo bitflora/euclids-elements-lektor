@@ -1,0 +1,32 @@
+id: JZ.1.13
+title: Dustpan fields — the symmetric trapezoid
+paraphrase: |
+  A "dustpan field" (*ji tian* 箕田) narrows from the "tongue" (the wide mouth) to the "heel" (the narrow
+  back): a symmetric trapezoid. The rule is the trapezoid rule again:
+  $\tfrac12(20 + 5) \cdot 30 = 375$ square *bu*. Liu Hui: split it down the middle and it is two slanted
+  fields.
+
+parallels:
+  - id: I.41
+    relation: related
+    note: |
+      As for the slanted field ([[JZ.1.12]]): the trapezoid is reduced to rectangles by moving
+      triangles, which Euclid would justify by congruence and by I.41.
+
+steps:
+  - classic: |
+      Now there is a dustpan field, its tongue 20 *bu* wide, its heel 5 *bu* wide, and its true length 30
+      *bu*. Question: how much field does it make? Answer: 1 *mu* 135 *bu*.
+  - classic: |
+      Again there is a dustpan field, its tongue 117 *bu* wide, its heel 50 *bu* wide, and its true length
+      135 *bu*. Question: how much field does it make? Answer: 46 *mu* 232 1/2 *bu*.
+    modern: $\tfrac12 (117 + 50) \cdot 135 = 11272\tfrac12$ square *bu* $= 46$ *mu* $232\tfrac12$ *bu*.
+  - classic: |
+      The rule says: add the heel and the tongue and halve them, and multiply by the true length. Divide
+      by the *mu* divisor.
+  - liu: |
+      Divide the dustpan field down the middle, and it becomes two slanted fields; so their rules are
+      alike. One may also add the heel and the tongue, halve the true length, and multiply.
+    hint: |
+      Reduction to a solved problem ([[JZ.1.12]]): each half is a right trapezoid with ends half the
+      tongue and half the heel.

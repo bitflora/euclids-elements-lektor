@@ -1,0 +1,57 @@
+id: JZ.5.11
+title: The hay-roof wedge
+paraphrase: |
+  A *chumeng* 芻甍 ("hay roof") is a wedge: a rectangular base, sloping faces, and a horizontal ridge
+  shorter than the base. The classic: twice the lower length plus the upper length, times the width,
+  times the height, divided by 6: $(2 \cdot 40 + 20) \cdot 30 \cdot 10 / 6 = 5000$.
+
+  Liu Hui: cut a square frustum straight down its two sides and join the pieces, and you have this wedge.
+  In blocks, two *qiandu* in the middle (under the ridge) and two *yangma* at each end. Again the proof
+  counts blocks in sixths.
+
+parallels:
+  - id: XII.7
+    relation: related
+    note: |
+      The wedge is two triangular prisms and a pyramid on a rectangular base, $V = \tfrac12 w b h + \tfrac13
+      w (a - b) h$. The pyramid's third rests on the result Euclid proves in XII.7 and Liu in [[JZ.5.8]].
+
+steps:
+  - classic: |
+      Now there is a hay-roof wedge, 3 *zhang* wide and 4 *zhang* long at the bottom, 2 *zhang* long at the top
+      with no width, and 1 *zhang* high. Question: what is its volume? Answer: 5000 *chi*.
+  - classic: |
+      The rule says: double the lower length, add the upper length, multiply by the width, again by the height,
+      and divide by 6.
+    modern: |
+      $V = \tfrac16 (2a + b)\, w\, h$.
+  - liu: |
+      To make clear the meaning: the old explanation says that, in general, a stack of hay with upper and lower
+      widths is called a *tong*, and the *meng* is the thatch of a house roof. So the lower width and length of
+      the *meng* equal the upper width and length of the *tong*. Cut a square frustum straight down its two
+      sides and put them together: that is the shape of the hay-roof wedge.
+    zh: 推明義理者舊說云凡積芻甍有上下廣曰童甍謂其屋蓋之茨也是故甍之下廣袤與童之上廣袤等正斬方亭兩邊合之卽芻甍之形也
+    hint: |
+      The *tong* (the "hay mound" of [[JZ.5.12]]) is a frustum with a rectangular top. The *meng* is the roof
+      that sits on it.
+  - liu: |
+      Suppose the bottom is 2 *chi* wide and 3 *chi* long, the top 1 *chi* long with no width, and the height 1
+      *chi*. The blocks used: two *qiandu* in the middle, two *yangma* at each end. Double the lower length and
+      add the upper length, getting 7 *chi*; multiplying by the height and width gives an area of 14 *chi*.
+      The *yangma* areas each take 1 and the *qiandu* areas each 3; multiplying by the height gives a volume of
+      14 *chi*. In terms of their blocks, each one is made six; so dividing by 6 gives it.
+    zh: 假令下廣二尺袤三尺上袤一尺無廣高一尺其用棊也中央壍堵二兩端陽馬各二倍下袤上袤從之爲七尺以高廣乘之得冪十四尺陽馬之冪各居一壍堵之冪各居三以高乘之得積十四尺其於本棊也皆一而爲六故六而一卽得
+    explain:
+      fact: |
+        Volume: two *qiandu* $2 \cdot \tfrac12 = 1$, four *yangma* $4 \cdot \tfrac13 = \tfrac43$; total
+        $\tfrac73$. In sixths: $2 \cdot 3 + 4 \cdot 2 = 14$, and $\tfrac{14}{6} = \tfrac73$.
+    dispute: |
+      "The *yangma* areas each take 1" should be 2 if each *yangma* is counted separately ($4 \cdot 2 + 2 \cdot 3 =
+      14$). The 1 fits only if the pairs at each end are counted as one.
+  - liu: |
+      Or one can multiply the difference of the upper and lower lengths by the width, multiply by the height,
+      and divide by 3: that is the four *yangma*. The lower width times the upper length, halved and multiplied
+      by the height, is the two *qiandu*. Add them for the volume of the wedge.
+    modern: |
+      $V = \tfrac13 (a - b)\, w\, h + \tfrac12\, w\, b\, h$.
+    cites: [XII.7]

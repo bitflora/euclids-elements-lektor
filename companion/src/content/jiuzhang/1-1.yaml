@@ -1,0 +1,138 @@
+id: JZ.1.1
+title: Rectangular fields — width times length
+paraphrase: |
+  The book opens with its simplest rule. A rectangular field 15 *bu* wide and 16 *bu* long has an area
+  of $15 \times 16 = 240$ square *bu*, which is one *mu* 畝, the unit of land; 100 *mu* make a *qing*
+  頃. Every problem in the book has this form: a question (*wen* 問), an answer (*da* 荅), and a rule
+  (*shu* 術) that gives the answer from the data.
+
+  Liu Hui calls the product the field's "area" (*mi* 冪). Li Chunfeng's team objects to his wording: a
+  *mi* is a spread-out surface, whereas the classic's *ji* 積, "accumulation", is a count of unit
+  squares. Then they verify the rule by counting. Cut the field into 15 strips one way and 16 the
+  other, and there are 240 unit squares.
+
+parallels:
+  - id: II.Def.1
+    relation: related
+    note: |
+      Euclid speaks of a rectangle as "contained by" its two sides and never multiplies lengths: his
+      areas are figures, compared by cutting and fitting, not numbers. The *Nine Chapters* measures an
+      area by the number of unit squares it holds, as Li Chunfeng's count shows.
+  - id: VII.Def.16
+    relation: related
+    note: |
+      In the arithmetical books Euclid calls the product of two numbers a "plane" number, whose
+      "sides" are the factors. The name keeps the picture of a rectangle of units: Li Chunfeng's 15 by
+      16 field.
+
+diagram:
+  width: 270
+  height: 300
+  elements:
+    - "A;point;fixed;30,270;black;black"
+    - "B;point;fixed;240,270;black;black"
+    - "C;point;fixed;240,46;black;black"
+    - "D;point;fixed;30,46;black;black"
+    - "field;polygon;quadrilateral;A,B,C,D;0;0;#6b6253;#f3ecd8"
+    - "u1;point;fixed;30,256;0;0"
+    - "u2;point;fixed;240,256;0;0"
+    - "v1;point;fixed;44,270;0;0"
+    - "v2;point;fixed;44,46;0;0"
+    - "row;line;connect;u1,u2;0;0;#b5a27a"
+    - "col;line;connect;v1,v2;0;0;#b5a27a"
+    - "e1;point;fixed;30,256;0;0"
+    - "e2;point;fixed;44,256;0;0"
+    - "e3;point;fixed;44,270;0;0"
+    - "unit;polygon;quadrilateral;A,e3,e2,e1;0;0;#9a3b2b;#e8b9a9"
+    - "AB;line;connect;A,B;0;0;black"
+    - "AD;line;connect;A,D;0;0;black"
+  given: [A, B, C, D, field, AB, AD]
+  caption: |
+    A field 15 *bu* wide ({AB}) and 16 *bu* long ({AD}). Cut into strips one *bu* wide each way, it
+    falls into $15 \times 16 = 240$ unit squares such as {this one|unit}: one *mu*.
+
+steps:
+  - classic: |
+      Now there is a field 15 *bu* wide and 16 *bu* long. Question: how much field does it make?
+      Answer: 1 *mu*.
+    hint: |
+      *Bu* 步, a "pace", was about 1.4 m in the Han. The width (*guang* 廣) is the shorter side, the
+      length (*zong* 從) the longer. The answer is given in *mu*: 240 square *bu*.
+    highlight: [AB, AD]
+  - classic: |
+      Again there is a field 12 *bu* wide and 14 *bu* long. Question: how much field does it make?
+      Answer: 168 [square] *bu*.
+    hint: |
+      Square *bu* are just called *bu*: the text does not distinguish units of length from units of
+      area, and the context decides.
+  - liu: |
+      Figure: length 14, width 12.
+    hint: |
+      A caption of one of Liu's figures, now lost. The figures were probably drawn with the field ruled
+      into unit squares, as Li Chunfeng describes below.
+  - classic: |
+      The rule for rectangular fields: multiply the numbers of *bu* of the width and the length to get
+      the accumulated *bu*.
+    hint: Area = width × length.
+    modern: $A = a \times b$.
+    highlight: [AB, AD, field]
+  - liu: |
+      This "accumulation" means the area of the field. Whenever width and length are multiplied, [the
+      product] is called the area.
+    hint: |
+      *Mi* 冪 (literally a cloth spread over something) is Liu Hui's word for an area. He uses it for
+      any product of two lengths, as Euclid would say "the rectangle contained by".
+  - li: |
+      We, Li Chunfeng and colleagues, respectfully note: the classic says "multiply width and length to
+      get the accumulated *bu*"; the commentary says "the multiplication of width and length is called
+      the area". Taking the commentary's meaning, accumulation and area are the same. Reasoning it
+      through, this should not be so.
+    zh: 臣淳風等謹按經云廣從相乘得積步注云廣從相乘謂之冪觀斯注意積冪義同以理推之固當不爾
+    hint: |
+      Li Chunfeng 李淳風 (602–670) headed the team that edited the "Ten Mathematical Classics" for the
+      Tang state school in 656. Every note of theirs begins with this formula.
+  - li: |
+      Why? An "area" is the name for something spread out flat in a single layer; an "accumulation" is
+      the word for many units gathered together. If one holds the names to the things, the two are
+      entirely different. One might wish to make them the same, but we fear it cannot be done.
+    zh: 何則冪是方面單布之名積乃衆數聚居之稱循名責實二者全殊雖欲同之竊恐不可
+    hint: |
+      A distinction between the extent of a surface and the number of unit squares that fill it. "Holding
+      names to things" (*xun ming ze shi* 循名責實) is a slogan of the Legalist philosophers.
+  - li: |
+      Now, whenever one speaks of an area, it refers to one face, of width and length; when one speaks
+      of an accumulation, it gives the total of the many *bu*. The classic says "multiply to get the
+      accumulated *bu*": that plainly states the total. The commentary's calling it an area quite
+      departs from the original meaning of "accumulated *bu*". The commentary's earlier remark, "the
+      accumulation means the area of the field", is reasonable. But to go on and say "it is called the
+      area" is redundant and improper. Now, in our notes, we keep what is good and remove what is wrong,
+      sorting things out briefly, to leave to later students.
+    zh: 今以凡言冪者據廣從之一方其言積者舉衆步之都數經云相乘得積步卽是都數之明文注云謂之爲冪全乖積步之本意此注前云積謂田冪於理得通復云謂之爲冪䌓而不當今者注釋存善去非略爲科簡遺諸後學
+    dispute: |
+      The objection is to Liu's general definition, not to his gloss on this problem. Modern readers
+      mostly side with Liu, for whom *mi* is the general notion of a product of two lengths. He applies
+      it to the faces of solids too ([[JZ.5.8]]).
+  - classic: |
+      Divide by the *mu* divisor, 240 *bu*: that is the number of *mu*. 100 *mu* make 1 *qing*.
+    modern: $1\ mu = 240\ \text{square } bu$, $\;1\ qing = 100\ mu$.
+  - li: |
+      We respectfully note: this is the beginning of the chapter, so the two divisors for *qing* and
+      *mu* are given specially. The other rules do not repeat them; they can be understood from here.
+    zh: 臣淳風等謹按此爲篇端故特舉頃畝二法餘術不復言者從此可知
+  - li: |
+      A field of one *mu* is 15 *bu* wide. Divide it lengthwise into 15 rows: each row is 1 *bu* wide and
+      16 *bu* long. Cut it crosswise into 16 rows: each row is 1 *bu* wide and 15 *bu* long. The *bu* made
+      by the lengthwise and crosswise cuts are each a square, 240 in all, exactly the number of *bu* in a
+      field of one *mu*. From this, "multiply width and length to get the accumulated *bu*" is
+      verified. 240 *bu* is the *mu* divisor, 100 *mu* the *qing* divisor; so dividing by them gives the
+      answer.
+    highlight: [row, col, unit]
+    hint: The rule justified by counting unit squares, for the first problem's numbers.
+    explain:
+      fact: |
+        A rectangle $a$ units by $b$ units is cut into $a$ strips of $b$ unit squares each, so it
+        holds $ab$ unit squares. This works for whole numbers; fractional sides are handled later
+        ([[JZ.1.9]], [[JZ.1.10]]).
+      implicit: |
+        That the unit squares exactly fill the field, with no gaps or overlaps. Euclid's equivalent is
+        the theory of parallelograms in Book I; Li Chunfeng takes it as obvious from the figure.

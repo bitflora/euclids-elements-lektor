@@ -1,0 +1,64 @@
+id: JZ.9.4
+title: The reed in the pond
+paraphrase: |
+  A square pond 1 *zhang* across has a reed in its centre, sticking up 1 *chi* above the water. Pulled to the
+  edge of the bank, its tip just reaches the water's surface. How deep is the water, and how long the reed?
+  Half the pond's width (5) is the *gou*, the depth the *gu*, the reed the hypotenuse, and the part above
+  water is the difference $c - b = 1$. By the gnomon of [[JZ.9.3]], $b = \dfrac{a^2 - (c - b)^2}{2(c-b)} =
+  \dfrac{25 - 1}{2} = 12$, and the reed is 13.
+
+  The problem travelled: it appears in India (Bhāskara II, 12th century) and in medieval European
+  arithmetic books, with a lotus in place of the reed.
+
+parallels:
+  - id: II.6
+    relation: related
+    note: |
+      Liu's derivation: the *gou* square is a gnomon of width $c - b$ ([[JZ.9.3]]). Remove the square on
+      $c - b$ from it and what is left is the rectangle $2(c - b) \cdot b$. These are the gnomon identities of
+      II.5–II.6.
+  - id: I.47
+    relation: same
+    note: |
+      The reed, the depth and half the pond make a right triangle.
+
+steps:
+  - classic: |
+      Now there is a pond 1 *zhang* square. A reed grows at its centre, sticking up 1 *chi* out of the water.
+      Pulled to the bank, it just reaches the bank. Question: how deep is the water, and how long the reed?
+      Answer: the water is 1 *zhang* 2 *chi* deep; the reed is 1 *zhang* 3 *chi* long.
+  - classic: |
+      The rule says: multiply half the pond's side by itself,
+  - liu: |
+      Here half the pond's side, 5 *chi*, is the *gou*, the water's depth the *gu*, and the reed's length the
+      hypotenuse. From the *gou* and the difference of *gu* and hypotenuse, find *gu* and hypotenuse. So the
+      *gou* is multiplied by itself first, to show the trysquare area.
+    hint: |
+      The *gou* square is the gnomon of [[JZ.9.3]], of width $c - b$.
+  - classic: |
+      multiply the 1 *chi* above water by itself, and subtract it;
+  - liu: |
+      The part above water is the difference of *gu* and hypotenuse. Subtract this difference squared from
+      the trysquare area; the remainder is the trysquare area made by twice the difference of *gu* and
+      hypotenuse times the length of the *gu*.
+    explain:
+      fact: |
+        The gnomon $a^2$ has two arms of width $d = c - b$ and lengths $b$ and $b$, plus the corner square
+        $d^2$. Remove the corner: $a^2 - d^2 = 2 d\, b$.
+    cites: [II.6]
+  - classic: |
+      divide the remainder by twice the part above water: that gives the depth of the water.
+    modern: |
+      $b = \dfrac{a^2 - d^2}{2d} = \dfrac{25 - 1}{2} = 12$ *chi*.
+  - liu: |
+      Twice the difference is the width of the trysquare area, and the water's depth is the *gu*. If one
+      wishes to find the reed's length first: multiply the 1 *chi* above water by itself, add it to half the
+      pond's side multiplied by itself, and divide by twice the part above water: that gives it. This makes the
+      area take the 1 *chi* above water [twice] as its width; so it is a trysquare, and gives the reed's length.
+    modern: |
+      $c = \dfrac{a^2 + d^2}{2d} = 13$.
+  - classic: |
+      Add the part above water to get the length of the reed.
+  - li: |
+      We respectfully note: this reed originally stood 1 *chi* out of the water. Now the water's depth is
+      known, so add the 1 *chi* above water to get the reed's length.

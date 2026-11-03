@@ -1,0 +1,112 @@
+id: JZ.9.3
+title: A vine round a tree — unrolling the cylinder; the gnomons of the gou-gu figure
+paraphrase: |
+  A tree 2 *zhang* tall, 3 *chi* round, has a vine growing from its foot that winds 7 times round it to the
+  top. How long is the vine? Unroll the trunk: the vine becomes the hypotenuse of a right triangle with legs
+  20 (the height) and $7 \times 3 = 21$ (seven circumferences). It is 29 *chi*.
+
+  Liu Hui's note goes on to his general account of the *gou-gu* figure. Take the square on the hypotenuse
+  with the square on the *gu* placed inside it at a corner. What is left is an L-shaped gnomon equal to the
+  *gou* square. That gnomon, straightened out, is a rectangle with width $c - b$ and length $c + b$. So
+  $a^2 = (c - b)(c + b)$, and likewise $b^2 = (c - a)(c + a)$. "Difference and sum divide each other." The
+  next five problems use this.
+
+parallels:
+  - id: I.47
+    relation: same
+    note: |
+      The vine is the hypotenuse of the unrolled triangle.
+  - id: II.6
+    relation: same
+    note: |
+      The *gou* square as a gnomon, "with the difference of *gu* and hypotenuse as width and their sum as
+      length": $c^2 - b^2 = (c - b)(c + b)$. In Euclid's form, II.6: if a line is bisected and extended, the
+      rectangle on the whole extended line and the extension, with the square on the half, equals the square
+      on the half plus the extension. (II.5 is the same identity for a line cut unequally.)
+  - id: II.Def.2
+    relation: related
+    note: |
+      Liu's *ju mi* 矩冪, "trysquare area", is the gnomon of II.Def.2: the L-shaped region left when a square is
+      cut from a corner of a larger square.
+
+diagram:
+  width: 300
+  height: 300
+  elements:
+    - "O;point;fixed;40,270;black;0"
+    - "P;point;fixed;270,270;0;0"
+    - "Q;point;fixed;270,40;0;0"
+    - "R;point;fixed;40,40;0;0"
+    - "S;point;fixed;224,270;0;0"
+    - "T;point;fixed;224,86;0;0"
+    - "U;point;fixed;40,86;0;0"
+    - "big;polygon;quadrilateral;O,P,Q,R;0;0;#33587a;#cfdde9"
+    - "inner;polygon;quadrilateral;O,S,T,U;0;0;#6b6253;#fbf8f0"
+    - "OP;line;connect;O,P;0;0;black"
+    - "OS;line;connect;O,S;0;0;#9a3b2b"
+    - "SP;line;connect;S,P;0;0;#8a6d12"
+  given: [O, P, Q, R, S, T, U, big, inner]
+  caption: |
+    {The square on the hypotenuse|big}, side {OP} $= c$, with the square on the *gu* ({OSTU|inner}), side {OS} $= b$,
+    in its corner. The blue gnomon left over is the *gou* square, $a^2$. Its width is {SP} $= c - b$, and
+    cut and straightened it is a rectangle $(c - b)$ by $(c + b)$.
+
+steps:
+  - classic: |
+      Now there is a tree 2 *zhang* tall and 3 *chi* round. A vine grows at its foot and winds round the tree 7
+      times, its top level with the tree's. Question: how long is the vine? Answer: 2 *zhang* 9 *chi*.
+  - classic: |
+      The rule says: multiply 3 *chi* by the 7 turns for the *gu*, take the tree's height as the *gou*, and find
+      the hypotenuse for them. The hypotenuse is the length of the vine.
+    modern: |
+      $\sqrt{21^2 + 20^2} = \sqrt{841} = 29$.
+    cites: [I.47]
+  - liu: |
+      From the girth and the tree's height, find the length of the vine. Its shape: the vine coils round,
+      wrapping the length; like a green thread wound round a brush handle, it looks like a vine winding round a
+      tree. Unwrap it and look: each turn makes its own *gou*, *gu* and hypotenuse. The tree's height [for each
+      turn] is the *gu*, the girth the *gou*, and the vine's length the hypotenuse. Multiplying the 3 *chi* of
+      girth by the 7 turns joins all the *gou* into one *gou*; then the *gou* is long and the *gu* short. So the
+      rule calls the tree's height the *gou* and the girth the *gu*, the words reversed.
+    zh: 據圍廣木長求葛之長其形葛卷裏袤以筆管靑線宛轉有似葛之纏木解而觀之則每周之間自有相間成句股弦則其間木長爲股圍之爲句葛長爲弦弦七周乘三圍是并合衆句以爲一句則句長而股短故術以木長謂之句圍之謂之股言之倒互
+    hint: |
+      Cut the trunk's surface along a vertical line and lay it flat: a rectangle 21 *chi* wide (seven
+      circumferences side by side) and 20 *chi* tall, with the vine as its diagonal.
+  - liu: |
+      Finding the hypotenuse from *gou* and *gu* is as in the earlier figure: the *gou*, 3, multiplied by itself is
+      the red area; the *gu*, 4, multiplied by itself the blue area; red and blue together, 25, are the
+      hypotenuse 5 multiplied by itself. From the first figure above, it is clear that the *gou* and *gu* areas
+      together make the hypotenuse area.
+    zh: 句與股求弦亦如前圖句三自乘爲朱幂股四自乘爲靑幂合朱靑二十五爲弦五自乘幂出上第一圖句股幂合爲弦幂明矣
+    hint: |
+      The "first figure" is the red-and-blue figure of [[JZ.9.1]].
+  - liu: |
+      Now, the numbers of the two areas are said to be placed within the hypotenuse area. The one that can be
+      put inside becomes a square area; the one outside becomes a trysquare area. The two, inside and outside,
+      differ in shape but are equal in number.
+    zh: 然二幂之數謂倒在於弦幂之中而已可更相裏者則成方幂其居表者則成矩幂二表裏形訛而數均
+    adds: [S, T, U, inner]
+    highlight: [inner, big]
+    hint: |
+      Put the *gu* square in the corner of the hypotenuse square; the rest is an L-shaped gnomon, a
+      "trysquare area" (*ju mi* 矩冪), equal in area to the *gou* square.
+  - liu: |
+      Further, in this figure, the trysquare of the *gou* area, blue rolled up with white outside: its area has
+      the difference of the *gu* and the hypotenuse as its width and the sum of the *gu* and the hypotenuse as
+      its length, and the *gu* area is the square inside it. The trysquare of the *gu* area, blue rolled up with
+      white outside: its area has the difference of the *gou* and the hypotenuse as its width and the sum of the
+      *gou* and the hypotenuse as its length, and the *gou* area is the square inside it.
+    zh: 又按此圖句幂之矩靑卷白表是其幂以股弦差爲廣股弦并爲袤而股幂方其裏股幂之矩靑卷白表是其幂以句弦差爲廣句弦并爲袤而句幂方其裏
+    highlight: [SP, OS]
+    explain:
+      fact: |
+        The gnomon has arms of width $c - b$. Cut one arm off and lay it end to end with the other: a
+        rectangle $(c - b) \times (c + b)$. So $a^2 = c^2 - b^2 = (c - b)(c + b)$, and in the same way
+        $b^2 = (c - a)(c + a)$.
+    cites: [II.6, II.Def.2]
+  - liu: |
+      Therefore the difference and the sum are used to divide [these areas], and short and long multiply each
+      other.
+    hint: |
+      Given $a$ and $c - b$, divide: $c + b = a^2 / (c - b)$. Then $c$ and $b$ follow from their sum and
+      difference. This is the key to the next problems ([[JZ.9.4]] to [[JZ.9.8]]).

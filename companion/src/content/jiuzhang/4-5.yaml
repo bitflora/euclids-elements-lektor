@@ -1,0 +1,217 @@
+id: JZ.4.5
+title: Extracting the cube root — faces, edges and a corner
+paraphrase: |
+  The cube-root algorithm, the solid analogue of [[JZ.4.3]]. The first digit $a$ is found and $a^3$
+  subtracted. To find the next digit $b$, what must be subtracted is the shell around the cube $a^3$ that
+  makes it the cube on $a + b$: three slabs on the faces ($3a^2 b$), three rods along the edges
+  ($3ab^2$), and a small cube at the corner ($b^3$). The counting board has rows for these: the "fixed
+  divisor" for the faces ($3a^2$), the "middle row" for the edges ($3a$), the "lower row" for the corner.
+
+  Liu Hui names the pieces and says frankly that "words do not exhaust the meaning; to understand this
+  one must use blocks". His explanations are physical: the algorithm takes apart a cube made of blocks.
+
+parallels:
+  - id: II.4
+    relation: related
+    note: |
+      The square-root algorithm rests on II.4, $(a+b)^2 = a^2 + 2ab + b^2$. This one rests on its solid
+      analogue, $(a+b)^3 = a^3 + 3a^2 b + 3ab^2 + b^3$, which Euclid never states. His solid geometry
+      (Book XI) compares solids but does not cut a cube into faces, edges and corner.
+  - id: VII.Def.19
+    relation: related
+    note: |
+      Euclid defines a cube number as "equal multiplied by equal and again by equal" (VII.Def.19). The
+      rule reverses that multiplication; Euclid has no procedure for it.
+
+steps:
+  - classic: |
+      Now there is a volume of 1,860,867 [cubic] *chi*.
+  - liu: |
+      These *chi* are cubic *chi*. Whenever a thing has height or depth and one speaks of its volume, it is
+      called a "standing square".
+    hint: |
+      The cube is *li fang* 立方, the "standing square".
+  - classic: |
+      Question: what is the side of the cube? Answer: 123 *chi*.
+  - classic: |
+      Now there is a volume of 1953 1/8 *chi*. Question: what is the side of the cube? Answer: 12 1/2 *chi*.
+  - classic: |
+      Now there is a volume of 63,401 447/512 *chi*. Question: what is the side of the cube? Answer: 39 7/8 *chi*.
+  - classic: |
+      Again there is a volume of 1,937,541 17/27 *chi*. Question: what is the side of the cube? Answer: 124
+      2/3 *chi*.
+  - classic: |
+      Extracting the cube root —
+  - liu: |
+      The cube is equal [on all sides]; one seeks one of its sides.
+  - classic: |
+      the rule says: set out the volume as the dividend. Borrow one rod and step it along, jumping two places
+      at a time.
+  - liu: |
+      That is: the side of a thousand is ten; the side of a million is a hundred.
+  - classic: |
+      Estimate the result, multiply the borrowed rod by it twice for the divisor, and subtract.
+    modern: |
+      For 1,860,867 the first digit is 1 (worth 100); subtract $100^3$, leaving 860,867.
+  - liu: |
+      "Multiply twice": it too makes a square area; naming it by the estimate above and subtracting, the
+      cube is equal [on all sides].
+  - classic: |
+      When it has been subtracted, triple it for the fixed divisor.
+    modern: |
+      Fixed divisor $3a^2 = 30{,}000$.
+  - liu: |
+      Since one must subtract again, three faces are laid out in advance; the fixed square areas are the
+      fixed divisor.
+    hint: |
+      The three faces of the cube $a^3$ on which the next slabs will lie.
+  - classic: |
+      To subtract again, move it down.
+  - liu: |
+      In subtracting again, the square areas of the three faces are all numbers already multiplied by
+      themselves; one must move down and estimate to fix their thickness. In extracting a plane area, the
+      side of a hundred is ten; in extracting a solid, the side of a thousand is ten. Since the fixed divisor
+      already has the area of a completed square, in subtracting again one takes a thousand as a hundred,
+      moving down one place.
+  - classic: |
+      Multiply the result by 3 and set it in the middle row.
+    modern: |
+      Middle row $3a = 300$.
+  - liu: |
+      This sets the fixed length of the three edges.
+    hint: |
+      The three rods along the edges of the cube, each of length $a$.
+  - classic: |
+      Again borrow a rod and set it in the lower row.
+  - liu: |
+      One wants it for the corner cube, which is equal [on all sides] but has no fixed number yet; so one
+      rod is set to fix its place.
+  - classic: |
+      Step them along: the middle jumping one place, the lower jumping two.
+  - liu: |
+      The upper, square divisor is length times length, and moves down one place; the middle, edge divisor
+      has only a length, so it goes down one place [more]; the lower, corner divisor has no side-length, so
+      it goes down yet another place.
+    hint: |
+      Place-value bookkeeping. Faces, edges and corner are of degree 2, 1 and 0 in the old root $a$.
+  - classic: |
+      Again set out the estimate; multiply the middle by it once,
+  - liu: |
+      This provides the areas of the three edges.
+    modern: |
+      $3a \cdot b$.
+  - classic: |
+      multiply the lower by it twice,
+  - liu: |
+      This makes the corner, multiplied by itself, into a square area.
+    modern: |
+      $b \cdot b$.
+  - classic: |
+      set each aside and add them to the fixed divisor; subtract by the fixed divisor.
+    modern: |
+      Next digit 2 (worth 20): subtract $(3a^2 + 3ab + b^2)\,b = (30{,}000 + 6000 + 400) \cdot 20 = 728{,}000$,
+      leaving 132,867.
+  - liu: |
+      The three faces, three edges and one corner all have their areas; naming them by the estimate above,
+      the thickness of the three lengths is subtracted.
+    explain:
+      fact: |
+        $(a + b)^3 - a^3 = 3a^2 b + 3ab^2 + b^3 = (3a^2 + 3ab + b^2)\,b$.
+  - classic: |
+      When it has been subtracted, double the lower, add the middle, and add them to the fixed divisor.
+    modern: |
+      $3a^2 + 3ab + b^2 + 3ab + 2b^2 = 3(a + b)^2$: the new fixed divisor is three times the square of the
+      root so far, $3 \cdot 120^2 = 43{,}200$.
+  - liu: |
+      In general, adding the middle once more and the lower twice more to the fixed divisor: each of the
+      three edges should join the areas of its two faces to the faces of the two squares, and the corner
+      joins the ends of the three edges, to await the next subtraction. Words do not exhaust the meaning;
+      to understand this, one must use blocks to make it clear.
+    hint: |
+      The new divisor is the three faces of the enlarged cube. They are made of the old faces, the edge rods
+      laid against them, and the corner. Liu's blocks (*qi* 棊) are the wooden models he uses throughout
+      chapter 5.
+  - classic: |
+      Subtract again, and move down as before. If the extraction is not exact, it too "cannot be extracted".
+    modern: |
+      Third digit 3: $(43{,}200 + 3 \cdot 120 \cdot 3 + 9) \cdot 3 = 132{,}867$. The root is 123.
+  - liu: |
+      Some rules name a fraction by the fixed divisor; that is not as good as the old [method for] extracting
+      an area, with minute digits as fractions.
+    hint: |
+      Decimal fractions again, as for square roots ([[JZ.4.3]]).
+  - classic: |
+      If the volume has a fraction, connect it, adding in the numerator, for the fixed dividend. Extract the
+      fixed dividend; when that is done, extract the root of the denominator and repay by division.
+    modern: |
+      $\sqrt[3]{1953\tfrac18} = \sqrt[3]{\tfrac{15625}{8}} = \tfrac{25}{2}$.
+  - li: |
+      We note: when the denominator can be extracted, both are connected. The volume first combined three
+      denominators; after extraction one denominator remains; so the denominator's root is extracted to get
+      one denominator as the divisor, to repay by division.
+  - classic: |
+      If the denominator cannot be extracted, multiply the fixed dividend twice more by the denominator, then
+      extract it; when that is done, divide by the denominator.
+    modern: |
+      $\sqrt[3]{\tfrac{a}{b}} = \dfrac{\sqrt[3]{a b^2}}{b}$.
+  - li: |
+      We respectfully note: if the denominator cannot be extracted, there was originally one denominator;
+      multiplying by it twice more combines three; after extraction one denominator remains. So divide by the
+      denominator to get the whole side.
+    zh: 臣淳風等謹按分母不可開者本一母也又以母再乘之今合三母旣開之後一母猶存故令如母而一得全面也
+  - li: |
+      Note: extracting the cube root seeks the number of one side of a cube, equal on all sides. "Borrow one
+      rod and step it along, jumping two places": a cube is found from its side multiplied twice; to extract
+      it from the volume one jumps two places: the side of a thousand is ten, of a million a hundred.
+    zh: 按開立方者立方適等求其一面之數也借一算步之超二等者立方求積方再自乘就積開之故超二位言千之面十言百萬之面百也
+  - li: |
+      "Estimate the result, multiply the borrowed rod twice for the divisor, and subtract": one makes a square
+      area, names it by the estimate, and subtracts; then the cube is equal. "When it has been subtracted,
+      triple it for the fixed divisor": since the volume is not exhausted and must be subtracted again, three
+      faces are laid out in advance; the fixed square areas are the fixed divisor.
+    zh: 議所得以再乘所借一算爲法而以除者求爲方冪以議命之而除則立方等也除已三之爲定法者爲積未盡當復更除故豫張三面已定方冪爲定法也
+  - li: |
+      "To subtract again, move it down": the square areas of the three faces all have numbers multiplied by
+      themselves; one must move down and estimate to fix their thickness. As in extracting a square root the
+      side of a hundred is ten, so in extracting a cube root the side of a thousand is ten; and since the
+      fixed divisor already has the area of a completed square, in subtracting again one takes a thousand as
+      a hundred, moving down one place.
+    zh: 復除折而下者三面方冪皆已有自乘之數須得折議定其厚薄據開平方百之面十其開立方卽千之面十而定法已有成方之冪故復除之當以千爲百折卞一等也
+    dispute: |
+      折卞 is a slip for 折下, "move down".
+  - li: |
+      "Multiply the result by 3 and set it in the middle row": this sets the fixed length of the three edges.
+      "Again borrow a rod and set it in the lower row": one wants it for the corner cube, equal but without a
+      number yet; so one rod is set to fix its place. "Step them along, the middle jumping one, the lower two":
+      the upper, square divisor is length times length and moves down one place; the middle, edge divisor has
+      only a length, so it goes down one place; the lower, corner divisor has no side-length, so it goes down
+      another place.
+    zh: 以三乘所得數置中行者設三亷之定長也復借一算置下行者欲以爲隅方立方等未有數且置一算定其位也步之中超一下超二者上方法長自乘而一折中亷法但有長故降一等下隅法無面長故又降一等也
+  - li: |
+      "Again set out the estimate; multiply the middle once": this provides the areas of the three edges.
+      "Multiply the lower twice": the corner, multiplied by itself, should make a square area. "Set each aside
+      and add to the fixed divisor; subtract by the fixed divisor": the three faces, three edges and one
+      corner all have areas; naming them by the estimate above, the thickness of the three lengths is
+      subtracted. "When it has been subtracted, double the lower, add the middle, and add to the fixed
+      divisor": each of the three edges should join the areas of its two faces to the faces of the two
+      squares, and the corner joins the ends of the three edges, to await the next subtraction.
+    zh: 復置議以一乘中者爲三亷借冪也再乘下者當令隅自乘爲方冪也皆副以加定法以定法除者三面三亷一隅皆已有冪以上議命之而除去三袤之厚也除已倍下併中從定法者三亷各當以兩面之冪連於兩方之面一隅連於三亷之端以待復除也
+  - li: |
+      If the extraction is not exact, move down as before; extracting then agrees with what was asked. If
+      there is a fraction, connect it, adding in the numerator, and extract it; when done, extract the
+      denominator and repay by division. When it can be extracted, both are connected: the volume first
+      combined three denominators, and after extraction one remains, so the denominator's root is extracted
+      to get one denominator as the divisor, to repay by division. If the denominator cannot be extracted,
+      multiply the fixed dividend twice more by the denominator, then extract; when done, divide by the
+      denominator. If the denominator cannot be extracted, there was originally one denominator; multiplied
+      twice more, three are combined; after extraction one remains, so divide by the denominator to get the
+      whole side.
+    dispute: |
+      As in [[JZ.4.3]], Li's note restates Liu Hui's notes almost word for word, including "words do not
+      exhaust the meaning" in substance.
+
+commentary: |
+  The method generalises to roots of any degree, and in Song China it did: Jia Xian (11th century) and
+  Qin Jiushao (1247) extended it to the numerical solution of polynomial equations, the procedure Europe
+  knows as Horner's method (1819). Its seed is here, in the "middle row" and "lower row" of the cube root,
+  which already carry the coefficients of $3a$, $3a^2$ and 1 of the cubic $b^3 + 3a b^2 + 3a^2 b = R$.

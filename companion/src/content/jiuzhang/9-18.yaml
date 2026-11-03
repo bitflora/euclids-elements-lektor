@@ -1,0 +1,106 @@
+id: JZ.9.18
+title: Sighting distances, a mountain's height, a well's depth
+paraphrase: |
+  The book ends with three surveying problems, each solved with one pair of similar right triangles. The
+  distance of a tree is found with four posts set out in a square. The height of a mountain is found by sighting
+  its peak over the top of a tree of known height. The depth of a well is found by sighting its far waterline
+  past the top of a post. In each, Liu Hui names a "*gou* rate" and "*gu* rate" in the small triangle and a
+  "given" side in the large one.
+
+  These are the methods Liu's preface says are limited: the base of the large triangle must be reachable
+  ([[JZ.Pref]]). His *Sea Island Manual* (*Haidao suanjing*) was appended here to go further.
+
+parallels:
+  - id: VI.4
+    relation: same
+    note: |
+      All three are the proportionality of the sides of equiangular triangles. The Zhou bi's gnomon calculations
+      ([[ZB.2.5]]) are the same.
+  - id: VI.2
+    relation: related
+    note: |
+      The mountain's height: a line (the tree) parallel to one side of a triangle (the mountain) cuts the other
+      sides proportionally (VI.2).
+
+diagram:
+  width: 320
+  height: 280
+  elements:
+    - "M0;point;fixed;40,260;0;0"
+    - "Q;point;fixed;40,40;black;black"
+    - "T0;point;fixed;220,260;0;0"
+    - "T;point;fixed;220,180.4;black;black"
+    - "P0;point;fixed;290,260;0;0"
+    - "E;point;fixed;290,235;black;black"
+    - "U;point;fixed;220,235;0;0"
+    - "V;point;fixed;40,235;0;0"
+    - "ground;line;connect;M0,P0;0;0;#6b6253"
+    - "mountain;line;connect;M0,Q;0;0;black"
+    - "tree;line;connect;T0,T;0;0;#3e6b5a"
+    - "person;line;connect;P0,E;0;0;black"
+    - "sight;line;connect;E,Q;0;0;#8a6d12"
+    - "EV;line;connect;E,V;0;0;#33587a"
+    - "UT;line;connect;U,T;0;0;#9a3b2b"
+    - "EU;line;connect;E,U;0;0;#33587a"
+  given: [M0, Q, T0, T, P0, E, ground, mountain, tree, person, sight]
+  caption: |
+    Not to scale. The mountain's peak {Q}, the treetop {T} 53 *li* east of it, the observer's eye {E} 3 *li* east of
+    the tree. The {sight-line|sight} from the eye over the treetop meets the peak. At eye level, the small
+    triangle has *gou* {UT} (tree minus eye height, 88 *chi*) and *gu* {EU} (3 *li*); the large one has *gu* {EV}
+    and the mountain above eye level.
+
+steps:
+  - classic: |
+      There is a tree at an unknown distance from a person. Set up four posts, each 1 *zhang* from the next, with the
+      two left posts in line with what is sighted. Sighting from the rear right post, the line enters 3 *cun* inside
+      the front right post. Question: how far is the tree from the person? Answer: 33 *zhang* 3 *chi* 3 1/3 *cun*.
+    hint: |
+      The four posts form a square 1 *zhang* on a side, its left side pointing at the tree. The sight-line from the
+      rear right post to the tree crosses the front side 3 *cun* in from the right post.
+  - classic: |
+      The rule says: multiply 1 *zhang* by itself for the dividend, take 3 *cun* as the divisor, and divide.
+    modern: |
+      $\dfrac{100 \cdot 100}{3} = 3333\tfrac13$ *cun*.
+    cites: [VI.4]
+  - liu: |
+      Here the 3 *cun* inside the front right post is the *gou* rate, and the 1 *zhang* between the two right posts
+      the *gu* rate. The 1 *zhang* between the left and right posts is the given *gou*, and the tree's distance from
+      the person, which is asked, is the *gu* of the given *gou*. The *gu* rate should multiply the given *gou*; both
+      are 1 *zhang*, so it says "multiply by itself". Take 3 *cun* as the divisor, and divide to get *cun*.
+  - classic: |
+      There is a mountain west of a tree, its height unknown. The mountain is 53 *li* from the tree, and the tree is
+      9 *zhang* 5 *chi* tall. A person stands 3 *li* east of the tree, and sighting past the treetop sees it exactly
+      in line with the mountain's peak. The person's eye is 7 *chi* high. Question: how high is the mountain?
+      Answer: 164 *zhang* 9 *chi* 6 2/3 *cun*.
+    highlight: [sight, tree, mountain]
+  - classic: |
+      The rule says: set out the tree's height, subtract the eye height of 7 *chi*, and multiply the remainder by 53
+      *li* for the dividend. Take the person's 3 *li* from the tree as the divisor. Divide, and add the tree's
+      height to the result: that is the mountain's height.
+    modern: |
+      $\dfrac{(95 - 7) \cdot 53}{3} + 95 = 1554\tfrac23 + 95 = 1649\tfrac23$ *chi*.
+    adds: [U, V, EV, EU, UT]
+    highlight: [UT, EU, EV]
+    cites: [VI.2, VI.4]
+  - liu: |
+      This rule has the meaning of *gou-gu*. The tree's height less the eye height of 7 *chi* leaves 8 *zhang* 8
+      *chi*, the *gou* rate; the 3 *li* from the eye is the *gu* rate; the mountain's 53 *li* from the tree is the
+      given *gu*. Multiply the given *gu* by the *gou* rate and divide by the *gu* rate to get the *gou*; add the
+      tree's height, and so it is the mountain's height.
+    dispute: |
+      Strictly, the mountain's height above eye level is the large *gou* over the whole 56 *li*, which is 88 · 56/3;
+      adding the tree's height (95) to 88 · 53/3 comes to the same, since $88 + 7 = 95$. The rule takes the
+      shortcut through the treetop.
+  - classic: |
+      Now there is a well 5 *chi* across, of unknown depth. A post 5 *chi* tall is set up on the well's edge.
+      Sighting from the top of the post to the water's [far] edge, the line enters the diameter by 4 *cun*.
+      Question: how deep is the well? Answer: 5 *zhang* 7 *chi* 5 *cun*.
+  - classic: |
+      The rule says: set out the well's diameter, 5 *chi*, subtract the 4 *cun* entered, and multiply the remainder
+      by the post's 5 *chi* for the dividend. Take the 4 *cun* entered as the divisor. Divide, getting *cun*.
+    modern: |
+      $\dfrac{(50 - 4) \cdot 50}{4} = 575$ *cun*.
+  - liu: |
+      Here the 4 *cun* entered is the *gou* rate and the post's 5 *chi* the *gu* rate; the 4 *chi* 6 *cun* of the well's
+      diameter is the given *gou*. The well's depth, which is asked, is the *gu* of the given *gou*.
+    cites: [VI.4]
