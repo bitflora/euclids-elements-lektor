@@ -676,6 +676,9 @@ blockquote.quote { margin: 0 0 0.8rem; }
 .toc-list a:hover { background: var(--hover); }
 .toc-list a.annotated { color: var(--ink); }
 .toc-list a.current { background: var(--select); }
+.toc-shared-books .toc-book { grid-template-columns: 3.8rem 1fr auto; }
+.toc-shared a { display: grid; grid-template-columns: 7.2rem 1fr; gap: 0.4rem; align-items: baseline; }
+.toc-where { font: 0.78rem var(--sans); color: var(--muted); }
 .toc-n { display: inline-block; min-width: 1.4rem; font-variant-numeric: tabular-nums; color: var(--muted); }
 
 .parallels { margin: 1rem 0; }

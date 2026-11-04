@@ -1,9 +1,10 @@
 import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
 import { BOOKS } from "../content/books";
-import { getItem, isAnnotated, items, resolveQuery, sequence } from "../lib/corpus";
-import { WORKS, allSections, getSection, workByKey, type Work } from "../lib/works";
+import { byOrder, getItem, isAnnotated, items, resolveQuery, sequence } from "../lib/corpus";
+import { WORKS, allParallels, allSections, getSection, workByKey, type IndexedParallel, type Work } from "../lib/works";
 import { hrefFor, jump, navigate, type Route } from "../lib/router";
 import { setSettings, useSettings } from "../lib/store";
+import { refLabel } from "../lib/rich";
 import { Rich } from "./Rich";
 
 // ─── Side panel ───────────────────────────────────────────────────────────
@@ -271,8 +272,55 @@ export function Toc({ open, onClose, current }: { open: boolean; onClose: () => 
             </ul>
           </Fragment>
         ))}
+        <p className="toc-work">Proved in more than one work</p>
+        <ul className="toc-books toc-shared-books">
+          {SHARED.map(([id, list], i) => {
+            const k = SHARED_KEY + i;
+            return (
+              <li key={id}>
+                <button type="button" className="toc-book" onClick={() => setOpenBook(openBook === k ? 0 : k)}>
+                  <span className="roman">{id}</span>
+                  <span className="subject">{getItem(id)?.prop?.annotation?.title ?? getItem(id)?.label}</span>
+                </button>
+                {openBook === k && <SharedToc id={id} list={list} current={current} />}
+              </li>
+            );
+          })}
+        </ul>
       </nav>
     </>
+  );
+}
+
+// Euclid's theorems that a Chinese work also proves (a "same" parallel), in Euclid's order.
+const bookOf = (id: string) => BOOKS.findIndex((b) => id.startsWith(`${b.roman}.`));
+const SHARED: (readonly [string, IndexedParallel[]])[] = allParallels()
+  .filter(([id]) => /^[IVX]+\.\d+$/.test(id))
+  .map(([id, list]) => [id, list.filter((p) => p.relation === "same")] as const)
+  .filter(([, list]) => list.length)
+  .sort(([a], [b]) => bookOf(a) - bookOf(b) || byOrder(a, b));
+// Drawer keys for these, clear of Euclid's books (1–13) and the works' parts (100·k + n).
+const SHARED_KEY = 10_000;
+
+function SharedToc({ id, list, current }: { id: string; list: IndexedParallel[]; current?: string }) {
+  const link = (to: string, where: string, title?: string) => (
+    <li key={to}>
+      <a href={hrefFor(to)} className={`annotated${to === current ? " current" : ""}`}>
+        <span className="toc-where">{where}</span>
+        <span>{title}</span>
+      </a>
+    </li>
+  );
+  return (
+    <div className="toc-book-body">
+      <ol className="toc-list toc-shared">
+        {link(id, `Elements ${id}`, getItem(id)?.prop?.annotation?.title ?? getItem(id)?.label)}
+        {list.map((p) => {
+          const s = getSection(p.section);
+          return link(p.section, refLabel(p.section), s?.annotation?.title ?? s?.label);
+        })}
+      </ol>
+    </div>
   );
 }
 
