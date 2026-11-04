@@ -9,6 +9,7 @@ import { PanelShell } from "../components/Layout";
 import { WorkParallels } from "../components/Parallels";
 import { PeekCard, RefChip } from "../components/Refs";
 import { Rich } from "../components/Rich";
+import { measurementNotes } from "../lib/measurements";
 
 /**
  * One part of a Chinese work, read straight through: the classic with its commentary
@@ -325,6 +326,7 @@ export function WorkStepNotes({
   onNext?: () => void;
   onClose: () => void;
 }) {
+  const measurements = measurementNotes(step.en ?? "", step.source);
   const e = step.explain ?? {};
   const hasMore = !!(e.did || e.fact || e.justification || e.follows || e.implicit);
   return (
@@ -415,6 +417,16 @@ export function WorkStepNotes({
             </div>
           ) : null}
         </>
+      )}
+      {measurements.length > 0 && (
+        <section className="voice-note">
+          <span className="voice-label">Metric equivalents</span>
+          <Rich md={measurements.map((note) => `- ${note}`).join("\n")} />
+          <p className="small muted">
+            Approximate Han-era scales; standards varied with period and place. Conversions use the quantities written in this passage.
+            {" "}<a href="https://www.sciengine.com/doi/pdf/1BF271281C954C2DBBBC75A73A65D8E6">Source for the base scales</a>.
+          </p>
+        </section>
       )}
       {(step.sbck || step.sbckOnly) && (
         <p className="small muted text-note">
