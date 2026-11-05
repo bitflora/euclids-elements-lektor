@@ -11,12 +11,14 @@ paraphrase: |
 parallels:
   - id: XII.7
     relation: same
+    proves: true
     note: |
       "Any pyramid is a third part of the prism which has the same base with it and equal height" (porism to
       XII.7). Euclid proves it for triangular pyramids by dissecting a prism into three pyramids equal by
       XII.5. Liu counts *yangma*, relying on his proof that a *yangma* is a third of its cube ([[JZ.5.8]]).
   - id: XII.10
     relation: same
+    proves: true
     note: |
       "Any cone is a third part of the cylinder which has the same base with it and equal height." Liu gets it
       from the pyramid by the ratio of circle to square; Euclid proves it by exhaustion with inscribed

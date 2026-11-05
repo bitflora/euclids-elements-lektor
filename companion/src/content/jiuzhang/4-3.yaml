@@ -15,6 +15,7 @@ paraphrase: |
 parallels:
   - id: II.4
     relation: same
+    proves: true
     note: |
       "If a straight line be cut at random, the square on the whole is equal to the squares on the
       segments and twice the rectangle contained by the segments." Liu's figure is Euclid's: yellow A and

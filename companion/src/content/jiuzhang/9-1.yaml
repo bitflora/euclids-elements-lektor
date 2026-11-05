@@ -14,6 +14,7 @@ paraphrase: |
 parallels:
   - id: I.47
     relation: same
+    proves: true
     note: |
       Euclid's theorem: the square on the hypotenuse equals the squares on the two legs. Euclid proves it by
       dividing the square on the hypotenuse into two rectangles and showing each equal to a square on a leg,

@@ -18,6 +18,7 @@ paraphrase: |
 parallels:
   - id: I.47
     relation: same
+    proves: true
     note: |
       The classic states one case, $3^2 + 4^2 = 5^2$; Zhao's essay states and proves the general
       theorem, differently from Euclid. Euclid divides the square on the hypotenuse into two

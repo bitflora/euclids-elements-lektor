@@ -7,6 +7,7 @@ paraphrase: |
 parallels:
   - id: XII.7
     relation: same
+    proves: true
     note: |
       Euclid's XII.7 divides a triangular prism (a *qiandu*) into three pyramids equal to one another. Liu's
       *qiandu* divides into a *yangma*, which is two tetrahedra, and a *bienao*; [[JZ.5.8]] shows all three

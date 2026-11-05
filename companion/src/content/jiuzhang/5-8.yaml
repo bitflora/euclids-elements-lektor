@@ -20,6 +20,7 @@ paraphrase: |
 parallels:
   - id: XII.7
     relation: same
+    proves: true
     note: |
       The porism to XII.7: any pyramid is a third of the prism with the same base and height. Liu proves it for
       the *yangma*; Euclid for the triangular pyramid, by cutting a triangular prism (a *qiandu*) into three

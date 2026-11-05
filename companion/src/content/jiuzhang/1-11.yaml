@@ -13,6 +13,7 @@ paraphrase: |
 parallels:
   - id: I.41
     relation: same
+    proves: true
     note: |
       A parallelogram on the same base and between the same parallels as a triangle is double the
       triangle. So the triangle equals the rectangle on half the base with the same height, which is the

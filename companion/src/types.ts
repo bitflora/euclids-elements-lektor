@@ -280,6 +280,8 @@ export interface WorkParallel {
   id: ItemId;
   /** "same": the same proposition is proved (or used) in both; "related": a close kin. */
   relation: "same" | "related";
+  /** This passage explicitly proves the referenced proposition, rather than using it. */
+  proves?: boolean;
   note: Rich;
 }
 

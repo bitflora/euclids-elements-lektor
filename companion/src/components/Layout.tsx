@@ -292,11 +292,11 @@ export function Toc({ open, onClose, current }: { open: boolean; onClose: () => 
   );
 }
 
-// Euclid's theorems that a Chinese work also proves (a "same" parallel), in Euclid's order.
+// Only explicit proofs belong here; "same" parallels also include applications.
 const bookOf = (id: string) => BOOKS.findIndex((b) => id.startsWith(`${b.roman}.`));
 const SHARED: (readonly [string, IndexedParallel[]])[] = allParallels()
   .filter(([id]) => /^[IVX]+\.\d+$/.test(id))
-  .map(([id, list]) => [id, list.filter((p) => p.relation === "same")] as const)
+  .map(([id, list]) => [id, list.filter((p) => p.proves === true)] as const)
   .filter(([, list]) => list.length)
   .sort(([a], [b]) => bookOf(a) - bookOf(b) || byOrder(a, b));
 // Drawer keys for these, clear of Euclid's books (1–13) and the works' parts (100·k + n).

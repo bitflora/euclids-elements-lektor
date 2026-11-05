@@ -33,6 +33,16 @@ describe("the works", () => {
     for (const w of WORKS) expect([...w.sections.values()].filter((s) => !s.annotation).map((s) => s.id)).toEqual([]);
   });
 
+  it("distinguishes proofs of the Pythagorean theorem from applications", () => {
+    expect(parallelsOf("I.47").filter((p) => p.proves).map((p) => p.section).sort())
+      .toEqual(["JZ.9.1", "ZB.1.3"]);
+    // Applications remain available among the broader parallels.
+    expect(parallelsOf("I.47").some((p) => p.section === "JZ.9.2")).toBe(true);
+    for (const [, list] of allParallels()) {
+      for (const p of list.filter((p) => p.proves)) expect(p.relation).toBe("same");
+    }
+  });
+
   it("index parallels both ways, to real Euclid items", () => {
     for (const [eid, list] of allParallels()) {
       expect(items.has(eid), `parallel to unknown Euclid item ${eid}`).toBe(true);
