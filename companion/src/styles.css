@@ -361,7 +361,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.2; }
   gap: 0 0.4rem;
   align-items: baseline;
   padding: 0.28rem 0.5rem 0.28rem 0;
-  margin: 0 -0.5rem 0 -2.6rem;
+  margin: 0 -0.5rem 0 var(--step-margin-left, -2.6rem);
   border-left: 3px solid transparent;
   border-radius: 0 6px 6px 0;
   cursor: pointer;
@@ -583,7 +583,7 @@ blockquote.quote { margin: 0 0 0.8rem; }
   .jump input { max-width: none; }
   .reading { grid-template-columns: minmax(0, 1fr); }
   .text-col { padding-bottom: 50vh; }
-  .step { margin-left: -0.5rem; grid-template-columns: 1.6rem minmax(0, 1fr); }
+  .step { --step-margin-left: -0.5rem; grid-template-columns: 1.6rem minmax(0, 1fr); }
   .panel {
     position: fixed;
     left: 0;
@@ -650,7 +650,7 @@ blockquote.quote { margin: 0 0 0.8rem; }
 .zb-en, .zb-en p { margin: 0; }
 .zb-zh { margin: 0.15rem 0 0; font: 400 0.98rem/1.7 var(--cjk); color: var(--ink-2); letter-spacing: 0.04em; }
 .zb-step.classic .zb-en { font-size: 1.24rem; }
-.zb-step.commentary { margin-left: -1rem; border-left: 3px solid var(--zhao-tint); font-size: 1.04rem; color: var(--ink-2); }
+.zb-step.commentary { margin-left: calc(var(--step-margin-left, -2.6rem) + 1.6rem); border-left: 3px solid var(--zhao-tint); font-size: 1.04rem; color: var(--ink-2); }
 .zb-step.commentary .zb-en { font-size: 1.06rem; line-height: 1.55; }
 .zb-step.commentary .zb-zh { font-size: 0.9rem; }
 .zb-step.commentary.selected { border-left-color: var(--select-rule); }
@@ -660,7 +660,7 @@ blockquote.quote { margin: 0 0 0.8rem; }
 :root { --li: #7a4a6b; --li-tint: #f4e9f0; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --li: #d3a5c4; --li-tint: #2a1f27; } }
 [data-theme="dark"] { --li: #d3a5c4; --li-tint: #2a1f27; }
-.zb-step.li { margin-left: 0.4rem; border-left-color: var(--li-tint); }
+.zb-step.li { margin-left: calc(var(--step-margin-left, -2.6rem) + 3rem); border-left-color: var(--li-tint); }
 .zb-step.li .step-num { color: var(--li); }
 .zhao-label.voice-li { margin-left: 3rem; color: var(--li); }
 .jz-problem { display: block; margin: 0 0 0.1rem; font: 600 0.7rem var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
